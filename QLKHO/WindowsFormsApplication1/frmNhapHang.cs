@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
         }
         public void loaddridmathang()
         {
-            cboMaMatHang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+           /* cboMaMatHang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cboMaMatHang.Properties.DataSource = dtvMH;
             cboMaMatHang.Properties.DisplayMember = "MAMH";
             cboMaMatHang.Properties.ValueMember = "TENMH";
@@ -93,10 +93,11 @@ namespace WindowsFormsApplication1
             cboMaMatHang.Properties.PopupFormWidth = 300;
             cboMaMatHang.Properties.DataSource = ctlNCC.GETMATHANG();
             dtoNCC.MAMH = gridMH.GetFocusedRowCellValue("MAMH").ToString();
+            */ 
         }
         public void loadgridthue()
         {
-            cboThue.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            /*cboThue.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cboThue.Properties.DataSource = dtvMH;
             cboThue.Properties.DisplayMember = "SOTHUE";
             cboThue.Properties.ValueMember = "MATH";
@@ -104,10 +105,11 @@ namespace WindowsFormsApplication1
             cboThue.Properties.PopupFormWidth = 300;
             cboThue.Properties.DataSource = ctlNCC.GETTHUE();
             dtoNCC.MATH = gridTHUE.GetFocusedRowCellValue("MATH").ToString();
+            */
         }
         public void loaddridDVT()
         {
-            cboDVT.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            /*cboDVT.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cboDVT.Properties.DataSource = dtvDVT;
             cboDVT.Properties.DisplayMember = "DONVITINH";
             cboDVT.Properties.ValueMember = "MADVT";
@@ -115,6 +117,7 @@ namespace WindowsFormsApplication1
             cboDVT.Properties.PopupFormWidth = 300;
             cboDVT.Properties.DataSource = ctlNCC.GETDVT();
             dtoNCC.MADVT = gridDVT.GetFocusedRowCellValue("MADVT").ToString();
+             */ 
         }
    
         private void cboMANCC_EditValueChanged(object sender, EventArgs e)
@@ -145,7 +148,7 @@ namespace WindowsFormsApplication1
         }
         private void cboTenMatHang_EditValueChanged(object sender, EventArgs e)
         {
-            cboTenMH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+           /* cboTenMH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cboTenMH.Properties.DataSource = dtvMH;
             cboTenMH.Properties.DisplayMember = "TENMH";
             cboTenMH.Properties.ValueMember = "TENMH";
@@ -155,6 +158,7 @@ namespace WindowsFormsApplication1
             cboTenMH.Text = gridMH.GetFocusedRowCellValue("TENMH").ToString();
             cboThue.Text = gridMH.GetFocusedRowCellValue("MATH").ToString();
             cboDVT.Text = gridMH.GetFocusedRowCellValue("MADVT").ToString();
+            */
         }
         public string sTenNV, sMaNV;
         private void btTaoMoi_Click(object sender, EventArgs e)
@@ -168,11 +172,12 @@ namespace WindowsFormsApplication1
            
             txtNo.Text = "";
           
-            cboMaMatHang.Text = "";
+           /* cboMaMatHang.Text = "";
             cboThue.Text = "";
             cboSL.Text = "";
             cboDonGia.Text = "";
             cboDVT.Text = "";
+            */ 
             if (hd._Cart.Count > 0)
             {
                 hd._Cart.Clear();
@@ -240,7 +245,7 @@ namespace WindowsFormsApplication1
         }
         public void createHoadon()
         {
-            String mamh = cboMaMatHang.Text;
+          /*  String mamh = cboMaMatHang.Text;
             try
             {
                 ctlNCC.GETMH();
@@ -252,11 +257,12 @@ namespace WindowsFormsApplication1
             finally
             {
             }
+           */ 
         } 
         ArrayList list1 = new ArrayList();
         private void btXemTruoc_Click(object sender, EventArgs e)
         {
-            if (cboMaMatHang.Text == "")
+           /* if (cboMaMatHang.Text == "")
             {
                 XtraMessageBox.Show("Vui lòng chọn Mã Mặt Hàng");
             }
@@ -284,6 +290,7 @@ namespace WindowsFormsApplication1
                     txtthanhtien.Text = hd.tong_HoaDon.ToString();
                 }
             }
+            */
         }
         public void insert_HoadonChitiet(string mahdn, String mamh, int SoLuong, int DonGia)
         {
