@@ -1,0 +1,886 @@
+C:\Users\Nhocs\DoAn548\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Nhocs\DoAn548\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Nhocs\DoAn548\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nhocs\DoAn548\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+C:\Users\Nhocs\DoAn548\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Nhocs\DoAn548\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Nhocs\DoAn548\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+C:\Users\Nhocs\DoAn548\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Nhocs\DoAn548\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Nhocs\DoAn548\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\bin\Debug\DevExpress.Xpf.Projects.v10.1.Installers.dll
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+C:\Users\Nhocs\Desktop\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+G:\DoAn548\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhoiPhuc.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSaoLuu.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\bin\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\bin\Debug\office.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhapHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resEngLand.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resVietNam.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMatHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemSua.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PrintRibbonControllerResources.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.XRDesignRibbonControllerResources.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTin.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTinNhom.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLienHe.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLoad.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNguoiDung.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDoiMatKhau.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmPhanQuyen.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho1.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamEL.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamVN.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaKho.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDonViTinh.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhanVien.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhomhang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaBoPhan.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaDVT.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaKhachHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaKhuVuc.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNhanVien.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNhomHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaThue.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemBoPhan.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemDVT.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhanVien.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhomHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemSuaMatHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemThue.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThue.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemMatHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.af-ZA.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\bin\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\bin\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\bin\Debug\office.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\bin\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDoiMatKhau.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDonViTinh.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho1.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhoiPhuc.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLienHe.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLoad.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMatHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhanVien.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhapHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhomhang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmPhanQuyen.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSaoLuu.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaBoPhan.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaDVT.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaKhachHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaKho.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaKhuVuc.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNhanVien.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNhomHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaThue.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemBoPhan.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemDVT.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNguoiDung.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhanVien.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhomHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemSua.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemSuaMatHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemThue.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTin.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTinNhom.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThue.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamEL.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamVN.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PrintRibbonControllerResources.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resEngLand.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resVietNam.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemMatHang.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.XRDesignRibbonControllerResources.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.af-ZA.resources
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\BamBi\Desktop\Lan Cuoi\New folder\doan548\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNguoiDung.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\Interop.SQLDMO.dll
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNguoiDung.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDoiMatKhau.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDonViTinh.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho1.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhoiPhuc.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLienHe.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLoad.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMatHang.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhanVien.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhapHang.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhomhang.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmPhanQuyen.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSaoLuu.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaThue.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemBoPhan.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemDVT.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNguoiDung.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhanVien.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhomHang.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemSua.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemThue.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTin.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTinNhom.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThue.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamEL.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamVN.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.PrintRibbonControllerResources.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resEngLand.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resVietNam.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemMatHang.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.XRDesignRibbonControllerResources.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.af-ZA.resources
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\bin\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\bin\Debug\office.dll
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\bin\Debug\Interop.SQLDMO.dll
+C:\Users\LamTac\Desktop\cuoicung\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\bin\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\bin\Debug\office.dll
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\bin\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNguoiDung.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDoiMatKhau.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDonViTinh.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho1.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhoiPhuc.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLienHe.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLoad.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMatHang.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhanVien.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhapHang.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhomhang.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmPhanQuyen.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSaoLuu.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemBoPhan.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemDVT.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNguoiDung.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhanVien.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhomHang.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemSua.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemThue.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTin.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTinNhom.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThue.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamEL.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamVN.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resEngLand.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resVietNam.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemMatHang.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.af-ZA.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoKH.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoNcc.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmThuTien.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTraTien.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_EL.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_VN.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportThutienKH.resources
+C:\Users\BamBi\Desktop\Lam\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportTratienNCC.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\bin\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\bin\Debug\office.dll
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\bin\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoKH.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoNcc.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportThutienKH.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportTratienNCC.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmThuTien.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTraTien.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmPhanQuyen.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNguoiDung.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNguoiDung.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDoiMatKhau.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDonViTinh.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho1.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhoiPhuc.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLienHe.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLoad.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMatHang.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhanVien.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhapHang.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhomhang.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSaoLuu.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemBoPhan.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemDVT.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhanVien.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhomHang.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemSua.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemThue.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTin.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTinNhom.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThue.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamEL.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamVN.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resEngLand.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resVietNam.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemMatHang.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_EL.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_VN.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.af-ZA.resources
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+C:\Users\BamBi\Desktop\Finish\cuoicung\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+F:\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\Interop.SQLDMO.dll
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBangKeXuatKhoTheoKHAchhangHangHoa.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoKhachHang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoLoiNhuan.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.reportBaoCaoMathang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.reportBaoCaoNhomHang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.Reportbaocaotheomathang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.reportBaoCaoThongKeKho.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportKhachang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportTheoloinhuan.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoKH.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoNcc.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportThutienKH.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportTratienNCC.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmThuTien.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTraTien.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmPhanQuyen.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNguoiDung.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNguoiDung.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDoiMatKhau.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDonViTinh.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho1.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhoiPhuc.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLienHe.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLoad.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMatHang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhanVien.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhapHang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhomhang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSaoLuu.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemBoPhan.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemDVT.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhanVien.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhomHang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemSua.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemThue.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTin.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTinNhom.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThue.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamEL.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamVN.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resEngLand.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resVietNam.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemMatHang.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_EL.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_VN.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.af-ZA.resources
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+F:\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+F:\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+F:\cuoicung\WindowsFormsApplication1\bin\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+F:\cuoicung\WindowsFormsApplication1\bin\Debug\Interop.SQLDMO.dll
+F:\cuoicung\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\Interop.SQLDMO.dll
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\bin\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Office.Interop.Excel.dll
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Vbe.Interop.dll
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\bin\Debug\office.dll
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\bin\Debug\Interop.SQLDMO.dll
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBangKeXuatKhoTheoKHAchhangHangHoa.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoKhachHang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoLoiNhuan.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.reportBaoCaoMathang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.reportBaoCaoNhomHang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.Reportbaocaotheomathang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.reportBaoCaoThongKeKho.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportKhachang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportTheoloinhuan.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoKH.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoNcc.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportThutienKH.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportTratienNCC.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmThuTien.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTraTien.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmPhanQuyen.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNguoiDung.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNguoiDung.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDoiMatKhau.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDonViTinh.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho1.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhoiPhuc.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLienHe.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLoad.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMatHang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhanVien.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhapHang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhomhang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSaoLuu.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemBoPhan.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemDVT.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhanVien.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhomHang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemSua.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemThue.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTin.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTinNhom.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThue.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamEL.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamVN.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resEngLand.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resVietNam.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemMatHang.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_EL.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_VN.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.af-ZA.resources
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+E:\TailieuIT\Projectratruong\cuoicung\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\Interop.SQLDMO.dll
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\bin\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Office.Interop.Excel.dll
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Vbe.Interop.dll
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\bin\Debug\office.dll
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\bin\Debug\Interop.SQLDMO.dll
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBangKeXuatKhoTheoKHAchhangHangHoa.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoKhachHang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoLoiNhuan.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.reportBaoCaoThongKeKho.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportKhachang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportTheoloinhuan.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoKH.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoNcc.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportThutienKH.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportTratienNCC.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmThuTien.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTraTien.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmPhanQuyen.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNguoiDung.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNguoiDung.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDoiMatKhau.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDonViTinh.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho1.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhoiPhuc.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLienHe.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLoad.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMatHang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhanVien.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhapHang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhomhang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSaoLuu.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemBoPhan.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemDVT.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhanVien.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhomHang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemSua.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemThue.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTin.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTinNhom.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThue.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamEL.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamVN.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resEngLand.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resVietNam.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemMatHang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_EL.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_VN.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.af-ZA.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reporthansudung.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoMathang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoNhomHang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reportbaocaotheomathang.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonNhap.In.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonXuat.frmHoaDonXuat.resources
+F:\BAILAMCANHOM\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonXuat.Inxuat.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\bin\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\bin\Debug\office.dll
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\bin\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBangKeXuatKhoTheoKHAchhangHangHoa.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoKhachHang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoLoiNhuan.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoMathang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoNhomHang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reportbaocaotheomathang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.reportBaoCaoThongKeKho.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reporthansudung.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportKhachang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportTheoloinhuan.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoKH.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoNcc.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportThutienKH.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportTratienNCC.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmThuTien.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTraTien.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonNhap.In.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonXuat.frmHoaDonXuat.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonXuat.Inxuat.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmPhanQuyen.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNguoiDung.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNguoiDung.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDoiMatKhau.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDonViTinh.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho1.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhoiPhuc.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLienHe.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLoad.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMatHang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhanVien.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhapHang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhomhang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSaoLuu.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemBoPhan.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemDVT.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhanVien.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhomHang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemThue.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTin.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTinNhom.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThue.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamEL.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamVN.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resEngLand.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resVietNam.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemMatHang.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_EL.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_VN.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.af-ZA.resources
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\BamBi\Desktop\Dung\BAILAMCANHOMSDAYDU\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmAttachcs.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\bin\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Office.Interop.Excel.dll
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\bin\Debug\Microsoft.Vbe.Interop.dll
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\bin\Debug\office.dll
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\bin\Debug\Interop.SQLDMO.dll
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBangKeXuatKhoTheoKHAchhangHangHoa.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoKhachHang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoLoiNhuan.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoMathang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoNhomHang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reportbaocaotheomathang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.reportBaoCaoThongKeKho.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reporthansudung.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportKhachang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportTheoloinhuan.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmAttachcs.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoKH.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoNcc.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportThutienKH.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportTratienNCC.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemThue.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThue.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmThuTien.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTraTien.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonNhap.In.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonXuat.frmHoaDonXuat.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonXuat.Inxuat.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmPhanQuyen.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNguoiDung.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNguoiDung.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDoiMatKhau.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDonViTinh.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho1.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhoiPhuc.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLienHe.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLoad.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMatHang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhanVien.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhapHang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhomhang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSaoLuu.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemBoPhan.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemDVT.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhanVien.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhomHang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTin.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTinNhom.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamEL.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamVN.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resEngLand.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resVietNam.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemMatHang.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_EL.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_VN.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.af-ZA.resources
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+C:\Users\BamBi\Desktop\Dung\ProMag Soft02\cuoicung\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\Interop.SQLDMO.dll
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.ResolveComReference.cache
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\ResolveAssemblyReference.cache
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBangKeXuatKhoTheoKHAchhangHangHoa.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoKhachHang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoLoiNhuan.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoMathang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoNhomHang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Reportbaocaotheomathang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.reportBaoCaoThongKeKho.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reporthansudung.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportKhachang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.BaoCao.ReportTheoloinhuan.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonXuat.frmHoaDonXuat.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhapHang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonNhap.In.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonXuat.Inxuat.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMatHang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmAttachcs.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCauHinhHeThong.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoKH.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmCongNoNcc.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmMain.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportThutienKH.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportTratienNCC.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemMatHang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemThue.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeDoanhThu.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThue.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmThuTien.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTraTien.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmPhanQuyen.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSuaNguoiDung.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNguoiDung.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDoiMatKhau.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmDonViTinh.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhaCungCap.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKho1.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhoiPhuc.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhuVuc.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLienHe.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLoad.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmLogin.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmNhanVien.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhomhang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSaoLuu.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemBoPhan.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemDVT.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhachHang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKho.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemKhuVuc.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhaCungCap.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhanVien.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThemNhomHang.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTin.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongTinNhom.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamEL.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.LamVN.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resEngLand.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.resVietNam.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_EL.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Tien_VN.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\bin\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\bin\Debug\Interop.SQLDMO.dll
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKhachHang.af-ZA.resources
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
+e:\visualsudio\VBNET\ProMag\cuoicung\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
