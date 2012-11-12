@@ -591,6 +591,11 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void txtsdt_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
       
 
        

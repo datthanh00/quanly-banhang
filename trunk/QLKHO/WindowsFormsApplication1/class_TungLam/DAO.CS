@@ -405,6 +405,11 @@ namespace WindowsFormsApplication1
             DataTable tb = new DataTable();
             return executeNonQuerya("DONVITINH_getall", sqlpa);
         }
+        public DataTable GETMATHANG(string MAMH)
+        {
+            string SQL = "SELECT T3.TENMH,T3.MAMH,T3.SOLUONGMH,T3.GIABAN,T3.MATH,T3.SOTHUE,T3.MADVT, T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MATH,T2.SOTHUE,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH='"+MAMH+"') AS T1 INNER JOIN THUE AS T2 ON T1.MATH =T2.MATH) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT";
+            return getdata(SQL);
+        }
         public DataTable GETMATHANG()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();

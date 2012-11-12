@@ -163,6 +163,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMATHANG();
         }
+        public DataTable GETMATHANG(string MAMH)
+        {
+            return DAO.GETMATHANG(MAMH);
+        }
         public DataTable GETTHUE()
         {
             return DAO.GETTHUE();

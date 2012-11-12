@@ -62,11 +62,11 @@
             this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             this.cmbtenkhuvuc = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cotMaKV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cotTenKV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtfax = new DevExpress.XtraEditors.CalcEdit();
             this.txtmasothue = new DevExpress.XtraEditors.CalcEdit();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            this.cotMaKV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cotTenKV = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txttenkh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdiachi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnganhang.Properties)).BeginInit();
@@ -346,6 +346,7 @@
             this.txtsdt.Size = new System.Drawing.Size(231, 20);
             this.txtsdt.TabIndex = 3;
             this.txtsdt.Validating += new System.ComponentModel.CancelEventHandler(this.txtsdt_Validating);
+            this.txtsdt.EditValueChanged += new System.EventHandler(this.txtsdt_EditValueChanged);
             this.txtsdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsdt_KeyPress);
             // 
             // txtsotaikhan
@@ -365,7 +366,7 @@
             this.checkTT.Location = new System.Drawing.Point(112, 188);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 18);
+            this.checkTT.Size = new System.Drawing.Size(82, 19);
             this.checkTT.TabIndex = 4;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
@@ -397,6 +398,22 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // cotMaKV
+            // 
+            this.cotMaKV.Caption = "Mã Khu Vực";
+            this.cotMaKV.FieldName = "MAKV";
+            this.cotMaKV.Name = "cotMaKV";
+            this.cotMaKV.Visible = true;
+            this.cotMaKV.VisibleIndex = 0;
+            // 
+            // cotTenKV
+            // 
+            this.cotTenKV.Caption = "Tên Khu Vực";
+            this.cotTenKV.FieldName = "TENKV";
+            this.cotTenKV.Name = "cotTenKV";
+            this.cotTenKV.Visible = true;
+            this.cotTenKV.VisibleIndex = 1;
+            // 
             // txtfax
             // 
             this.txtfax.Location = new System.Drawing.Point(445, 128);
@@ -423,22 +440,6 @@
             // dxErrorProvider1
             // 
             this.dxErrorProvider1.ContainerControl = this;
-            // 
-            // cotMaKV
-            // 
-            this.cotMaKV.Caption = "Mã Khu Vực";
-            this.cotMaKV.FieldName = "MAKV";
-            this.cotMaKV.Name = "cotMaKV";
-            this.cotMaKV.Visible = true;
-            this.cotMaKV.VisibleIndex = 0;
-            // 
-            // cotTenKV
-            // 
-            this.cotTenKV.Caption = "Tên Khu Vực";
-            this.cotTenKV.FieldName = "TENKV";
-            this.cotTenKV.Name = "cotTenKV";
-            this.cotTenKV.Visible = true;
-            this.cotTenKV.VisibleIndex = 1;
             // 
             // frmThemKhachHang
             // 

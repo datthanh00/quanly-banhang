@@ -839,6 +839,7 @@
             this.gridCTHOADON.OptionsView.ShowFooter = true;
             this.gridCTHOADON.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridCTHOADON.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridCTHOADON_CellValuedChanged);
+            this.gridCTHOADON.RowCountChanged += new System.EventHandler(this.gridCTHOADON_RowcountChanged);
             this.gridCTHOADON.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridCTHOADON_ValidateRow);
             // 
             // gridColumn6
@@ -871,12 +872,16 @@
             this.gridColumn5.Caption = "Mã Mặt Hàng";
             this.gridColumn5.FieldName = "_MaMH";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            this.gridColumn5.OptionsColumn.ReadOnly = true;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 1;
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Số Lượng";
+            this.gridColumn7.DisplayFormat.FormatString = "{0:0}";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "_SoLuong";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
@@ -887,6 +892,8 @@
             this.gridColumn8.Caption = "Đơn Giá";
             this.gridColumn8.FieldName = "_DonGia";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
+            this.gridColumn8.OptionsColumn.ReadOnly = true;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 3;
             // 
@@ -895,6 +902,8 @@
             this.gridColumn9.Caption = "Thuế";
             this.gridColumn9.FieldName = "_Thue";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
+            this.gridColumn9.OptionsColumn.ReadOnly = true;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 4;
             // 
@@ -903,14 +912,19 @@
             this.gridColumn22.Caption = "Đơn Vị Tính";
             this.gridColumn22.FieldName = "_DVT";
             this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.OptionsColumn.AllowEdit = false;
+            this.gridColumn22.OptionsColumn.ReadOnly = true;
             this.gridColumn22.Visible = true;
             this.gridColumn22.VisibleIndex = 5;
             // 
             // gridColumn25
             // 
             this.gridColumn25.Caption = "Tổng Cộng";
+            this.gridColumn25.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn25.FieldName = "_Total";
             this.gridColumn25.Name = "gridColumn25";
+            this.gridColumn25.OptionsColumn.AllowEdit = false;
+            this.gridColumn25.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn25.Visible = true;
             this.gridColumn25.VisibleIndex = 6;
             // 
