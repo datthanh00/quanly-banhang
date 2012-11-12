@@ -422,21 +422,61 @@ namespace WindowsFormsApplication1
 
         private void gridCTHOADON_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
         {
-            MessageBox.Show("thanh");
+          
+            
         }
 
         private void gridCTHOADON_CellValuedChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
             //MessageBox.Show("Cell value Changed");
+            
             DataRow dtr = dtr= gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
-      
+                
                 if (dtr["_TenMH"].ToString() != "")
                 {
-                    MessageBox.Show(dtr["_TenMH"].ToString());
+                    if (e.Column.FieldName.ToString() == "_TenMH")
+                    {
+                        DataTable dtmh = ctlNCC.GETMATHANG(dtr["_TenMH"].ToString());
+                        dtr["_MaMH"] =dtmh.Rows[0]["MAMH"];
+                        dtr["_SoLuong"] = "0";
+                        dtr["_DonGia"] = dtmh.Rows[0]["GIABAN"];
+                        dtr["_Thue"] = dtmh.Rows[0]["SOTHUE"];
+                        dtr["_DVT"] = dtmh.Rows[0]["DONVITINH"];
+                        //dtr["_TenMH"] = dtmh.Rows[0]["TENMH"];
+                        dtr["_Total"] = "0";
+                    }else
+                    {
+                        int Num;
+                        bool isNum = int.TryParse(dtr["_SoLuong"].ToString(), out Num);
+                        if (isNum)
+                        {
+                            int total = int.Parse(dtr["_DonGia"].ToString()) * Num;
+                            dtr["_Total"] = total.ToString();
+                        }
+                        else
+                        {
+                            dtr["_SoLuong"] = "0";
+                            dtr["_Total"] = "0";
+                        }
+                    }
                 }
+                
 
             //"_MaMH"));
            // dt.Columns.Add(new DataColumn("_TenMH"));
+        }
+
+        private void gridCTHOADON_RowcountChanged(object sender, EventArgs e)
+        {
+            int rowcount = gridCTHOADON.DataRowCount;
+            int total = 0;
+            for (int i = 0; i < rowcount; i++)
+            {
+                DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
+                total += int.Parse(dtr["_Total"].ToString());
+
+            }
+            txtthanhtien.Text = total.ToString();
         }
 
        
