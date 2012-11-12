@@ -200,6 +200,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMH();
         }
+        public DataTable GETMMH()
+        {
+            return DAO.GETMMH();
+        }
         internal object getDatabase()
         {
             throw new NotImplementedException();

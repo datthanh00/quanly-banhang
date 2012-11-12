@@ -48,6 +48,8 @@ namespace WindowsFormsApplication1
             loadmahdn();
             cboNhanVienLap.Text = sMaNV;
             loadGiaoDich();
+            loadgridCTHOADON();
+            loadGrid_sanpham();
 
         }
         DataView dvdropdow;
@@ -60,17 +62,37 @@ namespace WindowsFormsApplication1
         DataView dtvMH;
         DataView dtvThue;
         DataView dtvDVT;
+        public void loadgridCTHOADON()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add(new DataColumn("_MaMH"));
+            dt.Columns.Add(new DataColumn("_TenMH"));
+            dt.Columns.Add(new DataColumn("_SoLuong"));
+            dt.Columns.Add(new DataColumn("_DonGia"));
+            dt.Columns.Add(new DataColumn("_Thue"));
+            dt.Columns.Add(new DataColumn("_DVT"));
+            dt.Columns.Add(new DataColumn("_Total"));
+
+            gridControl1.DataSource = dt;
+        }
+        public void loadGrid_sanpham()
+        {
+            Grid_sanpham.DataSource = ctlNCC.GETMMH();
+            Grid_sanpham.DisplayMember = "TENMH";
+            Grid_sanpham.ValueMember = "MAMH";
+           
+        }
         public void loadgridNhacCungCap()
         {
 
-            cboMANCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboMANCC.Properties.DataSource = dtvNCC;
-            cboMANCC.Properties.DisplayMember = "MANCC";
-            cboMANCC.Properties.ValueMember = "TENNCC";
-            cboMANCC.Properties.View.BestFitColumns();
-            cboMANCC.Properties.PopupFormWidth = 300;
-            cboMANCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
-            dtoNCC.MANCC = gridNCC.GetFocusedRowCellValue("MANCC").ToString();
+            cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cboTenNCC.Properties.DataSource = dtvNCC;
+            cboTenNCC.Properties.DisplayMember = "TENNCC";
+            cboTenNCC.Properties.ValueMember = "MANCC";
+            cboTenNCC.Properties.View.BestFitColumns();
+            cboTenNCC.Properties.PopupFormWidth = 300;
+            cboTenNCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
+            //dtoNCC.TENNCC = gridNCC.GetFocusedRowCellValue("TENNCC").ToString();
         }
         public void loadgridNhanVien()
         {
@@ -119,20 +141,19 @@ namespace WindowsFormsApplication1
             dtoNCC.MADVT = gridDVT.GetFocusedRowCellValue("MADVT").ToString();
              */ 
         }
-   
-        private void cboMANCC_EditValueChanged(object sender, EventArgs e)
+        private void cboTenNCC_EditValueChanged(object sender, EventArgs e)
         {
-            cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboTenNCC.Properties.DataSource = dtvNCC;
-            cboTenNCC.Properties.DisplayMember = "TENNCC";
-            cboTenNCC.Properties.ValueMember = "TENNCC";
-            cboTenNCC.Properties.View.BestFitColumns();
-            cboTenNCC.Properties.PopupFormWidth = 300;
-            cboTenNCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
-            cboTenNCC.Text = gridNCC.GetFocusedRowCellValue("TENNCC").ToString();
-            txtSoDT.Text = gridNCC.GetFocusedRowCellValue("SDT").ToString();
-            txtFax.Text = gridNCC.GetFocusedRowCellValue("FAX").ToString();
-            txtEmail.Text = gridNCC.GetFocusedRowCellValue("EMAIL").ToString();
+            cboMANCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cboMANCC.Properties.DataSource = dtvNCC;
+            cboMANCC.Properties.DisplayMember = "MANCC";
+            cboMANCC.Properties.ValueMember = "MANCC";
+            cboMANCC.Properties.View.BestFitColumns();
+            cboMANCC.Properties.PopupFormWidth = 300;
+            cboMANCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
+            cboMANCC.Text = gridView3.GetFocusedRowCellValue("MANCC").ToString();
+            txtSoDT.Text = gridView3.GetFocusedRowCellValue("SDT").ToString();
+            txtFax.Text = gridView3.GetFocusedRowCellValue("FAX").ToString();
+            txtEmail.Text = gridView3.GetFocusedRowCellValue("EMAIL").ToString();
             dtoNCC.MANCC = cboMANCC.Text;
             layno = ctlNCC.LAYTIENNO(dtoNCC);
             string tienno = layno.Rows[0]["TIENNO"].ToString();
@@ -144,6 +165,11 @@ namespace WindowsFormsApplication1
             {
                 txtNo.Text = string.Format("{0:N}", double.Parse(tienno));
             }
+        }
+      
+        private void cboMANCC_EditValueChanged(object sender, EventArgs e)
+        {
+    
 
         }
         private void cboTenMatHang_EditValueChanged(object sender, EventArgs e)
@@ -393,6 +419,26 @@ namespace WindowsFormsApplication1
            // frm.sBoPhan = sMaBP;
             frm.ShowDialog();
         }
+
+        private void gridCTHOADON_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            MessageBox.Show("thanh");
+        }
+
+        private void gridCTHOADON_CellValuedChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            //MessageBox.Show("Cell value Changed");
+            DataRow dtr = dtr= gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
       
+                if (dtr["_TenMH"].ToString() != "")
+                {
+                    MessageBox.Show(dtr["_TenMH"].ToString());
+                }
+
+            //"_MaMH"));
+           // dt.Columns.Add(new DataColumn("_TenMH"));
+        }
+
+       
     }
 }
