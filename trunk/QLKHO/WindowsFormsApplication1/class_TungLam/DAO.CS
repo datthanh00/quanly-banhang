@@ -433,8 +433,6 @@ namespace WindowsFormsApplication1
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
             sqlpa.Add(new SqlParameter("@MANCC", dto.MANCC));
-
-
             ChayProc("DONVITINH_delete", sqlpa);
         }
         //public void deleteDVT(DTO DTO)
@@ -490,6 +488,11 @@ namespace WindowsFormsApplication1
             List<SqlParameter> sqlpa = new List<SqlParameter>();
             DataTable tb = new DataTable();
             return executeNonQuerya("MATHANG_getall", sqlpa);
+        }
+        public DataTable GETMMH()
+        {
+            string SQL = "SELECT MAMH,TENMH FROM MATHANG";
+            return getdata(SQL);
         }
         public DataTable GETTINHTRANG()
         {

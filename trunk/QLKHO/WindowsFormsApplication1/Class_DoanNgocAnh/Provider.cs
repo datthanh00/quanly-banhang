@@ -180,6 +180,15 @@ namespace WindowsFormsApplication1
             disconnect();
             return ds;
         }
+        public DataTable getdata(string sql)
+        {
+            connect();
+            da = new SqlDataAdapter(sql, con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            disconnect();
+            return dt;
+        }
         public void executeNonQuery(string sql)
         {
             connect();
