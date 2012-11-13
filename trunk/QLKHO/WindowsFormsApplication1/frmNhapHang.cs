@@ -462,7 +462,7 @@ namespace WindowsFormsApplication1
             //MessageBox.Show("Cell value Changed");
             
             DataRow dtr = dtr= gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
-                
+                if(dtr!=null)
                 if (dtr["_TenMH"].ToString() != "")
                 {
                     if (e.Column.FieldName.ToString() == "_TenMH")
@@ -520,6 +520,24 @@ namespace WindowsFormsApplication1
             }
             txtthanhtien.Text = total.ToString();
             //MessageBox.Show(total.ToString());
+        }
+
+        private void gridCTHOADON_Keydown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete && gridCTHOADON.State != DevExpress.XtraGrid.Views.Grid.GridState.Editing)
+            {
+                if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DataRow dtr = dtr = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
+                    bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+
+                    if (!isinsert)
+                        ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+
+                    GridView view = sender as GridView;
+                    view.DeleteRow(view.FocusedRowHandle);
+                }
+            }
         }
     }
 }

@@ -232,6 +232,10 @@ namespace WindowsFormsApplication1
         {
             DAO.UPDATECTHOADONNHAP(DTO);
         }
+        public void DELETECTHOADONNHAP(string MAHDN, string MAMH)
+        {
+            DAO.DELETECTHOADONNHAP(MAHDN, MAMH);
+        }
         public bool ISINSERTCTHOADONNHAP(string MAHDN, string MAMH)
         {
             return DAO.ISINSERTCTHOADONNHAP(MAHDN, MAMH);
