@@ -12,6 +12,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using System.Collections;
 using DevExpress.XtraEditors.DXErrorProvider;
 using WindowsFormsApplication1.HoaDonNhap;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace WindowsFormsApplication1
 {
@@ -505,18 +506,20 @@ namespace WindowsFormsApplication1
 
         public void gettotal()
         {
-            int rowcount = gridCTHOADON.DataRowCount;
+            int rowcount = gridCTHOADON.RowCount;
             int total = 0;
             for (int i = 0; i < rowcount; i++)
             {
                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
-                int Num;
-                bool isNum = int.TryParse(dtr["_Total"].ToString(), out Num);
-                if (isNum)
+                if (dtr != null)
                 {
-                    total += Num;
+                    int Num;
+                    bool isNum = int.TryParse(dtr["_Total"].ToString(), out Num);
+                    if (isNum)
+                    {
+                        total += Num;
+                    }
                 }
-
             }
             txtthanhtien.Text = total.ToString();
             //MessageBox.Show(total.ToString());
@@ -537,6 +540,39 @@ namespace WindowsFormsApplication1
                     GridView view = sender as GridView;
                     view.DeleteRow(view.FocusedRowHandle);
                 }
+            }
+        }
+
+
+
+        private void gridCTHOADON_ShowGridMenu(object sender, GridMenuEventArgs e)
+        {
+            int rowcount = gridCTHOADON.DataRowCount;
+            if (rowcount > 0)
+            {
+                GridView view = sender as GridView;
+                GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
+                if (hitInfo.InRow)
+                {
+                    view.FocusedRowHandle = hitInfo.RowHandle;
+                    contextMenu1.Show(view.GridControl, e.Point);
+                }
+            }
+        }
+
+        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DataRow dtr = dtr = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
+                bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+
+                if (!isinsert)
+                    ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+
+               // GridView view = sender as GridView;
+               // view.DeleteRow(view.FocusedRowHandle);
+                gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
             }
         }
     }
