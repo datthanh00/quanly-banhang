@@ -238,21 +238,38 @@ namespace WindowsFormsApplication1
                         cbotientra.Text = "0";
                     }
                     dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
-                    ctlNCC.INSERTHOADONNHAP(dtoNCC);
+                    bool isINSERTHOADONNHAP = ctlNCC.isINSERTHOADONNHAP(dtoNCC.MAHDN);
+                    if (isINSERTHOADONNHAP)
+                    {
+                        ctlNCC.INSERTHOADONNHAP(dtoNCC);
+                    }
+                    else
+                    {
+                        ctlNCC.UPDATEHOADONNHAP(dtoNCC);
+                    }
+
+                    int rowcount = gridCTHOADON.DataRowCount;
+                    for (int i = 0; i < rowcount; i++)
+                    {
+                        DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
+                        insert_HoadonChitiet(txtMaHD.Text, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
+                    }
+                    /*
                     foreach (Cart cart in hd._Cart)
                     {
                         insert_HoadonChitiet(txtMaHD.Text, cart._MaMH, cart._SoLuong, cart._DonGia);
-
                     }
-
+                    
                     if (hd._Cart.Count > 0)
                     {
                         hd._Cart.Clear();
                     }
                     loadGiaoDich();
-                    MessageBox.Show("Bạn Đã Thêm Thành Công");
+                    
                     loadmahdn();
                     // this.Close();
+                     * */
+                    MessageBox.Show("Bạn Đã Thêm Thành Công");
                 }
             }
             catch (Exception ex)
@@ -326,7 +343,21 @@ namespace WindowsFormsApplication1
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGNHAP = SoLuong;
                 dtoNCC.GIANHAP = DonGia;
-                ctlNCC.INSERTCTHOADONNHAP(dtoNCC);
+              
+                
+               // ctlNCC.INSERTCTHOADONNHAP(dtoNCC);
+
+                bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(mahdn, mamh);
+                if (isinsert)
+                {
+                    ctlNCC.INSERTCTHOADONNHAP(dtoNCC);
+                    MessageBox.Show("insert");
+                }
+                else
+                {
+                    ctlNCC.UPDATECTHOADONNHAP(dtoNCC);
+                    MessageBox.Show("update");
+                }
             }
             catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu", "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
@@ -452,6 +483,7 @@ namespace WindowsFormsApplication1
                         {
                             int total = int.Parse(dtr["_DonGia"].ToString()) * Num;
                             dtr["_Total"] = total.ToString();
+                            gettotal();
                         }
                         else
                         {
@@ -468,17 +500,26 @@ namespace WindowsFormsApplication1
 
         private void gridCTHOADON_RowcountChanged(object sender, EventArgs e)
         {
+            gettotal();
+        }
+
+        public void gettotal()
+        {
             int rowcount = gridCTHOADON.DataRowCount;
             int total = 0;
             for (int i = 0; i < rowcount; i++)
             {
                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
-                total += int.Parse(dtr["_Total"].ToString());
+                int Num;
+                bool isNum = int.TryParse(dtr["_Total"].ToString(), out Num);
+                if (isNum)
+                {
+                    total += Num;
+                }
 
             }
             txtthanhtien.Text = total.ToString();
+            //MessageBox.Show(total.ToString());
         }
-
-       
     }
 }

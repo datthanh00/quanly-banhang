@@ -519,6 +519,22 @@ namespace WindowsFormsApplication1
 
             ChayProc("HOADONNHAP_add", sqlpa);
         }
+        public bool isINSERTHOADONNHAP(string MAHDN)
+        {
+            string SQL = "SELECT MAHDN FROM HOADONNHAP WHERE MAHDN='" + MAHDN + "'";
+            DataTable DT = getdata(SQL);
+
+            int count = DT.Rows.Count;
+            if (count > 0)
+                return false;
+            return true;
+        }
+        public void UPDATEHOADONNHAP(DTO dto)
+        {
+            string SQL = "update HOADONNHAP set MANCC='" + dto.MANCC + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= '" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
+
+            executeNonQuery(SQL);
+        }
 
         public void INSERTCTHOADONNHAP(DTO dto)
         {
@@ -531,6 +547,23 @@ namespace WindowsFormsApplication1
 
             ChayProc("CHITIETHDN_add", sqlpa);
         }
+        public bool ISINSERTCTHOADONNHAP(string MAHDN, string MAMH)
+        {
+            string SQL = "SELECT MAHDN FROM CHITIETHDN WHERE MAHDN='"+MAHDN+"' AND MAMH='"+MAMH+"'";
+            DataTable DT= getdata(SQL);
+
+            int count = DT.Rows.Count;
+            if(count>0)
+                return false;
+            return true;
+        }
+        public void UPDATECTHOADONNHAP(DTO dto)
+        {
+            string SQL = "update CHITIETHDN set SOLUONGNHAP=" + dto.SOLUONGNHAP + " ,GIANHAP=" + dto.GIANHAP + ", TINHTRANG= 1 where (MAHDN='" + dto.MAHDN + "' AND MAMH='" + dto.MAMH + "')";
+
+            executeNonQuery(SQL);
+        }
+
         public DataTable GETCTHOADONNHAP()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();

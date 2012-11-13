@@ -216,9 +216,25 @@ namespace WindowsFormsApplication1
         {
             DAO.INSERTHOADONNHAP(DTO);
         }
+        public bool isINSERTHOADONNHAP(string MHDN)
+        {
+            return  DAO.isINSERTHOADONNHAP(MHDN);
+        }
+        public void UPDATEHOADONNHAP(DTO DTO)
+        {
+            DAO.UPDATEHOADONNHAP(DTO);
+        }
         public void INSERTCTHOADONNHAP(DTO DTO)
         {
             DAO.INSERTCTHOADONNHAP(DTO);
+        }
+        public void UPDATECTHOADONNHAP(DTO DTO)
+        {
+            DAO.UPDATECTHOADONNHAP(DTO);
+        }
+        public bool ISINSERTCTHOADONNHAP(string MAHDN, string MAMH)
+        {
+            return DAO.ISINSERTCTHOADONNHAP(MAHDN, MAMH);
         }
 
         public DataTable GETALLCTHOADONNHAP()
