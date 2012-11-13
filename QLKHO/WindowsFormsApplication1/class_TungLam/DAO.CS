@@ -563,6 +563,12 @@ namespace WindowsFormsApplication1
 
             executeNonQuery(SQL);
         }
+        public void DELETECTHOADONNHAP(string MAHDN, string MAMH)
+        {
+            string SQL = "DELETE FROM CHITIETHDN where MAHDN='" + MAHDN + "' AND MAMH='" + MAMH + "'";
+
+            executeNonQuery(SQL);
+        }
 
         public DataTable GETCTHOADONNHAP()
         {
