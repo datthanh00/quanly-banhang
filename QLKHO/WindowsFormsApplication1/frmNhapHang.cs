@@ -51,6 +51,7 @@ namespace WindowsFormsApplication1
             loadGiaoDich();
             loadgridCTHOADON();
             loadGrid_sanpham();
+            Load_panel_create();
 
         }
         DataView dvdropdow;
@@ -63,6 +64,27 @@ namespace WindowsFormsApplication1
         DataView dtvMH;
         DataView dtvThue;
         DataView dtvDVT;
+        public void Load_panel_create()
+        {
+            //panel_create
+            //panel_filter
+            //panel_info
+            panel_filter.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
+           // panel_filter_grid.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
+            panel_create.Visible = true;
+            panel_info1.Visible = true;
+            panel_grid.Visible = true;
+             
+        }
+        public void Load_panel_filter()
+        {
+            panel_filter.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
+           // panel_filter_grid.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
+            panel_create.Visible = false;
+            panel_info1.Visible = false;
+            panel_grid.Visible = false;
+        }
+
         public void loadgridCTHOADON()
         {
             DataTable dt = new DataTable();
@@ -73,6 +95,19 @@ namespace WindowsFormsApplication1
             dt.Columns.Add(new DataColumn("_Thue"));
             dt.Columns.Add(new DataColumn("_DVT"));
             dt.Columns.Add(new DataColumn("_Total"));
+
+            gridControl1.DataSource = dt;
+        }
+        public void loadgridCTHOADON2()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add(new DataColumn("_MaMH"));
+            dt.Columns.Add(new DataColumn("_TenMH"));
+            dt.Columns.Add(new DataColumn("_SoLuong"));
+            dt.Columns.Add(new DataColumn("_DonGia"));
+           // dt.Columns.Add(new DataColumn("_Thue"));
+           // dt.Columns.Add(new DataColumn("_DVT"));
+            //dt.Columns.Add(new DataColumn("_Total"));
 
             gridControl1.DataSource = dt;
         }
@@ -574,6 +609,28 @@ namespace WindowsFormsApplication1
                // view.DeleteRow(view.FocusedRowHandle);
                 gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
             }
+        }
+
+        private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Load_panel_create();
+            loadgridCTHOADON();
+        }
+
+        private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Load_panel_filter();
+            loadgridCTHOADON2();
+        }
+
+        private void linkTheoSanPham_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Load_panel_filter();
+        }
+
+        private void dockPanel3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

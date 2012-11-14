@@ -192,11 +192,16 @@
             // 
             // cmbdate
             // 
-            this.cmbdate.EditValue = null;
+            this.cmbdate.EditValue = new System.DateTime(2012, 11, 13, 0, 0, 0, 0);
             this.cmbdate.Location = new System.Drawing.Point(110, 70);
             this.cmbdate.Name = "cmbdate";
             this.cmbdate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbdate.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.cmbdate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cmbdate.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.cmbdate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cmbdate.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.cmbdate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.cmbdate.Size = new System.Drawing.Size(228, 20);

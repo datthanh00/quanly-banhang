@@ -30,8 +30,14 @@
         {
             this.cbNhomHang = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmanh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colten = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colghichu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.txtGiaMua = new DevExpress.XtraEditors.CalcEdit();
             this.txtSoLuong = new DevExpress.XtraEditors.CalcEdit();
             this.txtGiaBan = new DevExpress.XtraEditors.CalcEdit();
@@ -52,10 +58,16 @@
             this.btThemKhuVuc = new DevExpress.XtraEditors.SimpleButton();
             this.gKhoHang = new DevExpress.XtraEditors.GridLookUpEdit();
             this.GRIDKHO = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbthue = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmathue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsothue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbDvt = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmadvt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldvt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbDVT = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.lbmathue = new DevExpress.XtraEditors.LabelControl();
@@ -70,18 +82,6 @@
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.lbnhomhang = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmathue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsothue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmadvt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldvt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmanh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colten = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colghichu = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cbNhomHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -130,6 +130,29 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colmanh
+            // 
+            this.colmanh.FieldName = "MANH";
+            this.colmanh.Name = "colmanh";
+            this.colmanh.Visible = true;
+            this.colmanh.VisibleIndex = 0;
+            // 
+            // colten
+            // 
+            this.colten.Caption = "gridColumn2";
+            this.colten.FieldName = "TENNHOMHANG";
+            this.colten.Name = "colten";
+            this.colten.Visible = true;
+            this.colten.VisibleIndex = 1;
+            // 
+            // colghichu
+            // 
+            this.colghichu.Caption = "gridColumn3";
+            this.colghichu.FieldName = "GHICHU";
+            this.colghichu.Name = "colghichu";
+            this.colghichu.Visible = true;
+            this.colghichu.VisibleIndex = 2;
             // 
             // panelControl1
             // 
@@ -187,6 +210,42 @@
             this.groupControl1.Size = new System.Drawing.Size(555, 112);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Thông tin giao dịch";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl7.Appearance.Options.UseBackColor = true;
+            this.labelControl7.Appearance.Options.UseForeColor = true;
+            this.labelControl7.Location = new System.Drawing.Point(125, 88);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(14, 13);
+            this.labelControl7.TabIndex = 163;
+            this.labelControl7.Text = "(*)";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl6.Appearance.Options.UseBackColor = true;
+            this.labelControl6.Appearance.Options.UseForeColor = true;
+            this.labelControl6.Location = new System.Drawing.Point(125, 62);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(14, 13);
+            this.labelControl6.TabIndex = 162;
+            this.labelControl6.Text = "(*)";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl5.Appearance.Options.UseBackColor = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Location = new System.Drawing.Point(125, 36);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(14, 13);
+            this.labelControl5.TabIndex = 161;
+            this.labelControl5.Text = "(*)";
             // 
             // txtGiaMua
             // 
@@ -300,6 +359,11 @@
             this.txthansudung.Name = "txthansudung";
             this.txthansudung.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txthansudung.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.txthansudung.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txthansudung.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.txthansudung.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txthansudung.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.txthansudung.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txthansudung.Size = new System.Drawing.Size(127, 20);
@@ -340,7 +404,7 @@
             this.checkTT.Location = new System.Drawing.Point(129, 107);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 18);
+            this.checkTT.Size = new System.Drawing.Size(82, 19);
             this.checkTT.TabIndex = 5;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
@@ -409,6 +473,22 @@
             this.GRIDKHO.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.GRIDKHO.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã kho";
+            this.gridColumn1.FieldName = "MAKHO";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên kho";
+            this.gridColumn2.FieldName = "TENKHO";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
             // cbthue
             // 
             this.cbthue.Location = new System.Drawing.Point(425, 101);
@@ -434,6 +514,22 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // colmathue
+            // 
+            this.colmathue.Caption = "Mã Thuế";
+            this.colmathue.FieldName = "MATH";
+            this.colmathue.Name = "colmathue";
+            this.colmathue.Visible = true;
+            this.colmathue.VisibleIndex = 0;
+            // 
+            // colsothue
+            // 
+            this.colsothue.Caption = "Số Thuế";
+            this.colsothue.FieldName = "SOTHUE";
+            this.colsothue.Name = "colsothue";
+            this.colsothue.Visible = true;
+            this.colsothue.VisibleIndex = 1;
+            // 
             // cbDvt
             // 
             this.cbDvt.Location = new System.Drawing.Point(424, 38);
@@ -458,6 +554,22 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colmadvt
+            // 
+            this.colmadvt.Caption = "Mã DVT";
+            this.colmadvt.FieldName = "MADVT";
+            this.colmadvt.Name = "colmadvt";
+            this.colmadvt.Visible = true;
+            this.colmadvt.VisibleIndex = 0;
+            // 
+            // coldvt
+            // 
+            this.coldvt.Caption = "Đơn Vị Tính";
+            this.coldvt.FieldName = "DONVITINH";
+            this.coldvt.Name = "coldvt";
+            this.coldvt.Visible = true;
+            this.coldvt.VisibleIndex = 1;
             // 
             // lbDVT
             // 
@@ -585,113 +697,6 @@
             this.lbnhomhang.Size = new System.Drawing.Size(54, 13);
             this.lbnhomhang.TabIndex = 2;
             this.lbnhomhang.Text = "Nhóm hàng";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl5.Appearance.Options.UseBackColor = true;
-            this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Location = new System.Drawing.Point(125, 36);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(14, 13);
-            this.labelControl5.TabIndex = 161;
-            this.labelControl5.Text = "(*)";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl6.Appearance.Options.UseBackColor = true;
-            this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(125, 62);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(14, 13);
-            this.labelControl6.TabIndex = 162;
-            this.labelControl6.Text = "(*)";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl7.Appearance.Options.UseBackColor = true;
-            this.labelControl7.Appearance.Options.UseForeColor = true;
-            this.labelControl7.Location = new System.Drawing.Point(125, 88);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(14, 13);
-            this.labelControl7.TabIndex = 163;
-            this.labelControl7.Text = "(*)";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Mã kho";
-            this.gridColumn1.FieldName = "MAKHO";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tên kho";
-            this.gridColumn2.FieldName = "TENKHO";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // colmathue
-            // 
-            this.colmathue.Caption = "Mã Thuế";
-            this.colmathue.FieldName = "MATH";
-            this.colmathue.Name = "colmathue";
-            this.colmathue.Visible = true;
-            this.colmathue.VisibleIndex = 0;
-            // 
-            // colsothue
-            // 
-            this.colsothue.Caption = "Số Thuế";
-            this.colsothue.FieldName = "SOTHUE";
-            this.colsothue.Name = "colsothue";
-            this.colsothue.Visible = true;
-            this.colsothue.VisibleIndex = 1;
-            // 
-            // colmadvt
-            // 
-            this.colmadvt.Caption = "Mã DVT";
-            this.colmadvt.FieldName = "MADVT";
-            this.colmadvt.Name = "colmadvt";
-            this.colmadvt.Visible = true;
-            this.colmadvt.VisibleIndex = 0;
-            // 
-            // coldvt
-            // 
-            this.coldvt.Caption = "Đơn Vị Tính";
-            this.coldvt.FieldName = "DONVITINH";
-            this.coldvt.Name = "coldvt";
-            this.coldvt.Visible = true;
-            this.coldvt.VisibleIndex = 1;
-            // 
-            // colmanh
-            // 
-            this.colmanh.FieldName = "MANH";
-            this.colmanh.Name = "colmanh";
-            this.colmanh.Visible = true;
-            this.colmanh.VisibleIndex = 0;
-            // 
-            // colten
-            // 
-            this.colten.Caption = "gridColumn2";
-            this.colten.FieldName = "TENNHOMHANG";
-            this.colten.Name = "colten";
-            this.colten.Visible = true;
-            this.colten.VisibleIndex = 1;
-            // 
-            // colghichu
-            // 
-            this.colghichu.Caption = "gridColumn3";
-            this.colghichu.FieldName = "GHICHU";
-            this.colghichu.Name = "colghichu";
-            this.colghichu.Visible = true;
-            this.colghichu.VisibleIndex = 2;
             // 
             // ThemMatHang
             // 
