@@ -74,6 +74,8 @@ namespace WindowsFormsApplication1
             panel_create.Visible = true;
             panel_info1.Visible = true;
             panel_grid.Visible = true;
+            panel_grid.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel_grid2.Visible = false;
              
         }
         public void Load_panel_filter()
@@ -83,6 +85,8 @@ namespace WindowsFormsApplication1
             panel_create.Visible = false;
             panel_info1.Visible = false;
             panel_grid.Visible = false;
+            panel_grid2.Visible = true;
+            panel_grid2.Dock = System.Windows.Forms.DockStyle.Fill;
         }
 
         public void loadgridCTHOADON()
