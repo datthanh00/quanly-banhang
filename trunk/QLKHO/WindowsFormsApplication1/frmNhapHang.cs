@@ -102,100 +102,26 @@ namespace WindowsFormsApplication1
 
             gridControl1.DataSource = dt;
         }
-        public void loadgridPHIEUNHAP()
+        public void loadgridPHIEUNHAP(string SQL)
         {
-            
-            DataColumn column;
-            DataTable dt = new DataTable();
-            //colum 1
-            column = new DataColumn();
-            column.Caption = "Ngày Nhập";
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "NGAYNHAP";
-            dt.Columns.Add(column);
-            //colum 2
-            column = new DataColumn();
-            column.Caption = "Mã Hóa Đơn";
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "MAHDN";
-            dt.Columns.Add(column);
-            //colum 3
-            column = new DataColumn();
-            column.Caption = "Nhân Viên";
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "NHANVIEN";
-            dt.Columns.Add(column);
-            //colum 4
-            column = new DataColumn();
-            column.Caption = "Tiền Phải Trả";
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "TIENPHAITRA";
-            dt.Columns.Add(column);
-            //colum 5
-            column = new DataColumn();
-            column.Caption = "Tiền Đã Trả";
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "TIENDATRA";
-            dt.Columns.Add(column);
-            //colum 6
-            column = new DataColumn();
-            column.Caption = "Ghi Chú";
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "GHICHU";
-            dt.Columns.Add(column);
-            //data table
-           // gridControl3.DataSource = dt;
-           // gridControl3.RefreshDataSource();
+            DataTable TBS = ctlNCC.GETDATA(SQL);
             gridView4.Columns.Clear();
-            gridControl3.DataSource = dt;
+            gridControl3.DataSource = TBS;
             gridView4.RefreshData();
             gridControl3.RefreshDataSource();
             
         }
-        public void loadgridSANPHAM()
+        public void loadgridSANPHAM(string SQL)
         {
-            gridControl3.DataSource = null;
- 
-            DataColumn column;
-            DataTable dt = new DataTable();
-            //colum 1
-            column = new DataColumn();
-            column.Caption = "Ngày Nhập";
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "NGAYNHAP";
-            dt.Columns.Add(column);
-            //colum 2
-            column = new DataColumn();
-            column.Caption = "Mã Hóa Đơn";
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "MAHDN";
-            dt.Columns.Add(column);
-            //colum 3
-            column = new DataColumn();
-            column.Caption = "Nhân Viên";
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "NHANVIEN";
-            dt.Columns.Add(column);
-            //colum 4
-            column = new DataColumn();
-            column.Caption = "Số Lượng Nhập";
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "SOLUONGNHAP";
-            dt.Columns.Add(column);
-            //colum 5
-            column = new DataColumn();
-            column.Caption = "Giá Nhập";
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "GIANHAP";
-            dt.Columns.Add(column);
-            //data table
-            //gridControl3.DataSource = dt;
-            //gridControl3.RefreshDataSource();
-
+            DataTable TBS = ctlNCC.GETDATA(SQL);
             gridView4.Columns.Clear();
-            gridControl3.DataSource = dt;
+            gridControl3.DataSource = TBS;
+            gridView4.Columns["Mã Hóa Đơn"].Group();
+            gridView4.ExpandAllGroups();
             gridView4.RefreshData();
             gridControl3.RefreshDataSource(); 
+            
+          
         }
         
         public void loadGrid_sanpham()
@@ -707,13 +633,15 @@ namespace WindowsFormsApplication1
         private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            loadgridPHIEUNHAP();
+            string SQL = "SELECT T1.NGAYNHAP 'Ngày Nhập',T1.MAHDN 'Mã Hóa Đơn',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (SELECT * FROM HOADONNHAP ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            loadgridPHIEUNHAP(SQL);
         }
 
         private void linkTheoSanPham_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            loadgridSANPHAM();
+            string SQL = "SELECT T3.NGAYNHAP 'NGÀY NHẬP',T3.MAHDN 'Mã Hóa Đơn', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGNHAP 'Số Lượng',T3.GIANHAP 'Giá Nhập' FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T1.SOLUONGNHAP,T1.GIANHAP FROM (SELECT * FROM CHITIETHDN ) AS T1 INNER JOIN HOADONNHAP AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
+            loadgridSANPHAM(SQL);
         }
 
         private void dockPanel3_Click(object sender, EventArgs e)
