@@ -208,6 +208,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMMH();
         }
+        public DataTable GETDATA(string SQL)
+        {
+            return DAO.GET_DATA(SQL);
+        }
         internal object getDatabase()
         {
             throw new NotImplementedException();

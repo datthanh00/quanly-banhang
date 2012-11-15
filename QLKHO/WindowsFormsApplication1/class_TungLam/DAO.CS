@@ -499,6 +499,17 @@ namespace WindowsFormsApplication1
             string SQL = "SELECT MAMH,TENMH FROM MATHANG";
             return getdata(SQL);
         }
+        public DataTable GETDATA()
+        {
+            string SQL = "SELECT MAMH,TENMH FROM MATHANG";
+            return getdata(SQL);
+        }
+        public DataTable GET_DATA(string SQL)
+        {
+            return getdata(SQL);
+        }
+  
+
         public DataTable GETTINHTRANG()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
