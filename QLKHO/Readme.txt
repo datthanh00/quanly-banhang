@@ -1,0 +1,1 @@
+B2: =DATEVALUE(MID(A2,4,2)&"/"&RIGHT(A2,2)&"/"&LEFT(A2,2))
