@@ -138,15 +138,8 @@
             this.panel_grid2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemCalcEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
@@ -1329,14 +1322,6 @@
             // 
             // gridView4
             // 
-            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn12,
-            this.gridColumn13,
-            this.gridColumn16,
-            this.gridColumn17,
-            this.gridColumn18,
-            this.gridColumn19,
-            this.gridColumn23});
             this.gridView4.GridControl = this.gridControl3;
             this.gridView4.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "OrderID", null, "")});
@@ -1355,15 +1340,6 @@
             this.gridView4.OptionsView.ShowFooter = true;
             this.gridView4.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "Tên Mặt Hàng";
-            this.gridColumn12.ColumnEdit = this.repositoryItemGridLookUpEdit1;
-            this.gridColumn12.FieldName = "_TenMH";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 0;
-            // 
             // repositoryItemGridLookUpEdit1
             // 
             this.repositoryItemGridLookUpEdit1.AutoHeight = false;
@@ -1379,67 +1355,6 @@
             this.gridView6.Name = "gridView6";
             this.gridView6.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView6.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "Mã Mặt Hàng";
-            this.gridColumn13.FieldName = "_MaMH";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.OptionsColumn.AllowEdit = false;
-            this.gridColumn13.OptionsColumn.ReadOnly = true;
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 1;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "Số Lượng";
-            this.gridColumn16.DisplayFormat.FormatString = "n3";
-            this.gridColumn16.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn16.FieldName = "_SoLuong";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 2;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "Đơn Giá";
-            this.gridColumn17.FieldName = "_DonGia";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.OptionsColumn.AllowEdit = false;
-            this.gridColumn17.OptionsColumn.ReadOnly = true;
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 3;
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "Thuế";
-            this.gridColumn18.FieldName = "_Thue";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.OptionsColumn.AllowEdit = false;
-            this.gridColumn18.OptionsColumn.ReadOnly = true;
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 4;
-            // 
-            // gridColumn19
-            // 
-            this.gridColumn19.Caption = "Đơn Vị Tính";
-            this.gridColumn19.FieldName = "_DVT";
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.OptionsColumn.AllowEdit = false;
-            this.gridColumn19.OptionsColumn.ReadOnly = true;
-            this.gridColumn19.Visible = true;
-            this.gridColumn19.VisibleIndex = 5;
-            // 
-            // gridColumn23
-            // 
-            this.gridColumn23.Caption = "Tổng Cộng";
-            this.gridColumn23.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn23.FieldName = "_Total";
-            this.gridColumn23.Name = "gridColumn23";
-            this.gridColumn23.OptionsColumn.AllowEdit = false;
-            this.gridColumn23.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            this.gridColumn23.Visible = true;
-            this.gridColumn23.VisibleIndex = 6;
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -1717,15 +1632,8 @@
         private DevExpress.XtraEditors.PanelControl panel_grid2;
         private DevExpress.XtraGrid.GridControl gridControl3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
         public DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit2;
