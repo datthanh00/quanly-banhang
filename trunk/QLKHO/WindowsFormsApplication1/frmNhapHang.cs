@@ -500,11 +500,6 @@ namespace WindowsFormsApplication1
             frm.ShowDialog();
         }
 
-        private void gridCTHOADON_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
-        {
-          
-            
-        }
 
         private void gridCTHOADON_CellValuedChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
         {
@@ -595,32 +590,52 @@ namespace WindowsFormsApplication1
 
         private void gridCTHOADON_ShowGridMenu(object sender, GridMenuEventArgs e)
         {
-            int rowcount = gridCTHOADON.DataRowCount;
-            if (rowcount > 0)
-            {
+          //  int rowcount = gridCTHOADON.DataRowCount;
+          //  if (rowcount > 0)
+          //  {
                 GridView view = sender as GridView;
                 GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
                 if (hitInfo.InRow)
                 {
                     view.FocusedRowHandle = hitInfo.RowHandle;
-                    contextMenu1.Show(view.GridControl, e.Point);
+                   
+                    contextMenuStrip1.Show(view.GridControl, e.Point);
                 }
-            }
+            //}
+        }
+        private void gridView4_ShowGridMenu(object sender, GridMenuEventArgs e)
+        {
+           // int rowcount = gridCTHOADON.DataRowCount;
+           // if (rowcount > 0)
+          //  {
+                GridView view = sender as GridView;
+                GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
+                if (hitInfo.InRow)
+                {
+                    view.FocusedRowHandle = hitInfo.RowHandle;
+
+                    contextMenuStrip2.Show(view.GridControl, e.Point);
+                }
+          //  }
         }
 
-        private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void DeleteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
-                bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+                if (dtr != null)
+                {
+                    bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
 
-                if (!isinsert)
-                    ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+                    if (!isinsert)
+                        ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
 
-               // GridView view = sender as GridView;
-               // view.DeleteRow(view.FocusedRowHandle);
-                gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
+                    // GridView view = sender as GridView;
+                    // view.DeleteRow(view.FocusedRowHandle);
+                    gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
+                }
             }
         }
 
@@ -644,9 +659,30 @@ namespace WindowsFormsApplication1
             loadgridSANPHAM(SQL);
         }
 
-        private void dockPanel3_Click(object sender, EventArgs e)
-        {
 
+
+        private void gridView4_doubleclick(object sender, EventArgs e)
+        {
+           // Load_panel_create();
+           // loadgridCTHOADON();
         }
+
+        private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Load_panel_create();
+            loadgridCTHOADON();
+        }
+
+        private void EditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Load_panel_create();
+            loadgridCTHOADON();
+        }
+
+       
+
+      
+
+  
     }
 }
