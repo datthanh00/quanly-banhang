@@ -196,6 +196,15 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETDANHSACHNCC();
         }
+        public DataTable GETDANHSACHNCC(String MANCC)
+        {
+            return DAO.GETDANHSACHNCC(MANCC);
+        }
+        public string GETMANCCfromMHDN(String MAHDN)
+        {
+            return DAO.GETMANCCfromMHDN(MAHDN);
+        }
+
         public DataTable GETKHO()
         {
             return DAO.GETKHO();
@@ -248,6 +257,10 @@ namespace WindowsFormsApplication1
         public DataTable GETALLCTHOADONNHAP()
         {
             return DAO.GETCTHOADONNHAP();
+        }
+        public DataTable GETCTHOADONNHAP(string MAHDN)
+        {
+            return DAO.GETCTHOADONNHAP(MAHDN);
         }
         public DataTable GETHOADONNHAP(DTO dto)
         {
