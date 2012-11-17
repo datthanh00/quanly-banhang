@@ -478,9 +478,28 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETDANHSACHNCC()
         {
+          
             List<SqlParameter> sqlpa = new List<SqlParameter>();
             DataTable tb = new DataTable();
             return executeNonQuerya("NHACUNGCAP_getall", sqlpa);
+           
+        }
+         public DataTable GETDANHSACHNCC(string MANCC)
+        {
+            string SQL="SELECT * FROM NHACUNGCAP WHERE MANCC='"+MANCC+"'";
+            return GET_DATA(SQL);
+            
+        }
+
+         public string GETMANCCfromMHDN(string MAHDN)
+        {
+            DataTable dt;
+            string SQL = "SELECT MANCC FROM HOADONNHAP WHERE MAHDN='" + MAHDN + "'";
+            dt= GET_DATA(SQL);
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0]["MANCC"].ToString();
+            return "";
+            
         }
         public DataTable GETKHO()
         {
@@ -577,8 +596,7 @@ namespace WindowsFormsApplication1
         public void DELETECTHOADONNHAP(string MAHDN, string MAMH)
         {
             string SQL = "DELETE FROM CHITIETHDN where MAHDN='" + MAHDN + "' AND MAMH='" + MAMH + "'";
-
-            executeNonQuery(SQL);
+                       executeNonQuery(SQL);
         }
 
         public DataTable GETCTHOADONNHAP()
@@ -586,6 +604,13 @@ namespace WindowsFormsApplication1
             List<SqlParameter> sqlpa = new List<SqlParameter>();
             DataTable tb = new DataTable();
             return executeNonQuerya("CHITIETHDN_getall", sqlpa);
+        }
+
+        public DataTable GETCTHOADONNHAP(string MAHDN)
+        {
+           // string SQL = "SELECT T3.MAMH _TenMH,T3.MAMH _MaMH,T3.SOLUONGMH _SoLuong,T3.GIABAN _DonGia,T3.SOTHUE _Thue, T4.DONVITINH _DVT, (T3.SOLUONGMH*T3.GIABAN) _Total FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MATH,T2.SOTHUE,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH IN(SELECT MAMH FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "' )) AS T1 INNER JOIN THUE AS T2 ON T1.MATH =T2.MATH) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT";
+            string SQL = "SELECT T7.MAMH _TenMH,T7.MAMH _MaMH,T7.SOLUONGNHAP _SoLuong,T7.GIANHAP _DonGia,T7.SOTHUE _Thue, T7.DONVITINH _DVT, (T7.SOLUONGNHAP*T7.GIANHAP) _Total FROM (SELECT T5.*, T6.SOLUONGNHAP, T6.GIANHAP FROM (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MATH,T2.SOTHUE,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH IN (SELECT MAMH FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "')) AS T1 INNER JOIN THUE AS T2 ON T1.MATH =T2.MATH) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDN where MAHDN='" + MAHDN + "') T6 ON T6.MAMH =t5.MAMH) AS T7";
+            return getdata(SQL);
         }
         public DataTable GETHOADONNHAP(DTO dto)
         {
