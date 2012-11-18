@@ -123,6 +123,7 @@ namespace WindowsFormsApplication1
             gridView4.Columns.Clear();
             gridControl3.DataSource = TBS;
             gridView4.Columns["Mã Hóa Đơn"].Group();
+            gridView4.Columns["Mã Hóa Đơn"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
             gridView4.ExpandAllGroups();
             gridView4.RefreshData();
             gridControl3.RefreshDataSource(); 
@@ -675,7 +676,7 @@ namespace WindowsFormsApplication1
         private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            string SQL = "SELECT T1.NGAYNHAP 'Ngày Nhập',T1.MAHDN 'Mã Hóa Đơn',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (SELECT * FROM HOADONNHAP ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT T1.NGAYNHAP 'Ngày Nhập',T1.MAHDN 'Mã Hóa Đơn',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (SELECT * FROM HOADONNHAP ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDN DESC";
             loadgridPHIEUNHAP(SQL);
         }
 

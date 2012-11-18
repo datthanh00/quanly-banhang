@@ -10,6 +10,8 @@ using System.Collections;
 using DevExpress.XtraEditors.DXErrorProvider;
 using WindowsFormsApplication1.Class_ManhCuong;
 using System.Data.SqlClient;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace WindowsFormsApplication1.HoaDonXuat
 {
@@ -27,16 +29,61 @@ namespace WindowsFormsApplication1.HoaDonXuat
         CTL ctlNCC = new CTL();
         public void loadgridKhachHang()
         {
-
-            cboMaKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboMaKH.Properties.DataSource = dtvKH;
-            cboMaKH.Properties.DisplayMember = "MAKH";
-            cboMaKH.Properties.ValueMember = "TENKH";
-            cboMaKH.Properties.View.BestFitColumns();
-            cboMaKH.Properties.PopupFormWidth = 300;
-            cboMaKH.Properties.DataSource = ctlNCC.GETKHACHHANG();
-            dtoNCC.MANCC = gridKH.GetFocusedRowCellValue("MAKH").ToString();
+            cboTenKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cboTenKH.Properties.DataSource = dtvKH;
+            cboTenKH.Properties.DisplayMember = "TENKH";
+            cboTenKH.Properties.ValueMember = "MAKH";
+            cboTenKH.Properties.View.BestFitColumns();
+            cboTenKH.Properties.PopupFormWidth = 300;
+            cboTenKH.Properties.DataSource = ctlNCC.GETKHACHHANG();
+            //dtoNCC.MANCC = gridKH1.GetFocusedRowCellValue("TENKH").ToString();
         }
+        public void Load_panel_create()
+        {
+
+           /* panel_filter.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
+           
+            panel_create.Visible = true;
+            panel_info1.Visible = true;
+            panel_grid.Visible = true;
+            panel_grid.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel_grid2.Visible = false;
+            * */
+
+        }
+        public void Load_panel_filter()
+        {
+            /*
+            panel_filter.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
+            
+            panel_create.Visible = false;
+            panel_info1.Visible = false;
+            panel_grid.Visible = false;
+            panel_grid2.Visible = true;
+            panel_grid2.Dock = System.Windows.Forms.DockStyle.Fill;
+             * */
+        }
+        public void loadgridCTHOADON()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add(new DataColumn("_MaMH"));
+            dt.Columns.Add(new DataColumn("_TenMH"));
+            dt.Columns.Add(new DataColumn("_SoLuong"));
+            dt.Columns.Add(new DataColumn("_DonGia"));
+            dt.Columns.Add(new DataColumn("_Thue"));
+            dt.Columns.Add(new DataColumn("_DVT"));
+            dt.Columns.Add(new DataColumn("_Total"));
+            gridControl1.DataSource = dt;
+
+        }
+        public void loadGrid_sanpham()
+        {
+            Grid_sanpham.DataSource = ctlNCC.GETMMH();
+            Grid_sanpham.DisplayMember = "TENMH";
+            Grid_sanpham.ValueMember = "MAMH";
+
+        }
+
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
         public int iNgonNgu;
@@ -47,27 +94,30 @@ namespace WindowsFormsApplication1.HoaDonXuat
            // cbotientra.Text = "0";
             loadgridKhachHang();
             loadgridNhanVien();
-            loaddridmathang();
-            loaddridDVT();
-            loadgridthue();
+           // loaddridmathang();
+           // loaddridDVT();
+           // loadgridthue();
             loadmahdx();
+            loadgridCTHOADON();
+            loadGrid_sanpham();
             cboNhanVienLap.Text = sMaNV;
         }
 
-        private void cboMaKH_EditValueChanged(object sender, EventArgs e)
+        private void cboTenKH_EditValueChanged(object sender, EventArgs e)
         {
-            cboTenKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboTenKH.Properties.DataSource = dtvKH;
-            cboTenKH.Properties.DisplayMember = "TENKH";
-            cboTenKH.Properties.ValueMember = "TENKH";
-            cboTenKH.Properties.View.BestFitColumns();
-            cboTenKH.Properties.PopupFormWidth = 300;
-            cboTenKH.Properties.DataSource = ctlNCC.GETKHACHHANG();
-            cboTenKH.Text = gridKH.GetFocusedRowCellValue("TENKH").ToString();
-            txtSDT.Text = gridKH.GetFocusedRowCellValue("SDT").ToString();
-            txtDiachi.Text = gridKH.GetFocusedRowCellValue("DIACHI").ToString();
-            txtWeb.Text = gridKH.GetFocusedRowCellValue("WEBSITE").ToString();   
+            cboMaKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cboMaKH.Properties.DataSource = dtvKH;
+            cboMaKH.Properties.DisplayMember = "MAKH";
+            cboMaKH.Properties.ValueMember = "MAKH";
+            cboMaKH.Properties.View.BestFitColumns();
+            cboMaKH.Properties.PopupFormWidth = 300;
+            cboMaKH.Properties.DataSource = ctlNCC.GETKHACHHANG();
+            cboMaKH.Text = gridKH1.GetFocusedRowCellValue("MAKH").ToString();
+            txtSDT.Text = gridKH1.GetFocusedRowCellValue("SDT").ToString();
+            txtDiachi.Text = gridKH1.GetFocusedRowCellValue("DIACHI").ToString();
+            //txtWeb.Text = gridKH1.GetFocusedRowCellValue("WEBSITE").ToString();   
         }
+
         public void loadgridNhanVien()
         {
             cboNhanVienLap.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
@@ -79,6 +129,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cboNhanVienLap.Properties.DataSource = ctlNCC.GETNV();
             dtoNCC.MANV = gridNV.GetFocusedRowCellValue("MANV").ToString();
         }
+        /*
         public void loaddridmathang()
         {
             cboMaMatHang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
@@ -89,6 +140,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cboMaMatHang.Properties.PopupFormWidth = 300;
             cboMaMatHang.Properties.DataSource = ctlNCC.GETMATHANG();
             dtoNCC.MAMH = gridMH.GetFocusedRowCellValue("MAMH").ToString();
+           
         }
         public void loaddridDVT()
         {
@@ -100,7 +152,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cboDVT.Properties.PopupFormWidth = 300;
             cboDVT.Properties.DataSource = ctlNCC.GETDVT();
             dtoNCC.MADVT = gridDVT.GetFocusedRowCellValue("MADVT").ToString();
+           
         }
+         
         public void loadgridthue()
         {
             cboThue.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
@@ -126,9 +180,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cboDVT.Text = gridMH.GetFocusedRowCellValue("MADVT").ToString();
             cboDonGia.Text = gridMH.GetFocusedRowCellValue("GIABAN").ToString();
         }
+         */
         ArrayList list1 = new ArrayList();
         WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
-        private void btXemTruoc_Click(object sender, EventArgs e)
+       /* private void btXemTruoc_Click(object sender, EventArgs e)
         {
                 ArrayList list = new ArrayList();
                 if (int.Parse(cboSL.Text) <= 0)
@@ -164,6 +219,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             {
             }
         }
+        */
         private void Validate_LessThanMinRule(BaseEdit control, Decimal min)
         {
             if (!(control.EditValue is Decimal)) return;
@@ -191,7 +247,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dtoNCC.TENKH = cboTenKH.Text;
             dtoNCC.DIACHI = txtDiachi.Text;
             dtoNCC.SDT = txtSDT.Text;
-            dtoNCC.WEBSITE = txtWeb.Text;
+           // dtoNCC.WEBSITE = txtWeb.Text;
             dtoNCC.NGAYXUAT = DateTime.Now;
             dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
             dtoNCC.MAHDX = txtMaHD.Text;
@@ -309,12 +365,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cboTenKH.Text = "";
             txtDiachi.Text = "";
             txtSDT.Text = "";
-            txtWeb.Text = "";
-            cboMaMatHang.Text = "";
+           // txtWeb.Text = "";
+           /* cboMaMatHang.Text = "";
             cboThue.Text = "";
             cboSL.Text = "";
             cboDonGia.Text = "";
             cboDVT.Text = "";
+            * */
             if (hd._Cart.Count > 0)
             {
                 hd._Cart.Clear();
@@ -324,6 +381,139 @@ namespace WindowsFormsApplication1.HoaDonXuat
             gridCTHOADON.RefreshData(); 
 
         }
+
+        private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Load_panel_create();
+            //loadgridCTHOADON();
+        }
+
+        private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Load_panel_filter();
+            string SQL = "SELECT T1.NGAYNHAP 'Ngày Nhập',T1.MAHDN 'Mã Hóa Đơn',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (SELECT * FROM HOADONNHAP ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDN DESC";
+            //loadgridPHIEUNHAP(SQL);
+        }
+
+        private void linkTheoSanPham_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Load_panel_filter();
+            string SQL = "SELECT T3.NGAYNHAP 'NGÀY NHẬP',T3.MAHDN 'Mã Hóa Đơn', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGNHAP 'Số Lượng',T3.GIANHAP 'Giá Nhập' FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T1.SOLUONGNHAP,T1.GIANHAP FROM (SELECT * FROM CHITIETHDN ) AS T1 INNER JOIN HOADONNHAP AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
+            //loadgridSANPHAM(SQL);
+        }
+
+        private void gridCTHOADON_CellValuedChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+
+            DataRow dtr = dtr = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
+            if (dtr != null)
+                if (dtr["_TenMH"].ToString() != "")
+                {
+                    if (e.Column.FieldName.ToString() == "_TenMH")
+                    {
+                        DataTable dtmh = ctlNCC.GETMATHANG(dtr["_TenMH"].ToString());
+                        dtr["_MaMH"] = dtmh.Rows[0]["MAMH"];
+                        dtr["_SoLuong"] = "0";
+                        dtr["_DonGia"] = dtmh.Rows[0]["GIABAN"];
+                        dtr["_Thue"] = dtmh.Rows[0]["SOTHUE"];
+                        dtr["_DVT"] = dtmh.Rows[0]["DONVITINH"];
+                        //dtr["_TenMH"] = dtmh.Rows[0]["TENMH"];
+                        dtr["_Total"] = "0";
+                    }
+                    else
+                    {
+                        int Num;
+                        bool isNum = int.TryParse(dtr["_SoLuong"].ToString(), out Num);
+                        if (isNum)
+                        {
+                            int total = int.Parse(dtr["_DonGia"].ToString()) * Num;
+                            dtr["_Total"] = total.ToString();
+                            gettotal();
+                        }
+                        else
+                        {
+                            dtr["_SoLuong"] = "0";
+                            dtr["_Total"] = "0";
+                        }
+                    }
+                }
+        }
+
+        private void gridCTHOADON_Keydown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete && gridCTHOADON.State != DevExpress.XtraGrid.Views.Grid.GridState.Editing)
+            {
+                if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DataRow dtr = dtr = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
+                    bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+
+                    if (!isinsert)
+                        ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+
+                    GridView view = sender as GridView;
+                    view.DeleteRow(view.FocusedRowHandle);
+                }
+            }
+        }
+
+        private void gridCTHOADON_RowcountChanged(object sender, EventArgs e)
+        {
+            gettotal();
+        }
+
+        private void gridCTHOADON_ShowGridMenu(object sender, DevExpress.XtraGrid.Views.Grid.GridMenuEventArgs e)
+        {
+            GridView view = sender as GridView;
+            GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
+            if (hitInfo.InRow)
+            {
+                view.FocusedRowHandle = hitInfo.RowHandle;
+
+                contextMenuStrip1.Show(view.GridControl, e.Point);
+            }
+        }
+        public void gettotal()
+        {
+            int rowcount = gridCTHOADON.RowCount;
+            int total = 0;
+            for (int i = 0; i < rowcount; i++)
+            {
+                DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
+                if (dtr != null)
+                {
+                    int Num;
+                    bool isNum = int.TryParse(dtr["_Total"].ToString(), out Num);
+                    if (isNum)
+                    {
+                        total += Num;
+                    }
+                }
+            }
+            txtthanhtien.Text = total.ToString();
+            //MessageBox.Show(total.ToString());
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                DataRow dtr = dtr = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
+                if (dtr != null)
+                {
+                    bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+
+                    if (!isinsert)
+                        ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+
+                    // GridView view = sender as GridView;
+                    // view.DeleteRow(view.FocusedRowHandle);
+                    gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
+                }
+            }
+        }
+
+     
 
     }
 }
