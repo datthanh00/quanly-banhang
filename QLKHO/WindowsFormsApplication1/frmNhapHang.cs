@@ -149,6 +149,13 @@ namespace WindowsFormsApplication1
             cboTenNCC.Properties.PopupFormWidth = 300;
             cboTenNCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
             //dtoNCC.TENNCC = gridNCC.GetFocusedRowCellValue("TENNCC").ToString();
+            cboMANCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cboMANCC.Properties.DataSource = dtvNCC;
+            cboMANCC.Properties.DisplayMember = "MANCC";
+            cboMANCC.Properties.ValueMember = "MANCC";
+            cboMANCC.Properties.View.BestFitColumns();
+            cboMANCC.Properties.PopupFormWidth = 300;
+            cboMANCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
           
         }
         public void loadgridNhacCungCap(String MANCC)
@@ -213,57 +220,43 @@ namespace WindowsFormsApplication1
             dtoNCC.MADVT = gridDVT.GetFocusedRowCellValue("MADVT").ToString();
              */ 
         }
-        private void cboTenNCC_EditValueChanged(object sender, EventArgs e)
-        {
-            cboTenNCC_EDITCHANGED();
-        }
-        public void cboTenNCC_EDITCHANGED(){
-            cboMANCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboMANCC.Properties.DataSource = dtvNCC;
-            cboMANCC.Properties.DisplayMember = "MANCC";
-            cboMANCC.Properties.ValueMember = "MANCC";
-            cboMANCC.Properties.View.BestFitColumns();
-            cboMANCC.Properties.PopupFormWidth = 300;
-            cboMANCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
-            cboMANCC.Text = gridView3.GetFocusedRowCellValue("MANCC").ToString();
-            txtSoDT.Text = gridView3.GetFocusedRowCellValue("SDT").ToString();
-            txtFax.Text = gridView3.GetFocusedRowCellValue("FAX").ToString();
-            txtEmail.Text = gridView3.GetFocusedRowCellValue("EMAIL").ToString();
-            dtoNCC.MANCC = cboMANCC.Text;
-            layno = ctlNCC.LAYTIENNO(dtoNCC);
-            string tienno = layno.Rows[0]["TIENNO"].ToString();
-            if (tienno == "")
-            {
-                txtNo.Text = "0";
-            }
-            else
-            {
-                txtNo.Text = string.Format("{0:N}", double.Parse(tienno));
-            }
-        }
-      
-        private void cboMANCC_EditValueChanged(object sender, EventArgs e)
-        {
-    
+ 
 
-        }
-        private void cboTenMatHang_EditValueChanged(object sender, EventArgs e)
+        private void cboTenNCC_Validated(object sender, EventArgs e)
         {
-           /* cboTenMH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboTenMH.Properties.DataSource = dtvMH;
-            cboTenMH.Properties.DisplayMember = "TENMH";
-            cboTenMH.Properties.ValueMember = "TENMH";
-            cboTenMH.Properties.View.BestFitColumns();
-            cboTenMH.Properties.PopupFormWidth = 300;
-            cboTenMH.Properties.DataSource = ctlNCC.GETMATHANG();
-            cboTenMH.Text = gridMH.GetFocusedRowCellValue("TENMH").ToString();
-            cboThue.Text = gridMH.GetFocusedRowCellValue("MATH").ToString();
-            cboDVT.Text = gridMH.GetFocusedRowCellValue("MADVT").ToString();
-            */
+            gridView3.UpdateCurrentRow();
+            DataRow rowselect = gridView3.GetFocusedDataRow();
+            // MessageBox.Show(gridView3.GetFocusedDisplayText());
+
+            if (rowselect != null)
+            {
+                cboMANCC.Text = gridView3.GetFocusedRowCellValue("MANCC").ToString();
+                txtSoDT.Text = gridView3.GetFocusedRowCellValue("SDT").ToString();
+                txtFax.Text = gridView3.GetFocusedRowCellValue("FAX").ToString();
+                txtEmail.Text = gridView3.GetFocusedRowCellValue("EMAIL").ToString();
+                dtoNCC.MANCC = cboMANCC.Text;
+                layno = ctlNCC.LAYTIENNO(dtoNCC);
+                string tienno = layno.Rows[0]["TIENNO"].ToString();
+                if (tienno == "")
+                {
+                    txtNo.Text = "0";
+                }
+                else
+                {
+                    txtNo.Text = string.Format("{0:N}", double.Parse(tienno));
+                }
+            }
         }
+        
+        
+
         public string sTenNV, sMaNV;
         private void btTaoMoi_Click(object sender, EventArgs e)
         {
+
+            Create_new();
+        }
+        public void Create_new(){
             loadgridNhacCungCap();
             cboMANCC.Text = "";
             cboTenNCC.Text = "";
@@ -271,25 +264,18 @@ namespace WindowsFormsApplication1
             txtFax.Text = "";
             txtEmail.Text = "";
             txtMaHD.Text = "";
-           
             txtNo.Text = "";
-          
-           /* cboMaMatHang.Text = "";
-            cboThue.Text = "";
-            cboSL.Text = "";
-            cboDonGia.Text = "";
-            cboDVT.Text = "";
-            */ 
+
             if (hd._Cart.Count > 0)
             {
                 hd._Cart.Clear();
             }
             loadmahdn();
             //   cboTinhTrang.Text = "";
-           gridControl1.DataSource = null;
-           gridCTHOADON.RefreshData();
-           
+            gridControl1.DataSource = null;
+            gridCTHOADON.RefreshData();
         }
+
         public int kiemtra;
         private void btLuu_Click(object sender, EventArgs e)
         {
@@ -412,11 +398,11 @@ namespace WindowsFormsApplication1
             }
             */
         }
-        public void insert_HoadonChitiet(string mahdn, String mamh, int SoLuong, int DonGia)
+        public void insert_HoadonChitiet(string mahdx, String mamh, int SoLuong, int DonGia)
         {
             try
             {
-                dtoNCC.MAHDN = mahdn;
+                dtoNCC.MAHDN = mahdx;
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGNHAP = SoLuong;
                 dtoNCC.GIANHAP = DonGia;
@@ -424,15 +410,15 @@ namespace WindowsFormsApplication1
                 
                // ctlNCC.INSERTCTHOADONNHAP(dtoNCC);
 
-                bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(mahdn, mamh);
+                bool isinsert = ctlNCC.ISINSERTCTHOADONXUAT(mahdx, mamh);
                 if (isinsert)
                 {
-                    ctlNCC.INSERTCTHOADONNHAP(dtoNCC);
+                    ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
                     MessageBox.Show("insert");
                 }
                 else
                 {
-                    ctlNCC.UPDATECTHOADONNHAP(dtoNCC);
+                    ctlNCC.UPDATECTHOADONXUAT(dtoNCC);
                     MessageBox.Show("update");
                 }
             }
@@ -670,6 +656,7 @@ namespace WindowsFormsApplication1
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_create();
+            Create_new();
             loadgridCTHOADON();
         }
 
@@ -723,6 +710,17 @@ namespace WindowsFormsApplication1
             Load_panel_create();
             loadgridCTHOADON();
         }
+
+    
+
+        
+
+        
+
+
+       
+
+
 
        
 
