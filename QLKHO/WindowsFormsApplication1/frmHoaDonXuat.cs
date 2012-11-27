@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cboTenKH.Properties.PopupFormWidth = 300;
             DataTable dt = ctlNCC.GETKHACHHANG(MAKH);
             cboTenKH.Properties.DataSource = dt;
-            cboTenKH.Text = dt.Rows[0]["MANCC"].ToString();
+            cboTenKH.Text = dt.Rows[0]["MAKH"].ToString();
 
         }
         public void Load_panel_create()
@@ -127,6 +127,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
         private void cboTenKH_Validated(object sender, EventArgs e)
         {
 
+            LOAD_TTKH();
+        }
+        public void LOAD_TTKH()
+        {
             DataRow rowselect = gridKH1.GetFocusedDataRow();
 
             if (rowselect != null)
@@ -137,7 +141,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 //txtWeb.Text = gridKH1.GetFocusedRowCellValue("WEBSITE").ToString();   
             }
         }
-
 
         public void loadgridNhanVien()
         {
@@ -280,7 +283,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
              
             dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
 
-            bool isINSERTHOADONXUAT = ctlNCC.isINSERTHOADONXUAT(dtoNCC.MAHDN);
+            bool isINSERTHOADONXUAT = ctlNCC.isINSERTHOADONXUAT(dtoNCC.MAHDX);
             if (isINSERTHOADONXUAT)
             {
                 ctlNCC.INSERTHOADONXUAT(dtoNCC);
@@ -302,7 +305,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
             loadGiaoDich();
             MessageBox.Show("Bạn Đã Thêm Thành Công");
-            loadmahdx();
+            
                 }
             }
             catch (Exception ex)
@@ -334,16 +337,15 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 dtoNCC.SOLUONGXUAT = SoLuong;
                 dtoNCC.GIATIEN = DonGia;
 
-
-                bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(mahdx, mamh);
+                bool isinsert = ctlNCC.ISINSERTCTHOADONXUAT(mahdx, mamh);
                 if (isinsert)
                 {
-                    ctlNCC.INSERTCTHOADONNHAP(dtoNCC);
+                    ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
                     MessageBox.Show("insert");
                 }
                 else
                 {
-                    ctlNCC.UPDATECTHOADONNHAP(dtoNCC);
+                    ctlNCC.UPDATECTHOADONXUAT(dtoNCC);
                     MessageBox.Show("update");
                 }
 
@@ -606,17 +608,23 @@ namespace WindowsFormsApplication1.HoaDonXuat
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr = dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
-            string MAKH = ctlNCC.GETMANCCfromMHDN(dtr["Mã Hóa Đơn"].ToString());
+            string MAKH = ctlNCC.GETMAKHfromMHDX(dtr["Mã Hóa Đơn"].ToString());
             View_phieunhap(dtr["Mã Hóa Đơn"].ToString());
             txtNgayXuat.Text = dtr["NGÀY XUẤT"].ToString();
-            loadgridKhachHang(MAKH);//MANCC
-            //cboTenNCC_EDITCHANGED();
+            loadgridKhachHang(MAKH);
+            LOAD_TTKH();
         }
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Load_panel_create();
             loadgridCTHOADON();
+            DataRow dtr = dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+            string MAKH = ctlNCC.GETMAKHfromMHDX(dtr["Mã Hóa Đơn"].ToString());
+            View_phieunhap(dtr["Mã Hóa Đơn"].ToString());
+            txtNgayXuat.Text = dtr["NGÀY XUẤT"].ToString();
+            loadgridKhachHang(MAKH);
+            LOAD_TTKH();
         }
 
         private void gridView4_ShowGridMenu(object sender, GridMenuEventArgs e)
