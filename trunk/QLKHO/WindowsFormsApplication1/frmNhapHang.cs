@@ -224,9 +224,12 @@ namespace WindowsFormsApplication1
 
         private void cboTenNCC_Validated(object sender, EventArgs e)
         {
-            gridView3.UpdateCurrentRow();
+            Load_TTNCC();
+        }
+        public void Load_TTNCC()
+        {
+
             DataRow rowselect = gridView3.GetFocusedDataRow();
-            // MessageBox.Show(gridView3.GetFocusedDisplayText());
 
             if (rowselect != null)
             {
@@ -247,7 +250,6 @@ namespace WindowsFormsApplication1
                 }
             }
         }
-        
         
 
         public string sTenNV, sMaNV;
@@ -701,14 +703,20 @@ namespace WindowsFormsApplication1
             string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["Mã Hóa Đơn"].ToString());
             View_phieunhap(dtr["Mã Hóa Đơn"].ToString());
             txtNgay.Text = dtr["NGÀY NHẬP"].ToString();
-            loadgridNhacCungCap(MANCC);//MANCC
-            //cboTenNCC_EDITCHANGED();
+            loadgridNhacCungCap(MANCC);
+            Load_TTNCC();
         }
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Load_panel_create();
             loadgridCTHOADON();
+            DataRow dtr = dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+            string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["Mã Hóa Đơn"].ToString());
+            View_phieunhap(dtr["Mã Hóa Đơn"].ToString());
+            txtNgay.Text = dtr["NGÀY NHẬP"].ToString();
+            loadgridNhacCungCap(MANCC);
+            Load_TTNCC();
         }
 
     
