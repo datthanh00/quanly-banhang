@@ -36,32 +36,45 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cboTenKH.Properties.View.BestFitColumns();
             cboTenKH.Properties.PopupFormWidth = 300;
             cboTenKH.Properties.DataSource = ctlNCC.GETKHACHHANG();
-            //dtoNCC.MANCC = gridKH1.GetFocusedRowCellValue("TENKH").ToString();
+           // dtoNCC.MANCC = gridKH1.GetFocusedRowCellValue("TENKH").ToString();
+            cboMaKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cboMaKH.Properties.DataSource = dtvKH;
+            cboMaKH.Properties.DisplayMember = "MAKH";
+            cboMaKH.Properties.ValueMember = "MAKH";
+            cboMaKH.Properties.View.BestFitColumns();
+            cboMaKH.Properties.PopupFormWidth = 300;
+            cboMaKH.Properties.DataSource = ctlNCC.GETKHACHHANG();
+        }
+        public void loadgridKhachHang(string MAKH)
+        {
+            cboTenKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cboTenKH.Properties.DataSource = dtvKH;
+            cboTenKH.Properties.DisplayMember = "TENKH";
+            cboTenKH.Properties.ValueMember = "MAKH";
+            cboTenKH.Properties.View.BestFitColumns();
+            cboTenKH.Properties.PopupFormWidth = 300;
+            DataTable dt = ctlNCC.GETKHACHHANG(MAKH);
+            cboTenKH.Properties.DataSource = dt;
+            cboTenKH.Text = dt.Rows[0]["MANCC"].ToString();
+
         }
         public void Load_panel_create()
         {
-
-           /* panel_filter.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
-           
-            panel_create.Visible = true;
-            panel_info1.Visible = true;
-            panel_grid.Visible = true;
-            panel_grid.Dock = System.Windows.Forms.DockStyle.Fill;
-            panel_grid2.Visible = false;
-            * */
-
+            Panel_filter.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
+            panel_Grid.Visible = false;
+            panel_Create.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel_Create.Visible = true;
+            panel_info.Visible = true;
+            panel_tool.Visible = true;
         }
         public void Load_panel_filter()
         {
-            /*
-            panel_filter.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
-            
-            panel_create.Visible = false;
-            panel_info1.Visible = false;
-            panel_grid.Visible = false;
-            panel_grid2.Visible = true;
-            panel_grid2.Dock = System.Windows.Forms.DockStyle.Fill;
-             * */
+            Panel_filter.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Visible;
+            panel_Grid.Visible = true;
+            panel_Grid.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel_Create.Visible = false;
+            panel_info.Visible = false;
+            panel_tool.Visible = false;
         }
         public void loadgridCTHOADON()
         {
@@ -73,6 +86,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dt.Columns.Add(new DataColumn("_Thue"));
             dt.Columns.Add(new DataColumn("_DVT"));
             dt.Columns.Add(new DataColumn("_Total"));
+            gridControl1.DataSource = dt;
+
+        }
+        public void loadgridCTHOADON(string MHDX)
+        {
+            DataTable dt = new DataTable();
+            dt = ctlNCC.GETCTHOADONXUAT(MHDX);
             gridControl1.DataSource = dt;
 
         }
@@ -101,22 +121,23 @@ namespace WindowsFormsApplication1.HoaDonXuat
             loadgridCTHOADON();
             loadGrid_sanpham();
             cboNhanVienLap.Text = sMaNV;
+            Load_panel_create();
         }
 
-        private void cboTenKH_EditValueChanged(object sender, EventArgs e)
+        private void cboTenKH_Validated(object sender, EventArgs e)
         {
-            cboMaKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboMaKH.Properties.DataSource = dtvKH;
-            cboMaKH.Properties.DisplayMember = "MAKH";
-            cboMaKH.Properties.ValueMember = "MAKH";
-            cboMaKH.Properties.View.BestFitColumns();
-            cboMaKH.Properties.PopupFormWidth = 300;
-            cboMaKH.Properties.DataSource = ctlNCC.GETKHACHHANG();
-            cboMaKH.Text = gridKH1.GetFocusedRowCellValue("MAKH").ToString();
-            txtSDT.Text = gridKH1.GetFocusedRowCellValue("SDT").ToString();
-            txtDiachi.Text = gridKH1.GetFocusedRowCellValue("DIACHI").ToString();
-            //txtWeb.Text = gridKH1.GetFocusedRowCellValue("WEBSITE").ToString();   
+
+            DataRow rowselect = gridKH1.GetFocusedDataRow();
+
+            if (rowselect != null)
+            {
+                cboMaKH.Text = gridKH1.GetFocusedRowCellValue("MAKH").ToString();
+                txtSDT.Text = gridKH1.GetFocusedRowCellValue("SDT").ToString();
+                txtDiachi.Text = gridKH1.GetFocusedRowCellValue("DIACHI").ToString();
+                //txtWeb.Text = gridKH1.GetFocusedRowCellValue("WEBSITE").ToString();   
+            }
         }
+
 
         public void loadgridNhanVien()
         {
@@ -251,19 +272,32 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dtoNCC.NGAYXUAT = DateTime.Now;
             dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
             dtoNCC.MAHDX = txtMaHD.Text;
+            if (cbotientra.Text == "")
+            {
+                cbotientra.Text = "0";
+            }
             dtoNCC.GHICHU= textBoxX1.Text;
              
             dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
-            ctlNCC.INSERTHOADONXUAT(dtoNCC);
-            foreach (Cart cart in hd._Cart)
-            {
-                insert_HoadonChitietxuat(txtMaHD.Text, cart._MaMH, cart._SoLuong, cart._DonGia);
 
+            bool isINSERTHOADONXUAT = ctlNCC.isINSERTHOADONXUAT(dtoNCC.MAHDN);
+            if (isINSERTHOADONXUAT)
+            {
+                ctlNCC.INSERTHOADONXUAT(dtoNCC);
+            }
+            else
+            {
+                ctlNCC.UPDATEHOADONXUAT(dtoNCC);
             }
 
-            if (hd._Cart.Count > 0)
+            
+              
+
+            int rowcount = gridCTHOADON.DataRowCount;
+            for (int i = 0; i < rowcount; i++)
             {
-                hd._Cart.Clear();
+               DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
+               insert_HoadonChitietxuat(txtMaHD.Text, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
             }
 
             loadGiaoDich();
@@ -299,7 +333,23 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGXUAT = SoLuong;
                 dtoNCC.GIATIEN = DonGia;
-                ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
+
+
+                bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(mahdx, mamh);
+                if (isinsert)
+                {
+                    ctlNCC.INSERTCTHOADONNHAP(dtoNCC);
+                    MessageBox.Show("insert");
+                }
+                else
+                {
+                    ctlNCC.UPDATECTHOADONNHAP(dtoNCC);
+                    MessageBox.Show("update");
+                }
+
+
+
+                //ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
             }
             catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu", "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
@@ -361,17 +411,21 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            Create_new();
+        }
+        public void Create_new()
+        {
             cboMaKH.Text = "";
             cboTenKH.Text = "";
             txtDiachi.Text = "";
             txtSDT.Text = "";
-           // txtWeb.Text = "";
-           /* cboMaMatHang.Text = "";
-            cboThue.Text = "";
-            cboSL.Text = "";
-            cboDonGia.Text = "";
-            cboDVT.Text = "";
-            * */
+            // txtWeb.Text = "";
+            /* cboMaMatHang.Text = "";
+             cboThue.Text = "";
+             cboSL.Text = "";
+             cboDonGia.Text = "";
+             cboDVT.Text = "";
+             * */
             if (hd._Cart.Count > 0)
             {
                 hd._Cart.Clear();
@@ -379,27 +433,50 @@ namespace WindowsFormsApplication1.HoaDonXuat
             loadmahdx();
             gridControl1.DataSource = null;
             gridCTHOADON.RefreshData(); 
-
         }
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_create();
-            //loadgridCTHOADON();
+            Create_new();
+            loadgridCTHOADON();
         }
 
         private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            string SQL = "SELECT T1.NGAYNHAP 'Ngày Nhập',T1.MAHDN 'Mã Hóa Đơn',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (SELECT * FROM HOADONNHAP ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDN DESC";
-            //loadgridPHIEUNHAP(SQL);
+            string SQL = "SELECT T1.NGAYXUAT 'Ngày xuất',T1.MAHDX 'Mã Hóa Đơn',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (SELECT * FROM HOADONXUAT ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
+            loadgridPHIEUNHAP(SQL);
         }
 
         private void linkTheoSanPham_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            string SQL = "SELECT T3.NGAYNHAP 'NGÀY NHẬP',T3.MAHDN 'Mã Hóa Đơn', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGNHAP 'Số Lượng',T3.GIANHAP 'Giá Nhập' FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T1.SOLUONGNHAP,T1.GIANHAP FROM (SELECT * FROM CHITIETHDN ) AS T1 INNER JOIN HOADONNHAP AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
-            //loadgridSANPHAM(SQL);
+            string SQL = "SELECT T3.NGAYXUAT 'Ngày Xuất',T3.MAHDX 'Mã Hóa Đơn', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGXUAT 'Số Lượng',T3.GIATIEN 'Giá Bán' FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN FROM (SELECT * FROM CHITIETHDX ) AS T1 INNER JOIN HOADONXUAT AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
+            loadgridSANPHAM(SQL);
+        }
+
+        public void loadgridPHIEUNHAP(string SQL)
+        {
+            DataTable TBS = ctlNCC.GETDATA(SQL);
+            gridView4.Columns.Clear();
+            gridControl3.DataSource = TBS;
+            gridView4.RefreshData();
+            gridControl3.RefreshDataSource();
+
+        }
+        public void loadgridSANPHAM(string SQL)
+        {
+            DataTable TBS = ctlNCC.GETDATA(SQL);
+            gridView4.Columns.Clear();
+            gridControl3.DataSource = TBS;
+            gridView4.Columns["Mã Hóa Đơn"].Group();
+            gridView4.Columns["Mã Hóa Đơn"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+            gridView4.ExpandAllGroups();
+            gridView4.RefreshData();
+            gridControl3.RefreshDataSource();
+
+
         }
 
         private void gridCTHOADON_CellValuedChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -512,7 +589,49 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 }
             }
         }
+        public void View_phieunhap(string MAHDX)
+        {
+            loadgridCTHOADON(MAHDX);
 
+            txtMaHD.Text = MAHDX;
+            string SQL = "SELECT T1.NGAYXUAT ,T1.MAHDX ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            DataTable DT = ctlNCC.GETDATA(SQL);
+            cboNhanVienLap.Text = DT.Rows[0]["MANV"].ToString();
+            txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
+            cbotientra.Text = DT.Rows[0]["TIENDATRA"].ToString();
+            txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();
+        }
+        private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Load_panel_create();
+            loadgridCTHOADON();
+            DataRow dtr = dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+            string MAKH = ctlNCC.GETMANCCfromMHDN(dtr["Mã Hóa Đơn"].ToString());
+            View_phieunhap(dtr["Mã Hóa Đơn"].ToString());
+            txtNgayXuat.Text = dtr["NGÀY XUẤT"].ToString();
+            loadgridKhachHang(MAKH);//MANCC
+            //cboTenNCC_EDITCHANGED();
+        }
+
+        private void EditToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Load_panel_create();
+            loadgridCTHOADON();
+        }
+
+        private void gridView4_ShowGridMenu(object sender, GridMenuEventArgs e)
+        {
+            GridView view = sender as GridView;
+            GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
+            if (hitInfo.InRow)
+            {
+                view.FocusedRowHandle = hitInfo.RowHandle;
+
+                contextMenuStrip2.Show(view.GridControl, e.Point);
+            }
+        }
+
+     
      
 
     }

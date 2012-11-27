@@ -718,11 +718,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboTenNCC.Properties.NullText = "";
             this.cboTenNCC.Properties.PopupSizeable = false;
-            this.cboTenNCC.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.cboTenNCC.Properties.View = this.gridView3;
             this.cboTenNCC.Size = new System.Drawing.Size(276, 20);
             this.cboTenNCC.TabIndex = 17;
-            this.cboTenNCC.EditValueChanged += new System.EventHandler(this.cboTenNCC_EditValueChanged);
+            this.cboTenNCC.Validated += new System.EventHandler(this.cboTenNCC_Validated);
             // 
             // gridView3
             // 
@@ -765,7 +764,6 @@
             this.cboMANCC.Properties.View = this.gridNCC;
             this.cboMANCC.Size = new System.Drawing.Size(113, 19);
             this.cboMANCC.TabIndex = 16;
-            this.cboMANCC.EditValueChanged += new System.EventHandler(this.cboMANCC_EditValueChanged);
             // 
             // gridNCC
             // 
@@ -836,7 +834,7 @@
             // 
             // txtconLai
             // 
-            this.txtconLai.Location = new System.Drawing.Point(131, 103);
+            this.txtconLai.Location = new System.Drawing.Point(87, 103);
             this.txtconLai.Name = "txtconLai";
             this.txtconLai.ReadOnly = true;
             this.txtconLai.Size = new System.Drawing.Size(169, 21);
@@ -878,7 +876,7 @@
             // 
             // labelControl19
             // 
-            this.labelControl19.Location = new System.Drawing.Point(306, 105);
+            this.labelControl19.Location = new System.Drawing.Point(262, 106);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(20, 13);
             this.labelControl19.TabIndex = 0;
@@ -886,7 +884,7 @@
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(64, 105);
+            this.labelControl18.Location = new System.Drawing.Point(12, 106);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(35, 13);
             this.labelControl18.TabIndex = 0;
@@ -1433,19 +1431,19 @@
             this.ViewToolStripMenuItem,
             this.EditToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(106, 48);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(153, 70);
             // 
             // ViewToolStripMenuItem
             // 
             this.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
-            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ViewToolStripMenuItem.Text = "Xem";
             this.ViewToolStripMenuItem.Click += new System.EventHandler(this.ViewToolStripMenuItem_Click);
             // 
             // EditToolStripMenuItem
             // 
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
-            this.EditToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 

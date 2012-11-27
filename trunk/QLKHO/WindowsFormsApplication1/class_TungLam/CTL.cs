@@ -147,6 +147,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETDANHSACHKH();
         }
+        public DataTable GETKHACHHANG(string MAKH)
+        {
+            return DAO.GETDANHSACHKH(MAKH);
+        }
         public DataTable GETKHACHHANG1()
         {
             return DAO.GETDANHSACHKH1();
@@ -253,6 +257,7 @@ namespace WindowsFormsApplication1
         {
             return DAO.ISINSERTCTHOADONNHAP(MAHDN, MAMH);
         }
+        
 
         public DataTable GETALLCTHOADONNHAP()
         {
@@ -262,6 +267,7 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETCTHOADONNHAP(MAHDN);
         }
+        
         public DataTable GETHOADONNHAP(DTO dto)
         {
             return DAO.GETHOADONNHAP(dto);
@@ -274,13 +280,40 @@ namespace WindowsFormsApplication1
         {
             DAO.INSERTHOADONXUAT(DTO);
         }
+        public bool isINSERTHOADONXUAT(string MHDX)
+        {
+            return DAO.isINSERTHOADONXUAT(MHDX);
+        }
+        public void UPDATEHOADONXUAT(DTO DTO)
+        {
+            DAO.UPDATEHOADONXUAT(DTO);
+        }
+
         public void INSERTCTHOADONXUAT(DTO DTO)
         {
             DAO.INSERTCTHOADONXUAT(DTO);
         }
+        public bool ISINSERTCTHOADONXUAT(string MAHDX, string MAMH)
+        {
+            return DAO.ISINSERTCTHOADONXUAT(MAHDX, MAMH);
+        }
+        public void UPDATECTHOADONXUAT(DTO DTO)
+        {
+            DAO.UPDATECTHOADONXUAT(DTO);
+        }
+        public void DELETECTHOADONXUAT(string MAHDN, string MAMH)
+        {
+            DAO.DELETECTHOADONXUAT(MAHDN, MAMH);
+        }
+
+
         public DataTable GETHOADONXUAT(DTO dto)
         {
             return DAO.GETHOADONXUAT(dto);
+        }
+        public DataTable GETCTHOADONXUAT(string MAHDX)
+        {
+            return DAO.GETCTHOADONXUAT(MAHDX);
         }
 
 
