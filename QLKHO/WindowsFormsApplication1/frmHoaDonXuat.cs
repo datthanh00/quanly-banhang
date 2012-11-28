@@ -421,6 +421,15 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cboTenKH.Text = "";
             txtDiachi.Text = "";
             txtSDT.Text = "";
+            DateTime time = DateTime.Now;           
+	        string format = "dd/MM/yyyy";            
+            txtMaHD.Text = "";
+            txtNgayXuat.Text = time.ToString(format);
+            txtNo.Text = "0";
+            txtconLai.Text = "0";
+            cbotientra.Text = "0";
+            txtthanhtien.Text = "";
+
             // txtWeb.Text = "";
             /* cboMaMatHang.Text = "";
              cboThue.Text = "";
