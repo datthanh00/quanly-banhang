@@ -73,10 +73,9 @@
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gridControl2);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl2.Location = new System.Drawing.Point(0, 243);
+            this.groupControl2.Location = new System.Drawing.Point(0, 42);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1321, 249);
+            this.groupControl2.Size = new System.Drawing.Size(1290, 201);
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "Tiền trả Nhà cung cấp";
             // 
@@ -86,7 +85,7 @@
             this.gridControl2.Location = new System.Drawing.Point(2, 21);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1317, 226);
+            this.gridControl2.Size = new System.Drawing.Size(1286, 178);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -146,18 +145,19 @@
             // groupCnncc
             // 
             this.groupCnncc.Controls.Add(this.gridControl1);
-            this.groupCnncc.Location = new System.Drawing.Point(2, 42);
+            this.groupCnncc.Location = new System.Drawing.Point(0, 249);
             this.groupCnncc.Name = "groupCnncc";
-            this.groupCnncc.Size = new System.Drawing.Size(1330, 248);
+            this.groupCnncc.Size = new System.Drawing.Size(1288, 261);
             this.groupCnncc.TabIndex = 4;
             this.groupCnncc.Text = "Công nợ Nhà Cung cấp";
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(2, 22);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1312, 182);
+            this.gridControl1.Size = new System.Drawing.Size(1284, 238);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -242,7 +242,7 @@
             // 
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 42);
-            this.barDockControlTop.Size = new System.Drawing.Size(1321, 67);
+            this.barDockControlTop.Size = new System.Drawing.Size(1292, 67);
             // 
             // barManager1
             // 
@@ -306,25 +306,25 @@
             // 
             this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControl1.Location = new System.Drawing.Point(0, 0);
-            this.barDockControl1.Size = new System.Drawing.Size(1321, 42);
+            this.barDockControl1.Size = new System.Drawing.Size(1292, 42);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 492);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1321, 0);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 511);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1292, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 450);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 469);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1321, 42);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 450);
+            this.barDockControlRight.Location = new System.Drawing.Point(1292, 42);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 469);
             // 
             // barEditItem1
             // 
@@ -344,7 +344,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1321, 492);
+            this.ClientSize = new System.Drawing.Size(1292, 511);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupCnncc);
             this.Controls.Add(this.barDockControlTop);
