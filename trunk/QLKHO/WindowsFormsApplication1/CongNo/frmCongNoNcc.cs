@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using System.Threading;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace WindowsFormsApplication1
 {
@@ -28,62 +30,19 @@ namespace WindowsFormsApplication1
         public string sMaNV, sTenNV;
         public void loadGetAllHDN()
         {
-            dt = Ctrl_Tien.GETALLHDn_ctrl();
+            //dt = Ctrl_Tien.GETALLHDn_ctrl();
+            dt = Ctrl_Tien.GETALLcongno_ncc();
             gridControl1.DataSource = dt;
         }
-        private void barTraTien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        public void loadGetAllphieuchi()
         {
-            frmTraTien frm = new frmTraTien();
-            if (this.smaNcc == null)
-            {
-                if (iNgonNgu == 0)
-                {
-                    XtraMessageBox.Show("Bạn phải chọn 1 hóa đơn để thu tiền");
-                }
-                else
-                    XtraMessageBox.Show("You must select a bill to get money");
-            }
-            else
-            {
-                frm.Nhan = "Them";
-                frm.MaChuyen = sMahdn;
-                frm.Tienno = sTienno;
-                frm.sMaNV = sMaNV;
-                frm.sTenNV = sTenNV;
-                frm.iNgonNgu = this.iNgonNgu;
-                frm.ShowDialog();
-                loadctncc();
-                loadGetAllHDN();
-            }
+            //dt = Ctrl_Tien.GETALLHDn_ctrl();
+            dt = Ctrl_Tien.Getall_phieuchi_Dao();
+            gridControl2.DataSource = dt;
         }
 
-        private void barSuaTien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            frmTraTien frm = new frmTraTien();
-            if (this.smpc == null)
-            {
-                if (iNgonNgu == 0)
-                {
-                    XtraMessageBox.Show("Bạn phải chọn 1 hóa đơn để thu tiền");
-                }
-                else
-                    XtraMessageBox.Show("You must select a bill to get money");
-            }
-            else
-            {
-                frm.Nhan = "Sua";
-                frm.MaPC = smpc;
-                frm.HD = smahdn;
-                frm.TIEN = stientra;
-                frm.Tienno = sTienno;
-                frm.sMaNV = sMaNV;
-                frm.sTenNV = sTenNV;
-                frm.iNgonNgu = this.iNgonNgu;
-                frm.ShowDialog();
-                loadGetAllHDN();
-                loadctncc();
-            }
-        }
+
+
         public void loadctncc()
         {
             dt = Ctrl_Tien.get1pthdn_ctrl(sMahdn);
@@ -105,25 +64,44 @@ namespace WindowsFormsApplication1
                 loadEL();
             
             loadGetAllHDN();
+            load_congno();
+        }
+        public void load_congno()
+        {
+            panel_congno.Visible = true;
+            panel_phieuchi.Visible = false;
+
+            groupControl_congno.Visible = true;
+            groupControl_congno.Dock = System.Windows.Forms.DockStyle.Fill;
+            groupControl_phieuchi.Visible = false;
+            gridView1.ExpandAllGroups();
+        }
+        public void load_phieuchi()
+        {
+            panel_congno.Visible = false;
+            panel_phieuchi.Visible = true;
+
+            groupControl_congno.Visible = false;
+            groupControl_phieuchi.Visible = true;
+            groupControl_phieuchi.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridView2.ExpandAllGroups();
         }
 
-        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            try
-            {
-
-                DataRow dtr = gridView1.GetDataRow(e.RowHandle);
-                sMahdn = dtr[0].ToString();
-                smaNcc = dtr[2].ToString();
-                sTienno = dtr[5].ToString();
-                dt = Ctrl_Tien.get1pthdn_ctrl(dtr[0].ToString());
-                gridControl2.DataSource = dt;
-            }
-            catch 
-            {
-
-                //XtraMessageBox.Show(ex.Message);
-            }
+            GridView view = sender as GridView;
+            Point pt = view.GridControl.PointToClient(Control.MousePosition);
+            GridHitInfo hitInfo = view.CalcHitInfo(pt);
+                if (hitInfo.InRow)
+                {
+                    DataRow dtr = gridView1.GetDataRow(hitInfo.RowHandle);
+                    sMahdn = dtr[0].ToString();
+                    smaNcc = dtr[2].ToString();
+                    sTienno = dtr[5].ToString();
+                    loadfrm_tratien();
+                }
+            
+           
         }
 
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -183,8 +161,88 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+           
+        }
+
+        private void btTratien_Click(object sender, EventArgs e)
+        {
+            loadfrm_tratien();
+        }
+        public void loadfrm_tratien()
+        {
+            frmTraTien frm = new frmTraTien();
+            if (this.smaNcc == null)
+            {
+                if (iNgonNgu == 0)
+                {
+                    XtraMessageBox.Show("Bạn phải chọn 1 hóa đơn để thu tiền");
+                }
+                else
+                    XtraMessageBox.Show("You must select a bill to get money");
+            }
+            else
+            {
+                frm.Nhan = "Them";
+                frm.MaChuyen = sMahdn;
+                frm.Tienno = sTienno;
+                frm.sMaNV = sMaNV;
+                frm.sTenNV = sTenNV;
+                frm.iNgonNgu = this.iNgonNgu;
+                frm.ShowDialog();
+                //loadctncc();
+                loadGetAllHDN();
+                load_congno();
+            }
+        }
+
+        private void btDong_Click(object sender, EventArgs e)
+        {
             deDongTab();
         }
+
+        private void bt_edittratien_Click(object sender, EventArgs e)
+        {
+            frmTraTien frm = new frmTraTien();
+            if (this.smpc == null)
+            {
+                if (iNgonNgu == 0)
+                {
+                    XtraMessageBox.Show("Bạn phải chọn 1 hóa đơn để thu tiền");
+                }
+                else
+                    XtraMessageBox.Show("You must select a bill to get money");
+            }
+            else
+            {
+                frm.Nhan = "Sua";
+                frm.MaPC = smpc;
+                frm.HD = smahdn;
+                frm.TIEN = stientra;
+                frm.Tienno = sTienno;
+                frm.sMaNV = sMaNV;
+                frm.sTenNV = sTenNV;
+                frm.iNgonNgu = this.iNgonNgu;
+                frm.ShowDialog();
+                loadGetAllHDN();
+                loadctncc();
+                load_phieuchi();
+            }
+        }
+
+        private void linkcongno_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            load_congno();
+        }
+
+        private void linkphieuchi_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            loadGetAllphieuchi();
+            load_phieuchi();
+        }
+
+       
+
+   
 
     }
 }
