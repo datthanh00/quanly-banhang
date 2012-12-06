@@ -396,6 +396,19 @@ namespace WindowsFormsApplication1
                 return THC;
             }
         }
+        public static DataTable GETALLcongno_ncc()
+        {
+            using (SqlConnection cn = Provider.get_Connect())
+            {
+                string SQL = "SELECT MAHDN as N'Mã hóa đơn nhập',TENncc as N'Tên nhà cung cấp',HOADONnhap.MAncc as N'Mã nhà cung cấp',TIENPHAITRA AS N'Tiền phải trả',TIENdaTRA as N'Tiền đã trả', tienphaitra-tiendatra as N'Còn lại' FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc and tienphaitra-tiendatra<>0 group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc";
+                SqlDataAdapter da;
+                da = new SqlDataAdapter(SQL, cn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cn.Close();
+                return dt;
+            }
+        }
         public static DataTable get1pc_dao(string sMahdn)
         {
             using (SqlConnection cn = Provider.get_Connect())
@@ -407,6 +420,20 @@ namespace WindowsFormsApplication1
                 dtgetpc.Load(cmd.ExecuteReader());
                 cn.Close();
                 return dtgetpc;
+            }
+        }
+        public static DataTable Getall_phieuchi_Dao()
+        {
+            using (SqlConnection cn = Provider.get_Connect())
+            {
+
+                string SQL = "SELECT MAPc as N'Mã phiếu chi',MANV as N'Mã nhân viên',MAhdn as N'Mã hóa đơn nhập',ngaychi as N'Ngày chi',SoTienDaTra_PC as N'Tiền đã trả' FROM PHIEUCHI";
+                SqlDataAdapter da;
+                da = new SqlDataAdapter(SQL, cn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cn.Close();
+                return dt;
             }
         }
         public static void SUAPHIEUCHI_DAO(PHIEUCHI_DTO dto)

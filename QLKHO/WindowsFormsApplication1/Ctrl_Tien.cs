@@ -116,6 +116,16 @@ namespace WindowsFormsApplication1
         {
             return CONGNONCC.GETALLHDN_DAO();
         }
+
+        public static DataTable GETALLcongno_ncc()
+        {
+            return CONGNONCC.GETALLcongno_ncc();
+        }
+
+        public static DataTable Getall_phieuchi_Dao()
+        {
+            return CONGNONCC.Getall_phieuchi_Dao();
+        }
         public static DataTable get1pthdn_ctrl(string MaHDn)
         {
             return CONGNONCC.get1pc_dao(MaHDn);
