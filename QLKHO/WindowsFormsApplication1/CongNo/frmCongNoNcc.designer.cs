@@ -97,7 +97,7 @@
             this.groupControl_phieuchi.Controls.Add(this.gridControl2);
             this.groupControl_phieuchi.Location = new System.Drawing.Point(203, 113);
             this.groupControl_phieuchi.Name = "groupControl_phieuchi";
-            this.groupControl_phieuchi.Size = new System.Drawing.Size(1086, 201);
+            this.groupControl_phieuchi.Size = new System.Drawing.Size(1086, 229);
             this.groupControl_phieuchi.TabIndex = 5;
             this.groupControl_phieuchi.Text = "Tiền trả Nhà cung cấp";
             // 
@@ -107,7 +107,7 @@
             this.gridControl2.Location = new System.Drawing.Point(2, 22);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1082, 177);
+            this.gridControl2.Size = new System.Drawing.Size(1082, 205);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -122,6 +122,8 @@
             this.colTiềnđãtrả1});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsSelection.MultiSelect = true;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick);
             // 
@@ -204,7 +206,7 @@
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTênnhàcungcấp, DevExpress.Data.ColumnSortOrder.Ascending)});
-
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // colMãhóađơnnhập
