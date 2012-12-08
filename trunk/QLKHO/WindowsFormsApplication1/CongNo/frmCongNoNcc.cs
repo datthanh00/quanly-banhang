@@ -104,21 +104,23 @@ namespace WindowsFormsApplication1
            
         }
 
-        private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        
+        private void gridView1_RowClick(object sender, RowClickEventArgs e)
         {
             try
             {
-                DataRow dtr1 = gridView2.GetDataRow(e.RowHandle);
-                smpc = dtr1[0].ToString();
-                smahdn = dtr1[2].ToString();
-                stientra = dtr1[4].ToString();
+                DataRow dtr = gridView1.GetDataRow(e.RowHandle);
+                sMahdn = dtr[0].ToString();
+                smaNcc = dtr[2].ToString();
+                sTienno = dtr[5].ToString();
 
             }
-            catch 
+            catch
             {
                 //XtraMessageBox.Show(ex.Message);
 
             }
+            
         }
         public void loadVN()
         {
@@ -184,9 +186,11 @@ namespace WindowsFormsApplication1
             {
                 frm.Nhan = "Them";
                 frm.MaChuyen = sMahdn;
+                
                 frm.Tienno = sTienno;
                 frm.sMaNV = sMaNV;
                 frm.sTenNV = sTenNV;
+
                 frm.iNgonNgu = this.iNgonNgu;
                 frm.ShowDialog();
                 //loadctncc();
@@ -199,7 +203,24 @@ namespace WindowsFormsApplication1
         {
             deDongTab();
         }
+        private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            try
+            {
+                DataRow dtr1 = gridView2.GetDataRow(e.RowHandle);
+                smpc = dtr1[0].ToString();
+                sMaNV = dtr1[1].ToString();
+                smahdn = dtr1[2].ToString();
+                stientra = dtr1[4].ToString();
 
+
+            }
+            catch
+            {
+                //XtraMessageBox.Show(ex.Message);
+
+            }
+        }
         private void bt_edittratien_Click(object sender, EventArgs e)
         {
             frmTraTien frm = new frmTraTien();
@@ -207,7 +228,7 @@ namespace WindowsFormsApplication1
             {
                 if (iNgonNgu == 0)
                 {
-                    XtraMessageBox.Show("Bạn phải chọn 1 hóa đơn để thu tiền");
+                    XtraMessageBox.Show("Bạn phải chọn 1 phiếu chi để sửa tiền");
                 }
                 else
                     XtraMessageBox.Show("You must select a bill to get money");
@@ -218,14 +239,16 @@ namespace WindowsFormsApplication1
                 frm.MaPC = smpc;
                 frm.HD = smahdn;
                 frm.TIEN = stientra;
-                frm.Tienno = sTienno;
                 frm.sMaNV = sMaNV;
+
+                frm.Tienno = Ctrl_Tien.GETcongno_HDN(smahdn);
                 frm.sTenNV = sTenNV;
+                
+                
                 frm.iNgonNgu = this.iNgonNgu;
                 frm.ShowDialog();
                 loadGetAllHDN();
-                loadctncc();
-                load_phieuchi();
+                //loadctncc();
             }
         }
 
@@ -239,6 +262,8 @@ namespace WindowsFormsApplication1
             loadGetAllphieuchi();
             load_phieuchi();
         }
+
+        
 
        
 

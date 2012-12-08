@@ -409,6 +409,22 @@ namespace WindowsFormsApplication1
                 return dt;
             }
         }
+
+        public static string GETcongno_HDN(string MHDN)
+        {
+            using (SqlConnection cn = Provider.get_Connect())
+            {
+                string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONnhap where MAHDN='"+MHDN+"'";
+                SqlDataAdapter da;
+                da = new SqlDataAdapter(SQL, cn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cn.Close();
+                if (dt.Rows.Count > 0)
+                    return dt.Rows[0][0].ToString();
+                return "0";
+            }
+        }
         public static DataTable get1pc_dao(string sMahdn)
         {
             using (SqlConnection cn = Provider.get_Connect())
