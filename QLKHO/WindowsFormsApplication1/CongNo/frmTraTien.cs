@@ -57,7 +57,8 @@ namespace WindowsFormsApplication1
                 txtPC.Text = connect.sTuDongDienMapc(txtPC.Text);
                 txtMahd.Text = MaChuyen;
                 txtSoTienNo.Text = Tienno;
-                txtSoTienTra.Text = "0";
+
+                txtSoTienTra.Text = Tienno;
             }
             else
             {
@@ -164,7 +165,7 @@ namespace WindowsFormsApplication1
         
 
         private void txtSoTienTra_TextChanged_1(object sender, EventArgs e)
-        {
+        {/*
             try
             {
                 if (txtSoTienTra.Text == "")
@@ -178,6 +179,7 @@ namespace WindowsFormsApplication1
                 }
             }
             catch (Exception ex) { DevComponents.DotNetBar.MessageBoxEx.Show(ex.Message); }
+           */
         }
         public void loadVN()
         {
@@ -222,13 +224,6 @@ namespace WindowsFormsApplication1
             groupCtInFo.Text = Tien_EL.groupCtInFo.ToString();
         }
 
-        private void txtSoTienTra_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
         public string rMapc, rHdn, rTientra, rTienno, rNgaychi, rNv;
         private void barIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -252,6 +247,8 @@ namespace WindowsFormsApplication1
         {
             this.Close();
         }
+
+   
 
         
     }

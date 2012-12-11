@@ -42,6 +42,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMãhóađơnnhập = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ColNgàynhập = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTênnhàcungcấp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMãnhàcungcấp = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTiềnphảitrả = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -190,6 +191,7 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMãhóađơnnhập,
+            this.ColNgàynhập,
             this.colTênnhàcungcấp,
             this.colMãnhàcungcấp,
             this.colTiềnphảitrả,
@@ -205,7 +207,8 @@
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTênnhàcungcấp, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTênnhàcungcấp, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.ColNgàynhập, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
@@ -216,19 +219,24 @@
             this.colMãhóađơnnhập.Visible = true;
             this.colMãhóađơnnhập.VisibleIndex = 0;
             // 
+            // ColNgàynhập
+            // 
+            this.ColNgàynhập.FieldName = "Ngày nhập";
+            this.ColNgàynhập.Name = "ColNgàynhập";
+            this.ColNgàynhập.Visible = true;
+            this.ColNgàynhập.VisibleIndex = 1;
+            // 
             // colTênnhàcungcấp
             // 
             this.colTênnhàcungcấp.FieldName = "Tên nhà cung cấp";
             this.colTênnhàcungcấp.Name = "colTênnhàcungcấp";
-            this.colTênnhàcungcấp.Visible = true;
-            this.colTênnhàcungcấp.VisibleIndex = 1;
             // 
             // colMãnhàcungcấp
             // 
             this.colMãnhàcungcấp.FieldName = "Mã nhà cung cấp";
             this.colMãnhàcungcấp.Name = "colMãnhàcungcấp";
             this.colMãnhàcungcấp.Visible = true;
-            this.colMãnhàcungcấp.VisibleIndex = 1;
+            this.colMãnhàcungcấp.VisibleIndex = 2;
             // 
             // colTiềnphảitrả
             // 
@@ -239,7 +247,7 @@
             this.colTiềnphảitrả.SummaryItem.DisplayFormat = "Tổng tiền chi:{0:0,0 vnđ}";
             this.colTiềnphảitrả.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colTiềnphảitrả.Visible = true;
-            this.colTiềnphảitrả.VisibleIndex = 2;
+            this.colTiềnphảitrả.VisibleIndex = 3;
             // 
             // colTiềnđãtrả
             // 
@@ -250,7 +258,7 @@
             this.colTiềnđãtrả.SummaryItem.DisplayFormat = "Tiền đã chi:{0:0,0 vnđ}";
             this.colTiềnđãtrả.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colTiềnđãtrả.Visible = true;
-            this.colTiềnđãtrả.VisibleIndex = 3;
+            this.colTiềnđãtrả.VisibleIndex = 4;
             // 
             // colCònlại
             // 
@@ -262,7 +270,7 @@
             this.colCònlại.SummaryItem.DisplayFormat = "Tổng tiền Còn nợ:{0:0,0 vnđ}";
             this.colCònlại.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colCònlại.Visible = true;
-            this.colCònlại.VisibleIndex = 4;
+            this.colCònlại.VisibleIndex = 5;
             // 
             // barManager1
             // 
@@ -572,5 +580,6 @@
         private DevExpress.XtraNavBar.NavBarItem linkcongno;
         private DevExpress.XtraNavBar.NavBarItem linkphieuchi;
         private DevExpress.XtraNavBar.NavBarItem linkTheoTuan;
+        private DevExpress.XtraGrid.Columns.GridColumn ColNgàynhập;
     }
 }

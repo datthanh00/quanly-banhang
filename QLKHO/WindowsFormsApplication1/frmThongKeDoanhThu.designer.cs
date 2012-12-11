@@ -162,9 +162,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 460);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 459);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -182,7 +182,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(194, 460);
+            this.navBarControl1.Size = new System.Drawing.Size(194, 459);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
@@ -257,7 +257,7 @@
             this.xtraTabPage5.Controls.Add(this.panelControl9);
             this.xtraTabPage5.Controls.Add(this.panelControl10);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 459);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 458);
             this.xtraTabPage5.Text = "Doanh Thu Theo Khu Vực";
             // 
             // panelControl9
@@ -266,7 +266,7 @@
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl9.Location = new System.Drawing.Point(0, 39);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(1005, 420);
+            this.panelControl9.Size = new System.Drawing.Size(1005, 419);
             this.panelControl9.TabIndex = 7;
             // 
             // gridControl6
@@ -275,10 +275,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl6.Location = new System.Drawing.Point(3, 3);
+            this.gridControl6.Location = new System.Drawing.Point(2, 2);
             this.gridControl6.MainView = this.gridView1;
             this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(999, 414);
+            this.gridControl6.Size = new System.Drawing.Size(1001, 415);
             this.gridControl6.TabIndex = 1;
             this.gridControl6.UseEmbeddedNavigator = true;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -304,6 +304,8 @@
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowChildrenInGroupPanel = true;
             this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colNgayXuat, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // colNgayXuat
             // 

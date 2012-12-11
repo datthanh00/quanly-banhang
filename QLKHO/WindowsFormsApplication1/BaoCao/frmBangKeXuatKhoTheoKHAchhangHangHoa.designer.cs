@@ -482,7 +482,8 @@
             this.gridView4.OptionsView.ShowAutoFilterRow = true;
             this.gridView4.OptionsView.ShowFooter = true;
             this.gridView4.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn16, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn16, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn25, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // coltenkh1
             // 
@@ -693,7 +694,8 @@
             this.gridView5.OptionsView.ShowAutoFilterRow = true;
             this.gridView5.OptionsView.ShowFooter = true;
             this.gridView5.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colnhomhang5, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colnhomhang5, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colngay5, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // colnhomhang5
             // 
@@ -888,7 +890,7 @@
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.COLMAHDX, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colngayxuat, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colngayxuat, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // colkhachang
             // 
@@ -1089,7 +1091,8 @@
             this.gridView2.OptionsView.ShowFooter = true;
             this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn41, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn41, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colngayxuathoadon, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // gridColumn1
             // 
@@ -1328,7 +1331,8 @@
             this.gridView3.OptionsView.ShowAutoFilterRow = true;
             this.gridView3.OptionsView.ShowFooter = true;
             this.gridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colkho, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colkho, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colNgay, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // gridColumn12
             // 
