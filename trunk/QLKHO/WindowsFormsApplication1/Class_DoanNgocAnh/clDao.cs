@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 
@@ -17,14 +15,6 @@ namespace WindowsFormsApplication1
             return executeNonQuerya("KIEMTRA_USER", sqlpa);
         }
 
-        public void inSertHoaDonXuat(clDTO dto)
-        {
-            //List<SqlParameter> sqlpa = new List<SqlParameter>();
-           
-            //sqlpa.Add(new SqlParameter("@ghichu", dto.MANHOMHANG));
-            //sqlpa.Add(new SqlParameter("@tinhtrang", dto.TENNHOMHANG));
-            //ChayProc("NHOMHANG_add", sqlpa);
-        }
         public void addMatHang(clDTO dto)
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
@@ -145,14 +135,12 @@ namespace WindowsFormsApplication1
         public DataTable getNhomHang()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("NHOMHANG_getall", sqlpa);
             
         }//-----------------Get day du mat hang
            public DataTable getDayDuMatHang()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("MatHang_DayDu", sqlpa);
            
         }
@@ -160,20 +148,17 @@ namespace WindowsFormsApplication1
         public DataTable getDatabase()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("sp_databases", sqlpa);
         }//------------------Get all Kho-------------------
         public DataTable getKho()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("KHO_getall", sqlpa);
         }
         //------------------------TON KHO
         public DataTable getTonKho(clDTO dto)
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             sqlpa.Add(new SqlParameter("@MAKHO", dto.MAKHO));
             sqlpa.Add(new SqlParameter("@NGAYTHANGTU", dto.NGAYBDKHO));
             sqlpa.Add(new SqlParameter("@NGAYTHANGDEN", dto.NGAYKTKHO));
@@ -199,7 +184,6 @@ namespace WindowsFormsApplication1
             List<SqlParameter> sqlpa = new List<SqlParameter>();
             sqlpa.Add(new SqlParameter("@USERNAME", dto.TENDANGNHAP));
             sqlpa.Add(new SqlParameter("@PASSWORD", dto.MATKHAU));
-            DataTable tb = new DataTable();
             return executeNonQuerya("TEST_NHANVIEN", sqlpa);
         }
 

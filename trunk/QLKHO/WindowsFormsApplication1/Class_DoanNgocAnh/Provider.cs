@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
@@ -15,9 +13,6 @@ namespace WindowsFormsApplication1
         SqlDataAdapter da;
         SqlCommand cmd;
         DataSet ds;
-
-       
-       
 
         public void thu(String sql, List<SqlParameter> sqlParams)
         {
@@ -41,7 +36,6 @@ namespace WindowsFormsApplication1
             {
                 connect();
                 {
-                   // try
                     {
 
                         SqlCommand command = con.CreateCommand();
@@ -59,18 +53,6 @@ namespace WindowsFormsApplication1
                         adapter.SelectCommand = command;
                         adapter.Fill(dt);
                     }
-
-                    //catch (Exception ex)
-                    //{
-                    //    DevComponents.DotNetBar.MessageBoxEx.Show("Không tìm thấy dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //    frmCauHinhHeThong frm = new frmCauHinhHeThong();
-                    //    frm.ShowDialog();
-                       
-                    //}
-                    //finally
-                    //{
-                    //    con.Close();
-                    //}
                 }
             }
             catch (Exception ex)
@@ -111,26 +93,14 @@ namespace WindowsFormsApplication1
         public static string sUser;
         public static SqlConnection get_Connect()
         {
-        //tt:
-            //try
+            if (File.Exists("App.config"))
             {
-                if (File.Exists("App.config"))
-                {
-                    Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
-                    strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
-                }
-                SqlConnection cn = new SqlConnection(strConnect);
-                cn.Open();
-               return cn;
+                Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
+                strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
             }
-            //catch(Exception)
-            //{
-            //    DevComponents.DotNetBar.MessageBoxEx.Show("Không tìm thấy server", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    //frmCauHinhHeThong frm = new frmCauHinhHeThong();
-            //    //frm.ShowDialog();
-            //   //goto ;
-                
-            //} 
+            SqlConnection cn = new SqlConnection(strConnect);
+            cn.Open();
+            return cn;
         }
 
         public static SqlConnection connect1()

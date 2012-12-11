@@ -57,7 +57,7 @@ namespace WindowsFormsApplication1
         DataTable layno = new DataTable();
         DTO dtoNCC = new DTO();
         CTL ctlNCC = new CTL();
-        tudienma connect = new tudienma();
+        ketnoi connect = new ketnoi();
         DataView dtvNCC;
         DataView dtvNhanVien;
         DataView dtvMH;

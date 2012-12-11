@@ -1,46 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
     class ketnoi:Provider
     {
-        
-        //public SqlConnection sqlcondatabase(SqlConnection sqlKetNoi)
-        //{
-
         SqlConnection sqlKetNoi = get_Connect();
-          
-        //    return sqlKetNoi;
-        //}
-        //-----------------------//
+        SqlCommand sqlcmdLenhThucThi;
+        SqlDataReader sqldatareader;
         int Maxa = 1;
-
-
-
-
-
-
-
-
 
         public string sTuDongDienMapc(string sMaPC)
         {
             int iMaxSoSanh = 1;
-           // sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MAPC from PHIEUCHI", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MAPC from PHIEUCHI", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaPC = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaPC.ToString().Trim().Substring(2, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -49,10 +28,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -83,17 +59,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMapt(string sMaPT)
         {
             int iMaxSoSanh = 1;
-           // sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MAPT from PHIEUTHU", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MAPT from PHIEUTHU", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaPT = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaPT.ToString().Trim().Substring(2, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -102,10 +74,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -134,27 +103,16 @@ namespace WindowsFormsApplication1
             sqlKetNoi.Close();
         }
 
-
-
-
-
-
         public string sTuDongDienMaKH(string sMaKH)
         {
             int iMaxSoSanh = 1;
-            //sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG",sqlKetNoi);
-            
-            //sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG",sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
-                     sMaKH = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
+                    sMaKH = sqldatareader.GetValue(0).ToString().Trim();
                     int iLaySoDuoi = int.Parse(sMaKH.ToString().Trim().Substring(2, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -163,10 +121,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -199,19 +154,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaKho(string sMaKHO)
         {
             int iMaxSoSanh = 1;
-            //sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MAKHO from KHO", sqlKetNoi);
-
-            //sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MAKHO from KHO", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaKHO = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaKHO.ToString().Trim().Substring(5, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -220,10 +169,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -255,19 +201,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaDVT(string sMaDVT)
         {
             int iMaxSoSanh = 1;
-            //sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MADVT from DONVITINH", sqlKetNoi);
-
-            //sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MADVT from DONVITINH", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaDVT = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaDVT.ToString().Trim().Substring(3, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -276,10 +216,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -311,19 +248,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaMH(string sMaDVT)
         {
             int iMaxSoSanh = 1;
-            //sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MAMH from MATHANG", sqlKetNoi);
-
-            //sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MAMH from MATHANG", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaDVT = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaDVT.ToString().Trim().Substring(2, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -332,10 +263,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -367,19 +295,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaThue(string sMaDVT)
         {
             int iMaxSoSanh = 1;
-            //sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MATH from THUE", sqlKetNoi);
-
-            //sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MATH from THUE", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaDVT = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaDVT.ToString().Trim().Substring(2, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -388,10 +310,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -424,19 +343,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaKV(string sMaKHO)
         {
             int iMaxSoSanh = 1;
-            //sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MAKV from KHUVUC", sqlKetNoi);
-
-            //sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MAKV from KHUVUC", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaKHO = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaKHO.ToString().Trim().Substring(4, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -445,10 +358,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -483,19 +393,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaNV(string sMaNV)
         {
             int iMaxSoSanh = 1;
-            //sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MANV from NHANVIEN", sqlKetNoi);
-
-            //sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MANV from NHANVIEN", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaNV = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaNV.ToString().Trim().Substring(4, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -504,10 +408,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -539,19 +440,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaQL(string sMaNV)
         {
             int iMaxSoSanh = 1;
-            //sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MAQL from QUANLY", sqlKetNoi);
-
-            //sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MAQL from QUANLY", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaNV = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaNV.ToString().Trim().Substring(4, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -560,10 +455,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -596,19 +488,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaBP(string sMaBP)
         {
             int iMaxSoSanh = 1;
-            //sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MABP from BOPHAN", sqlKetNoi);
-
-            //sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MABP from BOPHAN", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaBP = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaBP.ToString().Trim().Substring(4, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -617,10 +503,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -654,19 +537,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaNhomHang(string sMaNH)
         {
             int iMaxSoSanh = 1;
-            //sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MANH from NHOMHANG", sqlKetNoi);
-
-            //sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MANH from NHOMHANG", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaNH = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaNH.ToString().Trim().Substring(2, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -675,10 +552,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -711,19 +585,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaNCC(string sMaKHO)
         {
             int iMaxSoSanh = 1;
-            //sqlKetNoi.Open();
-            SqlCommand sqlcmdLenhThucThi = new SqlCommand("Select MANCC from NHACUNGCAP", sqlKetNoi);
-
-            //sqlcmdLenhThucThi = new SqlCommand("Select MAKH from KHACHHANG", sqlKetNoi);
-            SqlDataReader sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            sqlcmdLenhThucThi = new SqlCommand("Select MANCC from NHACUNGCAP", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
             while (sqldatareader.Read())
             {
                 for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
                 {
                     sMaKHO = sqldatareader.GetValue(0).ToString().Trim();
-
-
-
                     int iLaySoDuoi = int.Parse(sMaKHO.ToString().Trim().Substring(5, 5));
                     if (iMaxSoSanh == iLaySoDuoi)
                     {
@@ -732,10 +600,7 @@ namespace WindowsFormsApplication1
                     if (iMaxSoSanh != iLaySoDuoi)
                     {
                         Maxa = iMaxSoSanh;
-
                     }
-
-
                 }
             }
             sqldatareader.Close();
@@ -763,10 +628,102 @@ namespace WindowsFormsApplication1
             return sMaKHO;
             sqlKetNoi.Close();
         }
-        ///
-        //internal string matudong(string p, SqlCommand sqlCmd, SqlConnection sqlCon)
-        //{
-        //    throw new NotImplementedException();
-        //}
+
+        public string sTuDongDienMaHoaDonXuat(string sMahdx)
+        {
+            int iMaxSoSanh = 1;
+            sqlcmdLenhThucThi = new SqlCommand("Select MAHDX from HOADONXUAT", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            while (sqldatareader.Read())
+            {
+                for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
+                {
+                    sMahdx = sqldatareader.GetValue(0).ToString().Trim();
+                    int iLaySoDuoi = int.Parse(sMahdx.ToString().Trim().Substring(5, 5));
+                    if (iMaxSoSanh == iLaySoDuoi)
+                    {
+                        iMaxSoSanh++;
+                    }
+                    if (iMaxSoSanh != iLaySoDuoi)
+                    {
+                        Maxa = iMaxSoSanh;
+
+                    }
+
+
+                }
+            }
+            sqldatareader.Close();
+
+            if (Maxa < 10)
+            {
+                sMahdx = string.Concat("MAHDX", "0000", Maxa);
+            }
+            if (Maxa >= 10)
+            {
+                sMahdx = string.Concat("MAHDX", "000", Maxa);
+            }
+            if (Maxa >= 100)
+            {
+                sMahdx = string.Concat("MAHDX", "00", Maxa);
+            }
+            if (Maxa >= 1000)
+            {
+                sMahdx = string.Concat("MAHDX", "0", Maxa);
+            }
+            if (Maxa >= 10000)
+            {
+                sMahdx = string.Concat("MAHDX", Maxa);
+            }
+            return sMahdx;
+            sqlKetNoi.Close();
+        }
+
+        public string sTuDongDienMaHoaDonNhap(string sMahdn)
+        {
+            int iMaxSoSanh = 1;
+            sqlcmdLenhThucThi = new SqlCommand("Select MAHDN from HOADONNHAP", sqlKetNoi);
+            sqldatareader = sqlcmdLenhThucThi.ExecuteReader();
+            while (sqldatareader.Read())
+            {
+                for (int ii = 0; ii < sqldatareader.GetValue(0).ToString().Length; ii++)
+                {
+                    sMahdn = sqldatareader.GetValue(0).ToString().Trim();
+                    int iLaySoDuoi = int.Parse(sMahdn.ToString().Trim().Substring(5, 5));
+                    if (iMaxSoSanh == iLaySoDuoi)
+                    {
+                        iMaxSoSanh++;
+                    }
+                    if (iMaxSoSanh != iLaySoDuoi)
+                    {
+                        Maxa = iMaxSoSanh;
+                    }
+                }
+            }
+            sqldatareader.Close();
+
+            if (Maxa < 10)
+            {
+                sMahdn = string.Concat("MAHDN", "0000", Maxa);
+            }
+            if (Maxa >= 10)
+            {
+                sMahdn = string.Concat("MAHDN", "000", Maxa);
+            }
+            if (Maxa >= 100)
+            {
+                sMahdn = string.Concat("MAHDN", "00", Maxa);
+            }
+            if (Maxa >= 1000)
+            {
+                sMahdn = string.Concat("MAHDN", "0", Maxa);
+            }
+            if (Maxa >= 10000)
+            {
+                sMahdn = string.Concat("MAHDN", Maxa);
+            }
+            return sMahdn;
+            sqlKetNoi.Close();
+        }
     }
 }

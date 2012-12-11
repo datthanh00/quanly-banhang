@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+
 using System.Data;
 using System.Data.SqlClient;
 
@@ -389,20 +388,15 @@ namespace WindowsFormsApplication1
         }
        
         
-
-        //KHO_add
-        //SqlConnection cn = new SqlConnection();
        
         public DataTable GETKV()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("KHUVUC_getall", sqlpa);
         }
         public DataTable GETDVT()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("DONVITINH_getall", sqlpa);
         }
         public DataTable GETMATHANG(string MAMH)
@@ -413,25 +407,21 @@ namespace WindowsFormsApplication1
         public DataTable GETMATHANG()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("MATHANG_getall", sqlpa);
         }
         public DataTable GETTHUE()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("THUE_getall", sqlpa);
         }
         public DataTable GETNHANVIEN()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("NHANVIEN_getall", sqlpa);
         }
         public DataTable GETQUANLY()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("QUANLY_getall", sqlpa);
         }
         public void deleteDVT(DTO dto)
@@ -440,34 +430,20 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new SqlParameter("@MANCC", dto.MANCC));
             ChayProc("DONVITINH_delete", sqlpa);
         }
-        //public void deleteDVT(DTO DTO)
-        //{
-        //    using (SqlConnection cn = Dataprovider.get_Connect())
-        //    {
-        //        SqlCommand cmd = new SqlCommand("DONVITINH_delete", cn);
-        //        cmd.CommandType = CommandType.StoredProcedure;
 
-        //        cmd.Parameters.AddWithValue("@MADVT", DTO.MADVT);
-        //        cmd.ExecuteNonQuery();
-        //        cn.Close();
-        //    }
-        //}
         public DataTable GETBP()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("BOPHAN_getall", sqlpa);
         }
         public DataTable GETNHOMHANG()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("NHOMHANG_getall", sqlpa);
         }
         public DataTable GETDANHSACHKH()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("KHACHHANG_getall", sqlpa);
         }
         public DataTable GETDANHSACHKH(string MAKH)
@@ -480,22 +456,17 @@ namespace WindowsFormsApplication1
         public DataTable GETDANHSACHKH1()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("KHACHHANG_getall", sqlpa);
         }
         public DataTable GETDANHSACHNCC()
         {
-          
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("NHACUNGCAP_getall", sqlpa);
-           
         }
          public DataTable GETDANHSACHNCC(string MANCC)
         {
             string SQL="SELECT * FROM NHACUNGCAP WHERE MANCC='"+MANCC+"'";
             return GET_DATA(SQL);
-            
         }
 
          public string GETMANCCfromMHDN(string MAHDN)
@@ -516,18 +487,15 @@ namespace WindowsFormsApplication1
              if (dt.Rows.Count > 0)
                  return dt.Rows[0]["MAKH"].ToString();
              return "";
-
          }
         public DataTable GETKHO()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("KHO_getall", sqlpa);
         }
         public DataTable GETMH()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("MATHANG_getall", sqlpa);
         }
         public DataTable GETMMH()
@@ -544,12 +512,11 @@ namespace WindowsFormsApplication1
         {
             return getdata(SQL);
         }
-  
 
         public DataTable GETTINHTRANG()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
+
             return executeNonQuerya("KHACHHANG_getall", sqlpa);
         }
         public void INSERTHOADONNHAP(DTO dto)
@@ -580,35 +547,22 @@ namespace WindowsFormsApplication1
         {
             string SQL = "SELECT MAHDN FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "'";
             DataTable DT = getdata(SQL);
-
             return DT.Rows.Count;
         }
         public int maxrowCTHOADONXUAT(string MAHDX)
         {
             string SQL = "SELECT MAHDX FROM CHITIETHDX WHERE MAHDX='" + MAHDX + "'";
             DataTable DT = getdata(SQL);
-
             return DT.Rows.Count;
         }
         public void UPDATEHOADONNHAP(DTO dto)
         {
             string SQL = "update HOADONNHAP set MANCC='" + dto.MANCC + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= '" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
-
             executeNonQuery(SQL);
         }
 
         public void INSERTCTHOADONNHAP(DTO dto)
         {
-           /* List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@ID", dto.MAHDN));
-            sqlpa.Add(new SqlParameter("@MAHDN", dto.MAHDN));
-            sqlpa.Add(new SqlParameter("@MAMH", dto.MAMH));
-            sqlpa.Add(new SqlParameter("@SOLUONGNHAP", dto.SOLUONGNHAP));
-            sqlpa.Add(new SqlParameter("@GIANHAP", dto.GIANHAP));
-            sqlpa.Add(new SqlParameter("@TINHTRANG", dto.TINHTRANG));
-
-            ChayProc("CHITIETHDN_add", sqlpa);
-            */
             string SQL = "INSERT INTO CHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,GIANHAP,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.GIANHAP + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
@@ -616,7 +570,6 @@ namespace WindowsFormsApplication1
         {
             string SQL = "SELECT MAHDN FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "' AND ID=" + ID.ToString();
             DataTable DT= getdata(SQL);
-
             int count = DT.Rows.Count;
             if(count>0)
                 return false;
@@ -625,19 +578,17 @@ namespace WindowsFormsApplication1
         public void UPDATECTHOADONNHAP(DTO dto)
         {
             string SQL = "update CHITIETHDN set MAMH='" + dto.MAMH + "', SOLUONGNHAP=" + dto.SOLUONGNHAP + " ,GIANHAP=" + dto.GIANHAP + ", TINHTRANG= 1 where (MAHDN='" + dto.MAHDN + "' AND ID=" + dto.ID + ")";
-
             executeNonQuery(SQL);
         }
         public void DELETECTHOADONNHAP(string MAHDN, int ID)
         {
             string SQL = "DELETE FROM CHITIETHDN where MAHDN='" + MAHDN + "' AND ID="+ID.ToString();
-                       executeNonQuery(SQL);
+            executeNonQuery(SQL);
         }
 
         public DataTable GETCTHOADONNHAP()
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             return executeNonQuerya("CHITIETHDN_getall", sqlpa);
         }
 
@@ -654,14 +605,12 @@ namespace WindowsFormsApplication1
         public DataTable GETHOADONNHAP(DTO dto)
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             sqlpa.Add(new SqlParameter("@NGAYNHAP", dto.NGAYNHAP));
             return executeNonQuerya("HOADONNHAP_get", sqlpa);
         }
         public DataTable LAYTIENNO(DTO dto)
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             sqlpa.Add(new SqlParameter("@MANCC", dto.MANCC));
             return executeNonQuerya("LAYTIENNO", sqlpa);
         }
@@ -676,14 +625,12 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new SqlParameter("@TIENDATRA", dto.TIENDATRA));
             sqlpa.Add(new SqlParameter("@GHICHU", dto.GHICHU));
             sqlpa.Add(new SqlParameter("@TINHTRANG", dto.TINHTRANG));
-
             ChayProc("HOADONXUAT_add", sqlpa);
         }
         public bool isINSERTHOADONXUAT(string MAHDX)
         {
             string SQL = "SELECT MAHDX FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "'";
             DataTable DT = getdata(SQL);
-
             int count = DT.Rows.Count;
             if (count > 0)
                 return false;
@@ -692,19 +639,10 @@ namespace WindowsFormsApplication1
         public void UPDATEHOADONXUAT(DTO dto)
         {
             string SQL = "update HOADONXUAT set MAKH='" + dto.MAKH + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= '" + dto.GHICHU + "' where (MAHDX='" + dto.MAHDX + "' )";
-
             executeNonQuery(SQL);
         }
         public void INSERTCTHOADONXUAT(DTO dto)
         {
-            /*List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MAHDX", dto.MAHDX));
-            sqlpa.Add(new SqlParameter("@MAMH", dto.MAMH));
-            sqlpa.Add(new SqlParameter("@SOLUONGXUAT", dto.SOLUONGXUAT));
-            sqlpa.Add(new SqlParameter("@GIATIEN", dto.GIATIEN));
-            sqlpa.Add(new SqlParameter("@TINHTRANG", dto.TINHTRANG));
-            ChayProc("CHITIETHDX_add", sqlpa);
-            */
             string SQL = "INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,SOLUONGXUAT,GIATIEN,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "'," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
@@ -712,7 +650,6 @@ namespace WindowsFormsApplication1
         {
             string SQL = "SELECT MAHDX FROM CHITIETHDX WHERE MAHDX='" + MAHDX + "' AND ID=" +ID.ToString();
             DataTable DT = getdata(SQL);
-
             int count = DT.Rows.Count;
             if (count > 0)
                 return false;
@@ -721,7 +658,6 @@ namespace WindowsFormsApplication1
         public void UPDATECTHOADONXUAT(DTO dto)
         {
             string SQL = "update CHITIETHDX set MAMH='" + dto.MAMH + "',SOLUONGXUAT=" + dto.SOLUONGXUAT + " ,GIATIEN=" + dto.GIATIEN + ", TINHTRANG= 1 where (MAHDX='" + dto.MAHDX + "' AND ID=" + dto.ID.ToString() + ")";
-
             executeNonQuery(SQL);
         }
         public void DELETECTHOADONXUAT(string MAHDX, int ID)
@@ -732,7 +668,6 @@ namespace WindowsFormsApplication1
         public DataTable GETHOADONXUAT(DTO dto)
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
-            DataTable tb = new DataTable();
             sqlpa.Add(new SqlParameter("@NGAYXUAT", dto.NGAYXUAT));
             return executeNonQuerya("HOADONXUAT_get", sqlpa);
         }
