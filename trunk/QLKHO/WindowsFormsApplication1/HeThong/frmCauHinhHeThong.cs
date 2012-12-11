@@ -287,10 +287,7 @@ namespace WindowsFormsApplication1
                 }
                 try
                 {
-                    //using (SqlConnection cn = Provider.get_Connect())
-                    //{
-                    //    cn.Close();
-                    //}
+                 
                 }
                 catch
                 {

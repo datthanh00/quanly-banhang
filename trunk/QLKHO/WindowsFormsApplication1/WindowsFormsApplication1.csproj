@@ -182,6 +182,7 @@
     <Compile Include="BaoCao\thongketonghop.Designer.cs">
       <DependentUpon>thongketonghop.cs</DependentUpon>
     </Compile>
+    <Compile Include="class\Class_mysqlchange.cs" />
     <Compile Include="class_ManhCuong\HoaDon.cs" />
     <Compile Include="CongNo\frmCongNoKH.cs">
       <SubType>Form</SubType>

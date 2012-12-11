@@ -19,9 +19,6 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
         ketnoi connect = new ketnoi();
-        Provider pv = new Provider();
-        SqlCommand sqlCmd;
-        SqlConnection sqlCon;
         DataTable dt = new DataTable();
         public int iNgonNgu;
         public string Nhan;

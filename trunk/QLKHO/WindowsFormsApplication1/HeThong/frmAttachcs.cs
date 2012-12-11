@@ -15,6 +15,7 @@ namespace WindowsFormsApplication1
 {
     public partial class frmAttachcs : DevExpress.XtraEditors.XtraForm
     {
+       
         public frmAttachcs()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace WindowsFormsApplication1
         Thread regularThread1;
         private void VLoad2()
         {
-
+            Mysqlchange MSQL = new Mysqlchange();
             FileStream fs = new FileStream("log.txt", FileMode.Open, FileAccess.Write);
             StreamWriter wr = new StreamWriter(fs);
             wr.WriteLine("Database duoc tao luc : " + DateTime.Now.ToString());
@@ -31,9 +32,9 @@ namespace WindowsFormsApplication1
         tt:
             try
             {
-                using (SqlConnection cn = Provider.get_Connect()) 
+                using (MSQL.SQLConnection1 = Provider.get_Connect()) 
                 {
-                    cn.Close();
+                    MSQL.SQLConnection1.Close();
                 }
             }
             catch
