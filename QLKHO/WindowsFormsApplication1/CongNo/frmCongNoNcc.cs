@@ -40,9 +40,6 @@ namespace WindowsFormsApplication1
             dt = Ctrl_Tien.Getall_phieuchi_Dao();
             gridControl2.DataSource = dt;
         }
-
-
-
         public void loadctncc()
         {
             dt = Ctrl_Tien.get1pthdn_ctrl(sMahdn);
@@ -100,8 +97,6 @@ namespace WindowsFormsApplication1
                     sTienno = dtr[5].ToString();
                     loadfrm_tratien();
                 }
-            
-           
         }
 
         

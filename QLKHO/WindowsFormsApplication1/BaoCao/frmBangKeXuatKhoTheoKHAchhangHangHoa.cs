@@ -46,14 +46,15 @@ namespace WindowsFormsApplication1
 
             if (iNgonNgu == 0)
             {
-                loadReSEG();
-                loadcbEgLish();
+             
+                loadReSVN();
+                loadcbVietNam();
 
             }
             else
             {
-                loadReSVN();
-                loadcbVietNam();
+                loadReSEG();
+                loadcbEgLish();
 
             }
 
