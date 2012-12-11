@@ -7,6 +7,14 @@ namespace WindowsFormsApplication1
 {
     class DTO
     {
+        private int _ID;
+
+        public int ID
+        {
+            get { return _ID; }
+            set { _ID = value; }
+        }
+
         private string _MAKH;
 
         public string MAKH

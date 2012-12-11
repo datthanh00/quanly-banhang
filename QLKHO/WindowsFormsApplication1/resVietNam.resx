@@ -124,10 +124,10 @@
     <value>Bộ phận</value>
   </data>
   <data name="btCongNoKH" xml:space="preserve">
-    <value>Khách hàng</value>
+    <value>Thu Tiền</value>
   </data>
   <data name="btCongNoNCC" xml:space="preserve">
-    <value>Nhà cung cấp</value>
+    <value>Trả Tiền</value>
   </data>
   <data name="btDangXuat" xml:space="preserve">
     <value>Đăng xuất</value>
@@ -136,7 +136,7 @@
     <value>Danh sách nhân viên</value>
   </data>
   <data name="btDoanhThu" xml:space="preserve">
-    <value>Danh thu</value>
+    <value>Doanh thu</value>
   </data>
   <data name="btDoiMatKhau" xml:space="preserve">
     <value>Đổi mật khẩu</value>
@@ -169,7 +169,7 @@
     <value>Liên hệ</value>
   </data>
   <data name="btMatHang" xml:space="preserve">
-    <value>Hàng hoá</value>
+    <value>Tồn Kho</value>
   </data>
   <data name="btNhaCungCap" xml:space="preserve">
     <value>Nhà cung cấp</value>
@@ -439,10 +439,10 @@
     <value>Danh sách nhân viên</value>
   </data>
   <data name="btDoanhThu1" xml:space="preserve">
-    <value>Danh thu</value>
+    <value>Doanh thu</value>
   </data>
   <data name="btDoanhThu11" xml:space="preserve">
-    <value>Danh thu</value>
+    <value>Doanh thu</value>
   </data>
   <data name="btDoiMatKhau1" xml:space="preserve">
     <value>Đổi mật khẩu</value>

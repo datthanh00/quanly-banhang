@@ -205,7 +205,7 @@
             this.repositoryItemComboBox2,
             this.repositoryItemComboBox3});
             this.ribbon.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ribbon.SelectedPage = this.ribTroGiup;
+            this.ribbon.SelectedPage = this.ribChucNang;
             this.ribbon.Size = new System.Drawing.Size(967, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ItemLinks.Add(this.barSubItem1);
@@ -303,7 +303,7 @@
             // 
             // btCongNoNCC
             // 
-            this.btCongNoNCC.Caption = "Nhà Cung Cấp";
+            this.btCongNoNCC.Caption = "Trả Tiền";
             this.btCongNoNCC.Id = 20;
             this.btCongNoNCC.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.cno;
             this.btCongNoNCC.LargeWidth = 80;
@@ -312,7 +312,7 @@
             // 
             // btCongNoKH
             // 
-            this.btCongNoKH.Caption = "Khách Hàng";
+            this.btCongNoKH.Caption = "Thu Tiền";
             this.btCongNoKH.Id = 21;
             this.btCongNoKH.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.cno;
             this.btCongNoKH.LargeWidth = 70;
@@ -509,10 +509,10 @@
             // 
             // btTonKho
             // 
-            this.btTonKho.Caption = "TonKho";
+            this.btTonKho.Caption = "Tổng Hợp Tồn";
             this.btTonKho.Id = 82;
             this.btTonKho.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.tonkho;
-            this.btTonKho.LargeWidth = 70;
+            this.btTonKho.LargeWidth = 80;
             this.btTonKho.Name = "btTonKho";
             this.btTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btTonKho_ItemClick);
             // 
@@ -600,7 +600,7 @@
             // 
             // btmathangthongkhe
             // 
-            this.btmathangthongkhe.Caption = "Mặt Hàng";
+            this.btmathangthongkhe.Caption = "Tồn Kho";
             this.btmathangthongkhe.Id = 104;
             this.btmathangthongkhe.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
             this.btmathangthongkhe.LargeWidth = 70;
@@ -666,24 +666,24 @@
             // 
             this.ribQLHangHoa.ItemLinks.Add(this.btNhapHang);
             this.ribQLHangHoa.ItemLinks.Add(this.btXuatHang);
+            this.ribQLHangHoa.ItemLinks.Add(this.btmathangthongkhe);
             this.ribQLHangHoa.Name = "ribQLHangHoa";
             this.ribQLHangHoa.ShowCaptionButton = false;
             this.ribQLHangHoa.Text = "Quản Lý Hàng Hóa";
             // 
             // ribQLCongNo
             // 
-            this.ribQLCongNo.ItemLinks.Add(this.btCongNoNCC);
             this.ribQLCongNo.ItemLinks.Add(this.btCongNoKH);
+            this.ribQLCongNo.ItemLinks.Add(this.btCongNoNCC, true);
             this.ribQLCongNo.Name = "ribQLCongNo";
             this.ribQLCongNo.ShowCaptionButton = false;
             this.ribQLCongNo.Text = "Quản Lý Công Nợ";
             // 
             // ribThongKe
             // 
-            this.ribThongKe.ItemLinks.Add(this.btTonKho);
             this.ribThongKe.ItemLinks.Add(this.btTongHop);
             this.ribThongKe.ItemLinks.Add(this.btDoanhThu);
-            this.ribThongKe.ItemLinks.Add(this.btmathangthongkhe);
+            this.ribThongKe.ItemLinks.Add(this.btTonKho);
             this.ribThongKe.Name = "ribThongKe";
             this.ribThongKe.ShowCaptionButton = false;
             this.ribThongKe.Text = "Thống Kê";

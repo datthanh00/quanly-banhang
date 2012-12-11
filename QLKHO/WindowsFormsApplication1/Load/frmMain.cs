@@ -1273,13 +1273,11 @@ namespace WindowsFormsApplication1
             sTieuDe = "";
             if (iNgonNgu == 0)
             {
-                sTieuDe = "Công nợ nhà cung cấp";
-
+                sTieuDe = "Trả Tiền";
             }
             if (iNgonNgu == 1)
             {
                 sTieuDe = "Debt Custommer";
-
             }
             if (!checkOpenTabs(sTieuDe))
             {
@@ -1309,7 +1307,7 @@ namespace WindowsFormsApplication1
             sTieuDe = "";
             if (iNgonNgu == 0)
             {
-                sTieuDe = "Công nợ khách hàng";
+                sTieuDe = "Thu Tiền";
 
             }
             if (iNgonNgu == 1)
