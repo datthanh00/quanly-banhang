@@ -95,7 +95,7 @@ namespace WindowsFormsApplication1
             dt.Columns.Add(new DataColumn("_TenMH"));
             dt.Columns.Add(new DataColumn("_SoLuong"));
             dt.Columns.Add(new DataColumn("_DonGia"));
-            dt.Columns.Add(new DataColumn("_Thue"));
+           // dt.Columns.Add(new DataColumn("_Thue"));
             dt.Columns.Add(new DataColumn("_DVT"));
             dt.Columns.Add(new DataColumn("_Total"));
             gridControl1.DataSource = dt;
@@ -307,33 +307,44 @@ namespace WindowsFormsApplication1
                     if (isINSERTHOADONNHAP)
                     {
                         ctlNCC.INSERTHOADONNHAP(dtoNCC);
+                        //insert hoa don chi tiet
+                        int rowcount = gridCTHOADON.DataRowCount;
+                        for (int i = 0; i < rowcount; i++)
+                        {
+                            DataRow dtr = gridCTHOADON.GetDataRow(i);
+                            insert_HoadonChitiet(txtMaHD.Text,i+1, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
+                        }
+
                     }
                     else
                     {
                         ctlNCC.UPDATEHOADONNHAP(dtoNCC);
-                    }
+                        //update hoa don chi tiet
+                        int rowcount = gridCTHOADON.DataRowCount;
+                        int maxrowCTHOADONNHAP = ctlNCC.maxrowCTHOADONNHAP(txtMaHD.Text);
 
-                    int rowcount = gridCTHOADON.DataRowCount;
-                    for (int i = 0; i < rowcount; i++)
-                    {
-                        DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
-                        insert_HoadonChitiet(txtMaHD.Text, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
+                        for (int i = 0; i < rowcount; i++)
+                        {
+                            DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
+                            if (i < maxrowCTHOADONNHAP)
+                            {
+                                update_HoadonChitiet(txtMaHD.Text, i + 1, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
+                            }
+                            else
+                            {
+                                insert_HoadonChitiet(txtMaHD.Text, i + 1, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
+                            
+                            }
+                        }
+
+                        if (maxrowCTHOADONNHAP > rowcount)
+                        {
+                            for (int i = rowcount; i < maxrowCTHOADONNHAP; i++)
+                            {
+                                ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, i + 1);
+                            }
+                        }
                     }
-                    /*
-                    foreach (Cart cart in hd._Cart)
-                    {
-                        insert_HoadonChitiet(txtMaHD.Text, cart._MaMH, cart._SoLuong, cart._DonGia);
-                    }
-                    
-                    if (hd._Cart.Count > 0)
-                    {
-                        hd._Cart.Clear();
-                    }
-                    loadGiaoDich();
-                    
-                    loadmahdn();
-                    // this.Close();
-                     * */
                     MessageBox.Show("Bạn Đã Thêm Thành Công");
                 }
             }
@@ -344,7 +355,12 @@ namespace WindowsFormsApplication1
             }
 
         }
-        
+
+        private void Update_Delete_Gridview()
+        {
+            dtoNCC.NGAYNHAP = DateTime.Now;
+            gridControl2.DataSource = ctlNCC.GETHOADONNHAP(dtoNCC);
+        }
 
         private void loadGiaoDich()
         {
@@ -400,29 +416,35 @@ namespace WindowsFormsApplication1
             }
             */
         }
-        public void insert_HoadonChitiet(string mahdx, String mamh, int SoLuong, int DonGia)
+        public void insert_HoadonChitiet(string mahdn,int ID, String mamh, int SoLuong, int DonGia)
         {
             try
             {
-                dtoNCC.MAHDN = mahdx;
+                dtoNCC.MAHDN = mahdn;
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGNHAP = SoLuong;
                 dtoNCC.GIANHAP = DonGia;
-              
-                
-               // ctlNCC.INSERTCTHOADONNHAP(dtoNCC);
+                dtoNCC.ID = ID;
 
-                bool isinsert = ctlNCC.ISINSERTCTHOADONXUAT(mahdx, mamh);
-                if (isinsert)
-                {
-                    ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
-                    MessageBox.Show("insert");
-                }
-                else
-                {
-                    ctlNCC.UPDATECTHOADONXUAT(dtoNCC);
-                    MessageBox.Show("update");
-                }
+                ctlNCC.INSERTCTHOADONNHAP(dtoNCC);
+
+            }
+            catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu", "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            finally { }
+        }
+        public void update_HoadonChitiet(string mahdn, int ID, String mamh, int SoLuong, int DonGia)
+        {
+            try
+            {
+                dtoNCC.MAHDN = mahdn;
+                dtoNCC.MAMH = mamh;
+                dtoNCC.SOLUONGNHAP = SoLuong;
+                dtoNCC.GIANHAP = DonGia;
+                dtoNCC.ID = ID;
+
+
+                ctlNCC.UPDATECTHOADONNHAP(dtoNCC);
+          
             }
             catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu", "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
@@ -527,11 +549,14 @@ namespace WindowsFormsApplication1
                 {
                     if (e.Column.FieldName.ToString() == "_TenMH")
                     {
+                        //
+
                         DataTable dtmh = ctlNCC.GETMATHANG(dtr["_TenMH"].ToString());
-                        dtr["_MaMH"] =dtmh.Rows[0]["MAMH"];
+                        string mamh = dtmh.Rows[0]["MAMH"].ToString();
+                        dtr["_MaMH"] = mamh;
                         dtr["_SoLuong"] = "0";
                         dtr["_DonGia"] = dtmh.Rows[0]["GIABAN"];
-                        dtr["_Thue"] = dtmh.Rows[0]["SOTHUE"];
+                        //dtr["_Thue"] = dtmh.Rows[0]["SOTHUE"];
                         dtr["_DVT"] = dtmh.Rows[0]["DONVITINH"];
                         //dtr["_TenMH"] = dtmh.Rows[0]["TENMH"];
                         dtr["_Total"] = "0";
@@ -590,12 +615,11 @@ namespace WindowsFormsApplication1
             {
                 if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    int focusrow=gridCTHOADON.FocusedRowHandle;
                     DataRow dtr = dtr = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
-                    bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
-
-                    if (!isinsert)
-                        ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
-
+                   // bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, focusrow+1);
+                   // if (!isinsert)
+                       // ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, focusrow+1);
                     GridView view = sender as GridView;
                     view.DeleteRow(view.FocusedRowHandle);
                 }
@@ -640,13 +664,14 @@ namespace WindowsFormsApplication1
         {
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                int focusrow = gridCTHOADON.FocusedRowHandle;
                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
                 if (dtr != null)
                 {
-                    bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+                   // bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, focusrow+1);
 
-                    if (!isinsert)
-                        ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, dtr["_MaMH"].ToString());
+                    //if (!isinsert)
+                    //    ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, focusrow+1);
 
                     // GridView view = sender as GridView;
                     // view.DeleteRow(view.FocusedRowHandle);

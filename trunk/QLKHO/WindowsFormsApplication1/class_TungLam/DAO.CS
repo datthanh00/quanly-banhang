@@ -407,7 +407,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETMATHANG(string MAMH)
         {
-            string SQL = "SELECT T3.TENMH,T3.MAMH,T3.SOLUONGMH,T3.GIABAN,T3.MATH,T3.SOTHUE,T3.MADVT, T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MATH,T2.SOTHUE,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH='"+MAMH+"') AS T1 INNER JOIN THUE AS T2 ON T1.MATH =T2.MATH) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT";
+            string SQL = "SELECT T3.TENMH,T3.MAMH,T3.SOLUONGMH,T3.GIABAN,T3.MADVT, T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH='"+MAMH+"') AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT";
             return getdata(SQL);
         }
         public DataTable GETMATHANG()
@@ -576,6 +576,20 @@ namespace WindowsFormsApplication1
                 return false;
             return true;
         }
+        public int maxrowCTHOADONNHAP(string MAHDN)
+        {
+            string SQL = "SELECT MAHDN FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "'";
+            DataTable DT = getdata(SQL);
+
+            return DT.Rows.Count;
+        }
+        public int maxrowCTHOADONXUAT(string MAHDX)
+        {
+            string SQL = "SELECT MAHDX FROM CHITIETHDX WHERE MAHDX='" + MAHDX + "'";
+            DataTable DT = getdata(SQL);
+
+            return DT.Rows.Count;
+        }
         public void UPDATEHOADONNHAP(DTO dto)
         {
             string SQL = "update HOADONNHAP set MANCC='" + dto.MANCC + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= '" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
@@ -585,7 +599,8 @@ namespace WindowsFormsApplication1
 
         public void INSERTCTHOADONNHAP(DTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+           /* List<SqlParameter> sqlpa = new List<SqlParameter>();
+            sqlpa.Add(new SqlParameter("@ID", dto.MAHDN));
             sqlpa.Add(new SqlParameter("@MAHDN", dto.MAHDN));
             sqlpa.Add(new SqlParameter("@MAMH", dto.MAMH));
             sqlpa.Add(new SqlParameter("@SOLUONGNHAP", dto.SOLUONGNHAP));
@@ -593,10 +608,13 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new SqlParameter("@TINHTRANG", dto.TINHTRANG));
 
             ChayProc("CHITIETHDN_add", sqlpa);
+            */
+            string SQL = "INSERT INTO CHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,GIANHAP,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.GIANHAP + ",'" + dto.TINHTRANG + "')";
+            executeNonQuery(SQL);
         }
-        public bool ISINSERTCTHOADONNHAP(string MAHDN, string MAMH)
+        public bool ISINSERTCTHOADONNHAP(string MAHDN, int ID)
         {
-            string SQL = "SELECT MAHDN FROM CHITIETHDN WHERE MAHDN='"+MAHDN+"' AND MAMH='"+MAMH+"'";
+            string SQL = "SELECT MAHDN FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "' AND ID=" + ID.ToString();
             DataTable DT= getdata(SQL);
 
             int count = DT.Rows.Count;
@@ -606,13 +624,13 @@ namespace WindowsFormsApplication1
         }
         public void UPDATECTHOADONNHAP(DTO dto)
         {
-            string SQL = "update CHITIETHDN set SOLUONGNHAP=" + dto.SOLUONGNHAP + " ,GIANHAP=" + dto.GIANHAP + ", TINHTRANG= 1 where (MAHDN='" + dto.MAHDN + "' AND MAMH='" + dto.MAMH + "')";
+            string SQL = "update CHITIETHDN set SOLUONGNHAP=" + dto.SOLUONGNHAP + " ,GIANHAP=" + dto.GIANHAP + ", TINHTRANG= 1 where (MAHDN='" + dto.MAHDN + "' AND ID=" + dto.ID + ")";
 
             executeNonQuery(SQL);
         }
-        public void DELETECTHOADONNHAP(string MAHDN, string MAMH)
+        public void DELETECTHOADONNHAP(string MAHDN, int ID)
         {
-            string SQL = "DELETE FROM CHITIETHDN where MAHDN='" + MAHDN + "' AND MAMH='" + MAMH + "'";
+            string SQL = "DELETE FROM CHITIETHDN where MAHDN='" + MAHDN + "' AND ID="+ID.ToString();
                        executeNonQuery(SQL);
         }
 
@@ -625,12 +643,12 @@ namespace WindowsFormsApplication1
 
         public DataTable GETCTHOADONNHAP(string MAHDN)
         {
-            string SQL = "SELECT T5.MAMH _TenMH,T5.MAMH _MaMH,T6.SOLUONGNHAP _SoLuong,T6.GIANHAP _DonGia,T5.SOTHUE _Thue, T5.DONVITINH _DVT, (T6.SOLUONGNHAP*T6.GIANHAP) _Total FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MATH,T2.SOTHUE,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH IN (SELECT MAMH FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "')) AS T1 INNER JOIN THUE AS T2 ON T1.MATH =T2.MATH) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDN where MAHDN='" + MAHDN + "') T6 ON T6.MAMH =t5.MAMH";
+            string SQL = "SELECT T5.MAMH _TenMH,T5.MAMH _MaMH,T6.SOLUONGNHAP _SoLuong,T6.GIANHAP _DonGia, T5.DONVITINH _DVT, (T6.SOLUONGNHAP*T6.GIANHAP) _Total FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH IN (SELECT MAMH FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "')) AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDN where MAHDN='" + MAHDN + "') T6 ON T6.MAMH =t5.MAMH";
             return getdata(SQL);
         }
         public DataTable GETCTHOADONXUAT(string MAHDX)
         {
-            string SQL = "SELECT T5.MAMH _TenMH,T5.MAMH _MaMH,T6.SOLUONGXUAT _SoLuong,T6.GIATIEN _DonGia,T5.SOTHUE _Thue, T5.DONVITINH _DVT, (T6.SOLUONGXUAT*T6.GIATIEN) _Total FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MATH,T2.SOTHUE,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH IN (SELECT MAMH FROM CHITIETHDX WHERE MAHDX='" + MAHDX + "')) AS T1 INNER JOIN THUE AS T2 ON T1.MATH =T2.MATH) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDX where MAHDX='" + MAHDX + "') T6 ON T6.MAMH =t5.MAMH";
+            string SQL = "SELECT T5.MAMH _TenMH,T5.MAMH _MaMH,T6.SOLUONGXUAT _SoLuong,T6.GIATIEN _DonGia, T5.DONVITINH _DVT, (T6.SOLUONGXUAT*T6.GIATIEN) _Total FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH IN (SELECT MAMH FROM CHITIETHDX WHERE MAHDX='" + MAHDX + "')) AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDX where MAHDX='" + MAHDX + "') T6 ON T6.MAMH =t5.MAMH";
             return getdata(SQL);
         }
         public DataTable GETHOADONNHAP(DTO dto)
@@ -679,18 +697,20 @@ namespace WindowsFormsApplication1
         }
         public void INSERTCTHOADONXUAT(DTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            /*List<SqlParameter> sqlpa = new List<SqlParameter>();
             sqlpa.Add(new SqlParameter("@MAHDX", dto.MAHDX));
             sqlpa.Add(new SqlParameter("@MAMH", dto.MAMH));
             sqlpa.Add(new SqlParameter("@SOLUONGXUAT", dto.SOLUONGXUAT));
             sqlpa.Add(new SqlParameter("@GIATIEN", dto.GIATIEN));
             sqlpa.Add(new SqlParameter("@TINHTRANG", dto.TINHTRANG));
-
             ChayProc("CHITIETHDX_add", sqlpa);
+            */
+            string SQL = "INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,SOLUONGXUAT,GIATIEN,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "'," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "')";
+            executeNonQuery(SQL);
         }
-        public bool ISINSERTCTHOADONXUAT(string MAHDX, string MAMH)
+        public bool ISINSERTCTHOADONXUAT(string MAHDX, int ID)
         {
-            string SQL = "SELECT MAHDX FROM CHITIETHDX WHERE MAHDX='" + MAHDX + "' AND MAMH='" + MAMH + "'";
+            string SQL = "SELECT MAHDX FROM CHITIETHDX WHERE MAHDX='" + MAHDX + "' AND ID=" +ID.ToString();
             DataTable DT = getdata(SQL);
 
             int count = DT.Rows.Count;
@@ -700,13 +720,13 @@ namespace WindowsFormsApplication1
         }
         public void UPDATECTHOADONXUAT(DTO dto)
         {
-            string SQL = "update CHITIETHDX set SOLUONGXUAT=" + dto.SOLUONGXUAT + " ,GIATIEN=" + dto.GIATIEN + ", TINHTRANG= 1 where (MAHDX='" + dto.MAHDX + "' AND MAMH='" + dto.MAMH + "')";
+            string SQL = "update CHITIETHDX set SOLUONGXUAT=" + dto.SOLUONGXUAT + " ,GIATIEN=" + dto.GIATIEN + ", TINHTRANG= 1 where (MAHDX='" + dto.MAHDX + "' AND ID=" + dto.ID.ToString() + ")";
 
             executeNonQuery(SQL);
         }
-        public void DELETECTHOADONXUAT(string MAHDX, string MAMH)
+        public void DELETECTHOADONXUAT(string MAHDX, int ID)
         {
-            string SQL = "DELETE FROM CHITIETHDX where MAHDX='" + MAHDX + "' AND MAMH='" + MAMH + "'";
+            string SQL = "DELETE FROM CHITIETHDX where MAHDX='" + MAHDX + "' AND ID=" + ID.ToString();
             executeNonQuery(SQL);
         }
         public DataTable GETHOADONXUAT(DTO dto)

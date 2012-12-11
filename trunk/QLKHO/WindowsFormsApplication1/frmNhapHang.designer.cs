@@ -120,7 +120,6 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.resTENMATHANG = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -1087,7 +1086,6 @@
             this.gridColumn5,
             this.gridColumn7,
             this.gridColumn8,
-            this.gridColumn9,
             this.gridColumn22,
             this.gridColumn25});
             this.gridCTHOADON.GridControl = this.gridControl1;
@@ -1167,16 +1165,6 @@
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 3;
             // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "Thuế";
-            this.gridColumn9.FieldName = "_Thue";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.OptionsColumn.AllowEdit = false;
-            this.gridColumn9.OptionsColumn.ReadOnly = true;
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 4;
-            // 
             // gridColumn22
             // 
             this.gridColumn22.Caption = "Đơn Vị Tính";
@@ -1185,7 +1173,7 @@
             this.gridColumn22.OptionsColumn.AllowEdit = false;
             this.gridColumn22.OptionsColumn.ReadOnly = true;
             this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 5;
+            this.gridColumn22.VisibleIndex = 4;
             // 
             // gridColumn25
             // 
@@ -1196,7 +1184,7 @@
             this.gridColumn25.OptionsColumn.AllowEdit = false;
             this.gridColumn25.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 6;
+            this.gridColumn25.VisibleIndex = 5;
             // 
             // resTENMATHANG
             // 
@@ -1649,7 +1637,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
         public DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit resTENMATHANG;

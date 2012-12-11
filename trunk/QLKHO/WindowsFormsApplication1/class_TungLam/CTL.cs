@@ -242,6 +242,14 @@ namespace WindowsFormsApplication1
         {
             return  DAO.isINSERTHOADONNHAP(MHDN);
         }
+        public int maxrowCTHOADONNHAP(string MHDN)
+        {
+            return DAO.maxrowCTHOADONNHAP(MHDN);
+        }
+        public int maxrowCTHOADONXUAT(string MHDX)
+        {
+            return DAO.maxrowCTHOADONXUAT(MHDX);
+        }
         public void UPDATEHOADONNHAP(DTO DTO)
         {
             DAO.UPDATEHOADONNHAP(DTO);
@@ -250,17 +258,18 @@ namespace WindowsFormsApplication1
         {
             DAO.INSERTCTHOADONNHAP(DTO);
         }
+        
         public void UPDATECTHOADONNHAP(DTO DTO)
         {
             DAO.UPDATECTHOADONNHAP(DTO);
         }
-        public void DELETECTHOADONNHAP(string MAHDN, string MAMH)
+        public void DELETECTHOADONNHAP(string MAHDN, int ID)
         {
-            DAO.DELETECTHOADONNHAP(MAHDN, MAMH);
+            DAO.DELETECTHOADONNHAP(MAHDN, ID);
         }
-        public bool ISINSERTCTHOADONNHAP(string MAHDN, string MAMH)
+        public bool ISINSERTCTHOADONNHAP(string MAHDN, int ID)
         {
-            return DAO.ISINSERTCTHOADONNHAP(MAHDN, MAMH);
+            return DAO.ISINSERTCTHOADONNHAP(MAHDN, ID);
         }
         
 
@@ -298,17 +307,17 @@ namespace WindowsFormsApplication1
         {
             DAO.INSERTCTHOADONXUAT(DTO);
         }
-        public bool ISINSERTCTHOADONXUAT(string MAHDX, string MAMH)
+        public bool ISINSERTCTHOADONXUAT(string MAHDX, int ID)
         {
-            return DAO.ISINSERTCTHOADONXUAT(MAHDX, MAMH);
+            return DAO.ISINSERTCTHOADONXUAT(MAHDX, ID);
         }
         public void UPDATECTHOADONXUAT(DTO DTO)
         {
             DAO.UPDATECTHOADONXUAT(DTO);
         }
-        public void DELETECTHOADONXUAT(string MAHDN, string MAMH)
+        public void DELETECTHOADONXUAT(string MAHDN, int ID)
         {
-            DAO.DELETECTHOADONXUAT(MAHDN, MAMH);
+            DAO.DELETECTHOADONXUAT(MAHDN, ID);
         }
 
 
