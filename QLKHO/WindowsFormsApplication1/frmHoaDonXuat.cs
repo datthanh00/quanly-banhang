@@ -421,7 +421,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             
          
         }
-        tudienma connect = new tudienma();
+        ketnoi connect = new ketnoi();
         public void loadmahdx()
         {
             txtMaHD.Text = connect.sTuDongDienMaHoaDonXuat(txtMaHD.Text);

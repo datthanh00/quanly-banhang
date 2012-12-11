@@ -113,9 +113,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCao\ClassThongke_mathang_dal.cs" />
-    <Compile Include="BaoCao\Class_ctrl_thongkekho.cs" />
-    <Compile Include="BaoCao\Class_DTO_ThongKe.cs" />
+    <Compile Include="class\ClassThongke_mathang_dal.cs" />
+    <Compile Include="class\Class_ctrl_thongkekho.cs" />
+    <Compile Include="class\Class_DTO_ThongKe.cs" />
     <Compile Include="BaoCao\frmBangKeXuatKhoTheoKHAchhangHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,7 +183,6 @@
       <DependentUpon>thongketonghop.cs</DependentUpon>
     </Compile>
     <Compile Include="class_ManhCuong\HoaDon.cs" />
-    <Compile Include="class_ManhCuong\tudienma.cs" />
     <Compile Include="CongNo\frmCongNoKH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,15 +273,13 @@
     <Compile Include="CongNo\frmTraTien.designer.cs">
       <DependentUpon>frmTraTien.cs</DependentUpon>
     </Compile>
-    <Compile Include="PhanQuyen\Class_ManhCuong\Loadingggg.cs" />
+    <Compile Include="class_ManhCuong\Loadingggg.cs" />
     <Compile Include="Class_DoanNgocAnh\clCtrl.cs" />
     <Compile Include="Class_DoanNgocAnh\clDao.cs" />
     <Compile Include="Class_DoanNgocAnh\clDTO.cs" />
-    <Compile Include="Backup_Restore\clDaoRestore.cs" />
-    <Compile Include="Backup_Restore\clProviderRestore.cs" />
+    <Compile Include="class\clDaoRestore.cs" />
     <Compile Include="class_TungLam\CTL.cs" />
     <Compile Include="class_TungLam\DAO.CS" />
-    <Compile Include="class_TungLam\Dataprovider.cs" />
     <Compile Include="class_TungLam\DTO.cs" />
     <Compile Include="BaoCao\frmBaoCaoTonKho.cs">
       <SubType>Form</SubType>
@@ -296,9 +293,9 @@
     <Compile Include="BoPhan\frmBoPhan.designer.cs">
       <DependentUpon>frmBoPhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ctrl_Tien.cs" />
-    <Compile Include="DAO_Tien.cs" />
-    <Compile Include="DTO_Tien.cs" />
+    <Compile Include="class_tien\Ctrl_Tien.cs" />
+    <Compile Include="class_tien\DAO_Tien.cs" />
+    <Compile Include="class_tien\DTO_Tien.cs" />
     <Compile Include="HeThong\frmCauHinhHeThong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -478,8 +475,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LamVN.resx</DependentUpon>
     </Compile>
-    <Compile Include="PhanQuyen\Class_ManhCuong\NhapHangDAO.cs" />
-    <Compile Include="PhanQuyen\Class_ManhCuong\NhapHangDTO.cs" />
+    <Compile Include="class_ManhCuong\NhapHangDAO.cs" />
+    <Compile Include="class_ManhCuong\NhapHangDTO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BaoCao\frmBangKeXuatKhoTheoKHAchhangHangHoa.resx">

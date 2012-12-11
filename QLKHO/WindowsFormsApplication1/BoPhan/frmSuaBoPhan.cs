@@ -15,8 +15,6 @@ namespace WindowsFormsApplication1
         DTO DTO = new DTO();
         CTL CTL = new CTL();
         DAO DAO = new DAO();
-        SqlCommand sqlCmd;
-        SqlConnection sqlCon;
         public string MACHUYEN;
         DataTable dt = new DataTable();
         public string MABP, TENBOPHAN, TINHTRANG;       

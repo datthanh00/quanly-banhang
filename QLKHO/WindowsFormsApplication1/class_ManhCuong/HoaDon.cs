@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace WindowsFormsApplication1.Class_ManhCuong
 {
@@ -18,28 +16,28 @@ namespace WindowsFormsApplication1.Class_ManhCuong
    
      public Cart(String MaMH,String TenMH,int SoLuong,int DonGia, int Thue, String DVT)
         {
-            this.MaMH = MaMH;
-            this.TenMH = TenMH;
-            this.SoLuong = SoLuong;
-            this.DonGia = DonGia;
-            this.Thue = Thue;
-            this.DVT = DVT;
+            MaMH = MaMH;
+            TenMH = TenMH;
+            SoLuong = SoLuong;
+            DonGia = DonGia;
+            Thue = Thue;
+            DVT = DVT;
   
         }
      public String _MaMH
      { 
-         get {return this.MaMH;}
-         set {this.MaMH = value;}
+         get {return MaMH;}
+         set {MaMH = value;}
      }
      public String _TenMH 
      {
-         get { return this.TenMH; } 
-         set { this.TenMH = value; } 
+         get { return TenMH; } 
+         set { TenMH = value; } 
      }
-     public int _SoLuong { get { return this.SoLuong; } set { this.SoLuong = value; } }
-     public int _DonGia { get { return this.DonGia; } set { this.DonGia = value; } }
-     public int _Thue { get { return this.Thue; } set { this.Thue = value; } }
-     public String _DVT { get { return this.DVT; } set { this.DVT = value; } }
+     public int _SoLuong { get { return SoLuong; } set { SoLuong = value; } }
+     public int _DonGia { get { return DonGia; } set { DonGia = value; } }
+     public int _Thue { get { return Thue; } set { Thue = value; } }
+     public String _DVT { get { return DVT; } set { DVT = value; } }
   
      public int _Total 
      {
@@ -51,13 +49,13 @@ namespace WindowsFormsApplication1.Class_ManhCuong
       private List<Cart> cart;
       public HoaDon()
       {
-          if (this.cart == null)
-              this.cart = new List<Cart>();
+          if (cart == null)
+              cart = new List<Cart>();
       }
       public List<Cart> _Cart
       {
-          get { return this.cart; }
-          set { this.cart = value; }
+          get { return cart; }
+          set { cart = value; }
       }
       //tim mot san pham trong gio? hang`
       public int search_item_incart(String mamh)
@@ -78,7 +76,7 @@ namespace WindowsFormsApplication1.Class_ManhCuong
           if (search_item_incart(mamh) == -1)
           {
               Cart items = new Cart(mamh, TenMH, SoLuong, DonGia,Thue,DVT);
-              this.cart.Add(items);
+              cart.Add(items);
               
           }
           else

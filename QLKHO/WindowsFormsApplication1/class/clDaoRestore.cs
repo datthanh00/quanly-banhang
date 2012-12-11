@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
-    class clDaoRestore:clProviderRestore
+    class clDaoRestore:Provider
     {
         public void ReStore(clDTO DTO)
         {
