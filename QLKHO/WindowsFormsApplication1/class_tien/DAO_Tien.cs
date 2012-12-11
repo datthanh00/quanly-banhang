@@ -11,27 +11,28 @@ namespace WindowsFormsApplication1
     }
     class CHITIETNHCC_HDN
     {
+        public static Mysqlchange MSQL = new Mysqlchange();
         public static DataTable TTNCC_DAO(string sMancc)
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("HOADONNHAP_CNO", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@mancc", sMancc);
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("HOADONNHAP_CNO", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@mancc", sMancc);
                 DataTable dtttncc = new DataTable();
-                dtttncc.Load(cmd.ExecuteReader());
-                cn.Close();
+                dtttncc.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return dtttncc;
             }
         }
         public static ArrayList RDTTNCC_DAO()
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("THONGTIN_HOADONNHAP_CNO", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("THONGTIN_HOADONNHAP_CNO", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
                 ArrayList AR = new ArrayList();
-                SqlDataReader RD = cmd.ExecuteReader();
+                SqlDataReader RD = MSQL.sqlcmdLenhThucThi.ExecuteReader();
                 while (RD.Read())
                 {
                     NHACUNGCAP ncc = new NHACUNGCAP();
@@ -54,14 +55,14 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                using (SqlConnection cn = Provider.get_Connect())
+                using (MSQL.sqlKetNoi = Provider.get_Connect())
                 {
-                    SqlCommand cmd = new SqlCommand("sp_CONGNONCC", cn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@CNNCC", sMancc);
-                    SqlDataAdapter dt = new SqlDataAdapter(cmd);
+                    MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("sp_CONGNONCC", MSQL.sqlKetNoi);
+                    MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                    MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@CNNCC", sMancc);
+                    MSQL.DA = MSQL.SqlDataAdapter(MSQL.sqlcmdLenhThucThi);
                     DataTable dtthncc = new DataTable();
-                    dt.Fill(dtthncc);
+                    MSQL.DA.Fill(dtthncc);
                     return dtthncc;
                 }
             }
@@ -76,14 +77,14 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                using (SqlConnection cn = Provider.get_Connect())
+                using (MSQL.sqlKetNoi = Provider.get_Connect())
                 {
-                    SqlCommand cmd = new SqlCommand("sp_phieuthu_chitiet_nhacungcap", cn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@PC", sMancc);
-                    SqlDataAdapter dt = new SqlDataAdapter(cmd);
+                    MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("sp_phieuthu_chitiet_nhacungcap", MSQL.sqlKetNoi);
+                    MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                    MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@PC", sMancc);
+                    MSQL.DA = MSQL.SqlDataAdapter(MSQL.sqlcmdLenhThucThi);
                     DataTable dtthncc = new DataTable();
-                    dt.Fill(dtthncc);
+                    MSQL.DA.Fill(dtthncc);
                     return dtthncc;
                 }
             }
@@ -95,40 +96,40 @@ namespace WindowsFormsApplication1
         }
         public static DataTable TONGHOP1CONGNO_DAO(string sMancc)
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("TonghopchimotNcc", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@manhacc", sMancc);
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("TonghopchimotNcc", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@manhacc", sMancc);
                 DataTable dttonghop1 = new DataTable();
-                dttonghop1.Load(cmd.ExecuteReader());
-                cn.Close();
+                dttonghop1.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return dttonghop1;
             }
         }
         public static DataTable MOTPC_DAO(string sMapc)
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("get_phieuchi", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@mpc", sMapc);
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("get_phieuchi", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@mpc", sMapc);
                 DataTable pc = new DataTable();
-                pc.Load(cmd.ExecuteReader());
-                cn.Close();
+                pc.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return pc;
             }
         }
         public static DataTable TONGHOPCONGNO_DAO()
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("TonghopchiNcc", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@manhacc", sMancc);
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("TonghopchiNcc", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                //MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@manhacc", sMancc);
                 DataTable dttonghop = new DataTable();
-                dttonghop.Load(cmd.ExecuteReader());
-                cn.Close();
+                dttonghop.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return dttonghop;
             }
         }
@@ -159,13 +160,13 @@ namespace WindowsFormsApplication1
         }
         public static DataTable TONGHOPCHI()
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("TONGHOPCHI", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("TONGHOPCHI", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
                 DataTable THC = new DataTable();
-                THC.Load(cmd.ExecuteReader());
-                cn.Close();
+                THC.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return THC;
             }
         }
@@ -179,67 +180,69 @@ namespace WindowsFormsApplication1
     }
     class CONGNOKH
     {
+        public static Mysqlchange MSQL = new Mysqlchange();
         public static DataTable GETALLHDX_DAO()
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 string SQL = "SELECT MAHDX as N'Mã hóa đơn xuất',NGAYXUAT as N'Ngày Xuất',TENKH as N'Tên khách hàng',HOADONXUAT.MAKH as N'Mã khách hàng',TIENPHAITRA AS N'Tiền phải trả',TIENdaTRA as N'Tiền đã trả', tienphaitra-tiendatra as N'Còn lại' FROM HOADONXUAT,KHACHHANG WHERE HOADONXUAT.MAKH=KHACHHANG.MAKH and tienphaitra-tiendatra <> 0 group by hoadonxuat.mahdx,hoadonxuat.tienphaitra,hoadonxuat.tiendatra,khachhang.tenkh,hoadonxuat.makh,hoadonxuat.ngayxuat";
-                SqlDataAdapter da;
-                da = new SqlDataAdapter(SQL, cn);
+
+                MSQL.DA = MSQL.SqlDataAdapter(SQL, MSQL.sqlKetNoi);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
-                cn.Close();
+                MSQL.DA.Fill(dt);
+                MSQL.sqlKetNoi.Close();
                 return dt;
             }
         }
         public static DataTable GETALLPHIEUCHI_DAO()
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 string SQL = "SELECT MAPT as N'Mã phiếu thu',MANV as N'Mã nhân viên',MAhdx as N'Mã hóa đơn xuất',ngaythu as N'Ngày thu',SoTienTra_PT as N'Tiền đã trả' FROM PHIEUTHU";
-                SqlDataAdapter da;
-                da = new SqlDataAdapter(SQL, cn);
+             
+                MSQL.DA = MSQL.SqlDataAdapter(SQL, MSQL.sqlKetNoi);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
-                cn.Close();
+                MSQL.DA.Fill(dt);
+                MSQL.sqlKetNoi.Close();
                 return dt;
             }
         }
         public static DataTable get1pt_dao(string sMahdx)
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("GETONEPT", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MAHDX", sMahdx);
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("GETONEPT", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@MAHDX", sMahdx);
                 DataTable dtgetpt = new DataTable();
-                dtgetpt.Load(cmd.ExecuteReader());
-                cn.Close();
+                dtgetpt.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return dtgetpt;
             }
         }
         public static DataTable TONGHOPTHU()
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("TONGHOP_THU", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@manhacc", sMancc);
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("TONGHOP_THU", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                //MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@manhacc", sMancc);
                 DataTable THT = new DataTable();
-                THT.Load(cmd.ExecuteReader());
-                cn.Close();
+                THT.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return THT;
             }
         }
         public static DataTable MAPT_DAO()
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("MA_PHIEUTHU", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("MA_PHIEUTHU", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
                 DataTable PT = new DataTable();
-                PT.Load(cmd.ExecuteReader());
-                cn.Close();
+                PT.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return PT;
             }
         }
@@ -259,16 +262,16 @@ namespace WindowsFormsApplication1
 
             try
             {
-                using (SqlConnection cn = Provider.get_Connect())
+                using (MSQL.sqlKetNoi = Provider.get_Connect())
                 {
-                    SqlCommand cmd = new SqlCommand("sp_phieuthu_chitiet_khachhang", cn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@pt", sMaKH);
-                    SqlDataAdapter dt = new SqlDataAdapter(cmd);
+                    MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("sp_phieuthu_chitiet_khachhang", MSQL.sqlKetNoi);
+                    MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                    MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@pt", sMaKH);
+                    MSQL.DA = MSQL.SqlDataAdapter(MSQL.sqlcmdLenhThucThi);
                     DataTable dtthkh = new DataTable();
-                    dt.Fill(dtthkh);
-                    //  dtthncc.Load(cmd.ExecuteReader());
-                    //cn.Close();
+                    MSQL.DA.Fill(dtthkh);
+                    //  dtthncc.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                    //MSQL.sqlKetNoi.Close();
                     return dtthkh;
                 }
             }
@@ -280,14 +283,14 @@ namespace WindowsFormsApplication1
         }
         public static DataTable TH1CNKH_DAO(string sMaKH)
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("TonghopthumotKH", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@makh", sMaKH);
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("TonghopthumotKH", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@makh", sMaKH);
                 DataTable dttonghop1 = new DataTable();
-                dttonghop1.Load(cmd.ExecuteReader());
-                cn.Close();
+                dttonghop1.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return dttonghop1;
             }
         }
@@ -318,14 +321,14 @@ namespace WindowsFormsApplication1
         }
         public static DataTable MOTPT_DAO(string sMapt)
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("get_phieuthu", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@mpt", sMapt);
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("get_phieuthu", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@mpt", sMapt);
                 DataTable pt = new DataTable();
-                pt.Load(cmd.ExecuteReader());
-                cn.Close();
+                pt.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return pt;
             }
         }
@@ -338,59 +341,56 @@ namespace WindowsFormsApplication1
         }
         public static DataTable LOADHDX_DAO(string maKH)
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("LoadHDX", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@makh", maKH);
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("LoadHDX", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@makh", maKH);
                 DataTable dtloadhdx = new DataTable();
-                dtloadhdx.Load(cmd.ExecuteReader());
-                cn.Close();
+                dtloadhdx.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return dtloadhdx;
             }
         }
-
-        
     }
     class CONGNONCC
     {
+        public static Mysqlchange MSQL = new Mysqlchange();
         public static DataTable GETALLHDN_DAO()
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("LoadGETALLHDN", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@manhacc", sMancc);
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("LoadGETALLHDN", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                //MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@manhacc", sMancc);
                 DataTable THC = new DataTable();
-                THC.Load(cmd.ExecuteReader());
-                cn.Close();
+                THC.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return THC;
             }
         }
         public static DataTable GETALLcongno_ncc()
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 string SQL = "SELECT MAHDN as N'Mã hóa đơn nhập',NGAYNHAP as N'Ngày nhập',TENncc as N'Tên nhà cung cấp',HOADONnhap.MAncc as N'Mã nhà cung cấp',TIENPHAITRA AS N'Tiền phải trả',TIENdaTRA as N'Tiền đã trả', tienphaitra-tiendatra as N'Còn lại' FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc and tienphaitra-tiendatra<>0 group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc,hoadonnhap.ngaynhap";
-                SqlDataAdapter da;
-                da = new SqlDataAdapter(SQL, cn);
+                MSQL.DA = MSQL.SqlDataAdapter(SQL, MSQL.sqlKetNoi);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
-                cn.Close();
+                MSQL.DA.Fill(dt);
+                MSQL.sqlKetNoi.Close();
                 return dt;
             }
         }
 
         public static string GETcongno_HDN(string MHDN)
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONnhap where MAHDN='"+MHDN+"'";
-                SqlDataAdapter da;
-                da = new SqlDataAdapter(SQL, cn);
+                MSQL.DA = MSQL.SqlDataAdapter(SQL, MSQL.sqlKetNoi);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
-                cn.Close();
+                MSQL.DA.Fill(dt);
+                MSQL.sqlKetNoi.Close();
                 if (dt.Rows.Count > 0)
                     return dt.Rows[0][0].ToString();
                 return "0";
@@ -398,14 +398,14 @@ namespace WindowsFormsApplication1
         }
         public static string GETcongno_HDX(string MHDX)
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONXUAT where MAHDX='" + MHDX + "'";
-                SqlDataAdapter da;
-                da = new SqlDataAdapter(SQL, cn);
+             
+                MSQL.DA = MSQL.SqlDataAdapter(SQL, MSQL.sqlKetNoi);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
-                cn.Close();
+                MSQL.DA.Fill(dt);
+                MSQL.sqlKetNoi.Close();
                 if (dt.Rows.Count > 0)
                     return dt.Rows[0][0].ToString();
                 return "0";
@@ -413,28 +413,28 @@ namespace WindowsFormsApplication1
         }
         public static DataTable get1pc_dao(string sMahdn)
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("GETONEPC", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@MAHDN", sMahdn);
+                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("GETONEPC", MSQL.sqlKetNoi);
+                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@MAHDN", sMahdn);
                 DataTable dtgetpc = new DataTable();
-                dtgetpc.Load(cmd.ExecuteReader());
-                cn.Close();
+                dtgetpc.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                MSQL.sqlKetNoi.Close();
                 return dtgetpc;
             }
         }
         public static DataTable Getall_phieuchi_Dao()
         {
-            using (SqlConnection cn = Provider.get_Connect())
+            using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
 
                 string SQL = "SELECT MAPc as N'Mã phiếu chi',MANV as N'Mã nhân viên',MAhdn as N'Mã hóa đơn nhập',ngaychi as N'Ngày chi',SoTienDaTra_PC as N'Tiền đã trả' FROM PHIEUCHI";
-                SqlDataAdapter da;
-                da = new SqlDataAdapter(SQL, cn);
+    
+                MSQL.DA = MSQL.SqlDataAdapter(SQL, MSQL.sqlKetNoi);
                 DataTable dt = new DataTable();
-                da.Fill(dt);
-                cn.Close();
+                MSQL.DA.Fill(dt);
+                MSQL.sqlKetNoi.Close();
                 return dt;
             }
         }
