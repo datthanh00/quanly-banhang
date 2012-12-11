@@ -255,8 +255,9 @@ namespace WindowsFormsApplication1
         public string sTenNV, sMaNV;
         private void btTaoMoi_Click(object sender, EventArgs e)
         {
-
+           
             Create_new();
+            loadgridCTHOADON();
         }
         public void Create_new(){
             loadgridNhacCungCap();

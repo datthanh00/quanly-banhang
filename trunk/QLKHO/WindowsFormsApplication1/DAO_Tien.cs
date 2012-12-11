@@ -225,13 +225,13 @@ namespace WindowsFormsApplication1
         {
             using (SqlConnection cn = Provider.get_Connect())
             {
-                SqlCommand cmd = new SqlCommand("LoadGETALLHDX", cn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.Parameters.AddWithValue("@manhacc", sMancc);
-                DataTable THT = new DataTable();
-                THT.Load(cmd.ExecuteReader());
+                string SQL = "SELECT MAHDX as N'Mã hóa đơn xuất',NGAYXUAT as N'Ngày Xuất',TENKH as N'Tên khách hàng',HOADONXUAT.MAKH as N'Mã khách hàng',TIENPHAITRA AS N'Tiền phải trả',TIENdaTRA as N'Tiền đã trả', tienphaitra-tiendatra as N'Còn lại' FROM HOADONXUAT,KHACHHANG WHERE HOADONXUAT.MAKH=KHACHHANG.MAKH and tienphaitra-tiendatra <> 0 group by hoadonxuat.mahdx,hoadonxuat.tienphaitra,hoadonxuat.tiendatra,khachhang.tenkh,hoadonxuat.makh,hoadonxuat.ngayxuat";
+                SqlDataAdapter da;
+                da = new SqlDataAdapter(SQL, cn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
                 cn.Close();
-                return THT;
+                return dt;
             }
         }
         public static DataTable GETALLPHIEUCHI_DAO()
@@ -413,7 +413,7 @@ namespace WindowsFormsApplication1
         {
             using (SqlConnection cn = Provider.get_Connect())
             {
-                string SQL = "SELECT MAHDN as N'Mã hóa đơn nhập',TENncc as N'Tên nhà cung cấp',HOADONnhap.MAncc as N'Mã nhà cung cấp',TIENPHAITRA AS N'Tiền phải trả',TIENdaTRA as N'Tiền đã trả', tienphaitra-tiendatra as N'Còn lại' FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc and tienphaitra-tiendatra<>0 group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc";
+                string SQL = "SELECT MAHDN as N'Mã hóa đơn nhập',NGAYNHAP as N'Ngày nhập',TENncc as N'Tên nhà cung cấp',HOADONnhap.MAncc as N'Mã nhà cung cấp',TIENPHAITRA AS N'Tiền phải trả',TIENdaTRA as N'Tiền đã trả', tienphaitra-tiendatra as N'Còn lại' FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc and tienphaitra-tiendatra<>0 group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc,hoadonnhap.ngaynhap";
                 SqlDataAdapter da;
                 da = new SqlDataAdapter(SQL, cn);
                 DataTable dt = new DataTable();

@@ -52,7 +52,7 @@ namespace WindowsFormsApplication1
                 txtPT.Text = connect.sTuDongDienMapt(txtPT.Text);
                 txtMahd.Text = MaChuyen;
                 txtSoTienNo.Text = Tienno;
-                txtSoTienTra.Text = "0";
+                txtSoTienTra.Text = Tienno;
             }
             else
             {
@@ -241,7 +241,7 @@ namespace WindowsFormsApplication1
  
         private void txtSoTienTra_TextChanged_1(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 if (txtSoTienTra.Text == "")
                 {
@@ -254,15 +254,10 @@ namespace WindowsFormsApplication1
                 }
             }
             catch (Exception ex) { XtraMessageBox.Show(ex.Message); }
+             */
         }
 
-        private void txtSoTienTra_KeyPress_1(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+
 
         private void barstDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

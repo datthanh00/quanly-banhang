@@ -260,6 +260,7 @@
             // 
             // 
             this.txtPT.Border.Class = "TextBoxBorder";
+            this.txtPT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtPT.Location = new System.Drawing.Point(489, 29);
             this.txtPT.Name = "txtPT";
             this.txtPT.ReadOnly = true;
@@ -286,7 +287,6 @@
             this.txtSoTienTra.Properties.Mask.EditMask = "n0";
             this.txtSoTienTra.Size = new System.Drawing.Size(200, 20);
             this.txtSoTienTra.TabIndex = 44;
-            this.txtSoTienTra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoTienTra_KeyPress_1);
             this.txtSoTienTra.TextChanged += new System.EventHandler(this.txtSoTienTra_TextChanged_1);
             // 
             // groupCtDetails

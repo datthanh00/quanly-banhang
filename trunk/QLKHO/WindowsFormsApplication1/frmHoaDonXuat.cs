@@ -443,7 +443,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+           
             Create_new();
+            loadgridCTHOADON();
         }
         public void Create_new()
         {

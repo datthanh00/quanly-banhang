@@ -41,6 +41,7 @@ namespace WindowsFormsApplication1
         //---------------------------------------------------
 
         public DataTable getbaocaotheokho(Class_DTO_ThongKe dto)
+
         {
             List<SqlParameter> sqlpa = new List<SqlParameter>();
             DataTable tb = new DataTable();
@@ -48,6 +49,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new SqlParameter("@NGAYTHANGTU", dto.NGAYBDKHO));
             sqlpa.Add(new SqlParameter("@NGAYTHANGDEN", dto.NGAYKTKHO));
             return executeNonQuerya("BAOCAOTHEOKHO_getall", sqlpa);
+
         }
     //---------------------------------------------
          public DataTable getTonKho(Class_DTO_ThongKe dto)

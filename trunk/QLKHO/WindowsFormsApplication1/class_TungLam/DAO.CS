@@ -624,7 +624,7 @@ namespace WindowsFormsApplication1
         }
         public void UPDATECTHOADONNHAP(DTO dto)
         {
-            string SQL = "update CHITIETHDN set SOLUONGNHAP=" + dto.SOLUONGNHAP + " ,GIANHAP=" + dto.GIANHAP + ", TINHTRANG= 1 where (MAHDN='" + dto.MAHDN + "' AND ID=" + dto.ID + ")";
+            string SQL = "update CHITIETHDN set MAMH='" + dto.MAMH + "', SOLUONGNHAP=" + dto.SOLUONGNHAP + " ,GIANHAP=" + dto.GIANHAP + ", TINHTRANG= 1 where (MAHDN='" + dto.MAHDN + "' AND ID=" + dto.ID + ")";
 
             executeNonQuery(SQL);
         }
@@ -720,7 +720,7 @@ namespace WindowsFormsApplication1
         }
         public void UPDATECTHOADONXUAT(DTO dto)
         {
-            string SQL = "update CHITIETHDX set SOLUONGXUAT=" + dto.SOLUONGXUAT + " ,GIATIEN=" + dto.GIATIEN + ", TINHTRANG= 1 where (MAHDX='" + dto.MAHDX + "' AND ID=" + dto.ID.ToString() + ")";
+            string SQL = "update CHITIETHDX set MAMH='" + dto.MAMH + "',SOLUONGXUAT=" + dto.SOLUONGXUAT + " ,GIATIEN=" + dto.GIATIEN + ", TINHTRANG= 1 where (MAHDX='" + dto.MAHDX + "' AND ID=" + dto.ID.ToString() + ")";
 
             executeNonQuery(SQL);
         }
