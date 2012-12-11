@@ -214,9 +214,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 443);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 442);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -234,7 +234,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 194;
-            this.navBarControl1.Size = new System.Drawing.Size(181, 443);
+            this.navBarControl1.Size = new System.Drawing.Size(181, 442);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "Thống Kê";
             this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
@@ -294,7 +294,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(187, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1109, 35);
+            this.panelControl1.Size = new System.Drawing.Size(1105, 35);
             this.panelControl1.TabIndex = 0;
             // 
             // pnthoigian
@@ -381,7 +381,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(187, 35);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1109, 38);
+            this.panelControl3.Size = new System.Drawing.Size(1105, 38);
             this.panelControl3.TabIndex = 2;
             // 
             // btdong
@@ -430,13 +430,13 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(187, 73);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1109, 397);
+            this.panelControl2.Size = new System.Drawing.Size(1105, 397);
             this.panelControl2.TabIndex = 3;
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 3);
+            this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridView4;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -444,7 +444,7 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
             this.repositoryItemDateEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1103, 391);
+            this.gridControl1.Size = new System.Drawing.Size(1101, 393);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView4,
@@ -1531,7 +1531,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1296, 470);
+            this.ClientSize = new System.Drawing.Size(1292, 470);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);

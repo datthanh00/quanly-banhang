@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using System.Threading;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace WindowsFormsApplication1
 {
@@ -24,7 +26,12 @@ namespace WindowsFormsApplication1
             dt = Ctrl_Tien.GETALLHDX_ctrl();
             gridControl1.DataSource = dt;
         }
-         public frmMain frm;
+        public void loadGetAllPHIEUCHI()
+        {
+            dt = Ctrl_Tien.GETALLPHIEUCHI_ctrl();
+            gridControl2.DataSource = dt;
+        }
+        public frmMain frm;
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
            
@@ -39,6 +46,7 @@ namespace WindowsFormsApplication1
             else
                 loadEL();
             loadGetAllHDX();
+            load_congno();
         }
         public string smaKH;
         public string sTienno;
@@ -55,8 +63,8 @@ namespace WindowsFormsApplication1
                 sMahdx = dtr[0].ToString();
                 smaKH = dtr[2].ToString();
                 sTienno = dtr[5].ToString();
-                dt = Ctrl_Tien.get1pthdx_ctrl(dtr[0].ToString());
-                gridControl2.DataSource = dt;
+                //dt = Ctrl_Tien.get1pthdx_ctrl(dtr[0].ToString());
+                //gridControl2.DataSource = dt;
             }
             catch 
             {
@@ -65,18 +73,43 @@ namespace WindowsFormsApplication1
             }
         }
         public string sMaNV, sTenNV;
-        private void barThuTien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+
+        public void load_congno()
+        {
+            panel_congno.Visible = true;
+            panel_phieuchi.Visible = false;
+
+            groupControl_congno.Visible = true;
+            groupControl_congno.Dock = System.Windows.Forms.DockStyle.Fill;
+            groupControl_phieuthu.Visible = false;
+            gridView1.ExpandAllGroups();
+        }
+        public void load_phieuthu()
+        {
+            panel_congno.Visible = false;
+            panel_phieuchi.Visible = true;
+
+            groupControl_congno.Visible = false;
+            groupControl_phieuthu.Visible = true;
+            groupControl_phieuthu.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridView2.ExpandAllGroups();
+        }
+        private void btThutien_Click(object sender, EventArgs e)
+        {
+            loadfrm_thutien();
+        }
+        public void loadfrm_thutien()
         {
             FrmThuTien frm = new FrmThuTien();
             if (this.smaKH == null)
             {
-                if (iNgonNgu==0)
+                if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Bạn phải chọn 1 hóa đơn để thu tiền");
                 }
                 else
                     XtraMessageBox.Show("You must select a bill to get money");
-                
+
             }
             else
             {
@@ -88,23 +121,22 @@ namespace WindowsFormsApplication1
                 frm.sTenNV = sTenNV;
                 frm.ShowDialog();
                 loadGetAllHDX();
-                loadctkh();
+                //loadctkh();
+                load_congno();
             }
-            
         }
-
-        private void barSuaTien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btneditthutien_Click(object sender, EventArgs e)
         {
             FrmThuTien frm = new FrmThuTien();
             if (this.smpt == null)
             {
-                if (iNgonNgu==0)
+                if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Bạn phải chọn 1 phiếu thu để sửa lại số tiền vừa trả");
                 }
                 else
                     XtraMessageBox.Show("You must select a bill to update paid money!!!");
-                
+
             }
             else
             {
@@ -112,15 +144,19 @@ namespace WindowsFormsApplication1
                 frm.MaPT = smpt;
                 frm.HD = smahdx;
                 frm.TIEN = stientra;
-                frm.Tienno = sTienno;
-                frm.iNgonNgu = this.iNgonNgu;
                 frm.sMaNV = sMaNV;
+
+                frm.Tienno = Ctrl_Tien.GETcongno_HDX(smahdx);
+                frm.iNgonNgu = this.iNgonNgu;
+                
                 frm.sTenNV = sTenNV;
                 frm.ShowDialog();
                 loadGetAllHDX();
-                loadctkh();
+                //loadctkh();
+                load_phieuthu();
             }
         }
+ 
 
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
@@ -128,9 +164,9 @@ namespace WindowsFormsApplication1
             {
                 DataRow dtr1 = gridView2.GetDataRow(e.RowHandle);
                 smpt = dtr1[0].ToString();
+                sMaNV = dtr1[1].ToString();
                 smahdx=dtr1[2].ToString();
                 stientra = dtr1[4].ToString();
-
             }
             catch 
             {
@@ -160,8 +196,8 @@ namespace WindowsFormsApplication1
             colTiềnđãtrả1.Caption = Tien_VN.colTiềnđãtrả1.ToString();
             colMãnhânviên.Caption = Tien_VN.colMãnhânviên.ToString();
             colNgàythu.Caption = Tien_VN.colNgàythu.ToString();
-            groupControl1.Text = Tien_VN.groupControl1.ToString();
-            groupControl2.Text = Tien_VN.groupControl2.ToString();
+            groupControl_congno.Text = Tien_VN.groupControl1.ToString();
+            groupControl_phieuthu.Text = Tien_VN.groupControl2.ToString();
             barBtDong.Caption = Tien_VN.barstDong.ToString();
             colMãkháchhàng.Caption = Tien_VN.colMãkháchhàng.ToString();
         }
@@ -181,8 +217,8 @@ namespace WindowsFormsApplication1
             colTiềnđãtrả1.Caption = Tien_EL.colTiềnđãtrả1.ToString();
             colMãnhânviên.Caption = Tien_EL.colMãnhânviên.ToString();
             colNgàythu.Caption = Tien_EL.colNgàythu.ToString();
-            groupControl1.Text = Tien_EL.groupControl1.ToString();
-            groupControl2.Text = Tien_EL.groupControl2.ToString();
+            groupControl_congno.Text = Tien_EL.groupControl1.ToString();
+            groupControl_phieuthu.Text = Tien_EL.groupControl2.ToString();
             barBtDong.Caption = Tien_EL.barstDong.ToString();
             colMãkháchhàng.Caption = Tien_EL.colMãkháchhàng.ToString();
         }
@@ -191,5 +227,45 @@ namespace WindowsFormsApplication1
         {
             deDongTab();
         }
+
+        private void btDong_Click(object sender, EventArgs e)
+        {
+            deDongTab();
+        }
+
+        private void btnclose_Click(object sender, EventArgs e)
+        {
+            deDongTab();
+        }
+
+        private void linkcongno_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            load_congno();
+        }
+
+        private void linkphieuthu_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            loadGetAllPHIEUCHI();
+            load_phieuthu();
+        }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            GridView view = sender as GridView;
+            Point pt = view.GridControl.PointToClient(Control.MousePosition);
+            GridHitInfo hitInfo = view.CalcHitInfo(pt);
+            if (hitInfo.InRow)
+            {
+                DataRow dtr = gridView1.GetDataRow(hitInfo.RowHandle);
+                sMahdx = dtr[0].ToString();
+                smaKH = dtr[2].ToString();
+                sTienno = dtr[5].ToString();
+                loadfrm_thutien();
+            }
+        }
+
+      
+
+       
     }
 }

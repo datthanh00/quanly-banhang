@@ -234,6 +234,19 @@ namespace WindowsFormsApplication1
                 return THT;
             }
         }
+        public static DataTable GETALLPHIEUCHI_DAO()
+        {
+            using (SqlConnection cn = Provider.get_Connect())
+            {
+                string SQL = "SELECT MAPT as N'Mã phiếu thu',MANV as N'Mã nhân viên',MAhdx as N'Mã hóa đơn xuất',ngaythu as N'Ngày thu',SoTienTra_PT as N'Tiền đã trả' FROM PHIEUTHU";
+                SqlDataAdapter da;
+                da = new SqlDataAdapter(SQL, cn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cn.Close();
+                return dt;
+            }
+        }
         public static DataTable get1pt_dao(string sMahdx)
         {
             using (SqlConnection cn = Provider.get_Connect())
@@ -415,6 +428,21 @@ namespace WindowsFormsApplication1
             using (SqlConnection cn = Provider.get_Connect())
             {
                 string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONnhap where MAHDN='"+MHDN+"'";
+                SqlDataAdapter da;
+                da = new SqlDataAdapter(SQL, cn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cn.Close();
+                if (dt.Rows.Count > 0)
+                    return dt.Rows[0][0].ToString();
+                return "0";
+            }
+        }
+        public static string GETcongno_HDX(string MHDX)
+        {
+            using (SqlConnection cn = Provider.get_Connect())
+            {
+                string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONXUAT where MAHDX='" + MHDX + "'";
                 SqlDataAdapter da;
                 da = new SqlDataAdapter(SQL, cn);
                 DataTable dt = new DataTable();

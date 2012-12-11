@@ -100,6 +100,11 @@ namespace WindowsFormsApplication1
             return CONGNOKH.GETALLHDX_DAO();
             
         }
+        public static DataTable GETALLPHIEUCHI_ctrl()
+        {
+            return CONGNOKH.GETALLPHIEUCHI_DAO();
+
+        }
         public static DataTable get1pthdx_ctrl(string MaHDX)
         {
             return CONGNOKH.get1pt_dao(MaHDX);
@@ -124,6 +129,10 @@ namespace WindowsFormsApplication1
         public static string GETcongno_HDN(string MHDN)
         {
             return CONGNONCC.GETcongno_HDN(MHDN);
+        }
+        public static string GETcongno_HDX(string MHDX)
+        {
+            return CONGNONCC.GETcongno_HDN(MHDX);
         }
 
         public static DataTable Getall_phieuchi_Dao()
