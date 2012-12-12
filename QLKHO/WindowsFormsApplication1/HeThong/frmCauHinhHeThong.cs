@@ -291,7 +291,6 @@ namespace WindowsFormsApplication1
                 }
                 catch
                 {
-
                     DevComponents.DotNetBar.MessageBoxEx.Show("Không tìm thấy server", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }

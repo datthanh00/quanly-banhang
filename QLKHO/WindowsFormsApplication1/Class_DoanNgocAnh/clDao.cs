@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication1
 {
@@ -10,56 +11,56 @@ namespace WindowsFormsApplication1
     {
         public DataTable kiemtra_user(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@USERNAME", dto.TENDANGNHAP));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@USERNAME", dto.TENDANGNHAP));
             return executeNonQuerya("KIEMTRA_USER", sqlpa);
         }
 
         public void addMatHang(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MAMH", dto.MAMH));
-            sqlpa.Add(new SqlParameter("@MATH", dto.MATH));
-            sqlpa.Add(new SqlParameter("@MANH", dto.MANH));
-            sqlpa.Add(new SqlParameter("@MAKHO", dto.MAKHO));
-            sqlpa.Add(new SqlParameter("@TENMH", dto.TENMH));
-            sqlpa.Add(new SqlParameter("@MADVT", dto.MADVT));
-            sqlpa.Add(new SqlParameter("@SOLUONGMH", dto.SOLUONGMH));
-            sqlpa.Add(new SqlParameter("@HANSUDUNG", dto.HANSUDUNG));
-            sqlpa.Add(new SqlParameter("@GIAMUA", dto.GIAMUA));
-            sqlpa.Add(new SqlParameter("@GIABAN", dto.GIABAN));
-            sqlpa.Add(new SqlParameter("@PICTURE", dto.PICTURE));
-            sqlpa.Add(new SqlParameter("@MOTA", dto.MOTA));
-            sqlpa.Add(new SqlParameter("@TINHTRANG", dto.TINHTRANG));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAMH", dto.MAMH));
+            sqlpa.Add(new MySqlParameter("@MATH", dto.MATH));
+            sqlpa.Add(new MySqlParameter("@MANH", dto.MANH));
+            sqlpa.Add(new MySqlParameter("@MAKHO", dto.MAKHO));
+            sqlpa.Add(new MySqlParameter("@TENMH", dto.TENMH));
+            sqlpa.Add(new MySqlParameter("@MADVT", dto.MADVT));
+            sqlpa.Add(new MySqlParameter("@SOLUONGMH", dto.SOLUONGMH));
+            sqlpa.Add(new MySqlParameter("@HANSUDUNG", dto.HANSUDUNG));
+            sqlpa.Add(new MySqlParameter("@GIAMUA", dto.GIAMUA));
+            sqlpa.Add(new MySqlParameter("@GIABAN", dto.GIABAN));
+            sqlpa.Add(new MySqlParameter("@PICTURE", dto.PICTURE));
+            sqlpa.Add(new MySqlParameter("@MOTA", dto.MOTA));
+            sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
             ChayProc("MATHANG_add", sqlpa);
         }
         public void insertNhomHang(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
 
-            sqlpa.Add(new SqlParameter("@MANHOMHANG", dto.MANHOMHANG));
-            sqlpa.Add(new SqlParameter("@TENNHOMHANG", dto.TENNHOMHANG));
+            sqlpa.Add(new MySqlParameter("@MANHOMHANG", dto.MANHOMHANG));
+            sqlpa.Add(new MySqlParameter("@TENNHOMHANG", dto.TENNHOMHANG));
             ChayProc("NHOMHANG_add", sqlpa);
         }
         public void updateThonTinCongTy(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MACT", dto.MACT));
-            sqlpa.Add(new SqlParameter("@TENCT", dto.TENCT));
-            sqlpa.Add(new SqlParameter("@DIACHI", dto.DIACHI));
-            sqlpa.Add(new SqlParameter("@FAX", dto.FAX));
-            sqlpa.Add(new SqlParameter("@SDT", dto.SDT));
-            sqlpa.Add(new SqlParameter("@MOBILE", dto.MOBILE));
-            sqlpa.Add(new SqlParameter("@EMAIL", dto.EMAIL));
-            sqlpa.Add(new SqlParameter("@LOGO", dto.LOGO));
-            sqlpa.Add(new SqlParameter("@MASOTHUE", dto.MASOTHUE));
-            sqlpa.Add(new SqlParameter("@WEBSITE", dto.WEBSITE));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MACT", dto.MACT));
+            sqlpa.Add(new MySqlParameter("@TENCT", dto.TENCT));
+            sqlpa.Add(new MySqlParameter("@DIACHI", dto.DIACHI));
+            sqlpa.Add(new MySqlParameter("@FAX", dto.FAX));
+            sqlpa.Add(new MySqlParameter("@SDT", dto.SDT));
+            sqlpa.Add(new MySqlParameter("@MOBILE", dto.MOBILE));
+            sqlpa.Add(new MySqlParameter("@EMAIL", dto.EMAIL));
+            sqlpa.Add(new MySqlParameter("@LOGO", dto.LOGO));
+            sqlpa.Add(new MySqlParameter("@MASOTHUE", dto.MASOTHUE));
+            sqlpa.Add(new MySqlParameter("@WEBSITE", dto.WEBSITE));
 
             ChayProc("THONGTINCT_update", sqlpa);
         }//----------------GET NHAN VIEN
         public DataTable getNhanVien()
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
 
 
             return executeNonQuerya("NHANVIEN_gettrue", sqlpa);
@@ -67,123 +68,123 @@ namespace WindowsFormsApplication1
         }
              public DataTable getNhanVienBP(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
 
-            sqlpa.Add(new SqlParameter("@mabp", dto.MABOPHAN));
+            sqlpa.Add(new MySqlParameter("@mabp", dto.MABOPHAN));
             return executeNonQuerya("NHANVIEN_getoneBOPHAN", sqlpa);
 
         }
         public DataTable getBoPhan()
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             return executeNonQuerya("BOPHAN_getall", sqlpa);
         }
         public DataTable getThongTinCT(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             
-             sqlpa.Add(new SqlParameter("@MACT",dto.MACT));
+             sqlpa.Add(new MySqlParameter("@MACT",dto.MACT));
             return executeNonQuerya("THONGTINCT_get", sqlpa);
 
         }
         public void delMatHang(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
 
-            sqlpa.Add(new SqlParameter("@MAMH", dto.MAMH));
+            sqlpa.Add(new MySqlParameter("@MAMH", dto.MAMH));
             ChayProc("MATHANG_delete", sqlpa);
         }
         //-------------------------THEM NGUOI DUNG --
 
         public void THEMNGUOIDUNG(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MABP", dto.MABOPHAN));
-            sqlpa.Add(new SqlParameter("@USERNAME", dto.TENDANGNHAP));
-            sqlpa.Add(new SqlParameter("@PASSWORD", dto.MATKHAU));
-            sqlpa.Add(new SqlParameter("@MANV", dto.MANV));
-            sqlpa.Add(new SqlParameter("@TINHTRANG", dto.TINHTRANG));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MABP", dto.MABOPHAN));
+            sqlpa.Add(new MySqlParameter("@USERNAME", dto.TENDANGNHAP));
+            sqlpa.Add(new MySqlParameter("@PASSWORD", dto.MATKHAU));
+            sqlpa.Add(new MySqlParameter("@MANV", dto.MANV));
+            sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
             ChayProc("THEMNGUOIDUNG_update", sqlpa);
         }
           public void SuaNguoiDung(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MANV", dto.MANV));
-            sqlpa.Add(new SqlParameter("@MABP", dto.MABOPHAN));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MANV", dto.MANV));
+            sqlpa.Add(new MySqlParameter("@MABP", dto.MABOPHAN));
             ChayProc("NHANVIEN_SuaNguoiDung", sqlpa);
         }
           public void DoiMatKhau(clDTO dto)
           {
-              List<SqlParameter> sqlpa = new List<SqlParameter>();
-              sqlpa.Add(new SqlParameter("@MANV", dto.MANV));
-              sqlpa.Add(new SqlParameter("@pass", dto.MATKHAU));
+              List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+              sqlpa.Add(new MySqlParameter("@MANV", dto.MANV));
+              sqlpa.Add(new MySqlParameter("@pass", dto.MATKHAU));
               ChayProc("NHANVIEN_DoiMatKhau", sqlpa);
           }
           public DataTable KiemTraMatKhau(clDTO dto)
           {
-              List<SqlParameter> sqlpa = new List<SqlParameter>();
-              sqlpa.Add(new SqlParameter("@MANV", dto.MANV));
-              sqlpa.Add(new SqlParameter("@Pass", dto.MATKHAU));
+              List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+              sqlpa.Add(new MySqlParameter("@MANV", dto.MANV));
+              sqlpa.Add(new MySqlParameter("@Pass", dto.MATKHAU));
               return executeNonQuerya("NHANVIEN_KiemTraPass", sqlpa);
           }
         public void XoaNguoiDUng(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MANV", dto.MANV));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MANV", dto.MANV));
             ChayProc("NHANVIEN_XoaPQ", sqlpa);
         }
         public DataTable getNhomHang()
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             return executeNonQuerya("NHOMHANG_getall", sqlpa);
             
         }//-----------------Get day du mat hang
            public DataTable getDayDuMatHang()
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             return executeNonQuerya("MatHang_DayDu", sqlpa);
            
         }
         //------------------Lay Tat ca database--------
         public DataTable getDatabase()
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             return executeNonQuerya("sp_databases", sqlpa);
         }//------------------Get all Kho-------------------
         public DataTable getKho()
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             return executeNonQuerya("KHO_getall", sqlpa);
         }
         //------------------------TON KHO
         public DataTable getTonKho(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MAKHO", dto.MAKHO));
-            sqlpa.Add(new SqlParameter("@NGAYTHANGTU", dto.NGAYBDKHO));
-            sqlpa.Add(new SqlParameter("@NGAYTHANGDEN", dto.NGAYKTKHO));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAKHO", dto.MAKHO));
+            sqlpa.Add(new MySqlParameter("@NGAYTHANGTU", dto.NGAYBDKHO));
+            sqlpa.Add(new MySqlParameter("@NGAYTHANGDEN", dto.NGAYKTKHO));
             return executeNonQuerya("TONKHO_getall", sqlpa);
         }
         //--------------------Backup Restore---------------------------
         public  void Backup(clDTO DTO)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@TENFILE",DTO.TENFILE));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@TENFILE",DTO.TENFILE));
             ChayProc("BACKUP_DATABASE", sqlpa);
         }
         public DataTable getDoanhThu(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@NGAY_BD", dto.NGAYBD));
-            sqlpa.Add(new SqlParameter("@NGAY_KT", dto.NGAYKT));
-            sqlpa.Add(new SqlParameter("@LOAI_TG", dto.LOAITG));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@NGAY_BD", dto.NGAYBD));
+            sqlpa.Add(new MySqlParameter("@NGAY_KT", dto.NGAYKT));
+            sqlpa.Add(new MySqlParameter("@LOAI_TG", dto.LOAITG));
             return executeNonQuerya("THONGKE_DOANHTHU", sqlpa);
         }
         public DataTable testLogin(clDTO dto)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@USERNAME", dto.TENDANGNHAP));
-            sqlpa.Add(new SqlParameter("@PASSWORD", dto.MATKHAU));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@USERNAME", dto.TENDANGNHAP));
+            sqlpa.Add(new MySqlParameter("@PASSWORD", dto.MATKHAU));
             return executeNonQuerya("TEST_NHANVIEN", sqlpa);
         }
 
