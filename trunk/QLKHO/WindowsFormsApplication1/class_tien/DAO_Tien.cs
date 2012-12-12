@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Collections;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication1
 {
@@ -32,22 +33,22 @@ namespace WindowsFormsApplication1
                 MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("THONGTIN_HOADONNHAP_CNO", MSQL.sqlKetNoi);
                 MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
                 ArrayList AR = new ArrayList();
-                SqlDataReader RD = MSQL.sqlcmdLenhThucThi.ExecuteReader();
-                while (RD.Read())
+                MSQL.SqlDataReader1 = MSQL.sqlcmdLenhThucThi.ExecuteReader();
+                while (MSQL.SqlDataReader1.Read())
                 {
                     NHACUNGCAP ncc = new NHACUNGCAP();
-                    ncc.ManNCC1 = RD[0].ToString();
-                    ncc.TenNCC1 = RD[1].ToString();
-                    ncc.Diachi1 = RD[2].ToString();
-                    ncc.MaSoThue1 = RD[3].ToString();
-                    ncc.SdT1 = RD[4].ToString();
-                    ncc.Email1 = RD[5].ToString();
-                    ncc.GhiChu1 = RD[6].ToString();
-                    ncc.SoTienPhaiTra1 = int.Parse(RD[7].ToString());
-                    ncc.SoTienDaTra1 = int.Parse(RD[8].ToString());
+                    ncc.ManNCC1 = MSQL.SqlDataReader1[0].ToString();
+                    ncc.TenNCC1 = MSQL.SqlDataReader1[1].ToString();
+                    ncc.Diachi1 = MSQL.SqlDataReader1[2].ToString();
+                    ncc.MaSoThue1 = MSQL.SqlDataReader1[3].ToString();
+                    ncc.SdT1 = MSQL.SqlDataReader1[4].ToString();
+                    ncc.Email1 = MSQL.SqlDataReader1[5].ToString();
+                    ncc.GhiChu1 = MSQL.SqlDataReader1[6].ToString();
+                    ncc.SoTienPhaiTra1 = int.Parse(MSQL.SqlDataReader1[7].ToString());
+                    ncc.SoTienDaTra1 = int.Parse(MSQL.SqlDataReader1[8].ToString());
                     AR.Add(ncc);
                 }
-                RD.Close();
+                MSQL.SqlDataReader1.Close();
                 return AR;
             }
         }
@@ -137,8 +138,8 @@ namespace WindowsFormsApplication1
         {
 
                 Provider dv = new Provider();
-                List<SqlParameter> sqlParams = new List<SqlParameter>();
-                SqlParameter sqlpa = new SqlParameter("@MAPC", SqlDbType.VarChar, 15);
+                List<MySqlParameter> sqlParams = new List<MySqlParameter>();
+                MySqlParameter sqlpa = new MySqlParameter("@MAPC", SqlDbType.VarChar, 15);
                 sqlpa.Direction = ParameterDirection.Output;
                 sqlParams.Add(sqlpa);
 
@@ -150,12 +151,12 @@ namespace WindowsFormsApplication1
         public static void SUAPHIEUCHI_DAO(PHIEUCHI_DTO dto)
         {
             Provider dv = new Provider();
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MAPC", dto.MaPhieuChi));
-            sqlpa.Add(new SqlParameter("@MANV", dto.NhanVien));
-            sqlpa.Add(new SqlParameter("@NGAYCHI", dto.NgayChi));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAPC", dto.MaPhieuChi));
+            sqlpa.Add(new MySqlParameter("@MANV", dto.NhanVien));
+            sqlpa.Add(new MySqlParameter("@NGAYCHI", dto.NgayChi));
 
-            sqlpa.Add(new SqlParameter("@SOTIENDATRA_PC", dto.SoTienDaTra));
+            sqlpa.Add(new MySqlParameter("@SOTIENDATRA_PC", dto.SoTienDaTra));
             dv.ChayProc("UPDATE_PHIEUCHI", sqlpa);
         }
         public static DataTable TONGHOPCHI()
@@ -173,8 +174,8 @@ namespace WindowsFormsApplication1
         public static void XOAPHIEUCHI_DAO(XOAPHIEUCHI_DTO dto)
         {
             Provider dv = new Provider();
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MAPC", dto.MaPhieuChi));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAPC", dto.MaPhieuChi));
             dv.ChayProc("DELETE_PHIEUCHI", sqlpa);
         }       
     }
@@ -249,12 +250,12 @@ namespace WindowsFormsApplication1
         public static void THEM_PHIEUTHU_DAO(PHIEUTHU_DTO dto)
         {
             Provider dv = new Provider();
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MAPT", dto.MaPhieuThu));
-            sqlpa.Add(new SqlParameter("@MANV", dto.NhanVien));
-            sqlpa.Add(new SqlParameter("@NGAYTHU", dto.NgayThu));
-            sqlpa.Add(new SqlParameter("@MAHDX", dto.Mahoadonxuat));
-            sqlpa.Add(new SqlParameter("@TIENTHU", dto.SoTienDaTra));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAPT", dto.MaPhieuThu));
+            sqlpa.Add(new MySqlParameter("@MANV", dto.NhanVien));
+            sqlpa.Add(new MySqlParameter("@NGAYTHU", dto.NgayThu));
+            sqlpa.Add(new MySqlParameter("@MAHDX", dto.Mahoadonxuat));
+            sqlpa.Add(new MySqlParameter("@TIENTHU", dto.SoTienDaTra));
             dv.ChayProc("INSERTPT", sqlpa);
         }
         public static DataTable ChiTietPNKH_DAO(string sMaKH)
@@ -298,8 +299,8 @@ namespace WindowsFormsApplication1
         {
 
             Provider dv = new Provider();
-            List<SqlParameter> sqlParams = new List<SqlParameter>();
-            SqlParameter sqlpa = new SqlParameter("@MAPT", SqlDbType.VarChar, 15);
+            List<MySqlParameter> sqlParams = new List<MySqlParameter>();
+            MySqlParameter sqlpa = new MySqlParameter("@MAPT", SqlDbType.VarChar, 15);
             sqlpa.Direction = ParameterDirection.Output;
             sqlParams.Add(sqlpa);
 
@@ -311,12 +312,12 @@ namespace WindowsFormsApplication1
         public static void SUAPHIEUTHU_DAO(PHIEUTHU_DTO dto)
         {
             Provider dv = new Provider();
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MAPT", dto.MaPhieuThu));
-            sqlpa.Add(new SqlParameter("@MANV", dto.NhanVien));
-            sqlpa.Add(new SqlParameter("@NGAYTHU", dto.NgayThu));
-            sqlpa.Add(new SqlParameter("@MAHDX",dto.Mahoadonxuat));
-            sqlpa.Add(new SqlParameter("@TIENTHU", dto.SoTienDaTra));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAPT", dto.MaPhieuThu));
+            sqlpa.Add(new MySqlParameter("@MANV", dto.NhanVien));
+            sqlpa.Add(new MySqlParameter("@NGAYTHU", dto.NgayThu));
+            sqlpa.Add(new MySqlParameter("@MAHDX",dto.Mahoadonxuat));
+            sqlpa.Add(new MySqlParameter("@TIENTHU", dto.SoTienDaTra));
             dv.ChayProc("UPDATEPT", sqlpa);
         }
         public static DataTable MOTPT_DAO(string sMapt)
@@ -335,8 +336,8 @@ namespace WindowsFormsApplication1
         public static void XOAPHIEUTHU_DAO(XOAPHIEUTHU_DTO dto)
         {
             Provider dv = new Provider();
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MAPT", dto.MaPhieuThu));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAPT", dto.MaPhieuThu));
             dv.ChayProc("DELETE_PHIEUTHU", sqlpa);
         }
         public static DataTable LOADHDX_DAO(string maKH)
@@ -441,23 +442,23 @@ namespace WindowsFormsApplication1
         public static void SUAPHIEUCHI_DAO(PHIEUCHI_DTO dto)
         {
             Provider dv = new Provider();
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MAPC", dto.MaPhieuChi));
-            sqlpa.Add(new SqlParameter("@MANV", dto.NhanVien));
-            sqlpa.Add(new SqlParameter("@NGAYCHI", dto.NgayChi));
-            sqlpa.Add(new SqlParameter("@MAHDN", dto.Mahoadonnhap));
-            sqlpa.Add(new SqlParameter("@TIENTRA", dto.SoTienDaTra));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAPC", dto.MaPhieuChi));
+            sqlpa.Add(new MySqlParameter("@MANV", dto.NhanVien));
+            sqlpa.Add(new MySqlParameter("@NGAYCHI", dto.NgayChi));
+            sqlpa.Add(new MySqlParameter("@MAHDN", dto.Mahoadonnhap));
+            sqlpa.Add(new MySqlParameter("@TIENTRA", dto.SoTienDaTra));
             dv.ChayProc("UPDATEPC", sqlpa);
         }
         public static void THEM_PHIEUCHI_DAO(PHIEUCHI_DTO dto)
         {
             Provider dv = new Provider();
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@MAPC", dto.MaPhieuChi));
-            sqlpa.Add(new SqlParameter("@MANV", dto.NhanVien));
-            sqlpa.Add(new SqlParameter("@NGAYCHI", dto.NgayChi));
-            sqlpa.Add(new SqlParameter("@MAHDN", dto.Mahoadonnhap));
-            sqlpa.Add(new SqlParameter("@TIENTRA", dto.SoTienDaTra));
+            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAPC", dto.MaPhieuChi));
+            sqlpa.Add(new MySqlParameter("@MANV", dto.NhanVien));
+            sqlpa.Add(new MySqlParameter("@NGAYCHI", dto.NgayChi));
+            sqlpa.Add(new MySqlParameter("@MAHDN", dto.Mahoadonnhap));
+            sqlpa.Add(new MySqlParameter("@TIENTRA", dto.SoTienDaTra));
             dv.ChayProc("INSERTPC", sqlpa);
         }
     }

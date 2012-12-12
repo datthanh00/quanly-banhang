@@ -1,33 +1,35 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Data;
+using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication1
 {
 	class Mysqlchange:Provider
 	{
-        public SqlConnection SQLConnection1;
-        public SqlCommand SqlCommand1;
-        public SqlDataReader SqlDataReader1;
+        public MySqlConnection SQLConnection1;
+        public MySqlCommand SqlCommand1;
+        public MySqlDataReader SqlDataReader1;
 
-        public SqlConnection sqlKetNoi;
-        public SqlCommand sqlcmdLenhThucThi;
-        public SqlDataReader sqldatareader;
-        public SqlDataAdapter DA;
+        public MySqlConnection sqlKetNoi;
+        public MySqlCommand sqlcmdLenhThucThi;
+        public MySqlDataReader sqldatareader;
+        public MySqlDataAdapter DA;
+        //public SqlParameter
 
-        public SqlCommand SqlCommand(string sqlstring,SqlConnection SqlCnn)
+        public MySqlCommand SqlCommand(string sqlstring, MySqlConnection SqlCnn)
         {
-            return new SqlCommand(sqlstring, SqlCnn);
+            return new MySqlCommand(sqlstring, SqlCnn);
         }
 
-        public SqlDataAdapter SqlDataAdapter(string sqlstring, SqlConnection SqlCnn)
+        public MySqlDataAdapter SqlDataAdapter(string sqlstring, MySqlConnection SqlCnn)
         {
-            return new SqlDataAdapter(sqlstring, SqlCnn);
+            return new MySqlDataAdapter(sqlstring, SqlCnn);
         }
 
-        public SqlDataAdapter SqlDataAdapter(SqlCommand sqlcommand)
+        public MySqlDataAdapter SqlDataAdapter(MySqlCommand sqlcommand)
         {
-            return new SqlDataAdapter(sqlcommand);
+            return new MySqlDataAdapter(sqlcommand);
         }
     }
 }

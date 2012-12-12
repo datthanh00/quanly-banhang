@@ -5,22 +5,23 @@ using System.Configuration;
 using System.Windows.Forms;
 using System.IO;
 using System.Data;
+using  MySql.Data.MySqlClient;
 namespace WindowsFormsApplication1
 {
     class Provider
     {
-        SqlConnection con;
-        SqlDataAdapter da;
-        SqlCommand cmd;
+        MySqlConnection con;
+        MySqlDataAdapter da;
+        MySqlCommand cmd;
         DataSet ds;
 
-        public void thu(String sql, List<SqlParameter> sqlParams)
+        public void thu(String sql, List<MySqlParameter> sqlParams)
         {
             connect();
-            cmd = new SqlCommand(sql, con);
+            cmd = new MySqlCommand(sql, con);
             if (sqlParams != null)
             {
-                foreach (SqlParameter param in sqlParams)
+                foreach ( MySqlParameter param in sqlParams)
                 {
                     cmd.Parameters.Add(param);
                 }
@@ -28,7 +29,7 @@ namespace WindowsFormsApplication1
             cmd.ExecuteNonQuery();
             disconnect();
         }
-        public DataTable executeNonQuerya(String spName, List<SqlParameter> sqlParams)
+        public DataTable executeNonQuerya(String spName, List<MySqlParameter> sqlParams)
         {
            
             DataTable dt = new DataTable();
@@ -38,18 +39,18 @@ namespace WindowsFormsApplication1
                 {
                     {
 
-                        SqlCommand command = con.CreateCommand();
+                        MySqlCommand command = con.CreateCommand();
 
                         command.CommandType = CommandType.StoredProcedure;
                         command.CommandText = spName;
                         if (sqlParams != null)
                         {
-                            foreach (SqlParameter param in sqlParams)
+                            foreach (MySqlParameter param in sqlParams)
                             {
                                 command.Parameters.Add(param);
                             }
                         }
-                        SqlDataAdapter adapter = new SqlDataAdapter();
+                        MySqlDataAdapter adapter = new MySqlDataAdapter();
                         adapter.SelectCommand = command;
                         adapter.Fill(dt);
                     }
@@ -61,18 +62,18 @@ namespace WindowsFormsApplication1
             }
             return dt;
         }
-        public void ChayProc(String spName, List<SqlParameter> sqlParams)
+        public void ChayProc(String spName, List<MySqlParameter> sqlParams)
         {
         tt:
             try
             {
                 connect();
-                SqlCommand command = con.CreateCommand();
+                MySqlCommand command = con.CreateCommand();
                 command.CommandType = CommandType.StoredProcedure;
                 command.CommandText = spName;
                 if (sqlParams != null)
                 {
-                    foreach (SqlParameter param in sqlParams)
+                    foreach (MySqlParameter param in sqlParams)
                     {
                         command.Parameters.Add(param);
                     }
@@ -91,19 +92,19 @@ namespace WindowsFormsApplication1
         protected static string strConnect;
         public static string sPass;
         public static string sUser;
-        public static SqlConnection get_Connect()
+        public static MySqlConnection get_Connect()
         {
             if (File.Exists("App.config"))
             {
                 Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
                 strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
             }
-            SqlConnection cn = new SqlConnection(strConnect);
+            MySqlConnection cn = new MySqlConnection(strConnect);
             cn.Open();
             return cn;
         }
 
-        public static SqlConnection connect1()
+        public static MySqlConnection connect1()
         {
         tt:
             try
@@ -114,7 +115,7 @@ namespace WindowsFormsApplication1
                     Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
                     strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true";
                 }
-                SqlConnection cn = new SqlConnection(strConnect);
+                MySqlConnection cn = new MySqlConnection(strConnect);
                 cn.Open();
                 return cn;
             }
@@ -144,7 +145,7 @@ namespace WindowsFormsApplication1
         public DataSet get(string sql)
         {
             connect();
-            da = new SqlDataAdapter(sql, con);
+            da = new MySqlDataAdapter(sql, con);
             ds = new DataSet();
             da.Fill(ds);
             disconnect();
@@ -153,7 +154,7 @@ namespace WindowsFormsApplication1
         public DataTable getdata(string sql)
         {
             connect();
-            da = new SqlDataAdapter(sql, con);
+            da = new MySqlDataAdapter(sql, con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             disconnect();
@@ -162,7 +163,7 @@ namespace WindowsFormsApplication1
         public void executeNonQuery(string sql)
         {
             connect();
-            cmd = new SqlCommand(sql, con);
+            cmd = new MySqlCommand(sql, con);
             cmd.ExecuteNonQuery();
             disconnect();
         }
