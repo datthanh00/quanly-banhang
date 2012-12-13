@@ -6,7 +6,7 @@ namespace WindowsFormsApplication1
 {
     class Ctrl_Tien
     {
-        public static DataTable TTNCC_CTRL(string sMancc)
+       /* public static DataTable TTNCC_CTRL(string sMancc)
         {
 
             return CHITIETNHCC_HDN.TTNCC_DAO(sMancc);
@@ -50,10 +50,7 @@ namespace WindowsFormsApplication1
         }
 
         
-        public static DataTable TONGHOPTHU_KH()
-        {
-            return CONGNOKH.GETALLHDX_DAO();
-        }
+        
         public static DataTable Chitietnokh(string sMaKH)
         {
             return CONGNOKH.ChiTietPNKH_DAO(sMaKH);
@@ -67,10 +64,7 @@ namespace WindowsFormsApplication1
 
             return CONGNOKH.THEMPHIEUTHU_DAO(dt);
         }
-        public static void SUAPHIEUTHU_ctrl(PHIEUTHU_DTO dt)
-        {
-            CONGNOKH.SUAPHIEUTHU_DAO(dt);
-        }
+       
         public static DataTable pt_ctrl(string sma)
         {
             return CONGNOKH.MOTPT_DAO(sma);
@@ -87,6 +81,15 @@ namespace WindowsFormsApplication1
         public static DataTable loadhdx_ctrl(string MaKH)
         {
             return CONGNOKH.LOADHDX_DAO(MaKH);
+        }
+        */
+        public static void SUAPHIEUTHU_ctrl(PHIEUTHU_DTO dt)
+        {
+            CONGNOKH.SUAPHIEUTHU_DAO(dt);
+        }
+        public static DataTable TONGHOPTHU_KH()
+        {
+            return CONGNOKH.GETALLHDX_DAO();
         }
         /// <summary>
         /// //////////////Lại từ đầu
@@ -110,10 +113,10 @@ namespace WindowsFormsApplication1
         {
               CONGNOKH.THEM_PHIEUTHU_DAO(dt);
         }
-        public static DataTable MAPT_ctrl()
+       /* public static DataTable MAPT_ctrl()
         {
             return CONGNOKH.MAPT_DAO();
-        }
+        }*/
         public static DataTable GETALLHDn_ctrl()
         {
             return CONGNONCC.GETALLHDN_DAO();
