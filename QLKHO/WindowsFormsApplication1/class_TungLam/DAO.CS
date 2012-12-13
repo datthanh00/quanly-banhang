@@ -11,7 +11,7 @@ namespace WindowsFormsApplication1
     {
         public void insertKhachHang(DTO dto)
         {
-            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MAKH", dto.MAKH));
             sqlpa.Add(new MySqlParameter("@MAKV", dto.MAKV));
             sqlpa.Add(new MySqlParameter("@TENKH", dto.TENKH));
@@ -27,10 +27,15 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
 
             ChayProc("KHACHHANG_add", sqlpa);
+             */
+            string SQL = "	insert into KHACHHANG(MAKH,MAKV,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG)"
+	        +" values('"+dto.MAKH+"','"+dto.MAKV+"','"+dto.TENKH+"','"+dto.SOTAIKHOAN+"','"+dto.NGANHANG+"','"+dto.MASOTHUE+"','"+dto.DIACHI+"','"+dto.SDT+"','"+dto.FAX+"','"+dto.WEBSITE+"','"+dto.YAHOO+"','"+dto.SKYPE+"','"+dto.TINHTRANG)";
+            executeNonQuery(SQL);
+
         }
         public void updateKhachHang(DTO dto)
         {
-            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MAKH", dto.MAKH));
             sqlpa.Add(new MySqlParameter("@MAKV", dto.MAKV));
             sqlpa.Add(new MySqlParameter("@TENKH", dto.TENKH));
@@ -45,52 +50,72 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@SKYPE", dto.SKYPE));
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
 
-            ChayProc("KHACHHANG_update", sqlpa);
+            ChayProc("KHACHHANG_update", sqlpa);*/
+            string SQL = "update KHACHHANG set MAKH='"+ dto.MAKH +"' ,MAKV='"+ dto.MAKV +"',TENKH='"+ dto.TENKH +"',SOTAIKHOAN='"+ dto.SOTAIKHOAN +"',NGANHANG='"+ dto.NGANHANG +"',MASOTHUE='"+ dto.MASOTHUE +"',DIACHI='"+ dto.DIACHI +"',SDT='"+ dto.SDT +"',FAX='"+ dto.FAX +"',WEBSITE='"+ dto.WEBSITE +"',YAHOO='"+ dto.YAHOO +"',SKYPE='"+ dto.SKYPE +"',TINHTRANG='"+ dto.TINHTRANG +"' where 	(MAKH='"+dto.MAKH +"')";
+            executeNonQuery(SQL);
         }
         public void INSERTKHUVUC(DTO dto)
         {
-            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MAKV", dto.MAKV));
             sqlpa.Add(new MySqlParameter("@TENKV", dto.TENKV));
             sqlpa.Add(new MySqlParameter("@GHICHU", dto.GHICHU));
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
             ChayProc("KHUVUC_add", sqlpa);
+             * */
+            string SQL = "insert into KHUVUC(MAKV,TENKV,GHICHU,TINHTRANG)"
+            +" values('"+dto.MAKV+"','"+dto.TENKV+"','"+dto.GHICHU+"','"+dto.TINHTRANG+"')";
+            executeNonQuery(SQL);
         }
         public void INSERTNHOMHANG(DTO dto)
         {
-            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MANH", dto.MANH));
             sqlpa.Add(new MySqlParameter("@TENNHOMHANG", dto.TENNHOMHANG));
             sqlpa.Add(new MySqlParameter("@GHICHU", dto.GHICHU));
            
             ChayProc("NHOMHANG_add", sqlpa);
+            */
+            string SQL = "insert into NHOMHANG(MANH,TENNHOMHANG,GHICHU)"
+            +" values('"+dto.MANH+"','"+dto.TENNHOMHANG+"','"+dto.GHICHU+"')";
+            executeNonQuery(SQL);
         }
         public void UPDATENHOMHANG(DTO dto)
         {
-            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MANH", dto.MANH));
             sqlpa.Add(new MySqlParameter("@TENNHOMHANG", dto.TENNHOMHANG));
             sqlpa.Add(new MySqlParameter("@GHICHU", dto.GHICHU));
 
             ChayProc("NHOMHANG_update", sqlpa);
+            */
+            string SQL = "update NHOMHANG set MANH='"+dto.MANH +"' ,TENNHOMHANG='"+dto.TENNHOMHANG+"',GHICHU='"+dto.GHICHU+"' where MANH='"+dto.MANH+"'";
+            executeNonQuery(SQL);
         }
         public void INSERTBOPHAN(DTO dto)
         {
-            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MABP", dto.MABP));
             sqlpa.Add(new MySqlParameter("@TENBOPHAN", dto.TENBOPHAN));
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
 
             ChayProc("BOPHAN_add", sqlpa);
+             */
+            string SQL = "insert into BOPHAN(MABP,TENBOPHAN,TINHTRANG)"
+            +" values('"+dto.MABP+"','"+dto.TENBOPHAN+"','"+dto.TINHTRANG+"')";
+            executeNonQuery(SQL);
         }
         public void UPDATEBOPHAN(DTO dto)
         {
-            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MABP", dto.MABP));
             sqlpa.Add(new MySqlParameter("@TENBOPHAN", dto.TENBOPHAN));
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
 
-            ChayProc("BOPHAN_update", sqlpa);
+            ChayProc("BOPHAN_update", sqlpa);*/
+            string SQL = "update BOPHAN set MABP= '"+dto.MABP+"',TENBOPHAN= '"+dto.TENBOPHAN+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MABP='"+dto.MABP+"'";
+            executeNonQuery(SQL);
+
         }
         public void UPDATEKHUVUC(DTO dto)
         {
@@ -167,7 +192,6 @@ namespace WindowsFormsApplication1
             List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MATH", dto.MATH));
             sqlpa.Add(new MySqlParameter("@SOTHUE", dto.SOTHUE));
-
 
             ChayProc("THUE_add", sqlpa);
         }

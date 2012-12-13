@@ -7,10 +7,12 @@ using MySql.Data.MySqlClient;
 
 namespace WindowsFormsApplication1
 {
+    /*
     class DAO_Tien
     {
     }
-    class CHITIETNHCC_HDN
+   
+    class CHITIETNHCC_HDN:Provider
     {
         public static Mysqlchange MSQL = new Mysqlchange();
         public static DataTable TTNCC_DAO(string sMancc)
@@ -25,6 +27,10 @@ namespace WindowsFormsApplication1
                 MSQL.sqlKetNoi.Close();
                 return dtttncc;
             }
+
+
+            //String SQL = "select * from NHANVIEN where USERNAME='" + dto.TENDANGNHAP + "'";
+           // return getdata(SQL);
         }
         public static ArrayList RDTTNCC_DAO()
         {
@@ -51,6 +57,7 @@ namespace WindowsFormsApplication1
                 MSQL.SqlDataReader1.Close();
                 return AR;
             }
+      
         }
         public static DataTable TONGHOPNCC_DAO(string sMancc)
         {
@@ -72,7 +79,6 @@ namespace WindowsFormsApplication1
               //  mess
                 throw;
             }
-
         }
         public static DataTable ChiTietPNCC_DAO(string sMancc)
         {
@@ -179,12 +185,13 @@ namespace WindowsFormsApplication1
             dv.ChayProc("DELETE_PHIEUCHI", sqlpa);
         }       
     }
-    class CONGNOKH
+    */
+    class CONGNOKH:Provider
     {
         public static Mysqlchange MSQL = new Mysqlchange();
         public static DataTable GETALLHDX_DAO()
         {
-            
+            /*
             using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 string SQL = "SELECT MAHDX as N'Mã hóa đơn xuất',NGAYXUAT as N'Ngày Xuất',TENKH as N'Tên khách hàng',HOADONXUAT.MAKH as N'Mã khách hàng',TIENPHAITRA AS N'Tiền phải trả',TIENdaTRA as N'Tiền đã trả', tienphaitra-tiendatra as N'Còn lại' FROM HOADONXUAT,KHACHHANG WHERE HOADONXUAT.MAKH=KHACHHANG.MAKH and tienphaitra-tiendatra <> 0 group by hoadonxuat.mahdx,hoadonxuat.tienphaitra,hoadonxuat.tiendatra,khachhang.tenkh,hoadonxuat.makh,hoadonxuat.ngayxuat";
@@ -195,9 +202,16 @@ namespace WindowsFormsApplication1
                 MSQL.sqlKetNoi.Close();
                 return dt;
             }
+            */
+            Provider pv = new Provider();
+            string SQL = "SELECT MAHDX as N'Mã hóa đơn xuất',NGAYXUAT as N'Ngày Xuất',TENKH as N'Tên khách hàng',HOADONXUAT.MAKH as N'Mã khách hàng',TIENPHAITRA AS N'Tiền phải trả',TIENdaTRA as N'Tiền đã trả', tienphaitra-tiendatra as N'Còn lại' FROM HOADONXUAT,KHACHHANG WHERE HOADONXUAT.MAKH=KHACHHANG.MAKH and tienphaitra-tiendatra <> 0 group by hoadonxuat.mahdx,hoadonxuat.tienphaitra,hoadonxuat.tiendatra,khachhang.tenkh,hoadonxuat.makh,hoadonxuat.ngayxuat";
+
+            return pv.getdata(SQL);
+
         }
         public static DataTable GETALLPHIEUCHI_DAO()
         {
+            /*
             using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 string SQL = "SELECT MAPT as N'Mã phiếu thu',MANV as N'Mã nhân viên',MAhdx as N'Mã hóa đơn xuất',ngaythu as N'Ngày thu',SoTienTra_PT as N'Tiền đã trả' FROM PHIEUTHU";
@@ -208,10 +222,15 @@ namespace WindowsFormsApplication1
                 MSQL.sqlKetNoi.Close();
                 return dt;
             }
+             */
+            Provider pv = new Provider();
+            string SQL = "SELECT MAPT as N'Mã phiếu thu',MANV as N'Mã nhân viên',MAhdx as N'Mã hóa đơn xuất',ngaythu as N'Ngày thu',SoTienTra_PT as N'Tiền đã trả' FROM PHIEUTHU";
+            return pv.getdata(SQL);
+             
         }
         public static DataTable get1pt_dao(string sMahdx)
         {
-            using (MSQL.sqlKetNoi = Provider.get_Connect())
+           /* using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("GETONEPT", MSQL.sqlKetNoi);
                 MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
@@ -221,7 +240,12 @@ namespace WindowsFormsApplication1
                 MSQL.sqlKetNoi.Close();
                 return dtgetpt;
             }
+            * */
+            Provider pv = new Provider();
+            string SQL = "SELECT MAPT as N'Mã phiếu thu',MANV as N'Mã nhân viên',MAhdx as N'Mã hóa đơn xuất',ngaythu as N'Ngày thu',sotientra_pt as N'Tiền đã trả' FROM PHIEUTHU WHERE MAHDX='" + sMahdx + "'";
+            return pv.getdata(SQL);
         }
+        /*
         public static DataTable TONGHOPTHU()
         {
             using (MSQL.sqlKetNoi = Provider.get_Connect())
@@ -246,10 +270,12 @@ namespace WindowsFormsApplication1
                 MSQL.sqlKetNoi.Close();
                 return PT;
             }
+            
         }
+         */
         public static void THEM_PHIEUTHU_DAO(PHIEUTHU_DTO dto)
         {
-            Provider dv = new Provider();
+            /*Provider dv = new Provider();
             List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MAPT", dto.MaPhieuThu));
             sqlpa.Add(new MySqlParameter("@MANV", dto.NhanVien));
@@ -257,44 +283,53 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MAHDX", dto.Mahoadonxuat));
             sqlpa.Add(new MySqlParameter("@TIENTHU", dto.SoTienDaTra));
             dv.ChayProc("INSERTPT", sqlpa);
+            */
+            Provider pv = new Provider();
+            string SQL = "INSERT INTO PHIEUTHU (MAPT,MAHDX,NGAYTHU,MANV,SoTienTra_PT)"
+            + " VALUES('" + dto.MaPhieuThu + "', '" + dto.Mahoadonxuat + "','" + dto.NgayThu + "','" + dto.NhanVien + "','" + dto.SoTienDaTra + "')"
+            + " select TIENCANSUA =SUM(SOTIENTRA_PT) FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "'"
+            + " update hoadonxuat set TIENDATRA=tiendatra+TIENCANSUA WHERE MAHDX='" + dto.Mahoadonxuat + "'";
+            pv.executeNonQuery(SQL);
         }
-        public static DataTable ChiTietPNKH_DAO(string sMaKH)
-        {
+        /* public static DataTable ChiTietPNKH_DAO(string sMaKH)
+         {
 
-            try
-            {
-                using (MSQL.sqlKetNoi = Provider.get_Connect())
-                {
-                    MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("sp_phieuthu_chitiet_khachhang", MSQL.sqlKetNoi);
-                    MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
-                    MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@pt", sMaKH);
-                    MSQL.DA = MSQL.SqlDataAdapter(MSQL.sqlcmdLenhThucThi);
-                    DataTable dtthkh = new DataTable();
-                    MSQL.DA.Fill(dtthkh);
-                    //  dtthncc.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
-                    //MSQL.sqlKetNoi.Close();
-                    return dtthkh;
-                }
-            }
-            catch (Exception ex)
-            {
-                //  mess
-                throw;
-            }
-        }
-        public static DataTable TH1CNKH_DAO(string sMaKH)
-        {
-            using (MSQL.sqlKetNoi = Provider.get_Connect())
-            {
-                MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("TonghopthumotKH", MSQL.sqlKetNoi);
-                MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
-                MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@makh", sMaKH);
-                DataTable dttonghop1 = new DataTable();
-                dttonghop1.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
-                MSQL.sqlKetNoi.Close();
-                return dttonghop1;
-            }
-        }
+             try
+             {
+                 using (MSQL.sqlKetNoi = Provider.get_Connect())
+                 {
+                     MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("sp_phieuthu_chitiet_khachhang", MSQL.sqlKetNoi);
+                     MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                     MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@pt", sMaKH);
+                     MSQL.DA = MSQL.SqlDataAdapter(MSQL.sqlcmdLenhThucThi);
+                     DataTable dtthkh = new DataTable();
+                     MSQL.DA.Fill(dtthkh);
+                     //  dtthncc.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                     //MSQL.sqlKetNoi.Close();
+                     return dtthkh;
+                 }
+             }
+             catch (Exception ex)
+             {
+                 //  mess
+                 throw;
+             }
+         }
+        
+         public static DataTable TH1CNKH_DAO(string sMaKH)
+         {
+             using (MSQL.sqlKetNoi = Provider.get_Connect())
+             {
+                 MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("TonghopthumotKH", MSQL.sqlKetNoi);
+                 MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
+                 MSQL.sqlcmdLenhThucThi.Parameters.AddWithValue("@makh", sMaKH);
+                 DataTable dttonghop1 = new DataTable();
+                 dttonghop1.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
+                 MSQL.sqlKetNoi.Close();
+                 return dttonghop1;
+             }
+         }
+         
         public static string THEMPHIEUTHU_DAO(THEMPHIEUTHU_DTO dt)
         {
 
@@ -309,9 +344,10 @@ namespace WindowsFormsApplication1
             return dt.MaPhieuThu = Convert.ToString(sqlpa.Value.ToString());
 
         }
+         */
         public static void SUAPHIEUTHU_DAO(PHIEUTHU_DTO dto)
         {
-            Provider dv = new Provider();
+            /*Provider dv = new Provider();
             List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MAPT", dto.MaPhieuThu));
             sqlpa.Add(new MySqlParameter("@MANV", dto.NhanVien));
@@ -319,8 +355,14 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MAHDX",dto.Mahoadonxuat));
             sqlpa.Add(new MySqlParameter("@TIENTHU", dto.SoTienDaTra));
             dv.ChayProc("UPDATEPT", sqlpa);
+            */
+            Provider pv = new Provider();
+            string SQL = "select TIENCANSUA =SOTIENTRA_PT FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "'"
+             + " UPDATE  PHIEUTHU set NGAYTHU ='" + dto.NgayThu + "',MAHDX='" + dto.Mahoadonxuat + "',MANV='" + dto.NhanVien + "',SoTienTra_PT='" + dto.SoTienDaTra + "' WHERE MAPT='" + dto.MaPhieuThu + "'"
+             + " UPDATE HOADONXUAT SET TIENDATRA=(tiendatra-TIENCANSUA)+'" + dto.SoTienDaTra + "' where MAHDX='" + dto.Mahoadonxuat + "'";
+            pv.executeNonQuery(SQL);
         }
-        public static DataTable MOTPT_DAO(string sMapt)
+        /*public static DataTable MOTPT_DAO(string sMapt)
         {
             using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
@@ -353,13 +395,14 @@ namespace WindowsFormsApplication1
                 return dtloadhdx;
             }
         }
+         */ 
     }
     class CONGNONCC
     {
         public static Mysqlchange MSQL = new Mysqlchange();
         public static DataTable GETALLHDN_DAO()
         {
-            using (MSQL.sqlKetNoi = Provider.get_Connect())
+            /*using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("LoadGETALLHDN", MSQL.sqlKetNoi);
                 MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
@@ -368,11 +411,16 @@ namespace WindowsFormsApplication1
                 THC.Load(MSQL.sqlcmdLenhThucThi.ExecuteReader());
                 MSQL.sqlKetNoi.Close();
                 return THC;
-            }
+            }*/
+            Provider pv = new Provider();
+            string SQL = "SELECT MAHDN as N'Mã hóa đơn nhập',TENncc as N'Tên nhà cung cấp',HOADONnhap.MAncc as N'Mã nhà cung cấp',TIENPHAITRA AS N'Tiền phải trả',TIENdaTRA as N'Tiền đã trả', tienphaitra-tiendatra as N'Còn lại'"
+            +" FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc and hoadonnhap.tinhtrang='false' "
+            +" group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc";
+            return pv.getdata(SQL);
         }
         public static DataTable GETALLcongno_ncc()
         {
-            using (MSQL.sqlKetNoi = Provider.get_Connect())
+            /*using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 string SQL = "SELECT MAHDN as N'Mã hóa đơn nhập',NGAYNHAP as N'Ngày nhập',TENncc as N'Tên nhà cung cấp',HOADONnhap.MAncc as N'Mã nhà cung cấp',TIENPHAITRA AS N'Tiền phải trả',TIENdaTRA as N'Tiền đã trả', tienphaitra-tiendatra as N'Còn lại' FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc and tienphaitra-tiendatra<>0 group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc,hoadonnhap.ngaynhap";
                 MSQL.DA = MSQL.SqlDataAdapter(SQL, MSQL.sqlKetNoi);
@@ -380,12 +428,15 @@ namespace WindowsFormsApplication1
                 MSQL.DA.Fill(dt);
                 MSQL.sqlKetNoi.Close();
                 return dt;
-            }
+            }*/
+            Provider pv = new Provider();
+            string SQL = "SELECT MAHDN as N'Mã hóa đơn nhập',NGAYNHAP as N'Ngày nhập',TENncc as N'Tên nhà cung cấp',HOADONnhap.MAncc as N'Mã nhà cung cấp',TIENPHAITRA AS N'Tiền phải trả',TIENdaTRA as N'Tiền đã trả', tienphaitra-tiendatra as N'Còn lại' FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc and tienphaitra-tiendatra<>0 group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc,hoadonnhap.ngaynhap";
+            return pv.getdata(SQL);
         }
 
         public static string GETcongno_HDN(string MHDN)
         {
-            using (MSQL.sqlKetNoi = Provider.get_Connect())
+            /*using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONnhap where MAHDN='"+MHDN+"'";
                 MSQL.DA = MSQL.SqlDataAdapter(SQL, MSQL.sqlKetNoi);
@@ -395,11 +446,18 @@ namespace WindowsFormsApplication1
                 if (dt.Rows.Count > 0)
                     return dt.Rows[0][0].ToString();
                 return "0";
-            }
+            }*/
+            Provider pv = new Provider();
+            string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONnhap where MAHDN='"+MHDN+"'";
+            DataTable dt = new DataTable();
+            dt= pv.getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0][0].ToString();
+            return "0";
         }
         public static string GETcongno_HDX(string MHDX)
         {
-            using (MSQL.sqlKetNoi = Provider.get_Connect())
+            /*using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONXUAT where MAHDX='" + MHDX + "'";
              
@@ -410,11 +468,19 @@ namespace WindowsFormsApplication1
                 if (dt.Rows.Count > 0)
                     return dt.Rows[0][0].ToString();
                 return "0";
-            }
+            }*/
+            Provider pv = new Provider();
+            string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONXUAT where MAHDX='" + MHDX + "'";
+            DataTable dt = new DataTable();
+            dt = pv.getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0][0].ToString();
+            return "0";
+
         }
         public static DataTable get1pc_dao(string sMahdn)
         {
-            using (MSQL.sqlKetNoi = Provider.get_Connect())
+            /*using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
                 MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("GETONEPC", MSQL.sqlKetNoi);
                 MSQL.sqlcmdLenhThucThi.CommandType = CommandType.StoredProcedure;
@@ -424,10 +490,14 @@ namespace WindowsFormsApplication1
                 MSQL.sqlKetNoi.Close();
                 return dtgetpc;
             }
+            */
+            Provider pv = new Provider();
+            string SQL = "SELECT MAPc as N'Mã phiếu chi',MANV as N'Mã nhân viên',MAhdn as N'Mã hóa đơn nhập',ngaychi as N'Ngày chi',SoTienDaTra_PC as N'Tiền đã trả' FROM PHIEUCHI WHERE MAHDN='"+sMahdn+"'";
+            return pv.getdata(SQL);
         }
         public static DataTable Getall_phieuchi_Dao()
         {
-            using (MSQL.sqlKetNoi = Provider.get_Connect())
+            /*using (MSQL.sqlKetNoi = Provider.get_Connect())
             {
 
                 string SQL = "SELECT MAPc as N'Mã phiếu chi',MANV as N'Mã nhân viên',MAhdn as N'Mã hóa đơn nhập',ngaychi as N'Ngày chi',SoTienDaTra_PC as N'Tiền đã trả' FROM PHIEUCHI";
@@ -437,11 +507,14 @@ namespace WindowsFormsApplication1
                 MSQL.DA.Fill(dt);
                 MSQL.sqlKetNoi.Close();
                 return dt;
-            }
+            }*/
+            Provider pv = new Provider();
+            string SQL = "SELECT MAPc as N'Mã phiếu chi',MANV as N'Mã nhân viên',MAhdn as N'Mã hóa đơn nhập',ngaychi as N'Ngày chi',SoTienDaTra_PC as N'Tiền đã trả' FROM PHIEUCHI";
+            return pv.getdata(SQL);
         }
         public static void SUAPHIEUCHI_DAO(PHIEUCHI_DTO dto)
         {
-            Provider dv = new Provider();
+            /*Provider dv = new Provider();
             List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MAPC", dto.MaPhieuChi));
             sqlpa.Add(new MySqlParameter("@MANV", dto.NhanVien));
@@ -449,10 +522,16 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MAHDN", dto.Mahoadonnhap));
             sqlpa.Add(new MySqlParameter("@TIENTRA", dto.SoTienDaTra));
             dv.ChayProc("UPDATEPC", sqlpa);
+            */
+            Provider pv = new Provider();
+            string SQL = "select TIENCANSUA =SoTienDaTra_PC FROM PHIEUCHI WHERE MAHDN='"+dto.Mahoadonnhap+"' AND MAPC='"+dto.MaPhieuChi+"'"
+	        +" UPDATE  PHIEUCHI set NGAYCHI ='"+dto.NgayChi+"',MAHDN='"+dto.Mahoadonnhap+"',MANV='"+dto.NhanVien+"',SoTienDaTra_PC='"+dto.SoTienDaTra+"' WHERE MAPC='"+dto.MaPhieuChi+"'"
+	        +" UPDATE HOADONnhap SET TIENDATRA=(tiendatra-TIENCANSUA)+'"+dto.SoTienDaTra+"' where MAHDN='"+dto.Mahoadonnhap+"'";
+            pv.executeNonQuery(SQL);
         }
         public static void THEM_PHIEUCHI_DAO(PHIEUCHI_DTO dto)
         {
-            Provider dv = new Provider();
+            /*Provider dv = new Provider();
             List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             sqlpa.Add(new MySqlParameter("@MAPC", dto.MaPhieuChi));
             sqlpa.Add(new MySqlParameter("@MANV", dto.NhanVien));
@@ -460,6 +539,12 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MAHDN", dto.Mahoadonnhap));
             sqlpa.Add(new MySqlParameter("@TIENTRA", dto.SoTienDaTra));
             dv.ChayProc("INSERTPC", sqlpa);
+            */
+            Provider pv = new Provider();
+            string SQL = "INSERT INTO PHIEUCHI (MAPC,MAHDN,NGAYCHI,MANV,SoTienDaTra_PC)   VALUES('"+dto.MaPhieuChi+"', '"+dto.Mahoadonnhap+"','"+dto.NgayChi+"','"+dto.NhanVien+"','"+dto.SoTienDaTra+"')"
+	        +" select TIENCANSUA =SUM(SoTienDaTra_PC) FROM PHIEUCHI WHERE MAHDN='"+dto.Mahoadonnhap+"' AND MAPC='"+dto.MaPhieuChi+"'"
+	        +" update hoadonnhap set TIENDATRA=tiendatra+TIENCANSUA WHERE MAHDN='"+dto.Mahoadonnhap+"'";
+            pv.executeNonQuery(SQL);
         }
     }
 
