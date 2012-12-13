@@ -239,15 +239,15 @@ namespace WindowsFormsApplication1
             +" BEGIN"
             +" select  NGAYXUAT , TENKH as N'Tên Khách hàng',TENKV ,SUM(TIENPHAITRA) AS  N'TongDoanhThu' FROM HOADONXUAT,KHACHHANG,KHUVUC WHERE KHUVUC.MAKV=KHACHHANG.MAKV AND KHACHHANG.MAKH=HOADONXUAT.MAKH  AND  NGAYXUAT BETWEEN '"+dto.NGAYBD+"' AND '"+dto.NGAYKT+"' group by TENKH,TENKV,ngayxuat"
             +" END"
-            +" ELSE IF('"+dto.LOAITG+"' = 'THANG')
+            +" ELSE IF('"+dto.LOAITG+"' = 'THANG')"
             +" BEGIN"
             +" select  NGAYXUAT , TENKH as N'Tên Khách hàng',TENKV ,SUM(TIENPHAITRA) AS  N'TongDoanhThu' FROM HOADONXUAT,KHACHHANG,KHUVUC WHERE KHUVUC.MAKV=KHACHHANG.MAKV AND KHACHHANG.MAKH=HOADONXUAT.MAKH  AND  MONTH(NGAYXUAT) between MONTH('"+dto.NGAYBD+"') and month('"+dto.NGAYKT+"') AND YEAR(NGAYXUAT) = YEAR('"+dto.NGAYBD+"')	group by TENKH,TENKV,ngayxuat"
             +" END"
-            +" ELSE IF('"+dto.LOAITG+"' = 'QUI')
+            +" ELSE IF('"+dto.LOAITG+"' = 'QUI')"
             +" BEGIN"
             +" select NGAYXUAT ,TENKH as N'Tên Khách hàng',TENKV ,SUM(TIENPHAITRA) AS  N'TongDoanhThu' FROM HOADONXUAT,KHACHHANG,KHUVUC WHERE KHUVUC.MAKV=KHACHHANG.MAKV AND KHACHHANG.MAKH=HOADONXUAT.MAKH  AND  YEAR(NGAYXUAT) = YEAR('"+dto.NGAYBD+"') AND MONTH(NGAYXUAT) BETWEEN MONTH('"+dto.NGAYBD+"') AND MONTH('"+dto.NGAYKT+"')	group by TENKH,TENKV,ngayxuat"
             +" END"
-            +" ELSE IF('"+dto.LOAITG+"'='NAM')
+            +" ELSE IF('"+dto.LOAITG+"'='NAM')"
             +" BEGIN"
             +" select NGAYXUAT ,TENKH as N'Tên Khách hàng',TENKV ,SUM(TIENPHAITRA) AS  N'TongDoanhThu' FROM HOADONXUAT,KHACHHANG,KHUVUC WHERE KHUVUC.MAKV=KHACHHANG.MAKV AND KHACHHANG.MAKH=HOADONXUAT.MAKH  AND YEAR(NGAYXUAT) between YEAR('"+dto.NGAYBD+"') and year('"+dto.NGAYKT+"')	group by TENKH,TENKV,ngayxuat"
             +" END"

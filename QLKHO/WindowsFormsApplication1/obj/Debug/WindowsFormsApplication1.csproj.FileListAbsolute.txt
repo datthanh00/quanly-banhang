@@ -964,3 +964,4 @@ e:\visualsudio\VBNET\ProMag\QLKHO\WindowsFormsApplication1\obj\Debug\WindowsForm
 e:\visualsudio\VBNET\ProMag\QLKHO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 e:\visualsudio\VBNET\ProMag\QLKHO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe.licenses
 e:\visualsudio\VBNET\ProMag\QLKHO\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsFormsApplication1.resources.dll
+e:\visualsudio\VBNET\ProMag\QLKHO\WindowsFormsApplication1\bin\Debug\MySql.Data.dll
