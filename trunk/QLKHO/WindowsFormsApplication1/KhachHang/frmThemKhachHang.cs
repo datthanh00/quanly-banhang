@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
         public string MACHUYEN;
         DataTable dt = new DataTable();
         public string Nhan;
-        public string TenKH, sMaKV, DIACHI, SDT, SOTK, NGANHANG, MASOTHUE, FAX, YAHOO, WEBSITE, SKYPE, TINHTRANG;
+        public string TenKH, sMaKV,sTenKV, DIACHI, SDT, SOTK, NGANHANG, MASOTHUE, FAX, YAHOO, WEBSITE, SKYPE, TINHTRANG;
         public int kiemtra;
         public void loadma()
         {
@@ -329,20 +329,7 @@ namespace WindowsFormsApplication1
             btDong.Text = LamEL.DONG.ToString(); checkTT.Text = LamEL.CHECKTINHTRANG.ToString();
             this.Text = "Form Insert Custommer"; 
         }
-        //DataView dvdropdow;
-        //public void loadgirdlookup()
-        //{
 
-        //    cmbtenkhuvuc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-        //    cmbtenkhuvuc.Properties.DataSource = dvdropdow;
-        //    cmbtenkhuvuc.Properties.DisplayMember = "TENKHO";
-        //    cmbtenkhuvuc.Properties.ValueMember = "MAKHO";
-        //    cmbtenkhuvuc.Properties.View.BestFitColumns();
-        //    cmbtenkhuvuc.Properties.PopupFormWidth = 300;
-        //    cmbtenkhuvuc.Properties.DataSource = CTRL.GETKHO();
-
-        //    // glKhoHang.Text = "";
-        //}
         DataView dvdropdow;
         public void loadgirdlookupKV()
         {
@@ -364,8 +351,6 @@ namespace WindowsFormsApplication1
             if (iNgonNgu == 1)
             {
                 LoadEL();
-
-
             }
             else
             {
@@ -377,9 +362,8 @@ namespace WindowsFormsApplication1
             {
                 loadgirdlookupKV();
                 txtmakh.Text = MACHUYEN;
-               
                 txttenkh.Text = TenKH;
-                cmbtenkhuvuc.Text = sMaKV;
+                cmbtenkhuvuc.Text = CTRL.GETTENKHUVUC(sMaKV);
                 txtdiachi.Text = DIACHI;
                 txtmasothue.Text = MASOTHUE;
                 txtnganhang.Text = NGANHANG;

@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1
             ChayProc("KHACHHANG_add", sqlpa);
              */
             string SQL = "	insert into KHACHHANG(MAKH,MAKV,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG)"
-            + " values('" + dto.MAKH + "','" + dto.MAKV + "','" + dto.TENKH + "','" + dto.SOTAIKHOAN + "','" + dto.NGANHANG + "','" + dto.MASOTHUE + "','" + dto.DIACHI + "','" + dto.SDT + "','" + dto.FAX + "','" + dto.WEBSITE + "','" + dto.YAHOO + "','" + dto.SKYPE + "','" + dto.TINHTRANG + "')";
+            + " values('" + dto.MAKH + "','" + dto.MAKV + "',N'" + dto.TENKH + "','" + dto.SOTAIKHOAN + "',N'" + dto.NGANHANG + "','" + dto.MASOTHUE + "',N'" + dto.DIACHI + "','" + dto.SDT + "','" + dto.FAX + "','" + dto.WEBSITE + "','" + dto.YAHOO + "','" + dto.SKYPE + "','" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 
         }
@@ -51,7 +51,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
 
             ChayProc("KHACHHANG_update", sqlpa);*/
-            string SQL = "update KHACHHANG set MAKH='"+ dto.MAKH +"' ,MAKV='"+ dto.MAKV +"',TENKH='"+ dto.TENKH +"',SOTAIKHOAN='"+ dto.SOTAIKHOAN +"',NGANHANG='"+ dto.NGANHANG +"',MASOTHUE='"+ dto.MASOTHUE +"',DIACHI='"+ dto.DIACHI +"',SDT='"+ dto.SDT +"',FAX='"+ dto.FAX +"',WEBSITE='"+ dto.WEBSITE +"',YAHOO='"+ dto.YAHOO +"',SKYPE='"+ dto.SKYPE +"',TINHTRANG='"+ dto.TINHTRANG +"' where 	(MAKH='"+dto.MAKH +"')";
+            string SQL = "update KHACHHANG set MAKH='"+ dto.MAKH +"' ,MAKV='"+ dto.MAKV +"N',TENKH='"+ dto.TENKH +"',SOTAIKHOAN='"+ dto.SOTAIKHOAN +"',NGANHANG=N'"+ dto.NGANHANG +"',MASOTHUE='"+ dto.MASOTHUE +"',DIACHI='"+ dto.DIACHI +"',SDT='"+ dto.SDT +"',FAX='"+ dto.FAX +"',WEBSITE='"+ dto.WEBSITE +"',YAHOO='"+ dto.YAHOO +"',SKYPE='"+ dto.SKYPE +"',TINHTRANG='"+ dto.TINHTRANG +"' where 	(MAKH='"+dto.MAKH +"')";
             executeNonQuery(SQL);
         }
         public void INSERTKHUVUC(DTO dto)
@@ -476,6 +476,15 @@ namespace WindowsFormsApplication1
              */
             string SQL = "select 	MAKV,TENKV,GHICHU,TINHTRANG from  KHUVUC";
             return GET_DATA(SQL);
+        }
+
+        public string GETTENKHUVUC(string MAKV)
+        {
+            string SQL = "select TENKV from  KHUVUC where MAKV='" + MAKV + "'";
+            DataTable dt= getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0]["TENKV"].ToString();
+            return "";
         }
         public DataTable GETDVT()
         {

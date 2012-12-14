@@ -156,6 +156,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETKV();
         }
+        public string GETTENKHUVUC(string MAKV)
+        {
+            return DAO.GETTENKHUVUC(MAKV);
+        }
         public DataTable GETDVT()
         {
             return DAO.GETDVT();
