@@ -309,7 +309,7 @@
             this.btThemKhuVuc.Appearance.Options.UseForeColor = true;
             this.btThemKhuVuc.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.add;
             this.btThemKhuVuc.Image = global::WindowsFormsApplication1.Properties.Resources.plus;
-            this.btThemKhuVuc.Location = new System.Drawing.Point(629, 10);
+            this.btThemKhuVuc.Location = new System.Drawing.Point(637, 10);
             this.btThemKhuVuc.Name = "btThemKhuVuc";
             this.btThemKhuVuc.Size = new System.Drawing.Size(26, 19);
             this.btThemKhuVuc.TabIndex = 1;
