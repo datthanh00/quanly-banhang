@@ -91,7 +91,8 @@ namespace WindowsFormsApplication1
            // sqlpa.Add(new MySqlParameter("@mabp", dto.MABOPHAN));
            // return executeNonQuerya("NHANVIEN_getoneBOPHAN", sqlpa);
 
-            String SQL = "select 	MANV,MABP,USERNAME,PASSWORD,CHUCVU,TENNV,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG from  NHANVIEN where mabp='"+dto.MABOPHAN+"' and TINHTRANG='True'";
+            String SQL = "select MANV,MABP,USERNAME,PASSWORD,CHUCVU,TENNV,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG from NHANVIEN where mabp='"+dto.MABOPHAN+"' and TINHTRANG='True'";
+            //String SQL = "select * from NHANVIEN";
             return getdata(SQL);
 
         }

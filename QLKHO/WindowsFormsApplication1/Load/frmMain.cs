@@ -1485,7 +1485,7 @@ namespace WindowsFormsApplication1
         {
             Process notePad = new Process();
 
-            notePad.StartInfo.FileName = "help.chm";
+            notePad.StartInfo.FileName = "Help.chm";
            
 
             notePad.Start();
