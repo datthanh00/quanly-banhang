@@ -153,7 +153,7 @@ namespace WindowsFormsApplication1
               sqlpa.Add(new MySqlParameter("@pass", dto.MATKHAU));
               ChayProc("NHANVIEN_DoiMatKhau", sqlpa);
               */
-              String SQL = "delete MATHANG where 	(MAMH='" + dto.MAMH + "')";
+              String SQL = "update NHANVIEN set PASSWORD='" + dto.MATKHAU + "' where 	MANV='" + dto.MANV + "'";
               executeNonQuery(SQL);
           }
           public DataTable KiemTraMatKhau(clDTO dto)
@@ -162,7 +162,7 @@ namespace WindowsFormsApplication1
               //sqlpa.Add(new MySqlParameter("@MANV", dto.MANV));
               //sqlpa.Add(new MySqlParameter("@Pass", dto.MATKHAU));
               //return executeNonQuerya("NHANVIEN_KiemTraPass", sqlpa);
-              String SQL = "select * from NHANVIEN where MANV='" + dto.MANV + "' AND PASS='" + dto.MATKHAU + "'";
+              String SQL = "select * from NHANVIEN where MANV='" + dto.MANV + "' AND PASSWORD='" + dto.MATKHAU + "'";
               return getdata(SQL);
 
           }
