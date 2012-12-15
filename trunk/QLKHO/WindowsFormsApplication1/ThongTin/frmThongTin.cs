@@ -26,7 +26,8 @@ namespace WindowsFormsApplication1
         }
         clDTO dto = new clDTO();
         clCtrl ctr = new clCtrl();
-        byte[] imageData; Loadingggg ld = new Loadingggg();
+        //byte[] imageData; 
+        Loadingggg ld = new Loadingggg();
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             try
@@ -37,11 +38,11 @@ namespace WindowsFormsApplication1
                 MemoryStream ms = new MemoryStream();
                 if (pictureEdit1.Image!=null)
                 {
-                     pictureEdit1.Image.Save(ms, pictureEdit1.Image.RawFormat);
-                imageData = ms.GetBuffer();
+               //      pictureEdit1.Image.Save(ms, pictureEdit1.Image.RawFormat);
+               // imageData = ms.GetBuffer();
                 ms.Close();
                 }
-               
+              
                 dto.MACT = "1";
                 dto.TENCT = txtten.Text;
                 dto.DIACHI = txtDiaChi.Text;
@@ -49,7 +50,7 @@ namespace WindowsFormsApplication1
                 dto.FAX = txtFax.Text;
                 dto.MOBILE = txtDiDong.Text;
                 dto.EMAIL = txtEmail.Text;
-                dto.LOGO = imageData;
+               // dto.LOGO = ""; //imageData;
                 dto.MASOTHUE = txtMaST.Text;
                 dto.WEBSITE = txtWeb.Text;
                 ld.simpleCloseWait();
@@ -115,11 +116,7 @@ namespace WindowsFormsApplication1
                 {
                     loadEN();
                 }
-                //if (Convert.ToString(Clipboard.GetText()) != "ok")
-                //{
-                //    Clipboard.SetText(" ");
 
-                //}
                 DataTable tb = new DataTable();
                 dto.MACT = "1";
                 tb = ctr.getTTCTy(dto);
@@ -133,23 +130,7 @@ namespace WindowsFormsApplication1
                     txtEmail.Text = tb.Rows[i]["EMAIL"].ToString();
                     txtMaST.Text = tb.Rows[i]["MASOTHUE"].ToString();
                     txtWeb.Text = tb.Rows[i]["WEBSITE"].ToString();
-
-                    imageData = (byte[])tb.Rows[i]["LOGO"];
-
-                    //Initialize image variable
-                    Image newImage;
-                    //Read image data into a memory stream
-                    using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
-                    {
-                        ms.Write(imageData, 0, imageData.Length);
-
-                        //Set image variable value using memory stream.
-                        newImage = Image.FromStream(ms, true);
-                        pictureEdit1.Image = newImage;
-                        //pictureEdit1.Image.Save(ms, pictureEdit1.Image.RawFormat);
-                    }
-
-                    //set picture
+                    pictureEdit1.Image = Image.FromFile(tb.Rows[i]["logo"].ToString());
 
                 }
             }

@@ -53,9 +53,6 @@ namespace WindowsFormsApplication1
                         XtraMessageBox.Show("Vui lòng Nhập Tên Bộ Phận");
                         txtten.Focus();
                         return;
-                        //Validate_EmptyStringRule(sender as BaseEdit);
-                        //txtten.Focus();
-                        //return;
                     }
 
 
@@ -65,8 +62,6 @@ namespace WindowsFormsApplication1
                     {
                         DTO.MABP = txtma.Text;
                         DTO.TENBOPHAN = txtten.Text;
-
-
                         DTO.TINHTRANG = KT;
                         CTL.INSERTBOPHAN(DTO);
                         XtraMessageBox.Show("Bạn Đã Thêm Thành Công");
@@ -74,7 +69,6 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-
                         DTO.MABP = txtma.Text;
                         DTO.TENBOPHAN = txtten.Text;
                         DTO.TINHTRANG = KT;
@@ -82,8 +76,6 @@ namespace WindowsFormsApplication1
                         XtraMessageBox.Show("Bạn Đã Sửa Thành Công");
                         this.Close();
                     }
-
-                    //}
                 }
                 else
                 {
@@ -97,8 +89,6 @@ namespace WindowsFormsApplication1
                     {
                         KT = "False";
                     }
-
-
 
                     if (txtten.Text == "")
                     {
@@ -114,7 +104,6 @@ namespace WindowsFormsApplication1
                         {
                             DTO.MABP = txtma.Text;
                             DTO.TENBOPHAN = txtten.Text;
-
 
                             DTO.TINHTRANG = KT;
                             CTL.INSERTBOPHAN(DTO);
@@ -222,41 +211,11 @@ namespace WindowsFormsApplication1
 
         private void txtten_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (iNgonNgu == 0)
-            //{
-            //    if (txtten.Text == "")
-            //    {
-            //        XtraMessageBox.Show("Vui Lòng Nhập Tên Bộ Phận Vào");
-            //        txtten.Focus();
-            //        return;
-            //    }
-            //    else
-            //    {
             if ((Keys)e.KeyChar == Keys.Enter)
             {
 
                 btluu_Click(null, null);
             }
-                   
-            //    }
-            //}
-            //else
-            //{
-            //    if (txtten.Text == "")
-            //    {
-            //        XtraMessageBox.Show("Please Enter Posittion Name");
-            //        txtten.Focus();
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        if ((Keys)e.KeyChar == Keys.Enter)
-            //        {
-
-            //            btluu_Click(null, null);
-            //        }
-            //    }
-            //}
             
         }
         private void Validate_EmptyStringRule(BaseEdit control)

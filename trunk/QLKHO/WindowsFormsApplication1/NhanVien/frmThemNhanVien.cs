@@ -138,6 +138,12 @@ namespace WindowsFormsApplication1
                         txtsdt.Focus();
                         return;
                     }
+                    else if (cmbdate.Text.Length < 10 )
+                    {
+                        XtraMessageBox.Show("ngày sinh không đúng phải theo định dạng dd/mm/yyyy");
+                        txtsdt.Focus();
+                        return;
+                    }
 
                     else
                     {
@@ -148,7 +154,9 @@ namespace WindowsFormsApplication1
 
                             DTO.TENNV = txttennv.Text;
                             DTO.DIACHI = txtdiachi.Text;
-                            DTO.NGAYSINH = cmbdate.Text;
+                            string ngaysinh = cmbdate.Text;
+                            ngaysinh = ngaysinh.Substring(6, 4) + "/" + ngaysinh.Substring(3, 2) + "/" + ngaysinh.Substring(0, 2);
+                            DTO.NGAYSINH = ngaysinh;
                             DTO.SCMND = txtsoCMND.Text;
                             DTO.SDT = txtsdt.Text;
                             DTO.TINHTRANG = "False";
@@ -165,8 +173,9 @@ namespace WindowsFormsApplication1
 
                             DTO.TENNV = txttennv.Text;
                             DTO.DIACHI = txtdiachi.Text;
-                        
-                            DTO.NGAYSINH = cmbdate.Text;
+                            string ngaysinh = cmbdate.Text;
+                            ngaysinh = ngaysinh.Substring(6, 4) + "/" + ngaysinh.Substring(3, 2) + "/" + ngaysinh.Substring(0, 2);
+                            DTO.NGAYSINH = ngaysinh;
                             DTO.SCMND = txtsoCMND.Text;
                             DTO.SDT = txtsdt.Text;
                             DTO.TINHTRANG =KT ;
@@ -224,7 +233,9 @@ namespace WindowsFormsApplication1
 
                             DTO.TENNV = txttennv.Text;
                             DTO.DIACHI = txtdiachi.Text;
-                            DTO.NGAYSINH = cmbdate.Text;
+                            string ngaysinh = cmbdate.Text;
+                            ngaysinh = ngaysinh.Substring(6, 4) + "/" + ngaysinh.Substring(3, 2) + "/" + ngaysinh.Substring(0, 2);
+                            DTO.NGAYSINH = ngaysinh;
                             DTO.SCMND = txtsoCMND.Text;
                             DTO.SDT = txtsdt.Text;
                             DTO.TINHTRANG = "False";
@@ -241,7 +252,9 @@ namespace WindowsFormsApplication1
 
                             DTO.TENNV = txttennv.Text;
                             DTO.DIACHI = txtdiachi.Text;
-                            DTO.NGAYSINH = cmbdate.Text;
+                            string ngaysinh = cmbdate.Text;
+                            ngaysinh = ngaysinh.Substring(6, 4) + "/" + ngaysinh.Substring(3, 2) + "/" + ngaysinh.Substring(0, 2);
+                            DTO.NGAYSINH = ngaysinh;
                             DTO.SCMND = txtsoCMND.Text;
                             DTO.SDT = txtsdt.Text;
                             DTO.TINHTRANG = KT;

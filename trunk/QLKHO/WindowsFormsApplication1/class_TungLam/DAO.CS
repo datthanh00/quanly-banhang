@@ -520,7 +520,7 @@ namespace WindowsFormsApplication1
             /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             return executeNonQuerya("NHANVIEN_getall", sqlpa);
             */
-            string SQL = "select 	MANV,TENNV,DIACHI,DATE_FORMAT(NGAYSINH,'%D%M%Y'),SCMND,SDT,TINHTRANG from  NHANVIEN";
+            string SQL = "select 	MANV,TENNV,DIACHI,DATE_FORMAT(NGAYSINH,'%d/%m/%Y')as NGAYSINH ,SCMND,SDT,TINHTRANG from  NHANVIEN";
             return GET_DATA(SQL);
         }
         public DataTable GETQUANLY()

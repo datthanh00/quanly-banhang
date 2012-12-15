@@ -120,7 +120,7 @@ namespace WindowsFormsApplication1
                  if (a == DialogResult.Yes)
                  {
 
-                     DTO.MASOTHUE = sma;
+                     DTO.MATH = sma;
                      CTL.DELETETHUE(DTO);
                      LoadT();
                      sma = "";
@@ -135,7 +135,7 @@ namespace WindowsFormsApplication1
                  if (a == DialogResult.Yes)
                  {
 
-                     DTO.MASOTHUE = sma;
+                     DTO.MATH = sma;
                      CTL.DELETETHUE(DTO);
                      LoadT();
 
