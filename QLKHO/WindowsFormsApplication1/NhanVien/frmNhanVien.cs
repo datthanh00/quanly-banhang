@@ -34,24 +34,14 @@ namespace WindowsFormsApplication1
             frm.LoadVI += new frmMain.Translate(LoadTV);
             frm.LoadEN += new frmMain.Translate(LoadEL);
             gridControl1.DataSource = CTL.GETNV();
-            // TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet36.NHANVIEN' table. You can move, or remove it, as needed.
-            //this.nHANVIENTableAdapter2.Fill(this.xUAT_NHAPTONDataSet36.NHANVIEN);
-            //// TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet33.NHANVIEN' table. You can move, or remove it, as needed.
-            //this.nHANVIENTableAdapter1.Fill(this.xUAT_NHAPTONDataSet33.NHANVIEN);
-            //loadnhanvien();
-            //// TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet12.NHANVIEN' table. You can move, or remove it, as needed.
-            //this.nHANVIENTableAdapter.Fill(this.xUAT_NHAPTONDataSet12.NHANVIEN);
+
             if (iNgonNgu == 1)
             {
                 LoadEL();
-
-
             }
             else
             {
                 LoadTV();
-
-
             } 
         }
         public int iNgonNgu;

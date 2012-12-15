@@ -58,15 +58,15 @@ namespace WindowsFormsApplication1
             {
                 if (iNgonNgu == 0)
                 {
-                    bool KT;
+                    string KT;
                     if (checkTT.Checked)
                     {
-                        KT = true;
+                        KT = "True";
 
                     }
                     else
                     {
-                        KT = false;
+                        KT = "False";
                     }
 
 
@@ -162,15 +162,15 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    bool KT;
+                    string KT;
                     if (checkTT.Checked)
                     {
-                        KT = true;
+                        KT = "True";
 
                     }
                     else
                     {
-                        KT = false;
+                        KT = "False";
                     }
 
 
@@ -326,7 +326,8 @@ namespace WindowsFormsApplication1
             cotTenKV.Caption = LamEL.TENKV.ToString();
             lbCHUY.Text = LamEL.CHUY.ToString();
             btLuu.Text = LamEL.LUU.ToString();
-            btDong.Text = LamEL.DONG.ToString(); checkTT.Text = LamEL.CHECKTINHTRANG.ToString();
+            btDong.Text = LamEL.DONG.ToString(); 
+            checkTT.Text = LamEL.CHECKTINHTRANG.ToString();
             this.Text = "Form Insert Custommer"; 
         }
 
@@ -363,7 +364,7 @@ namespace WindowsFormsApplication1
                 loadgirdlookupKV();
                 txtmakh.Text = MACHUYEN;
                 txttenkh.Text = TenKH;
-                cmbtenkhuvuc.Text = CTRL.GETTENKHUVUC(sMaKV);
+                cmbtenkhuvuc.Text = sMaKV;
                 txtdiachi.Text = DIACHI;
                 txtmasothue.Text = MASOTHUE;
                 txtnganhang.Text = NGANHANG;

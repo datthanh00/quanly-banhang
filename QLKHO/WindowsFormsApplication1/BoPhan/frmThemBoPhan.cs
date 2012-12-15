@@ -36,15 +36,15 @@ namespace WindowsFormsApplication1
             {
                 if (iNgonNgu == 0)
                 {
-                    bool KT;
+                    String  KT;
                     if (checkTT.Checked)
                     {
-                        KT = true;
+                        KT = "True";
 
                     }
                     else
                     {
-                        KT = false;
+                        KT = "False";
                     }
 
 
@@ -87,15 +87,15 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    bool KT;
+                    String  KT;
                     if (checkTT.Checked)
                     {
-                        KT = true;
+                        KT = "True";
 
                     }
                     else
                     {
-                        KT = false;
+                        KT = "False";
                     }
 
 

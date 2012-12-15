@@ -51,7 +51,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
 
             ChayProc("KHACHHANG_update", sqlpa);*/
-            string SQL = "update KHACHHANG set MAKH='"+ dto.MAKH +"' ,MAKV='"+ dto.MAKV +"N',TENKH='"+ dto.TENKH +"',SOTAIKHOAN='"+ dto.SOTAIKHOAN +"',NGANHANG=N'"+ dto.NGANHANG +"',MASOTHUE='"+ dto.MASOTHUE +"',DIACHI='"+ dto.DIACHI +"',SDT='"+ dto.SDT +"',FAX='"+ dto.FAX +"',WEBSITE='"+ dto.WEBSITE +"',YAHOO='"+ dto.YAHOO +"',SKYPE='"+ dto.SKYPE +"',TINHTRANG='"+ dto.TINHTRANG +"' where 	(MAKH='"+dto.MAKH +"')";
+            string SQL = "update KHACHHANG set MAKH='"+ dto.MAKH +"' ,MAKV='"+ dto.MAKV +"',TENKH=N'"+ dto.TENKH +"',SOTAIKHOAN='"+ dto.SOTAIKHOAN +"',NGANHANG=N'"+ dto.NGANHANG +"',MASOTHUE='"+ dto.MASOTHUE +"',DIACHI=N'"+ dto.DIACHI +"',SDT='"+ dto.SDT +"',FAX='"+ dto.FAX +"',WEBSITE='"+ dto.WEBSITE +"',YAHOO='"+ dto.YAHOO +"',SKYPE='"+ dto.SKYPE +"',TINHTRANG='"+ dto.TINHTRANG +"' where 	(MAKH='"+dto.MAKH +"')";
             executeNonQuery(SQL);
         }
         public void INSERTKHUVUC(DTO dto)
@@ -64,7 +64,7 @@ namespace WindowsFormsApplication1
             ChayProc("KHUVUC_add", sqlpa);
              * */
             string SQL = "insert into KHUVUC(MAKV,TENKV,GHICHU,TINHTRANG)"
-            +" values('"+dto.MAKV+"','"+dto.TENKV+"','"+dto.GHICHU+"','"+dto.TINHTRANG+"')";
+            +" values('"+dto.MAKV+"',N'"+dto.TENKV+"',N'"+dto.GHICHU+"','"+dto.TINHTRANG+"')";
             executeNonQuery(SQL);
         }
         public void INSERTNHOMHANG(DTO dto)
@@ -77,7 +77,7 @@ namespace WindowsFormsApplication1
             ChayProc("NHOMHANG_add", sqlpa);
             */
             string SQL = "insert into NHOMHANG(MANH,TENNHOMHANG,GHICHU)"
-            +" values('"+dto.MANH+"','"+dto.TENNHOMHANG+"','"+dto.GHICHU+"')";
+            +" values('"+dto.MANH+"',N'"+dto.TENNHOMHANG+"','"+dto.GHICHU+"')";
             executeNonQuery(SQL);
         }
         public void UPDATENHOMHANG(DTO dto)
@@ -89,7 +89,7 @@ namespace WindowsFormsApplication1
 
             ChayProc("NHOMHANG_update", sqlpa);
             */
-            string SQL = "update NHOMHANG set MANH='"+dto.MANH +"' ,TENNHOMHANG='"+dto.TENNHOMHANG+"',GHICHU='"+dto.GHICHU+"' where MANH='"+dto.MANH+"'";
+            string SQL = "update NHOMHANG set MANH='"+dto.MANH +"' ,TENNHOMHANG=N'"+dto.TENNHOMHANG+"',GHICHU=N'"+dto.GHICHU+"' where MANH='"+dto.MANH+"'";
             executeNonQuery(SQL);
         }
         public void INSERTBOPHAN(DTO dto)
@@ -102,7 +102,7 @@ namespace WindowsFormsApplication1
             ChayProc("BOPHAN_add", sqlpa);
              */
             string SQL = "insert into BOPHAN(MABP,TENBOPHAN,TINHTRANG)"
-            +" values('"+dto.MABP+"','"+dto.TENBOPHAN+"','"+dto.TINHTRANG+"')";
+            +" values('"+dto.MABP+"',N'"+dto.TENBOPHAN+"','"+dto.TINHTRANG+"')";
             executeNonQuery(SQL);
         }
         public void UPDATEBOPHAN(DTO dto)
@@ -113,7 +113,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
 
             ChayProc("BOPHAN_update", sqlpa);*/
-            string SQL = "update BOPHAN set MABP= '"+dto.MABP+"',TENBOPHAN= '"+dto.TENBOPHAN+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MABP='"+dto.MABP+"'";
+            string SQL = "update BOPHAN set MABP= '"+dto.MABP+"',TENBOPHAN= N'"+dto.TENBOPHAN+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MABP='"+dto.MABP+"'";
             executeNonQuery(SQL);
 
         }
@@ -126,7 +126,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
             ChayProc("KHUVUC_update", sqlpa);
             */
-            string SQL = "update KHUVUC set MAKV= '"+dto.MAKV+"',TENKV= '"+dto.TENKV+"',GHICHU= '"+dto.GHICHU+"',TINHTRANG= '"+dto.TINHTRANG+"' where MAKV='"+dto.MAKV+"'";
+            string SQL = "update KHUVUC set MAKV= '"+dto.MAKV+"',TENKV= N'"+dto.TENKV+"',GHICHU= N'"+dto.GHICHU+"',TINHTRANG= '"+dto.TINHTRANG+"' where MAKV='"+dto.MAKV+"'";
             executeNonQuery(SQL);
         }
         public void INSERTNHACC(DTO dto)
@@ -148,7 +148,7 @@ namespace WindowsFormsApplication1
             ChayProc("NHACUNGCAP_add", sqlpa);
             */
             string SQL = "insert into NHACUNGCAP(MANCC,MAKV,TENNCC,DIACHI,MASOTHUE,SOTAIKHOAN,NGANHANG,SDT,EMAIL,FAX,WEBSITE,TINHTRANG)"
-            +" values('"+dto.MANCC+"','"+dto.MAKV+"','"+dto.TENNCC+"','"+dto.DIACHI+"','"+dto.MASOTHUE+"','"+dto.SOTAIKHOAN+"','"+dto.NGANHANG+"','"+dto.SDT+"','"+dto.EMAIL+"','"+dto.FAX+"','"+dto.WEBSITE+"','"+dto.TINHTRANG+"')";
+            +" values('"+dto.MANCC+"','"+dto.MAKV+"',N'"+dto.TENNCC+"',N'"+dto.DIACHI+"','"+dto.MASOTHUE+"','"+dto.SOTAIKHOAN+"',N'"+dto.NGANHANG+"','"+dto.SDT+"','"+dto.EMAIL+"','"+dto.FAX+"','"+dto.WEBSITE+"','"+dto.TINHTRANG+"')";
             executeNonQuery(SQL);
         }
         public void UPDATENHACC(DTO dto)
@@ -169,7 +169,7 @@ namespace WindowsFormsApplication1
 
             ChayProc("NHACUNGCAP_update", sqlpa);
             */
-            string SQL = "update NHACUNGCAP set MANCC= '"+dto.MANCC+"',MAKV= '"+dto.MAKV+"',TENNCC= '"+dto.TENNCC+"',DIACHI= '"+dto.DIACHI+"',MASOTHUE= '"+dto.MASOTHUE+"',SOTAIKHOAN= '"+dto.SOTAIKHOAN+"',NGANHANG= '"+dto.NGANHANG+"',SDT= '"+dto.SDT+"',EMAIL= '"+dto.EMAIL+"',FAX= '"+dto.FAX+"', WEBSITE= '"+dto.WEBSITE+"',TINHTRANG= '"+dto.TINHTRANG+"' where MANCC='"+dto.MANCC+"'";
+            string SQL = "update NHACUNGCAP set MANCC= '"+dto.MANCC+"',MAKV= '"+dto.MAKV+"',TENNCC= N'"+dto.TENNCC+"',DIACHI= N'"+dto.DIACHI+"',MASOTHUE= '"+dto.MASOTHUE+"',SOTAIKHOAN= '"+dto.SOTAIKHOAN+"',NGANHANG= N'"+dto.NGANHANG+"',SDT= '"+dto.SDT+"',EMAIL= '"+dto.EMAIL+"',FAX= '"+dto.FAX+"', WEBSITE= '"+dto.WEBSITE+"',TINHTRANG= '"+dto.TINHTRANG+"' where MANCC='"+dto.MANCC+"'";
             executeNonQuery(SQL);
         }
         public void INSERTKHO(DTO dto)
@@ -189,7 +189,7 @@ namespace WindowsFormsApplication1
             ChayProc("KHO_add", sqlpa);
              */
             string SQL = "insert into KHO(MAKHO,MANV,TENKHO,DIACHI,SDTB,DTDD,NGUOILH,FAX,GHICHU,TINHTRANG)"
-            +" values('"+dto.MAKHO+"','"+dto.MANV+"','"+dto.TENKHO+"','"+dto.DIACHI+"','"+dto.SDTB+"','"+dto.DTDD+"','"+dto.NGUOILH+"','"+dto.FAX+"','"+dto.GHICHU+"','"+dto.TINHTRANG+"')";
+            + " values('" + dto.MAKHO + "','" + dto.MANV + "',N'" + dto.TENKHO + "',N'" + dto.DIACHI + "','" + dto.SDTB + "','" + dto.DTDD + "',N'" + dto.NGUOILH + "','" + dto.FAX + "','" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
         public void INSERTDVT(DTO dto)
@@ -246,7 +246,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
             ChayProc("NHANVIEN_update", sqlpa);
              */
-            string SQL = "update NHANVIEN set MANV= '"+dto.MANV+"',TENNV= '"+dto.TENNV+"',DIACHI= '"+dto.DIACHI+"',NGAYSINH= '"+dto.NGAYSINH+"',SCMND= '"+dto.SCMND+"',SDT= '"+dto.SDT+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MANV='"+dto.MANV+"'";
+            string SQL = "update NHANVIEN set MANV= '" + dto.MANV + "',TENNV= N'" + dto.TENNV + "',DIACHI= N'" + dto.DIACHI + "',NGAYSINH= '" + dto.NGAYSINH + "',SCMND= '" + dto.SCMND + "',SDT= '" + dto.SDT + "',TINHTRANG= '" + dto.TINHTRANG + "' where 	MANV='" + dto.MANV + "'";
             executeNonQuery(SQL);
         }
         public void UPDATEQUANLY(DTO dto)
@@ -265,7 +265,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
             ChayProc("QUANLY_update", sqlpa);
              */ 
-            string SQL = "update QUANLY set MAQL= '"+dto.MAQL+"',USERNAME= '"+dto.USERNAME+"',PASSWORD= '"+dto.PASSWORD+"',TENQL= '"+dto.TENQL+"',DIACHI= '"+dto.DIACHI+"',NGAYSINH= '"+dto.NGAYSINH+"',SCMND= '"+dto.SCMND+"',SDT= '"+dto.SDT+"',TINHTRANG= '"+dto.TINHTRANG+"' where MAQL='"+dto.MAQL+"'";
+            string SQL = "update QUANLY set MAQL= '"+dto.MAQL+"',USERNAME= '"+dto.USERNAME+"',PASSWORD= '"+dto.PASSWORD+"',TENQL= '"+dto.TENQL+"',DIACHI= '"+dto.DIACHI+"',NGAYSINH= '"+ dto.NGAYSINH+"',SCMND= '"+dto.SCMND+"',SDT= '"+dto.SDT+"',TINHTRANG= '"+dto.TINHTRANG+"' where MAQL='"+dto.MAQL+"'";
             executeNonQuery(SQL);
         }
         public void INSERTQUANLY(DTO dto)
@@ -285,7 +285,7 @@ namespace WindowsFormsApplication1
             ChayProc("QUANLY_add", sqlpa);
             */
             string SQL = "insert into dbo.[QUANLY](MAQL,USERNAME,PASSWORD,TENQL,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG)"
-            +" values('"+dto.MAQL+"','"+dto.USERNAME+"','"+dto.PASSWORD+"','"+dto.TENQL+"','"+dto.DIACHI+"','"+dto.NGAYSINH+"','"+dto.SCMND+"','"+dto.SDT+"','"+dto.TINHTRANG+"')";
+            +" values('"+dto.MAQL+"','"+dto.USERNAME+"','"+dto.PASSWORD+"',N'"+dto.TENQL+"',N'"+dto.DIACHI+"','"+dto.NGAYSINH+"','"+dto.SCMND+"','"+dto.SDT+"','"+dto.TINHTRANG+"')";
             executeNonQuery(SQL);
         }
       
@@ -308,7 +308,7 @@ namespace WindowsFormsApplication1
             ChayProc("MATHANG_add", sqlpa);
              */ 
             string SQL = "insert into MATHANG(MAMH,MATH,MANH,MAKHO,TENMH,MADVT,SOLUONGMH,HANSUDUNG,GIAMUA,GIABAN, MOTA,TINHTRANG)"
-            +" values('"+dto.MAMH+"','"+dto.MATH+"','"+dto.MANH+"','"+dto.MAKHO+"','"+dto.TENMH+"','"+dto.MADVT+"','"+dto.SOLUONGMH+"','"+dto.HANSUDUNG+"','"+dto.GIAMUA+"','"+dto.GIABAN+"', '"+dto.MOTA+"','"+dto.TINHTRANG+"')";
+            +" values('"+dto.MAMH+"','"+dto.MATH+"','"+dto.MANH+"','"+dto.MAKHO+"',N'"+dto.TENMH+"','"+dto.MADVT+"',"+dto.SOLUONGMH+",'"+dto.HANSUDUNG+"',"+dto.GIAMUA+","+dto.GIABAN+", N'"+dto.MOTA+"','"+dto.TINHTRANG+"')";
             executeNonQuery(SQL);
         }
         public void UPDATEMATHANG(DTO dto)
@@ -328,7 +328,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
             ChayProc("MATHANG_update", sqlpa);
             */
-            string SQL = "update MATHANG set MAMH= '"+dto.MAMH+"',MATH= '"+dto.MATH+"',MANH= '"+dto.MANH+"',MAKHO= '"+dto.MAKHO+"',TENMH= '"+dto.TENMH+"',MADVT= '"+dto.MADVT+"',SOLUONGMH= '"+dto.SOLUONGMH+"',HANSUDUNG= '"+dto.HANSUDUNG+"',GIAMUA= '"+dto.GIAMUA+"',GIABAN= '"+dto.GIABAN+"', MOTA= '"+dto.MOTA+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MAMH='"+dto.MAMH+"'";
+            string SQL = "update MATHANG set MAMH= '"+dto.MAMH+"',MATH= '"+dto.MATH+"',MANH= '"+dto.MANH+"',MAKHO= '"+dto.MAKHO+"',TENMH= N'"+dto.TENMH+"',MADVT= '"+dto.MADVT+"',SOLUONGMH= "+dto.SOLUONGMH+",HANSUDUNG= '"+dto.HANSUDUNG+"',GIAMUA= "+dto.GIAMUA+",GIABAN= "+dto.GIABAN+", MOTA= N'"+dto.MOTA+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MAMH='"+dto.MAMH+"'";
             executeNonQuery(SQL);
         }
         public void DELELEKHACHHANG(DTO dto)
@@ -337,7 +337,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MAKH", dto.MAKH));
             ChayProc("KHACHHANG_delete", sqlpa);
              */
-            string SQL = "delete KHACHHANG where 	MAKH='"+dto.MAKH+"'";
+            string SQL = "delete from KHACHHANG where 	MAKH='"+dto.MAKH+"'";
             executeNonQuery(SQL);
         }
         public void DELELEBOPHAN(DTO dto)
@@ -346,7 +346,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MABP", dto.MABP));
             ChayProc("BOPHAN_delete", sqlpa);
              */
-            string SQL = "delete BOPHAN where 	MABP='"+dto.MABP+"'";
+            string SQL = "delete from BOPHAN where 	MABP='" + dto.MABP + "'";
             executeNonQuery(SQL);
         }
         public void DELELEMATHANG(DTO dto)
@@ -355,7 +355,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MAMH", dto.MAMH));
             ChayProc("MATHANG_delete", sqlpa);
             */
-            string SQL = "delete MATHANG where 	MAMH='"+dto.MAMH+"'";
+            string SQL = "delete from MATHANG where 	MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
         }
         public void DELELENHOMHANG(DTO dto)
@@ -364,7 +364,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MANH", dto.MANH));
             ChayProc("NHOMHANG_delete", sqlpa);
              */
-            string SQL = "delete NHOMHANG where 	MANH='"+dto.MANH+"'";
+            string SQL = "delete from NHOMHANG where 	MANH='" + dto.MANH + "'";
             executeNonQuery(SQL);
         }
         public void DELELEQUANLY(DTO dto)
@@ -373,7 +373,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MAQL", dto.MAQL));
             ChayProc("QUANLY_delete", sqlpa);
             */
-            string SQL = "delete QUANLY where 	MAQL='"+dto.MAQL+"'";
+            string SQL = "delete from QUANLY where 	MAQL='" + dto.MAQL + "'";
             executeNonQuery(SQL);
         }
         public void DELELETHUE(DTO dto)
@@ -382,7 +382,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MATH", dto.MATH));
             ChayProc("THUE_delete", sqlpa);
             */
-            string SQL = "delete THUE where 	MATH='"+dto.MATH+"'";
+            string SQL = "delete from THUE where 	MATH='" + dto.MATH + "'";
             executeNonQuery(SQL);
         }
         public void DELELEKHO(DTO dto)
@@ -391,7 +391,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MAKHO", dto.MAKHO));
             ChayProc("KHO_delete", sqlpa);
             */
-            string SQL = "delete KHO where 	MAKHO='"+dto.MAKHO+"'";
+            string SQL = "delete from KHO where 	MAKHO='" + dto.MAKHO + "'";
             executeNonQuery(SQL);
         }
         public void DELELEKV(DTO dto)
@@ -400,7 +400,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MAKV", dto.MAKV));
             ChayProc("KHUVUC_delete", sqlpa);
              */
-            string SQL = "delete KHUVUC where 	MAKV='"+dto.MAKV+"'";
+            string SQL = "delete from KHUVUC where 	MAKV='" + dto.MAKV + "'";
             executeNonQuery(SQL);
         }
         public void DELELENCC(DTO dto)
@@ -409,7 +409,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MANCC", dto.MANCC));
             ChayProc("NHACUNGCAP_delete", sqlpa);
             */
-            string SQL = "delete NHACUNGCAP where 	MANCC='"+dto.MANCC+"'";
+            string SQL = "delete from NHACUNGCAP where 	MANCC='" + dto.MANCC + "'";
             executeNonQuery(SQL); 
         }
         public void DELELENHANVIEN(DTO dto)
@@ -418,7 +418,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MANV", dto.MANV));
             ChayProc("NHANVIEN_delete", sqlpa);
             */
-            string SQL = "delete NHANVIEN where 	MANV='"+dto.MANV+"'";
+            string SQL = "delete from NHANVIEN where 	MANV='" + dto.MANV + "'";
             executeNonQuery(SQL); 
         }
         public void DELELEDVT(DTO dto)
@@ -427,7 +427,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MADVT", dto.MADVT));
             ChayProc("DONVITINH_delete", sqlpa);
             */
-            string SQL = "delete DONVITINH where 	MADVT='"+dto.MADVT+"'";
+            string SQL = "delete from DONVITINH where 	MADVT='" + dto.MADVT + "'";
             executeNonQuery(SQL);
         }
         public void INSERTNHANVIEN(DTO dto)
@@ -463,7 +463,7 @@ namespace WindowsFormsApplication1
 
             ChayProc("KHO_update", sqlpa);
             */
-            string SQL = "update KHO set MAKHO= '"+dto.MAKHO+"',MANV= '"+dto.MANV+"',TENKHO= '"+dto.TENKHO+"',DIACHI= '"+dto.DIACHI+"',SDTB= '"+dto.SDTB+"',DTDD= '"+dto.DTDD+"',NGUOILH= '"+dto.NGUOILH+"',FAX= '"+dto.FAX+"',GHICHU= '"+dto.GHICHU+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MAKHO='"+dto.MAKHO+"'";
+            string SQL = "update KHO set MAKHO= '"+dto.MAKHO+"',MANV= '"+dto.MANV+"',TENKHO= N'"+dto.TENKHO+"',DIACHI= N'"+dto.DIACHI+"',SDTB= '"+dto.SDTB+"',DTDD= '"+dto.DTDD+"',NGUOILH= N'"+dto.NGUOILH+"',FAX= '"+dto.FAX+"',GHICHU= '"+dto.GHICHU+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MAKHO='"+dto.MAKHO+"'";
             executeNonQuery(SQL);
         }
        
@@ -504,7 +504,7 @@ namespace WindowsFormsApplication1
             /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             return executeNonQuerya("MATHANG_getall", sqlpa);
              */
-            string SQL = "select 	MAMH,MATH,MANH,MAKHO,TENMH,MADVT,SOLUONGMH,HANSUDUNG,GIAMUA,GIABAN,MOTA,TINHTRANG from  dbo.[MATHANG]";
+            string SQL = "select 	MAMH,MATH,MANH,MAKHO,TENMH,MADVT,SOLUONGMH,DATE_FORMAT(HANSUDUNG,'%D%M%Y'),GIAMUA,GIABAN,MOTA,TINHTRANG from  MATHANG";
             return GET_DATA(SQL);
         }
         public DataTable GETTHUE()
@@ -520,7 +520,7 @@ namespace WindowsFormsApplication1
             /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             return executeNonQuerya("NHANVIEN_getall", sqlpa);
             */
-            string SQL = "select 	MANV,TENNV,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG from  NHANVIEN";
+            string SQL = "select 	MANV,TENNV,DIACHI,DATE_FORMAT(NGAYSINH,'%D%M%Y'),SCMND,SDT,TINHTRANG from  NHANVIEN";
             return GET_DATA(SQL);
         }
         public DataTable GETQUANLY()

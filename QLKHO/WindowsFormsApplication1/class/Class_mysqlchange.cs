@@ -19,6 +19,7 @@ namespace WindowsFormsApplication1
 
         public MySqlCommand SqlCommand(string sqlstring, MySqlConnection SqlCnn)
         {
+            
             return new MySqlCommand(sqlstring, SqlCnn);
         }
 

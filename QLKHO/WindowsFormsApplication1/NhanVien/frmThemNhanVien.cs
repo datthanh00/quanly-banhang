@@ -47,10 +47,7 @@ namespace WindowsFormsApplication1
 
 
             } 
-            // TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet16.BOPHAN' table. You can move, or remove it, as needed.
-            //this.bOPHANTableAdapter2.Fill(this.xUAT_NHAPTONDataSet16.BOPHAN);
-            //// TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet15.BOPHAN' table. You can move, or remove it, as needed.
-            //this.bOPHANTableAdapter1.Fill(this.xUAT_NHAPTONDataSet15.BOPHAN);
+
             if (kiemtra == 0)
             {
                 txtmanv.Text = MANV;
@@ -60,14 +57,6 @@ namespace WindowsFormsApplication1
                 cmbdate.Text = NGAYSINH;
                 txtsoCMND.Text = SCMND;
                 txtsdt.Text = SDT;
-                //if (TINHTRANG == "True")
-                //{
-                //    checkTT.Checked = true;
-                //}
-                //else
-                //{
-                //    checkTT.Checked = false;
-                //}
             }
             else
             {
@@ -82,17 +71,11 @@ namespace WindowsFormsApplication1
             iNgonNgu = 0;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             lbmanv.Text = LamVN.MANV.ToString();
-            //lbmabp.Text = LamVN.MABP.ToString();
-            //lbtendangnhap.Text = LamVN.USERNAME.ToString();
-            //lbmatkhau.Text = LamVN.PASSWORD.ToString();
-            //lbnhaplaimatkhau.Text = LamVN.PASSWORD1.ToString();
-            //lbchucvu.Text = LamVN.CHUCVU.ToString();
             lbtennv.Text = LamVN.TENNV.ToString();
             lbdiachi.Text = LamVN.DIACHI.ToString();
             lbngaysinh.Text = LamVN.NGAYSINH.ToString();
             lbsocmnd.Text = LamVN.SCMND.ToString();
             lbsodt.Text = LamVN.SDT.ToString();
-            //lbtinhtrang.Text = LamVN.TINHTRANG.ToString();
             lbchuy.Text = LamVN.CHUY.ToString();
             btLuu.Text = LamVN.LUU.ToString();
             btDong.Text = LamVN.DONG.ToString();
@@ -103,11 +86,6 @@ namespace WindowsFormsApplication1
             iNgonNgu = 1;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             lbmanv.Text = LamEL.MANV.ToString();
-            //lbmabp.Text = LamEL.MABP.ToString();
-            //lbtendangnhap.Text = LamEL.USERNAME.ToString();
-            //lbmatkhau.Text = LamEL.PASSWORD.ToString();
-            //lbnhaplaimatkhau.Text = LamEL.PASSWORD1.ToString();
-            //lbchucvu.Text = LamEL.CHUCVU.ToString();
             lbtennv.Text = LamEL.TENNV.ToString();
             lbdiachi.Text = LamEL.DIACHI.ToString();
             lbngaysinh.Text = LamEL.NGAYSINH.ToString();
@@ -126,17 +104,14 @@ namespace WindowsFormsApplication1
             {
                 if (iNgonNgu == 0)
                 {
-
-
-                    bool KT;
+                    string KT;
                     if (TINHTRANG=="False")
                     {
-                        KT = false;
-
+                        KT = "False";
                     }
                     else
                     {
-                        KT = true;
+                        KT = "True";
                     }
                     if (txttennv.Text == "")
                     {
@@ -176,7 +151,7 @@ namespace WindowsFormsApplication1
                             DTO.NGAYSINH = cmbdate.Text;
                             DTO.SCMND = txtsoCMND.Text;
                             DTO.SDT = txtsdt.Text;
-                            DTO.TINHTRANG = false;
+                            DTO.TINHTRANG = "False";
                             CTL.INSERTNHANVIEN(DTO);
 
 
@@ -190,6 +165,7 @@ namespace WindowsFormsApplication1
 
                             DTO.TENNV = txttennv.Text;
                             DTO.DIACHI = txtdiachi.Text;
+                        
                             DTO.NGAYSINH = cmbdate.Text;
                             DTO.SCMND = txtsoCMND.Text;
                             DTO.SDT = txtsdt.Text;
@@ -204,16 +180,16 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    bool KT;
+                    string KT;
                    
                     if (TINHTRANG == "False")
                     {
-                        KT = false;
+                        KT = "False";
 
                     }
                     else
                     {
-                        KT = true;
+                        KT = "True";
                     }
                     if (txttennv.Text == "")
                     {
@@ -251,7 +227,7 @@ namespace WindowsFormsApplication1
                             DTO.NGAYSINH = cmbdate.Text;
                             DTO.SCMND = txtsoCMND.Text;
                             DTO.SDT = txtsdt.Text;
-                            DTO.TINHTRANG = false;
+                            DTO.TINHTRANG = "False";
                             CTL.INSERTNHANVIEN(DTO);
 
 

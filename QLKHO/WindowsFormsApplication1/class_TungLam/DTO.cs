@@ -96,9 +96,9 @@ namespace WindowsFormsApplication1
             get { return _SKYPE; }
             set { _SKYPE = value; }
         }
-        private bool _TINHTRANG;
+        private string _TINHTRANG;
 
-        public bool TINHTRANG
+        public string TINHTRANG
         {
             get { return _TINHTRANG; }
             set { _TINHTRANG = value; }
