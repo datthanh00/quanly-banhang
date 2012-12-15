@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
         private String _MOBILE;
         private String _EMAIL;
         private String _FAX;
-        private Byte[] _LOGO;
+        private String _LOGO;
         private String _MASOTHUE;
         private String _WEBSITE;
       
@@ -63,7 +63,7 @@ namespace WindowsFormsApplication1
             set { _FAX = value; }
         }
 
-        public Byte[] LOGO
+        public string LOGO
         {
             get { return _LOGO; }
             set { _LOGO = value; }

@@ -273,6 +273,7 @@
             this.colMANV.OptionsColumn.AllowEdit = false;
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 0;
+            this.colMANV.Width = 107;
             // 
             // colTENNV
             // 
@@ -282,6 +283,7 @@
             this.colTENNV.OptionsColumn.AllowEdit = false;
             this.colTENNV.Visible = true;
             this.colTENNV.VisibleIndex = 1;
+            this.colTENNV.Width = 150;
             // 
             // colDIACHI
             // 
@@ -291,6 +293,7 @@
             this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 2;
+            this.colDIACHI.Width = 163;
             // 
             // colNGAYSINH
             // 
@@ -300,6 +303,7 @@
             this.colNGAYSINH.OptionsColumn.AllowEdit = false;
             this.colNGAYSINH.Visible = true;
             this.colNGAYSINH.VisibleIndex = 3;
+            this.colNGAYSINH.Width = 127;
             // 
             // colSCMND
             // 
@@ -309,6 +313,7 @@
             this.colSCMND.OptionsColumn.AllowEdit = false;
             this.colSCMND.Visible = true;
             this.colSCMND.VisibleIndex = 4;
+            this.colSCMND.Width = 102;
             // 
             // colSDT
             // 
@@ -318,6 +323,7 @@
             this.colSDT.OptionsColumn.AllowEdit = false;
             this.colSDT.Visible = true;
             this.colSDT.VisibleIndex = 5;
+            this.colSDT.Width = 84;
             // 
             // colTINHTRANG
             // 
@@ -325,6 +331,9 @@
             this.colTINHTRANG.FieldName = "TINHTRANG";
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.OptionsColumn.AllowEdit = false;
+            this.colTINHTRANG.Visible = true;
+            this.colTINHTRANG.VisibleIndex = 6;
+            this.colTINHTRANG.Width = 133;
             // 
             // frmNhanVien
             // 

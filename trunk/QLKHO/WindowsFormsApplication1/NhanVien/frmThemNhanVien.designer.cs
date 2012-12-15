@@ -47,6 +47,8 @@
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.txtsoCMND = new DevExpress.XtraEditors.CalcEdit();
             this.txtsdt = new DevExpress.XtraEditors.CalcEdit();
+            this.checkTT = new DevExpress.XtraEditors.CheckEdit();
+            this.lbtinhtrang = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtmanv.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdiachi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txttennv.Properties)).BeginInit();
@@ -54,6 +56,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbdate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsoCMND.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl19
@@ -62,7 +65,7 @@
             this.labelControl19.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl19.Appearance.Options.UseBackColor = true;
             this.labelControl19.Appearance.Options.UseForeColor = true;
-            this.labelControl19.Location = new System.Drawing.Point(58, 110);
+            this.labelControl19.Location = new System.Drawing.Point(417, 107);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(14, 13);
             this.labelControl19.TabIndex = 55;
@@ -70,7 +73,7 @@
             // 
             // lbchuy
             // 
-            this.lbchuy.Location = new System.Drawing.Point(78, 110);
+            this.lbchuy.Location = new System.Drawing.Point(437, 107);
             this.lbchuy.Name = "lbchuy";
             this.lbchuy.Size = new System.Drawing.Size(246, 13);
             this.lbchuy.TabIndex = 56;
@@ -249,11 +252,30 @@
             this.txtsdt.Size = new System.Drawing.Size(228, 20);
             this.txtsdt.TabIndex = 57;
             // 
+            // checkTT
+            // 
+            this.checkTT.EditValue = true;
+            this.checkTT.Location = new System.Drawing.Point(108, 104);
+            this.checkTT.Name = "checkTT";
+            this.checkTT.Properties.Caption = "Kích Hoạt";
+            this.checkTT.Size = new System.Drawing.Size(82, 19);
+            this.checkTT.TabIndex = 140;
+            // 
+            // lbtinhtrang
+            // 
+            this.lbtinhtrang.Location = new System.Drawing.Point(7, 107);
+            this.lbtinhtrang.Name = "lbtinhtrang";
+            this.lbtinhtrang.Size = new System.Drawing.Size(49, 13);
+            this.lbtinhtrang.TabIndex = 141;
+            this.lbtinhtrang.Text = "Tình trạng";
+            // 
             // frmThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 195);
+            this.Controls.Add(this.checkTT);
+            this.Controls.Add(this.lbtinhtrang);
             this.Controls.Add(this.cmbdate);
             this.Controls.Add(this.labelControl19);
             this.Controls.Add(this.lbchuy);
@@ -285,6 +307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbdate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsoCMND.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,5 +341,7 @@
         //private XUAT_NHAPTONDataSet16 xuaT_NHAPTONDataSet161;
         private DevExpress.XtraEditors.CalcEdit txtsoCMND;
         private DevExpress.XtraEditors.CalcEdit txtsdt;
+        private DevExpress.XtraEditors.CheckEdit checkTT;
+        private DevExpress.XtraEditors.LabelControl lbtinhtrang;
     }
 }

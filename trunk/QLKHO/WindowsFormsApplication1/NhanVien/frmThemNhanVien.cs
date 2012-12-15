@@ -57,6 +57,14 @@ namespace WindowsFormsApplication1
                 cmbdate.Text = NGAYSINH;
                 txtsoCMND.Text = SCMND;
                 txtsdt.Text = SDT;
+                if (TINHTRANG == "True")
+                {
+                    checkTT.Checked = true;
+                }
+                else
+                {
+                    checkTT.Checked = false;
+                }
             }
             else
             {
@@ -159,7 +167,7 @@ namespace WindowsFormsApplication1
                             DTO.NGAYSINH = ngaysinh;
                             DTO.SCMND = txtsoCMND.Text;
                             DTO.SDT = txtsdt.Text;
-                            DTO.TINHTRANG = "False";
+                            DTO.TINHTRANG = KT;
                             CTL.INSERTNHANVIEN(DTO);
 
 
@@ -394,12 +402,7 @@ namespace WindowsFormsApplication1
 
         private void checkTT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((Keys)e.KeyChar == Keys.Enter)
-            {
 
-                btLuu_Click(null, null);
-
-            }
         }
     }
 }
