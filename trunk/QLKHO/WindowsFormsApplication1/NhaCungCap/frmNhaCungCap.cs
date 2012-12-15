@@ -40,7 +40,7 @@ namespace WindowsFormsApplication1
         {
             // TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet2.NHACUNGCAP' table. You can move, or remove it, as needed.
            // this.nHACUNGCAPTableAdapter.Fill(this.xUAT_NHAPTONDataSet2.NHACUNGCAP);
- frm.LoadVI += new frmMain.Translate(LoadTV);
+            frm.LoadVI += new frmMain.Translate(LoadTV);
             frm.LoadEN += new frmMain.Translate(LoadEL);
             LOADNHACC();
             if (iNgonNgu == 1)
@@ -255,20 +255,23 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                sua.MANCC = sma;
+                sua.MAKV = smakv;
+                sua.TENNCC = sten;
+                sua.DIACHI = sdiachi;
+                sua.SDT = ssdt;
+                sua.MASOTHUE = smasothue;
+                sua.FAX = sfax;
+                sua.SOTAIKHOAN = ssotaikhoan;
+                sua.NGANHANG = snganhang;
+                sua.WEBSITE = swebsite;
+                sua.TINHTRANG = stinhtrang;
+                sua.EMAIL = semail;
+
                 sua.ShowDialog();
                 LOADNHACC();
             }
-            sua.MANCC = sma;
-            sua.MAKV = smakv;
-            sua.TENNCC = sten;
-            sua.DIACHI = sdiachi;
-            sua.SDT = ssdt;
-            sua.MASOTHUE = smasothue;
-            sua.FAX = sfax;
-            sua.SOTAIKHOAN = ssotaikhoan;
-            sua.NGANHANG = snganhang;
-            sua.WEBSITE = swebsite;
-            sua.TINHTRANG = stinhtrang;
+            
            
             
 

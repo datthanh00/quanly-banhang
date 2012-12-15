@@ -70,14 +70,10 @@ namespace WindowsFormsApplication1
             if (iNgonNgu == 1)
             {
                 LoadEL();
-
-
             }
             else
             {
                 LoadTV();
-
-
             }
             if (kiemtra == 0)
             {
@@ -105,15 +101,15 @@ namespace WindowsFormsApplication1
             {
                 if (iNgonNgu == 0)
                 {
-                    bool KT;
+                    string KT;
                     if (checkTT.Checked)
                     {
-                        KT = true;
+                        KT = "True";
 
                     }
                     else
                     {
-                        KT = false;
+                        KT = "False";
                     }
 
 
@@ -130,11 +126,7 @@ namespace WindowsFormsApplication1
                         txtma.Focus();
                         return;
                     }
-                    //else if (cmbtinhtrang.Text == "")
-                    //{
-                    //    XtraMessageBox.Show("Vui Lòng Chọn Tình Trạng ", "Thông Báo");
 
-                    //}
                     if (kiemtra == 1)
                     {
                         DTO.MAKV = txtma.Text;
@@ -161,15 +153,15 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    bool KT;
+                    string KT;
                     if (checkTT.Checked)
                     {
-                        KT = true;
+                        KT = "True";
 
                     }
                     else
                     {
-                        KT = false;
+                        KT = "False";
                     }
 
 

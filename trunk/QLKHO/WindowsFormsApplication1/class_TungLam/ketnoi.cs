@@ -11,8 +11,8 @@ namespace WindowsFormsApplication1
 
         public string sTuDongDienMapc(string sMaPC)
         {
-            MSQL.sqlKetNoi = get_Connect();
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MAPC from PHIEUCHI", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -59,6 +59,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMapt(string sMaPT)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MAPT from PHIEUTHU", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -105,6 +106,7 @@ namespace WindowsFormsApplication1
 
         public string sTuDongDienMaKH(string sMaKH)
         {
+            MSQL.sqlKetNoi = get_Connect();
             int iMaxSoSanh = 1;
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MAKH from KHACHHANG",MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
@@ -154,6 +156,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaKho(string sMaKHO)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MAKHO from KHO", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -201,6 +204,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaDVT(string sMaDVT)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MADVT from DONVITINH", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -248,6 +252,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaMH(string sMaDVT)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MAMH from MATHANG", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -295,6 +300,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaThue(string sMaDVT)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MATH from THUE", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -343,6 +349,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaKV(string sMaKHO)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MAKV from KHUVUC", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -393,6 +400,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaNV(string sMaNV)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MANV from NHANVIEN", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -440,6 +448,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaQL(string sMaNV)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MAQL from QUANLY", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -488,6 +497,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaBP(string sMaBP)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MABP from BOPHAN", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -537,6 +547,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaNhomHang(string sMaNH)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MANH from NHOMHANG", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -585,6 +596,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaNCC(string sMaKHO)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MANCC from NHACUNGCAP", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -632,6 +644,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaHoaDonXuat(string sMahdx)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MAHDX from HOADONXUAT", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())
@@ -682,6 +695,7 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaHoaDonNhap(string sMahdn)
         {
             int iMaxSoSanh = 1;
+            MSQL.sqlKetNoi = get_Connect();
             MSQL.sqlcmdLenhThucThi = MSQL.SqlCommand("Select MAHDN from HOADONNHAP", MSQL.sqlKetNoi);
             MSQL.sqldatareader = MSQL.sqlcmdLenhThucThi.ExecuteReader();
             while (MSQL.sqldatareader.Read())

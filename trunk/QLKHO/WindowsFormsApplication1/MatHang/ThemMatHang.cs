@@ -314,7 +314,7 @@ namespace WindowsFormsApplication1
                             DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();
 
                             DTO.MOTA = txtmota.Text;
-                            DTO.TINHTRANG = true;
+                            DTO.TINHTRANG = "True";
                             CTL.addMatHangCtrl(DTO);
                             XtraMessageBox.Show("Bạn Đã Thêm Thành Công");
                             loadma();
@@ -340,7 +340,7 @@ namespace WindowsFormsApplication1
                             DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();
 
                             DTO.MOTA = txtmota.Text;
-                            DTO.TINHTRANG = true;
+                            DTO.TINHTRANG = "True";
                             CTL.UPDATEMATHANG(DTO);
                             XtraMessageBox.Show("Bạn Đã Sửa Thành Công");
                             this.Close();
@@ -428,7 +428,7 @@ namespace WindowsFormsApplication1
                             DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();
 
                             DTO.MOTA = txtmota.Text;
-                            DTO.TINHTRANG = true;
+                            DTO.TINHTRANG = "True";
                             CTL.addMatHangCtrl(DTO);
                             XtraMessageBox.Show("You Added Succeesful");
                             loadma();
@@ -455,7 +455,7 @@ namespace WindowsFormsApplication1
                             DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();
 
                             DTO.MOTA = txtmota.Text;
-                            DTO.TINHTRANG = true;
+                            DTO.TINHTRANG = "True";
                             CTL.UPDATEMATHANG(DTO);
                             XtraMessageBox.Show("You Edited Succeesful");
                             this.Close();

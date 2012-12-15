@@ -853,7 +853,7 @@ namespace WindowsFormsApplication1
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
-          bKTraMoTab = true;
+            bKTraMoTab = true;
             sTieuDe = "";
             if (iNgonNgu == 0)
             {
@@ -906,7 +906,7 @@ namespace WindowsFormsApplication1
                 frmNhapHang dt = new frmNhapHang();
                 dt.deDongTab = new frmNhapHang._deDongTab(vDOngTab);
                 dt.frm = this;
-                //dt.iNgonNgu = iNgonNgu;
+                
                 dt.sMaNV = sManv;
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
