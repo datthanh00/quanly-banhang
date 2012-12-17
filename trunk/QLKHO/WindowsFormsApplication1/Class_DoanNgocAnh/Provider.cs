@@ -98,7 +98,7 @@ namespace WindowsFormsApplication1
             {
                 Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
                 //strConnect = "server=bigedu.vn;Port=3306; User ID=bigeduvn_us; password=dat12345; database=bigeduvn_db"
-                strConnect = "server=localhost;Port=3306; User ID=root; password=; database=xuat_nhapton;charset=utf8;";
+                strConnect = "server=localhost;Port=3306; User ID=root; password=; database=xuat_nhapton;charset=utf8;Allow Zero Datetime=true";
                 //strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
             }
             MySqlConnection cn = new MySqlConnection(strConnect);
@@ -115,7 +115,7 @@ namespace WindowsFormsApplication1
                 {
                     Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
                     //strConnect = "server=bigedu.vn;Port=3306; User ID=bigeduvn_us; password=dat12345; database=bigeduvn_db"
-                    strConnect = "server=localhost;Port=3306; User ID=root; password=; database=xuat_nhapton;charset=utf8;";
+                    strConnect = "server=localhost;Port=3306; User ID=root; password=; database=xuat_nhapton;charset=utf8;Allow Zero Datetime=true";
                     //strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true";
                 }
                 MySqlConnection cn = new MySqlConnection(strConnect);
