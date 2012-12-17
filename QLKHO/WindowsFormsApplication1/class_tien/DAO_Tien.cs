@@ -224,7 +224,7 @@ namespace WindowsFormsApplication1
             }
              */
             Provider pv = new Provider();
-            string SQL = "SELECT MAPT as 'Mã phiếu thu',MANV as 'Mã nhân viê',MAhdx as 'Mã hóa đơn xuất',ngaythu as 'Ngày thu',SoTienTra_PT as 'Tiền đã trả' FROM PHIEUTHU";
+            string SQL = "SELECT T1.MAPT as 'Mã phiếu thu',T2.TENNV as 'Tên nhân viên',T1.MAhdx as 'Mã hóa đơn xuất',T1.ngaythu as 'Ngày thu',T1.SoTienTra_PT as 'Tiền đã trả' FROM PHIEUTHU AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV=T2.MANV";
             return pv.getdata(SQL);
              
         }
@@ -359,9 +359,11 @@ namespace WindowsFormsApplication1
             dv.ChayProc("UPDATEPT", sqlpa);
             */
             Provider pv = new Provider();
-            string SQL = "select TIENCANSUA =SOTIENTRA_PT FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "'"
-             + " UPDATE  PHIEUTHU set MAHDX='" + dto.Mahoadonxuat + "',MANV='" + dto.NhanVien + "',SoTienTra_PT='" + dto.SoTienDaTra + "' WHERE MAPT='" + dto.MaPhieuThu + "'"
-             + " UPDATE HOADONXUAT SET TIENDATRA=(tiendatra-TIENCANSUA)+'" + dto.SoTienDaTra + "' where MAHDX='" + dto.Mahoadonxuat + "'";
+
+            string SQL = "UPDATE HOADONXUAT SET TIENDATRA=(tiendatra-(select SOTIENTRA_PT FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "'))+'" + dto.SoTienDaTra + "' where MAHDX='" + dto.Mahoadonxuat + "'";
+            pv.executeNonQuery(SQL);
+
+            SQL = " UPDATE  PHIEUTHU set MANV='" + dto.NhanVien + "',SoTienTra_PT='" + dto.SoTienDaTra + "' WHERE MAPT='" + dto.MaPhieuThu + "' and MAHDX='" + dto.Mahoadonxuat + "'";
             pv.executeNonQuery(SQL);
         }
         /*public static DataTable MOTPT_DAO(string sMapt)
@@ -511,7 +513,7 @@ namespace WindowsFormsApplication1
                 return dt;
             }*/
             Provider pv = new Provider();
-            string SQL = "SELECT MAPc as 'Mã phiếu chi',MANV as 'Mã nhân viê',MAhdn as 'Mã hóa đơn nhập',ngaychi as 'Ngày chi',SoTienDaTra_PC as 'Tiền đã trả' FROM PHIEUCHI";
+            string SQL = "SELECT T1.MAPc as 'Mã phiếu chi',T2.TENNV as 'Tên nhân viên',T1.MAhdn as 'Mã hóa đơn nhập',T1.ngaychi as 'Ngày chi',T1.SoTienDaTra_PC as 'Tiền đã trả' FROM PHIEUCHI T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV=T2.MANV";
             return pv.getdata(SQL);
         }
         public static void SUAPHIEUCHI_DAO(PHIEUCHI_DTO dto)
@@ -526,10 +528,12 @@ namespace WindowsFormsApplication1
             dv.ChayProc("UPDATEPC", sqlpa);
             */
             Provider pv = new Provider();
-            string SQL = "select TIENCANSUA =SoTienDaTra_PC FROM PHIEUCHI WHERE MAHDN='"+dto.Mahoadonnhap+"' AND MAPC='"+dto.MaPhieuChi+"'"
-	        +" UPDATE  PHIEUCHI set NGAYCHI ='"+dto.NgayChi+"',MAHDN='"+dto.Mahoadonnhap+"',MANV='"+dto.NhanVien+"',SoTienDaTra_PC='"+dto.SoTienDaTra+"' WHERE MAPC='"+dto.MaPhieuChi+"'"
-	        +" UPDATE HOADONnhap SET TIENDATRA=(tiendatra-TIENCANSUA)+'"+dto.SoTienDaTra+"' where MAHDN='"+dto.Mahoadonnhap+"'";
+            string SQL = " UPDATE HOADONnhap SET TIENDATRA=(tiendatra-(select SoTienDaTra_PC FROM PHIEUCHI WHERE MAHDN='" + dto.Mahoadonnhap + "' AND MAPC='" + dto.MaPhieuChi + "'))+'" + dto.SoTienDaTra + "' where MAHDN='" + dto.Mahoadonnhap + "'";
             pv.executeNonQuery(SQL);
+
+            SQL = " UPDATE  PHIEUCHI set MANV='" + dto.NhanVien + "',SoTienDaTra_PC='" + dto.SoTienDaTra + "' WHERE MAPC='" + dto.MaPhieuChi + "' and MAHDN='" + dto.Mahoadonnhap + "'";
+            pv.executeNonQuery(SQL);
+
         }
         public static void THEM_PHIEUCHI_DAO(PHIEUCHI_DTO dto)
         {
@@ -543,10 +547,12 @@ namespace WindowsFormsApplication1
             dv.ChayProc("INSERTPC", sqlpa);
             */
             Provider pv = new Provider();
-            string SQL = "INSERT INTO PHIEUCHI (MAPC,MAHDN,NGAYCHI,MANV,SoTienDaTra_PC)   VALUES('" + dto.MaPhieuChi + "', '" + dto.Mahoadonnhap + "',CURDATE(),'" + dto.NhanVien + "','" + dto.SoTienDaTra + "')"
-	        +" select TIENCANSUA =SUM(SoTienDaTra_PC) FROM PHIEUCHI WHERE MAHDN='"+dto.Mahoadonnhap+"' AND MAPC='"+dto.MaPhieuChi+"'"
-	        +" update hoadonnhap set TIENDATRA=tiendatra+TIENCANSUA WHERE MAHDN='"+dto.Mahoadonnhap+"'";
+            string SQL = "INSERT INTO PHIEUCHI (MAPC,MAHDN,NGAYCHI,MANV,SoTienDaTra_PC)   VALUES('" + dto.MaPhieuChi + "', '" + dto.Mahoadonnhap + "',CURDATE(),'" + dto.NhanVien + "','" + dto.SoTienDaTra + "')";
             pv.executeNonQuery(SQL);
+
+            SQL = " update hoadonnhap set TIENDATRA=tiendatra+(select SUM(SoTienDaTra_PC) FROM PHIEUCHI WHERE MAHDN='" + dto.Mahoadonnhap + "' AND MAPC='" + dto.MaPhieuChi + "') WHERE MAHDN='" + dto.Mahoadonnhap + "'";
+            pv.executeNonQuery(SQL);
+
         }
     }
 

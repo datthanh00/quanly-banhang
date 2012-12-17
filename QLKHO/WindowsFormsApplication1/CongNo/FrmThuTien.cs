@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
                     XtraMessageBox.Show("You haven't type debt money yet!!!");
 
             }
-            else if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text))
+            else if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text)&&Nhan != "Sua")
             {
                 if (iNgonNgu == 0)
                 {
@@ -91,15 +91,22 @@ namespace WindowsFormsApplication1
                     XtraMessageBox.Show("Pay money is not bigger than debt money!!!");
 
             }
+            else if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text) && double.Parse(txtSoTienTra.Text) > double.Parse(TIEN) && Nhan == "Sua")
+            {
+                if (iNgonNgu == 0)
+                {
+                    XtraMessageBox.Show("Số tiền trả không thể lớn hơn số tiền nợ");
+                }
+                else
+                    XtraMessageBox.Show("Pay money is not bigger than debt money!!!");
 
-
+            }
             else if (Nhan == "Sua")
             {
                 PHIEUTHU_DTO dto = new PHIEUTHU_DTO();
                 dto.MaPhieuThu = txtPT.Text;
                 dto.NhanVien = sMaNV;
                 dto.NgayThu = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
-                dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
                 dto.Mahoadonxuat = txtMahd.Text;
                 dto.SoTienDaTra = double.Parse(txtSoTienTra.Text);
 

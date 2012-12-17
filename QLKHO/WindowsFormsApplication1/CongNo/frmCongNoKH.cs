@@ -186,6 +186,8 @@ namespace WindowsFormsApplication1
                 sMahdx = dtr[0].ToString();
                 smaKH = dtr[2].ToString();
                 sTienno = dtr[6].ToString();
+
+
                 loadfrm_thutien();
             }
         }
@@ -209,7 +211,7 @@ namespace WindowsFormsApplication1
             colMãphiếuthu.Caption = Tien_VN.colMãphiếuthu.ToString();
             colMãhóađơnxuất1.Caption = Tien_VN.colMãhóađơnxuất1.ToString();
             colTiềnđãtrả1.Caption = Tien_VN.colTiềnđãtrả1.ToString();
-            colMãnhânviên.Caption = Tien_VN.colMãnhânviên.ToString();
+            colTênnhânviên.Caption = Tien_VN.colTênnhanvien.ToString();
             colNgàythu.Caption = Tien_VN.colNgàythu.ToString();
             groupControl_congno.Text = Tien_VN.groupControl1.ToString();
             groupControl_phieuthu.Text = Tien_VN.groupControl2.ToString();
@@ -230,7 +232,7 @@ namespace WindowsFormsApplication1
             colMãphiếuthu.Caption = Tien_EL.colMãphiếuthu.ToString();
             colMãhóađơnxuất1.Caption = Tien_EL.colMãhóađơnxuất1.ToString();
             colTiềnđãtrả1.Caption = Tien_EL.colTiềnđãtrả1.ToString();
-            colMãnhânviên.Caption = Tien_EL.colMãnhânviên.ToString();
+            colTênnhânviên.Caption = Tien_EL.colTênnhanvien.ToString();
             colNgàythu.Caption = Tien_EL.colNgàythu.ToString();
             groupControl_congno.Text = Tien_EL.groupControl1.ToString();
             groupControl_phieuthu.Text = Tien_EL.groupControl2.ToString();
