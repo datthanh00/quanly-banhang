@@ -52,8 +52,6 @@
             this.coltendonvi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsoluong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
-            this.colhansudung = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colthanhtiennhap = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colgiaban = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colthanhtienxuat = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -65,6 +63,8 @@
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colgiamua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
+            this.colhansudung = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.colsongayhethan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.btdong = new DevExpress.XtraEditors.SimpleButton();
@@ -91,12 +91,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbloaihienthi.Properties)).BeginInit();
@@ -236,7 +236,6 @@
             this.colthue,
             this.coltendonvi,
             this.colsoluong,
-            this.colhansudung,
             this.colthanhtiennhap,
             this.colgiaban,
             this.colthanhtienxuat,
@@ -244,6 +243,7 @@
             this.colhinhanh,
             this.coltinhtrang,
             this.colgiamua,
+            this.colhansudung,
             this.colsongayhethan});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(846, 478, 216, 178);
             this.gridView1.GridControl = this.gridControl1;
@@ -322,6 +322,8 @@
             // 
             this.colsoluong.Caption = "Số Lượng";
             this.colsoluong.ColumnEdit = this.repositoryItemCalcEdit1;
+            this.colsoluong.DisplayFormat.FormatString = "{0:0,0}";
+            this.colsoluong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsoluong.FieldName = "SOLUONGMH";
             this.colsoluong.Name = "colsoluong";
             this.colsoluong.OptionsColumn.AllowEdit = false;
@@ -336,29 +338,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemCalcEdit1.Name = "repositoryItemCalcEdit1";
             // 
-            // colhansudung
-            // 
-            this.colhansudung.Caption = "Hạn Sử Dụng";
-            this.colhansudung.ColumnEdit = this.repositoryItemDateEdit1;
-            this.colhansudung.FieldName = "HANSUDUNG";
-            this.colhansudung.Name = "colhansudung";
-            this.colhansudung.OptionsColumn.AllowEdit = false;
-            this.colhansudung.Visible = true;
-            this.colhansudung.VisibleIndex = 10;
-            this.colhansudung.Width = 97;
-            // 
-            // repositoryItemDateEdit1
-            // 
-            this.repositoryItemDateEdit1.AutoHeight = false;
-            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            this.repositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            // 
             // colthanhtiennhap
             // 
             this.colthanhtiennhap.Caption = "Thành Tiền Nhập";
+            this.colthanhtiennhap.DisplayFormat.FormatString = "{0:0,0}";
+            this.colthanhtiennhap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colthanhtiennhap.FieldName = "thanhtien";
             this.colthanhtiennhap.Name = "colthanhtiennhap";
             this.colthanhtiennhap.OptionsColumn.AllowEdit = false;
@@ -442,6 +426,8 @@
             // 
             this.colgiamua.Caption = "Giá Mua";
             this.colgiamua.ColumnEdit = this.repositoryItemCalcEdit3;
+            this.colgiamua.DisplayFormat.FormatString = "{0:0,0}";
+            this.colgiamua.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgiamua.FieldName = "GIAMUA";
             this.colgiamua.Name = "colgiamua";
             this.colgiamua.OptionsColumn.AllowEdit = false;
@@ -456,14 +442,30 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemCalcEdit3.Name = "repositoryItemCalcEdit3";
             // 
+            // colhansudung
+            // 
+            this.colhansudung.Caption = "Hạn Sử Dụng";
+            this.colhansudung.ColumnEdit = this.repositoryItemDateEdit1;
+            this.colhansudung.FieldName = "HANSUDUNG";
+            this.colhansudung.Name = "colhansudung";
+            this.colhansudung.OptionsColumn.AllowEdit = false;
+            this.colhansudung.Width = 97;
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            this.repositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            // 
             // colsongayhethan
             // 
             this.colsongayhethan.Caption = "Số Ngày Hết Hạn";
             this.colsongayhethan.FieldName = "SONGAYHETHANH";
             this.colsongayhethan.Name = "colsongayhethan";
             this.colsongayhethan.OptionsColumn.AllowEdit = false;
-            this.colsongayhethan.Visible = true;
-            this.colsongayhethan.VisibleIndex = 11;
             // 
             // panelControl6
             // 
@@ -493,6 +495,7 @@
             // 
             // cmbloaihienthi
             // 
+            this.cmbloaihienthi.Enabled = false;
             this.cmbloaihienthi.Location = new System.Drawing.Point(398, 11);
             this.cmbloaihienthi.MenuManager = this.barManager1;
             this.cmbloaihienthi.Name = "cmbloaihienthi";
@@ -589,12 +592,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();

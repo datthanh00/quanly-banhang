@@ -383,16 +383,11 @@ namespace WindowsFormsApplication1
             {
                 dtr1[0] = "0";
                 dtr1[1] = "Tất Cả";
-
-
-
             }
             else
             {
                 dtr1[0] = "0";
-
                 dtr1[1] = "ALL Product";
-
             }
 
             dt.Rows.Add(dtr1);
@@ -413,28 +408,17 @@ namespace WindowsFormsApplication1
             
             if (iNgonNgu == 0)
             {
-
                 cmbloaihienthi.Properties.Items.Add("Tất Cả");
                 cmbloaihienthi.Properties.Items.Add("Hết Hạn Sử Dụng");
-                cmbloaihienthi.Properties.Items.Add("Còn Hạn Sử Dụng");
-                
-                
-                
+                cmbloaihienthi.Properties.Items.Add("Còn Hạn Sử Dụng");                
                 cmbloaihienthi.SelectedIndex = 0;
-
-
-
             }
             else
             {
                 cmbloaihienthi.Properties.Items.Add("ALL");
                 cmbloaihienthi.Properties.Items.Add("EXPIRY DATE");
                 cmbloaihienthi.Properties.Items.Add("EXPIRE ");
-               
-                
-                
                 cmbloaihienthi.SelectedIndex = 0;
-
             }
         }
 
@@ -442,21 +426,12 @@ namespace WindowsFormsApplication1
         {
             if (iNgonNgu == 0)
             {
-
-
                 xtraTabPage3.Text = "Chọn Loại Thống Kê Mặt Hàng";
-
             }
             else
             {
-
-
                 xtraTabPage3.Text = "STATISTICAL ITEMS REPORT";
-
             }
-
-            //pnThangNam.Visible = false;
-            //pnThoiGian.Visible = false;
         }
 
 
@@ -513,7 +488,7 @@ namespace WindowsFormsApplication1
 
 
             dto.Loai_TG = cbChonNhomHang.Text;
-                dto.Loai_HT = cmbloaihienthi.SelectedIndex.ToString();
+            dto.Loai_HT = cmbloaihienthi.SelectedIndex.ToString();
                 //dto.NGAY_BD = DateTime.Parse(dateNgayBD);
                 //dto.NGAY_KT = DateTime.Parse(dateNgayKT);
                // dto.MANH = cbChonNhomHang.SelectedValue.ToString();
@@ -521,7 +496,7 @@ namespace WindowsFormsApplication1
 
                 if (cbChonNhomHang.SelectedIndex == 0)
                     dto.Loai_TG = "";
-                    dt = ctr.geTthongke_ct_mathang2(dto);
+                dt = ctr.geTthongke_ct_mathang2(dto);
                 
               
                 gridControl1.DataSource = dt;
