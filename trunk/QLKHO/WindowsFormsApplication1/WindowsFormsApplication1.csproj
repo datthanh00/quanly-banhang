@@ -258,10 +258,10 @@
     <Compile Include="Thue\frmThemThue.designer.cs">
       <DependentUpon>frmThemThue.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongKeDoanhThu.cs">
+    <Compile Include="BaoCao\frmThongKeDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongKeDoanhThu.designer.cs">
+    <Compile Include="BaoCao\frmThongKeDoanhThu.designer.cs">
       <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
     </Compile>
     <Compile Include="Thue\frmThue.cs">
@@ -593,7 +593,7 @@
       <DependentUpon>frmThemThue.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongKeDoanhThu.resx">
+    <EmbeddedResource Include="BaoCao\frmThongKeDoanhThu.resx">
       <DependentUpon>frmThongKeDoanhThu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -733,11 +733,11 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportBaoCaoDoanhThu.resx">
+    <EmbeddedResource Include="BaoCao\reportBaoCaoDoanhThu.resx">
       <DependentUpon>reportBaoCaoDoanhThu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportTonKhoSoLuongGiaTri.resx">
+    <EmbeddedResource Include="BaoCao\reportTonKhoSoLuongGiaTri.resx">
       <DependentUpon>reportTonKhoSoLuongGiaTri.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -782,16 +782,16 @@
       <DependentUpon>frmThemKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Class_DoanNgocAnh\Provider.cs" />
-    <Compile Include="reportBaoCaoDoanhThu.cs">
+    <Compile Include="BaoCao\reportBaoCaoDoanhThu.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="reportBaoCaoDoanhThu.Designer.cs">
+    <Compile Include="BaoCao\reportBaoCaoDoanhThu.Designer.cs">
       <DependentUpon>reportBaoCaoDoanhThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="reportTonKhoSoLuongGiaTri.cs">
+    <Compile Include="BaoCao\reportTonKhoSoLuongGiaTri.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="reportTonKhoSoLuongGiaTri.Designer.cs">
+    <Compile Include="BaoCao\reportTonKhoSoLuongGiaTri.Designer.cs">
       <DependentUpon>reportTonKhoSoLuongGiaTri.cs</DependentUpon>
     </Compile>
     <Compile Include="resEngLand.Designer.cs">
