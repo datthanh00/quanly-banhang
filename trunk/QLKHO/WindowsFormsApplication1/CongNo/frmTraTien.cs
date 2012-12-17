@@ -69,7 +69,7 @@ namespace WindowsFormsApplication1
         public void Luu()
         {
 
-            if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text))
+            if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text) && Nhan != "Sua")
             {
                 if (iNgonNgu == 0)
                 {
@@ -77,6 +77,16 @@ namespace WindowsFormsApplication1
                 }
                 else
                     XtraMessageBox.Show("Pay money is not bigger than debt money!!!");
+            }
+            else if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text) && double.Parse(txtSoTienTra.Text) > double.Parse(TIEN) && Nhan == "Sua")
+            {
+                if (iNgonNgu == 0)
+                {
+                    XtraMessageBox.Show("Số tiền trả không thể lớn hơn số tiền nợ");
+                }
+                else
+                    XtraMessageBox.Show("Pay money is not bigger than debt money!!!");
+
             }
             else if (double.Parse(txtSoTienTra.Text) == 0)
             {

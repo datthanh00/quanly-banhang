@@ -243,4 +243,7 @@
   <data name="xrLbTieude1" xml:space="preserve">
     <value>Công nợ khách hàng</value>
   </data>
+  <data name="colTênnhanvien" xml:space="preserve">
+    <value>Tên Nhân viên</value>
+  </data>
 </root>

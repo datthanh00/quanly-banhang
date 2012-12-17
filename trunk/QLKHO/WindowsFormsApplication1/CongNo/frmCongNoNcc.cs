@@ -94,7 +94,7 @@ namespace WindowsFormsApplication1
                     DataRow dtr = gridView1.GetDataRow(hitInfo.RowHandle);
                     sMahdn = dtr[0].ToString();
                     smaNcc = dtr[2].ToString();
-                    sTienno = dtr[5].ToString();
+                    sTienno = dtr[6].ToString();
                     loadfrm_tratien();
                 }
         }
@@ -107,7 +107,7 @@ namespace WindowsFormsApplication1
                 DataRow dtr = gridView1.GetDataRow(e.RowHandle);
                 sMahdn = dtr[0].ToString();
                 smaNcc = dtr[2].ToString();
-                sTienno = dtr[5].ToString();
+                sTienno = dtr[6].ToString();
 
             }
             catch
@@ -130,7 +130,7 @@ namespace WindowsFormsApplication1
             colTiềnđãtrả.Caption = Tien_VN.colTiềnđãtrả.ToString();
             colCònlại.Caption = Tien_VN.colCònlại.ToString();
             colMãphiếuchi.Caption = Tien_VN.colMãphiếuchi.ToString();
-            colMãnhânviên.Caption = Tien_VN.colMãnhânviên.ToString();
+            colTênnhânviên.Caption = Tien_VN.colTênnhanvien.ToString();
             colMãhóađơnnhập1.Caption = Tien_VN.colMãhóađơnnhập.ToString();
             colNgàychi.Caption = Tien_VN.colNgàychi.ToString();
             colTiềnđãtrả1.Caption = Tien_VN.colTiềnđãtrả.ToString();
@@ -149,7 +149,7 @@ namespace WindowsFormsApplication1
             colTiềnđãtrả.Caption = Tien_EL.colTiềnđãtrả.ToString();
             colCònlại.Caption = Tien_EL.colCònlại.ToString();
             colMãphiếuchi.Caption = Tien_EL.colMãphiếuchi.ToString();
-            colMãnhânviên.Caption = Tien_EL.colMãnhânviên.ToString();
+            colTênnhânviên.Caption = Tien_EL.colTênnhanvien.ToString();
             colMãhóađơnnhập1.Caption = Tien_EL.colMãhóađơnnhập.ToString();
             colNgàychi.Caption = Tien_EL.colNgàychi.ToString();
             colTiềnđãtrả1.Caption = Tien_EL.colTiềnđãtrả.ToString();
@@ -207,8 +207,6 @@ namespace WindowsFormsApplication1
                 sMaNV = dtr1[1].ToString();
                 smahdn = dtr1[2].ToString();
                 stientra = dtr1[4].ToString();
-
-
             }
             catch
             {

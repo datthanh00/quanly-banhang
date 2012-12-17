@@ -53,7 +53,7 @@
             this.gETONEPTBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMãphiếuthu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMãnhânviên = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTênnhânviên = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMãhóađơnxuất1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgàythu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTiềnđãtrả1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -303,7 +303,7 @@
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMãphiếuthu,
-            this.colMãnhânviên,
+            this.colTênnhânviên,
             this.colMãhóađơnxuất1,
             this.colNgàythu,
             this.colTiềnđãtrả1});
@@ -323,12 +323,12 @@
             this.colMãphiếuthu.Visible = true;
             this.colMãphiếuthu.VisibleIndex = 0;
             // 
-            // colMãnhânviên
+            // colTênnhânviên
             // 
-            this.colMãnhânviên.FieldName = "Mã nhân viên";
-            this.colMãnhânviên.Name = "colMãnhânviên";
-            this.colMãnhânviên.Visible = true;
-            this.colMãnhânviên.VisibleIndex = 1;
+            this.colTênnhânviên.FieldName = "Tên nhân viên";
+            this.colTênnhânviên.Name = "colTênnhânviên";
+            this.colTênnhânviên.Visible = true;
+            this.colTênnhânviên.VisibleIndex = 1;
             // 
             // colMãhóađơnxuất1
             // 
@@ -551,7 +551,7 @@
         private System.Windows.Forms.BindingSource gETONEPTBindingSource1;
        // private XUAT_NHAPTONDataSet4 xUAT_NHAPTONDataSet4;
         private DevExpress.XtraGrid.Columns.GridColumn colMãphiếuthu;
-        private DevExpress.XtraGrid.Columns.GridColumn colMãnhânviên;
+        private DevExpress.XtraGrid.Columns.GridColumn colTênnhânviên;
         private DevExpress.XtraGrid.Columns.GridColumn colMãhóađơnxuất1;
         private DevExpress.XtraGrid.Columns.GridColumn colNgàythu;
         private DevExpress.XtraGrid.Columns.GridColumn colTiềnđãtrả1;

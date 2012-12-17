@@ -243,4 +243,7 @@
   <data name="xrLbTieude1" xml:space="preserve">
     <value>Custommer's Debt</value>
   </data>
+  <data name="colTênnhanvien" xml:space="preserve">
+    <value>Name</value>
+  </data>
 </root>
