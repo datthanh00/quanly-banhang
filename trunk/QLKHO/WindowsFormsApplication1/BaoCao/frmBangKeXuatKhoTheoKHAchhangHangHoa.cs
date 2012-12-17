@@ -59,10 +59,11 @@ namespace WindowsFormsApplication1
             }
 
             //loadGird();
-            loadGird1();
-            loadGird2();
-            loadGird3();
-            loadGird5();
+            //loadGird1();
+            //loadGird2();
+            //loadGird3();
+            //loadGird4();
+            //loadGird5();
         }
 
         //private void loadgirdlookup()
@@ -83,8 +84,14 @@ namespace WindowsFormsApplication1
         {
             
             //dto.MAKHO = gView.GetFocusedRowCellValue("MAKHO").ToString();
-            dto.NGAYBDKHO = dateTu.Text;
-            dto.NGAYKTKHO = dateDen.Text;
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dto.NGAYBDKHO = NGAYBD;
+            
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dto.NGAYKTKHO = NGAYKT;
+
             gridControl1.MainView = gridView1;
             dt = ctr1.LOINHUANKINHDOANH(dto);
             gridControl1.DataSource = dt;
@@ -94,8 +101,14 @@ namespace WindowsFormsApplication1
         }
         private void loadGird2()
         {
-            dto.NGAYBDKHO = dateTu.Text;
-            dto.NGAYKTKHO = dateDen.Text;
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dto.NGAYBDKHO = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dto.NGAYKTKHO = NGAYKT;
+
             gridControl1.MainView = gridView2;
 
             dt = ctr1.thongkhetheokhachang(dto);
@@ -103,17 +116,29 @@ namespace WindowsFormsApplication1
         }
         private void loadGird3()
         {
-            dto.NGAYBDKHO = dateTu.Text;
-            dto.NGAYKTKHO = dateDen.Text;
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dto.NGAYBDKHO = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dto.NGAYKTKHO = NGAYKT;
+
             gridControl1.MainView = gridView3;
            
-               dt = ctr1.getBAOCAOTHEOKHO(dto);
-               gridControl1.DataSource = dt;
+            dt = ctr1.getBAOCAOTHEOKHO(dto);
+            gridControl1.DataSource = dt;
         }
         private void loadGird4()
         {
-            dto.NGAYBDKHO = dateTu.Text;
-            dto.NGAYKTKHO = dateDen.Text;
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dto.NGAYBDKHO = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dto.NGAYKTKHO = NGAYKT;
+
             gridControl1.MainView = gridView4;
            
                dt = ctr1.gethieuquakinhdoanh(dto);
@@ -133,8 +158,14 @@ namespace WindowsFormsApplication1
         }
         private void loadGird5()
         {
-            dto.NGAYBDKHO = dateTu.Text;
-            dto.NGAYKTKHO = dateDen.Text;
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dto.NGAYBDKHO = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dto.NGAYKTKHO = NGAYKT;
+
             gridControl1.MainView = gridView5;
 
             dt = ctr1.gethieuquakinhdoanh(dto);
@@ -451,93 +482,97 @@ namespace WindowsFormsApplication1
 
                 case 0:
                     {
-                        dateDen.Text = DateTime.Now.ToShortDateString();
-                        dateTu.Text = DateTime.Now.ToShortDateString();
+                        dateDen.Text = DateTime.Now.ToString("yyy/MM/dd");
+
+                        dateTu.Text = DateTime.Now.ToString("yyy/MM/dd");
+
                         break;
                     }
                 case 1:
                     {
-                        dateDen.Text = "12/31/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/01/"+DateTime.Now.Year.ToString();
                         break;
                     }
                 case 2:
                     {
-                        dateDen.Text = "01/31/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/01/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/01/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 3:
                     {
-                        dateDen.Text = "02/28/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "02/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "28/02/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/02/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 4:
                     {
-                        dateDen.Text = "03/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "03/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/03/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/03/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 5:
                     {
-                        dateDen.Text = "04/30/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "04/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "30/04/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/04/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 6:
                     {
-                        dateDen.Text = "05/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "05/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/05/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/05/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 7:
                     {
-                        dateDen.Text = "06/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "06/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "30/06/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/06/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 8:
                     {
-                        dateDen.Text = "07/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "07/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/07/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/07/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 9:
                     {
-                        dateDen.Text = "08/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "08/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/08/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/08/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 10:
                     {
-                        dateDen.Text = "09/30/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "09/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "30/09/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/09/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 11:
                     {
-                        dateDen.Text = "10/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "10/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/10/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/10/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 12:
                     {
-                        dateDen.Text = "11/30/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "11/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "30/11/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/11/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 13:
                     {
-                        dateDen.Text = "12/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "12/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/12/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 14:
                     {
-                        
-                        dateDen.Text = DateTime.Now.ToShortDateString();
-                        dateTu.Text = DateTime.Now.ToShortDateString();
+
+                        dateDen.Text = DateTime.Now.ToString("yyy/MM/dd");
+
+                        dateTu.Text = DateTime.Now.ToString("yyy/MM/dd");
+
                         break;
                     }
                
@@ -649,32 +684,37 @@ namespace WindowsFormsApplication1
 
         private void loinhuan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            loadGird1();
             gridControl1.MainView = gridView1;
-            gridControl1.DataSource = ctr1.LOINHUANKINHDOANH(dto);
-            dt = ctr1.LOINHUANKINHDOANH(dto);
+            //gridControl1.DataSource = ctr1.LOINHUANKINHDOANH(dto);
+           // dt = ctr1.LOINHUANKINHDOANH(dto);
             pnthoigian.Visible = true;
+            
         }
 
         private void Khachhang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            loadGird2();
             pnthoigian.Visible = true;
-            gridControl1.MainView = gridView2;
-            gridControl1.DataSource = ctr1.thongkhetheokhachang(dto);
-            dt = ctr1.thongkhetheokhachang(dto);
+            //gridControl1.MainView = gridView2;
+            //gridControl1.DataSource = ctr1.thongkhetheokhachang(dto);
+            //dt = ctr1.thongkhetheokhachang(dto);
         }
 
         private void Theokho_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            loadGird3();
             pnthoigian.Visible = true;
-            gridControl1.MainView = gridView3;
-            gridControl1.DataSource =  ctr1.getBAOCAOTHEOKHO(dto);
-            dt = ctr1.getBAOCAOTHEOKHO(dto);
+            //gridControl1.MainView = gridView3;
+            //gridControl1.DataSource =  ctr1.getBAOCAOTHEOKHO(dto);
+            //dt = ctr1.getBAOCAOTHEOKHO(dto);
         }
 
         private void tenhang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            loadGird4();
             pnthoigian.Visible = false;
-            gridControl1.MainView = gridView4;
+            /*gridControl1.MainView = gridView4;
             gridControl1.DataSource = ctr1.gethieuquakinhdoanh(dto);
             dt = ctr1.gethieuquakinhdoanh(dto);
             DevExpress.XtraGrid.StyleFormatCondition cn;
@@ -689,14 +729,16 @@ namespace WindowsFormsApplication1
             cn.ApplyToRow = true;
             gridView4.FormatConditions.Add(cn);
             gridView4.BestFitColumns();
+            */
         }
 
         private void TheoNhom_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            loadGird5();
             pnthoigian.Visible = false;
-            gridControl1.MainView = gridView5;
-            gridControl1.DataSource = ctr1.gethieuquakinhdoanh(dto);
-            dt = ctr1.gethieuquakinhdoanh(dto);
+            //gridControl1.MainView = gridView5;
+            //gridControl1.DataSource = ctr1.gethieuquakinhdoanh(dto);
+            //dt = ctr1.gethieuquakinhdoanh(dto);
         }
 
         private void navBarGroup1_ItemChanged(object sender, EventArgs e)
