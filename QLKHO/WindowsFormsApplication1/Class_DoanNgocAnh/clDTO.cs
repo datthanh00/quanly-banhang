@@ -200,16 +200,16 @@ namespace WindowsFormsApplication1
         }
         //--------------------------------------------------------------------------------------------
         //--------THONG KE DOANH THU-----------------
-        private DateTime _NGAYBD;
+        private string _NGAYBD;
 
-        public DateTime NGAYBD
+        public string  NGAYBD
         {
             get { return _NGAYBD; }
             set { _NGAYBD = value; }
         }
-        private DateTime _NGAYKT;
+        private string _NGAYKT;
 
-        public DateTime NGAYKT
+        public string NGAYKT
         {
             get { return _NGAYKT; }
             set { _NGAYKT = value; }

@@ -151,7 +151,7 @@ namespace WindowsFormsApplication1
         
             gridControl2.MainView = advBandedGridView3;
             gridControl2.DataSource = ctr.getTonKho(dto);
-            dt = ctr.getTonKho(dto);
+            //dt = ctr.getTonKho(dto);
             
         }
 
