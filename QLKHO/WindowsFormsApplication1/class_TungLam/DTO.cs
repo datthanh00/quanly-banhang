@@ -416,7 +416,7 @@ namespace WindowsFormsApplication1
         private String _MAHDN;
         private String _sMANV;
         private String _sMANCC;
-        private DateTime _NGAYNHAP;
+        private string _NGAYNHAP;
         private int _TIENPHAITRA;
         private int _TIENDATRA;
         private string _sGHICHU;
@@ -440,7 +440,7 @@ namespace WindowsFormsApplication1
             set { _sMANV = value; }
         }
 
-        public DateTime NGAYNHAP
+        public string NGAYNHAP
         {
             get { return _NGAYNHAP; }
             set { _NGAYNHAP = value; }
@@ -509,7 +509,7 @@ namespace WindowsFormsApplication1
         private String _MAHDX;
         private String _s1MAKH;
         private String _s1MANV;
-        private DateTime _NGAYXUAT;
+        private string _NGAYXUAT;
         private int _s1TIENPHAITRA;
         private int _s1TIENDATRA;
         private String _s1GHICHU;
@@ -533,7 +533,7 @@ namespace WindowsFormsApplication1
             set { _MANV = value; }
         }
 
-        public DateTime NGAYXUAT
+        public string NGAYXUAT
         {
             get { return _NGAYXUAT; }
             set { _NGAYXUAT = value; }

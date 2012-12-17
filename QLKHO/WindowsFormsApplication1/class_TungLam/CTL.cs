@@ -291,6 +291,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.LAYTIENNO(dto);
         }
+        public DataTable LAYTIENNOKH(DTO dto)
+        {
+            return DAO.LAYTIENNOKH(dto);
+        }
         public void INSERTHOADONXUAT(DTO DTO)
         {
             DAO.INSERTHOADONXUAT(DTO);

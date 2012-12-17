@@ -54,7 +54,7 @@ namespace WindowsFormsApplication1
 
         }
         DataView dvdropdow;
-        DataTable layno = new DataTable();
+       
         DTO dtoNCC = new DTO();
         CTL ctlNCC = new CTL();
         ketnoi connect = new ketnoi();
@@ -238,15 +238,14 @@ namespace WindowsFormsApplication1
                 txtFax.Text = gridView3.GetFocusedRowCellValue("FAX").ToString();
                 txtEmail.Text = gridView3.GetFocusedRowCellValue("EMAIL").ToString();
                 dtoNCC.MANCC = cboMANCC.Text;
-                layno = ctlNCC.LAYTIENNO(dtoNCC);
-                string tienno = layno.Rows[0]["TIENNO"].ToString();
-                if (tienno == "")
+                DataTable tblayno = ctlNCC.LAYTIENNO(dtoNCC);
+                if (tblayno.Rows.Count > 0)
                 {
-                    txtNo.Text = "0";
+                    txtNo.Text = tblayno.Rows[0]["TIENNO"].ToString();
                 }
                 else
                 {
-                    txtNo.Text = string.Format("{0:N}", double.Parse(tienno));
+                    txtNo.Text = "0";
                 }
             }
         }
@@ -296,7 +295,7 @@ namespace WindowsFormsApplication1
                     dtoNCC.FAX = txtFax.Text;
                     dtoNCC.EMAIL = txtEmail.Text;
                     dtoNCC.GHICHU = textBoxX1.Text;
-                    dtoNCC.NGAYNHAP = DateTime.Now;
+                    dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                     dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
                     dtoNCC.MAHDN = txtMaHD.Text;
                     if (cbotientra.Text == "")
@@ -359,13 +358,13 @@ namespace WindowsFormsApplication1
 
         private void Update_Delete_Gridview()
         {
-            dtoNCC.NGAYNHAP = DateTime.Now;
+            dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
             gridControl2.DataSource = ctlNCC.GETHOADONNHAP(dtoNCC);
         }
 
         private void loadGiaoDich()
         {
-            dtoNCC.NGAYNHAP = DateTime.Now;
+            dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
             gridControl2.DataSource = ctlNCC.GETHOADONNHAP(dtoNCC);
         }
         public void createHoadon()
@@ -691,14 +690,14 @@ namespace WindowsFormsApplication1
         private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            string SQL = "SELECT T1.NGAYNHAP 'Ngày Nhập',T1.MAHDN 'Mã Hóa Đơn',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (SELECT * FROM HOADONNHAP ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDN DESC";
+            string SQL = "SELECT DATE_FORMAT(T1.NGAYNHAP,'%d/%m/%Y') 'Ngày Nhập',T1.MAHDN 'Mã Hóa Đơn',T1.tenncc 'Tên Nhà Cung Cấp',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM ((select t9.*,t8.tenncc from HOADONNHAP as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc) ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDN DESC";
             loadgridPHIEUNHAP(SQL);
         }
 
         private void linkTheoSanPham_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            string SQL = "SELECT T3.NGAYNHAP 'NGÀY NHẬP',T3.MAHDN 'Mã Hóa Đơn', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGNHAP 'Số Lượng',T3.GIANHAP 'Giá Nhập' FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T1.SOLUONGNHAP,T1.GIANHAP FROM (SELECT * FROM CHITIETHDN ) AS T1 INNER JOIN HOADONNHAP AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
+            string SQL = "SELECT DATE_FORMAT(T3.NGAYNHAP,'%d/%m/%Y') 'NGÀY NHẬP',T3.MAHDN 'Mã Hóa Đơn',T3.tenncc 'Tên Nhà Cung Cấp', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGNHAP 'Số Lượng',T3.GIANHAP 'Giá Nhập' FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T2.tenncc ,T1.SOLUONGNHAP,T1.GIANHAP FROM (SELECT * FROM CHITIETHDN )AS T1 INNER JOIN (select t9.ngaynhap,t9.mahdn,t9.mancc,t8.tenncc from HOADONNHAP as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc) AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
             loadgridSANPHAM(SQL);
         }
 
@@ -712,9 +711,9 @@ namespace WindowsFormsApplication1
         public void View_phieunhap(string MAHDN)
         {
             loadgridCTHOADON(MAHDN);
-
+  
             txtMaHD.Text = MAHDN;
-            string SQL = "SELECT T1.NGAYNHAP ,T1.MAHDN ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='"+MAHDN+"') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT DATE_FORMAT(T1.NGAYNHAP,'%d/%m/%Y') ,T1.MAHDN ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='" + MAHDN + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
             cboNhanVienLap.Text = DT.Rows[0]["MANV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
@@ -743,6 +742,11 @@ namespace WindowsFormsApplication1
             txtNgay.Text = dtr["NGÀY NHẬP"].ToString();
             loadgridNhacCungCap(MANCC);
             Load_TTNCC();
+        }
+
+        private void btXem_Click(object sender, EventArgs e)
+        {
+
         }
 
     

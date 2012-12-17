@@ -284,7 +284,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@TINHTRANG", dto.TINHTRANG));
             ChayProc("QUANLY_add", sqlpa);
             */
-            string SQL = "insert into dbo.[QUANLY](MAQL,USERNAME,PASSWORD,TENQL,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG)"
+            string SQL = "insert into QUANLY(MAQL,USERNAME,PASSWORD,TENQL,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG)"
             +" values('"+dto.MAQL+"','"+dto.USERNAME+"','"+dto.PASSWORD+"',N'"+dto.TENQL+"',N'"+dto.DIACHI+"','"+dto.NGAYSINH+"','"+dto.SCMND+"','"+dto.SDT+"','"+dto.TINHTRANG+"')";
             executeNonQuery(SQL);
         }
@@ -504,7 +504,7 @@ namespace WindowsFormsApplication1
             /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             return executeNonQuerya("MATHANG_getall", sqlpa);
              */
-            string SQL = "select 	MAMH,MATH,MANH,MAKHO,TENMH,MADVT,SOLUONGMH,DATE_FORMAT(HANSUDUNG,'%D%M%Y'),GIAMUA,GIABAN,MOTA,TINHTRANG from  MATHANG";
+            string SQL = "select 	MAMH,MATH,MANH,MAKHO,TENMH,MADVT,SOLUONGMH,DATE_FORMAT(HANSUDUNG,'%d/%m/%Y'),GIAMUA,GIABAN,MOTA,TINHTRANG from  MATHANG";
             return GET_DATA(SQL);
         }
         public DataTable GETTHUE()
@@ -528,7 +528,7 @@ namespace WindowsFormsApplication1
             /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             return executeNonQuerya("QUANLY_getall", sqlpa);
              */
-            string SQL = "select 	MAQL,USERNAME,PASSWORD,TENQL,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG from  QUANLY";
+            string SQL = "select 	MAQL,USERNAME,PASSWORD,TENQL,DIACHI,DATE_FORMAT(NGAYSINH,'%d/%m/%Y'),SCMND,SDT,TINHTRANG from  QUANLY";
             return GET_DATA(SQL);
         }
        /* public void deleteDVT(DTO dto)
@@ -667,7 +667,7 @@ namespace WindowsFormsApplication1
             ChayProc("HOADONNHAP_add", sqlpa);
              */
             string SQL = "insert into HOADONNHAP(MAHDN,MANCC,MANV,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            +" values('"+dto.MAHDN+"','"+dto.MANCC+"','"+dto.MANV+"','"+dto.NGAYNHAP+"','"+dto.TIENPHAITRA+"','"+dto.TIENDATRA+"','"+dto.GHICHU+"','"+dto.TINHTRANG+"')";
+            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "',CURDATE()," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
         public bool isINSERTHOADONNHAP(string MAHDN)
@@ -694,7 +694,7 @@ namespace WindowsFormsApplication1
         }
         public void UPDATEHOADONNHAP(DTO dto)
         {
-            string SQL = "update HOADONNHAP set MANCC='" + dto.MANCC + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= '" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
+            string SQL = "update HOADONNHAP set MANCC='" + dto.MANCC + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
             executeNonQuery(SQL);
         }
 
@@ -748,7 +748,7 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@NGAYNHAP", dto.NGAYNHAP));
             return executeNonQuerya("HOADONNHAP_get", sqlpa);
              */
-            string SQL = "select 	MAHDN,MANCC,MANV,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG from  HOADONNHAP where NGAYNHAP='"+dto.NGAYNHAP+"'";
+            string SQL = "select MAHDN,MANCC,MANV,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG from  HOADONNHAP where NGAYNHAP='"+dto.NGAYNHAP+"'";
             return getdata(SQL);
         }
         public DataTable LAYTIENNO(DTO dto)
@@ -757,8 +757,15 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@MANCC", dto.MANCC));
             return executeNonQuerya("LAYTIENNO", sqlpa);
              */
-            string SQL = "select sum(TIENPHAITRA) - sum(TIENDATRA)as TIENNO from HOADONNHAP where MANCC ='"+dto.MANCC+"'";
+            string SQL = "SELECT * FROM(select (sum(TIENPHAITRA) - sum(TIENDATRA))as 'TIENNO' from HOADONNHAP where MANCC ='" + dto.MANCC + "')AS T1";
             return getdata(SQL);
+
+        }
+        public DataTable LAYTIENNOKH(DTO dto)
+        {
+            string SQL = "SELECT * FROM(select (sum(TIENPHAITRA) - sum(TIENDATRA))as 'TIENNO' from HOADONXUAT where MAKH ='" + dto.MAKH + "')AS T1";
+            return getdata(SQL);
+
         }
         public void INSERTHOADONXUAT(DTO dto)
         {
@@ -774,7 +781,7 @@ namespace WindowsFormsApplication1
             ChayProc("HOADONXUAT_add", sqlpa);
             */
             string SQL = "insert into HOADONXUAT(MAHDX,MAKH,MANV,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            +" values('"+dto.MAHDX+"','"+dto.MAKH+"','"+dto.MANV+"','"+dto.NGAYXUAT+"','"+dto.TIENPHAITRA+"','"+dto.TIENDATRA+"','"+dto.GHICHU+"','"+dto.TINHTRANG+"')";
+            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "',CURDATE(),'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
         public bool isINSERTHOADONXUAT(string MAHDX)
@@ -788,7 +795,7 @@ namespace WindowsFormsApplication1
         }
         public void UPDATEHOADONXUAT(DTO dto)
         {
-            string SQL = "update HOADONXUAT set MAKH='" + dto.MAKH + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= '" + dto.GHICHU + "' where (MAHDX='" + dto.MAHDX + "' )";
+            string SQL = "update HOADONXUAT set MAKH='" + dto.MAKH + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDX='" + dto.MAHDX + "' )";
             executeNonQuery(SQL);
         }
         public void INSERTCTHOADONXUAT(DTO dto)
