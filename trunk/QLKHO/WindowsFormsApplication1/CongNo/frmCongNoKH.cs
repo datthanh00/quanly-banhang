@@ -62,7 +62,7 @@ namespace WindowsFormsApplication1
                 DataRow dtr = gridView1.GetDataRow(e.RowHandle);
                 sMahdx = dtr[0].ToString();
                 smaKH = dtr[2].ToString();
-                sTienno = dtr[5].ToString();
+                sTienno = dtr[6].ToString();
                 //dt = Ctrl_Tien.get1pthdx_ctrl(dtr[0].ToString());
                 //gridControl2.DataSource = dt;
             }
@@ -167,11 +167,26 @@ namespace WindowsFormsApplication1
                 sMaNV = dtr1[1].ToString();
                 smahdx=dtr1[2].ToString();
                 stientra = dtr1[4].ToString();
+               
             }
             catch 
             {
                 //MessageBox.Show(ex.Message);
                 
+            }
+        }
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            GridView view = sender as GridView;
+            Point pt = view.GridControl.PointToClient(Control.MousePosition);
+            GridHitInfo hitInfo = view.CalcHitInfo(pt);
+            if (hitInfo.InRow)
+            {
+                DataRow dtr = gridView1.GetDataRow(hitInfo.RowHandle);
+                sMahdx = dtr[0].ToString();
+                smaKH = dtr[2].ToString();
+                sTienno = dtr[6].ToString();
+                loadfrm_thutien();
             }
         }
         public void loadctkh()
@@ -249,20 +264,7 @@ namespace WindowsFormsApplication1
             load_phieuthu();
         }
 
-        private void gridView1_DoubleClick(object sender, EventArgs e)
-        {
-            GridView view = sender as GridView;
-            Point pt = view.GridControl.PointToClient(Control.MousePosition);
-            GridHitInfo hitInfo = view.CalcHitInfo(pt);
-            if (hitInfo.InRow)
-            {
-                DataRow dtr = gridView1.GetDataRow(hitInfo.RowHandle);
-                sMahdx = dtr[0].ToString();
-                smaKH = dtr[2].ToString();
-                sTienno = dtr[5].ToString();
-                loadfrm_thutien();
-            }
-        }
+        
 
       
 

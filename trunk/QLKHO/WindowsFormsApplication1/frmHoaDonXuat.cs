@@ -138,7 +138,16 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 cboMaKH.Text = gridKH1.GetFocusedRowCellValue("MAKH").ToString();
                 txtSDT.Text = gridKH1.GetFocusedRowCellValue("SDT").ToString();
                 txtDiachi.Text = gridKH1.GetFocusedRowCellValue("DIACHI").ToString();
-                //txtWeb.Text = gridKH1.GetFocusedRowCellValue("WEBSITE").ToString();   
+                dtoNCC.MAKH = cboMaKH.Text;  
+                DataTable tblayno = ctlNCC.LAYTIENNOKH(dtoNCC);
+                if (tblayno.Rows.Count > 0)
+                {
+                    txtNo.Text = tblayno.Rows[0]["TIENNO"].ToString();
+                }
+                else
+                {
+                    txtNo.Text = "0";
+                }
             }
         }
 
@@ -272,7 +281,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dtoNCC.DIACHI = txtDiachi.Text;
             dtoNCC.SDT = txtSDT.Text;
            // dtoNCC.WEBSITE = txtWeb.Text;
-            dtoNCC.NGAYXUAT = DateTime.Now;
+            dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
             dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
             dtoNCC.MAHDX = txtMaHD.Text;
             if (cbotientra.Text == "")
@@ -341,7 +350,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
       
         private void loadGiaoDich()
         {
-            dtoNCC.NGAYXUAT = DateTime.Now;
+            dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
             gridControl2.DataSource = ctlNCC.GETHOADONXUAT(dtoNCC);
         }
         double conlai, thanhtien, tientra;
@@ -452,23 +461,14 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cboMaKH.Text = "";
             cboTenKH.Text = "";
             txtDiachi.Text = "";
-            txtSDT.Text = "";
-            DateTime time = DateTime.Now;           
-	        string format = "dd/MM/yyyy";            
+            txtSDT.Text = "";           
             txtMaHD.Text = "";
-            txtNgayXuat.Text = time.ToString(format);
+            txtNgayXuat.Text = DateTime.Now.ToString("yyy/MM/dd");
             txtNo.Text = "0";
             txtconLai.Text = "0";
             cbotientra.Text = "0";
             txtthanhtien.Text = "";
 
-            // txtWeb.Text = "";
-            /* cboMaMatHang.Text = "";
-             cboThue.Text = "";
-             cboSL.Text = "";
-             cboDonGia.Text = "";
-             cboDVT.Text = "";
-             * */
             if (hd._Cart.Count > 0)
             {
                 hd._Cart.Clear();
@@ -488,14 +488,14 @@ namespace WindowsFormsApplication1.HoaDonXuat
         private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            string SQL = "SELECT T1.NGAYXUAT 'Ngày xuất',T1.MAHDX 'Mã Hóa Đơn',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (SELECT * FROM HOADONXUAT ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
+            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') 'Ngày xuất',T1.MAHDX 'Mã Hóa Đơn',T1.tenkh 'Tên Khách Hàng',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (select t9.*,t8.tenkh from hoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
             loadgridPHIEUXUAT(SQL);
         }
 
         private void linkTheoSanPham_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            string SQL = "SELECT T3.NGAYXUAT 'Ngày Xuất',T3.MAHDX 'Mã Hóa Đơn', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGXUAT 'Số Lượng',T3.GIATIEN 'Giá Bán' FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN FROM (SELECT * FROM CHITIETHDX ) AS T1 INNER JOIN HOADONXUAT AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
+            string SQL = "SELECT DATE_FORMAT(T3.NGAYXUAT,'%d/%m/%Y') 'Ngày Xuất',T3.tenkh 'Tên Khách Hàng',T3.MAHDX 'Mã Hóa Đơn', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGXUAT 'Số Lượng',T3.GIATIEN 'Giá Bán'  FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,t2.tenkh FROM (SELECT * FROM CHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh from hoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh) AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
             loadgridSANPHAM(SQL);
         }
 
@@ -641,7 +641,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             loadgridCTHOADON(MAHDX);
 
             txtMaHD.Text = MAHDX;
-            string SQL = "SELECT T1.NGAYXUAT ,T1.MAHDX ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') ,T1.MAHDX ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
             cboNhanVienLap.Text = DT.Rows[0]["MANV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
@@ -688,9 +688,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         {
 
         }
-
-     
-     
+ 
 
     }
 }

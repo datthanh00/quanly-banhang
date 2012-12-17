@@ -71,29 +71,29 @@ namespace WindowsFormsApplication1
         }
         public void Luu()
         {
- if (double.Parse(txtSoTienTra.Text) == 0)
+            if (double.Parse(txtSoTienTra.Text) == 0)
             {
-                if (iNgonNgu==0)
+                if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Bạn chưa nhập số tiền trả");
                 }
                 else
                     XtraMessageBox.Show("You haven't type debt money yet!!!");
-                
+
             }
-           else if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text))
+            else if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text))
             {
-                if (iNgonNgu==0)
+                if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Số tiền trả không thể lớn hơn số tiền nợ");
                 }
                 else
                     XtraMessageBox.Show("Pay money is not bigger than debt money!!!");
-               
+
             }
-            
-            
-            else if(Nhan=="Sua")
+
+
+            else if (Nhan == "Sua")
             {
                 PHIEUTHU_DTO dto = new PHIEUTHU_DTO();
                 dto.MaPhieuThu = txtPT.Text;
@@ -104,13 +104,13 @@ namespace WindowsFormsApplication1
                 dto.SoTienDaTra = double.Parse(txtSoTienTra.Text);
 
                 Ctrl_Tien.SUAPHIEUTHU_ctrl(dto);
-                if (iNgonNgu==0)
+                if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Bạn đã lưu thành công");
                 }
                 else
                     XtraMessageBox.Show("Saved Successful!");
-                
+
                 barSTluu.Enabled = false;
                 //vCapNhatSoTienNo();
             }
@@ -134,7 +134,7 @@ namespace WindowsFormsApplication1
                 vCapNhatSoTienNo();
             }
             loadctkh();
-           
+
         }
         private void vCapNhatSoTienNo()
         {
