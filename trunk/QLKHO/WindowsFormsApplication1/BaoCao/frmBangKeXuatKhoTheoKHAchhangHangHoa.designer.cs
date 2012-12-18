@@ -40,7 +40,22 @@
             this.Theokho = new DevExpress.XtraNavBar.NavBarItem();
             this.tenhang = new DevExpress.XtraNavBar.NavBarItem();
             this.TheoNhom = new DevExpress.XtraNavBar.NavBarItem();
+            this.Linktonkhotonghop = new DevExpress.XtraNavBar.NavBarItem();
+            this.Linkthekho = new DevExpress.XtraNavBar.NavBarItem();
+            this.Linkchitiethanghoa = new DevExpress.XtraNavBar.NavBarItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.pnkho = new DevExpress.XtraEditors.PanelControl();
+            this.cbsanpham = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridcbmathang = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbkho = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridcbkho = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lbmahang = new DevExpress.XtraEditors.LabelControl();
+            this.lbkho = new DevExpress.XtraEditors.LabelControl();
+            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.pnthoigian = new DevExpress.XtraEditors.PanelControl();
             this.cbThoiGian = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dateDen = new DevExpress.XtraEditors.DateEdit();
@@ -56,6 +71,11 @@
             this.btXem = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.repositoryItemDateEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coltenkh1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,10 +92,6 @@
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colsongayhethan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colhansudung = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
-            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.repositoryItemDateEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colnhomhang5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colngay5 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -160,6 +176,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnkho)).BeginInit();
+            this.pnkho.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbsanpham.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcbmathang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbkho.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcbkho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnthoigian)).BeginInit();
             this.pnthoigian.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbThoiGian.Properties)).BeginInit();
@@ -174,14 +198,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
@@ -214,9 +239,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 442);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 443);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -230,14 +255,16 @@
             this.Khachhang,
             this.Theokho,
             this.tenhang,
-            this.TheoNhom});
+            this.TheoNhom,
+            this.Linktonkhotonghop,
+            this.Linkthekho,
+            this.Linkchitiethanghoa});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 194;
-            this.navBarControl1.Size = new System.Drawing.Size(181, 442);
+            this.navBarControl1.Size = new System.Drawing.Size(181, 443);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "Thống Kê";
-            this.navBarControl1.Click += new System.EventHandler(this.navBarControl1_Click);
             // 
             // navthongke
             // 
@@ -249,9 +276,11 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.Khachhang),
             new DevExpress.XtraNavBar.NavBarItemLink(this.Theokho),
             new DevExpress.XtraNavBar.NavBarItemLink(this.tenhang),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.TheoNhom)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.TheoNhom),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.Linktonkhotonghop),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.Linkthekho),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.Linkchitiethanghoa)});
             this.navthongke.Name = "navthongke";
-            this.navthongke.ItemChanged += new System.EventHandler(this.navBarGroup1_ItemChanged);
             // 
             // loinhuan
             // 
@@ -269,7 +298,7 @@
             // 
             // Theokho
             // 
-            this.Theokho.Caption = "Theo Kho";
+            this.Theokho.Caption = "Lịch Sử Hàng Hóa";
             this.Theokho.Name = "Theokho";
             this.Theokho.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
             this.Theokho.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.Theokho_LinkClicked);
@@ -288,14 +317,154 @@
             this.TheoNhom.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
             this.TheoNhom.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.TheoNhom_LinkClicked);
             // 
+            // Linktonkhotonghop
+            // 
+            this.Linktonkhotonghop.Caption = "Tồn Kho Tổng Hợp";
+            this.Linktonkhotonghop.Name = "Linktonkhotonghop";
+            this.Linktonkhotonghop.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.Linktonkhotonghop.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.Linktonkhotonghop_LinkClicked);
+            // 
+            // Linkthekho
+            // 
+            this.Linkthekho.Caption = "Thẻ Kho";
+            this.Linkthekho.Name = "Linkthekho";
+            this.Linkthekho.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.Linkthekho.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.Linkthekho_LinkClicked);
+            // 
+            // Linkchitiethanghoa
+            // 
+            this.Linkchitiethanghoa.Caption = "Sổ Chi Tiết Hàng Hóa";
+            this.Linkchitiethanghoa.Name = "Linkchitiethanghoa";
+            this.Linkchitiethanghoa.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.Linkchitiethanghoa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.Linkchitiethanghoa_LinkClicked);
+            // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.pnkho);
             this.panelControl1.Controls.Add(this.pnthoigian);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(187, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1105, 35);
             this.panelControl1.TabIndex = 0;
+            // 
+            // pnkho
+            // 
+            this.pnkho.Controls.Add(this.cbsanpham);
+            this.pnkho.Controls.Add(this.cbkho);
+            this.pnkho.Controls.Add(this.lbmahang);
+            this.pnkho.Controls.Add(this.lbkho);
+            this.pnkho.Controls.Add(this.dateEdit1);
+            this.pnkho.Location = new System.Drawing.Point(11, 0);
+            this.pnkho.Name = "pnkho";
+            this.pnkho.Size = new System.Drawing.Size(317, 35);
+            this.pnkho.TabIndex = 3;
+            // 
+            // cbsanpham
+            // 
+            this.cbsanpham.Location = new System.Drawing.Point(201, 7);
+            this.cbsanpham.Name = "cbsanpham";
+            this.cbsanpham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbsanpham.Properties.NullText = "";
+            this.cbsanpham.Properties.PopupSizeable = false;
+            this.cbsanpham.Properties.View = this.gridcbmathang;
+            this.cbsanpham.Size = new System.Drawing.Size(107, 20);
+            this.cbsanpham.TabIndex = 23;
+            // 
+            // gridcbmathang
+            // 
+            this.gridcbmathang.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn11,
+            this.gridColumn15});
+            this.gridcbmathang.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridcbmathang.Name = "gridcbmathang";
+            this.gridcbmathang.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridcbmathang.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Mã Sản Phẩm";
+            this.gridColumn11.FieldName = "MASANPHAM";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 0;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "Tên Sản Phẩm";
+            this.gridColumn15.FieldName = "TENSANPHAM";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 1;
+            // 
+            // cbkho
+            // 
+            this.cbkho.Location = new System.Drawing.Point(33, 8);
+            this.cbkho.Name = "cbkho";
+            this.cbkho.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbkho.Properties.NullText = "";
+            this.cbkho.Properties.PopupSizeable = false;
+            this.cbkho.Properties.View = this.gridcbkho;
+            this.cbkho.Size = new System.Drawing.Size(107, 20);
+            this.cbkho.TabIndex = 22;
+            // 
+            // gridcbkho
+            // 
+            this.gridcbkho.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn4,
+            this.gridColumn7});
+            this.gridcbkho.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridcbkho.Name = "gridcbkho";
+            this.gridcbkho.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridcbkho.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Mã kho";
+            this.gridColumn4.FieldName = "MAKHO";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Tên kho";
+            this.gridColumn7.FieldName = "TENKHO";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 1;
+            // 
+            // lbmahang
+            // 
+            this.lbmahang.Location = new System.Drawing.Point(146, 12);
+            this.lbmahang.Name = "lbmahang";
+            this.lbmahang.Size = new System.Drawing.Size(47, 13);
+            this.lbmahang.TabIndex = 21;
+            this.lbmahang.Text = "Sản Phẩm";
+            // 
+            // lbkho
+            // 
+            this.lbkho.Location = new System.Drawing.Point(9, 12);
+            this.lbkho.Name = "lbkho";
+            this.lbkho.Size = new System.Drawing.Size(18, 13);
+            this.lbkho.TabIndex = 20;
+            this.lbkho.Text = "Kho";
+            // 
+            // dateEdit1
+            // 
+            this.dateEdit1.EditValue = null;
+            this.dateEdit1.Location = new System.Drawing.Point(614, 7);
+            this.dateEdit1.Name = "dateEdit1";
+            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateEdit1.Properties.Mask.EditMask = "";
+            this.dateEdit1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.dateEdit1.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.dateEdit1.Size = new System.Drawing.Size(100, 20);
+            this.dateEdit1.TabIndex = 0;
             // 
             // pnthoigian
             // 
@@ -304,14 +473,14 @@
             this.pnthoigian.Controls.Add(this.lbDen);
             this.pnthoigian.Controls.Add(this.lbTu);
             this.pnthoigian.Controls.Add(this.dateTu);
-            this.pnthoigian.Location = new System.Drawing.Point(294, 0);
+            this.pnthoigian.Location = new System.Drawing.Point(344, 0);
             this.pnthoigian.Name = "pnthoigian";
-            this.pnthoigian.Size = new System.Drawing.Size(453, 35);
+            this.pnthoigian.Size = new System.Drawing.Size(404, 35);
             this.pnthoigian.TabIndex = 2;
             // 
             // cbThoiGian
             // 
-            this.cbThoiGian.Location = new System.Drawing.Point(5, 9);
+            this.cbThoiGian.Location = new System.Drawing.Point(0, 5);
             this.cbThoiGian.Name = "cbThoiGian";
             this.cbThoiGian.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -322,7 +491,7 @@
             // dateDen
             // 
             this.dateDen.EditValue = null;
-            this.dateDen.Location = new System.Drawing.Point(311, 8);
+            this.dateDen.Location = new System.Drawing.Point(289, 5);
             this.dateDen.Name = "dateDen";
             this.dateDen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -332,11 +501,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateDen.Size = new System.Drawing.Size(100, 20);
             this.dateDen.TabIndex = 0;
-            this.dateDen.EditValueChanged += new System.EventHandler(this.dateDen_EditValueChanged);
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(262, 17);
+            this.lbDen.Location = new System.Drawing.Point(255, 9);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -344,7 +512,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(122, 17);
+            this.lbTu.Location = new System.Drawing.Point(119, 9);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -353,7 +521,7 @@
             // dateTu
             // 
             this.dateTu.EditValue = null;
-            this.dateTu.Location = new System.Drawing.Point(141, 8);
+            this.dateTu.Location = new System.Drawing.Point(140, 5);
             this.dateTu.Name = "dateTu";
             this.dateTu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -436,23 +604,68 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
-            this.gridControl1.MainView = this.gridView4;
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
+            this.gridControl1.MainView = this.gridView6;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemImageEdit1,
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
             this.repositoryItemDateEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1101, 393);
+            this.gridControl1.Size = new System.Drawing.Size(1099, 391);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView6,
             this.gridView4,
             this.gridView5,
             this.gridView1,
             this.gridView2,
             this.gridView3});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
+            // 
+            // gridView6
+            // 
+            this.gridView6.GridControl = this.gridControl1;
+            this.gridView6.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
+            this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsView.ShowAutoFilterRow = true;
+            this.gridView6.OptionsView.ShowFooter = true;
+            // 
+            // repositoryItemImageEdit1
+            // 
+            this.repositoryItemImageEdit1.AutoHeight = false;
+            this.repositoryItemImageEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemImageEdit1.Name = "repositoryItemImageEdit1";
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            this.repositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            // 
+            // repositoryItemDateEdit2
+            // 
+            this.repositoryItemDateEdit2.AutoHeight = false;
+            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
+            this.repositoryItemDateEdit2.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            // 
+            // repositoryItemDateEdit3
+            // 
+            this.repositoryItemDateEdit3.AutoHeight = false;
+            this.repositoryItemDateEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit3.Name = "repositoryItemDateEdit3";
+            this.repositoryItemDateEdit3.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // gridView4
             // 
@@ -627,40 +840,6 @@
             this.colhansudung.Visible = true;
             this.colhansudung.VisibleIndex = 1;
             this.colhansudung.Width = 123;
-            // 
-            // repositoryItemDateEdit1
-            // 
-            this.repositoryItemDateEdit1.AutoHeight = false;
-            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
-            this.repositoryItemDateEdit1.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            // 
-            // repositoryItemImageEdit1
-            // 
-            this.repositoryItemImageEdit1.AutoHeight = false;
-            this.repositoryItemImageEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemImageEdit1.Name = "repositoryItemImageEdit1";
-            // 
-            // repositoryItemDateEdit2
-            // 
-            this.repositoryItemDateEdit2.AutoHeight = false;
-            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
-            this.repositoryItemDateEdit2.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            // 
-            // repositoryItemDateEdit3
-            // 
-            this.repositoryItemDateEdit3.AutoHeight = false;
-            this.repositoryItemDateEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemDateEdit3.Name = "repositoryItemDateEdit3";
-            this.repositoryItemDateEdit3.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
             // gridView5
             // 
@@ -1550,6 +1729,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pnkho)).EndInit();
+            this.pnkho.ResumeLayout(false);
+            this.pnkho.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbsanpham.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcbmathang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbkho.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcbkho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnthoigian)).EndInit();
             this.pnthoigian.ResumeLayout(false);
             this.pnthoigian.PerformLayout();
@@ -1565,14 +1753,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
@@ -1710,6 +1899,22 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit3;
+        private DevExpress.XtraNavBar.NavBarItem Linktonkhotonghop;
+        private DevExpress.XtraNavBar.NavBarItem Linkthekho;
+        private DevExpress.XtraNavBar.NavBarItem Linkchitiethanghoa;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView6;
+        private DevExpress.XtraEditors.PanelControl pnkho;
+        private DevExpress.XtraEditors.DateEdit dateEdit1;
+        private DevExpress.XtraEditors.GridLookUpEdit cbsanpham;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridcbmathang;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraEditors.GridLookUpEdit cbkho;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridcbkho;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraEditors.LabelControl lbmahang;
+        private DevExpress.XtraEditors.LabelControl lbkho;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHOTableAdapter kHOTableAdapter;
     }
 }

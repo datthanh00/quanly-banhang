@@ -15,6 +15,19 @@ namespace WindowsFormsApplication1
         {
             return dao.getloinhuan(dto);
         }
+        public DataTable TONKHOTONGHOP(Class_DTO_ThongKe dto)
+        {
+            return dao.gettonkhotonghop(dto);
+        }
+        public DataTable THEKHO(Class_DTO_ThongKe dto)
+        {
+            return dao.getthekho(dto);
+        }
+        public DataTable SOCHITIETHANGHOA(Class_DTO_ThongKe dto)
+        {
+            return dao.getsochitiethanghoa(dto);
+        }
+
         public DataTable getBAOCAOTHEOKHO(Class_DTO_ThongKe dto)
         {
             return dao.getbaocaotheokho(dto);
@@ -40,6 +53,14 @@ namespace WindowsFormsApplication1
         public DataTable dtGetNH()
         {
             return dao.get_NH();
+        }
+        public DataTable dtGetkho()
+        {
+            return dao.dtGetkho();
+        }
+        public DataTable dtGetsanpham()
+        {
+            return dao.dtGetsanpham();
         }
         //public DataTable getTHONGKE_CT_MATHANG(Class_DTO_ThongKe dto)
         //{

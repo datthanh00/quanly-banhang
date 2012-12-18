@@ -235,24 +235,8 @@ namespace WindowsFormsApplication1
             sqlpa.Add(new MySqlParameter("@NGAY_KT", dto.NGAYKT));
             sqlpa.Add(new MySqlParameter("@LOAI_TG", dto.LOAITG));
             return executeNonQuerya("THONGKE_DOANHTHU", sqlpa);*/
-            String SQL ="";
-            if (dto.LOAITG == "NGAY")
-            {
-                SQL ="select  NGAYXUAT , TENKH as 'Tên Khách hàng',TENKV ,SUM(TIENPHAITRA) AS  'TongDoanhThu' FROM HOADONXUAT,KHACHHANG,KHUVUC WHERE KHUVUC.MAKV=KHACHHANG.MAKV AND KHACHHANG.MAKH=HOADONXUAT.MAKH  AND  NGAYXUAT BETWEEN '"+dto.NGAYBD+"' AND '"+dto.NGAYKT+"' group by TENKH,TENKV,ngayxuat";
-            }
-            else if (dto.LOAITG == "THANG")
-            {
-                SQL ="select  NGAYXUAT , TENKH as 'Tên Khách hàng',TENKV ,SUM(TIENPHAITRA) AS  'TongDoanhThu' FROM HOADONXUAT,KHACHHANG,KHUVUC WHERE KHUVUC.MAKV=KHACHHANG.MAKV AND KHACHHANG.MAKH=HOADONXUAT.MAKH  AND  MONTH(NGAYXUAT) between MONTH('"+dto.NGAYBD+"') and month('"+dto.NGAYKT+"') AND YEAR(NGAYXUAT) = YEAR('"+dto.NGAYBD+"')	group by TENKH,TENKV,ngayxuat";
+            String SQL ="select  NGAYXUAT , TENKH as 'Tên Khách hàng',TENKV ,SUM(TIENPHAITRA) AS  'TongDoanhThu' FROM HOADONXUAT,KHACHHANG,KHUVUC WHERE KHUVUC.MAKV=KHACHHANG.MAKV AND KHACHHANG.MAKH=HOADONXUAT.MAKH  AND  NGAYXUAT BETWEEN '"+dto.NGAYBD+"' AND '"+dto.NGAYKT+"' group by TENKH,TENKV,ngayxuat";
             
-            }
-            else if (dto.LOAITG == "QUI")
-            {
-                SQL ="select NGAYXUAT ,TENKH as 'Tên Khách hàng',TENKV ,SUM(TIENPHAITRA) AS  'TongDoanhThu' FROM HOADONXUAT,KHACHHANG,KHUVUC WHERE KHUVUC.MAKV=KHACHHANG.MAKV AND KHACHHANG.MAKH=HOADONXUAT.MAKH  AND  YEAR(NGAYXUAT) = YEAR('"+dto.NGAYBD+"') AND MONTH(NGAYXUAT) BETWEEN MONTH('"+dto.NGAYBD+"') AND MONTH('"+dto.NGAYKT+"')	group by TENKH,TENKV,ngayxuat";
-            }
-            else if (dto.LOAITG == "NAM")
-            {
-                SQL ="select NGAYXUAT ,TENKH as 'Tên Khách hàng',TENKV ,SUM(TIENPHAITRA) AS  'TongDoanhThu' FROM HOADONXUAT,KHACHHANG,KHUVUC WHERE KHUVUC.MAKV=KHACHHANG.MAKV AND KHACHHANG.MAKH=HOADONXUAT.MAKH  AND YEAR(NGAYXUAT) between YEAR('"+dto.NGAYBD+"') and year('"+dto.NGAYKT+"')	group by TENKH,TENKV,ngayxuat";
-            }
             return getdata(SQL);
         }
         public DataTable testLogin(clDTO dto)

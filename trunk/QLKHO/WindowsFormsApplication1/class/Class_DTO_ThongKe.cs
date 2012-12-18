@@ -68,6 +68,14 @@ namespace WindowsFormsApplication1
             set { _MANH = value; }
         }
 
+        private string _MAMH;
+
+        public string MAMH
+        {
+            get { return _MAMH; }
+            set { _MAMH = value; }
+        }
+
         //------------------------------------
         private string _MANHOMHANG;
         private string _TENNHOMHANG;
