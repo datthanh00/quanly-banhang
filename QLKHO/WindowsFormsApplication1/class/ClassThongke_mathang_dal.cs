@@ -31,6 +31,36 @@ namespace WindowsFormsApplication1
             return getdata(SQL);
         }
         //---------------------------------------------------
+        public DataTable gettonkhotonghop(Class_DTO_ThongKe dto)
+        {
+            String SQL = "select mathang.mamh as 'Mã Hàng', tenmh as 'Tên Hàng', donvitinh as 'Đơn Vị', tenkho as 'Kho Hàng', tennhomhang as 'Nhóm Hàng', soluongmh as 'Số Lượng', giamua as 'Đơn Giá', giamua*soluongmh as 'Thành Tiền' from mathang, donvitinh, kho, nhomhang where mathang.madvt=donvitinh.madvt and  mathang.makho=kho.makho and mathang.manh=nhomhang.manh and mathang.makho='" + dto.MAKHO + "'";
+            return getdata(SQL);
+
+        }
+        public DataTable getthekho(Class_DTO_ThongKe dto)
+        {
+            String SQL = "SELECT * FROM(select t1.mamh,t2.mhd , t1.tenmh , t1.donvitinh , t1.tenkho ,t2.ngaythang , t2.tennv , t2.soluongnhap ,'' as soluongxuat , t2.loai from"
+            +" (select mathang.mamh, tenmh , donvitinh, tenkho  from mathang, donvitinh, kho where mathang.madvt=donvitinh.madvt and  mathang.makho=kho.makho) as t1"
+            +" Inner JOIN(select MAMH,hoadonnhap.mahdn as mhd,ngaynhap as ngaythang, tennv, soluongnhap as soluong, 'Nhập kho' as loai"
+            +" from chitiethdn,hoadonnhap, nhanvien where chitiethdn.MAHDN=hoadonnhap.MAHDN and hoadonnhap.manv = nhanvien.manv) as t2 ON t1.mamh =t2.mamh ) as t5"
+            +" UNION ALL"
+            + " (select t3.mamh ,t4.mhd , t3.tenmh , t3.donvitinh , t3.tenkho ,t4.ngaythang , t4.tennv ,'' as soluongnhap , t4.soluongxuat , t4.loai from"
+            +" (select mathang.mamh, tenmh , donvitinh, tenkho  from mathang, donvitinh, kho where mathang.madvt=donvitinh.madvt and  mathang.makho=kho.makho) as t3"
+            +" Inner JOIN(select MAMH,hoadonxuat.mahdx as mhd,ngayxuat as ngaythang, tennv, soluongxuat as soluong, 'Xuấtkho' as 'loai'"
+            +" from chitiethdx,hoadonxuat, nhanvien where chitiethdx.MAHDX=hoadonxuat.MAHDX and hoadonxuat.manv = nhanvien.manv) as t4 ON t3.mamh =t4.mamh)";
+            return getdata(SQL);
+        }
+        public DataTable getsochitiethanghoa(Class_DTO_ThongKe dto)
+        {
+            String SQL = "SELECT * FROM(select t1.mamh,t2.mhd,t1.giamua as dongia , t1.tenmh , t1.donvitinh , t1.tenkho ,t2.ngaythang , t2.tennv , t2.soluongnhap,  t2.soluongnhap *t1.giamua as thanhtiennhap,'' as soluongxuat ,'' as thanhtienban, t2.loai  "
+            + " from (select mathang.mamh,mathang.giamua, tenmh , donvitinh, tenkho from mathang, donvitinh, kho where mathang.madvt=donvitinh.madvt and mathang.makho=kho.makho) as t1 "
+            + " Inner JOIN(select MAMH,hoadonnhap.mahdn as mhd,ngaynhap as ngaythang, tennv, soluongnhap, 'Nhập hàng' as loai from chitiethdn,hoadonnhap, nhanvien where chitiethdn.MAHDN=hoadonnhap.MAHDN and hoadonnhap.manv = nhanvien.manv) as t2 ON t1.mamh =t2.mamh ) as t5 "
+            + " UNION ALL"
+            + " (select t3.mamh ,t4.mhd ,t3.giaban as dongia, t3.tenmh , t3.donvitinh , t3.tenkho ,t4.ngaythang , t4.tennv ,'' as soluongnhap,'' as thanhtiennhap , t4.soluongxuat ,t4.soluongxuat *t3.giaban as thanhtienban, t4.loai  "
+            + " from (select mathang.mamh,mathang.giaban, tenmh , donvitinh, tenkho from mathang, donvitinh, kho where mathang.madvt=donvitinh.madvt and mathang.makho=kho.makho) as t3 "
+            + " Inner JOIN(select MAMH,hoadonxuat.mahdx as mhd,ngayxuat as ngaythang, tennv, soluongxuat, 'Xuấtkho' as 'loai' from chitiethdx,hoadonxuat, nhanvien where chitiethdx.MAHDX=hoadonxuat.MAHDX and hoadonxuat.manv = nhanvien.manv) as t4 ON t3.mamh =t4.mamh)";
+            return getdata(SQL);
+        }
 
         public DataTable getbaocaotheokho(Class_DTO_ThongKe dto)
 
@@ -263,6 +293,15 @@ namespace WindowsFormsApplication1
             String SQL = "select 	MANH,TENNHOMHANG,GHICHU from  NHOMHANG";
             return getdata(SQL);
         }
-
+        public DataTable dtGetkho()
+        {
+            String SQL = "select MAKHO,TENKHO from  KHO";
+            return getdata(SQL);
+        }
+        public DataTable dtGetsanpham()
+        {
+            String SQL = "select 	MAMH AS MASANPHAM,TENMH AS TENSANPHAM from  MATHANG";
+            return getdata(SQL);
+        }
     }
 }

@@ -33,48 +33,7 @@ namespace WindowsFormsApplication1
         public frmMain frm;
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
-        private void linkTheoThang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            if (iNgonNgu==0)
-            {
-                cbHienThiBatDau.Text = "Chọn tháng";
-                cbHienThiKeThuc.Text = "Chọn tháng";
-                cbNam.Text = "Chọn năm";
-                xtraTabPage5.Text = "Doanh thu theo tháng";
-            }
-            if (iNgonNgu == 1)
-            {
-                cbHienThiBatDau.Text = "Select month";
-                cbHienThiKeThuc.Text = "Select month";
-                cbNam.Text = "Select year";
-                xtraTabPage5.Text = "By month";
-            }
-            
-            pnThangNam.Visible = true;
-            pnThoiGian.Visible = false;
-            cbHienThiKeThuc.Visible = true;
-            cbNam.Visible = true;
-            lbNam.Visible = true;
-            lbDen.Visible = true;
-            lbTu.Visible = true;
-            cbNam.Properties.Items.Clear();
-            cbHienThiBatDau.Properties.Items.Clear();
-            cbHienThiKeThuc.Properties.Items.Clear();
-            for (int i = 1; i < 13; i++)
-            {
-                cbHienThiBatDau.Properties.Items.Add(i.ToString());
-                cbHienThiKeThuc.Properties.Items.Add(i.ToString());
-            }
-            for (int i = 2005; i < DateTime.Now.Year + 1; i++)
-            {
-                cbNam.Properties.Items.Add(i.ToString());
-            }
-            sLoaiThoiGian = "";
-            dateNgayBD = DateTime.Now.ToShortDateString();
-            dateNgayKT = DateTime.Now.ToShortDateString();
-            load();
-            sLoaiThoiGian = "THANG";
-        }
+        
         public void vLucLoad()
         {
             
@@ -86,8 +45,6 @@ namespace WindowsFormsApplication1
             {
                 xtraTabPage5.Text = "Select sales statistics";
             }
-            pnThangNam.Visible = false;
-            pnThoiGian.Visible = false;
             
         }
         private void loadVN()
@@ -104,17 +61,15 @@ namespace WindowsFormsApplication1
             btXuatDuLieu.Text = resVietNam.btXuat.ToString();
             btIn.Text = resVietNam.btIn.ToString();
             btDong.Text = resVietNam.btDong.ToString();
-              linkTheoNam.Caption = resVietNam.linkTheoNam.ToString();
-              linkTheoThang.Caption = resVietNam.linkTheoThang.ToString();
-              linkTheoQui.Caption = resVietNam.linkTheoQui.ToString();
+            linkTheoNam.Caption = resVietNam.linkTheoNam.ToString();
+            linkTheoThang.Caption = resVietNam.linkTheoThang.ToString();
+            linkTheoQui.Caption = resVietNam.linkTheoQui.ToString();
             linkTheoNgay.Caption = resVietNam.linkTheoNgay.ToString();
-            navBarKhachHang.Caption = resVietNam.navBarKhachHang.ToString();
+          
             dockChucNang.Text = resVietNam.nvaChucNang.ToString();
             lbTu.Text = resVietNam.NgayBD.ToString();
             lbDen.Text = resVietNam.NgayKT.ToString();
-            lbtu1.Text = resVietNam.NgayBD.ToString();
-            lbDen1.Text = resVietNam.NgayKT.ToString();
-            lbNam.Text = resVietNam.lbNam.ToString();
+
         }
         public void loadEN()
         {
@@ -134,139 +89,152 @@ namespace WindowsFormsApplication1
             linkTheoThang.Caption = resEngLand.linkTheoThang.ToString();
             linkTheoQui.Caption = resEngLand.linkTheoQui.ToString();
             linkTheoNgay.Caption = resEngLand.linkTheoNgay.ToString();
-            navBarKhachHang.Caption = resEngLand.navBarKhachHang.ToString();
             dockChucNang.Text = resEngLand.nvaChucNang.ToString();
             lbTu.Text = resEngLand.NgayBD.ToString();
-            lbDen.Text = resEngLand.NgayKT.ToString();
-            lbtu1.Text = resEngLand.NgayBD.ToString();
-            lbDen1.Text = resEngLand.NgayKT.ToString();
-            lbNam.Text = resEngLand.lbNam.ToString();
-          
-
-            
-        }
-        private void linkTheoNam_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            if (iNgonNgu==0)
-            {
-                cbHienThiBatDau.Text = "Chọn năm";
-                cbHienThiKeThuc.Text = "Chọn năm";
-                xtraTabPage5.Text = "Doanh thu theo năm";
-            }
-            if (iNgonNgu == 1)
-            {
-                cbHienThiBatDau.Text = "Select year";
-                cbHienThiKeThuc.Text = "Select year";
-                xtraTabPage5.Text = "By year";
-            }
-            cbNam.Visible = false;
-            lbNam.Visible = false;
-            lbTu.Visible = true;
-            pnThangNam.Visible = true;
-            pnThoiGian.Visible = false;
-            cbHienThiKeThuc.Visible = true;
-            lbDen.Visible = true;
-            cbHienThiBatDau.Properties.Items.Clear();
-            cbHienThiKeThuc.Properties.Items.Clear();
-            
-            for (int i = 2005; i < DateTime.Now.Year + 1; i++)
-            {
-                cbHienThiBatDau.Properties.Items.Add(i.ToString());
-                cbHienThiKeThuc.Properties.Items.Add(i.ToString());
-            }
-            sLoaiThoiGian = "";
-            dateNgayBD = DateTime.Now.ToShortDateString();
-            dateNgayKT = DateTime.Now.ToShortDateString();
-            load();
-            sLoaiThoiGian = "NAM";
+            lbDen.Text = resEngLand.NgayKT.ToString(); 
         }
 
-    
-
-        void linkTheoKhuVuc_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        public void load_cbthoigian()
         {
-            if (iNgonNgu==0)
+            cbThoiGian.Properties.Items.Add("Hôm nay");
+            cbThoiGian.Properties.Items.Add("Năm này");
+            cbThoiGian.Properties.Items.Add("Tháng 1");
+            cbThoiGian.Properties.Items.Add("Tháng 2");
+            cbThoiGian.Properties.Items.Add("Tháng 3");
+            cbThoiGian.Properties.Items.Add("Tháng 4");
+            cbThoiGian.Properties.Items.Add("Tháng 5");
+            cbThoiGian.Properties.Items.Add("Tháng 6");
+            cbThoiGian.Properties.Items.Add("Tháng 7");
+            cbThoiGian.Properties.Items.Add("Tháng 8");
+            cbThoiGian.Properties.Items.Add("Tháng 9");
+            cbThoiGian.Properties.Items.Add("Tháng 10");
+            cbThoiGian.Properties.Items.Add("Tháng 11");
+            cbThoiGian.Properties.Items.Add("Tháng 12");
+            cbThoiGian.SelectedIndex = 1;
+        }
+
+        public void loadNgay()
+        {
+            switch (cbThoiGian.SelectedIndex)
             {
-                dateBD.Text = "Chọn ngày";
-                dateKetThuc.Text = "Chọn ngày";
-                xtraTabPage5.Text = "Doanh thu theo Ngày";
+
+                case 0:
+                    {
+                        dateDen.Text = DateTime.Now.ToString("yyy/MM/dd");
+                        dateTu.Text = DateTime.Now.ToString("yyy/MM/dd");
+
+                        break;
+                    }
+                case 1:
+                    {
+                        dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/01/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 2:
+                    {
+                        dateDen.Text = "31/01/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/01/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 3:
+                    {
+                        dateDen.Text = "28/02/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/02/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 4:
+                    {
+                        dateDen.Text = "31/03/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/03/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 5:
+                    {
+                        dateDen.Text = "30/04/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/04/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 6:
+                    {
+                        dateDen.Text = "31/05/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/05/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 7:
+                    {
+                        dateDen.Text = "30/06/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/06/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 8:
+                    {
+                        dateDen.Text = "31/07/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/07/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 9:
+                    {
+                        dateDen.Text = "31/08/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/08/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 10:
+                    {
+                        dateDen.Text = "30/09/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/09/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 11:
+                    {
+                        dateDen.Text = "31/10/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/10/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 12:
+                    {
+                        dateDen.Text = "30/11/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/11/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 13:
+                    {
+                        dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/12/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 14:
+                    {
+
+                        dateDen.Text = DateTime.Now.ToString("yyy/MM/dd");
+
+                        dateTu.Text = DateTime.Now.ToString("yyy/MM/dd");
+
+                        break;
+                    }
+
             }
-            if (iNgonNgu == 1)
-            {
-                dateBD.Text = "Select date";
-                dateKetThuc.Text = "Select date";
-                xtraTabPage5.Text = "By date";
-            }
-            
-            
-            pnThoiGian.Visible = true;
-            pnThangNam.Visible = false;
-            sLoaiThoiGian = "";
-            dateNgayBD = DateTime.Now.ToShortDateString() ;
-            dateNgayKT = DateTime.Now.ToShortDateString() ;
-            load();
-            sLoaiThoiGian = "NGAY";
+
         }
 
         public void load()
         {
             dto.NGAYBD = dateNgayBD;
             dto.NGAYKT = dateNgayKT;
-            dto.LOAITG = sLoaiThoiGian;
+
             gridControl6.MainView = gridView1;
             gridControl6.DataSource = ctr.getDoanhThu(dto);
             //tb = ctr.getDoanhThu(dto);
         }
 
-        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            if (iNgonNgu==0)
-            {
-                cbHienThiBatDau.Text = "Chọn quí";
-                cbHienThiKeThuc.Text = "Chọn năm";
-                xtraTabPage5.Text = "Doanh thu theo quí";
-            }
-            if (iNgonNgu==1)
-            {
-
-                cbHienThiBatDau.Text = "Select Quarterly";
-                cbHienThiKeThuc.Text = "Select year";
-                xtraTabPage5.Text = "By Quarterly";
-            }
-           
-            sTheHien = "thoigian";
-            pnThangNam.Visible = true;
-            pnThoiGian.Visible = false;
-            cbHienThiKeThuc.Visible = true;
-            lbNam.Visible = false;
-            cbNam.Visible = false;
-            lbDen.Visible = false;
-            lbTu.Visible = false;
-            cbHienThiBatDau.Properties.Items.Clear();
-            cbHienThiKeThuc.Properties.Items.Clear();
-            if (DateTime.Now.Month > 4)
-            {
-                for (int i = 1; i <= (12 / 3) ; i++)
-                {
-                    cbHienThiBatDau.Properties.Items.Add(i.ToString());
-                }
-            }
-            for (int i = 2005; i < DateTime.Now.Year + 1; i++)
-            {
-                cbHienThiKeThuc.Properties.Items.Add(i.ToString());
-            }
-            sLoaiThoiGian = "";
-            dateNgayBD = DateTime.Now.ToString("yyy/MM/dd");
-            dateNgayKT = DateTime.Now.ToString("yyy/MM/dd");
-            load();
-            sLoaiThoiGian = "QUI";
-        }
-
+   
         private void frmThongKeDoanhThu_Load(object sender, EventArgs e)
         {
             frm.LoadVI += new frmMain.Translate(loadVN);
             frm.LoadEN += new frmMain.Translate(loadEN);
-             vLucLoad();
+            
+            load_cbthoigian();
+            vLucLoad();
              if (iNgonNgu==0)
              {
                  loadVN();
@@ -284,62 +252,16 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                if (sLoaiThoiGian == "THANG")
-                {
+                string NGAYBD = dateTu.Text;
+                NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+                dateNgayBD = NGAYBD;
 
-                    dateNgayBD = cbNam.Text + "/" + cbHienThiBatDau.Text + "/01";
-                    dateNgayKT = cbNam.Text + "/" + cbHienThiKeThuc.Text + "/01";
-                    load();
-                    return;
-                }
-                if (sLoaiThoiGian == "NGAY")
-                {
-                    string NGAYBD = dateBD.Text;
-                    NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
-                    dateNgayBD = NGAYBD;
+                string NGAYKT = dateDen.Text;
+                NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+                dateNgayKT = NGAYKT;
 
-                    string NGAYKT = dateKetThuc.Text;
-                    NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
-                    dateNgayKT = NGAYKT;
-
-                    
-                    
-                    load();
-                    return;
-                }
-                if (sLoaiThoiGian == "NAM")
-                {
-                    dateNgayBD = cbHienThiBatDau.Text + "/01/01";
-                    dateNgayKT = cbHienThiKeThuc.Text + "/01/01";
-                    load();
-                    return;
-                }
-                if (sLoaiThoiGian == "QUI")
-                {
-                    switch (cbHienThiBatDau.Text.Trim())
-                    {
-                        case "1":
-                            dateNgayBD = (cbHienThiKeThuc.Text + "/01/01");
-                            dateNgayKT = (cbHienThiKeThuc.Text+ "/03/31");
-                            break;
-                        case "2":
-                            dateNgayBD = (cbHienThiKeThuc.Text + "/04/01" );
-                            dateNgayKT = (cbHienThiKeThuc.Text + "/06/30" );
-                            break;
-                        case "3":
-                            dateNgayBD = (cbHienThiKeThuc.Text + "/07/01" );
-                            dateNgayKT = (cbHienThiKeThuc.Text + "/90/30" );
-                            break;
-
-                        default:
-                            dateNgayBD = (cbHienThiKeThuc.Text + "/10/01" );
-                            dateNgayKT = (cbHienThiKeThuc.Text + "/12/31" );
-                            break;
-                    }
-                    load();
-                    return;
-
-                }
+                
+                load();
             }
             catch (Exception)
             {
@@ -390,20 +312,12 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void btxuatexcel_Click(object sender, EventArgs e)
+        private void cbThoiGian_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            
+            loadNgay();
         }
 
-        private void gridControl6_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void dateBD_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
       
         
