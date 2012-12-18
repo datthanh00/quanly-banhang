@@ -53,6 +53,7 @@
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl6 = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colNgayXuat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ColTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -97,6 +98,8 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.NBI_MH_SP = new DevExpress.XtraNavBar.NavBarItem();
+            this.NBI_BH_SP = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockChucNang.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -108,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
             this.panelControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
             this.panelControl10.SuspendLayout();
@@ -159,9 +163,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 460);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 459);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -182,11 +186,13 @@
             this.NBI_MH_NCC,
             this.NBI_BH_ngay,
             this.NBI_BH_KH,
-            this.NBI_DS_NV});
+            this.NBI_DS_NV,
+            this.NBI_MH_SP,
+            this.NBI_BH_SP});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(194, 460);
+            this.navBarControl1.Size = new System.Drawing.Size(194, 459);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -196,18 +202,23 @@
             this.NBmuahang.Expanded = true;
             this.NBmuahang.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_MH_ngay),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_MH_NCC)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_MH_NCC),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_MH_SP)});
             this.NBmuahang.Name = "NBmuahang";
             // 
             // NBI_MH_ngay
             // 
             this.NBI_MH_ngay.Caption = "Theo ngày";
             this.NBI_MH_ngay.Name = "NBI_MH_ngay";
+            this.NBI_MH_ngay.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_MH_ngay.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_ngay_LinkClicked);
             // 
             // NBI_MH_NCC
             // 
             this.NBI_MH_NCC.Caption = "Theo Nhà Cung Cấp";
             this.NBI_MH_NCC.Name = "NBI_MH_NCC";
+            this.NBI_MH_NCC.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_MH_NCC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_NCC_LinkClicked);
             // 
             // NBbanhang
             // 
@@ -215,18 +226,23 @@
             this.NBbanhang.Expanded = true;
             this.NBbanhang.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_BH_ngay),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_BH_KH)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_BH_KH),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_BH_SP)});
             this.NBbanhang.Name = "NBbanhang";
             // 
             // NBI_BH_ngay
             // 
             this.NBI_BH_ngay.Caption = "Theo Ngày";
             this.NBI_BH_ngay.Name = "NBI_BH_ngay";
+            this.NBI_BH_ngay.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_BH_ngay.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_ngay_LinkClicked);
             // 
             // NBI_BH_KH
             // 
             this.NBI_BH_KH.Caption = "Khách Hàng";
             this.NBI_BH_KH.Name = "NBI_BH_KH";
+            this.NBI_BH_KH.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_BH_KH.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_KH_LinkClicked);
             // 
             // NBdoanhso
             // 
@@ -240,6 +256,8 @@
             // 
             this.NBI_DS_NV.Caption = "Nhân Viên";
             this.NBI_DS_NV.Name = "NBI_DS_NV";
+            this.NBI_DS_NV.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_DS_NV.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_DS_NV_LinkClicked);
             // 
             // linkTheoTuan
             // 
@@ -296,7 +314,7 @@
             this.xtraTabPage5.Controls.Add(this.panelControl9);
             this.xtraTabPage5.Controls.Add(this.panelControl10);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 459);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 458);
             this.xtraTabPage5.Text = "Doanh Thu Theo Khu Vực";
             // 
             // panelControl9
@@ -305,7 +323,7 @@
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl9.Location = new System.Drawing.Point(0, 39);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(1005, 420);
+            this.panelControl9.Size = new System.Drawing.Size(1005, 419);
             this.panelControl9.TabIndex = 7;
             // 
             // gridControl6
@@ -314,14 +332,27 @@
             gridLevelNode1.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl6.Location = new System.Drawing.Point(3, 3);
-            this.gridControl6.MainView = this.gridView1;
+            this.gridControl6.Location = new System.Drawing.Point(2, 2);
+            this.gridControl6.MainView = this.gridView4;
             this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(999, 414);
+            this.gridControl6.Size = new System.Drawing.Size(1001, 415);
             this.gridControl6.TabIndex = 1;
             this.gridControl6.UseEmbeddedNavigator = true;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4,
             this.gridView1});
+            // 
+            // gridView4
+            // 
+            this.gridView4.GridControl = this.gridControl6;
+            this.gridView4.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.Hidden;
+            this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.Editable = false;
+            this.gridView4.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
+            this.gridView4.OptionsView.RowAutoHeight = true;
+            this.gridView4.OptionsView.ShowAutoFilterRow = true;
+            this.gridView4.OptionsView.ShowChildrenInGroupPanel = true;
+            this.gridView4.OptionsView.ShowFooter = true;
             // 
             // gridView1
             // 
@@ -739,6 +770,20 @@
             // 
             this.saveFileDialog1.Filter = "File excel | *.xls";
             // 
+            // NBI_MH_SP
+            // 
+            this.NBI_MH_SP.Caption = "Theo sản phẩm";
+            this.NBI_MH_SP.Name = "NBI_MH_SP";
+            this.NBI_MH_SP.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_MH_SP.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_SP_LinkClicked);
+            // 
+            // NBI_BH_SP
+            // 
+            this.NBI_BH_SP.Caption = "Theo sản phẩm";
+            this.NBI_BH_SP.Name = "NBI_BH_SP";
+            this.NBI_BH_SP.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_BH_SP.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_SP_LinkClicked);
+            // 
             // frmThongKeDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -767,6 +812,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
             this.panelControl9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
             this.panelControl10.ResumeLayout(false);
@@ -862,5 +908,8 @@
         private DevExpress.XtraEditors.LabelControl lbTu;
         private DevExpress.XtraEditors.DateEdit dateTu;
         private DevExpress.XtraEditors.DateEdit dateDen;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraNavBar.NavBarItem NBI_MH_SP;
+        private DevExpress.XtraNavBar.NavBarItem NBI_BH_SP;
     }
 }

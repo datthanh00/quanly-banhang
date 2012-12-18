@@ -24,6 +24,7 @@ namespace WindowsFormsApplication1
          |_______________________________________________________________|
          */
         string dateNgayBD, dateNgayKT;
+        string baocaotype = "";
         string sLoaiThoiGian = "";
         string sTheHien;
         clCtrl ctr = new clCtrl();
@@ -120,8 +121,8 @@ namespace WindowsFormsApplication1
 
                 case 0:
                     {
-                        dateDen.Text = DateTime.Now.ToString("yyy/MM/dd");
-                        dateTu.Text = DateTime.Now.ToString("yyy/MM/dd");
+                        dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
+                        dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
 
                         break;
                     }
@@ -222,9 +223,38 @@ namespace WindowsFormsApplication1
             dto.NGAYBD = dateNgayBD;
             dto.NGAYKT = dateNgayKT;
 
-            gridControl6.MainView = gridView1;
-            gridControl6.DataSource = ctr.getDoanhThu(dto);
+            gridControl6.MainView = gridView4;
+            //gridControl6.DataSource = ctr.getDoanhThu(dto);
             //tb = ctr.getDoanhThu(dto);
+            if (baocaotype == "MH_NGAY")
+            {
+                gridControl6.DataSource = ctr.getcpmuahangngay(dto);
+            }
+            else if (baocaotype == "MH_NCC")
+            {
+                gridControl6.DataSource = ctr.getcpmuahangncc(dto);
+            }
+            else if (baocaotype == "BH_NGAY")
+            {
+                gridControl6.DataSource = ctr.getDoanhThungay(dto);
+            }
+            else if (baocaotype == "BH_KH")
+            {
+                gridControl6.DataSource = ctr.getDoanhThukh(dto);
+            }
+            else if (baocaotype == "DS_NV")
+            {
+                gridControl6.DataSource = ctr.getDoanhsonv(dto);
+            }
+            else if (baocaotype == "BH_SP")
+            {
+                gridControl6.DataSource = ctr.getcpmuahangsp(dto);
+            }
+            else if (baocaotype == "MH_SP")
+            {
+                gridControl6.DataSource = ctr.getDoanhsosp(dto);
+            }
+
         }
 
    
@@ -315,6 +345,55 @@ namespace WindowsFormsApplication1
         private void cbThoiGian_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             loadNgay();
+        }
+
+        private void NBI_MH_ngay_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            baocaotype = "MH_NGAY";
+            gridControl6.DataSource = null;
+            gridView4.Columns.Clear();
+        }
+
+        private void NBI_MH_NCC_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            baocaotype = "MH_NCC";
+            gridControl6.DataSource = null;
+            gridView4.Columns.Clear();
+        }
+
+        private void NBI_BH_ngay_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            baocaotype = "BH_NGAY";
+            gridControl6.DataSource = null;
+            gridView4.Columns.Clear();
+        }
+
+        private void NBI_BH_KH_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            baocaotype = "BH_KH";
+            gridControl6.DataSource = null;
+            gridView4.Columns.Clear();
+        }
+
+        private void NBI_DS_NV_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            baocaotype = "DS_NV";
+            gridControl6.DataSource = null;
+            gridView4.Columns.Clear();
+        }
+
+        private void NBI_BH_SP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            baocaotype = "MH_SP";
+            gridControl6.DataSource = null;
+            gridView4.Columns.Clear();
+        }
+
+        private void NBI_MH_SP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            baocaotype = "BH_SP";
+            gridControl6.DataSource = null;
+            gridView4.Columns.Clear();
         }
 
 

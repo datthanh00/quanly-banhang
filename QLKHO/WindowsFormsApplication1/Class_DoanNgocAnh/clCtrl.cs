@@ -96,6 +96,37 @@ namespace WindowsFormsApplication1
         {
             return dao.getDoanhThu(dto);
         }
+
+        public DataTable getcpmuahangngay(clDTO dto)
+        {
+            return dao.getcpmuahangngay(dto);
+        }
+
+        public DataTable getcpmuahangncc(clDTO dto)
+        {
+            return dao.getcpmuahangncc(dto);
+        }
+        public DataTable getDoanhThungay(clDTO dto)
+        {
+            return dao.getDoanhThungay(dto);
+        }
+        public DataTable getDoanhThukh(clDTO dto)
+        {
+            return dao.getDoanhThukh(dto);
+        }
+        public DataTable getDoanhsonv(clDTO dto)
+        {
+            return dao.getDoanhsonv(dto);
+        }
+        public DataTable getcpmuahangsp(clDTO dto)
+        {
+            return dao.getcpmuahangsp(dto);
+        }
+        public DataTable getDoanhsosp(clDTO dto)
+        {
+            return dao.getDoanhsosp(dto);
+        }
+
         //________________________________TestLogin_____________________________
         public DataTable ctrTestLogin(clDTO dto)
         {
