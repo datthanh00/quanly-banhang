@@ -127,8 +127,7 @@ namespace WindowsFormsApplication1
             gridView4.ExpandAllGroups();
             gridView4.RefreshData();
             gridControl3.RefreshDataSource(); 
-            
-          
+
         }
         
         public void loadGrid_sanpham()
@@ -697,7 +696,7 @@ namespace WindowsFormsApplication1
         private void linkTheoSanPham_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            string SQL = "SELECT DATE_FORMAT(T3.NGAYNHAP,'%d/%m/%Y') 'NGÀY NHẬP',T3.MAHDN 'Mã Hóa Đơn',T3.tenncc 'Tên Nhà Cung Cấp', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGNHAP 'Số Lượng',T3.GIANHAP 'Giá Nhập' FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T2.tenncc ,T1.SOLUONGNHAP,T1.GIANHAP FROM (SELECT * FROM CHITIETHDN )AS T1 INNER JOIN (select t9.ngaynhap,t9.mahdn,t9.mancc,t8.tenncc from HOADONNHAP as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc) AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
+            string SQL = "SELECT DATE_FORMAT(T3.NGAYNHAP,'%d/%m/%Y') 'NGÀY NHẬP',T3.MAHDN 'Mã Hóa Đơn',T3.tenncc 'Tên Nhà Cung Cấp', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGNHAP 'Số Lượng',T3.GIANHAP 'Giá Nhập' FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T2.tenncc ,T1.SOLUONGNHAP,T1.GIANHAP FROM (SELECT * FROM CHITIETHDN )AS T1 INNER JOIN (select t9.ngaynhap,t9.mahdn,t9.mancc,t8.tenncc from HOADONNHAP as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc) AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH order by T3.MAHDN desc";
             loadgridSANPHAM(SQL);
         }
 

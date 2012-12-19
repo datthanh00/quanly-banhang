@@ -438,6 +438,7 @@ namespace WindowsFormsApplication1
         {
             //cbThoiGian.Properties.Items.Add("Option");
             cbThoiGian.Properties.Items.Add("Today");
+            cbThoiGian.Properties.Items.Add("This Month");
             cbThoiGian.Properties.Items.Add("This Year");
             cbThoiGian.Properties.Items.Add("Jannuary");
             cbThoiGian.Properties.Items.Add("February");
@@ -457,6 +458,7 @@ namespace WindowsFormsApplication1
         {
             //cbThoiGian.Properties.Items.Add("Tùy Chọn");
             cbThoiGian.Properties.Items.Add("Ngày nay");
+            cbThoiGian.Properties.Items.Add("Tháng này");
             cbThoiGian.Properties.Items.Add("Năm này");
             cbThoiGian.Properties.Items.Add("Tháng 1");
             cbThoiGian.Properties.Items.Add("Tháng 2");
@@ -479,93 +481,100 @@ namespace WindowsFormsApplication1
         {
             switch (cbThoiGian.SelectedIndex)
             {
-                
+
                 case 0:
                     {
-                        dateDen.Text = DateTime.Now.ToString("yyy/MM/dd");
-                        dateTu.Text = DateTime.Now.ToString("yyy/MM/dd");
+                        dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
+                        dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
 
                         break;
                     }
                 case 1:
                     {
-                        dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "01/01/"+DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/" + DateTime.Now.ToString("MM/yyy");
+                        dateTu.Text = "01/" + DateTime.Now.ToString("MM/yyy");
+
                         break;
                     }
                 case 2:
                     {
-                        dateDen.Text = "31/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/01/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 3:
                     {
+                        dateDen.Text = "31/01/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/01/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 4:
+                    {
                         dateDen.Text = "28/02/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/02/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 4:
+                case 5:
                     {
                         dateDen.Text = "31/03/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/03/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 5:
+                case 6:
                     {
                         dateDen.Text = "30/04/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/04/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 6:
+                case 7:
                     {
                         dateDen.Text = "31/05/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/05/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 7:
+                case 8:
                     {
                         dateDen.Text = "30/06/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/06/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 8:
+                case 9:
                     {
                         dateDen.Text = "31/07/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/07/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 9:
+                case 10:
                     {
                         dateDen.Text = "31/08/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/08/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 10:
+                case 11:
                     {
                         dateDen.Text = "30/09/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/09/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 11:
+                case 12:
                     {
                         dateDen.Text = "31/10/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/10/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 12:
+                case 13:
                     {
                         dateDen.Text = "30/11/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/11/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 13:
+                case 14:
                     {
                         dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/12/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 14:
+                case 15:
                     {
 
                         dateDen.Text = DateTime.Now.ToString("yyy/MM/dd");
@@ -789,7 +798,7 @@ namespace WindowsFormsApplication1
             cbsanpham.Visible = false;
             gridControl1.DataSource = null;
             gridView6.Columns.Clear();
-            //loadGird_tonkhotonghop();
+            loadGird_tonkhotonghop();
         }
         private void loadGird_tonkhotonghop()
         {
@@ -813,6 +822,7 @@ namespace WindowsFormsApplication1
             cbsanpham.Visible = true;
             gridControl1.DataSource = null;
             gridView6.Columns.Clear();
+            loadGird_thekho();
         }
 
         private void loadGird_thekho()
@@ -848,9 +858,10 @@ namespace WindowsFormsApplication1
         private void Linkchitiethanghoa_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             optionload = "sochitiethanghoa";
-            //loadGird_chitiethanghoa();
+            
             gridControl1.DataSource = null;
             gridView6.Columns.Clear();
+            loadGird_chitiethanghoa();
         }
         private void loadGird_chitiethanghoa()
         {

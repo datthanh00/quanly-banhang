@@ -163,7 +163,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(488, 17);
+            this.lbDen.Location = new System.Drawing.Point(489, 18);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -171,7 +171,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(357, 17);
+            this.lbTu.Location = new System.Drawing.Point(358, 18);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -290,10 +290,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 2);
+            this.gridControl2.Location = new System.Drawing.Point(3, 3);
             this.gridControl2.MainView = this.advBandedGridView3;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1288, 393);
+            this.gridControl2.Size = new System.Drawing.Size(1286, 391);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
