@@ -38,9 +38,11 @@
             this.NBmuahang = new DevExpress.XtraNavBar.NavBarGroup();
             this.NBI_MH_ngay = new DevExpress.XtraNavBar.NavBarItem();
             this.NBI_MH_NCC = new DevExpress.XtraNavBar.NavBarItem();
+            this.NBI_MH_SP = new DevExpress.XtraNavBar.NavBarItem();
             this.NBbanhang = new DevExpress.XtraNavBar.NavBarGroup();
             this.NBI_BH_ngay = new DevExpress.XtraNavBar.NavBarItem();
             this.NBI_BH_KH = new DevExpress.XtraNavBar.NavBarItem();
+            this.NBI_BH_SP = new DevExpress.XtraNavBar.NavBarItem();
             this.NBdoanhso = new DevExpress.XtraNavBar.NavBarGroup();
             this.NBI_DS_NV = new DevExpress.XtraNavBar.NavBarItem();
             this.linkTheoTuan = new DevExpress.XtraNavBar.NavBarItem();
@@ -98,8 +100,6 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.NBI_MH_SP = new DevExpress.XtraNavBar.NavBarItem();
-            this.NBI_BH_SP = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockChucNang.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -163,9 +163,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 459);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 460);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -192,7 +192,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(194, 459);
+            this.navBarControl1.Size = new System.Drawing.Size(194, 460);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -220,6 +220,13 @@
             this.NBI_MH_NCC.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
             this.NBI_MH_NCC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_NCC_LinkClicked);
             // 
+            // NBI_MH_SP
+            // 
+            this.NBI_MH_SP.Caption = "Theo sản phẩm";
+            this.NBI_MH_SP.Name = "NBI_MH_SP";
+            this.NBI_MH_SP.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_MH_SP.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_SP_LinkClicked);
+            // 
             // NBbanhang
             // 
             this.NBbanhang.Caption = "Doanh thu bán hàng";
@@ -243,6 +250,13 @@
             this.NBI_BH_KH.Name = "NBI_BH_KH";
             this.NBI_BH_KH.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
             this.NBI_BH_KH.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_KH_LinkClicked);
+            // 
+            // NBI_BH_SP
+            // 
+            this.NBI_BH_SP.Caption = "Theo sản phẩm";
+            this.NBI_BH_SP.Name = "NBI_BH_SP";
+            this.NBI_BH_SP.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_BH_SP.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_SP_LinkClicked);
             // 
             // NBdoanhso
             // 
@@ -314,7 +328,7 @@
             this.xtraTabPage5.Controls.Add(this.panelControl9);
             this.xtraTabPage5.Controls.Add(this.panelControl10);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 458);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 459);
             this.xtraTabPage5.Text = "Doanh Thu Theo Khu Vực";
             // 
             // panelControl9
@@ -323,7 +337,7 @@
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl9.Location = new System.Drawing.Point(0, 39);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(1005, 419);
+            this.panelControl9.Size = new System.Drawing.Size(1005, 420);
             this.panelControl9.TabIndex = 7;
             // 
             // gridControl6
@@ -332,10 +346,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl6.Location = new System.Drawing.Point(2, 2);
+            this.gridControl6.Location = new System.Drawing.Point(3, 3);
             this.gridControl6.MainView = this.gridView4;
             this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(1001, 415);
+            this.gridControl6.Size = new System.Drawing.Size(999, 414);
             this.gridControl6.TabIndex = 1;
             this.gridControl6.UseEmbeddedNavigator = true;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -480,7 +494,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(288, 12);
+            this.lbDen.Location = new System.Drawing.Point(289, 13);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -488,7 +502,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(136, 12);
+            this.lbTu.Location = new System.Drawing.Point(137, 13);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -769,20 +783,6 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "File excel | *.xls";
-            // 
-            // NBI_MH_SP
-            // 
-            this.NBI_MH_SP.Caption = "Theo sản phẩm";
-            this.NBI_MH_SP.Name = "NBI_MH_SP";
-            this.NBI_MH_SP.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
-            this.NBI_MH_SP.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_SP_LinkClicked);
-            // 
-            // NBI_BH_SP
-            // 
-            this.NBI_BH_SP.Caption = "Theo sản phẩm";
-            this.NBI_BH_SP.Name = "NBI_BH_SP";
-            this.NBI_BH_SP.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
-            this.NBI_BH_SP.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_SP_LinkClicked);
             // 
             // frmThongKeDoanhThu
             // 

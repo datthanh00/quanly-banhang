@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btKhachHang = new DevExpress.XtraBars.BarButtonItem();
@@ -118,6 +118,8 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.iPaintStyle = new DevExpress.XtraBars.BarSubItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeZone1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWeekOfMonth1)).BeginInit();
@@ -187,9 +189,11 @@
             this.barMayChu,
             this.barSubItem1,
             this.btmathangthongkhe,
-            this.btThue});
+            this.btThue,
+            this.barButtonItem1,
+            this.barButtonItem2});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 106;
+            this.ribbon.MaxItemId = 108;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.btAnh);
             this.ribbon.PageHeaderItemLinks.Add(this.btNgonNguViet);
@@ -463,12 +467,12 @@
             this.btAnh.Id = 70;
             this.btAnh.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources._64_restore;
             this.btAnh.Name = "btAnh";
-            toolTipTitleItem1.Text = "Language";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "English";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.btAnh.SuperTip = superToolTip1;
+            toolTipTitleItem3.Text = "Language";
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "English";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            this.btAnh.SuperTip = superToolTip3;
             this.btAnh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btAnh_ItemClick);
             // 
             // btViet
@@ -483,12 +487,12 @@
             this.btNgonNguViet.Glyph = global::WindowsFormsApplication1.Properties.Resources.vn;
             this.btNgonNguViet.Id = 74;
             this.btNgonNguViet.Name = "btNgonNguViet";
-            toolTipTitleItem2.Text = "Ngôn ngữ";
-            toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "Vietnamese\r\n";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.btNgonNguViet.SuperTip = superToolTip2;
+            toolTipTitleItem4.Text = "Ngôn ngữ";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "Vietnamese\r\n";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            superToolTip4.Items.Add(toolTipItem4);
+            this.btNgonNguViet.SuperTip = superToolTip4;
             this.btNgonNguViet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btNgonNguViet_ItemClick);
             // 
             // btHoaDonNhap
@@ -667,6 +671,8 @@
             this.ribQLHangHoa.ItemLinks.Add(this.btNhapHang);
             this.ribQLHangHoa.ItemLinks.Add(this.btXuatHang);
             this.ribQLHangHoa.ItemLinks.Add(this.btmathangthongkhe);
+            this.ribQLHangHoa.ItemLinks.Add(this.barButtonItem1);
+            this.ribQLHangHoa.ItemLinks.Add(this.barButtonItem2);
             this.ribQLHangHoa.Name = "ribQLHangHoa";
             this.ribQLHangHoa.ShowCaptionButton = false;
             this.ribQLHangHoa.Text = "Quản Lý Hàng Hóa";
@@ -905,6 +911,20 @@
             this.iPaintStyle.ImageIndex = 26;
             this.iPaintStyle.Name = "iPaintStyle";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Trả Hàng CTY";
+            this.barButtonItem1.Id = 106;
+            this.barButtonItem1.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Khách Trả Hàng";
+            this.barButtonItem2.Id = 107;
+            this.barButtonItem2.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1021,5 +1041,7 @@
         private DevExpress.XtraBars.BarSubItem iPaintStyle;
         private DevExpress.XtraBars.BarButtonItem btmathangthongkhe;
         private DevExpress.XtraBars.BarButtonItem btThue;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }

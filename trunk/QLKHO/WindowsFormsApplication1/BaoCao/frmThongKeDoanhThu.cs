@@ -98,6 +98,7 @@ namespace WindowsFormsApplication1
         public void load_cbthoigian()
         {
             cbThoiGian.Properties.Items.Add("Hôm nay");
+            cbThoiGian.Properties.Items.Add("Tháng này");
             cbThoiGian.Properties.Items.Add("Năm này");
             cbThoiGian.Properties.Items.Add("Tháng 1");
             cbThoiGian.Properties.Items.Add("Tháng 2");
@@ -128,83 +129,90 @@ namespace WindowsFormsApplication1
                     }
                 case 1:
                     {
-                        dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "01/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/" + DateTime.Now.ToString("MM/yyy");
+                        dateTu.Text = "01/" + DateTime.Now.ToString("MM/yyy");
+
                         break;
                     }
                 case 2:
                     {
-                        dateDen.Text = "31/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/01/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 3:
                     {
+                        dateDen.Text = "31/01/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/01/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 4:
+                    {
                         dateDen.Text = "28/02/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/02/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 4:
+                case 5:
                     {
                         dateDen.Text = "31/03/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/03/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 5:
+                case 6:
                     {
                         dateDen.Text = "30/04/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/04/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 6:
+                case 7:
                     {
                         dateDen.Text = "31/05/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/05/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 7:
+                case 8:
                     {
                         dateDen.Text = "30/06/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/06/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 8:
+                case 9:
                     {
                         dateDen.Text = "31/07/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/07/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 9:
+                case 10:
                     {
                         dateDen.Text = "31/08/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/08/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 10:
+                case 11:
                     {
                         dateDen.Text = "30/09/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/09/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 11:
+                case 12:
                     {
                         dateDen.Text = "31/10/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/10/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 12:
+                case 13:
                     {
                         dateDen.Text = "30/11/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/11/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 13:
+                case 14:
                     {
                         dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/12/" + DateTime.Now.Year.ToString();
                         break;
                     }
-                case 14:
+                case 15:
                     {
 
                         dateDen.Text = DateTime.Now.ToString("yyy/MM/dd");
@@ -220,9 +228,18 @@ namespace WindowsFormsApplication1
 
         public void load()
         {
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dateNgayBD = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dateNgayKT = NGAYKT;
+
             dto.NGAYBD = dateNgayBD;
             dto.NGAYKT = dateNgayKT;
 
+            
             gridControl6.MainView = gridView4;
             //gridControl6.DataSource = ctr.getDoanhThu(dto);
             //tb = ctr.getDoanhThu(dto);
@@ -282,13 +299,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                string NGAYBD = dateTu.Text;
-                NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
-                dateNgayBD = NGAYBD;
-
-                string NGAYKT = dateDen.Text;
-                NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
-                dateNgayKT = NGAYKT;
+               
 
                 
                 load();
@@ -314,8 +325,6 @@ namespace WindowsFormsApplication1
                 {
                      gridControl6.ExportToXls(saveFileDialog1.FileName );
                 }
-               
-
             }
             catch (Exception)
             {
@@ -352,6 +361,7 @@ namespace WindowsFormsApplication1
             baocaotype = "MH_NGAY";
             gridControl6.DataSource = null;
             gridView4.Columns.Clear();
+            load();
         }
 
         private void NBI_MH_NCC_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -359,6 +369,7 @@ namespace WindowsFormsApplication1
             baocaotype = "MH_NCC";
             gridControl6.DataSource = null;
             gridView4.Columns.Clear();
+            load();
         }
 
         private void NBI_BH_ngay_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -366,6 +377,7 @@ namespace WindowsFormsApplication1
             baocaotype = "BH_NGAY";
             gridControl6.DataSource = null;
             gridView4.Columns.Clear();
+            load();
         }
 
         private void NBI_BH_KH_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -373,6 +385,7 @@ namespace WindowsFormsApplication1
             baocaotype = "BH_KH";
             gridControl6.DataSource = null;
             gridView4.Columns.Clear();
+            load();
         }
 
         private void NBI_DS_NV_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -380,6 +393,7 @@ namespace WindowsFormsApplication1
             baocaotype = "DS_NV";
             gridControl6.DataSource = null;
             gridView4.Columns.Clear();
+            load();
         }
 
         private void NBI_BH_SP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -387,6 +401,7 @@ namespace WindowsFormsApplication1
             baocaotype = "MH_SP";
             gridControl6.DataSource = null;
             gridView4.Columns.Clear();
+            load();
         }
 
         private void NBI_MH_SP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -394,6 +409,7 @@ namespace WindowsFormsApplication1
             baocaotype = "BH_SP";
             gridControl6.DataSource = null;
             gridView4.Columns.Clear();
+            load();
         }
 
 

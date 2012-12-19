@@ -702,7 +702,44 @@ namespace WindowsFormsApplication1
         {
             string SQL = "INSERT INTO CHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,GIANHAP,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.GIANHAP + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
+
+            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =" + dto.SOLUONGNHAP.ToString() + " + SOLUONGMH, WHERE MAMH='" + dto.MAMH + "'";
+            executeNonQuery(SQL);
+
+
+            SQL = "SELECT DATE_FORMAT(NGAYNHAP,'%Y/%m/%d') FROM HOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
+            DataTable dt = getdata(SQL);
+            string ngay = dt.Rows[0][0].ToString();
+
+            SQL = "SELECT tondau+nhap-xuat as toncuoi, id FROM tonkho where MAMH = '" + dto.MAMH + "' and ngay< '"+ngay+"'";
+            dt = getdata(SQL);
+
+            INSERT_TONKHO(ngay, dto.MAMH, dt.Rows[0]["toncuoi"].ToString(), dto.SOLUONGNHAP.ToString(),"0",dt.Rows[0]["id"].ToString());
         }
+
+        public void INSERT_TONKHO(string NGAY, string MAMH, string TONDAU, string NHAP, string XUAT,string MAID)
+        {
+            string SQL = "Select nhap from tonkho where ngay ='"+NGAY+"' and MAMH='" + MAMH + "'";
+            DataTable dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+            {
+                UPDATE_TONKHO(NGAY, MAMH, NHAP, XUAT);
+            }else
+            {
+                SQL = "INSERT TONKHO(NGAY,MAMH,TONDAU,NHAP,XUAT,MAID)"
+                  + " VALUES (" + NGAY + ",'" + MAMH + "','" + TONDAU + "', '" + NHAP + "','" + XUAT + "','" + MAID + "')";
+                executeNonQuery(SQL);
+            }
+        }
+        public void UPDATE_TONKHO(string NGAY, string MAMH, string NHAP, string XUAT)
+        {
+            string SQL = "UPDATE TONKHO SET  NHAP=NHAP +" + NHAP + ",XUAT=XUAT +" + XUAT + "  WHERE NGAY ='" + NGAY + "' and MAMH='" + MAMH + "'";
+            executeNonQuery(SQL);
+
+            SQL = "update tonkho T, (SELECT MAMH,ID, tondau+nhap-xuat as toncuoi  FROM tonkho where ngay<='"+NGAY+"') T1  set T.tondau= T1.toncuoi  where  T1.MAMH=T.MAMH AND T.MAID=T1.ID";
+            executeNonQuery(SQL);
+        }
+
         public bool ISINSERTCTHOADONNHAP(string MAHDN, int ID)
         {
             string SQL = "SELECT MAHDN FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "' AND ID=" + ID.ToString();
@@ -714,8 +751,30 @@ namespace WindowsFormsApplication1
         }
         public void UPDATECTHOADONNHAP(DTO dto)
         {
-            string SQL = "update CHITIETHDN set MAMH='" + dto.MAMH + "', SOLUONGNHAP=" + dto.SOLUONGNHAP + " ,GIANHAP=" + dto.GIANHAP + ", TINHTRANG= 1 where (MAHDN='" + dto.MAHDN + "' AND ID=" + dto.ID + ")";
+
+            string  SQL = "select SOLUONGNHAP from CHITIETHDN where (MAHDN='" + dto.MAHDN + "' AND MAMH='" + dto.MAMH + "')";
+            DataTable dt = getdata(SQL);
+            int sluongnhapcu = 0;
+            if (dt.Rows.Count > 0)
+            {
+                sluongnhapcu = Convert.ToInt32(dt.Rows[0][0].ToString());
+            }
+
+            SQL = "update CHITIETHDN set MAMH='" + dto.MAMH + "', SOLUONGNHAP=" + dto.SOLUONGNHAP + " ,GIANHAP=" + dto.GIANHAP + ", TINHTRANG= 1 where (MAHDN='" + dto.MAHDN + "' AND ID=" + dto.ID + ")";
             executeNonQuery(SQL);
+
+            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =" + (dto.SOLUONGNHAP- sluongnhapcu).ToString() + " + SOLUONGMH WHERE MAMH='" + dto.MAMH + "'";
+            executeNonQuery(SQL);
+
+            SQL = "select DATE_FORMAT(ngaynhap,'%Y/%m/%d') from hoadonnhap where  MAHDN='" + dto.MAHDN + "'";
+            dt = getdata(SQL);
+            string ngaythang = dt.Rows[0][0].ToString();
+            int chinhsuanhap = dto.SOLUONGNHAP - sluongnhapcu;
+            if (chinhsuanhap != 0)
+            {
+                UPDATE_TONKHO(ngaythang, dto.MAMH, chinhsuanhap.ToString(), "0");
+            }
+
         }
         public void DELETECTHOADONNHAP(string MAHDN, int ID)
         {
@@ -800,8 +859,42 @@ namespace WindowsFormsApplication1
         }
         public void INSERTCTHOADONXUAT(DTO dto)
         {
-            string SQL = "INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,SOLUONGXUAT,GIATIEN,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "'," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "')";
+            string SQL = "select soluongmh from mathang where MAMH='" + dto.MAMH + "'";
+            DataTable dt = getdata(SQL);
+
+            if (dt.Rows.Count > 0)
+            {
+                int slton = Convert.ToInt32(dt.Rows[0]["soluongmh"].ToString());
+                if (slton < dto.SOLUONGXUAT)
+                {
+                    System.Windows.Forms.MessageBox.Show("Không đủ số lượng để xuất");
+                    return;
+                }
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Chưa có mã hàng này");
+                return;
+            }
+
+
+            SQL = "INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,SOLUONGXUAT,GIATIEN,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "'," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
+
+            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH-" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
+            executeNonQuery(SQL);
+
+
+
+            SQL = "SELECT DATE_FORMAT(NGAYXUAT,'%Y/%m/%d') FROM HOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
+            dt = getdata(SQL);
+            string ngay = dt.Rows[0][0].ToString();
+
+            SQL = "SELECT tondau+nhap-xuat as toncuoi, id FROM tonkho where MAMH = '" + dto.MAMH + "' and ngay< '" + ngay + "'";
+            dt = getdata(SQL);
+
+            INSERT_TONKHO(ngay, dto.MAMH, dt.Rows[0]["toncuoi"].ToString(), "0", dto.SOLUONGXUAT.ToString(), dt.Rows[0]["id"].ToString());
+        
         }
         public bool ISINSERTCTHOADONXUAT(string MAHDX, int ID)
         {
@@ -814,8 +907,54 @@ namespace WindowsFormsApplication1
         }
         public void UPDATECTHOADONXUAT(DTO dto)
         {
-            string SQL = "update CHITIETHDX set MAMH='" + dto.MAMH + "',SOLUONGXUAT=" + dto.SOLUONGXUAT + " ,GIATIEN=" + dto.GIATIEN + ", TINHTRANG= 1 where (MAHDX='" + dto.MAHDX + "' AND ID=" + dto.ID.ToString() + ")";
+            string SQL = "select soluongmh from mathang where MAMH='" + dto.MAMH + "'";
+            DataTable dt = getdata(SQL);
+
+            if (dt.Rows.Count > 0)
+            {
+                int slton = Convert.ToInt32(dt.Rows[0]["soluongmh"].ToString());
+                SQL = "select SOLUONGXUAT from CHITIETHDX where (MAHDX='" + dto.MAHDX + "' AND ID=" + dto.ID.ToString() + ")";
+                dt = getdata(SQL);
+                int slxuatcu = 0;
+                if (dt.Rows.Count > 0)
+                {
+                    slxuatcu = Convert.ToInt32(dt.Rows[0]["SOLUONGXUAT"].ToString());
+                }
+
+                if (slton < (dto.SOLUONGXUAT - slxuatcu))
+                {
+                    System.Windows.Forms.MessageBox.Show("Không đủ số lượng để xuất");
+                    return;
+                }
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Chưa có mã hàng này");
+                return;
+            }
+
+            SQL = "select SOLUONGXUAT from CHITIETHDX where (MAHDX='" + dto.MAHDX + "' AND MAMH='" + dto.MAMH + "')";
+            dt = getdata(SQL);
+            int sluongxuatcu = 0;
+            if (dt.Rows.Count > 0)
+            {
+                sluongxuatcu = Convert.ToInt32(dt.Rows[0][0].ToString());
+            }
+
+            SQL = "update CHITIETHDX set MAMH='" + dto.MAMH + "',SOLUONGXUAT=" + dto.SOLUONGXUAT + " ,GIATIEN=" + dto.GIATIEN + ", TINHTRANG= 1 where (MAHDX='" + dto.MAHDX + "' AND ID=" + dto.ID.ToString() + ")";
             executeNonQuery(SQL);
+
+            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + (dto.SOLUONGXUAT - sluongxuatcu).ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
+            executeNonQuery(SQL);
+
+            SQL = "select DATE_FORMAT(ngayxuat,'%Y/%m/%d') from hoadonxuat where  MAHDX='" + dto.MAHDX + "'";
+            dt = getdata(SQL);
+            string ngaythang = dt.Rows[0][0].ToString();
+            int chinhsuaxuat = dto.SOLUONGXUAT - sluongxuatcu;
+            if (chinhsuaxuat != 0)
+            {
+                UPDATE_TONKHO(ngaythang, dto.MAMH, "0", chinhsuaxuat.ToString());
+            }
         }
         public void DELETECTHOADONXUAT(string MAHDX, int ID)
         {
