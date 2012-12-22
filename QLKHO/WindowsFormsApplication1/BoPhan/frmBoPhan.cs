@@ -161,6 +161,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MABP = sma;
+                    Boolean isdeletebp = CTL.isDELETEBOPHAN(DTO);
+                    if (!isdeletebp)
+                    {
+                        MessageBox.Show("Bộ phận này đang có nhân viên, bạn không thể xóa");
+                        return;
+                    }
                     CTL.DELETEBOPHAN(DTO);
                     loadbophan();
                     sma = "";
@@ -178,6 +184,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MABP = sma;
+                    Boolean isdeletebp = CTL.isDELETEBOPHAN(DTO);
+                    if (!isdeletebp)
+                    {
+                        MessageBox.Show("Department is not empty, you can not delete it");
+                        return;
+                    }
                     CTL.DELETEBOPHAN(DTO);
                     loadbophan();
                     sma = "";

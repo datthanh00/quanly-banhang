@@ -340,6 +340,23 @@ namespace WindowsFormsApplication1
             string SQL = "delete from KHACHHANG where 	MAKH='"+dto.MAKH+"'";
             executeNonQuery(SQL);
         }
+
+        public Boolean isDELELEKHACHHANG(DTO dto)
+        {
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAKH", dto.MAKH));
+            ChayProc("KHACHHANG_delete", sqlpa);
+             */
+            string SQL = "select makh from hoadonxuat where 	MAKH='" + dto.MAKH + "' limit 1";
+            DataTable dt= getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+            SQL = "select makh from trahoadonxuat where 	MAKH='" + dto.MAKH + "' limit 1";
+            dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+            return true;
+        }
         public void DELELEBOPHAN(DTO dto)
         {
             /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
@@ -348,6 +365,15 @@ namespace WindowsFormsApplication1
              */
             string SQL = "delete from BOPHAN where 	MABP='" + dto.MABP + "'";
             executeNonQuery(SQL);
+        }
+        public Boolean isDELELEBOPHAN(DTO dto)
+        {
+            string SQL = "select mabp from nhanvien where 	MABP='" + dto.MABP + "' limit 1";
+            DataTable dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+            return true;
         }
         public void DELELEMATHANG(DTO dto)
         {
@@ -358,6 +384,19 @@ namespace WindowsFormsApplication1
             string SQL = "delete from MATHANG where 	MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
         }
+        public Boolean isDELELEMATHANG(DTO dto)
+        {
+            /* List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+             sqlpa.Add(new MySqlParameter("@MAMH", dto.MAMH));
+             ChayProc("MATHANG_delete", sqlpa);
+             */
+            string SQL = "select mamh from MATHANG where 	MAMH='" + dto.MAMH + "'";
+            DataTable dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+            return true;
+        }
         public void DELELENHOMHANG(DTO dto)
         {
             /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
@@ -366,6 +405,15 @@ namespace WindowsFormsApplication1
              */
             string SQL = "delete from NHOMHANG where 	MANH='" + dto.MANH + "'";
             executeNonQuery(SQL);
+        }
+        public Boolean isDELELENHOMHANG(DTO dto)
+        {
+            string SQL = "select manh from mathang where 	MANH='" + dto.MANH + "' limit 1";
+            DataTable dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+            return true;
         }
         public void DELELEQUANLY(DTO dto)
         {
@@ -385,6 +433,20 @@ namespace WindowsFormsApplication1
             string SQL = "delete from THUE where 	MATH='" + dto.MATH + "'";
             executeNonQuery(SQL);
         }
+        public Boolean isDELELETHUE(DTO dto)
+        {
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MATH", dto.MATH));
+            ChayProc("THUE_delete", sqlpa);
+            */
+            string SQL = "select math from mathang where 	MATH='" + dto.MATH + "' limit 1";
+            DataTable dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+            return true;
+        }
+
         public void DELELEKHO(DTO dto)
         {
             /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
@@ -393,6 +455,20 @@ namespace WindowsFormsApplication1
             */
             string SQL = "delete from KHO where 	MAKHO='" + dto.MAKHO + "'";
             executeNonQuery(SQL);
+        }
+
+        public Boolean isDELELEKHO(DTO dto)
+        {
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAKHO", dto.MAKHO));
+            ChayProc("KHO_delete", sqlpa);
+            */
+            string SQL = "select makho from mathang where 	MAKHO='" + dto.MAKHO + "' limit 1";
+            DataTable dt=getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+            return true;
         }
         public void DELELEKV(DTO dto)
         {
@@ -403,6 +479,24 @@ namespace WindowsFormsApplication1
             string SQL = "delete from KHUVUC where 	MAKV='" + dto.MAKV + "'";
             executeNonQuery(SQL);
         }
+
+        public Boolean isDELELEKV(DTO dto)
+        {
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MAKV", dto.MAKV));
+            ChayProc("KHUVUC_delete", sqlpa);
+             */
+            string SQL = "select makv from  khachhang where 	MAKV='" + dto.MAKV + "' limit 1";
+            DataTable dt=getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+            SQL = "select makv from  nhacungcap where 	MAKV='" + dto.MAKV + "' limit 1";
+            dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+            return true;
+        }
         public void DELELENCC(DTO dto)
         {
             /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
@@ -411,6 +505,23 @@ namespace WindowsFormsApplication1
             */
             string SQL = "delete from NHACUNGCAP where 	MANCC='" + dto.MANCC + "'";
             executeNonQuery(SQL); 
+        }
+        public Boolean isDELELENCC(DTO dto)
+        {
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MANCC", dto.MANCC));
+            ChayProc("NHACUNGCAP_delete", sqlpa);
+            */
+            string SQL = "select mancc from hoadonnhap where 	MANCC='" + dto.MANCC + "' limit 1";
+            DataTable dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+            SQL = "select mancc from trahoadonnhap where 	MANCC='" + dto.MANCC + "' limit 1";
+            dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+            return true;
         }
         public void DELELENHANVIEN(DTO dto)
         {
@@ -421,6 +532,34 @@ namespace WindowsFormsApplication1
             string SQL = "delete from NHANVIEN where 	MANV='" + dto.MANV + "'";
             executeNonQuery(SQL); 
         }
+        public Boolean isDELELENHANVIEN(DTO dto)
+        {
+            /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
+            sqlpa.Add(new MySqlParameter("@MANV", dto.MANV));
+            ChayProc("NHANVIEN_delete", sqlpa);
+            */
+            string SQL = "select manv from hoadonnhap where 	MANV='" + dto.MANV + "' limit 1";
+            DataTable dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+             SQL = "select manv from hoadonxuat where 	MANV='" + dto.MANV + "' limit 1";
+             dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+             SQL = "select manv from trahoadonnhap where 	MANV='" + dto.MANV + "' limit 1";
+             dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+             SQL = "select manv from trahoadonxuat where 	MANV='" + dto.MANV + "' limit 1";
+             dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+            return true;
+        }
         public void DELELEDVT(DTO dto)
         {
             /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
@@ -429,6 +568,15 @@ namespace WindowsFormsApplication1
             */
             string SQL = "delete from DONVITINH where 	MADVT='" + dto.MADVT + "'";
             executeNonQuery(SQL);
+        }
+        public Boolean isDELELEDVT(DTO dto)
+        {
+            string SQL = "select madvt from mathang where 	MADVT='" + dto.MADVT + "' limit 1";
+            DataTable dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+                return false;
+
+            return true;
         }
         public void INSERTNHANVIEN(DTO dto)
         {

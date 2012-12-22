@@ -149,6 +149,12 @@ namespace WindowsFormsApplication1
                 if (a == DialogResult.Yes)
                 {
                     DTO.MAMH = sma;
+                    Boolean isdeletemathang = CTL.isDELETEMATHANG(DTO);
+                    if (!isdeletemathang)
+                    {
+                        MessageBox.Show("Mặt hàng đã xuất hóa đơn bạn không thể xóa");
+                        return;
+                    }
                     CTL.DELETEMATHANG(DTO);
                     loadmathang();
                 }
@@ -160,6 +166,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MAMH = sma;
+                    Boolean isdeletemathang = CTL.isDELETEMATHANG(DTO);
+                    if (!isdeletemathang)
+                    {
+                        MessageBox.Show("product is have bill you can not delete");
+                        return;
+                    }
                     CTL.DELETEMATHANG(DTO);
                     loadmathang();
                 }

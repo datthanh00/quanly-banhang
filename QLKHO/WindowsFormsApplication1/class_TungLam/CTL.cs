@@ -100,17 +100,34 @@ namespace WindowsFormsApplication1
         {
             DAO.DELELEKHACHHANG(DTO);
         }
+        public Boolean isDELETEKHACHHANG(DTO DTO)
+        {
+            return DAO.isDELELEKHACHHANG(DTO);
+        }
         public void DELETEBOPHAN(DTO DTO)
         {
             DAO.DELELEBOPHAN(DTO);
+        }
+        public Boolean isDELETEBOPHAN(DTO DTO)
+        {
+            return DAO.isDELELEBOPHAN(DTO);
         }
         public void DELETEMATHANG(DTO DTO)
         {
             DAO.DELELEMATHANG(DTO);
         }
+        public Boolean isDELETEMATHANG(DTO DTO)
+        {
+            return DAO.isDELELEMATHANG(DTO);
+        }
         public void DELETENHOMHANG(DTO DTO)
         {
             DAO.DELELENHOMHANG(DTO);
+        }
+
+        public Boolean isDELETENHOMHANG(DTO DTO)
+        {
+            return DAO.isDELELENHOMHANG(DTO);
         }
         public void DELETEQUANLY(DTO DTO)
         {
@@ -120,25 +137,49 @@ namespace WindowsFormsApplication1
         {
             DAO.DELELETHUE(DTO);
         }
+        public Boolean isDELETETHUE(DTO DTO)
+        {
+            return DAO.isDELELETHUE(DTO);
+        }
         public void DELETEKHO(DTO DTO)
         {
             DAO.DELELEKHO(DTO);
+        }
+        public Boolean isDELETEKHO(DTO DTO)
+        {
+            return DAO.isDELELEKHO(DTO);
         }
         public void DELETEKV(DTO DTO)
         {
             DAO.DELELEKV(DTO);
         }
+        public Boolean isDELETEKV(DTO DTO)
+        {
+            return DAO.isDELELEKV(DTO);
+        }
         public void DELETENCC(DTO DTO)
         {
             DAO.DELELENCC(DTO);
+        }
+        public Boolean  isDELETENCC(DTO DTO)
+        {
+            return DAO.isDELELENCC(DTO);
         }
         public void DELETENHANVIEN(DTO DTO)
         {
             DAO.DELELENHANVIEN(DTO);
         }
+        public Boolean isDELETENHANVIEN(DTO DTO)
+        {
+            return DAO.isDELELENHANVIEN(DTO);
+        }
         public void DELETEDVT(DTO DTO)
         {
             DAO.DELELEDVT(DTO);
+        }
+        public Boolean isDELETEDVT(DTO DTO)
+        {
+            return DAO.isDELELEDVT(DTO);
         }
         public DataTable GETKHACHHANG()
         {

@@ -118,6 +118,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MANH = sma;
+                    Boolean isdeletenhomhang = CTL.isDELETENHOMHANG(DTO);
+                    if (!isdeletenhomhang)
+                    {
+                        MessageBox.Show("Nhóm hàng đang có hàng không thể xóa");
+                        return;
+                    }
                     CTL.DELETENHOMHANG(DTO);
                     loadnhomhang();
                     sma = "";
@@ -133,6 +139,12 @@ namespace WindowsFormsApplication1
                 if (a == DialogResult.Yes)
                 {
                     DTO.MANH = sma;
+                    Boolean isdeletenhomhang = CTL.isDELETENHOMHANG(DTO);
+                    if (!isdeletenhomhang)
+                    {
+                        MessageBox.Show("Group Products not empty you can not delete");
+                        return;
+                    }
                     CTL.DELETENHOMHANG(DTO);
                     loadnhomhang();
                     sma = "";

@@ -120,6 +120,13 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MAKH = sma;
+                    Boolean isdeletekh = ctl.isDELETEKHACHHANG(DTO);
+                    if (!isdeletekh)
+                    {
+                        MessageBox.Show("Khách hàng Có Hóa Đơn bạn không thể xóa");
+                        return;
+                    }
+
                     ctl.DELETEKHACHHANG(DTO);
                     LOADDANHSACHKHACHHANG();
                     sma = "";
@@ -148,6 +155,12 @@ namespace WindowsFormsApplication1
 
 
                     DTO.MAKH = sma;
+                    Boolean isdeletekh = ctl.isDELETEKHACHHANG(DTO);
+                    if (!isdeletekh)
+                    {
+                        MessageBox.Show("Custommer is used you can not delete");
+                        return;
+                    }
                     ctl.DELETEKHACHHANG(DTO);
                     LOADDANHSACHKHACHHANG();
                     sma = "";
