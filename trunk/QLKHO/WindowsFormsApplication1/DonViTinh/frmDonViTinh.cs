@@ -117,6 +117,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MADVT = sma;
+                    Boolean isdeletedvt = CTL.isDELETEDVT(DTO);
+                    if (!isdeletedvt)
+                    {
+                        MessageBox.Show("Đơn vị tính đang được sử dụng cho sản phẩm. bạn không thể xóa");
+                        return;
+                    }
                     CTL.DELETEDVT(DTO);
                     LoadDVT();
                     sma = "";
@@ -134,6 +140,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MADVT = sma;
+                    Boolean isdeletedvt = CTL.isDELETEDVT(DTO);
+                    if (!isdeletedvt)
+                    {
+                        MessageBox.Show("Unit is curent us for product, you cant not delete it");
+                        return;
+                    }
                     CTL.DELETEDVT(DTO);
                     LoadDVT();
                     sma = "";

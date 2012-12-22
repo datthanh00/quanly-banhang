@@ -140,6 +140,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MANV = sma;
+                    Boolean isdeletenv = CTL.isDELETENHANVIEN(DTO);
+                    if (!isdeletenv)
+                    {
+                        MessageBox.Show("Mã nhân viên này đã xuất hóa đơn cho khách, bạn có thể dổi tên nhân viên thay vì xóa");
+                        return;
+                    }
                     CTL.DELETENHANVIEN(DTO);
                     loadnhanvien();
                     sma = "";
@@ -161,6 +167,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MANV = sma;
+                    Boolean isdeletenv = CTL.isDELETENHANVIEN(DTO);
+                    if (!isdeletenv)
+                    {
+                        MessageBox.Show("Employee is used for bill can not delete");
+                        return;
+                    }
                     CTL.DELETENHANVIEN(DTO);
                     loadnhanvien();
                     sma = "";

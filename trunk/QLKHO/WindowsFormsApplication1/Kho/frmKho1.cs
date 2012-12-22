@@ -187,6 +187,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MAKHO = sma;
+                    Boolean isdeletekho = CTL.isDELETEKHO(DTO);
+                    if (!isdeletekho)
+                    {
+                        MessageBox.Show("Kho đang chứa hàng bạn không thể xóa");
+                        return;
+                    }
                     CTL.DELETEKHO(DTO);
                     loadKho();
                     sma = "";
@@ -211,6 +217,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MAKHO = sma;
+                    Boolean isdeletekho = CTL.isDELETEKHO(DTO);
+                    if (!isdeletekho)
+                    {
+                        MessageBox.Show("Posibility is not empty you can not delete");
+                        return;
+                    }
                     CTL.DELETEKHO(DTO);
                     loadKho();
                     sma = "";

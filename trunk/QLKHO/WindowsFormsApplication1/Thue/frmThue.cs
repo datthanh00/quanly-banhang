@@ -121,6 +121,12 @@ namespace WindowsFormsApplication1
                  {
 
                      DTO.MATH = sma;
+                     Boolean isdeletethue = CTL.isDELETETHUE(DTO);
+                     if (!isdeletethue)
+                     {
+                         MessageBox.Show("Đã có sản phẩm sử dụng mã thuế này, bạn không thể xóa");
+                         return;
+                     }
                      CTL.DELETETHUE(DTO);
                      LoadT();
                      sma = "";
@@ -136,6 +142,12 @@ namespace WindowsFormsApplication1
                  {
 
                      DTO.MATH = sma;
+                     Boolean isdeletethue = CTL.isDELETETHUE(DTO);
+                     if (!isdeletethue)
+                     {
+                         MessageBox.Show("Tax Number is used you can not delete");
+                         return;
+                     }
                      CTL.DELETETHUE(DTO);
                      LoadT();
 

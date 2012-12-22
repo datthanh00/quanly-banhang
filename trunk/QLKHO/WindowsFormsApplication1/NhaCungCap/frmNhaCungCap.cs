@@ -189,6 +189,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MANCC = sma;
+                    Boolean isdeletencc = CTL.isDELETENCC(DTO);
+                    if (!isdeletencc)
+                    {
+                        MessageBox.Show("Nhà cung cấp đang có hóa đơn bạn không thể xóa");
+                        return;
+                    }
                     CTL.DELETENCC(DTO);
                     LOADNHACC();
                     sma = "";
@@ -214,6 +220,12 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MANCC = sma;
+                    Boolean isdeletencc = CTL.isDELETENCC(DTO);
+                    if (!isdeletencc)
+                    {
+                        MessageBox.Show("Provider is curent used you can not delete");
+                        return;
+                    }
                     CTL.DELETENCC(DTO);
                     LOADNHACC();
                     sma = "";

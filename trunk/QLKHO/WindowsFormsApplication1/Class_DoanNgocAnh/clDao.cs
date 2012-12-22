@@ -219,7 +219,7 @@ namespace WindowsFormsApplication1
           //  + " NGAYTHANG BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "'";
 
             String SQL = "select t2.ngay,t1.*,t2.tondau,t2.nhap,t2.xuat, t2.tondau+t2.nhap-t2.xuat as toncuoi, t1.giamua*(t2.tondau+t2.nhap-t2.xuat) as tongtien from(select tennhomhang, mamh,tenkho,tenmh, donvitinh, giamua,giaban from "
-            + " mathang, nhomhang, kho, donvitinh where mathang.manh=nhomhang.manh and mathang.madvt=donvitinh.madvt and mathang.makho=kho.makho ) as t1 inner join (select * from tonkho where NGAY BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "') as t2  on t1.mamh=t2.mamh ";
+            + " mathang, nhomhang, kho, donvitinh where mathang.manh=nhomhang.manh and mathang.madvt=donvitinh.madvt and mathang.makho='"+dto.MAKHO+"' ) as t1 inner join (select * from tonkho where NGAY BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "') as t2  on t1.mamh=t2.mamh ";
 
             return getdata(SQL);
         }

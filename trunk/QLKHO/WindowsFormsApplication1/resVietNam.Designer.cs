@@ -592,7 +592,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Tồn Kho.
+        ///   Looks up a localized string similar to Hàng hoá.
         /// </summary>
         internal static string btMatHang {
             get {

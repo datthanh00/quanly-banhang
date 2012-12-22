@@ -168,10 +168,18 @@ namespace WindowsFormsApplication1
             else  if (iNgonNgu == 0)
             {
                 DialogResult a = DevComponents.DotNetBar.MessageBoxEx.Show("Bạn có chắc xóa thông tin khu vực : " + sten + " không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                
                 if (a == DialogResult.Yes)
                 {
 
                     DTO.MAKV = sma;
+                    Boolean isdeletekv = CTL.isDELETEKV(DTO);
+                    if (!isdeletekv)
+                    {
+                        MessageBox.Show("khu vực đang được sử dụng bạn không thể xóa");
+                        return;
+                    }
                     CTL.DELETEKV(DTO);
                     loadkhuvuc();
                     sma = "";
@@ -185,10 +193,18 @@ namespace WindowsFormsApplication1
             else
             {
                 DialogResult a = DevComponents.DotNetBar.MessageBoxEx.Show(" Are You Sure To Delete Infomation about Area :  " + sten + " ???", "Warming", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                
+
                 if (a == DialogResult.Yes)
                 {
 
                     DTO.MAKV = sma;
+                    Boolean isdeletekv = CTL.isDELETEKV(DTO);
+                    if (!isdeletekv)
+                    {
+                        MessageBox.Show("Area is used, you cannot delete");
+                        return;
+                    }
                     CTL.DELETEKV(DTO);
                     loadkhuvuc();
                     sma = "";
