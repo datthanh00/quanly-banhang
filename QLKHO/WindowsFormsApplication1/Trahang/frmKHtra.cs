@@ -13,11 +13,11 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
-namespace WindowsFormsApplication1.HoaDonXuat
+namespace WindowsFormsApplication1.KHtra
 {
-    public partial class frmHoaDonXuat : DevExpress.XtraEditors.XtraForm
+    public partial class frmKHtra : DevExpress.XtraEditors.XtraForm
     {
-        public frmHoaDonXuat()
+        public frmKHtra()
         {
             InitializeComponent();
         }
@@ -92,7 +92,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         public void loadgridCTHOADON(string MHDX)
         {
             DataTable dt = new DataTable();
-            dt = ctlNCC.GETCTHOADONXUAT(MHDX);
+            dt = ctlNCC.GETtraCTHOADONXUAT(MHDX);
             gridControl1.DataSource = dt;
 
         }
@@ -292,10 +292,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
              
             dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
 
-            bool isINSERTHOADONXUAT = ctlNCC.isINSERTHOADONXUAT(dtoNCC.MAHDX);
+            bool isINSERTHOADONXUAT = ctlNCC.isINSERTtraHOADONXUAT(dtoNCC.MAHDX);
             if (isINSERTHOADONXUAT)
             {
-                ctlNCC.INSERTHOADONXUAT(dtoNCC);
+                ctlNCC.INSERTtraHOADONXUAT(dtoNCC);
                 //insert hoa don chi tiet
                 int rowcount = gridCTHOADON.DataRowCount;
                 for (int i = 0; i < rowcount; i++)
@@ -306,9 +306,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
             }
             else
             {
-                ctlNCC.UPDATEHOADONXUAT(dtoNCC);
+                ctlNCC.UPDATEtraHOADONXUAT(dtoNCC);
                 int rowcount = gridCTHOADON.DataRowCount;
-                int maxrowCTHOADONXUAT = ctlNCC.maxrowCTHOADONXUAT(txtMaHD.Text);
+                int maxrowCTHOADONXUAT = ctlNCC.maxrowtraCTHOADONXUAT(txtMaHD.Text);
                 for (int i = 0; i < rowcount; i++)
                 {
                     DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
@@ -326,7 +326,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 {
                     for (int i = rowcount; i < maxrowCTHOADONXUAT; i++)
                     {
-                        ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, i + 1);
+                        ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, i + 1);
                     }
                 }
             }
@@ -351,7 +351,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         private void loadGiaoDich()
         {
             dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
-            gridControl2.DataSource = ctlNCC.GETHOADONXUAT(dtoNCC);
+            gridControl2.DataSource = ctlNCC.GETtraHOADONXUAT(dtoNCC);
         }
         double conlai, thanhtien, tientra;
         private void cbotientra_TextChanged(object sender, EventArgs e)
@@ -370,7 +370,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 dtoNCC.SOLUONGXUAT = SoLuong;
                 dtoNCC.GIATIEN = DonGia;
                 dtoNCC.ID = ID;
-                ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
+                ctlNCC.INSERTtraCTHOADONXUAT(dtoNCC);
       
                 //ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
             }
@@ -387,7 +387,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 dtoNCC.GIATIEN = DonGia;
                 dtoNCC.ID = ID;
                 
-                ctlNCC.UPDATECTHOADONXUAT(dtoNCC);
+                ctlNCC.UPDATEtraCTHOADONXUAT(dtoNCC);
 
                 //ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
             }
@@ -433,7 +433,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         ketnoi connect = new ketnoi();
         public void loadmahdx()
         {
-            txtMaHD.Text = connect.sTuDongDienMaHoaDonXuat(txtMaHD.Text);
+            txtMaHD.Text = connect.sTuDongDienMatraHoaDonXuat(txtMaHD.Text);
         }
 
         private void btDong_Click(object sender, EventArgs e)
@@ -488,14 +488,14 @@ namespace WindowsFormsApplication1.HoaDonXuat
         private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') 'Ngày xuất',T1.MAHDX 'Mã Hóa Đơn',T1.tenkh 'Tên Khách Hàng',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (select t9.*,t8.tenkh from hoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
+            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') 'Ngày xuất',T1.MAHDX 'Mã Hóa Đơn',T1.tenkh 'Tên Khách Hàng',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (select t9.*,t8.tenkh from trahoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
             loadgridPHIEUXUAT(SQL);
         }
 
         private void linkTheoSanPham_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             Load_panel_filter();
-            string SQL = "SELECT DATE_FORMAT(T3.NGAYXUAT,'%d/%m/%Y') 'Ngày Xuất',T3.tenkh 'Tên Khách Hàng',T3.MAHDX 'Mã Hóa Đơn', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGXUAT 'Số Lượng',T3.GIATIEN 'Giá Bán'  FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,t2.tenkh FROM (SELECT * FROM CHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh from hoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh) AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
+            string SQL = "SELECT DATE_FORMAT(T3.NGAYXUAT,'%d/%m/%Y') 'Ngày Xuất',T3.tenkh 'Tên Khách Hàng',T3.MAHDX 'Mã Hóa Đơn', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGXUAT 'Số Lượng',T3.GIATIEN 'Giá Bán'  FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,t2.tenkh FROM (SELECT * FROM traCHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh from trahoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh) AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
             loadgridSANPHAM(SQL);
         }
 
@@ -638,7 +638,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             loadgridCTHOADON(MAHDX);
 
             txtMaHD.Text = MAHDX;
-            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') ,T1.MAHDX ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') ,T1.MAHDX ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM traHOADONXUAT WHERE MAHDX='" + MAHDX + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
             cboNhanVienLap.Text = DT.Rows[0]["MANV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();

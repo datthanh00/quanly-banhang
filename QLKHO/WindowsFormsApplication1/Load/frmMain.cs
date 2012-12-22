@@ -17,6 +17,7 @@ using System.Threading;
 using DevExpress.XtraEditors;
 using WindowsFormsApplication1.HoaDonXuat;
 using System.Diagnostics;
+using WindowsFormsApplication1.KHtra;
 //using DoanCuoi;
 
 
@@ -763,6 +764,32 @@ namespace WindowsFormsApplication1
                     }
 
                 }
+                if (item.Name == "TraNCC")
+                {
+                    if (iNgonNgu == 0)
+                    {
+                        item.Text = "Trả hàng cho nhà cung cấp";
+                    }
+                    else
+                    {
+                        item.Text = "rerun product in company  ";
+
+                    }
+
+                }
+                if (item.Name == "KHtra")
+                {
+                    if (iNgonNgu == 0)
+                    {
+                        item.Text = "Khách hàng trả lại hàng";
+                    }
+                    else
+                    {
+                        item.Text = "Customner return product";
+
+                    }
+
+                }
                 //item.
             }
             //tabControl1.Text = sTieuDe;
@@ -1495,6 +1522,75 @@ namespace WindowsFormsApplication1
         {
             frmLienHe frm = new frmLienHe();
             frm.ShowDialog();
+        }
+
+        private void BTTraNCC_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            //bKTraMoTab = true;
+            sTieuDe = "";
+            if (iNgonNgu == 0)
+            {
+                sTieuDe = "Trả NCC";
+            }
+            if (iNgonNgu == 1)
+            {
+                sTieuDe = "rerun product in company  ";
+
+            }
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "TraNCC";
+                frmTraNCC dt = new frmTraNCC();
+                dt.deDongTab = new frmTraNCC._deDongTab(vDOngTab);
+                dt.frm = this;
+
+                dt.sMaNV = sManv;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
+        }
+
+        private void BTKHtra_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            //  bKTraMoTab = true;
+            sTieuDe = "";
+            if (iNgonNgu == 0)
+            {
+                sTieuDe = "KH trả hàng";
+            }
+            if (iNgonNgu == 1)
+            {
+                sTieuDe = "rerun product in company";
+
+            }
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "KHtra";
+                frmKHtra dt = new frmKHtra();
+                dt.deDongTab = new frmKHtra._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.sMaNV = sManv;
+                dt.sTenNV = sTennv;
+                dt.iNgonNgu = iNgonNgu;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
         }
 
     }
