@@ -39,14 +39,14 @@ namespace WindowsFormsApplication1
         }
         public DataTable getthekho(Class_DTO_ThongKe dto)
         {
-            String SQL = "SELECT * FROM(select t1.mamh,t2.mhd , t1.tenmh , t1.donvitinh , t1.tenkho ,t2.ngaythang , t2.tennv , t2.soluongnhap ,'' as soluongxuat , t2.loai from"
+            String SQL = "SELECT * FROM(select t1.mamh,t2.mhd , t1.tenmh , t1.donvitinh , t1.tenkho ,t2.ngaythang , t2.tennv , t2.nhap ,'' as xuat , t2.loai from"
             +" (select mathang.mamh, tenmh , donvitinh, tenkho  from mathang, donvitinh, kho where mathang.madvt=donvitinh.madvt and  mathang.makho=kho.makho) as t1"
-            +" Inner JOIN(select MAMH,hoadonnhap.mahdn as mhd,ngaynhap as ngaythang, tennv, soluongnhap as soluong, 'Nhập kho' as loai"
+            +" Inner JOIN(select MAMH,hoadonnhap.mahdn as mhd,ngaynhap as ngaythang, tennv, nhap as soluong, 'Nhập kho' as loai"
             +" from chitiethdn,hoadonnhap, nhanvien where chitiethdn.MAHDN=hoadonnhap.MAHDN and hoadonnhap.manv = nhanvien.manv) as t2 ON t1.mamh =t2.mamh ) as t5"
             +" UNION ALL"
-            + " (select t3.mamh ,t4.mhd , t3.tenmh , t3.donvitinh , t3.tenkho ,t4.ngaythang , t4.tennv ,'' as soluongnhap , t4.soluongxuat , t4.loai from"
+            + " (select t3.mamh ,t4.mhd , t3.tenmh , t3.donvitinh , t3.tenkho ,t4.ngaythang , t4.tennv ,'' as nhap , t4.xuat , t4.loai from"
             +" (select mathang.mamh, tenmh , donvitinh, tenkho  from mathang, donvitinh, kho where mathang.madvt=donvitinh.madvt and  mathang.makho=kho.makho) as t3"
-            +" Inner JOIN(select MAMH,hoadonxuat.mahdx as mhd,ngayxuat as ngaythang, tennv, soluongxuat as soluong, 'Xuấtkho' as 'loai'"
+            +" Inner JOIN(select MAMH,hoadonxuat.mahdx as mhd,ngayxuat as ngaythang, tennv, xuat as soluong, 'Xuấtkho' as 'loai'"
             +" from chitiethdx,hoadonxuat, nhanvien where chitiethdx.MAHDX=hoadonxuat.MAHDX and hoadonxuat.manv = nhanvien.manv) as t4 ON t3.mamh =t4.mamh)";
             return getdata(SQL);
         }
@@ -69,9 +69,9 @@ namespace WindowsFormsApplication1
             //sqlpa.Add(new MySqlParameter("@NGAYTHANGTU", dto.NGAYBDKHO));
             //sqlpa.Add(new MySqlParameter("@NGAYTHANGDEN", dto.NGAYKTKHO));
             //return executeNonQuerya("BAOCAOTHEOKHO_getall", sqlpa);
-            String SQL = "select SOLUONGMH,GIABAN,((GIABAN*SOLUONGTON) + (SOTHUE * SOLUONGTON * GIABAN)div 100) as thanhtienban, THUE.MATH,SOTHUE,TENNHOMHANG,TENMH,SOLUONGTON,MATHANG.MAKHO,TENKHO,DONVITINH,NGAYTHANG,SOLUONGDAU,GIAMUA*SOLUONGDAU AS TONGTIENDAU,SOLUONGNHAP,SOLUONGNHAP*GIAMUA AS TONGTIENNHAP,SOLUONGXUAT,SOLUONGXUAT*GIABAN AS TONGTIENXUAT,SOLUONGTON,SOLUONGTON*GIAMUA AS TONGTIENTON FROM TONKHO,MATHANG,DONVITINH,NHOMHANG,KHO,THUE "
+            String SQL = "select SOLUONGMH,GIABAN,((GIABAN*(tondau+nhap-xuat)) + (SOTHUE * (tondau+nhap-xuat) * GIABAN)div 100) as thanhtienban, THUE.MATH,SOTHUE,TENNHOMHANG,TENMH,tondau+nhap-xuat as SOLUONGTON,MATHANG.MAKHO,TENKHO,DONVITINH,NGAY,tondau,GIAMUA*tondau AS TONGTIENDAU,nhap,nhap*GIAMUA AS TONGTIENNHAP,xuat,xuat*GIABAN AS TONGTIENXUAT,tondau+nhap-xuat as SOLUONGTON,(tondau+nhap-xuat)*GIAMUA AS TONGTIENTON FROM TONKHO,MATHANG,DONVITINH,NHOMHANG,KHO,THUE "
             + " WHERE  MATHANG.MANH=NHOMHANG.MANH AND DONVITINH.MADVT=MATHANG.MADVT AND MATHANG.MAMH=TONKHO.MAMH AND MATHANG.MAKHO=KHO.MAKHO  AND THUE.MATH = MATHANG.MATH AND"
-            + "  NGAYTHANG BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "'";
+            + "  NGAY BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "'";
             return getdata(SQL);
         }
     //---------------------------------------------
