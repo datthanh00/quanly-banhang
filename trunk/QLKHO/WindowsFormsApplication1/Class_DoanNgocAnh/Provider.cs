@@ -170,6 +170,25 @@ namespace WindowsFormsApplication1
             cmd.ExecuteNonQuery();
             disconnect();
         }
+        public void executereader(string sql)
+        {
+            connect();
+            cmd = new MySqlCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            disconnect();
+
+            cmd = new MySqlCommand(sql, con);
+
+            MySqlDataReader DR = cmd.ExecuteReader();
+            while (DR.Read())
+            {
+                Console.WriteLine(DR.GetString(0)); 
+            }
+            DR.Close();
+            disconnect();
+
+        }
+
     }
     
 }

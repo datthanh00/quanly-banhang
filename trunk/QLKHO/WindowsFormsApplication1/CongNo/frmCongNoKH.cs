@@ -211,7 +211,7 @@ namespace WindowsFormsApplication1
             colMãphiếuthu.Caption = Tien_VN.colMãphiếuthu.ToString();
             colMãhóađơnxuất1.Caption = Tien_VN.colMãhóađơnxuất1.ToString();
             colTiềnđãtrả1.Caption = Tien_VN.colTiềnđãtrả1.ToString();
-            colTênnhânviên.Caption = Tien_VN.colTênnhanvien.ToString();
+            colTênnhânviên.Caption = Tien_VN.colTennhanvien.ToString();
             colNgàythu.Caption = Tien_VN.colNgàythu.ToString();
             groupControl_congno.Text = Tien_VN.groupControl1.ToString();
             groupControl_phieuthu.Text = Tien_VN.groupControl2.ToString();

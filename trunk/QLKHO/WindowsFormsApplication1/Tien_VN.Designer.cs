@@ -234,6 +234,15 @@ namespace WindowsFormsApplication1 {
         /// <summary>
         ///   Looks up a localized string similar to Tên Nhân viên.
         /// </summary>
+        internal static string colTennhanvien {
+            get {
+                return ResourceManager.GetString("colTennhanvien", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tên Nhân viên.
+        /// </summary>
         internal static string colTênnhanvien {
             get {
                 return ResourceManager.GetString("colTênnhanvien", resourceCulture);

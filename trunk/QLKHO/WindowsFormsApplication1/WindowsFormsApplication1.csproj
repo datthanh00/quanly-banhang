@@ -761,6 +761,18 @@
       <LastGenOutput>Tien_VN.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Trahang\frmKHtra.resx">
+      <DependentUpon>frmKHtra.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trahang\frmTraNCC.resx">
+      <DependentUpon>frmTraNCC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trahang\Inkhtra.resx">
+      <DependentUpon>Inkhtra.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -813,6 +825,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Tien_VN.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Trahang\frmKHtra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trahang\frmKHtra.designer.cs">
+      <DependentUpon>frmKHtra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trahang\frmTraNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trahang\frmTraNCC.designer.cs">
+      <DependentUpon>frmTraNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trahang\Inkhtra.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Trahang\Inkhtra.designer.cs">
+      <DependentUpon>Inkhtra.cs</DependentUpon>
     </Compile>
     <Compile Include="XUAT_NHAPTONTTCT.Designer.cs">
       <AutoGen>True</AutoGen>

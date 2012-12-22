@@ -84,6 +84,8 @@
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.btmathangthongkhe = new DevExpress.XtraBars.BarButtonItem();
             this.btThue = new DevExpress.XtraBars.BarButtonItem();
+            this.BTTraNCC = new DevExpress.XtraBars.BarButtonItem();
+            this.BTKHtra = new DevExpress.XtraBars.BarButtonItem();
             this.ribDanhMuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribDoiTac = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribKhoHang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -118,8 +120,6 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.iPaintStyle = new DevExpress.XtraBars.BarSubItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeZone1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWeekOfMonth1)).BeginInit();
@@ -190,8 +190,8 @@
             this.barSubItem1,
             this.btmathangthongkhe,
             this.btThue,
-            this.barButtonItem1,
-            this.barButtonItem2});
+            this.BTTraNCC,
+            this.BTKHtra});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.MaxItemId = 108;
             this.ribbon.Name = "ribbon";
@@ -620,6 +620,22 @@
             this.btThue.Name = "btThue";
             this.btThue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btThue_ItemClick);
             // 
+            // BTTraNCC
+            // 
+            this.BTTraNCC.Caption = "Trả Hàng CTY";
+            this.BTTraNCC.Id = 106;
+            this.BTTraNCC.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
+            this.BTTraNCC.Name = "BTTraNCC";
+            this.BTTraNCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTTraNCC_ItemClick);
+            // 
+            // BTKHtra
+            // 
+            this.BTKHtra.Caption = "Khách Trả Hàng";
+            this.BTKHtra.Id = 107;
+            this.BTKHtra.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
+            this.BTKHtra.Name = "BTKHtra";
+            this.BTKHtra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTKHtra_ItemClick);
+            // 
             // ribDanhMuc
             // 
             this.ribDanhMuc.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -671,8 +687,8 @@
             this.ribQLHangHoa.ItemLinks.Add(this.btNhapHang);
             this.ribQLHangHoa.ItemLinks.Add(this.btXuatHang);
             this.ribQLHangHoa.ItemLinks.Add(this.btmathangthongkhe);
-            this.ribQLHangHoa.ItemLinks.Add(this.barButtonItem1);
-            this.ribQLHangHoa.ItemLinks.Add(this.barButtonItem2);
+            this.ribQLHangHoa.ItemLinks.Add(this.BTTraNCC);
+            this.ribQLHangHoa.ItemLinks.Add(this.BTKHtra);
             this.ribQLHangHoa.Name = "ribQLHangHoa";
             this.ribQLHangHoa.ShowCaptionButton = false;
             this.ribQLHangHoa.Text = "Quản Lý Hàng Hóa";
@@ -911,20 +927,6 @@
             this.iPaintStyle.ImageIndex = 26;
             this.iPaintStyle.Name = "iPaintStyle";
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Trả Hàng CTY";
-            this.barButtonItem1.Id = 106;
-            this.barButtonItem1.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "Khách Trả Hàng";
-            this.barButtonItem2.Id = 107;
-            this.barButtonItem2.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1041,7 +1043,7 @@
         private DevExpress.XtraBars.BarSubItem iPaintStyle;
         private DevExpress.XtraBars.BarButtonItem btmathangthongkhe;
         private DevExpress.XtraBars.BarButtonItem btThue;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem BTTraNCC;
+        private DevExpress.XtraBars.BarButtonItem BTKHtra;
     }
 }

@@ -74,11 +74,11 @@ namespace WindowsFormsApplication1
             colDonViTInh.Caption = resVietNam.colDonViTInh.ToString();
             colHangHoa.Caption = resVietNam.colHangHoa.ToString();
             colSLDau.Caption = resVietNam.SoLuong.ToString();
-            colThanhTienDau.Caption = resVietNam.TongCong.ToString();
+            //colThanhTienDau.Caption = resVietNam.TongCong.ToString();
             colSLNhap.Caption = resVietNam.SoLuong.ToString();
-            colThanhTienNhap.Caption = resVietNam.TongCong.ToString();
+            //colThanhTienNhap.Caption = resVietNam.TongCong.ToString();
             colSLXuat.Caption = resVietNam.SoLuong.ToString();
-            colThanhTienXuat.Caption = resVietNam.TongCong.ToString();
+            //colThanhTienXuat.Caption = resVietNam.TongCong.ToString();
             colSLTOn.Caption = resVietNam.SoLuong.ToString();
             colThanhTienTOn.Caption = resVietNam.TongCong.ToString();
             gridThongTin.Caption = resVietNam.gridThongTin.ToString();
@@ -108,11 +108,11 @@ namespace WindowsFormsApplication1
             colDonViTInh.Caption = resEngLand.colDonViTInh.ToString();
             colHangHoa.Caption = resEngLand.colHangHoa.ToString();
             colSLDau.Caption = resEngLand.SoLuong.ToString();
-            colThanhTienDau.Caption = resEngLand.TongCong.ToString();
+            //colThanhTienDau.Caption = resEngLand.TongCong.ToString();
             colSLNhap.Caption = resEngLand.SoLuong.ToString();
-            colThanhTienNhap.Caption = resEngLand.TongCong.ToString();
+            //colThanhTienNhap.Caption = resEngLand.TongCong.ToString();
             colSLXuat.Caption = resEngLand.SoLuong.ToString();
-            colThanhTienXuat.Caption = resEngLand.TongCong.ToString();
+            //colThanhTienXuat.Caption = resEngLand.TongCong.ToString();
             colSLTOn.Caption = resEngLand.SoLuong.ToString();
             colThanhTienTOn.Caption = resEngLand.TongCong.ToString();
             gridThongTin.Caption = resEngLand.gridThongTin.ToString();
@@ -146,8 +146,15 @@ namespace WindowsFormsApplication1
         {
             
             dto.MAKHO = gView.GetFocusedRowCellValue("MAKHO").ToString();
-            dto.NGAYBDKHO = dateTu.Text;
-            dto.NGAYKTKHO = dateDen.Text;
+            
+
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dto.NGAYBDKHO = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dto.NGAYKTKHO = NGAYKT;
         
             gridControl2.MainView = advBandedGridView3;
             gridControl2.DataSource = ctr.getTonKho(dto);
@@ -170,6 +177,7 @@ namespace WindowsFormsApplication1
         {
             cbThoiGian.Properties.Items.Clear();
             cbThoiGian.Properties.Items.Add("Today");
+            cbThoiGian.Properties.Items.Add("This Month");
             cbThoiGian.Properties.Items.Add("This Year");
             cbThoiGian.Properties.Items.Add("Jannuary");
             cbThoiGian.Properties.Items.Add("February");
@@ -187,8 +195,8 @@ namespace WindowsFormsApplication1
         }
         public void loadcbVietNam()
         {
-            cbThoiGian.Properties.Items.Clear();
-            cbThoiGian.Properties.Items.Add("Ngày nay");
+            cbThoiGian.Properties.Items.Add("Hôm nay");
+            cbThoiGian.Properties.Items.Add("Tháng này");
             cbThoiGian.Properties.Items.Add("Năm này");
             cbThoiGian.Properties.Items.Add("Tháng 1");
             cbThoiGian.Properties.Items.Add("Tháng 2");
@@ -212,91 +220,108 @@ namespace WindowsFormsApplication1
 
                 case 0:
                     {
-                        dateDen.Text = DateTime.Now.ToShortDateString();
-                        dateTu.Text = DateTime.Now.ToShortDateString();
+                        dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
+                        dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
+
                         break;
                     }
                 case 1:
                     {
-                        dateDen.Text = "12/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "01/01/"+DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/" + DateTime.Now.ToString("MM/yyy");
+                        dateTu.Text = "01/" + DateTime.Now.ToString("MM/yyy");
+
                         break;
                     }
                 case 2:
                     {
-                        dateDen.Text = "01/31/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
                         dateTu.Text = "01/01/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 3:
                     {
-                        dateDen.Text = "02/28/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "02/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/01/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/01/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 4:
                     {
-                        dateDen.Text = "03/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "03/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "28/02/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/02/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 5:
                     {
-                        dateDen.Text = "04/30/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "04/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/03/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/03/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 6:
                     {
-                        dateDen.Text = "05/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "05/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "30/04/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/04/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 7:
                     {
-                        dateDen.Text = "06/30/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "06/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/05/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/05/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 8:
                     {
-                        dateDen.Text = "07/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "07/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "30/06/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/06/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 9:
                     {
-                        dateDen.Text = "08/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "08/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/07/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/07/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 10:
                     {
-                        dateDen.Text = "09/30/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "09/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/08/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/08/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 11:
                     {
-                        dateDen.Text = "10/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "10/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "30/09/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/09/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 12:
                     {
-                        dateDen.Text = "11/30/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "11/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "31/10/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/10/" + DateTime.Now.Year.ToString();
                         break;
                     }
                 case 13:
                     {
-                        dateDen.Text = "12/31/" + DateTime.Now.Year.ToString();
-                        dateTu.Text = "12/01/" + DateTime.Now.Year.ToString();
+                        dateDen.Text = "30/11/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/11/" + DateTime.Now.Year.ToString();
                         break;
                     }
-               
+                case 14:
+                    {
+                        dateDen.Text = "31/12/" + DateTime.Now.Year.ToString();
+                        dateTu.Text = "01/12/" + DateTime.Now.Year.ToString();
+                        break;
+                    }
+                case 15:
+                    {
+
+                        dateDen.Text = DateTime.Now.ToString("yyy/MM/dd");
+
+                        dateTu.Text = DateTime.Now.ToString("yyy/MM/dd");
+
+                        break;
+                    }
+
             }
-           
+
         }
         private void gridControl1_Click(object sender, EventArgs e)
         {

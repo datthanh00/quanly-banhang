@@ -59,13 +59,10 @@
             this.colDonViTInh = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridDauKi = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSLDau = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colThanhTienDau = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridNhapKho = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSLNhap = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colThanhTienNhap = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridXuatKho = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSLXuat = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colThanhTienXuat = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridCuoiKi = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSLTOn = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colThanhTienTOn = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -314,11 +311,8 @@
             this.colHangHoa,
             this.colDonViTInh,
             this.colSLDau,
-            this.colThanhTienDau,
             this.colSLNhap,
-            this.colThanhTienNhap,
             this.colSLXuat,
-            this.colThanhTienXuat,
             this.colSLTOn,
             this.colThanhTienTOn});
             this.advBandedGridView3.GridControl = this.gridControl2;
@@ -348,7 +342,7 @@
             // colNhomHang
             // 
             this.colNhomHang.Caption = "Nhóm hàng";
-            this.colNhomHang.FieldName = "TENNHOMHANG";
+            this.colNhomHang.FieldName = "tennhomhang";
             this.colNhomHang.Name = "colNhomHang";
             this.colNhomHang.Visible = true;
             this.colNhomHang.Width = 114;
@@ -356,7 +350,7 @@
             // colNgay
             // 
             this.colNgay.Caption = "Ngày ";
-            this.colNgay.FieldName = "NGAYTHANG";
+            this.colNgay.FieldName = "ngay";
             this.colNgay.Name = "colNgay";
             this.colNgay.Visible = true;
             this.colNgay.Width = 115;
@@ -364,7 +358,7 @@
             // colMa
             // 
             this.colMa.Caption = "Mã";
-            this.colMa.FieldName = "MAMH";
+            this.colMa.FieldName = "mamh";
             this.colMa.Name = "colMa";
             this.colMa.Visible = true;
             this.colMa.Width = 62;
@@ -372,7 +366,7 @@
             // colHangHoa
             // 
             this.colHangHoa.Caption = "Hàng hoá";
-            this.colHangHoa.FieldName = "TENMH";
+            this.colHangHoa.FieldName = "tenmh";
             this.colHangHoa.Name = "colHangHoa";
             this.colHangHoa.Visible = true;
             this.colHangHoa.Width = 96;
@@ -380,7 +374,7 @@
             // colDonViTInh
             // 
             this.colDonViTInh.Caption = "Đơn vị tính";
-            this.colDonViTInh.FieldName = "DONVITINH";
+            this.colDonViTInh.FieldName = "donvitinh";
             this.colDonViTInh.Name = "colDonViTInh";
             this.colDonViTInh.Visible = true;
             this.colDonViTInh.Width = 132;
@@ -391,29 +385,16 @@
             this.gridDauKi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridDauKi.Caption = "Đầu kì";
             this.gridDauKi.Columns.Add(this.colSLDau);
-            this.gridDauKi.Columns.Add(this.colThanhTienDau);
             this.gridDauKi.Name = "gridDauKi";
-            this.gridDauKi.Width = 192;
+            this.gridDauKi.Width = 79;
             // 
             // colSLDau
             // 
             this.colSLDau.Caption = "Số lượng";
-            this.colSLDau.FieldName = "SOLUONGDAU";
+            this.colSLDau.FieldName = "tondau";
             this.colSLDau.Name = "colSLDau";
             this.colSLDau.Visible = true;
             this.colSLDau.Width = 79;
-            // 
-            // colThanhTienDau
-            // 
-            this.colThanhTienDau.Caption = "Thanh tiền";
-            this.colThanhTienDau.DisplayFormat.FormatString = "0,0";
-            this.colThanhTienDau.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colThanhTienDau.FieldName = "TONGTIENDAU";
-            this.colThanhTienDau.Name = "colThanhTienDau";
-            this.colThanhTienDau.SummaryItem.DisplayFormat = "Sum: {0:0,0 vnđ}";
-            this.colThanhTienDau.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            this.colThanhTienDau.Visible = true;
-            this.colThanhTienDau.Width = 113;
             // 
             // gridNhapKho
             // 
@@ -421,29 +402,16 @@
             this.gridNhapKho.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridNhapKho.Caption = "Nhập kho";
             this.gridNhapKho.Columns.Add(this.colSLNhap);
-            this.gridNhapKho.Columns.Add(this.colThanhTienNhap);
             this.gridNhapKho.Name = "gridNhapKho";
-            this.gridNhapKho.Width = 186;
+            this.gridNhapKho.Width = 62;
             // 
             // colSLNhap
             // 
             this.colSLNhap.Caption = "Số lượng";
-            this.colSLNhap.FieldName = "SOLUONGNHAP";
+            this.colSLNhap.FieldName = "nhap";
             this.colSLNhap.Name = "colSLNhap";
             this.colSLNhap.Visible = true;
             this.colSLNhap.Width = 62;
-            // 
-            // colThanhTienNhap
-            // 
-            this.colThanhTienNhap.Caption = "Thành tiền";
-            this.colThanhTienNhap.DisplayFormat.FormatString = "0,0";
-            this.colThanhTienNhap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colThanhTienNhap.FieldName = "TONGTIENNHAP";
-            this.colThanhTienNhap.Name = "colThanhTienNhap";
-            this.colThanhTienNhap.SummaryItem.DisplayFormat = "Sum: {0:0,0 vnđ}";
-            this.colThanhTienNhap.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            this.colThanhTienNhap.Visible = true;
-            this.colThanhTienNhap.Width = 124;
             // 
             // gridXuatKho
             // 
@@ -451,29 +419,16 @@
             this.gridXuatKho.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridXuatKho.Caption = "Xuất kho";
             this.gridXuatKho.Columns.Add(this.colSLXuat);
-            this.gridXuatKho.Columns.Add(this.colThanhTienXuat);
             this.gridXuatKho.Name = "gridXuatKho";
-            this.gridXuatKho.Width = 205;
+            this.gridXuatKho.Width = 68;
             // 
             // colSLXuat
             // 
             this.colSLXuat.Caption = "Số lượng";
-            this.colSLXuat.FieldName = "SOLUONGXUAT";
+            this.colSLXuat.FieldName = "xuat";
             this.colSLXuat.Name = "colSLXuat";
             this.colSLXuat.Visible = true;
             this.colSLXuat.Width = 68;
-            // 
-            // colThanhTienXuat
-            // 
-            this.colThanhTienXuat.Caption = "Thành tiền";
-            this.colThanhTienXuat.DisplayFormat.FormatString = "0,0";
-            this.colThanhTienXuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colThanhTienXuat.FieldName = "TONGTIENXUAT";
-            this.colThanhTienXuat.Name = "colThanhTienXuat";
-            this.colThanhTienXuat.SummaryItem.DisplayFormat = "Sum: {0:0,0 vnđ}";
-            this.colThanhTienXuat.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            this.colThanhTienXuat.Visible = true;
-            this.colThanhTienXuat.Width = 137;
             // 
             // gridCuoiKi
             // 
@@ -488,7 +443,7 @@
             // colSLTOn
             // 
             this.colSLTOn.Caption = "Số lượng";
-            this.colSLTOn.FieldName = "SOLUONGTON";
+            this.colSLTOn.FieldName = "toncuoi";
             this.colSLTOn.Name = "colSLTOn";
             this.colSLTOn.Visible = true;
             this.colSLTOn.Width = 61;
@@ -498,9 +453,10 @@
             this.colThanhTienTOn.Caption = "Thành tiền";
             this.colThanhTienTOn.DisplayFormat.FormatString = "0,0";
             this.colThanhTienTOn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colThanhTienTOn.FieldName = "TONGTIENTON";
+            this.colThanhTienTOn.FieldName = "tongtien";
             this.colThanhTienTOn.Name = "colThanhTienTOn";
             this.colThanhTienTOn.SummaryItem.DisplayFormat = "Sum: {0:0,0 vnđ}";
+            this.colThanhTienTOn.SummaryItem.FieldName = "TONGTIENTON";
             this.colThanhTienTOn.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colThanhTienTOn.Visible = true;
             this.colThanhTienTOn.Width = 147;
@@ -599,11 +555,8 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHangHoa;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colDonViTInh;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLDau;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colThanhTienDau;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLNhap;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colThanhTienNhap;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLXuat;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colThanhTienXuat;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLTOn;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colThanhTienTOn;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridThongTin;
