@@ -915,10 +915,19 @@ namespace WindowsFormsApplication1
             string  SQL = "INSERT INTO CHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,GIANHAP,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.GIANHAP + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 
+            SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
+            DataTable dt = getdata(SQL);
+            int tondau = 0;
+
+            if (dt.Rows.Count > 0)
+            {
+                tondau = Convert.ToInt32(dt.Rows[0][0].ToString());
+            }
+
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =" + dto.SOLUONGNHAP.ToString() + " + SOLUONGMH WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
-            INSERT_TONKHO(dto.ID.ToString(),dto.MAHDN, dto.MAMH,"GETDATE()", dto.SOLUONGNHAP.ToString(),"0");
+            INSERT_TONKHO(dto.ID.ToString(),dto.MAHDN, dto.MAMH,"GETDATE()",tondau, dto.SOLUONGNHAP.ToString(),"0");
         }
 
 
@@ -928,27 +937,29 @@ namespace WindowsFormsApplication1
             String SQL = "INSERT INTO traCHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,GIANHAP,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.GIANHAP + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 
-            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + dto.SOLUONGNHAP.ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
-            executeNonQuery(SQL);
-
-            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDN, dto.MAMH, "GETDATE()", dto.SOLUONGNHAP.ToString(), "0");
-        
-        }
-
-        public void INSERT_TONKHO(string ID,string MAHD, string MAMH,string NGAY, string NHAP, string XUAT)
-        {
-            string SQL = "SELECT TONCUOI FROM TONKHO WHERE STT =  (SELECT MAX(STT) FROM TONKHO WHERE MAMH='" + MAMH + "')";
+            SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
             DataTable dt = getdata(SQL);
             int tondau = 0;
-            
+
             if (dt.Rows.Count > 0)
             {
                 tondau = Convert.ToInt32(dt.Rows[0][0].ToString());
             }
-            int toncuoi = tondau + Convert.ToInt32(NHAP) - Convert.ToInt32(XUAT);
+
+            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + dto.SOLUONGNHAP.ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
+            executeNonQuery(SQL);
+
+            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDN, dto.MAMH, "GETDATE()",tondau, dto.SOLUONGNHAP.ToString(), "0");
+        
+        }
+
+        public void INSERT_TONKHO(string ID,string MAHD, string MAMH,string NGAY,int TONDAU, string NHAP, string XUAT)
+        {
             
-            SQL = "INSERT TONKHO(ID,MAHD,MAMH,NGAY,TONDAU,NHAP,XUAT,TONCUOI)"
-                  + " VALUES ('" + ID + "','" + MAHD + "','" + MAMH + "','" + NGAY + "', " + tondau.ToString() + "," + NHAP + "," + XUAT + "," + toncuoi.ToString() + ")";
+            int toncuoi = TONDAU + Convert.ToInt32(NHAP) - Convert.ToInt32(XUAT);
+            
+           string SQL = "INSERT TONKHO(ID,MAHD,MAMH,NGAY,TONDAU,NHAP,XUAT,TONCUOI)"
+                  + " VALUES ('" + ID + "','" + MAHD + "','" + MAMH + "','" + NGAY + "', " + TONDAU.ToString() + "," + NHAP + "," + XUAT + "," + toncuoi.ToString() + ")";
                 executeNonQuery(SQL);
             
         }
@@ -1219,12 +1230,22 @@ namespace WindowsFormsApplication1
             SQL = "INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,SOLUONGXUAT,GIATIEN,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "'," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 
+            SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
+            dt = getdata(SQL);
+            int tondau = 0;
+
+            if (dt.Rows.Count > 0)
+            {
+                tondau = Convert.ToInt32(dt.Rows[0][0].ToString());
+            }
+            
+
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH-" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
 
 
-            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, "GETDATE()", "0", dto.SOLUONGXUAT.ToString());
+            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, "GETDATE()",tondau, "0", dto.SOLUONGXUAT.ToString());
         
         
         }
@@ -1253,11 +1274,21 @@ namespace WindowsFormsApplication1
             SQL = "INSERT INTO traCHITIETHDX (ID, MAHDX, MAMH,SOLUONGXUAT,GIATIEN,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "'," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 
+            SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + MAMH + "'";
+            dt = getdata(SQL);
+            int tondau = 0;
+
+            if (dt.Rows.Count > 0)
+            {
+                tondau = Convert.ToInt32(dt.Rows[0][0].ToString());
+            }
+   
+
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH+" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
 
-            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, "GETDATE()", "0", dto.SOLUONGXUAT.ToString());
+            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, "GETDATE()",tondau, "0", dto.SOLUONGXUAT.ToString());
         
 
         }

@@ -12,6 +12,14 @@ namespace WindowsFormsApplication1
             set { _ID = value; }
         }
 
+        private int _TONDAU;
+
+        public int TONDAU
+        {
+            get { return _TONDAU; }
+            set { _TONDAU = value; }
+        }
+
         private string _MAKH;
 
         public string MAKH
