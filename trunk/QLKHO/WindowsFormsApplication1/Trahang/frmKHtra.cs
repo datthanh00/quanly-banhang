@@ -372,7 +372,7 @@ namespace WindowsFormsApplication1.KHtra
                 string SQL = "SELECT MAX(ID) FROM traCHITIETHDX WHERE MAHDX='" + mahdx + "'";
                 DataTable dt = ctlNCC.GETDATA(SQL);
                 dtoNCC.ID = 0;
-                if (dt.Rows.Count > 0)
+                if (dt.Rows[0][0].ToString() != "")
                 {
                     dtoNCC.ID = Convert.ToInt32(dt.Rows[0][0].ToString()) + 1;
                 }

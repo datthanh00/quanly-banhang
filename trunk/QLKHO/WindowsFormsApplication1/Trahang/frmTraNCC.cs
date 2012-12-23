@@ -426,7 +426,7 @@ namespace WindowsFormsApplication1
                 string SQL = "SELECT MAX(ID) FROM traCHITIETHDN WHERE MAHDN='" + mahdn + "'";
                 DataTable DT = ctlNCC.GETDATA(SQL);
                 dtoNCC.ID = 0;
-                if (dt.Rows.Count > 0)
+                if (dt.Rows[0][0].ToString() != "")
                 {
                     dtoNCC.ID = Convert.ToInt32(dt.Rows[0][0].ToString()) + 1;
                 }
