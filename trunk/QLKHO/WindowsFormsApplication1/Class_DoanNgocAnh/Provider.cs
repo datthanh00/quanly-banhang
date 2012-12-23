@@ -64,7 +64,7 @@ namespace WindowsFormsApplication1
         }
         public void ChayProc(String spName, List<MySqlParameter> sqlParams)
         {
-        tt:
+        
             try
             {
                 connect();

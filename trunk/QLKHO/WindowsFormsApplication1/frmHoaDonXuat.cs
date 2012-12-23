@@ -301,7 +301,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 for (int i = 0; i < rowcount; i++)
                 {
                     DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
-                    insert_HoadonChitietxuat(txtMaHD.Text,i+1, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
+                    insert_HoadonChitietxuat(txtMaHD.Text, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
                 }
             }
             else
@@ -318,7 +318,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     }
                     else
                     {
-                        insert_HoadonChitietxuat(txtMaHD.Text,i+1, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
+                        insert_HoadonChitietxuat(txtMaHD.Text, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
                     }
                 }
 
@@ -361,7 +361,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             conlai = thanhtien - tientra;
             txtconLai.Text = conlai.ToString();
         }
-        public void insert_HoadonChitietxuat(string mahdx,int ID, String mamh, int SoLuong, int DonGia)
+        public void insert_HoadonChitietxuat(string mahdx, String mamh, int SoLuong, int DonGia)
         {
             try
             {
@@ -371,12 +371,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 dtoNCC.GIATIEN = DonGia;
                 string SQL = "SELECT MAX(ID) FROM CHITIETHDX WHERE MAHDX='" + mahdx + "'";
                 DataTable dt = ctlNCC.GETDATA(SQL);
-                dtoNCC.ID = 0;
+                dtoNCC.ID = 1;
                 if (dt.Rows[0][0].ToString()!="")
                 {
                     dtoNCC.ID = Convert.ToInt32(dt.Rows[0][0].ToString()) + 1;
                 }
-                dtoNCC.ID = ID;
+           
                 ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
       
                 //ctlNCC.INSERTCTHOADONXUAT(dtoNCC);

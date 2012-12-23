@@ -927,7 +927,11 @@ namespace WindowsFormsApplication1
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =" + dto.SOLUONGNHAP.ToString() + " + SOLUONGMH WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
-            INSERT_TONKHO(dto.ID.ToString(),dto.MAHDN, dto.MAMH,"GETDATE()",tondau, dto.SOLUONGNHAP.ToString(),"0");
+            SQL = "SELECT DATE_FORMAT(NGAYNHAP,'%Y/%m/%d') FROM HOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
+            DataTable dt = getdata(SQL);
+            string ngay = dt.Rows[0][0].ToString();
+
+            INSERT_TONKHO(dto.ID.ToString(),dto.MAHDN, dto.MAMH,ngay,tondau, dto.SOLUONGNHAP.ToString(),"0");
         }
 
 
@@ -949,7 +953,11 @@ namespace WindowsFormsApplication1
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + dto.SOLUONGNHAP.ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
-            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDN, dto.MAMH, "GETDATE()",tondau, dto.SOLUONGNHAP.ToString(), "0");
+            SQL = "SELECT DATE_FORMAT(NGAYNHAP,'%Y/%m/%d') FROM traHOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
+            DataTable dt = getdata(SQL);
+            string ngay = dt.Rows[0][0].ToString();
+
+            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDN, dto.MAMH, ngay,tondau, dto.SOLUONGNHAP.ToString(), "0");
         
         }
 
@@ -977,11 +985,11 @@ namespace WindowsFormsApplication1
                 SUAXUAT = (Convert.ToInt32(XUAT)- Convert.ToInt32(dt.Rows[0]["xuat"].ToString())).ToString();
             }
 
-            SQL = "UPDATE TONKHO SET  NHAP=" + NHAP + ",XUAT=" + XUAT + "  WHERE STT='" + STT+ "' ";
+            SQL = "UPDATE TONKHO SET  toncuoi=toncuoi+" + SUANHAP + "-" + SUAXUAT + " ,NHAP=" + NHAP + ",XUAT=" + XUAT + "  WHERE STT='" + STT + "' ";
             executeNonQuery(SQL);
 
 
-            SQL = "UPDATE TONKHO SET  tondau=tondau+" + SUANHAP + "-" + SUAXUAT + ",  toncuoi=tondau+" + SUANHAP + "-" + SUAXUAT + "  WHERE STT>" + STT + " and MAMH='" + MAMH + "'";
+            SQL = "UPDATE TONKHO SET  tondau=tondau+" + SUANHAP + "-" + SUAXUAT + ",  toncuoi=toncuoi+" + SUANHAP + "-" + SUAXUAT + "  WHERE STT>" + STT + " and MAMH='" + MAMH + "'";
             executeNonQuery(SQL);
         }
 
@@ -1225,6 +1233,7 @@ namespace WindowsFormsApplication1
                 System.Windows.Forms.MessageBox.Show("Chưa có mã hàng này");
                 return;
             }
+            
 
 
             SQL = "INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,SOLUONGXUAT,GIATIEN,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "'," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "')";
@@ -1243,9 +1252,11 @@ namespace WindowsFormsApplication1
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH-" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
+            SQL = "SELECT DATE_FORMAT(NGAYNHAP,'%Y/%m/%d') FROM HOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
+            DataTable dt = getdata(SQL);
+            string ngay = dt.Rows[0][0].ToString();
 
-
-            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, "GETDATE()",tondau, "0", dto.SOLUONGXUAT.ToString());
+            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, ngay,tondau, "0", dto.SOLUONGXUAT.ToString());
         
         
         }
@@ -1274,7 +1285,7 @@ namespace WindowsFormsApplication1
             SQL = "INSERT INTO traCHITIETHDX (ID, MAHDX, MAMH,SOLUONGXUAT,GIATIEN,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "'," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 
-            SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + MAMH + "'";
+            SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
             dt = getdata(SQL);
             int tondau = 0;
 
@@ -1287,8 +1298,12 @@ namespace WindowsFormsApplication1
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH+" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
+            SQL = "SELECT DATE_FORMAT(NGAYNHAP,'%Y/%m/%d') FROM traHOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
+            DataTable dt = getdata(SQL);
+            string ngay = dt.Rows[0][0].ToString();
 
-            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, "GETDATE()",tondau, "0", dto.SOLUONGXUAT.ToString());
+
+            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, ngay ,tondau, "0", dto.SOLUONGXUAT.ToString());
         
 
         }
@@ -1352,7 +1367,7 @@ namespace WindowsFormsApplication1
 
             if (chinhsuaxuat != 0)
             {
-                UPDATE_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, "0", dto.SOLUONGNHAP.ToString());
+                UPDATE_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, "0", dto.SOLUONGXUAT.ToString());
             }
         }
         public void UPDATEtraCTHOADONXUAT(DTO dto)
@@ -1403,7 +1418,7 @@ namespace WindowsFormsApplication1
 
             if (chinhsuaxuat != 0)
             {
-                UPDATE_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, "0", dto.SOLUONGNHAP.ToString());
+                UPDATE_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, "0", dto.SOLUONGXUAT.ToString());
             }
         }
         public void DELETECTHOADONXUAT(string MAHDX, int ID)
