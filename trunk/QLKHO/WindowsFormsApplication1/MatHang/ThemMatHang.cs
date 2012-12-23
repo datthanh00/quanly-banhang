@@ -181,6 +181,7 @@ namespace WindowsFormsApplication1
                 txtTenMH.Text = TENMATHANG;
                 cbDvt.Text = DVT;
                 txtSoLuong.Text = SOLUONG;
+                txtSoLuong.Enabled = false;
                 txthansudung.Text = HANSUDUNG;
                 txtmota.Text = MOTA;
                 txtGiaBan.Text = GIABAN;
@@ -290,6 +291,12 @@ namespace WindowsFormsApplication1
                         txtSoLuong.Focus();
                         return;
                     }
+                    else if (cbthue.Text == "")
+                    {
+                        XtraMessageBox.Show("Vui lòng điền mã thuế ");
+                        cbthue.Focus();
+                        return;
+                    }
 
 
                     else
@@ -308,7 +315,7 @@ namespace WindowsFormsApplication1
                             DTO.MAKHO = GRIDKHO.GetFocusedRowCellValue("MAKHO").ToString();
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MADVT = gridView1.GetFocusedRowCellValue("MADVT").ToString();
-                            DTO.SOLUONGMH = "0";
+                            DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = "";
                             DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
                             DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();
@@ -395,13 +402,19 @@ namespace WindowsFormsApplication1
                     else if (txtGiaMua.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng điền Giá mua ");
-                        txtGiaMua.Focus();
+                        cbthue.Focus();
                         return;
                     }
                     
                     else if (txtSoLuong.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng điền Số lượng ");
+                        txtSoLuong.Focus();
+                        return;
+                    }
+                    else if (cbthue.Text == "")
+                    {
+                        XtraMessageBox.Show("Vui lòng điền mã thuế ");
                         txtSoLuong.Focus();
                         return;
                     }
@@ -422,7 +435,7 @@ namespace WindowsFormsApplication1
 
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MAKHO = GRIDKHO.GetFocusedRowCellValue("MAKHO").ToString();
-                            DTO.SOLUONGMH = "0";
+                            DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = DateTime.Parse(txthansudung.Text).ToString();
                             DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
                             DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();

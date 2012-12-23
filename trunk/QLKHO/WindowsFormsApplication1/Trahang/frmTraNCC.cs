@@ -327,7 +327,7 @@ namespace WindowsFormsApplication1
                             DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
                             if (i < maxrowCTHOADONNHAP)
                             {
-                                update_HoadonChitiet(txtMaHD.Text, i + 1, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
+                                update_HoadonChitiet(txtMaHD.Text, Convert.ToInt32(dtr["ID"].ToString()), dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
                             }
                             else
                             {
@@ -423,6 +423,13 @@ namespace WindowsFormsApplication1
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGNHAP = SoLuong;
                 dtoNCC.GIANHAP = DonGia;
+                string SQL = "SELECT MAX(ID) FROM traCHITIETHDN WHERE MAHDN='" + mahdn + "'";
+                DataTable DT = ctlNCC.GETDATA(SQL);
+                dtoNCC.ID = 0;
+                if (dt.Rows.Count > 0)
+                {
+                    dtoNCC.ID = Convert.ToInt32(dt.Rows[0][0].ToString()) + 1;
+                }
                 dtoNCC.ID = ID;
 
                 ctlNCC.INSERTtraCTHOADONNHAP(dtoNCC);
