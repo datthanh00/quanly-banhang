@@ -769,10 +769,29 @@ namespace WindowsFormsApplication1
             return "";
             
         }
+         public string GETMANCCfromtraMHDN(string MAHDN)
+         {
+             DataTable dt;
+             string SQL = "SELECT MANCC FROM traHOADONNHAP WHERE MAHDN='" + MAHDN + "'";
+             dt = GET_DATA(SQL);
+             if (dt.Rows.Count > 0)
+                 return dt.Rows[0]["MANCC"].ToString();
+             return "";
+
+         }
          public string GETMAKHfromMHDX(string MAHDX)
          {
              DataTable dt;
              string SQL = "SELECT MAKH FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "'";
+             dt = GET_DATA(SQL);
+             if (dt.Rows.Count > 0)
+                 return dt.Rows[0]["MAKH"].ToString();
+             return "";
+         }
+         public string GETMAKHfromtraMHDX(string MAHDX)
+         {
+             DataTable dt;
+             string SQL = "SELECT MAKH FROM traHOADONXUAT WHERE MAHDX='" + MAHDX + "'";
              dt = GET_DATA(SQL);
              if (dt.Rows.Count > 0)
                  return dt.Rows[0]["MAKH"].ToString();
@@ -1020,7 +1039,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    SQL = "select * from tonkho where STT=(select MIN(STT) from tonkho where MAMH='" + MAMH + "')) ORDER BY ID DESC limit 1";
+                    SQL = "select * from tonkho where STT=(select MIN(STT) from tonkho where MAMH='" + MAMH + "') ORDER BY ID DESC limit 1";
                     dt = getdata(SQL);
                     if (dt.Rows.Count > 0)
                     {
@@ -1082,8 +1101,6 @@ namespace WindowsFormsApplication1
 
         public void DELETE_TONKHO(string ID, string MAHD)
         {
-            
-
             string SQL = "select nhap,xuat,STT,mamh from tonkho where mahd='"+MAHD+"' and id="+ID;
             DataTable dt = getdata(SQL);
             if (dt.Rows.Count > 0)

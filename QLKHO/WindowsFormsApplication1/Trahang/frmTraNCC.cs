@@ -183,7 +183,7 @@ namespace WindowsFormsApplication1
             DataTable dt=ctlNCC.GETDANHSACHNCC(MANCC);
             cboTenNCC.Properties.DataSource = dt;
            // cboTenNCC.SelectedText = dt.Rows[0]["TENNCC"].ToString();
-           // cboTenNCC.Text = dt.Rows[0]["MANCC"].ToString();
+            cboTenNCC.Text = dt.Rows[0]["MANCC"].ToString();
       
         }
         public void loadgridNhanVien()
@@ -758,7 +758,7 @@ namespace WindowsFormsApplication1
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr = dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
-            string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["Mã Hóa Đơn"].ToString());
+            string MANCC = ctlNCC.GETMANCCfromtraMHDN(dtr["Mã Hóa Đơn"].ToString());
             View_phieunhap(dtr["Mã Hóa Đơn"].ToString());
             txtNgay.Text = dtr["NGÀY NHẬP"].ToString();
             loadgridNhacCungCap(MANCC);

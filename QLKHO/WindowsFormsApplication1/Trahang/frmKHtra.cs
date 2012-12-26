@@ -57,7 +57,7 @@ namespace WindowsFormsApplication1.KHtra
             cboTenKH.Properties.PopupFormWidth = 300;
             DataTable dt = ctlNCC.GETKHACHHANG(MAKH);
             cboTenKH.Properties.DataSource = dt;
-           // cboTenKH.Text = dt.Rows[0]["MAKH"].ToString();
+            cboTenKH.Text = dt.Rows[0]["MAKH"].ToString();
 
         }
         public void Load_panel_create()
@@ -682,7 +682,7 @@ namespace WindowsFormsApplication1.KHtra
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr = dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
-            string MAKH = ctlNCC.GETMAKHfromMHDX(dtr["Mã Hóa Đơn"].ToString());
+            string MAKH = ctlNCC.GETMAKHfromtraMHDX(dtr["Mã Hóa Đơn"].ToString());
             View_phieuxuat(dtr["Mã Hóa Đơn"].ToString());
             txtNgayXuat.Text = dtr["NGÀY XUẤT"].ToString();
             loadgridKhachHang(MAKH);
