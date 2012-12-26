@@ -4,12 +4,27 @@ namespace WindowsFormsApplication1
 {
     class DTO
     {
+        private Boolean _IsUPDATE;
+
+        public Boolean IsUPDATE
+        {
+            get { return _IsUPDATE; }
+            set { _IsUPDATE = value; }
+        }
+
         private int _ID;
 
         public int ID
         {
             get { return _ID; }
             set { _ID = value; }
+        }
+        private int _STT;
+
+        public int STT
+        {
+            get { return _STT; }
+            set { _STT = value; }
         }
 
         private int _TONDAU;
