@@ -185,7 +185,64 @@ namespace WindowsFormsApplication1
               gridView5.FormatConditions.Add(cn);
               gridView5.BestFitColumns();
         }
-       
+        private void loadGird_tonkhotonghop()
+        {
+            dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+
+            gridControl1.MainView = gridView7;
+            dt = ctr1.TONKHOTONGHOP(dto);
+            gridControl1.DataSource = dt;
+            gridView7.RefreshData();
+            gridControl1.RefreshDataSource();
+        }
+        private void loadGird_thekho()
+        {
+            //dto.MAKHO = gView.GetFocusedRowCellValue("MAKHO").ToString();
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dto.NGAYBDKHO = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dto.NGAYKTKHO = NGAYKT;
+
+            dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+            dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
+
+            dto.MAKHO = cbkho.Text;
+            dto.MAMH = cbsanpham.Text;
+
+            gridControl1.MainView = gridView6;
+            dt = ctr1.THEKHO(dto);
+            gridControl1.DataSource = dt;
+            gridView6.RefreshData();
+            gridControl1.RefreshDataSource();
+
+            gridView6.Columns["Mã Hàng"].Group();
+            gridView6.Columns["Ngày"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+
+            gridView6.ExpandAllGroups();
+
+        }
+        private void loadGird_chitiethanghoa()
+        {
+
+
+            dto.MAKHO = cbkho.Text;
+            dto.MAMH = cbsanpham.Text;
+
+            gridControl1.MainView = gridView6;
+            dt = ctr1.SOCHITIETHANGHOA(dto);
+            gridControl1.DataSource = dt;
+            gridView6.RefreshData();
+            gridControl1.RefreshDataSource();
+
+            gridView6.Columns["tenmh"].Group();
+            gridView6.Columns["ngaythang"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+
+            gridView6.ExpandAllGroups();
+
+        }
        
   
         
@@ -618,6 +675,18 @@ namespace WindowsFormsApplication1
                 {
                     loadGird5();
                 }
+                if (gridControl1.MainView == gridView7)
+                {
+                    loadGird_tonkhotonghop();
+                }
+                if (gridControl1.MainView == gridView8)
+                {
+                    loadGird_thekho();
+                }
+                if (gridControl1.MainView == gridView9)
+                {
+                    loadGird_chitiethanghoa();
+                }
                 if (gridControl1.MainView == gridView6)
                 {
                     if (optionload == "tonkhotonghop")
@@ -797,19 +866,10 @@ namespace WindowsFormsApplication1
             lbmahang.Visible = false;
             cbsanpham.Visible = false;
             gridControl1.DataSource = null;
-            gridView6.Columns.Clear();
+            //gridView6.Columns.Clear();
             loadGird_tonkhotonghop();
         }
-        private void loadGird_tonkhotonghop()
-        {
-            dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
-            
-            gridControl1.MainView = gridView6;
-            dt = ctr1.TONKHOTONGHOP(dto);
-            gridControl1.DataSource = dt;
-            gridView6.RefreshData();
-            gridControl1.RefreshDataSource(); 
-        }
+        
 
         private void Linkthekho_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -824,36 +884,7 @@ namespace WindowsFormsApplication1
             gridView6.Columns.Clear();
             loadGird_thekho();
         }
-
-        private void loadGird_thekho()
-        {
-            //dto.MAKHO = gView.GetFocusedRowCellValue("MAKHO").ToString();
-            string NGAYBD = dateTu.Text;
-            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
-            dto.NGAYBDKHO = NGAYBD;
-
-            string NGAYKT = dateDen.Text;
-            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
-            dto.NGAYKTKHO = NGAYKT;
-
-            dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
-            dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
-
-            dto.MAKHO = cbkho.Text;
-            dto.MAMH = cbsanpham.Text;
         
-            gridControl1.MainView = gridView6;
-            dt = ctr1.THEKHO(dto);
-            gridControl1.DataSource = dt;
-            gridView6.RefreshData();
-            gridControl1.RefreshDataSource(); 
-
-            gridView6.Columns["Mã Hàng"].Group();
-            gridView6.Columns["Ngày"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
-
-            gridView6.ExpandAllGroups();
-            
-        }
 
         private void Linkchitiethanghoa_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
@@ -863,26 +894,7 @@ namespace WindowsFormsApplication1
             gridView6.Columns.Clear();
             loadGird_chitiethanghoa();
         }
-        private void loadGird_chitiethanghoa()
-        {
-
-
-            dto.MAKHO = cbkho.Text;
-            dto.MAMH = cbsanpham.Text;
-      
-            gridControl1.MainView = gridView6;
-            dt = ctr1.SOCHITIETHANGHOA(dto);
-            gridControl1.DataSource = dt;
-            gridView6.RefreshData();
-            gridControl1.RefreshDataSource();
-
-            gridView6.Columns["tenmh"].Group();
-            gridView6.Columns["ngaythang"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
-
-            gridView6.ExpandAllGroups();
-
-        }
-
+        
 
 
 
