@@ -130,7 +130,7 @@ namespace WindowsFormsApplication1
             colTiềnđãtrả.Caption = Tien_VN.colTiềnđãtrả.ToString();
             colCònlại.Caption = Tien_VN.colCònlại.ToString();
             colMãphiếuchi.Caption = Tien_VN.colMãphiếuchi.ToString();
-            colTênnhânviên.Caption = Tien_VN.colTênnhanvien.ToString();
+            //colTênnhânviên.Caption = Tien_VN.colTênnhanvien.ToString();
             colMãhóađơnnhập1.Caption = Tien_VN.colMãhóađơnnhập.ToString();
             colNgàychi.Caption = Tien_VN.colNgàychi.ToString();
             colTiềnđãtrả1.Caption = Tien_VN.colTiềnđãtrả.ToString();
@@ -149,7 +149,7 @@ namespace WindowsFormsApplication1
             colTiềnđãtrả.Caption = Tien_EL.colTiềnđãtrả.ToString();
             colCònlại.Caption = Tien_EL.colCònlại.ToString();
             colMãphiếuchi.Caption = Tien_EL.colMãphiếuchi.ToString();
-            colTênnhânviên.Caption = Tien_EL.colTênnhanvien.ToString();
+            //colTênnhânviên.Caption = Tien_EL.colTênnhanvien.ToString();
             colMãhóađơnnhập1.Caption = Tien_EL.colMãhóađơnnhập.ToString();
             colNgàychi.Caption = Tien_EL.colNgàychi.ToString();
             colTiềnđãtrả1.Caption = Tien_EL.colTiềnđãtrả.ToString();
