@@ -1327,6 +1327,7 @@
             this.gridView4.OptionsView.EnableAppearanceOddRow = true;
             this.gridView4.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView4.OptionsView.RowAutoHeight = true;
+            this.gridView4.OptionsView.ShowAutoFilterRow = true;
             this.gridView4.OptionsView.ShowFooter = true;
             this.gridView4.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridView4.DoubleClick += new System.EventHandler(this.gridView4_doubleclick);

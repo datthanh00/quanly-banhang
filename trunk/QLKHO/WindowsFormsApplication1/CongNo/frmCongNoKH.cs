@@ -211,7 +211,7 @@ namespace WindowsFormsApplication1
             colMãphiếuthu.Caption = Tien_VN.colMãphiếuthu.ToString();
             colMãhóađơnxuất1.Caption = Tien_VN.colMãhóađơnxuất1.ToString();
             colTiềnđãtrả1.Caption = Tien_VN.colTiềnđãtrả1.ToString();
-            colTênnhânviên.Caption = Tien_VN.colTênnhanvien.ToString();
+            //colTênnhânviên.Caption = Tien_VN.colTennhanvien.ToString();
             colNgàythu.Caption = Tien_VN.colNgàythu.ToString();
             groupControl_congno.Text = Tien_VN.groupControl1.ToString();
             groupControl_phieuthu.Text = Tien_VN.groupControl2.ToString();
@@ -232,7 +232,7 @@ namespace WindowsFormsApplication1
             colMãphiếuthu.Caption = Tien_EL.colMãphiếuthu.ToString();
             colMãhóađơnxuất1.Caption = Tien_EL.colMãhóađơnxuất1.ToString();
             colTiềnđãtrả1.Caption = Tien_EL.colTiềnđãtrả1.ToString();
-            colTênnhânviên.Caption = Tien_EL.colTênnhanvien.ToString();
+            //colTênnhânviên.Caption = Tien_EL.colTênnhanvien.ToString();
             colNgàythu.Caption = Tien_EL.colNgàythu.ToString();
             groupControl_congno.Text = Tien_EL.groupControl1.ToString();
             groupControl_phieuthu.Text = Tien_EL.groupControl2.ToString();
