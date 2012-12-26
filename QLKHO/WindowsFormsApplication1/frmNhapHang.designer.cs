@@ -122,6 +122,7 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.resTENMATHANG = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
@@ -148,7 +149,6 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -1111,6 +1111,7 @@
             this.gridCTHOADON.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridCTHOADON_CellValuedChanged);
             this.gridCTHOADON.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridCTHOADON_Keydown);
             this.gridCTHOADON.RowCountChanged += new System.EventHandler(this.gridCTHOADON_RowcountChanged);
+            this.gridCTHOADON.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridCTHOADON_ShowingEditor_1);
             this.gridCTHOADON.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridCTHOADON_ShowGridMenu);
             // 
             // gridColumn6
@@ -1188,6 +1189,11 @@
             this.gridColumn25.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn25.Visible = true;
             this.gridColumn25.VisibleIndex = 5;
+            // 
+            // ID
+            // 
+            this.ID.Caption = "ID";
+            this.ID.Name = "ID";
             // 
             // resTENMATHANG
             // 
@@ -1437,11 +1443,6 @@
             this.EditToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
-            // 
-            // ID
-            // 
-            this.ID.Caption = "ID";
-            this.ID.Name = "ID";
             // 
             // frmNhapHang
             // 

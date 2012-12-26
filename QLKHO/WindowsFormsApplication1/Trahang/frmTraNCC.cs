@@ -13,6 +13,7 @@ using System.Collections;
 using DevExpress.XtraEditors.DXErrorProvider;
 using WindowsFormsApplication1.HoaDonNhap;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using DevExpress.XtraGrid;
 
 namespace WindowsFormsApplication1
 {
@@ -25,6 +26,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             
         }
+        int CountRowTBEdit = 0;
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
         public int iNgonNgu;
@@ -98,7 +100,9 @@ namespace WindowsFormsApplication1
            // dt.Columns.Add(new DataColumn("_Thue"));
             dt.Columns.Add(new DataColumn("_DVT"));
             dt.Columns.Add(new DataColumn("_Total"));
+            dt.Columns.Add(new DataColumn("ID"));
             gridControl1.DataSource = dt;
+            CountRowTBEdit = 0;
 
         }
         public void loadgridCTHOADON(String MAHDN)
@@ -106,6 +110,16 @@ namespace WindowsFormsApplication1
             DataTable dt = new DataTable();
             dt=ctlNCC.GETtraCTHOADONNHAP(MAHDN);
             gridControl1.DataSource = dt;
+
+            CountRowTBEdit = dt.Rows.Count;
+
+
+            DevExpress.XtraGrid.StyleFormatCondition condition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            condition1.Appearance.BackColor = Color.LightBlue;
+            condition1.Appearance.Options.UseBackColor = true;
+            condition1.Condition = FormatConditionEnum.Expression;
+            condition1.Expression = "[ID] >0";
+            gridCTHOADON.FormatConditions.Add(condition1);
           
         }
         public void loadgridPHIEUNHAP(string SQL)
@@ -169,7 +183,7 @@ namespace WindowsFormsApplication1
             DataTable dt=ctlNCC.GETDANHSACHNCC(MANCC);
             cboTenNCC.Properties.DataSource = dt;
            // cboTenNCC.SelectedText = dt.Rows[0]["TENNCC"].ToString();
-            cboTenNCC.Text = dt.Rows[0]["MANCC"].ToString();
+           // cboTenNCC.Text = dt.Rows[0]["MANCC"].ToString();
       
         }
         public void loadgridNhanVien()
@@ -255,7 +269,7 @@ namespace WindowsFormsApplication1
         {
            
             Create_new();
-            loadgridCTHOADON();
+            
         }
         public void Create_new(){
             loadgridNhacCungCap();
@@ -275,6 +289,8 @@ namespace WindowsFormsApplication1
             //   cboTinhTrang.Text = "";
             gridControl1.DataSource = null;
             gridCTHOADON.RefreshData();
+
+            loadgridCTHOADON();
         }
 
         public int kiemtra;
@@ -301,13 +317,22 @@ namespace WindowsFormsApplication1
                     {
                         cbotientra.Text = "0";
                     }
+                    
+                    int rowcount = gridCTHOADON.DataRowCount;
+                    if (rowcount == 0)
+                    {
+                        XtraMessageBox.Show("Hãy chọn một sản phẩm trước khi lưu");
+                        return;
+                    }
+
                     dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
                     bool isINSERTHOADONNHAP = ctlNCC.isINSERTtraHOADONNHAP(dtoNCC.MAHDN);
                     if (isINSERTHOADONNHAP)
                     {
+                        dtoNCC.IsUPDATE = false;
                         ctlNCC.INSERTtraHOADONNHAP(dtoNCC);
                         //insert hoa don chi tiet
-                        int rowcount = gridCTHOADON.DataRowCount;
+            
                         for (int i = 0; i < rowcount; i++)
                         {
                             DataRow dtr = gridCTHOADON.GetDataRow(i);
@@ -317,34 +342,31 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
+                        dtoNCC.IsUPDATE = true;
                         ctlNCC.UPDATEtraHOADONNHAP(dtoNCC);
                         //update hoa don chi tiet
-                        int rowcount = gridCTHOADON.DataRowCount;
-                        int maxrowCTHOADONNHAP = ctlNCC.maxrowtraCTHOADONNHAP(txtMaHD.Text);
+                      
+
 
                         for (int i = 0; i < rowcount; i++)
                         {
                             DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
-                            if (i < maxrowCTHOADONNHAP)
+                            String sID = dtr["ID"].ToString();
+
+                            if (sID != "")
                             {
-                                update_HoadonChitiet(txtMaHD.Text, Convert.ToInt32(dtr["ID"].ToString()), dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
+                                update_HoadonChitiet(txtMaHD.Text, Convert.ToInt32(sID), dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
                             }
                             else
                             {
                                 insert_HoadonChitiet(txtMaHD.Text, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
-                            
                             }
                         }
 
-                        if (maxrowCTHOADONNHAP > rowcount)
-                        {
-                            for (int i = rowcount; i < maxrowCTHOADONNHAP; i++)
-                            {
-                                ctlNCC.DELETEtraCTHOADONNHAP(txtMaHD.Text, i + 1);
-                            }
-                        }
+                      
                     }
                     MessageBox.Show("Bạn Đã Thêm Thành Công");
+                    Create_new();
                 }
             }
             catch (Exception ex)
@@ -522,7 +544,7 @@ namespace WindowsFormsApplication1
 
         public void loadmahdn()
         {
-            txtMaHD.Text = connect.sTuDongDientraMaHoaDonNhap(txtMaHD.Text);
+            txtMaHD.Text = connect.sTuDongDienMatraHoaDonNhap(txtMaHD.Text);
         }
 
         private void dockPanel1_Click(object sender, EventArgs e)
@@ -674,6 +696,11 @@ namespace WindowsFormsApplication1
                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
                 if (dtr != null)
                 {
+                    String sID = dtr["ID"].ToString();
+                    if (sID != "")
+                    {
+                        ctlNCC.DELETEtraCTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID));
+                    }
                    // bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, focusrow+1);
 
                     //if (!isinsert)
@@ -753,6 +780,27 @@ namespace WindowsFormsApplication1
         private void btXem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void gridCTHOADON_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            GridView view = sender as GridView;
+            int RowCount = view.RowCount;
+
+            if (view.FocusedColumn.FieldName == "_TenMH" && CountRowTBEdit > 0)
+            {
+                int rowfocus = view.FocusedRowHandle;
+                if (rowfocus >= 0)
+                {
+                    DataRow dtr = dtr = gridCTHOADON.GetDataRow(rowfocus);
+
+                    String sID = dtr["ID"].ToString();
+                    if (sID != "")
+                    {
+                        e.Cancel = true;
+                    }
+                }
+            }
         }
 
     

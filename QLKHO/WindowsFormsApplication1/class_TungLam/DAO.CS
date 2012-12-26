@@ -928,10 +928,17 @@ namespace WindowsFormsApplication1
             executeNonQuery(SQL);
 
             SQL = "SELECT DATE_FORMAT(NGAYNHAP,'%Y/%m/%d') FROM HOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
-            DataTable dt = getdata(SQL);
+            dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
 
-            INSERT_TONKHO(dto.ID.ToString(),dto.MAHDN, dto.MAMH,ngay,tondau, dto.SOLUONGNHAP.ToString(),"0");
+            if (dto.IsUPDATE)
+            {
+                INSERT_TONKHO2(dto.ID.ToString(), dto.MAHDN, dto.MAMH, ngay, dto.SOLUONGNHAP.ToString(), "0");
+            }
+            else
+            {
+                INSERT_TONKHO(dto.ID.ToString(), dto.MAHDN, dto.MAMH, ngay, tondau, dto.SOLUONGNHAP.ToString(), "0");
+            }
         }
 
 
@@ -954,22 +961,99 @@ namespace WindowsFormsApplication1
             executeNonQuery(SQL);
 
             SQL = "SELECT DATE_FORMAT(NGAYNHAP,'%Y/%m/%d') FROM traHOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
-            DataTable dt = getdata(SQL);
+            dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
-
-            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDN, dto.MAMH, ngay,tondau, dto.SOLUONGNHAP.ToString(), "0");
+            if (dto.IsUPDATE)
+            {
+                INSERT_TONKHO2(dto.ID.ToString(), dto.MAHDN, dto.MAMH, ngay, "0", dto.SOLUONGNHAP.ToString());
+            }
+            else
+            {
+                INSERT_TONKHO(dto.ID.ToString(), dto.MAHDN, dto.MAMH, ngay, tondau, "0", dto.SOLUONGNHAP.ToString());
+            }
         
         }
 
         public void INSERT_TONKHO(string ID,string MAHD, string MAMH,string NGAY,int TONDAU, string NHAP, string XUAT)
         {
+           string SQL = "select STT from tonkho where MAHD='" + MAHD + "' limit 1";
+           DataTable dt = getdata(SQL);
+           string STT = "0";
+           if (dt.Rows.Count > 0)
+           {
+               STT = dt.Rows[0][0].ToString();
+           }
+           else
+           {
+               SQL = "select MAX(STT) from tonkho";
+               dt = getdata(SQL);
+               if (dt.Rows[0][0].ToString() != "")
+               {
+                   STT = (Convert.ToInt32(dt.Rows[0][0].ToString()) + 1).ToString();
+               }
+               else
+               {
+                   STT = "1";
+               }
+           }
+           int toncuoi = TONDAU + Convert.ToInt32(NHAP) - Convert.ToInt32(XUAT);
+           SQL = "INSERT TONKHO(STT,ID,MAHD,MAMH,NGAY,TONDAU,NHAP,XUAT,TONCUOI)"
+                  + " VALUES (" + STT + "," + ID + ",'" + MAHD + "','" + MAMH + "','" + NGAY + "', " + TONDAU.ToString() + "," + NHAP + "," + XUAT + "," + toncuoi.ToString() + ")";
+           executeNonQuery(SQL);
             
-            int toncuoi = TONDAU + Convert.ToInt32(NHAP) - Convert.ToInt32(XUAT);
-            
-           string SQL = "INSERT TONKHO(ID,MAHD,MAMH,NGAY,TONDAU,NHAP,XUAT,TONCUOI)"
-                  + " VALUES ('" + ID + "','" + MAHD + "','" + MAMH + "','" + NGAY + "', " + TONDAU.ToString() + "," + NHAP + "," + XUAT + "," + toncuoi.ToString() + ")";
+        }
+        public void INSERT_TONKHO2(string ID, string MAHD, string MAMH, string NGAY, string NHAP, string XUAT)
+        {
+            string SQL = "select STT from tonkho where MAHD='" + MAHD + "' limit 1";
+            DataTable dt = getdata(SQL);
+            string STT = "0";
+            if (dt.Rows.Count > 0)
+            {
+                STT = dt.Rows[0][0].ToString();
+
+                SQL = "select * from tonkho where STT=(select max(STT) from tonkho where MAMH='" + MAMH + "' AND (STT<" + STT + " OR  STT=" + STT + ")) ORDER BY ID DESC limit 1";
+                dt = getdata(SQL);
+                string TONDAU = "0";
+                if (dt.Rows.Count > 0)
+                {
+                    TONDAU = dt.Rows[0]["toncuoi"].ToString();
+                }
+                else
+                {
+                    SQL = "select * from tonkho where STT=(select MIN(STT) from tonkho where MAMH='" + MAMH + "')) ORDER BY ID DESC limit 1";
+                    dt = getdata(SQL);
+                    if (dt.Rows.Count > 0)
+                    {
+                        TONDAU = dt.Rows[0]["tondau"].ToString();
+                    }
+                    else
+                    {
+                        SQL = "select soluongmh from mathang  where MAMH='" + MAMH + "'";
+                        dt = getdata(SQL);
+                        if (dt.Rows.Count > 0)
+                        {
+                            TONDAU = dt.Rows[0]["soluongmh"].ToString();
+                        }
+                    }
+
+                }
+
+                int toncuoi = Convert.ToInt32(TONDAU) + Convert.ToInt32(NHAP) - Convert.ToInt32(XUAT);
+                SQL = "INSERT TONKHO(STT,ID,MAHD,MAMH,NGAY,TONDAU,NHAP,XUAT,TONCUOI)"
+                       + " VALUES (" + STT + "," + ID + ",'" + MAHD + "','" + MAMH + "','" + NGAY + "', " + TONDAU + "," + NHAP + "," + XUAT + "," + toncuoi.ToString() + ")";
                 executeNonQuery(SQL);
+
+
+                //update cac dong sau
+                SQL = "UPDATE TONKHO SET  tondau=tondau+" + NHAP + "-" + XUAT + ",  toncuoi=toncuoi+" + NHAP + "-" + XUAT + "  WHERE STT>" + STT + " and MAMH='" + MAMH + "'";
+                executeNonQuery(SQL);
+
+                SQL = "UPDATE TONKHO SET  tondau=tondau+" + NHAP + "-" + XUAT + ",  toncuoi=toncuoi+" + NHAP + "-" + XUAT + "  WHERE STT=" + STT + " and MAMH='" + MAMH + "' and ID>" + ID;
+                executeNonQuery(SQL);
+            }
             
+            
+
         }
         public void UPDATE_TONKHO(string ID, string MAHD, string MAMH, string NHAP, string XUAT)
         {
@@ -985,26 +1069,37 @@ namespace WindowsFormsApplication1
                 SUAXUAT = (Convert.ToInt32(XUAT)- Convert.ToInt32(dt.Rows[0]["xuat"].ToString())).ToString();
             }
 
-            SQL = "UPDATE TONKHO SET  toncuoi=toncuoi+" + SUANHAP + "-" + SUAXUAT + " ,NHAP=" + NHAP + ",XUAT=" + XUAT + "  WHERE STT='" + STT + "' ";
+            SQL = "UPDATE TONKHO SET  toncuoi=toncuoi+" + SUANHAP + "-" + SUAXUAT + " ,NHAP=" + NHAP + ",XUAT=" + XUAT + "  WHERE STT=" + STT + " and id= " + ID ;
             executeNonQuery(SQL);
 
 
             SQL = "UPDATE TONKHO SET  tondau=tondau+" + SUANHAP + "-" + SUAXUAT + ",  toncuoi=toncuoi+" + SUANHAP + "-" + SUAXUAT + "  WHERE STT>" + STT + " and MAMH='" + MAMH + "'";
             executeNonQuery(SQL);
+
+            SQL = "UPDATE TONKHO SET  tondau=tondau+" + SUANHAP + "-" + SUAXUAT + ",  toncuoi=toncuoi+" + SUANHAP + "-" + SUAXUAT + "  WHERE STT=" + STT + " and MAMH='" + MAMH + "' and ID>" + ID;
+            executeNonQuery(SQL);
         }
 
         public void DELETE_TONKHO(string ID, string MAHD)
         {
+            
+
             string SQL = "select nhap,xuat,STT,mamh from tonkho where mahd='"+MAHD+"' and id="+ID;
             DataTable dt = getdata(SQL);
             if (dt.Rows.Count > 0)
             {
-                SQL = "delete from tonkho where STT=" + dt.Rows[0]["STT"].ToString();
+                SQL = "delete from tonkho where STT=" + dt.Rows[0]["STT"].ToString()+" and ID="+ID;
                 executeNonQuery(SQL);
 
-                string CHENHLECH = (Convert.ToInt32(dt.Rows[0]["NHAP"].ToString()) - Convert.ToInt32(dt.Rows[0]["NHAP"].ToString())).ToString();
+                string CHENHLECH = (Convert.ToInt32(dt.Rows[0]["NHAP"].ToString()) - Convert.ToInt32(dt.Rows[0]["XUAT"].ToString())).ToString();
 
-                SQL = "UPDATE TONKHO SET  TONDAU=TONDAU- " + CHENHLECH + ", toncuoi=toncuoi-" + CHENHLECH + "  WHERE STT> =" + dt.Rows[0]["STT"].ToString() + " and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "' ";
+                SQL = "UPDATE TONKHO SET  TONDAU=TONDAU- " + CHENHLECH + ", toncuoi=toncuoi-" + CHENHLECH + "  WHERE STT>" + dt.Rows[0]["STT"].ToString() + " and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "' ";
+                executeNonQuery(SQL);
+
+                SQL = "UPDATE TONKHO SET  TONDAU=TONDAU- " + CHENHLECH + ", toncuoi=toncuoi-" + CHENHLECH + "  WHERE STT=" + dt.Rows[0]["STT"].ToString() + " and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "' and ID>" + ID;
+                executeNonQuery(SQL);
+
+                SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + CHENHLECH + "  WHERE MAMH='" + dt.Rows[0]["MAMH"].ToString() + "'";
                 executeNonQuery(SQL);
 
             }
@@ -1042,7 +1137,7 @@ namespace WindowsFormsApplication1
 
             if (chinhsuanhap != 0)
             {
-                UPDATE_TONKHO(dto.ID.ToString(), dto.MAHDN, dto.MAMH, dto.SOLUONGNHAP.ToString(), "0");
+                UPDATE_TONKHO(dto.ID.ToString(), dto.MAHDN, dto.MAMH, "0", dto.SOLUONGNHAP.ToString());
             }
 
         }
@@ -1252,11 +1347,18 @@ namespace WindowsFormsApplication1
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH-" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
-            SQL = "SELECT DATE_FORMAT(NGAYNHAP,'%Y/%m/%d') FROM HOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
-            DataTable dt = getdata(SQL);
+            SQL = "SELECT DATE_FORMAT(NGAYXUAT,'%Y/%m/%d') FROM HOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
+            dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
 
-            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, ngay,tondau, "0", dto.SOLUONGXUAT.ToString());
+            if (dto.IsUPDATE)
+            {
+                INSERT_TONKHO2(dto.ID.ToString(), dto.MAHDX, dto.MAMH, ngay, "0", dto.SOLUONGXUAT.ToString());
+            }
+            else
+            {
+                INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, ngay, tondau, "0", dto.SOLUONGXUAT.ToString());
+            }
         
         
         }
@@ -1298,12 +1400,18 @@ namespace WindowsFormsApplication1
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH+" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
-            SQL = "SELECT DATE_FORMAT(NGAYNHAP,'%Y/%m/%d') FROM traHOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
-            DataTable dt = getdata(SQL);
+            SQL = "SELECT DATE_FORMAT(NGAYXUAT,'%Y/%m/%d') FROM traHOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
+            dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
 
-
-            INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, ngay ,tondau, "0", dto.SOLUONGXUAT.ToString());
+            if (dto.IsUPDATE)
+            {
+                INSERT_TONKHO2(dto.ID.ToString(), dto.MAHDX, dto.MAMH, ngay, dto.SOLUONGXUAT.ToString(), "0");
+            }
+            else
+            {
+                INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, ngay, tondau, dto.SOLUONGXUAT.ToString(), "0");
+            }
         
 
         }
@@ -1418,7 +1526,7 @@ namespace WindowsFormsApplication1
 
             if (chinhsuaxuat != 0)
             {
-                UPDATE_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, "0", dto.SOLUONGXUAT.ToString());
+                UPDATE_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, dto.SOLUONGXUAT.ToString(), "0");
             }
         }
         public void DELETECTHOADONXUAT(string MAHDX, int ID)
