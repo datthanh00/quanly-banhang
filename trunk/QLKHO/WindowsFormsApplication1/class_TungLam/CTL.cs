@@ -250,11 +250,18 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMANCCfromMHDN(MAHDN);
         }
+        public string GETMANCCfromtraMHDN(String MAHDN)
+        {
+            return DAO.GETMANCCfromtraMHDN(MAHDN);
+        }
         public string GETMAKHfromMHDX(String MAHDX)
         {
             return DAO.GETMAKHfromMHDX(MAHDX);
         }
-        
+        public string GETMAKHfromtraMHDX(String MAHDX)
+        {
+            return DAO.GETMAKHfromtraMHDX(MAHDX);
+        }
 
         public DataTable GETKHO()
         {
