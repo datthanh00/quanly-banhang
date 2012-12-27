@@ -55,6 +55,9 @@ namespace WindowsFormsApplication1
             loadGrid_sanpham();
             Load_panel_create();
 
+            dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
+            dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
+
         }
         DataView dvdropdow;
        
@@ -126,25 +129,62 @@ namespace WindowsFormsApplication1
 
           
         }
-        public void loadgridPHIEUNHAP(string SQL)
+        public void loadgridPHIEUNHAP()
         {
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dtoNCC.NGAYBD = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dtoNCC.NGAYKT = NGAYKT;
+
+            Load_panel_filter();
+            string SQL = "SELECT DATE_FORMAT(T1.NGAYNHAP,'%d/%m/%Y') AS NGAYNHAP ,T1.MAHDN ,T1.TENNCC ,T2.TENNV,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,T1.GHICHU  FROM ((select t9.*,t8.tenncc from HOADONNHAP  as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc where NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDN DESC";
+            
             DataTable TBS = ctlNCC.GETDATA(SQL);
-            gridView4.Columns.Clear();
+            //gridView4.Columns.Clear();
+            gridControl3.MainView = gridView4;
             gridControl3.DataSource = TBS;
             gridView4.RefreshData();
             gridControl3.RefreshDataSource();
             
         }
-        public void loadgridSANPHAM(string SQL)
+        public void loadgridSANPHAM()
         {
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dtoNCC.NGAYKT = NGAYKT;
+            Load_panel_filter();
+            string SQL = "SELECT DATE_FORMAT(T3.NGAYNHAP,'%d/%m/%Y')AS NGAYNHAP ,T3.MAHDN ,T3.TENNCC , T3.MAMH , T4.TENMH ,T3.SOLUONGNHAP ,T3.GIANHAP,GHICHU  FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T2.tenncc ,T1.SOLUONGNHAP,T1.GIANHAP,GHICHU FROM (SELECT * FROM CHITIETHDN )AS T1 INNER JOIN (select t9.ngaynhap,t9.mahdn,t9.mancc,t8.tenncc,GHICHU from HOADONNHAP as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc where NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH order by T3.MAHDN desc";
+            
             DataTable TBS = ctlNCC.GETDATA(SQL);
-            gridView4.Columns.Clear();
+            gridControl3.MainView = gridView5;
             gridControl3.DataSource = TBS;
-            gridView4.Columns["Mã Hóa Đơn"].Group();
-            gridView4.Columns["Mã Hóa Đơn"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
-            gridView4.ExpandAllGroups();
-            gridView4.RefreshData();
+            //gridView4.Columns["Mã Hóa Đơn"].Group();
+            //gridView4.Columns["Mã Hóa Đơn"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+            gridView5.ExpandAllGroups();
+            //gridView4.RefreshData();
             gridControl3.RefreshDataSource(); 
+
+        }
+        public void loadgridtongSANPHAM()
+        {
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dtoNCC.NGAYBD = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dtoNCC.NGAYKT = NGAYKT;
+            Load_panel_filter();
+            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNHOMHANG, TENKHO, DONVITINH, sum(SOLUONGNHAP) as SOLUONGNHAP, GIANHAP, SOLUONGNHAP*GIANHAP AS TONGTIEN FROM MATHANG,NHOMHANG,KHO,DONVITINH,(select MAMH,SOLUONGNHAP, GIANHAP FROM CHITIETHDN, HOADONNHAP WHERE NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as CHITIETHDN WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=CHITIETHDN.MAMH group by MAMH";
+           
+
+            DataTable TBS = ctlNCC.GETDATA(SQL);
+            gridControl3.MainView = gridView7;
+            gridControl3.DataSource = TBS;
+            gridControl3.RefreshDataSource();
 
         }
         
@@ -718,18 +758,25 @@ namespace WindowsFormsApplication1
 
         private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Load_panel_filter();
-            string SQL = "SELECT DATE_FORMAT(T1.NGAYNHAP,'%d/%m/%Y') 'Ngày Nhập',T1.MAHDN 'Mã Hóa Đơn',T1.tenncc 'Tên Nhà Cung Cấp',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM ((select t9.*,t8.tenncc from HOADONNHAP as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc) ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDN DESC";
-            loadgridPHIEUNHAP(SQL);
+            
+            loadgridPHIEUNHAP();
         }
 
         private void linkTheoSanPham_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Load_panel_filter();
-            string SQL = "SELECT DATE_FORMAT(T3.NGAYNHAP,'%d/%m/%Y') 'NGÀY NHẬP',T3.MAHDN 'Mã Hóa Đơn',T3.tenncc 'Tên Nhà Cung Cấp', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGNHAP 'Số Lượng',T3.GIANHAP 'Giá Nhập' FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T2.tenncc ,T1.SOLUONGNHAP,T1.GIANHAP FROM (SELECT * FROM CHITIETHDN )AS T1 INNER JOIN (select t9.ngaynhap,t9.mahdn,t9.mancc,t8.tenncc from HOADONNHAP as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc) AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH order by T3.MAHDN desc";
-            loadgridSANPHAM(SQL);
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dtoNCC.NGAYBD = NGAYBD;
+
+            
+            loadgridSANPHAM();
         }
 
+        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+           
+            loadgridtongSANPHAM();
+        }
 
 
         private void gridView4_doubleclick(object sender, EventArgs e)
@@ -753,10 +800,18 @@ namespace WindowsFormsApplication1
         {
             Load_panel_create();
             loadgridCTHOADON();
-            DataRow dtr = dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
-            string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["Mã Hóa Đơn"].ToString());
-            View_phieunhap(dtr["Mã Hóa Đơn"].ToString());
-            txtNgay.Text = dtr["NGÀY NHẬP"].ToString();
+            DataRow dtr;
+            if (gridControl3.MainView == gridView4)
+            {
+                dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+            }
+            else
+            {
+                dtr = gridView5.GetDataRow(gridView5.FocusedRowHandle);
+            }
+            string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
+            View_phieunhap(dtr["MAHDN"].ToString());
+            txtNgay.Text = dtr["NGAYNHAP"].ToString();
             loadgridNhacCungCap(MANCC);
             Load_TTNCC();
         }
@@ -765,10 +820,18 @@ namespace WindowsFormsApplication1
         {
             Load_panel_create();
             loadgridCTHOADON();
-            DataRow dtr = dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
-            string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["Mã Hóa Đơn"].ToString());
-            View_phieunhap(dtr["Mã Hóa Đơn"].ToString());
-            txtNgay.Text = dtr["NGÀY NHẬP"].ToString();
+            DataRow dtr;
+            if (gridControl3.MainView == gridView4)
+            {
+                dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+            }
+            else
+            {
+                dtr = gridView5.GetDataRow(gridView5.FocusedRowHandle);
+            }
+            string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
+            View_phieunhap(dtr["MAHDN"].ToString());
+            txtNgay.Text = dtr["NGAYNHAP"].ToString();
             loadgridNhacCungCap(MANCC);
             Load_TTNCC();
         }
@@ -799,6 +862,8 @@ namespace WindowsFormsApplication1
                 }
             }
         }
+
+       
 
 
 
