@@ -11,6 +11,10 @@ namespace WindowsFormsApplication1
         {
             return dao.THONGKHETHEOKHACHHANG(dto);
         }
+        public DataTable thongkhetheoNCC(Class_DTO_ThongKe dto)
+        {
+            return dao.THONGKHETHEONCC(dto);
+        }
         public DataTable LOINHUANKINHDOANH(Class_DTO_ThongKe dto)
         {
             return dao.getloinhuan(dto);
