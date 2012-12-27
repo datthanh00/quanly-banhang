@@ -94,8 +94,8 @@ namespace WindowsFormsApplication1
             NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
             dto.NGAYKTKHO = NGAYKT;
 
-            gridControl1.MainView = gridView1;
-            dt = ctr1.LOINHUANKINHDOANH(dto);
+            gridControl1.MainView = gridView10;
+            dt = ctr1.thongkhetheoNCC(dto);
             gridControl1.DataSource = dt;
                 
             
@@ -275,7 +275,7 @@ namespace WindowsFormsApplication1
             colsoluongmh.Caption = resVietNam.colsoluongmh.ToString();
 
             // coldonvi.Caption = resVietNam.colDonViTInh.ToString();
-            colthanhtien2.Caption = resVietNam.colthanhtien.ToString();
+            //colthanhtien2.Caption = resVietNam.colthanhtien.ToString();
             coldongia.Caption = resVietNam.colgiaban.ToString();
             colngayxuat.Caption = resVietNam.colNgay.ToString();
             gridColumn1.Caption = resVietNam.colkhachhang11.ToString();
@@ -301,12 +301,12 @@ namespace WindowsFormsApplication1
             gridColumn5.Caption = resVietNam.colDonViTInh.ToString();
             gridColumn6.Caption = resVietNam.colgiaban.ToString();
             colthanhtienxuat1.Caption = resVietNam.colthanhtien.ToString();
-            gridColumn8.Caption = resVietNam.colthanhtien.ToString();
+            //gridColumn8.Caption = resVietNam.colthanhtien.ToString();
             gridColumn9.Caption = resVietNam.colmahang.ToString();
-            gridColumn10.Caption = resVietNam.colloinhuan.ToString();
-            gridColumn13.Caption = resVietNam.colthueGTGT.ToString();
+            //gridColumn10.Caption = resVietNam.colloinhuan.ToString();
+            //gridColumn13.Caption = resVietNam.colthueGTGT.ToString();
             gridColumn41.Caption = resVietNam.COLMAHDX.ToString();
-            gridColumn42.Caption = resVietNam.coltennhomhang.ToString();
+            //gridColumn42.Caption = resVietNam.coltennhomhang.ToString();
             //===================gird33333333333
             gridColumn12.Caption = resVietNam.colNhomHang.ToString();
             colNgay.Caption = resVietNam.colNgay.ToString();
@@ -354,11 +354,12 @@ namespace WindowsFormsApplication1
             colkho.Caption = resVietNam.colkho.ToString();
             gridColumn39.Caption = resVietNam.colkho.ToString();
             colnhomhang5.Caption = resVietNam.colNhomHang.ToString();
-            loinhuan.Caption = resVietNam.linktheoloinhuan.ToString();
-            Khachhang.Caption = resVietNam.linktheokhachhang.ToString();
-            tenhang.Caption = resVietNam.linktheomathang.ToString();
-            Theokho.Caption = resVietNam.linhtheokho.ToString();
-            TheoNhom.Caption = resVietNam.linktheonhomhang.ToString();
+            //HDNCC.Caption = resVietNam.linktheoloinhuan.ToString();
+           
+            //Khachhang.Caption = resVietNam.linktheokhachhang.ToString();
+            //tenhang.Caption = resVietNam.linktheomathang.ToString();
+            //Theokho.Caption = resVietNam.linhtheokho.ToString();
+            //TheoNhom.Caption = resVietNam.linktheonhomhang.ToString();
             navthongke.Caption = resVietNam.navthongke.ToString();
             colgiakho.Caption = resVietNam.coldongia.ToString();
             colgia5.Caption = resVietNam.coldongia.ToString();
@@ -386,7 +387,7 @@ namespace WindowsFormsApplication1
             colsoluongmh.Caption = resEngLand.colsoluongmh.ToString();
 
            // coldonvi.Caption = resEngLand.colDonViTInh.ToString();
-            colthanhtien2.Caption = resEngLand.colthanhtien.ToString();
+            //colthanhtien2.Caption = resEngLand.colthanhtien.ToString();
             coldongia.Caption = resEngLand.colgiaban.ToString();
 
             colthanhtien.Caption = resEngLand.coltienban.ToString();
@@ -414,12 +415,12 @@ namespace WindowsFormsApplication1
             gridColumn5.Caption = resEngLand.colDonViTInh.ToString();
             gridColumn6.Caption = resEngLand.coldongia.ToString();
             colthanhtienxuat1.Caption = resEngLand.colthanhtienxuat.ToString();
-            gridColumn8.Caption = resEngLand.colthanhtien.ToString();
+            //gridColumn8.Caption = resEngLand.colthanhtien.ToString();
             gridColumn9.Caption = resEngLand.colmahang.ToString();
-            gridColumn10.Caption = resEngLand.colloinhuan.ToString();
-            gridColumn13.Caption = resEngLand.colthueGTGT.ToString();
+            //gridColumn10.Caption = resEngLand.colloinhuan.ToString();
+           // gridColumn13.Caption = resEngLand.colthueGTGT.ToString();
             gridColumn41.Caption = resEngLand.COLMAHDX.ToString();
-            gridColumn42.Caption = resEngLand.coltennhomhang.ToString();
+            //gridColumn42.Caption = resEngLand.coltennhomhang.ToString();
             colgiakho.Caption = resEngLand.coldongia.ToString();
             //-----------------------------------
             gridColumn12.Caption = resEngLand.colNhomHang.ToString();
@@ -471,7 +472,7 @@ namespace WindowsFormsApplication1
             colkho.Caption = resEngLand.colkho.ToString();
             gridColumn39.Caption = resEngLand.colkho.ToString();
             colnhomhang5.Caption = resEngLand.colNhomHang.ToString();
-            loinhuan.Caption = resEngLand.linktheoloinhuan.ToString();
+            HDNCC.Caption = resEngLand.linktheoloinhuan.ToString();
             Khachhang.Caption = resEngLand.linktheokhachhang.ToString();
             tenhang.Caption = resEngLand.linktheomathang.ToString();
             Theokho.Caption = resEngLand.linhtheokho.ToString();
@@ -658,7 +659,7 @@ namespace WindowsFormsApplication1
 
             try
             {
-                if (gridControl1.MainView == gridView1)
+                if (gridControl1.MainView == gridView10)
                 {
 
                     loadGird1();
@@ -783,7 +784,7 @@ namespace WindowsFormsApplication1
         private void loinhuan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             loadGird1();
-            gridControl1.MainView = gridView1;
+            gridControl1.MainView = gridView10;
             //gridControl1.DataSource = ctr1.LOINHUANKINHDOANH(dto);
            // dt = ctr1.LOINHUANKINHDOANH(dto);
             pnthoigian.Visible = true;

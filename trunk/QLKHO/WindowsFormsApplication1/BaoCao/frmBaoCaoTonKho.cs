@@ -69,7 +69,7 @@ namespace WindowsFormsApplication1
             btXem.Text = resVietNam.btXem.ToString();
             colNhomHang.Caption = resVietNam.colNhomHang.ToString();
             colNhomHang.Caption = resVietNam.colNhomHang.ToString();
-            colNgay.Caption = resVietNam.colNgay.ToString();
+           // colNgay.Caption = resVietNam.colNgay.ToString();
             colMa.Caption = resVietNam.colMa.ToString();
             colDonViTInh.Caption = resVietNam.colDonViTInh.ToString();
             colHangHoa.Caption = resVietNam.colHangHoa.ToString();
@@ -103,7 +103,7 @@ namespace WindowsFormsApplication1
             btXem.Text = resEngLand.btXem.ToString();
             colNhomHang.Caption = resEngLand.colNhomHang.ToString();
             colNhomHang.Caption = resEngLand.colNhomHang.ToString();
-            colNgay.Caption = resEngLand.colNgay.ToString();
+           // colNgay.Caption = resEngLand.colNgay.ToString();
             colMa.Caption = resEngLand.colMa.ToString();
             colDonViTInh.Caption = resEngLand.colDonViTInh.ToString();
             colHangHoa.Caption = resEngLand.colHangHoa.ToString();

@@ -240,7 +240,7 @@ namespace WindowsFormsApplication1
             dto.NGAYKT = dateNgayKT;
 
             
-            gridControl6.MainView = gridView4;
+            
             //gridControl6.DataSource = ctr.getDoanhThu(dto);
             //tb = ctr.getDoanhThu(dto);
             if (baocaotype == "MH_NGAY")
@@ -360,7 +360,8 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "MH_NGAY";
             gridControl6.DataSource = null;
-            gridView4.Columns.Clear();
+            gridControl6.MainView = gridView4;
+            //gridView4.Columns.Clear();
             load();
         }
 
@@ -368,7 +369,8 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "MH_NCC";
             gridControl6.DataSource = null;
-            gridView4.Columns.Clear();
+            //gridView4.Columns.Clear();
+            gridControl6.MainView = gridView5;
             load();
         }
 
@@ -376,7 +378,7 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "BH_NGAY";
             gridControl6.DataSource = null;
-            gridView4.Columns.Clear();
+            gridControl6.MainView = gridView7;
             load();
         }
 
@@ -384,7 +386,7 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "BH_KH";
             gridControl6.DataSource = null;
-            gridView4.Columns.Clear();
+            gridControl6.MainView = gridView8;
             load();
         }
 
@@ -392,7 +394,7 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "DS_NV";
             gridControl6.DataSource = null;
-            gridView4.Columns.Clear();
+            gridControl6.MainView = gridView10;
             load();
         }
 
@@ -400,7 +402,7 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "MH_SP";
             gridControl6.DataSource = null;
-            gridView4.Columns.Clear();
+            gridControl6.MainView = gridView9;
             load();
         }
 
@@ -408,7 +410,7 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "BH_SP";
             gridControl6.DataSource = null;
-            gridView4.Columns.Clear();
+            gridControl6.MainView = gridView6;
             load();
         }
 
