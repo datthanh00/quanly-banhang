@@ -136,6 +136,8 @@ namespace WindowsFormsApplication1.KHtra
             loadGrid_sanpham();
             cboNhanVienLap.Text = sMaNV;
             Load_panel_create();
+            dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
+            dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
         }
 
         private void cboTenKH_Validated(object sender, EventArgs e)
@@ -515,36 +517,84 @@ namespace WindowsFormsApplication1.KHtra
 
         private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Load_panel_filter();
-            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') 'Ngày xuất',T1.MAHDX 'Mã Hóa Đơn',T1.tenkh 'Tên Khách Hàng',T2.TENNV 'Tên Nhân Viên',T1.TIENPHAITRA 'Tiền Phải Trả',T1.TIENDATRA 'Tiền Đã Trả',(T1.TIENPHAITRA - T1.TIENDATRA) 'Tiền Nợ',T1.GHICHU 'Ghi Chú' FROM (select t9.*,t8.tenkh from trahoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
-            loadgridPHIEUXUAT(SQL);
+           
+            loadgridPHIEUXUAT();
         }
 
         private void linkTheoSanPham_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            Load_panel_filter();
-            string SQL = "SELECT DATE_FORMAT(T3.NGAYXUAT,'%d/%m/%Y') 'Ngày Xuất',T3.tenkh 'Tên Khách Hàng',T3.MAHDX 'Mã Hóa Đơn', T3.MAMH 'Mã Hàng', T4.TENMH 'Tên Hàng',T3.SOLUONGXUAT 'Số Lượng',T3.GIATIEN 'Giá Bán'  FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,t2.tenkh FROM (SELECT * FROM traCHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh from trahoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh) AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
-            loadgridSANPHAM(SQL);
+            
+            
+            loadgridSANPHAM();
         }
-
-        public void loadgridPHIEUXUAT(string SQL)
+        private void tongsanpham_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            loadgridTONGSANPHAM();
+        }
+        public void loadgridPHIEUXUAT()
+        {
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dtoNCC.NGAYBD = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dtoNCC.NGAYKT = NGAYKT;
+            Load_panel_filter();
+            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') AS NGAYXUAT,T1.MAHDX ,T1.TENKH ,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA)AS TONGTIEN ,T1.GHICHU  FROM (select t9.*,t8.tenkh from TRAHOADONXUAT as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
+            
+            
+
             DataTable TBS = ctlNCC.GETDATA(SQL);
-            gridView4.Columns.Clear();
+            gridControl3.MainView = gridView4;
             gridControl3.DataSource = TBS;
             gridView4.RefreshData();
             gridControl3.RefreshDataSource();
 
         }
-        public void loadgridSANPHAM(string SQL)
+        public void loadgridSANPHAM()
         {
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dtoNCC.NGAYBD = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dtoNCC.NGAYKT = NGAYKT;
+
+            Load_panel_filter();
+            string SQL = "SELECT DATE_FORMAT(T3.NGAYXUAT,'%d/%m/%Y') AS NGAYXUAT,T3.TENKH ,T3.MAHDX , T3.MAMH , T4.TENMH ,T3.SOLUONGXUAT ,T3.GIATIEN, GHICHU   FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,GHICHU,t2.tenkh FROM (SELECT * FROM TRACHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh,GHICHU from TRAHOADONXUAT as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
+            
+
             DataTable TBS = ctlNCC.GETDATA(SQL);
-            gridView4.Columns.Clear();
+            gridControl3.MainView = gridView1;
             gridControl3.DataSource = TBS;
-            gridView4.Columns["Mã Hóa Đơn"].Group();
-            gridView4.Columns["Mã Hóa Đơn"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
-            gridView4.ExpandAllGroups();
-            gridView4.RefreshData();
+            //gridView4.Columns["Mã Hóa Đơn"].Group();
+            //gridView4.Columns["Mã Hóa Đơn"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+            gridView1.ExpandAllGroups();
+            gridView1.RefreshData();
+            gridControl3.RefreshDataSource();
+        }
+
+        public void loadgridTONGSANPHAM()
+        {
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dtoNCC.NGAYBD = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dtoNCC.NGAYKT = NGAYKT;
+
+            Load_panel_filter();
+            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNHOMHANG, TENKHO, DONVITINH, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN, SOLUONGXUAT*GIATIEN AS TONGTIEN FROM MATHANG,NHOMHANG,KHO,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN FROM TRACHITIETHDX, TRAHOADONXUAT WHERE NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDX WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDX.MAMH group by MAMH";
+           
+
+            DataTable TBS = ctlNCC.GETDATA(SQL);
+            gridControl3.MainView = gridView3;
+            gridControl3.DataSource = TBS;
+            
+            gridView3.RefreshData();
             gridControl3.RefreshDataSource();
         }
 
@@ -681,10 +731,18 @@ namespace WindowsFormsApplication1.KHtra
         {
             Load_panel_create();
             loadgridCTHOADON();
-            DataRow dtr = dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
-            string MAKH = ctlNCC.GETMAKHfromtraMHDX(dtr["Mã Hóa Đơn"].ToString());
-            View_phieuxuat(dtr["Mã Hóa Đơn"].ToString());
-            txtNgayXuat.Text = dtr["NGÀY XUẤT"].ToString();
+            DataRow dtr;
+            if (gridControl3.MainView == gridView4)
+            {
+                dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+            }
+            else
+            {
+                dtr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            }
+            string MAKH = ctlNCC.GETMAKHfromtraMHDX(dtr["MAHDX"].ToString());
+            View_phieuxuat(dtr["MAHDX"].ToString());
+            txtNgayXuat.Text = dtr["NGAYXUAT"].ToString();
             loadgridKhachHang(MAKH);
             LOAD_TTKH();
         }
@@ -693,7 +751,15 @@ namespace WindowsFormsApplication1.KHtra
         {
             Load_panel_create();
             loadgridCTHOADON();
-            DataRow dtr = dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+            DataRow dtr;
+            if (gridControl3.MainView == gridView4)
+            {
+                dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+            }
+            else
+            {
+                dtr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            }
             string MAKH = ctlNCC.GETMAKHfromMHDX(dtr["Mã Hóa Đơn"].ToString());
             View_phieuxuat(dtr["Mã Hóa Đơn"].ToString());
             txtNgayXuat.Text = dtr["NGÀY XUẤT"].ToString();
@@ -738,6 +804,8 @@ namespace WindowsFormsApplication1.KHtra
                 }
             }
         }
+
+       
  
 
     }

@@ -150,7 +150,19 @@ namespace WindowsFormsApplication1
             get { return _MANH; }
             set { _MANH = value; }
         }
+        private string _NGAYBD;
+        public string NGAYBD
+        {
+            get { return _NGAYBD; }
+            set { _NGAYBD = value; }
+        }
+        private string _NGAYKT;
 
+        public string NGAYKT
+        {
+            get { return _NGAYKT; }
+            set { _NGAYKT = value; }
+        }
         
         private string _TENNHOMHANG;
 
