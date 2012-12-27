@@ -63,8 +63,8 @@ namespace WindowsFormsApplication1
             {
                 
             DataRow dtr = gridView1.GetDataRow(e.RowHandle);
-           sMaBP = dtr[0].ToString();
-           sTenBP = dtr[1].ToString();
+            sMaBP = dtr[0].ToString();
+            sTenBP = dtr[1].ToString();
             loadNguoiDung();
             }
             catch 
@@ -367,6 +367,23 @@ namespace WindowsFormsApplication1
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
+        }
+
+        private void btnphanquyen_Click(object sender, EventArgs e)
+        {
+        
+            frmPhanQuyenbophan frmbp = new frmPhanQuyenbophan();
+            frmbp.sMaBP = sMaBP;
+            frmbp.isPhankho = false;
+            frmbp.ShowDialog();
+        }
+
+        private void btnphankho_Click(object sender, EventArgs e)
+        {
+            frmPhanQuyenbophan frmbp = new frmPhanQuyenbophan();
+            frmbp.sMaBP = sMaBP;
+            frmbp.isPhankho = true;
+            frmbp.ShowDialog();
         }
     }
 }
