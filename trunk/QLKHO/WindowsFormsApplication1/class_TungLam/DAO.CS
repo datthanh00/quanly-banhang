@@ -104,6 +104,15 @@ namespace WindowsFormsApplication1
             string SQL = "insert into BOPHAN(MABP,TENBOPHAN,TINHTRANG)"
             +" values('"+dto.MABP+"',N'"+dto.TENBOPHAN+"','"+dto.TINHTRANG+"')";
             executeNonQuery(SQL);
+
+            //PHAN KHO
+
+            SQL = "insert into PHANKHO SELECT '" + dto.MABP + "' AS MABP,MAKHO FROM KHO";
+            executeNonQuery(SQL);
+            //PHAN QUYEN
+            SQL = "insert into PHANQUYEN SELECT '" + dto.MABP + "' AS MABP,MACN FROM CHUCNANG";
+            executeNonQuery(SQL);
+
         }
         public void UPDATEBOPHAN(DTO dto)
         {
@@ -191,6 +200,10 @@ namespace WindowsFormsApplication1
             string SQL = "insert into KHO(MAKHO,MANV,TENKHO,DIACHI,SDTB,DTDD,NGUOILH,FAX,GHICHU,TINHTRANG)"
             + " values('" + dto.MAKHO + "','" + dto.MANV + "',N'" + dto.TENKHO + "',N'" + dto.DIACHI + "','" + dto.SDTB + "','" + dto.DTDD + "',N'" + dto.NGUOILH + "','" + dto.FAX + "','" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
+
+            SQL = "insert into PHANKHO SELECT '" + dto.MABP + "' AS MABP,MAKHO FROM KHO";
+            executeNonQuery(SQL);
+
         }
         public void INSERTDVT(DTO dto)
         {

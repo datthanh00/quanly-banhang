@@ -252,6 +252,12 @@
     <Compile Include="MatHang\ThemMatHang.designer.cs">
       <DependentUpon>ThemMatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="PhanQuyen\frmPhanQuyenbophan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanQuyen\frmPhanQuyenbophan.designer.cs">
+      <DependentUpon>frmPhanQuyenbophan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Thue\frmThemThue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -587,6 +593,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MatHang\ThemMatHang.resx">
       <DependentUpon>ThemMatHang.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanQuyen\frmPhanQuyenbophan.resx">
+      <DependentUpon>frmPhanQuyenbophan.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Thue\frmThemThue.resx">
