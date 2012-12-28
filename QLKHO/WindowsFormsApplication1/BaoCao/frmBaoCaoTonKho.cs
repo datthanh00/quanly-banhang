@@ -34,8 +34,16 @@ namespace WindowsFormsApplication1
         public frmMain frm;
 
         public int iNgonNgu;
+        PublicVariable PV;
         private void frmBaoCaoTonKho_Load(object sender, EventArgs e)
         {
+            PV = new PublicVariable();
+
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             frm.LoadVI += new frmMain.Translate(loadcbVietNam);
             ////frm.LoadVI += new frmMain.Translate(loadGird);
         
@@ -360,6 +368,11 @@ namespace WindowsFormsApplication1
 
         private void btIn_Click(object sender, EventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            } 
             if (advBandedGridView3.RowCount > 0)
             {
                 reportTonKhoSoLuongGiaTri rep = new reportTonKhoSoLuongGiaTri(dt, iNgonNgu, glKhoHang.Text, dateTu.Text, dateDen.Text);
@@ -416,6 +429,11 @@ namespace WindowsFormsApplication1
 
         private void btXuat_Click(object sender, EventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            } 
             try
             {
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();

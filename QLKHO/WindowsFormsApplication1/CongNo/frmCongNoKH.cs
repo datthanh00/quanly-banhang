@@ -34,9 +34,16 @@ namespace WindowsFormsApplication1
         public frmMain frm;
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
-           
+        PublicVariable PV;
         private void frmCongNoKH_Load(object sender, EventArgs e)
         {
+            PV = new PublicVariable();
+
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             frm.LoadVI += new frmMain.Translate(loadVN);
             frm.LoadEN += new frmMain.Translate(loadEL);
             if (iNgonNgu == 0)
@@ -96,6 +103,11 @@ namespace WindowsFormsApplication1
         }
         private void btThutien_Click(object sender, EventArgs e)
         {
+            if (PV.THEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            } 
             loadfrm_thutien();
         }
         public void loadfrm_thutien()
@@ -127,6 +139,11 @@ namespace WindowsFormsApplication1
         }
         private void btneditthutien_Click(object sender, EventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            } 
             FrmThuTien frm = new FrmThuTien();
             if (this.smpt == null)
             {
@@ -160,6 +177,7 @@ namespace WindowsFormsApplication1
 
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
+ 
             try
             {
                 DataRow dtr1 = gridView2.GetDataRow(e.RowHandle);
@@ -177,6 +195,12 @@ namespace WindowsFormsApplication1
         }
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
+            if (PV.THEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             GridView view = sender as GridView;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             GridHitInfo hitInfo = view.CalcHitInfo(pt);
@@ -264,6 +288,15 @@ namespace WindowsFormsApplication1
         {
             loadGetAllPHIEUCHI();
             load_phieuthu();
+        }
+
+        private void btndelthutien_Click(object sender, EventArgs e)
+        {
+            if (PV.XOA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
         }
 
         

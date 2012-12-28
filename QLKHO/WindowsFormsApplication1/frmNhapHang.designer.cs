@@ -160,6 +160,7 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -175,7 +176,6 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -506,7 +506,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(163, 11);
+            this.lbDen.Location = new System.Drawing.Point(164, 12);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -514,7 +514,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(11, 11);
+            this.lbTu.Location = new System.Drawing.Point(12, 12);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -547,7 +547,7 @@
             // 
             // lbDen1
             // 
-            this.lbDen1.Location = new System.Drawing.Point(150, 11);
+            this.lbDen1.Location = new System.Drawing.Point(151, 12);
             this.lbDen1.Name = "lbDen1";
             this.lbDen1.Size = new System.Drawing.Size(20, 13);
             this.lbDen1.TabIndex = 1;
@@ -569,7 +569,7 @@
             // 
             // lbtu1
             // 
-            this.lbtu1.Location = new System.Drawing.Point(4, 11);
+            this.lbtu1.Location = new System.Drawing.Point(5, 12);
             this.lbtu1.Name = "lbtu1";
             this.lbtu1.Size = new System.Drawing.Size(13, 13);
             this.lbtu1.TabIndex = 1;
@@ -583,6 +583,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(70, 31);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "In";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
             // 
@@ -601,6 +602,7 @@
             this.btXuatDuLieu.Size = new System.Drawing.Size(103, 31);
             this.btXuatDuLieu.TabIndex = 3;
             this.btXuatDuLieu.Text = "Xuất Dữ Liệu";
+            this.btXuatDuLieu.Click += new System.EventHandler(this.btXuatDuLieu_Click);
             // 
             // btXem
             // 
@@ -703,7 +705,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(13, 7);
+            this.labelControl2.Location = new System.Drawing.Point(14, 8);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(90, 13);
             this.labelControl2.TabIndex = 9;
@@ -711,7 +713,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(449, 32);
+            this.labelControl5.Location = new System.Drawing.Point(450, 33);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(24, 13);
             this.labelControl5.TabIndex = 8;
@@ -719,7 +721,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(259, 32);
+            this.labelControl4.Location = new System.Drawing.Point(260, 33);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(18, 13);
             this.labelControl4.TabIndex = 7;
@@ -727,7 +729,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(15, 71);
+            this.labelControl10.Location = new System.Drawing.Point(16, 72);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(37, 13);
             this.labelControl10.TabIndex = 12;
@@ -735,7 +737,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(15, 32);
+            this.labelControl3.Location = new System.Drawing.Point(16, 33);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(66, 13);
             this.labelControl3.TabIndex = 11;
@@ -743,7 +745,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(436, 7);
+            this.labelControl1.Location = new System.Drawing.Point(437, 8);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(86, 13);
             this.labelControl1.TabIndex = 10;
@@ -891,7 +893,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(211, 23);
+            this.labelControl8.Location = new System.Drawing.Point(211, 22);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(45, 13);
             this.labelControl8.TabIndex = 0;
@@ -915,7 +917,7 @@
             // 
             // labelControl19
             // 
-            this.labelControl19.Location = new System.Drawing.Point(262, 105);
+            this.labelControl19.Location = new System.Drawing.Point(262, 104);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(20, 13);
             this.labelControl19.TabIndex = 0;
@@ -923,7 +925,7 @@
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(12, 105);
+            this.labelControl18.Location = new System.Drawing.Point(12, 104);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(35, 13);
             this.labelControl18.TabIndex = 0;
@@ -931,7 +933,7 @@
             // 
             // labelControl17
             // 
-            this.labelControl17.Location = new System.Drawing.Point(209, 77);
+            this.labelControl17.Location = new System.Drawing.Point(209, 76);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(37, 13);
             this.labelControl17.TabIndex = 0;
@@ -939,7 +941,7 @@
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(12, 77);
+            this.labelControl16.Location = new System.Drawing.Point(12, 76);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(53, 13);
             this.labelControl16.TabIndex = 0;
@@ -947,7 +949,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(12, 51);
+            this.labelControl7.Location = new System.Drawing.Point(12, 50);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(68, 13);
             this.labelControl7.TabIndex = 0;
@@ -955,7 +957,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(211, 51);
+            this.labelControl9.Location = new System.Drawing.Point(211, 50);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(29, 13);
             this.labelControl9.TabIndex = 0;
@@ -963,7 +965,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(12, 24);
+            this.labelControl6.Location = new System.Drawing.Point(12, 23);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(59, 13);
             this.labelControl6.TabIndex = 0;
@@ -1600,6 +1602,14 @@
             this.gridColumn19.Visible = true;
             this.gridColumn19.VisibleIndex = 6;
             // 
+            // gridColumn40
+            // 
+            this.gridColumn40.Caption = "Ghi Chú";
+            this.gridColumn40.FieldName = "GHICHU";
+            this.gridColumn40.Name = "gridColumn40";
+            this.gridColumn40.Visible = true;
+            this.gridColumn40.VisibleIndex = 7;
+            // 
             // gridView5
             // 
             this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -1751,14 +1761,6 @@
             this.EditToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
-            // 
-            // gridColumn40
-            // 
-            this.gridColumn40.Caption = "Ghi Chú";
-            this.gridColumn40.FieldName = "GHICHU";
-            this.gridColumn40.Name = "gridColumn40";
-            this.gridColumn40.Visible = true;
-            this.gridColumn40.VisibleIndex = 7;
             // 
             // frmNhapHang
             // 

@@ -55,10 +55,22 @@ namespace WindowsFormsApplication1
 
                 this.timer1.Enabled = false;
 
+
+                DataTable PhanKho = new DataTable();
+                DataTable PhanQuyen = new DataTable();
+                String SQL = "";
+                CTL ctl = new CTL();
+                SQL = "select * from phankho where MABP='" + sBoPhan + "'";
+                PhanKho= ctl.GETDATA(SQL);
+                SQL = "select * from phanquyen where MABP='" + sBoPhan + "'";
+                PhanQuyen = ctl.GETDATA(SQL);
+
                 frmMain frm = new frmMain();
                 frm.sBoPhan = sBoPhan;
                 frm.sTennv = sTennv;
                 frm.sManv = sManv;
+                frm.PhanKho = PhanKho;
+                frm.PhanQuyen = PhanQuyen;
                 frm.Show();
                 this.Hide();
 
@@ -76,5 +88,6 @@ namespace WindowsFormsApplication1
             this.timer1.Interval = 10;
             timer1.Start(); 
         }
+
     }
 }

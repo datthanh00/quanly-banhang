@@ -123,8 +123,17 @@ namespace WindowsFormsApplication1.HoaDonXuat
         public int iNgonNgu;
         public frmMain frm;
         public string sTenNV, sMaNV;
+        PublicVariable PV;
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
         {
+            PV = new PublicVariable();
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                this.Close();
+                return;
+            }
+
            // cbotientra.Text = "0";
             loadgridKhachHang();
             loadgridNhanVien();
@@ -320,6 +329,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
             bool isINSERTHOADONXUAT = ctlNCC.isINSERTHOADONXUAT(dtoNCC.MAHDX);
             if (isINSERTHOADONXUAT)
             {
+                if (PV.THEM == "0")
+                {
+                    MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                    return;
+                }
+
                 dtoNCC.IsUPDATE = false;
                 ctlNCC.INSERTHOADONXUAT(dtoNCC);
                 //insert hoa don chi tiet
@@ -332,6 +347,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
             }
             else
             {
+                if (PV.SUA == "0")
+                {
+                    MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                    return;
+                }
+
                 dtoNCC.IsUPDATE = true;
                 ctlNCC.UPDATEHOADONXUAT(dtoNCC);
              
@@ -436,6 +457,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void btIn_Click(object sender, EventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
 
             try
             {
@@ -482,7 +508,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-           
+            if (PV.THEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             Create_new();
             
         }
@@ -512,6 +542,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            if (PV.THEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             Load_panel_create();
             Create_new();
             loadgridCTHOADON();
@@ -695,6 +730,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (PV.XOA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int focusrow = gridCTHOADON.FocusedRowHandle;
@@ -732,6 +772,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -752,6 +797,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -805,6 +856,33 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         e.Cancel = true;
                     }
                 }
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+        }
+
+        private void btXuatDuLieu_Click(object sender, EventArgs e)
+        {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+        }
+
+        private void btXem_Click(object sender, EventArgs e)
+        {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
             }
         }
 

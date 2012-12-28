@@ -154,6 +154,7 @@
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -163,11 +164,6 @@
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView7 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.DeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -176,7 +172,11 @@
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.DeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -584,6 +584,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(70, 31);
             this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "In";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
             // 
@@ -602,6 +603,7 @@
             this.btXuatDuLieu.Size = new System.Drawing.Size(103, 31);
             this.btXuatDuLieu.TabIndex = 3;
             this.btXuatDuLieu.Text = "Xuất Dữ Liệu";
+            this.btXuatDuLieu.Click += new System.EventHandler(this.btXuatDuLieu_Click);
             // 
             // btXem
             // 
@@ -1561,6 +1563,15 @@
             this.gridView5.DoubleClick += new System.EventHandler(this.gridView4_doubleclick);
             this.gridView5.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
             // 
+            // gridColumn41
+            // 
+            this.gridColumn41.Caption = "Mã Hóa Đơn";
+            this.gridColumn41.FieldName = "MAHDN";
+            this.gridColumn41.Name = "gridColumn41";
+            this.gridColumn41.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumn41.Visible = true;
+            this.gridColumn41.VisibleIndex = 0;
+            // 
             // gridColumn24
             // 
             this.gridColumn24.Caption = "Ngày Trả Hàng";
@@ -1586,7 +1597,7 @@
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 3;
+            this.gridColumn27.VisibleIndex = 2;
             // 
             // gridColumn28
             // 
@@ -1595,7 +1606,7 @@
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 4;
+            this.gridColumn28.VisibleIndex = 3;
             // 
             // gridColumn29
             // 
@@ -1604,7 +1615,7 @@
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 5;
+            this.gridColumn29.VisibleIndex = 4;
             // 
             // gridColumn30
             // 
@@ -1613,7 +1624,7 @@
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 6;
+            this.gridColumn30.VisibleIndex = 5;
             // 
             // gridColumn31
             // 
@@ -1622,7 +1633,7 @@
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 7;
+            this.gridColumn31.VisibleIndex = 6;
             // 
             // gridColumn32
             // 
@@ -1631,7 +1642,7 @@
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 8;
+            this.gridColumn32.VisibleIndex = 7;
             // 
             // gridView7
             // 
@@ -1663,42 +1674,6 @@
             this.gridView7.OptionsView.ShowAutoFilterRow = true;
             this.gridView7.OptionsView.ShowFooter = true;
             this.gridView7.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.DeleteToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 26);
-            // 
-            // DeleteToolStripMenuItem
-            // 
-            this.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem";
-            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.DeleteToolStripMenuItem.Text = "Xóa";
-            this.DeleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click_1);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ViewToolStripMenuItem,
-            this.EditToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(106, 48);
-            // 
-            // ViewToolStripMenuItem
-            // 
-            this.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
-            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.ViewToolStripMenuItem.Text = "Xem";
-            this.ViewToolStripMenuItem.Click += new System.EventHandler(this.ViewToolStripMenuItem_Click);
-            // 
-            // EditToolStripMenuItem
-            // 
-            this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
-            this.EditToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
-            this.EditToolStripMenuItem.Text = "Sửa";
-            this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
             // gridColumn33
             // 
@@ -1764,14 +1739,41 @@
             this.gridColumn40.Visible = true;
             this.gridColumn40.VisibleIndex = 7;
             // 
-            // gridColumn41
+            // contextMenuStrip1
             // 
-            this.gridColumn41.Caption = "Mã Hóa Đơn";
-            this.gridColumn41.FieldName = "MAHDN";
-            this.gridColumn41.Name = "gridColumn41";
-            this.gridColumn41.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn41.Visible = true;
-            this.gridColumn41.VisibleIndex = 0;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.DeleteToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            // 
+            // DeleteToolStripMenuItem
+            // 
+            this.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem";
+            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.DeleteToolStripMenuItem.Text = "Xóa";
+            this.DeleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click_1);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ViewToolStripMenuItem,
+            this.EditToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(106, 48);
+            // 
+            // ViewToolStripMenuItem
+            // 
+            this.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
+            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.ViewToolStripMenuItem.Text = "Xem";
+            this.ViewToolStripMenuItem.Click += new System.EventHandler(this.ViewToolStripMenuItem_Click);
+            // 
+            // EditToolStripMenuItem
+            // 
+            this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.EditToolStripMenuItem.Text = "Sửa";
+            this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
             // frmTraNCC
             // 

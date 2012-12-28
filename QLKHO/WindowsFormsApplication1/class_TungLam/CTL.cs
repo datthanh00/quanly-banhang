@@ -460,7 +460,10 @@ namespace WindowsFormsApplication1
             return DAO.GETtraCTHOADONXUAT(MAHDX);
         }
 
-
+        public void executeNonQuery(string SQL)
+        {
+             DAO.executeNonQuery(SQL);
+        }
 
 
 

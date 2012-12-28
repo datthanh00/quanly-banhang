@@ -693,6 +693,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(70, 31);
             this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "In";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton3
             // 
@@ -711,6 +712,7 @@
             this.btXuatDuLieu.Size = new System.Drawing.Size(103, 31);
             this.btXuatDuLieu.TabIndex = 3;
             this.btXuatDuLieu.Text = "Xuất Dữ Liệu";
+            this.btXuatDuLieu.Click += new System.EventHandler(this.btXuatDuLieu_Click);
             // 
             // btXem
             // 
@@ -720,6 +722,7 @@
             this.btXem.Size = new System.Drawing.Size(70, 31);
             this.btXem.TabIndex = 3;
             this.btXem.Text = "Xem";
+            this.btXem.Click += new System.EventHandler(this.btXem_Click);
             // 
             // panel_info
             // 

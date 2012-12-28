@@ -46,11 +46,18 @@ namespace WindowsFormsApplication1
         {
 
         }
-        
 
-      
+        PublicVariable PV;
         private void frmThongKeTongHop_Load(object sender, EventArgs e)
         {
+            PV = new PublicVariable();
+
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             frm.LoadVI += new frmMain.Translate(loadcbVietNam);
             ////frm.LoadVI += new frmMain.Translate(loadGird);
 
@@ -616,7 +623,11 @@ namespace WindowsFormsApplication1
 
         private void simpleButton8_Click(object sender, EventArgs e)
         {
-
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
 
             reporthansudung hansudung = new reporthansudung(dt, iNgonNgu);
             hansudung.ShowPreviewDialog();
@@ -639,6 +650,11 @@ namespace WindowsFormsApplication1
 
         private void BtXuatdulieu_Click(object sender, EventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            } 
             try
             {
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
