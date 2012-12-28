@@ -38,9 +38,16 @@ namespace WindowsFormsApplication1
         
         NhapHangDTO dto = new NhapHangDTO();
         NhapHangDAO mh = new NhapHangDAO();
-        WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
+        //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
+        PublicVariable PV;
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
+            PV = new PublicVariable();
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             loadGiaoDich();
             loadgridNhacCungCap();
             loadgridNhanVien();
@@ -318,7 +325,11 @@ namespace WindowsFormsApplication1
         public string sTenNV, sMaNV;
         private void btTaoMoi_Click(object sender, EventArgs e)
         {
-           
+            if (PV.THEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             Create_new();
             
         }
@@ -332,10 +343,7 @@ namespace WindowsFormsApplication1
             txtMaHD.Text = "";
             txtNo.Text = "";
 
-            if (hd._Cart.Count > 0)
-            {
-                hd._Cart.Clear();
-            }
+         
             loadmahdn();
             //   cboTinhTrang.Text = "";
             gridControl1.DataSource = null;
@@ -380,6 +388,12 @@ namespace WindowsFormsApplication1
                     bool isINSERTHOADONNHAP = ctlNCC.isINSERTtraHOADONNHAP(dtoNCC.MAHDN);
                     if (isINSERTHOADONNHAP)
                     {
+                        if (PV.THEM == "0")
+                        {
+                            MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                            return;
+                        }
+
                         dtoNCC.IsUPDATE = false;
                         ctlNCC.INSERTtraHOADONNHAP(dtoNCC);
                         //insert hoa don chi tiet
@@ -393,6 +407,12 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
+                        if (PV.SUA == "0")
+                        {
+                            MessageBox.Show("KHÔNG CÓ QUYỀN  ");
+                            return;
+                        }
+
                         dtoNCC.IsUPDATE = true;
                         ctlNCC.UPDATEtraHOADONNHAP(dtoNCC);
                         //update hoa don chi tiet
@@ -561,6 +581,11 @@ namespace WindowsFormsApplication1
         
         private void btIn_Click(object sender, EventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             try
             {
                 if (gridCTHOADON.RowCount > 0)
@@ -741,6 +766,11 @@ namespace WindowsFormsApplication1
 
         private void DeleteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            if (PV.XOA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int focusrow = gridCTHOADON.FocusedRowHandle;
@@ -766,6 +796,11 @@ namespace WindowsFormsApplication1
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            if (PV.THEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             Load_panel_create();
             Create_new();
             loadgridCTHOADON();
@@ -804,6 +839,11 @@ namespace WindowsFormsApplication1
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -824,6 +864,12 @@ namespace WindowsFormsApplication1
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -844,7 +890,11 @@ namespace WindowsFormsApplication1
 
         private void btXem_Click(object sender, EventArgs e)
         {
-
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
         }
 
         private void gridCTHOADON_ShowingEditor(object sender, CancelEventArgs e)
@@ -871,6 +921,24 @@ namespace WindowsFormsApplication1
         private void tongsanpham_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             loadgridTONGSANPHAM();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+        }
+
+        private void btXuatDuLieu_Click(object sender, EventArgs e)
+        {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
         }
 
     

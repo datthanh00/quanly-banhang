@@ -52,6 +52,12 @@ namespace WindowsFormsApplication1
         }
         private void btLuu_Click(object sender, EventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             if (txtPassCu.Text=="")
             {
                 Validate_EmptyStringRule(txtPassCu);
@@ -111,9 +117,17 @@ namespace WindowsFormsApplication1
                     XtraMessageBox.Show("Old password is incorrect");
             }
         }
-
+        PublicVariable PV;
         private void frmDoiMatKhau_Load(object sender, EventArgs e)
         {
+            PV = new PublicVariable();
+
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             if (iNgonNgu == 0)
             {
                 loadVN();

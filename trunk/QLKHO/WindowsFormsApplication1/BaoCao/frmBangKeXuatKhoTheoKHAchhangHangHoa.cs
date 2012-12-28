@@ -31,10 +31,18 @@ namespace WindowsFormsApplication1
         public _deDongTab deDongTab;
         public  int iNgonNgu ;
         public  string optionload="";
-       
+
+        PublicVariable PV;
 
         private void frmBaoCaoTonKho_Load(object sender, EventArgs e)
         {
+            PV = new PublicVariable();
+
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             frm.LoadVI += new frmMain.Translate(loadcbVietNam);
             ////frm.LoadVI += new frmMain.Translate(loadGird);
 
@@ -720,7 +728,11 @@ namespace WindowsFormsApplication1
 
         private void btIn_Click(object sender, EventArgs e)
         {
-
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             if (gridControl1.MainView == gridView1)
             {
 
@@ -762,6 +774,11 @@ namespace WindowsFormsApplication1
 
         private void btXuat_Click(object sender, EventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            } 
             try
             {
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();

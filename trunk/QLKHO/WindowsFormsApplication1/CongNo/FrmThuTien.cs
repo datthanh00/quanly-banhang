@@ -36,6 +36,7 @@ namespace WindowsFormsApplication1
 
         private void FrmThuTien_Load(object sender, EventArgs e)
         {
+
             txtNV.Text=sTenNV;
             if (iNgonNgu == 0)
             {

@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1
         public frmBaoCaoTonKho frmTonKho;
         private void btKhachHang_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("11");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -94,6 +95,8 @@ namespace WindowsFormsApplication1
         }
         private void btNhaCungCap_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("12");
+
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -128,6 +131,7 @@ namespace WindowsFormsApplication1
 
         private void bKhuVuc_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("13");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -162,6 +166,7 @@ namespace WindowsFormsApplication1
 
         private void btKho_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("14");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -211,20 +216,346 @@ namespace WindowsFormsApplication1
         }
         clDTO dto = new clDTO();
         public string sManv, sTennv, sBoPhan;
+
+
+        private void SetPhanQuyen(string MACN)
+        {
+            int phanquyencount = PhanQuyen.Rows.Count;
+            PublicVariable PV = new PublicVariable();
+
+           // for (int i = 0; i < phanquyencount; i++)
+           // {
+            int imacn = Convert.ToInt32(MACN);
+                //if (PhanQuyen.Rows[i]["MACN"].ToString() == MACN)
+                //{
+            PV.XEM = PhanQuyen.Rows[imacn-1]["TRUYCAP"].ToString();
+            PV.THEM = PhanQuyen.Rows[imacn-1]["THEM"].ToString();
+            PV.XOA = PhanQuyen.Rows[imacn-1]["XOA"].ToString();
+            PV.SUA = PhanQuyen.Rows[imacn-1]["SUA"].ToString();
+            PV.IN = PhanQuyen.Rows[imacn-1]["IN"].ToString();
+                //}
+            //}
+        }
+        private void SetPhanKho(DataTable KHO)
+        {
+            PublicVariable PV = new PublicVariable();
+            PV.AddKhoQL(KHO);
+        }
+
+        public Boolean Isused(string MACN)
+        {
+            int phanquyencount = PhanQuyen.Rows.Count;
+            string TATCA,TRUYCAP;
+            for (int i = 0; i < phanquyencount; i++)
+            {
+                if (PhanQuyen.Rows[i]["MACN"].ToString() == MACN)
+                {
+                    TRUYCAP = PhanQuyen.Rows[i]["TRUYCAP"].ToString();
+                    if (TRUYCAP == "1")
+                        return true;
+                    else
+                        return false;
+                }
+            }
+            return false;
+        }
         public void vKiemTraDangNhap()
         {
-            if (sBoPhan=="MABP00001")
+            int phanquyencount=PhanQuyen.Rows.Count;
+            for (int i = 0; i < phanquyencount; i++)
             {
-                btNhapHang.Enabled = true;
-                btCongNoNCC.Enabled = true;
-                btHoaDonNhap.Enabled = true;
-                btXuatHang.Enabled = false;
-                btHoaDonXuat.Enabled = false;
-                btCongNoKH.Enabled = false;
-                ribBaoMat.Visible = false;
-                ribDuLieu.Visible = false;
-                ribNhanVien.Visible = false;
+                switch (PhanQuyen.Rows[i]["MACN"].ToString())
+                {
+                    case "1":
+                        if (Isused("1"))
+                        {
+                            btNhapHang.Enabled= true;
+                            break;
+                        }
+                        else
+                        {
+                            btNhapHang.Enabled = false;
+                            break;
+                        }
+                    case "2":
+                        if (Isused("2"))
+                        {
+                            btXuatHang.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btXuatHang.Enabled = false;
+                            break;
+                        }
+                    case "3":
+                        if (Isused("3"))
+                        {
+                            btmathangthongkhe.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btmathangthongkhe.Enabled = false;
+                            break;
+                        }
+                    case "4":
+                        if (Isused("4"))
+                        {
+                            BTTraNCC.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            BTTraNCC.Enabled = false;
+                            break;
+                        }
+                    case "5":
+                        if (Isused("5"))
+                        {
+                            BTKHtra.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            BTKHtra.Enabled = false;
+                            break;
+                        }
+                    case "6":
+                        if (Isused("6"))
+                        {
+                            btCongNoKH.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btCongNoKH.Enabled = false;
+                            break;
+                        }
+                    case "7":
+                        if (Isused("7"))
+                        {
+                            btCongNoNCC.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btCongNoNCC.Enabled = false;
+                            break;
+                        }
+                    case "8":
+                        if (Isused("8"))
+                        {
+                            btTongHop.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btTongHop.Enabled = false;
+                            break;
+                        }
+                    case "9":
+                        if (Isused("9"))
+                        {
+                            btDoanhThu.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btDoanhThu.Enabled = false;
+                            break;
+                        }
+                    case "10":
+                        if (Isused("10"))
+                        {
+                            btTonKho.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btTonKho.Enabled = false;
+                            break;
+                        }
+                    case "11":
+                        if (Isused("11"))
+                        {
+                            btKhachHang.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btKhachHang.Enabled = false;
+                            break;
+                        }
+                    case "12":
+                        if (Isused("12"))
+                        {
+                            btNhaCungCap.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btNhaCungCap.Enabled = false;
+                            break;
+                        }
+                    case "13":
+                        if (Isused("13"))
+                        {
+                            btKhuVuc.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btKhuVuc.Enabled = false;
+                            break;
+                        }
+                    case "14":
+                        if (Isused("14"))
+                        {
+                            btKho.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btKho.Enabled = false;
+                            break;
+                        }
+                    case "15":
+                        if (Isused("15"))
+                        {
+                            btNhomHang.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btNhomHang.Enabled = false;
+                            break;
+                        }
+                    case "16":
+                        if (Isused("16"))
+                        {
+                            btMatHang.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btMatHang.Enabled = false;
+                            break;
+                        }
+                    case "17":
+                        if (Isused("17"))
+                        {
+                            btDonViTinh.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btDonViTinh.Enabled = false;
+                            break;
+                        }
+                    case "18":
+                        if (Isused("18"))
+                        {
+                            btNhanVien.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btNhanVien.Enabled = false;
+                            break;
+                        }
+                    case "19":
+                        if (Isused("19"))
+                        {
+                            btBoPhan.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btBoPhan.Enabled = false;
+                            break;
+                        }
+                    case "20":
+                        if (Isused("20"))
+                        {
+                            btThue.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btThue.Enabled = false;
+                            break;
+                        }
+                    case "21":
+                        if (Isused("21"))
+                        {
+                            btSaoluu.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btSaoluu.Enabled = false;
+                            break;
+                        }
+                    case "22":
+                        if (Isused("22"))
+                        {
+                            btPhuchoi.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btPhuchoi.Enabled = false;
+                            break;
+                        }
+                    case "23":
+                        if (Isused("23"))
+                        {
+                            btPhanQuyen.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btPhanQuyen.Enabled = false;
+                            break;
+                        }
+                    case "24":
+                        if (Isused("24"))
+                        {
+                            btDoiMatKhau.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btDoiMatKhau.Enabled = false;
+                            break;
+                        }
+                    case "25":
+                        if (Isused("25"))
+                        {
+                            btThongTin.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btThongTin.Enabled = false;
+                            break;
+                        }
+
+                }
             }
+                if (sBoPhan == "MABP00001")
+                {
+                    btNhapHang.Enabled = true;
+                    btCongNoNCC.Enabled = true;
+                    btHoaDonNhap.Enabled = true;
+                    btXuatHang.Enabled = false;
+                    btHoaDonXuat.Enabled = false;
+                    btCongNoKH.Enabled = false;
+                    ribBaoMat.Visible = false;
+                    ribDuLieu.Visible = false;
+                    ribNhanVien.Visible = false;
+                }
             if (sBoPhan == "MABP00002")
             {
 
@@ -277,6 +608,9 @@ namespace WindowsFormsApplication1
           barDatabase.Caption = AppC.AppSettings.Settings["Database"].Value;
         }
         int iNgonNgu; 
+        public DataTable PhanKho=new DataTable();
+        public DataTable PhanQuyen = new DataTable();
+
         private void frmMain_Load(object sender, EventArgs e)
         {
             vKiemTraDangNhap();
@@ -312,9 +646,9 @@ namespace WindowsFormsApplication1
                     btNgonNguViet.Enabled = false;
                     loadVN();
                 }
-          
-           
-            
+
+            //gans cho kho ma user quan ly
+                SetPhanKho(PhanKho);
            
             loadStatus();
             ld.CreateWaitDialog();
@@ -337,6 +671,7 @@ namespace WindowsFormsApplication1
 
         private void btDoanhThu_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("9");
             if (!checkOpenTabs("Báo Cáo Doanh Thu"))
             {
                 TabItem t = tabControl12.CreateTab("Báo Cáo Doanh Thu");
@@ -370,6 +705,7 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem18_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("21");
             frmSaoLuu frmsaoluu = new frmSaoLuu();
             frmsaoluu.iNgonNgu = iNgonNgu;
             frmsaoluu.ShowDialog();
@@ -377,6 +713,7 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("22");
             frmKhoiPhuc frm = new frmKhoiPhuc();
             frm.iNgonNgu = iNgonNgu;
             frm.ShowDialog();
@@ -391,8 +728,8 @@ namespace WindowsFormsApplication1
         {
             tabControl12.Text = sTieuDe;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-            btSaoLuu.Caption = resEngLand.btPhucHoi.ToString();
-            btPhucHoi.Caption = resEngLand.btSaoLuu.ToString();
+            //btSaoLuu.Caption = resEngLand.btPhucHoi.ToString();
+            //btPhucHoi.Caption = resEngLand.btSaoLuu.ToString();
             ribDoiTac.Text = resEngLand.ribDoiTac.ToString();
             btBoPhan.Caption = resEngLand.btBoPhan.ToString();
             //btDanhSachNV.Caption = resEngLand.btDanhSachNV.ToString();
@@ -453,8 +790,8 @@ namespace WindowsFormsApplication1
         public void loadVN()
         {
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-            btSaoLuu.Caption = resVietNam.btPhucHoi.ToString();
-            btPhucHoi.Caption = resVietNam.btSaoLuu.ToString();
+           // btSaoLuu.Caption = resVietNam.btPhucHoi.ToString();
+            //btPhucHoi.Caption = resVietNam.btSaoLuu.ToString();
             ribDoiTac.Text = resVietNam.ribDoiTac.ToString();
             btBoPhan.Caption = resVietNam.btBoPhan.ToString();
            // btDanhSachNV.Caption = resVietNam.btDanhSachNV.ToString();
@@ -797,6 +1134,7 @@ namespace WindowsFormsApplication1
         string sTieuDe;
         private void btTonKho_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("10");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
             
@@ -876,7 +1214,7 @@ namespace WindowsFormsApplication1
         public string sMaBP;
         private void btMatHang_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            SetPhanQuyen("16");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -912,6 +1250,7 @@ namespace WindowsFormsApplication1
 
         private void btNhapHang_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("1");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -946,6 +1285,7 @@ namespace WindowsFormsApplication1
 
         private void btThongTin_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("25");
             frmThongTin frm = new frmThongTin();
             frm.iNgonNgu = iNgonNgu;
             frm.ShowDialog();
@@ -1093,6 +1433,7 @@ namespace WindowsFormsApplication1
 
         private void btPhanQuyen_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("23");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -1127,6 +1468,7 @@ namespace WindowsFormsApplication1
 
         private void btBoPhan_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("19");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
          bKTraMoTab = true;
@@ -1160,6 +1502,7 @@ namespace WindowsFormsApplication1
 
         private void btNhanVien_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("18");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -1194,6 +1537,7 @@ namespace WindowsFormsApplication1
 
         private void btDonViTinh_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("17");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -1228,6 +1572,7 @@ namespace WindowsFormsApplication1
 
         private void btNhomHang_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("15");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -1293,6 +1638,7 @@ namespace WindowsFormsApplication1
 
         private void btCongNoNCC_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("7");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -1327,6 +1673,7 @@ namespace WindowsFormsApplication1
 
         private void btCongNoKH_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("6");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -1363,7 +1710,7 @@ namespace WindowsFormsApplication1
 
         private void btTongHop_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-
+            SetPhanQuyen("8");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -1398,7 +1745,7 @@ namespace WindowsFormsApplication1
 
         private void btmathangthongkhe_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            SetPhanQuyen("3");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -1433,6 +1780,7 @@ namespace WindowsFormsApplication1
 
         private void btThue_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("20");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -1467,6 +1815,7 @@ namespace WindowsFormsApplication1
 
         private void btXuatHang_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("2");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -1502,6 +1851,7 @@ namespace WindowsFormsApplication1
 
         private void btDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("24");
             frmDoiMatKhau frm = new frmDoiMatKhau();
             frm.sMaNV = sManv;
             frm.iNgonNgu = iNgonNgu;
@@ -1526,6 +1876,7 @@ namespace WindowsFormsApplication1
 
         private void BTTraNCC_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("4");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
@@ -1560,6 +1911,7 @@ namespace WindowsFormsApplication1
 
         private void BTKHtra_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("5");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 

@@ -48,9 +48,18 @@ namespace WindowsFormsApplication1
          public frmMain frm;
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
-        
+        PublicVariable PV;
         private void frmCongNoNcc_Load(object sender, EventArgs e)
         {
+
+            PV = new PublicVariable();
+
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             frm.LoadVI += new frmMain.Translate(loadVN);
             frm.LoadEN += new frmMain.Translate(loadEL);
             if (iNgonNgu == 0)
@@ -163,10 +172,17 @@ namespace WindowsFormsApplication1
 
         private void btTratien_Click(object sender, EventArgs e)
         {
+            
             loadfrm_tratien();
         }
         public void loadfrm_tratien()
         {
+            if (PV.THEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             frmTraTien frm = new frmTraTien();
             if (this.smaNcc == null)
             {
@@ -216,6 +232,11 @@ namespace WindowsFormsApplication1
         }
         private void bt_edittratien_Click(object sender, EventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             frmTraTien frm = new frmTraTien();
             if (this.smpc == null)
             {
@@ -254,6 +275,15 @@ namespace WindowsFormsApplication1
         {
             loadGetAllphieuchi();
             load_phieuchi();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            if (PV.XOA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
         }
 
         

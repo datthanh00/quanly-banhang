@@ -274,9 +274,16 @@ namespace WindowsFormsApplication1
 
         }
 
-   
+        PublicVariable PV;
         private void frmThongKeDoanhThu_Load(object sender, EventArgs e)
         {
+            PV = new PublicVariable();
+
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             frm.LoadVI += new frmMain.Translate(loadVN);
             frm.LoadEN += new frmMain.Translate(loadEN);
             
@@ -314,6 +321,11 @@ namespace WindowsFormsApplication1
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             //gridControl6.ShowPrintPreview();
             try
             {
@@ -340,6 +352,12 @@ namespace WindowsFormsApplication1
 
         private void btIn_Click(object sender, EventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             if (gridView1.RowCount > 0)
             {
                 reportBaoCaoDoanhThu rep = new reportBaoCaoDoanhThu(tb, iNgonNgu);

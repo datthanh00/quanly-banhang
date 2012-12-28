@@ -454,6 +454,7 @@
             this.btndelthutien.Size = new System.Drawing.Size(113, 42);
             this.btndelthutien.TabIndex = 0;
             this.btndelthutien.Text = "Xóa Thu Tiền";
+            this.btndelthutien.Click += new System.EventHandler(this.btndelthutien_Click);
             // 
             // panel_congno
             // 

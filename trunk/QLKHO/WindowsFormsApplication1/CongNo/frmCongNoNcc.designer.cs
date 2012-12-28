@@ -494,6 +494,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(103, 42);
             this.simpleButton3.TabIndex = 0;
             this.simpleButton3.Text = "Xóa Trả Tiền";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frmCongNoNcc
             // 

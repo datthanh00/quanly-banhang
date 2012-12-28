@@ -28,9 +28,18 @@ namespace WindowsFormsApplication1
            public frmMain frm;
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
-           
+        PublicVariable PV;
         private void frmnhomhang_Load(object sender, EventArgs e)
-        { frm.LoadVI += new frmMain.Translate(LoadTV);
+        {
+            PV = new PublicVariable();
+
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
+            frm.LoadVI += new frmMain.Translate(LoadTV);
             frm.LoadEN += new frmMain.Translate(LoadEL);
             loadnhomhang();
             // TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet8.NHOMHANG' table. You can move, or remove it, as needed.
@@ -90,6 +99,12 @@ namespace WindowsFormsApplication1
         }
         private void b_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PV.THEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             frmThemNhomHang th = new frmThemNhomHang();
             th.kiemtra = 1;
             th.iNgonNgu = iNgonNgu;
@@ -99,6 +114,12 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PV.XOA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             if (sma == null || sma == "")
             {
                 if (iNgonNgu == 0)
@@ -158,6 +179,12 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             frmThemNhomHang sua = new frmThemNhomHang();
             sua.kiemtra = 0;
             sua.iNgonNgu = iNgonNgu;
@@ -211,6 +238,11 @@ namespace WindowsFormsApplication1
 
         private void gridView1_DoubleClick_1(object sender, EventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             try
             {
                 if (sma == null || sma == "")
@@ -247,6 +279,12 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "Excel|*.xls";
             saveFileDialog1.Title = "Save an File";
@@ -260,6 +298,12 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             gridControl1.ShowPrintPreview();
         }
 

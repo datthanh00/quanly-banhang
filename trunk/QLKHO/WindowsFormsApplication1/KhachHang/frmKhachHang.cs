@@ -79,7 +79,11 @@ namespace WindowsFormsApplication1
         public string MaKH { get { return sMaKH; } set { sMaKH = value; } }
         private void btThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-          
+            if (PV.THEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
              frmThemKhachHang tkh = new frmThemKhachHang();
              tkh.iNgonNgu = iNgonNgu;
              tkh.kiemtra = 1;
@@ -101,6 +105,11 @@ namespace WindowsFormsApplication1
        
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PV.XOA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            } 
             if (sma == null || sma == "")
             {
                 if (iNgonNgu == 0)
@@ -199,9 +208,16 @@ namespace WindowsFormsApplication1
             deDongTab();
            
         }
-
+        PublicVariable PV;
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
+            PV = new PublicVariable();
+
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             // TODO: This line of code loads data into the 'xUAT_NHAPTONKhachHang.KHACHHANG' table. You can move, or remove it, as needed.
            // this.kHACHHANGTableAdapter.Fill(this.xUAT_NHAPTONKhachHang.KHACHHANG);
             frm.LoadVI += new frmMain.Translate(LoadTV);
@@ -280,6 +296,11 @@ namespace WindowsFormsApplication1
 
         private void btIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            } 
             girdcontrol.ShowPrintPreview();
         }
 
@@ -287,6 +308,11 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PV.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            } 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "Excel|*.xls";
             saveFileDialog1.Title = "Save an File";
@@ -334,6 +360,11 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
 
             frmThemKhachHang sua = new frmThemKhachHang();
             sua.iNgonNgu = iNgonNgu;
@@ -388,6 +419,11 @@ namespace WindowsFormsApplication1
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            } 
             try
             {
                 if (sma == null || sma == "")

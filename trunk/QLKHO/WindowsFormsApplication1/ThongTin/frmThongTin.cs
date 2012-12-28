@@ -30,6 +30,22 @@ namespace WindowsFormsApplication1
         Loadingggg ld = new Loadingggg();
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            if (PV.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            if (PV.THEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            if (PV.XOA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             try
             {
                
@@ -104,8 +120,17 @@ namespace WindowsFormsApplication1
         }
         public int iNgonNgu;
         Image newImage;
+        PublicVariable PV;
         private void frmThongTin_Load(object sender, EventArgs e)
         {
+            PV = new PublicVariable();
+
+            if (PV.XEM == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             try
             {
                 if (iNgonNgu == 0)

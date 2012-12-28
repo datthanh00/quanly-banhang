@@ -107,10 +107,10 @@ namespace WindowsFormsApplication1
 
             //PHAN KHO
 
-            SQL = "insert into PHANKHO SELECT '" + dto.MABP + "' AS MABP,MAKHO FROM KHO";
+            SQL = "insert into PHANKHO(MABP,MAKHO) SELECT '" + dto.MABP + "' AS MABP,MAKHO FROM KHO";
             executeNonQuery(SQL);
             //PHAN QUYEN
-            SQL = "insert into PHANQUYEN SELECT '" + dto.MABP + "' AS MABP,MACN FROM CHUCNANG";
+            SQL = "insert into PHANQUYEN(MABP,MACN) SELECT '" + dto.MABP + "' AS MABP,MACN FROM CHUCNANG";
             executeNonQuery(SQL);
 
         }
@@ -201,7 +201,7 @@ namespace WindowsFormsApplication1
             + " values('" + dto.MAKHO + "','" + dto.MANV + "',N'" + dto.TENKHO + "',N'" + dto.DIACHI + "','" + dto.SDTB + "','" + dto.DTDD + "',N'" + dto.NGUOILH + "','" + dto.FAX + "','" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 
-            SQL = "insert into PHANKHO SELECT '" + dto.MABP + "' AS MABP,MAKHO FROM KHO";
+            SQL = "insert into PHANKHO(MABP,MAKHO) SELECT  MABP,'" + dto.MAKHO + "' AS MAKHO FROM BOPHAN";
             executeNonQuery(SQL);
 
         }
