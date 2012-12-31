@@ -52,7 +52,7 @@ namespace WindowsFormsApplication1
         }
         private void btLuu_Click(object sender, EventArgs e)
         {
-            if (PV.SUA == "0")
+            if (PublicVariable.SUA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -117,12 +117,12 @@ namespace WindowsFormsApplication1
                     XtraMessageBox.Show("Old password is incorrect");
             }
         }
-        PublicVariable PV;
+   
         private void frmDoiMatKhau_Load(object sender, EventArgs e)
         {
-            PV = new PublicVariable();
+      
 
-            if (PV.XEM == "0")
+            if (PublicVariable.XEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;

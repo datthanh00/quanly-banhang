@@ -28,12 +28,12 @@ namespace WindowsFormsApplication1
        public frmMain frm;
                  public delegate void _deDongTab();
         public _deDongTab deDongTab;
-        PublicVariable PV;
+     
         private void frmDonViTinh_Load(object sender, EventArgs e)
         {
-            PV = new PublicVariable();
+           
 
-            if (PV.XEM == "0")
+            if (PublicVariable.XEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -98,7 +98,7 @@ namespace WindowsFormsApplication1
        
         private void barThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (PV.THEM == "0")
+            if (PublicVariable.THEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -112,7 +112,7 @@ namespace WindowsFormsApplication1
 
         private void barXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (PV.XOA == "0")
+            if (PublicVariable.XOA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -176,7 +176,7 @@ namespace WindowsFormsApplication1
         public int kiemtra;
         private void barSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (PV.SUA == "0")
+            if (PublicVariable.SUA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -232,7 +232,7 @@ namespace WindowsFormsApplication1
 
         private void gridView1_DoubleClick_1(object sender, EventArgs e)
         {
-            if (PV.SUA == "0")
+            if (PublicVariable.SUA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -270,7 +270,7 @@ namespace WindowsFormsApplication1
 
         private void barIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -280,7 +280,7 @@ namespace WindowsFormsApplication1
 
         private void barXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;

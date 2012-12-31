@@ -72,6 +72,10 @@
             this.panel_congno = new DevExpress.XtraEditors.PanelControl();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.btThutien = new DevExpress.XtraEditors.SimpleButton();
+            this.btIn = new DevExpress.XtraEditors.SimpleButton();
+            this.btXuat = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -118,9 +122,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 465);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 466);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -136,7 +140,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(194, 465);
+            this.navBarControl1.Size = new System.Drawing.Size(194, 466);
             this.navBarControl1.TabIndex = 3;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -172,10 +176,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 22);
+            this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(963, 158);
+            this.gridControl1.Size = new System.Drawing.Size(963, 159);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -287,10 +291,10 @@
             // 
             this.gridControl2.DataSource = this.gETONEPTBindingSource1;
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 22);
+            this.gridControl2.Location = new System.Drawing.Point(2, 21);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(965, 218);
+            this.gridControl2.Size = new System.Drawing.Size(965, 219);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -417,6 +421,8 @@
             // 
             // panel_phieuchi
             // 
+            this.panel_phieuchi.Controls.Add(this.simpleButton4);
+            this.panel_phieuchi.Controls.Add(this.simpleButton5);
             this.panel_phieuchi.Controls.Add(this.btnclose);
             this.panel_phieuchi.Controls.Add(this.btneditthutien);
             this.panel_phieuchi.Controls.Add(this.btndelthutien);
@@ -429,7 +435,7 @@
             // btnclose
             // 
             this.btnclose.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
-            this.btnclose.Location = new System.Drawing.Point(302, 8);
+            this.btnclose.Location = new System.Drawing.Point(540, 6);
             this.btnclose.Name = "btnclose";
             this.btnclose.Size = new System.Drawing.Size(103, 42);
             this.btnclose.TabIndex = 0;
@@ -458,6 +464,8 @@
             // 
             // panel_congno
             // 
+            this.panel_congno.Controls.Add(this.btIn);
+            this.panel_congno.Controls.Add(this.btXuat);
             this.panel_congno.Controls.Add(this.btDong);
             this.panel_congno.Controls.Add(this.btThutien);
             this.panel_congno.Dock = System.Windows.Forms.DockStyle.Top;
@@ -469,7 +477,7 @@
             // btDong
             // 
             this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
-            this.btDong.Location = new System.Drawing.Point(119, 8);
+            this.btDong.Location = new System.Drawing.Point(356, 5);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(103, 42);
             this.btDong.TabIndex = 0;
@@ -485,6 +493,46 @@
             this.btThutien.TabIndex = 0;
             this.btThutien.Text = "Thu Tiền";
             this.btThutien.Click += new System.EventHandler(this.btThutien_Click);
+            // 
+            // btIn
+            // 
+            this.btIn.Image = ((System.Drawing.Image)(resources.GetObject("btIn.Image")));
+            this.btIn.Location = new System.Drawing.Point(122, 6);
+            this.btIn.Name = "btIn";
+            this.btIn.Size = new System.Drawing.Size(91, 42);
+            this.btIn.TabIndex = 6;
+            this.btIn.Text = "In";
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
+            // 
+            // btXuat
+            // 
+            this.btXuat.Image = ((System.Drawing.Image)(resources.GetObject("btXuat.Image")));
+            this.btXuat.Location = new System.Drawing.Point(225, 6);
+            this.btXuat.Name = "btXuat";
+            this.btXuat.Size = new System.Drawing.Size(118, 42);
+            this.btXuat.TabIndex = 5;
+            this.btXuat.Text = "Xuất";
+            this.btXuat.Click += new System.EventHandler(this.btXuat_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(302, 6);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(91, 42);
+            this.simpleButton4.TabIndex = 10;
+            this.simpleButton4.Text = "In";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
+            // simpleButton5
+            // 
+            this.simpleButton5.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton5.Image")));
+            this.simpleButton5.Location = new System.Drawing.Point(405, 6);
+            this.simpleButton5.Name = "simpleButton5";
+            this.simpleButton5.Size = new System.Drawing.Size(118, 42);
+            this.simpleButton5.TabIndex = 9;
+            this.simpleButton5.Text = "Xuất";
+            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // frmCongNoKH
             // 
@@ -572,6 +620,10 @@
         private DevExpress.XtraNavBar.NavBarItem linkphieuthu;
         private DevExpress.XtraNavBar.NavBarItem linkTheoTuan;
         private DevExpress.XtraGrid.Columns.GridColumn colNgàyXuất;
+        public DevExpress.XtraEditors.SimpleButton btIn;
+        private DevExpress.XtraEditors.SimpleButton btXuat;
+        public DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton5;
        // private WindowsFormsApplication1.XUAT_NHAPTONDataSet4TableAdapters.GETONEPTTableAdapter gETONEPTTableAdapter1;
     }
 }

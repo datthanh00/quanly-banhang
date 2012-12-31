@@ -34,12 +34,12 @@ namespace WindowsFormsApplication1
         public frmMain frm;
 
         public int iNgonNgu;
-        PublicVariable PV;
+      
         private void frmBaoCaoTonKho_Load(object sender, EventArgs e)
         {
-            PV = new PublicVariable();
+            
 
-            if (PV.XEM == "0")
+            if (PublicVariable.XEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -52,7 +52,7 @@ namespace WindowsFormsApplication1
             frm.LoadEN += new frmMain.Translate(loadReSEG);
             
             
-            loadgirdlookup();
+            //loadgirdlookup();
             
             if (iNgonNgu == 0)
             {
@@ -99,8 +99,8 @@ namespace WindowsFormsApplication1
             btXuat.Text = resVietNam.btXuat.ToString();
             lbTu.Text = resVietNam.NgayBD.ToString();
             lbDen.Text = resVietNam.NgayKT.ToString();
-            colMaKho.Caption = resVietNam.MaKho.ToString();
-            colTen.Caption = resVietNam.TenKho.ToString();
+            //colMaKho.Caption = resVietNam.MaKho.ToString();
+           // colTen.Caption = resVietNam.TenKho.ToString();
 
         }
 
@@ -133,27 +133,15 @@ namespace WindowsFormsApplication1
             btXuat.Text = resEngLand.btXuat.ToString();
             lbTu.Text = resEngLand.NgayBD.ToString();
             lbDen.Text = resEngLand.NgayKT.ToString();
-            colMaKho.Caption = resEngLand.MaKho.ToString();
-            colTen.Caption = resEngLand.TenKho.ToString();
+           // colMaKho.Caption = resEngLand.MaKho.ToString();
+           // colTen.Caption = resEngLand.TenKho.ToString();
         }
         clDTO dto = new clDTO();
-        public void loadgirdlookup()
-        {
 
-            glKhoHang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            glKhoHang.Properties.DataSource = dvdropdow;
-            glKhoHang.Properties.DisplayMember = "TENKHO";
-            glKhoHang.Properties.ValueMember = "MAKHO";
-            glKhoHang.Properties.View.BestFitColumns();
-            glKhoHang.Properties.PopupFormWidth = 300;
-            glKhoHang.Properties.DataSource = ctr.getallKho();
-            
-           // glKhoHang.Text = "";
-        }
         private void loadGird()
         {
             
-            dto.MAKHO = gView.GetFocusedRowCellValue("MAKHO").ToString();
+           // dto.MAKHO = gView.GetFocusedRowCellValue("MAKHO").ToString();
             
 
             string NGAYBD = dateTu.Text;
@@ -340,24 +328,8 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                if (glKhoHang.Text != "")
-                {
-                    loadGird();
 
-                }
-                else
-                {
-                    if (iNgonNgu == 0)
-                    {
-                        MessageBox.Show("Vui long chọn kho", "Thông tin", MessageBoxButtons.OK, MessageBoxIcon.Warning); glKhoHang.Focus();
-                    }
-                    else
-                    {
-
-                        MessageBox.Show("Please select store", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Warning); glKhoHang.Focus();
-                    }
-                }
-               
+                loadGird();
             }
             catch (Exception)
             {
@@ -368,14 +340,14 @@ namespace WindowsFormsApplication1
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             } 
-            if (advBandedGridView3.RowCount > 0)
+           /* if (advBandedGridView3.RowCount > 0)
             {
-                reportTonKhoSoLuongGiaTri rep = new reportTonKhoSoLuongGiaTri(dt, iNgonNgu, glKhoHang.Text, dateTu.Text, dateDen.Text);
+                reportTonKhoSoLuongGiaTri rep = new reportTonKhoSoLuongGiaTri(dt, iNgonNgu, PublicVariable.MAKHO, dateTu.Text, dateDen.Text);
                 rep.ShowPreviewDialog();
             }
             else
@@ -387,11 +359,14 @@ namespace WindowsFormsApplication1
                 else
                 {
 
-                    MessageBox.Show("Data null", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Warning); glKhoHang.Focus();
+                    MessageBox.Show("Data null", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    
                 }
 
 
             }
+            */
+            gridControl2.ShowPrintPreview();
         }
 
         private void cbThoiGian_SelectedIndexChanged(object sender, EventArgs e)
@@ -429,7 +404,7 @@ namespace WindowsFormsApplication1
 
         private void btXuat_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;

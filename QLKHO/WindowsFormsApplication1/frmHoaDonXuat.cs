@@ -123,11 +123,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
         public int iNgonNgu;
         public frmMain frm;
         public string sTenNV, sMaNV;
-        PublicVariable PV;
+    
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
         {
-            PV = new PublicVariable();
-            if (PV.XEM == "0")
+
+            if (PublicVariable.XEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 this.Close();
@@ -187,97 +187,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cboNhanVienLap.Properties.DataSource = ctlNCC.GETNV();
             dtoNCC.MANV = gridNV.GetFocusedRowCellValue("MANV").ToString();
         }
-        /*
-        public void loaddridmathang()
-        {
-            cboMaMatHang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboMaMatHang.Properties.DataSource = dtvMH;
-            cboMaMatHang.Properties.DisplayMember = "MAMH";
-            cboMaMatHang.Properties.ValueMember = "TENMH";
-            cboMaMatHang.Properties.View.BestFitColumns();
-            cboMaMatHang.Properties.PopupFormWidth = 300;
-            cboMaMatHang.Properties.DataSource = ctlNCC.GETMATHANG();
-            dtoNCC.MAMH = gridMH.GetFocusedRowCellValue("MAMH").ToString();
-           
-        }
-        public void loaddridDVT()
-        {
-            cboDVT.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboDVT.Properties.DataSource = dtvDVT;
-            cboDVT.Properties.DisplayMember = "DONVITINH";
-            cboDVT.Properties.ValueMember = "MADVT";
-            cboDVT.Properties.View.BestFitColumns();
-            cboDVT.Properties.PopupFormWidth = 300;
-            cboDVT.Properties.DataSource = ctlNCC.GETDVT();
-            dtoNCC.MADVT = gridDVT.GetFocusedRowCellValue("MADVT").ToString();
-           
-        }
-         
-        public void loadgridthue()
-        {
-            cboThue.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboThue.Properties.DataSource = dtvMH;
-            cboThue.Properties.DisplayMember = "SOTHUE";
-            cboThue.Properties.ValueMember = "MATH";
-            cboThue.Properties.View.BestFitColumns();
-            cboThue.Properties.PopupFormWidth = 300;
-            cboThue.Properties.DataSource = ctlNCC.GETTHUE();
-            dtoNCC.MATH = gridTHUE.GetFocusedRowCellValue("MATH").ToString();
-        }
-        private void cboMaMatHang_EditValueChanged(object sender, EventArgs e)
-        {
-            cboTenMH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboTenMH.Properties.DataSource = dtvMH;
-            cboTenMH.Properties.DisplayMember = "TENMH";
-            cboTenMH.Properties.ValueMember = "TENMH";
-            cboTenMH.Properties.View.BestFitColumns();
-            cboTenMH.Properties.PopupFormWidth = 300;
-            cboTenMH.Properties.DataSource = ctlNCC.GETMATHANG();
-            cboTenMH.Text = gridMH.GetFocusedRowCellValue("TENMH").ToString();
-            cboThue.Text = gridMH.GetFocusedRowCellValue("MATH").ToString();
-            cboDVT.Text = gridMH.GetFocusedRowCellValue("MADVT").ToString();
-            cboDonGia.Text = gridMH.GetFocusedRowCellValue("GIABAN").ToString();
-        }
-         */
+ 
         ArrayList list1 = new ArrayList();
-        WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
-       /* private void btXemTruoc_Click(object sender, EventArgs e)
-        {
-                ArrayList list = new ArrayList();
-                if (int.Parse(cboSL.Text) <= 0)
-                {
-                    Validate_LessThanMinRule(cboSL, 0);
-                    XtraMessageBox.Show("Nhập Số Lượng không phù hợp");
-
-                }
-                else
-                {
-                    createHoadon();
-                    foreach (Cart cart in hd._Cart)
-                    {
-                        list.Add(cart);
-                    }
-                    gridControl1.DataSource = list;
-                    list1 = list;
-                    txtthanhtien.Text = hd.tong_HoaDon.ToString();
-                }
-        }
-        public void createHoadon()
-        {
-            String mamh = cboMaMatHang.Text;
-            try
-            {
-                ctlNCC.GETMH();
-                if (int.Parse(cboSL.Text) > 0)
-                    hd.insert_item_toCart(cboMaMatHang.Text, cboTenMH.Text, int.Parse(cboSL.Text), int.Parse(cboDonGia.Text), int.Parse(cboThue.Text), cboDVT.Text);
-            }
-            catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu"); }
-            catch (Exception ex) { MessageBox.Show("Có lỗi sảy ra, bạn có chắc là đã thao tác đúng các bước không?", "Norther says", MessageBoxButtons.OK, MessageBoxIcon.Information); }
-            finally
-            {
-            }
-        }
-        */
+        
         private void Validate_LessThanMinRule(BaseEdit control, Decimal min)
         {
             if (!(control.EditValue is Decimal)) return;
@@ -329,7 +241,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             bool isINSERTHOADONXUAT = ctlNCC.isINSERTHOADONXUAT(dtoNCC.MAHDX);
             if (isINSERTHOADONXUAT)
             {
-                if (PV.THEM == "0")
+                if (PublicVariable.THEM == "0")
                 {
                     MessageBox.Show("KHÔNG CÓ QUYỀN ");
                     return;
@@ -347,7 +259,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             }
             else
             {
-                if (PV.SUA == "0")
+                if (PublicVariable.SUA == "0")
                 {
                     MessageBox.Show("KHÔNG CÓ QUYỀN ");
                     return;
@@ -395,6 +307,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         private void loadGiaoDich()
         {
             dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
+            dtoNCC.MAKHO = PublicVariable.MAKHO;
             gridControl2.DataSource = ctlNCC.GETHOADONXUAT(dtoNCC);
         }
         double conlai, thanhtien, tientra;
@@ -457,7 +370,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -508,7 +421,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (PV.THEM == "0")
+            if (PublicVariable.THEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -529,10 +442,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cbotientra.Text = "0";
             txtthanhtien.Text = "";
 
-            if (hd._Cart.Count > 0)
-            {
-                hd._Cart.Clear();
-            }
             loadmahdx();
             gridControl1.DataSource = null;
             gridCTHOADON.RefreshData();
@@ -542,7 +451,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            if (PV.THEM == "0")
+            if (PublicVariable.THEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -581,7 +490,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') AS NGAYXUAT,T1.MAHDX ,T1.TENKH ,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA)AS TONGTIEN ,T1.GHICHU  FROM (select t9.*,t8.tenkh from hoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
+            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') AS NGAYXUAT,T1.MAHDX ,T1.TENKH ,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA)AS TONGTIEN ,T1.GHICHU  FROM (select t9.*,t8.tenkh from hoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
             
             DataTable TBS = ctlNCC.GETDATA(SQL);
             gridControl3.MainView = gridView4;
@@ -601,7 +510,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT DATE_FORMAT(T3.NGAYXUAT,'%d/%m/%Y') AS NGAYXUAT,T3.TENKH ,T3.MAHDX , T3.MAMH , T4.TENMH ,T3.SOLUONGXUAT ,T3.GIATIEN, GHICHU   FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,GHICHU,t2.tenkh FROM (SELECT * FROM CHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh,GHICHU from hoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
+            string SQL = "SELECT DATE_FORMAT(T3.NGAYXUAT,'%d/%m/%Y') AS NGAYXUAT,T3.TENKH ,T3.MAHDX , T3.MAMH , T4.TENMH ,T3.SOLUONGXUAT ,T3.GIATIEN, GHICHU   FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,GHICHU,t2.tenkh FROM (SELECT * FROM CHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh,GHICHU from hoadonxuat  as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
             
             DataTable TBS = ctlNCC.GETDATA(SQL);
             gridControl3.MainView = gridView1;
@@ -623,7 +532,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNHOMHANG, TENKHO, DONVITINH, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN, SOLUONGXUAT*GIATIEN AS TONGTIEN FROM MATHANG,NHOMHANG,KHO,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN FROM CHITIETHDX, HOADONXUAT WHERE NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as CHITIETHDX WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=CHITIETHDX.MAMH group by MAMH";
+            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNHOMHANG, TENKHO, DONVITINH, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN, SOLUONGXUAT*GIATIEN AS TONGTIEN FROM MATHANG,NHOMHANG,KHO,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN FROM CHITIETHDX, HOADONXUAT WHERE NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as CHITIETHDX WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=CHITIETHDX.MAMH AND KHO.MAKHO='"+PublicVariable.MAKHO+"' group by MAMH";
            
             DataTable TBS = ctlNCC.GETDATA(SQL);
             gridControl3.MainView = gridView3;
@@ -730,7 +639,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PV.XOA == "0")
+            if (PublicVariable.XOA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -763,7 +672,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             loadgridCTHOADON(MAHDX);
 
             txtMaHD.Text = MAHDX;
-            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') ,T1.MAHDX ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT DATE_FORMAT(T1.NGAYXUAT,'%d/%m/%Y') ,T1.MAHDX ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
             cboNhanVienLap.Text = DT.Rows[0]["MANV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
@@ -772,7 +681,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PV.SUA == "0")
+            if (PublicVariable.SUA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -797,7 +706,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PV.SUA == "0")
+            if (PublicVariable.SUA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -861,25 +770,36 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+            gridControl3.ShowPrintPreview();
         }
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
+            }
+
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel|*.xls";
+            saveFileDialog1.Title = "Save an File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                gridControl3.ExportToXls(saveFileDialog1.FileName);
             }
         }
 
         private void btXem_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;

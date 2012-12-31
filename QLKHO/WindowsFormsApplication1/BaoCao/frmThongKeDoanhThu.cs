@@ -274,12 +274,12 @@ namespace WindowsFormsApplication1
 
         }
 
-        PublicVariable PV;
+        
         private void frmThongKeDoanhThu_Load(object sender, EventArgs e)
         {
-            PV = new PublicVariable();
+          
 
-            if (PV.XEM == "0")
+            if (PublicVariable.XEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -321,7 +321,7 @@ namespace WindowsFormsApplication1
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -352,13 +352,13 @@ namespace WindowsFormsApplication1
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-
-            if (gridView1.RowCount > 0)
+            gridControl6.ShowPrintPreview();
+           /* if (gridView1.RowCount > 0)
             {
                 reportBaoCaoDoanhThu rep = new reportBaoCaoDoanhThu(tb, iNgonNgu);
                 rep.ShowPreviewDialog();
@@ -367,6 +367,7 @@ namespace WindowsFormsApplication1
             {
                 XtraMessageBox.Show("Dữ liệu không có", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            * */
         }
 
         private void cbThoiGian_SelectedIndexChanged_1(object sender, EventArgs e)

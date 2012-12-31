@@ -267,10 +267,7 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETKHO();
         }
-        public DataTable GETMH()
-        {
-            return DAO.GETMH();
-        }
+ 
         public DataTable GETMMH()
         {
             return DAO.GETMMH();
@@ -362,10 +359,7 @@ namespace WindowsFormsApplication1
             return DAO.maxrowtraCTHOADONXUAT(MHDX);
         }
 
-        public DataTable GETALLCTHOADONNHAP()
-        {
-            return DAO.GETCTHOADONNHAP();
-        }
+
         public DataTable GETtraCTHOADONNHAP(string MAHDN)
         {
             return DAO.GETtraCTHOADONNHAP(MAHDN);

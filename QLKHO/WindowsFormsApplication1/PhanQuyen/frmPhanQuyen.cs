@@ -23,12 +23,12 @@ namespace WindowsFormsApplication1
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
         string sMaBP;
-        PublicVariable PV;
+  
         private void frmPhanQuyen_Load(object sender, EventArgs e)
         {
-            PV = new PublicVariable();
+         
 
-            if (PV.XEM == "0")
+            if (PublicVariable.XEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (PV.THEM == "0")
+            if (PublicVariable.THEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -115,7 +115,7 @@ namespace WindowsFormsApplication1
         private void simpleButton2_Click(object sender, EventArgs e)
         {
 
-            if (PV.SUA == "0")
+            if (PublicVariable.SUA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -231,12 +231,12 @@ namespace WindowsFormsApplication1
         }
         private void gridView2_DoubleClick(object sender, EventArgs e)
         {
-            if (PV.SUA == "0")
+            if (PublicVariable.SUA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            if (PV.THEM == "0")
+            if (PublicVariable.THEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -295,7 +295,7 @@ namespace WindowsFormsApplication1
         public int iNgonNgu;
         private void btXoa_Click(object sender, EventArgs e)
         {
-            if (PV.XOA == "0")
+            if (PublicVariable.XOA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -408,7 +408,23 @@ namespace WindowsFormsApplication1
 
         private void btnphanquyen_Click(object sender, EventArgs e)
         {
-            if (PV.SUA == "0")
+            if (PublicVariable.SUA == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
+            frmPhanQuyenbophan frmbp = new frmPhanQuyenbophan();
+            frmbp.sMaBP = sMaBP;
+            frmbp.isPhankho = false;
+            frmbp.ShowDialog();
+        }
+
+        private void btnphankho_Click(object sender, EventArgs e)
+        {
+            
+
+            if (PublicVariable.SUA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -424,20 +440,6 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("chọn 1 bộ phận để phân quyền");
             }
-        }
-
-        private void btnphankho_Click(object sender, EventArgs e)
-        {
-            if (PV.SUA == "0")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN ");
-                return;
-            }
-
-            frmPhanQuyenbophan frmbp = new frmPhanQuyenbophan();
-            frmbp.sMaBP = sMaBP;
-            frmbp.isPhankho = false;
-            frmbp.ShowDialog();
         }
     }
 }
