@@ -120,6 +120,11 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
             this.iPaintStyle = new DevExpress.XtraBars.BarSubItem();
+            this.cbkho = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridcbkho = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lbkho = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeZone1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWeekOfMonth1)).BeginInit();
@@ -130,6 +135,8 @@
             this.clientPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl12)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbkho.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcbkho)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -209,8 +216,8 @@
             this.repositoryItemComboBox2,
             this.repositoryItemComboBox3});
             this.ribbon.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ribbon.SelectedPage = this.ribHeThong;
-            this.ribbon.Size = new System.Drawing.Size(967, 148);
+            this.ribbon.SelectedPage = this.ribChucNang;
+            this.ribbon.Size = new System.Drawing.Size(1182, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ItemLinks.Add(this.barSubItem1);
             this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
@@ -805,7 +812,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 452);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(967, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1182, 23);
             // 
             // clientPanel
             // 
@@ -814,7 +821,7 @@
             this.clientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientPanel.Location = new System.Drawing.Point(0, 148);
             this.clientPanel.Name = "clientPanel";
-            this.clientPanel.Size = new System.Drawing.Size(967, 304);
+            this.clientPanel.Size = new System.Drawing.Size(1182, 304);
             this.clientPanel.TabIndex = 2;
             // 
             // tabControl12
@@ -828,7 +835,7 @@
             this.tabControl12.Name = "tabControl12";
             this.tabControl12.SelectedTabFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.tabControl12.SelectedTabIndex = -1;
-            this.tabControl12.Size = new System.Drawing.Size(967, 304);
+            this.tabControl12.Size = new System.Drawing.Size(1182, 304);
             this.tabControl12.Style = DevComponents.DotNetBar.eTabStripStyle.Office2007Document;
             this.tabControl12.TabIndex = 5;
             this.tabControl12.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
@@ -927,13 +934,62 @@
             this.iPaintStyle.ImageIndex = 26;
             this.iPaintStyle.Name = "iPaintStyle";
             // 
+            // cbkho
+            // 
+            this.cbkho.Location = new System.Drawing.Point(991, 92);
+            this.cbkho.Name = "cbkho";
+            this.cbkho.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbkho.Properties.NullText = "";
+            this.cbkho.Properties.PopupSizeable = false;
+            this.cbkho.Properties.View = this.gridcbkho;
+            this.cbkho.Size = new System.Drawing.Size(163, 20);
+            this.cbkho.TabIndex = 28;
+            this.cbkho.EditValueChanged += new System.EventHandler(this.cbkho_EditValueChanged);
+            // 
+            // gridcbkho
+            // 
+            this.gridcbkho.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn4,
+            this.gridColumn7});
+            this.gridcbkho.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridcbkho.Name = "gridcbkho";
+            this.gridcbkho.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridcbkho.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Mã kho";
+            this.gridColumn4.FieldName = "MAKHO";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Tên kho";
+            this.gridColumn7.FieldName = "TENKHO";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 1;
+            // 
+            // lbkho
+            // 
+            this.lbkho.Location = new System.Drawing.Point(928, 96);
+            this.lbkho.Name = "lbkho";
+            this.lbkho.Size = new System.Drawing.Size(46, 13);
+            this.lbkho.TabIndex = 27;
+            this.lbkho.Text = "Kho Hàng";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(967, 475);
+            this.ClientSize = new System.Drawing.Size(1182, 475);
             this.Controls.Add(this.clientPanel);
+            this.Controls.Add(this.cbkho);
             this.Controls.Add(this.ribbonStatusBar);
+            this.Controls.Add(this.lbkho);
             this.Controls.Add(this.ribbon);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
@@ -955,7 +1011,10 @@
             this.clientPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl12)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cbkho.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcbkho)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1045,5 +1104,10 @@
         private DevExpress.XtraBars.BarButtonItem btThue;
         private DevExpress.XtraBars.BarButtonItem BTTraNCC;
         private DevExpress.XtraBars.BarButtonItem BTKHtra;
+        private DevExpress.XtraEditors.GridLookUpEdit cbkho;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridcbkho;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraEditors.LabelControl lbkho;
     }
 }

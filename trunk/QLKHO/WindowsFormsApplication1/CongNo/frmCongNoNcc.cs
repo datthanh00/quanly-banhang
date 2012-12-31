@@ -28,33 +28,34 @@ namespace WindowsFormsApplication1
         public string smahdn;
         public string stientra;
         public string sMaNV, sTenNV;
+        Ctrl_Tien CTR = new Ctrl_Tien();
         public void loadGetAllHDN()
         {
-            //dt = Ctrl_Tien.GETALLHDn_ctrl();
-            dt = Ctrl_Tien.GETALLcongno_ncc();
+            //dt = CTR.GETALLHDn_ctrl();
+            dt = CTR.GETALLcongno_ncc();
             gridControl1.DataSource = dt;
         }
         public void loadGetAllphieuchi()
         {
-            //dt = Ctrl_Tien.GETALLHDn_ctrl();
-            dt = Ctrl_Tien.Getall_phieuchi_Dao();
+            //dt = CTR.GETALLHDn_ctrl();
+            dt = CTR.Getall_phieuchi_Dao();
             gridControl2.DataSource = dt;
         }
         public void loadctncc()
         {
-            dt = Ctrl_Tien.get1pthdn_ctrl(sMahdn);
+            dt = CTR.get1pthdn_ctrl(sMahdn);
             gridControl2.DataSource = dt;
         }
          public frmMain frm;
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
-        PublicVariable PV;
+      
         private void frmCongNoNcc_Load(object sender, EventArgs e)
         {
 
-            PV = new PublicVariable();
+           
 
-            if (PV.XEM == "0")
+            if (PublicVariable.XEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -177,7 +178,7 @@ namespace WindowsFormsApplication1
         }
         public void loadfrm_tratien()
         {
-            if (PV.THEM == "0")
+            if (PublicVariable.THEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -232,7 +233,7 @@ namespace WindowsFormsApplication1
         }
         private void bt_edittratien_Click(object sender, EventArgs e)
         {
-            if (PV.SUA == "0")
+            if (PublicVariable.SUA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -255,7 +256,7 @@ namespace WindowsFormsApplication1
                 frm.TIEN = stientra;
                 frm.sMaNV = sMaNV;
 
-                frm.Tienno = Ctrl_Tien.GETcongno_HDN(smahdn);
+                frm.Tienno = CTR.GETcongno_HDN(smahdn);
                 frm.sTenNV = sTenNV;
                 
                 
@@ -279,11 +280,69 @@ namespace WindowsFormsApplication1
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            if (PV.XOA == "0")
+            if (PublicVariable.XOA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+        }
+
+        private void btIn_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            gridControl1.ShowPrintPreview();
+        }
+
+        private void btXuat_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel|*.xls";
+            saveFileDialog1.Title = "Save an File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                gridControl1.ExportToXls(saveFileDialog1.FileName);
+            }
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
+            gridControl2.ShowPrintPreview();
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel|*.xls";
+            saveFileDialog1.Title = "Save an File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                gridControl2.ExportToXls(saveFileDialog1.FileName);
+            }
+
         }
 
         

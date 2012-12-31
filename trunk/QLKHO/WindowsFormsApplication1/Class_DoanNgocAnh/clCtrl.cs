@@ -46,14 +46,8 @@ namespace WindowsFormsApplication1
         {
             return dao.getNhomHang();
         }
-        public DataTable getDayDuMatHang()
-        {
-            return dao.getDayDuMatHang();
-        }
-        public DataTable getDatabase()
-        {
-            return dao.getDatabase();
-        }//---------------------------------------get all kho
+
+      //---------------------------------------get all kho
         public DataTable getallKho()
         {
             return dao.getKho();

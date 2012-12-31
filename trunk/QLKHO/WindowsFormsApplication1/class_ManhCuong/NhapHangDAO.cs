@@ -8,6 +8,7 @@ namespace WindowsFormsApplication1.Class_ManhCuong
 {
     class NhapHangDAO : Provider
     {
+      
         public DataTable GetOneNhaCungCap(NhapHangDTO dto)
         {
             List<MySqlParameter> sqlpa = new List<MySqlParameter>();
@@ -19,7 +20,7 @@ namespace WindowsFormsApplication1.Class_ManhCuong
             //List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             //return executeNonQuerya("MATHANG_getall", sqlpa);
 
-            string SQL = "select 	MAMH,MATH,MANH,MAKHO,TENMH,MADVT,SOLUONGMH,HANSUDUNG,GIAMUA,GIABAN,MOTA,TINHTRANG from  MATHANG";
+            string SQL = "select 	MAMH,MATH,MANH,MAKHO,TENMH,MADVT,SOLUONGMH,HANSUDUNG,GIAMUA,GIABAN,MOTA,TINHTRANG from  MATHANG WHERE  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
             return getdata(SQL);
         }
         public DataTable GetAllTHUE()
@@ -50,7 +51,7 @@ namespace WindowsFormsApplication1.Class_ManhCuong
             //List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             //return executeNonQuerya("CHITIETHDN_getall", sqlpa);
 
-            string SQL = "select 	MAHDN,MAMH,SOLUONGNHAP,GIANHAP,TINHTRANG from  CHITIETHDN";
+            string SQL = "select 	MAHDN,CHITIETHDN.MAMH,SOLUONGNHAP,GIANHAP,TINHTRANG from  CHITIETHDN,MATHANG  WHERE MATHANG.MAMH=CHITIETHDN.MAMH AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
             return getdata(SQL);
         }
     }

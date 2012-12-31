@@ -29,6 +29,7 @@ namespace WindowsFormsApplication1
         public string TIEN;
         public string HD;
         public string sMaNV,sTenNV;
+        Ctrl_Tien CTR = new Ctrl_Tien();
         private void barSTluu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Luu();
@@ -48,7 +49,7 @@ namespace WindowsFormsApplication1
             {
                 
                 DataTable dt = new DataTable();
-                //dt = Ctrl_Tien.MAPT_ctrl();
+                //dt = CTR.MAPT_ctrl();
                 //textBoxX1.Text = dt.Rows[0]["mapt"].ToString();
                 txtPT.Text = connect.sTuDongDienMapt(txtPT.Text);
                 txtMahd.Text = MaChuyen;
@@ -67,7 +68,7 @@ namespace WindowsFormsApplication1
         public void loadctkh()
         {
             //DataTable dt = new DataTable();
-            dt = Ctrl_Tien.get1pthdx_ctrl(txtMahd.Text);
+            dt = CTR.get1pthdx_ctrl(txtMahd.Text);
             gridControl1.DataSource = dt;
         }
         public void Luu()
@@ -111,7 +112,7 @@ namespace WindowsFormsApplication1
                 dto.Mahoadonxuat = txtMahd.Text;
                 dto.SoTienDaTra = double.Parse(txtSoTienTra.Text);
 
-                Ctrl_Tien.SUAPHIEUTHU_ctrl(dto);
+                CTR.SUAPHIEUTHU_ctrl(dto);
                 if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Bạn đã lưu thành công");
@@ -131,7 +132,7 @@ namespace WindowsFormsApplication1
                 dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
                 dto.Mahoadonxuat = txtMahd.Text;
 
-                Ctrl_Tien.THEM_PHIEUTHU_ctrl(dto);
+                CTR.THEM_PHIEUTHU_ctrl(dto);
                 if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Bạn đã lưu thành công");

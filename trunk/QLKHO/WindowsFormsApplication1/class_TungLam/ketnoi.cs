@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(2, 5));
             }
             Maxa = maxmaphieu+1;
             
@@ -53,7 +53,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(2, 5));
             }
             Maxa = maxmaphieu + 1;
 
@@ -89,7 +89,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(2, 5));
             }
             Maxa = maxmaphieu + 1;
 
@@ -167,7 +167,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(3, 5));
             }
             Maxa = maxmaphieu + 1;
 
@@ -203,7 +203,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(2, 5));
             }
             Maxa = maxmaphieu + 1;
 
@@ -240,7 +240,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(2, 5));
             }
             Maxa = maxmaphieu + 1;
 
@@ -277,7 +277,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(4, 5));
             }
             Maxa = maxmaphieu + 1;
 
@@ -317,7 +317,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(4, 5));
             }
             Maxa = maxmaphieu + 1;
 
@@ -355,7 +355,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(4, 5));
             }
             Maxa = maxmaphieu + 1;
 
@@ -393,7 +393,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(4, 5));
             }
             Maxa = maxmaphieu + 1;
 
@@ -433,7 +433,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(2, 5));
             }
             Maxa = maxmaphieu + 1;
 
@@ -472,7 +472,7 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows[0][0].ToString() != "")
             {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(4, 5));
             }
             Maxa = maxmaphieu + 1;
 

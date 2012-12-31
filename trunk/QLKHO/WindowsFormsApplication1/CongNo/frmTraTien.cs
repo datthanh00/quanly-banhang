@@ -29,9 +29,10 @@ namespace WindowsFormsApplication1
         public string TIEN;
         public string HD;
         public string sMaNV, sTenNV;
+        Ctrl_Tien CTR = new Ctrl_Tien();
         public void loadctncc()
         {
-            dt = Ctrl_Tien.get1pthdn_ctrl(txtMahd.Text);
+            dt = CTR.get1pthdn_ctrl(txtMahd.Text);
             gridControl1.DataSource = dt;
         }
 
@@ -48,7 +49,7 @@ namespace WindowsFormsApplication1
             {
 
                 DataTable dt = new DataTable();
-                //dt = Ctrl_Tien.MAPT_ctrl();
+                //dt = CTR.MAPT_ctrl();
                 //textBoxX1.Text = dt.Rows[0]["mapt"].ToString();
                 //loadmatutang();
                 txtPC.Text = connect.sTuDongDienMapc(txtPC.Text);
@@ -108,7 +109,7 @@ namespace WindowsFormsApplication1
                 dto.Mahoadonnhap = txtMahd.Text;
                 //dto.SoTienDaTra = double.Parse(txtSoTienTra.Text);
 
-                Ctrl_Tien.SUAPHIEUCHI(dto);
+                CTR.SUAPHIEUCHI(dto);
                 if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Bạn đã lưu thành công");
@@ -127,7 +128,7 @@ namespace WindowsFormsApplication1
                 dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
                 dto.Mahoadonnhap = txtMahd.Text;
 
-                Ctrl_Tien.THEM_PHIEUCHI_ctrl(dto);
+                CTR.THEM_PHIEUCHI_ctrl(dto);
                 if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Bạn đã lưu thành công");

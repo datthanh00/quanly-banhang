@@ -55,12 +55,7 @@
             this.gridcbmathang = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cbkho = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridcbkho = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbmahang = new DevExpress.XtraEditors.LabelControl();
-            this.lbkho = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.pnthoigian = new DevExpress.XtraEditors.PanelControl();
             this.cbThoiGian = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -240,8 +235,6 @@
             this.pnkho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbsanpham.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridcbmathang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbkho.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridcbkho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnthoigian)).BeginInit();
@@ -319,9 +312,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 442);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 443);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -342,7 +335,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 194;
-            this.navBarControl1.Size = new System.Drawing.Size(181, 442);
+            this.navBarControl1.Size = new System.Drawing.Size(181, 443);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "Thống Kê";
             // 
@@ -434,18 +427,16 @@
             // pnkho
             // 
             this.pnkho.Controls.Add(this.cbsanpham);
-            this.pnkho.Controls.Add(this.cbkho);
             this.pnkho.Controls.Add(this.lbmahang);
-            this.pnkho.Controls.Add(this.lbkho);
             this.pnkho.Controls.Add(this.dateEdit1);
             this.pnkho.Location = new System.Drawing.Point(11, 0);
             this.pnkho.Name = "pnkho";
-            this.pnkho.Size = new System.Drawing.Size(317, 35);
+            this.pnkho.Size = new System.Drawing.Size(181, 35);
             this.pnkho.TabIndex = 3;
             // 
             // cbsanpham
             // 
-            this.cbsanpham.Location = new System.Drawing.Point(201, 7);
+            this.cbsanpham.Location = new System.Drawing.Point(63, 7);
             this.cbsanpham.Name = "cbsanpham";
             this.cbsanpham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -481,59 +472,13 @@
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 1;
             // 
-            // cbkho
-            // 
-            this.cbkho.Location = new System.Drawing.Point(33, 8);
-            this.cbkho.Name = "cbkho";
-            this.cbkho.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbkho.Properties.NullText = "";
-            this.cbkho.Properties.PopupSizeable = false;
-            this.cbkho.Properties.View = this.gridcbkho;
-            this.cbkho.Size = new System.Drawing.Size(107, 20);
-            this.cbkho.TabIndex = 22;
-            // 
-            // gridcbkho
-            // 
-            this.gridcbkho.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn4,
-            this.gridColumn7});
-            this.gridcbkho.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridcbkho.Name = "gridcbkho";
-            this.gridcbkho.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridcbkho.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Mã kho";
-            this.gridColumn4.FieldName = "MAKHO";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 0;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "Tên kho";
-            this.gridColumn7.FieldName = "TENKHO";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 1;
-            // 
             // lbmahang
             // 
-            this.lbmahang.Location = new System.Drawing.Point(146, 12);
+            this.lbmahang.Location = new System.Drawing.Point(8, 12);
             this.lbmahang.Name = "lbmahang";
-            this.lbmahang.Size = new System.Drawing.Size(47, 13);
+            this.lbmahang.Size = new System.Drawing.Size(46, 13);
             this.lbmahang.TabIndex = 21;
-            this.lbmahang.Text = "Sản Phẩm";
-            // 
-            // lbkho
-            // 
-            this.lbkho.Location = new System.Drawing.Point(9, 12);
-            this.lbkho.Name = "lbkho";
-            this.lbkho.Size = new System.Drawing.Size(18, 13);
-            this.lbkho.TabIndex = 20;
-            this.lbkho.Text = "Kho";
+            this.lbmahang.Text = "Mặt Hàng";
             // 
             // dateEdit1
             // 
@@ -556,14 +501,14 @@
             this.pnthoigian.Controls.Add(this.lbDen);
             this.pnthoigian.Controls.Add(this.lbTu);
             this.pnthoigian.Controls.Add(this.dateTu);
-            this.pnthoigian.Location = new System.Drawing.Point(344, 0);
+            this.pnthoigian.Location = new System.Drawing.Point(192, 0);
             this.pnthoigian.Name = "pnthoigian";
             this.pnthoigian.Size = new System.Drawing.Size(404, 35);
             this.pnthoigian.TabIndex = 2;
             // 
             // cbThoiGian
             // 
-            this.cbThoiGian.Location = new System.Drawing.Point(0, 5);
+            this.cbThoiGian.Location = new System.Drawing.Point(2, 5);
             this.cbThoiGian.Name = "cbThoiGian";
             this.cbThoiGian.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -687,7 +632,7 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
             this.gridControl1.MainView = this.gridView10;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -695,7 +640,7 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
             this.repositoryItemDateEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1101, 393);
+            this.gridControl1.Size = new System.Drawing.Size(1099, 391);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView10,
@@ -731,6 +676,8 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.gridView10.Name = "gridView10";
+            this.gridView10.OptionsBehavior.Editable = false;
+            this.gridView10.OptionsSelection.MultiSelect = true;
             this.gridView10.OptionsView.AllowCellMerge = true;
             this.gridView10.OptionsView.ShowAutoFilterRow = true;
             this.gridView10.OptionsView.ShowFooter = true;
@@ -988,6 +935,8 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.gridView9.Name = "gridView9";
+            this.gridView9.OptionsBehavior.Editable = false;
+            this.gridView9.OptionsSelection.MultiSelect = true;
             this.gridView9.OptionsView.ShowAutoFilterRow = true;
             this.gridView9.OptionsView.ShowFooter = true;
             this.gridView9.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -1189,6 +1138,8 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.gridView7.Name = "gridView7";
+            this.gridView7.OptionsBehavior.Editable = false;
+            this.gridView7.OptionsSelection.MultiSelect = true;
             this.gridView7.OptionsView.ShowAutoFilterRow = true;
             this.gridView7.OptionsView.ShowFooter = true;
             // 
@@ -1298,6 +1249,8 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.gridView8.Name = "gridView8";
+            this.gridView8.OptionsBehavior.Editable = false;
+            this.gridView8.OptionsSelection.MultiSelect = true;
             this.gridView8.OptionsView.ShowAutoFilterRow = true;
             this.gridView8.OptionsView.ShowFooter = true;
             this.gridView8.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -1433,6 +1386,8 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.gridView6.Name = "gridView6";
+            this.gridView6.OptionsBehavior.Editable = false;
+            this.gridView6.OptionsSelection.MultiSelect = true;
             this.gridView6.OptionsView.ShowAutoFilterRow = true;
             this.gridView6.OptionsView.ShowFooter = true;
             // 
@@ -1461,6 +1416,8 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.gridView4.Name = "gridView4";
+            this.gridView4.OptionsBehavior.Editable = false;
+            this.gridView4.OptionsSelection.MultiSelect = true;
             this.gridView4.OptionsView.ShowAutoFilterRow = true;
             this.gridView4.OptionsView.ShowFooter = true;
             this.gridView4.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -1639,6 +1596,8 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.gridView5.Name = "gridView5";
+            this.gridView5.OptionsBehavior.Editable = false;
+            this.gridView5.OptionsSelection.MultiSelect = true;
             this.gridView5.OptionsView.ShowAutoFilterRow = true;
             this.gridView5.OptionsView.ShowFooter = true;
             this.gridView5.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -1832,6 +1791,7 @@
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "LOINHUAN", null, "Lợi nhuận : {0:0,0}")});
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsPrint.UsePrintStyles = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -2030,6 +1990,8 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsSelection.MultiSelect = true;
             this.gridView2.OptionsView.AllowCellMerge = true;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowFooter = true;
@@ -2230,6 +2192,8 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsBehavior.Editable = false;
+            this.gridView3.OptionsSelection.MultiSelect = true;
             this.gridView3.OptionsView.ShowAutoFilterRow = true;
             this.gridView3.OptionsView.ShowFooter = true;
             this.gridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -2457,8 +2421,6 @@
             this.pnkho.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbsanpham.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridcbmathang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbkho.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridcbkho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnthoigian)).EndInit();
@@ -2631,12 +2593,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridcbmathang;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraEditors.GridLookUpEdit cbkho;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridcbkho;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.LabelControl lbmahang;
-        private DevExpress.XtraEditors.LabelControl lbkho;
         private DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView gridView8;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn26;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn27;

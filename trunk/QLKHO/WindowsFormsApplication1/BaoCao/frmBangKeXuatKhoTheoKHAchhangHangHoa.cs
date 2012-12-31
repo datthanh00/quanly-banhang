@@ -32,13 +32,13 @@ namespace WindowsFormsApplication1
         public  int iNgonNgu ;
         public  string optionload="";
 
-        PublicVariable PV;
+      
 
         private void frmBaoCaoTonKho_Load(object sender, EventArgs e)
         {
-            PV = new PublicVariable();
+           
 
-            if (PV.XEM == "0")
+            if (PublicVariable.XEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -66,26 +66,10 @@ namespace WindowsFormsApplication1
 
             }
             load_cbhanghoa();
-            load_cbkho();
 
-            //loadGird();
-            //loadGird1();
-            //loadGird2();
-            //loadGird3();
-            //loadGird4();
-            //loadGird5();
         }
 
-        //private void loadgirdlookup()
-        //{
-        //    glKhoHang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-        //    glKhoHang.Properties.DataSource = dvdropdow;
-        //    glKhoHang.Properties.DisplayMember = "TENKHO";
-        //    glKhoHang.Properties.ValueMember = "MAKHO";
-        //    glKhoHang.Properties.View.BestFitColumns();
-        //    glKhoHang.Properties.PopupFormWidth = 300;
-        //    glKhoHang.Properties.DataSource = ctr1.getTonKho(dto);
-        //}
+
         Class_DTO_ThongKe dto = new Class_DTO_ThongKe();
         Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
         DataTable dt = new DataTable();
@@ -195,7 +179,7 @@ namespace WindowsFormsApplication1
         }
         private void loadGird_tonkhotonghop()
         {
-            dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+            //dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
 
             gridControl1.MainView = gridView7;
             dt = ctr1.TONKHOTONGHOP(dto);
@@ -214,7 +198,7 @@ namespace WindowsFormsApplication1
             NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
             dto.NGAYKTKHO = NGAYKT;
 
-            dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+           // dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
             dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
 
             //dto.MAKHO = cbkho.Text;
@@ -243,7 +227,7 @@ namespace WindowsFormsApplication1
             NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
             dto.NGAYKTKHO = NGAYKT;
 
-            dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+            //dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
             dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
 
             gridControl1.MainView = gridView9;
@@ -728,12 +712,12 @@ namespace WindowsFormsApplication1
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            if (gridControl1.MainView == gridView1)
+           /* if (gridControl1.MainView == gridView1)
             {
 
                 reportBaoCaoLoiNhuan loinhuan = new reportBaoCaoLoiNhuan(dt, iNgonNgu);
@@ -762,6 +746,8 @@ namespace WindowsFormsApplication1
                 nhom.ShowPreviewDialog();
 
             }
+            * */
+            gridControl1.ShowPrintPreview();
 
         }
 
@@ -774,7 +760,7 @@ namespace WindowsFormsApplication1
 
         private void btXuat_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -863,15 +849,7 @@ namespace WindowsFormsApplication1
         {
             deDongTab();
         }
-        private void load_cbkho()
-        {
-            cbkho.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cbkho.Properties.DisplayMember = "TENKHO";
-            cbkho.Properties.ValueMember = "MAKHO";
-            cbkho.Properties.View.BestFitColumns();
-            cbkho.Properties.PopupFormWidth = 200;
-            cbkho.Properties.DataSource = ctr1.dtGetkho();
-        }
+
         private void load_cbhanghoa()
         {
             cbsanpham.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
@@ -886,8 +864,8 @@ namespace WindowsFormsApplication1
             optionload = "tonkhotonghop";
             pnkho.Visible = true;
             pnthoigian.Visible = false;
-            lbkho.Visible=true;
-            cbkho.Visible=true;
+            //lbkho.Visible=true;
+            //cbkho.Visible=true;
             lbmahang.Visible = false;
             cbsanpham.Visible = false;
             gridControl1.DataSource = null;
@@ -901,8 +879,8 @@ namespace WindowsFormsApplication1
             optionload = "thekho";
             pnkho.Visible = true;
             pnthoigian.Visible = true;
-            lbkho.Visible = true;
-            cbkho.Visible = true;
+           // lbkho.Visible = true;
+            //cbkho.Visible = true;
             lbmahang.Visible = true;
             cbsanpham.Visible = true;
             gridControl1.DataSource = null;
@@ -918,6 +896,11 @@ namespace WindowsFormsApplication1
             gridControl1.DataSource = null;
             //gridView6.Columns.Clear();
             loadGird_chitiethanghoa();
+        }
+
+        private void cbkho_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
         
 

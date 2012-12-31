@@ -21,25 +21,25 @@ namespace WindowsFormsApplication1
         }
         DataTable dt = new DataTable();
         public int iNgonNgu;
+        Ctrl_Tien CTR = new Ctrl_Tien();
         public void loadGetAllHDX()
         {
-            dt = Ctrl_Tien.GETALLHDX_ctrl();
+            dt = CTR.GETALLHDX_ctrl();
             gridControl1.DataSource = dt;
         }
         public void loadGetAllPHIEUCHI()
         {
-            dt = Ctrl_Tien.GETALLPHIEUCHI_ctrl();
+            dt = CTR.GETALLPHIEUCHI_ctrl();
             gridControl2.DataSource = dt;
         }
         public frmMain frm;
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
-        PublicVariable PV;
+      
         private void frmCongNoKH_Load(object sender, EventArgs e)
         {
-            PV = new PublicVariable();
-
-            if (PV.XEM == "0")
+           
+            if (PublicVariable.XEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -70,7 +70,7 @@ namespace WindowsFormsApplication1
                 sMahdx = dtr[0].ToString();
                 smaKH = dtr[2].ToString();
                 sTienno = dtr[6].ToString();
-                //dt = Ctrl_Tien.get1pthdx_ctrl(dtr[0].ToString());
+                //dt = CTR.get1pthdx_ctrl(dtr[0].ToString());
                 //gridControl2.DataSource = dt;
             }
             catch 
@@ -103,7 +103,7 @@ namespace WindowsFormsApplication1
         }
         private void btThutien_Click(object sender, EventArgs e)
         {
-            if (PV.THEM == "0")
+            if (PublicVariable.THEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -139,7 +139,7 @@ namespace WindowsFormsApplication1
         }
         private void btneditthutien_Click(object sender, EventArgs e)
         {
-            if (PV.SUA == "0")
+            if (PublicVariable.SUA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -163,7 +163,7 @@ namespace WindowsFormsApplication1
                 frm.TIEN = stientra;
                 frm.sMaNV = sMaNV;
 
-                frm.Tienno = Ctrl_Tien.GETcongno_HDX(smahdx);
+                frm.Tienno = CTR.GETcongno_HDX(smahdx);
                 frm.iNgonNgu = this.iNgonNgu;
                 
                 frm.sTenNV = sTenNV;
@@ -195,7 +195,7 @@ namespace WindowsFormsApplication1
         }
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (PV.THEM == "0")
+            if (PublicVariable.THEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -218,7 +218,7 @@ namespace WindowsFormsApplication1
         public void loadctkh()
         {
             //DataTable dt = new DataTable();
-            dt = Ctrl_Tien.get1pthdx_ctrl(sMahdx);
+            dt = CTR.get1pthdx_ctrl(sMahdx);
             gridControl2.DataSource = dt;
         }
         public void loadVN()
@@ -292,10 +292,70 @@ namespace WindowsFormsApplication1
 
         private void btndelthutien_Click(object sender, EventArgs e)
         {
-            if (PV.XOA == "0")
+            if (PublicVariable.XOA == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
+            }
+        }
+
+        private void btIn_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            gridControl1.ShowPrintPreview();
+        }
+        
+
+        private void btXuat_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            
+
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel|*.xls";
+            saveFileDialog1.Title = "Save an File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                gridControl1.ExportToXls(saveFileDialog1.FileName);
+            }
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+             if (PublicVariable.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            gridControl2.ShowPrintPreview();
+
+            
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+           SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel|*.xls";
+            saveFileDialog1.Title = "Save an File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                gridControl2.ExportToXls(saveFileDialog1.FileName);
             }
         }
 

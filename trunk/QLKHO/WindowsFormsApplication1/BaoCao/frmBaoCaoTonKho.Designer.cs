@@ -32,10 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoTonKho));
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.glKhoHang = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMaKho = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbDen = new DevExpress.XtraEditors.LabelControl();
             this.lbTu = new DevExpress.XtraEditors.LabelControl();
             this.dateDen = new DevExpress.XtraEditors.DateEdit();
@@ -77,8 +73,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.glKhoHang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).BeginInit();
@@ -106,7 +100,6 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.glKhoHang);
             this.panelControl1.Controls.Add(this.lbDen);
             this.panelControl1.Controls.Add(this.lbTu);
             this.panelControl1.Controls.Add(this.dateDen);
@@ -118,50 +111,9 @@
             this.panelControl1.Size = new System.Drawing.Size(1292, 35);
             this.panelControl1.TabIndex = 0;
             // 
-            // glKhoHang
-            // 
-            this.glKhoHang.AllowDrop = true;
-            this.glKhoHang.EditValue = "ggfg";
-            this.glKhoHang.Location = new System.Drawing.Point(38, 9);
-            this.glKhoHang.Name = "glKhoHang";
-            this.glKhoHang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.glKhoHang.Properties.View = this.gView;
-            this.glKhoHang.Size = new System.Drawing.Size(171, 20);
-            this.glKhoHang.TabIndex = 4;
-            this.glKhoHang.EditValueChanged += new System.EventHandler(this.glKhoHang_EditValueChanged_1);
-            // 
-            // gView
-            // 
-            this.gView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMaKho,
-            this.colTen});
-            this.gView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gView.Name = "gView";
-            this.gView.OptionsBehavior.AllowIncrementalSearch = true;
-            this.gView.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gView.OptionsView.ShowGroupPanel = false;
-            // 
-            // colMaKho
-            // 
-            this.colMaKho.Caption = "Mã kho";
-            this.colMaKho.FieldName = "MAKHO";
-            this.colMaKho.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
-            this.colMaKho.Name = "colMaKho";
-            this.colMaKho.Visible = true;
-            this.colMaKho.VisibleIndex = 0;
-            // 
-            // colTen
-            // 
-            this.colTen.Caption = "Tên kho";
-            this.colTen.FieldName = "TENKHO";
-            this.colTen.Name = "colTen";
-            this.colTen.Visible = true;
-            this.colTen.VisibleIndex = 1;
-            // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(494, 13);
+            this.lbDen.Location = new System.Drawing.Point(289, 13);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -169,7 +121,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(345, 13);
+            this.lbTu.Location = new System.Drawing.Point(140, 13);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -178,7 +130,7 @@
             // dateDen
             // 
             this.dateDen.EditValue = new System.DateTime(2010, 11, 28, 0, 0, 0, 0);
-            this.dateDen.Location = new System.Drawing.Point(532, 9);
+            this.dateDen.Location = new System.Drawing.Point(326, 8);
             this.dateDen.Name = "dateDen";
             this.dateDen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -193,7 +145,7 @@
             // dateTu
             // 
             this.dateTu.EditValue = new System.DateTime(2010, 11, 27, 23, 39, 42, 143);
-            this.dateTu.Location = new System.Drawing.Point(376, 9);
+            this.dateTu.Location = new System.Drawing.Point(170, 8);
             this.dateTu.Name = "dateTu";
             this.dateTu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -208,7 +160,7 @@
             // 
             // cbThoiGian
             // 
-            this.cbThoiGian.Location = new System.Drawing.Point(227, 9);
+            this.cbThoiGian.Location = new System.Drawing.Point(21, 8);
             this.cbThoiGian.Name = "cbThoiGian";
             this.cbThoiGian.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -288,10 +240,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 2);
+            this.gridControl2.Location = new System.Drawing.Point(3, 3);
             this.gridControl2.MainView = this.advBandedGridView3;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1288, 393);
+            this.gridControl2.Size = new System.Drawing.Size(1286, 391);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -509,8 +461,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.glKhoHang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).EndInit();
@@ -566,10 +516,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLXuat;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLTOn;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colThanhTienTOn;
-        private DevExpress.XtraEditors.GridLookUpEdit glKhoHang;
-        private DevExpress.XtraGrid.Views.Grid.GridView gView;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaKho;
-        private DevExpress.XtraGrid.Columns.GridColumn colTen;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridThongTin;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridDauKi;

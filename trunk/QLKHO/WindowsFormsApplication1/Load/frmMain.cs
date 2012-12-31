@@ -221,25 +221,25 @@ namespace WindowsFormsApplication1
         private void SetPhanQuyen(string MACN)
         {
             int phanquyencount = PhanQuyen.Rows.Count;
-            PublicVariable PV = new PublicVariable();
+          
 
            // for (int i = 0; i < phanquyencount; i++)
            // {
             int imacn = Convert.ToInt32(MACN);
                 //if (PhanQuyen.Rows[i]["MACN"].ToString() == MACN)
                 //{
-            PV.XEM = PhanQuyen.Rows[imacn-1]["TRUYCAP"].ToString();
-            PV.THEM = PhanQuyen.Rows[imacn-1]["THEM"].ToString();
-            PV.XOA = PhanQuyen.Rows[imacn-1]["XOA"].ToString();
-            PV.SUA = PhanQuyen.Rows[imacn-1]["SUA"].ToString();
-            PV.IN = PhanQuyen.Rows[imacn-1]["IN"].ToString();
+            PublicVariable.XEM = PhanQuyen.Rows[imacn-1]["TRUYCAP"].ToString();
+            PublicVariable.THEM = PhanQuyen.Rows[imacn-1]["THEM"].ToString();
+            PublicVariable.XOA = PhanQuyen.Rows[imacn-1]["XOA"].ToString();
+            PublicVariable.SUA = PhanQuyen.Rows[imacn-1]["SUA"].ToString();
+            PublicVariable.IN = PhanQuyen.Rows[imacn-1]["IN"].ToString();
                 //}
             //}
         }
         private void SetPhanKho(DataTable KHO)
         {
-            PublicVariable PV = new PublicVariable();
-            PV.AddKhoQL(KHO);
+
+            PublicVariable.KhoQL = KHO;
         }
 
         public Boolean Isused(string MACN)
@@ -649,7 +649,7 @@ namespace WindowsFormsApplication1
 
             //gans cho kho ma user quan ly
                 SetPhanKho(PhanKho);
-           
+                load_cbkho();
             loadStatus();
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
@@ -657,6 +657,25 @@ namespace WindowsFormsApplication1
             timer1.Enabled = true;
             notifyIcon();
         }
+        private void load_cbkho()
+        {
+            cbkho.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbkho.Properties.DisplayMember = "TENKHO";
+            cbkho.Properties.ValueMember = "MAKHO";
+            cbkho.Properties.View.BestFitColumns();
+            cbkho.Properties.PopupFormWidth = 200;
+            Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
+            cbkho.Properties.DataSource = ctr1.dtGetkho();
+            gridcbkho.SelectRow(0);
+
+            cbkho.Text = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+          
+            
+            PublicVariable.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+            
+            
+        }
+
         void OnPaintStyleClick(object sender, ItemClickEventArgs e)
         {
             defaultLookAndFeel1.LookAndFeel.SetSkinStyle(e.Item.Tag.ToString());
@@ -755,7 +774,7 @@ namespace WindowsFormsApplication1
             btNhomHang.Caption = resEngLand.btNhomHang.ToString();
             btTacGia.Caption = resEngLand.btTacGia.ToString();
             btTongHop.Caption = resEngLand.btTongHop.ToString();
-            btTonKho.Caption = resEngLand.btTonKho.ToString();
+            //btTonKho.Caption = resEngLand.btTonKho.ToString();
             btXuatHang.Caption = resEngLand.btXuatHang.ToString();
             ribChucNang.Text = resEngLand.ribChucNang.ToString();
             ribDanhMuc.Text = resEngLand.ribDanhMuc.ToString();
@@ -821,7 +840,7 @@ namespace WindowsFormsApplication1
             btNhomHang.Caption = resVietNam.btNhomHang.ToString();
             btTacGia.Caption = resVietNam.btTacGia.ToString();
             btTongHop.Caption = resVietNam.btTongHop.ToString();
-            btTonKho.Caption = resVietNam.btTonKho.ToString();
+            //btTonKho.Caption = resVietNam.btTonKho.ToString();
             btXuatHang.Caption = resVietNam.btXuatHang.ToString();
             ribChucNang.Text = resVietNam.ribChucNang.ToString();
             ribDanhMuc.Text = resVietNam.ribDanhMuc.ToString();
@@ -1943,6 +1962,12 @@ namespace WindowsFormsApplication1
                 tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
             }
             ld.simpleCloseWait();
+        }
+
+        private void cbkho_EditValueChanged(object sender, EventArgs e)
+        {
+            
+            PublicVariable.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
         }
 
     }

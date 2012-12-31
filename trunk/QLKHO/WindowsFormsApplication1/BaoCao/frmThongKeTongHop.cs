@@ -47,12 +47,10 @@ namespace WindowsFormsApplication1
 
         }
 
-        PublicVariable PV;
         private void frmThongKeTongHop_Load(object sender, EventArgs e)
         {
-            PV = new PublicVariable();
-
-            if (PV.XEM == "0")
+         
+            if (PublicVariable.XEM == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -82,9 +80,13 @@ namespace WindowsFormsApplication1
             } 
             vload();
             vloadchitietmathang();
+            load_cbhanghoa();
             loadngonngu();
 
-
+            lbnhom.Visible = false;
+            lbsanpham.Visible = false;
+            cbnhomhang.Visible = false;
+            cbmathang.Visible = false;
 
         }
 
@@ -109,7 +111,7 @@ namespace WindowsFormsApplication1
             colthue.Caption = resVietNam.colthue.ToString();
             colthanhtienxuat.Caption = resVietNam.colthanhtienxuat.ToString();
             colgiamua.Caption = resVietNam.colgiamua.ToString();
-            labelControl1.Text = resVietNam.lbchonnhom.ToString();
+            lbnhom.Text = resVietNam.lbchonnhom.ToString();
             //labelControl2.Text = resVietNam.lbden.ToString();
             colsongayhethan.Caption = resVietNam.colsongayconhan.ToString();
             //labelControl13.Text = resVietNam.lbtu.ToString();
@@ -143,7 +145,7 @@ namespace WindowsFormsApplication1
             colthue.Caption = resEngLand.colthue.ToString();
             colthanhtienxuat.Caption = resEngLand.colthanhtienxuat.ToString();
             colgiamua.Caption = resEngLand.colgiamua.ToString();
-            labelControl1.Text = resEngLand.lbchonnhom.ToString();
+            lbnhom.Text = resEngLand.lbchonnhom.ToString();
             //labelControl2.Text = resEngLand.l.ToString();
             colsongayhethan.Caption = resEngLand.colsongayconhan.ToString();
             //labelControl13.Text = resEngLand.lbtu.ToString();
@@ -273,54 +275,7 @@ namespace WindowsFormsApplication1
 
             //cbHienThiBatDau.SelectedIndex = 1;
         }
-        private void linkTongHop_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            //{
-            //    if (iNgonNgu == 0)
-            //    {
-            //        cbHienThiBatDau.Text = "Chọn Tháng";
-            //        cbHienThiKeThuc.Text = "Chọn Tháng";
-            //        cbNam.Text = "Chọn năm";
-            //        xtraTabPage3.Text = "Thống Kê theo tháng";
-
-            //    }
-            //    else
-            //    {
-            //        cbHienThiBatDau.Text = "Select Moth";
-            //        cbHienThiKeThuc.Text = "Select Moth";
-            //        cbNam.Text = "Select Year";
-            //        xtraTabPage3.Text = "Monthly Statistics";
-
-            //    }
-
-
-
-            //    pnThangNam.Visible = true;
-            //    pnThoiGian.Visible = false;
-            //    cbHienThiKeThuc.Visible = true;
-            //    cbNam.Visible = true;
-            //    lbNam.Visible = true;
-            //    lbDen.Visible = true;
-            //    cbNam.Properties.Items.Clear();
-            //    cbHienThiBatDau.Properties.Items.Clear();
-            //    cbHienThiKeThuc.Properties.Items.Clear();
-            //    for (int i = 1; i < 13; i++)
-            //    {
-            //        cbHienThiBatDau.Properties.Items.Add(i.ToString());
-            //        cbHienThiKeThuc.Properties.Items.Add(i.ToString());
-            //    }
-            //    for (int i = 2005; i < DateTime.Now.Year + 1; i++)
-            //    {
-            //        cbNam.Properties.Items.Add(i.ToString());
-            //    }
-            //    LoaiHT = "";
-            //    dateNgayBD = DateTime.Now.ToShortDateString();
-            //    dateNgayKT = DateTime.Now.ToShortDateString();
-            //    //load();
-            //    LoaiTG = "thang";
-            //}
-
-        }
+  
         public void load()
         {
             //dto.NGAY_BD = DateTime.Parse(dateNgayBD);
@@ -380,53 +335,10 @@ namespace WindowsFormsApplication1
 
         private void vloadchitietmathang()
         {
-
-
-           // DataTable dt = new DataTable();
-            dt.Columns.Add("manh");
-            dt.Columns.Add("tennhomhang");
-            DataRow dtr1 = dt.NewRow();
-            if (iNgonNgu == 0)
-            {
-                dtr1[0] = "0";
-                dtr1[1] = "Tất Cả";
-            }
-            else
-            {
-                dtr1[0] = "0";
-                dtr1[1] = "ALL Product";
-            }
-
-            dt.Rows.Add(dtr1);
-
-            foreach (DataRow dtr in ctr.dtGetNH().Rows)
-            {
-                DataRow dtr2 = dt.NewRow();
-                dtr2[0] = dtr[0].ToString();
-                dtr2[1] = dtr[1].ToString();
-                dt.Rows.Add(dtr2);
-            }
-
-            cbChonNhomHang.DataSource = dt;
-            cbChonNhomHang.DisplayMember = "Tennhomhang";
-            cbChonNhomHang.ValueMember = "manh";
-            cbChonNhomHang.AutoCompleteSource = AutoCompleteSource.ListItems;
-            cbChonNhomHang.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            
-            if (iNgonNgu == 0)
-            {
-                cmbloaihienthi.Properties.Items.Add("Tất Cả");
-                cmbloaihienthi.Properties.Items.Add("Hết Hạn Sử Dụng");
-                cmbloaihienthi.Properties.Items.Add("Còn Hạn Sử Dụng");                
-                cmbloaihienthi.SelectedIndex = 0;
-            }
-            else
-            {
-                cmbloaihienthi.Properties.Items.Add("ALL");
-                cmbloaihienthi.Properties.Items.Add("EXPIRY DATE");
-                cmbloaihienthi.Properties.Items.Add("EXPIRE ");
-                cmbloaihienthi.SelectedIndex = 0;
-            }
+                cbloaihienthi.Properties.Items.Add("Tất Cả");
+                cbloaihienthi.Properties.Items.Add("Theo Hàng Hóa");
+                cbloaihienthi.Properties.Items.Add("Theo Nhóm Hàng");
+                cbloaihienthi.SelectedIndex = 0;
         }
 
         private void vload()
@@ -441,68 +353,52 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void load_cbhanghoa()
+        {
+            cbmathang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbmathang.Properties.DisplayMember = "TENSANPHAM";
+            cbmathang.Properties.ValueMember = "MASANPHAM";
+            cbmathang.Properties.View.BestFitColumns();
+            cbmathang.Properties.PopupFormWidth = 200;
+            Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
+            cbmathang.Properties.DataSource = ctr1.dtGetsanpham();
 
+            cbnhomhang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbnhomhang.Properties.DisplayMember = "TENNHOMHANG";
+            cbnhomhang.Properties.ValueMember = "MANH";
+            cbnhomhang.Properties.View.BestFitColumns();
+            cbnhomhang.Properties.PopupFormWidth = 200;
+            cbnhomhang.Properties.DataSource = ctr1.dtGetNH2();
+        }
 
 
         private void simpleButton11_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            int loaihienthi = cbloaihienthi.SelectedIndex;
+            if (loaihienthi == 1)
+            {
+                if (cbmathang.Text == "")
+                {
+                    MessageBox.Show("Hãy Chọn một mã hàng");
+                    return;
+                }
 
-            //    if (LoaiTG == "thang")
-            //    {
-            //        dateNgayBD = cbHienThiBatDau.Text + "/1/" + cbNam.Text;
-            //        dateNgayKT = cbHienThiKeThuc.Text + "/1/" + cbNam.Text;
+            }
+            else if (loaihienthi == 2)
+            {
+                if (cbmathang.Text == "")
+                {
+                    MessageBox.Show("Hãy Chọn một nhóm hàng");
+                    return;
+                }
+            }
 
-            //    }
-            //    if (LoaiTG == "ngay")
-            //    {
-            //        dateNgayBD = dateBD.Text;
-            //        dateNgayKT = dateKetThuc.Text;
+                dto.Loai_HT = loaihienthi.ToString();
 
-            //        // return;
-            //    }
-            //    if (LoaiTG == "nam")
-            //    {
-            //        dateNgayBD = "1/1/" + cbHienThiBatDau.Text;
-            //        dateNgayKT = "1/1/" + cbHienThiKeThuc.Text;
+                dto.MAMH = gridView2.GetFocusedRowCellValue("MASANPHAM").ToString();
+                dto.MANH = gridView3.GetFocusedRowCellValue("MANH").ToString();
 
-            //    }
-            //    if (LoaiTG == "QUI")
-            //    {
-            //        switch (cbHienThiBatDau.Text.Trim())
-            //        {
-            //            case "1":
-            //                dateNgayBD = ("1/1/" + cbHienThiKeThuc.Text);
-            //                dateNgayKT = ("03/31/" + cbHienThiKeThuc.Text);
-            //                break;
-            //            case "2":
-            //                dateNgayBD = ("4/1/" + cbHienThiKeThuc.Text);
-            //                dateNgayKT = ("06/30/" + cbHienThiKeThuc.Text);
-            //                break;
-            //            case "3":
-            //                dateNgayBD = ("07/01/" + cbHienThiKeThuc.Text);
-            //                dateNgayKT = ("09/30/" + cbHienThiKeThuc.Text);
-            //                break;
-
-            //            default:
-            //                dateNgayBD = ("10/01/" + cbHienThiKeThuc.Text);
-            //                dateNgayKT = ("12/31/" + cbHienThiKeThuc.Text);
-            //                break;
-            //        }
-
-            //    }
-
-
-            dto.Loai_TG = cbChonNhomHang.Text;
-            dto.Loai_HT = cmbloaihienthi.SelectedIndex.ToString();
-                //dto.NGAY_BD = DateTime.Parse(dateNgayBD);
-                //dto.NGAY_KT = DateTime.Parse(dateNgayKT);
-               // dto.MANH = cbChonNhomHang.SelectedValue.ToString();
-
-
-                if (cbChonNhomHang.SelectedIndex == 0)
-                    dto.Loai_TG = "";
+            
                 dt = ctr.geTthongke_ct_mathang2(dto);
                 
               
@@ -511,8 +407,6 @@ namespace WindowsFormsApplication1
                 cn = new DevExpress.XtraGrid.StyleFormatCondition(FormatConditionEnum.Less, gridView1.Columns["SONGAYHETHANH"], null, 0);
                 cn.Appearance.BackColor = Color.Yellow;
                 gridView1.FormatConditions.Add(cn);
-               // cn.Appearance.Font = new Font(AppearanceObject.DefaultFont, FontStyle.Strikeout);
-                //cn.Appearance.ForeColor = SystemColors.ControlDark;
                 cn.ApplyToRow = true;
                 gridView1.FormatConditions.Add(cn);
                 gridView1.BestFitColumns();
@@ -578,52 +472,11 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void linktheonam_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            //{
-            //    if (iNgonNgu == 0)
-            //    {
 
-            //        cbHienThiBatDau.Text = "Chọn năm";
-            //        cbHienThiKeThuc.Text = "Chọn năm";
-
-            //        xtraTabPage3.Text = "Thống Kê Theo Năm";
-
-            //    }
-            //    else
-            //    {
-            //        cbHienThiBatDau.Text = "Select year";
-            //        cbHienThiKeThuc.Text = "Select year";
-
-            //        xtraTabPage3.Text = "Statistics year";
-
-            //    }
-            //    cbNam.Visible = false;
-            //    lbNam.Visible = false;
-            //    //xtraTabPage3.Text = "Thống kê theo năm";
-            //    pnThangNam.Visible = true;
-            //    pnThoiGian.Visible = false;
-            //    cbHienThiKeThuc.Visible = true;
-            //    lbDen.Visible = true;
-            //    cbHienThiBatDau.Properties.Items.Clear();
-            //    cbHienThiKeThuc.Properties.Items.Clear();
-
-            //    for (int i = 2005; i < DateTime.Now.Year + 1; i++)
-            //    {
-            //        cbHienThiBatDau.Properties.Items.Add(i.ToString());
-            //        cbHienThiKeThuc.Properties.Items.Add(i.ToString());
-            //    }
-            //    LoaiHT = "";
-            //    dateNgayBD = DateTime.Now.ToShortDateString();
-            //    dateNgayKT = DateTime.Now.ToShortDateString();
-            //    load();
-            //    LoaiTG = "Nam";
-            //}
-        }
 
         private void simpleButton8_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -650,7 +503,7 @@ namespace WindowsFormsApplication1
 
         private void BtXuatdulieu_Click(object sender, EventArgs e)
         {
-            if (PV.IN == "0")
+            if (PublicVariable.IN == "0")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -676,31 +529,32 @@ namespace WindowsFormsApplication1
 
         private void cmbloaihienthi_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            int loaihienthi = cbloaihienthi.SelectedIndex;
+            if (loaihienthi==0)
+            {
+                lbnhom.Visible = false;
+                lbsanpham.Visible = false;
+                cbnhomhang.Visible = false;
+                cbmathang.Visible = false;
+            }
+            else if (loaihienthi == 1)
+            {
+                lbnhom.Visible = false;
+                lbsanpham.Visible = true;
+                cbnhomhang.Visible = false;
+                cbmathang.Visible = true;
+            }
+            else
+            {
+                lbnhom.Visible = true;
+                lbsanpham.Visible = false;
+                cbnhomhang.Visible = true;
+                cbmathang.Visible = false;
+            }
+
         }
 
-        private void navBarGroup1_CalcGroupClientHeight(object sender, DevExpress.XtraNavBar.NavBarCalcGroupClientHeightEventArgs e)
-        {
-            //if (iNgonNgu == 0)
-            //{
-            //      //gridColumn1.Caption = "COMMODITIES' CODE";
-            //      linkTongHop.Caption = "Thống kê theo ngày";
-            //      linkNgayThang.Caption = "Thống kê theo tháng";
-            //      LinkTheoqui.Caption = "Thống Kê Theo quí";
-            //      linktheonam.Caption = "Thống kê theo năm";
-                  
-                
 
-            //}
-            //else
-            //{
-            //    linkTongHop.Caption = "Statistics by moth";
-            //    linkNgayThang.Caption = "Statistics by date";
-            //    LinkTheoqui.Caption = "Statistics by quater";
-            //    linktheonam.Caption = "Statistics by year";
-                
-            //}
-        }
 
         private void labelControl13_Click(object sender, EventArgs e)
         {
