@@ -96,7 +96,7 @@
             // 
             // lbNV
             // 
-            this.lbNV.Location = new System.Drawing.Point(358, 118);
+            this.lbNV.Location = new System.Drawing.Point(358, 117);
             this.lbNV.Name = "lbNV";
             this.lbNV.Size = new System.Drawing.Size(52, 13);
             this.lbNV.TabIndex = 47;
@@ -104,7 +104,7 @@
             // 
             // lbNgaylap
             // 
-            this.lbNgaylap.Location = new System.Drawing.Point(358, 78);
+            this.lbNgaylap.Location = new System.Drawing.Point(358, 77);
             this.lbNgaylap.Name = "lbNgaylap";
             this.lbNgaylap.Size = new System.Drawing.Size(45, 13);
             this.lbNgaylap.TabIndex = 47;
@@ -112,7 +112,7 @@
             // 
             // lbPC
             // 
-            this.lbPC.Location = new System.Drawing.Point(358, 31);
+            this.lbPC.Location = new System.Drawing.Point(358, 30);
             this.lbPC.Name = "lbPC";
             this.lbPC.Size = new System.Drawing.Size(46, 13);
             this.lbPC.TabIndex = 47;
@@ -120,7 +120,7 @@
             // 
             // lbTienno
             // 
-            this.lbTienno.Location = new System.Drawing.Point(10, 118);
+            this.lbTienno.Location = new System.Drawing.Point(10, 117);
             this.lbTienno.Name = "lbTienno";
             this.lbTienno.Size = new System.Drawing.Size(52, 13);
             this.lbTienno.TabIndex = 47;
@@ -128,7 +128,7 @@
             // 
             // lbTratien
             // 
-            this.lbTratien.Location = new System.Drawing.Point(10, 78);
+            this.lbTratien.Location = new System.Drawing.Point(10, 77);
             this.lbTratien.Name = "lbTratien";
             this.lbTratien.Size = new System.Drawing.Size(54, 13);
             this.lbTratien.TabIndex = 47;
@@ -136,7 +136,7 @@
             // 
             // lbhdn
             // 
-            this.lbhdn.Location = new System.Drawing.Point(10, 32);
+            this.lbhdn.Location = new System.Drawing.Point(10, 31);
             this.lbhdn.Name = "lbhdn";
             this.lbhdn.Size = new System.Drawing.Size(71, 13);
             this.lbhdn.TabIndex = 47;

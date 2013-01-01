@@ -86,6 +86,7 @@
             this.btThue = new DevExpress.XtraBars.BarButtonItem();
             this.BTTraNCC = new DevExpress.XtraBars.BarButtonItem();
             this.BTKHtra = new DevExpress.XtraBars.BarButtonItem();
+            this.logitem = new DevExpress.XtraBars.BarButtonItem();
             this.ribDanhMuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribDoiTac = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribKhoHang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -198,9 +199,10 @@
             this.btmathangthongkhe,
             this.btThue,
             this.BTTraNCC,
-            this.BTKHtra});
+            this.BTKHtra,
+            this.logitem});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 108;
+            this.ribbon.MaxItemId = 109;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.btAnh);
             this.ribbon.PageHeaderItemLinks.Add(this.btNgonNguViet);
@@ -643,6 +645,14 @@
             this.BTKHtra.Name = "BTKHtra";
             this.BTKHtra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTKHtra_ItemClick);
             // 
+            // logitem
+            // 
+            this.logitem.Caption = "LOG";
+            this.logitem.Id = 108;
+            this.logitem.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.hitchhikeguidetogalaxy5_lock;
+            this.logitem.Name = "logitem";
+            this.logitem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // ribDanhMuc
             // 
             this.ribDanhMuc.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -747,6 +757,7 @@
             this.ribHeThongBar.ItemLinks.Add(this.btDangXuat);
             this.ribHeThongBar.ItemLinks.Add(this.btThongTin);
             this.ribHeThongBar.ItemLinks.Add(this.btKetThuc);
+            this.ribHeThongBar.ItemLinks.Add(this.logitem);
             this.ribHeThongBar.Name = "ribHeThongBar";
             this.ribHeThongBar.ShowCaptionButton = false;
             this.ribHeThongBar.Text = "Hệ Thống";
@@ -1109,5 +1120,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraEditors.LabelControl lbkho;
+        private DevExpress.XtraBars.BarButtonItem logitem;
     }
 }
