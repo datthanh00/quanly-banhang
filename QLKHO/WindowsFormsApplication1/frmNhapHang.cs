@@ -165,6 +165,10 @@ namespace WindowsFormsApplication1
         }
         public void loadgridSANPHAM()
         {
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dtoNCC.NGAYBD = NGAYBD;
+
             string NGAYKT = dateDen.Text;
             NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
             dtoNCC.NGAYKT = NGAYKT;
@@ -783,9 +787,7 @@ namespace WindowsFormsApplication1
 
         private void linkTheoSanPham_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            string NGAYBD = dateTu.Text;
-            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
-            dtoNCC.NGAYBD = NGAYBD;
+          
             
             
             loadgridSANPHAM();
@@ -869,8 +871,9 @@ namespace WindowsFormsApplication1
 
         private void btXem_Click(object sender, EventArgs e)
         {
-
+            loadgrid();
         }
+
 
 
         private void gridCTHOADON_ShowingEditor_1(object sender, CancelEventArgs e)
@@ -927,5 +930,38 @@ namespace WindowsFormsApplication1
             
 
         }
+        private void loadgrid()
+        {
+            if (gridControl3.MainView == gridView4)
+            {
+                loadgridPHIEUNHAP();
+            }
+            else if (gridControl3.MainView == gridView4)
+            {
+                loadgridSANPHAM();
+            }
+            else if (gridControl3.MainView == gridView7)
+            {
+                loadgridtongSANPHAM();
+            }
+        }
+
+        private void dateTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar ==(char)13)
+            {
+                loadgrid();
+            }
+        }
+
+        private void dateDen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar ==(char)13)
+            {
+                loadgrid();
+            }
+        }
+
+
     }
 }

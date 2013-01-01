@@ -481,9 +481,9 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-
-            reporthansudung hansudung = new reporthansudung(dt, iNgonNgu);
-            hansudung.ShowPreviewDialog();
+            gridControl1.ShowPrintPreview();
+           // reporthansudung hansudung = new reporthansudung(dt, iNgonNgu);
+           // hansudung.ShowPreviewDialog();
         }
 
      

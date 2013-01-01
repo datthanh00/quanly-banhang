@@ -596,6 +596,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateDen.Size = new System.Drawing.Size(115, 20);
             this.dateDen.TabIndex = 6;
+            this.dateDen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateDen_KeyPress);
             // 
             // dateTu
             // 
@@ -613,6 +614,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateTu.Size = new System.Drawing.Size(115, 20);
             this.dateTu.TabIndex = 5;
+            this.dateTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTu_KeyPress);
             // 
             // lbDen
             // 

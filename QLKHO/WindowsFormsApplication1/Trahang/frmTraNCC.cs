@@ -859,6 +859,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+            loadgrid();
         }
 
         private void gridCTHOADON_ShowingEditor(object sender, CancelEventArgs e)
@@ -914,9 +915,39 @@ namespace WindowsFormsApplication1
             }
         }
 
-    
+        private void dateTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar ==(char)13)
+            {
+                loadgrid();
+            }
+        }
 
-        
+        private void dateDen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar ==(char)13)
+            {
+                loadgrid();
+            }
+        }
+
+
+
+        private void loadgrid()
+        {
+            if (gridControl3.MainView == gridView4)
+            {
+                loadgridPHIEUNHAP();
+            }
+            else if (gridControl3.MainView == gridView5)
+            {
+                loadgridSANPHAM();
+            }
+            else if (gridControl3.MainView == gridView7)
+            {
+                loadgridTONGSANPHAM();
+            }
+        }
 
         
 

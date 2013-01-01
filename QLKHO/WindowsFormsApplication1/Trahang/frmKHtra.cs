@@ -774,6 +774,7 @@ namespace WindowsFormsApplication1.KHtra
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+            loadgrid();
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)
@@ -805,8 +806,38 @@ namespace WindowsFormsApplication1.KHtra
 			
         }
 
-    
-       
+        private void dateTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loadgrid();
+            }
+        }
+
+        private void dateDen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loadgrid();
+            }
+        }
+
+
+        private void loadgrid()
+        {
+            if (gridControl3.MainView == gridView4)
+            {
+                loadgridPHIEUXUAT();
+            }
+            else if (gridControl3.MainView == gridView1)
+            {
+                loadgridSANPHAM();
+            }
+            else if (gridControl3.MainView == gridView3)
+            {
+                loadgridTONGSANPHAM();
+            }
+        }
  
 
     }
