@@ -238,6 +238,12 @@
     <Compile Include="Inxuat.designer.cs">
       <DependentUpon>Inxuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="log\frmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="log\frmLog.designer.cs">
+      <DependentUpon>frmLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="MatHang\frmMatHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -571,6 +577,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inxuat.resx">
       <DependentUpon>Inxuat.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="log\frmLog.resx">
+      <DependentUpon>frmLog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MatHang\frmMatHang.resx">

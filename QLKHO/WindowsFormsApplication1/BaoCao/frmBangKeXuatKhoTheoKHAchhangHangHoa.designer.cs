@@ -656,6 +656,8 @@
             // 
             // gridView10
             // 
+            this.gridView10.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView10.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView10.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn52,
             this.gridColumn78,
@@ -890,6 +892,10 @@
             // 
             // gridView9
             // 
+            this.gridView9.Appearance.BandPanel.Options.UseTextOptions = true;
+            this.gridView9.Appearance.BandPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView9.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView9.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView9.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridBand4,
             this.gridBand11,
@@ -1123,6 +1129,8 @@
             // 
             // gridView7
             // 
+            this.gridView7.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView7.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView7.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.GV7colMAMH,
             this.GV7COLTENMH,
@@ -1209,6 +1217,10 @@
             // 
             // gridView8
             // 
+            this.gridView8.Appearance.BandPanel.Options.UseTextOptions = true;
+            this.gridView8.Appearance.BandPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView8.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView8.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView8.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridBand5,
             this.gridBand6,
@@ -1380,6 +1392,8 @@
             // 
             // gridView6
             // 
+            this.gridView6.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView6.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView6.GridControl = this.gridControl1;
             this.gridView6.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
@@ -1393,6 +1407,8 @@
             // 
             // gridView4
             // 
+            this.gridView4.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView4.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.coltenkh1,
             this.gridColumn16,
@@ -1569,6 +1585,8 @@
             // 
             // gridView5
             // 
+            this.gridView5.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView5.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView5.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colnhomhang5,
             this.colngay5,
@@ -1770,6 +1788,8 @@
             // 
             this.gridView1.Appearance.ColumnFilterButton.ForeColor = System.Drawing.Color.Red;
             this.gridView1.Appearance.ColumnFilterButton.Options.UseForeColor = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colkhachang,
             this.colmathang,
@@ -1969,6 +1989,8 @@
             // 
             // gridView2
             // 
+            this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn41,
@@ -2165,6 +2187,8 @@
             // 
             // gridView3
             // 
+            this.gridView3.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView3.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn12,
             this.colNgay,

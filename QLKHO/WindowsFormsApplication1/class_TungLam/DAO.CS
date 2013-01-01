@@ -719,12 +719,22 @@ namespace WindowsFormsApplication1
                 STT = dt.Rows[0]["STT"].ToString();
                 SUANHAP = (Convert.ToInt32(NHAP)- Convert.ToInt32(dt.Rows[0]["nhap"].ToString())).ToString();
                 SUAXUAT = (Convert.ToInt32(XUAT)- Convert.ToInt32(dt.Rows[0]["xuat"].ToString())).ToString();
+                if (SUANHAP != "0")
+                {
+                    SQL = "INSERT INTO LOG (MAHD,MAMH,SOLUONG,LOG,LYDO) VALUES ( '" + MAHD + "', '" + MAMH + "'," + SUANHAP + ",'THEM','')";
+                    executeNonQuery(SQL);
+                }
+                else
+                {
+                    SQL = "INSERT INTO LOG (MAHD,MAMH,SOLUONG,LOG,LYDO) VALUES ( '" + MAHD + "', '" + MAMH + "'," + SUAXUAT + ",'GIAM','')";
+                    executeNonQuery(SQL);
+                }
             }
 
             SQL = "UPDATE TONKHO SET  toncuoi=toncuoi+" + SUANHAP + "-" + SUAXUAT + " ,NHAP=" + NHAP + ",XUAT=" + XUAT + "  WHERE STT=" + STT + " and id= " + ID ;
             executeNonQuery(SQL);
 
-
+    
             SQL = "UPDATE TONKHO SET  tondau=tondau+" + SUANHAP + "-" + SUAXUAT + ",  toncuoi=toncuoi+" + SUANHAP + "-" + SUAXUAT + "  WHERE STT>" + STT + " and MAMH='" + MAMH + "'";
             executeNonQuery(SQL);
 
@@ -738,10 +748,15 @@ namespace WindowsFormsApplication1
             DataTable dt = getdata(SQL);
             if (dt.Rows.Count > 0)
             {
+                
+
                 SQL = "delete from tonkho where STT=" + dt.Rows[0]["STT"].ToString()+" and ID="+ID;
                 executeNonQuery(SQL);
 
                 string CHENHLECH = (Convert.ToInt32(dt.Rows[0]["NHAP"].ToString()) - Convert.ToInt32(dt.Rows[0]["XUAT"].ToString())).ToString();
+
+                SQL = "INSERT INTO LOG (MAHD,MAMH,SOLUONG,LOG,LYDO) VALUES ( '" + MAHD + "', '" + dt.Rows[0]["MAMH"].ToString() + "',"+CHENHLECH+",'DELETE','')";
+                executeNonQuery(SQL);
 
                 SQL = "UPDATE TONKHO SET  TONDAU=TONDAU- " + CHENHLECH + ", toncuoi=toncuoi-" + CHENHLECH + "  WHERE STT>" + dt.Rows[0]["STT"].ToString() + " and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "' ";
                 executeNonQuery(SQL);

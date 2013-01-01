@@ -1970,5 +1970,31 @@ namespace WindowsFormsApplication1
             PublicVariable.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
         }
 
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetPhanQuyen("23");
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            bKTraMoTab = true;
+       
+            sTieuDe = "LOG Hệ thống";
+
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "LOG";
+                frmLog dt = new frmLog();
+                dt.deDongTab = new frmLog._deDongTab(vDOngTab);
+
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
+        }
+
     }
 }
