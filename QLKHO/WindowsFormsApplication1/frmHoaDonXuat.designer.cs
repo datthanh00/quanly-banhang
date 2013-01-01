@@ -181,6 +181,7 @@
             this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkIntheomathang = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -1666,11 +1667,12 @@
             this.gridColumn31,
             this.gridColumn32,
             this.gridColumn33,
+            this.gridColumn44,
             this.gridColumn43});
             this.gridView1.GridControl = this.gridControl3;
             this.gridView1.GroupCount = 1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "OrderID", null, "")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THANHTIEN", this.gridColumn44, "")});
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
@@ -1724,8 +1726,6 @@
             this.gridColumn29.FieldName = "MAHDX";
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 3;
             // 
             // gridColumn30
             // 
@@ -1801,6 +1801,14 @@
             this.linkIntheomathang.Size = new System.Drawing.Size(168, 22);
             this.linkIntheomathang.Text = "In theo mặt hàng";
             this.linkIntheomathang.Click += new System.EventHandler(this.linkIntheomathang_Click);
+            // 
+            // gridColumn44
+            // 
+            this.gridColumn44.Caption = "Thành Tiền";
+            this.gridColumn44.FieldName = "THANHTIEN";
+            this.gridColumn44.Name = "gridColumn44";
+            this.gridColumn44.Visible = true;
+            this.gridColumn44.VisibleIndex = 8;
             // 
             // frmHoaDonXuat
             // 
@@ -2063,6 +2071,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn34;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
         private System.Windows.Forms.ToolStripMenuItem linkIntheomathang;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn44;
     }
     
 }
