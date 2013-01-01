@@ -829,25 +829,32 @@ namespace WindowsFormsApplication1.HoaDonXuat
             }
            
             String SQL1 = "";
-            for (int i = 0; i < array1.Count; i++)
+            if (array1.Count == 1)
             {
-                if (i == 0)
+                SQL1 = SQL1 + " AND CHITIETHDX.MAHDX='" + array1[0].ToString() + "' ";
+            }
+            else
+            {
+                for (int i = 0; i < array1.Count; i++)
                 {
-                    SQL1 = SQL1 + " AND (CHITIETHDX.MAHDX='" + array1[i].ToString() + "' ";
-                }
-                else if (i == array1.Count - 1)
-                {
-                    SQL1 = SQL1 + " OR CHITIETHDX.MAHDX='" + array1[i].ToString() + "') ";
-                }
-                else
-                {
-                    SQL1 = SQL1 + " OR CHITIETHDX.MAHDX='" + array1[i].ToString() + "' ";
+                    if (i == 0)
+                    {
+                        SQL1 = SQL1 + " AND (CHITIETHDX.MAHDX='" + array1[i].ToString() + "' ";
+                    }
+                    else if (i == array1.Count - 1)
+                    {
+                        SQL1 = SQL1 + " OR CHITIETHDX.MAHDX='" + array1[i].ToString() + "') ";
+                    }
+                    else
+                    {
+                        SQL1 = SQL1 + " OR CHITIETHDX.MAHDX='" + array1[i].ToString() + "' ";
+                    }
                 }
             }
 
-            string SQL = "SELECT CHITIETHDX.MAHDX,NGAYXUAT,TENKH,TENMH,DONVITINH,GIATIEN,GIATIEN*SOLUONGXUAT AS THANHTIEN  FROM CHITIETHDX, HOADONXUAT,KHACHHANG, (SELECT MATHANG.MAMH,TENMH, DONVITINH FROM DONVITINH, MATHANG WHERE MATHANG.MADVT=DONVITINH.MADVT) AS DONVITINH WHERE CHITIETHDX.MAHDX=HOADONXUAT.MAHDX AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND CHITIETHDX.MAMH=DONVITINH.MAMH " + SQL1 ;
+            string SQL = "SELECT CHITIETHDX.MAHDX,NGAYXUAT,TENKH,TENMH,DONVITINH,SOLUONGXUAT,GIATIEN,GIATIEN*SOLUONGXUAT AS THANHTIEN  FROM CHITIETHDX, HOADONXUAT,KHACHHANG, (SELECT MATHANG.MAMH,TENMH, DONVITINH FROM DONVITINH, MATHANG WHERE MATHANG.MADVT=DONVITINH.MADVT) AS DONVITINH WHERE CHITIETHDX.MAHDX=HOADONXUAT.MAHDX AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND CHITIETHDX.MAMH=DONVITINH.MAMH " + SQL1 ;
             DataTable dt1 = ctlNCC.GETDATA(SQL);
-            SQL = "SELECT MATHANG.MAMH, TENMH, SUM(SOLUONGXUAT), GIATIEN, GHICHU FROM CHITIETHDX, MATHANG, DONVITINH, HOADONXUAT WHERE MATHANG.MADVT=DONVITINH.MADVT AND  HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND MATHANG.MAMH=CHITIETHDX.MAMH " + SQL1 + " GROUP BY MAMH";
+            SQL = "SELECT MATHANG.MAMH,NGAYXUAT, TENMH, SUM(SOLUONGXUAT) AS SOLUONGXUAT, GIATIEN FROM CHITIETHDX, MATHANG, DONVITINH,HOADONXUAT WHERE MATHANG.MADVT=DONVITINH.MADVT AND  HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND MATHANG.MAMH=CHITIETHDX.MAMH " + SQL1 + " GROUP BY MAMH";
             DataTable dt2 = ctlNCC.GETDATA(SQL);
             Inhdnhap rep = new Inhdnhap(dt1,dt2);
             rep.ShowPreviewDialog();  
