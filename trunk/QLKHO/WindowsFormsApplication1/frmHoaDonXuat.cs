@@ -798,14 +798,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             }
         }
 
-        private void btXem_Click(object sender, EventArgs e)
-        {
-            if (PublicVariable.IN == "0")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN ");
-                return;
-            }
-        }
+        
 
         private void linkIntheomathang_Click(object sender, EventArgs e)
         {
@@ -821,21 +814,20 @@ namespace WindowsFormsApplication1.HoaDonXuat
             }
             if (gridControl3.MainView == gridView1)
             {
-                string mahdncu = "";
                 int[] row = gridView1.GetSelectedRows();
                 for (int i = 0; i < row.Length; i++)
                 {
-                    
                     DataRow dtr = gridView1.GetDataRow(row[i]);
                     string mahdn = dtr["MAHDX"].ToString();
-                    if (mahdn != mahdncu)
+                    if (array1.Contains(dtr["MAHDX"].ToString()) == false)
                     {
                         array1.Add(mahdn);
                     }
-                    mahdncu = mahdn;
                 }
 
+              
             }
+           
             String SQL1 = "";
             for (int i = 0; i < array1.Count; i++)
             {
@@ -846,32 +838,54 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 else if (i == array1.Count - 1)
                 {
                     SQL1 = SQL1 + " OR CHITIETHDX.MAHDX='" + array1[i].ToString() + "') ";
-
                 }
                 else
                 {
                     SQL1 = SQL1 + " OR CHITIETHDX.MAHDX='" + array1[i].ToString() + "' ";
                 }
             }
+
             string SQL = "SELECT CHITIETHDX.MAHDX,NGAYXUAT,TENKH,TENMH,DONVITINH,GIATIEN,GIATIEN*SOLUONGXUAT AS THANHTIEN  FROM CHITIETHDX, HOADONXUAT,KHACHHANG, (SELECT MATHANG.MAMH,TENMH, DONVITINH FROM DONVITINH, MATHANG WHERE MATHANG.MADVT=DONVITINH.MADVT) AS DONVITINH WHERE CHITIETHDX.MAHDX=HOADONXUAT.MAHDX AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND CHITIETHDX.MAMH=DONVITINH.MAMH " + SQL1 ;
-
-
             DataTable dt1 = ctlNCC.GETDATA(SQL);
-
-
-            Inhdnhap rep = new Inhdnhap(dt1,true);
-
-            rep.ShowPreviewDialog();
-
-
-            SQL = "SELECT MATHANG.MAMH, TENMH, SUM(SOLUONGXUAT), GIATIEN, GHICHU FROM CHITIETHDX, MATHANG, DONVITINH, HOADONXUAT WHERE MATHANG.MADVT=DONVITINH.MADVT AND  HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND MATHANG.MAMH=CHITIETHDX.MAMH "+SQL1+" GROUP BY MAMH";
+            SQL = "SELECT MATHANG.MAMH, TENMH, SUM(SOLUONGXUAT), GIATIEN, GHICHU FROM CHITIETHDX, MATHANG, DONVITINH, HOADONXUAT WHERE MATHANG.MADVT=DONVITINH.MADVT AND  HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND MATHANG.MAMH=CHITIETHDX.MAMH " + SQL1 + " GROUP BY MAMH";
             DataTable dt2 = ctlNCC.GETDATA(SQL);
+            Inhdnhap rep = new Inhdnhap(dt1,dt2);
+            rep.ShowPreviewDialog();  
+        }
 
-            Inhdnhap rep2 = new Inhdnhap(dt2, false);
+        private void loadgrid()
+        {
+            if (gridControl3.MainView == gridView4)
+            {
+                loadgridPHIEUXUAT();
+            }
+            else if (gridControl3.MainView == gridView1)
+            {
+                loadgridSANPHAM();
+            }
+            else if (gridControl3.MainView == gridView3)
+            {
+                loadgridTONGSANPHAM();
+            }
+        }
+        private void btXem_Click(object sender, EventArgs e)
+        {
+            loadgrid();
+        }
+        private void dateTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar ==(char)13)
+            {
+                loadgrid();
+            }
+        }
 
-            rep2.ShowPreviewDialog();
-
-           
+        private void dateDen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar ==(char)13)
+            {
+                loadgrid();
+            }
         }
 
 

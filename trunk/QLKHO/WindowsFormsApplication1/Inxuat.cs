@@ -24,6 +24,14 @@ namespace WindowsFormsApplication1
             {
                 lbBaoCaoDoanhThu.Text = ten;
             }
+            String SQL = "select * from thongtinct where mact=1";
+            CTL ctl = new CTL();
+            DataTable dt = ctl.GETDATA(SQL);
+
+            xrLabel4.Text = dt.Rows[0]["TENCT"].ToString();
+            xrLabel3.Text = dt.Rows[0]["SDT"].ToString();
+            xrLabel2.Text = dt.Rows[0]["FAX"].ToString();
+            lbDiaChi.Text = dt.Rows[0]["DIACHI"].ToString();
         }
 
     }

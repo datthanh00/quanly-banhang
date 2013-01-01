@@ -235,7 +235,15 @@ namespace WindowsFormsApplication1
         public string rMapc, rHdn, rTientra, rTienno, rNgaychi, rNv;
         private void barIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (gridView1.RowCount>0)
+            if (PublicVariable.IN == "0")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
+            gridControl1.ShowPrintPreview();
+
+            /*if (gridView1.RowCount>0)
             {
                 frmReportTratienNCC frm = new frmReportTratienNCC(dt, this.iNgonNgu, txtPC.Text, txtMahd.Text, txtSoTienTra.Text,  txtSoTienNo.Text, dtNgayThu.Text,txtNV.Text);
                 frm.ShowPreviewDialog();
@@ -249,6 +257,7 @@ namespace WindowsFormsApplication1
                 else
                     XtraMessageBox.Show("Data is null", "Note", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+             * */
         }
 
         private void barstDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
