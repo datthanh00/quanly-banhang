@@ -11,7 +11,6 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Collections;
 using DevExpress.XtraEditors.DXErrorProvider;
-using WindowsFormsApplication1.HoaDonNhap;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraGrid;
 
@@ -552,8 +551,11 @@ namespace WindowsFormsApplication1
             {
                 if (gridCTHOADON.RowCount > 0)
                 {
-                    //dt = gridCTHOADON.DataSource;
-                    In rep = new In(list1, cboMANCC.Text, cboTenNCC.Text, double.Parse(cbotientra.Text), double.Parse(txtNo.Text), double.Parse(txtthanhtien.Text), txtMaHD.Text);
+                    string ten = "Trả hàng cho nhà cung cấp";
+                    DataTable dt = new DataTable();
+                    dt = ctlNCC.GETtraCTHOADONNHAP(txtMaHD.Text);
+
+                    In rep = new In(dt, cboMANCC.Text, cboTenNCC.Text, double.Parse(cbotientra.Text), double.Parse(txtNo.Text), double.Parse(txtthanhtien.Text), txtMaHD.Text,ten);
                     rep.ShowPreviewDialog();
                 }
                 else

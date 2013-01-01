@@ -80,6 +80,8 @@
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="MySql.Data, Version=1.0.4.20163, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\MySql.Data.dll</HintPath>
@@ -102,6 +104,7 @@
     </Reference>
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -222,6 +225,12 @@
     </Compile>
     <Compile Include="In.designer.cs">
       <DependentUpon>In.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InHD\Inhdnhap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InHD\Inhdnhap.designer.cs">
+      <DependentUpon>Inhdnhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Inxuat.cs">
       <SubType>Component</SubType>
@@ -556,6 +565,10 @@
       <DependentUpon>In.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="InHD\Inhdnhap.resx">
+      <DependentUpon>Inhdnhap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Inxuat.resx">
       <DependentUpon>Inxuat.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -780,10 +793,6 @@
       <DependentUpon>frmTraNCC.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Trahang\Inkhtra.resx">
-      <DependentUpon>Inkhtra.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -848,12 +857,6 @@
     </Compile>
     <Compile Include="Trahang\frmTraNCC.designer.cs">
       <DependentUpon>frmTraNCC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Trahang\Inkhtra.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Trahang\Inkhtra.designer.cs">
-      <DependentUpon>Inkhtra.cs</DependentUpon>
     </Compile>
     <Compile Include="XUAT_NHAPTONTTCT.Designer.cs">
       <AutoGen>True</AutoGen>
