@@ -376,8 +376,10 @@ namespace WindowsFormsApplication1.KHtra
             {
                 if (gridCTHOADON.RowCount > 0)
                 {
-                    //dt = gridCTHOADON.DataSource;
-                    Inxuat rep = new Inxuat(list1, cboTenKH.Text, txtDiachi.Text,cbotientra.Text, txtNo.Text, txtthanhtien.Text, txtMaHD.Text);
+                    string ten = "Khách trả hàng";
+                    DataTable dt = new DataTable();
+                    dt = ctlNCC.GETtraCTHOADONXUAT(txtMaHD.Text);
+                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text,cbotientra.Text, txtNo.Text, txtthanhtien.Text, txtMaHD.Text,ten);
                     rep.ShowPreviewDialog();
                 }
                 else
@@ -803,6 +805,7 @@ namespace WindowsFormsApplication1.KHtra
 			
         }
 
+    
        
  
 

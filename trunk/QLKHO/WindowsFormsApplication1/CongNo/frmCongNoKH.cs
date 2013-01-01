@@ -339,7 +339,6 @@ namespace WindowsFormsApplication1
             }
             gridControl2.ShowPrintPreview();
 
-            
         }
 
         private void simpleButton5_Click(object sender, EventArgs e)

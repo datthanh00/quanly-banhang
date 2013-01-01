@@ -11,7 +11,6 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Collections;
 using DevExpress.XtraEditors.DXErrorProvider;
-using WindowsFormsApplication1.HoaDonNhap;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraTreeList.StyleFormatConditions;
 using DevExpress.XtraGrid;
@@ -81,6 +80,8 @@ namespace WindowsFormsApplication1
         DataView dtvMH;
         DataView dtvThue;
         DataView dtvDVT;
+        
+
         public void Load_panel_create()
         {
             //panel_create
@@ -549,8 +550,14 @@ namespace WindowsFormsApplication1
                 if (gridCTHOADON.RowCount > 0)
                 {
                     //dt = gridCTHOADON.DataSource;
-                    In rep = new In(list1, cboMANCC.Text, cboTenNCC.Text, double.Parse(cbotientra.Text), double.Parse(txtNo.Text), double.Parse(txtthanhtien.Text), txtMaHD.Text);
+                    //gridControl1.da
+                    DataTable dt = new DataTable();
+                    dt = ctlNCC.GETCTHOADONNHAP(txtMaHD.Text);
+
+                    In rep = new In(dt, cboMANCC.Text, cboTenNCC.Text, double.Parse(cbotientra.Text), double.Parse(txtNo.Text), double.Parse(txtthanhtien.Text), txtMaHD.Text,"");
                     rep.ShowPreviewDialog();
+
+                    //gridControl1.ShowPrintPreview();
                 }
                 else
                 {
@@ -915,23 +922,10 @@ namespace WindowsFormsApplication1
             }
         }
 
-       
+        private void linkIntheomathang_Click(object sender, EventArgs e)
+        {
+            
 
-
-
-        
-
-        
-
-
-       
-
-
-
-       
-
-      
-
-  
+        }
     }
 }
