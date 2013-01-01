@@ -24,12 +24,25 @@ namespace WindowsFormsApplication1
         Ctrl_Tien CTR = new Ctrl_Tien();
         public void loadGetAllHDX()
         {
-            dt = CTR.GETALLHDX_ctrl();
+
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+        
+
+            dt = CTR.GETALLHDX_ctrl(NGAYBD,NGAYKT);
             gridControl1.DataSource = dt;
         }
         public void loadGetAllPHIEUCHI()
         {
-            dt = CTR.GETALLPHIEUCHI_ctrl();
+            string NGAYBD = dateTu1.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            string NGAYKT = dateDen1.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+
+
+            dt = CTR.GETALLPHIEUCHI_ctrl(NGAYBD, NGAYKT);
             gridControl2.DataSource = dt;
         }
         public frmMain frm;
@@ -52,8 +65,17 @@ namespace WindowsFormsApplication1
             }
             else
                 loadEL();
+            
+
+            dateDen.Text = "31/" + DateTime.Now.ToString("MM/yyy");
+            dateTu.Text = "01/" + DateTime.Now.ToString("MM/yyy");
+            dateDen1.Text = "31/" + DateTime.Now.ToString("MM/yyy");
+            dateTu1.Text = "01/" + DateTime.Now.ToString("MM/yyy");
+
             loadGetAllHDX();
             load_congno();
+
+
         }
         public string smaKH;
         public string sTienno;
@@ -83,6 +105,9 @@ namespace WindowsFormsApplication1
 
         public void load_congno()
         {
+            
+        
+
             panel_congno.Visible = true;
             panel_phieuchi.Visible = false;
 
@@ -281,6 +306,7 @@ namespace WindowsFormsApplication1
 
         private void linkcongno_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            loadGetAllHDX();
             load_congno();
         }
 
@@ -357,6 +383,39 @@ namespace WindowsFormsApplication1
                 gridControl2.ExportToXls(saveFileDialog1.FileName);
             }
         }
+
+        private void dateTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loadGetAllHDX();
+            }
+        }
+
+        private void dateDen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loadGetAllHDX();
+            }
+        }
+
+        private void dateTu1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loadGetAllPHIEUCHI();
+            }
+        }
+
+        private void dateDen1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loadGetAllPHIEUCHI();
+            }
+        }
+
 
         
 

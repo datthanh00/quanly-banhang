@@ -199,8 +199,16 @@ namespace WindowsFormsApplication1
             dto.NGAYKTKHO = NGAYKT;
 
            // dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
-            dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
-
+            if (cbsanpham.Text != "")
+            {
+                dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
+                gridcbmathang.ClearSelection();
+                cbsanpham.Text = "";
+            }
+            else
+            {
+                dto.MAMH = "";
+            }
             //dto.MAKHO = cbkho.Text;
             //dto.MAMH = cbsanpham.Text;
 
@@ -228,7 +236,17 @@ namespace WindowsFormsApplication1
             dto.NGAYKTKHO = NGAYKT;
 
             //dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
-            dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
+            if (cbsanpham.Text != "")
+            {
+                dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
+                gridcbmathang.ClearSelection();
+                cbsanpham.Text = "";
+            }
+            else
+            {
+                dto.MAMH = "";
+            }
+            
 
             gridControl1.MainView = gridView9;
             dt = ctr1.SOCHITIETHANGHOA(dto);
@@ -790,6 +808,7 @@ namespace WindowsFormsApplication1
             gridControl1.MainView = gridView10;
             //gridControl1.DataSource = ctr1.LOINHUANKINHDOANH(dto);
            // dt = ctr1.LOINHUANKINHDOANH(dto);
+            cbsanpham.Visible = false;
             pnthoigian.Visible = true;
             
         }
@@ -798,6 +817,7 @@ namespace WindowsFormsApplication1
         {
             loadGird2();
             pnthoigian.Visible = true;
+            cbsanpham.Visible = false;
             //gridControl1.MainView = gridView2;
             //gridControl1.DataSource = ctr1.thongkhetheokhachang(dto);
             //dt = ctr1.thongkhetheokhachang(dto);
@@ -892,10 +912,11 @@ namespace WindowsFormsApplication1
         private void Linkchitiethanghoa_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             optionload = "sochitiethanghoa";
-            
+            cbsanpham.Visible = true;
             gridControl1.DataSource = null;
             //gridView6.Columns.Clear();
             loadGird_chitiethanghoa();
+            pnthoigian.Visible = true;
         }
 
         private void cbkho_EditValueChanged(object sender, EventArgs e)
