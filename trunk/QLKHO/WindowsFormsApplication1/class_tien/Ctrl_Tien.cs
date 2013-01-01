@@ -11,22 +11,22 @@ namespace WindowsFormsApplication1
         {
             CNKH.SUAPHIEUTHU_DAO(dt);
         }
-        public  DataTable TONGHOPTHU_KHD()
+        public  DataTable TONGHOPTHU_KHD12()
         {
-            return CNKH.GETALLHDX_DAO();
+            return CNKH.GETALLHDX_DAO("","");
         }
         /// <summary>
         /// //////////////Lại từ đầu
         /// </summary>
         /// <returns></returns>
-        public  DataTable GETALLHDX_ctrl()
+        public  DataTable GETALLHDX_ctrl(string NGAYBD,string NGAYKT)
         {
-            return CNKH.GETALLHDX_DAO();
+            return CNKH.GETALLHDX_DAO(NGAYBD, NGAYKT);
             
         }
-        public  DataTable GETALLPHIEUCHI_ctrl()
+        public DataTable GETALLPHIEUCHI_ctrl(string NGAYBD, string NGAYKT)
         {
-            return CNKH.GETALLPHIEUCHI_DAO();
+            return CNKH.GETALLPHIEUCHI_DAO(NGAYBD, NGAYKT);
 
         }
         public  DataTable get1pthdx_ctrl(string MaHDX)
@@ -47,9 +47,9 @@ namespace WindowsFormsApplication1
             return CNNCC.GETALLHDN_DAO();
         }
 
-        public  DataTable GETALLcongno_ncc()
+        public  DataTable GETALLcongno_ncc(string NGAYBD, string NGAYKT)
         {
-            return CNNCC.GETALLcongno_ncc();
+            return CNNCC.GETALLcongno_ncc(NGAYBD, NGAYKT);
         }
         public  string GETcongno_HDN(string MHDN)
         {
@@ -60,9 +60,9 @@ namespace WindowsFormsApplication1
             return CNNCC.GETcongno_HDN(MHDX);
         }
 
-        public  DataTable Getall_phieuchi_Dao()
+        public  DataTable Getall_phieuchi_Dao(string NGAYBD,string NGAYKT)
         {
-            return CNNCC.Getall_phieuchi_Dao();
+            return CNNCC.Getall_phieuchi_Dao(NGAYBD, NGAYKT);
         }
         public  DataTable get1pthdn_ctrl(string MaHDn)
         {

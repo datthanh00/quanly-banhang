@@ -31,14 +31,24 @@ namespace WindowsFormsApplication1
         Ctrl_Tien CTR = new Ctrl_Tien();
         public void loadGetAllHDN()
         {
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+
             //dt = CTR.GETALLHDn_ctrl();
-            dt = CTR.GETALLcongno_ncc();
+            dt = CTR.GETALLcongno_ncc( NGAYBD,  NGAYKT);
             gridControl1.DataSource = dt;
         }
         public void loadGetAllphieuchi()
         {
+            string NGAYBD = dateTu1.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            string NGAYKT = dateDen1.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+
             //dt = CTR.GETALLHDn_ctrl();
-            dt = CTR.Getall_phieuchi_Dao();
+            dt = CTR.Getall_phieuchi_Dao( NGAYBD,  NGAYKT);
             gridControl2.DataSource = dt;
         }
         public void loadctncc()
@@ -69,7 +79,12 @@ namespace WindowsFormsApplication1
             }
             else
                 loadEL();
-            
+
+            dateDen.Text = "31/" + DateTime.Now.ToString("MM/yyy");
+            dateTu.Text = "01/" + DateTime.Now.ToString("MM/yyy");
+            dateDen1.Text = "31/" + DateTime.Now.ToString("MM/yyy");
+            dateTu1.Text = "01/" + DateTime.Now.ToString("MM/yyy");
+
             loadGetAllHDN();
             load_congno();
         }
@@ -269,6 +284,7 @@ namespace WindowsFormsApplication1
 
         private void linkcongno_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            loadGetAllHDN();
             load_congno();
         }
 
@@ -344,6 +360,39 @@ namespace WindowsFormsApplication1
             }
 
         }
+
+        private void dateTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loadGetAllHDN();
+            }
+        }
+
+        private void dateDen_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loadGetAllHDN();
+            }
+        }
+
+        private void dateTu1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loadGetAllphieuchi();
+            }
+        }
+
+        private void dateDen1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                loadGetAllphieuchi();
+            }
+        }
+
 
         
 
