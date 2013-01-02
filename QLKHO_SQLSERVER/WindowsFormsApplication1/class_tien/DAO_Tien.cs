@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
         {
             Provider pv = new Provider();
             string SQL = "INSERT INTO PHIEUTHU (MAPT,MAHDX,NGAYTHU,MANV,SoTienTra_PT)"
-            + " VALUES('" + dto.MaPhieuThu + "', '" + dto.Mahoadonxuat + "',CURDATE(),'" + dto.NhanVien + "','" + dto.SoTienDaTra + "')";
+            + " VALUES('" + dto.MaPhieuThu + "', '" + dto.Mahoadonxuat + "',convert(varchar,getDate(),101),'" + dto.NhanVien + "','" + dto.SoTienDaTra + "')";
             pv.executeNonQuery(SQL);
 
             SQL = "update hoadonxuat set TIENDATRA=tiendatra+(select SUM(SOTIENTRA_PT) FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "') WHERE MAHDX='" + dto.Mahoadonxuat + "'";
@@ -128,7 +128,7 @@ namespace WindowsFormsApplication1
         {
 
             Provider pv = new Provider();
-            string SQL = "INSERT INTO PHIEUCHI (MAPC,MAHDN,NGAYCHI,MANV,SoTienDaTra_PC)   VALUES('" + dto.MaPhieuChi + "', '" + dto.Mahoadonnhap + "',CURDATE(),'" + dto.NhanVien + "','" + dto.SoTienDaTra + "')";
+            string SQL = "INSERT INTO PHIEUCHI (MAPC,MAHDN,NGAYCHI,MANV,SoTienDaTra_PC)   VALUES('" + dto.MaPhieuChi + "', '" + dto.Mahoadonnhap + "',convert(varchar,getDate(),101),'" + dto.NhanVien + "','" + dto.SoTienDaTra + "')";
             pv.executeNonQuery(SQL);
 
             SQL = " update hoadonnhap set TIENDATRA=tiendatra+(select SUM(SoTienDaTra_PC) FROM PHIEUCHI WHERE MAHDN='" + dto.Mahoadonnhap + "' AND MAPC='" + dto.MaPhieuChi + "') WHERE MAHDN='" + dto.Mahoadonnhap + "'";

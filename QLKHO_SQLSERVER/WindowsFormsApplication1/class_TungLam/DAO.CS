@@ -128,7 +128,7 @@ namespace WindowsFormsApplication1
             +" values('"+dto.MAMH+"','"+dto.MATH+"','"+dto.MANH+"','"+dto.MAKHO+"',N'"+dto.TENMH+"','"+dto.MADVT+"',"+dto.SOLUONGMH+",'"+dto.HANSUDUNG+"',"+dto.GIAMUA+","+dto.GIABAN+", N'"+dto.MOTA+"','"+dto.TINHTRANG+"')";
             executeNonQuery(SQL);
 
-            SQL = "INSERT TONKHO(NGAY,MAMH,TONDAU,NHAP,XUAT,MAID)" + " VALUES (CURDATE(),'" + dto.MAMH + "','" + dto.SOLUONGMH + "', 0,0,0)";
+            SQL = "INSERT TONKHO(NGAY,MAMH,TONDAU,NHAP,XUAT,MAID)" + " VALUES (convert(varchar,getDate(),101),'" + dto.MAMH + "','" + dto.SOLUONGMH + "', 0,0,0)";
             executeNonQuery(SQL);
         }
         public void UPDATEMATHANG(DTO dto)
@@ -146,11 +146,11 @@ namespace WindowsFormsApplication1
 
         public Boolean isDELELEKHACHHANG(DTO dto)
         {
-            string SQL = "select makh from hoadonxuat where 	MAKH='" + dto.MAKH + "' limit 1";
+            string SQL = "select TOP 1 makh from hoadonxuat where 	MAKH='" + dto.MAKH + "'";
             DataTable dt= getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
-            SQL = "select makh from trahoadonxuat where 	MAKH='" + dto.MAKH + "' limit 1";
+            SQL = "select TOP 1 makh from trahoadonxuat where 	MAKH='" + dto.MAKH + "'";
             dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
@@ -163,7 +163,7 @@ namespace WindowsFormsApplication1
         }
         public Boolean isDELELEBOPHAN(DTO dto)
         {
-            string SQL = "select mabp from nhanvien where 	MABP='" + dto.MABP + "' limit 1";
+            string SQL = "select TOP 1 mabp from nhanvien where 	MABP='" + dto.MABP + "' ";
             DataTable dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
@@ -177,22 +177,22 @@ namespace WindowsFormsApplication1
         }
         public Boolean isDELELEMATHANG(DTO dto)
         {
-            string SQL = "select mamh from chitiethdn where 	MAMH='" + dto.MAMH + "' limit 1";
+            string SQL = "select TOP 1 mamh from chitiethdn where 	MAMH='" + dto.MAMH + "' ";
             DataTable dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
 
-            SQL = "select mamh from chitiethdx where 	MAMH='" + dto.MAMH + "' limit 1";
+            SQL = "select TOP 1 mamh from chitiethdx where 	MAMH='" + dto.MAMH + "' ";
             dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
 
-            SQL = "select mamh from trachitiethdn where 	MAMH='" + dto.MAMH + "' limit 1";
+            SQL = "select TOP 1 mamh from trachitiethdn where 	MAMH='" + dto.MAMH + "'";
              dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
 
-            SQL = "select mamh from trachitiethdx where 	MAMH='" + dto.MAMH + "' limit 1";
+            SQL = "select TOP 1 mamh from trachitiethdx where 	MAMH='" + dto.MAMH + "' ";
             dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
@@ -206,7 +206,7 @@ namespace WindowsFormsApplication1
         }
         public Boolean isDELELENHOMHANG(DTO dto)
         {
-            string SQL = "select manh from mathang where 	MANH='" + dto.MANH + "' limit 1";
+            string SQL = "select TOP 1 manh from mathang where 	MANH='" + dto.MANH + "' ";
             DataTable dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
@@ -225,7 +225,7 @@ namespace WindowsFormsApplication1
         }
         public Boolean isDELELETHUE(DTO dto)
         {
-            string SQL = "select math from mathang where 	MATH='" + dto.MATH + "' limit 1";
+            string SQL = "select TOP 1 math from mathang where 	MATH='" + dto.MATH + "' ";
             DataTable dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
@@ -243,7 +243,7 @@ namespace WindowsFormsApplication1
 
         public Boolean isDELELEKHO(DTO dto)
         {
-            string SQL = "select makho from mathang where 	MAKHO='" + dto.MAKHO + "' limit 1";
+            string SQL = "select TOP 1 makho from mathang where 	MAKHO='" + dto.MAKHO + "' ";
             DataTable dt=getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
@@ -258,11 +258,11 @@ namespace WindowsFormsApplication1
 
         public Boolean isDELELEKV(DTO dto)
         {
-            string SQL = "select makv from  khachhang where 	MAKV='" + dto.MAKV + "' limit 1";
+            string SQL = "select TOP 1 makv from  khachhang where 	MAKV='" + dto.MAKV + "' ";
             DataTable dt=getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
-            SQL = "select makv from  nhacungcap where 	MAKV='" + dto.MAKV + "' limit 1";
+            SQL = "select TOP 1 makv from  nhacungcap where 	MAKV='" + dto.MAKV + "' ";
             dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
@@ -276,11 +276,11 @@ namespace WindowsFormsApplication1
         }
         public Boolean isDELELENCC(DTO dto)
         {
-            string SQL = "select mancc from hoadonnhap where 	MANCC='" + dto.MANCC + "' limit 1";
+            string SQL = "select TOP 1 mancc from hoadonnhap where 	MANCC='" + dto.MANCC + "' ";
             DataTable dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
-            SQL = "select mancc from trahoadonnhap where 	MANCC='" + dto.MANCC + "' limit 1";
+            SQL = "select TOP 1 mancc from trahoadonnhap where 	MANCC='" + dto.MANCC + "' ";
             dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
@@ -294,22 +294,22 @@ namespace WindowsFormsApplication1
         }
         public Boolean isDELELENHANVIEN(DTO dto)
         {
-            string SQL = "select manv from hoadonnhap where 	MANV='" + dto.MANV + "' limit 1";
+            string SQL = "select TOP 1 manv from hoadonnhap where 	MANV='" + dto.MANV + "' ";
             DataTable dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
 
-             SQL = "select manv from hoadonxuat where 	MANV='" + dto.MANV + "' limit 1";
+             SQL = "select TOP 1 manv from hoadonxuat where 	MANV='" + dto.MANV + "' ";
              dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
 
-             SQL = "select manv from trahoadonnhap where 	MANV='" + dto.MANV + "' limit 1";
+             SQL = "select TOP 1 manv from trahoadonnhap where 	MANV='" + dto.MANV + "' ";
              dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
 
-             SQL = "select manv from trahoadonxuat where 	MANV='" + dto.MANV + "' limit 1";
+             SQL = "select TOP 1 manv from trahoadonxuat where 	MANV='" + dto.MANV + "' ";
              dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
@@ -323,7 +323,7 @@ namespace WindowsFormsApplication1
         }
         public Boolean isDELELEDVT(DTO dto)
         {
-            string SQL = "select madvt from mathang where 	MADVT='" + dto.MADVT + "' limit 1";
+            string SQL = "select  TOP 1 madvt from mathang where 	MADVT='" + dto.MADVT + "' ";
             DataTable dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
@@ -497,13 +497,13 @@ namespace WindowsFormsApplication1
         public void INSERTtraHOADONNHAP(DTO dto)
         {
             string SQL = "insert into traHOADONNHAP(MAHDN,MANCC,MANV,MAKHO,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',CURDATE()," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
+            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',convert(varchar,getDate(),101)," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
         public void INSERTHOADONNHAP(DTO dto)
         {
             string SQL = "insert into HOADONNHAP(MAHDN,MANCC,MANV,MAKHO,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','"+PublicVariable.MAKHO+"',CURDATE()," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
+            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',convert(varchar,getDate(),101)," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
         public bool isINSERTHOADONNHAP(string MAHDN)
@@ -579,7 +579,7 @@ namespace WindowsFormsApplication1
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =" + dto.SOLUONGNHAP.ToString() + " + SOLUONGMH WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 			//ymd
-            SQL = "SELECT convert(varchar,NGAYNHAP,103) FROM HOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
+            SQL = "SELECT convert(varchar,NGAYNHAP,101) FROM HOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
             dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
 
@@ -612,7 +612,7 @@ namespace WindowsFormsApplication1
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + dto.SOLUONGNHAP.ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 //ymd
-            SQL = "SELECT convert(varchar,NGAYNHAP,103) FROM traHOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
+            SQL = "SELECT convert(varchar,NGAYNHAP,101) FROM traHOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
             dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
             if (dto.IsUPDATE)
@@ -628,7 +628,7 @@ namespace WindowsFormsApplication1
 
         public void INSERT_TONKHO(string ID,string MAHD, string MAMH,string NGAY,int TONDAU, string NHAP, string XUAT)
         {
-           string SQL = "select STT from tonkho where MAHD='" + MAHD + "' limit 1";
+           string SQL = "select  TOP 1 STT from tonkho where MAHD='" + MAHD + "' ";
            DataTable dt = getdata(SQL);
            string STT = "0";
            if (dt.Rows.Count > 0)
@@ -656,14 +656,14 @@ namespace WindowsFormsApplication1
         }
         public void INSERT_TONKHO2(string ID, string MAHD, string MAMH, string NGAY, string NHAP, string XUAT)
         {
-            string SQL = "select STT from tonkho where MAHD='" + MAHD + "' limit 1";
+            string SQL = "select TOP 1 STT from tonkho where MAHD='" + MAHD + "' ";
             DataTable dt = getdata(SQL);
             string STT = "0";
             if (dt.Rows.Count > 0)
             {
                 STT = dt.Rows[0][0].ToString();
 
-                SQL = "select * from tonkho where STT=(select max(STT) from tonkho where MAMH='" + MAMH + "' AND (STT<" + STT + " OR  STT=" + STT + ")) ORDER BY ID DESC limit 1";
+                SQL = "select * from tonkho where STT=(select max(STT) from tonkho where MAMH='" + MAMH + "' AND (STT<" + STT + " OR  STT=" + STT + ")) ORDER BY ID DESC ";
                 dt = getdata(SQL);
                 string TONDAU = "0";
                 if (dt.Rows.Count > 0)
@@ -672,7 +672,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    SQL = "select * from tonkho where STT=(select MIN(STT) from tonkho where MAMH='" + MAMH + "') ORDER BY ID DESC limit 1";
+                    SQL = "select * from tonkho where STT=(select MIN(STT) from tonkho where MAMH='" + MAMH + "') ORDER BY ID DESC  ";
                     dt = getdata(SQL);
                     if (dt.Rows.Count > 0)
                     {
@@ -896,13 +896,13 @@ namespace WindowsFormsApplication1
         public void INSERTHOADONXUAT(DTO dto)
         {
             string SQL = "insert into HOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','"+PublicVariable.MAKHO+"',CURDATE(),'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "')";
+            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','"+PublicVariable.MAKHO+"',convert(varchar,getDate(),101),'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
         public void INSERTtraHOADONXUAT(DTO dto)
         {
             string SQL = "insert into traHOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',CURDATE(),'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "')";
+            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',convert(varchar,getDate(),101),'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
         public bool isINSERTHOADONXUAT(string MAHDX)
@@ -971,7 +971,7 @@ namespace WindowsFormsApplication1
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH-" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 //ymd
-            SQL = "SELECT convert(varchar,NGAYXUAT,103) FROM HOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
+            SQL = "SELECT convert(varchar,NGAYXUAT,101) FROM HOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
             dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
 
@@ -1024,7 +1024,7 @@ namespace WindowsFormsApplication1
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH+" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 //ymd
-            SQL = "SELECT convert(varchar,NGAYXUAT,103) FROM traHOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
+            SQL = "SELECT convert(varchar,NGAYXUAT,101) FROM traHOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
             dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
 
