@@ -370,7 +370,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETMATHANG()
         {
-            string SQL = "select 	MAMH,MATH,MANH,MAKHO,TENMH,MADVT,SOLUONGMH,DATE_FORMAT(HANSUDUNG,'%d/%m/%Y'),GIAMUA,GIABAN,MOTA,TINHTRANG from  MATHANG WHERE MAKHO='"+PublicVariable.MAKHO+"' ";
+            string SQL = "select 	MAMH,MATH,MANH,MAKHO,TENMH,MADVT,SOLUONGMH,convert(varchar,HANSUDUNG,103),GIAMUA,GIABAN,MOTA,TINHTRANG from  MATHANG WHERE MAKHO='"+PublicVariable.MAKHO+"' ";
             return GET_DATA(SQL);
         }
         public DataTable GETTHUE()
@@ -380,12 +380,12 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETNHANVIEN()
         {
-            string SQL = "select 	MANV,TENNV,DIACHI,DATE_FORMAT(NGAYSINH,'%d/%m/%Y')as NGAYSINH ,SCMND,SDT,TINHTRANG from  NHANVIEN";
+            string SQL = "select 	MANV,TENNV,DIACHI,convert(varchar,NGAYSINH,103)as NGAYSINH ,SCMND,SDT,TINHTRANG from  NHANVIEN";
             return GET_DATA(SQL);
         }
         public DataTable GETQUANLY()
         {
-            string SQL = "select 	MAQL,USERNAME,PASSWORD,TENQL,DIACHI,DATE_FORMAT(NGAYSINH,'%d/%m/%Y'),SCMND,SDT,TINHTRANG from  QUANLY";
+            string SQL = "select 	MAQL,USERNAME,PASSWORD,TENQL,DIACHI,convert(varchar,NGAYSINH,103),SCMND,SDT,TINHTRANG from  QUANLY";
             return GET_DATA(SQL);
         }
 
@@ -578,8 +578,8 @@ namespace WindowsFormsApplication1
 
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =" + dto.SOLUONGNHAP.ToString() + " + SOLUONGMH WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
-
-            SQL = "SELECT DATE_FORMAT(NGAYNHAP,'%Y/%m/%d') FROM HOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
+			//ymd
+            SQL = "SELECT convert(varchar,NGAYNHAP,103) FROM HOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
             dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
 
@@ -611,8 +611,8 @@ namespace WindowsFormsApplication1
 
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + dto.SOLUONGNHAP.ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
-
-            SQL = "SELECT DATE_FORMAT(NGAYNHAP,'%Y/%m/%d') FROM traHOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
+//ymd
+            SQL = "SELECT convert(varchar,NGAYNHAP,103) FROM traHOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
             dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
             if (dto.IsUPDATE)
@@ -970,8 +970,8 @@ namespace WindowsFormsApplication1
 
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH-" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
-
-            SQL = "SELECT DATE_FORMAT(NGAYXUAT,'%Y/%m/%d') FROM HOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
+//ymd
+            SQL = "SELECT convert(varchar,NGAYXUAT,103) FROM HOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
             dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
 
@@ -1023,8 +1023,8 @@ namespace WindowsFormsApplication1
 
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH+" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
-
-            SQL = "SELECT DATE_FORMAT(NGAYXUAT,'%Y/%m/%d') FROM traHOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
+//ymd
+            SQL = "SELECT convert(varchar,NGAYXUAT,103) FROM traHOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
             dt = getdata(SQL);
             string ngay = dt.Rows[0][0].ToString();
 
