@@ -97,8 +97,10 @@ namespace WindowsFormsApplication1
             if (File.Exists("App.config"))
             {
                 Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
-                //strConnect = "server=bigedu.vn;Port=3306; User ID=bigeduvn_us; password=dat12345; database=bigeduvn_db"
-                strConnect = "server=localhost;Port=3306; User ID=root; password=; database=xuat_nhapton;charset=utf8;Allow Zero Datetime=true";
+                //strConnect = "server=bigedu.vn;Port=3306; User ID=bigeduvn_us; password=dat12345; database=bigeduvn_db";
+                strConnect = "server=tvdirect.com.vn;Port=3306; User ID=vdajio9f_thanh; password=dat12345; database=vdajio9f_qlkho; charset=utf8;Allow Zero Datetime=true";
+                    
+                //strConnect = "server=localhost;Port=3306; User ID=root; password=; database=xuat_nhapton;charset=utf8;Allow Zero Datetime=true";
                 //strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
             }
             MySqlConnection cn = new MySqlConnection(strConnect);
@@ -108,6 +110,7 @@ namespace WindowsFormsApplication1
 
         public static MySqlConnection connect1()
         {
+
         tt:
             try
             {
@@ -115,7 +118,9 @@ namespace WindowsFormsApplication1
                 {
                     Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
                     //strConnect = "server=bigedu.vn;Port=3306; User ID=bigeduvn_us; password=dat12345; database=bigeduvn_db"
-                    strConnect = "server=localhost;Port=3306; User ID=root; password=; database=xuat_nhapton;charset=utf8;Allow Zero Datetime=true";
+                    strConnect = "server=tvdirect.com.vn;Port=3306; User ID=vdajio9f_thanh; password=dat12345; database=vdajio9f_qlkho; charset=utf8;Allow Zero Datetime=true";
+                    //vdajio9f_qlkho   'dC]|e#8#I3CDj39'
+                    //strConnect = "server=localhost;Port=3306; User ID=root; password=; database=xuat_nhapton;charset=utf8;Allow Zero Datetime=true";
                     //strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true";
                 }
                 MySqlConnection cn = new MySqlConnection(strConnect);
