@@ -108,7 +108,8 @@ namespace WindowsFormsApplication1
              
             dto.TENDANGNHAP=txtTenTaiKhoan.Text;
             dto.MATKHAU=txtMatKhau.Text;
-            DataTable tb = new DataTable(); tb= ctr.ctrTestLogin(dto);
+            DataTable tb = new DataTable(); 
+            tb= ctr.ctrTestLogin(dto);
            
             if (tb.Rows.Count > 0)
             {

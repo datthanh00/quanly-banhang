@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using MySql.Data.MySqlClient;
+
 
 namespace WindowsFormsApplication1.Class_ManhCuong
 {
@@ -11,8 +11,8 @@ namespace WindowsFormsApplication1.Class_ManhCuong
       
         public DataTable GetOneNhaCungCap(NhapHangDTO dto)
         {
-            List<MySqlParameter> sqlpa = new List<MySqlParameter>();
-            sqlpa.Add(new MySqlParameter("@MANCC", dto.MANCC));
+            List<SqlParameter> sqlpa = new List<SqlParameter>();
+            sqlpa.Add(new SqlParameter("@MANCC", dto.MANCC));
             return executeNonQuerya("NHACUNGCAP_get", sqlpa);
         }
         public DataTable GetAllMatHang()

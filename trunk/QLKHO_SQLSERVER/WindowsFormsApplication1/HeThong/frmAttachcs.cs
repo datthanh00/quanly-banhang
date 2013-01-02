@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
         Thread regularThread1;
         private void VLoad2()
         {
-            Mysqlchange MSQL = new Mysqlchange();
+            //Mysqlchange MSQL = new Mysqlchange();
             FileStream fs = new FileStream("log.txt", FileMode.Open, FileAccess.Write);
             StreamWriter wr = new StreamWriter(fs);
             wr.WriteLine("Database duoc tao luc : " + DateTime.Now.ToString());
@@ -32,9 +32,9 @@ namespace WindowsFormsApplication1
         tt:
             try
             {
-                using (MSQL.SQLConnection1 = Provider.get_Connect()) 
+                using (SqlConnection cn = Provider.get_Connect()) 
                 {
-                    MSQL.SQLConnection1.Close();
+                    cn.Close();
                 }
             }
             catch
