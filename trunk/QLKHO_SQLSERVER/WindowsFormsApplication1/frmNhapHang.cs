@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
             
-            if (PublicVariable.XEM == "0")
+            if (PublicVariable.XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN MỤC NÀY");
                 this.Close();
@@ -330,7 +330,7 @@ namespace WindowsFormsApplication1
         public string sTenNV, sMaNV;
         private void btTaoMoi_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.THEM == "0")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -395,8 +395,8 @@ namespace WindowsFormsApplication1
                     bool isINSERTHOADONNHAP = ctlNCC.isINSERTHOADONNHAP(dtoNCC.MAHDN);
                     if (isINSERTHOADONNHAP)
                     {
-                        
-                        if (PublicVariable.THEM == "0")
+
+                        if (PublicVariable.THEM == "False")
                         {
                             MessageBox.Show("KHÔNG CÓ QUYỀN THÊM");
                             return;
@@ -413,8 +413,8 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        
-                        if (PublicVariable.SUA == "0")
+
+                        if (PublicVariable.SUA == "False")
                         {
                             MessageBox.Show("KHÔNG CÓ QUYỀN SỬA");
                             return;
@@ -739,7 +739,7 @@ namespace WindowsFormsApplication1
 
         private void DeleteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (PublicVariable.XOA == "0")
+            if (PublicVariable.XOA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN XÓA ");
                 return;
@@ -765,7 +765,7 @@ namespace WindowsFormsApplication1
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            if (PublicVariable.THEM == "0")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -777,7 +777,7 @@ namespace WindowsFormsApplication1
 
         private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            if (PublicVariable.THEM == "0")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -821,7 +821,7 @@ namespace WindowsFormsApplication1
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "0")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -847,7 +847,7 @@ namespace WindowsFormsApplication1
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "0")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;

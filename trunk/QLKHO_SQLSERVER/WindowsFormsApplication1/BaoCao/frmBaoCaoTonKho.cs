@@ -37,9 +37,9 @@ namespace WindowsFormsApplication1
       
         private void frmBaoCaoTonKho_Load(object sender, EventArgs e)
         {
-            
 
-            if (PublicVariable.XEM == "0")
+
+            if (PublicVariable.XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -340,7 +340,7 @@ namespace WindowsFormsApplication1
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "0")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -404,7 +404,7 @@ namespace WindowsFormsApplication1
 
         private void btXuat_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "0")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;

@@ -127,7 +127,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
         {
 
-            if (PublicVariable.XEM == "0")
+            if (PublicVariable.XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 this.Close();
@@ -241,7 +241,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             bool isINSERTHOADONXUAT = ctlNCC.isINSERTHOADONXUAT(dtoNCC.MAHDX);
             if (isINSERTHOADONXUAT)
             {
-                if (PublicVariable.THEM == "0")
+                if (PublicVariable.THEM == "False")
                 {
                     MessageBox.Show("KHÔNG CÓ QUYỀN ");
                     return;
@@ -259,7 +259,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             }
             else
             {
-                if (PublicVariable.SUA == "0")
+                if (PublicVariable.SUA == "False")
                 {
                     MessageBox.Show("KHÔNG CÓ QUYỀN ");
                     return;
@@ -370,7 +370,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "0")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -422,7 +422,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.THEM == "0")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -452,7 +452,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            if (PublicVariable.THEM == "0")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -640,7 +640,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.XOA == "0")
+            if (PublicVariable.XOA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -682,7 +682,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "0")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -707,7 +707,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "0")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -771,7 +771,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "0")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -781,7 +781,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "0")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;

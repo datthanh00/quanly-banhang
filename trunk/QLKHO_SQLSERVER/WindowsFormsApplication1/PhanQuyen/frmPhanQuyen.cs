@@ -28,7 +28,7 @@ namespace WindowsFormsApplication1
         {
          
 
-            if (PublicVariable.XEM == "0")
+            if (PublicVariable.XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.THEM == "0")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -115,7 +115,7 @@ namespace WindowsFormsApplication1
         private void simpleButton2_Click(object sender, EventArgs e)
         {
 
-            if (PublicVariable.SUA == "0")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -231,12 +231,12 @@ namespace WindowsFormsApplication1
         }
         private void gridView2_DoubleClick(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "0")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            if (PublicVariable.THEM == "0")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -295,7 +295,7 @@ namespace WindowsFormsApplication1
         public int iNgonNgu;
         private void btXoa_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.XOA == "0")
+            if (PublicVariable.XOA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -408,7 +408,7 @@ namespace WindowsFormsApplication1
 
         private void btnphanquyen_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "0")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -424,7 +424,7 @@ namespace WindowsFormsApplication1
         {
             
 
-            if (PublicVariable.SUA == "0")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
