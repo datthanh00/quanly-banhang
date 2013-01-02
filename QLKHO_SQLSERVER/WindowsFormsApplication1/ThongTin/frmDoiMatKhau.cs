@@ -52,7 +52,7 @@ namespace WindowsFormsApplication1
         }
         private void btLuu_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "0")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -120,9 +120,9 @@ namespace WindowsFormsApplication1
    
         private void frmDoiMatKhau_Load(object sender, EventArgs e)
         {
-      
 
-            if (PublicVariable.XEM == "0")
+
+            if (PublicVariable.XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;

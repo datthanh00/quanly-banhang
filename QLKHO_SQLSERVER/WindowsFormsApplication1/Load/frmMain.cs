@@ -267,18 +267,20 @@ namespace WindowsFormsApplication1
                 switch (PhanQuyen.Rows[i]["MACN"].ToString())
                 {
                     case "1":
-                        if (Isused("1"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString()=="True")
                         {
+                            
                             btNhapHang.Enabled= true;
                             break;
                         }
                         else
                         {
+                           
                             btNhapHang.Enabled = false;
                             break;
                         }
                     case "2":
-                        if (Isused("2"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btXuatHang.Enabled = true;
                             break;
@@ -289,7 +291,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "3":
-                        if (Isused("3"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btmathangthongkhe.Enabled = true;
                             break;
@@ -300,7 +302,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "4":
-                        if (Isused("4"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             BTTraNCC.Enabled = true;
                             break;
@@ -311,7 +313,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "5":
-                        if (Isused("5"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             BTKHtra.Enabled = true;
                             break;
@@ -322,7 +324,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "6":
-                        if (Isused("6"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btCongNoKH.Enabled = true;
                             break;
@@ -333,7 +335,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "7":
-                        if (Isused("7"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btCongNoNCC.Enabled = true;
                             break;
@@ -344,7 +346,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "8":
-                        if (Isused("8"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btTongHop.Enabled = true;
                             break;
@@ -355,7 +357,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "9":
-                        if (Isused("9"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btDoanhThu.Enabled = true;
                             break;
@@ -366,7 +368,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "10":
-                        if (Isused("10"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btTonKho.Enabled = true;
                             break;
@@ -377,7 +379,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "11":
-                        if (Isused("11"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btKhachHang.Enabled = true;
                             break;
@@ -388,7 +390,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "12":
-                        if (Isused("12"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btNhaCungCap.Enabled = true;
                             break;
@@ -410,7 +412,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "14":
-                        if (Isused("14"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btKho.Enabled = true;
                             break;
@@ -421,7 +423,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "15":
-                        if (Isused("15"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btNhomHang.Enabled = true;
                             break;
@@ -432,7 +434,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "16":
-                        if (Isused("16"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btMatHang.Enabled = true;
                             break;
@@ -443,7 +445,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "17":
-                        if (Isused("17"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btDonViTinh.Enabled = true;
                             break;
@@ -454,7 +456,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "18":
-                        if (Isused("18"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btNhanVien.Enabled = true;
                             break;
@@ -465,7 +467,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "19":
-                        if (Isused("19"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btBoPhan.Enabled = true;
                             break;
@@ -476,7 +478,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "20":
-                        if (Isused("20"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btThue.Enabled = true;
                             break;
@@ -487,7 +489,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "21":
-                        if (Isused("21"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btSaoluu.Enabled = true;
                             break;
@@ -498,7 +500,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "22":
-                        if (Isused("22"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btPhuchoi.Enabled = true;
                             break;
@@ -509,7 +511,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "23":
-                        if (Isused("23"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btPhanQuyen.Enabled = true;
                             break;
@@ -520,7 +522,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "24":
-                        if (Isused("24"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btDoiMatKhau.Enabled = true;
                             break;
@@ -531,7 +533,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "25":
-                        if (Isused("25"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btThongTin.Enabled = true;
                             break;
@@ -544,60 +546,7 @@ namespace WindowsFormsApplication1
 
                 }
             }
-                if (sBoPhan == "MABP00001")
-                {
-                    btNhapHang.Enabled = true;
-                    btCongNoNCC.Enabled = true;
-                    btHoaDonNhap.Enabled = true;
-                    btXuatHang.Enabled = false;
-                    btHoaDonXuat.Enabled = false;
-                    btCongNoKH.Enabled = false;
-                    ribBaoMat.Visible = false;
-                    ribDuLieu.Visible = false;
-                    ribNhanVien.Visible = false;
-                }
-            if (sBoPhan == "MABP00002")
-            {
-
-                btXuatHang.Enabled = true;
-                btHoaDonXuat.Enabled = true;
-                btCongNoKH.Enabled = true;
-                btNhapHang.Enabled = false;
-                btCongNoNCC.Enabled = false;
-                btHoaDonNhap.Enabled = false;
-                ribBaoMat.Visible = false;
-                ribDuLieu.Visible = false;
-                ribNhanVien.Visible = false;
-            }
-           
-            if (sBoPhan == "MABP00004")
-            {
-                btNhapHang.Enabled = true;
-                btCongNoNCC.Enabled = true;
-                btHoaDonNhap.Enabled = true;
-                btXuatHang.Enabled = true;
-                btHoaDonXuat.Enabled = true;
-                btCongNoKH.Enabled = true;
-                ribBaoMat.Visible = true;
-                ribDuLieu.Visible = true;
-                ribNhanVien.Visible = true;
-                
                
-            
-                
-            }
-            if (sBoPhan == "MABP00003")
-            {
-                btNhapHang.Enabled = true;
-                btCongNoNCC.Enabled = true;
-                btHoaDonNhap.Enabled = true;
-                btXuatHang.Enabled = true;
-                btHoaDonXuat.Enabled = true;
-                btCongNoKH.Enabled = true;
-                ribBaoMat.Visible = false;
-                ribDuLieu.Visible = false;
-                ribNhanVien.Visible = false;
-            }
         }
         System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
         System.Configuration.Configuration NgonNguVA = ConfigurationManager.OpenExeConfiguration("NgonNgu");

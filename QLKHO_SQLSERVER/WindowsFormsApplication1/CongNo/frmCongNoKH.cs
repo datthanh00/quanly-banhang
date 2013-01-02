@@ -51,8 +51,8 @@ namespace WindowsFormsApplication1
       
         private void frmCongNoKH_Load(object sender, EventArgs e)
         {
-           
-            if (PublicVariable.XEM == "0")
+
+            if (PublicVariable.XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -128,7 +128,7 @@ namespace WindowsFormsApplication1
         }
         private void btThutien_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.THEM == "0")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -164,7 +164,7 @@ namespace WindowsFormsApplication1
         }
         private void btneditthutien_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "0")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -220,7 +220,7 @@ namespace WindowsFormsApplication1
         }
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (PublicVariable.THEM == "0")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -318,7 +318,7 @@ namespace WindowsFormsApplication1
 
         private void btndelthutien_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.XOA == "0")
+            if (PublicVariable.XOA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -327,7 +327,7 @@ namespace WindowsFormsApplication1
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "0")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -338,7 +338,7 @@ namespace WindowsFormsApplication1
 
         private void btXuat_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "0")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -358,7 +358,7 @@ namespace WindowsFormsApplication1
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-             if (PublicVariable.IN == "0")
+             if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -369,7 +369,7 @@ namespace WindowsFormsApplication1
 
         private void simpleButton5_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "0")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
