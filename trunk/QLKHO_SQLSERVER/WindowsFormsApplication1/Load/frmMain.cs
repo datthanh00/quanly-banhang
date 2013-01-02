@@ -242,23 +242,7 @@ namespace WindowsFormsApplication1
             PublicVariable.KhoQL = KHO;
         }
 
-        public Boolean Isused(string MACN)
-        {
-            int phanquyencount = PhanQuyen.Rows.Count;
-            string TATCA,TRUYCAP;
-            for (int i = 0; i < phanquyencount; i++)
-            {
-                if (PhanQuyen.Rows[i]["MACN"].ToString() == MACN)
-                {
-                    TRUYCAP = PhanQuyen.Rows[i]["TRUYCAP"].ToString();
-                    if (TRUYCAP == "1")
-                        return true;
-                    else
-                        return false;
-                }
-            }
-            return false;
-        }
+
         public void vKiemTraDangNhap()
         {
             int phanquyencount=PhanQuyen.Rows.Count;
@@ -401,7 +385,7 @@ namespace WindowsFormsApplication1
                             break;
                         }
                     case "13":
-                        if (Isused("13"))
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btKhuVuc.Enabled = true;
                             break;

@@ -180,10 +180,9 @@ namespace WindowsFormsApplication1
        
         private void barThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //if (DevComponents.DotNetBar.MessageBoxEx.Show("Bạn có muốn thoát hay không ?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
-            //{
-                this.Close();
-            //}
+
+            deDongTab();
+            
         }
 
         private void barThem_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

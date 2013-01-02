@@ -74,7 +74,7 @@ namespace WindowsFormsApplication1
 
                     String quanly = dtr["QUANLY"].ToString();
                     string SQL = "";
-                    if (quanly == "0")
+                    if (quanly == "False")
                     {
                         SQL = "update  PHANKHO set quanly=0 where mabp='" + sMaBP + "' and makho='" + dtr["MAKHO"].ToString() + "' ";
                     }
@@ -98,7 +98,7 @@ namespace WindowsFormsApplication1
                     String XOA = dtr["XOA"].ToString();
                     String SUA = dtr["SUA"].ToString();
                     String IN = dtr["IN"].ToString();
-                    if (TATCA == "0")
+                    if (TATCA == "False")
                     {
                         TATCA = "0";
                     }
@@ -107,7 +107,7 @@ namespace WindowsFormsApplication1
                         TATCA = "1";
                     }
                     //
-                    if (TRUYCAP == "0")
+                    if (TRUYCAP == "False")
                     {
                         TRUYCAP = "0";
                     }
@@ -116,7 +116,7 @@ namespace WindowsFormsApplication1
                         TRUYCAP = "1";
                     }
 
-                    if (THEM == "0")
+                    if (THEM == "False")
                     {
                         THEM = "0";
                     }
@@ -125,7 +125,7 @@ namespace WindowsFormsApplication1
                         THEM = "1";
                     }
 
-                    if (XOA == "0")
+                    if (XOA == "False")
                     {
                         XOA = "0";
                     }
@@ -134,7 +134,7 @@ namespace WindowsFormsApplication1
                         XOA = "1";
                     }
 
-                    if (SUA == "0")
+                    if (SUA == "False")
                     {
                         SUA = "0";
                     }
@@ -142,7 +142,7 @@ namespace WindowsFormsApplication1
                     {
                         SUA = "1";
                     }
-                    if (IN == "0")
+                    if (IN == "False")
                     {
                         IN = "0";
                     }
@@ -151,7 +151,7 @@ namespace WindowsFormsApplication1
                         IN = "1";
                     }
 
-                    string SQL = "UPDATE `phanquyen` SET `TATCA`=" + TATCA + ",`TRUYCAP`=" + TRUYCAP + ",`THEM`=" + THEM + ",`XOA`=" + XOA + ",`SUA`=" + SUA + ",`IN`=" + IN + " WHERE  `MABP`='" + sMaBP + "' and `MACN`=" + dtr["MACN"].ToString();
+                    string SQL = "UPDATE phanquyen SET TATCA=" + TATCA + ",TRUYCAP=" + TRUYCAP + ",THEM=" + THEM + ",XOA=" + XOA + ",SUA=" + SUA + ",[IN]=" + IN + " WHERE  MABP='" + sMaBP + "' and MACN=" + dtr["MACN"].ToString();
                     Ctl.executeNonQuery(SQL);
                 }
 
@@ -169,7 +169,7 @@ namespace WindowsFormsApplication1
                         if (e.Column.FieldName.ToString() == "TATCA")
                         {
                             string SSSS = dtr["TATCA"].ToString();
-                            if (dtr["TATCA"].ToString() != "0")
+                            if (dtr["TATCA"].ToString() != "False")
                             {
                                 
                                 gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["TRUYCAP"], Convert.ToBoolean(1));

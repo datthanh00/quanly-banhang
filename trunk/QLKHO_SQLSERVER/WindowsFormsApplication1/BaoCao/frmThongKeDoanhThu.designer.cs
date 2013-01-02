@@ -201,9 +201,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 460);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 459);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -230,7 +230,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(194, 460);
+            this.navBarControl1.Size = new System.Drawing.Size(194, 459);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -366,7 +366,7 @@
             this.xtraTabPage5.Controls.Add(this.panelControl9);
             this.xtraTabPage5.Controls.Add(this.panelControl10);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 459);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 458);
             this.xtraTabPage5.Text = "Doanh Thu Theo Khu Vực";
             // 
             // panelControl9
@@ -375,7 +375,7 @@
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl9.Location = new System.Drawing.Point(0, 39);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(1005, 420);
+            this.panelControl9.Size = new System.Drawing.Size(1005, 419);
             this.panelControl9.TabIndex = 7;
             // 
             // gridControl6
@@ -384,10 +384,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl6.Location = new System.Drawing.Point(3, 3);
+            this.gridControl6.Location = new System.Drawing.Point(2, 2);
             this.gridControl6.MainView = this.gridView10;
             this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(999, 414);
+            this.gridControl6.Size = new System.Drawing.Size(1001, 415);
             this.gridControl6.TabIndex = 1;
             this.gridControl6.UseEmbeddedNavigator = true;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -439,6 +439,8 @@
             // gridColumn28
             // 
             this.gridColumn28.Caption = "Doanh Số";
+            this.gridColumn28.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn28.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn28.FieldName = "DOANHSO";
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.Visible = true;
@@ -501,6 +503,8 @@
             // gridColumn23
             // 
             this.gridColumn23.Caption = "Tiền Phải Trả";
+            this.gridColumn23.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn23.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn23.FieldName = "DOANHSO";
             this.gridColumn23.Name = "gridColumn23";
             this.gridColumn23.Visible = true;
@@ -563,6 +567,8 @@
             // gridColumn18
             // 
             this.gridColumn18.Caption = "Doanh Thu";
+            this.gridColumn18.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn18.FieldName = "DOANHTHU";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
@@ -598,6 +604,8 @@
             // gridColumn13
             // 
             this.gridColumn13.Caption = "Doanh Thu";
+            this.gridColumn13.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn13.FieldName = "DOANHTHU";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
@@ -660,6 +668,8 @@
             // gridColumn12
             // 
             this.gridColumn12.Caption = "Tiền Phải Trả";
+            this.gridColumn12.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn12.FieldName = "TIENPHAITRA";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
@@ -713,6 +723,8 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Chi Phí Mua Hàng";
+            this.gridColumn4.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn4.FieldName = "CHIPHI";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
@@ -748,6 +760,8 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Chi Phí Mua Hàng";
+            this.gridColumn2.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn2.FieldName = "CHIPHI";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
@@ -805,7 +819,7 @@
             // colTongDanhThu
             // 
             this.colTongDanhThu.Caption = "Tổng doanh thu";
-            this.colTongDanhThu.DisplayFormat.FormatString = "0,0 vnđ";
+            this.colTongDanhThu.DisplayFormat.FormatString = "{0:0,0}";
             this.colTongDanhThu.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colTongDanhThu.FieldName = "TongDoanhThu";
             this.colTongDanhThu.Name = "colTongDanhThu";

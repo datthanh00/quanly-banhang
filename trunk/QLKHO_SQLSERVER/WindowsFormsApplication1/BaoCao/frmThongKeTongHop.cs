@@ -386,7 +386,7 @@ namespace WindowsFormsApplication1
             }
             else if (loaihienthi == 2)
             {
-                if (cbmathang.Text == "")
+                if (cbnhomhang.Text == "")
                 {
                     MessageBox.Show("Hãy Chọn một nhóm hàng");
                     return;
