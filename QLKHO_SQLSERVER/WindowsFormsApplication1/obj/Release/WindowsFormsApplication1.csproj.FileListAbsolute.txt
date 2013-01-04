@@ -1,0 +1,3 @@
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe.config
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\Interop.SQLDMO.dll
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.csproj.ResolveComReference.cache
