@@ -85,6 +85,8 @@
             this.btxem = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.mATHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -249,6 +251,7 @@
             this.coltennhomhang,
             this.coltenmathang,
             this.colthue,
+            this.gridColumn7,
             this.coltendonvi,
             this.colsoluong,
             this.colthanhtiennhap,
@@ -260,7 +263,8 @@
             this.colgiamua,
             this.colhansudung,
             this.colsongayhethan,
-            this.gridColumn5});
+            this.gridColumn5,
+            this.gridColumn6});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(846, 478, 216, 178);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -313,8 +317,6 @@
             this.colthue.FieldName = "SOTHUE";
             this.colthue.Name = "colthue";
             this.colthue.OptionsColumn.AllowEdit = false;
-            this.colthue.Visible = true;
-            this.colthue.VisibleIndex = 3;
             this.colthue.Width = 52;
             // 
             // repositoryItemCalcEdit2
@@ -331,7 +333,7 @@
             this.coltendonvi.Name = "coltendonvi";
             this.coltendonvi.OptionsColumn.AllowEdit = false;
             this.coltendonvi.Visible = true;
-            this.coltendonvi.VisibleIndex = 4;
+            this.coltendonvi.VisibleIndex = 5;
             this.coltendonvi.Width = 65;
             // 
             // colsoluong
@@ -344,7 +346,7 @@
             this.colsoluong.Name = "colsoluong";
             this.colsoluong.OptionsColumn.AllowEdit = false;
             this.colsoluong.Visible = true;
-            this.colsoluong.VisibleIndex = 5;
+            this.colsoluong.VisibleIndex = 6;
             this.colsoluong.Width = 44;
             // 
             // repositoryItemCalcEdit1
@@ -365,7 +367,7 @@
             this.colthanhtiennhap.SummaryItem.DisplayFormat = "Tổng:{0:0,0 vnđ}";
             this.colthanhtiennhap.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colthanhtiennhap.Visible = true;
-            this.colthanhtiennhap.VisibleIndex = 7;
+            this.colthanhtiennhap.VisibleIndex = 8;
             this.colthanhtiennhap.Width = 67;
             // 
             // colgiaban
@@ -377,7 +379,7 @@
             this.colgiaban.Name = "colgiaban";
             this.colgiaban.OptionsColumn.AllowEdit = false;
             this.colgiaban.Visible = true;
-            this.colgiaban.VisibleIndex = 8;
+            this.colgiaban.VisibleIndex = 9;
             this.colgiaban.Width = 50;
             // 
             // colthanhtienxuat
@@ -392,7 +394,7 @@
             this.colthanhtienxuat.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colthanhtienxuat.ToolTip = "Tổng Tiền Bán";
             this.colthanhtienxuat.Visible = true;
-            this.colthanhtienxuat.VisibleIndex = 9;
+            this.colthanhtienxuat.VisibleIndex = 10;
             this.colthanhtienxuat.Width = 97;
             // 
             // colmota
@@ -448,7 +450,7 @@
             this.colgiamua.Name = "colgiamua";
             this.colgiamua.OptionsColumn.AllowEdit = false;
             this.colgiamua.Visible = true;
-            this.colgiamua.VisibleIndex = 6;
+            this.colgiamua.VisibleIndex = 7;
             this.colgiamua.Width = 51;
             // 
             // repositoryItemCalcEdit3
@@ -661,6 +663,22 @@
             this.labelControl2.Text = "Loại Hiển Thị:";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Nhà cung cấp";
+            this.gridColumn6.FieldName = "TENNCC";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 3;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "KL DVT";
+            this.gridColumn7.FieldName = "KLDVT";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 4;
+            // 
             // frmThongKeTongHop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -768,5 +786,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }

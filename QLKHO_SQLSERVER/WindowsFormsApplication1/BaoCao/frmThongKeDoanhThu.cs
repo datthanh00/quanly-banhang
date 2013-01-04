@@ -249,7 +249,6 @@ namespace WindowsFormsApplication1
             //tb = ctr.getDoanhThu(dto);
             if (baocaotype == "MH_NGAY")
             {
-                
                gridControl6.DataSource = ctr.getcpmuahangngay(dto);
             }
             else if (baocaotype == "MH_NCC")

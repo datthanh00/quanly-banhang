@@ -181,98 +181,12 @@ namespace WindowsFormsApplication1
 
         public void loadcbEgLish()
         {
-            //cbHienThiBatDau.Properties.Items.Add("please chose");
-
-            //cbHienThiBatDau.Properties.Items.Add("Jannuary");
-            //cbHienThiBatDau.Properties.Items.Add("February");
-            //cbHienThiBatDau.Properties.Items.Add("March");
-            //cbHienThiBatDau.Properties.Items.Add("April");
-            //cbHienThiBatDau.Properties.Items.Add("May");
-            //cbHienThiBatDau.Properties.Items.Add("June");
-            //cbHienThiBatDau.Properties.Items.Add("July");
-            //cbHienThiBatDau.Properties.Items.Add("August");
-            //cbHienThiBatDau.Properties.Items.Add("September");
-            //cbHienThiBatDau.Properties.Items.Add("October");
-            //cbHienThiBatDau.Properties.Items.Add("November");
-            //cbHienThiBatDau.Properties.Items.Add("December");
-            ////-----------------------------------------------
-            //cbHienThiKeThuc.Properties.Items.Add("please chose");
-            //cbHienThiKeThuc.Properties.Items.Add("Jannuary");
-            //cbHienThiKeThuc.Properties.Items.Add("February");
-            //cbHienThiKeThuc.Properties.Items.Add("March");
-            //cbHienThiKeThuc.Properties.Items.Add("April");
-            //cbHienThiKeThuc.Properties.Items.Add("May");
-            //cbHienThiKeThuc.Properties.Items.Add("June");
-            //cbHienThiKeThuc.Properties.Items.Add("July");
-            //cbHienThiKeThuc.Properties.Items.Add("August");
-            //cbHienThiKeThuc.Properties.Items.Add("September");
-            //cbHienThiKeThuc.Properties.Items.Add("October");
-            //cbHienThiKeThuc.Properties.Items.Add("November");
-            //cbHienThiKeThuc.Properties.Items.Add("December");
-            ////-------------------------------------------------
-            //cbNam.Properties.Items.Clear();
-            //cbHienThiBatDau.Properties.Items.Clear();
-            //cbHienThiKeThuc.Properties.Items.Clear();
-            //for (int i = 1; i < 13; i++)
-            //{
-            //    cbHienThiBatDau.Properties.Items.Add(i.ToString());
-            //    cbHienThiKeThuc.Properties.Items.Add(i.ToString());
-            //}
-            //for (int i = 1900; i < DateTime.Now.Year + 1; i++)
-            //{
-            //    cbNam.Properties.Items.Add(i.ToString());
-            //}
-            //cbHienThiKeThuc.SelectedIndex = 1;
-
+            
 
         }
         public void loadcbVietNam()
         {
-            //cbHienThiBatDau.Properties.Items.Add("Chọn Tháng");
-
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 1");
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 2");
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 3");
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 4");
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 5");
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 6");
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 7");
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 8");
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 9");
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 10");
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 11");
-            //cbHienThiBatDau.Properties.Items.Add("Tháng 12");
-            ////------------------------------------------------- 
-            //cbHienThiKeThuc.Properties.Items.Add("Chọn Tháng");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 1");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 2");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 3");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 4");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 5");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 6");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 7");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 8");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 9");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 10");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 11");
-            //cbHienThiKeThuc.Properties.Items.Add("Tháng 12");
-            ////-------------------------------------------------
-            //cbNam.Properties.Items.Clear();
-            //cbHienThiBatDau.Properties.Items.Clear();
-            //cbHienThiKeThuc.Properties.Items.Clear();
-            //for (int i = 1; i < 13; i++)
-            //{
-            //    cbHienThiBatDau.Properties.Items.Add(i.ToString());
-            //    cbHienThiKeThuc.Properties.Items.Add(i.ToString());
-            //}
-            //for (int i = 1900; i < DateTime.Now.Year + 1; i++)
-            //{
-            //    cbNam.Properties.Items.Add(i.ToString());
-            //}
-
-            //cbHienThiKeThuc.SelectedIndex = 1;
-
-            //cbHienThiBatDau.SelectedIndex = 1;
+           
         }
   
         public void load()
@@ -394,20 +308,26 @@ namespace WindowsFormsApplication1
 
                 dto.Loai_HT = loaihienthi.ToString();
 
-                dto.MAMH = gridView2.GetFocusedRowCellValue("MASANPHAM").ToString();
-                dto.MANCC = gridView3.GetFocusedRowCellValue("MANCC").ToString();
+                if (cbmathang.Text != "")
+                {
+                    dto.MAMH = gridView2.GetFocusedRowCellValue("MASANPHAM").ToString();
+                }
+                if (cbnhomhang.Text != "")
+                {
+                    dto.MANCC = gridView3.GetFocusedRowCellValue("MANCC").ToString();
+                }
 
             
                 dt = ctr.geTthongke_ct_mathang2(dto);
                 
               
                 gridControl1.DataSource = dt;
-                DevExpress.XtraGrid.StyleFormatCondition cn;
-                cn = new DevExpress.XtraGrid.StyleFormatCondition(FormatConditionEnum.Less, gridView1.Columns["SONGAYHETHANH"], null, 0);
-                cn.Appearance.BackColor = Color.Yellow;
-                gridView1.FormatConditions.Add(cn);
-                cn.ApplyToRow = true;
-                gridView1.FormatConditions.Add(cn);
+               // DevExpress.XtraGrid.StyleFormatCondition cn;
+                //cn = new DevExpress.XtraGrid.StyleFormatCondition(FormatConditionEnum.Less, gridView1.Columns["SONGAYHETHANH"], null, 0);
+                //cn.Appearance.BackColor = Color.Yellow;
+                //gridView1.FormatConditions.Add(cn);
+                //cn.ApplyToRow = true;
+                //gridView1.FormatConditions.Add(cn);
                 gridView1.BestFitColumns();
 
             }

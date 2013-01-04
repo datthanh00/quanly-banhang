@@ -174,6 +174,7 @@
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -182,7 +183,6 @@
             this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkIntheomathang = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -1160,6 +1160,7 @@
             this.gridCTHOADON.Name = "gridCTHOADON";
             this.gridCTHOADON.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridCTHOADON.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridCTHOADON.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.gridCTHOADON.OptionsSelection.InvertSelection = true;
             this.gridCTHOADON.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridCTHOADON.OptionsView.ShowFooter = true;
@@ -1744,6 +1745,14 @@
             this.gridColumn31.Visible = true;
             this.gridColumn31.VisibleIndex = 3;
             // 
+            // gridColumn45
+            // 
+            this.gridColumn45.Caption = "Nhà Cung Cấp";
+            this.gridColumn45.FieldName = "TENNCC";
+            this.gridColumn45.Name = "gridColumn45";
+            this.gridColumn45.Visible = true;
+            this.gridColumn45.VisibleIndex = 4;
+            // 
             // gridColumn32
             // 
             this.gridColumn32.Caption = "Số Lượng Xuất";
@@ -1808,14 +1817,6 @@
             this.linkIntheomathang.Size = new System.Drawing.Size(168, 22);
             this.linkIntheomathang.Text = "In theo mặt hàng";
             this.linkIntheomathang.Click += new System.EventHandler(this.linkIntheomathang_Click);
-            // 
-            // gridColumn45
-            // 
-            this.gridColumn45.Caption = "Nhà Cung Cấp";
-            this.gridColumn45.FieldName = "TENNCC";
-            this.gridColumn45.Name = "gridColumn45";
-            this.gridColumn45.Visible = true;
-            this.gridColumn45.VisibleIndex = 4;
             // 
             // frmHoaDonXuat
             // 

@@ -22,6 +22,7 @@ namespace WindowsFormsApplication1.class_import
             cbTable.Properties.Items.Add("NHà Cung Cấp");
             cbTable.Properties.Items.Add("Khách Hàng");
             cbTable.Properties.Items.Add("Mặt Hàng");
+            cbTable.Properties.Items.Add("Đơn Vị Tính");
             button2.Enabled = false;
 
         }
@@ -59,7 +60,14 @@ namespace WindowsFormsApplication1.class_import
             foreach (System.Data.DataRow duyet_dong in dulieu.Rows)
             {
                 lenh = nhap_tien_tc(duyet_dong);
-                pv.executeNonQuery(lenh);
+                try
+                {
+                    pv.executeNonQuery(lenh);
+                }
+                catch
+                {
+                    MessageBox.Show("CỘT TRONG FILE EXCELL KHÔNG HỢP LỆ"+lenh+"");
+                }
                 tientrinh.PerformStep();
             }
             MessageBox.Show("Quá trình đưa dữ liệu đã hoàn tất.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -68,30 +76,30 @@ namespace WindowsFormsApplication1.class_import
         private String nhap_tien_tc(System.Data.DataRow cot)
         {
             String lenh = "";
-            try
-            {
+            
                 
                 if (cbTable.SelectedIndex == 0)
                 {
-                    lenh = "INSERT INTO [NHACUNGCAP]([MANCC],[MAKV],[TENNCC],[DIACHI],[MASOTHUE],[SOTAIKHOAN],[NGANHANG],[SDT],[EMAIL],[FAX],[WEBSITE],[TINHTRANG]) "
-                    + " VALUES ('" + cot["MANCC"] + "','" + cot["MAKV"] + "',N'" + cot["TENNCC"] + "',N'" + cot["DIACHI"] + "','" + cot["MASOTHUE"] + "','" + cot["SOTAIKHOAN"] + "',N'" + cot["NGANHANG"] + "','" + cot["SDT"] + "','" + cot["EMAIL"] + "','" + cot["FAX"] + "','" + cot["WEBSITE"] + "'," + cot["TINHTRANG"] + ") ";
+                    lenh = "INSERT INTO [NHACUNGCAP]([MANCC],[MAKV],[MAKHO],[TENNCC],[DIACHI],[MASOTHUE],[SOTAIKHOAN],[NGANHANG],[SDT],[EMAIL],[FAX],[WEBSITE],[TINHTRANG]) "
+                    + " VALUES ('" + cot["MANCC"] + "','" + cot["MAKV"] + "','" + cot["MAKHO"] + "',N'" + cot["TENNCC"] + "',N'" + cot["DIACHI"] + "','" + cot["MASOTHUE"] + "','" + cot["SOTAIKHOAN"] + "',N'" + cot["NGANHANG"] + "','" + cot["SDT"] + "','" + cot["EMAIL"] + "','" + cot["FAX"] + "','" + cot["WEBSITE"] + "'," + cot["TINHTRANG"] + ") ";
                 }
                 else if (cbTable.SelectedIndex == 1)
                 {
-                    lenh = "INSERT INTO [KHACHHANG] ([MAKH],[MAKV],[TENKH],[SOTAIKHOAN],[NGANHANG],[MASOTHUE],[DIACHI],[SDT],[FAX],[WEBSITE],[YAHOO],[SKYPE],[TINHTRANG]) "
-                + " VALUES ('" + cot["MAKH"] + "','" + cot["MAKV"] + "',N'" + cot["TENKH"] + "','" + cot["SOTAIKHOAN"] + "',N'" + cot["NGANHANG"] + "','" + cot["MASOTHUE"] + "',N'" + cot["DIACHI"] + "','" + cot["SDT"] + "','" + cot["FAX"] + "','" + cot["WEBSITE"] + "','" + cot["YAHOO"] + "','" + cot["SKYPE"] + "'," + cot["TINHTRANG"] + ") ";
+                    lenh = "INSERT INTO [KHACHHANG] ([MAKH],[MAKV],[MAKHO],[TENKH],[SOTAIKHOAN],[NGANHANG],[MASOTHUE],[DIACHI],[SDT],[FAX],[WEBSITE],[YAHOO],[SKYPE],[TINHTRANG]) "
+                + " VALUES ('" + cot["MAKH"] + "','" + cot["MAKV"] + "','" + cot["MAKHO"] + "',N'" + cot["TENKH"] + "','" + cot["SOTAIKHOAN"] + "',N'" + cot["NGANHANG"] + "','" + cot["MASOTHUE"] + "',N'" + cot["DIACHI"] + "','" + cot["SDT"] + "','" + cot["FAX"] + "','" + cot["WEBSITE"] + "','" + cot["YAHOO"] + "','" + cot["SKYPE"] + "'," + cot["TINHTRANG"] + ") ";
 
                 }
                 else if (cbTable.SelectedIndex == 2)
                 {
-                    lenh = "INSERT INTO [MATHANG]([MAMH],[MATH],[MANH],[MAKHO],[TENMH],[MADVT],[SOLUONGMH],[HANSUDUNG],[GIAMUA],[GIABAN],[MOTA],[TINHTRANG]) "
-                    + " VALUES ('" + cot["MAMH"] + "','" + cot["MATH"] + "','" + cot["MANH"] + "','" + cot["MAKHO"] + "',N'" + cot["TENMH"] + "','" + cot["MADVT"] + "'," + cot["SOLUONGMH"] + ",'" + cot["HANSUDUNG"] + "'," + cot["GIAMUA"] + "," + cot["GIABAN"] + ",N'" + cot["MOTA"] + "'," + cot["TINHTRANG"] + ")";
+                    lenh = "INSERT INTO [MATHANG]([MAMH],[MATH],[MANH],[MANCC],[MAKHO],[TENMH],[KLDVT],[MADVT],[SOLUONGMH],[HANSUDUNG],[GIAMUA],[GIABAN],[MOTA],[TINHTRANG]) "
+                    + " VALUES ('" + cot["MAMH"] + "','" + cot["MATH"] + "','" + cot["MANH"] + "','" + cot["MANCC"] + "','" + cot["MAKHO"] + "',N'" + cot["TENMH"] + "','" + cot["KLDVT"] + "','" + cot["MADVT"] + "'," + cot["SOLUONGMH"] + ",'" + cot["HANSUDUNG"] + "'," + cot["GIAMUA"] + "," + cot["GIABAN"] + ",N'" + cot["MOTA"] + "'," + cot["TINHTRANG"] + ")";
                 }
-            }
-            catch
-            {
-                MessageBox.Show("CỘT TRONG FILE EXCELL KHÔNG HỢP LỆ");
-            }
+                else if (cbTable.SelectedIndex == 3)
+                {
+                    lenh = "INSERT INTO [DONVITINH]([MADVT],[DONVITINH]) "
+                    + " VALUES ('" + cot["MADVT"] + "',N'" + cot["DONVITINH"] + "')";
+                }
+           
             return lenh;
         }
 
