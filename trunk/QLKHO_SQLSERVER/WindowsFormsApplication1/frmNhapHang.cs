@@ -118,8 +118,11 @@ namespace WindowsFormsApplication1
             dt.Columns.Add(new DataColumn("_DVT"));
             dt.Columns.Add(new DataColumn("_Total"));
             dt.Columns.Add(new DataColumn("ID"));
+            gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gridColumn8.DisplayFormat.FormatString = "{0:0,0}";
+            gridControl1.MainView = gridCTHOADON;
             gridControl1.DataSource = dt;
-
+            
             CountRowTBEdit = 0;
         }
         public void loadgridCTHOADON(String MAHDN)

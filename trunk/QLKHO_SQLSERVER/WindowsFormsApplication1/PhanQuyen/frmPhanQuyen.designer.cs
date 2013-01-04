@@ -158,9 +158,9 @@
             // 
             this.dockPanel2_Container.Controls.Add(this.btnphankho);
             this.dockPanel2_Container.Controls.Add(this.btnphanquyen);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(194, 69);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(194, 68);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // btnphankho
@@ -191,7 +191,7 @@
             // btDong
             // 
             this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close3;
-            this.btDong.Location = new System.Drawing.Point(281, 45);
+            this.btDong.Location = new System.Drawing.Point(281, 46);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(87, 38);
             this.btDong.StyleController = this.layoutControl1;
@@ -201,10 +201,10 @@
             // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(31, 89);
+            this.gridControl2.Location = new System.Drawing.Point(31, 90);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1030, 375);
+            this.gridControl2.Size = new System.Drawing.Size(1030, 374);
             this.gridControl2.TabIndex = 5;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -270,7 +270,7 @@
             // btThem
             // 
             this.btThem.Image = global::WindowsFormsApplication1.Properties.Resources.add;
-            this.btThem.Location = new System.Drawing.Point(26, 47);
+            this.btThem.Location = new System.Drawing.Point(26, 48);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(74, 38);
             this.btThem.StyleController = this.layoutControl1;
@@ -281,7 +281,7 @@
             // btSua
             // 
             this.btSua.Image = global::WindowsFormsApplication1.Properties.Resources.edit2;
-            this.btSua.Location = new System.Drawing.Point(104, 45);
+            this.btSua.Location = new System.Drawing.Point(104, 46);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(83, 38);
             this.btSua.StyleController = this.layoutControl1;
@@ -292,7 +292,7 @@
             // btXoa
             // 
             this.btXoa.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
-            this.btXoa.Location = new System.Drawing.Point(191, 45);
+            this.btXoa.Location = new System.Drawing.Point(191, 46);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(86, 38);
             this.btXoa.StyleController = this.layoutControl1;
@@ -338,7 +338,7 @@
             this.layoutControlItem2.CustomizationFormText = " ";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 46);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1041, 379);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1041, 378);
             this.layoutControlItem2.Text = " ";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(3, 13);
             // 
@@ -448,9 +448,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.gridControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 365);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 364);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // gridControl1
@@ -459,7 +459,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(194, 365);
+            this.gridControl1.Size = new System.Drawing.Size(194, 364);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

@@ -509,7 +509,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(164, 12);
+            this.lbDen.Location = new System.Drawing.Point(165, 13);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -517,7 +517,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(12, 12);
+            this.lbTu.Location = new System.Drawing.Point(13, 13);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -550,7 +550,7 @@
             // 
             // lbDen1
             // 
-            this.lbDen1.Location = new System.Drawing.Point(151, 12);
+            this.lbDen1.Location = new System.Drawing.Point(152, 13);
             this.lbDen1.Name = "lbDen1";
             this.lbDen1.Size = new System.Drawing.Size(20, 13);
             this.lbDen1.TabIndex = 1;
@@ -572,7 +572,7 @@
             // 
             // lbtu1
             // 
-            this.lbtu1.Location = new System.Drawing.Point(5, 12);
+            this.lbtu1.Location = new System.Drawing.Point(6, 13);
             this.lbtu1.Name = "lbtu1";
             this.lbtu1.Size = new System.Drawing.Size(13, 13);
             this.lbtu1.TabIndex = 1;
@@ -708,7 +708,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(14, 8);
+            this.labelControl2.Location = new System.Drawing.Point(15, 9);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(90, 13);
             this.labelControl2.TabIndex = 9;
@@ -716,7 +716,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(450, 33);
+            this.labelControl5.Location = new System.Drawing.Point(451, 34);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(24, 13);
             this.labelControl5.TabIndex = 8;
@@ -724,7 +724,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(260, 33);
+            this.labelControl4.Location = new System.Drawing.Point(261, 34);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(18, 13);
             this.labelControl4.TabIndex = 7;
@@ -732,7 +732,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(16, 72);
+            this.labelControl10.Location = new System.Drawing.Point(17, 73);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(37, 13);
             this.labelControl10.TabIndex = 12;
@@ -740,7 +740,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(16, 33);
+            this.labelControl3.Location = new System.Drawing.Point(17, 34);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(66, 13);
             this.labelControl3.TabIndex = 11;
@@ -748,7 +748,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(437, 8);
+            this.labelControl1.Location = new System.Drawing.Point(438, 9);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(86, 13);
             this.labelControl1.TabIndex = 10;
@@ -896,7 +896,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(211, 22);
+            this.labelControl8.Location = new System.Drawing.Point(211, 21);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(45, 13);
             this.labelControl8.TabIndex = 0;
@@ -920,7 +920,7 @@
             // 
             // labelControl19
             // 
-            this.labelControl19.Location = new System.Drawing.Point(262, 104);
+            this.labelControl19.Location = new System.Drawing.Point(262, 103);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(20, 13);
             this.labelControl19.TabIndex = 0;
@@ -928,7 +928,7 @@
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(12, 104);
+            this.labelControl18.Location = new System.Drawing.Point(12, 103);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(35, 13);
             this.labelControl18.TabIndex = 0;
@@ -936,7 +936,7 @@
             // 
             // labelControl17
             // 
-            this.labelControl17.Location = new System.Drawing.Point(209, 76);
+            this.labelControl17.Location = new System.Drawing.Point(209, 75);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(37, 13);
             this.labelControl17.TabIndex = 0;
@@ -944,7 +944,7 @@
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(12, 76);
+            this.labelControl16.Location = new System.Drawing.Point(12, 75);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(53, 13);
             this.labelControl16.TabIndex = 0;
@@ -952,7 +952,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(12, 50);
+            this.labelControl7.Location = new System.Drawing.Point(12, 49);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(68, 13);
             this.labelControl7.TabIndex = 0;
@@ -960,7 +960,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(211, 50);
+            this.labelControl9.Location = new System.Drawing.Point(211, 49);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(29, 13);
             this.labelControl9.TabIndex = 0;
@@ -968,7 +968,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(12, 23);
+            this.labelControl6.Location = new System.Drawing.Point(12, 22);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(59, 13);
             this.labelControl6.TabIndex = 0;
@@ -1197,7 +1197,7 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Số Lượng";
-            this.gridColumn7.DisplayFormat.FormatString = "n3";
+            this.gridColumn7.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "_SoLuong";
             this.gridColumn7.Name = "gridColumn7";
@@ -1207,10 +1207,10 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Đơn Giá";
+            this.gridColumn8.DisplayFormat.FormatString = "n3";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn8.FieldName = "_DonGia";
             this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.OptionsColumn.ReadOnly = true;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 3;
             // 
@@ -1227,6 +1227,7 @@
             // gridColumn25
             // 
             this.gridColumn25.Caption = "Tổng Cộng";
+            this.gridColumn25.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn25.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn25.FieldName = "_Total";
             this.gridColumn25.Name = "gridColumn25";
@@ -1425,6 +1426,8 @@
             // gridColumn37
             // 
             this.gridColumn37.Caption = "Số Lượng Nhập";
+            this.gridColumn37.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn37.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn37.FieldName = "SOLUONGNHAP";
             this.gridColumn37.Name = "gridColumn37";
             this.gridColumn37.Visible = true;
@@ -1433,6 +1436,8 @@
             // gridColumn38
             // 
             this.gridColumn38.Caption = "Giá Nhập";
+            this.gridColumn38.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn38.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn38.FieldName = "GIANHAP";
             this.gridColumn38.Name = "gridColumn38";
             this.gridColumn38.Visible = true;
@@ -1441,6 +1446,8 @@
             // gridColumn39
             // 
             this.gridColumn39.Caption = "Tổng Tiền Nhập";
+            this.gridColumn39.CustomizationCaption = "{0:0,0}";
+            this.gridColumn39.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn39.FieldName = "TONGTIEN";
             this.gridColumn39.Name = "gridColumn39";
             this.gridColumn39.Visible = true;
@@ -1594,6 +1601,8 @@
             // gridColumn17
             // 
             this.gridColumn17.Caption = "Tiền Phải Trả";
+            this.gridColumn17.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn17.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn17.FieldName = "TIENPHAITRA";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
@@ -1602,6 +1611,8 @@
             // gridColumn18
             // 
             this.gridColumn18.Caption = "Tiền Đã Trả";
+            this.gridColumn18.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn18.FieldName = "TIENDATRA";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
@@ -1610,6 +1621,8 @@
             // gridColumn19
             // 
             this.gridColumn19.Caption = "Tiền Nợ";
+            this.gridColumn19.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn19.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn19.FieldName = "TIENNO";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
@@ -1718,6 +1731,8 @@
             // gridColumn30
             // 
             this.gridColumn30.Caption = "Số Lượng Nhập";
+            this.gridColumn30.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn30.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn30.FieldName = "SOLUONGNHAP";
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1727,6 +1742,8 @@
             // gridColumn31
             // 
             this.gridColumn31.Caption = "Giá Nhập";
+            this.gridColumn31.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn31.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn31.FieldName = "GIANHAP";
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1736,6 +1753,8 @@
             // gridColumn41
             // 
             this.gridColumn41.Caption = "Thành Tiền";
+            this.gridColumn41.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn41.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn41.FieldName = "THANHTIEN";
             this.gridColumn41.Name = "gridColumn41";
             this.gridColumn41.Visible = true;
