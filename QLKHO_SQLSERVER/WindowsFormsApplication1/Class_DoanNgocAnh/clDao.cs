@@ -205,13 +205,22 @@ namespace WindowsFormsApplication1
            // String SQL = "select TENNHOMHANG,TENMH,MATHANG.MAKHO,TONKHO.MAMH,DONVITINH,NGAYTHANG,SOLUONGDAU,GIAMUA*SOLUONGDAU AS TONGTIENDAU,SOLUONGNHAP,SOLUONGNHAP*GIAMUA AS TONGTIENNHAP,SOLUONGXUAT,SOLUONGXUAT*GIABAN AS TONGTIENXUAT,SOLUONGTON,SOLUONGTON*GIAMUA AS TONGTIENTON FROM TONKHO,MATHANG,DONVITINH,NHOMHANG,KHO WHERE  MATHANG.MANH=NHOMHANG.MANH AND DONVITINH.MADVT=MATHANG.MADVT AND MATHANG.MAMH=TONKHO.MAMH "
            // + " AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MAKHO='"+dto.MAKHO +"' AND"
           //  + " NGAYTHANG BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "'";
+            string SQL1 = "";
+            if (dto.MAMH != "")
+            {
+                SQL1 = " AND MATHANG.MAMH='" + dto.MAMH + "'  ";
+            }
+            if (dto.MANCC != "")
+            {
+                SQL1 =SQL1+ " AND MATHANG.MANCC='" + dto.MANCC + "'  ";
+            }
 
             String SQL = "SELECT MATHANG.MAMH, TENMH, TENNHOMHANG, DONVITINH, TONDAU, NHAP, XUAT, TONCUOI, CAST(TONCUOI * GIAMUA AS  NUMERIC(18,0)) AS TONGTIEN, CAST((XUAT * GIABAN)- (NHAP * GIAMUA) AS  NUMERIC(18,0))  AS LOINHUAN FROM MATHANG, DONVITINH,NHOMHANG, "
             + " (SELECT  *, TONDAU+NHAP-XUAT AS TONCUOI FROM "
             +" (SELECT T1.MAMH, NHAP ,XUAT,"
             + " CASE WHEN TONDAU>0 THEN TONDAU ELSE (SELECT TONCUOI FROM (SELECT TOP 1 TONCUOI,STT   FROM TONKHO WHERE MAMH=T1.MAMH AND NGAY < '" + dto.NGAYBDKHO + "'  ORDER BY STT DESC ) AS TH) END AS TONDAU   "
             + " FROM (SELECT MATHANG.MAMH, SUM(NHAP) AS NHAP, SUM(XUAT) AS XUAT,TONDAU=(SELECT TOP 1 TONDAU FROM TONKHO WHERE NGAY BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' AND MATHANG.MAMH=TONKHO.MAMH ) "
-            + " FROM ( SELECT * FROM MATHANG WHERE MAKHO='" + PublicVariable.MAKHO + "') AS MATHANG, (SELECT * FROM TONKHO WHERE NGAY BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "')AS TONKHO WHERE  MATHANG.MAMH = TONKHO.MAMH GROUP BY MATHANG.MAMH ) AS T1) AS T2) AS T WHERE MATHANG.MAMH=T.MAMH AND MATHANG.MADVT=DONVITINH.MADVT AND MATHANG.MANH=NHOMHANG.MANH";
+            + " FROM ( SELECT * FROM MATHANG WHERE MAKHO='" + PublicVariable.MAKHO + "') AS MATHANG, (SELECT * FROM TONKHO WHERE NGAY BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "')AS TONKHO WHERE  MATHANG.MAMH = TONKHO.MAMH GROUP BY MATHANG.MAMH ) AS T1) AS T2) AS T WHERE MATHANG.MAMH=T.MAMH  " + SQL1 + " AND MATHANG.MADVT=DONVITINH.MADVT AND MATHANG.MANH=NHOMHANG.MANH";
             
            
             return getdata(SQL);
@@ -244,7 +253,12 @@ namespace WindowsFormsApplication1
 
         public DataTable getcpmuahangncc(clDTO dto)
         {
-            String SQL = "select NHACUNGCAP.MANCC,TENNCC,TENKV,SUM(TIENPHAITRA) AS CHIPHI FROM HOADONNHAP, NHACUNGCAP,KHUVUC WHERE KHUVUC.MAKV=NHACUNGCAP.MAKV AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' AND NHACUNGCAP.MANCC=HOADONNHAP.MANCC AND ngaynhap BETWEEN '" + dto.NGAYBD + "' AND '" + dto.NGAYKT + "' group by NHACUNGCAP.MANCC,TENNCC,TENKV";
+            string SQL1 = "";
+            if (dto.MANCC != "")
+            {
+                SQL1 = " AND NHACUNGCAP.MANCC='" + dto.MANCC + "'  ";
+            }
+            String SQL = "select NHACUNGCAP.MANCC,TENNCC,TENKV,SUM(TIENPHAITRA) AS CHIPHI FROM HOADONNHAP, NHACUNGCAP,KHUVUC WHERE KHUVUC.MAKV=NHACUNGCAP.MAKV AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' "+SQL1+" AND NHACUNGCAP.MANCC=HOADONNHAP.MANCC AND ngaynhap BETWEEN '" + dto.NGAYBD + "' AND '" + dto.NGAYKT + "' group by NHACUNGCAP.MANCC,TENNCC,TENKV";
             return getdata(SQL);
         }
         public DataTable getDoanhThungay(clDTO dto)
@@ -255,7 +269,12 @@ namespace WindowsFormsApplication1
         }
         public DataTable getDoanhThukh(clDTO dto)
         {
-            String SQL = "select KHACHHANG.MAKH,TENKH,SDT ,TENKV ,SUM(TIENPHAITRA) AS DOANHTHU FROM HOADONXUAT,KHACHHANG,KHUVUC WHERE KHUVUC.MAKV=KHACHHANG.MAKV AND KHACHHANG.MAKH=HOADONXUAT.MAKH AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' AND ngayxuat BETWEEN '" + dto.NGAYBD + "' AND '" + dto.NGAYKT + "' group by  KHACHHANG.MAKH,TENKH,SDT ,TENKV";
+            string SQL1 = "";
+            if (dto.MAKH != "")
+            {
+                SQL1 = " AND KHACHHANG.MAKH='" + dto.MAKH + "'  ";
+            }
+            String SQL = "select KHACHHANG.MAKH,TENKH,SDT ,TENKV ,SUM(TIENPHAITRA) AS DOANHTHU FROM HOADONXUAT,KHACHHANG,KHUVUC WHERE KHUVUC.MAKV=KHACHHANG.MAKV "+SQL1+" AND KHACHHANG.MAKH=HOADONXUAT.MAKH AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' AND ngayxuat BETWEEN '" + dto.NGAYBD + "' AND '" + dto.NGAYKT + "' group by  KHACHHANG.MAKH,TENKH,SDT ,TENKV";
             return getdata(SQL);
         }
         public DataTable getDoanhsonv(clDTO dto)
@@ -265,12 +284,23 @@ namespace WindowsFormsApplication1
         }
         public DataTable getcpmuahangsp(clDTO dto)
         {
-            String SQL = "select TENMH ,t1.MAMH,TENNHOMHANG,TENKHO,TIENPHAITRA from (select TENMH ,mathang.mamh,tennhomhang,tenkho FROM MATHANG,NHOMHANG,KHO WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO AND KHO.MAKHO='" + PublicVariable.MAKHO + "') as t1 LEFT JOIN (select  chitiethdn.MAMH,sum(soluongnhap*gianhap) as TIENPHAITRA from hoadonnhap, chitiethdn where hoadonnhap.MAHDN=chitiethdn.MAHDN AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "'   and ngaynhap  BETWEEN '" + dto.NGAYBD + "' AND '" + dto.NGAYKT + "'  group by MAMH) as t2 ON  t1.mamh=t2.mamh";
+            string SQL1 = "";
+            if (dto.MAMH != "")
+            {
+                SQL1 = " AND MATHANG.MAMH='" + dto.MAMH + "'  ";
+            }
+
+            String SQL = "select TENMH ,t1.MAMH,TENNHOMHANG,TENKHO,TIENPHAITRA from (select TENMH ,mathang.mamh,tennhomhang,tenkho FROM MATHANG,NHOMHANG,KHO WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO "+SQL1+" AND KHO.MAKHO='" + PublicVariable.MAKHO + "') as t1 LEFT JOIN (select  chitiethdn.MAMH,sum(soluongnhap*gianhap) as TIENPHAITRA from hoadonnhap, chitiethdn where hoadonnhap.MAHDN=chitiethdn.MAHDN AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "'   and ngaynhap  BETWEEN '" + dto.NGAYBD + "' AND '" + dto.NGAYKT + "'  group by MAMH) as t2 ON  t1.mamh=t2.mamh";
             return getdata(SQL);
         }
         public DataTable getDoanhsosp(clDTO dto)
         {
-            String SQL = "select TENMH ,t1.MAMH,TENNHOMHANG,TENKHO,DOANHSO from (select TENMH ,mathang.mamh,tennhomhang,tenkho FROM MATHANG,NHOMHANG,KHO WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO AND KHO.MAKHO='" + PublicVariable.MAKHO + "') as t1 LEFT JOIN (select  chitiethdx.MAMH,sum(soluongxuat*giatien) as doanhso from hoadonxuat, chitiethdx where hoadonxuat.MAHDX=chitiethdx.MAHDX   AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and ngayxuat  BETWEEN '" + dto.NGAYBD + "' AND '" + dto.NGAYKT + "'  group by MAMH) as t2 ON  t1.mamh=t2.mamh";
+            string SQL1 = "";
+            if (dto.MAMH != "")
+            {
+                SQL1 = " AND MATHANG.MAMH='" + dto.MAMH + "'  ";
+            }
+            String SQL = "select TENMH ,t1.MAMH,TENNHOMHANG,TENKHO,DOANHSO from (select TENMH ,mathang.mamh,tennhomhang,tenkho FROM MATHANG,NHOMHANG,KHO WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO "+SQL1+"  AND KHO.MAKHO='" + PublicVariable.MAKHO + "') as t1 LEFT JOIN (select  chitiethdx.MAMH,sum(soluongxuat*giatien) as doanhso from hoadonxuat, chitiethdx where hoadonxuat.MAHDX=chitiethdx.MAHDX   AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and ngayxuat  BETWEEN '" + dto.NGAYBD + "' AND '" + dto.NGAYKT + "'  group by MAMH) as t2 ON  t1.mamh=t2.mamh";
             return getdata(SQL);
         }
         public DataTable testLogin(clDTO dto)

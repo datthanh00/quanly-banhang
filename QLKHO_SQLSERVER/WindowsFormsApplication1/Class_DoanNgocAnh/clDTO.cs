@@ -6,6 +6,7 @@ namespace WindowsFormsApplication1
     {
         //------------------------Thong tin cong ty
         private String _MACT;
+        private String _MANCC;
         private String _GHICHU;
         private String _TENCT;
         private String _DIACHI;
@@ -21,6 +22,19 @@ namespace WindowsFormsApplication1
         {
             get { return _MACT; }
             set { _MACT = value; }
+        }
+        private String _MAKH;
+        public String MAKH
+        {
+            get { return _MAKH; }
+            set { _MAKH = value; }
+        }
+
+      
+        public String MANCC
+        {
+            get { return _MANCC; }
+            set { _MANCC = value; }
         }
         public String GHICHU
         {

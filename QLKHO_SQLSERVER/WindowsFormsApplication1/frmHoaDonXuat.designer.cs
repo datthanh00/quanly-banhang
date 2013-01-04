@@ -182,6 +182,7 @@
             this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkIntheomathang = new System.Windows.Forms.ToolStripMenuItem();
+            this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -1437,16 +1438,16 @@
             // 
             // gridColumn37
             // 
-            this.gridColumn37.Caption = "Nhóm Hàng";
-            this.gridColumn37.FieldName = "TENNHOMHANG";
+            this.gridColumn37.Caption = "Nhà Cung Cấp";
+            this.gridColumn37.FieldName = "TENNCC";
             this.gridColumn37.Name = "gridColumn37";
             this.gridColumn37.Visible = true;
             this.gridColumn37.VisibleIndex = 2;
             // 
             // gridColumn38
             // 
-            this.gridColumn38.Caption = "Kho Hàng";
-            this.gridColumn38.FieldName = "TENKHO";
+            this.gridColumn38.Caption = "KL DVT";
+            this.gridColumn38.FieldName = "KLDVT";
             this.gridColumn38.Name = "gridColumn38";
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 3;
@@ -1663,6 +1664,7 @@
             this.gridColumn29,
             this.gridColumn30,
             this.gridColumn31,
+            this.gridColumn45,
             this.gridColumn32,
             this.gridColumn33,
             this.gridColumn44,
@@ -1698,8 +1700,6 @@
             this.gridColumn34.FieldName = "MAHDX";
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 0;
             // 
             // gridColumn27
             // 
@@ -1708,7 +1708,7 @@
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 1;
+            this.gridColumn27.VisibleIndex = 0;
             // 
             // gridColumn28
             // 
@@ -1717,7 +1717,7 @@
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 2;
+            this.gridColumn28.VisibleIndex = 1;
             // 
             // gridColumn29
             // 
@@ -1733,7 +1733,7 @@
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn30.Visible = true;
-            this.gridColumn30.VisibleIndex = 3;
+            this.gridColumn30.VisibleIndex = 2;
             // 
             // gridColumn31
             // 
@@ -1742,7 +1742,7 @@
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 4;
+            this.gridColumn31.VisibleIndex = 3;
             // 
             // gridColumn32
             // 
@@ -1768,7 +1768,7 @@
             this.gridColumn44.FieldName = "THANHTIEN";
             this.gridColumn44.Name = "gridColumn44";
             this.gridColumn44.Visible = true;
-            this.gridColumn44.VisibleIndex = 8;
+            this.gridColumn44.VisibleIndex = 7;
             // 
             // gridColumn43
             // 
@@ -1777,7 +1777,7 @@
             this.gridColumn43.Name = "gridColumn43";
             this.gridColumn43.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn43.Visible = true;
-            this.gridColumn43.VisibleIndex = 7;
+            this.gridColumn43.VisibleIndex = 8;
             // 
             // contextMenuStrip2
             // 
@@ -1808,6 +1808,14 @@
             this.linkIntheomathang.Size = new System.Drawing.Size(168, 22);
             this.linkIntheomathang.Text = "In theo mặt hàng";
             this.linkIntheomathang.Click += new System.EventHandler(this.linkIntheomathang_Click);
+            // 
+            // gridColumn45
+            // 
+            this.gridColumn45.Caption = "Nhà Cung Cấp";
+            this.gridColumn45.FieldName = "TENNCC";
+            this.gridColumn45.Name = "gridColumn45";
+            this.gridColumn45.Visible = true;
+            this.gridColumn45.VisibleIndex = 4;
             // 
             // frmHoaDonXuat
             // 
@@ -2071,6 +2079,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
         private System.Windows.Forms.ToolStripMenuItem linkIntheomathang;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn44;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn45;
     }
     
 }

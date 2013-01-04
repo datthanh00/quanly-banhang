@@ -26,6 +26,13 @@ namespace WindowsFormsApplication1
             get { return _STT; }
             set { _STT = value; }
         }
+        private string _KLDVT;
+
+        public string  KLDVT
+        {
+            get { return _KLDVT; }
+            set { _KLDVT = value; }
+        }
 
         private int _TONDAU;
 

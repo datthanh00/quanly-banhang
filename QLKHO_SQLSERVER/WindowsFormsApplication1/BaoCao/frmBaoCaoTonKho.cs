@@ -66,8 +66,27 @@ namespace WindowsFormsApplication1
 
                 loadReSEG();
                 loadcbEgLish();
-            } 
+            }
+            load_cbhanghoa();
            // loadGird();
+        }
+        private void load_cbhanghoa()
+        {
+            Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
+            cbsanpham.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbsanpham.Properties.DisplayMember = "TENMH";
+            cbsanpham.Properties.ValueMember = "MAMH";
+            cbsanpham.Properties.View.BestFitColumns();
+            cbsanpham.Properties.PopupFormWidth = 200;
+            cbsanpham.Properties.DataSource = ctr1.dtGetsanpham2();
+
+            cbncc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbncc.Properties.DisplayMember = "TENNCC";
+            cbncc.Properties.ValueMember = "MANCC";
+            cbncc.Properties.View.BestFitColumns();
+            cbncc.Properties.PopupFormWidth = 200;
+            cbncc.Properties.DataSource = ctr1.dtGetNCC();
+
         }
         DataView dvdropdow;
         private void loadReSVN()
@@ -153,6 +172,28 @@ namespace WindowsFormsApplication1
             dto.NGAYKTKHO = NGAYKT;
         
             gridControl2.MainView = advBandedGridView3;
+
+
+            if (cbsanpham.Text != "")
+            {
+                dto.MAMH = gridsanpham.GetFocusedRowCellValue("MAMH").ToString();
+                gridsanpham.ClearSelection();
+                cbsanpham.Text = "";
+            }
+            else
+            {
+                dto.MAMH = "";
+            }
+            if (cbncc.Text != "")
+            {
+                dto.MANCC = gridncc.GetFocusedRowCellValue("MANCC").ToString();
+                gridncc.ClearSelection();
+                cbncc.Text = "";
+            }
+            else
+            {
+                dto.MANCC = "";
+            }
             gridControl2.DataSource = ctr.getTonKho(dto);
             //dt = ctr.getTonKho(dto);
             
