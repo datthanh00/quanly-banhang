@@ -30,6 +30,7 @@ namespace WindowsFormsApplication1
         public _deDongTab deDongTab;
         public int iNgonNgu;
         public frmMain frm;
+        DataTable tbsanpham;
         private void btDong_Click(object sender, EventArgs e)
         {
             deDongTab();
@@ -50,14 +51,12 @@ namespace WindowsFormsApplication1
             //loadGiaoDich();
             loadgridNhacCungCap();
             loadgridNhanVien();
-            loaddridmathang();
-            loadgridthue();
-            loaddridDVT();
+   
             loadmahdn();
             cboNhanVienLap.Text = sMaNV;
             loadGiaoDich();
             loadgridCTHOADON();
-            loadGrid_sanpham();
+           
             Load_panel_create();
             dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
             dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
@@ -201,46 +200,21 @@ namespace WindowsFormsApplication1
 
         }
         
-        public void loadGrid_sanpham()
+        public void loadGrid_sanpham(string MAHDN)
         {
-            Grid_sanpham.DataSource = ctlNCC.GETMMH();
+            tbsanpham = ctlNCC.GETMMHN(MAHDN); ;
+            Grid_sanpham.DataSource = tbsanpham;
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "MAMH";
-           
         }
         public void loadgridNhacCungCap()
         {
             
-            cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboTenNCC.Properties.DataSource = dtvNCC;
-            cboTenNCC.Properties.DisplayMember = "TENNCC";
-            cboTenNCC.Properties.ValueMember = "MANCC";
-            cboTenNCC.Properties.View.BestFitColumns();
-            cboTenNCC.Properties.PopupFormWidth = 300;
-            cboTenNCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
-            //dtoNCC.TENNCC = gridNCC.GetFocusedRowCellValue("TENNCC").ToString();
-            cboMANCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboMANCC.Properties.DataSource = dtvNCC;
-            cboMANCC.Properties.DisplayMember = "MANCC";
-            cboMANCC.Properties.ValueMember = "MANCC";
-            cboMANCC.Properties.View.BestFitColumns();
-            cboMANCC.Properties.PopupFormWidth = 300;
-            cboMANCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
-          
         }
         public void loadgridNhacCungCap(String MANCC)
         {
           
-            cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboTenNCC.Properties.DataSource = dtvNCC;
-            cboTenNCC.Properties.DisplayMember = "TENNCC";
-            cboTenNCC.Properties.ValueMember = "MANCC";
-            cboTenNCC.Properties.View.BestFitColumns();
-            cboTenNCC.Properties.PopupFormWidth = 300;
-            DataTable dt=ctlNCC.GETDANHSACHNCC(MANCC);
-            cboTenNCC.Properties.DataSource = dt;
-           // cboTenNCC.SelectedText = dt.Rows[0]["TENNCC"].ToString();
-            cboTenNCC.Text = dt.Rows[0]["MANCC"].ToString();
+          
       
         }
         public void loadgridNhanVien()
@@ -254,42 +228,7 @@ namespace WindowsFormsApplication1
             cboNhanVienLap.Properties.DataSource = ctlNCC.GETNV();
             dtoNCC.MANV = gridNV.GetFocusedRowCellValue("MANV").ToString();
         }
-        public void loaddridmathang()
-        {
-           /* cboMaMatHang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboMaMatHang.Properties.DataSource = dtvMH;
-            cboMaMatHang.Properties.DisplayMember = "MAMH";
-            cboMaMatHang.Properties.ValueMember = "TENMH";
-            cboMaMatHang.Properties.View.BestFitColumns();
-            cboMaMatHang.Properties.PopupFormWidth = 300;
-            cboMaMatHang.Properties.DataSource = ctlNCC.GETMATHANG();
-            dtoNCC.MAMH = gridMH.GetFocusedRowCellValue("MAMH").ToString();
-            */ 
-        }
-        public void loadgridthue()
-        {
-            /*cboThue.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboThue.Properties.DataSource = dtvMH;
-            cboThue.Properties.DisplayMember = "SOTHUE";
-            cboThue.Properties.ValueMember = "MATH";
-            cboThue.Properties.View.BestFitColumns();
-            cboThue.Properties.PopupFormWidth = 300;
-            cboThue.Properties.DataSource = ctlNCC.GETTHUE();
-            dtoNCC.MATH = gridTHUE.GetFocusedRowCellValue("MATH").ToString();
-            */
-        }
-        public void loaddridDVT()
-        {
-            /*cboDVT.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboDVT.Properties.DataSource = dtvDVT;
-            cboDVT.Properties.DisplayMember = "DONVITINH";
-            cboDVT.Properties.ValueMember = "MADVT";
-            cboDVT.Properties.View.BestFitColumns();
-            cboDVT.Properties.PopupFormWidth = 300;
-            cboDVT.Properties.DataSource = ctlNCC.GETDVT();
-            dtoNCC.MADVT = gridDVT.GetFocusedRowCellValue("MADVT").ToString();
-             */ 
-        }
+
  
 
         private void cboTenNCC_Validated(object sender, EventArgs e)
@@ -299,25 +238,8 @@ namespace WindowsFormsApplication1
         public void Load_TTNCC()
         {
 
-            DataRow rowselect = gridView3.GetFocusedDataRow();
-
-            if (rowselect != null)
-            {
-                cboMANCC.Text = gridView3.GetFocusedRowCellValue("MANCC").ToString();
-                txtSoDT.Text = gridView3.GetFocusedRowCellValue("SDT").ToString();
-                txtFax.Text = gridView3.GetFocusedRowCellValue("FAX").ToString();
-                txtEmail.Text = gridView3.GetFocusedRowCellValue("EMAIL").ToString();
-                dtoNCC.MANCC = cboMANCC.Text;
-                DataTable tblayno = ctlNCC.LAYTIENNO(dtoNCC);
-                if (tblayno.Rows.Count > 0)
-                {
-                    txtNo.Text = tblayno.Rows[0]["TIENNO"].ToString();
-                }
-                else
-                {
-                    txtNo.Text = "0";
-                }
-            }
+            
+           
         }
         
 
@@ -334,13 +256,9 @@ namespace WindowsFormsApplication1
         }
         public void Create_new(){
             loadgridNhacCungCap();
-            cboMANCC.Text = "";
-            cboTenNCC.Text = "";
-            txtSoDT.Text = "";
-            txtFax.Text = "";
-            txtEmail.Text = "";
+            tbmahdn.Text = "";
             txtMaHD.Text = "";
-            txtNo.Text = "";
+           
 
          
             loadmahdn();
@@ -356,17 +274,23 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                if (cboMANCC.Text == "")
+                if (tbmahdn.Text == "")
                 {
-                    XtraMessageBox.Show("Vui lòng chọn Mã Nhà Cung Cấp");
+                    XtraMessageBox.Show("Vui lòng điền mã hóa đơn nhập");
+                    tbmahdn.Focus();
+                    return;
                 }
                 else
                 {
-                    dtoNCC.MANCC = cboMANCC.Text;
-                    dtoNCC.TENNCC = cboTenNCC.Text;
-                    dtoNCC.SDT = txtSoDT.Text;
-                    dtoNCC.FAX = txtFax.Text;
-                    dtoNCC.EMAIL = txtEmail.Text;
+                    String SQL = "Select mahdn,mancc From hoadonnhap where mahdn='" + tbmahdn.Text + "' and makho='" + PublicVariable.MAKHO + "'";
+                    DataTable dt = ctlNCC.GETDATA(SQL);
+                    if (dt.Rows.Count <= 0)
+                    {
+                        XtraMessageBox.Show("Không có mã hóa đơn này");
+                        tbmahdn.Focus();
+                        return;
+                    }
+                    dtoNCC.MANCC = dt.Rows[0]["mancc"].ToString();
                     dtoNCC.GHICHU = textBoxX1.Text;
                     dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                     dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
@@ -379,8 +303,27 @@ namespace WindowsFormsApplication1
                     int rowcount = gridCTHOADON.DataRowCount;
                     if (rowcount == 0)
                     {
-                        XtraMessageBox.Show("Hãy chọn một sản phẩm trước khi lưu");
+                        XtraMessageBox.Show("Hãy chọn một sản phẩm trả trước khi lưu");
                         return;
+                    }
+                    
+                    for (int i = 0; i < rowcount; i++)
+                    {
+                        DataRow dtr = gridCTHOADON.GetDataRow(i);
+                        int soluongtra = Convert.ToInt32(dtr["_SoLuong"].ToString());
+                        int soluongnhap=0;
+                        for (int j = 0; j < tbsanpham.Rows.Count; j++)
+                        {
+                            if (tbsanpham.Rows[j]["MAMH"].ToString() == dtr["_MaMH"].ToString())
+                            {
+                                soluongnhap = soluongnhap + Convert.ToInt32(tbsanpham.Rows[j]["SOLUONGNHAP"].ToString());
+                            }
+                        }
+                        if (soluongnhap < soluongtra)
+                        {
+                            MessageBox.Show("mã hàng này: " + dtr["_MaMH"].ToString() + "  không được trả nhiều hơn so với hóa đơn");
+                            return;
+                        }
                     }
 
                     dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
@@ -406,11 +349,10 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        if (PublicVariable.SUA == "False")
-                        {
+                        
                             MessageBox.Show("KHÔNG CÓ QUYỀN  ");
                             return;
-                        }
+                        
 
                         dtoNCC.IsUPDATE = true;
                         ctlNCC.UPDATEtraHOADONNHAP(dtoNCC);
@@ -473,12 +415,32 @@ namespace WindowsFormsApplication1
         {
             try
             {
+
+                string SQL = "SELECT ID,soluongnhap FROM CHITIETHDN WHERE MAHDN='" + tbmahdn.Text + "' AND MAMH='" + mamh + "' AND SOLUONGNHAP >=" + SoLuong;
+                DataTable dt = ctlNCC.GETDATA(SQL);
+                if (dt.Rows.Count <= 0)
+                {
+                    MessageBox.Show("Số lượng mã hàng: "+mamh+" này không dược lớn hơn số lượng nhập ");
+                    return;
+                }
+                
+                int soluongupdate=Convert.ToInt32(dt.Rows[0]["soluongnhap"].ToString())- SoLuong;
+                dtoNCC.MAHDN = tbmahdn.Text;
+                dtoNCC.MAMH = mamh;
+                dtoNCC.SOLUONGNHAP = soluongupdate;
+                dtoNCC.GIANHAP = DonGia;
+                dtoNCC.ID = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
+                ctlNCC.UPDATECTHOADONNHAP(dtoNCC);
+
+
+
+
                 dtoNCC.MAHDN = mahdn;
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGNHAP = SoLuong;
                 dtoNCC.GIANHAP = DonGia;
-                string SQL = "SELECT MAX(ID) FROM traCHITIETHDN WHERE MAHDN='" + mahdn + "'";
-                DataTable dt = ctlNCC.GETDATA(SQL);
+                SQL = "SELECT MAX(ID) FROM traCHITIETHDN WHERE MAHDN='" + mahdn + "'";
+                dt = ctlNCC.GETDATA(SQL);
                 dtoNCC.ID = 1;
                 if (dt.Rows[0][0].ToString() != "")
                 {
@@ -555,7 +517,7 @@ namespace WindowsFormsApplication1
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETtraCTHOADONNHAP(txtMaHD.Text);
 
-                    In rep = new In(dt, cboMANCC.Text, cboTenNCC.Text, double.Parse(cbotientra.Text), double.Parse(txtNo.Text), double.Parse(txtthanhtien.Text), txtMaHD.Text,ten);
+                    In rep = new In(dt, "", "", double.Parse(cbotientra.Text), 0, double.Parse(txtthanhtien.Text), txtMaHD.Text,ten);
                     rep.ShowPreviewDialog();
                 }
                 else
@@ -948,6 +910,43 @@ namespace WindowsFormsApplication1
                 loadgridTONGSANPHAM();
             }
         }
+
+        private void tbmahdn_Validated_1(object sender, EventArgs e)
+        {
+            kiemtramahd();
+        }
+
+        private void tbmahdn_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                kiemtramahd();
+            }
+        }
+
+        public void kiemtramahd()
+        {
+            if (tbmahdn.Text == "")
+                {
+                    XtraMessageBox.Show("Vui lòng điền mã hóa đơn nhập");
+                    tbmahdn.Focus();
+                    return;
+                }
+               
+            String SQL = "Select mahdn From hoadonnhap where mahdn='" + tbmahdn.Text + "' and makho='"+PublicVariable.MAKHO+"'";
+            DataTable dt = ctlNCC.GETDATA(SQL);
+            if (dt.Rows.Count <= 0)
+            {
+                tbmahdn.Text = "";
+                XtraMessageBox.Show("Không có mã hóa đơn này");
+                tbmahdn.Focus();
+                return;
+            }
+
+            loadGrid_sanpham(tbmahdn.Text);
+            loadgridCTHOADON();
+        }
+
 
         
 

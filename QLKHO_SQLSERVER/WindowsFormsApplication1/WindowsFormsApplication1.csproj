@@ -77,6 +77,18 @@
     <Reference Include="DevExpress.XtraScheduler.v10.1.Core, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraVerticalGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Interop.Excel, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Documents and Settings\Administrator\Desktop\Import2DatabaseFromExcel\Import2DataBaseFormExcel\Import2DataBaseFormExcel\bin\Debug\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Documents and Settings\Administrator\Desktop\Import2DatabaseFromExcel\Import2DataBaseFormExcel\Import2DataBaseFormExcel\bin\Debug\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.VBIDE, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Documents and Settings\Administrator\Desktop\Import2DatabaseFromExcel\Import2DataBaseFormExcel\Import2DataBaseFormExcel\bin\Debug\Interop.VBIDE.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.Smo, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
@@ -194,6 +206,13 @@
       <DependentUpon>thongketonghop.cs</DependentUpon>
     </Compile>
     <Compile Include="class\PublicVariable.cs" />
+    <Compile Include="class_import\import.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="class_import\import.Designer.cs">
+      <DependentUpon>import.cs</DependentUpon>
+    </Compile>
+    <Compile Include="class_import\importexcell.cs" />
     <Compile Include="class_ManhCuong\HoaDon.cs" />
     <Compile Include="CongNo\frmCongNoKH.cs">
       <SubType>Form</SubType>
@@ -556,6 +575,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BoPhan\frmBoPhan.resx">
       <DependentUpon>frmBoPhan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="class_import\import.resx">
+      <DependentUpon>import.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHoaDonXuat.resx">
@@ -1086,6 +1109,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AddResources\" />

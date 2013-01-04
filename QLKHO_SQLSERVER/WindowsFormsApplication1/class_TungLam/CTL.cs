@@ -272,6 +272,14 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMMH();
         }
+        public DataTable GETMMHN(string MAHDN)
+        {
+            return DAO.GETMMHN(MAHDN);
+        }
+        public DataTable GETMMHX(string MAHDX)
+        {
+            return DAO.GETMMHX(MAHDX);
+        }
         public DataTable GETDATA(string SQL)
         {
             return DAO.GET_DATA(SQL);

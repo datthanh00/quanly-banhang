@@ -9,9 +9,8 @@ namespace WindowsFormsApplication1
     {
         public void ReStore(clDTO DTO)
         {
-            List<SqlParameter> sqlpa = new List<SqlParameter>();
-            sqlpa.Add(new SqlParameter("@TENFILE", DTO.TENFILE));
-            ChayProc("RESTORE_DATABASE", sqlpa);
+            string SQL = "RESTORE DATABASE [XUAT_NHAPTON] FROM  DISK = N'"+DTO.TENFILE+"'";
+            executeNonQuery(SQL);
         }
     }
 }

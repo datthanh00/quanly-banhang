@@ -18,6 +18,7 @@ using DevExpress.XtraEditors;
 using WindowsFormsApplication1.HoaDonXuat;
 using System.Diagnostics;
 using WindowsFormsApplication1.KHtra;
+using WindowsFormsApplication1.class_import;
 //using DoanCuoi;
 
 
@@ -1919,6 +1920,32 @@ namespace WindowsFormsApplication1
                 t.Name = "LOG";
                 frmLog dt = new frmLog();
                 dt.deDongTab = new frmLog._deDongTab(vDOngTab);
+
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
+        }
+
+        private void barButtonItem1_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            SetPhanQuyen("23");
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            bKTraMoTab = true;
+
+            sTieuDe = "import dữ liệu bằng excell";
+
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "import_excell";
+                import dt = new import();
+                dt.deDongTab = new import._deDongTab(vDOngTab);
 
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
