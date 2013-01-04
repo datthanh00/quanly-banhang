@@ -148,6 +148,7 @@ namespace WindowsFormsApplication1
                 gridControl1.DataSource = null;
             }
             ISXEMCLICK = false;
+            gridView2.BestFitColumns();
         }
         private void loadGird3()
         {
@@ -254,6 +255,7 @@ namespace WindowsFormsApplication1
             }
             ISXEMCLICK = false;
             gridView7.RefreshData();
+            gridView7.BestFitColumns();
             gridControl1.RefreshDataSource();
         }
         private void loadGird_thekho()
@@ -290,16 +292,7 @@ namespace WindowsFormsApplication1
             dto.NGAYKTKHO = NGAYKT;
 
            // dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
-            if (cbsanpham.Text != "")
-            {
-                dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
-                gridcbmathang.ClearSelection();
-                cbsanpham.Text = "";
-            }
-            else
-            {
-                dto.MAMH = "";
-            }
+
             //dto.MAKHO = cbkho.Text;
             //dto.MAMH = cbsanpham.Text;
 
@@ -320,6 +313,7 @@ namespace WindowsFormsApplication1
             //gridView6.Columns["Ngày"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
 
             gridView8.ExpandAllGroups();
+            gridView8.BestFitColumns();
 
         }
         private void loadGird_chitiethanghoa()
@@ -376,6 +370,7 @@ namespace WindowsFormsApplication1
            // gridView6.Columns["ngaythang"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
 
             gridView9.ExpandAllGroups();
+            gridView9.BestFitColumns();
 
         }
        

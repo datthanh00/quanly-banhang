@@ -736,7 +736,6 @@
             this.tbmahdx.Name = "tbmahdx";
             this.tbmahdx.Size = new System.Drawing.Size(118, 20);
             this.tbmahdx.TabIndex = 25;
-      
             this.tbmahdx.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbmahdx_KeyPress_1);
             this.tbmahdx.Validated += new System.EventHandler(this.tbmahdx_Validated_1);
             // 
@@ -992,6 +991,7 @@
             this.gridCTHOADON.Name = "gridCTHOADON";
             this.gridCTHOADON.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridCTHOADON.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridCTHOADON.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.gridCTHOADON.OptionsSelection.InvertSelection = true;
             this.gridCTHOADON.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridCTHOADON.OptionsView.ShowFooter = true;
