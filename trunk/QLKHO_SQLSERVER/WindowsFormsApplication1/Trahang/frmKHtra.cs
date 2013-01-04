@@ -179,7 +179,7 @@ namespace WindowsFormsApplication1.KHtra
                 else
                 {
 
-                    String SQL = "Select mahdx,mancc From hoadonxuat where mahdx='" + tbmahdx.Text + "' and makho='" + PublicVariable.MAKHO + "'";
+                    String SQL = "Select mahdx,MAKH From hoadonxuat where mahdx='" + tbmahdx.Text + "' and makho='" + PublicVariable.MAKHO + "'";
                     DataTable dt = ctlNCC.GETDATA(SQL);
                     if (dt.Rows.Count <= 0)
                     {
@@ -188,7 +188,7 @@ namespace WindowsFormsApplication1.KHtra
                         return;
                     }
 
-            dtoNCC.MANCC = dt.Rows[0]["mancc"].ToString();
+            dtoNCC.MAKH = dt.Rows[0]["MAKH"].ToString();
             dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
             dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
             dtoNCC.MAHDX = txtMaHD.Text;
@@ -212,7 +212,7 @@ namespace WindowsFormsApplication1.KHtra
                 DataRow dtr = gridCTHOADON.GetDataRow(i);
                 int soluongtra = Convert.ToInt32(dtr["_SoLuong"].ToString());
                 int soluongxuat = 0;
-                for (int j = 0; j < tbsanpham.Rows.Count; i++)
+                for (int j = 0; j < tbsanpham.Rows.Count; j++)
                 {
                     if (tbsanpham.Rows[j]["MAMH"].ToString() == dtr["_MaMH"].ToString())
                     {
@@ -322,7 +322,7 @@ namespace WindowsFormsApplication1.KHtra
                 dtoNCC.SOLUONGXUAT = soluongupdate;
                 dtoNCC.GIATIEN = DonGia;
                 dtoNCC.ID = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
-                ctlNCC.UPDATECTHOADONNHAP(dtoNCC);
+                ctlNCC.UPDATECTHOADONXUAT(dtoNCC);
 
 
                 dtoNCC.MAHDX = mahdx;
@@ -489,7 +489,7 @@ namespace WindowsFormsApplication1.KHtra
             NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
             dtoNCC.NGAYKT = NGAYKT;
             Load_panel_filter();
-            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) AS NGAYXUAT,T1.MAHDX ,T1.TENKH ,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA)AS TONGTIEN ,T1.GHICHU  FROM (select t9.*,t8.tenkh from TRAHOADONXUAT   as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
+            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) AS NGAYXUAT,T1.MAHDX ,T1.TENKH ,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA)AS TONGTIEN ,T1.GHICHU  FROM (select t9.*,t8.tenkh from TRAHOADONXUAT   as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  t9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
             
             
 
@@ -511,7 +511,7 @@ namespace WindowsFormsApplication1.KHtra
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT convert(varchar,T3.NGAYXUAT,103) AS NGAYXUAT,T3.TENKH ,T3.MAHDX , T3.MAMH , T4.TENMH ,T3.SOLUONGXUAT ,T3.GIATIEN,soluongxuat*giatien AS THANHTIEN, GHICHU   FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,GHICHU,t2.tenkh FROM (SELECT * FROM TRACHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh,GHICHU from TRAHOADONXUAT  as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH";
+            string SQL = "SELECT convert(varchar,T3.NGAYXUAT,103) AS NGAYXUAT,T3.TENKH ,T3.MAHDX , T3.MAMH , T4.TENMH ,T3.SOLUONGXUAT ,T3.GIATIEN,soluongxuat*giatien AS THANHTIEN,TENNCC, GHICHU   FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,GHICHU,t2.tenkh FROM (SELECT * FROM TRACHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh,GHICHU from TRAHOADONXUAT  as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  t9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN (SELECT TENMH,MAMH,TENNCC FROM MATHANG,NHACUNGCAP WHERE NHACUNGCAP.MANCC=MATHANG.MANCC) AS T4 ON T3.MAMH =T4.MAMH";
             
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
@@ -535,7 +535,7 @@ namespace WindowsFormsApplication1.KHtra
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNHOMHANG, TENKHO, DONVITINH, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN, SUM(SOLUONGXUAT*GIATIEN) AS TONGTIEN FROM MATHANG,NHOMHANG,KHO,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN FROM TRACHITIETHDX, TRAHOADONXUAT WHERE TRACHITIETHDX.MAHDX=TRAHOADONXUAT.MAHDX AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDX WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDX.MAMH AND KHO.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNHOMHANG, TENKHO, DONVITINH,GIATIEN";
+            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNHOMHANG, TENNCC,KLDVT, DONVITINH, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN, SUM(SOLUONGXUAT*GIATIEN) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN FROM TRACHITIETHDX, TRAHOADONXUAT WHERE TRACHITIETHDX.MAHDX=TRAHOADONXUAT.MAHDX AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDX WHERE MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNHOMHANG, TENNCC, DONVITINH,GIATIEN,KLDVT";
            
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
@@ -877,6 +877,8 @@ namespace WindowsFormsApplication1.KHtra
             loadgridCTHOADON();
             
         }
+
+
 
    
 

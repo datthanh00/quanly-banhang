@@ -29,7 +29,7 @@ namespace WindowsFormsApplication1
         {
             iNgonNgu = 0;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-            lbnhomhang.Text = LamVN.NHOMHANG.ToString();
+           // lbnhomhang.Text = LamVN.NHOMHANG.ToString();
             lbtenmh.Text = LamVN.TENMH.ToString();
             lbmamh.Text = LamVN.MAMH.ToString();
             lbDVT.Text = LamVN.DVT.ToString();
@@ -44,7 +44,7 @@ namespace WindowsFormsApplication1
             btDong.Text = LamVN.DONG.ToString();
             colmadvt.Caption = LamVN.MADVT.ToString();
             coldvt.Caption = LamVN.DVT.ToString();
-            colghichu.Caption = LamVN.GHICHU.ToString();
+           // colghichu.Caption = LamVN.GHICHU.ToString();
             colmanh.Caption = LamVN.MANH.ToString();
             colten.Caption = LamVN.TENNHOMHANG.ToString();
             colmathue.Caption = LamVN.MATH.ToString();
@@ -56,7 +56,7 @@ namespace WindowsFormsApplication1
         {
             iNgonNgu = 1;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-            lbnhomhang.Text = LamEL.NHOMHANG.ToString();
+          //  lbnhomhang.Text = LamEL.NHOMHANG.ToString();
             lbtenmh.Text = LamEL.TENMH.ToString();
             lbmamh.Text = LamEL.MAMH.ToString();
             lbDVT.Text = LamEL.DVT.ToString();
@@ -73,7 +73,7 @@ namespace WindowsFormsApplication1
             btDong.Text = LamEL.DONG.ToString();
             colmadvt.Caption = LamEL.MADVT.ToString();
             coldvt.Caption = LamEL.DVT.ToString();
-            colghichu.Caption = LamEL.GHICHU.ToString();
+           // colghichu.Caption = LamEL.GHICHU.ToString();
             colmanh.Caption = LamEL.MANH.ToString();
             colten.Caption = LamEL.TENNHOMHANG.ToString();
             colmathue.Caption = LamEL.MATH.ToString();
@@ -82,7 +82,7 @@ namespace WindowsFormsApplication1
            
             this.Text = "Form Insert && Update Products";
         }
-        public string MANHOMHANG, TENMATHANG, MAMH, DVT ,TINHTRANG, HINHANH, MASOTHUE, GIABAN, GIANUA, SOLUONG,MOTA,HANSUDUNG,MAKHO;
+        public string MANHOMHANG, MANCC, TENMATHANG, MAMH, DVT, TINHTRANG, HINHANH, MASOTHUE, GIABAN, GIANUA, SOLUONG, MOTA, HANSUDUNG, MAKHO, MADVT,KLDVT;
         DataView dvdropdow;
         public void loadgirdlookupTHUE()
         {
@@ -110,29 +110,23 @@ namespace WindowsFormsApplication1
 
 
         }
-        public void loadgirdlookupNH()
+        public void loadgirdlookupNCC()
         {
 
             cbNhomHang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cbNhomHang.Properties.DataSource = dvdropdow;
-            cbNhomHang.Properties.DisplayMember = "TENNHOMHANG";
-            cbNhomHang.Properties.ValueMember = "MANH";
+            cbNhomHang.Properties.DisplayMember = "TENNCC";
+            cbNhomHang.Properties.ValueMember = "MANCC";
             cbNhomHang.Properties.View.BestFitColumns();
             cbNhomHang.Properties.PopupFormWidth = 300;
-            cbNhomHang.Properties.DataSource = CTL.GETNHOMHANG();
+            cbNhomHang.Properties.DataSource = CTL.GETNCC();
 
 
         }
         public void LoadKhoHang()
         {
             
-            gKhoHang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            gKhoHang.Properties.DataSource = dvdropdow;
-            gKhoHang.Properties.DisplayMember = "TENKHO";
-            gKhoHang.Properties.ValueMember = "MAKHO";
-            gKhoHang.Properties.View.BestFitColumns();
-            gKhoHang.Properties.PopupFormWidth = 300;
-            gKhoHang.Properties.DataSource = CTL.GETKHO();
+           
 
 
         }
@@ -171,18 +165,22 @@ namespace WindowsFormsApplication1
                     groupControl1.Enabled = false;
                 }
                 LoadKhoHang();
-                loadgirdlookupNH();
+                loadgirdlookupNCC();
                 loadgirdlookupDVT();
                 loadgirdlookupTHUE();
+
                 txtMaMH.Text = MAMH;
-                cbthue.Text = MASOTHUE;
-                cbNhomHang.Text = MANHOMHANG;
-                gKhoHang.Text = MAKHO;
                 txtTenMH.Text = TENMATHANG;
+                cbNhomHang.Text = MANCC;
                 cbDvt.Text = DVT;
+                calKLDVT.Text = KLDVT;
+
+                cbthue.Text = MASOTHUE;
+                txthansudung.Text = HANSUDUNG;
+
                 txtSoLuong.Text = SOLUONG;
                 txtSoLuong.Enabled = false;
-                txthansudung.Text = HANSUDUNG;
+                
                 txtmota.Text = MOTA;
                 txtGiaBan.Text = GIABAN;
                 txtGiaMua.Text = GIANUA;
@@ -207,7 +205,7 @@ namespace WindowsFormsApplication1
                 groupControl1.Enabled = false;
             }
                 LoadKhoHang();
-                loadgirdlookupNH();
+                loadgirdlookupNCC();
                 loadgirdlookupDVT();
                 loadgirdlookupTHUE();
                 loadma();
@@ -251,12 +249,7 @@ namespace WindowsFormsApplication1
                         txtTenMH.Focus();
                         return;
                     }
-                    else if (gKhoHang.Text == "")
-                    {
-                        XtraMessageBox.Show("Vui lòng Nhập Kho Hàng");
-                        gKhoHang.Focus();
-                        return;
-                    }
+    
                     else if (cbDvt.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng Chọn Đơn Vị Tính ");
@@ -297,6 +290,12 @@ namespace WindowsFormsApplication1
                         cbthue.Focus();
                         return;
                     }
+                    else if (calKLDVT.Text == "")
+                    {
+                        XtraMessageBox.Show("Vui lòng điền khối lượng theo đơn vị tính ");
+                        cbthue.Focus();
+                        return;
+                    }
 
 
                     else
@@ -311,10 +310,11 @@ namespace WindowsFormsApplication1
                             DTO.MAMH = txtMaMH.Text;
                             DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
 
-                            DTO.MANH = gridLookUpEdit1View.GetFocusedRowCellValue("MANH").ToString();
-                            DTO.MAKHO = GRIDKHO.GetFocusedRowCellValue("MAKHO").ToString();
+                            DTO.MANCC = gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
+                            DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MADVT = gridView1.GetFocusedRowCellValue("MADVT").ToString();
+                            DTO.KLDVT = calKLDVT.Text;
                             DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = "";
                             DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
@@ -337,10 +337,11 @@ namespace WindowsFormsApplication1
                             //DTO.PICTURE = imageData;
                             DTO.MAMH = txtMaMH.Text;
                             DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
-                            DTO.MANH = gridLookUpEdit1View.GetFocusedRowCellValue("MANH").ToString();
+                            DTO.MANCC = gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
                             DTO.MADVT = gridView1.GetFocusedRowCellValue("MADVT").ToString();
+                            DTO.KLDVT = calKLDVT.Text;
                             DTO.TENMH = txtTenMH.Text;
-                            DTO.MAKHO = GRIDKHO.GetFocusedRowCellValue("MAKHO").ToString();
+                            DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.SOLUONGMH = int.Parse(txtSoLuong.Text).ToString();
                             DTO.HANSUDUNG = "";
                             DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
@@ -373,18 +374,8 @@ namespace WindowsFormsApplication1
                         txtTenMH.Focus();
                         return;
                     }
-                    else if (gKhoHang.Text == "")
-                    {
-                        XtraMessageBox.Show("Please Choose The Store Of Products");
-                        gKhoHang.Focus();
-                        return;
-                    }
-                    else if (cbDvt.Text == "")
-                    {
-                        XtraMessageBox.Show("Please Choose The Unit ID ");
-                        cbDvt.Focus();
-                        return;
-                    }
+
+  
                     else if (cbNhomHang.Text == "")
                     {
                         XtraMessageBox.Show("Please Choose The Group Product");
@@ -418,6 +409,12 @@ namespace WindowsFormsApplication1
                         txtSoLuong.Focus();
                         return;
                     }
+                    else if (calKLDVT.Text == "")
+                    {
+                        XtraMessageBox.Show("Vui lòng điền khối lượng theo đơn vị tính ");
+                        cbthue.Focus();
+                        return;
+                    }
 
                     else
                     {
@@ -430,11 +427,11 @@ namespace WindowsFormsApplication1
                             //    DTO.PICTURE = imageData;
                             DTO.MAMH = txtMaMH.Text;
                             DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
-                            DTO.MANH = gridLookUpEdit1View.GetFocusedRowCellValue("MANH").ToString();
+                            DTO.MANCC = gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
                             DTO.MADVT = gridView1.GetFocusedRowCellValue("MADVT").ToString();
-
+                            DTO.KLDVT = calKLDVT.Text;
                             DTO.TENMH = txtTenMH.Text;
-                            DTO.MAKHO = GRIDKHO.GetFocusedRowCellValue("MAKHO").ToString();
+                            DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = DateTime.Parse(txthansudung.Text).ToString();
                             DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
@@ -457,9 +454,10 @@ namespace WindowsFormsApplication1
                             //DTO.PICTURE = imageData;
                             DTO.MAMH = txtMaMH.Text;
                             DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
-                            DTO.MANH = gridLookUpEdit1View.GetFocusedRowCellValue("MANH").ToString();
+                            DTO.MANCC = gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
                             DTO.MADVT = gridView1.GetFocusedRowCellValue("MADVT").ToString();
-                            DTO.MAKHO = GRIDKHO.GetFocusedRowCellValue("MAKHO").ToString();
+                            DTO.KLDVT = calKLDVT.Text;
+                            DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
 
                             DTO.SOLUONGMH = int.Parse(txtSoLuong.Text).ToString();
@@ -489,11 +487,11 @@ namespace WindowsFormsApplication1
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            frmThemNhomHang th = new frmThemNhomHang();
+            frmThemNhaCungCap th = new frmThemNhaCungCap();
             th.kiemtra = 1;
             th.iNgonNgu = iNgonNgu;
             th.ShowDialog();
-            loadgirdlookupNH();
+            loadgirdlookupNCC();
             //this.nHOMHANGTableAdapter.Fill(this.xUAT_NHAPTONDataSet26.NHOMHANG);
         }
 

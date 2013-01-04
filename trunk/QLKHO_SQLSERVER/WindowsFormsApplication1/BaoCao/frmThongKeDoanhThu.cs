@@ -239,16 +239,31 @@ namespace WindowsFormsApplication1
             dto.NGAYBD = dateNgayBD;
             dto.NGAYKT = dateNgayKT;
 
-            
+            if (isxemclick == false)
+            {
+                gridControl6.DataSource = null;
+                return;
+            }
             
             //gridControl6.DataSource = ctr.getDoanhThu(dto);
             //tb = ctr.getDoanhThu(dto);
             if (baocaotype == "MH_NGAY")
             {
-                gridControl6.DataSource = ctr.getcpmuahangngay(dto);
+                
+               gridControl6.DataSource = ctr.getcpmuahangngay(dto);
             }
             else if (baocaotype == "MH_NCC")
             {
+                if (cbncc.Text != "")
+                {
+                    dto.MANCC = gridncc.GetFocusedRowCellValue("MANCC").ToString();
+                    gridncc.ClearSelection();
+                    cbncc.Text = "";
+                }
+                else
+                {
+                    dto.MANCC = "";
+                }
                 gridControl6.DataSource = ctr.getcpmuahangncc(dto);
             }
             else if (baocaotype == "BH_NGAY")
@@ -257,6 +272,17 @@ namespace WindowsFormsApplication1
             }
             else if (baocaotype == "BH_KH")
             {
+                if (cbkhachhang.Text != "")
+                {
+                    dto.MAKH = gridkhachhang.GetFocusedRowCellValue("MAKH").ToString();
+                    gridkhachhang.ClearSelection();
+                    cbkhachhang.Text = "";
+                }
+                else
+                {
+                    dto.MAKH = "";
+                }
+
                 gridControl6.DataSource = ctr.getDoanhThukh(dto);
             }
             else if (baocaotype == "DS_NV")
@@ -265,15 +291,62 @@ namespace WindowsFormsApplication1
             }
             else if (baocaotype == "BH_SP")
             {
+                if (cbsanpham.Text != "")
+                {
+                    dto.MAMH = gridsanpham.GetFocusedRowCellValue("MAMH").ToString();
+                    gridsanpham.ClearSelection();
+                    cbsanpham.Text = "";
+                }
+                else
+                {
+                    dto.MAMH = "";
+                }
+
                 gridControl6.DataSource = ctr.getcpmuahangsp(dto);
             }
             else if (baocaotype == "MH_SP")
             {
+                if (cbsanpham.Text != "")
+                {
+                    dto.MAMH = gridsanpham.GetFocusedRowCellValue("MAMH").ToString();
+                    gridsanpham.ClearSelection();
+                    cbsanpham.Text = "";
+                }
+                else
+                {
+                    dto.MAMH = "";
+                }
+
                 gridControl6.DataSource = ctr.getDoanhsosp(dto);
+
             }
 
         }
+        private void load_cbhanghoa()
+        {
+            Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
+            cbsanpham.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbsanpham.Properties.DisplayMember = "TENMH";
+            cbsanpham.Properties.ValueMember = "MAMH";
+            cbsanpham.Properties.View.BestFitColumns();
+            cbsanpham.Properties.PopupFormWidth = 200;
+            cbsanpham.Properties.DataSource = ctr1.dtGetsanpham2();
 
+            cbncc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbncc.Properties.DisplayMember = "TENNCC";
+            cbncc.Properties.ValueMember = "MANCC";
+            cbncc.Properties.View.BestFitColumns();
+            cbncc.Properties.PopupFormWidth = 200;
+            cbncc.Properties.DataSource = ctr1.dtGetNCC();
+
+            cbkhachhang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbkhachhang.Properties.DisplayMember = "TENKH";
+            cbkhachhang.Properties.ValueMember = "MAKH";
+            cbkhachhang.Properties.View.BestFitColumns();
+            cbkhachhang.Properties.PopupFormWidth = 200;
+            cbkhachhang.Properties.DataSource = ctr1.dtGetKH();
+
+        }
         
         private void frmThongKeDoanhThu_Load(object sender, EventArgs e)
         {
@@ -297,19 +370,25 @@ namespace WindowsFormsApplication1
              {
                  loadEN();
              }
+             load_cbhanghoa();
+             lbloc.Text = "";
+             cbkhachhang.Visible = false;
+             cbncc.Visible = false;
+             cbsanpham.Visible = false;
              
         }
-        
-       
+
+        bool isxemclick = false;
         
         private void simpleButton21_Click(object sender, EventArgs e)
         {
             try
             {
-               
 
+                isxemclick = true;
                 
                 load();
+                isxemclick = false;
             }
             catch (Exception)
             {
@@ -382,6 +461,10 @@ namespace WindowsFormsApplication1
             gridControl6.MainView = gridView4;
             //gridView4.Columns.Clear();
             load();
+            lbloc.Text = "";
+            cbkhachhang.Visible = false;
+            cbncc.Visible = false;
+            cbsanpham.Visible = false;
         }
 
         private void NBI_MH_NCC_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -391,6 +474,10 @@ namespace WindowsFormsApplication1
             //gridView4.Columns.Clear();
             gridControl6.MainView = gridView5;
             load();
+            lbloc.Text = "Nhà cung cấp";
+            cbkhachhang.Visible = false;
+            cbncc.Visible = true;
+            cbsanpham.Visible = false;
         }
 
         private void NBI_BH_ngay_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -399,6 +486,10 @@ namespace WindowsFormsApplication1
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView7;
             load();
+            lbloc.Text = "";
+            cbkhachhang.Visible = false;
+            cbncc.Visible = false;
+            cbsanpham.Visible = false;
         }
 
         private void NBI_BH_KH_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -407,6 +498,10 @@ namespace WindowsFormsApplication1
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView8;
             load();
+            lbloc.Text = "Khách Hàng";
+            cbkhachhang.Visible = true;
+            cbncc.Visible = false;
+            cbsanpham.Visible = false;
         }
 
         private void NBI_DS_NV_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -415,6 +510,10 @@ namespace WindowsFormsApplication1
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView10;
             load();
+            lbloc.Text = "";
+            cbkhachhang.Visible = false;
+            cbncc.Visible = false;
+            cbsanpham.Visible = false;
         }
 
         private void NBI_BH_SP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -423,6 +522,10 @@ namespace WindowsFormsApplication1
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView9;
             load();
+            lbloc.Text = "Sản phẩm";
+            cbkhachhang.Visible = false;
+            cbncc.Visible = false;
+            cbsanpham.Visible = true;
         }
 
         private void NBI_MH_SP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -431,6 +534,10 @@ namespace WindowsFormsApplication1
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView6;
             load();
+            lbloc.Text = "Sản phẩm";
+            cbkhachhang.Visible = false;
+            cbncc.Visible = false;
+            cbsanpham.Visible = true;
         }
 
 

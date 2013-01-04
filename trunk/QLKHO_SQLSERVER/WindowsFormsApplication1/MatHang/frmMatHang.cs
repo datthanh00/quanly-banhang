@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-        string sma, sten, smathue, smanhomhang ,smadvt, ssoluong, shansudung, sgiamua, sgiaban, shinhanh, smota, stinhtrang,smakho;
+        string sma, sten, smathue, smanhomhang, smadvt, ssoluong, shansudung, sgiamua, sgiaban, shinhanh, smota, stinhtrang, smakho, SKLDVT;
         CTL CTL = new CTL();
         DAO DAO = new DAO();
         DTO DTO = new DTO();
@@ -116,6 +116,7 @@ namespace WindowsFormsApplication1
         private void loadmathang()
         {
             gridControl1.DataSource = CTL.GETMATHANG();
+            gridView1.ExpandAllGroups();
         }
         ketnoi connect = new ketnoi();
         private void barThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -208,19 +209,29 @@ namespace WindowsFormsApplication1
             ThemMatHang sua = new ThemMatHang();
             sua.iNgonNgu = iNgonNgu;
             sua.kiemtra = 0;
+
             sua.MAMH = sma;
-            sua.MASOTHUE = smathue;
-            sua.sBoPhan = sMaBP;
-            sua.MANHOMHANG = smanhomhang;
             sua.TENMATHANG = sten;
+            sua.MANCC = smanhomhang;
             sua.DVT = smadvt;
-            sua.MAKHO = smakho;
-            sua.SOLUONG = ssoluong;
+            sua.KLDVT = SKLDVT;
+
+            sua.MASOTHUE = smathue;
             sua.HANSUDUNG = shansudung;
+            sua.MOTA = smota;
+            sua.SOLUONG = ssoluong;
+
             sua.GIANUA = sgiamua;
             sua.GIABAN = sgiaban;
+
+            sua.sBoPhan = sMaBP;
+           
+            
+            
+            sua.MAKHO = smakho;
+            
             sua.HINHANH = shinhanh;
-            sua.MOTA = smota;
+            
             sua.TINHTRANG = stinhtrang;
             if (sma == null||sma =="")
             {
@@ -314,19 +325,26 @@ namespace WindowsFormsApplication1
             try
             {
                 DataRow dtr = gridView1.GetDataRow(e.RowHandle);
-                sma = dtr[0].ToString();
-                smathue = dtr[1].ToString();
-                smanhomhang = dtr[2].ToString();
-                smakho = dtr[3].ToString();
-                smadvt = dtr[5].ToString();
-                ssoluong = dtr[6].ToString();
-                shansudung = dtr[7].ToString();
-                sgiamua = dtr[8].ToString();
-                sgiaban = dtr[9].ToString();
+                sma = dtr["MAMH"].ToString();
+                sten = dtr["TENMH"].ToString();
+                smanhomhang = dtr["MANCC"].ToString();
+                smadvt = dtr["MADVT"].ToString();
+                SKLDVT = dtr["KLDVT"].ToString();
+
+                smathue = dtr["MATH"].ToString();
+                
+                
+
+                smakho = dtr["MAKHO"].ToString();
+                
+                ssoluong = dtr["SOLUONGMH"].ToString();
+                shansudung = dtr["HANSUDUNG"].ToString();
+                sgiamua = dtr["GIAMUA"].ToString();
+                sgiaban = dtr["GIABAN"].ToString();
                 //shinhanh = dtr[9].ToString();
-                smota = dtr[10].ToString();
-                stinhtrang = dtr[11].ToString();
-                sten = dtr[4].ToString();
+                smota = dtr["MOTA"].ToString();
+                stinhtrang = dtr["TINHTRANG"].ToString();
+                
             }
             catch (Exception ex)
             {

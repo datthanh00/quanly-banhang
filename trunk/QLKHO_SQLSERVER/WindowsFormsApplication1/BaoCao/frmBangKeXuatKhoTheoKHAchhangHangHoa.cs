@@ -66,7 +66,15 @@ namespace WindowsFormsApplication1
 
             }
             load_cbhanghoa();
+            pnthoigian.Visible = false;
+            lbmahang.Visible = true;
+            cbsanpham.Visible = true;
 
+            lbncc.Visible = true;
+            cbncc.Visible = true;
+
+            lbkhachhang.Visible = false;
+            cbkhachhang.Visible = false;
         }
 
 
@@ -76,7 +84,17 @@ namespace WindowsFormsApplication1
         DataView dvdropdow;
         private void loadGird1()
         {
-            
+            if (cbncc.Text != "")
+            {
+                dto.MANCC = gridCBNCC.GetFocusedRowCellValue("MANCC").ToString();
+                gridCBNCC.ClearSelection();
+                cbncc.Text = "";
+            }
+            else
+            {
+                dto.MANCC = "";
+            }
+
             //dto.MAKHO = gView.GetFocusedRowCellValue("MAKHO").ToString();
             string NGAYBD = dateTu.Text;
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
@@ -87,14 +105,31 @@ namespace WindowsFormsApplication1
             dto.NGAYKTKHO = NGAYKT;
 
             gridControl1.MainView = gridView10;
+            if (ISXEMCLICK){
             dt = ctr1.thongkhetheoNCC(dto);
-            gridControl1.DataSource = dt;
-                
-            
+                gridControl1.DataSource = dt;
+            }
+            else
+            {
+                gridControl1.DataSource = null;
+            }
+            ISXEMCLICK = false;
 
+           
         }
         private void loadGird2()
         {
+            if (cbkhachhang.Text != "")
+            {
+                dto.MAKH = gridCBKH.GetFocusedRowCellValue("MAKH").ToString();
+                gridCBKH.ClearSelection();
+                cbkhachhang.Text = "";
+            }
+            else
+            {
+                dto.MAKH = "";
+            }
+
             string NGAYBD = dateTu.Text;
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
             dto.NGAYBDKHO = NGAYBD;
@@ -104,9 +139,15 @@ namespace WindowsFormsApplication1
             dto.NGAYKTKHO = NGAYKT;
 
             gridControl1.MainView = gridView2;
-
+            if (ISXEMCLICK){
             dt = ctr1.thongkhetheokhachang(dto);
-               gridControl1.DataSource = dt;
+                gridControl1.DataSource = dt;
+            }
+            else
+            {
+                gridControl1.DataSource = null;
+            }
+            ISXEMCLICK = false;
         }
         private void loadGird3()
         {
@@ -180,15 +221,65 @@ namespace WindowsFormsApplication1
         private void loadGird_tonkhotonghop()
         {
             //dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+            if (cbsanpham.Text != "")
+            {
+                dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
+                gridcbmathang.ClearSelection();
+                cbsanpham.Text = "";
+            }
+            else
+            {
+                dto.MAMH = "";
+            }
+
+            if (cbncc.Text != "")
+            {
+                dto.MANCC = gridCBNCC.GetFocusedRowCellValue("MANCC").ToString();
+                gridCBNCC.ClearSelection();
+                cbncc.Text = "";
+            }
+            else
+            {
+                dto.MANCC = "";
+            }
 
             gridControl1.MainView = gridView7;
+            if (ISXEMCLICK){
             dt = ctr1.TONKHOTONGHOP(dto);
-            gridControl1.DataSource = dt;
+                gridControl1.DataSource = dt;
+            }
+            else
+            {
+                gridControl1.DataSource = null;
+            }
+            ISXEMCLICK = false;
             gridView7.RefreshData();
             gridControl1.RefreshDataSource();
         }
         private void loadGird_thekho()
         {
+            if (cbsanpham.Text != "")
+            {
+                dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
+                gridcbmathang.ClearSelection();
+                cbsanpham.Text = "";
+            }
+            else
+            {
+                dto.MAMH = "";
+            }
+
+            if (cbncc.Text != "")
+            {
+                dto.MANCC = gridCBNCC.GetFocusedRowCellValue("MANCC").ToString();
+                gridCBNCC.ClearSelection();
+                cbncc.Text = "";
+            }
+            else
+            {
+                dto.MANCC = "";
+            }
+
             //dto.MAKHO = gView.GetFocusedRowCellValue("MAKHO").ToString();
             string NGAYBD = dateTu.Text;
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
@@ -213,8 +304,15 @@ namespace WindowsFormsApplication1
             //dto.MAMH = cbsanpham.Text;
 
             gridControl1.MainView = gridView8;
+            if (ISXEMCLICK){
             dt = ctr1.THEKHO(dto);
-            gridControl1.DataSource = dt;
+                gridControl1.DataSource = dt;
+            }
+            else
+            {
+                gridControl1.DataSource = null;
+            }
+            ISXEMCLICK = false;
             gridView8.RefreshData();
             gridControl1.RefreshDataSource();
 
@@ -226,16 +324,6 @@ namespace WindowsFormsApplication1
         }
         private void loadGird_chitiethanghoa()
         {
-
-            string NGAYBD = dateTu.Text;
-            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
-            dto.NGAYBDKHO = NGAYBD;
-
-            string NGAYKT = dateDen.Text;
-            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
-            dto.NGAYKTKHO = NGAYKT;
-
-            //dto.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
             if (cbsanpham.Text != "")
             {
                 dto.MAMH = gridcbmathang.GetFocusedRowCellValue("MASANPHAM").ToString();
@@ -246,11 +334,41 @@ namespace WindowsFormsApplication1
             {
                 dto.MAMH = "";
             }
+
+            if (cbncc.Text != "")
+            {
+                dto.MANCC = gridCBNCC.GetFocusedRowCellValue("MANCC").ToString();
+                gridCBNCC.ClearSelection();
+                cbncc.Text = "";
+            }
+            else
+            {
+                dto.MANCC = "";
+            }
+
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            dto.NGAYBDKHO = NGAYBD;
+
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dto.NGAYKTKHO = NGAYKT;
+
+
             
 
             gridControl1.MainView = gridView9;
-            dt = ctr1.SOCHITIETHANGHOA(dto);
-            gridControl1.DataSource = dt;
+            if (ISXEMCLICK)
+            {
+                dt = ctr1.SOCHITIETHANGHOA(dto);
+                gridControl1.DataSource = dt;
+            }
+            else
+            {
+                gridControl1.DataSource = null;
+            }
+            ISXEMCLICK = false;
+           
             gridView9.RefreshData();
             gridControl1.RefreshDataSource();
 
@@ -662,11 +780,12 @@ namespace WindowsFormsApplication1
             }
            
         }
-        
+        Boolean ISXEMCLICK=false;
+
 
         private void btXem_Click(object sender, EventArgs e)
         {
-
+            ISXEMCLICK = true;
             try
             {
                 if (gridControl1.MainView == gridView10)
@@ -808,8 +927,18 @@ namespace WindowsFormsApplication1
             gridControl1.MainView = gridView10;
             //gridControl1.DataSource = ctr1.LOINHUANKINHDOANH(dto);
            // dt = ctr1.LOINHUANKINHDOANH(dto);
-            cbsanpham.Visible = false;
+            //pnkho.Visible = false;
             pnthoigian.Visible = true;
+
+            lbmahang.Visible = false;
+            cbsanpham.Visible = false;
+
+            lbncc.Visible = true;
+            cbncc.Visible = true;
+
+            lbkhachhang.Visible = false;
+            cbkhachhang.Visible = false;
+
             
         }
 
@@ -817,10 +946,18 @@ namespace WindowsFormsApplication1
         {
             loadGird2();
             pnthoigian.Visible = true;
-            cbsanpham.Visible = false;
+           // pnkho.Visible = false;
             //gridControl1.MainView = gridView2;
             //gridControl1.DataSource = ctr1.thongkhetheokhachang(dto);
             //dt = ctr1.thongkhetheokhachang(dto);
+            lbmahang.Visible = false;
+            cbsanpham.Visible = false;
+
+            lbncc.Visible = false;
+            cbncc.Visible = false;
+
+            lbkhachhang.Visible = true;
+            cbkhachhang.Visible = true;
         }
 
         private void Theokho_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -878,45 +1015,86 @@ namespace WindowsFormsApplication1
             cbsanpham.Properties.View.BestFitColumns();
             cbsanpham.Properties.PopupFormWidth = 200;
             cbsanpham.Properties.DataSource = ctr1.dtGetsanpham();
+
+            cbncc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbncc.Properties.DisplayMember = "TENNCC";
+            cbncc.Properties.ValueMember = "MANCC";
+            cbncc.Properties.View.BestFitColumns();
+            cbncc.Properties.PopupFormWidth = 200;
+            cbncc.Properties.DataSource = ctr1.dtGetNCC();
+
+            cbkhachhang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbkhachhang.Properties.DisplayMember = "TENKH";
+            cbkhachhang.Properties.ValueMember = "MAKH";
+            cbkhachhang.Properties.View.BestFitColumns();
+            cbkhachhang.Properties.PopupFormWidth = 200;
+            cbkhachhang.Properties.DataSource = ctr1.dtGetKH();
+
         }
         private void Linktonkhotonghop_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             optionload = "tonkhotonghop";
-            pnkho.Visible = true;
-            pnthoigian.Visible = false;
+            //pnkho.Visible = true;
+           
             //lbkho.Visible=true;
             //cbkho.Visible=true;
-            lbmahang.Visible = false;
-            cbsanpham.Visible = false;
+
             gridControl1.DataSource = null;
             //gridView6.Columns.Clear();
             loadGird_tonkhotonghop();
+            pnthoigian.Visible = false;
+            lbmahang.Visible = true;
+            cbsanpham.Visible = true;
+
+            lbncc.Visible = true;
+            cbncc.Visible = true;
+
+            lbkhachhang.Visible = false;
+            cbkhachhang.Visible = false;
         }
         
 
         private void Linkthekho_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             optionload = "thekho";
-            pnkho.Visible = true;
+           // pnkho.Visible = true;
             pnthoigian.Visible = true;
            // lbkho.Visible = true;
             //cbkho.Visible = true;
-            lbmahang.Visible = true;
-            cbsanpham.Visible = true;
+      
             gridControl1.DataSource = null;
             //gridView6.Columns.Clear();
             loadGird_thekho();
+
+            lbmahang.Visible = true;
+            cbsanpham.Visible = true;
+
+            lbncc.Visible = true;
+            cbncc.Visible = true;
+
+            lbkhachhang.Visible = false;
+            cbkhachhang.Visible = false;
         }
         
 
         private void Linkchitiethanghoa_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             optionload = "sochitiethanghoa";
-            cbsanpham.Visible = true;
+           
             gridControl1.DataSource = null;
             //gridView6.Columns.Clear();
             loadGird_chitiethanghoa();
             pnthoigian.Visible = true;
+           // pnkho.Visible = true;
+
+            lbmahang.Visible = true;
+            cbsanpham.Visible = true;
+
+            lbncc.Visible = true;
+            cbncc.Visible = true;
+
+            lbkhachhang.Visible = false;
+            cbkhachhang.Visible = false;
         }
 
         private void cbkho_EditValueChanged(object sender, EventArgs e)

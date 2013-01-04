@@ -56,6 +56,14 @@ namespace WindowsFormsApplication1
         {
             return dao.get_NH2();
         }
+        public DataTable dtGetNCC()
+        {
+            return dao.get_NCC();
+        }
+        public DataTable dtGetKH()
+        {
+            return dao.get_KH();
+        }
         public DataTable dtGetkho()
         {
             return dao.dtGetkho();
@@ -63,6 +71,10 @@ namespace WindowsFormsApplication1
         public DataTable dtGetsanpham()
         {
             return dao.dtGetsanpham();
+        }
+        public DataTable dtGetsanpham2()
+        {
+            return dao.dtGetsanpham2();
         }
         //public DataTable getTHONGKE_CT_MATHANG(Class_DTO_ThongKe dto)
         //{

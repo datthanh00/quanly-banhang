@@ -11,6 +11,21 @@ namespace WindowsFormsApplication1
             get { return _TENKHO; }
             set { _TENKHO = value; }
         }
+        private string _MAKH;
+
+        public string MAKH
+        {
+            get { return _MAKH; }
+            set { _MAKH = value; }
+        }
+
+        private string _MANCC;
+
+        public string MANCC
+        {
+            get { return _MANCC; }
+            set { _MANCC = value; }
+        }
         private string _MAKHO;
 
         public string MAKHO

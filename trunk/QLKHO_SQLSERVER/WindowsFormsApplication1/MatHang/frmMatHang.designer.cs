@@ -58,6 +58,10 @@
             this.colMOTA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -233,13 +237,20 @@
             this.colGIABAN,
             this.colMOTA,
             this.colTINHTRANG,
-            this.colMAKHO});
+            this.colMAKHO,
+            this.gridColumn2,
+            this.gridColumn1,
+            this.gridColumn4,
+            this.gridColumn3});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn2, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick_1);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick_1);
             // 
@@ -249,18 +260,14 @@
             this.colMAMH.FieldName = "MAMH";
             this.colMAMH.Name = "colMAMH";
             this.colMAMH.OptionsColumn.AllowEdit = false;
-            this.colMAMH.Visible = true;
-            this.colMAMH.VisibleIndex = 0;
             this.colMAMH.Width = 99;
             // 
             // colMATH
             // 
-            this.colMATH.Caption = "Mã Tên Hàng";
+            this.colMATH.Caption = "Mã Thuế";
             this.colMATH.FieldName = "MATH";
             this.colMATH.Name = "colMATH";
             this.colMATH.OptionsColumn.AllowEdit = false;
-            this.colMATH.Visible = true;
-            this.colMATH.VisibleIndex = 2;
             this.colMATH.Width = 99;
             // 
             // colMANH
@@ -269,8 +276,6 @@
             this.colMANH.FieldName = "MANH";
             this.colMANH.Name = "colMANH";
             this.colMANH.OptionsColumn.AllowEdit = false;
-            this.colMANH.Visible = true;
-            this.colMANH.VisibleIndex = 3;
             this.colMANH.Width = 106;
             // 
             // colTENMH
@@ -280,18 +285,18 @@
             this.colTENMH.Name = "colTENMH";
             this.colTENMH.OptionsColumn.AllowEdit = false;
             this.colTENMH.Visible = true;
-            this.colTENMH.VisibleIndex = 1;
-            this.colTENMH.Width = 136;
+            this.colTENMH.VisibleIndex = 0;
+            this.colTENMH.Width = 185;
             // 
             // colMADVT
             // 
-            this.colMADVT.Caption = "Mã ĐVT";
-            this.colMADVT.FieldName = "MADVT";
+            this.colMADVT.Caption = "Đơn Vị Tính";
+            this.colMADVT.FieldName = "DONVITINH";
             this.colMADVT.Name = "colMADVT";
             this.colMADVT.OptionsColumn.AllowEdit = false;
             this.colMADVT.Visible = true;
-            this.colMADVT.VisibleIndex = 5;
-            this.colMADVT.Width = 92;
+            this.colMADVT.VisibleIndex = 2;
+            this.colMADVT.Width = 95;
             // 
             // colSOLUONGMH
             // 
@@ -300,8 +305,8 @@
             this.colSOLUONGMH.Name = "colSOLUONGMH";
             this.colSOLUONGMH.OptionsColumn.AllowEdit = false;
             this.colSOLUONGMH.Visible = true;
-            this.colSOLUONGMH.VisibleIndex = 6;
-            this.colSOLUONGMH.Width = 120;
+            this.colSOLUONGMH.VisibleIndex = 5;
+            this.colSOLUONGMH.Width = 101;
             // 
             // colHANSUDUNG
             // 
@@ -309,8 +314,6 @@
             this.colHANSUDUNG.FieldName = "HANSUDUNG";
             this.colHANSUDUNG.Name = "colHANSUDUNG";
             this.colHANSUDUNG.OptionsColumn.AllowEdit = false;
-            this.colHANSUDUNG.Visible = true;
-            this.colHANSUDUNG.VisibleIndex = 7;
             this.colHANSUDUNG.Width = 102;
             // 
             // colGIAMUA
@@ -324,8 +327,8 @@
             this.colGIAMUA.SummaryItem.DisplayFormat = "Sum: {0:0,0 vnđ}";
             this.colGIAMUA.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colGIAMUA.Visible = true;
-            this.colGIAMUA.VisibleIndex = 8;
-            this.colGIAMUA.Width = 69;
+            this.colGIAMUA.VisibleIndex = 3;
+            this.colGIAMUA.Width = 93;
             // 
             // colGIABAN
             // 
@@ -338,8 +341,8 @@
             this.colGIABAN.SummaryItem.DisplayFormat = "Sum: {0:0,0 vnđ}";
             this.colGIABAN.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colGIABAN.Visible = true;
-            this.colGIABAN.VisibleIndex = 9;
-            this.colGIABAN.Width = 69;
+            this.colGIABAN.VisibleIndex = 4;
+            this.colGIABAN.Width = 93;
             // 
             // colMOTA
             // 
@@ -348,26 +351,53 @@
             this.colMOTA.Name = "colMOTA";
             this.colMOTA.OptionsColumn.AllowEdit = false;
             this.colMOTA.Visible = true;
-            this.colMOTA.VisibleIndex = 10;
-            this.colMOTA.Width = 54;
+            this.colMOTA.VisibleIndex = 7;
+            this.colMOTA.Width = 117;
             // 
             // colTINHTRANG
             // 
-            this.colTINHTRANG.Caption = "Tình Trạng";
-            this.colTINHTRANG.FieldName = "TINHTRANG";
+            this.colTINHTRANG.Caption = "Thành Tiền";
+            this.colTINHTRANG.FieldName = "THANHTIEN";
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.OptionsColumn.AllowEdit = false;
             this.colTINHTRANG.Visible = true;
-            this.colTINHTRANG.VisibleIndex = 11;
-            this.colTINHTRANG.Width = 155;
+            this.colTINHTRANG.VisibleIndex = 6;
+            this.colTINHTRANG.Width = 123;
             // 
             // colMAKHO
             // 
-            this.colMAKHO.Caption = "gridColumn1";
+            this.colMAKHO.Caption = "Mã Kho";
             this.colMAKHO.FieldName = "MAKHO";
             this.colMAKHO.Name = "colMAKHO";
-            this.colMAKHO.Visible = true;
-            this.colMAKHO.VisibleIndex = 4;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Công Ty";
+            this.gridColumn2.FieldName = "TENNCC";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Width = 138;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã CTY";
+            this.gridColumn1.FieldName = "MANCC";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Width = 133;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Theo ĐVT";
+            this.gridColumn4.FieldName = "KLDVT";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.Width = 145;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Hạn Dùng";
+            this.gridColumn3.FieldName = "HANSUDUNG";
+            this.gridColumn3.Name = "gridColumn3";
             // 
             // repositoryItemPictureEdit1
             // 
@@ -431,6 +461,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
       //  private XUAT_NHAPTONDataSet32 xUAT_NHAPTONDataSet32;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet32TableAdapters.MATHANGTableAdapter mATHANGTableAdapter1;
         //private XUAT_NHAPTONDataSet37 xUAT_NHAPTONDataSet37;

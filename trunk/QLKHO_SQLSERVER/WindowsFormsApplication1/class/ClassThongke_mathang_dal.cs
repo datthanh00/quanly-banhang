@@ -15,9 +15,16 @@ namespace WindowsFormsApplication1
             //sqlpa1.Add(new MySqlParameter("@NGAYTHANGTU", dto.NGAYBDKHO));
             //sqlpa1.Add(new MySqlParameter("@NGAYTHANGDEN", dto.NGAYKTKHO));
             //return executeNonQuerya("THONGKETHEOKHACHHANG_getall", sqlpa1);
+            string SQL1 = "";
+            string SQL2 = "";
+            if (dto.MAKH != "")
+            {
+                SQL1 = "and HOADONXUAT.MAKH ='" + dto.MAKH + "'";
+                SQL2 = "and TRAHOADONXUAT.MAKH ='" + dto.MAKH + "'";
+            }
 
-            String SQL = "select TENKH, HOADONXUAT.MAHDX, convert(varchar,NGAYXUAT,103)AS NGAYXUAT,MATHANG.MAMH,MATHANG.TENMH,DONVITINH,SOLUONGXUAT,GIATIEN,CAST((SOLUONGXUAT * GIATIEN) + (SOTHUE *SOLUONGXUAT * GIATIEN) / 100 AS NUMERIC(18,0)) AS TIENXUAT,TIENPHAITRA,TIENDATRA ,TIENPHAITRA-TIENDATRA as TIENNO FROM CHITIETHDX,MATHANG,DONVITINH, HOADONXUAT,KHACHHANG,THUE WHERE DONVITINH.MADVT=MATHANG.MADVT AND CHITIETHDX.MAMH = MATHANG.MAMH AND KHACHHANG.MAKH = HOADONXUAT.MAKH AND THUE.MATH = MATHANG.MATH AND HOADONXUAT.MAHDX = CHITIETHDX.MAHDX AND NGAYXUAT BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' "
-                + " union all select TENKH, trahoadonxuat.MAHDX, convert(varchar,NGAYXUAT,103)AS NGAYXUAT,MATHANG.MAMH,MATHANG.TENMH,DONVITINH,SOLUONGXUAT,GIATIEN,CAST((SOLUONGXUAT * GIATIEN) + (SOTHUE *SOLUONGXUAT * GIATIEN) / 100 AS NUMERIC(18,0)) AS TIENXUAT,TIENPHAITRA,TIENDATRA ,TIENPHAITRA-TIENDATRA as TIENNO FROM trachitiethdx,MATHANG,DONVITINH, trahoadonxuat,KHACHHANG,THUE WHERE DONVITINH.MADVT=MATHANG.MADVT AND trachitiethdx.MAMH = MATHANG.MAMH AND KHACHHANG.MAKH = trahoadonxuat.MAKH AND THUE.MATH = MATHANG.MATH AND trahoadonxuat.MAHDX = trachitiethdx.MAHDX AND NGAYXUAT BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
+            String SQL = "select TENKH, HOADONXUAT.MAHDX, convert(varchar,NGAYXUAT,103)AS NGAYXUAT,MATHANG.MAMH,MATHANG.TENMH,DONVITINH,SOLUONGXUAT,GIATIEN,CAST((SOLUONGXUAT * GIATIEN) + (SOTHUE *SOLUONGXUAT * GIATIEN) / 100 AS NUMERIC(18,0)) AS TIENXUAT,TIENPHAITRA,TIENDATRA ,TIENPHAITRA-TIENDATRA as TIENNO FROM CHITIETHDX,MATHANG,DONVITINH, HOADONXUAT,KHACHHANG,THUE WHERE DONVITINH.MADVT=MATHANG.MADVT AND CHITIETHDX.MAMH = MATHANG.MAMH AND KHACHHANG.MAKH = HOADONXUAT.MAKH AND THUE.MATH = MATHANG.MATH AND HOADONXUAT.MAHDX = CHITIETHDX.MAHDX AND NGAYXUAT BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' "+SQL1+"  AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' "
+                + " union all select TENKH, trahoadonxuat.MAHDX, convert(varchar,NGAYXUAT,103)AS NGAYXUAT,MATHANG.MAMH,MATHANG.TENMH,DONVITINH,SOLUONGXUAT,GIATIEN,CAST((SOLUONGXUAT * GIATIEN) + (SOTHUE *SOLUONGXUAT * GIATIEN) / 100 AS NUMERIC(18,0)) AS TIENXUAT,TIENPHAITRA,TIENDATRA ,TIENPHAITRA-TIENDATRA as TIENNO FROM trachitiethdx,MATHANG,DONVITINH, trahoadonxuat,KHACHHANG,THUE WHERE DONVITINH.MADVT=MATHANG.MADVT AND trachitiethdx.MAMH = MATHANG.MAMH AND KHACHHANG.MAKH = trahoadonxuat.MAKH AND THUE.MATH = MATHANG.MATH AND trahoadonxuat.MAHDX = trachitiethdx.MAHDX AND NGAYXUAT BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' "+SQL2+" AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
 
             return getdata(SQL);
         }
@@ -27,9 +34,14 @@ namespace WindowsFormsApplication1
             //sqlpa1.Add(new MySqlParameter("@NGAYTHANGTU", dto.NGAYBDKHO));
             //sqlpa1.Add(new MySqlParameter("@NGAYTHANGDEN", dto.NGAYKTKHO));
             //return executeNonQuerya("THONGKETHEOKHACHHANG_getall", sqlpa1);
+            string SQL1 = "";
+            if (dto.MANCC != "")
+            {
+                SQL1 = "and mathang.mancc ='"+dto.MANCC+"'";
+            }
 
-            String SQL = "select TENNCC, HOADONNHAP.MAHDN, convert(varchar,NGAYNHAP,103)AS NGAYNHAP,MATHANG.MAMH,TENMH,DONVITINH,SOLUONGNHAP,GIANHAP,CAST((SOLUONGNHAP * GIANHAP) + (SOTHUE *SOLUONGNHAP * GIANHAP) / 100 AS  NUMERIC(18,0)) AS TIENNHAP, TIENPHAITRA,TIENDATRA ,TIENPHAITRA-TIENDATRA as TIENNO FROM CHITIETHDN,MATHANG,DONVITINH,HOADONNHAP,NHACUNGCAP,THUE WHERE DONVITINH.MADVT=MATHANG.MADVT AND CHITIETHDN.MAMH = MATHANG.MAMH AND NHACUNGCAP.MANCC = HOADONNHAP.MANCC  AND THUE.MATH = MATHANG.MATH AND HOADONNHAP.MAHDN = CHITIETHDN.MAHDN AND NGAYNHAP BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' "
-                + " union all select TENNCC, trahoadonnhap.MAHDN, convert(varchar,NGAYNHAP,103)AS NGAYNHAP,MATHANG.MAMH,TENMH,DONVITINH,SOLUONGNHAP,GIANHAP,CAST((SOLUONGNHAP * GIANHAP) + (SOTHUE *SOLUONGNHAP * GIANHAP) / 100 AS  NUMERIC(18,0)) AS TIENNHAP, TIENPHAITRA,TIENDATRA ,TIENPHAITRA-TIENDATRA as TIENNO FROM trachitiethdn,MATHANG,DONVITINH,trahoadonnhap,NHACUNGCAP,THUE WHERE DONVITINH.MADVT=MATHANG.MADVT AND trachitiethdn.MAMH = MATHANG.MAMH AND NHACUNGCAP.MANCC = trahoadonnhap.MANCC  AND THUE.MATH = MATHANG.MATH AND trahoadonnhap.MAHDN = trachitiethdn.MAHDN AND NGAYNHAP BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
+            String SQL = "select TENNCC, HOADONNHAP.MAHDN, convert(varchar,NGAYNHAP,103)AS NGAYNHAP,MATHANG.MAMH,TENMH,DONVITINH,SOLUONGNHAP,GIANHAP,CAST((SOLUONGNHAP * GIANHAP) + (SOTHUE *SOLUONGNHAP * GIANHAP) / 100 AS  NUMERIC(18,0)) AS TIENNHAP, TIENPHAITRA,TIENDATRA ,TIENPHAITRA-TIENDATRA as TIENNO FROM CHITIETHDN,MATHANG,DONVITINH,HOADONNHAP,NHACUNGCAP,THUE WHERE DONVITINH.MADVT=MATHANG.MADVT AND CHITIETHDN.MAMH = MATHANG.MAMH AND NHACUNGCAP.MANCC = HOADONNHAP.MANCC  AND THUE.MATH = MATHANG.MATH AND HOADONNHAP.MAHDN = CHITIETHDN.MAHDN AND NGAYNHAP BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' "+SQL1+" AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' "
+                + " union all select TENNCC, trahoadonnhap.MAHDN, convert(varchar,NGAYNHAP,103)AS NGAYNHAP,MATHANG.MAMH,TENMH,DONVITINH,SOLUONGNHAP,GIANHAP,CAST((SOLUONGNHAP * GIANHAP) + (SOTHUE *SOLUONGNHAP * GIANHAP) / 100 AS  NUMERIC(18,0)) AS TIENNHAP, TIENPHAITRA,TIENDATRA ,TIENPHAITRA-TIENDATRA as TIENNO FROM trachitiethdn,MATHANG,DONVITINH,trahoadonnhap,NHACUNGCAP,THUE WHERE DONVITINH.MADVT=MATHANG.MADVT AND trachitiethdn.MAMH = MATHANG.MAMH AND NHACUNGCAP.MANCC = trahoadonnhap.MANCC  AND THUE.MATH = MATHANG.MATH AND trahoadonnhap.MAHDN = trachitiethdn.MAHDN AND NGAYNHAP BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' "+SQL1+" AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
             return getdata(SQL);
         }
         //--------------------
@@ -46,7 +58,17 @@ namespace WindowsFormsApplication1
         //---------------------------------------------------
         public DataTable gettonkhotonghop(Class_DTO_ThongKe dto)
         {
-            String SQL = "select mathang.MAMH, TENMH, DONVITINH, TENKHO, TENNHOMHANG, SOLUONGMH, GIAMUA, giamua*soluongmh as THANHTIEN   from mathang, donvitinh, kho, nhomhang where mathang.madvt=donvitinh.madvt and  mathang.makho=kho.makho and mathang.manh=nhomhang.manh and mathang.makho='" + PublicVariable.MAKHO + "'";
+            string SQL1 = "";
+            if (dto.MAMH != "")
+            {
+                SQL1 = "and mathang.mamh ='" + dto.MAMH + "' ";
+            }
+            if (dto.MANCC != "")
+            {
+                SQL1 = SQL1+ "and mathang.MANCC ='" + dto.MANCC + "'";
+            }
+
+            String SQL = "select mathang.MAMH, TENMH, DONVITINH, TENKHO, TENNHOMHANG, SOLUONGMH, GIAMUA, giamua*soluongmh as THANHTIEN   from mathang, donvitinh, kho, nhomhang where mathang.madvt=donvitinh.madvt and  mathang.makho=kho.makho and mathang.manh=nhomhang.manh "+SQL1+" and mathang.makho='" + PublicVariable.MAKHO + "'";
             return getdata(SQL);
 
         }
@@ -55,7 +77,11 @@ namespace WindowsFormsApplication1
             string MAMH = "";
             if (dto.MAMH != "")
             {
-                MAMH = " and tonkho.MAMH='" + dto.MAMH + "' ";
+                MAMH = "and mathang.mamh ='" + dto.MAMH + "' ";
+            }
+            if (dto.MANCC != "")
+            {
+                MAMH = MAMH + "and mathang.MANCC ='" + dto.MANCC + "'";
             }
             String SQL = "select MAMH, TENMH, convert(varchar,NGAY,103)AS NGAY, MAHD,TENKHO,TENNHOMHANG,DONVITINH,TONDAU, NHAP, XUAT, TONCUOI from (select tonkho.*, math, tenmh,makho,manh,madvt  from tonkho, mathang where tonkho.mamh= mathang.mamh and ngay BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' and makho='" + PublicVariable.MAKHO + "' " + MAMH + ")  as t1, kho,nhomhang,donvitinh where t1.makho=kho.makho and t1.manh=nhomhang.manh and t1.madvt=donvitinh.madvt";
             return getdata(SQL);
@@ -65,7 +91,11 @@ namespace WindowsFormsApplication1
             string MAMH = "";
             if (dto.MAMH != "")
             {
-                MAMH = " and tonkho.MAMH='" + dto.MAMH + "' ";
+                MAMH = "and mathang.mamh ='" + dto.MAMH + "' ";
+            }
+            if (dto.MANCC != "")
+            {
+                MAMH = MAMH + "and mathang.MANCC ='" + dto.MANCC + "'";
             }
             String SQL = "select MAMH, TENMH,  convert(varchar,NGAY,103)AS NGAY, MAHD,TENKHO,TENNHOMHANG,DONVITINH,GIAMUA,GIABAN,TONDAU, TONDAU*GIAMUA AS TIENTONDAU, NHAP , GIAMUA*NHAP AS TIENNHAP, XUAT, GIAMUA * XUAT AS TIENXUAT, TONCUOI, GIAMUA*TONCUOI AS TIENTONCUOI  from (select tonkho.*, math, tenmh,makho,manh,madvt,GIAMUA,GIABAN from tonkho, mathang where tonkho.mamh= mathang.mamh and ngay BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' and makho='" + PublicVariable.MAKHO + "' " + MAMH + ") as t1, kho,nhomhang,donvitinh where t1.makho=kho.makho and t1.manh=nhomhang.manh and t1.madvt=donvitinh.madvt";
             return getdata(SQL);
@@ -143,18 +173,18 @@ namespace WindowsFormsApplication1
 
                 if (dto.Loai_HT == "0")
                 {//load tat ca
-                    SQL = " SELECT MAMH,THUE.MATH,SOTHUE,MATHANG.MANH,tennhomhang,TENMH,DONVITINH.MADVT,DONVITINH,SOLUONGMH,HANSUDUNG,GIAMUA,CAST(((GIAMUA*SOLUONGMH) + (SOTHUE * SOLUONGMH * GIAMUA) / 100)  as  NUMERIC(18,0))  as thanhtien,GIABAN,CAST((GIABAN*SOLUONGMH + (SOTHUE * SOLUONGMH * GIABAN) / 100) as  NUMERIC(18,0)) as thanhtienban,MOTA,TINHTRANG"
-                    + " FROM THUE,nhomhang,MATHANG,DONVITINH WHERE THUE.MATH = MATHANG.MATH  and nhomhang.manh=MATHANG.manh and DONVITINH.madvt=MATHANG.madvt and MATHANG.MAKHO='"+PublicVariable.MAKHO+"' ";
+                    SQL = " SELECT MATHANG.MANCC,THUE.MATH,SOTHUE,MATHANG.MANH,TENNCC,TENMH,DONVITINH.MADVT,DONVITINH,SOLUONGMH,HANSUDUNG,GIAMUA,CAST(((GIAMUA*SOLUONGMH) + (SOTHUE * SOLUONGMH * GIAMUA) / 100)  as  NUMERIC(18,0))  as thanhtien,GIABAN,CAST((GIABAN*SOLUONGMH + (SOTHUE * SOLUONGMH * GIABAN) / 100) as  NUMERIC(18,0)) as thanhtienban,MOTA"
+                    + " FROM THUE,NHACUNGCAP,MATHANG,DONVITINH WHERE THUE.MATH = MATHANG.MATH  and NHACUNGCAP.MANCC=MATHANG.MANCC and DONVITINH.madvt=MATHANG.madvt and MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
                 }
                 if (dto.Loai_HT == "1")
                 {//con han
-                    SQL = " SELECT MAMH,THUE.MATH,SOTHUE,MATHANG.MANH,tennhomhang,TENMH,DONVITINH.MADVT,DONVITINH,SOLUONGMH,HANSUDUNG,GIAMUA,CAST(((GIAMUA*SOLUONGMH) + (SOTHUE * SOLUONGMH * GIAMUA) / 100) as  NUMERIC(18,0))  as thanhtien,GIABAN,CAST((GIABAN*SOLUONGMH + (SOTHUE * SOLUONGMH * GIABAN) / 100) as  NUMERIC(18,0)) as thanhtienban,MOTA,TINHTRANG"
-                   + " FROM THUE,nhomhang,MATHANG,DONVITINH WHERE THUE.MATH = MATHANG.MATH  and nhomhang.manh=MATHANG.manh and DONVITINH.madvt=MATHANG.madvt AND MATHANG.MAMH='"+dto.MAMH+"' and MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
+                    SQL = " SELECT MATHANG.MANCC,THUE.MATH,SOTHUE,MATHANG.MANH,TENNCC,TENMH,DONVITINH.MADVT,DONVITINH,SOLUONGMH,HANSUDUNG,GIAMUA,CAST(((GIAMUA*SOLUONGMH) + (SOTHUE * SOLUONGMH * GIAMUA) / 100) as  NUMERIC(18,0))  as thanhtien,GIABAN,CAST((GIABAN*SOLUONGMH + (SOTHUE * SOLUONGMH * GIABAN) / 100) as  NUMERIC(18,0)) as thanhtienban,MOTA"
+                   + " FROM THUE,NHACUNGCAP,MATHANG,DONVITINH WHERE THUE.MATH = MATHANG.MATH  and NHACUNGCAP.MANCC=MATHANG.MANCC and DONVITINH.madvt=MATHANG.madvt AND MATHANG.MAMH='" + dto.MAMH + "' and MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
                 }
                 if (dto.Loai_HT == "2")
                 {//het han
-                    SQL = " SELECT MAMH,THUE.MATH,SOTHUE,MATHANG.MANH,tennhomhang,TENMH,DONVITINH.MADVT,DONVITINH,SOLUONGMH,HANSUDUNG,GIAMUA,CAST(((GIAMUA*SOLUONGMH) + (SOTHUE * SOLUONGMH * GIAMUA) / 100) as  NUMERIC(18,0))  as thanhtien,GIABAN,CAST((GIABAN*SOLUONGMH + (SOTHUE * SOLUONGMH * GIABAN) / 100) as  NUMERIC(18,0)) as thanhtienban,MOTA,TINHTRANG"
-                    + " FROM THUE,nhomhang,MATHANG,DONVITINH WHERE THUE.MATH = MATHANG.MATH  and nhomhang.manh=MATHANG.manh and DONVITINH.madvt=MATHANG.madvt AND MATHANG.MANH='" + dto.MANH + "' and MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
+                    SQL = " SELECT MATHANG.MANCC,THUE.MATH,SOTHUE,MATHANG.MANH,TENNCC,TENMH,DONVITINH.MADVT,DONVITINH,SOLUONGMH,HANSUDUNG,GIAMUA,CAST(((GIAMUA*SOLUONGMH) + (SOTHUE * SOLUONGMH * GIAMUA) / 100) as  NUMERIC(18,0))  as thanhtien,GIABAN,CAST((GIABAN*SOLUONGMH + (SOTHUE * SOLUONGMH * GIABAN) / 100) as  NUMERIC(18,0)) as thanhtienban,MOTA"
+                    + " FROM THUE,NHACUNGCAP,MATHANG,DONVITINH WHERE THUE.MATH = MATHANG.MATH  and NHACUNGCAP.MANCC=MATHANG.MANCC and DONVITINH.madvt=MATHANG.madvt AND MATHANG.MANCC='" + dto.MANCC + "' and MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
                 }
            
 
@@ -176,6 +206,20 @@ namespace WindowsFormsApplication1
             String SQL = "select 	MANH ,TENNHOMHANG from  NHOMHANG";
             return getdata(SQL);
         }
+        public DataTable get_NCC()
+        {
+            // List<MySqlParameter> sql = new List<MySqlParameter>();
+            //return executeNonQuerya("[NHOMHANG_getall]", sql);
+            String SQL = "select 	MANCC ,TENNCC from  NHACUNGCAP WHERE MAKHO='"+PublicVariable.MAKHO+"'";
+            return getdata(SQL);
+        }
+        public DataTable get_KH()
+        {
+            // List<MySqlParameter> sql = new List<MySqlParameter>();
+            //return executeNonQuerya("[NHOMHANG_getall]", sql);
+            String SQL = "select 	TENKH ,MAKH from  KHACHHANG WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            return getdata(SQL);
+        }
         public DataTable dtGetkho()
         {
             String SQL = "select MAKHO,TENKHO from  KHO";
@@ -184,6 +228,11 @@ namespace WindowsFormsApplication1
         public DataTable dtGetsanpham()
         {
             String SQL = "select 	MAMH AS MASANPHAM,TENMH AS TENSANPHAM from  MATHANG where mathang.makho='"+PublicVariable.MAKHO+"'";
+            return getdata(SQL);
+        }
+        public DataTable dtGetsanpham2()
+        {
+            String SQL = "select 	MAMH ,TENMH from  MATHANG where mathang.makho='" + PublicVariable.MAKHO + "'";
             return getdata(SQL);
         }
     }

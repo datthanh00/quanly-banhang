@@ -25,11 +25,10 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
         
-        string dateNgayBD;
-        string dateNgayKT;
+   
         string LoaiTG = "";
         string LoaiHT = "";
-        string MANH;
+       
         DataTable dt = new DataTable();
         public int iNgonNgu;
         public frmMain frm;
@@ -337,7 +336,7 @@ namespace WindowsFormsApplication1
         {
                 cbloaihienthi.Properties.Items.Add("Tất Cả");
                 cbloaihienthi.Properties.Items.Add("Theo Hàng Hóa");
-                cbloaihienthi.Properties.Items.Add("Theo Nhóm Hàng");
+                cbloaihienthi.Properties.Items.Add("Theo Nhà Cung Cấp");
                 cbloaihienthi.SelectedIndex = 0;
         }
 
@@ -364,11 +363,11 @@ namespace WindowsFormsApplication1
             cbmathang.Properties.DataSource = ctr1.dtGetsanpham();
 
             cbnhomhang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cbnhomhang.Properties.DisplayMember = "TENNHOMHANG";
-            cbnhomhang.Properties.ValueMember = "MANH";
+            cbnhomhang.Properties.DisplayMember = "TENNCC";
+            cbnhomhang.Properties.ValueMember = "MANCC";
             cbnhomhang.Properties.View.BestFitColumns();
             cbnhomhang.Properties.PopupFormWidth = 200;
-            cbnhomhang.Properties.DataSource = ctr1.dtGetNH2();
+            cbnhomhang.Properties.DataSource = ctr1.dtGetNCC();
         }
 
 
@@ -388,7 +387,7 @@ namespace WindowsFormsApplication1
             {
                 if (cbnhomhang.Text == "")
                 {
-                    MessageBox.Show("Hãy Chọn một nhóm hàng");
+                    MessageBox.Show("Hãy Chọn một nhà cung cấp");
                     return;
                 }
             }
@@ -396,7 +395,7 @@ namespace WindowsFormsApplication1
                 dto.Loai_HT = loaihienthi.ToString();
 
                 dto.MAMH = gridView2.GetFocusedRowCellValue("MASANPHAM").ToString();
-                dto.MANH = gridView3.GetFocusedRowCellValue("MANH").ToString();
+                dto.MANCC = gridView3.GetFocusedRowCellValue("MANCC").ToString();
 
             
                 dt = ctr.geTthongke_ct_mathang2(dto);
