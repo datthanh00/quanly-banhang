@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsFormsApplication1</RootNamespace>
     <AssemblyName>WindowsFormsApplication1</AssemblyName>
-    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <StartupObject>WindowsFormsApplication1.Program</StartupObject>
   </PropertyGroup>
@@ -133,6 +133,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCao\frmReportThutienKH.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaoCao\frmReportThutienKH.designer.cs">
+      <DependentUpon>frmReportThutienKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\frmReportTratienNCC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaoCao\frmReportTratienNCC.designer.cs">
+      <DependentUpon>frmReportTratienNCC.cs</DependentUpon>
+    </Compile>
     <Compile Include="class\ClassThongke_mathang_dal.cs" />
     <Compile Include="class\Class_ctrl_thongkekho.cs" />
     <Compile Include="class\Class_DTO_ThongKe.cs" />
@@ -147,60 +159,6 @@
     </Compile>
     <Compile Include="BaoCao\frmThongKeTongHop.designer.cs">
       <DependentUpon>frmThongKeTongHop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\reportBaoCaoKhachHang.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\reportBaoCaoKhachHang.designer.cs">
-      <DependentUpon>reportBaoCaoKhachHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\reportBaoCaoLoiNhuan.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\reportBaoCaoLoiNhuan.designer.cs">
-      <DependentUpon>reportBaoCaoLoiNhuan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\reportBaoCaoMathang.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\reportBaoCaoMathang.designer.cs">
-      <DependentUpon>reportBaoCaoMathang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\reportBaoCaoNhomHang.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\reportBaoCaoNhomHang.designer.cs">
-      <DependentUpon>reportBaoCaoNhomHang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\Reportbaocaotheomathang.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\Reportbaocaotheomathang.designer.cs">
-      <DependentUpon>Reportbaocaotheomathang.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\reportBaoCaoThongKeKho.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\reportBaoCaoThongKeKho.Designer.cs" />
-    <Compile Include="BaoCao\reporthansudung.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\reporthansudung.designer.cs">
-      <DependentUpon>reporthansudung.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\ReportKhachang.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\ReportKhachang.Designer.cs" />
-    <Compile Include="BaoCao\ReportTheoloinhuan.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\ReportTheoloinhuan.Designer.cs" />
-    <Compile Include="BaoCao\thongketonghop.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\thongketonghop.Designer.cs">
-      <DependentUpon>thongketonghop.cs</DependentUpon>
     </Compile>
     <Compile Include="class\PublicVariable.cs" />
     <Compile Include="class_import\import.cs">
@@ -347,18 +305,6 @@
     </Compile>
     <Compile Include="HeThong\frmCauHinhHeThong.Designer.cs">
       <DependentUpon>frmCauHinhHeThong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\frmReportThutienKH.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\frmReportThutienKH.designer.cs">
-      <DependentUpon>frmReportThutienKH.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\frmReportTratienNCC.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\frmReportTratienNCC.designer.cs">
-      <DependentUpon>frmReportTratienNCC.cs</DependentUpon>
     </Compile>
     <Compile Include="PhanQuyen\frmPhanQuyen.cs">
       <SubType>Form</SubType>
@@ -533,41 +479,16 @@
       <DependentUpon>frmBaoCaoTonKho.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\frmReportThutienKH.resx">
+      <DependentUpon>frmReportThutienKH.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\frmReportTratienNCC.resx">
+      <DependentUpon>frmReportTratienNCC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\frmThongKeTongHop.resx">
       <DependentUpon>frmThongKeTongHop.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\reportBaoCaoKhachHang.resx">
-      <DependentUpon>reportBaoCaoKhachHang.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\reportBaoCaoLoiNhuan.resx">
-      <DependentUpon>reportBaoCaoLoiNhuan.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\reportBaoCaoMathang.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>reportBaoCaoMathang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\reportBaoCaoNhomHang.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>reportBaoCaoNhomHang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\Reportbaocaotheomathang.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Reportbaocaotheomathang.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\reportBaoCaoThongKeKho.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\reporthansudung.resx">
-      <DependentUpon>reporthansudung.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\ReportKhachang.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\ReportTheoloinhuan.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BoPhan\frmBoPhan.resx">
@@ -624,14 +545,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Load\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\frmReportThutienKH.resx">
-      <DependentUpon>frmReportThutienKH.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\frmReportTratienNCC.resx">
-      <DependentUpon>frmReportTratienNCC.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MatHang\ThemMatHang.resx">
@@ -786,14 +699,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\reportBaoCaoDoanhThu.resx">
-      <DependentUpon>reportBaoCaoDoanhThu.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\reportTonKhoSoLuongGiaTri.resx">
-      <DependentUpon>reportTonKhoSoLuongGiaTri.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="resEngLand.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>resEngLand.Designer.cs</LastGenOutput>
@@ -843,18 +748,6 @@
       <DependentUpon>frmThemKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Class_DoanNgocAnh\Provider.cs" />
-    <Compile Include="BaoCao\reportBaoCaoDoanhThu.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\reportBaoCaoDoanhThu.Designer.cs">
-      <DependentUpon>reportBaoCaoDoanhThu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BaoCao\reportTonKhoSoLuongGiaTri.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="BaoCao\reportTonKhoSoLuongGiaTri.Designer.cs">
-      <DependentUpon>reportTonKhoSoLuongGiaTri.cs</DependentUpon>
-    </Compile>
     <Compile Include="resEngLand.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -886,11 +779,6 @@
     </Compile>
     <Compile Include="Trahang\frmTraNCC.designer.cs">
       <DependentUpon>frmTraNCC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="XUAT_NHAPTONTTCT.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>XUAT_NHAPTONTTCT.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1086,17 +974,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Hien.ico" />
-    <None Include="XUAT_NHAPTONTTCT.xsc">
-      <DependentUpon>XUAT_NHAPTONTTCT.xsd</DependentUpon>
-    </None>
-    <None Include="XUAT_NHAPTONTTCT.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>XUAT_NHAPTONTTCT.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="XUAT_NHAPTONTTCT.xss">
-      <DependentUpon>XUAT_NHAPTONTTCT.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\emblem_art2.ico" />
