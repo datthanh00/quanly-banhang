@@ -254,7 +254,6 @@
             // 
             // checkTT
             // 
-            this.checkTT.EditValue = true;
             this.checkTT.Location = new System.Drawing.Point(108, 104);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";

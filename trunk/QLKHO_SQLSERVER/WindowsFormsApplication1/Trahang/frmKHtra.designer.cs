@@ -336,9 +336,9 @@
             // controlContainer1
             // 
             this.controlContainer1.Controls.Add(this.navBarControl1);
-            this.controlContainer1.Location = new System.Drawing.Point(3, 25);
+            this.controlContainer1.Location = new System.Drawing.Point(3, 24);
             this.controlContainer1.Name = "controlContainer1";
-            this.controlContainer1.Size = new System.Drawing.Size(194, 231);
+            this.controlContainer1.Size = new System.Drawing.Size(194, 232);
             this.controlContainer1.TabIndex = 0;
             // 
             // navBarControl1
@@ -356,7 +356,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(194, 231);
+            this.navBarControl1.Size = new System.Drawing.Size(194, 232);
             this.navBarControl1.TabIndex = 2;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -420,9 +420,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.panelControl6);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 234);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 235);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // panelControl6
@@ -431,17 +431,17 @@
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl6.Location = new System.Drawing.Point(0, 0);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(194, 234);
+            this.panelControl6.Size = new System.Drawing.Size(194, 235);
             this.panelControl6.TabIndex = 0;
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 2);
+            this.gridControl2.Location = new System.Drawing.Point(3, 3);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(190, 230);
+            this.gridControl2.Size = new System.Drawing.Size(188, 229);
             this.gridControl2.TabIndex = 19;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -530,9 +530,9 @@
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.panelControl10);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(1056, 41);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1056, 42);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // panelControl10
@@ -599,7 +599,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(164, 12);
+            this.lbDen.Location = new System.Drawing.Point(165, 13);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -607,7 +607,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(12, 12);
+            this.lbTu.Location = new System.Drawing.Point(13, 13);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -640,7 +640,7 @@
             // 
             // lbDen1
             // 
-            this.lbDen1.Location = new System.Drawing.Point(151, 12);
+            this.lbDen1.Location = new System.Drawing.Point(152, 13);
             this.lbDen1.Name = "lbDen1";
             this.lbDen1.Size = new System.Drawing.Size(20, 13);
             this.lbDen1.TabIndex = 1;
@@ -662,7 +662,7 @@
             // 
             // lbtu1
             // 
-            this.lbtu1.Location = new System.Drawing.Point(5, 12);
+            this.lbtu1.Location = new System.Drawing.Point(6, 13);
             this.lbtu1.Name = "lbtu1";
             this.lbtu1.Size = new System.Drawing.Size(13, 13);
             this.lbtu1.TabIndex = 1;
@@ -724,9 +724,9 @@
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(2, 2);
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1058, 171);
+            this.groupControl1.Size = new System.Drawing.Size(1056, 169);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông Tin Khách Hàng";
             // 
@@ -743,9 +743,9 @@
             // 
             this.panelControl3.Controls.Add(this.groupControl2);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl3.Location = new System.Drawing.Point(695, 22);
+            this.panelControl3.Location = new System.Drawing.Point(693, 21);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(361, 147);
+            this.panelControl3.Size = new System.Drawing.Size(361, 146);
             this.panelControl3.TabIndex = 23;
             // 
             // groupControl2
@@ -764,15 +764,15 @@
             this.groupControl2.Controls.Add(this.cboNhanVienLap);
             this.groupControl2.Controls.Add(this.cbotientra);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(2, 2);
+            this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(357, 143);
+            this.groupControl2.Size = new System.Drawing.Size(355, 140);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Phiếu Thu Hàng Trả Về";
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(191, 32);
+            this.labelControl9.Location = new System.Drawing.Point(191, 31);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(50, 13);
             this.labelControl9.TabIndex = 0;
@@ -780,7 +780,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(202, 88);
+            this.labelControl13.Location = new System.Drawing.Point(202, 87);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(39, 13);
             this.labelControl13.TabIndex = 0;
@@ -788,7 +788,7 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(249, 119);
+            this.labelControl15.Location = new System.Drawing.Point(249, 118);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(20, 13);
             this.labelControl15.TabIndex = 0;
@@ -796,7 +796,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(5, 119);
+            this.labelControl14.Location = new System.Drawing.Point(5, 118);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(35, 13);
             this.labelControl14.TabIndex = 0;
@@ -804,7 +804,7 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(5, 88);
+            this.labelControl12.Location = new System.Drawing.Point(5, 87);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(53, 13);
             this.labelControl12.TabIndex = 0;
@@ -812,7 +812,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(5, 59);
+            this.labelControl10.Location = new System.Drawing.Point(5, 58);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(68, 13);
             this.labelControl10.TabIndex = 0;
@@ -820,7 +820,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(5, 30);
+            this.labelControl8.Location = new System.Drawing.Point(5, 29);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(59, 13);
             this.labelControl8.TabIndex = 0;
@@ -930,7 +930,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(8, 106);
+            this.labelControl7.Location = new System.Drawing.Point(8, 105);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(37, 13);
             this.labelControl7.TabIndex = 0;
@@ -938,7 +938,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(5, 47);
+            this.labelControl2.Location = new System.Drawing.Point(5, 46);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(84, 13);
             this.labelControl2.TabIndex = 0;
@@ -958,7 +958,7 @@
             this.gridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControl1.EmbeddedNavigator.Buttons.Edit.ImageIndex = 0;
             this.gridControl1.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
             this.gridControl1.MainView = this.gridCTHOADON;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -968,7 +968,7 @@
             this.repositoryItemTextEdit1,
             this.repositoryItemLookUpEdit1,
             this.Grid_sanpham});
-            this.gridControl1.Size = new System.Drawing.Size(1058, 107);
+            this.gridControl1.Size = new System.Drawing.Size(1056, 105);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridCTHOADON});
@@ -1199,7 +1199,7 @@
             this.gridControl3.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControl3.EmbeddedNavigator.Buttons.Edit.ImageIndex = 0;
             this.gridControl3.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControl3.Location = new System.Drawing.Point(2, 2);
+            this.gridControl3.Location = new System.Drawing.Point(3, 3);
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1210,7 +1210,7 @@
             this.repositoryItemLookUpEdit3,
             this.repositoryItemGridLookUpEdit1,
             this.repositoryItemComboBox2});
-            this.gridControl3.Size = new System.Drawing.Size(1057, 103);
+            this.gridControl3.Size = new System.Drawing.Size(1055, 101);
             this.gridControl3.TabIndex = 19;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3,

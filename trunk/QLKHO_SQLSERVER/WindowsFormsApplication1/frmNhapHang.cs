@@ -593,7 +593,8 @@ namespace WindowsFormsApplication1
            // tncc.iNgonNgu = iNgonNgu;
             tncc.kiemtra = 1;
             tncc.ShowDialog();
-            //LOADNHACC();
+            loadgridNhacCungCap();
+           
         }
 
         public void loadmahdn()
