@@ -367,6 +367,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
            // tkh.iNgonNgu = iNgonNgu;
             tkh.kiemtra = 1;
             tkh.ShowDialog();
+            loadgridKhachHang();
         }
 
         private void btIn_Click(object sender, EventArgs e)

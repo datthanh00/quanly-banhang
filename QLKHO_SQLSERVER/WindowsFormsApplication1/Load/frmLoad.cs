@@ -60,7 +60,7 @@ namespace WindowsFormsApplication1
                 DataTable PhanQuyen = new DataTable();
                 String SQL = "";
                 CTL ctl = new CTL();
-                SQL = "select * from phankho where MABP='" + sBoPhan + "'";
+                SQL = "select * from phankho where MABP='" + sBoPhan + "' and quanly=1";
                 PhanKho= ctl.GETDATA(SQL);
                 SQL = "select * from phanquyen where MABP='" + sBoPhan + "'";
                 PhanQuyen = ctl.GETDATA(SQL);

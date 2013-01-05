@@ -499,11 +499,15 @@ namespace WindowsFormsApplication1
                         if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btPhanQuyen.Enabled = true;
+                            btnlog.Enabled = true;
+                            btnimportexcell.Enabled = true;
                             break;
                         }
                         else
                         {
                             btPhanQuyen.Enabled = false;
+                            btnlog.Enabled = false;
+                            btnimportexcell.Enabled = false;
                             break;
                         }
                     case "24":
@@ -598,8 +602,10 @@ namespace WindowsFormsApplication1
             cbkho.Properties.ValueMember = "MAKHO";
             cbkho.Properties.View.BestFitColumns();
             cbkho.Properties.PopupFormWidth = 200;
-            Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
-            cbkho.Properties.DataSource = ctr1.dtGetkho();
+            CTL ctl = new CTL();
+            String SQL = "select TENKHO,KHO.MAKHO from phankho,KHO WHERE KHO.MAKHO=PHANKHO.MAKHO AND MABP='" + sBoPhan + "' and quanly=1";
+            
+            cbkho.Properties.DataSource = ctl.GETDATA(SQL);
             gridcbkho.SelectRow(0);
 
             cbkho.Text = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();

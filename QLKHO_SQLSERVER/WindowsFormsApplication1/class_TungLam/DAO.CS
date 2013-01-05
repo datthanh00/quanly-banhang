@@ -12,7 +12,7 @@ namespace WindowsFormsApplication1
         
         public void insertKhachHang(DTO dto)
         {
-            string SQL = "	insert into KHACHHANG(MAKH,MAKV,MAKO,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG)"
+            string SQL = "	insert into KHACHHANG(MAKH,MAKV,MAKHO,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG)"
             + " values('" + dto.MAKH + "','" + dto.MAKV + "','"+PublicVariable.MAKHO+"',N'" + dto.TENKH + "','" + dto.SOTAIKHOAN + "',N'" + dto.NGANHANG + "','" + dto.MASOTHUE + "',N'" + dto.DIACHI + "','" + dto.SDT + "','" + dto.FAX + "','" + dto.WEBSITE + "','" + dto.YAHOO + "','" + dto.SKYPE + "','" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 

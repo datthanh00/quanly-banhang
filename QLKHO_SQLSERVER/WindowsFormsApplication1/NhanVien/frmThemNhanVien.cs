@@ -113,13 +113,13 @@ namespace WindowsFormsApplication1
                 if (iNgonNgu == 0)
                 {
                     string KT;
-                    if (TINHTRANG=="False")
+                    if (checkTT.Checked==true)
                     {
-                        KT = "False";
+                        KT = "True";
                     }
                     else
                     {
-                        KT = "True";
+                        KT = "False";
                     }
                     if (txttennv.Text == "")
                     {
