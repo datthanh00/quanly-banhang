@@ -15,19 +15,19 @@ namespace WindowsFormsApplication1
         public  DataTable GETALLHDX_DAO(string NGAYBD,string NGAYKT)
         {
             Provider pv = new Provider();
-            string SQL = "SELECT MAHDX as 'Mã hóa đơn xuất',convert(varchar,NGAYXUAT,103) as 'Ngày Xuất',TENKH as 'Tên khách hàng',HOADONXUAT.MAKH as 'Mã khách hàng',TIENPHAITRA AS 'Tiền phải trả',TIENdaTRA as 'Tiền đã trả', tienphaitra-tiendatra as 'Còn lại' FROM HOADONXUAT,KHACHHANG WHERE HOADONXUAT.MAKH=KHACHHANG.MAKH AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra <> 0 and ngayxuat BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' group by hoadonxuat.mahdx,hoadonxuat.tienphaitra,hoadonxuat.tiendatra,khachhang.tenkh,hoadonxuat.makh,hoadonxuat.ngayxuat";
+            string SQL = "SELECT MAHDX ,convert(varchar,NGAYXUAT,103) as NGAYXUAT,TENKH ,HOADONXUAT.MAKH ,TIENPHAITRA ,TIENDATRA , tienphaitra-tiendatra as CONLAI FROM HOADONXUAT,KHACHHANG WHERE HOADONXUAT.MAKH=KHACHHANG.MAKH AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra <> 0 and ngayxuat BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' group by hoadonxuat.mahdx,hoadonxuat.tienphaitra,hoadonxuat.tiendatra,khachhang.tenkh,hoadonxuat.makh,hoadonxuat.ngayxuat";
             return pv.getdata(SQL);
         }
         public DataTable GETALLPHIEUCHI_DAO(string NGAYBD, string NGAYKT)
         {
             Provider pv = new Provider();
-            string SQL = "SELECT MAPT as 'Mã phiếu thu',TENNV as 'Tên nhân viên',HOADONXUAT.MAhdx as 'Mã hóa đơn xuất', convert(varchar,ngaythu ,103)AS 'Ngày thu',SoTienTra_PT as 'Tiền đã trả' FROM PHIEUTHU ,NHANVIEN, HOADONXUAT WHERE  NHANVIEN.MANV=PHIEUTHU.MANV AND HOADONXUAT.MAHDX=PHIEUTHU.MAHDX AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and ngaythu BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
+            string SQL = "SELECT MAPT ,TENNV,HOADONXUAT.MAHDX, convert(varchar,ngaythu ,103)AS NGAYTHU,SoTienTra_PT as TIENDATRA FROM PHIEUTHU ,NHANVIEN, HOADONXUAT WHERE  NHANVIEN.MANV=PHIEUTHU.MANV AND HOADONXUAT.MAHDX=PHIEUTHU.MAHDX AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and ngaythu BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
             return pv.getdata(SQL);
         }
         public  DataTable get1pt_dao(string sMahdx)
         {
             Provider pv = new Provider();
-            string SQL = "SELECT MAPT as 'Mã phiếu thu',HOADONXUAT.MANV as 'Mã nhân viên',HOADONXUAT.MAhdx as 'Mã hóa đơn xuất',convert(varchar,ngaythu ,103)AS 'Ngày thu',sotientra_pt as 'Tiền đã trả' FROM PHIEUTHU,HOADONXUAT WHERE PHIEUTHU.MAHDX=HOADONXUAT.MAHDX AND HOADONXUAT.MAHDX='" + sMahdx + "'";
+            string SQL = "SELECT MAPT ,HOADONXUAT.MANV ,HOADONXUAT.MAHDX ,convert(varchar,ngaythu ,103)AS NGAYTHU,sotientra_pt as TIENDATRA FROM PHIEUTHU,HOADONXUAT WHERE PHIEUTHU.MAHDX=HOADONXUAT.MAHDX AND HOADONXUAT.MAHDX='" + sMahdx + "'";
             return pv.getdata(SQL);
         }
 
@@ -63,7 +63,7 @@ namespace WindowsFormsApplication1
         {
 
             Provider pv = new Provider();
-            string SQL = "SELECT MAHDN as 'Mã hóa đơn nhập',TENncc as 'Tên nhà cung cấp',HOADONnhap.MAncc as 'Mã nhà cung cấp',TIENPHAITRA AS 'Tiền phải trả',TIENdaTRA as 'Tiền đã trả', tienphaitra-tiendatra as 'Còn lại'"
+            string SQL = "SELECT MAHDN ,TENNCC,HOADONnhap.MANCC,TIENPHAITRA ,TIENDATRA, tienphaitra-tiendatra as CONLAI"
             +" FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc AND HOADONNHAP.MAKHO='"+PublicVariable.MAKHO+"' and hoadonnhap.tinhtrang='false' "
             +" group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc";
             return pv.getdata(SQL);
@@ -72,7 +72,7 @@ namespace WindowsFormsApplication1
         {
 
             Provider pv = new Provider();
-            string SQL = "SELECT MAHDN as 'Mã hóa đơn nhập',convert(varchar,NGAYNHAP ,103)AS 'Ngày nhập',TENncc as 'Tên nhà cung cấp',HOADONnhap.MAncc as 'Mã nhà cung cấp',TIENPHAITRA AS 'Tiền phải trả',TIENdaTRA as 'Tiền đã trả', tienphaitra-tiendatra as 'Còn lại' FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra<>0 and ngaynhap BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc,hoadonnhap.ngaynhap";
+            string SQL = "SELECT MAHDN ,convert(varchar,NGAYNHAP ,103)AS NGAYNHAP,TENNCC,HOADONnhap.MANCC,TIENPHAITRA ,TIENDATRA , tienphaitra-tiendatra as  CONLAI FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra<>0 and ngaynhap BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc,hoadonnhap.ngaynhap";
             return pv.getdata(SQL);
         }
 
@@ -103,14 +103,14 @@ namespace WindowsFormsApplication1
         {
 
             Provider pv = new Provider();
-            string SQL = "SELECT MAPc as 'Mã phiếu chi',MANV as 'Mã nhân viên',MAhdn as 'Mã hóa đơn nhập',convert(varchar,NGAYCHI ,103)AS  'Ngày chi',SoTienDaTra_PC as 'Tiền đã trả' FROM PHIEUCHI WHERE MAHDN='" + sMahdn + "'";
+            string SQL = "SELECT MAPC,MANV ,MAHDN ,convert(varchar,NGAYCHI ,103)AS NGAYCHI,SoTienDaTra_PC as TIENDATRA FROM PHIEUCHI WHERE MAHDN='" + sMahdn + "'";
             return pv.getdata(SQL);
         }
         public  DataTable Getall_phieuchi_Dao(string NGAYBD, string NGAYKT)
         {
 
             Provider pv = new Provider();
-            string SQL = "SELECT MAPc as 'Mã phiếu chi',TENNV as 'Tên nhân viên',HOADONNHAP.MAhdn as 'Mã hóa đơn nhập',convert(varchar,NGAYCHI ,103)AS  'Ngày chi',SoTienDaTra_PC as 'Tiền đã trả' FROM PHIEUCHI, NHANVIEN,HOADONNHAP WHERE PHIEUCHI.MANV=NHANVIEN.MANV AND PHIEUCHI.MAHDN=HOADONNHAP.MAHDN AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and ngaychi BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
+            string SQL = "SELECT MAPC ,TENNV ,HOADONNHAP.MAHDN ,convert(varchar,NGAYCHI ,103)AS  NGAYCHI ,SoTienDaTra_PC AS TIENDATRA FROM PHIEUCHI, NHANVIEN,HOADONNHAP WHERE PHIEUCHI.MANV=NHANVIEN.MANV AND PHIEUCHI.MAHDN=HOADONNHAP.MAHDN AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and ngaychi BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
             return pv.getdata(SQL);
         }
         public  void SUAPHIEUCHI_DAO(PHIEUCHI_DTO dto)

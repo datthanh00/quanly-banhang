@@ -272,15 +272,17 @@ namespace WindowsFormsApplication1
             cbmathang.Properties.DisplayMember = "TENSANPHAM";
             cbmathang.Properties.ValueMember = "MASANPHAM";
             cbmathang.Properties.View.BestFitColumns();
-            cbmathang.Properties.PopupFormWidth = 200;
+            //cbmathang.Properties.PopupFormWidth = 200;
             Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
             cbmathang.Properties.DataSource = ctr1.dtGetsanpham();
+            gridView2.BestFitColumns();
+            //cbmathang.best
 
             cbnhomhang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cbnhomhang.Properties.DisplayMember = "TENNCC";
             cbnhomhang.Properties.ValueMember = "MANCC";
             cbnhomhang.Properties.View.BestFitColumns();
-            cbnhomhang.Properties.PopupFormWidth = 200;
+            cbnhomhang.Properties.PopupFormWidth = 300;
             cbnhomhang.Properties.DataSource = ctr1.dtGetNCC();
         }
 

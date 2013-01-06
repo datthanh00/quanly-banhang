@@ -39,6 +39,45 @@ namespace WindowsFormsApplication1.KHtra
            
 
         }
+        public void Load_MAHD()
+        {
+            string sql = "SELECT MAX(MAHDX) FROM HOADONXUAT";
+            DataTable dt = ctlNCC.GETDATA(sql);
+
+            if (dt.Rows[0][0].ToString() == "")
+            {
+                tbmahdx.Properties.Items.Add("Chưa có HDX");
+            }
+            else
+            {
+                string smahd = dt.Rows[0][0].ToString();
+                int maxnum = Convert.ToInt32(smahd.Substring(5, 5));
+
+                for (int i = 1; i < maxnum; i++)
+                {
+                    if (i < 10)
+                    {
+                        tbmahdx.Properties.Items.Add("MAHDX0000" + i.ToString());
+                    }
+                    else if (i < 100)
+                    {
+                        tbmahdx.Properties.Items.Add("MAHDX000" + i.ToString());
+                    }
+                    else if (i < 1000)
+                    {
+                        tbmahdx.Properties.Items.Add("MAHDX00" + i.ToString());
+                    }
+                    else if (i < 10000)
+                    {
+                        tbmahdx.Properties.Items.Add("MAHDX0" + i.ToString());
+                    }
+                    else
+                    {
+                        tbmahdx.Properties.Items.Add("MAHDX" + i.ToString());
+                    }
+                }
+            }
+        }
         public void Load_panel_create()
         {
             Panel_filter.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
@@ -95,6 +134,7 @@ namespace WindowsFormsApplication1.KHtra
             Grid_sanpham.DataSource = tbsanpham;
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "MAMH";
+            Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
 
         }
 
@@ -126,6 +166,7 @@ namespace WindowsFormsApplication1.KHtra
             Load_panel_create();
             dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
             dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
+            Load_MAHD();
         }
 
         private void cboTenKH_Validated(object sender, EventArgs e)
@@ -168,6 +209,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void btLuu_Click(object sender, EventArgs e)
         {
+            //kiemtramahd();
             try
             {
                 if (tbmahdx.Text =="")
@@ -535,7 +577,7 @@ namespace WindowsFormsApplication1.KHtra
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNHOMHANG, TENNCC,KLDVT, DONVITINH, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN, SUM(SOLUONGXUAT*GIATIEN) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN FROM TRACHITIETHDX, TRAHOADONXUAT WHERE TRACHITIETHDX.MAHDX=TRAHOADONXUAT.MAHDX AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDX WHERE MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNHOMHANG, TENNCC, DONVITINH,GIATIEN,KLDVT";
+            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC,KLDVT, DONVITINH, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN, SUM(SOLUONGXUAT*GIATIEN) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN FROM TRACHITIETHDX, TRAHOADONXUAT WHERE TRACHITIETHDX.MAHDX=TRAHOADONXUAT.MAHDX AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDX WHERE MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC, DONVITINH,GIATIEN,KLDVT";
            
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
@@ -842,10 +884,7 @@ namespace WindowsFormsApplication1.KHtra
             }
         }
 
-        private void tbmahdx_Validated_1(object sender, EventArgs e)
-        {
-            kiemtramahd();
-        }
+ 
 
         private void tbmahdx_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -859,7 +898,7 @@ namespace WindowsFormsApplication1.KHtra
             if (tbmahdx.Text == "")
             {
                 XtraMessageBox.Show("Vui lòng điền mã hóa đơn xuất");
-                tbmahdx.Focus();
+                //tbmahdx.Focus();
                 return;
             }
 
@@ -869,13 +908,18 @@ namespace WindowsFormsApplication1.KHtra
             {
                 tbmahdx.Text = "";
                 XtraMessageBox.Show("Không có mã hóa đơn này");
-                tbmahdx.Focus();
+                //tbmahdx.Focus();
                 return;
             }
 
             loadGrid_sanpham(tbmahdx.Text);
             loadgridCTHOADON();
             
+        }
+
+        private void tbmahdx_Validated(object sender, EventArgs e)
+        {
+            kiemtramahd();
         }
 
 

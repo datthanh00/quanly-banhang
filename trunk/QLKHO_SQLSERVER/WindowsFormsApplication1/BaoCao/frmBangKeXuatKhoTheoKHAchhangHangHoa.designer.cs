@@ -111,11 +111,12 @@
             this.gridColumn83 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView9 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
             this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridColumn55 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn54 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn56 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridColumn55 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn58 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn59 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn62 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn67 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -239,7 +240,7 @@
             this.gridBand13 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand10 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridColumn74 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -331,9 +332,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 442);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 443);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -354,7 +355,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 194;
-            this.navBarControl1.Size = new System.Drawing.Size(181, 442);
+            this.navBarControl1.Size = new System.Drawing.Size(181, 443);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "Thống Kê";
             // 
@@ -414,7 +415,7 @@
             // 
             // Linktonkhotonghop
             // 
-            this.Linktonkhotonghop.Caption = "Tồn Kho Tổng Hợp";
+            this.Linktonkhotonghop.Caption = "Tồn Kho Cuối Kỳ";
             this.Linktonkhotonghop.Name = "Linktonkhotonghop";
             this.Linktonkhotonghop.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
             this.Linktonkhotonghop.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.Linktonkhotonghop_LinkClicked);
@@ -565,7 +566,8 @@
             // 
             this.gridcbmathang.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn11,
-            this.gridColumn15});
+            this.gridColumn15,
+            this.gridColumn74});
             this.gridcbmathang.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridcbmathang.Name = "gridcbmathang";
             this.gridcbmathang.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -747,7 +749,7 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
             this.gridControl1.MainView = this.gridView7;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -755,7 +757,7 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
             this.repositoryItemDateEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1101, 393);
+            this.gridControl1.Size = new System.Drawing.Size(1099, 391);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7,
@@ -813,6 +815,8 @@
             // gridColumn73
             // 
             this.gridColumn73.Caption = "KLDVT";
+            this.gridColumn73.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn73.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn73.FieldName = "KLDVT";
             this.gridColumn73.Name = "gridColumn73";
             this.gridColumn73.Visible = true;
@@ -845,6 +849,8 @@
             // gv7colSOLUONG
             // 
             this.gv7colSOLUONG.Caption = "Số Lượng";
+            this.gv7colSOLUONG.DisplayFormat.FormatString = "{0:0,0}";
+            this.gv7colSOLUONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gv7colSOLUONG.FieldName = "SOLUONGMH";
             this.gv7colSOLUONG.Name = "gv7colSOLUONG";
             this.gv7colSOLUONG.Visible = true;
@@ -853,6 +859,8 @@
             // gv7colDONGIA
             // 
             this.gv7colDONGIA.Caption = "Đơn Giá";
+            this.gv7colDONGIA.DisplayFormat.FormatString = "{0:0,0}";
+            this.gv7colDONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gv7colDONGIA.FieldName = "GIAMUA";
             this.gv7colDONGIA.Name = "gv7colDONGIA";
             this.gv7colDONGIA.Visible = true;
@@ -861,6 +869,8 @@
             // gv7colTHANHTIEN
             // 
             this.gv7colTHANHTIEN.Caption = "Thành Tiền";
+            this.gv7colTHANHTIEN.DisplayFormat.FormatString = "{0:0,0}";
+            this.gv7colTHANHTIEN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gv7colTHANHTIEN.FieldName = "THANHTIEN";
             this.gv7colTHANHTIEN.Name = "gv7colTHANHTIEN";
             this.gv7colTHANHTIEN.Visible = true;
@@ -1020,6 +1030,8 @@
             // gridColumn60
             // 
             this.gridColumn60.Caption = "Số Lượng";
+            this.gridColumn60.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn60.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn60.FieldName = "SOLUONGNHAP";
             this.gridColumn60.Name = "gridColumn60";
             this.gridColumn60.OptionsColumn.AllowEdit = false;
@@ -1182,14 +1194,6 @@
             this.gridBand4.OptionsBand.FixedWidth = true;
             this.gridBand4.Width = 684;
             // 
-            // gridColumn55
-            // 
-            this.gridColumn55.Caption = "Tên Hàng";
-            this.gridColumn55.FieldName = "TENMH";
-            this.gridColumn55.Name = "gridColumn55";
-            this.gridColumn55.Visible = true;
-            this.gridColumn55.Width = 80;
-            // 
             // gridColumn54
             // 
             this.gridColumn54.Caption = "Mã Hàng";
@@ -1206,6 +1210,14 @@
             this.gridColumn56.Visible = true;
             this.gridColumn56.Width = 90;
             // 
+            // gridColumn55
+            // 
+            this.gridColumn55.Caption = "Tên Hàng";
+            this.gridColumn55.FieldName = "TENMH";
+            this.gridColumn55.Name = "gridColumn55";
+            this.gridColumn55.Visible = true;
+            this.gridColumn55.Width = 80;
+            // 
             // gridColumn58
             // 
             this.gridColumn58.Caption = "Kho Hàng";
@@ -1221,6 +1233,15 @@
             this.gridColumn59.Visible = true;
             this.gridColumn59.Width = 76;
             // 
+            // bandedGridColumn3
+            // 
+            this.bandedGridColumn3.Caption = "KL DVT";
+            this.bandedGridColumn3.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn3.FieldName = "KLDVT";
+            this.bandedGridColumn3.Name = "bandedGridColumn3";
+            this.bandedGridColumn3.Visible = true;
+            // 
             // gridColumn62
             // 
             this.gridColumn62.Caption = "Đơn Vị";
@@ -1232,6 +1253,8 @@
             // gridColumn67
             // 
             this.gridColumn67.Caption = "Giá Mua";
+            this.gridColumn67.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn67.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn67.FieldName = "GIAMUA";
             this.gridColumn67.Name = "gridColumn67";
             this.gridColumn67.Visible = true;
@@ -1240,6 +1263,8 @@
             // bandedGridColumn1
             // 
             this.bandedGridColumn1.Caption = "Giá Bán";
+            this.bandedGridColumn1.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn1.FieldName = "GIABAN";
             this.bandedGridColumn1.Name = "bandedGridColumn1";
             this.bandedGridColumn1.Visible = true;
@@ -1259,6 +1284,8 @@
             // gridColumn63
             // 
             this.gridColumn63.Caption = "Số lượng";
+            this.gridColumn63.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn63.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn63.FieldName = "TONDAU";
             this.gridColumn63.Name = "gridColumn63";
             this.gridColumn63.Visible = true;
@@ -1266,6 +1293,8 @@
             // gridColumn68
             // 
             this.gridColumn68.Caption = "Thành Tiền";
+            this.gridColumn68.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn68.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn68.FieldName = "TIENTONDAU";
             this.gridColumn68.Name = "gridColumn68";
             this.gridColumn68.Visible = true;
@@ -1284,6 +1313,8 @@
             // gridColumn64
             // 
             this.gridColumn64.Caption = "Số lượng";
+            this.gridColumn64.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn64.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn64.FieldName = "NHAP";
             this.gridColumn64.Name = "gridColumn64";
             this.gridColumn64.Visible = true;
@@ -1291,6 +1322,8 @@
             // gridColumn69
             // 
             this.gridColumn69.Caption = "Thành Tiền";
+            this.gridColumn69.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn69.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn69.FieldName = "TIENNHAP";
             this.gridColumn69.Name = "gridColumn69";
             this.gridColumn69.Visible = true;
@@ -1309,6 +1342,8 @@
             // gridColumn65
             // 
             this.gridColumn65.Caption = "Số lượng";
+            this.gridColumn65.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn65.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn65.FieldName = "XUAT";
             this.gridColumn65.Name = "gridColumn65";
             this.gridColumn65.Visible = true;
@@ -1316,6 +1351,8 @@
             // gridColumn70
             // 
             this.gridColumn70.Caption = "Thành Tiền";
+            this.gridColumn70.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn70.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn70.FieldName = "TIENXUAT";
             this.gridColumn70.Name = "gridColumn70";
             this.gridColumn70.Visible = true;
@@ -1334,6 +1371,8 @@
             // gridColumn66
             // 
             this.gridColumn66.Caption = "Số lượng";
+            this.gridColumn66.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn66.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn66.FieldName = "TONCUOI";
             this.gridColumn66.Name = "gridColumn66";
             this.gridColumn66.Visible = true;
@@ -1341,6 +1380,8 @@
             // gridColumn71
             // 
             this.gridColumn71.Caption = "Thành Tiền";
+            this.gridColumn71.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn71.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn71.FieldName = "TIENTONCUOI";
             this.gridColumn71.Name = "gridColumn71";
             this.gridColumn71.Visible = true;
@@ -1465,6 +1506,8 @@
             // bandedGridColumn2
             // 
             this.bandedGridColumn2.Caption = "KL DVT";
+            this.bandedGridColumn2.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn2.FieldName = "KLDVT";
             this.bandedGridColumn2.Name = "bandedGridColumn2";
             this.bandedGridColumn2.Visible = true;
@@ -1503,6 +1546,8 @@
             // gridColumn46
             // 
             this.gridColumn46.Caption = "Tồn Đầu";
+            this.gridColumn46.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn46.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn46.FieldName = "TONDAU";
             this.gridColumn46.Name = "gridColumn46";
             this.gridColumn46.Visible = true;
@@ -1511,6 +1556,8 @@
             // gridColumn47
             // 
             this.gridColumn47.Caption = "Nhập";
+            this.gridColumn47.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn47.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn47.FieldName = "NHAP";
             this.gridColumn47.Name = "gridColumn47";
             this.gridColumn47.Visible = true;
@@ -1519,6 +1566,8 @@
             // gridColumn48
             // 
             this.gridColumn48.Caption = "Xuất";
+            this.gridColumn48.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn48.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn48.FieldName = "XUAT";
             this.gridColumn48.Name = "gridColumn48";
             this.gridColumn48.Visible = true;
@@ -1527,6 +1576,8 @@
             // gridColumn51
             // 
             this.gridColumn51.Caption = "Tồn Cuối";
+            this.gridColumn51.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn51.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn51.FieldName = "TONCUOI";
             this.gridColumn51.Name = "gridColumn51";
             this.gridColumn51.Visible = true;
@@ -1601,6 +1652,8 @@
             // gridColumn17
             // 
             this.gridColumn17.Caption = "Số Lượng";
+            this.gridColumn17.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn17.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn17.FieldName = "SOLUONGMH";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
@@ -1812,6 +1865,8 @@
             // gridColumn31
             // 
             this.gridColumn31.Caption = "Số Lượng Đầu";
+            this.gridColumn31.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn31.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn31.FieldName = "SOLUONGDAU";
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.OptionsColumn.AllowEdit = false;
@@ -1829,6 +1884,8 @@
             // gridColumn33
             // 
             this.gridColumn33.Caption = "Số Lượng Nhập";
+            this.gridColumn33.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn33.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn33.FieldName = "SOLUONGNHAP";
             this.gridColumn33.Name = "gridColumn33";
             this.gridColumn33.OptionsColumn.AllowEdit = false;
@@ -1854,13 +1911,15 @@
             // gridColumn36
             // 
             this.gridColumn36.Caption = "Số Lượng Tồn";
+            this.gridColumn36.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn36.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn36.FieldName = "SOLUONGTON";
             this.gridColumn36.Name = "gridColumn36";
             this.gridColumn36.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn37
             // 
-            this.gridColumn37.Caption = "Thành Tiền Ton";
+            this.gridColumn37.Caption = "Thành Tiền Tồn";
             this.gridColumn37.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn37.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn37.FieldName = "TONGTIENTON";
@@ -1870,6 +1929,8 @@
             // gridColumn38
             // 
             this.gridColumn38.Caption = "Số Lượng Xuất";
+            this.gridColumn38.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn38.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn38.FieldName = "SOLUONGXUAT";
             this.gridColumn38.Name = "gridColumn38";
             this.gridColumn38.OptionsColumn.AllowEdit = false;
@@ -1899,6 +1960,8 @@
             // gridColumn40
             // 
             this.gridColumn40.Caption = "Số Lượng";
+            this.gridColumn40.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn40.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn40.FieldName = "SOLUONGMH";
             this.gridColumn40.Name = "gridColumn40";
             this.gridColumn40.OptionsColumn.AllowEdit = false;
@@ -1983,6 +2046,7 @@
             // colsoluongmh
             // 
             this.colsoluongmh.Caption = "Số Lượng";
+            this.colsoluongmh.DisplayFormat.FormatString = "{0:0,0}";
             this.colsoluongmh.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsoluongmh.FieldName = "SOLUONGMH";
             this.colsoluongmh.ImageAlignment = System.Drawing.StringAlignment.Center;
@@ -2240,6 +2304,8 @@
             // gridColumn42
             // 
             this.gridColumn42.Caption = "KLDVT";
+            this.gridColumn42.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn42.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn42.FieldName = "KLDVT";
             this.gridColumn42.Name = "gridColumn42";
             this.gridColumn42.Visible = true;
@@ -2259,6 +2325,8 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Số Lượng";
+            this.gridColumn3.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn3.FieldName = "SOLUONGXUAT";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
@@ -2438,6 +2506,8 @@
             // colSLDau1
             // 
             this.colSLDau1.Caption = "Số Lượng Đầu";
+            this.colSLDau1.DisplayFormat.FormatString = "{0:0,0}";
+            this.colSLDau1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLDau1.FieldName = "SOLUONGDAU";
             this.colSLDau1.Name = "colSLDau1";
             this.colSLDau1.OptionsColumn.AllowEdit = false;
@@ -2456,6 +2526,8 @@
             // colSLNhap1
             // 
             this.colSLNhap1.Caption = "Số Lượng Nhập";
+            this.colSLNhap1.DisplayFormat.FormatString = "{0:0,0}";
+            this.colSLNhap1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLNhap1.FieldName = "SOLUONGNHAP";
             this.colSLNhap1.Name = "colSLNhap1";
             this.colSLNhap1.OptionsColumn.AllowEdit = false;
@@ -2474,6 +2546,8 @@
             // colThanhTienXuat
             // 
             this.colThanhTienXuat.Caption = "Thành Tiền";
+            this.colThanhTienXuat.DisplayFormat.FormatString = "{0:0,0}";
+            this.colThanhTienXuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colThanhTienXuat.FieldName = "TONGTIENXUAT";
             this.colThanhTienXuat.Name = "colThanhTienXuat";
             this.colThanhTienXuat.OptionsColumn.AllowEdit = false;
@@ -2482,6 +2556,8 @@
             // colSLTOn1
             // 
             this.colSLTOn1.Caption = "Số Lượng Tồn";
+            this.colSLTOn1.DisplayFormat.FormatString = "{0:0,0}";
+            this.colSLTOn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLTOn1.FieldName = "SOLUONGMH";
             this.colSLTOn1.Name = "colSLTOn1";
             this.colSLTOn1.OptionsColumn.AllowEdit = false;
@@ -2500,6 +2576,8 @@
             // colSLXuat1
             // 
             this.colSLXuat1.Caption = "Số Lượng Xuất";
+            this.colSLXuat1.DisplayFormat.FormatString = "{0:0,0}";
+            this.colSLXuat1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLXuat1.FieldName = "SOLUONGXUAT";
             this.colSLXuat1.Name = "colSLXuat1";
             this.colSLXuat1.OptionsColumn.AllowEdit = false;
@@ -2530,6 +2608,8 @@
             // gridColumn44
             // 
             this.gridColumn44.Caption = "Số Lượng";
+            this.gridColumn44.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn44.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn44.FieldName = "SOLUONGTON";
             this.gridColumn44.Name = "gridColumn44";
             this.gridColumn44.OptionsColumn.AllowEdit = false;
@@ -2583,12 +2663,13 @@
             // 
             this.gridBand10.Name = "gridBand10";
             // 
-            // bandedGridColumn3
+            // gridColumn74
             // 
-            this.bandedGridColumn3.Caption = "KL DVT";
-            this.bandedGridColumn3.FieldName = "KLDVT";
-            this.bandedGridColumn3.Name = "bandedGridColumn3";
-            this.bandedGridColumn3.Visible = true;
+            this.gridColumn74.Caption = "Nhà Cung Cấp";
+            this.gridColumn74.FieldName = "TENNCC";
+            this.gridColumn74.Name = "gridColumn74";
+            this.gridColumn74.Visible = true;
+            this.gridColumn74.VisibleIndex = 2;
             // 
             // frmBangKeXuatKhoTheoKHAchhangHangHoa
             // 
@@ -2867,6 +2948,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn73;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn2;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn74;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHOTableAdapter kHOTableAdapter;
     }
 }

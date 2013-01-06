@@ -1044,3 +1044,4 @@ e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsAp
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Interop.Excel.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Interop.Microsoft.Office.Core.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Interop.VBIDE.dll
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Microsoft.SqlServer.BatchParser.dll

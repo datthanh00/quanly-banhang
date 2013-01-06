@@ -235,10 +235,10 @@ namespace WindowsFormsApplication1
             try
             {
                 DataRow dtr1 = gridView2.GetDataRow(e.RowHandle);
-                smpc = dtr1[0].ToString();
-                sMaNV = dtr1[1].ToString();
-                smahdn = dtr1[2].ToString();
-                stientra = dtr1[4].ToString();
+                smpc = dtr1["MAPC"].ToString();
+                //sMaNV = dtr1["MANV"].ToString();
+                smahdn = dtr1["MAHDN"].ToString();
+                stientra = dtr1["TIENDATRA"].ToString();
             }
             catch
             {

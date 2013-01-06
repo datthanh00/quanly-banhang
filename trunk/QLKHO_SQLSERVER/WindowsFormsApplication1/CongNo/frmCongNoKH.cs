@@ -89,9 +89,9 @@ namespace WindowsFormsApplication1
             {
                 
                 DataRow dtr = gridView1.GetDataRow(e.RowHandle);
-                sMahdx = dtr[0].ToString();
-                smaKH = dtr[2].ToString();
-                sTienno = dtr[6].ToString();
+                sMahdx = dtr["MAHDX"].ToString();
+                smaKH = dtr["MAKH"].ToString();
+                sTienno = dtr["TIENPHAITRA"].ToString();
                 //dt = CTR.get1pthdx_ctrl(dtr[0].ToString());
                 //gridControl2.DataSource = dt;
             }
@@ -206,10 +206,10 @@ namespace WindowsFormsApplication1
             try
             {
                 DataRow dtr1 = gridView2.GetDataRow(e.RowHandle);
-                smpt = dtr1[0].ToString();
-                sMaNV = dtr1[1].ToString();
-                smahdx=dtr1[2].ToString();
-                stientra = dtr1[4].ToString();
+                smpt = dtr1["MAPT"].ToString();
+                //sMaNV = dtr1["MANV"].ToString();
+                smahdx=dtr1["MAHDX"].ToString();
+                stientra = dtr1["TIENDATRA"].ToString();
                
             }
             catch 
@@ -232,9 +232,9 @@ namespace WindowsFormsApplication1
             if (hitInfo.InRow)
             {
                 DataRow dtr = gridView1.GetDataRow(hitInfo.RowHandle);
-                sMahdx = dtr[0].ToString();
-                smaKH = dtr[2].ToString();
-                sTienno = dtr[6].ToString();
+                sMahdx = dtr["MAHDX"].ToString();
+                smaKH = dtr["MAKH"].ToString();
+                sTienno = dtr["TIENPHAITRA"].ToString();
 
 
                 loadfrm_thutien();

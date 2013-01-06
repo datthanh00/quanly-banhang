@@ -970,6 +970,8 @@
             this.cbkho.Size = new System.Drawing.Size(163, 20);
             this.cbkho.TabIndex = 28;
             this.cbkho.EditValueChanged += new System.EventHandler(this.cbkho_EditValueChanged);
+    
+            this.cbkho.TextChanged += new System.EventHandler(this.cbkho_TextChanged);
             // 
             // gridcbkho
             // 

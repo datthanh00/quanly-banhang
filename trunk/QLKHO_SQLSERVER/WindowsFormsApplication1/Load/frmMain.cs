@@ -1962,5 +1962,12 @@ namespace WindowsFormsApplication1
             ld.simpleCloseWait();
         }
 
+
+
+        private void cbkho_TextChanged(object sender, EventArgs e)
+        {
+            PublicVariable.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+        }
+
     }
 }

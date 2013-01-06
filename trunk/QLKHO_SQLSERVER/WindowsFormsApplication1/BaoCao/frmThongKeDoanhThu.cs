@@ -328,21 +328,22 @@ namespace WindowsFormsApplication1
             cbsanpham.Properties.DisplayMember = "TENMH";
             cbsanpham.Properties.ValueMember = "MAMH";
             cbsanpham.Properties.View.BestFitColumns();
-            cbsanpham.Properties.PopupFormWidth = 200;
+            cbsanpham.Properties.PopupFormWidth = 300;
             cbsanpham.Properties.DataSource = ctr1.dtGetsanpham2();
 
             cbncc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cbncc.Properties.DisplayMember = "TENNCC";
             cbncc.Properties.ValueMember = "MANCC";
             cbncc.Properties.View.BestFitColumns();
-            cbncc.Properties.PopupFormWidth = 200;
+            //cbncc.Properties.PopupFormWidth = 200;
             cbncc.Properties.DataSource = ctr1.dtGetNCC();
+            gridsanpham.BestFitColumns();
 
             cbkhachhang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cbkhachhang.Properties.DisplayMember = "TENKH";
             cbkhachhang.Properties.ValueMember = "MAKH";
             cbkhachhang.Properties.View.BestFitColumns();
-            cbkhachhang.Properties.PopupFormWidth = 200;
+            cbkhachhang.Properties.PopupFormWidth = 300;
             cbkhachhang.Properties.DataSource = ctr1.dtGetKH();
 
         }

@@ -1445,6 +1445,7 @@
             // 
             this.gridColumn39.Caption = "Tổng Tiền Nhập";
             this.gridColumn39.CustomizationCaption = "{0:0,0}";
+            this.gridColumn39.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn39.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn39.FieldName = "TONGTIEN";
             this.gridColumn39.Name = "gridColumn39";

@@ -67,7 +67,7 @@
             this.panel_info1 = new DevExpress.XtraEditors.PanelControl();
             this.panel_info = new DevExpress.XtraEditors.GroupControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.tbmahdn = new DevExpress.XtraEditors.TextEdit();
+            this.tbmahdn = new DevExpress.XtraEditors.ComboBoxEdit();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
@@ -629,12 +629,13 @@
             // 
             // tbmahdn
             // 
-            this.tbmahdn.Location = new System.Drawing.Point(119, 18);
+            this.tbmahdn.Location = new System.Drawing.Point(119, 20);
             this.tbmahdn.Name = "tbmahdn";
-            this.tbmahdn.Size = new System.Drawing.Size(118, 20);
-            this.tbmahdn.TabIndex = 20;
-            this.tbmahdn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbmahdn_KeyPress_1);
-            this.tbmahdn.Validated += new System.EventHandler(this.tbmahdn_Validated_1);
+            this.tbmahdn.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.tbmahdn.Size = new System.Drawing.Size(100, 20);
+            this.tbmahdn.TabIndex = 39;
+            this.tbmahdn.Validated += new System.EventHandler(this.tbmahdn_Validated);
             // 
             // textBoxX1
             // 
@@ -1230,6 +1231,8 @@
             // gridColumn17
             // 
             this.gridColumn17.Caption = "Tiền Nhận Lại";
+            this.gridColumn17.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn17.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn17.FieldName = "TIENPHAITRA";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
@@ -1238,6 +1241,8 @@
             // gridColumn18
             // 
             this.gridColumn18.Caption = "Tiền Đã Nhận";
+            this.gridColumn18.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn18.FieldName = "TIENDATRA";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.Visible = true;
@@ -1246,6 +1251,8 @@
             // gridColumn19
             // 
             this.gridColumn19.Caption = "Còn Lại";
+            this.gridColumn19.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn19.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn19.FieldName = "TIENNO";
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
@@ -1431,6 +1438,8 @@
             // gridColumn30
             // 
             this.gridColumn30.Caption = "Số Lượng Trả";
+            this.gridColumn30.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn30.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn30.FieldName = "SOLUONGNHAP";
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1440,6 +1449,8 @@
             // gridColumn31
             // 
             this.gridColumn31.Caption = "Giá Trả";
+            this.gridColumn31.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn31.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn31.FieldName = "GIANHAP";
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
@@ -1449,6 +1460,8 @@
             // gridColumn42
             // 
             this.gridColumn42.Caption = "Thành Tiền";
+            this.gridColumn42.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn42.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn42.FieldName = "THANHTIEN";
             this.gridColumn42.Name = "gridColumn42";
             this.gridColumn42.Visible = true;
@@ -1539,6 +1552,8 @@
             // gridColumn38
             // 
             this.gridColumn38.Caption = "Số Lượng Trả";
+            this.gridColumn38.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn38.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn38.FieldName = "SOLUONGNHAP";
             this.gridColumn38.Name = "gridColumn38";
             this.gridColumn38.Visible = true;
@@ -1547,6 +1562,8 @@
             // gridColumn39
             // 
             this.gridColumn39.Caption = "Giá Trả";
+            this.gridColumn39.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn39.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn39.FieldName = "GIANHAP";
             this.gridColumn39.Name = "gridColumn39";
             this.gridColumn39.Visible = true;
@@ -1555,6 +1572,8 @@
             // gridColumn40
             // 
             this.gridColumn40.Caption = "Tổng Tiền";
+            this.gridColumn40.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn40.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn40.FieldName = "TONGTIEN";
             this.gridColumn40.Name = "gridColumn40";
             this.gridColumn40.Visible = true;
@@ -1830,7 +1849,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn42;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.TextEdit tbmahdn;
+        private DevExpress.XtraEditors.ComboBoxEdit tbmahdn;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet2TableAdapters.MATHANGTableAdapter mATHANGTableAdapter1;
     }
 }
