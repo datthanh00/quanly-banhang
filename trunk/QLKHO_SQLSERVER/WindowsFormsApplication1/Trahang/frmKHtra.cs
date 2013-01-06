@@ -53,27 +53,27 @@ namespace WindowsFormsApplication1.KHtra
                 string smahd = dt.Rows[0][0].ToString();
                 int maxnum = Convert.ToInt32(smahd.Substring(5, 5));
 
-                for (int i = 1; i < maxnum; i++)
+                for (int i = 0; i < maxnum; i++)
                 {
                     if (i < 10)
                     {
-                        tbmahdx.Properties.Items.Add("MAHDX0000" + i.ToString());
+                        tbmahdx.Properties.Items.Add("MAHDX0000" + (i+1).ToString());
                     }
                     else if (i < 100)
                     {
-                        tbmahdx.Properties.Items.Add("MAHDX000" + i.ToString());
+                        tbmahdx.Properties.Items.Add("MAHDX000" + (i + 1).ToString());
                     }
                     else if (i < 1000)
                     {
-                        tbmahdx.Properties.Items.Add("MAHDX00" + i.ToString());
+                        tbmahdx.Properties.Items.Add("MAHDX00" + (i + 1).ToString());
                     }
                     else if (i < 10000)
                     {
-                        tbmahdx.Properties.Items.Add("MAHDX0" + i.ToString());
+                        tbmahdx.Properties.Items.Add("MAHDX0" + (i + 1).ToString());
                     }
                     else
                     {
-                        tbmahdx.Properties.Items.Add("MAHDX" + i.ToString());
+                        tbmahdx.Properties.Items.Add("MAHDX" + (i + 1).ToString());
                     }
                 }
             }
@@ -352,14 +352,16 @@ namespace WindowsFormsApplication1.KHtra
                     return;
                 }
 
-                int soluongupdate = Convert.ToInt32(dt.Rows[0]["soluongxuat"].ToString()) - SoLuong;
+               /* int soluongupdate = Convert.ToInt32(dt.Rows[0]["soluongxuat"].ToString()) - SoLuong;
                 dtoNCC.MAHDX = tbmahdx.Text;
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGXUAT = soluongupdate;
                 dtoNCC.GIATIEN = DonGia;
                 dtoNCC.ID = Convert.ToInt32(dt.Rows[0]["ID"].ToString());
                 ctlNCC.UPDATECTHOADONXUAT(dtoNCC);
-
+                */
+                SQL = "UPDATE CHITIETHDX SET SOLUONGTRAXUAT=SOLUONGTRAXUAT+" + SoLuong + " WHERE MAHDX='" + tbmahdx.Text + "' AND ID=" + Convert.ToInt32(dt.Rows[0]["ID"].ToString()) + "";
+                ctlNCC.executeNonQuery(SQL);
 
                 dtoNCC.MAHDX = mahdx;
                 dtoNCC.MAMH = mamh;

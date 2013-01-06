@@ -538,6 +538,43 @@ namespace WindowsFormsApplication1
             return sMahdx;
            
         }
+        public string sTuDongDienMaHoaDonXuattam(string sMahdx)
+        {
+
+            int maxmaphieu = 0;
+            String SQL = "Select MAX(MAHDX) from CHITIETHDXTAM";
+            DataTable dt = getdata(SQL);
+            if (dt.Rows[0][0].ToString() != "")
+            {
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
+            }
+            Maxa = maxmaphieu + 1;
+
+
+            if (Maxa < 10)
+            {
+                sMahdx = string.Concat("MAHDX", "0000", Maxa);
+            }
+            if (Maxa >= 10)
+            {
+                sMahdx = string.Concat("MAHDX", "000", Maxa);
+            }
+            if (Maxa >= 100)
+            {
+                sMahdx = string.Concat("MAHDX", "00", Maxa);
+            }
+            if (Maxa >= 1000)
+            {
+                sMahdx = string.Concat("MAHDX", "0", Maxa);
+            }
+            if (Maxa >= 10000)
+            {
+                sMahdx = string.Concat("MAHDX", Maxa);
+            }
+
+            return sMahdx;
+
+        }
         public string sTuDongDienMatraHoaDonXuat(string sMahdx)
         {
 

@@ -354,6 +354,10 @@ namespace WindowsFormsApplication1
         {
             DAO.DELETECTHOADONNHAP(MAHDN, ID);
         }
+        public void DELETECTHOADONXUATTAM(string MAHDX)
+        {
+            DAO.DELETECTHOADONXUATTAM(MAHDX);
+        }
         public void DELETEtraCTHOADONNHAP(string MAHDN, int ID)
         {
             DAO.DELETEtraCTHOADONNHAP(MAHDN, ID);
@@ -464,6 +468,14 @@ namespace WindowsFormsApplication1
         public DataTable GETCTHOADONXUAT(string MAHDX)
         {
             return DAO.GETCTHOADONXUAT(MAHDX);
+        }
+        public DataTable GETCTHOADONXUATTAM(string MAHDX)
+        {
+            return DAO.GETCTHOADONXUATTAM(MAHDX);
+        }
+        public DataTable GETCTHOADONXUATTAM()
+        {
+            return DAO.GETCTHOADONXUATTAM();
         }
         public DataTable GETtraCTHOADONXUAT(string MAHDX)
         {

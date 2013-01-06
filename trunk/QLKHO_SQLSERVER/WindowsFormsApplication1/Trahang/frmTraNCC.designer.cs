@@ -88,6 +88,7 @@
             this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
             this.panel_create = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
@@ -158,7 +159,6 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -831,6 +831,16 @@
             this.panel_create.Name = "panel_create";
             this.panel_create.Size = new System.Drawing.Size(1061, 63);
             this.panel_create.TabIndex = 2;
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(427, 12);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(129, 42);
+            this.simpleButton3.TabIndex = 5;
+            this.simpleButton3.Text = "Xuất Dữ Liệu";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // btIn
             // 
@@ -1579,16 +1589,6 @@
             this.EditToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(427, 12);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(129, 42);
-            this.simpleButton3.TabIndex = 5;
-            this.simpleButton3.Text = "Xuất Dữ Liệu";
-            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frmTraNCC
             // 
