@@ -89,19 +89,7 @@ namespace WindowsFormsApplication1
 
 
 
-                    else if (txtsdt.Text == "")
-                    {
-                        XtraMessageBox.Show("Vui lòng nhập số điện thoại");
-                        txtsdt.Focus();
-                        return;
-                    }
-                    else if (txtsdt.Text.Length < 6 || txtsdt.Text.Length > 13)
-                    {
-                        XtraMessageBox.Show("Số điện thoại phải nằm trong khoản từ 6 số tới 12 số");
-                        txtsdt.Focus();
-                        return;
-                    }
-
+                   
                     else if (cmbtenkhuvuc.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng Chọn Tên Khu Vực");
@@ -193,18 +181,6 @@ namespace WindowsFormsApplication1
 
 
 
-                    else if (txtsdt.Text == "")
-                    {
-                        XtraMessageBox.Show("Please Insert Phone Number ");
-                        txtsdt.Focus();
-                        return;
-                    }
-                    else if (txtsdt.Text.Length < 6 || txtsdt.Text.Length > 13)
-                    {
-                        XtraMessageBox.Show("The Phone Number must into between 6 to 12 number ");
-                        txtsdt.Focus();
-                        return;
-                    }
                     //else if (cmbtinhtrang.Text == "")
                     //{
                     //    XtraMessageBox.Show("Please Choose Status");

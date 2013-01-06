@@ -158,9 +158,9 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -1538,9 +1538,9 @@
             this.gridView4.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn9,
+            this.gridColumn21,
             this.gridColumn19,
             this.gridColumn20,
-            this.gridColumn21,
             this.gridColumn23,
             this.gridColumn24,
             this.gridColumn26,
@@ -1576,6 +1576,14 @@
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 0;
             // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "Tên Nhân Viên";
+            this.gridColumn21.FieldName = "TENNV";
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 2;
+            // 
             // gridColumn19
             // 
             this.gridColumn19.Caption = "Mã Hóa Đơn";
@@ -1590,15 +1598,7 @@
             this.gridColumn20.FieldName = "TENKH";
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 2;
-            // 
-            // gridColumn21
-            // 
-            this.gridColumn21.Caption = "Tên Nhân Viên";
-            this.gridColumn21.FieldName = "TENNV";
-            this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.Visible = true;
-            this.gridColumn21.VisibleIndex = 3;
+            this.gridColumn20.VisibleIndex = 3;
             // 
             // gridColumn23
             // 

@@ -1587,7 +1587,7 @@
             this.gridColumn13.FieldName = "TENNCC";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 2;
+            this.gridColumn13.VisibleIndex = 3;
             // 
             // gridColumn16
             // 
@@ -1595,7 +1595,7 @@
             this.gridColumn16.FieldName = "TENNV";
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 3;
+            this.gridColumn16.VisibleIndex = 2;
             // 
             // gridColumn17
             // 

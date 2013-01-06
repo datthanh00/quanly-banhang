@@ -224,7 +224,6 @@
             this.ribbon.Size = new System.Drawing.Size(1182, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ItemLinks.Add(this.barSubItem1);
-            this.ribbon.Click += new System.EventHandler(this.ribbon_Click);
             // 
             // btKhachHang
             // 
@@ -865,6 +864,7 @@
             this.tabControl12.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl12.Text = "tabControl1";
             this.tabControl12.TabItemClose += new DevComponents.DotNetBar.TabStrip.UserActionEventHandler(this.tabControl1_TabItemClose);
+            this.tabControl12.SelectedTabChanged += new DevComponents.DotNetBar.TabStrip.SelectedTabChangedEventHandler(this.tabControl12_SelectedTabChanged);
             // 
             // timer1
             // 
@@ -970,8 +970,6 @@
             this.cbkho.Size = new System.Drawing.Size(163, 20);
             this.cbkho.TabIndex = 28;
             this.cbkho.EditValueChanged += new System.EventHandler(this.cbkho_EditValueChanged);
-    
-            this.cbkho.TextChanged += new System.EventHandler(this.cbkho_TextChanged);
             // 
             // gridcbkho
             // 
