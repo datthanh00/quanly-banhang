@@ -877,8 +877,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
             DataTable dt1 = ctlNCC.GETDATA(SQL);
             SQL = "SELECT MATHANG.MAMH,NGAYXUAT, TENMH, SUM(SOLUONGXUAT) AS SOLUONGXUAT, GIATIEN FROM CHITIETHDX, MATHANG, DONVITINH,HOADONXUAT WHERE MATHANG.MADVT=DONVITINH.MADVT AND  HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND MATHANG.MAMH=CHITIETHDX.MAMH " + SQL1 + " GROUP BY MATHANG.MAMH,NGAYXUAT, TENMH,GIATIEN";
             DataTable dt2 = ctlNCC.GETDATA(SQL);
-            Inhdnhap rep = new Inhdnhap(dt1,dt2);
-            rep.ShowPreviewDialog();  
+            Inhdnhap rep = new Inhdnhap(dt1);
+            rep.ShowPreviewDialog();
+
+            Inhdxuat rep2 = new Inhdxuat(dt2);
+            rep2.ShowPreviewDialog();  
         }
 
         private void loadgrid()
