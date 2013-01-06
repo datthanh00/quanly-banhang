@@ -57,7 +57,7 @@ namespace WindowsFormsApplication1
         }
         public  string GETcongno_HDX(string MHDX)
         {
-            return CNNCC.GETcongno_HDN(MHDX);
+            return CNNCC.GETcongno_HDX(MHDX);
         }
 
         public  DataTable Getall_phieuchi_Dao(string NGAYBD,string NGAYKT)

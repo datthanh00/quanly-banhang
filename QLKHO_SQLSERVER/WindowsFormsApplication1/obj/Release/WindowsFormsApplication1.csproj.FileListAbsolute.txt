@@ -13,15 +13,6 @@ e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\ResolveAssem
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmBangKeXuatKhoTheoKHAchhangHangHoa.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmBaoCaoTonKho.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmThongKeTongHop.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.reportBaoCaoKhachHang.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.reportBaoCaoLoiNhuan.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.reportBaoCaoMathang.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.reportBaoCaoNhomHang.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Reportbaocaotheomathang.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.BaoCao.reportBaoCaoThongKeKho.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.reporthansudung.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.BaoCao.ReportKhachang.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.BaoCao.ReportTheoloinhuan.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmBoPhan.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.class_import.import.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.HoaDonXuat.frmHoaDonXuat.resources
@@ -74,8 +65,6 @@ e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsForms
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.LamEL.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.LamVN.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Properties.Resources.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.reportBaoCaoDoanhThu.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.reportTonKhoSoLuongGiaTri.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.resEngLand.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.resVietNam.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Tien_EL.resources
@@ -88,3 +77,4 @@ e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsForms
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\af-ZA\WindowsFormsApplication1.resources.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.exe
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.pdb
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\Microsoft.SqlServer.BatchParser.dll

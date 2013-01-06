@@ -60,7 +60,7 @@ namespace WindowsFormsApplication1
             Load_panel_create();
             dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
             dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
-
+            Load_MAHD();
         }
         DataView dvdropdow;
        
@@ -85,6 +85,46 @@ namespace WindowsFormsApplication1
             panel_grid.Dock = System.Windows.Forms.DockStyle.Fill;
             panel_grid2.Visible = false;
              
+        }
+        public void Load_MAHD()
+        {
+            string sql = "SELECT MAX(MAHDN) FROM HOADONNHAP";
+            DataTable dt=ctlNCC.GETDATA(sql);
+
+            if (dt.Rows[0][0].ToString() == "")
+            {
+                tbmahdn.Properties.Items.Add("Chưa có HDN");
+            }
+            else
+            {
+                string smahd = dt.Rows[0][0].ToString();
+                int maxnum = Convert.ToInt32(smahd.Substring(5, 5));
+
+                for (int i = 1; i < maxnum; i++)
+                {
+                    if (i < 10)
+                    {
+                        tbmahdn.Properties.Items.Add("MAHDN0000" + i.ToString());
+                    }
+                    else if (i < 100)
+                    {
+                        tbmahdn.Properties.Items.Add("MAHDN000" + i.ToString());
+                    }
+                    else if (i < 1000)
+                    {
+                        tbmahdn.Properties.Items.Add("MAHDN00" + i.ToString());
+                    }
+                    else if (i < 10000)
+                    {
+                        tbmahdn.Properties.Items.Add("MAHDN0" + i.ToString());
+                    }
+                    else
+                    {
+                        tbmahdn.Properties.Items.Add("MAHDN" + i.ToString());
+                    }
+                }
+            }
+            
         }
         public void Load_panel_filter()
         {
@@ -206,6 +246,7 @@ namespace WindowsFormsApplication1
             Grid_sanpham.DataSource = tbsanpham;
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "MAMH";
+            Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
         }
         public void loadgridNhacCungCap()
         {
@@ -272,6 +313,7 @@ namespace WindowsFormsApplication1
         public int kiemtra;
         private void btLuu_Click(object sender, EventArgs e)
         {
+           // kiemtramahd();
             try
             {
                 if (tbmahdn.Text == "")
@@ -911,10 +953,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void tbmahdn_Validated_1(object sender, EventArgs e)
-        {
-            kiemtramahd();
-        }
+    
 
         private void tbmahdn_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -929,7 +968,7 @@ namespace WindowsFormsApplication1
             if (tbmahdn.Text == "")
                 {
                     XtraMessageBox.Show("Vui lòng điền mã hóa đơn nhập");
-                    tbmahdn.Focus();
+                   // tbmahdn.Focus();
                     return;
                 }
                
@@ -939,12 +978,19 @@ namespace WindowsFormsApplication1
             {
                 tbmahdn.Text = "";
                 XtraMessageBox.Show("Không có mã hóa đơn này");
-                tbmahdn.Focus();
+                //tbmahdn.Focus();
                 return;
             }
 
             loadGrid_sanpham(tbmahdn.Text);
+       
+            
             loadgridCTHOADON();
+        }
+
+        private void tbmahdn_Validated(object sender, EventArgs e)
+        {
+            kiemtramahd();
         }
 
 

@@ -131,10 +131,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 22);
+            this.gridControl2.Location = new System.Drawing.Point(2, 21);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1082, 205);
+            this.gridControl2.Size = new System.Drawing.Size(1082, 206);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -160,30 +160,33 @@
             // 
             // colMãphiếuchi
             // 
+            this.colMãphiếuchi.Caption = "Mã Phiếu Chi";
             this.colMãphiếuchi.DisplayFormat.FormatString = "0,0";
             this.colMãphiếuchi.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colMãphiếuchi.FieldName = "Mã phiếu chi";
+            this.colMãphiếuchi.FieldName = "MAPC";
             this.colMãphiếuchi.Name = "colMãphiếuchi";
             this.colMãphiếuchi.Visible = true;
             this.colMãphiếuchi.VisibleIndex = 0;
             // 
             // colTênnhânviên
             // 
-            this.colTênnhânviên.FieldName = "Tên nhân viên";
+            this.colTênnhânviên.Caption = "Tên Nhân Viên";
+            this.colTênnhânviên.FieldName = "TENNV";
             this.colTênnhânviên.Name = "colTênnhânviên";
             this.colTênnhânviên.Visible = true;
             this.colTênnhânviên.VisibleIndex = 1;
             // 
             // colMãhóađơnnhập1
             // 
-            this.colMãhóađơnnhập1.FieldName = "Mã hóa đơn nhập";
+            this.colMãhóađơnnhập1.Caption = "Mã Hóa Đơn Nhập";
+            this.colMãhóađơnnhập1.FieldName = "MAHDN";
             this.colMãhóađơnnhập1.Name = "colMãhóađơnnhập1";
             this.colMãhóađơnnhập1.Visible = true;
             this.colMãhóađơnnhập1.VisibleIndex = 2;
             // 
             // colNgàychi
             // 
-            this.colNgàychi.FieldName = "Ngày chi";
+            this.colNgàychi.FieldName = "NGAYCHI";
             this.colNgàychi.Name = "colNgàychi";
             this.colNgàychi.Visible = true;
             this.colNgàychi.VisibleIndex = 3;
@@ -192,7 +195,7 @@
             // 
             this.colTiềnđãtrả1.DisplayFormat.FormatString = "0,0";
             this.colTiềnđãtrả1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTiềnđãtrả1.FieldName = "Tiền đã trả";
+            this.colTiềnđãtrả1.FieldName = "TIENDATRA";
             this.colTiềnđãtrả1.Name = "colTiềnđãtrả1";
             this.colTiềnđãtrả1.Visible = true;
             this.colTiềnđãtrả1.VisibleIndex = 4;
@@ -209,10 +212,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 22);
+            this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1078, 215);
+            this.gridControl1.Size = new System.Drawing.Size(1078, 216);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -246,26 +249,26 @@
             // 
             // colMãhóađơnnhập
             // 
-            this.colMãhóađơnnhập.FieldName = "Mã hóa đơn nhập";
+            this.colMãhóađơnnhập.FieldName = "MAHDN";
             this.colMãhóađơnnhập.Name = "colMãhóađơnnhập";
             this.colMãhóađơnnhập.Visible = true;
             this.colMãhóađơnnhập.VisibleIndex = 0;
             // 
             // ColNgàynhập
             // 
-            this.ColNgàynhập.FieldName = "Ngày nhập";
+            this.ColNgàynhập.FieldName = "NGAYNHAP";
             this.ColNgàynhập.Name = "ColNgàynhập";
             this.ColNgàynhập.Visible = true;
             this.ColNgàynhập.VisibleIndex = 1;
             // 
             // colTênnhàcungcấp
             // 
-            this.colTênnhàcungcấp.FieldName = "Tên nhà cung cấp";
+            this.colTênnhàcungcấp.FieldName = "TENNCC";
             this.colTênnhàcungcấp.Name = "colTênnhàcungcấp";
             // 
             // colMãnhàcungcấp
             // 
-            this.colMãnhàcungcấp.FieldName = "Mã nhà cung cấp";
+            this.colMãnhàcungcấp.FieldName = "MANCC";
             this.colMãnhàcungcấp.Name = "colMãnhàcungcấp";
             this.colMãnhàcungcấp.Visible = true;
             this.colMãnhàcungcấp.VisibleIndex = 2;
@@ -274,9 +277,10 @@
             // 
             this.colTiềnphảitrả.DisplayFormat.FormatString = "0,0";
             this.colTiềnphảitrả.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTiềnphảitrả.FieldName = "Tiền phải trả";
+            this.colTiềnphảitrả.FieldName = "TIENPHAITRA";
             this.colTiềnphảitrả.Name = "colTiềnphảitrả";
             this.colTiềnphảitrả.SummaryItem.DisplayFormat = "Tổng tiền chi:{0:0,0 vnđ}";
+            this.colTiềnphảitrả.SummaryItem.FieldName = "Tiền phải trả";
             this.colTiềnphảitrả.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colTiềnphảitrả.Visible = true;
             this.colTiềnphảitrả.VisibleIndex = 3;
@@ -285,9 +289,10 @@
             // 
             this.colTiềnđãtrả.DisplayFormat.FormatString = "0,0";
             this.colTiềnđãtrả.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTiềnđãtrả.FieldName = "Tiền đã trả";
+            this.colTiềnđãtrả.FieldName = "TIENDATRA";
             this.colTiềnđãtrả.Name = "colTiềnđãtrả";
             this.colTiềnđãtrả.SummaryItem.DisplayFormat = "Tiền đã chi:{0:0,0 vnđ}";
+            this.colTiềnđãtrả.SummaryItem.FieldName = "Tiền đã trả";
             this.colTiềnđãtrả.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colTiềnđãtrả.Visible = true;
             this.colTiềnđãtrả.VisibleIndex = 4;
@@ -296,10 +301,11 @@
             // 
             this.colCònlại.DisplayFormat.FormatString = "0,0";
             this.colCònlại.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colCònlại.FieldName = "Còn lại";
+            this.colCònlại.FieldName = "CONLAI";
             this.colCònlại.Name = "colCònlại";
             this.colCònlại.OptionsColumn.ReadOnly = true;
             this.colCònlại.SummaryItem.DisplayFormat = "Tổng tiền Còn nợ:{0:0,0 vnđ}";
+            this.colCònlại.SummaryItem.FieldName = "Còn lại";
             this.colCònlại.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colCònlại.Visible = true;
             this.colCònlại.VisibleIndex = 5;
@@ -406,9 +412,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 483);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 484);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -424,7 +430,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(194, 483);
+            this.navBarControl1.Size = new System.Drawing.Size(194, 484);
             this.navBarControl1.TabIndex = 2;
             this.navBarControl1.Text = "navBarControl1";
             // 

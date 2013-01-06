@@ -217,6 +217,8 @@ namespace WindowsFormsApplication1
             Grid_sanpham.DataSource = ctlNCC.GETMMH(cboMANCC.Text);
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "MAMH";
+            
+            Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
            
         }
         public void loadgridNhacCungCap()

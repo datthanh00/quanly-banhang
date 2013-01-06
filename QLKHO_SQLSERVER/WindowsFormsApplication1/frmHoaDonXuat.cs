@@ -116,6 +116,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             Grid_sanpham.DataSource = ctlNCC.GETMMH();
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "MAMH";
+            Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
 
         }
 
@@ -248,13 +249,41 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     return;
                 }
 
+
+                for (int i = 0; i < rowcount; i++)
+                {
+                    DataRow dtr = gridCTHOADON.GetDataRow(i);
+
+
+                    string SQL = "select soluongmh from mathang where MAMH='" + dtr["_MaMH"].ToString() + "'";
+                    DataTable dt = ctlNCC.GETDATA(SQL);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        int slton = Convert.ToInt32(dt.Rows[0]["soluongmh"].ToString());
+                        if (slton <  Convert.ToInt32(dtr["_SoLuong"].ToString()))
+                        {
+                            System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["_MaMH"].ToString() + " Không đủ số lượng để xuất");
+                           
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        System.Windows.Forms.MessageBox.Show("Chưa có mã hàng này");
+                        return;
+                    }
+                }
+
+
+
                 dtoNCC.IsUPDATE = false;
                 ctlNCC.INSERTHOADONXUAT(dtoNCC);
                 //insert hoa don chi tiet
                 
                 for (int i = 0; i < rowcount; i++)
                 {
-                    DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
+                    DataRow dtr = gridCTHOADON.GetDataRow(i);
                     insert_HoadonChitietxuat(txtMaHD.Text, dtr["_MaMH"].ToString(), int.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
                 }
             }

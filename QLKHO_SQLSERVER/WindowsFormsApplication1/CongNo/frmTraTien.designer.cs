@@ -323,37 +323,42 @@
             // 
             // colMãphiếuchi
             // 
-            this.colMãphiếuchi.FieldName = "Mã phiếu chi";
+            this.colMãphiếuchi.Caption = "Mã Phiếu Chi";
+            this.colMãphiếuchi.FieldName = "MAPC";
             this.colMãphiếuchi.Name = "colMãphiếuchi";
             this.colMãphiếuchi.Visible = true;
             this.colMãphiếuchi.VisibleIndex = 0;
             // 
             // colMãnhânviên
             // 
-            this.colMãnhânviên.FieldName = "Mã nhân viên";
+            this.colMãnhânviên.Caption = "Mã Nhân Viên";
+            this.colMãnhânviên.FieldName = "MANV";
             this.colMãnhânviên.Name = "colMãnhânviên";
             this.colMãnhânviên.Visible = true;
             this.colMãnhânviên.VisibleIndex = 1;
             // 
             // colMãhóađơnnhập
             // 
-            this.colMãhóađơnnhập.FieldName = "Mã hóa đơn nhập";
+            this.colMãhóađơnnhập.Caption = "Mã Hóa Đơn Nhập";
+            this.colMãhóađơnnhập.FieldName = "MAHDN";
             this.colMãhóađơnnhập.Name = "colMãhóađơnnhập";
             this.colMãhóađơnnhập.Visible = true;
             this.colMãhóađơnnhập.VisibleIndex = 2;
             // 
             // colNgàychi
             // 
-            this.colNgàychi.FieldName = "Ngày chi";
+            this.colNgàychi.Caption = "Ngày Chi";
+            this.colNgàychi.FieldName = "NGAYCHI";
             this.colNgàychi.Name = "colNgàychi";
             this.colNgàychi.Visible = true;
             this.colNgàychi.VisibleIndex = 3;
             // 
             // colTiềnđãtrả
             // 
+            this.colTiềnđãtrả.Caption = "Tiền Đã Trả";
             this.colTiềnđãtrả.DisplayFormat.FormatString = "0,0";
             this.colTiềnđãtrả.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTiềnđãtrả.FieldName = "Tiền đã trả";
+            this.colTiềnđãtrả.FieldName = "TIENDATRA";
             this.colTiềnđãtrả.Name = "colTiềnđãtrả";
             this.colTiềnđãtrả.Visible = true;
             this.colTiềnđãtrả.VisibleIndex = 4;

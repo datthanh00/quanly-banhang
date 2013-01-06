@@ -227,12 +227,12 @@ namespace WindowsFormsApplication1
         }
         public DataTable dtGetsanpham()
         {
-            String SQL = "select 	MAMH AS MASANPHAM,TENMH AS TENSANPHAM from  MATHANG where mathang.makho='"+PublicVariable.MAKHO+"'";
+            String SQL = "select 	MAMH AS MASANPHAM,TENMH AS TENSANPHAM,TENNCC from  MATHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND mathang.makho='"+PublicVariable.MAKHO+"'";
             return getdata(SQL);
         }
         public DataTable dtGetsanpham2()
         {
-            String SQL = "select 	MAMH ,TENMH from  MATHANG where mathang.makho='" + PublicVariable.MAKHO + "'";
+            String SQL = "select 	MAMH ,TENMH,TENNCC from  MATHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND mathang.makho='" + PublicVariable.MAKHO + "'";
             return getdata(SQL);
         }
     }

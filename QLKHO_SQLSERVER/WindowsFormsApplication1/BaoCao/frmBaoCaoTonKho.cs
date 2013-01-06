@@ -77,14 +77,15 @@ namespace WindowsFormsApplication1
             cbsanpham.Properties.DisplayMember = "TENMH";
             cbsanpham.Properties.ValueMember = "MAMH";
             cbsanpham.Properties.View.BestFitColumns();
-            cbsanpham.Properties.PopupFormWidth = 200;
+            //cbsanpham.Properties.PopupFormWidth = 200;
             cbsanpham.Properties.DataSource = ctr1.dtGetsanpham2();
+            gridsanpham.BestFitColumns();
 
             cbncc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cbncc.Properties.DisplayMember = "TENNCC";
             cbncc.Properties.ValueMember = "MANCC";
             cbncc.Properties.View.BestFitColumns();
-            cbncc.Properties.PopupFormWidth = 200;
+            cbncc.Properties.PopupFormWidth = 300;
             cbncc.Properties.DataSource = ctr1.dtGetNCC();
 
         }
@@ -195,6 +196,7 @@ namespace WindowsFormsApplication1
                 dto.MANCC = "";
             }
             gridControl2.DataSource = ctr.getTonKho(dto);
+            advBandedGridView3.BestFitColumns();
             //dt = ctr.getTonKho(dto);
             
         }
