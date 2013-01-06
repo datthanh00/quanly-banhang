@@ -494,12 +494,12 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETMMHN(String MAHDN)
         {
-            string SQL = "SELECT mathang.MAMH,TENMH,TENNCC,SOLUONGNHAP FROM MATHANG, chitiethdn,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND mathang.mamh=chitiethdn.mamh  and MAHDN='" + MAHDN + "'and soluongnhap>0  and mathang.MAKHO='" + PublicVariable.MAKHO + "'";
+            string SQL = "SELECT mathang.MAMH,TENMH,TENNCC,SOLUONGNHAP-SOLUONGTRANHAP AS SOLUONGNHAP FROM MATHANG, chitiethdn,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND mathang.mamh=chitiethdn.mamh  and MAHDN='" + MAHDN + "'and soluongnhap-SOLUONGTRANHAP>0  and mathang.MAKHO='" + PublicVariable.MAKHO + "'";
             return getdata(SQL);
         }
         public DataTable GETMMHX(String MAHDX)
         {
-            string SQL = "SELECT mathang.MAMH,TENMH,TENNCC,SOLUONGXUAT FROM MATHANG, chitiethdx,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND mathang.mamh=chitiethdx.mamh and MAHDX='" + MAHDX + "'  and soluongxuat>0 and mathang.MAKHO='" + PublicVariable.MAKHO + "'";
+            string SQL = "SELECT mathang.MAMH,TENMH,TENNCC,soluongxuat-SOLUONGTRAXUAT AS SOLUONGXUAT FROM MATHANG, chitiethdx,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND mathang.mamh=chitiethdx.mamh and MAHDX='" + MAHDX + "'  and soluongxuat-soluongtraxuat>0 and mathang.MAKHO='" + PublicVariable.MAKHO + "'";
             return getdata(SQL);
         }
 
@@ -619,7 +619,7 @@ namespace WindowsFormsApplication1
             String SQL = "INSERT INTO traCHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,GIANHAP,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.GIANHAP + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 
-           /* SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
+           SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
             DataTable dt = getdata(SQL);
             int tondau = 0;
 
@@ -627,6 +627,7 @@ namespace WindowsFormsApplication1
             {
                 tondau = Convert.ToInt32(dt.Rows[0][0].ToString());
             }
+        
 
             SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + dto.SOLUONGNHAP.ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
@@ -642,7 +643,7 @@ namespace WindowsFormsApplication1
             {
                 INSERT_TONKHO(dto.ID.ToString(), dto.MAHDN, dto.MAMH, ngay, tondau, "0", dto.SOLUONGNHAP.ToString());
             }
-            */
+            
         
         }
 
@@ -864,6 +865,13 @@ namespace WindowsFormsApplication1
 
             
         }
+        public void DELETECTHOADONXUATTAM(string MAHDX)
+        {
+            string SQL = "DELETE FROM CHITIETHDXTAM where MAHDX='" + MAHDX + "' ";
+            executeNonQuery(SQL);
+
+
+        }
         public void DELETEtraCTHOADONNHAP(string MAHDN, int ID)
         {
             DELETE_TONKHO(ID.ToString(), MAHDN);
@@ -885,6 +893,16 @@ namespace WindowsFormsApplication1
         public DataTable GETCTHOADONXUAT(string MAHDX)
         {
             string SQL = "SELECT ID,T5.MAMH _TenMH,T5.MAMH _MaMH,T6.SOLUONGXUAT _SoLuong,T6.GIATIEN _DonGia, T5.DONVITINH _DVT, (T6.SOLUONGXUAT*T6.GIATIEN) _Total FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH IN (SELECT MAMH FROM CHITIETHDX WHERE MAHDX='" + MAHDX + "')) AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDX where MAHDX='" + MAHDX + "') T6 ON T6.MAMH =t5.MAMH";
+            return getdata(SQL);
+        }
+        public DataTable GETCTHOADONXUATTAM(string MAHDX)
+        {
+            string SQL = "SELECT ID,CHITIETHDXTAM.MAMH _TenMH,CHITIETHDXTAM.MAMH _MaMH,SOLUONGXUAT _SoLuong,GIATIEN _DonGia,DONVITINH _DVT,SOLUONGXUAT*GIATIEN _Total FROM  CHITIETHDXTAM,MATHANG,DONVITINH WHERE CHITIETHDXTAM.MAMH=MATHANG.MAMH AND MATHANG.MADVT=DONVITINH.MADVT and CHITIETHDXTAM.MAHDX='"+MAHDX+"' ";
+            return getdata(SQL);
+        }
+        public DataTable GETCTHOADONXUATTAM()
+        {
+            string SQL = "SELECT MAHDX FROM  CHITIETHDXTAM GROUP BY MAHDX  ";
             return getdata(SQL);
         }
         public DataTable GETtraCTHOADONXUAT(string MAHDX)
@@ -1015,7 +1033,7 @@ namespace WindowsFormsApplication1
             SQL = "INSERT INTO traCHITIETHDX (ID, MAHDX, MAMH,SOLUONGXUAT,GIATIEN,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "'," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 
-          /*  SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
+            SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
             dt = getdata(SQL);
             int tondau = 0;
 
@@ -1040,7 +1058,7 @@ namespace WindowsFormsApplication1
             {
                 INSERT_TONKHO(dto.ID.ToString(), dto.MAHDX, dto.MAMH, ngay, tondau, dto.SOLUONGXUAT.ToString(), "0");
             }
-        */
+       
 
         }
         public bool ISINSERTCTHOADONXUAT(string MAHDX, int ID)

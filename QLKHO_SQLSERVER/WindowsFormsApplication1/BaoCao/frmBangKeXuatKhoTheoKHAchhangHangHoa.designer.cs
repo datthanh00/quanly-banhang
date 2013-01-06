@@ -34,6 +34,9 @@
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition3 = new DevExpress.XtraGrid.StyleFormatCondition();
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition4 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition5 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition6 = new DevExpress.XtraGrid.StyleFormatCondition();
+            this.gridColumn78 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn57 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn50 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
@@ -65,6 +68,7 @@
             this.gridcbmathang = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn74 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbmahang = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.pnthoigian = new DevExpress.XtraEditors.PanelControl();
@@ -98,7 +102,6 @@
             this.repositoryItemDateEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn52 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn78 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn84 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn75 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn53 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -240,7 +243,6 @@
             this.gridBand13 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand10 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.gridColumn74 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -290,6 +292,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
+            // gridColumn78
+            // 
+            this.gridColumn78.AppearanceCell.BorderColor = System.Drawing.Color.Red;
+            this.gridColumn78.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.gridColumn78.AppearanceCell.ForeColor = System.Drawing.Color.Red;
+            this.gridColumn78.AppearanceCell.Options.UseBorderColor = true;
+            this.gridColumn78.AppearanceCell.Options.UseFont = true;
+            this.gridColumn78.AppearanceCell.Options.UseForeColor = true;
+            this.gridColumn78.AppearanceHeader.BackColor = System.Drawing.Color.Red;
+            this.gridColumn78.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
+            this.gridColumn78.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
+            this.gridColumn78.AppearanceHeader.Options.UseBackColor = true;
+            this.gridColumn78.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn78.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn78.Caption = "Mã Hóa Đơn";
+            this.gridColumn78.FieldName = "MAHDN";
+            this.gridColumn78.ImageAlignment = System.Drawing.StringAlignment.Center;
+            this.gridColumn78.Name = "gridColumn78";
+            this.gridColumn78.OptionsColumn.AllowEdit = false;
+            // 
             // gridColumn57
             // 
             this.gridColumn57.Caption = "Hóa Đơn";
@@ -332,9 +354,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 443);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 442);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -355,7 +377,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 194;
-            this.navBarControl1.Size = new System.Drawing.Size(181, 443);
+            this.navBarControl1.Size = new System.Drawing.Size(181, 442);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "Thống Kê";
             // 
@@ -589,6 +611,14 @@
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 1;
             // 
+            // gridColumn74
+            // 
+            this.gridColumn74.Caption = "Nhà Cung Cấp";
+            this.gridColumn74.FieldName = "TENNCC";
+            this.gridColumn74.Name = "gridColumn74";
+            this.gridColumn74.Visible = true;
+            this.gridColumn74.VisibleIndex = 2;
+            // 
             // lbmahang
             // 
             this.lbmahang.Location = new System.Drawing.Point(8, 11);
@@ -749,7 +779,7 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 3);
+            this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridView7;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -757,7 +787,7 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
             this.repositoryItemDateEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1099, 391);
+            this.gridControl1.Size = new System.Drawing.Size(1101, 393);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7,
@@ -927,6 +957,14 @@
             this.gridColumn81,
             this.gridColumn82,
             this.gridColumn83});
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.gridColumn78;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "[MAHDN] Like \'MATHDN%\'";
+            this.gridView10.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition1});
             this.gridView10.GridControl = this.gridControl1;
             this.gridView10.GroupCount = 2;
             this.gridView10.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -953,26 +991,6 @@
             this.gridColumn52.Name = "gridColumn52";
             this.gridColumn52.OptionsColumn.AllowEdit = false;
             this.gridColumn52.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
-            // 
-            // gridColumn78
-            // 
-            this.gridColumn78.AppearanceCell.BorderColor = System.Drawing.Color.Red;
-            this.gridColumn78.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn78.AppearanceCell.ForeColor = System.Drawing.Color.Red;
-            this.gridColumn78.AppearanceCell.Options.UseBorderColor = true;
-            this.gridColumn78.AppearanceCell.Options.UseFont = true;
-            this.gridColumn78.AppearanceCell.Options.UseForeColor = true;
-            this.gridColumn78.AppearanceHeader.BackColor = System.Drawing.Color.Red;
-            this.gridColumn78.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Italic);
-            this.gridColumn78.AppearanceHeader.ForeColor = System.Drawing.Color.Red;
-            this.gridColumn78.AppearanceHeader.Options.UseBackColor = true;
-            this.gridColumn78.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn78.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn78.Caption = "Mã Hóa Đơn";
-            this.gridColumn78.FieldName = "MAHDN";
-            this.gridColumn78.ImageAlignment = System.Drawing.StringAlignment.Center;
-            this.gridColumn78.Name = "gridColumn78";
-            this.gridColumn78.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn84
             // 
@@ -1145,20 +1163,20 @@
             this.gridColumn70,
             this.gridColumn66,
             this.gridColumn71});
-            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            styleFormatCondition1.Appearance.Options.UseBackColor = true;
-            styleFormatCondition1.ApplyToRow = true;
-            styleFormatCondition1.Column = this.gridColumn57;
-            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition1.Expression = "[MAHD]  Like \'MATHDN%\'";
-            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             styleFormatCondition2.Appearance.Options.UseBackColor = true;
             styleFormatCondition2.ApplyToRow = true;
             styleFormatCondition2.Column = this.gridColumn57;
-            styleFormatCondition2.Expression = "[MAHD]  Like \'MATHDX%\'";
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition2.Expression = "[MAHD]  Like \'MATHDN%\'";
+            styleFormatCondition3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            styleFormatCondition3.Appearance.Options.UseBackColor = true;
+            styleFormatCondition3.ApplyToRow = true;
+            styleFormatCondition3.Column = this.gridColumn57;
+            styleFormatCondition3.Expression = "[MAHD]  Like \'MATHDX%\'";
             this.gridView9.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition1,
-            styleFormatCondition2});
+            styleFormatCondition2,
+            styleFormatCondition3});
             this.gridView9.GridControl = this.gridControl1;
             this.gridView9.GroupCount = 1;
             this.gridView9.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -1410,22 +1428,22 @@
             this.gridColumn47,
             this.gridColumn48,
             this.gridColumn51});
-            styleFormatCondition3.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            styleFormatCondition3.Appearance.Options.UseBackColor = true;
-            styleFormatCondition3.ApplyToRow = true;
-            styleFormatCondition3.Column = this.gridColumn50;
-            styleFormatCondition3.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition3.Expression = "[MAHD]  Like \'MATHDN%\'";
-            styleFormatCondition3.Value1 = "";
-            styleFormatCondition4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            styleFormatCondition4.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             styleFormatCondition4.Appearance.Options.UseBackColor = true;
             styleFormatCondition4.ApplyToRow = true;
             styleFormatCondition4.Column = this.gridColumn50;
             styleFormatCondition4.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition4.Expression = "[MAHD]  Like \'MATHDX%\'";
+            styleFormatCondition4.Expression = "[MAHD]  Like \'MATHDN%\'";
+            styleFormatCondition4.Value1 = "";
+            styleFormatCondition5.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            styleFormatCondition5.Appearance.Options.UseBackColor = true;
+            styleFormatCondition5.ApplyToRow = true;
+            styleFormatCondition5.Column = this.gridColumn50;
+            styleFormatCondition5.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition5.Expression = "[MAHD]  Like \'MATHDX%\'";
             this.gridView8.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition3,
-            styleFormatCondition4});
+            styleFormatCondition4,
+            styleFormatCondition5});
             this.gridView8.GridControl = this.gridControl1;
             this.gridView8.GroupCount = 1;
             this.gridView8.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -2213,6 +2231,14 @@
             this.coltienno,
             this.gridColumn13});
             this.gridView2.CustomizationFormBounds = new System.Drawing.Rectangle(1030, 432, 216, 178);
+            styleFormatCondition6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            styleFormatCondition6.Appearance.Options.UseBackColor = true;
+            styleFormatCondition6.ApplyToRow = true;
+            styleFormatCondition6.Column = this.gridColumn41;
+            styleFormatCondition6.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition6.Expression = "[MAHDX] Like \'MATHDX%\'";
+            this.gridView2.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition6});
             this.gridView2.GridControl = this.gridControl1;
             this.gridView2.GroupCount = 2;
             this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -2662,14 +2688,6 @@
             // gridBand10
             // 
             this.gridBand10.Name = "gridBand10";
-            // 
-            // gridColumn74
-            // 
-            this.gridColumn74.Caption = "Nhà Cung Cấp";
-            this.gridColumn74.FieldName = "TENNCC";
-            this.gridColumn74.Name = "gridColumn74";
-            this.gridColumn74.Visible = true;
-            this.gridColumn74.VisibleIndex = 2;
             // 
             // frmBangKeXuatKhoTheoKHAchhangHangHoa
             // 
