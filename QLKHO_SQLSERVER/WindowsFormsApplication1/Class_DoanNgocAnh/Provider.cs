@@ -91,15 +91,24 @@ namespace WindowsFormsApplication1
         public static string sUser;
         public static SqlConnection get_Connect()
         {
-            if (File.Exists("App.config"))
-            {
-                Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
-                 //strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
-                 strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_qlkho;User ID=nguyendat_thanh;Password=Xziojs1U98;";
-             
-            }
+            
+           
+                if (File.Exists("App.config"))
+                {
+                    Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
+                   // strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
+                    strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_qlkho;User ID=nguyendat_thanh;Password=Xziojs1U98;";
+
+                }
                 SqlConnection cn = new SqlConnection(strConnect);
-            cn.Open();
+           try
+            {
+                cn.Open();
+            }
+            catch
+            {
+                MessageBox.Show("Kiểm Tra Lại Kết Nối InterNet nếu không được thì gọi cho Thành SĐT:0907093902");
+            }
             return cn;
         }
 

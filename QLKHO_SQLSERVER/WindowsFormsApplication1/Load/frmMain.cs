@@ -1253,6 +1253,7 @@ namespace WindowsFormsApplication1
                 dt.frm = this;
                 
                 dt.sMaNV = sManv;
+                dt.sTenNV = sTennv;
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(dt);
@@ -1876,6 +1877,7 @@ namespace WindowsFormsApplication1
                 dt.frm = this;
 
                 dt.sMaNV = sManv;
+                dt.sTenNV = sTennv;
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(dt);

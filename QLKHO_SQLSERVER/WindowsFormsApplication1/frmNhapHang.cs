@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
                 loadgridthue();
                 loaddridDVT();
                 loadmahdn();
-                cboNhanVienLap.Text = sMaNV;
+           
                 //loadGiaoDich();
                 loadgridCTHOADON();
                 //loadGrid_sanpham();
@@ -216,7 +216,7 @@ namespace WindowsFormsApplication1
         
         public void loadGrid_sanpham()
         {
-            Grid_sanpham.DataSource = ctlNCC.GETMMH(cboMANCC.Text);
+            Grid_sanpham.DataSource = ctlNCC.GETMMH(txtMANCC.Text);
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "MAMH";
             
@@ -234,13 +234,7 @@ namespace WindowsFormsApplication1
             cboTenNCC.Properties.PopupFormWidth = 300;
             cboTenNCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
             //dtoNCC.TENNCC = gridNCC.GetFocusedRowCellValue("TENNCC").ToString();
-            cboMANCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboMANCC.Properties.DataSource = dtvNCC;
-            cboMANCC.Properties.DisplayMember = "MANCC";
-            cboMANCC.Properties.ValueMember = "MANCC";
-            cboMANCC.Properties.View.BestFitColumns();
-            cboMANCC.Properties.PopupFormWidth = 300;
-            cboMANCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
+ 
           
         }
         public void loadgridNhacCungCap(String MANCC)
@@ -260,14 +254,9 @@ namespace WindowsFormsApplication1
         }
         public void loadgridNhanVien()
         {
-            cboNhanVienLap.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboNhanVienLap.Properties.DataSource = dtvNhanVien;
-            cboNhanVienLap.Properties.DisplayMember = "TENNV";
-            cboNhanVienLap.Properties.ValueMember = "MANV";
-            cboNhanVienLap.Properties.View.BestFitColumns();
-            cboNhanVienLap.Properties.PopupFormWidth = 300;
-            cboNhanVienLap.Properties.DataSource = ctlNCC.GETNV();
-            dtoNCC.MANV = gridNV.GetFocusedRowCellValue("MANV").ToString();
+           
+            dtoNCC.MANV = sMaNV;
+            txtnhanvienlap.Text = sTenNV;
         }
         public void loaddridmathang()
         {
@@ -320,11 +309,11 @@ namespace WindowsFormsApplication1
 
             if (rowselect != null)
             {
-                cboMANCC.Text = gridView3.GetFocusedRowCellValue("MANCC").ToString();
+                txtMANCC.Text = gridView3.GetFocusedRowCellValue("MANCC").ToString();
                 txtSoDT.Text = gridView3.GetFocusedRowCellValue("SDT").ToString();
                 txtFax.Text = gridView3.GetFocusedRowCellValue("FAX").ToString();
                 txtEmail.Text = gridView3.GetFocusedRowCellValue("EMAIL").ToString();
-                dtoNCC.MANCC = cboMANCC.Text;
+                dtoNCC.MANCC = txtMANCC.Text;
                 DataTable tblayno = ctlNCC.LAYTIENNO(dtoNCC);
                 if (tblayno.Rows.Count > 0)
                 {
@@ -352,7 +341,7 @@ namespace WindowsFormsApplication1
         }
         public void Create_new(){
             loadgridNhacCungCap();
-            cboMANCC.Text = "";
+            txtMANCC.Text = "";
             cboTenNCC.Text = "";
             txtSoDT.Text = "";
             txtFax.Text = "";
@@ -374,13 +363,13 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                if (cboMANCC.Text == "")
+                if (txtMANCC.Text == "")
                 {
-                    XtraMessageBox.Show("Vui lòng chọn Mã Nhà Cung Cấp");
+                    XtraMessageBox.Show("Vui lòng chọn Nhà Cung Cấp");
                 }
                 else
                 {
-                    dtoNCC.MANCC = cboMANCC.Text;
+                    dtoNCC.MANCC = txtMANCC.Text;
                     dtoNCC.TENNCC = cboTenNCC.Text;
                     dtoNCC.SDT = txtSoDT.Text;
                     dtoNCC.FAX = txtFax.Text;
@@ -571,7 +560,7 @@ namespace WindowsFormsApplication1
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETCTHOADONNHAP(txtMaHD.Text);
 
-                    In rep = new In(dt, cboMANCC.Text, cboTenNCC.Text, double.Parse(cbotientra.Text), double.Parse(txtNo.Text), double.Parse(txtthanhtien.Text), txtMaHD.Text,"");
+                    In rep = new In(dt, txtMANCC.Text, cboTenNCC.Text, double.Parse(cbotientra.Text), double.Parse(txtNo.Text), double.Parse(txtthanhtien.Text), txtMaHD.Text,"");
                     rep.ShowPreviewDialog();
 
                     //gridControl1.ShowPrintPreview();
@@ -822,9 +811,9 @@ namespace WindowsFormsApplication1
             loadgridCTHOADON(MAHDN);
   
             txtMaHD.Text = MAHDN;
-            string SQL = "SELECT convert(varchar,T1.NGAYNHAP,103) ,T1.MAHDN ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='" + MAHDN + "' AND MAKHO='"+PublicVariable.MAKHO+"' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT convert(varchar,T1.NGAYNHAP,103) ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='" + MAHDN + "' AND MAKHO='"+PublicVariable.MAKHO+"' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
-            cboNhanVienLap.Text = DT.Rows[0]["MANV"].ToString();
+            txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
             cbotientra.Text = DT.Rows[0]["TIENDATRA"].ToString();
             txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();

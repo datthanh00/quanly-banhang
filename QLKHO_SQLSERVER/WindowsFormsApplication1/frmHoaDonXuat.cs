@@ -40,13 +40,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             DataTable dt = ctlNCC.GETKHACHHANG();
             cboTenKH.Properties.DataSource = dt;
            // dtoNCC.MANCC = gridKH1.GetFocusedRowCellValue("TENKH").ToString();
-            cboMaKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-           // cboMaKH.Properties.DataSource = dtvKH;
-            cboMaKH.Properties.DisplayMember = "MAKH";
-            cboMaKH.Properties.ValueMember = "MAKH";
-            cboMaKH.Properties.View.BestFitColumns();
-            cboMaKH.Properties.PopupFormWidth = 300;
-            cboMaKH.Properties.DataSource = dt;
+  
         }
         public void loadgridKhachHang(string MAKH)
         {
@@ -145,7 +139,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             loadmahdx();
             loadgridCTHOADON();
             loadGrid_sanpham();
-            cboNhanVienLap.Text = sMaNV;
+         
             Load_panel_create();
             dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
             dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
@@ -162,10 +156,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
             if (rowselect != null)
             {
-                cboMaKH.Text = gridKH1.GetFocusedRowCellValue("MAKH").ToString();
+                txtmakh.Text = gridKH1.GetFocusedRowCellValue("MAKH").ToString();
                 txtSDT.Text = gridKH1.GetFocusedRowCellValue("SDT").ToString();
                 txtDiachi.Text = gridKH1.GetFocusedRowCellValue("DIACHI").ToString();
-                dtoNCC.MAKH = cboMaKH.Text;  
+                dtoNCC.MAKH = txtmakh.Text;  
                 DataTable tblayno = ctlNCC.LAYTIENNOKH(dtoNCC);
                 if (tblayno.Rows.Count > 0)
                 {
@@ -180,14 +174,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         public void loadgridNhanVien()
         {
-            cboNhanVienLap.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboNhanVienLap.Properties.DataSource = dtvNhanVien;
-            cboNhanVienLap.Properties.DisplayMember = "TENNV";
-            cboNhanVienLap.Properties.ValueMember = "MANV";
-            cboNhanVienLap.Properties.View.BestFitColumns();
-            cboNhanVienLap.Properties.PopupFormWidth = 300;
-            cboNhanVienLap.Properties.DataSource = ctlNCC.GETNV();
-            dtoNCC.MANV = gridNV.GetFocusedRowCellValue("MANV").ToString();
+            dtoNCC.MANV = sMaNV;
+            txtnhanvienlap.Text = sTenNV;
         }
  
         ArrayList list1 = new ArrayList();
@@ -208,14 +196,14 @@ namespace WindowsFormsApplication1.HoaDonXuat
         {
             try
             {
-                if (cboMaKH.Text =="")
+                if (txtmakh.Text =="")
                 {
                     XtraMessageBox.Show("Vui lòng chọn Mã Khách Hàng");
                 }
                 else
                 {
                 
-            dtoNCC.MAKH = cboMaKH.Text;
+            dtoNCC.MAKH = txtmakh.Text;
             dtoNCC.TENKH = cboTenKH.Text;
             dtoNCC.DIACHI = txtDiachi.Text;
             dtoNCC.SDT = txtSDT.Text;
@@ -463,7 +451,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         public void Create_new()
         {
-            cboMaKH.Text = "";
+            txtmakh.Text = "";
             cboTenKH.Text = "";
             txtDiachi.Text = "";
             txtSDT.Text = "";           
@@ -706,9 +694,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
             loadgridCTHOADON(MAHDX);
 
             txtMaHD.Text = MAHDX;
-            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
-            cboNhanVienLap.Text = DT.Rows[0]["MANV"].ToString();
+            txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
             cbotientra.Text = DT.Rows[0]["TIENDATRA"].ToString();
             txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();

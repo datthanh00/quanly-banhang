@@ -53,7 +53,7 @@ namespace WindowsFormsApplication1
             loadgridNhanVien();
    
             loadmahdn();
-            cboNhanVienLap.Text = sMaNV;
+            
             loadGiaoDich();
             loadgridCTHOADON();
            
@@ -262,14 +262,8 @@ namespace WindowsFormsApplication1
         }
         public void loadgridNhanVien()
         {
-            cboNhanVienLap.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cboNhanVienLap.Properties.DataSource = dtvNhanVien;
-            cboNhanVienLap.Properties.DisplayMember = "TENNV";
-            cboNhanVienLap.Properties.ValueMember = "MANV";
-            cboNhanVienLap.Properties.View.BestFitColumns();
-            cboNhanVienLap.Properties.PopupFormWidth = 300;
-            cboNhanVienLap.Properties.DataSource = ctlNCC.GETNV();
-            dtoNCC.MANV = gridNV.GetFocusedRowCellValue("MANV").ToString();
+            txtnhanvienlap.Text = sTenNV;
+            dtoNCC.MANV = sMaNV;
         }
 
  
@@ -800,9 +794,9 @@ namespace WindowsFormsApplication1
             loadgridCTHOADON(MAHDN);
   
             txtMaHD.Text = MAHDN;
-            string SQL = "SELECT convert(varchar,T1.NGAYNHAP,103) ,T1.MAHDN ,T2.MANV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM traHOADONNHAP WHERE MAHDN='" + MAHDN + "' AND MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT convert(varchar,T1.NGAYNHAP,103) ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM traHOADONNHAP WHERE MAHDN='" + MAHDN + "' AND MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
-            cboNhanVienLap.Text = DT.Rows[0]["MANV"].ToString();
+            txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
             cbotientra.Text = DT.Rows[0]["TIENDATRA"].ToString();
             txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();
