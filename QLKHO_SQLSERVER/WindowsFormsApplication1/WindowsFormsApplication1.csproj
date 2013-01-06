@@ -205,6 +205,12 @@
     <Compile Include="InHD\Inhdnhap.designer.cs">
       <DependentUpon>Inhdnhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="InHD\Inhdxuat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InHD\Inhdxuat.designer.cs">
+      <DependentUpon>Inhdxuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inxuat.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -513,6 +519,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InHD\Inhdnhap.resx">
       <DependentUpon>Inhdnhap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InHD\Inhdxuat.resx">
+      <DependentUpon>Inhdxuat.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Inxuat.resx">
@@ -990,6 +1000,7 @@
   <ItemGroup>
     <Folder Include="AddResources\" />
     <Folder Include="NgonNgu\" />
+    <Folder Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

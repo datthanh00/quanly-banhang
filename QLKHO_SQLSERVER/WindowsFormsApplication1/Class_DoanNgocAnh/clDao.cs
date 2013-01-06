@@ -73,8 +73,8 @@ namespace WindowsFormsApplication1
 
             ChayProc("THONGTINCT_update", sqlpa);
              * */
-             String SQL = "update THONGTINCT set MACT= '"+dto.MACT+"',TENCT= '"+dto.TENCT+"',DIACHI= '"+dto.DIACHI+"',SDT= '"+dto.SDT+"',"
-	        +" MOBILE= '"+dto.MOBILE+"',EMAIL= '"+dto.EMAIL+"',FAX= '"+dto.FAX+"',LOGO= '"+dto.LOGO+"',MASOTHUE= '"+dto.MASOTHUE+"',WEBSITE= '"+dto.WEBSITE+"'"
+             String SQL = "update THONGTINCT set MACT= '"+dto.MACT+"',TENCT= N'"+dto.TENCT+"',DIACHI= N'"+dto.DIACHI+"',SDT= '"+dto.SDT+"',"
+	        +" MOBILE= '"+dto.MOBILE+"',EMAIL= '"+dto.EMAIL+"',FAX= '"+dto.FAX+"',MASOTHUE= '"+dto.MASOTHUE+"',WEBSITE= '"+dto.WEBSITE+"'"
             +" where 	(MACT='"+dto.MACT+"')";
             executeNonQuery(SQL);
         }//----------------GET NHAN VIEN

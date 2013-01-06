@@ -1045,3 +1045,4 @@ e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Interop.Excel.
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Interop.Microsoft.Office.Core.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Interop.VBIDE.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Microsoft.SqlServer.BatchParser.dll
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Inhdxuat.resources
