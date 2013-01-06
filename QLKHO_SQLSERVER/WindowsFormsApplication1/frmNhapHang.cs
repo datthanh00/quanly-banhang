@@ -820,12 +820,7 @@ namespace WindowsFormsApplication1
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "False")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN ");
-                return;
-            }
-
+            
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -960,6 +955,46 @@ namespace WindowsFormsApplication1
             if (e.KeyChar ==(char)13)
             {
                 loadgrid();
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            deDongTab();
+        }
+
+        private void btXuatDuLieu_Click_1(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel|*.xls";
+            saveFileDialog1.Title = "Save an File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                gridControl1.ExportToXls(saveFileDialog1.FileName);
+            }
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel|*.xls";
+            saveFileDialog1.Title = "Save an File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                gridControl1.ExportToXls(saveFileDialog1.FileName);
             }
         }
 

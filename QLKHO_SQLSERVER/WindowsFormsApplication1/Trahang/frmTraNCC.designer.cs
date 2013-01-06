@@ -74,6 +74,7 @@
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.splitterControl1 = new DevExpress.XtraEditors.SplitterControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtnhanvienlap = new DevExpress.XtraEditors.TextEdit();
             this.txtconLai = new System.Windows.Forms.TextBox();
             this.txtthanhtien = new System.Windows.Forms.TextBox();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -157,7 +158,7 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtnhanvienlap = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -194,6 +195,7 @@
             this.panelControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
@@ -230,7 +232,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dockManager1
@@ -569,6 +570,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(70, 31);
             this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "Đóng";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btXuatDuLieu
             // 
@@ -701,6 +703,14 @@
             this.groupControl2.TabIndex = 5;
             this.groupControl2.Text = "Phiếu Nhập Hàng";
             // 
+            // txtnhanvienlap
+            // 
+            this.txtnhanvienlap.Location = new System.Drawing.Point(87, 51);
+            this.txtnhanvienlap.Name = "txtnhanvienlap";
+            this.txtnhanvienlap.Properties.ReadOnly = true;
+            this.txtnhanvienlap.Size = new System.Drawing.Size(118, 20);
+            this.txtnhanvienlap.TabIndex = 7;
+            // 
             // txtconLai
             // 
             this.txtconLai.Location = new System.Drawing.Point(87, 106);
@@ -811,6 +821,7 @@
             // 
             // panel_create
             // 
+            this.panel_create.Controls.Add(this.simpleButton3);
             this.panel_create.Controls.Add(this.btIn);
             this.panel_create.Controls.Add(this.btDong);
             this.panel_create.Controls.Add(this.btLuu);
@@ -834,7 +845,7 @@
             // btDong
             // 
             this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
-            this.btDong.Location = new System.Drawing.Point(427, 12);
+            this.btDong.Location = new System.Drawing.Point(579, 12);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(103, 42);
             this.btDong.TabIndex = 0;
@@ -1569,13 +1580,15 @@
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
-            // txtnhanvienlap
+            // simpleButton3
             // 
-            this.txtnhanvienlap.Location = new System.Drawing.Point(87, 51);
-            this.txtnhanvienlap.Name = "txtnhanvienlap";
-            this.txtnhanvienlap.Properties.ReadOnly = true;
-            this.txtnhanvienlap.Size = new System.Drawing.Size(118, 20);
-            this.txtnhanvienlap.TabIndex = 7;
+            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(427, 12);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(129, 42);
+            this.simpleButton3.TabIndex = 5;
+            this.simpleButton3.Text = "Xuất Dữ Liệu";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frmTraNCC
             // 
@@ -1633,6 +1646,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
@@ -1669,7 +1683,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1808,6 +1821,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.ComboBoxEdit tbmahdn;
         private DevExpress.XtraEditors.TextEdit txtnhanvienlap;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet2TableAdapters.MATHANGTableAdapter mATHANGTableAdapter1;
     }
 }

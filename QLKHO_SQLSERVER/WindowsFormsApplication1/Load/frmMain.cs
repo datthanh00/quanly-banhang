@@ -239,7 +239,6 @@ namespace WindowsFormsApplication1
         }
         private void SetPhanQuyen2(string MACN)
         {
-         
 
                 int imacn = Convert.ToInt32(MACN);
 

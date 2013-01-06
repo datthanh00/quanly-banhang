@@ -78,6 +78,7 @@
             this.btXem = new DevExpress.XtraEditors.SimpleButton();
             this.panel_info = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtmakh = new DevExpress.XtraEditors.TextEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.txtnhanvienlap = new DevExpress.XtraEditors.TextEdit();
@@ -177,7 +178,7 @@
             this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.linkIntheomathang = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtmakh = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -212,6 +213,7 @@
             this.panel_info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmakh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -256,11 +258,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtmakh.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_tool
             // 
+            this.panel_tool.Controls.Add(this.simpleButton4);
             this.panel_tool.Controls.Add(this.btDong);
             this.panel_tool.Controls.Add(this.btIn);
             this.panel_tool.Controls.Add(this.btLuu);
@@ -274,7 +276,7 @@
             // btDong
             // 
             this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
-            this.btDong.Location = new System.Drawing.Point(438, 6);
+            this.btDong.Location = new System.Drawing.Point(590, 5);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(103, 42);
             this.btDong.TabIndex = 4;
@@ -700,6 +702,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(70, 31);
             this.simpleButton3.TabIndex = 3;
             this.simpleButton3.Text = "Đóng";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // btXuatDuLieu
             // 
@@ -750,6 +753,14 @@
             this.groupControl1.Size = new System.Drawing.Size(1058, 171);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông Tin Khách Hàng";
+            // 
+            // txtmakh
+            // 
+            this.txtmakh.Location = new System.Drawing.Point(588, 26);
+            this.txtmakh.Name = "txtmakh";
+            this.txtmakh.Properties.ReadOnly = true;
+            this.txtmakh.Size = new System.Drawing.Size(99, 20);
+            this.txtmakh.TabIndex = 24;
             // 
             // panelControl3
             // 
@@ -1768,13 +1779,15 @@
             this.linkIntheomathang.Text = "In theo mặt hàng";
             this.linkIntheomathang.Click += new System.EventHandler(this.linkIntheomathang_Click);
             // 
-            // txtmakh
+            // simpleButton4
             // 
-            this.txtmakh.Location = new System.Drawing.Point(588, 26);
-            this.txtmakh.Name = "txtmakh";
-            this.txtmakh.Properties.ReadOnly = true;
-            this.txtmakh.Size = new System.Drawing.Size(99, 20);
-            this.txtmakh.TabIndex = 24;
+            this.simpleButton4.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(436, 5);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(129, 42);
+            this.simpleButton4.TabIndex = 5;
+            this.simpleButton4.Text = "Xuất Dữ Liệu";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // frmHoaDonXuat
             // 
@@ -1832,6 +1845,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmakh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
@@ -1877,7 +1891,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtmakh.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2032,6 +2045,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn46;
         private DevExpress.XtraEditors.TextEdit txtnhanvienlap;
         private DevExpress.XtraEditors.TextEdit txtmakh;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
     
 }

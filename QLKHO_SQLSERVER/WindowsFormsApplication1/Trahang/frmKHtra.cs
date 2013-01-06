@@ -721,11 +721,7 @@ namespace WindowsFormsApplication1.KHtra
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.XEM == "False")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN ");
-                return;
-            }
+            
 
             Load_panel_create();
             loadgridCTHOADON();
@@ -916,6 +912,28 @@ namespace WindowsFormsApplication1.KHtra
         private void tbmahdx_Validated(object sender, EventArgs e)
         {
             kiemtramahd();
+        }
+
+        private void simpleButton3_Click(object sender, EventArgs e)
+        {
+            deDongTab();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel|*.xls";
+            saveFileDialog1.Title = "Save an File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                gridControl1.ExportToXls(saveFileDialog1.FileName);
+            }
         }
 
 
