@@ -81,6 +81,7 @@
             this.tbmahdx = new DevExpress.XtraEditors.ComboBoxEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtnhanvienlap = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
@@ -164,7 +165,7 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtnhanvienlap = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -204,6 +205,7 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHD.Properties)).BeginInit();
@@ -238,11 +240,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_tool
             // 
+            this.panel_tool.Controls.Add(this.simpleButton4);
             this.panel_tool.Controls.Add(this.btDong);
             this.panel_tool.Controls.Add(this.btIn);
             this.panel_tool.Controls.Add(this.btLuu);
@@ -256,7 +258,7 @@
             // btDong
             // 
             this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
-            this.btDong.Location = new System.Drawing.Point(438, 6);
+            this.btDong.Location = new System.Drawing.Point(588, 5);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(103, 42);
             this.btDong.TabIndex = 4;
@@ -682,6 +684,7 @@
             this.simpleButton3.Size = new System.Drawing.Size(70, 31);
             this.simpleButton3.TabIndex = 3;
             this.simpleButton3.Text = "Đóng";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // btXuatDuLieu
             // 
@@ -766,6 +769,14 @@
             this.groupControl2.Size = new System.Drawing.Size(357, 143);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Phiếu Thu Hàng Trả Về";
+            // 
+            // txtnhanvienlap
+            // 
+            this.txtnhanvienlap.Location = new System.Drawing.Point(78, 55);
+            this.txtnhanvienlap.Name = "txtnhanvienlap";
+            this.txtnhanvienlap.Properties.ReadOnly = true;
+            this.txtnhanvienlap.Size = new System.Drawing.Size(99, 20);
+            this.txtnhanvienlap.TabIndex = 22;
             // 
             // labelControl9
             // 
@@ -1618,13 +1629,15 @@
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
-            // txtnhanvienlap
+            // simpleButton4
             // 
-            this.txtnhanvienlap.Location = new System.Drawing.Point(78, 55);
-            this.txtnhanvienlap.Name = "txtnhanvienlap";
-            this.txtnhanvienlap.Properties.ReadOnly = true;
-            this.txtnhanvienlap.Size = new System.Drawing.Size(99, 20);
-            this.txtnhanvienlap.TabIndex = 22;
+            this.simpleButton4.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(441, 5);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(129, 42);
+            this.simpleButton4.TabIndex = 5;
+            this.simpleButton4.Text = "Xuất Dữ Liệu";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
             // frmKHtra
             // 
@@ -1688,6 +1701,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHD.Properties)).EndInit();
@@ -1722,7 +1736,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1864,6 +1877,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraEditors.ComboBoxEdit tbmahdx;
         private DevExpress.XtraEditors.TextEdit txtnhanvienlap;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
     
 }

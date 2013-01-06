@@ -133,15 +133,15 @@ namespace WindowsFormsApplication1
         public string sBoPhan;
         private void ThemMatHang_Load(object sender, EventArgs e)
         {
-            
             if (sBoPhan == "MABP00004")
             {
-                groupControl1.Enabled = true;
+                txtSoLuong.Enabled = true;
             }
             else
             {
-                groupControl1.Enabled = false;
+                txtSoLuong.Enabled = false;
             }
+           
             if (iNgonNgu == 1)
             {
                 LoadEL();
@@ -156,14 +156,7 @@ namespace WindowsFormsApplication1
             }
               if (kiemtra == 0)
             {
-                if (sBoPhan == "MABP00004")
-                {
-                    groupControl1.Enabled = true;
-                }
-                else
-                {
-                    groupControl1.Enabled = false;
-                }
+                
                 LoadKhoHang();
                 loadgirdlookupNCC();
                 loadgirdlookupDVT();
@@ -204,14 +197,6 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                  if (sBoPhan == "MABP00004")
-            {
-                groupControl1.Enabled = true;
-            }
-            else
-            {
-                groupControl1.Enabled = false;
-            }
                 LoadKhoHang();
                 loadgirdlookupNCC();
                 loadgirdlookupDVT();

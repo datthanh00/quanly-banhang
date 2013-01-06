@@ -62,11 +62,11 @@
             this.lbtu1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.btXuatDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btXem = new DevExpress.XtraEditors.SimpleButton();
             this.panel_info1 = new DevExpress.XtraEditors.PanelControl();
             this.panel_info = new DevExpress.XtraEditors.GroupControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.txtMANCC = new DevExpress.XtraEditors.TextEdit();
             this.btAdd = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
@@ -101,6 +101,7 @@
             this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
             this.panel_create = new DevExpress.XtraEditors.PanelControl();
+            this.btXuatDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
@@ -170,7 +171,7 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtMANCC = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -202,6 +203,7 @@
             this.panel_info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMANCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoDT.Properties)).BeginInit();
@@ -249,7 +251,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMANCC.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dockManager1
@@ -440,11 +441,11 @@
             // 
             // panelControl10
             // 
+            this.panelControl10.Controls.Add(this.simpleButton3);
             this.panelControl10.Controls.Add(this.pnThangNam);
             this.panelControl10.Controls.Add(this.pnThoiGian);
             this.panelControl10.Controls.Add(this.simpleButton1);
             this.panelControl10.Controls.Add(this.simpleButton2);
-            this.panelControl10.Controls.Add(this.btXuatDuLieu);
             this.panelControl10.Controls.Add(this.btXem);
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl10.Location = new System.Drawing.Point(0, 0);
@@ -588,16 +589,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(70, 31);
             this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "Đóng";
-            // 
-            // btXuatDuLieu
-            // 
-            this.btXuatDuLieu.Image = ((System.Drawing.Image)(resources.GetObject("btXuatDuLieu.Image")));
-            this.btXuatDuLieu.Location = new System.Drawing.Point(808, 5);
-            this.btXuatDuLieu.Name = "btXuatDuLieu";
-            this.btXuatDuLieu.Size = new System.Drawing.Size(103, 31);
-            this.btXuatDuLieu.TabIndex = 3;
-            this.btXuatDuLieu.Text = "Xuất Dữ Liệu";
-            this.btXuatDuLieu.Click += new System.EventHandler(this.btXuatDuLieu_Click);
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btXem
             // 
@@ -650,6 +642,14 @@
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(658, 135);
             this.panelControl5.TabIndex = 8;
+            // 
+            // txtMANCC
+            // 
+            this.txtMANCC.Location = new System.Drawing.Point(531, 5);
+            this.txtMANCC.Name = "txtMANCC";
+            this.txtMANCC.Properties.ReadOnly = true;
+            this.txtMANCC.Size = new System.Drawing.Size(118, 20);
+            this.txtMANCC.TabIndex = 20;
             // 
             // btAdd
             // 
@@ -960,6 +960,7 @@
             // 
             // panel_create
             // 
+            this.panel_create.Controls.Add(this.btXuatDuLieu);
             this.panel_create.Controls.Add(this.btIn);
             this.panel_create.Controls.Add(this.btDong);
             this.panel_create.Controls.Add(this.btLuu);
@@ -969,6 +970,16 @@
             this.panel_create.Name = "panel_create";
             this.panel_create.Size = new System.Drawing.Size(1061, 63);
             this.panel_create.TabIndex = 2;
+            // 
+            // btXuatDuLieu
+            // 
+            this.btXuatDuLieu.Image = ((System.Drawing.Image)(resources.GetObject("btXuatDuLieu.Image")));
+            this.btXuatDuLieu.Location = new System.Drawing.Point(426, 12);
+            this.btXuatDuLieu.Name = "btXuatDuLieu";
+            this.btXuatDuLieu.Size = new System.Drawing.Size(129, 42);
+            this.btXuatDuLieu.TabIndex = 4;
+            this.btXuatDuLieu.Text = "Xuất Dữ Liệu";
+            this.btXuatDuLieu.Click += new System.EventHandler(this.btXuatDuLieu_Click_1);
             // 
             // btIn
             // 
@@ -983,7 +994,7 @@
             // btDong
             // 
             this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
-            this.btDong.Location = new System.Drawing.Point(427, 12);
+            this.btDong.Location = new System.Drawing.Point(586, 12);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(103, 42);
             this.btDong.TabIndex = 0;
@@ -1720,13 +1731,15 @@
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
-            // txtMANCC
+            // simpleButton3
             // 
-            this.txtMANCC.Location = new System.Drawing.Point(531, 5);
-            this.txtMANCC.Name = "txtMANCC";
-            this.txtMANCC.Properties.ReadOnly = true;
-            this.txtMANCC.Size = new System.Drawing.Size(118, 20);
-            this.txtMANCC.TabIndex = 20;
+            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
+            this.simpleButton3.Location = new System.Drawing.Point(802, 5);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(112, 31);
+            this.simpleButton3.TabIndex = 5;
+            this.simpleButton3.Text = "Xuất Dữ Liệu";
+            this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
             // frmNhapHang
             // 
@@ -1778,6 +1791,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMANCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoDT.Properties)).EndInit();
@@ -1826,7 +1840,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtMANCC.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1910,7 +1923,6 @@
         private DevExpress.XtraEditors.LabelControl lbtu1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton btXuatDuLieu;
         private DevExpress.XtraEditors.SimpleButton btXem;
         private DevExpress.XtraEditors.DateEdit dateTu;
         private DevExpress.XtraEditors.DateEdit dateDen;
@@ -1978,6 +1990,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
         private DevExpress.XtraEditors.TextEdit txtnhanvienlap;
         private DevExpress.XtraEditors.TextEdit txtMANCC;
+        private DevExpress.XtraEditors.SimpleButton btXuatDuLieu;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet2TableAdapters.MATHANGTableAdapter mATHANGTableAdapter1;
     }
 }
