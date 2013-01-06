@@ -179,7 +179,15 @@ namespace WindowsFormsApplication1
                 txthansudung.Text = HANSUDUNG;
 
                 txtSoLuong.Text = SOLUONG;
-                txtSoLuong.Enabled = false;
+                if (PublicVariable.XOA == "False")
+                {
+                    txtSoLuong.Enabled = false;
+                }
+                else
+                {
+                    txtSoLuong.Enabled = true;
+                }
+                
                 
                 txtmota.Text = MOTA;
                 txtGiaBan.Text = GIABAN;

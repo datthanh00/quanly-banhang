@@ -50,7 +50,6 @@
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.txtmakh = new DevExpress.XtraEditors.TextEdit();
             this.colTINHTRANG = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.txtyahoo = new DevExpress.XtraEditors.TextEdit();
             this.lbCHUY = new DevExpress.XtraEditors.LabelControl();
@@ -263,18 +262,6 @@
             this.colTINHTRANG.TabIndex = 16;
             this.colTINHTRANG.Text = "Tình Trạng";
             // 
-            // labelControl18
-            // 
-            this.labelControl18.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl18.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl18.Appearance.Options.UseBackColor = true;
-            this.labelControl18.Appearance.Options.UseForeColor = true;
-            this.labelControl18.Location = new System.Drawing.Point(425, 69);
-            this.labelControl18.Name = "labelControl18";
-            this.labelControl18.Size = new System.Drawing.Size(14, 13);
-            this.labelControl18.TabIndex = 19;
-            this.labelControl18.Text = "(*)";
-            // 
             // labelControl19
             // 
             this.labelControl19.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -366,7 +353,7 @@
             this.checkTT.Location = new System.Drawing.Point(112, 188);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 19);
+            this.checkTT.Size = new System.Drawing.Size(82, 18);
             this.checkTT.TabIndex = 4;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
@@ -452,7 +439,6 @@
             this.Controls.Add(this.btThemKhuVuc);
             this.Controls.Add(this.lbCHUY);
             this.Controls.Add(this.labelControl19);
-            this.Controls.Add(this.labelControl18);
             this.Controls.Add(this.colTINHTRANG);
             this.Controls.Add(this.txtmakh);
             this.Controls.Add(this.btDong);
@@ -531,8 +517,7 @@
         private DevExpress.XtraEditors.SimpleButton btDong;
         private DevExpress.XtraEditors.TextEdit txtmakh;
         private DevExpress.XtraEditors.LabelControl colTINHTRANG;
-      //  private WindowsFormsApplication1.XUAT_NHAPTONDataSetTableAdapters.KHUVUCTableAdapter kHUVUCTableAdapter;
-        private DevExpress.XtraEditors.LabelControl labelControl18;
+        //  private WindowsFormsApplication1.XUAT_NHAPTONDataSetTableAdapters.KHUVUCTableAdapter kHUVUCTableAdapter;
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraEditors.TextEdit txtyahoo;
         private DevExpress.XtraEditors.LabelControl lbCHUY;

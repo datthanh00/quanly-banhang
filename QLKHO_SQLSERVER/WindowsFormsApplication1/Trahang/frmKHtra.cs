@@ -540,6 +540,7 @@ namespace WindowsFormsApplication1.KHtra
             gridControl3.DataSource = TBS;
             gridView4.RefreshData();
             gridControl3.RefreshDataSource();
+            gridView4.BestFitColumns();
 
         }
         public void loadgridSANPHAM()
@@ -564,6 +565,7 @@ namespace WindowsFormsApplication1.KHtra
             gridView1.ExpandAllGroups();
             gridView1.RefreshData();
             gridControl3.RefreshDataSource();
+            gridView1.BestFitColumns();
         }
 
         public void loadgridTONGSANPHAM()

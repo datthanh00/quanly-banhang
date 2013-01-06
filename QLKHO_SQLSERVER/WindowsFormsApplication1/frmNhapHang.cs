@@ -164,6 +164,7 @@ namespace WindowsFormsApplication1
             gridControl3.DataSource = TBS;
             gridView4.RefreshData();
             gridControl3.RefreshDataSource();
+            gridView4.BestFitColumns();
             
         }
         public void loadgridSANPHAM()
@@ -189,7 +190,8 @@ namespace WindowsFormsApplication1
             gridView5.ExpandAllGroups();
             //gridColumn26.SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
             //gridView4.RefreshData();
-            gridControl3.RefreshDataSource(); 
+            gridControl3.RefreshDataSource();
+            gridView5.BestFitColumns();
 
         }
         public void loadgridtongSANPHAM()

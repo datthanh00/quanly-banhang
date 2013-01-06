@@ -529,6 +529,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             gridControl3.DataSource = TBS;
             gridView4.RefreshData();
             gridControl3.RefreshDataSource();
+            gridView4.BestFitColumns();
 
         }
         public void loadgridSANPHAM( )
@@ -552,6 +553,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             gridView1.ExpandAllGroups();
             gridView1.RefreshData();
             gridControl3.RefreshDataSource();
+            gridView1.BestFitColumns();
         }
         public void loadgridTONGSANPHAM()
         {

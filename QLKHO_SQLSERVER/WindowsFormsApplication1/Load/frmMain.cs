@@ -221,22 +221,38 @@ namespace WindowsFormsApplication1
 
         private void SetPhanQuyen(string MACN)
         {
-            int phanquyencount = PhanQuyen.Rows.Count;
-          
+            int tabcount= tabControl12.Tabs.Count;
+            if (tabcount == 0)
+            {
+                //int phanquyencount = PhanQuyen.Rows.Count;
+         
+                int imacn = Convert.ToInt32(MACN);
+       
+                PublicVariable.XEM = PhanQuyen.Rows[imacn - 1]["TRUYCAP"].ToString();
+                PublicVariable.THEM = PhanQuyen.Rows[imacn - 1]["THEM"].ToString();
+                PublicVariable.XOA = PhanQuyen.Rows[imacn - 1]["XOA"].ToString();
+                PublicVariable.SUA = PhanQuyen.Rows[imacn - 1]["SUA"].ToString();
+                PublicVariable.IN = PhanQuyen.Rows[imacn - 1]["IN"].ToString();
+            }
 
-           // for (int i = 0; i < phanquyencount; i++)
-           // {
-            int imacn = Convert.ToInt32(MACN);
-                //if (PhanQuyen.Rows[i]["MACN"].ToString() == MACN)
-                //{
-            PublicVariable.XEM = PhanQuyen.Rows[imacn-1]["TRUYCAP"].ToString();
-            PublicVariable.THEM = PhanQuyen.Rows[imacn-1]["THEM"].ToString();
-            PublicVariable.XOA = PhanQuyen.Rows[imacn-1]["XOA"].ToString();
-            PublicVariable.SUA = PhanQuyen.Rows[imacn-1]["SUA"].ToString();
-            PublicVariable.IN = PhanQuyen.Rows[imacn-1]["IN"].ToString();
-                //}
-            //}
+              
         }
+        private void SetPhanQuyen2(string MACN)
+        {
+         
+
+                int imacn = Convert.ToInt32(MACN);
+
+                PublicVariable.XEM = PhanQuyen.Rows[imacn - 1]["TRUYCAP"].ToString();
+                PublicVariable.THEM = PhanQuyen.Rows[imacn - 1]["THEM"].ToString();
+                PublicVariable.XOA = PhanQuyen.Rows[imacn - 1]["XOA"].ToString();
+                PublicVariable.SUA = PhanQuyen.Rows[imacn - 1]["SUA"].ToString();
+                PublicVariable.IN = PhanQuyen.Rows[imacn - 1]["IN"].ToString();
+            
+
+
+        }
+
         private void SetPhanKho(DataTable KHO)
         {
 
@@ -634,6 +650,7 @@ namespace WindowsFormsApplication1
             if (!checkOpenTabs("Báo Cáo Doanh Thu"))
             {
                 TabItem t = tabControl12.CreateTab("Báo Cáo Doanh Thu");
+                t.Name = "Doanhthu";
                 frmThongKeDoanhThu dt = new frmThongKeDoanhThu();
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
@@ -647,7 +664,9 @@ namespace WindowsFormsApplication1
 
         private void btTongHop_ItemClick(object sender, ItemClickEventArgs e)
         {
-            TabItem t = tabControl12.CreateTab("Báo Cáo Doanh Thu");
+            SetPhanQuyen("8");
+            TabItem t = tabControl12.CreateTab("Tổng Hợp");
+            t.Name = "Tonghop";
             frmThongKeTongHop th = new frmThongKeTongHop();
             th.TopLevel = false;
             th.Dock = DockStyle.Fill;
@@ -664,7 +683,7 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem18_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetPhanQuyen("21");
+            SetPhanQuyen2("21");
             frmSaoLuu frmsaoluu = new frmSaoLuu();
             frmsaoluu.iNgonNgu = iNgonNgu;
             frmsaoluu.ShowDialog();
@@ -672,7 +691,7 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetPhanQuyen("22");
+            SetPhanQuyen2("22");
             frmKhoiPhuc frm = new frmKhoiPhuc();
             frm.iNgonNgu = iNgonNgu;
             frm.ShowDialog();
@@ -1129,6 +1148,7 @@ namespace WindowsFormsApplication1
 
         private void btDoanhThu_ItemClick_1(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("9");
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
             bKTraMoTab = true;
@@ -1244,16 +1264,13 @@ namespace WindowsFormsApplication1
 
         private void btThongTin_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetPhanQuyen("25");
+            SetPhanQuyen2("25");
             frmThongTin frm = new frmThongTin();
             frm.iNgonNgu = iNgonNgu;
             frm.ShowDialog();
         }
 
-        private void ribbon_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btDangXuat_ItemClick_1(object sender, ItemClickEventArgs e)
         {
@@ -1810,7 +1827,7 @@ namespace WindowsFormsApplication1
 
         private void btDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetPhanQuyen("24");
+            SetPhanQuyen2("24");
             frmDoiMatKhau frm = new frmDoiMatKhau();
             frm.sMaNV = sManv;
             frm.iNgonNgu = iNgonNgu;
@@ -1908,6 +1925,12 @@ namespace WindowsFormsApplication1
         {
             
             PublicVariable.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+         
+            //for (int i = 0; i < tabControl12.Tabs.Count; i++)
+            //{
+                tabControl12.Tabs.Clear();
+            //}
+
         }
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
@@ -1957,6 +1980,7 @@ namespace WindowsFormsApplication1
                 dt.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(dt);
                 dt.Show();
+                
                 tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
             }
             ld.simpleCloseWait();
@@ -1964,9 +1988,99 @@ namespace WindowsFormsApplication1
 
 
 
-        private void cbkho_TextChanged(object sender, EventArgs e)
+    
+
+        private void tabControl12_SelectedTabChanged(object sender, TabStripTabChangedEventArgs e)
         {
-            PublicVariable.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+           
+
+            TabItem ti = tabControl12.SelectedTab as TabItem;
+
+
+            int imacn = 1;
+            if(ti!=null)
+            switch (ti.Name)
+            {
+                case "HoaDonNhap":
+                    imacn = 1;
+                    break;
+                case "HoaDonXuat":
+                    imacn = 2;
+                    break;
+                case "TKMatHang":
+                    imacn = 3;
+                    break;
+                case "TraNCC":
+                    imacn = 4;
+                    break;
+                case "KHtra":
+                    imacn = 5;
+                    break;
+                case "CNKH":
+                    imacn = 6;
+                    break;
+                case "CNCC":
+                    imacn = 7;
+                    break;
+                case "TKTongHop":
+                    imacn = 8;
+                    break;
+                case "Doanhthu":
+                    imacn = 9;
+                    break;
+                case "ThongKe":
+                    imacn = 10;
+                    break;
+                case "KhachHang":
+                    imacn = 11;
+                    break;
+                case "NhaCungCap":
+                    imacn = 12;
+                    break;
+                case "KhuVuc":
+                    imacn = 13;
+                    break;
+                case "Kho":
+                    imacn = 14;
+                    break;
+                case "NhomHang":
+                    imacn = 15;
+                    break;
+                case "MatHang":
+                    imacn = 16;
+                    break;
+                case "DonViTinh":
+                    imacn = 17;
+                    break;
+                case "NhanVien":
+                    imacn = 18;
+                    break;
+                case "BoPhan":
+                    imacn = 19;
+                    break;
+                case "Thue":
+                    imacn = 20;
+                    break;
+                case "PhanQuyen":
+                    imacn = 23;
+                    break;
+                case "LOG":
+                    imacn = 23;
+                    break;
+                case "import_excell":
+                    imacn = 23;
+                    break;
+            }
+
+
+            PublicVariable.XEM = PhanQuyen.Rows[imacn - 1]["TRUYCAP"].ToString();
+            PublicVariable.THEM = PhanQuyen.Rows[imacn - 1]["THEM"].ToString();
+            PublicVariable.XOA = PhanQuyen.Rows[imacn - 1]["XOA"].ToString();
+            PublicVariable.SUA = PhanQuyen.Rows[imacn - 1]["SUA"].ToString();
+            PublicVariable.IN = PhanQuyen.Rows[imacn - 1]["IN"].ToString();
+
+
+            //MessageBox.Show(ti.Name);
         }
 
     }
