@@ -83,7 +83,7 @@ namespace WindowsFormsApplication1
             {
                 MAMH = MAMH + "and mathang.MANCC ='" + dto.MANCC + "'";
             }
-            String SQL = "select MAMH,KLDVT, TENMH, convert(varchar,NGAY,103)AS NGAY, MAHD,TENKHO,TENNCC,DONVITINH,TONDAU, NHAP, XUAT, TONCUOI from (select tonkho.*, math, tenmh,makho,manh,madvt,MANCC,KLDVT  from tonkho, mathang where tonkho.mamh= mathang.mamh and ngay BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' and makho='" + PublicVariable.MAKHO + "' " + MAMH + ")  as t1, kho,NHACUNGCAP,donvitinh where t1.makho=kho.makho and t1.MANCC=NHACUNGCAP.MANCC and t1.madvt=donvitinh.madvt";
+            String SQL = "select MAMH,KLDVT, TENMH, convert(varchar,NGAY,103)AS NGAY, MAHD,TENKHO,TENNCC,DONVITINH,TONDAU, NHAP,TRANHAP, XUAT,TRAXUAT, TONCUOI from (select tonkho.*, math, tenmh,makho,manh,madvt,MANCC,KLDVT  from tonkho, mathang where tonkho.mamh= mathang.mamh and ngay BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' and makho='" + PublicVariable.MAKHO + "' " + MAMH + ")  as t1, kho,NHACUNGCAP,donvitinh where t1.makho=kho.makho and t1.MANCC=NHACUNGCAP.MANCC and t1.madvt=donvitinh.madvt";
             return getdata(SQL);
         }
         public DataTable getsochitiethanghoa(Class_DTO_ThongKe dto)
@@ -97,7 +97,7 @@ namespace WindowsFormsApplication1
             {
                 MAMH = MAMH + "and mathang.MANCC ='" + dto.MANCC + "'";
             }
-            String SQL = "select MAMH,KLDVT, TENMH,  convert(varchar,NGAY,103)AS NGAY, MAHD,TENKHO,TENNCC,DONVITINH,GIAMUA,GIABAN,TONDAU, TONDAU*GIAMUA AS TIENTONDAU, NHAP , GIAMUA*NHAP AS TIENNHAP, XUAT, GIAMUA * XUAT AS TIENXUAT, TONCUOI, GIAMUA*TONCUOI AS TIENTONCUOI  from (select tonkho.*, math, tenmh,makho,manh,madvt,GIAMUA,GIABAN,MANCC,KLDVT from tonkho, mathang where tonkho.mamh= mathang.mamh and ngay BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' and makho='" + PublicVariable.MAKHO + "' " + MAMH + ") as t1, kho,NHACUNGCAP,donvitinh where t1.makho=kho.makho and t1.MANCC=NHACUNGCAP.MANCC and t1.madvt=donvitinh.madvt";
+            String SQL = "select MAMH,KLDVT, TENMH,  convert(varchar,NGAY,103)AS NGAY, MAHD,TENKHO,TENNCC,DONVITINH,GIAMUA,GIABAN,TONDAU, TONDAU*GIAMUA AS TIENTONDAU, NHAP , GIAMUA*NHAP AS TIENNHAP, TRANHAP , GIAMUA*TRANHAP AS TIENTRANHAP, XUAT, GIABAN * XUAT AS TIENXUAT, TRAXUAT, GIABAN * TRAXUAT AS TIENTRAXUAT, TONCUOI, GIAMUA*TONCUOI AS TIENTONCUOI  from (select tonkho.*, math, tenmh,makho,manh,madvt,GIAMUA,GIABAN,MANCC,KLDVT from tonkho, mathang where tonkho.mamh= mathang.mamh and ngay BETWEEN '" + dto.NGAYBDKHO + "' AND '" + dto.NGAYKTKHO + "' and makho='" + PublicVariable.MAKHO + "' " + MAMH + ") as t1, kho,NHACUNGCAP,donvitinh where t1.makho=kho.makho and t1.MANCC=NHACUNGCAP.MANCC and t1.madvt=donvitinh.madvt";
             return getdata(SQL);
         }
 

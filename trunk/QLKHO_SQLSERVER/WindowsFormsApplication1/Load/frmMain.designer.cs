@@ -127,6 +127,7 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbkho = new DevExpress.XtraEditors.LabelControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeZone1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWeekOfMonth1)).BeginInit();
@@ -202,9 +203,10 @@
             this.BTTraNCC,
             this.BTKHtra,
             this.btnlog,
-            this.btnimportexcell});
+            this.btnimportexcell,
+            this.barButtonItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 110;
+            this.ribbon.MaxItemId = 111;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.btAnh);
             this.ribbon.PageHeaderItemLinks.Add(this.btNgonNguViet);
@@ -734,6 +736,7 @@
             this.ribThongKe.ItemLinks.Add(this.btTongHop);
             this.ribThongKe.ItemLinks.Add(this.btDoanhThu);
             this.ribThongKe.ItemLinks.Add(this.btTonKho);
+            this.ribThongKe.ItemLinks.Add(this.barButtonItem1);
             this.ribThongKe.Name = "ribThongKe";
             this.ribThongKe.ShowCaptionButton = false;
             this.ribThongKe.Text = "Thống Kê";
@@ -1005,6 +1008,15 @@
             this.lbkho.TabIndex = 27;
             this.lbkho.Text = "Kho Hàng";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Tồn Kho Theo Ngày";
+            this.barButtonItem1.Id = 110;
+            this.barButtonItem1.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.store;
+            this.barButtonItem1.LargeWidth = 80;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_2);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1135,5 +1147,6 @@
         private DevExpress.XtraEditors.LabelControl lbkho;
         private DevExpress.XtraBars.BarButtonItem btnlog;
         private DevExpress.XtraBars.BarButtonItem btnimportexcell;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

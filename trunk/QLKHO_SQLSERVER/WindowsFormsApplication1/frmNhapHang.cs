@@ -740,11 +740,7 @@ namespace WindowsFormsApplication1
 
         private void DeleteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (PublicVariable.XOA == "False")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN XÓA ");
-                return;
-            }
+            
 
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -756,6 +752,11 @@ namespace WindowsFormsApplication1
                     String sID = dtr["ID"].ToString();
                     if (sID != "")
                     {
+                        if (PublicVariable.XOA == "False")
+                        {
+                            MessageBox.Show("KHÔNG CÓ QUYỀN XÓA ");
+                            return;
+                        }
                         ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID));
                     }
 

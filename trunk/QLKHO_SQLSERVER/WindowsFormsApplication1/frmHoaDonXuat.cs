@@ -675,20 +675,29 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.XOA == "False")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN ");
-                return;
-            }
+           
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int focusrow = gridCTHOADON.FocusedRowHandle;
                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(focusrow);
                 if (dtr != null)
                 {
-                    String sID = dtr["ID"].ToString();
+                    String sID = "";
+
+                    try
+                    {
+                        sID = dtr["ID"].ToString();
+                    }
+                    catch { }
+
+
                     if (sID != "")
                     {
+                        if (PublicVariable.XOA == "False")
+                        {
+                            MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                            return;
+                        }
                         ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
                     }
 
@@ -1006,7 +1015,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             for (int i = 0; i < gridCTHOADON.DataRowCount; i++)
             {
                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
-                SQL = "INSERT INTO [CHITIETHDXTAM] ([ID],[MAHDX],[MAMH],[SOLUONGXUAT],[GIATIEN],[TONGGIATIEN]) VALUES (" + i + 1 + ", '" + mahdtam + "','" + dtr["_MaMH"].ToString() + "'," + dtr["_SoLuong"].ToString() + "," + dtr["_DonGia"].ToString() + "," + thanhtien + ")";
+                SQL = "INSERT INTO [CHITIETHDXTAM] ([MAHDX],[MAMH],[SOLUONGXUAT],[GIATIEN],[TONGGIATIEN]) VALUES ( '" + mahdtam + "','" + dtr["_MaMH"].ToString() + "'," + dtr["_SoLuong"].ToString() + "," + dtr["_DonGia"].ToString() + "," + thanhtien + ")";
                 ctlNCC.executeNonQuery(SQL);
             }
             gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();
