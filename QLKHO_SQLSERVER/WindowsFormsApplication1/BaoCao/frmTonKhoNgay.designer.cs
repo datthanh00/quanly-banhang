@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class frmBaoCaoTonKho
+    partial class frmTonKhoNgay
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBaoCaoTonKho));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTonKhoNgay));
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            this.bandedGridColumn13 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -43,14 +45,11 @@
             this.colmancc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbloc = new DevExpress.XtraEditors.LabelControl();
-            this.lbDen = new DevExpress.XtraEditors.LabelControl();
-            this.lbTu = new DevExpress.XtraEditors.LabelControl();
-            this.dateDen = new DevExpress.XtraEditors.DateEdit();
             this.dateTu = new DevExpress.XtraEditors.DateEdit();
-            this.cbThoiGian = new DevExpress.XtraEditors.ComboBoxEdit();
             this.kHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHOgetallBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
             this.btXuat = new DevExpress.XtraEditors.SimpleButton();
@@ -59,6 +58,7 @@
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.advBandedGridView3 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
             this.gridThongTin = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.bandedGridColumn12 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colMa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colHangHoa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colNhomHang = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -66,6 +66,7 @@
             this.bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colDonViTInh = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn11 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridDauKi = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSLDau = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -96,11 +97,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridsanpham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbncc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridncc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbThoiGian.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOgetallBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
@@ -110,6 +108,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView3)).BeginInit();
             this.SuspendLayout();
+            // 
+            // bandedGridColumn13
+            // 
+            this.bandedGridColumn13.Caption = "Chên lệch";
+            this.bandedGridColumn13.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn13.FieldName = "CHENHLECH";
+            this.bandedGridColumn13.Name = "bandedGridColumn13";
+            this.bandedGridColumn13.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn13.Visible = true;
             // 
             // dockManager1
             // 
@@ -127,11 +135,7 @@
             this.panelControl1.Controls.Add(this.cbsanpham);
             this.panelControl1.Controls.Add(this.cbncc);
             this.panelControl1.Controls.Add(this.lbloc);
-            this.panelControl1.Controls.Add(this.lbDen);
-            this.panelControl1.Controls.Add(this.lbTu);
-            this.panelControl1.Controls.Add(this.dateDen);
             this.panelControl1.Controls.Add(this.dateTu);
-            this.panelControl1.Controls.Add(this.cbThoiGian);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
@@ -140,7 +144,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(705, 13);
+            this.labelControl1.Location = new System.Drawing.Point(365, 15);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(69, 13);
             this.labelControl1.TabIndex = 33;
@@ -148,7 +152,7 @@
             // 
             // cbsanpham
             // 
-            this.cbsanpham.Location = new System.Drawing.Point(534, 8);
+            this.cbsanpham.Location = new System.Drawing.Point(193, 9);
             this.cbsanpham.Name = "cbsanpham";
             this.cbsanpham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -195,7 +199,7 @@
             // 
             // cbncc
             // 
-            this.cbncc.Location = new System.Drawing.Point(800, 8);
+            this.cbncc.Location = new System.Drawing.Point(459, 9);
             this.cbncc.Name = "cbncc";
             this.cbncc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -233,47 +237,16 @@
             // 
             // lbloc
             // 
-            this.lbloc.Location = new System.Drawing.Point(471, 11);
+            this.lbloc.Location = new System.Drawing.Point(131, 13);
             this.lbloc.Name = "lbloc";
             this.lbloc.Size = new System.Drawing.Size(47, 13);
             this.lbloc.TabIndex = 30;
             this.lbloc.Text = "Sản Phẩm";
             // 
-            // lbDen
-            // 
-            this.lbDen.Location = new System.Drawing.Point(289, 13);
-            this.lbDen.Name = "lbDen";
-            this.lbDen.Size = new System.Drawing.Size(20, 13);
-            this.lbDen.TabIndex = 1;
-            this.lbDen.Text = "Đến";
-            // 
-            // lbTu
-            // 
-            this.lbTu.Location = new System.Drawing.Point(140, 13);
-            this.lbTu.Name = "lbTu";
-            this.lbTu.Size = new System.Drawing.Size(13, 13);
-            this.lbTu.TabIndex = 1;
-            this.lbTu.Text = "Từ";
-            // 
-            // dateDen
-            // 
-            this.dateDen.EditValue = new System.DateTime(2010, 11, 28, 0, 0, 0, 0);
-            this.dateDen.Location = new System.Drawing.Point(326, 8);
-            this.dateDen.Name = "dateDen";
-            this.dateDen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateDen.Properties.Mask.EditMask = "";
-            this.dateDen.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.dateDen.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateDen.Size = new System.Drawing.Size(100, 20);
-            this.dateDen.TabIndex = 3;
-            this.dateDen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateDen_KeyPress);
-            // 
             // dateTu
             // 
             this.dateTu.EditValue = new System.DateTime(2010, 11, 27, 23, 39, 42, 143);
-            this.dateTu.Location = new System.Drawing.Point(170, 8);
+            this.dateTu.Location = new System.Drawing.Point(12, 9);
             this.dateTu.Name = "dateTu";
             this.dateTu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -286,16 +259,6 @@
             this.dateTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTu_KeyPress);
             this.dateTu.TextChanged += new System.EventHandler(this.dateTu_TextChanged);
             // 
-            // cbThoiGian
-            // 
-            this.cbThoiGian.Location = new System.Drawing.Point(21, 8);
-            this.cbThoiGian.Name = "cbThoiGian";
-            this.cbThoiGian.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbThoiGian.Size = new System.Drawing.Size(100, 20);
-            this.cbThoiGian.TabIndex = 1;
-            this.cbThoiGian.SelectedIndexChanged += new System.EventHandler(this.cbThoiGian_SelectedIndexChanged);
-            // 
             // kHOBindingSource
             // 
             this.kHOBindingSource.DataMember = "KHO";
@@ -306,6 +269,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.simpleButton1);
             this.panelControl3.Controls.Add(this.btDong);
             this.panelControl3.Controls.Add(this.btIn);
             this.panelControl3.Controls.Add(this.btXuat);
@@ -316,10 +280,20 @@
             this.panelControl3.Size = new System.Drawing.Size(1292, 38);
             this.panelControl3.TabIndex = 2;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = global::WindowsFormsApplication1.Properties.Resources.save;
+            this.simpleButton1.Location = new System.Drawing.Point(103, 5);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 29);
+            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.Text = "Lưu";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
             // btDong
             // 
             this.btDong.Image = ((System.Drawing.Image)(resources.GetObject("btDong.Image")));
-            this.btDong.Location = new System.Drawing.Point(326, 6);
+            this.btDong.Location = new System.Drawing.Point(411, 6);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(75, 29);
             this.btDong.TabIndex = 3;
@@ -329,7 +303,7 @@
             // btIn
             // 
             this.btIn.Image = ((System.Drawing.Image)(resources.GetObject("btIn.Image")));
-            this.btIn.Location = new System.Drawing.Point(230, 6);
+            this.btIn.Location = new System.Drawing.Point(315, 6);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(75, 29);
             this.btIn.TabIndex = 2;
@@ -339,7 +313,7 @@
             // btXuat
             // 
             this.btXuat.Image = ((System.Drawing.Image)(resources.GetObject("btXuat.Image")));
-            this.btXuat.Location = new System.Drawing.Point(107, 6);
+            this.btXuat.Location = new System.Drawing.Point(192, 6);
             this.btXuat.Name = "btXuat";
             this.btXuat.Size = new System.Drawing.Size(102, 29);
             this.btXuat.TabIndex = 1;
@@ -368,10 +342,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 2);
+            this.gridControl2.Location = new System.Drawing.Point(3, 3);
             this.gridControl2.MainView = this.advBandedGridView3;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1288, 393);
+            this.gridControl2.Size = new System.Drawing.Size(1286, 391);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -390,6 +364,7 @@
             this.gridXuatKho,
             this.gridCuoiKi});
             this.advBandedGridView3.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.bandedGridColumn12,
             this.colNhomHang,
             this.colMa,
             this.colHangHoa,
@@ -397,6 +372,8 @@
             this.bandedGridColumn2,
             this.colDonViTInh,
             this.bandedGridColumn8,
+            this.bandedGridColumn11,
+            this.bandedGridColumn13,
             this.colSLDau,
             this.bandedGridColumn5,
             this.colSLNhap,
@@ -409,18 +386,28 @@
             this.bandedGridColumn10,
             this.colSLTOn,
             this.colThanhTienTOn});
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.bandedGridColumn13;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "[CHENHLECH]  !=  0";
+            this.advBandedGridView3.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition1});
             this.advBandedGridView3.GridControl = this.gridControl2;
             this.advBandedGridView3.Name = "advBandedGridView3";
-            this.advBandedGridView3.OptionsBehavior.Editable = false;
+            this.advBandedGridView3.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.advBandedGridView3.OptionsSelection.MultiSelect = true;
             this.advBandedGridView3.OptionsView.ShowAutoFilterRow = true;
             this.advBandedGridView3.OptionsView.ShowFooter = true;
+            this.advBandedGridView3.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.advBandedGridView3_CellValueChanged);
             // 
             // gridThongTin
             // 
             this.gridThongTin.AppearanceHeader.Options.UseTextOptions = true;
             this.gridThongTin.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridThongTin.Caption = "Thông tin";
+            this.gridThongTin.Columns.Add(this.bandedGridColumn12);
             this.gridThongTin.Columns.Add(this.colMa);
             this.gridThongTin.Columns.Add(this.colHangHoa);
             this.gridThongTin.Columns.Add(this.colNhomHang);
@@ -428,15 +415,25 @@
             this.gridThongTin.Columns.Add(this.bandedGridColumn2);
             this.gridThongTin.Columns.Add(this.colDonViTInh);
             this.gridThongTin.Columns.Add(this.bandedGridColumn8);
+            this.gridThongTin.Columns.Add(this.bandedGridColumn11);
+            this.gridThongTin.Columns.Add(this.bandedGridColumn13);
             this.gridThongTin.MinWidth = 20;
             this.gridThongTin.Name = "gridThongTin";
-            this.gridThongTin.Width = 613;
+            this.gridThongTin.Width = 838;
+            // 
+            // bandedGridColumn12
+            // 
+            this.bandedGridColumn12.Caption = "Ngày";
+            this.bandedGridColumn12.FieldName = "NGAY";
+            this.bandedGridColumn12.Name = "bandedGridColumn12";
+            this.bandedGridColumn12.Visible = true;
             // 
             // colMa
             // 
             this.colMa.Caption = "Mã";
             this.colMa.FieldName = "MAMH";
             this.colMa.Name = "colMa";
+            this.colMa.OptionsColumn.AllowEdit = false;
             this.colMa.Visible = true;
             this.colMa.Width = 85;
             // 
@@ -445,6 +442,7 @@
             this.colHangHoa.Caption = "Hàng hoá";
             this.colHangHoa.FieldName = "TENMH";
             this.colHangHoa.Name = "colHangHoa";
+            this.colHangHoa.OptionsColumn.AllowEdit = false;
             this.colHangHoa.Visible = true;
             this.colHangHoa.Width = 157;
             // 
@@ -453,6 +451,7 @@
             this.colNhomHang.Caption = "Nhóm hàng";
             this.colNhomHang.FieldName = "TENNHOMHANG";
             this.colNhomHang.Name = "colNhomHang";
+            this.colNhomHang.OptionsColumn.AllowEdit = false;
             this.colNhomHang.Width = 119;
             // 
             // bandedGridColumn3
@@ -460,6 +459,7 @@
             this.bandedGridColumn3.Caption = "Tên Nhà Cung Cấp";
             this.bandedGridColumn3.FieldName = "TENNCC";
             this.bandedGridColumn3.Name = "bandedGridColumn3";
+            this.bandedGridColumn3.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn3.Visible = true;
             // 
             // bandedGridColumn2
@@ -469,6 +469,7 @@
             this.bandedGridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn2.FieldName = "KLDVT";
             this.bandedGridColumn2.Name = "bandedGridColumn2";
+            this.bandedGridColumn2.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn2.Visible = true;
             // 
             // colDonViTInh
@@ -476,6 +477,7 @@
             this.colDonViTInh.Caption = "Đơn vị tính";
             this.colDonViTInh.FieldName = "DONVITINH";
             this.colDonViTInh.Name = "colDonViTInh";
+            this.colDonViTInh.OptionsColumn.AllowEdit = false;
             this.colDonViTInh.Visible = true;
             this.colDonViTInh.Width = 146;
             // 
@@ -486,7 +488,17 @@
             this.bandedGridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn8.FieldName = "GIAMUA";
             this.bandedGridColumn8.Name = "bandedGridColumn8";
+            this.bandedGridColumn8.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn8.Visible = true;
+            // 
+            // bandedGridColumn11
+            // 
+            this.bandedGridColumn11.Caption = "Tồn Thực Tế";
+            this.bandedGridColumn11.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn11.FieldName = "TONTT";
+            this.bandedGridColumn11.Name = "bandedGridColumn11";
+            this.bandedGridColumn11.Visible = true;
             // 
             // gridDauKi
             // 
@@ -506,6 +518,7 @@
             this.colSLDau.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLDau.FieldName = "TONDAU";
             this.colSLDau.Name = "colSLDau";
+            this.colSLDau.OptionsColumn.AllowEdit = false;
             this.colSLDau.Visible = true;
             this.colSLDau.Width = 117;
             // 
@@ -516,6 +529,7 @@
             this.bandedGridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn5.FieldName = "THANHTIENTONDAU";
             this.bandedGridColumn5.Name = "bandedGridColumn5";
+            this.bandedGridColumn5.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn5.Visible = true;
             // 
             // gridNhapKho
@@ -538,6 +552,7 @@
             this.colSLNhap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLNhap.FieldName = "NHAP";
             this.colSLNhap.Name = "colSLNhap";
+            this.colSLNhap.OptionsColumn.AllowEdit = false;
             this.colSLNhap.Visible = true;
             this.colSLNhap.Width = 113;
             // 
@@ -548,6 +563,7 @@
             this.bandedGridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn4.FieldName = "THANHTIENNHAP";
             this.bandedGridColumn4.Name = "bandedGridColumn4";
+            this.bandedGridColumn4.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn4.Visible = true;
             // 
             // bandedGridColumn1
@@ -557,6 +573,7 @@
             this.bandedGridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn1.FieldName = "TRANHAP";
             this.bandedGridColumn1.Name = "bandedGridColumn1";
+            this.bandedGridColumn1.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn1.Visible = true;
             // 
             // bandedGridColumn9
@@ -566,6 +583,7 @@
             this.bandedGridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn9.FieldName = "THANHTIENTRANHAP";
             this.bandedGridColumn9.Name = "bandedGridColumn9";
+            this.bandedGridColumn9.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn9.Visible = true;
             // 
             // gridXuatKho
@@ -588,6 +606,7 @@
             this.colSLXuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLXuat.FieldName = "XUAT";
             this.colSLXuat.Name = "colSLXuat";
+            this.colSLXuat.OptionsColumn.AllowEdit = false;
             this.colSLXuat.Visible = true;
             this.colSLXuat.Width = 113;
             // 
@@ -598,6 +617,7 @@
             this.bandedGridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn6.FieldName = "THANHTIENXUAT";
             this.bandedGridColumn6.Name = "bandedGridColumn6";
+            this.bandedGridColumn6.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn6.Visible = true;
             // 
             // bandedGridColumn7
@@ -607,6 +627,7 @@
             this.bandedGridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn7.FieldName = "TRAXUAT";
             this.bandedGridColumn7.Name = "bandedGridColumn7";
+            this.bandedGridColumn7.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn7.Visible = true;
             // 
             // bandedGridColumn10
@@ -616,6 +637,7 @@
             this.bandedGridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn10.FieldName = "THANHTIENTRAXUAT";
             this.bandedGridColumn10.Name = "bandedGridColumn10";
+            this.bandedGridColumn10.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn10.Visible = true;
             // 
             // gridCuoiKi
@@ -636,6 +658,7 @@
             this.colSLTOn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLTOn.FieldName = "TONCUOI";
             this.colSLTOn.Name = "colSLTOn";
+            this.colSLTOn.OptionsColumn.AllowEdit = false;
             this.colSLTOn.Visible = true;
             this.colSLTOn.Width = 113;
             // 
@@ -646,6 +669,7 @@
             this.colThanhTienTOn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colThanhTienTOn.FieldName = "THANHTIENTONCUOI";
             this.colThanhTienTOn.Name = "colThanhTienTOn";
+            this.colThanhTienTOn.OptionsColumn.AllowEdit = false;
             this.colThanhTienTOn.SummaryItem.DisplayFormat = "Sum: {0:0,0 vnđ}";
             this.colThanhTienTOn.SummaryItem.FieldName = "TONGTIENTON";
             this.colThanhTienTOn.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
@@ -676,7 +700,7 @@
             // 
             this.gridBand10.Name = "gridBand10";
             // 
-            // frmBaoCaoTonKho
+            // frmTonKhoNgay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -685,7 +709,7 @@
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmBaoCaoTonKho";
+            this.Name = "frmTonKhoNgay";
             this.Text = "frmBaoCaoTonKho";
             this.Load += new System.EventHandler(this.frmBaoCaoTonKho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
@@ -696,11 +720,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridsanpham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbncc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridncc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbThoiGian.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOgetallBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
@@ -722,11 +743,7 @@
         public DevExpress.XtraEditors.SimpleButton btIn;
         private DevExpress.XtraEditors.SimpleButton btXuat;
         private DevExpress.XtraEditors.SimpleButton btXem;
-        private DevExpress.XtraEditors.LabelControl lbDen;
-        private DevExpress.XtraEditors.LabelControl lbTu;
-        private DevExpress.XtraEditors.DateEdit dateDen;
         private DevExpress.XtraEditors.DateEdit dateTu;
-        private DevExpress.XtraEditors.ComboBoxEdit cbThoiGian;
         private DevExpress.XtraEditors.PanelControl panelControl2;
         //private XUAT_NHAPTONDataSet xUAT_NHAPTONDataSet;
         private System.Windows.Forms.BindingSource kHOgetallBindingSource;
@@ -770,12 +787,16 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn7;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn8;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn9;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn10;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn11;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn12;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn13;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridThongTin;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridDauKi;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridNhapKho;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn9;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridXuatKho;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn10;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridCuoiKi;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHOTableAdapter kHOTableAdapter;
     }

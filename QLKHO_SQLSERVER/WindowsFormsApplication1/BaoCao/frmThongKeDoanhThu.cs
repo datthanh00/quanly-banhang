@@ -301,7 +301,7 @@ namespace WindowsFormsApplication1
                     dto.MAMH = "";
                 }
 
-                gridControl6.DataSource = ctr.getcpmuahangsp(dto);
+                gridControl6.DataSource = ctr.getDoanhsosp(dto);
             }
             else if (baocaotype == "MH_SP")
             {
@@ -316,7 +316,7 @@ namespace WindowsFormsApplication1
                     dto.MAMH = "";
                 }
 
-                gridControl6.DataSource = ctr.getDoanhsosp(dto);
+                gridControl6.DataSource = ctr.getcpmuahangsp(dto);
 
             }
 
@@ -518,7 +518,7 @@ namespace WindowsFormsApplication1
 
         private void NBI_BH_SP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            baocaotype = "MH_SP";
+            baocaotype = "BH_SP";
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView9;
             load();
@@ -530,7 +530,7 @@ namespace WindowsFormsApplication1
 
         private void NBI_MH_SP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            baocaotype = "BH_SP";
+            baocaotype = "MH_SP";
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView6;
             load();

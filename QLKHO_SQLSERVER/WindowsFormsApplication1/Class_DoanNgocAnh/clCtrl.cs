@@ -62,9 +62,18 @@ namespace WindowsFormsApplication1
             return dao.getBoPhan();
         }
         //------------------ton kho
+        
         public DataTable getTonKho(clDTO dto)
         {
             return dao.getTonKho(dto);
+        }
+        public DataTable getTonKhoTTngay(clDTO dto)
+        {
+            return dao.getTonKhoTTngay(dto);
+        }
+        public DataTable getTonKhoTTngay2(clDTO dto)
+        {
+            return dao.getTonKhoTTngay2(dto);
         }
         //----------------------------------
         public  void Back_Up(clDTO dto)

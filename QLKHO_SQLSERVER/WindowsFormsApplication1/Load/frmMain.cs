@@ -2084,5 +2084,38 @@ namespace WindowsFormsApplication1
             //MessageBox.Show(ti.Name);
         }
 
+        private void barButtonItem1_ItemClick_2(object sender, ItemClickEventArgs e)
+        {
+
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            bKTraMoTab = true;
+            sTieuDe = "";
+            if (iNgonNgu == 0)
+            {
+                sTieuDe = "Tồn Kho thực tế theo ngày";
+
+            }
+            if (iNgonNgu == 1)
+            {
+                sTieuDe = "Total of investory";
+
+            }
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "tonkhongay";
+                frmTonKhoNgay dt = new frmTonKhoNgay();
+                dt.deDongTab = new frmTonKhoNgay._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.iNgonNgu = iNgonNgu;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
+        }
     }
 }

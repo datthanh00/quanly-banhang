@@ -79,3 +79,4 @@ e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsForms
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.pdb
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\Microsoft.SqlServer.BatchParser.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Inhdxuat.resources
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmTonKhoNgay.resources

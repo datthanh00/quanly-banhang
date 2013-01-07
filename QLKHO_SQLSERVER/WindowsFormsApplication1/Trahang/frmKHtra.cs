@@ -681,12 +681,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.XOA == "False")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN ");
-                return;
-            }
-
+           
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int focusrow = gridCTHOADON.FocusedRowHandle;
@@ -696,6 +691,12 @@ namespace WindowsFormsApplication1.KHtra
                     String sID = dtr["ID"].ToString();
                     if (sID != "")
                     {
+                        if (PublicVariable.XOA == "False")
+                        {
+                            MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                            return;
+                        }
+
                         ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
                     }
                    // bool isinsert = ctlNCC.ISINSERTCTHOADONXUAT(txtMaHD.Text, focusrow+1);
