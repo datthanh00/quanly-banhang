@@ -32,6 +32,7 @@
             this.lbTenkho = new DevExpress.XtraEditors.LabelControl();
             this.txtmakho = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
@@ -81,7 +82,7 @@
             // 
             // lbMakho
             // 
-            this.lbMakho.Location = new System.Drawing.Point(8, 27);
+            this.lbMakho.Location = new System.Drawing.Point(8, 26);
             this.lbMakho.Name = "lbMakho";
             this.lbMakho.Size = new System.Drawing.Size(35, 13);
             this.lbMakho.TabIndex = 15;
@@ -89,7 +90,7 @@
             // 
             // lbTenkho
             // 
-            this.lbTenkho.Location = new System.Drawing.Point(8, 57);
+            this.lbTenkho.Location = new System.Drawing.Point(8, 56);
             this.lbTenkho.Name = "lbTenkho";
             this.lbTenkho.Size = new System.Drawing.Size(39, 13);
             this.lbTenkho.TabIndex = 18;
@@ -105,6 +106,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.checkTT);
             this.groupControl1.Controls.Add(this.labelControl19);
@@ -135,10 +137,18 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(443, 248);
+            this.groupControl1.Size = new System.Drawing.Size(443, 302);
             this.groupControl1.TabIndex = 37;
             this.groupControl1.Text = "Thông Tin Kho";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(87, 230);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(144, 13);
+            this.labelControl2.TabIndex = 130;
+            this.labelControl2.Text = "HSD--BARCODE--TONTHUCTE";
             // 
             // labelControl1
             // 
@@ -146,7 +156,7 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl1.Appearance.Options.UseBackColor = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(67, 57);
+            this.labelControl1.Location = new System.Drawing.Point(67, 56);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(14, 13);
             this.labelControl1.TabIndex = 129;
@@ -155,7 +165,7 @@
             // checkTT
             // 
             this.checkTT.EditValue = true;
-            this.checkTT.Location = new System.Drawing.Point(85, 200);
+            this.checkTT.Location = new System.Drawing.Point(85, 259);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
             this.checkTT.Size = new System.Drawing.Size(82, 18);
@@ -168,7 +178,7 @@
             this.labelControl19.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl19.Appearance.Options.UseBackColor = true;
             this.labelControl19.Appearance.Options.UseForeColor = true;
-            this.labelControl19.Location = new System.Drawing.Point(40, 229);
+            this.labelControl19.Location = new System.Drawing.Point(40, 283);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(14, 13);
             this.labelControl19.TabIndex = 127;
@@ -189,7 +199,7 @@
             // 
             // lbchuy
             // 
-            this.lbchuy.Location = new System.Drawing.Point(63, 229);
+            this.lbchuy.Location = new System.Drawing.Point(63, 283);
             this.lbchuy.Name = "lbchuy";
             this.lbchuy.Size = new System.Drawing.Size(246, 13);
             this.lbchuy.TabIndex = 128;
@@ -228,7 +238,7 @@
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl13.Appearance.Options.UseBackColor = true;
             this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Location = new System.Drawing.Point(65, 200);
+            this.labelControl13.Location = new System.Drawing.Point(65, 258);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(14, 13);
             this.labelControl13.TabIndex = 46;
@@ -240,7 +250,7 @@
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl11.Appearance.Options.UseBackColor = true;
             this.labelControl11.Appearance.Options.UseForeColor = true;
-            this.labelControl11.Location = new System.Drawing.Point(63, 27);
+            this.labelControl11.Location = new System.Drawing.Point(63, 26);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(14, 13);
             this.labelControl11.TabIndex = 45;
@@ -252,7 +262,7 @@
             this.labelControl12.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl12.Appearance.Options.UseBackColor = true;
             this.labelControl12.Appearance.Options.UseForeColor = true;
-            this.labelControl12.Location = new System.Drawing.Point(267, 27);
+            this.labelControl12.Location = new System.Drawing.Point(267, 26);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(14, 13);
             this.labelControl12.TabIndex = 44;
@@ -260,15 +270,15 @@
             // 
             // txtghichu
             // 
-            this.txtghichu.Location = new System.Drawing.Point(282, 168);
+            this.txtghichu.Location = new System.Drawing.Point(87, 205);
             this.txtghichu.Name = "txtghichu";
-            this.txtghichu.Size = new System.Drawing.Size(100, 20);
+            this.txtghichu.Size = new System.Drawing.Size(344, 20);
             this.txtghichu.TabIndex = 9;
             this.txtghichu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtghichu_KeyPress);
             // 
             // lbnguoilienhe
             // 
-            this.lbnguoilienhe.Location = new System.Drawing.Point(8, 140);
+            this.lbnguoilienhe.Location = new System.Drawing.Point(8, 139);
             this.lbnguoilienhe.Name = "lbnguoilienhe";
             this.lbnguoilienhe.Size = new System.Drawing.Size(66, 13);
             this.lbnguoilienhe.TabIndex = 33;
@@ -284,7 +294,7 @@
             // 
             // lbtinhtrang
             // 
-            this.lbtinhtrang.Location = new System.Drawing.Point(8, 200);
+            this.lbtinhtrang.Location = new System.Drawing.Point(8, 258);
             this.lbtinhtrang.Name = "lbtinhtrang";
             this.lbtinhtrang.Size = new System.Drawing.Size(51, 13);
             this.lbtinhtrang.TabIndex = 36;
@@ -292,15 +302,15 @@
             // 
             // lbghichu
             // 
-            this.lbghichu.Location = new System.Drawing.Point(207, 170);
+            this.lbghichu.Location = new System.Drawing.Point(6, 207);
             this.lbghichu.Name = "lbghichu";
-            this.lbghichu.Size = new System.Drawing.Size(37, 13);
+            this.lbghichu.Size = new System.Drawing.Size(53, 13);
             this.lbghichu.TabIndex = 37;
-            this.lbghichu.Text = "Ghi Chú";
+            this.lbghichu.Text = "Chức Năng";
             // 
             // lbfax
             // 
-            this.lbfax.Location = new System.Drawing.Point(8, 170);
+            this.lbfax.Location = new System.Drawing.Point(8, 169);
             this.lbfax.Name = "lbfax";
             this.lbfax.Size = new System.Drawing.Size(18, 13);
             this.lbfax.TabIndex = 34;
@@ -309,7 +319,7 @@
             // 
             // lbsodtdd
             // 
-            this.lbsodtdd.Location = new System.Drawing.Point(8, 112);
+            this.lbsodtdd.Location = new System.Drawing.Point(8, 111);
             this.lbsodtdd.Name = "lbsodtdd";
             this.lbsodtdd.Size = new System.Drawing.Size(44, 13);
             this.lbsodtdd.TabIndex = 35;
@@ -333,7 +343,7 @@
             // 
             // lbMaNhanvien
             // 
-            this.lbMaNhanvien.Location = new System.Drawing.Point(200, 27);
+            this.lbMaNhanvien.Location = new System.Drawing.Point(200, 26);
             this.lbMaNhanvien.Name = "lbMaNhanvien";
             this.lbMaNhanvien.Size = new System.Drawing.Size(65, 13);
             this.lbMaNhanvien.TabIndex = 31;
@@ -341,7 +351,7 @@
             // 
             // lbdiachi
             // 
-            this.lbdiachi.Location = new System.Drawing.Point(204, 57);
+            this.lbdiachi.Location = new System.Drawing.Point(204, 56);
             this.lbdiachi.Name = "lbdiachi";
             this.lbdiachi.Size = new System.Drawing.Size(34, 13);
             this.lbdiachi.TabIndex = 15;
@@ -357,7 +367,7 @@
             // 
             // lbsosdtban
             // 
-            this.lbsosdtban.Location = new System.Drawing.Point(8, 83);
+            this.lbsosdtban.Location = new System.Drawing.Point(8, 82);
             this.lbsosdtban.Name = "lbsosdtban";
             this.lbsosdtban.Size = new System.Drawing.Size(50, 13);
             this.lbsosdtban.TabIndex = 18;
@@ -382,7 +392,7 @@
             // btDong
             // 
             this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
-            this.btDong.Location = new System.Drawing.Point(230, 254);
+            this.btDong.Location = new System.Drawing.Point(229, 308);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(123, 40);
             this.btDong.TabIndex = 1;
@@ -392,7 +402,7 @@
             // btluu
             // 
             this.btluu.Image = global::WindowsFormsApplication1.Properties.Resources.save1;
-            this.btluu.Location = new System.Drawing.Point(63, 254);
+            this.btluu.Location = new System.Drawing.Point(62, 308);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(124, 40);
             this.btluu.TabIndex = 0;
@@ -443,7 +453,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 308);
+            this.ClientSize = new System.Drawing.Size(443, 360);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.btDong);
             this.Controls.Add(this.btluu);
@@ -512,5 +522,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn coltennv;
         private DevExpress.XtraGrid.Columns.GridColumn colTinhtrang;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }

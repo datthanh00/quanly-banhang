@@ -997,7 +997,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nhẩu tài khoản và mật khẩu.
+        ///   Looks up a localized string similar to Nhớ tài khoản và mật khẩu.
         /// </summary>
         internal static string checkNho {
             get {

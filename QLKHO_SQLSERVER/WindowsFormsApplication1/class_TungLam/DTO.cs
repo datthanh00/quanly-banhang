@@ -26,6 +26,22 @@ namespace WindowsFormsApplication1
             get { return _STT; }
             set { _STT = value; }
         }
+        private string _HSD;
+
+        public string HSD
+        {
+            get { return _HSD; }
+            set { _HSD = value; }
+        }
+
+        private string _LOHANG;
+
+        public string LOHANG
+        {
+            get { return _LOHANG; }
+            set { _LOHANG = value; }
+        }
+
         private string _KLDVT;
 
         public string  KLDVT
@@ -514,7 +530,7 @@ namespace WindowsFormsApplication1
         //------------------CHITIETHOADONNHAP------------------------
         private String _s1MAHDN;
         private String _s1MAMH;
-        private int _SOLUONGNHAP;
+        private Double _SOLUONGNHAP;
         private int _GIANHAP;
         private String _s1TINHTRANG;
 
@@ -530,7 +546,7 @@ namespace WindowsFormsApplication1
             set { _s1MAMH = value; }
         }
 
-        public int SOLUONGNHAP
+        public Double SOLUONGNHAP
         {
             get { return _SOLUONGNHAP; }
             set { _SOLUONGNHAP = value; }
@@ -607,11 +623,11 @@ namespace WindowsFormsApplication1
         //-------------CT hoa don xuat
 
 
-        private int _SOLUONGXUAT;
+        private Double _SOLUONGXUAT;
         private int _GIATIEN;
 
 
-        public int SOLUONGXUAT
+        public Double SOLUONGXUAT
         {
             get { return _SOLUONGXUAT; }
             set { _SOLUONGXUAT = value; }

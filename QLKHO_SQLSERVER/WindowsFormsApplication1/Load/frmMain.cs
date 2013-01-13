@@ -283,11 +283,13 @@ namespace WindowsFormsApplication1
                         if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btXuatHang.Enabled = true;
+                            barButtonItem1.Enabled = true;
                             break;
                         }
                         else
                         {
                             btXuatHang.Enabled = false;
+                            barButtonItem1.Enabled = false;
                             break;
                         }
                     case "3":
@@ -625,12 +627,45 @@ namespace WindowsFormsApplication1
 
             cbkho.Text = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
           
-            
             PublicVariable.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
-            
+            LOAD_CHUCNANGKHO();
             
         }
+        void LOAD_CHUCNANGKHO()
+        {
+            CTL ctl = new CTL();
+            string SQL = "select KHO.GHICHU from KHO where MAKHO='" + PublicVariable.MAKHO + "'";
+            DataTable dt = ctl.GETDATA(SQL);
+            string chucnang = dt.Rows[0][0].ToString();
+            if (chucnang.IndexOf("HSD") >= 0)
+            {
+                PublicVariable.isHSD = true;
+            }
+            else
+            {
+                PublicVariable.isHSD = false;
+            }
 
+            if (chucnang.IndexOf("BARCODE") >= 0)
+            {
+                PublicVariable.isBARCODE = true;
+            }
+            else
+            {
+                PublicVariable.isBARCODE = false;
+            }
+            //HSD--BARCODE--TONTHUCTE
+            if (chucnang.IndexOf("TONTHUCTE") >= 0)
+            {
+                PublicVariable.isTONTHUCTE = true;
+                barButtonItem1.Enabled = true;
+            }
+            else
+            {
+                PublicVariable.isTONTHUCTE = false;
+                barButtonItem1.Enabled = false;
+            }
+        }
         void OnPaintStyleClick(object sender, ItemClickEventArgs e)
         {
             defaultLookAndFeel1.LookAndFeel.SetSkinStyle(e.Item.Tag.ToString());
@@ -1926,7 +1961,7 @@ namespace WindowsFormsApplication1
         {
             
             PublicVariable.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
-         
+            LOAD_CHUCNANGKHO();
             //for (int i = 0; i < tabControl12.Tabs.Count; i++)
             //{
                 tabControl12.Tabs.Clear();

@@ -167,6 +167,12 @@
       <DependentUpon>frmThongKeTongHop.cs</DependentUpon>
     </Compile>
     <Compile Include="class\PublicVariable.cs" />
+    <Compile Include="class_import\export.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="class_import\export.Designer.cs">
+      <DependentUpon>export.cs</DependentUpon>
+    </Compile>
     <Compile Include="class_import\import.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -509,6 +515,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BoPhan\frmBoPhan.resx">
       <DependentUpon>frmBoPhan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="class_import\export.resx">
+      <DependentUpon>export.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="class_import\import.resx">

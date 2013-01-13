@@ -338,6 +338,7 @@ namespace WindowsFormsApplication1
         {
             DAO.INSERTCTHOADONNHAP(DTO);
         }
+     
         public bool ISINSERTCTHOADONNHAP(string MAHDN, int ID)
         {
             return DAO.ISINSERTCTHOADONNHAP(MAHDN, ID);
@@ -350,9 +351,9 @@ namespace WindowsFormsApplication1
         {
             DAO.UPDATECTHOADONNHAP(DTO);
         }
-        public void DELETECTHOADONNHAP(string MAHDN, int ID)
+        public void DELETECTHOADONNHAP(string MAHDN, int ID, string MAMH)
         {
-            DAO.DELETECTHOADONNHAP(MAHDN, ID);
+            DAO.DELETECTHOADONNHAP(MAHDN, ID, MAMH);
         }
         public void DELETECTHOADONXUATTAM(string MAHDX)
         {
@@ -452,6 +453,14 @@ namespace WindowsFormsApplication1
         public void DELETECTHOADONXUAT(string MAHDN, int ID)
         {
             DAO.DELETECTHOADONXUAT(MAHDN, ID);
+        }
+        public void UPDATE_KHOHANG_NX(string MAMH, string LOHANG, string NHAP, string TRANHAP, string XUAT, string TRAXUAT)
+        {
+            DAO.UPDATE_KHOHANG_NX(MAMH, LOHANG, NHAP, TRANHAP, XUAT, TRAXUAT);
+        }
+        public void DELETE_KHOHANG(string MAMH, string LOHANG)
+        {
+            DAO.DELETE_KHOHANG(MAMH, LOHANG);
         }
         public void DELETEtraCTHOADONXUAT(string MAHDN, int ID)
         {
