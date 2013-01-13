@@ -117,7 +117,7 @@ namespace WindowsFormsApplication1.class_import
                 else if (cbTable.SelectedIndex == 6)
                 {
                     lenh = "UPDATE   [MATHANG] "
-                    + " SET  [TENMH]=N'" + cot["TENMH"] + "',[KLDVT]='" + cot["KLDVT"] + "',[MADVT]='" + cot["MADVT"] + "',[SOLUONGMH]=" + cot["SOLUONGMH"] + ",[HANSUDUNG]='" + cot["HANSUDUNG"] + "',[GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + ",[MOTA]=N'" + cot["MOTA"] + "',[TINHTRANG]=" + cot["TINHTRANG"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
+                    + " SET  [TENMH]=N'" + cot["TENMH"] + "',[MANCC]=N'" + cot["MANCC"] + "',[KLDVT]='" + cot["KLDVT"] + "',[MADVT]='" + cot["MADVT"] + "',[SOLUONGMH]=" + cot["SOLUONGMH"] + ",[HANSUDUNG]='" + cot["HANSUDUNG"] + "',[GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + ",[MOTA]=N'" + cot["MOTA"] + "',[TINHTRANG]=" + cot["TINHTRANG"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
                 }
                 else if (cbTable.SelectedIndex == 7)
                 {
@@ -130,7 +130,14 @@ namespace WindowsFormsApplication1.class_import
         private void button3_Click(object sender, EventArgs e)
         {
             deDongTab();
+            DataTable dt = new DataTable();
+           
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            export exp = new export();
+            exp.Show();
         }
 
        

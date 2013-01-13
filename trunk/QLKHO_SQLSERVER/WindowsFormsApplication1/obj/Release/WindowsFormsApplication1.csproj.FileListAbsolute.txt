@@ -4,9 +4,6 @@ e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsForms
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.exe
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\WindowsFormsApplication1.pdb
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\af-ZA\WindowsFormsApplication1.resources.dll
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\Interop.Excel.dll
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\Interop.Microsoft.Office.Core.dll
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\Interop.VBIDE.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\MySql.Data.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\Interop.SQLDMO.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\ResolveAssemblyReference.cache
@@ -80,3 +77,4 @@ e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsForms
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Release\Microsoft.SqlServer.BatchParser.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.Inhdxuat.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmTonKhoNgay.resources
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.class_import.export.resources

@@ -1,11 +1,26 @@
 
+ADD COLUM GIAMUA KHOHANG
+ADD COLUM LOHANG
+
+SET PRIMARY KEY IS MAMHAND LOHANG
 
 
 
-nguyen thi loan
 
 
-Dao thi huyen
+DELETE COLUM GIAMUA MATHANG
+
+
+
+ADD LOHANG///ADD NGAYXUAT IN TO CHITIETHDX
+
+
+
+
+nguyen thi loan  ------- bán le cám
+
+
+Dao thi huyen ----- vac xin
 
 
 

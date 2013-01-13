@@ -1041,9 +1041,7 @@ e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\af-ZA\WindowsF
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.class_import.import.resources
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Interop.Excel.dll
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Interop.Microsoft.Office.Core.dll
-e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Interop.VBIDE.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Microsoft.SqlServer.BatchParser.dll
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Inhdxuat.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTonKhoNgay.resources
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.class_import.export.resources

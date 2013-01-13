@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
 	{
         
        public static string XEM,THEM, XOA, SUA, IN, MAKHO;
-
+       public static Boolean isHSD, isBARCODE, isTONTHUCTE;
        public static DataTable KhoQL;
 
 	}

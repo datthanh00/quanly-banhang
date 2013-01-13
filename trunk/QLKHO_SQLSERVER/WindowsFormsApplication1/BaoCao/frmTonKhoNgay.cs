@@ -397,7 +397,6 @@ namespace WindowsFormsApplication1
                         DataRow dtr = advBandedGridView3.GetDataRow(i);
                         SQL = "INSERT INTO [TONKHOTT]([NGAY],[MAMH],[MAKHO] ,[TONTT]) VALUES('" + NGAYBD + "','" + dtr["MAMH"].ToString() + "','" + PublicVariable.MAKHO + "','" + dtr["TONTT"].ToString() + "')";
                         ctlNCC.executeNonQuery(SQL);
-
                     }
                 }
             }else{
