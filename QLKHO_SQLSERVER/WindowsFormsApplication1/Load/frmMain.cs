@@ -700,19 +700,7 @@ namespace WindowsFormsApplication1
             
         }
 
-        private void btTongHop_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            SetPhanQuyen("8");
-            TabItem t = tabControl12.CreateTab("Tổng Hợp");
-            t.Name = "Tonghop";
-            frmThongKeTongHop th = new frmThongKeTongHop();
-            th.TopLevel = false;
-            th.Dock = DockStyle.Fill;
-            t.AttachedControl.Controls.Add(th);
-            th.Show();
-            tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
-        }
-
+        
         private void btDangXuat_ItemClick(object sender, ItemClickEventArgs e)
         {
             frmLogin lg = new frmLogin();
@@ -2146,6 +2134,39 @@ namespace WindowsFormsApplication1
                 t.Name = "tonkhongay";
                 frmTonKhoNgay dt = new frmTonKhoNgay();
                 dt.deDongTab = new frmTonKhoNgay._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.iNgonNgu = iNgonNgu;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
+        }
+
+        private void btnphanlo_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            bKTraMoTab = true;
+            sTieuDe = "";
+            if (iNgonNgu == 0)
+            {
+                sTieuDe = "Tồn Kho Phân Lô";
+
+            }
+            if (iNgonNgu == 1)
+            {
+                sTieuDe = "Total of investory";
+
+            }
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "tonphanlo";
+                frmTonphanlo dt= new frmTonphanlo();
+                dt.deDongTab = new frmTonphanlo._deDongTab(vDOngTab);
                 dt.frm = this;
                 dt.iNgonNgu = iNgonNgu;
                 dt.TopLevel = false;

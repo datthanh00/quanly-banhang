@@ -47,6 +47,10 @@ namespace WindowsFormsApplication1
         {
             return dao.load_ct_mathang2(dto1);
         }
+        public DataTable geTthongke_ct_mathang_lo(Class_DTO_ThongKe dto1)
+        {
+            return dao.load_ct_mathang_lo(dto1);
+        }
 
         public DataTable dtGetNH()
         {
