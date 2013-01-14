@@ -40,6 +40,11 @@
             this.lbchuy = new DevExpress.XtraEditors.LabelControl();
             this.txtmanv = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmanv = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmabp = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colchucvu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coltennv = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTinhtrang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -47,7 +52,6 @@
             this.lbnguoilienhe = new DevExpress.XtraEditors.LabelControl();
             this.txtnguoiLH = new DevExpress.XtraEditors.TextEdit();
             this.lbtinhtrang = new DevExpress.XtraEditors.LabelControl();
-            this.lbghichu = new DevExpress.XtraEditors.LabelControl();
             this.lbfax = new DevExpress.XtraEditors.LabelControl();
             this.lbsodtdd = new DevExpress.XtraEditors.LabelControl();
             this.txtfax = new DevExpress.XtraEditors.TextEdit();
@@ -60,11 +64,7 @@
             this.txtdiachi = new DevExpress.XtraEditors.TextEdit();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.btluu = new DevExpress.XtraEditors.SimpleButton();
-            this.colmanv = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmabp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colchucvu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coltennv = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTinhtrang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtmakho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -106,6 +106,7 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.checkTT);
@@ -120,7 +121,6 @@
             this.groupControl1.Controls.Add(this.lbnguoilienhe);
             this.groupControl1.Controls.Add(this.txtnguoiLH);
             this.groupControl1.Controls.Add(this.lbtinhtrang);
-            this.groupControl1.Controls.Add(this.lbghichu);
             this.groupControl1.Controls.Add(this.lbfax);
             this.groupControl1.Controls.Add(this.lbsodtdd);
             this.groupControl1.Controls.Add(this.txtfax);
@@ -168,7 +168,7 @@
             this.checkTT.Location = new System.Drawing.Point(85, 259);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 18);
+            this.checkTT.Size = new System.Drawing.Size(82, 19);
             this.checkTT.TabIndex = 10;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
@@ -231,6 +231,46 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colmanv
+            // 
+            this.colmanv.Caption = "Mã Nhân Viên";
+            this.colmanv.FieldName = "MANV";
+            this.colmanv.Name = "colmanv";
+            this.colmanv.Visible = true;
+            this.colmanv.VisibleIndex = 0;
+            // 
+            // colmabp
+            // 
+            this.colmabp.Caption = "Mã Bộ Phận";
+            this.colmabp.FieldName = "MABP";
+            this.colmabp.Name = "colmabp";
+            this.colmabp.Visible = true;
+            this.colmabp.VisibleIndex = 1;
+            // 
+            // colchucvu
+            // 
+            this.colchucvu.Caption = "Chức Vụ";
+            this.colchucvu.FieldName = "CHUCVU";
+            this.colchucvu.Name = "colchucvu";
+            this.colchucvu.Visible = true;
+            this.colchucvu.VisibleIndex = 3;
+            // 
+            // coltennv
+            // 
+            this.coltennv.Caption = "Tên Nhân Viên";
+            this.coltennv.FieldName = "TENNV";
+            this.coltennv.Name = "coltennv";
+            this.coltennv.Visible = true;
+            this.coltennv.VisibleIndex = 2;
+            // 
+            // colTinhtrang
+            // 
+            this.colTinhtrang.Caption = "Tình Trạng";
+            this.colTinhtrang.FieldName = "TINHTRANG";
+            this.colTinhtrang.Name = "colTinhtrang";
+            this.colTinhtrang.Visible = true;
+            this.colTinhtrang.VisibleIndex = 4;
             // 
             // labelControl13
             // 
@@ -299,14 +339,6 @@
             this.lbtinhtrang.Size = new System.Drawing.Size(51, 13);
             this.lbtinhtrang.TabIndex = 36;
             this.lbtinhtrang.Text = "Tình Trạng";
-            // 
-            // lbghichu
-            // 
-            this.lbghichu.Location = new System.Drawing.Point(6, 207);
-            this.lbghichu.Name = "lbghichu";
-            this.lbghichu.Size = new System.Drawing.Size(53, 13);
-            this.lbghichu.TabIndex = 37;
-            this.lbghichu.Text = "Chức Năng";
             // 
             // lbfax
             // 
@@ -409,45 +441,13 @@
             this.btluu.Text = "Lưu";
             this.btluu.Click += new System.EventHandler(this.btluu_Click);
             // 
-            // colmanv
+            // labelControl3
             // 
-            this.colmanv.Caption = "Mã Nhân Viên";
-            this.colmanv.FieldName = "MANV";
-            this.colmanv.Name = "colmanv";
-            this.colmanv.Visible = true;
-            this.colmanv.VisibleIndex = 0;
-            // 
-            // colmabp
-            // 
-            this.colmabp.Caption = "Mã Bộ Phận";
-            this.colmabp.FieldName = "MABP";
-            this.colmabp.Name = "colmabp";
-            this.colmabp.Visible = true;
-            this.colmabp.VisibleIndex = 1;
-            // 
-            // colchucvu
-            // 
-            this.colchucvu.Caption = "Chức Vụ";
-            this.colchucvu.FieldName = "CHUCVU";
-            this.colchucvu.Name = "colchucvu";
-            this.colchucvu.Visible = true;
-            this.colchucvu.VisibleIndex = 3;
-            // 
-            // coltennv
-            // 
-            this.coltennv.Caption = "Tên Nhân Viên";
-            this.coltennv.FieldName = "TENNV";
-            this.coltennv.Name = "coltennv";
-            this.coltennv.Visible = true;
-            this.coltennv.VisibleIndex = 2;
-            // 
-            // colTinhtrang
-            // 
-            this.colTinhtrang.Caption = "Tình Trạng";
-            this.colTinhtrang.FieldName = "TINHTRANG";
-            this.colTinhtrang.Name = "colTinhtrang";
-            this.colTinhtrang.Visible = true;
-            this.colTinhtrang.VisibleIndex = 4;
+            this.labelControl3.Location = new System.Drawing.Point(8, 208);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(53, 13);
+            this.labelControl3.TabIndex = 131;
+            this.labelControl3.Text = "Chức Năng";
             // 
             // frmThemKho
             // 
@@ -498,7 +498,6 @@
         private DevExpress.XtraEditors.LabelControl lbnguoilienhe;
         private DevExpress.XtraEditors.TextEdit txtnguoiLH;
         private DevExpress.XtraEditors.LabelControl lbtinhtrang;
-        private DevExpress.XtraEditors.LabelControl lbghichu;
         private DevExpress.XtraEditors.LabelControl lbfax;
         private DevExpress.XtraEditors.LabelControl lbsodtdd;
         private DevExpress.XtraEditors.TextEdit txtfax;
@@ -523,5 +522,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTinhtrang;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

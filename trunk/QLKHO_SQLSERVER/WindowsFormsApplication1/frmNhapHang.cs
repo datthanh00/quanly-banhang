@@ -160,6 +160,12 @@ namespace WindowsFormsApplication1
             this.repositoryItemDateEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
             this.repositoryItemDateEdit1.Mask.UseMaskAsDisplayFormat = true;
             */
+            if (!PublicVariable.isHSD)
+            {
+                gridCTHOADON.Columns["_HSD"].Visible = false;
+                gridView5.Columns["HSD"].Visible = false;
+                gridView7.Columns["HSD"].Visible = false;
+            }
         }
         public void loadgridCTHOADON(String MAHDN)
         {
@@ -566,9 +572,23 @@ namespace WindowsFormsApplication1
             {
                 dtoNCC.MAHDN = mahdn;
                 dtoNCC.MAMH = mamh;
+                if (HSD.Length > 5)
+                {
+                    dtoNCC.HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
+                }
+                else
+                {
+                    dtoNCC.HSD = "";
+                }
+                if (PublicVariable.isHSD)
+                {
+                    dtoNCC.LOHANG = txtlohang.Text;
+                }
+                else
+                {
+                    dtoNCC.LOHANG = "1";
+                }
 
-                dtoNCC.HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
-                dtoNCC.LOHANG = txtlohang.Text;
                 dtoNCC.SOLUONGNHAP = SoLuong;
                 dtoNCC.GIANHAP = DonGia;
                 string SQL = "SELECT MAX(ID) FROM CHITIETHDN WHERE MAHDN='" + mahdn + "'";
@@ -590,9 +610,24 @@ namespace WindowsFormsApplication1
             try
             {
                 dtoNCC.MAHDN = mahdn;
-                dtoNCC.LOHANG = mahdn;
-                dtoNCC.HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
-                dtoNCC.LOHANG = txtlohang.Text;
+                
+                if (PublicVariable.isHSD)
+                {
+                    dtoNCC.LOHANG = txtlohang.Text;
+                }
+                else
+                {
+                    dtoNCC.LOHANG = "1";
+                }
+                if (HSD.Length > 5)
+                {
+                    dtoNCC.HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
+                }
+                else
+                {
+                    dtoNCC.HSD = "";
+                }
+                
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGNHAP = SoLuong;
                 dtoNCC.GIANHAP = DonGia;
@@ -720,7 +755,7 @@ namespace WindowsFormsApplication1
                     {
                         //
 
-                        DataTable dtmh = ctlNCC.GETMATHANG(dtr["_TenMH"].ToString());
+                        DataTable dtmh = ctlNCC.GETMATHANG_FULL(dtr["_TenMH"].ToString());
                         string mamh = dtmh.Rows[0]["MAMH"].ToString();
                         dtr["_MaMH"] = mamh;
                        
@@ -932,7 +967,7 @@ namespace WindowsFormsApplication1
   
             txtMaHD.Text = MAHDN;
             txtlohang.Text ="LO_"+ MAHDN;
-            string SQL = "SELECT convert(varchar,T1.NGAYNHAP,103) ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='" + MAHDN + "' AND MAKHO='"+PublicVariable.MAKHO+"' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
             DataTable DT = ctlNCC.GETDATA(SQL);
             txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();

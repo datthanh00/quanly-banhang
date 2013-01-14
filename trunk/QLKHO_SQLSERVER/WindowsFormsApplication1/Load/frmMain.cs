@@ -284,12 +284,14 @@ namespace WindowsFormsApplication1
                         {
                             btXuatHang.Enabled = true;
                             barButtonItem1.Enabled = true;
+                            btnphanlo.Enabled = true;
                             break;
                         }
                         else
                         {
                             btXuatHang.Enabled = false;
                             barButtonItem1.Enabled = false;
+                            btnphanlo.Enabled = false;
                             break;
                         }
                     case "3":
@@ -640,10 +642,12 @@ namespace WindowsFormsApplication1
             if (chucnang.IndexOf("HSD") >= 0)
             {
                 PublicVariable.isHSD = true;
+                btnphanlo.Enabled = true;
             }
             else
             {
                 PublicVariable.isHSD = false;
+                btnphanlo.Enabled = false;
             }
 
             if (chucnang.IndexOf("BARCODE") >= 0)

@@ -128,6 +128,7 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbkho = new DevExpress.XtraEditors.LabelControl();
+            this.btnphanlo = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeZone1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWeekOfMonth1)).BeginInit();
@@ -204,9 +205,10 @@
             this.BTKHtra,
             this.btnlog,
             this.btnimportexcell,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.btnphanlo});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 111;
+            this.ribbon.MaxItemId = 112;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.btAnh);
             this.ribbon.PageHeaderItemLinks.Add(this.btNgonNguViet);
@@ -304,7 +306,7 @@
             this.btNhapHang.Caption = "Nhập Hàng";
             this.btNhapHang.Id = 17;
             this.btNhapHang.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.nhaphang;
-            this.btNhapHang.LargeWidth = 70;
+            this.btNhapHang.LargeWidth = 60;
             this.btNhapHang.Name = "btNhapHang";
             this.btNhapHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btNhapHang_ItemClick);
             // 
@@ -313,7 +315,7 @@
             this.btXuatHang.Caption = "Xuất Hàng";
             this.btXuatHang.Id = 18;
             this.btXuatHang.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.xuathang;
-            this.btXuatHang.LargeWidth = 70;
+            this.btXuatHang.LargeWidth = 60;
             this.btXuatHang.Name = "btXuatHang";
             this.btXuatHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btXuatHang_ItemClick);
             // 
@@ -322,7 +324,7 @@
             this.btCongNoNCC.Caption = "Trả Tiền";
             this.btCongNoNCC.Id = 20;
             this.btCongNoNCC.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.cno;
-            this.btCongNoNCC.LargeWidth = 70;
+            this.btCongNoNCC.LargeWidth = 60;
             this.btCongNoNCC.Name = "btCongNoNCC";
             this.btCongNoNCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btCongNoNCC_ItemClick);
             // 
@@ -331,7 +333,7 @@
             this.btCongNoKH.Caption = "Thu Tiền";
             this.btCongNoKH.Id = 21;
             this.btCongNoKH.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.cno;
-            this.btCongNoKH.LargeWidth = 70;
+            this.btCongNoKH.LargeWidth = 60;
             this.btCongNoKH.Name = "btCongNoKH";
             this.btCongNoKH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btCongNoKH_ItemClick);
             // 
@@ -528,7 +530,7 @@
             this.btTonKho.Caption = "Tổng Hợp Tồn";
             this.btTonKho.Id = 82;
             this.btTonKho.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.tonkho;
-            this.btTonKho.LargeWidth = 78;
+            this.btTonKho.LargeWidth = 74;
             this.btTonKho.Name = "btTonKho";
             this.btTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btTonKho_ItemClick);
             // 
@@ -537,7 +539,7 @@
             this.btTongHop.Caption = "Tổng hợp";
             this.btTongHop.Id = 83;
             this.btTongHop.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.report;
-            this.btTongHop.LargeWidth = 70;
+            this.btTongHop.LargeWidth = 60;
             this.btTongHop.Name = "btTongHop";
             this.btTongHop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btTongHop_ItemClick_1);
             // 
@@ -546,7 +548,7 @@
             this.btDoanhThu.Caption = "Doanh thu";
             this.btDoanhThu.Id = 84;
             this.btDoanhThu.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.doanhthu;
-            this.btDoanhThu.LargeWidth = 70;
+            this.btDoanhThu.LargeWidth = 60;
             this.btDoanhThu.Name = "btDoanhThu";
             this.btDoanhThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btDoanhThu_ItemClick_1);
             // 
@@ -619,7 +621,7 @@
             this.btmathangthongkhe.Caption = "Tồn Kho";
             this.btmathangthongkhe.Id = 104;
             this.btmathangthongkhe.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
-            this.btmathangthongkhe.LargeWidth = 70;
+            this.btmathangthongkhe.LargeWidth = 60;
             this.btmathangthongkhe.Name = "btmathangthongkhe";
             this.btmathangthongkhe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btmathangthongkhe_ItemClick);
             // 
@@ -637,7 +639,7 @@
             this.BTTraNCC.Caption = "Trả Hàng CTY";
             this.BTTraNCC.Id = 106;
             this.BTTraNCC.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
-            this.BTTraNCC.LargeWidth = 70;
+            this.BTTraNCC.LargeWidth = 60;
             this.BTTraNCC.Name = "BTTraNCC";
             this.BTTraNCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTTraNCC_ItemClick);
             // 
@@ -646,7 +648,7 @@
             this.BTKHtra.Caption = "Khách Trả Hàng";
             this.BTKHtra.Id = 107;
             this.BTKHtra.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
-            this.BTKHtra.LargeWidth = 70;
+            this.BTKHtra.LargeWidth = 60;
             this.BTKHtra.Name = "BTKHtra";
             this.BTKHtra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTKHtra_ItemClick);
             // 
@@ -673,7 +675,7 @@
             this.barButtonItem1.Caption = "Tồn Kho Theo Ngày";
             this.barButtonItem1.Id = 110;
             this.barButtonItem1.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.store;
-            this.barButtonItem1.LargeWidth = 70;
+            this.barButtonItem1.LargeWidth = 68;
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_2);
             // 
@@ -747,6 +749,7 @@
             this.ribThongKe.ItemLinks.Add(this.btTongHop);
             this.ribThongKe.ItemLinks.Add(this.btDoanhThu);
             this.ribThongKe.ItemLinks.Add(this.btTonKho);
+            this.ribThongKe.ItemLinks.Add(this.btnphanlo);
             this.ribThongKe.ItemLinks.Add(this.barButtonItem1);
             this.ribThongKe.Name = "ribThongKe";
             this.ribThongKe.ShowCaptionButton = false;
@@ -1019,6 +1022,14 @@
             this.lbkho.TabIndex = 27;
             this.lbkho.Text = "Kho Hàng";
             // 
+            // btnphanlo
+            // 
+            this.btnphanlo.Caption = "Tồn   Phân Lô";
+            this.btnphanlo.Id = 111;
+            this.btnphanlo.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.listvn;
+            this.btnphanlo.LargeWidth = 60;
+            this.btnphanlo.Name = "btnphanlo";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1150,5 +1161,6 @@
         private DevExpress.XtraBars.BarButtonItem btnlog;
         private DevExpress.XtraBars.BarButtonItem btnimportexcell;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnphanlo;
     }
 }

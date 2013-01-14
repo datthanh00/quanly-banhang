@@ -211,7 +211,7 @@ namespace WindowsFormsApplication1
             lbnguoilienhe.Text = LamVN.NGUOILIENHE.ToString();
             lbfax.Text = LamVN.FAX.ToString();
             lbchuy.Text = LamVN.CHUY.ToString();
-            lbghichu.Text = LamVN.GHICHU.ToString();
+           // lbghichu.Text = LamVN.GHICHU.ToString();
             lbtinhtrang.Text = LamVN.TINHTRANG.ToString();
             btluu.Text = LamVN.LUU.ToString();
             btDong.Text = LamVN.DONG.ToString();
@@ -229,7 +229,7 @@ namespace WindowsFormsApplication1
             lbsosdtban.Text = LamEL.SDTB.ToString();
             lbnguoilienhe.Text = LamEL.NGUOILIENHE.ToString();
             lbfax.Text = LamEL.FAX.ToString();
-            lbghichu.Text = LamEL.GHICHU.ToString();
+           // lbghichu.Text = LamEL.GHICHU.ToString();
             lbtinhtrang.Text = LamEL.TINHTRANG.ToString();
             lbchuy.Text = LamEL.CHUY.ToString();
             btluu.Text = LamEL.LUU.ToString();

@@ -78,6 +78,7 @@
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbsanpham = new DevExpress.XtraEditors.LabelControl();
             this.btdong = new DevExpress.XtraEditors.SimpleButton();
             this.cbloaihienthi = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -87,7 +88,6 @@
             this.btxem = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.mATHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -606,9 +606,17 @@
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Tên Nhà Cung Cấp";
+            this.gridColumn8.FieldName = "TENNCC";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 2;
+            // 
             // lbsanpham
             // 
-            this.lbsanpham.Location = new System.Drawing.Point(256, 13);
+            this.lbsanpham.Location = new System.Drawing.Point(257, 14);
             this.lbsanpham.Name = "lbsanpham";
             this.lbsanpham.Size = new System.Drawing.Size(78, 13);
             this.lbsanpham.TabIndex = 24;
@@ -648,7 +656,7 @@
             // 
             // lbnhom
             // 
-            this.lbnhom.Location = new System.Drawing.Point(249, 13);
+            this.lbnhom.Location = new System.Drawing.Point(250, 14);
             this.lbnhom.Name = "lbnhom";
             this.lbnhom.Size = new System.Drawing.Size(53, 13);
             this.lbnhom.TabIndex = 3;
@@ -677,20 +685,12 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(11, 13);
+            this.labelControl2.Location = new System.Drawing.Point(12, 14);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Loại Hiển Thị:";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "Tên Nhà Cung Cấp";
-            this.gridColumn8.FieldName = "TENNCC";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 2;
             // 
             // frmThongKeTongHop
             // 

@@ -151,6 +151,12 @@
     <Compile Include="BaoCao\frmTonKhoNgay.designer.cs">
       <DependentUpon>frmTonKhoNgay.cs</DependentUpon>
     </Compile>
+    <Compile Include="BaoCao\frmTonphanlo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\frmTonphanlo.designer.cs">
+      <DependentUpon>frmTonphanlo.cs</DependentUpon>
+    </Compile>
     <Compile Include="class\ClassThongke_mathang_dal.cs" />
     <Compile Include="class\Class_ctrl_thongkekho.cs" />
     <Compile Include="class\Class_DTO_ThongKe.cs" />
@@ -511,6 +517,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\frmTonKhoNgay.resx">
       <DependentUpon>frmTonKhoNgay.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\frmTonphanlo.resx">
+      <DependentUpon>frmTonphanlo.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BoPhan\frmBoPhan.resx">
