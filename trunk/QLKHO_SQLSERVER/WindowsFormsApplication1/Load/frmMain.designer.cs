@@ -89,6 +89,7 @@
             this.btnlog = new DevExpress.XtraBars.BarButtonItem();
             this.btnimportexcell = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnphanlo = new DevExpress.XtraBars.BarButtonItem();
             this.ribDanhMuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribDoiTac = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribKhoHang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -128,7 +129,6 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbkho = new DevExpress.XtraEditors.LabelControl();
-            this.btnphanlo = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeZone1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWeekOfMonth1)).BeginInit();
@@ -679,6 +679,15 @@
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_2);
             // 
+            // btnphanlo
+            // 
+            this.btnphanlo.Caption = "Tồn   Phân Lô";
+            this.btnphanlo.Id = 111;
+            this.btnphanlo.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.listvn;
+            this.btnphanlo.LargeWidth = 60;
+            this.btnphanlo.Name = "btnphanlo";
+            this.btnphanlo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnphanlo_ItemClick);
+            // 
             // ribDanhMuc
             // 
             this.ribDanhMuc.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1021,14 +1030,6 @@
             this.lbkho.Size = new System.Drawing.Size(46, 13);
             this.lbkho.TabIndex = 27;
             this.lbkho.Text = "Kho Hàng";
-            // 
-            // btnphanlo
-            // 
-            this.btnphanlo.Caption = "Tồn   Phân Lô";
-            this.btnphanlo.Id = 111;
-            this.btnphanlo.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.listvn;
-            this.btnphanlo.LargeWidth = 60;
-            this.btnphanlo.Name = "btnphanlo";
             // 
             // frmMain
             // 
