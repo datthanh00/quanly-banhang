@@ -94,6 +94,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
             this.repositoryItemTextEdit1.Mask.EditMask = "n0";
             this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEdit1.Mask.UseMaskAsDisplayFormat = true;
+
+            if (!PublicVariable.isHSD)
+            {
+                gridCTHOADON.Columns["_LOHANG"].Visible = false;
+                
+            }
         }
         public void loadgridCTHOADON(string MHDX)
         {
@@ -576,7 +582,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC, KLDVT, DONVITINH, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN, SUM(SOLUONGXUAT*GIATIEN) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN FROM CHITIETHDX, HOADONXUAT WHERE CHITIETHDX.MAHDX=HOADONXUAT.MAHDX AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as CHITIETHDX WHERE MATHANG.MANCC=NHACUNGCAP.MANCC  AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=CHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC, DONVITINH,GIATIEN,KLDVT ";
+            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC, KLDVT, DONVITINH, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN, SUM(SOLUONGXUAT*GIATIEN) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN FROM CHITIETHDX WHERE  NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as CHITIETHDX WHERE MATHANG.MANCC=NHACUNGCAP.MANCC  AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=CHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC, DONVITINH,GIATIEN,KLDVT ";
            
             DataTable TBS = ctlNCC.GETDATA(SQL);
             gridControl3.MainView = gridView3;
@@ -598,6 +604,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     {
                         DataTable dtmh = ctlNCC.GETMATHANG(dtr["_TenMH"].ToString());
                         dtr["_MaMH"] = dtmh.Rows[0]["MAMH"];
+                        dtr["_LOHANG"] = dtmh.Rows[0]["LOHANG"];
                         dtr["_SoLuong"] = "0";
                         dtr["_DonGia"] = dtmh.Rows[0]["GIABAN"];
                         //dtr["_Thue"] = dtmh.Rows[0]["SOTHUE"];
@@ -1024,7 +1031,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             for (int i = 0; i < gridCTHOADON.DataRowCount; i++)
             {
                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
-                SQL = "INSERT INTO [CHITIETHDXTAM] ([MAHDX],[MAMH],[SOLUONGXUAT],[GIATIEN],[TONGGIATIEN]) VALUES ( '" + mahdtam + "','" + dtr["_MaMH"].ToString() + "'," + dtr["_SoLuong"].ToString() + "," + dtr["_DonGia"].ToString() + "," + thanhtien + ")";
+                SQL = "INSERT INTO [CHITIETHDXTAM] ([MAHDX],[MAMH],[LOHANG],[SOLUONGXUAT],[GIATIEN],[TONGGIATIEN]) VALUES ( '" + mahdtam + "','" + dtr["_MaMH"].ToString() + "','" + dtr["_LOHANG"].ToString() + "'," + dtr["_SoLuong"].ToString() + "," + dtr["_DonGia"].ToString() + "," + thanhtien + ")";
                 ctlNCC.executeNonQuery(SQL);
             }
             gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();

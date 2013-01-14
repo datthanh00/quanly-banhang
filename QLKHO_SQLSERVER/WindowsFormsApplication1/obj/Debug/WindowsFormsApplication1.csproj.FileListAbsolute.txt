@@ -1045,3 +1045,4 @@ e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Microsoft.SqlS
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Inhdxuat.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTonKhoNgay.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.class_import.export.resources
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTonphanlo.resources

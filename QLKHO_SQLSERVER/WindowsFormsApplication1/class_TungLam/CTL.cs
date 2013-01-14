@@ -213,6 +213,11 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMATHANG(MAMH);
         }
+
+        public DataTable GETMATHANG_FULL(string MAMH)
+        {
+            return DAO.GETMATHANG_FULL(MAMH);
+        }
         public DataTable GETTHUE()
         {
             return DAO.GETTHUE();
@@ -276,9 +281,17 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMMH();
         }
+        public DataTable GETMMH2()
+        {
+            return DAO.GETMMH2();
+        }
         public DataTable GETMMH(string MANCC)
         {
             return DAO.GETMMH(MANCC);
+        }
+        public DataTable GETMMH2(string MANCC)
+        {
+            return DAO.GETMMH2(MANCC);
         }
         public DataTable GETMMHN(string MAHDN)
         {
@@ -457,6 +470,10 @@ namespace WindowsFormsApplication1
         public void UPDATE_KHOHANG_NX(string MAMH, string LOHANG, string NHAP, string TRANHAP, string XUAT, string TRAXUAT)
         {
             DAO.UPDATE_KHOHANG_NX(MAMH, LOHANG, NHAP, TRANHAP, XUAT, TRAXUAT);
+        }
+        public void INSERT_KHOHANG(string MAMH, string LOHANG, string GIAMUA, string SOLUONGNHAP, string HSD)
+        {
+            DAO.INSERT_KHOHANG(MAMH, LOHANG, GIAMUA, SOLUONGNHAP, HSD);
         }
         public void DELETE_KHOHANG(string MAMH, string LOHANG)
         {

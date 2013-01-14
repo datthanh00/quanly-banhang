@@ -100,10 +100,12 @@
             this.gridkhachhang = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbsanpham = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridsanpham = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbncc = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridncc = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmancc = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -147,8 +149,6 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockChucNang.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -929,6 +929,13 @@
             this.gridColumn31.Visible = true;
             this.gridColumn31.VisibleIndex = 1;
             // 
+            // gridColumn34
+            // 
+            this.gridColumn34.FieldName = "MANCC";
+            this.gridColumn34.Name = "gridColumn34";
+            this.gridColumn34.Visible = true;
+            this.gridColumn34.VisibleIndex = 2;
+            // 
             // cbsanpham
             // 
             this.cbsanpham.Location = new System.Drawing.Point(465, 9);
@@ -967,6 +974,14 @@
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.Visible = true;
             this.gridColumn29.VisibleIndex = 1;
+            // 
+            // gridColumn35
+            // 
+            this.gridColumn35.Caption = "Nhà Cung Cấp";
+            this.gridColumn35.FieldName = "TENNCC";
+            this.gridColumn35.Name = "gridColumn35";
+            this.gridColumn35.Visible = true;
+            this.gridColumn35.VisibleIndex = 2;
             // 
             // cbncc
             // 
@@ -1008,7 +1023,7 @@
             // 
             // lbloc
             // 
-            this.lbloc.Location = new System.Drawing.Point(384, 13);
+            this.lbloc.Location = new System.Drawing.Point(385, 14);
             this.lbloc.Name = "lbloc";
             this.lbloc.Size = new System.Drawing.Size(20, 13);
             this.lbloc.TabIndex = 6;
@@ -1066,7 +1081,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(237, 10);
+            this.lbDen.Location = new System.Drawing.Point(238, 11);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -1074,7 +1089,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(100, 10);
+            this.lbTu.Location = new System.Drawing.Point(101, 11);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -1355,21 +1370,6 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "File excel | *.xls";
-            // 
-            // gridColumn34
-            // 
-            this.gridColumn34.FieldName = "MANCC";
-            this.gridColumn34.Name = "gridColumn34";
-            this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 2;
-            // 
-            // gridColumn35
-            // 
-            this.gridColumn35.Caption = "Nhà Cung Cấp";
-            this.gridColumn35.FieldName = "TENNCC";
-            this.gridColumn35.Name = "gridColumn35";
-            this.gridColumn35.Visible = true;
-            this.gridColumn35.VisibleIndex = 2;
             // 
             // frmThongKeDoanhThu
             // 

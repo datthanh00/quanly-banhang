@@ -114,6 +114,7 @@
             this.gridColumn82 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn83 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView9 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
+            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridColumn54 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn56 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn55 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -123,12 +124,20 @@
             this.gridColumn62 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn67 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand11 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridColumn63 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn68 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand14 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridColumn64 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn69 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand15 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridColumn65 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn70 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand16 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridColumn66 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn71 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridView8 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
@@ -240,15 +249,6 @@
             this.gridBand13 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand10 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.bandedGridColumn6 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn7 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn9 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand11 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand14 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand15 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand16 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -381,9 +381,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 442);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 443);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -404,7 +404,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 194;
-            this.navBarControl1.Size = new System.Drawing.Size(181, 442);
+            this.navBarControl1.Size = new System.Drawing.Size(181, 443);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "Thống Kê";
             // 
@@ -547,7 +547,7 @@
             // 
             // lbkhachhang
             // 
-            this.lbkhachhang.Location = new System.Drawing.Point(364, 11);
+            this.lbkhachhang.Location = new System.Drawing.Point(365, 12);
             this.lbkhachhang.Name = "lbkhachhang";
             this.lbkhachhang.Size = new System.Drawing.Size(56, 13);
             this.lbkhachhang.TabIndex = 26;
@@ -593,7 +593,7 @@
             // 
             // lbncc
             // 
-            this.lbncc.Location = new System.Drawing.Point(191, 11);
+            this.lbncc.Location = new System.Drawing.Point(192, 12);
             this.lbncc.Name = "lbncc";
             this.lbncc.Size = new System.Drawing.Size(36, 13);
             this.lbncc.TabIndex = 24;
@@ -648,7 +648,7 @@
             // 
             // lbmahang
             // 
-            this.lbmahang.Location = new System.Drawing.Point(8, 11);
+            this.lbmahang.Location = new System.Drawing.Point(9, 12);
             this.lbmahang.Name = "lbmahang";
             this.lbmahang.Size = new System.Drawing.Size(46, 13);
             this.lbmahang.TabIndex = 21;
@@ -706,7 +706,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(255, 9);
+            this.lbDen.Location = new System.Drawing.Point(256, 10);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -714,7 +714,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(119, 9);
+            this.lbTu.Location = new System.Drawing.Point(120, 10);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -806,7 +806,7 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
             this.gridControl1.MainView = this.gridView7;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -814,7 +814,7 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
             this.repositoryItemDateEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1101, 393);
+            this.gridControl1.Size = new System.Drawing.Size(1099, 391);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7,
@@ -1223,6 +1223,26 @@
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn55, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn56, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
+            // gridBand4
+            // 
+            this.gridBand4.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand4.Caption = "Thông Tin";
+            this.gridBand4.Columns.Add(this.gridColumn54);
+            this.gridBand4.Columns.Add(this.gridColumn56);
+            this.gridBand4.Columns.Add(this.gridColumn57);
+            this.gridBand4.Columns.Add(this.gridColumn55);
+            this.gridBand4.Columns.Add(this.gridColumn58);
+            this.gridBand4.Columns.Add(this.gridColumn59);
+            this.gridBand4.Columns.Add(this.bandedGridColumn3);
+            this.gridBand4.Columns.Add(this.gridColumn62);
+            this.gridBand4.Columns.Add(this.gridColumn67);
+            this.gridBand4.Columns.Add(this.bandedGridColumn1);
+            this.gridBand4.MinWidth = 20;
+            this.gridBand4.Name = "gridBand4";
+            this.gridBand4.OptionsBand.FixedWidth = true;
+            this.gridBand4.Width = 684;
+            // 
             // gridColumn54
             // 
             this.gridColumn54.Caption = "Mã Hàng";
@@ -1299,6 +1319,17 @@
             this.bandedGridColumn1.Visible = true;
             this.bandedGridColumn1.Width = 65;
             // 
+            // gridBand11
+            // 
+            this.gridBand11.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand11.Caption = "Tồn Đầu";
+            this.gridBand11.Columns.Add(this.gridColumn63);
+            this.gridBand11.Columns.Add(this.gridColumn68);
+            this.gridBand11.MinWidth = 20;
+            this.gridBand11.Name = "gridBand11";
+            this.gridBand11.Width = 150;
+            // 
             // gridColumn63
             // 
             this.gridColumn63.Caption = "Số lượng";
@@ -1316,6 +1347,19 @@
             this.gridColumn68.FieldName = "TIENTONDAU";
             this.gridColumn68.Name = "gridColumn68";
             this.gridColumn68.Visible = true;
+            // 
+            // gridBand14
+            // 
+            this.gridBand14.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand14.Caption = "Nhập";
+            this.gridBand14.Columns.Add(this.gridColumn64);
+            this.gridBand14.Columns.Add(this.gridColumn69);
+            this.gridBand14.Columns.Add(this.bandedGridColumn7);
+            this.gridBand14.Columns.Add(this.bandedGridColumn6);
+            this.gridBand14.MinWidth = 20;
+            this.gridBand14.Name = "gridBand14";
+            this.gridBand14.Width = 300;
             // 
             // gridColumn64
             // 
@@ -1335,6 +1379,37 @@
             this.gridColumn69.Name = "gridColumn69";
             this.gridColumn69.Visible = true;
             // 
+            // bandedGridColumn7
+            // 
+            this.bandedGridColumn7.Caption = "KH Trả";
+            this.bandedGridColumn7.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn7.FieldName = "TRAXUAT";
+            this.bandedGridColumn7.Name = "bandedGridColumn7";
+            this.bandedGridColumn7.Visible = true;
+            // 
+            // bandedGridColumn6
+            // 
+            this.bandedGridColumn6.Caption = "Thành tiền";
+            this.bandedGridColumn6.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn6.FieldName = "TIENTRAXUAT";
+            this.bandedGridColumn6.Name = "bandedGridColumn6";
+            this.bandedGridColumn6.Visible = true;
+            // 
+            // gridBand15
+            // 
+            this.gridBand15.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand15.Caption = "Xuất";
+            this.gridBand15.Columns.Add(this.gridColumn65);
+            this.gridBand15.Columns.Add(this.gridColumn70);
+            this.gridBand15.Columns.Add(this.bandedGridColumn9);
+            this.gridBand15.Columns.Add(this.bandedGridColumn8);
+            this.gridBand15.MinWidth = 20;
+            this.gridBand15.Name = "gridBand15";
+            this.gridBand15.Width = 300;
+            // 
             // gridColumn65
             // 
             this.gridColumn65.Caption = "Số lượng";
@@ -1352,6 +1427,35 @@
             this.gridColumn70.FieldName = "TIENXUAT";
             this.gridColumn70.Name = "gridColumn70";
             this.gridColumn70.Visible = true;
+            // 
+            // bandedGridColumn9
+            // 
+            this.bandedGridColumn9.Caption = "Trả CTY";
+            this.bandedGridColumn9.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn9.FieldName = "TRANHAP";
+            this.bandedGridColumn9.Name = "bandedGridColumn9";
+            this.bandedGridColumn9.Visible = true;
+            // 
+            // bandedGridColumn8
+            // 
+            this.bandedGridColumn8.Caption = "Thành tiền";
+            this.bandedGridColumn8.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn8.FieldName = "TIENTRANHAP";
+            this.bandedGridColumn8.Name = "bandedGridColumn8";
+            this.bandedGridColumn8.Visible = true;
+            // 
+            // gridBand16
+            // 
+            this.gridBand16.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand16.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand16.Caption = "Tồn Cuối";
+            this.gridBand16.Columns.Add(this.gridColumn66);
+            this.gridBand16.Columns.Add(this.gridColumn71);
+            this.gridBand16.MinWidth = 20;
+            this.gridBand16.Name = "gridBand16";
+            this.gridBand16.Width = 150;
             // 
             // gridColumn66
             // 
@@ -2656,110 +2760,6 @@
             // gridBand10
             // 
             this.gridBand10.Name = "gridBand10";
-            // 
-            // bandedGridColumn6
-            // 
-            this.bandedGridColumn6.Caption = "Thành tiền";
-            this.bandedGridColumn6.DisplayFormat.FormatString = "{0:0,0}";
-            this.bandedGridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn6.FieldName = "TIENTRAXUAT";
-            this.bandedGridColumn6.Name = "bandedGridColumn6";
-            this.bandedGridColumn6.Visible = true;
-            // 
-            // bandedGridColumn7
-            // 
-            this.bandedGridColumn7.Caption = "KH Trả";
-            this.bandedGridColumn7.DisplayFormat.FormatString = "{0:0,0}";
-            this.bandedGridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn7.FieldName = "TRAXUAT";
-            this.bandedGridColumn7.Name = "bandedGridColumn7";
-            this.bandedGridColumn7.Visible = true;
-            // 
-            // bandedGridColumn8
-            // 
-            this.bandedGridColumn8.Caption = "Thành tiền";
-            this.bandedGridColumn8.DisplayFormat.FormatString = "{0:0,0}";
-            this.bandedGridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn8.FieldName = "TIENTRANHAP";
-            this.bandedGridColumn8.Name = "bandedGridColumn8";
-            this.bandedGridColumn8.Visible = true;
-            // 
-            // bandedGridColumn9
-            // 
-            this.bandedGridColumn9.Caption = "Trả CTY";
-            this.bandedGridColumn9.DisplayFormat.FormatString = "{0:0,0}";
-            this.bandedGridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn9.FieldName = "TRANHAP";
-            this.bandedGridColumn9.Name = "bandedGridColumn9";
-            this.bandedGridColumn9.Visible = true;
-            // 
-            // gridBand4
-            // 
-            this.gridBand4.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand4.Caption = "Thông Tin";
-            this.gridBand4.Columns.Add(this.gridColumn54);
-            this.gridBand4.Columns.Add(this.gridColumn56);
-            this.gridBand4.Columns.Add(this.gridColumn57);
-            this.gridBand4.Columns.Add(this.gridColumn55);
-            this.gridBand4.Columns.Add(this.gridColumn58);
-            this.gridBand4.Columns.Add(this.gridColumn59);
-            this.gridBand4.Columns.Add(this.bandedGridColumn3);
-            this.gridBand4.Columns.Add(this.gridColumn62);
-            this.gridBand4.Columns.Add(this.gridColumn67);
-            this.gridBand4.Columns.Add(this.bandedGridColumn1);
-            this.gridBand4.MinWidth = 20;
-            this.gridBand4.Name = "gridBand4";
-            this.gridBand4.OptionsBand.FixedWidth = true;
-            this.gridBand4.Width = 684;
-            // 
-            // gridBand11
-            // 
-            this.gridBand11.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand11.Caption = "Tồn Đầu";
-            this.gridBand11.Columns.Add(this.gridColumn63);
-            this.gridBand11.Columns.Add(this.gridColumn68);
-            this.gridBand11.MinWidth = 20;
-            this.gridBand11.Name = "gridBand11";
-            this.gridBand11.Width = 150;
-            // 
-            // gridBand14
-            // 
-            this.gridBand14.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand14.Caption = "Nhập";
-            this.gridBand14.Columns.Add(this.gridColumn64);
-            this.gridBand14.Columns.Add(this.gridColumn69);
-            this.gridBand14.Columns.Add(this.bandedGridColumn7);
-            this.gridBand14.Columns.Add(this.bandedGridColumn6);
-            this.gridBand14.MinWidth = 20;
-            this.gridBand14.Name = "gridBand14";
-            this.gridBand14.Width = 300;
-            // 
-            // gridBand15
-            // 
-            this.gridBand15.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand15.Caption = "Xuất";
-            this.gridBand15.Columns.Add(this.gridColumn65);
-            this.gridBand15.Columns.Add(this.gridColumn70);
-            this.gridBand15.Columns.Add(this.bandedGridColumn9);
-            this.gridBand15.Columns.Add(this.bandedGridColumn8);
-            this.gridBand15.MinWidth = 20;
-            this.gridBand15.Name = "gridBand15";
-            this.gridBand15.Width = 300;
-            // 
-            // gridBand16
-            // 
-            this.gridBand16.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand16.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand16.Caption = "Tồn Cuối";
-            this.gridBand16.Columns.Add(this.gridColumn66);
-            this.gridBand16.Columns.Add(this.gridColumn71);
-            this.gridBand16.MinWidth = 20;
-            this.gridBand16.Name = "gridBand16";
-            this.gridBand16.Width = 150;
             // 
             // frmBangKeXuatKhoTheoKHAchhangHangHoa
             // 

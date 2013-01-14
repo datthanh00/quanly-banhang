@@ -122,7 +122,11 @@ namespace WindowsFormsApplication1
             this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEdit1.Mask.UseMaskAsDisplayFormat = true;
 
-
+            if (!PublicVariable.isHSD)
+            {
+                gridCTHOADON.Columns["_LOHANG"].Visible = false;
+               
+            }
         }
         public void loadgridCTHOADON(String MAHDN)
         {
@@ -216,7 +220,7 @@ namespace WindowsFormsApplication1
         
         public void loadGrid_sanpham(string MAHDN)
         {
-            Grid_sanpham.DataSource = ctlNCC.GETMMH(txtMANCC.Text);
+            Grid_sanpham.DataSource = ctlNCC.GETMMH2(txtMANCC.Text);
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "MAMH";
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
@@ -403,7 +407,7 @@ namespace WindowsFormsApplication1
                                 }
                             }
 
-                            String SQL = "Select soluongmh from mathang where mamh='" + dtr["_MaMH"].ToString() + "'";
+                            String SQL = "Select TONKHO from KHOHANG where MAMH='" + dtr["_MaMH"].ToString() + "' AND LOHANG='" + dtr["_LOHANG"].ToString() + "'";
                             DataTable dt = ctlNCC.GETDATA(SQL);
 
                             if (dt.Rows.Count > 0)
@@ -412,7 +416,13 @@ namespace WindowsFormsApplication1
                             }
                             if (soluongtra > soluongnhap)
                             {
-                                MessageBox.Show("Mã Hàng:" + dtr["_MaMH"].ToString() + " có Số lượng trả không thể nhiều hơn số lượng nhập");
+                                MessageBox.Show("Mã Hàng:" + dtr["_MaMH"].ToString() + " có Số lượng trả không thể nhiều hơn số lượng tồn");
+                                return;
+                            }
+
+                            if (Convert.ToDouble(dtr["_SoLuong"].ToString())<=0)
+                            {
+                                MessageBox.Show("Mã Hàng:" + dtr["_MaMH"].ToString() + " có Số lượng trả không được <=0");
                                 return;
                             }
                         }
@@ -507,24 +517,12 @@ namespace WindowsFormsApplication1
         {
             try
             {
-
-                string SQL = "SELECT ID,soluongnhap FROM CHITIETHDN WHERE MAHDN='" + txtMaHD.Text + "' AND MAMH='" + mamh + "' AND SOLUONGNHAP >=" + SoLuong;
-                DataTable dt = ctlNCC.GETDATA(SQL);
-                if (dt.Rows.Count <= 0)
-                {
-                    MessageBox.Show("Số lượng mã hàng: "+mamh+" này không dược lớn hơn số lượng nhập ");
-                    return;
-                }
-                
-                SQL = "UPDATE CHITIETHDN SET SOLUONGTRANHAP=SOLUONGTRANHAP+" + SoLuong + " WHERE MAHDN='" + txtMaHD.Text + "' AND ID=" + Convert.ToInt32(dt.Rows[0]["ID"].ToString()) + "";
-                ctlNCC.executeNonQuery(SQL);
-
                 dtoNCC.MAHDN = mahdn;
                 dtoNCC.LOHANG = lohang;
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGNHAP = SoLuong;
                 dtoNCC.GIANHAP = DonGia;
-                SQL = "SELECT MAX(ID) FROM traCHITIETHDN WHERE MAHDN='" + mahdn + "'";
+                string SQL = "SELECT MAX(ID) FROM traCHITIETHDN WHERE MAHDN='" + mahdn + "'";
                 dt = ctlNCC.GETDATA(SQL);
                 dtoNCC.ID = 1;
                 if (dt.Rows[0][0].ToString() != "")
@@ -659,13 +657,15 @@ namespace WindowsFormsApplication1
                         DataTable dtmh = ctlNCC.GETMATHANG(dtr["_TenMH"].ToString());
                         string mamh = dtmh.Rows[0]["MAMH"].ToString();
                         dtr["_MaMH"] = mamh;
+                        dtr["_LOHANG"] = dtmh.Rows[0]["LOHANG"].ToString();
                         dtr["_SoLuong"] = "0";
                         dtr["_DonGia"] = dtmh.Rows[0]["GIABAN"];
                         //dtr["_Thue"] = dtmh.Rows[0]["SOTHUE"];
                         dtr["_DVT"] = dtmh.Rows[0]["DONVITINH"];
                         //dtr["_TenMH"] = dtmh.Rows[0]["TENMH"];
                         dtr["_Total"] = "0";
-                    }else
+                    }
+                    else if (e.Column.FieldName.ToString() == "_SoLuong")
                     {
                         Double Num;
                         bool isNum = Double.TryParse(dtr["_SoLuong"].ToString(), out Num);
@@ -681,6 +681,7 @@ namespace WindowsFormsApplication1
                             dtr["_Total"] = "0";
                         }
                     }
+                   
                 }
                 
 
@@ -858,6 +859,7 @@ namespace WindowsFormsApplication1
             txtNgay.Text = dtr["NGAYNHAP"].ToString();
             loadgridNhacCungCap(MANCC);
             Load_TTNCC();
+            loadGrid_sanpham(txtMaHD.Text);
         }
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
