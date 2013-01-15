@@ -695,9 +695,7 @@ namespace WindowsFormsApplication1
                 t.AttachedControl.Controls.Add(dt);
                 dt.Show();
                 tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
-            }
-            
-            
+            }           
         }
 
         
