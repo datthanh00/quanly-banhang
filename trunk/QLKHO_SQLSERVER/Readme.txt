@@ -1,26 +1,6 @@
-
-ADD COLUM GIAMUA KHOHANG
-ADD COLUM LOHANG
-
-SET PRIMARY KEY IS MAMHAND LOHANG
+khohang chua co j
 
 
-
-
-
-DELETE COLUM GIAMUA MATHANG
-
-
-
-ADD LOHANG///ADD NGAYXUAT IN TO CHITIETHDX
-
-
-ADD LOHANG CHITIETHDXTAM
-
-
-delete sltranhap, sltraxuat from chitiethdn and chitiethdx
-
-ADD TONKHO GIAS, madoituong
 
 nguyen thi loan  ------- bán le cám
 
