@@ -944,7 +944,7 @@
             this.cbotientra.Name = "cbotientra";
             this.cbotientra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbotientra.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.cbotientra.Properties.Mask.EditMask = "n0";
             this.cbotientra.Size = new System.Drawing.Size(99, 20);
             this.cbotientra.TabIndex = 21;
             this.cbotientra.TextChanged += new System.EventHandler(this.cbotientra_TextChanged);
@@ -1167,6 +1167,7 @@
             this.gridColumn3.Caption = "Lô Hàng";
             this.gridColumn3.FieldName = "_LOHANG";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.ReadOnly = true;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
@@ -1441,7 +1442,7 @@
             // gridColumn40
             // 
             this.gridColumn40.Caption = "Số Lượng Xuất";
-            this.gridColumn40.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn40.DisplayFormat.FormatString = "{0:0.##}";
             this.gridColumn40.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn40.FieldName = "SOLUONGXUAT";
             this.gridColumn40.Name = "gridColumn40";
@@ -1754,7 +1755,7 @@
             // gridColumn32
             // 
             this.gridColumn32.Caption = "Số Lượng Xuất";
-            this.gridColumn32.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn32.DisplayFormat.FormatString = "{0:0.##}";
             this.gridColumn32.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn32.FieldName = "SOLUONGXUAT";
             this.gridColumn32.Name = "gridColumn32";

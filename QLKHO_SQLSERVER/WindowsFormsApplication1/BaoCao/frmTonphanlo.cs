@@ -251,6 +251,7 @@ namespace WindowsFormsApplication1
                 cbloaihienthi.Properties.Items.Add("Tất Cả");
                 cbloaihienthi.Properties.Items.Add("Theo Hàng Hóa");
                 cbloaihienthi.Properties.Items.Add("Theo Nhà Cung Cấp");
+                cbloaihienthi.Properties.Items.Add("Hết Hạn");
                 cbloaihienthi.SelectedIndex = 0;
         }
 

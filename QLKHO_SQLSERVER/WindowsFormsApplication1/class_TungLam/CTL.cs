@@ -213,6 +213,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMATHANG(MAMH);
         }
+        public DataTable GETMATHANG(string MAMH,String LOHANG)
+        {
+            return DAO.GETMATHANG(MAMH,LOHANG);
+        }
 
         public DataTable GETMATHANG_FULL(string MAMH)
         {

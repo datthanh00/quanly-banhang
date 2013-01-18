@@ -90,6 +90,7 @@
             this.btxem = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.mATHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -125,13 +126,13 @@
             // 
             this.colsoluong.Caption = "Số Lượng";
             this.colsoluong.ColumnEdit = this.repositoryItemCalcEdit1;
-            this.colsoluong.DisplayFormat.FormatString = "{0:0,0}";
+            this.colsoluong.DisplayFormat.FormatString = "{0:0.##}";
             this.colsoluong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsoluong.FieldName = "SOLUONGMH";
             this.colsoluong.Name = "colsoluong";
             this.colsoluong.OptionsColumn.AllowEdit = false;
             this.colsoluong.Visible = true;
-            this.colsoluong.VisibleIndex = 5;
+            this.colsoluong.VisibleIndex = 6;
             this.colsoluong.Width = 44;
             // 
             // repositoryItemCalcEdit1
@@ -209,10 +210,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(2, 21);
+            this.xtraTabControl1.Location = new System.Drawing.Point(2, 22);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 504);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 503);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3});
@@ -222,7 +223,7 @@
             this.xtraTabPage3.Controls.Add(this.panelControl5);
             this.xtraTabPage3.Controls.Add(this.panelControl6);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 476);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 474);
             this.xtraTabPage3.Text = "Tồn Theo Lô Hàng";
             // 
             // panelControl5
@@ -231,23 +232,23 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(0, 39);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1252, 437);
+            this.panelControl5.Size = new System.Drawing.Size(1252, 435);
             this.panelControl5.TabIndex = 9;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 3);
+            this.groupControl2.Location = new System.Drawing.Point(2, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1246, 431);
+            this.groupControl2.Size = new System.Drawing.Size(1248, 431);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Chi Tiết Mặt Hàng";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 21);
+            this.gridControl1.Location = new System.Drawing.Point(2, 22);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
@@ -260,7 +261,7 @@
             this.repositoryItemRichTextEdit1,
             this.repositoryItemDateEdit1});
             this.gridControl1.ShowOnlyPredefinedDetails = true;
-            this.gridControl1.Size = new System.Drawing.Size(1242, 408);
+            this.gridControl1.Size = new System.Drawing.Size(1244, 407);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -273,6 +274,7 @@
             this.colmamhathang,
             this.coltennhomhang,
             this.gridColumn9,
+            this.gridColumn10,
             this.coltenmathang,
             this.colthue,
             this.gridColumn7,
@@ -371,7 +373,7 @@
             this.gridColumn7.FieldName = "KLDVT";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 3;
+            this.gridColumn7.VisibleIndex = 4;
             // 
             // coltendonvi
             // 
@@ -380,7 +382,7 @@
             this.coltendonvi.Name = "coltendonvi";
             this.coltendonvi.OptionsColumn.AllowEdit = false;
             this.coltendonvi.Visible = true;
-            this.coltendonvi.VisibleIndex = 4;
+            this.coltendonvi.VisibleIndex = 5;
             this.coltendonvi.Width = 65;
             // 
             // colthanhtiennhap
@@ -394,7 +396,7 @@
             this.colthanhtiennhap.SummaryItem.DisplayFormat = "Tổng:{0:0,0 vnđ}";
             this.colthanhtiennhap.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colthanhtiennhap.Visible = true;
-            this.colthanhtiennhap.VisibleIndex = 7;
+            this.colthanhtiennhap.VisibleIndex = 8;
             this.colthanhtiennhap.Width = 67;
             // 
             // colgiaban
@@ -406,7 +408,7 @@
             this.colgiaban.Name = "colgiaban";
             this.colgiaban.OptionsColumn.AllowEdit = false;
             this.colgiaban.Visible = true;
-            this.colgiaban.VisibleIndex = 8;
+            this.colgiaban.VisibleIndex = 9;
             this.colgiaban.Width = 50;
             // 
             // colthanhtienxuat
@@ -421,7 +423,7 @@
             this.colthanhtienxuat.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colthanhtienxuat.ToolTip = "Tổng Tiền Bán";
             this.colthanhtienxuat.Visible = true;
-            this.colthanhtienxuat.VisibleIndex = 9;
+            this.colthanhtienxuat.VisibleIndex = 10;
             this.colthanhtienxuat.Width = 97;
             // 
             // colmota
@@ -477,7 +479,7 @@
             this.colgiamua.Name = "colgiamua";
             this.colgiamua.OptionsColumn.AllowEdit = false;
             this.colgiamua.Visible = true;
-            this.colgiamua.VisibleIndex = 6;
+            this.colgiamua.VisibleIndex = 7;
             this.colgiamua.Width = 51;
             // 
             // repositoryItemCalcEdit3
@@ -633,7 +635,7 @@
             // 
             // lbsanpham
             // 
-            this.lbsanpham.Location = new System.Drawing.Point(259, 16);
+            this.lbsanpham.Location = new System.Drawing.Point(260, 17);
             this.lbsanpham.Name = "lbsanpham";
             this.lbsanpham.Size = new System.Drawing.Size(78, 13);
             this.lbsanpham.TabIndex = 24;
@@ -673,7 +675,7 @@
             // 
             // lbnhom
             // 
-            this.lbnhom.Location = new System.Drawing.Point(252, 16);
+            this.lbnhom.Location = new System.Drawing.Point(253, 17);
             this.lbnhom.Name = "lbnhom";
             this.lbnhom.Size = new System.Drawing.Size(53, 13);
             this.lbnhom.TabIndex = 3;
@@ -702,12 +704,20 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(14, 16);
+            this.labelControl2.Location = new System.Drawing.Point(15, 17);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Loại Hiển Thị:";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Số Ngày Sử Dụng";
+            this.gridColumn10.FieldName = "NGAYSUDUNG";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 3;
             // 
             // frmTonphanlo
             // 
@@ -820,5 +830,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
     }
 }

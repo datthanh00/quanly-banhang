@@ -936,7 +936,7 @@
             this.cbotientra.Name = "cbotientra";
             this.cbotientra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbotientra.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.cbotientra.Properties.Mask.EditMask = "n0";
             this.cbotientra.Size = new System.Drawing.Size(99, 20);
             this.cbotientra.TabIndex = 21;
             this.cbotientra.TextChanged += new System.EventHandler(this.cbotientra_TextChanged);
@@ -1440,7 +1440,7 @@
             // gridColumn41
             // 
             this.gridColumn41.Caption = "Số Lượng Trả Về";
-            this.gridColumn41.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn41.DisplayFormat.FormatString = "{0:0.##}";
             this.gridColumn41.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn41.FieldName = "SOLUONGXUAT";
             this.gridColumn41.Name = "gridColumn41";
@@ -1633,7 +1633,7 @@
             // gridColumn33
             // 
             this.gridColumn33.Caption = "Số Lượng Trả";
-            this.gridColumn33.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn33.DisplayFormat.FormatString = "{0:0.##}";
             this.gridColumn33.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn33.FieldName = "SOLUONGXUAT";
             this.gridColumn33.Name = "gridColumn33";
@@ -1788,19 +1788,19 @@
             this.ViewToolStripMenuItem,
             this.EditToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(106, 48);
             // 
             // ViewToolStripMenuItem
             // 
             this.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
-            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.ViewToolStripMenuItem.Text = "Xem";
             this.ViewToolStripMenuItem.Click += new System.EventHandler(this.ViewToolStripMenuItem_Click);
             // 
             // EditToolStripMenuItem
             // 
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
-            this.EditToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 

@@ -27,6 +27,7 @@ namespace WindowsFormsApplication1.class_import
             cbTable.Properties.Items.Add("Update Khách Hàng");
             cbTable.Properties.Items.Add("Update Mặt Hàng");
             cbTable.Properties.Items.Add("Update Đơn Vị Tính");
+            cbTable.Properties.Items.Add("Thêm Kho Hàng");
             button2.Enabled = false;
 
         }
@@ -95,8 +96,9 @@ namespace WindowsFormsApplication1.class_import
                 }
                 else if (cbTable.SelectedIndex == 2)
                 {
+                    string HSD = cot["HANSUDUNG"].ToString().Substring(0, 10);
                     lenh = "INSERT INTO [MATHANG]([MAMH],[MATH],[MANH],[MANCC],[MAKHO],[TENMH],[KLDVT],[MADVT],[SOLUONGMH],[HANSUDUNG],[GIAMUA],[GIABAN],[MOTA],[TINHTRANG]) "
-                    + " VALUES ('" + cot["MAMH"] + "','" + cot["MATH"] + "','" + cot["MANH"] + "','" + cot["MANCC"] + "','" + cot["MAKHO"] + "',N'" + cot["TENMH"] + "','" + cot["KLDVT"] + "','" + cot["MADVT"] + "'," + cot["SOLUONGMH"] + ",'" + cot["HANSUDUNG"] + "'," + cot["GIAMUA"] + "," + cot["GIABAN"] + ",N'" + cot["MOTA"] + "'," + cot["TINHTRANG"] + ")";
+                    + " VALUES ('" + cot["MAMH"] + "','" + cot["MATH"] + "','" + cot["MANH"] + "','" + cot["MANCC"] + "','" + cot["MAKHO"] + "',N'" + cot["TENMH"] + "','" + cot["KLDVT"] + "','" + cot["MADVT"] + "'," + cot["SOLUONGMH"] + ",'" + HSD + "'," + cot["GIAMUA"] + "," + cot["GIABAN"] + ",N'" + cot["MOTA"] + "'," + cot["TINHTRANG"] + ")";
                 }
                 else if (cbTable.SelectedIndex == 3)
                 {
@@ -116,13 +118,26 @@ namespace WindowsFormsApplication1.class_import
                 }
                 else if (cbTable.SelectedIndex == 6)
                 {
+                    string HSD = cot["HANSUDUNG"].ToString().Substring(0, 10);
+                    HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
                     lenh = "UPDATE   [MATHANG] "
-                    + " SET  [TENMH]=N'" + cot["TENMH"] + "',[MANCC]=N'" + cot["MANCC"] + "',[KLDVT]='" + cot["KLDVT"] + "',[MADVT]='" + cot["MADVT"] + "',[SOLUONGMH]=" + cot["SOLUONGMH"] + ",[HANSUDUNG]='" + cot["HANSUDUNG"] + "',[GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + ",[MOTA]=N'" + cot["MOTA"] + "',[TINHTRANG]=" + cot["TINHTRANG"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
+                    + " SET  [TENMH]=N'" + cot["TENMH"] + "',[MANCC]=N'" + cot["MANCC"] + "',[KLDVT]='" + cot["KLDVT"] + "',[MADVT]='" + cot["MADVT"] + "',[SOLUONGMH]=" + cot["SOLUONGMH"] + ",[HANSUDUNG]='" + HSD + "',[GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + ",[MOTA]=N'" + cot["MOTA"] + "',[TINHTRANG]=" + cot["TINHTRANG"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
                 }
                 else if (cbTable.SelectedIndex == 7)
                 {
                     lenh = "UPDATE   [DONVITINH] "
                     + " SET  [DONVITINH]= N'" + cot["DONVITINH"] + "' WHERE [MADVT]='" + cot["MADVT"] + "'";
+                }
+                else if (cbTable.SelectedIndex == 8)
+                {
+                    
+                    String HSD = cot["HSD"].ToString().Substring(0, 10);
+                    HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
+                
+                    String NGAYNHAP = cot["NGAYNHAP"].ToString().Substring(0, 10);
+                    NGAYNHAP = NGAYNHAP.Substring(3, 2) + "/" + NGAYNHAP.Substring(0, 2) + "/" + NGAYNHAP.Substring(6, 4);
+                    lenh = "INSERT INTO [KHOHANG]([MAMH],[LOHANG],[HSD],[GIAMUA],[TONKHO],[NHAPKHO],[XUATKHO],[TRANHAPKHO],[TRAXUATKHO],[NGAYNHAP]) "
+                    + " VALUES ('" + cot["MAMH"].ToString() + "',N'" + cot["LOHANG"].ToString() + "',N'" + HSD + "'," + cot["GIAMUA"].ToString() + "," + cot["TONKHO"].ToString() + "," + cot["NHAPKHO"].ToString() + "," + cot["XUATKHO"] + "," + cot["TRANHAPKHO"].ToString() + "," + cot["TRAXUATKHO"].ToString() + ",N'" + NGAYNHAP + "')";
                 }
             return lenh;
         }
@@ -138,6 +153,27 @@ namespace WindowsFormsApplication1.class_import
         {
             export exp = new export();
             exp.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn có muốn Thực HIện Câu Lệnh không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    Provider pv = new Provider();
+                    pv.connect();
+                    String SQL = txtsql.Text;
+                    pv.executeNonQuery(SQL);
+
+                }
+                catch
+                {
+                    MessageBox.Show("Có Lỗi Xảy Ra Với Câu Lệnh");
+                }
+
+                MessageBox.Show("Đã Hoàn Thành Câu Lệnh");
+            }
         }
 
        

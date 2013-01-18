@@ -32,12 +32,14 @@
             this.tientrinh = new System.Windows.Forms.ProgressBar();
             this.luoi = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.cbTable = new DevExpress.XtraEditors.ComboBoxEdit();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.mo = new System.Windows.Forms.OpenFileDialog();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txtsql = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.luoi)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTable.Properties)).BeginInit();
@@ -72,6 +74,20 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao Tác";
+            // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button4.Image = global::WindowsFormsApplication1.Properties.Resources.excel;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(359, 20);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(114, 30);
+            this.button4.TabIndex = 39;
+            this.button4.Text = "Export excell";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // cbTable
             // 
@@ -128,25 +144,40 @@
             // 
             this.mo.FileName = "openFileDialog1";
             // 
-            // button4
+            // txtsql
             // 
-            this.button4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button4.Image = global::WindowsFormsApplication1.Properties.Resources.excel;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(359, 20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 30);
-            this.button4.TabIndex = 39;
-            this.button4.Text = "Export excell";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // 
+            // 
+            this.txtsql.Border.Class = "TextBoxBorder";
+            this.txtsql.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtsql.Location = new System.Drawing.Point(16, 436);
+            this.txtsql.Multiline = true;
+            this.txtsql.Name = "txtsql";
+            this.txtsql.Size = new System.Drawing.Size(533, 52);
+            this.txtsql.TabIndex = 19;
+            // 
+            // button5
+            // 
+            this.button5.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button5.Image = global::WindowsFormsApplication1.Properties.Resources.check;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(735, 436);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(108, 43);
+            this.button5.TabIndex = 36;
+            this.button5.Text = "Truy Vấn SQL";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 420);
+            this.ClientSize = new System.Drawing.Size(895, 506);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.txtsql);
             this.Controls.Add(this.tientrinh);
             this.Controls.Add(this.luoi);
             this.Controls.Add(this.groupBox1);
@@ -171,5 +202,7 @@
         private System.Windows.Forms.OpenFileDialog mo;
         private DevExpress.XtraEditors.ComboBoxEdit cbTable;
         private System.Windows.Forms.Button button4;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtsql;
+        private System.Windows.Forms.Button button5;
     }
 }

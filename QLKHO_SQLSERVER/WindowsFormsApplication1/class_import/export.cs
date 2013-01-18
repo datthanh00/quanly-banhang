@@ -23,10 +23,17 @@ namespace WindowsFormsApplication1.class_import
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CTL ctl = new CTL();
-            String SQL = "select * from mathang where makho='MAKHO00002'";
-            DataTable dt= ctl.GETDATA(SQL);
-            gridControl1.DataSource = dt;
+            try
+            {
+                CTL ctl = new CTL();
+                String SQL = txtsql.Text;
+                DataTable dt = ctl.GETDATA(SQL);
+                gridControl1.DataSource = dt;
+            }
+            catch
+            {
+                MessageBox.Show("Cau lenh truy van Sai");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

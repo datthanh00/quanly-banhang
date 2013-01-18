@@ -50,9 +50,9 @@ namespace WindowsFormsApplication1
             set { _KLDVT = value; }
         }
 
-        private int _TONDAU;
+        private Double _TONDAU;
 
-        public int TONDAU
+        public Double TONDAU
         {
             get { return _TONDAU; }
             set { _TONDAU = value; }

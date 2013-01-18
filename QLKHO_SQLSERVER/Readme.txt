@@ -1,3 +1,8 @@
+ loi xuat hang khi nhap so tien tra
+ 
+ 
+
+
 khohang chua co j
 
 
