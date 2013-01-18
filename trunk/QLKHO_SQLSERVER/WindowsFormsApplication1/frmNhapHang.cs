@@ -19,12 +19,9 @@ namespace WindowsFormsApplication1
 {
     public partial class frmNhapHang : DevExpress.XtraEditors.XtraForm
     {
-        
-       
         public frmNhapHang()
         {
-            InitializeComponent();
-            
+            InitializeComponent(); 
         }
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
@@ -36,7 +33,6 @@ namespace WindowsFormsApplication1
         }
 
         int CountRowTBEdit = 0;
-      
         NhapHangDTO dto = new NhapHangDTO();
         NhapHangDAO mh = new NhapHangDAO();
         //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
@@ -44,7 +40,6 @@ namespace WindowsFormsApplication1
       
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
-            
             if (PublicVariable.XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN MỤC NÀY");
@@ -402,6 +397,15 @@ namespace WindowsFormsApplication1
         public int kiemtra;
         private void btLuu_Click(object sender, EventArgs e)
         {
+            if (XtraMessageBox.Show("Bạn có muốn Nhập Những Mặt Hàng Này Không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int i = 0;
+            }
+            else
+            {
+                return;
+            }
+
             try
             {
                 if (txtMANCC.Text == "")
@@ -787,6 +791,16 @@ namespace WindowsFormsApplication1
                             dtr["_Total"] = "0";
                         }
                     }
+                    else if (e.Column.FieldName.ToString() == "_DonGia")
+                    {
+                        Double Num;
+                        bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
+                        if (!isNum)
+                        {
+                            dtr["_DonGia"] = "0";
+                        }
+                       
+                    }
                     else if (e.Column.FieldName.ToString() == "_HSD")
                     {
                         string NGAY= dtr["_HSD"].ToString();
@@ -1134,6 +1148,7 @@ namespace WindowsFormsApplication1
                 gridControl1.ExportToXls(saveFileDialog1.FileName);
             }
         }
+
 
    
 

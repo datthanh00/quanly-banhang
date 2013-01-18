@@ -984,7 +984,7 @@
             this.cbotientra.Name = "cbotientra";
             this.cbotientra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbotientra.Properties.Mask.EditMask = "n3";
+            this.cbotientra.Properties.Mask.EditMask = "n0";
             this.cbotientra.Size = new System.Drawing.Size(115, 20);
             this.cbotientra.TabIndex = 6;
             this.cbotientra.EditValueChanged += new System.EventHandler(this.cbotientra_EditValueChanged);
@@ -1002,6 +1002,7 @@
             this.panel_create.Name = "panel_create";
             this.panel_create.Size = new System.Drawing.Size(1061, 63);
             this.panel_create.TabIndex = 2;
+          
             // 
             // btXuatDuLieu
             // 
@@ -1431,7 +1432,7 @@
             // gridColumn37
             // 
             this.gridColumn37.Caption = "Số Lượng Nhập";
-            this.gridColumn37.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn37.DisplayFormat.FormatString = "{0:0.##}";
             this.gridColumn37.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn37.FieldName = "SOLUONGNHAP";
             this.gridColumn37.Name = "gridColumn37";
@@ -1746,7 +1747,7 @@
             // gridColumn30
             // 
             this.gridColumn30.Caption = "Số Lượng Nhập";
-            this.gridColumn30.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn30.DisplayFormat.FormatString = "{0:0.##}";
             this.gridColumn30.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn30.FieldName = "SOLUONGNHAP";
             this.gridColumn30.Name = "gridColumn30";
@@ -1812,19 +1813,19 @@
             this.ViewToolStripMenuItem,
             this.EditToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(106, 48);
             // 
             // ViewToolStripMenuItem
             // 
             this.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
-            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.ViewToolStripMenuItem.Text = "Xem";
             this.ViewToolStripMenuItem.Click += new System.EventHandler(this.ViewToolStripMenuItem_Click);
             // 
             // EditToolStripMenuItem
             // 
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
-            this.EditToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 

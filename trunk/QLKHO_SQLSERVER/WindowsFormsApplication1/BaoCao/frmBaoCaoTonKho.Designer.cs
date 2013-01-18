@@ -502,7 +502,7 @@
             // colSLDau
             // 
             this.colSLDau.Caption = "Số lượng";
-            this.colSLDau.DisplayFormat.FormatString = "{0:0,0}";
+            this.colSLDau.DisplayFormat.FormatString = "{0:0.##}";
             this.colSLDau.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLDau.FieldName = "TONDAU";
             this.colSLDau.Name = "colSLDau";
@@ -534,7 +534,7 @@
             // colSLNhap
             // 
             this.colSLNhap.Caption = "Số lượng";
-            this.colSLNhap.DisplayFormat.FormatString = "{0:0,0}";
+            this.colSLNhap.DisplayFormat.FormatString = "{0:0.##}";
             this.colSLNhap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLNhap.FieldName = "NHAP";
             this.colSLNhap.Name = "colSLNhap";
@@ -553,9 +553,9 @@
             // bandedGridColumn1
             // 
             this.bandedGridColumn1.Caption = "KH trả";
-            this.bandedGridColumn1.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn1.DisplayFormat.FormatString = "{0:0.##}";
             this.bandedGridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn1.FieldName = "TRANHAP";
+            this.bandedGridColumn1.FieldName = "TRAXUAT";
             this.bandedGridColumn1.Name = "bandedGridColumn1";
             this.bandedGridColumn1.Visible = true;
             // 
@@ -564,7 +564,7 @@
             this.bandedGridColumn9.Caption = "Thành Tiền";
             this.bandedGridColumn9.DisplayFormat.FormatString = "{0:0,0}";
             this.bandedGridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn9.FieldName = "THANHTIENTRANHAP";
+            this.bandedGridColumn9.FieldName = "THANHTIENTRAXUAT";
             this.bandedGridColumn9.Name = "bandedGridColumn9";
             this.bandedGridColumn9.Visible = true;
             // 
@@ -584,7 +584,7 @@
             // colSLXuat
             // 
             this.colSLXuat.Caption = "Số lượng";
-            this.colSLXuat.DisplayFormat.FormatString = "{0:0,0}";
+            this.colSLXuat.DisplayFormat.FormatString = "{0:0.##}";
             this.colSLXuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLXuat.FieldName = "XUAT";
             this.colSLXuat.Name = "colSLXuat";
@@ -603,18 +603,18 @@
             // bandedGridColumn7
             // 
             this.bandedGridColumn7.Caption = "Trả CTY";
-            this.bandedGridColumn7.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn7.DisplayFormat.FormatString = "{0:0.##}";
             this.bandedGridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn7.FieldName = "TRAXUAT";
+            this.bandedGridColumn7.FieldName = "TRANHAP";
             this.bandedGridColumn7.Name = "bandedGridColumn7";
             this.bandedGridColumn7.Visible = true;
             // 
             // bandedGridColumn10
             // 
-            this.bandedGridColumn10.Caption = "Thành Tiền ";
+            this.bandedGridColumn10.Caption = "Thành Tiền";
             this.bandedGridColumn10.DisplayFormat.FormatString = "{0:0,0}";
             this.bandedGridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn10.FieldName = "THANHTIENTRAXUAT";
+            this.bandedGridColumn10.FieldName = "THANHTIENTRANHAP";
             this.bandedGridColumn10.Name = "bandedGridColumn10";
             this.bandedGridColumn10.Visible = true;
             // 
@@ -632,7 +632,7 @@
             // colSLTOn
             // 
             this.colSLTOn.Caption = "Số lượng";
-            this.colSLTOn.DisplayFormat.FormatString = "{0:0,0}";
+            this.colSLTOn.DisplayFormat.FormatString = "{0:0.##}";
             this.colSLTOn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLTOn.FieldName = "TONCUOI";
             this.colSLTOn.Name = "colSLTOn";

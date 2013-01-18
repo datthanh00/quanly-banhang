@@ -78,6 +78,8 @@
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -173,8 +175,6 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -208,6 +208,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridCTHOADON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_sanpham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resTENMATHANG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
@@ -254,7 +255,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).BeginInit();
             this.SuspendLayout();
             // 
             // dockManager1
@@ -784,6 +784,25 @@
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
             // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Lô Hàng";
+            this.gridColumn10.ColumnEdit = this.repositoryItemTextEdit3;
+            this.gridColumn10.FieldName = "_LOHANG";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.ReadOnly = true;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 2;
+            // 
+            // repositoryItemTextEdit3
+            // 
+            this.repositoryItemTextEdit3.AutoHeight = false;
+            this.repositoryItemTextEdit3.DisplayFormat.FormatString = "n2";
+            this.repositoryItemTextEdit3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemTextEdit3.Mask.EditMask = "n2";
+            this.repositoryItemTextEdit3.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
+            // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Đơn Giá";
@@ -1211,7 +1230,7 @@
             // gridColumn30
             // 
             this.gridColumn30.Caption = "Số Lượng Trả";
-            this.gridColumn30.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn30.DisplayFormat.FormatString = "{0:0.##}";
             this.gridColumn30.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn30.FieldName = "SOLUONGNHAP";
             this.gridColumn30.Name = "gridColumn30";
@@ -1325,7 +1344,7 @@
             // gridColumn38
             // 
             this.gridColumn38.Caption = "Số Lượng Trả";
-            this.gridColumn38.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn38.DisplayFormat.FormatString = "{0:0.##}";
             this.gridColumn38.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn38.FieldName = "SOLUONGNHAP";
             this.gridColumn38.Name = "gridColumn38";
@@ -1738,28 +1757,10 @@
             this.cbotientra.Name = "cbotientra";
             this.cbotientra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbotientra.Properties.Mask.EditMask = "n3";
+            this.cbotientra.Properties.Mask.EditMask = "n0";
             this.cbotientra.Size = new System.Drawing.Size(115, 20);
             this.cbotientra.TabIndex = 6;
             this.cbotientra.TextChanged += new System.EventHandler(this.cbotientra_TextChanged);
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "Lô Hàng";
-            this.gridColumn10.ColumnEdit = this.repositoryItemTextEdit3;
-            this.gridColumn10.FieldName = "_LOHANG";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 2;
-            // 
-            // repositoryItemTextEdit3
-            // 
-            this.repositoryItemTextEdit3.AutoHeight = false;
-            this.repositoryItemTextEdit3.DisplayFormat.FormatString = "n2";
-            this.repositoryItemTextEdit3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryItemTextEdit3.Mask.EditMask = "n2";
-            this.repositoryItemTextEdit3.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
             // 
             // frmTraNCC
             // 
@@ -1812,6 +1813,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridCTHOADON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Grid_sanpham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resTENMATHANG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
@@ -1860,7 +1862,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit3)).EndInit();
             this.ResumeLayout(false);
 
         }

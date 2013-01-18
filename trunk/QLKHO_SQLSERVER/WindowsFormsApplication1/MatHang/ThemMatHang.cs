@@ -133,20 +133,25 @@ namespace WindowsFormsApplication1
         public string sBoPhan;
         private void ThemMatHang_Load(object sender, EventArgs e)
         {
+            txtSoLuong.Text = "0";
+
             if (sBoPhan == "MABP00004")
             {
                 txtSoLuong.Enabled = true;
+                cbthue.Enabled = true;
+                btThemKhuVuc.Enabled = true;
+
             }
             else
             {
                 txtSoLuong.Enabled = false;
+                cbthue.Enabled = false;
+                btThemKhuVuc.Enabled = false;
             }
            
             if (iNgonNgu == 1)
             {
                 LoadEL();
-
-
             }
             else 
             {
@@ -277,12 +282,12 @@ namespace WindowsFormsApplication1
                         txtSoLuong.Focus();
                         return;
                     }
-                    else if (cbthue.Text == "")
+                    /*else if (cbthue.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng điền mã thuế ");
                         cbthue.Focus();
                         return;
-                    }
+                    }*/
                     else if (calKLDVT.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng điền khối lượng theo đơn vị tính ");
@@ -301,7 +306,7 @@ namespace WindowsFormsApplication1
                             //ms.Close();
                             //DTO.PICTURE = imageData;
                             DTO.MAMH = txtMaMH.Text;
-                            DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
+                            DTO.MATH = "TH00001";//gridView2.GetFocusedRowCellValue("MATH").ToString();
 
                             DTO.MANCC = gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
                             DTO.MAKHO = PublicVariable.MAKHO;
@@ -329,13 +334,13 @@ namespace WindowsFormsApplication1
                             //ms.Close();
                             //DTO.PICTURE = imageData;
                             DTO.MAMH = txtMaMH.Text;
-                            DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
+                            DTO.MATH = "TH00001";//gridView2.GetFocusedRowCellValue("MATH").ToString();
                             DTO.MANCC = gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
                             DTO.MADVT = gridView1.GetFocusedRowCellValue("MADVT").ToString();
                             DTO.KLDVT = calKLDVT.Text;
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
-                            DTO.SOLUONGMH = int.Parse(txtSoLuong.Text).ToString();
+                            DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = "";
                             DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
                             DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();
@@ -453,7 +458,7 @@ namespace WindowsFormsApplication1
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
 
-                            DTO.SOLUONGMH = int.Parse(txtSoLuong.Text).ToString();
+                            DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = DateTime.Parse(txthansudung.Text).ToString();
                             DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
                             DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();

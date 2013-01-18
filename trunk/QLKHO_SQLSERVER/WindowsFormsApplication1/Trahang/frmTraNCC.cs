@@ -222,7 +222,7 @@ namespace WindowsFormsApplication1
         {
             Grid_sanpham.DataSource = ctlNCC.GETMMH2(txtMANCC.Text);
             Grid_sanpham.DisplayMember = "TENMH";
-            Grid_sanpham.ValueMember = "MAMH";
+            Grid_sanpham.ValueMember = "LOHANG";
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
         }
         public void loadgridNhacCungCap()
@@ -406,7 +406,7 @@ namespace WindowsFormsApplication1
                                     soluongtra = soluongtra + Convert.ToDouble(dtr2["_SoLuong"].ToString());
                                 }
                             }
-
+                           // string lohang = gridCTHOADON.GetFocusedRowCellValue("LOHANG").ToString();
                             String SQL = "Select TONKHO from KHOHANG where MAMH='" + dtr["_MaMH"].ToString() + "' AND LOHANG='" + dtr["_LOHANG"].ToString() + "'";
                             DataTable dt = ctlNCC.GETDATA(SQL);
 
@@ -654,7 +654,11 @@ namespace WindowsFormsApplication1
                     {
                         //
 
-                        DataTable dtmh = ctlNCC.GETMATHANG(dtr["_TenMH"].ToString());
+                        string SMAMH = dtr["_TenMH"].ToString();
+                        int index = SMAMH.IndexOf("_");
+                        string MAMH = SMAMH.Substring(0, index);
+                        string LOHANG = SMAMH.Substring(index + 1, SMAMH.Length - index - 1);
+                        DataTable dtmh = ctlNCC.GETMATHANG(MAMH, LOHANG);
                         string mamh = dtmh.Rows[0]["MAMH"].ToString();
                         dtr["_MaMH"] = mamh;
                         dtr["_LOHANG"] = dtmh.Rows[0]["LOHANG"].ToString();
@@ -680,6 +684,16 @@ namespace WindowsFormsApplication1
                             dtr["_SoLuong"] = "0";
                             dtr["_Total"] = "0";
                         }
+                    }
+                    else if (e.Column.FieldName.ToString() == "_DonGia")
+                    {
+                        Double Num;
+                        bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
+                        if (!isNum)
+                        {
+                            dtr["_DonGia"] = "0";
+                        }
+
                     }
                    
                 }

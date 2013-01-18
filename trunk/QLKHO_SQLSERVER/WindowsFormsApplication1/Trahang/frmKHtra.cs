@@ -345,7 +345,7 @@ namespace WindowsFormsApplication1.KHtra
                                     }
                                     else
                                     {
-                                        if (XtraMessageBox.Show("chưa có Lô hàng với Hạn Dùng này bạn có muốn thêm lô hàng này không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                        if (XtraMessageBox.Show("" + dtr["_MaMH"].ToString() + ": chưa có Lô hàng với Hạn Dùng này bạn có muốn thêm lô hàng này không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                         {
                                             ctlNCC.INSERT_KHOHANG(dtr["_MaMH"].ToString(), "LO_" + txtMaHD.Text,dtr["_DonGia"].ToString(), "0", HSD);
                                             dtoNCC.LOHANG = "LO_" + txtMaHD.Text;
@@ -366,7 +366,7 @@ namespace WindowsFormsApplication1.KHtra
                                     }
                                     else
                                     {
-                                        if (XtraMessageBox.Show("chưa có mặt hàng này bạn có muốn thêm mặt hàng này không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                        if (XtraMessageBox.Show(dtr["_MaMH"].ToString()+": chưa có mặt hàng này bạn có muốn thêm mặt hàng này không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                         {
                                             ctlNCC.INSERT_KHOHANG(dtr["_MaMH"].ToString(), "1", dtr["_DonGia"].ToString(), "0", dtr["_HSD"].ToString());
                                             dtoNCC.LOHANG = "1";
@@ -662,8 +662,8 @@ namespace WindowsFormsApplication1.KHtra
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC,KLDVT, DONVITINH, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN, SUM(SOLUONGXUAT*GIATIEN) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN FROM TRACHITIETHDX, TRAHOADONXUAT WHERE TRACHITIETHDX.MAHDX=TRAHOADONXUAT.MAHDX AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDX WHERE MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC, DONVITINH,GIATIEN,KLDVT";
-           
+            
+            String SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC,KLDVT, DONVITINH, sum(TRAXUAT) as SOLUONGXUAT,TONKHO.GIAXUAT AS GIATIEN, SUM(TRAXUAT*TONKHO.GIAXUAT) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,TONKHO WHERE MATHANG.MAMH=TONKHO.MAMH AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MANCC=NHACUNGCAP.MANCC AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "' AND TRAXUAT>0 AND TONKHO.NGAY BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "' group by MATHANG.MAMH, TENMH, TENNCC,KLDVT, DONVITINH,TONKHO.GIAXUAT";
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
             gridControl3.MainView = gridView3;
@@ -716,6 +716,16 @@ namespace WindowsFormsApplication1.KHtra
                         string NGAY = dtr["_HSD"].ToString();
                         if (NGAY.Length > 10)
                             dtr["_HSD"] = NGAY.Substring(0, 10);
+                    }
+                    else if (e.Column.FieldName.ToString() == "_DonGia")
+                    {
+                        Double Num;
+                        bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
+                        if (!isNum)
+                        {
+                            dtr["_DonGia"] = "0";
+                        }
+
                     }
                 }
         }
