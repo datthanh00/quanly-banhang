@@ -117,9 +117,6 @@ namespace WindowsFormsApplication1
                 con = get_Connect();
             if (con.State == ConnectionState.Closed)
                 con.Open();
-
-
-
         }
         public void disconnect()
         {

@@ -551,14 +551,25 @@ namespace WindowsFormsApplication1
         }
         public void INSERTtraHOADONNHAP(DTO dto)
         {
+            string NGAYNHAP = "convert(varchar,getDate(),101)";
+            if (PublicVariable.isUSE_COMPUTERDATE)
+            {
+                NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            }
+
             string SQL = "insert into traHOADONNHAP(MAHDN,MANCC,MANV,MAKHO,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',convert(varchar,getDate(),101)," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
+            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',"+NGAYNHAP+"," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
         public void INSERTHOADONNHAP(DTO dto)
         {
+            string NGAYNHAP = "convert(varchar,getDate(),101)";
+            if (PublicVariable.isUSE_COMPUTERDATE)
+            {
+                NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            }
             string SQL = "insert into HOADONNHAP(MAHDN,MANCC,MANV,MAKHO,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',convert(varchar,getDate(),101)," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
+            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',"+NGAYNHAP+"," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
         public bool isINSERTHOADONNHAP(string MAHDN)
@@ -698,8 +709,14 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                string NGAYNHAP = "convert(varchar,getDate(),101)";
+                if (PublicVariable.isUSE_COMPUTERDATE)
+                {
+                    NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+                }
+
                 SQL = "INSERT INTO KHOHANG ([MAMH],[LOHANG],[GIAMUA] ,[TONKHO],[NHAPKHO] ,[XUATKHO] ,[TRANHAPKHO],[TRAXUATKHO],[NGAYNHAP] ,[HSD])"
-                          + " VALUES ('" + MAMH + "','" + LOHANG + "'," + GIAMUA + "," + SOLUONGNHAP + "," + SOLUONGNHAP + ",0, 0,0,convert(varchar,getDate(),101),'" + HSD + "')";
+                          + " VALUES ('" + MAMH + "','" + LOHANG + "'," + GIAMUA + "," + SOLUONGNHAP + "," + SOLUONGNHAP + ",0, 0,0,"+NGAYNHAP+",'" + HSD + "')";
                 executeNonQuery(SQL);
 
                 SQL = "UPDATE MATHANG SET  GIAMUA=" + GIAMUA + " , GIABAN=GIABAN+" + GIAMUA + "- GIAMUA WHERE MAMH='" + MAMH + "' ";
@@ -1133,14 +1150,24 @@ namespace WindowsFormsApplication1
         }
         public void INSERTHOADONXUAT(DTO dto)
         {
+            string NGAYNHAP = "convert(varchar,getDate(),101)";
+            if (PublicVariable.isUSE_COMPUTERDATE)
+            {
+                NGAYNHAP = "'"+DateTime.Now.ToString("MM-dd-yyyy")+"'";
+            }
             string SQL = "insert into HOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','"+PublicVariable.MAKHO+"',convert(varchar,getDate(),101),'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "')";
+            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','"+PublicVariable.MAKHO+"',"+NGAYNHAP+",'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
         public void INSERTtraHOADONXUAT(DTO dto)
         {
+            string NGAYNHAP = "convert(varchar,getDate(),101)";
+            if (PublicVariable.isUSE_COMPUTERDATE)
+            {
+                NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            }
             string SQL = "insert into traHOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',convert(varchar,getDate(),101),'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "')";
+            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',"+NGAYNHAP+",'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
         }
         public bool isINSERTHOADONXUAT(string MAHDX)
@@ -1163,6 +1190,7 @@ namespace WindowsFormsApplication1
         }
         public void UPDATEHOADONXUAT(DTO dto)
         {
+
             string SQL = "update HOADONXUAT set MAKH='" + dto.MAKH + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDX='" + dto.MAHDX + "' )";
             executeNonQuery(SQL);
         }
@@ -1173,10 +1201,14 @@ namespace WindowsFormsApplication1
         }
         public void INSERTCTHOADONXUAT(DTO dto)
         {
+            string NGAYNHAP = "convert(varchar,getDate(),101)";
+            if (PublicVariable.isUSE_COMPUTERDATE)
+            {
+                NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+            }
 
 
-
-            string SQL = "INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,LOHANG,NGAYXUAT,SOLUONGXUAT,GIATIEN,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "','" + dto.LOHANG + "',convert(varchar,getDate(),101)," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "')";
+            string SQL = "INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,LOHANG,NGAYXUAT,SOLUONGXUAT,GIATIEN,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "','" + dto.LOHANG + "',"+NGAYNHAP+"," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 
             SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";

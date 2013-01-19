@@ -176,6 +176,11 @@ namespace WindowsFormsApplication1.class_import
             }
         }
 
+        private void btncomputerdate_Click(object sender, EventArgs e)
+        {
+            PublicVariable.isUSE_COMPUTERDATE = true;
+        }
+
        
     }
 }

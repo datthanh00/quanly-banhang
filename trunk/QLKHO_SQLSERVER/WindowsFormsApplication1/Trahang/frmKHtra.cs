@@ -150,6 +150,11 @@ namespace WindowsFormsApplication1.KHtra
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+            if (PublicVariable.isUSE_COMPUTERDATE)
+            {
+                MessageBox.Show("Bạn đang sử dụng hệ thống ngày tháng của máy tính");
+
+            }
            // cbotientra.Text = "0";
             loadgridKhachHang();
             loadgridNhanVien();

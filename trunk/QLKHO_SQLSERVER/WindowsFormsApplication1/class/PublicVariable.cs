@@ -10,6 +10,7 @@ namespace WindowsFormsApplication1
         
        public static string XEM,THEM, XOA, SUA, IN, MAKHO;
        public static Boolean isHSD, isBARCODE, isTONTHUCTE;
+       public static Boolean isUSE_COMPUTERDATE=true;
        public static DataTable KhoQL;
 
 	}
