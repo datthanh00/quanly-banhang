@@ -46,7 +46,11 @@ namespace WindowsFormsApplication1
                 this.Close();
                 return;
             }
-               
+            if (PublicVariable.isUSE_COMPUTERDATE)
+            {
+                MessageBox.Show("Bạn đang sử dụng hệ thống ngày tháng của máy tính");
+
+            }
                 loadgridNhacCungCap();
                 loadgridNhanVien();
                 loaddridmathang();

@@ -40,6 +40,7 @@
             this.mo = new System.Windows.Forms.OpenFileDialog();
             this.txtsql = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.button5 = new System.Windows.Forms.Button();
+            this.btncomputerdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.luoi)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTable.Properties)).BeginInit();
@@ -63,6 +64,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btncomputerdate);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.cbTable);
             this.groupBox1.Controls.Add(this.button3);
@@ -70,7 +72,7 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(11, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(594, 57);
+            this.groupBox1.Size = new System.Drawing.Size(808, 57);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao Tác";
@@ -171,6 +173,20 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // btncomputerdate
+            // 
+            this.btncomputerdate.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btncomputerdate.Image = global::WindowsFormsApplication1.Properties.Resources.check;
+            this.btncomputerdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncomputerdate.Location = new System.Drawing.Point(680, 20);
+            this.btncomputerdate.Name = "btncomputerdate";
+            this.btncomputerdate.Size = new System.Drawing.Size(122, 30);
+            this.btncomputerdate.TabIndex = 40;
+            this.btncomputerdate.Text = "COMPUTER DATE";
+            this.btncomputerdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncomputerdate.UseVisualStyleBackColor = true;
+            this.btncomputerdate.Click += new System.EventHandler(this.btncomputerdate_Click);
+            // 
             // import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,5 +220,6 @@
         private System.Windows.Forms.Button button4;
         private DevComponents.DotNetBar.Controls.TextBoxX txtsql;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btncomputerdate;
     }
 }
