@@ -28,6 +28,7 @@ namespace WindowsFormsApplication1.class_import
             cbTable.Properties.Items.Add("Update Mặt Hàng");
             cbTable.Properties.Items.Add("Update Đơn Vị Tính");
             cbTable.Properties.Items.Add("Thêm Kho Hàng");
+            cbTable.Properties.Items.Add("update Kho Hàng");
             button2.Enabled = false;
 
         }
@@ -118,10 +119,12 @@ namespace WindowsFormsApplication1.class_import
                 }
                 else if (cbTable.SelectedIndex == 6)
                 {
-                    string HSD = cot["HANSUDUNG"].ToString().Substring(0, 10);
-                    HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
+                    //string HSD = cot["HANSUDUNG"].ToString().Substring(0, 10);
+                    //HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
+                    //lenh = "UPDATE   [MATHANG] "
+                   // + " SET  [TENMH]=N'" + cot["TENMH"] + "',[MANCC]=N'" + cot["MANCC"] + "',[KLDVT]='" + cot["KLDVT"] + "',[MADVT]='" + cot["MADVT"] + "',[SOLUONGMH]=" + cot["SOLUONGMH"] + ",[HANSUDUNG]='" + HSD + "',[GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + ",[MOTA]=N'" + cot["MOTA"] + "',[TINHTRANG]=" + cot["TINHTRANG"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
                     lenh = "UPDATE   [MATHANG] "
-                    + " SET  [TENMH]=N'" + cot["TENMH"] + "',[MANCC]=N'" + cot["MANCC"] + "',[KLDVT]='" + cot["KLDVT"] + "',[MADVT]='" + cot["MADVT"] + "',[SOLUONGMH]=" + cot["SOLUONGMH"] + ",[HANSUDUNG]='" + HSD + "',[GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + ",[MOTA]=N'" + cot["MOTA"] + "',[TINHTRANG]=" + cot["TINHTRANG"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
+                    + " SET  [GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";                
                 }
                 else if (cbTable.SelectedIndex == 7)
                 {
@@ -130,7 +133,6 @@ namespace WindowsFormsApplication1.class_import
                 }
                 else if (cbTable.SelectedIndex == 8)
                 {
-                    
                     String HSD = cot["HSD"].ToString().Substring(0, 10);
                     HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
                 
@@ -138,6 +140,11 @@ namespace WindowsFormsApplication1.class_import
                     NGAYNHAP = NGAYNHAP.Substring(3, 2) + "/" + NGAYNHAP.Substring(0, 2) + "/" + NGAYNHAP.Substring(6, 4);
                     lenh = "INSERT INTO [KHOHANG]([MAMH],[LOHANG],[HSD],[GIAMUA],[TONKHO],[NHAPKHO],[XUATKHO],[TRANHAPKHO],[TRAXUATKHO],[NGAYNHAP]) "
                     + " VALUES ('" + cot["MAMH"].ToString() + "',N'" + cot["LOHANG"].ToString() + "',N'" + HSD + "'," + cot["GIAMUA"].ToString() + "," + cot["TONKHO"].ToString() + "," + cot["NHAPKHO"].ToString() + "," + cot["XUATKHO"] + "," + cot["TRANHAPKHO"].ToString() + "," + cot["TRAXUATKHO"].ToString() + ",N'" + NGAYNHAP + "')";
+                }
+                else if (cbTable.SelectedIndex == 9)
+                {
+                    lenh = "UPDATE   [KHOHANG] "
+                    + " SET  [GIAMUA]=" + cot["GIAMUA"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
                 }
             return lenh;
         }
