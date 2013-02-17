@@ -381,6 +381,11 @@ namespace WindowsFormsApplication1
             string SQL = "select 	mathang.MAMH,DONVITINH,TENMH,MATH,MANH,KLDVT,mathang.MANCC,mathang.MAKHO,TENNCC,mathang.MADVT,SOLUONGMH,convert(varchar,HANSUDUNG,103) as HANSUDUNG,GIAMUA,GIABAN,MOTA,mathang.TINHTRANG, GIAMUA*SOLUONGMH AS THANHTIEN from  MATHANG,NHACUNGCAP,DONVITINH WHERE MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MADVT=DONVITINH.MADVT AND mathang.MAKHO='" + PublicVariable.MAKHO + "' ";
             return GET_DATA(SQL);
         }
+        public DataTable GETMATHANG1()
+        {
+            string SQL = "select 	MAMH,TENMH,SOLUONGMH FROM MATHANG";
+            return GET_DATA(SQL);
+        }
         public DataTable GETTHUE()
         {
             string SQL = "select 	MATH,SOTHUE from  THUE";
