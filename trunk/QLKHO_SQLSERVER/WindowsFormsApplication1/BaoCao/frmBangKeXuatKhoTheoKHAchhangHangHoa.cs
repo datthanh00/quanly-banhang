@@ -75,6 +75,7 @@ namespace WindowsFormsApplication1
 
             lbkhachhang.Visible = false;
             cbkhachhang.Visible = false;
+            dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
         }
 
 

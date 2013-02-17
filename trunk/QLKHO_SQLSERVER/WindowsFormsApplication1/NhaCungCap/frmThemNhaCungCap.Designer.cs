@@ -360,7 +360,7 @@
             this.checkTT.Location = new System.Drawing.Point(439, 159);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 18);
+            this.checkTT.Size = new System.Drawing.Size(82, 19);
             this.checkTT.TabIndex = 12;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
@@ -374,6 +374,7 @@
             this.cmbmaKV.Properties.View = this.gridLookUpEdit1View;
             this.cmbmaKV.Size = new System.Drawing.Size(231, 20);
             this.cmbmaKV.TabIndex = 1;
+            this.cmbmaKV.Validated += new System.EventHandler(this.cmbmaKV_Validated);
             // 
             // gridLookUpEdit1View
             // 

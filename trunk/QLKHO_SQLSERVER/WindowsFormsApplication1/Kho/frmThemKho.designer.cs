@@ -32,6 +32,7 @@
             this.lbTenkho = new DevExpress.XtraEditors.LabelControl();
             this.txtmakho = new DevExpress.XtraEditors.TextEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.checkTT = new DevExpress.XtraEditors.CheckEdit();
@@ -64,7 +65,6 @@
             this.txtdiachi = new DevExpress.XtraEditors.TextEdit();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.btluu = new DevExpress.XtraEditors.SimpleButton();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtmakho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -142,6 +142,14 @@
             this.groupControl1.Text = "Thông Tin Kho";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(8, 208);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(53, 13);
+            this.labelControl3.TabIndex = 131;
+            this.labelControl3.Text = "Chức Năng";
+            // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(87, 230);
@@ -217,6 +225,7 @@
             this.txtmanv.Properties.View = this.gridLookUpEdit1View;
             this.txtmanv.Size = new System.Drawing.Size(108, 20);
             this.txtmanv.TabIndex = 1;
+            this.txtmanv.Validated += new System.EventHandler(this.txtmanv_Validated);
             this.txtmanv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmanv_KeyPress);
             // 
             // gridLookUpEdit1View
@@ -440,14 +449,6 @@
             this.btluu.TabIndex = 0;
             this.btluu.Text = "Lưu";
             this.btluu.Click += new System.EventHandler(this.btluu_Click);
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(8, 208);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(53, 13);
-            this.labelControl3.TabIndex = 131;
-            this.labelControl3.Text = "Chức Năng";
             // 
             // frmThemKho
             // 

@@ -80,9 +80,9 @@ namespace WindowsFormsApplication1
             else
                 loadEL();
 
-            dateDen.Text = "31/" + DateTime.Now.ToString("MM/yyy");
+            dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
             dateTu.Text = "01/" + DateTime.Now.ToString("MM/yyy");
-            dateDen1.Text = "31/" + DateTime.Now.ToString("MM/yyy");
+            dateDen1.Text = DateTime.Now.ToString("dd/MM/yyy");
             dateTu1.Text = "01/" + DateTime.Now.ToString("MM/yyy");
 
             loadGetAllHDN();

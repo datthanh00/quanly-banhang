@@ -378,20 +378,31 @@ namespace WindowsFormsApplication1
                     ThemMatHang sua = new ThemMatHang();
                     sua.iNgonNgu = iNgonNgu;
                     sua.kiemtra = 0;
+
                     sua.MAMH = sma;
-                    sua.MASOTHUE = smathue;
-                    sua.MANHOMHANG = smanhomhang;
                     sua.TENMATHANG = sten;
+                    sua.MANCC = smanhomhang;
                     sua.DVT = smadvt;
-                    sua.MAKHO = smakho;
-                    sua.SOLUONG = ssoluong;
+                    sua.KLDVT = SKLDVT;
+
+                    sua.MASOTHUE = smathue;
                     sua.HANSUDUNG = shansudung;
+                    sua.MOTA = smota;
+                    sua.SOLUONG = ssoluong;
+
                     sua.GIANUA = sgiamua;
                     sua.GIABAN = sgiaban;
-                    sua.HINHANH = shinhanh;
-                    sua.MOTA = smota;
-                    sua.TINHTRANG = stinhtrang;
+
                     sua.sBoPhan = sMaBP;
+
+
+
+                    sua.MAKHO = smakho;
+
+                    sua.HINHANH = shinhanh;
+
+                    sua.TINHTRANG = stinhtrang;
+
                     sua.ShowDialog();
                     loadmathang();
                 }

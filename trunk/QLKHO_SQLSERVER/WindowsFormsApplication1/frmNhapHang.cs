@@ -728,6 +728,7 @@ namespace WindowsFormsApplication1
         {
             txtMaHD.Text = connect.sTuDongDienMaHoaDonNhap(txtMaHD.Text);
             txtlohang.Text = "LO_"+txtMaHD.Text;
+            txtNgay.Text = DateTime.Now.ToString("dd/MM/yyy");
         }
 
         private void dockPanel1_Click(object sender, EventArgs e)

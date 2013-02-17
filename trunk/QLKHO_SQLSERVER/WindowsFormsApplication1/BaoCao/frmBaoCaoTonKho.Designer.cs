@@ -258,7 +258,7 @@
             // dateDen
             // 
             this.dateDen.EditValue = new System.DateTime(2010, 11, 28, 0, 0, 0, 0);
-            this.dateDen.Location = new System.Drawing.Point(326, 8);
+            this.dateDen.Location = new System.Drawing.Point(328, 8);
             this.dateDen.Name = "dateDen";
             this.dateDen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});

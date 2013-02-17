@@ -625,6 +625,7 @@ namespace WindowsFormsApplication1
         public void loadmahdn()
         {
             txtMaHD.Text = connect.sTuDongDienMatraHoaDonNhap(txtMaHD.Text);
+            txtNgay.Text = DateTime.Now.ToString("dd/MM/yyy");
         }
 
         private void dockPanel1_Click(object sender, EventArgs e)

@@ -390,5 +390,10 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void txtmanv_Validated(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

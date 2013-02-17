@@ -205,7 +205,7 @@ namespace WindowsFormsApplication1
                     if (kiemtra == 1)
                     {
                         DTO.MANCC = txtma.Text;
-                        DTO.MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+                        DTO.MAKV = MAKV;
                         DTO.TENNCC = txtten.Text;
                         DTO.DIACHI = txtdiachi.Text;
                         DTO.MASOTHUE = txtmasothue.Text;
@@ -225,7 +225,7 @@ namespace WindowsFormsApplication1
                     else
                     {
                         DTO.MANCC = txtma.Text;
-                        DTO.MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+                        DTO.MAKV = MAKV;
                         DTO.TENNCC = txtten.Text;
                         DTO.DIACHI = txtdiachi.Text;
                         DTO.MASOTHUE = txtmasothue.Text;
@@ -287,7 +287,7 @@ namespace WindowsFormsApplication1
                     if (kiemtra == 1)
                     {
                         DTO.MANCC = txtma.Text;
-                        DTO.MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+                        DTO.MAKV = MAKV;
                         DTO.TENNCC = txtten.Text;
                         DTO.DIACHI = txtdiachi.Text;
                         DTO.MASOTHUE = txtmasothue.Text;
@@ -307,7 +307,7 @@ namespace WindowsFormsApplication1
                     else
                     {
                         DTO.MANCC = txtma.Text;
-                        DTO.MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+                        DTO.MAKV = MAKV;
                         DTO.TENNCC = txtten.Text;
                         DTO.DIACHI = txtdiachi.Text;
                         DTO.MASOTHUE = txtmasothue.Text;
@@ -466,6 +466,11 @@ namespace WindowsFormsApplication1
                 simpleButton1_Click(null, null);
 
             }
+        }
+
+        private void cmbmaKV_Validated(object sender, EventArgs e)
+        {
+            MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
         }
 
         

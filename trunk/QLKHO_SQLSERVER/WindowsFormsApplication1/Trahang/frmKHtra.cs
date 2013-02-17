@@ -534,6 +534,7 @@ namespace WindowsFormsApplication1.KHtra
         public void loadmahdx()
         {
             txtMaHD.Text = connect.sTuDongDienMatraHoaDonXuat(txtMaHD.Text);
+            txtNgayXuat.Text = DateTime.Now.ToString("dd/MM/yyy");
         }
 
         private void btDong_Click(object sender, EventArgs e)
