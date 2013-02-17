@@ -101,7 +101,7 @@ namespace WindowsFormsApplication1
                     {
 
                         DTO.MAKH = txtmakh.Text;
-                        DTO.MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+                        DTO.MAKV = sMaKV;
 
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
@@ -125,7 +125,7 @@ namespace WindowsFormsApplication1
 
                         DTO.MAKH = txtmakh.Text;
                         txtmakh.Enabled = false;
-                        DTO.MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();//cmbtenkhuvuc.Properties.ValueMember.ToString();
+                        DTO.MAKV = sMaKV;
 
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
@@ -197,7 +197,7 @@ namespace WindowsFormsApplication1
                     {
 
                         DTO.MAKH = txtmakh.Text;
-                        DTO.MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+                        DTO.MAKV = sMaKV;
 
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
@@ -221,7 +221,7 @@ namespace WindowsFormsApplication1
 
                         DTO.MAKH = txtmakh.Text;
                         txtmakh.Enabled = false;
-                        DTO.MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+                        DTO.MAKV = sMaKV;
 
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
@@ -530,6 +530,7 @@ namespace WindowsFormsApplication1
             //Validate_EmptyStringRule(sender as BaseEdit);
             //cmbtenkhuvuc.Focus();
             //return;
+            sMaKV= gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
         }
 
         private void txttenkh_Validating(object sender, CancelEventArgs e)

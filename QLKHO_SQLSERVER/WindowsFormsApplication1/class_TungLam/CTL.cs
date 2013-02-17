@@ -499,6 +499,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETCTHOADONXUAT(MAHDX);
         }
+        public DataTable GETCTHOADONXUATIN(string MAHDX)
+        {
+            return DAO.GETCTHOADONXUATIN(MAHDX);
+        }
         public DataTable GETCTHOADONXUATTAM(string MAHDX)
         {
             return DAO.GETCTHOADONXUATTAM(MAHDX);

@@ -375,7 +375,7 @@ namespace WindowsFormsApplication1
              cbkhachhang.Visible = false;
              cbncc.Visible = false;
              cbsanpham.Visible = false;
-             
+             dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
         }
 
         bool isxemclick = false;

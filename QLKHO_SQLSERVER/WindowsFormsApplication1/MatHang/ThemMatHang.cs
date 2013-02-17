@@ -308,10 +308,10 @@ namespace WindowsFormsApplication1
                             DTO.MAMH = txtMaMH.Text;
                             DTO.MATH = "TH00001";//gridView2.GetFocusedRowCellValue("MATH").ToString();
 
-                            DTO.MANCC = gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
+                            DTO.MANCC = MANCC;
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
-                            DTO.MADVT = gridView1.GetFocusedRowCellValue("MADVT").ToString();
+                            DTO.MADVT = DVT;
                             DTO.KLDVT = calKLDVT.Text;
                             DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = "";
@@ -329,14 +329,13 @@ namespace WindowsFormsApplication1
                         {
 
                             MemoryStream ms = new MemoryStream();
-                            //pictureEdit1.Image.Save(ms, pictureEdit1.Image.RawFormat);
-                            //imageData = ms.GetBuffer();
-                            //ms.Close();
-                            //DTO.PICTURE = imageData;
+                            
+                           
+
                             DTO.MAMH = txtMaMH.Text;
                             DTO.MATH = "TH00001";//gridView2.GetFocusedRowCellValue("MATH").ToString();
-                            DTO.MANCC = gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
-                            DTO.MADVT = gridView1.GetFocusedRowCellValue("MADVT").ToString();
+                            DTO.MANCC = MANCC;
+                            DTO.MADVT = DVT;
                             DTO.KLDVT = calKLDVT.Text;
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
@@ -424,9 +423,9 @@ namespace WindowsFormsApplication1
                             //    ms.Close();
                             //    DTO.PICTURE = imageData;
                             DTO.MAMH = txtMaMH.Text;
-                            DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
-                            DTO.MANCC = gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
-                            DTO.MADVT = gridView1.GetFocusedRowCellValue("MADVT").ToString();
+                            DTO.MATH = MASOTHUE;
+                            DTO.MANCC = MANCC;
+                            DTO.MADVT = DVT;
                             DTO.KLDVT = calKLDVT.Text;
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
@@ -451,9 +450,9 @@ namespace WindowsFormsApplication1
                             //ms.Close();
                             //DTO.PICTURE = imageData;
                             DTO.MAMH = txtMaMH.Text;
-                            DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
-                            DTO.MANCC = gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
-                            DTO.MADVT = gridView1.GetFocusedRowCellValue("MADVT").ToString();
+                            DTO.MATH = MASOTHUE;
+                            DTO.MANCC = MANCC;
+                            DTO.MADVT = DVT;
                             DTO.KLDVT = calKLDVT.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
@@ -705,6 +704,21 @@ namespace WindowsFormsApplication1
         private void txtmota_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbNhomHang_Validated(object sender, EventArgs e)
+        {
+            MANCC=gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
+        }
+
+        private void cbDvt_Validated(object sender, EventArgs e)
+        {
+            DVT=gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
+        }
+
+        private void cbthue_Validated(object sender, EventArgs e)
+        {
+            MASOTHUE = gridView2.GetFocusedRowCellValue("MATH").ToString();
         }
         
       

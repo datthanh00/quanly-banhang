@@ -69,6 +69,7 @@ namespace WindowsFormsApplication1
             }
             load_cbhanghoa();
            // loadGird();
+            dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
         }
         private void load_cbhanghoa()
         {
