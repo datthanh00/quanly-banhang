@@ -32,6 +32,7 @@
             this.tientrinh = new System.Windows.Forms.ProgressBar();
             this.luoi = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btncomputerdate = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.cbTable = new DevExpress.XtraEditors.ComboBoxEdit();
             this.button3 = new System.Windows.Forms.Button();
@@ -40,10 +41,21 @@
             this.mo = new System.Windows.Forms.OpenFileDialog();
             this.txtsql = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.button5 = new System.Windows.Forms.Button();
-            this.btncomputerdate = new System.Windows.Forms.Button();
+            this.cboTenNCC = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.txtsoluong = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.button6 = new System.Windows.Forms.Button();
+            this.txtlohang = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.lbmathue = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.luoi)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTable.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTenNCC.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // tientrinh
@@ -76,6 +88,20 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao Tác";
+            // 
+            // btncomputerdate
+            // 
+            this.btncomputerdate.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btncomputerdate.Image = global::WindowsFormsApplication1.Properties.Resources.check;
+            this.btncomputerdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btncomputerdate.Location = new System.Drawing.Point(680, 20);
+            this.btncomputerdate.Name = "btncomputerdate";
+            this.btncomputerdate.Size = new System.Drawing.Size(122, 30);
+            this.btncomputerdate.TabIndex = 40;
+            this.btncomputerdate.Text = "COMPUTER DATE";
+            this.btncomputerdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btncomputerdate.UseVisualStyleBackColor = true;
+            this.btncomputerdate.Click += new System.EventHandler(this.btncomputerdate_Click);
             // 
             // button4
             // 
@@ -153,7 +179,7 @@
             // 
             this.txtsql.Border.Class = "TextBoxBorder";
             this.txtsql.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtsql.Location = new System.Drawing.Point(16, 436);
+            this.txtsql.Location = new System.Drawing.Point(16, 427);
             this.txtsql.Multiline = true;
             this.txtsql.Name = "txtsql";
             this.txtsql.Size = new System.Drawing.Size(533, 52);
@@ -164,7 +190,7 @@
             this.button5.ForeColor = System.Drawing.Color.DarkBlue;
             this.button5.Image = global::WindowsFormsApplication1.Properties.Resources.check;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(735, 436);
+            this.button5.Location = new System.Drawing.Point(726, 425);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(108, 43);
             this.button5.TabIndex = 36;
@@ -173,25 +199,120 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // btncomputerdate
+            // cboTenNCC
             // 
-            this.btncomputerdate.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btncomputerdate.Image = global::WindowsFormsApplication1.Properties.Resources.check;
-            this.btncomputerdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncomputerdate.Location = new System.Drawing.Point(680, 20);
-            this.btncomputerdate.Name = "btncomputerdate";
-            this.btncomputerdate.Size = new System.Drawing.Size(122, 30);
-            this.btncomputerdate.TabIndex = 40;
-            this.btncomputerdate.Text = "COMPUTER DATE";
-            this.btncomputerdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btncomputerdate.UseVisualStyleBackColor = true;
-            this.btncomputerdate.Click += new System.EventHandler(this.btncomputerdate_Click);
+            this.cboTenNCC.Location = new System.Drawing.Point(16, 492);
+            this.cboTenNCC.Name = "cboTenNCC";
+            this.cboTenNCC.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboTenNCC.Properties.NullText = "";
+            this.cboTenNCC.Properties.PopupSizeable = false;
+            this.cboTenNCC.Properties.View = this.gridView3;
+            this.cboTenNCC.Size = new System.Drawing.Size(262, 20);
+            this.cboTenNCC.TabIndex = 37;
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn1});
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            // 
+            // txtsoluong
+            // 
+            // 
+            // 
+            // 
+            this.txtsoluong.Border.Class = "TextBoxBorder";
+            this.txtsoluong.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtsoluong.Location = new System.Drawing.Point(331, 488);
+            this.txtsoluong.Name = "txtsoluong";
+            this.txtsoluong.Size = new System.Drawing.Size(90, 21);
+            this.txtsoluong.TabIndex = 38;
+            // 
+            // button6
+            // 
+            this.button6.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button6.Image = global::WindowsFormsApplication1.Properties.Resources.edit2;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(577, 485);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(108, 33);
+            this.button6.TabIndex = 39;
+            this.button6.Text = "UPDATE";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // txtlohang
+            // 
+            // 
+            // 
+            // 
+            this.txtlohang.Border.Class = "TextBoxBorder";
+            this.txtlohang.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtlohang.Location = new System.Drawing.Point(476, 488);
+            this.txtlohang.Name = "txtlohang";
+            this.txtlohang.Size = new System.Drawing.Size(90, 21);
+            this.txtlohang.TabIndex = 40;
+            // 
+            // lbmathue
+            // 
+            this.lbmathue.Enabled = false;
+            this.lbmathue.Location = new System.Drawing.Point(286, 495);
+            this.lbmathue.Name = "lbmathue";
+            this.lbmathue.Size = new System.Drawing.Size(38, 13);
+            this.lbmathue.TabIndex = 137;
+            this.lbmathue.Text = "SL thêm";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Enabled = false;
+            this.labelControl1.Location = new System.Drawing.Point(426, 495);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(39, 13);
+            this.labelControl1.TabIndex = 138;
+            this.labelControl1.Text = "Lo Hang";
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Mã Mặt Hàng";
+            this.gridColumn3.FieldName = "MAMH";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Tên Mặt Hàng";
+            this.gridColumn4.FieldName = "TENMH";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Số Lượng";
+            this.gridColumn1.FieldName = "SOLUONGMH";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
             // 
             // import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 506);
+            this.ClientSize = new System.Drawing.Size(895, 568);
+            this.Controls.Add(this.labelControl1);
+            this.Controls.Add(this.lbmathue);
+            this.Controls.Add(this.txtlohang);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.txtsoluong);
+            this.Controls.Add(this.cboTenNCC);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.txtsql);
             this.Controls.Add(this.tientrinh);
@@ -203,7 +324,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.luoi)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbTable.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTenNCC.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -221,5 +345,15 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtsql;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btncomputerdate;
+        private DevExpress.XtraEditors.GridLookUpEdit cboTenNCC;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtsoluong;
+        private System.Windows.Forms.Button button6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtlohang;
+        private DevExpress.XtraEditors.LabelControl lbmathue;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
     }
 }

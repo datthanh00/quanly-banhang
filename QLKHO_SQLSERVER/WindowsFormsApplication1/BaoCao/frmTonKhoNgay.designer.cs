@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTonKhoNgay));
             DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.bandedGridColumn13 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn11 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -66,7 +68,6 @@
             this.bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colDonViTInh = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn8 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn11 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridDauKi = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSLDau = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn5 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -117,7 +118,18 @@
             this.bandedGridColumn13.FieldName = "CHENHLECH";
             this.bandedGridColumn13.Name = "bandedGridColumn13";
             this.bandedGridColumn13.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn13.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn13.Visible = true;
+            // 
+            // bandedGridColumn11
+            // 
+            this.bandedGridColumn11.Caption = "Tồn Thực Tế";
+            this.bandedGridColumn11.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn11.FieldName = "TONTT";
+            this.bandedGridColumn11.Name = "bandedGridColumn11";
+            this.bandedGridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.bandedGridColumn11.Visible = true;
             // 
             // dockManager1
             // 
@@ -342,10 +354,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(3, 3);
+            this.gridControl2.Location = new System.Drawing.Point(2, 2);
             this.gridControl2.MainView = this.advBandedGridView3;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1286, 391);
+            this.gridControl2.Size = new System.Drawing.Size(1288, 393);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -392,8 +404,14 @@
             styleFormatCondition1.Column = this.bandedGridColumn13;
             styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
             styleFormatCondition1.Expression = "[CHENHLECH]  !=  0";
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            styleFormatCondition2.Appearance.Options.UseBackColor = true;
+            styleFormatCondition2.Column = this.bandedGridColumn11;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition2.Expression = "1 == 1";
             this.advBandedGridView3.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition1});
+            styleFormatCondition1,
+            styleFormatCondition2});
             this.advBandedGridView3.GridControl = this.gridControl2;
             this.advBandedGridView3.Name = "advBandedGridView3";
             this.advBandedGridView3.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
@@ -491,15 +509,6 @@
             this.bandedGridColumn8.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn8.Visible = true;
             // 
-            // bandedGridColumn11
-            // 
-            this.bandedGridColumn11.Caption = "Tồn Thực Tế";
-            this.bandedGridColumn11.DisplayFormat.FormatString = "{0:0.##}";
-            this.bandedGridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.bandedGridColumn11.FieldName = "TONTT";
-            this.bandedGridColumn11.Name = "bandedGridColumn11";
-            this.bandedGridColumn11.Visible = true;
-            // 
             // gridDauKi
             // 
             this.gridDauKi.AppearanceHeader.Options.UseTextOptions = true;
@@ -519,6 +528,7 @@
             this.colSLDau.FieldName = "TONDAU";
             this.colSLDau.Name = "colSLDau";
             this.colSLDau.OptionsColumn.AllowEdit = false;
+            this.colSLDau.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSLDau.Visible = true;
             this.colSLDau.Width = 117;
             // 
@@ -530,6 +540,7 @@
             this.bandedGridColumn5.FieldName = "THANHTIENTONDAU";
             this.bandedGridColumn5.Name = "bandedGridColumn5";
             this.bandedGridColumn5.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn5.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn5.Visible = true;
             // 
             // gridNhapKho
@@ -553,6 +564,7 @@
             this.colSLNhap.FieldName = "NHAP";
             this.colSLNhap.Name = "colSLNhap";
             this.colSLNhap.OptionsColumn.AllowEdit = false;
+            this.colSLNhap.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSLNhap.Visible = true;
             this.colSLNhap.Width = 113;
             // 
@@ -564,6 +576,7 @@
             this.bandedGridColumn4.FieldName = "THANHTIENNHAP";
             this.bandedGridColumn4.Name = "bandedGridColumn4";
             this.bandedGridColumn4.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn4.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn4.Visible = true;
             // 
             // bandedGridColumn1
@@ -574,6 +587,7 @@
             this.bandedGridColumn1.FieldName = "TRANHAP";
             this.bandedGridColumn1.Name = "bandedGridColumn1";
             this.bandedGridColumn1.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn1.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn1.Visible = true;
             // 
             // bandedGridColumn9
@@ -584,6 +598,7 @@
             this.bandedGridColumn9.FieldName = "THANHTIENTRANHAP";
             this.bandedGridColumn9.Name = "bandedGridColumn9";
             this.bandedGridColumn9.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn9.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn9.Visible = true;
             // 
             // gridXuatKho
@@ -607,6 +622,7 @@
             this.colSLXuat.FieldName = "XUAT";
             this.colSLXuat.Name = "colSLXuat";
             this.colSLXuat.OptionsColumn.AllowEdit = false;
+            this.colSLXuat.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSLXuat.Visible = true;
             this.colSLXuat.Width = 113;
             // 
@@ -618,6 +634,7 @@
             this.bandedGridColumn6.FieldName = "THANHTIENXUAT";
             this.bandedGridColumn6.Name = "bandedGridColumn6";
             this.bandedGridColumn6.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn6.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn6.Visible = true;
             // 
             // bandedGridColumn7
@@ -628,6 +645,7 @@
             this.bandedGridColumn7.FieldName = "TRAXUAT";
             this.bandedGridColumn7.Name = "bandedGridColumn7";
             this.bandedGridColumn7.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn7.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn7.Visible = true;
             // 
             // bandedGridColumn10
@@ -638,6 +656,7 @@
             this.bandedGridColumn10.FieldName = "THANHTIENTRAXUAT";
             this.bandedGridColumn10.Name = "bandedGridColumn10";
             this.bandedGridColumn10.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn10.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn10.Visible = true;
             // 
             // gridCuoiKi
@@ -659,6 +678,7 @@
             this.colSLTOn.FieldName = "TONCUOI";
             this.colSLTOn.Name = "colSLTOn";
             this.colSLTOn.OptionsColumn.AllowEdit = false;
+            this.colSLTOn.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSLTOn.Visible = true;
             this.colSLTOn.Width = 113;
             // 
@@ -670,8 +690,6 @@
             this.colThanhTienTOn.FieldName = "THANHTIENTONCUOI";
             this.colThanhTienTOn.Name = "colThanhTienTOn";
             this.colThanhTienTOn.OptionsColumn.AllowEdit = false;
-            this.colThanhTienTOn.SummaryItem.DisplayFormat = "Sum: {0:0,0 vnđ}";
-            this.colThanhTienTOn.SummaryItem.FieldName = "TONGTIENTON";
             this.colThanhTienTOn.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colThanhTienTOn.Visible = true;
             this.colThanhTienTOn.Width = 103;

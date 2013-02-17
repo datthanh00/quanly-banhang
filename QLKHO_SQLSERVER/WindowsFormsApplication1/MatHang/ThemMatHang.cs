@@ -713,7 +713,7 @@ namespace WindowsFormsApplication1
 
         private void cbDvt_Validated(object sender, EventArgs e)
         {
-            DVT=gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
+            DVT=gridView1.GetFocusedRowCellValue("MADVT").ToString();
         }
 
         private void cbthue_Validated(object sender, EventArgs e)

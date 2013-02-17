@@ -30,11 +30,23 @@ namespace WindowsFormsApplication1.class_import
             cbTable.Properties.Items.Add("Thêm Kho Hàng");
             cbTable.Properties.Items.Add("update Kho Hàng");
             button2.Enabled = false;
+            loadgridMatHang();
 
         }
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
         importexcell excell;
+        public void loadgridMatHang()
+        {
+            CTL ctlNCC = new CTL();
+            cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cboTenNCC.Properties.DisplayMember = "TENMH";
+            cboTenNCC.Properties.ValueMember = "MAMH";
+            cboTenNCC.Properties.View.BestFitColumns();
+            cboTenNCC.Properties.PopupFormWidth = 400;
+            cboTenNCC.Properties.DataSource = ctlNCC.GETMATHANG1();
+           
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             mo.Filter = "(*.xls)|*.xls";
@@ -186,6 +198,27 @@ namespace WindowsFormsApplication1.class_import
         private void btncomputerdate_Click(object sender, EventArgs e)
         {
             PublicVariable.isUSE_COMPUTERDATE = true;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            CTL ctlNCC = new CTL();
+            string mamhsql = gridView3.GetFocusedRowCellValue("MAMH").ToString(); ;
+            string soluongsql = txtsoluong.Text;
+            string lohangsql = "1";
+            if (txtlohang.Text != "")
+            {
+                lohangsql = txtlohang.Text;
+            }
+
+            String SQL = "update mathang set soluongmh=soluongmh+" + soluongsql + " where mamh='" + mamhsql + "' ";
+            ctlNCC.executeNonQuery(SQL);
+
+            SQL = "update KHOHANG set tonkho=tonkho + " + soluongsql + ", nhapkho=nhapkho+" + soluongsql + " where mamh='" + mamhsql + "' and LOHANG='" + lohangsql + "' ";
+            ctlNCC.executeNonQuery(SQL);
+
+            loadgridMatHang();
+            MessageBox.Show("Đã Hoàn Thành Câu Lệnh");
         }
 
        

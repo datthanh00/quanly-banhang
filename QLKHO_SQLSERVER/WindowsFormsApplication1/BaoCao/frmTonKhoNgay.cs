@@ -399,6 +399,7 @@ namespace WindowsFormsApplication1
                         ctlNCC.executeNonQuery(SQL);
                     }
                 }
+                MessageBox.Show("Đã lưu tồn kho thực tế ngày hôm nay");
             }else{
                 MessageBox.Show("Không phải ngày hôm nay nên không thể chỉnh sửa");
             }
@@ -413,7 +414,7 @@ namespace WindowsFormsApplication1
                     if (e.Column.FieldName.ToString() == "TONTT")
                     {
 
-                        dtr["CHENHLECH"] = (Convert.ToInt32(dtr["TONCUOI"].ToString()) - Convert.ToInt32(dtr["TONTT"].ToString())).ToString();
+                        dtr["CHENHLECH"] = (Convert.ToDouble(dtr["TONCUOI"].ToString()) - Convert.ToDouble(dtr["TONTT"].ToString())).ToString();
                     }
                    
                 }

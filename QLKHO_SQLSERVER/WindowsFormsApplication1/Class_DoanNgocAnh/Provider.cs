@@ -96,7 +96,7 @@ namespace WindowsFormsApplication1
                     Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
                    //strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
                     strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_qlkho;User ID=nguyendat_thanh;Password=Xziojs1U98;";
-                   //strConnect = "server=IEC-96D31E9E831\\SQLEXPRESS;database=nguyendat_qlkho;integrated security = true;uid=sa,pwd=dat123";
+                  // strConnect = "server=IEC-96D31E9E831\\SQLEXPRESS;database=nguyendat_qlkho;integrated security = true;uid=sa,pwd=dat123";
                 }
                 SqlConnection cn = new SqlConnection(strConnect);
            try
