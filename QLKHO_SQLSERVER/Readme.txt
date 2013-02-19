@@ -1,3 +1,19 @@
+
+{0:0.##}
+
+{0:0,0}
+
+if (!PublicVariable.isKHOILUONG)
+            {
+                gridView7.Columns["KHOILUONG"].Visible = false;
+            }
+
+BAO CAO THEO CONG TY
+
+THEO TRONG LUONG CHO BAO CAO
+
+LOI EROR KHONG CO QUYEN
+
  loi xuat hang khi nhap so tien tra
  
  
