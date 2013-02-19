@@ -50,6 +50,7 @@
             this.colmamhathang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltennhomhang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenmathang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colthue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
@@ -90,7 +91,7 @@
             this.btxem = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.mATHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -131,6 +132,8 @@
             this.colsoluong.FieldName = "SOLUONGMH";
             this.colsoluong.Name = "colsoluong";
             this.colsoluong.OptionsColumn.AllowEdit = false;
+            this.colsoluong.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.colsoluong.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colsoluong.Visible = true;
             this.colsoluong.VisibleIndex = 6;
             this.colsoluong.Width = 44;
@@ -280,6 +283,7 @@
             this.gridColumn7,
             this.coltendonvi,
             this.colsoluong,
+            this.gridColumn11,
             this.colthanhtiennhap,
             this.colgiaban,
             this.colthanhtienxuat,
@@ -341,6 +345,14 @@
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 0;
             // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Số Ngày Sử Dụng";
+            this.gridColumn10.FieldName = "NGAYSUDUNG";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 3;
+            // 
             // coltenmathang
             // 
             this.coltenmathang.Caption = "Tên Mặt Hàng";
@@ -393,10 +405,10 @@
             this.colthanhtiennhap.FieldName = "thanhtien";
             this.colthanhtiennhap.Name = "colthanhtiennhap";
             this.colthanhtiennhap.OptionsColumn.AllowEdit = false;
-            this.colthanhtiennhap.SummaryItem.DisplayFormat = "Tổng:{0:0,0 vnđ}";
+            this.colthanhtiennhap.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colthanhtiennhap.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colthanhtiennhap.Visible = true;
-            this.colthanhtiennhap.VisibleIndex = 8;
+            this.colthanhtiennhap.VisibleIndex = 9;
             this.colthanhtiennhap.Width = 67;
             // 
             // colgiaban
@@ -408,7 +420,7 @@
             this.colgiaban.Name = "colgiaban";
             this.colgiaban.OptionsColumn.AllowEdit = false;
             this.colgiaban.Visible = true;
-            this.colgiaban.VisibleIndex = 9;
+            this.colgiaban.VisibleIndex = 10;
             this.colgiaban.Width = 50;
             // 
             // colthanhtienxuat
@@ -419,11 +431,11 @@
             this.colthanhtienxuat.FieldName = "thanhtienban";
             this.colthanhtienxuat.Name = "colthanhtienxuat";
             this.colthanhtienxuat.OptionsColumn.AllowEdit = false;
-            this.colthanhtienxuat.SummaryItem.DisplayFormat = "Tổng :{0:0,0 vnđ}";
+            this.colthanhtienxuat.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colthanhtienxuat.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colthanhtienxuat.ToolTip = "Tổng Tiền Bán";
             this.colthanhtienxuat.Visible = true;
-            this.colthanhtienxuat.VisibleIndex = 10;
+            this.colthanhtienxuat.VisibleIndex = 11;
             this.colthanhtienxuat.Width = 97;
             // 
             // colmota
@@ -479,7 +491,7 @@
             this.colgiamua.Name = "colgiamua";
             this.colgiamua.OptionsColumn.AllowEdit = false;
             this.colgiamua.Visible = true;
-            this.colgiamua.VisibleIndex = 7;
+            this.colgiamua.VisibleIndex = 8;
             this.colgiamua.Width = 51;
             // 
             // repositoryItemCalcEdit3
@@ -711,13 +723,17 @@
             this.labelControl2.Text = "Loại Hiển Thị:";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 
-            // gridColumn10
+            // gridColumn11
             // 
-            this.gridColumn10.Caption = "Số Ngày Sử Dụng";
-            this.gridColumn10.FieldName = "NGAYSUDUNG";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 3;
+            this.gridColumn11.Caption = "Khối Lượng";
+            this.gridColumn11.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn11.FieldName = "KHOILUONG";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 7;
             // 
             // frmTonphanlo
             // 
@@ -831,5 +847,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
     }
 }

@@ -332,6 +332,10 @@ namespace WindowsFormsApplication1
                 //cn.ApplyToRow = true;
                 //gridView1.FormatConditions.Add(cn);
                 gridView1.BestFitColumns();
+                if (!PublicVariable.isKHOILUONG)
+                {
+                    gridView1.Columns["KHOILUONG"].Visible = false;
+                }
 
             }
             //catch (Exception)

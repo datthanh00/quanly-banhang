@@ -183,7 +183,7 @@ namespace WindowsFormsApplication1
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT convert(varchar,T3.NGAYNHAP,103)AS NGAYNHAP ,T3.MAHDN ,T3.TENNCC , T3.MAMH , T4.TENMH ,T3.SOLUONGNHAP ,T3.GIANHAP, soluongnhap * gianhap AS THANHTIEN,GHICHU  FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T2.tenncc ,T1.SOLUONGNHAP,T1.GIANHAP,ghichu FROM (SELECT * FROM TRACHITIETHDN )AS T1 INNER JOIN (select t9.ngaynhap,t9.mahdn,t9.mancc,t8.tenncc,ghichu from TRAHOADONNHAP  as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc where  t9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH order by T3.MAHDN desc";
+            string SQL = "SELECT convert(varchar,T3.NGAYNHAP,103)AS NGAYNHAP ,T3.MAHDN ,T3.TENNCC , T3.MAMH , T4.TENMH ,T3.SOLUONGNHAP,T3.SOLUONGNHAP*KLDVT AS KHOILUONG ,T3.GIANHAP, soluongnhap * gianhap AS THANHTIEN,GHICHU  FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T2.tenncc ,T1.SOLUONGNHAP,T1.GIANHAP,ghichu FROM (SELECT * FROM TRACHITIETHDN )AS T1 INNER JOIN (select t9.ngaynhap,t9.mahdn,t9.mancc,t8.tenncc,ghichu from TRAHOADONNHAP  as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc where  t9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH order by T3.MAHDN desc";
             
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
@@ -195,7 +195,10 @@ namespace WindowsFormsApplication1
             gridView5.RefreshData();
             gridControl3.RefreshDataSource();
             gridView5.BestFitColumns();
-
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView5.Columns["KHOILUONG"].Visible = false;
+            }
         }
 
         public void loadgridTONGSANPHAM()
@@ -209,7 +212,7 @@ namespace WindowsFormsApplication1
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNHOMHANG, TENKHO, DONVITINH, sum(SOLUONGNHAP) as SOLUONGNHAP, GIANHAP, SUM(SOLUONGNHAP*GIANHAP) AS TONGTIEN FROM MATHANG,NHOMHANG,KHO,DONVITINH,(select MAMH,SOLUONGNHAP, GIANHAP FROM TRACHITIETHDN, TRAHOADONNHAP WHERE TRACHITIETHDN.MAHDN=TRAHOADONNHAP.MAHDN AND NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDN WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND KHO.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNHOMHANG, TENKHO, DONVITINH,GIANHAP";
+            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNHOMHANG, TENKHO, DONVITINH, sum(SOLUONGNHAP*KLDVT) as KHOILUONG, sum(SOLUONGNHAP) as SOLUONGNHAP, GIANHAP, SUM(SOLUONGNHAP*GIANHAP) AS TONGTIEN FROM MATHANG,NHOMHANG,KHO,DONVITINH,(select MAMH,SOLUONGNHAP, GIANHAP FROM TRACHITIETHDN, TRAHOADONNHAP WHERE TRACHITIETHDN.MAHDN=TRAHOADONNHAP.MAHDN AND NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDN WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND KHO.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNHOMHANG, TENKHO, DONVITINH,GIANHAP";
            
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
@@ -220,7 +223,10 @@ namespace WindowsFormsApplication1
             //gridView4.ExpandAllGroups();
             gridView7.RefreshData();
             gridControl3.RefreshDataSource();
-
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView7.Columns["KHOILUONG"].Visible = false;
+            }
         }
         
         public void loadGrid_sanpham(string MAHDN)

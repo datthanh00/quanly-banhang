@@ -669,6 +669,15 @@ namespace WindowsFormsApplication1
                 PublicVariable.isTONTHUCTE = false;
                 barButtonItem1.Enabled = false;
             }
+
+            if (chucnang.IndexOf("KHOILUONG") >= 0)
+            {
+                PublicVariable.isKHOILUONG = true;
+            }
+            else
+            {
+                PublicVariable.isKHOILUONG = false;
+            }
         }
         void OnPaintStyleClick(object sender, ItemClickEventArgs e)
         {
