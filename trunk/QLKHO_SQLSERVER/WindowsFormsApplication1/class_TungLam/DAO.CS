@@ -686,7 +686,7 @@ namespace WindowsFormsApplication1
             }
         
 
-            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + dto.SOLUONGNHAP.ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
+            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH +" + (-dto.SOLUONGNHAP).ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 //ymd
             SQL = "SELECT convert(varchar,NGAYNHAP,101) FROM traHOADONNHAP where MAHDN = '" + dto.MAHDN + "'";
@@ -752,8 +752,6 @@ namespace WindowsFormsApplication1
 
             string SQL = "UPDATE KHOHANG SET  TONKHO=TONKHO+" + TONKHO + ", NHAPKHO=NHAPKHO+" + NHAP + ",XUATKHO=XUATKHO+" + XUAT + ",TRANHAPKHO=TRANHAPKHO+" + TRANHAP + ",TRAXUATKHO=TRAXUATKHO+" + TRAXUAT + "  WHERE MAMH='" + MAMH + "' AND LOHANG='" + LOHANG + "'";
             executeNonQuery(SQL);
-
-            
         }
 
         public void INSERT_TONKHO(string ID, string MAHD, string MAMH,String MANV, string MADOITUONG, string NGAY, Double TONDAU, string NHAP, string XUAT, string GIA)
@@ -809,7 +807,6 @@ namespace WindowsFormsApplication1
                GIABAN = GIA;
            }
 
-
            SQL = "INSERT TONKHO(STT,ID,MAHD,MAMH,MAKHO,MANV,MADOITUONG,NGAY,TONDAU,NHAP,TRANHAP,XUAT,TRAXUAT,TONCUOI,GIANHAP,GIAXUAT)"
                   + " VALUES (" + STT + "," + ID + ",'" + MAHD + "','" + MAMH + "','" + PublicVariable.MAKHO + "','" + MANV + "','" + MADOITUONG + "','" + NGAY + "', " + TONDAU.ToString() + "," + NHAP + "," + TRANHAP + "," + XUAT + "," + TRAXUAT + "," + toncuoi.ToString() + "," + GIAMUA + "," + GIABAN + ")";
 
@@ -827,7 +824,7 @@ namespace WindowsFormsApplication1
             {
                 STT = dt.Rows[0][0].ToString();
 
-                SQL = "select * from tonkho where STT=(select max(STT) from tonkho where MAMH='" + MAMH + "' AND (STT<" + STT + " OR  STT=" + STT + ")) ORDER BY ID DESC ";
+                SQL = "select * from tonkho where MAMH='" + MAMH + "' and STT=(select max(STT) from tonkho where MAMH='" + MAMH + "' AND (STT<" + STT + " OR  STT=" + STT + ")) ORDER BY ID DESC ";
                 dt = getdata(SQL);
                 string TONDAU = "0";
                 if (dt.Rows.Count > 0)
@@ -897,12 +894,12 @@ namespace WindowsFormsApplication1
                 {
                     XUAT = TRAXUAT;
                 }
-
+                string sxuat = (-Convert.ToDouble(XUAT)).ToString();
                 //update cac dong sau
-                SQL = "UPDATE TONKHO SET  tondau=tondau+" + NHAP + "-" + XUAT + ",  toncuoi=toncuoi+" + NHAP + "-" + XUAT + "  WHERE STT>" + STT + " and MAMH='" + MAMH + "'";
+                SQL = "UPDATE TONKHO SET  tondau=tondau+" + NHAP + "+" + sxuat + ",  toncuoi=toncuoi+" + NHAP + "+" + sxuat + "  WHERE STT>" + STT + " and MAMH='" + MAMH + "'";
                 executeNonQuery(SQL);
 
-                SQL = "UPDATE TONKHO SET  tondau=tondau+" + NHAP + "-" + XUAT + ",  toncuoi=toncuoi+" + NHAP + "-" + XUAT + "  WHERE STT=" + STT + " and MAMH='" + MAMH + "' and ID>" + ID;
+                SQL = "UPDATE TONKHO SET  tondau=tondau+" + NHAP + "+" + sxuat + ",  toncuoi=toncuoi+" + NHAP + "+" + sxuat + "  WHERE STT=" + STT + " and MAMH='" + MAMH + "' and ID>" + ID;
                 executeNonQuery(SQL);
             }
             
@@ -963,14 +960,16 @@ namespace WindowsFormsApplication1
                 GIABAN = dt.Rows[0]["GIABAN"].ToString();
             }
 
-            SQL = "UPDATE TONKHO SET  toncuoi=toncuoi+" + SUANHAP + "-" + SUAXUAT + " ,NHAP=" + NHAP + ",TRANHAP=" + TRANHAP + ",XUAT=" + XUAT + " ,TRAXUAT=" + TRAXUAT + " ,GIANHAP=" + GIAMUA + ", GIAXUAT="+GIABAN+"  WHERE STT=" + STT + " and id= " + ID;
+            string ssuaxuat = (-Convert.ToDouble(SUAXUAT)).ToString();
+
+            SQL = "UPDATE TONKHO SET  toncuoi=toncuoi+" + SUANHAP + "+" + ssuaxuat + " ,NHAP=" + NHAP + ",TRANHAP=" + TRANHAP + ",XUAT=" + XUAT + " ,TRAXUAT=" + TRAXUAT + " ,GIANHAP=" + GIAMUA + ", GIAXUAT=" + GIABAN + "  WHERE STT=" + STT + " and id= " + ID;
             executeNonQuery(SQL);
 
-    
-            SQL = "UPDATE TONKHO SET  tondau=tondau+" + SUANHAP + "-" + SUAXUAT + ",  toncuoi=toncuoi+" + SUANHAP + "-" + SUAXUAT + "  WHERE STT>" + STT + " and MAMH='" + MAMH + "'";
+
+            SQL = "UPDATE TONKHO SET  tondau=tondau+" + SUANHAP + "+" + ssuaxuat + ",  toncuoi=toncuoi+" + SUANHAP + "+" + ssuaxuat + "  WHERE STT>" + STT + " and MAMH='" + MAMH + "'";
             executeNonQuery(SQL);
 
-            SQL = "UPDATE TONKHO SET  tondau=tondau+" + SUANHAP + "-" + SUAXUAT + ",  toncuoi=toncuoi+" + SUANHAP + "-" + SUAXUAT + "  WHERE STT=" + STT + " and MAMH='" + MAMH + "' and ID>" + ID;
+            SQL = "UPDATE TONKHO SET  tondau=tondau+" + SUANHAP + "+" + ssuaxuat + ",  toncuoi=toncuoi+" + SUANHAP + "+" + ssuaxuat + "  WHERE STT=" + STT + " and MAMH='" + MAMH + "' and ID>" + ID;
             executeNonQuery(SQL);
         }
 
@@ -983,18 +982,18 @@ namespace WindowsFormsApplication1
                 SQL = "delete from tonkho where STT=" + dt.Rows[0]["STT"].ToString()+" and ID="+ID;
                 executeNonQuery(SQL);
 
-                string CHENHLECH = (Convert.ToDouble(dt.Rows[0]["NHAP"].ToString()) + Convert.ToDouble(dt.Rows[0]["TRANHAP"].ToString()) - Convert.ToDouble(dt.Rows[0]["TRAXUAT"].ToString()) - Convert.ToDouble(dt.Rows[0]["XUAT"].ToString())).ToString();
+                string CHENHLECH = (-(Convert.ToDouble(dt.Rows[0]["NHAP"].ToString()) - Convert.ToDouble(dt.Rows[0]["TRANHAP"].ToString()) + Convert.ToDouble(dt.Rows[0]["TRAXUAT"].ToString()) - Convert.ToDouble(dt.Rows[0]["XUAT"].ToString()))).ToString();
 
                 SQL = "INSERT INTO LOG (MAHD,MAMH,SOLUONG,LOG,LYDO) VALUES ( '" + MAHD + "', '" + dt.Rows[0]["MAMH"].ToString() + "',"+CHENHLECH+",'DELETE','')";
                 executeNonQuery(SQL);
 
-                SQL = "UPDATE TONKHO SET  TONDAU=TONDAU- " + CHENHLECH + ", toncuoi=toncuoi-" + CHENHLECH + "  WHERE STT>" + dt.Rows[0]["STT"].ToString() + " and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "' ";
+                SQL = "UPDATE TONKHO SET  TONDAU=TONDAU+ " + CHENHLECH + ", toncuoi=toncuoi+" + CHENHLECH + "  WHERE STT>" + dt.Rows[0]["STT"].ToString() + " and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "' ";
                 executeNonQuery(SQL);
 
-                SQL = "UPDATE TONKHO SET  TONDAU=TONDAU- " + CHENHLECH + ", toncuoi=toncuoi-" + CHENHLECH + "  WHERE STT=" + dt.Rows[0]["STT"].ToString() + " and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "' and ID>" + ID;
+                SQL = "UPDATE TONKHO SET  TONDAU=TONDAU+ " + CHENHLECH + ", toncuoi=toncuoi+" + CHENHLECH + "  WHERE STT=" + dt.Rows[0]["STT"].ToString() + " and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "' and ID>" + ID;
                 executeNonQuery(SQL);
 
-                SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + CHENHLECH + "  WHERE MAMH='" + dt.Rows[0]["MAMH"].ToString() + "'";
+                SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH +" + CHENHLECH + "  WHERE MAMH='" + dt.Rows[0]["MAMH"].ToString() + "'";
                 executeNonQuery(SQL);
 
             }
@@ -1028,7 +1027,7 @@ namespace WindowsFormsApplication1
 
           
 
-            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH-" + (dto.SOLUONGNHAP - sluongnhapcu).ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
+            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH+" + (-(dto.SOLUONGNHAP - sluongnhapcu)).ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
             Double chinhsuanhap = dto.SOLUONGNHAP - sluongnhapcu;
@@ -1231,7 +1230,7 @@ namespace WindowsFormsApplication1
             }
             
 
-            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH-" + dto.SOLUONGXUAT + " WHERE MAMH='" + dto.MAMH + "'";
+            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH+" + (-Convert.ToDouble(dto.SOLUONGXUAT)).ToString() + " WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 //ymd
             SQL = "SELECT convert(varchar,NGAYXUAT,101) FROM HOADONXUAT where MAHDX = '" + dto.MAHDX + "'";
@@ -1338,7 +1337,7 @@ namespace WindowsFormsApplication1
 
     
 
-            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + (dto.SOLUONGXUAT - sluongxuatcu).ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
+            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH +" + (-(dto.SOLUONGXUAT - sluongxuatcu)).ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
             Double chinhsuaxuat = dto.SOLUONGXUAT - sluongxuatcu;
@@ -1392,7 +1391,7 @@ namespace WindowsFormsApplication1
 
 
 
-            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + (dto.SOLUONGXUAT - sluongxuatcu).ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
+            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH " + (-(dto.SOLUONGXUAT - sluongxuatcu)).ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
             Double chinhsuaxuat = dto.SOLUONGXUAT - sluongxuatcu;

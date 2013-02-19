@@ -158,7 +158,11 @@
             this.txtSoTienNo.Location = new System.Drawing.Point(132, 113);
             this.txtSoTienNo.MenuManager = this.barManager1;
             this.txtSoTienNo.Name = "txtSoTienNo";
-            this.txtSoTienNo.Properties.Mask.EditMask = "n0";
+            this.txtSoTienNo.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.txtSoTienNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoTienNo.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.txtSoTienNo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoTienNo.Properties.Mask.EditMask = "{0:0,0}";
             this.txtSoTienNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtSoTienNo.Size = new System.Drawing.Size(200, 20);
             this.txtSoTienNo.TabIndex = 46;
@@ -279,6 +283,10 @@
             this.txtSoTienTra.Name = "txtSoTienTra";
             this.txtSoTienTra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtSoTienTra.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.txtSoTienTra.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoTienTra.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.txtSoTienTra.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtSoTienTra.Properties.Mask.EditMask = "n0";
             this.txtSoTienTra.Size = new System.Drawing.Size(200, 20);
             this.txtSoTienTra.TabIndex = 44;

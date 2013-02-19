@@ -115,7 +115,10 @@ namespace WindowsFormsApplication1
                 gridControl1.DataSource = null;
             }
             ISXEMCLICK = false;
-
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView10.Columns["KHOILUONG"].Visible = false;
+            }
            
         }
         private void loadGird2()
@@ -150,6 +153,10 @@ namespace WindowsFormsApplication1
             }
             ISXEMCLICK = false;
             gridView2.BestFitColumns();
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView2.Columns["KHOILUONG"].Visible = false;
+            }
         }
         private void loadGird3()
         {
@@ -258,6 +265,10 @@ namespace WindowsFormsApplication1
             gridView7.RefreshData();
             gridView7.BestFitColumns();
             gridControl1.RefreshDataSource();
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView7.Columns["KHOILUONG"].Visible = false;
+            }
         }
         private void loadGird_thekho()
         {
@@ -315,6 +326,15 @@ namespace WindowsFormsApplication1
 
             gridView8.ExpandAllGroups();
             gridView8.BestFitColumns();
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView8.Columns["KLTONDAU"].Visible = false;
+                gridView8.Columns["KLNHAP"].Visible = false;
+                gridView8.Columns["KLTRANHAP"].Visible = false;
+                gridView8.Columns["KLXUAT"].Visible = false;
+                gridView8.Columns["KLTRAXUAT"].Visible = false;
+                gridView8.Columns["KLTONCUOI"].Visible = false;
+            }
 
         }
         private void loadGird_chitiethanghoa()
@@ -372,7 +392,15 @@ namespace WindowsFormsApplication1
 
             gridView9.ExpandAllGroups();
             gridView9.BestFitColumns();
-
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView9.Columns["KLTONDAU"].Visible = false;
+                gridView9.Columns["KLNHAP"].Visible = false;
+                gridView9.Columns["KLTRANHAP"].Visible = false;
+                gridView9.Columns["KLXUAT"].Visible = false;
+                gridView9.Columns["KLTRAXUAT"].Visible = false;
+                gridView9.Columns["KLTONCUOI"].Visible = false;
+            }
         }
        
   
@@ -1048,6 +1076,7 @@ namespace WindowsFormsApplication1
 
             lbkhachhang.Visible = false;
             cbkhachhang.Visible = false;
+            
         }
         
 

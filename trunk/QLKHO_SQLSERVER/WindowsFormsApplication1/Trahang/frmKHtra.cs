@@ -142,12 +142,16 @@ namespace WindowsFormsApplication1.KHtra
         public int iNgonNgu;
         public frmMain frm;
         public string sTenNV, sMaNV;
-     
+        public string THEM, XOA, SUA, IN, XEM;
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
         {
-           
+            XEM = PublicVariable.XEM;
+            THEM = PublicVariable.THEM;
+            XOA = PublicVariable.XOA;
+            SUA = PublicVariable.SUA;
+            IN = PublicVariable.IN;
 
-            if (PublicVariable.XEM == "False")
+            if (XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -317,7 +321,7 @@ namespace WindowsFormsApplication1.KHtra
                         bool isINSERTHOADONXUAT = ctlNCC.isINSERTtraHOADONXUAT(dtoNCC.MAHDX);
                         if (isINSERTHOADONXUAT)
                         {
-                            if (PublicVariable.THEM == "False")
+                            if (THEM == "False")
                             {
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
@@ -344,7 +348,7 @@ namespace WindowsFormsApplication1.KHtra
                                         dtoNCC.HSD = "";
                                     }
                                     
-                                    SQL = "select * from khohang where  mamh='" + dtr["_MaMH"].ToString() + "' and HSD <='" + HSD + "'";
+                                    SQL = "select * from khohang where  mamh='" + dtr["_MaMH"].ToString() + "' and HSD ='" + HSD + "'";
                                     dt = ctlNCC.GETDATA(SQL);
                                     if (dt.Rows.Count > 0)
                                     {
@@ -504,7 +508,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -557,7 +561,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.THEM == "False")
+            if (THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -578,6 +582,7 @@ namespace WindowsFormsApplication1.KHtra
             cbotientra.Text = "0";
             txtthanhtien.Text = "";
             mahdtam = "";
+            btLuu.Enabled = true;
 
             loadmahdx();
             gridControl1.DataSource = null;
@@ -588,7 +593,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            if (PublicVariable.THEM == "False")
+            if (THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -754,6 +759,11 @@ namespace WindowsFormsApplication1.KHtra
                         }
 
                     }
+                    else if (e.Column.FieldName.ToString() == "TIENTHU")
+                    {
+
+                        gettotal();
+                    }
                 }
         }
 
@@ -811,7 +821,13 @@ namespace WindowsFormsApplication1.KHtra
                 }
             }
             txtthanhtien.Text = total.ToString();
-            //MessageBox.Show(total.ToString());
+            if (cbotientra.Text != "")
+            {
+                thanhtien = double.Parse(txtthanhtien.Text);
+                tientra = double.Parse(cbotientra.Text);
+                conlai = thanhtien - tientra;
+                txtconLai.Text = conlai.ToString();
+            }
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -833,22 +849,88 @@ namespace WindowsFormsApplication1.KHtra
 
                     if (sID != "")
                     {
-                        if (PublicVariable.XOA == "False")
+                        if (XOA == "False")
                         {
                             MessageBox.Show("KHÔNG CÓ QUYỀN ");
                             return;
                         }
 
-                        ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
+                        if (PublicVariable.isHSD)
+                        {
+                            String SQL = "select * from khohang where  mamh='" + dtr["_MaMH"].ToString() + "' and HSD ='" + dtr["_HSD"].ToString() + "'";
+                            DataTable dt = ctlNCC.GETDATA(SQL);
+                            if (dt.Rows.Count > 0)
+                            {
+                                dtoNCC.LOHANG = dt.Rows[0]["LOHANG"].ToString();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Mặt hàng  " + dtr["_MaMH"].ToString() + " không có lô hàng nên không thể xóa  ");
+                                return;
+                            }
+
+                            
+
+                            ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
+
+                            ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), dtoNCC.LOHANG,  "0", "0", "0","-"+dtr["_SoLuong"].ToString());
+                        }
+                        else
+                        {
+                            String SQL = "Select tonkho from khohang where mamh='" + dtr["_MaMH"].ToString() + "' and lohang='1' ";
+                            DataTable dt = ctlNCC.GETDATA(SQL);
+
+                            if (dt.Rows.Count > 0)
+                            {
+                                double soluongmh = Convert.ToDouble(dt.Rows[0][0].ToString());
+                                double soluonghientai = Convert.ToDouble(dtr["_SoLuong"].ToString());
+
+                                if (soluonghientai > soluongmh)
+                                {
+                                    MessageBox.Show("mặt hàng " + dtr["_MaMH"].ToString() + " này đã xuất nên không thể xóa");
+                                    return;
+                                }
+                                else
+                                {
+                                    ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
+
+                                    ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), "1", "0", "0", "0", (-soluonghientai).ToString());
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("không có mặt hàng " + dtr["_MaMH"].ToString() + " trong kho nên không thể xóa ");
+                                return;
+                            }
+                        }
+                        
                     }
-                   // bool isinsert = ctlNCC.ISINSERTCTHOADONXUAT(txtMaHD.Text, focusrow+1);
-
-                   // if (!isinsert)
-                    //    ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, focusrow+1);
-
-                    // GridView view = sender as GridView;
-                    // view.DeleteRow(view.FocusedRowHandle);
+                    else
+                    {
+                        return;
+                    }
                     gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
+                    gettotal();
+
+                    dtoNCC.MAKH = txtmakh.Text;
+                    dtoNCC.TENKH = cboTenKH.Text;
+                    dtoNCC.DIACHI = txtDiachi.Text;
+                    dtoNCC.SDT = txtSDT.Text;
+
+                    // dtoNCC.WEBSITE = txtWeb.Text;
+                    dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
+                    dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
+                    dtoNCC.MAHDX = txtMaHD.Text;
+                    if (cbotientra.Text == "")
+                    {
+                        cbotientra.Text = "0";
+                    }
+                    dtoNCC.GHICHU = textBoxX1.Text;
+
+                    dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
+
+                    ctlNCC.UPDATEtraHOADONXUAT(dtoNCC);
+
                 }
             }
         }
@@ -866,6 +948,13 @@ namespace WindowsFormsApplication1.KHtra
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            btLuu.Enabled = false;
+
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -887,11 +976,12 @@ namespace WindowsFormsApplication1.KHtra
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "False")
+            if (SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+            btLuu.Enabled = false;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -950,7 +1040,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void btXem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.XEM == "False")
+            if (XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -960,7 +1050,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -970,7 +1060,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1065,7 +1155,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
