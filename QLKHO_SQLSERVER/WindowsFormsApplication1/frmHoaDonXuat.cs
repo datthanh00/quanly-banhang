@@ -143,11 +143,17 @@ namespace WindowsFormsApplication1.HoaDonXuat
         public int iNgonNgu;
         public frmMain frm;
         public string sTenNV, sMaNV;
+        public string THEM, XOA, SUA, IN, XEM;
     
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
         {
+            XEM = PublicVariable.XEM;
+            THEM = PublicVariable.THEM;
+            XOA = PublicVariable.XOA;
+            SUA = PublicVariable.SUA;
+            IN = PublicVariable.IN;
 
-            if (PublicVariable.XEM == "False")
+            if (XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 this.Close();
@@ -158,6 +164,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 MessageBox.Show("Bạn đang sử dụng hệ thống ngày tháng của máy tính");
               
             }
+            
            // cbotientra.Text = "0";
             loadgridKhachHang();
             loadgridNhanVien();
@@ -262,7 +269,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         bool isINSERTHOADONXUAT = ctlNCC.isINSERTHOADONXUAT(dtoNCC.MAHDX);
                         if (isINSERTHOADONXUAT)
                         {
-                            if (PublicVariable.THEM == "False")
+                            if (THEM == "False")
                             {
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
@@ -316,7 +323,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         }
                         else
                         {
-                            if (PublicVariable.SUA == "False")
+                            if (SUA == "False")
                             {
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
@@ -432,7 +439,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -485,7 +492,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.THEM == "False")
+            if (THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -506,6 +513,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cbotientra.Text = "0";
             txtthanhtien.Text = "";
             mahdtam = "";
+            btLuu.Enabled = true;
 
             loadmahdx();
             gridControl1.DataSource = null;
@@ -516,7 +524,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            if (PublicVariable.THEM == "False")
+            if (THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -681,6 +689,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             dtr["TIENTHU"] = "0";
                         }
                     }
+                    else if (e.Column.FieldName.ToString() == "TIENTHU")
+                    {
+                        
+                            gettotal();
+                    }
                 }
         }
 
@@ -738,7 +751,14 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 }
             }
             txtthanhtien.Text = total.ToString();
-            //MessageBox.Show(total.ToString());
+
+            if (cbotientra.Text != "")
+            {
+                thanhtien = double.Parse(txtthanhtien.Text);
+                tientra = double.Parse(cbotientra.Text);
+                conlai = thanhtien - tientra;
+                txtconLai.Text = conlai.ToString();
+            }
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -761,7 +781,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
                     if (sID != "")
                     {
-                        if (PublicVariable.XOA == "False")
+                        if (XOA == "False")
                         {
                             MessageBox.Show("KHÔNG CÓ QUYỀN ");
                             return;
@@ -769,15 +789,26 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
                         ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "0", "-" + dtr["_SoLuong"].ToString(), "0");
                     }
-
-                   // bool isinsert = ctlNCC.ISINSERTCTHOADONXUAT(txtMaHD.Text, focusrow+1);
-
-                   // if (!isinsert)
-                    //    ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, focusrow+1);
-
-                    // GridView view = sender as GridView;
-                    // view.DeleteRow(view.FocusedRowHandle);
+                    else
+                    {
+                        return;
+                    }
                     gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
+                    gettotal();
+
+                    dtoNCC.MAKH = txtmakh.Text;
+                    dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
+                    dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
+                    dtoNCC.MAHDX = txtMaHD.Text;
+                    if (cbotientra.Text == "")
+                    {
+                        cbotientra.Text = "0";
+                    }
+                    dtoNCC.GHICHU = textBoxX1.Text;
+
+                    dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
+
+                    ctlNCC.UPDATEHOADONXUAT(dtoNCC);
                 }
             }
         }
@@ -795,7 +826,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            if (SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            btLuu.Enabled = false;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -818,12 +854,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "False")
+            if (SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-
+            btLuu.Enabled = false;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -882,7 +918,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -892,7 +928,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1016,7 +1052,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1033,6 +1069,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -1093,6 +1130,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
            // mahdtam = "";
             MessageBox.Show("Đã Lưu Tạm Hóa Đơn");
         }
+
 
     
 

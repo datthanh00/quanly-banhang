@@ -38,11 +38,16 @@ namespace WindowsFormsApplication1
         NhapHangDTO dto = new NhapHangDTO();
         NhapHangDAO mh = new NhapHangDAO();
         //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
-      
+        public string THEM, XOA, SUA, IN, XEM;
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
+            XEM = PublicVariable.XEM;
+            THEM = PublicVariable.THEM;
+            XOA = PublicVariable.XOA;
+            SUA = PublicVariable.SUA;
+            IN = PublicVariable.IN;
 
-            if (PublicVariable.XEM == "False")
+            if (XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 this.Close();
@@ -338,7 +343,7 @@ namespace WindowsFormsApplication1
         public string sTenNV, sMaNV;
         private void btTaoMoi_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.THEM == "False")
+            if (THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -355,7 +360,7 @@ namespace WindowsFormsApplication1
             txtEmail.Text = "";
             txtMaHD.Text = "";
             txtNo.Text = "";
-
+            btLuu.Enabled=true;
          
             loadmahdn();
             //   cboTinhTrang.Text = "";
@@ -442,7 +447,7 @@ namespace WindowsFormsApplication1
                         bool isINSERTHOADONNHAP = ctlNCC.isINSERTtraHOADONNHAP(dtoNCC.MAHDN);
                         if (isINSERTHOADONNHAP)
                         {
-                            if (PublicVariable.THEM == "False")
+                            if (THEM == "False")
                             {
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
@@ -597,7 +602,7 @@ namespace WindowsFormsApplication1
         
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -738,7 +743,13 @@ namespace WindowsFormsApplication1
                 }
             }
             txtthanhtien.Text = total.ToString();
-            //MessageBox.Show(total.ToString());
+            if (cbotientra.Text != "")
+            {
+                thanhtien = double.Parse(txtthanhtien.Text);
+                tientra = double.Parse(cbotientra.Text);
+                conlai = thanhtien - tientra;
+                txtconLai.Text = conlai.ToString();
+            }
         }
 
         private void gridCTHOADON_Keydown(object sender, KeyEventArgs e)
@@ -804,28 +815,42 @@ namespace WindowsFormsApplication1
                     String sID = dtr["ID"].ToString();
                     if (sID != "")
                     {
-                        if (PublicVariable.XOA == "False")
+                        if (XOA == "False")
                         {
                             MessageBox.Show("KHÔNG CÓ QUYỀN ");
                             return;
                         }
                         ctlNCC.DELETEtraCTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID));
+                        ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "-" + dtr["_SoLuong"].ToString(),"0", "0");
+                    
                     }
-                   // bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, focusrow+1);
-
-                    //if (!isinsert)
-                    //    ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, focusrow+1);
-
-                    // GridView view = sender as GridView;
-                    // view.DeleteRow(view.FocusedRowHandle);
                     gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
+
+                    gettotal();
+
+                    dtoNCC.MANCC = txtMANCC.Text;
+                    dtoNCC.TENNCC = cboTenNCC.Text;
+                    dtoNCC.SDT = txtSoDT.Text;
+                    dtoNCC.FAX = txtFax.Text;
+                    dtoNCC.EMAIL = txtEmail.Text;
+                    dtoNCC.GHICHU = textBoxX1.Text;
+                    dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
+                    dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
+                    dtoNCC.MAHDN = txtMaHD.Text;
+                    if (cbotientra.Text == "")
+                    {
+                        cbotientra.Text = "0";
+                    }
+                    dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
+
+                    ctlNCC.UPDATEtraHOADONNHAP(dtoNCC);
                 }
             }
         }
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            if (PublicVariable.THEM == "False")
+            if (THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -868,7 +893,12 @@ namespace WindowsFormsApplication1
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            if (SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            btLuu.Enabled = false;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -890,12 +920,12 @@ namespace WindowsFormsApplication1
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "False")
+            if (SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-
+            btLuu.Enabled=false;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -916,7 +946,7 @@ namespace WindowsFormsApplication1
 
         private void btXem_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.XEM == "False")
+            if (XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -952,7 +982,7 @@ namespace WindowsFormsApplication1
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -962,7 +992,7 @@ namespace WindowsFormsApplication1
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1058,7 +1088,7 @@ namespace WindowsFormsApplication1
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "False")
+            if (IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;

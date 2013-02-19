@@ -282,7 +282,6 @@
             this.colTiềnphảitrả.FieldName = "TIENPHAITRA";
             this.colTiềnphảitrả.Name = "colTiềnphảitrả";
             this.colTiềnphảitrả.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.colTiềnphảitrả.SummaryItem.FieldName = "Tiền phải trả";
             this.colTiềnphảitrả.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colTiềnphảitrả.Visible = true;
             this.colTiềnphảitrả.VisibleIndex = 3;
@@ -294,7 +293,6 @@
             this.colTiềnđãtrả.FieldName = "TIENDATRA";
             this.colTiềnđãtrả.Name = "colTiềnđãtrả";
             this.colTiềnđãtrả.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.colTiềnđãtrả.SummaryItem.FieldName = "Tiền đã trả";
             this.colTiềnđãtrả.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colTiềnđãtrả.Visible = true;
             this.colTiềnđãtrả.VisibleIndex = 4;
@@ -307,7 +305,6 @@
             this.colCònlại.Name = "colCònlại";
             this.colCònlại.OptionsColumn.ReadOnly = true;
             this.colCònlại.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.colCònlại.SummaryItem.FieldName = "Còn lại";
             this.colCònlại.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colCònlại.Visible = true;
             this.colCònlại.VisibleIndex = 5;
