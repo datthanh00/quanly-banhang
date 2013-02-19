@@ -624,7 +624,7 @@ namespace WindowsFormsApplication1
 
 
         private Double _SOLUONGXUAT;
-        private int _GIATIEN;
+        
 
 
         public Double SOLUONGXUAT
@@ -633,12 +633,19 @@ namespace WindowsFormsApplication1
             set { _SOLUONGXUAT = value; }
         }
 
+        private int _GIATIEN;
         public int GIATIEN
         {
             get { return _GIATIEN; }
             set { _GIATIEN = value; }
         }
-        
+
+        private int _TIENTHU;
+        public int TIENTHU
+        {
+            get { return _TIENTHU; }
+            set { _TIENTHU = value; }
+        }
         
     }
 }

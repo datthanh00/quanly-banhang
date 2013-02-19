@@ -217,6 +217,12 @@
     <Compile Include="In.designer.cs">
       <DependentUpon>In.cs</DependentUpon>
     </Compile>
+    <Compile Include="Inhd.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Inhd.designer.cs">
+      <DependentUpon>Inhd.cs</DependentUpon>
+    </Compile>
     <Compile Include="InHD\Inhdnhap.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -545,6 +551,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="In.resx">
       <DependentUpon>In.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inhd.resx">
+      <DependentUpon>Inhd.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="InHD\Inhdnhap.resx">

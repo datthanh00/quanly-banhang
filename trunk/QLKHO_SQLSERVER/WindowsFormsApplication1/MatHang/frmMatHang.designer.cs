@@ -304,6 +304,8 @@
             this.colSOLUONGMH.FieldName = "SOLUONGMH";
             this.colSOLUONGMH.Name = "colSOLUONGMH";
             this.colSOLUONGMH.OptionsColumn.AllowEdit = false;
+            this.colSOLUONGMH.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.colSOLUONGMH.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSOLUONGMH.Visible = true;
             this.colSOLUONGMH.VisibleIndex = 5;
             this.colSOLUONGMH.Width = 101;
@@ -324,7 +326,7 @@
             this.colGIAMUA.FieldName = "GIAMUA";
             this.colGIAMUA.Name = "colGIAMUA";
             this.colGIAMUA.OptionsColumn.AllowEdit = false;
-            this.colGIAMUA.SummaryItem.DisplayFormat = "Sum: {0:0,0 vnđ}";
+            this.colGIAMUA.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colGIAMUA.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colGIAMUA.Visible = true;
             this.colGIAMUA.VisibleIndex = 3;
@@ -338,7 +340,7 @@
             this.colGIABAN.FieldName = "GIABAN";
             this.colGIABAN.Name = "colGIABAN";
             this.colGIABAN.OptionsColumn.AllowEdit = false;
-            this.colGIABAN.SummaryItem.DisplayFormat = "Sum: {0:0,0 vnđ}";
+            this.colGIABAN.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colGIABAN.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colGIABAN.Visible = true;
             this.colGIABAN.VisibleIndex = 4;
@@ -360,6 +362,8 @@
             this.colTINHTRANG.FieldName = "THANHTIEN";
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.OptionsColumn.AllowEdit = false;
+            this.colTINHTRANG.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.colTINHTRANG.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colTINHTRANG.Visible = true;
             this.colTINHTRANG.VisibleIndex = 6;
             this.colTINHTRANG.Width = 123;

@@ -70,6 +70,8 @@ namespace WindowsFormsApplication1
             load_cbhanghoa();
            // loadGird();
             dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
+            dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
+
         }
         private void load_cbhanghoa()
         {
@@ -161,10 +163,7 @@ namespace WindowsFormsApplication1
 
         private void loadGird()
         {
-            
            // dto.MAKHO = gView.GetFocusedRowCellValue("MAKHO").ToString();
-            
-
             string NGAYBD = dateTu.Text;
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
             dto.NGAYBDKHO = NGAYBD;
@@ -199,6 +198,16 @@ namespace WindowsFormsApplication1
             gridControl2.DataSource = ctr.getTonKho(dto);
             advBandedGridView3.BestFitColumns();
             //dt = ctr.getTonKho(dto);
+
+            if (!PublicVariable.isKHOILUONG)
+            {
+                advBandedGridView3.Columns["KLTONDAU"].Visible = false;
+                advBandedGridView3.Columns["KLNHAP"].Visible = false;
+                advBandedGridView3.Columns["KLTRANHAP"].Visible = false;
+                advBandedGridView3.Columns["KLXUAT"].Visible = false;
+                advBandedGridView3.Columns["KLTRAXUAT"].Visible = false;
+                advBandedGridView3.Columns["KLTONCUOI"].Visible = false;
+            }
             
         }
 
@@ -511,6 +520,39 @@ namespace WindowsFormsApplication1
             catch (Exception)
             {
 
+                loadMesagebox();
+            }
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string NGAYBD = dateTu.Text;
+                NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+                dto.NGAYBDKHO = NGAYBD;
+
+                string NGAYKT = dateDen.Text;
+                NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+                dto.NGAYKTKHO = NGAYKT;
+
+                gridControl2.MainView = advBandedGridView2;
+                gridControl2.DataSource = ctr.getTonKhoncc(dto);
+                advBandedGridView2.BestFitColumns();
+                //dt = ctr.getTonKho(dto);
+                if (!PublicVariable.isKHOILUONG)
+                {
+                    advBandedGridView2.Columns["KLTONDAU"].Visible = false;
+                    advBandedGridView2.Columns["KLNHAP"].Visible = false;
+                    advBandedGridView2.Columns["KLTRANHAP"].Visible = false;
+                    advBandedGridView2.Columns["KLXUAT"].Visible = false;
+                    advBandedGridView2.Columns["KLTRAXUAT"].Visible = false;
+                    advBandedGridView2.Columns["KLTONCUOI"].Visible = false;
+                }
+                
+            }
+            catch (Exception)
+            {
                 loadMesagebox();
             }
         }

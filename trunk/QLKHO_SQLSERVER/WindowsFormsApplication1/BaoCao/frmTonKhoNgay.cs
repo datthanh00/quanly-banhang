@@ -61,6 +61,17 @@ namespace WindowsFormsApplication1
             }
             load_cbhanghoa();
             dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
+
+            if (!PublicVariable.isKHOILUONG)
+            {
+                advBandedGridView3.Columns["KLTONTT"].Visible = false;
+                advBandedGridView3.Columns["KLTONDAU"].Visible = false;
+                advBandedGridView3.Columns["KLNHAP"].Visible = false;
+                advBandedGridView3.Columns["KLTRANHAP"].Visible = false;
+                advBandedGridView3.Columns["KLXUAT"].Visible = false;
+                advBandedGridView3.Columns["KLTRAXUAT"].Visible = false;
+                advBandedGridView3.Columns["KLTONCUOI"].Visible = false;
+            }
         }
         private void load_cbhanghoa()
         {
@@ -215,6 +226,16 @@ namespace WindowsFormsApplication1
 
                 advBandedGridView3.BestFitColumns();
                 //dt = ctr.getTonKho(dto);
+                if (!PublicVariable.isKHOILUONG)
+                {
+                    advBandedGridView3.Columns["KLTONTT"].Visible = false;
+                    advBandedGridView3.Columns["KLTONDAU"].Visible = false;
+                    advBandedGridView3.Columns["KLNHAP"].Visible = false;
+                    advBandedGridView3.Columns["KLTRANHAP"].Visible = false;
+                    advBandedGridView3.Columns["KLXUAT"].Visible = false;
+                    advBandedGridView3.Columns["KLTRAXUAT"].Visible = false;
+                    advBandedGridView3.Columns["KLTONCUOI"].Visible = false;
+                }
             }
             else
             {
@@ -237,8 +258,6 @@ namespace WindowsFormsApplication1
 
         private void btXem_Click(object sender, EventArgs e)
         {
-           
-            
 
            loadGird();
          

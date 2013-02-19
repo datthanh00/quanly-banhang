@@ -67,6 +67,10 @@ namespace WindowsFormsApplication1
         {
             return dao.getTonKho(dto);
         }
+        public DataTable getTonKhoncc(clDTO dto)
+        {
+            return dao.getTonKhoncc(dto);
+        }
         public DataTable getTonKhoTTngay(clDTO dto)
         {
             return dao.getTonKhoTTngay(dto);

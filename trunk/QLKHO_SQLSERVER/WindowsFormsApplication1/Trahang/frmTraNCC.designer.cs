@@ -175,6 +175,8 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -781,6 +783,7 @@
             this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "_SoLuong";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn7.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
@@ -829,6 +832,7 @@
             this.gridColumn25.FieldName = "_Total";
             this.gridColumn25.Name = "gridColumn25";
             this.gridColumn25.OptionsColumn.AllowEdit = false;
+            this.gridColumn25.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn25.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn25.Visible = true;
             this.gridColumn25.VisibleIndex = 6;
@@ -1028,6 +1032,7 @@
             this.gridColumn17.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn17.FieldName = "TIENPHAITRA";
             this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn17.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 4;
@@ -1039,6 +1044,7 @@
             this.gridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn18.FieldName = "TIENDATRA";
             this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn18.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 5;
@@ -1050,6 +1056,7 @@
             this.gridColumn19.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn19.FieldName = "TIENNO";
             this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn19.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn19.Visible = true;
             this.gridColumn19.VisibleIndex = 6;
@@ -1150,6 +1157,7 @@
             this.gridColumn28,
             this.gridColumn29,
             this.gridColumn30,
+            this.gridColumn11,
             this.gridColumn31,
             this.gridColumn42,
             this.gridColumn32});
@@ -1239,6 +1247,7 @@
             this.gridColumn30.FieldName = "SOLUONGNHAP";
             this.gridColumn30.Name = "gridColumn30";
             this.gridColumn30.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn30.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn30.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn30.Visible = true;
             this.gridColumn30.VisibleIndex = 5;
@@ -1252,7 +1261,7 @@
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 6;
+            this.gridColumn31.VisibleIndex = 7;
             // 
             // gridColumn42
             // 
@@ -1261,9 +1270,10 @@
             this.gridColumn42.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn42.FieldName = "THANHTIEN";
             this.gridColumn42.Name = "gridColumn42";
+            this.gridColumn42.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn42.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn42.Visible = true;
-            this.gridColumn42.VisibleIndex = 8;
+            this.gridColumn42.VisibleIndex = 9;
             // 
             // gridColumn32
             // 
@@ -1272,7 +1282,7 @@
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 7;
+            this.gridColumn32.VisibleIndex = 8;
             // 
             // gridView7
             // 
@@ -1285,6 +1295,7 @@
             this.gridColumn36,
             this.gridColumn37,
             this.gridColumn38,
+            this.gridColumn20,
             this.gridColumn39,
             this.gridColumn40});
             this.gridView7.GridControl = this.gridControl3;
@@ -1354,6 +1365,7 @@
             this.gridColumn38.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn38.FieldName = "SOLUONGNHAP";
             this.gridColumn38.Name = "gridColumn38";
+            this.gridColumn38.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn38.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 5;
@@ -1366,7 +1378,7 @@
             this.gridColumn39.FieldName = "GIANHAP";
             this.gridColumn39.Name = "gridColumn39";
             this.gridColumn39.Visible = true;
-            this.gridColumn39.VisibleIndex = 6;
+            this.gridColumn39.VisibleIndex = 7;
             // 
             // gridColumn40
             // 
@@ -1375,9 +1387,10 @@
             this.gridColumn40.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn40.FieldName = "TONGTIEN";
             this.gridColumn40.Name = "gridColumn40";
+            this.gridColumn40.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn40.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn40.Visible = true;
-            this.gridColumn40.VisibleIndex = 7;
+            this.gridColumn40.VisibleIndex = 8;
             // 
             // contextMenuStrip1
             // 
@@ -1770,6 +1783,30 @@
             this.cbotientra.TabIndex = 6;
             this.cbotientra.TextChanged += new System.EventHandler(this.cbotientra_TextChanged);
             // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Khối Lượng";
+            this.gridColumn11.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn11.FieldName = "KHOILUONG";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 6;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "Khối Lượng";
+            this.gridColumn20.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn20.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn20.FieldName = "KHOILUONG";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn20.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 6;
+            // 
             // frmTraNCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2025,6 +2062,8 @@
         private DevExpress.XtraEditors.CalcEdit cbotientra;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet2TableAdapters.MATHANGTableAdapter mATHANGTableAdapter1;
     }
 }
