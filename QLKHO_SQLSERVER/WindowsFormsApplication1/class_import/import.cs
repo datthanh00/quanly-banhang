@@ -29,6 +29,7 @@ namespace WindowsFormsApplication1.class_import
             cbTable.Properties.Items.Add("Update Đơn Vị Tính");
             cbTable.Properties.Items.Add("Thêm Kho Hàng");
             cbTable.Properties.Items.Add("update Kho Hàng");
+            cbTable.Properties.Items.Add("THÊM TỒN KHO THUC TẾ");
             button2.Enabled = false;
             loadgridMatHang();
 
@@ -158,6 +159,12 @@ namespace WindowsFormsApplication1.class_import
                     lenh = "UPDATE   [KHOHANG] "
                     + " SET  [GIAMUA]=" + cot["GIAMUA"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
                 }
+                else if (cbTable.SelectedIndex == 10)
+                {
+                    lenh = "INSERT INTO [TONKHOTT]([NGAY],[MAMH],[MAKHO],[TONTT],[TONKHONGAY]) "
+              + " VALUES ('" + cot["NGAY"].ToString() + "','" + cot["MAMH"].ToString() + "','" + cot["MAKHO"].ToString() + "'," + cot["TONTT"].ToString() + "," + cot["TONKHONGAY"].ToString() + ")";
+               
+                }
             return lenh;
         }
 
@@ -219,6 +226,25 @@ namespace WindowsFormsApplication1.class_import
 
             loadgridMatHang();
             MessageBox.Show("Đã Hoàn Thành Câu Lệnh");
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            CTL ctlNCC = new CTL();
+            String SQL = "SELECT mamh,toncuoi,convert(varchar,ngay,101) as ngay,TONCUOINGAY FROM TONKHO";
+            DataTable dt= ctlNCC.GETDATA(SQL);
+
+            for (int i = dt.Rows.Count-1; i >=0; i--)
+            {
+                if (dt.Rows[i][3].ToString() == "")
+                {
+                    SQL = "update tonkho set TONCUOINGAY=" + dt.Rows[i][1].ToString() + " where mamh='" + dt.Rows[i][0].ToString() + "' and ngay='" + dt.Rows[i][2].ToString() + "'";
+                    ctlNCC.executeNonQuery(SQL);
+
+                    SQL = "SELECT mamh,toncuoi,convert(varchar,ngay,101) as ngay,TONCUOINGAY FROM TONKHO";
+                    dt = ctlNCC.GETDATA(SQL);
+                }
+            }
         }
 
        

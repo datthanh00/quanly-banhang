@@ -121,6 +121,7 @@
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -131,6 +132,7 @@
             this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -175,8 +177,6 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.txtNgay = new DevExpress.XtraEditors.DateEdit();
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -1164,7 +1164,9 @@
             this.gridView5.GridControl = this.gridControl3;
             this.gridView5.GroupCount = 1;
             this.gridView5.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THANHTIEN", this.gridColumn42, "")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THANHTIEN", this.gridColumn42, "{0:0,0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SOLUONGNHAP", this.gridColumn30, "{0:0,0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KHOILUONG", this.gridColumn11, "{0:0,0}")});
             this.gridView5.Name = "gridView5";
             this.gridView5.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridView5.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
@@ -1251,6 +1253,18 @@
             this.gridColumn30.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn30.Visible = true;
             this.gridColumn30.VisibleIndex = 5;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "Khối Lượng";
+            this.gridColumn11.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn11.FieldName = "KHOILUONG";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 6;
             // 
             // gridColumn31
             // 
@@ -1369,6 +1383,18 @@
             this.gridColumn38.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn38.Visible = true;
             this.gridColumn38.VisibleIndex = 5;
+            // 
+            // gridColumn20
+            // 
+            this.gridColumn20.Caption = "Khối Lượng";
+            this.gridColumn20.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn20.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn20.FieldName = "KHOILUONG";
+            this.gridColumn20.Name = "gridColumn20";
+            this.gridColumn20.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn20.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn20.Visible = true;
+            this.gridColumn20.VisibleIndex = 6;
             // 
             // gridColumn39
             // 
@@ -1782,30 +1808,6 @@
             this.cbotientra.Size = new System.Drawing.Size(115, 20);
             this.cbotientra.TabIndex = 6;
             this.cbotientra.TextChanged += new System.EventHandler(this.cbotientra_TextChanged);
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "Khối Lượng";
-            this.gridColumn11.DisplayFormat.FormatString = "{0:0,0}";
-            this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn11.FieldName = "KHOILUONG";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.gridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 6;
-            // 
-            // gridColumn20
-            // 
-            this.gridColumn20.Caption = "Khối Lượng";
-            this.gridColumn20.DisplayFormat.FormatString = "{0:0,0}";
-            this.gridColumn20.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn20.FieldName = "KHOILUONG";
-            this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.gridColumn20.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            this.gridColumn20.Visible = true;
-            this.gridColumn20.VisibleIndex = 6;
             // 
             // frmTraNCC
             // 

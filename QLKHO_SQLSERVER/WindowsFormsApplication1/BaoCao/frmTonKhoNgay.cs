@@ -64,7 +64,7 @@ namespace WindowsFormsApplication1
 
             if (!PublicVariable.isKHOILUONG)
             {
-                advBandedGridView3.Columns["KLTONTT"].Visible = false;
+                
                 advBandedGridView3.Columns["KLTONDAU"].Visible = false;
                 advBandedGridView3.Columns["KLNHAP"].Visible = false;
                 advBandedGridView3.Columns["KLTRANHAP"].Visible = false;
@@ -210,7 +210,7 @@ namespace WindowsFormsApplication1
                     dto.MANCC = "";
                 }
 
-                SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
+                SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' AND TONTT <> 0 ";
 
                 dt = ctlNCC.GETDATA(SQL);
                 string s123 = dt.Rows[0][0].ToString();
@@ -228,7 +228,7 @@ namespace WindowsFormsApplication1
                 //dt = ctr.getTonKho(dto);
                 if (!PublicVariable.isKHOILUONG)
                 {
-                    advBandedGridView3.Columns["KLTONTT"].Visible = false;
+                    
                     advBandedGridView3.Columns["KLTONDAU"].Visible = false;
                     advBandedGridView3.Columns["KLNHAP"].Visible = false;
                     advBandedGridView3.Columns["KLTRANHAP"].Visible = false;
@@ -269,7 +269,20 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
-            } 
+            }
+
+            CTL ctltk = new CTL();
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            string SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' AND TONTT <>0";
+
+            DataTable dt = ctltk.GETDATA(SQL);
+            if (dt.Rows[0][0].ToString() == "0")
+            {
+                MessageBox.Show("Bạn phải lưu trước khi in");
+                return;
+            }
+
            /* if (advBandedGridView3.RowCount > 0)
             {
                 reportTonKhoSoLuongGiaTri rep = new reportTonKhoSoLuongGiaTri(dt, iNgonNgu, PublicVariable.MAKHO, dateTu.Text, dateDen.Text);
@@ -283,7 +296,6 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-
                     MessageBox.Show("Data null", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     
                 }
@@ -320,7 +332,18 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
-            } 
+            }
+                CTL ctltk = new CTL();
+                string NGAYBD = dateTu.Text;
+                NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+                string SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' AND TONTT<>0";
+
+                DataTable dt = ctltk.GETDATA(SQL);
+                if (dt.Rows[0][0].ToString() == "0")
+                {
+                    MessageBox.Show("Bạn phải lưu trước khi xuất");
+                    return;
+                }
             try
             {
                 SaveFileDialog saveFileDialog1 = new SaveFileDialog();
@@ -409,15 +432,7 @@ namespace WindowsFormsApplication1
                         ctlNCC.executeNonQuery(SQL);
                     }
                 }
-                else
-                {
-                    for (int i = 0; i < advBandedGridView3.DataRowCount; i++)
-                    {
-                        DataRow dtr = advBandedGridView3.GetDataRow(i);
-                        SQL = "INSERT INTO [TONKHOTT]([NGAY],[MAMH],[MAKHO] ,[TONTT]) VALUES('" + NGAYBD + "','" + dtr["MAMH"].ToString() + "','" + PublicVariable.MAKHO + "','" + dtr["TONTT"].ToString() + "')";
-                        ctlNCC.executeNonQuery(SQL);
-                    }
-                }
+                
                 MessageBox.Show("Đã lưu tồn kho thực tế ngày hôm nay");
             }else{
                 MessageBox.Show("Không phải ngày hôm nay nên không thể chỉnh sửa");
@@ -433,7 +448,7 @@ namespace WindowsFormsApplication1
                     if (e.Column.FieldName.ToString() == "TONTT")
                     {
 
-                        dtr["CHENHLECH"] = (Convert.ToDouble(dtr["TONCUOI"].ToString()) - Convert.ToDouble(dtr["TONTT"].ToString())).ToString();
+                        dtr["CHENHLECH"] = (Convert.ToDouble(dtr["TONTT"].ToString()) - Convert.ToDouble(dtr["TONCUOI"].ToString())).ToString();
                     }
                    
                 }

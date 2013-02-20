@@ -43,14 +43,14 @@
             this.button5 = new System.Windows.Forms.Button();
             this.cboTenNCC = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtsoluong = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.button6 = new System.Windows.Forms.Button();
             this.txtlohang = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbmathue = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.luoi)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTable.Properties)).BeginInit();
@@ -94,7 +94,7 @@
             this.btncomputerdate.ForeColor = System.Drawing.Color.DarkBlue;
             this.btncomputerdate.Image = global::WindowsFormsApplication1.Properties.Resources.check;
             this.btncomputerdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncomputerdate.Location = new System.Drawing.Point(680, 20);
+            this.btncomputerdate.Location = new System.Drawing.Point(702, 20);
             this.btncomputerdate.Name = "btncomputerdate";
             this.btncomputerdate.Size = new System.Drawing.Size(122, 30);
             this.btncomputerdate.TabIndex = 40;
@@ -108,7 +108,7 @@
             this.button4.ForeColor = System.Drawing.Color.DarkBlue;
             this.button4.Image = global::WindowsFormsApplication1.Properties.Resources.excel;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(359, 20);
+            this.button4.Location = new System.Drawing.Point(453, 20);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(114, 30);
             this.button4.TabIndex = 39;
@@ -123,7 +123,7 @@
             this.cbTable.Name = "cbTable";
             this.cbTable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbTable.Size = new System.Drawing.Size(100, 20);
+            this.cbTable.Size = new System.Drawing.Size(168, 20);
             this.cbTable.TabIndex = 38;
             // 
             // button3
@@ -131,7 +131,7 @@
             this.button3.ForeColor = System.Drawing.Color.DarkBlue;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(498, 21);
+            this.button3.Location = new System.Drawing.Point(597, 20);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 30);
             this.button3.TabIndex = 37;
@@ -145,7 +145,7 @@
             this.button2.ForeColor = System.Drawing.Color.DarkBlue;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(213, 20);
+            this.button2.Location = new System.Drawing.Point(299, 20);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 30);
             this.button2.TabIndex = 36;
@@ -222,6 +222,30 @@
             this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Mã Mặt Hàng";
+            this.gridColumn3.FieldName = "MAMH";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Tên Mặt Hàng";
+            this.gridColumn4.FieldName = "TENMH";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Số Lượng";
+            this.gridColumn1.FieldName = "SOLUONGMH";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
+            // 
             // txtsoluong
             // 
             // 
@@ -277,30 +301,6 @@
             this.labelControl1.Size = new System.Drawing.Size(39, 13);
             this.labelControl1.TabIndex = 138;
             this.labelControl1.Text = "Lo Hang";
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Mã Mặt Hàng";
-            this.gridColumn3.FieldName = "MAMH";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Tên Mặt Hàng";
-            this.gridColumn4.FieldName = "TENMH";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Số Lượng";
-            this.gridColumn1.FieldName = "SOLUONGMH";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
             // 
             // import
             // 
