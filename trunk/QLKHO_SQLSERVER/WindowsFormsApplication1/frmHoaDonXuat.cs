@@ -786,6 +786,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             MessageBox.Show("KHÔNG CÓ QUYỀN ");
                             return;
                         }
+                        string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
+                        DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
+                        if (txtNgayXuat.Text != dtn.Rows[0][0].ToString())
+                        {
+                            MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
+                            return;
+                        }
                         ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
                         ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "0", "-" + dtr["_SoLuong"].ToString(), "0");
                     }
@@ -826,11 +833,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SUA == "False")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN ");
-                return;
-            }
+      
             btLuu.Enabled = false;
             Load_panel_create();
             loadgridCTHOADON();
@@ -924,6 +927,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 return;
             }
             gridControl3.ShowPrintPreview();
+
+         
+
         }
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
@@ -1008,6 +1014,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
             Inhdxuat rep2 = new Inhdxuat(dt2);
             rep2.ShowPreviewDialog();  
+
+            
         }
 
         private void loadgrid()

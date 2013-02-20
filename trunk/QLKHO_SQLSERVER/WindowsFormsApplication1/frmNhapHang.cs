@@ -75,11 +75,7 @@ namespace WindowsFormsApplication1
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            if (SUA == "False")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN MỤC NÀY");
-                return;
-            }
+       
             btLuu.Enabled = false;
             loadgridCTHOADON();
             Load_panel_create();
@@ -944,6 +940,13 @@ namespace WindowsFormsApplication1
                             return;
                         }
 
+                        string SQLNGAY="SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
+                         DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
+                         if (txtNgay.Text != dtn.Rows[0][0].ToString())
+                         {
+                             MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
+                             return;
+                         }
 
                         if (PublicVariable.isHSD)
                         {

@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(export));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtsql = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cbTable = new DevExpress.XtraEditors.ComboBoxEdit();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.txtsql = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -56,6 +56,19 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao Tác";
+            // 
+            // txtsql
+            // 
+            // 
+            // 
+            // 
+            this.txtsql.Border.Class = "TextBoxBorder";
+            this.txtsql.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtsql.Location = new System.Drawing.Point(6, 22);
+            this.txtsql.Multiline = true;
+            this.txtsql.Name = "txtsql";
+            this.txtsql.Size = new System.Drawing.Size(632, 28);
+            this.txtsql.TabIndex = 39;
             // 
             // cbTable
             // 
@@ -122,19 +135,6 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            // 
-            // txtsql
-            // 
-            // 
-            // 
-            // 
-            this.txtsql.Border.Class = "TextBoxBorder";
-            this.txtsql.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtsql.Location = new System.Drawing.Point(6, 22);
-            this.txtsql.Multiline = true;
-            this.txtsql.Name = "txtsql";
-            this.txtsql.Size = new System.Drawing.Size(617, 28);
-            this.txtsql.TabIndex = 39;
             // 
             // export
             // 

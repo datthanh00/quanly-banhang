@@ -854,6 +854,13 @@ namespace WindowsFormsApplication1.KHtra
                             MessageBox.Show("KHÔNG CÓ QUYỀN ");
                             return;
                         }
+                        string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
+                        DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
+                        if (txtNgayXuat.Text != dtn.Rows[0][0].ToString())
+                        {
+                            MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
+                            return;
+                        }
 
                         if (PublicVariable.isHSD)
                         {
@@ -948,13 +955,7 @@ namespace WindowsFormsApplication1.KHtra
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SUA == "False")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN ");
-                return;
-            }
             btLuu.Enabled = false;
-
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;

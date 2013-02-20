@@ -613,6 +613,25 @@ namespace WindowsFormsApplication1
             ld.simpleCloseWait();
             timer1.Enabled = true;
             notifyIcon();
+            load_KHOHANGNGAY();
+        }
+        private void load_KHOHANGNGAY()
+        {
+            CTL ctlNCC = new CTL();
+            string SQL = "";
+            SQL = "SELECT convert(varchar,getDate(),101) AS CurrentDateTime ";
+            DataTable dt = ctlNCC.GETDATA(SQL);
+
+            string NGAY = dt.Rows[0][0].ToString();
+            SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAY + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
+                
+            dt=ctlNCC.GETDATA(SQL);
+            if (dt.Rows[0][0].ToString() == "0")
+            {
+                SQL = "INSERT INTO [TONKHOTT]([NGAY],[MAMH],[MAKHO],[TONTT],[TONKHONGAY]) select convert(varchar,getDate(),101) AS CurrentDateTime ,MAMH,MAKHO,0 as TONTT,SOLUONGMH AS TONKHONGAY FROM MATHANG WHERE TINHTRANG='TRUE' AND MAKHO='" + PublicVariable.MAKHO + "'";
+                ctlNCC.executeNonQuery(SQL);
+            }
+
         }
         private void load_cbkho()
         {
