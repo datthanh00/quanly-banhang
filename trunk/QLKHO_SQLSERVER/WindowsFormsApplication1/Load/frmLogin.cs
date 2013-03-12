@@ -183,6 +183,17 @@ namespace WindowsFormsApplication1
             {
                 checkNho.Checked = false;
             }
+
+            CTL ctl = new CTL();
+            String SQL = "SELECT CODERUNT from THONGTINCT";
+            DataTable dt = ctl.GETDATA(SQL);
+
+            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "ACTIVE", null) != dt.Rows[0]["CODERUNT"].ToString())
+            {
+                frmActive active = new frmActive();
+                active.ShowDialog();
+            }
+
         }
         System.Configuration.Configuration NgonNguVA = ConfigurationManager.OpenExeConfiguration("NgonNgu");
         public int iNgonNgu;
@@ -200,6 +211,7 @@ namespace WindowsFormsApplication1
                
                 loadVN();
             }
+
             txtTenTaiKhoan.Focus();
             LoadRegistry();
         }
