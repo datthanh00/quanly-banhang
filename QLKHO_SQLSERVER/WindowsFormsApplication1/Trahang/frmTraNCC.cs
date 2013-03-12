@@ -40,6 +40,7 @@ namespace WindowsFormsApplication1
         NhapHangDAO mh = new NhapHangDAO();
         //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
         public string THEM, XOA, SUA, IN, XEM;
+
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
             XEM = PublicVariable.XEM;
@@ -837,10 +838,22 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
                             return;
                         }
+                        PublicVariable.TMPtring = "";
+                        frmxoahd xhd = new frmxoahd();
+                        xhd.MAHD = txtMaHD.Text;
+                        xhd.MAMH = dtr["_MaMH"].ToString();
+                        xhd.TENMH = dtr["_TenMH"].ToString();
+
+                        xhd.ShowDialog();
+                        if (PublicVariable.TMPtring == "")
+                        {
+                            return;
+                        }
+                        
 
                         ctlNCC.DELETEtraCTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID));
                         ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "-" + dtr["_SoLuong"].ToString(), "0", "0");
-
+                        PublicVariable.TMPtring = "";
                     }
                     else
                     {

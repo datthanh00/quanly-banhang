@@ -25,6 +25,7 @@ namespace WindowsFormsApplication1.KHtra
         }
         int CountRowTBEdit = 0;
         string mahdtam = "";
+    
         DataView dtvKH = new DataView();
         DataView dtvNhanVien = new DataView();
         DataView dtvMH = new DataView();
@@ -890,11 +891,23 @@ namespace WindowsFormsApplication1.KHtra
                                 return;
                             }
 
-                            
+                            PublicVariable.TMPtring = "";
+                            frmxoahd xhd = new frmxoahd();
+                            xhd.MAHD = txtMaHD.Text;
+                            xhd.MAMH = dtr["_MaMH"].ToString();
+                            xhd.TENMH = dtr["_TenMH"].ToString();
+
+                            xhd.ShowDialog();
+                            if (PublicVariable.TMPtring == "")
+                            {
+                                return;
+                            }
+                           
 
                             ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
 
                             ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), dtoNCC.LOHANG,  "0", "0", "0","-"+dtr["_SoLuong"].ToString());
+                            PublicVariable.TMPtring = "";
                         }
                         else
                         {
@@ -913,9 +926,22 @@ namespace WindowsFormsApplication1.KHtra
                                 }
                                 else
                                 {
-                                    ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
+                                    PublicVariable.TMPtring = "";
+                                    frmxoahd xhd = new frmxoahd();
+                                    xhd.MAHD = txtMaHD.Text;
+                                    xhd.MAMH = dtr["_MaMH"].ToString();
+                                    xhd.TENMH = dtr["_TenMH"].ToString();
 
+                                    xhd.ShowDialog();
+                                    if (PublicVariable.TMPtring == "")
+                                    {
+                                        return;
+                                    }
+                                    
+
+                                    ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
                                     ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), "1", "0", "0", "0", (-soluonghientai).ToString());
+                                    PublicVariable.TMPtring = "";
                                 }
                             }
                             else

@@ -25,6 +25,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         int CountRowTBEdit = 0;
         string mahdtam = "";
+   
         DataView dtvKH = new DataView();
         DataView dtvNhanVien = new DataView();
         DataView dtvMH = new DataView();
@@ -804,8 +805,23 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
                             return;
                         }
+
+                        PublicVariable.TMPtring = "";
+                        frmxoahd xhd = new frmxoahd();
+                        xhd.MAHD = txtMaHD.Text;
+                        xhd.MAMH = dtr["_MaMH"].ToString();
+                        xhd.TENMH = dtr["_TenMH"].ToString();
+
+                        xhd.ShowDialog();
+                        if (PublicVariable.TMPtring == "")
+                        {
+                            return;
+                        }
+                        
+
                         ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
                         ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "0", "-" + dtr["_SoLuong"].ToString(), "0");
+                        PublicVariable.TMPtring = "";
                     }
                     else
                     {
@@ -823,7 +839,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         dtoNCC.GHICHU = textBoxX1.Text;
 
                         dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
-
                         return;
                     }
                     gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);

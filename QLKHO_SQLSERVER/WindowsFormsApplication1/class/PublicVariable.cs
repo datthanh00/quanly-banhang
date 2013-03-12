@@ -12,6 +12,7 @@ namespace WindowsFormsApplication1
        public static Boolean isHSD, isBARCODE, isTONTHUCTE,isKHOILUONG;
        public static Boolean isUSE_COMPUTERDATE=false;
        public static DataTable KhoQL;
+       public static String TMPtring; 
 
 	}
 

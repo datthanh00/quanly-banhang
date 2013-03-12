@@ -930,12 +930,12 @@ namespace WindowsFormsApplication1
                 SUAXUAT = (Convert.ToDouble(XUAT) - Convert.ToDouble(dt.Rows[0]["xuat"].ToString()) - Convert.ToDouble(dt.Rows[0]["TRAXUAT"].ToString())).ToString();
                 if (SUANHAP != "0")
                 {
-                    SQL = "INSERT INTO LOG (MAHD,MAMH,SOLUONG,LOG,LYDO) VALUES ( '" + MAHD + "', '" + MAMH + "'," + SUANHAP + ",'THEM','')";
+                    SQL = "INSERT INTO LOG (MAHD,MAMH,SOLUONG,LOG,LYDO) VALUES ( '" + MAHD + "', '" + MAMH + "'," + SUANHAP + ",'THEM',N'"+PublicVariable.TMPtring+"')";
                     executeNonQuery(SQL);
                 }
                 else
                 {
-                    SQL = "INSERT INTO LOG (MAHD,MAMH,SOLUONG,LOG,LYDO) VALUES ( '" + MAHD + "', '" + MAMH + "'," + SUAXUAT + ",'GIAM','')";
+                    SQL = "INSERT INTO LOG (MAHD,MAMH,SOLUONG,LOG,LYDO) VALUES ( '" + MAHD + "', '" + MAMH + "'," + SUAXUAT + ",'GIAM',N'" + PublicVariable.TMPtring + "')";
                     executeNonQuery(SQL);
                 }
             }
@@ -998,7 +998,7 @@ namespace WindowsFormsApplication1
 
                 string CHENHLECH = (-(Convert.ToDouble(dt.Rows[0]["NHAP"].ToString()) - Convert.ToDouble(dt.Rows[0]["TRANHAP"].ToString()) + Convert.ToDouble(dt.Rows[0]["TRAXUAT"].ToString()) - Convert.ToDouble(dt.Rows[0]["XUAT"].ToString()))).ToString();
 
-                SQL = "INSERT INTO LOG (MAHD,MAMH,SOLUONG,LOG,LYDO) VALUES ( '" + MAHD + "', '" + dt.Rows[0]["MAMH"].ToString() + "',"+CHENHLECH+",'DELETE','')";
+                SQL = "INSERT INTO LOG (MAHD,MAMH,SOLUONG,LOG,LYDO) VALUES ( '" + MAHD + "', '" + dt.Rows[0]["MAMH"].ToString() + "'," + CHENHLECH + ",'DELETE',N'" + PublicVariable.TMPtring + "')";
                 executeNonQuery(SQL);
 
                 SQL = "UPDATE TONKHO SET  TONDAU=TONDAU+ " + CHENHLECH + ", toncuoi=toncuoi+" + CHENHLECH + "  WHERE STT>" + dt.Rows[0]["STT"].ToString() + " and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "' ";
