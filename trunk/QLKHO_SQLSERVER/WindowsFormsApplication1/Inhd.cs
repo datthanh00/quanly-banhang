@@ -11,6 +11,7 @@ namespace WindowsFormsApplication1
     {
         public Inhd(DataTable list )
         {
+            
             CTL ctl = new CTL();
             InitializeComponent();
             gridControl1.DataSource = list;

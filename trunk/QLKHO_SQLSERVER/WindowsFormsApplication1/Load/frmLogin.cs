@@ -133,6 +133,7 @@ namespace WindowsFormsApplication1
                     frm.sTennv = tb.Rows[0]["tennv"].ToString();
                     frm.sBoPhan = tb.Rows[0]["mabp"].ToString();
                     frm.sManv = tb.Rows[0]["manv"].ToString();
+                    PublicVariable.MANV = tb.Rows[0]["manv"].ToString();
                     frm.iNgonNgu = iNgonNgu;
                     frm.ShowDialog();
                     SaveRegistry();

@@ -147,6 +147,7 @@
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -167,6 +168,7 @@
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn47 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -186,6 +188,8 @@
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ViewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
+            this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -268,6 +272,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_tool
@@ -635,7 +641,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(165, 13);
+            this.lbDen.Location = new System.Drawing.Point(166, 14);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -643,7 +649,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(13, 13);
+            this.lbTu.Location = new System.Drawing.Point(14, 14);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -676,7 +682,7 @@
             // 
             // lbDen1
             // 
-            this.lbDen1.Location = new System.Drawing.Point(152, 13);
+            this.lbDen1.Location = new System.Drawing.Point(153, 14);
             this.lbDen1.Name = "lbDen1";
             this.lbDen1.Size = new System.Drawing.Size(20, 13);
             this.lbDen1.TabIndex = 1;
@@ -698,7 +704,7 @@
             // 
             // lbtu1
             // 
-            this.lbtu1.Location = new System.Drawing.Point(6, 13);
+            this.lbtu1.Location = new System.Drawing.Point(7, 14);
             this.lbtu1.Name = "lbtu1";
             this.lbtu1.Size = new System.Drawing.Size(13, 13);
             this.lbtu1.TabIndex = 1;
@@ -833,7 +839,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(191, 29);
+            this.labelControl9.Location = new System.Drawing.Point(191, 28);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(50, 13);
             this.labelControl9.TabIndex = 0;
@@ -841,7 +847,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(202, 87);
+            this.labelControl13.Location = new System.Drawing.Point(202, 86);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(39, 13);
             this.labelControl13.TabIndex = 0;
@@ -849,7 +855,7 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(249, 118);
+            this.labelControl15.Location = new System.Drawing.Point(249, 117);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(20, 13);
             this.labelControl15.TabIndex = 0;
@@ -857,7 +863,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(5, 118);
+            this.labelControl14.Location = new System.Drawing.Point(5, 117);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(35, 13);
             this.labelControl14.TabIndex = 0;
@@ -865,7 +871,7 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(5, 87);
+            this.labelControl12.Location = new System.Drawing.Point(5, 86);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(53, 13);
             this.labelControl12.TabIndex = 0;
@@ -873,7 +879,7 @@
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(205, 58);
+            this.labelControl11.Location = new System.Drawing.Point(205, 57);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(36, 13);
             this.labelControl11.TabIndex = 0;
@@ -881,7 +887,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(5, 58);
+            this.labelControl10.Location = new System.Drawing.Point(5, 57);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(68, 13);
             this.labelControl10.TabIndex = 0;
@@ -889,7 +895,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(5, 29);
+            this.labelControl8.Location = new System.Drawing.Point(5, 28);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(59, 13);
             this.labelControl8.TabIndex = 0;
@@ -987,7 +993,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(516, 59);
+            this.labelControl5.Location = new System.Drawing.Point(516, 58);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(66, 13);
             this.labelControl5.TabIndex = 0;
@@ -995,7 +1001,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(8, 105);
+            this.labelControl7.Location = new System.Drawing.Point(8, 104);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(37, 13);
             this.labelControl7.TabIndex = 0;
@@ -1003,7 +1009,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(7, 59);
+            this.labelControl4.Location = new System.Drawing.Point(7, 58);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(34, 13);
             this.labelControl4.TabIndex = 0;
@@ -1011,7 +1017,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(5, 31);
+            this.labelControl2.Location = new System.Drawing.Point(5, 30);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(78, 13);
             this.labelControl2.TabIndex = 0;
@@ -1019,7 +1025,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(504, 31);
+            this.labelControl1.Location = new System.Drawing.Point(504, 30);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(74, 13);
             this.labelControl1.TabIndex = 0;
@@ -1163,8 +1169,12 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Số Lượng";
+            this.gridColumn7.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "_SoLuong";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn7.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
             // 
@@ -1206,7 +1216,7 @@
             // gridColumn25
             // 
             this.gridColumn25.Caption = "Tổng Cộng";
-            this.gridColumn25.DisplayFormat.FormatString = "0,0";
+            this.gridColumn25.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn25.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn25.FieldName = "_Total";
             this.gridColumn25.Name = "gridColumn25";
@@ -1219,8 +1229,12 @@
             // gridColumn18
             // 
             this.gridColumn18.Caption = "Tiền Thu";
+            this.gridColumn18.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn18.FieldName = "TIENTHU";
             this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn18.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 7;
             // 
@@ -1387,6 +1401,7 @@
             this.gridColumn38,
             this.gridColumn2,
             this.gridColumn40,
+            this.gridColumn49,
             this.gridColumn41,
             this.gridColumn48,
             this.gridColumn42,
@@ -1404,8 +1419,6 @@
             this.gridView3.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
             this.gridView3.OptionsDetail.AutoZoomDetail = true;
             this.gridView3.OptionsSelection.MultiSelect = true;
-            this.gridView3.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView3.OptionsView.EnableAppearanceOddRow = true;
             this.gridView3.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView3.OptionsView.RowAutoHeight = true;
             this.gridView3.OptionsView.ShowAutoFilterRow = true;
@@ -1454,6 +1467,15 @@
             this.gridColumn40.Visible = true;
             this.gridColumn40.VisibleIndex = 4;
             // 
+            // gridColumn49
+            // 
+            this.gridColumn49.Caption = "Lô Hàng";
+            this.gridColumn49.FieldName = "LOHANG";
+            this.gridColumn49.Name = "gridColumn49";
+            this.gridColumn49.OptionsColumn.ReadOnly = true;
+            this.gridColumn49.Visible = true;
+            this.gridColumn49.VisibleIndex = 5;
+            // 
             // gridColumn41
             // 
             this.gridColumn41.Caption = "Số Lượng Trả Về";
@@ -1464,7 +1486,7 @@
             this.gridColumn41.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn41.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn41.Visible = true;
-            this.gridColumn41.VisibleIndex = 5;
+            this.gridColumn41.VisibleIndex = 6;
             // 
             // gridColumn48
             // 
@@ -1476,7 +1498,7 @@
             this.gridColumn48.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn48.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn48.Visible = true;
-            this.gridColumn48.VisibleIndex = 6;
+            this.gridColumn48.VisibleIndex = 7;
             // 
             // gridColumn42
             // 
@@ -1486,7 +1508,7 @@
             this.gridColumn42.FieldName = "GIATIEN";
             this.gridColumn42.Name = "gridColumn42";
             this.gridColumn42.Visible = true;
-            this.gridColumn42.VisibleIndex = 7;
+            this.gridColumn42.VisibleIndex = 8;
             // 
             // gridColumn43
             // 
@@ -1498,7 +1520,7 @@
             this.gridColumn43.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn43.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn43.Visible = true;
-            this.gridColumn43.VisibleIndex = 8;
+            this.gridColumn43.VisibleIndex = 9;
             // 
             // gridColumn39
             // 
@@ -1508,7 +1530,7 @@
             this.gridColumn39.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn39.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn39.Visible = true;
-            this.gridColumn39.VisibleIndex = 9;
+            this.gridColumn39.VisibleIndex = 10;
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -1597,6 +1619,7 @@
             this.gridColumn30,
             this.gridColumn31,
             this.gridColumn32,
+            this.gridColumn50,
             this.gridColumn33,
             this.gridColumn47,
             this.gridColumn34,
@@ -1620,8 +1643,6 @@
             this.gridView1.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
             this.gridView1.OptionsDetail.AutoZoomDetail = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView1.OptionsView.EnableAppearanceOddRow = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -1678,6 +1699,14 @@
             this.gridColumn32.Visible = true;
             this.gridColumn32.VisibleIndex = 4;
             // 
+            // gridColumn50
+            // 
+            this.gridColumn50.Caption = "Lô Hàng";
+            this.gridColumn50.FieldName = "LOHANG";
+            this.gridColumn50.Name = "gridColumn50";
+            this.gridColumn50.Visible = true;
+            this.gridColumn50.VisibleIndex = 6;
+            // 
             // gridColumn33
             // 
             this.gridColumn33.Caption = "Số Lượng Trả";
@@ -1688,7 +1717,7 @@
             this.gridColumn33.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn33.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 6;
+            this.gridColumn33.VisibleIndex = 7;
             // 
             // gridColumn47
             // 
@@ -1700,7 +1729,7 @@
             this.gridColumn47.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn47.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn47.Visible = true;
-            this.gridColumn47.VisibleIndex = 7;
+            this.gridColumn47.VisibleIndex = 8;
             // 
             // gridColumn34
             // 
@@ -1710,7 +1739,7 @@
             this.gridColumn34.FieldName = "GIATIEN";
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 8;
+            this.gridColumn34.VisibleIndex = 9;
             // 
             // gridColumn45
             // 
@@ -1729,8 +1758,6 @@
             this.gridColumn35.Caption = "Ghi Chú";
             this.gridColumn35.FieldName = "GHICHU";
             this.gridColumn35.Name = "gridColumn35";
-            this.gridColumn35.Visible = true;
-            this.gridColumn35.VisibleIndex = 9;
             // 
             // gridColumn1
             // 
@@ -1775,8 +1802,6 @@
             this.gridView4.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
             this.gridView4.OptionsDetail.AutoZoomDetail = true;
             this.gridView4.OptionsSelection.MultiSelect = true;
-            this.gridView4.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView4.OptionsView.EnableAppearanceOddRow = true;
             this.gridView4.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView4.OptionsView.RowAutoHeight = true;
             this.gridView4.OptionsView.ShowAutoFilterRow = true;
@@ -1881,6 +1906,24 @@
             this.EditToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
+            // 
+            // printingSystem1
+            // 
+            this.printingSystem1.Links.AddRange(new object[] {
+            this.printableComponentLink1});
+            // 
+            // printableComponentLink1
+            // 
+            this.printableComponentLink1.Component = this.gridControl3;
+            // 
+            // 
+            // 
+            this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
+            this.printableComponentLink1.Margins = new System.Drawing.Printing.Margins(40, 40, 40, 40);
+            this.printableComponentLink1.PrintingSystem = this.printingSystem1;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
+            this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
+            this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
             // frmKHtra
             // 
@@ -1987,6 +2030,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2149,6 +2194,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn46;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn48;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn47;
+        private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
+        private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn49;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn50;
     }
     
 }

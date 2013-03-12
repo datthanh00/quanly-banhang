@@ -877,7 +877,6 @@
             // 
             this.tabControl12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.tabControl12.CanReorderTabs = true;
-            this.tabControl12.CloseButtonOnTabsVisible = true;
             this.tabControl12.CloseButtonPosition = DevComponents.DotNetBar.eTabCloseButtonPosition.Right;
             this.tabControl12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl12.Location = new System.Drawing.Point(0, 0);
@@ -1035,6 +1034,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1182, 475);
             this.Controls.Add(this.clientPanel);
             this.Controls.Add(this.cbkho);
@@ -1050,6 +1050,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Resize += new System.EventHandler(this.frmMain_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeZone1)).EndInit();

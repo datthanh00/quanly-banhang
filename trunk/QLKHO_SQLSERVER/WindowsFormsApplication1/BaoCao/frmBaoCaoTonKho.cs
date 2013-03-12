@@ -14,6 +14,7 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.Utils;
 using System.Globalization;
 using System.Threading;
+using DevExpress.XtraPrinting;
 
 
 namespace WindowsFormsApplication1
@@ -171,7 +172,16 @@ namespace WindowsFormsApplication1
             string NGAYKT = dateDen.Text;
             NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
             dto.NGAYKTKHO = NGAYKT;
-        
+
+            int ingaybd =Convert.ToInt32(dateTu.Text.Substring(6, 4)) + Convert.ToInt32(dateTu.Text.Substring(3, 2))*31 + Convert.ToInt32(dateTu.Text.Substring(0, 2))*365;
+            int ingaykt = Convert.ToInt32(dateDen.Text.Substring(6, 4))  + Convert.ToInt32(dateDen.Text.Substring(3, 2))*31  + Convert.ToInt32(dateDen.Text.Substring(0, 2))*365;
+            if (ingaybd>ingaykt)
+            {
+                MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
+                return;
+            }
+                
+
             gridControl2.MainView = advBandedGridView3;
 
 
@@ -195,6 +205,18 @@ namespace WindowsFormsApplication1
             {
                 dto.MANCC = "";
             }
+            string SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYKT + "' AND MAKHO='" + PublicVariable.MAKHO + "' ";
+            CTL ctl = new CTL();
+            DataTable dt = ctl.GETDATA(SQL);
+
+            if (dt.Rows[0][0].ToString() == "0")
+            {
+
+                MessageBox.Show("ngày kết thúc kỳ này không có dữ liệu");
+                return;
+            }
+                
+
             gridControl2.DataSource = ctr.getTonKho(dto);
             advBandedGridView3.BestFitColumns();
             //dt = ctr.getTonKho(dto);
@@ -419,7 +441,32 @@ namespace WindowsFormsApplication1
 
             }
             */
-            gridControl2.ShowPrintPreview();
+
+           // gridControl2.ShowPrintPreview();
+            /*
+
+            PrintableComponentLink pcl = new PrintableComponentLink(printingSystem1);
+
+            pcl.Component = gridControl2;
+
+
+            PageHeaderFooter phf = pcl.PageHeaderFooter as PageHeaderFooter;
+
+            // Clear the PageHeaderFooter's contents.
+            phf.Header.Content.Clear();
+
+            // Add custom information to the link's header.
+            phf.Header.Content.AddRange(new string[] { "CỬA HÀNG THUỐC THÚY Y TUẤN HẠNH", "XUẤT NHẬP TỒN KHO", "[Date Printed] [Time Printed]" });
+            phf.Header.LineAlignment = BrickAlignment.Far;
+
+
+
+            //pcl.CreateDocument();
+            pcl.ShowPreviewDialog();
+             * */
+
+            printableComponentLink1.CreateDocument();
+            printableComponentLink1.ShowPreview(); 
         }
 
         private void cbThoiGian_SelectedIndexChanged(object sender, EventArgs e)
@@ -536,6 +583,17 @@ namespace WindowsFormsApplication1
                 NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
                 dto.NGAYKTKHO = NGAYKT;
 
+                string SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYKT + "' AND MAKHO='" + PublicVariable.MAKHO + "' ";
+                CTL ctl = new CTL();
+                DataTable dt = ctl.GETDATA(SQL);
+
+                if (dt.Rows[0][0].ToString() == "0")
+                {
+
+                    MessageBox.Show("ngày kết thúc kỳ này không có dữ liệu");
+                    return;
+                }
+
                 gridControl2.MainView = advBandedGridView2;
                 gridControl2.DataSource = ctr.getTonKhoncc(dto);
                 advBandedGridView2.BestFitColumns();
@@ -555,6 +613,28 @@ namespace WindowsFormsApplication1
             {
                 loadMesagebox();
             }
+        }
+
+        private void printableComponentLink1_CreateReportHeaderArea(object sender, CreateAreaEventArgs e)
+        {
+            CTL ctlbc = new CTL();
+            String SQL = "select TENKHO, convert(varchar,getDate(),103) AS NGAY FROM KHO WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            DataTable dt = ctlbc.GETDATA(SQL);
+            string reportHeader = "Báo Cáo Tồn Kho " + dt.Rows[0]["TENKHO"].ToString() + " -- Ngày: " + dt.Rows[0]["NGAY"].ToString() + "";
+
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 11, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void printableComponentLink1_CreateReportFooterArea(object sender, CreateAreaEventArgs e)
+        {
+            string reportHeader = "Chủ Cửa Hàng                  Thủ Kho                  Kế Toán";
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 10, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
         

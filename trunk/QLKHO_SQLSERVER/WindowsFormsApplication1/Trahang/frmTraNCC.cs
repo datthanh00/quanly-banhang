@@ -13,6 +13,7 @@ using System.Collections;
 using DevExpress.XtraEditors.DXErrorProvider;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraGrid;
+using DevExpress.XtraPrinting;
 
 namespace WindowsFormsApplication1
 {
@@ -469,7 +470,11 @@ namespace WindowsFormsApplication1
 
                             MessageBox.Show("KHÔNG CÓ QUYỀN  ");
                             return;
-
+                            if (PublicVariable.TATCA == "False")
+                            {
+                                MessageBox.Show("TRÙNG MÃ HÓA ĐƠN");
+                                return;
+                            }
 
                             dtoNCC.IsUPDATE = true;
                             ctlNCC.UPDATEtraHOADONNHAP(dtoNCC);
@@ -756,6 +761,11 @@ namespace WindowsFormsApplication1
         {
             if (e.KeyCode == Keys.Delete && gridCTHOADON.State != DevExpress.XtraGrid.Views.Grid.GridState.Editing)
             {
+                DataRow dtr1 = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
+                if (dtr1["ID"].ToString() != "")
+                {
+                    return;
+                }
                 if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int focusrow=gridCTHOADON.FocusedRowHandle;
@@ -829,8 +839,31 @@ namespace WindowsFormsApplication1
                         }
 
                         ctlNCC.DELETEtraCTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID));
-                        ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "-" + dtr["_SoLuong"].ToString(),"0", "0");
-                    
+                        ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "-" + dtr["_SoLuong"].ToString(), "0", "0");
+
+                    }
+                    else
+                    {
+                        gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
+
+                        gettotal();
+
+                        dtoNCC.MANCC = txtMANCC.Text;
+                        dtoNCC.TENNCC = cboTenNCC.Text;
+                        dtoNCC.SDT = txtSoDT.Text;
+                        dtoNCC.FAX = txtFax.Text;
+                        dtoNCC.EMAIL = txtEmail.Text;
+                        dtoNCC.GHICHU = textBoxX1.Text;
+                        dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
+                        dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
+                        dtoNCC.MAHDN = txtMaHD.Text;
+                        if (cbotientra.Text == "")
+                        {
+                            cbotientra.Text = "0";
+                        }
+                        dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
+
+                        return;
                     }
                     gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
 
@@ -991,7 +1024,9 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            gridControl3.ShowPrintPreview();
+           // gridControl3.ShowPrintPreview();
+            printableComponentLink1.CreateDocument();
+            printableComponentLink1.ShowPreview();
         }
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
@@ -1031,6 +1066,14 @@ namespace WindowsFormsApplication1
 
         private void loadgrid()
         {
+            int ingaybd = Convert.ToInt32(dateTu.Text.Substring(6, 4)) + Convert.ToInt32(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu.Text.Substring(0, 2)) * 365;
+            int ingaykt = Convert.ToInt32(dateDen.Text.Substring(6, 4)) + Convert.ToInt32(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen.Text.Substring(0, 2)) * 365;
+            if (ingaybd > ingaykt)
+            {
+                MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
+                return;
+            }
+
             if (gridControl3.MainView == gridView4)
             {
                 loadgridPHIEUNHAP();
@@ -1105,6 +1148,28 @@ namespace WindowsFormsApplication1
             {
                 gridControl1.ExportToXls(saveFileDialog1.FileName);
             }
+        }
+
+        private void printableComponentLink1_CreateReportFooterArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            string reportHeader = "Chủ Cửa Hàng                  Thủ Kho                  Kế Toán";
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 10, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void printableComponentLink1_CreateReportHeaderArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            CTL ctlbc = new CTL();
+            String SQL = "select TENKHO, convert(varchar,getDate(),103) AS NGAY FROM KHO WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            DataTable dt = ctlbc.GETDATA(SQL);
+            string reportHeader = "Hàng trả Công Ty Kho " + dt.Rows[0]["TENKHO"].ToString() + " -- Ngày: " + dt.Rows[0]["NGAY"].ToString() + "";
+
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 11, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
 
