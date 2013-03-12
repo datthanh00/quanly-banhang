@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraGrid;
+using DevExpress.XtraPrinting;
 
 namespace WindowsFormsApplication1.KHtra
 {
@@ -176,6 +177,11 @@ namespace WindowsFormsApplication1.KHtra
             dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
 
             gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView1.Columns["KHOILUONG"].Visible = false;
+                gridView3.Columns["KHOILUONG"].Visible = false;
+            }
         }
 
         private void cboTenKH_Validated(object sender, EventArgs e)
@@ -358,8 +364,9 @@ namespace WindowsFormsApplication1.KHtra
                                     {
                                         if (XtraMessageBox.Show("" + dtr["_MaMH"].ToString() + ": chưa có Lô hàng với Hạn Dùng này bạn có muốn thêm lô hàng này không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                                         {
-                                            ctlNCC.INSERT_KHOHANG(dtr["_MaMH"].ToString(), "LO_" + txtMaHD.Text,dtr["_DonGia"].ToString(), "0", HSD);
-                                            dtoNCC.LOHANG = "LO_" + txtMaHD.Text;
+                                            dtoNCC.LOHANG = txtMaHD.Text;
+                                            ctlNCC.INSERT_KHOHANG(dtr["_MaMH"].ToString(), txtMaHD.Text,dtr["_DonGia"].ToString(), "0", HSD);
+                                            
                                         }
                                         else
                                         {
@@ -396,7 +403,11 @@ namespace WindowsFormsApplication1.KHtra
 
                             MessageBox.Show("KHÔNG CÓ QUYỀN ");
                             return;
-
+                            if (PublicVariable.TATCA == "False")
+                            {
+                                MessageBox.Show("TRÙNG MÃ HÓA ĐƠN");
+                                return;
+                            }
                             dtoNCC.IsUPDATE = true;
                             ctlNCC.UPDATEtraHOADONXUAT(dtoNCC);
 
@@ -649,7 +660,7 @@ namespace WindowsFormsApplication1.KHtra
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT convert(varchar,T3.NGAYXUAT,103) AS NGAYXUAT,T3.TENKH ,T3.MAHDX , T3.MAMH , T4.TENMH ,T3.SOLUONGXUAT,T3.SOLUONGXUAT*kldvt as KHOILUONG ,T3.GIATIEN,soluongxuat*giatien AS THANHTIEN,TIENTHU,TENNCC, GHICHU   FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,GHICHU,TIENTHU,t2.tenkh FROM (SELECT * FROM TRACHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh,GHICHU from TRAHOADONXUAT  as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  t9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN (SELECT TENMH,MAMH,TENNCC,KLDVT FROM MATHANG,NHACUNGCAP WHERE NHACUNGCAP.MANCC=MATHANG.MANCC) AS T4 ON T3.MAMH =T4.MAMH";
+            string SQL = "SELECT convert(varchar,T3.NGAYXUAT,103) AS NGAYXUAT,T3.TENKH ,T3.MAHDX , T3.MAMH , T4.TENMH ,T3.SOLUONGXUAT,T3.SOLUONGXUAT*kldvt as KHOILUONG ,T3.GIATIEN,soluongxuat*giatien AS THANHTIEN,TIENTHU,TENNCC, GHICHU,LOHANG   FROM (select T2.NGAYXUAT,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,GHICHU,TIENTHU,LOHANG,t2.tenkh FROM (SELECT * FROM TRACHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh,GHICHU from TRAHOADONXUAT  as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  t9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN (SELECT TENMH,MAMH,TENNCC,KLDVT FROM MATHANG,NHACUNGCAP WHERE NHACUNGCAP.MANCC=MATHANG.MANCC) AS T4 ON T3.MAMH =T4.MAMH";
       
             DataTable TBS = ctlNCC.GETDATA(SQL);
             gridControl3.MainView = gridView1;
@@ -660,10 +671,7 @@ namespace WindowsFormsApplication1.KHtra
             gridView1.RefreshData();
             gridControl3.RefreshDataSource();
             gridView1.BestFitColumns();
-            if (!PublicVariable.isKHOILUONG)
-            {
-                gridView1.Columns["KHOILUONG"].Visible = false;
-            }
+            
         }
 
         public void loadgridTONGSANPHAM()
@@ -679,7 +687,7 @@ namespace WindowsFormsApplication1.KHtra
             Load_panel_filter();
 
             //String SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC,KLDVT, DONVITINH, sum(TRAXUAT) as SOLUONGXUAT,TONKHO.GIAXUAT AS GIATIEN,SUM(TIENTHU) AS TIENTHU, SUM(TRAXUAT*TONKHO.GIAXUAT) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,TONKHO WHERE MATHANG.MAMH=TONKHO.MAMH AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MANCC=NHACUNGCAP.MANCC AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "' AND TRAXUAT>0 AND TONKHO.NGAY BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "' group by MATHANG.MAMH, TENMH, TENNCC,KLDVT, DONVITINH,TONKHO.GIAXUAT";
-            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC, KLDVT, DONVITINH,sum(SOLUONGXUAT*KLDVT) AS KHOILUONG, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN,SUM(TIENTHU) AS TIENTHU, SUM(SOLUONGXUAT*GIATIEN) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN,TIENTHU FROM TRACHITIETHDX,TRAHOADONXUAT WHERE TRACHITIETHDX.MAHDX=TRAHOADONXUAT.MAHDX AND  NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDX WHERE MATHANG.MANCC=NHACUNGCAP.MANCC  AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC, DONVITINH,GIATIEN,KLDVT ";
+            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC, KLDVT, DONVITINH,LOHANG,sum(SOLUONGXUAT*KLDVT) AS KHOILUONG, sum(SOLUONGXUAT) as SOLUONGXUAT, GIATIEN,SUM(TIENTHU) AS TIENTHU, SUM(SOLUONGXUAT*GIATIEN) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIATIEN,TIENTHU,LOHANG FROM TRACHITIETHDX,TRAHOADONXUAT WHERE TRACHITIETHDX.MAHDX=TRAHOADONXUAT.MAHDX AND  NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDX WHERE MATHANG.MANCC=NHACUNGCAP.MANCC  AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC, DONVITINH,GIATIEN,KLDVT,LOHANG ";
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
             gridControl3.MainView = gridView3;
@@ -771,6 +779,11 @@ namespace WindowsFormsApplication1.KHtra
         {
             if (e.KeyCode == Keys.Delete && gridCTHOADON.State != DevExpress.XtraGrid.Views.Grid.GridState.Editing)
             {
+                DataRow dtr1 = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
+                if (dtr1["ID"].ToString() != "")
+                {
+                    return;
+                }
                 if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int focusrow=gridCTHOADON.FocusedRowHandle;
@@ -861,10 +874,11 @@ namespace WindowsFormsApplication1.KHtra
                             MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
                             return;
                         }
-
+                        string HSD = dtr["_HSD"].ToString();
+                        HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
                         if (PublicVariable.isHSD)
                         {
-                            String SQL = "select * from khohang where  mamh='" + dtr["_MaMH"].ToString() + "' and HSD ='" + dtr["_HSD"].ToString() + "'";
+                            String SQL = "select * from khohang where  mamh='" + dtr["_MaMH"].ToString() + "' and HSD ='" + HSD + "'";
                             DataTable dt = ctlNCC.GETDATA(SQL);
                             if (dt.Rows.Count > 0)
                             {
@@ -914,6 +928,25 @@ namespace WindowsFormsApplication1.KHtra
                     }
                     else
                     {
+                        gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
+                        gettotal();
+
+                        dtoNCC.MAKH = txtmakh.Text;
+                        dtoNCC.TENKH = cboTenKH.Text;
+                        dtoNCC.DIACHI = txtDiachi.Text;
+                        dtoNCC.SDT = txtSDT.Text;
+
+                        // dtoNCC.WEBSITE = txtWeb.Text;
+                        dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
+                        dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
+                        dtoNCC.MAHDX = txtMaHD.Text;
+                        if (cbotientra.Text == "")
+                        {
+                            cbotientra.Text = "0";
+                        }
+                        dtoNCC.GHICHU = textBoxX1.Text;
+
+                        dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
                         return;
                     }
                     gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
@@ -1056,7 +1089,9 @@ namespace WindowsFormsApplication1.KHtra
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            gridControl3.ShowPrintPreview();
+           // gridControl3.ShowPrintPreview();
+            printableComponentLink1.CreateDocument();
+            printableComponentLink1.ShowPreview();
         }
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
@@ -1097,6 +1132,14 @@ namespace WindowsFormsApplication1.KHtra
 
         private void loadgrid()
         {
+            int ingaybd = Convert.ToInt32(dateTu.Text.Substring(6, 4)) + Convert.ToInt32(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu.Text.Substring(0, 2)) * 365;
+            int ingaykt = Convert.ToInt32(dateDen.Text.Substring(6, 4)) + Convert.ToInt32(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen.Text.Substring(0, 2)) * 365;
+            if (ingaybd > ingaykt)
+            {
+                MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
+                return;
+            }
+
             if (gridControl3.MainView == gridView4)
             {
                 loadgridPHIEUXUAT();
@@ -1169,6 +1212,28 @@ namespace WindowsFormsApplication1.KHtra
             {
                 gridControl1.ExportToXls(saveFileDialog1.FileName);
             }
+        }
+
+        private void printableComponentLink1_CreateReportHeaderArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            CTL ctlbc = new CTL();
+            String SQL = "select TENKHO, convert(varchar,getDate(),103) AS NGAY FROM KHO WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            DataTable dt = ctlbc.GETDATA(SQL);
+            string reportHeader = "Khách Hàng Trả Kho " + dt.Rows[0]["TENKHO"].ToString() + " -- Ngày: " + dt.Rows[0]["NGAY"].ToString() + "";
+
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 11, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void printableComponentLink1_CreateReportFooterArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            string reportHeader = "Chủ Cửa Hàng                  Thủ Kho                  Kế Toán";
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 10, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
 

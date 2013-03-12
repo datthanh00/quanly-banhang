@@ -68,11 +68,6 @@
             this.dateTu = new DevExpress.XtraEditors.DateEdit();
             this.lbDen = new DevExpress.XtraEditors.LabelControl();
             this.lbTu = new DevExpress.XtraEditors.LabelControl();
-            this.pnThoiGian = new DevExpress.XtraEditors.PanelControl();
-            this.dateBD = new DevExpress.XtraEditors.DateEdit();
-            this.lbDen1 = new DevExpress.XtraEditors.LabelControl();
-            this.dateKetThuc = new DevExpress.XtraEditors.DateEdit();
-            this.lbtu1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.btXuatDuLieu = new DevExpress.XtraEditors.SimpleButton();
@@ -189,6 +184,8 @@
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
+            this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -213,12 +210,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pnThoiGian)).BeginInit();
-            this.pnThoiGian.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBD.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBD.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).BeginInit();
             this.panel_info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -270,6 +261,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_tool
@@ -578,7 +571,6 @@
             // panelControl10
             // 
             this.panelControl10.Controls.Add(this.pnThangNam);
-            this.panelControl10.Controls.Add(this.pnThoiGian);
             this.panelControl10.Controls.Add(this.simpleButton2);
             this.panelControl10.Controls.Add(this.simpleButton3);
             this.panelControl10.Controls.Add(this.btXuatDuLieu);
@@ -595,7 +587,7 @@
             this.pnThangNam.Controls.Add(this.dateTu);
             this.pnThangNam.Controls.Add(this.lbDen);
             this.pnThangNam.Controls.Add(this.lbTu);
-            this.pnThangNam.Location = new System.Drawing.Point(104, 2);
+            this.pnThangNam.Location = new System.Drawing.Point(7, 3);
             this.pnThangNam.Name = "pnThangNam";
             this.pnThangNam.Size = new System.Drawing.Size(325, 32);
             this.pnThangNam.TabIndex = 4;
@@ -639,7 +631,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(165, 9);
+            this.lbDen.Location = new System.Drawing.Point(166, 10);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -647,71 +639,16 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(13, 9);
+            this.lbTu.Location = new System.Drawing.Point(14, 10);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
             this.lbTu.Text = "Từ";
             // 
-            // pnThoiGian
-            // 
-            this.pnThoiGian.Controls.Add(this.dateBD);
-            this.pnThoiGian.Controls.Add(this.lbDen1);
-            this.pnThoiGian.Controls.Add(this.dateKetThuc);
-            this.pnThoiGian.Controls.Add(this.lbtu1);
-            this.pnThoiGian.Location = new System.Drawing.Point(104, 4);
-            this.pnThoiGian.Name = "pnThoiGian";
-            this.pnThoiGian.Size = new System.Drawing.Size(306, 32);
-            this.pnThoiGian.TabIndex = 4;
-            // 
-            // dateBD
-            // 
-            this.dateBD.EditValue = null;
-            this.dateBD.Location = new System.Drawing.Point(31, 5);
-            this.dateBD.Name = "dateBD";
-            this.dateBD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBD.Properties.Mask.EditMask = global::WindowsFormsApplication1.resEngLand.btHoaDonXuat;
-            this.dateBD.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.dateBD.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateBD.Size = new System.Drawing.Size(112, 20);
-            this.dateBD.TabIndex = 2;
-            // 
-            // lbDen1
-            // 
-            this.lbDen1.Location = new System.Drawing.Point(152, 13);
-            this.lbDen1.Name = "lbDen1";
-            this.lbDen1.Size = new System.Drawing.Size(20, 13);
-            this.lbDen1.TabIndex = 1;
-            this.lbDen1.Text = "Đến";
-            // 
-            // dateKetThuc
-            // 
-            this.dateKetThuc.EditValue = null;
-            this.dateKetThuc.Location = new System.Drawing.Point(186, 5);
-            this.dateKetThuc.Name = "dateKetThuc";
-            this.dateKetThuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateKetThuc.Properties.Mask.EditMask = global::WindowsFormsApplication1.resEngLand.btHoaDonXuat;
-            this.dateKetThuc.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.dateKetThuc.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateKetThuc.Size = new System.Drawing.Size(112, 20);
-            this.dateKetThuc.TabIndex = 2;
-            // 
-            // lbtu1
-            // 
-            this.lbtu1.Location = new System.Drawing.Point(6, 13);
-            this.lbtu1.Name = "lbtu1";
-            this.lbtu1.Size = new System.Drawing.Size(13, 13);
-            this.lbtu1.TabIndex = 1;
-            this.lbtu1.Text = "Từ";
-            // 
             // simpleButton2
             // 
             this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.Location = new System.Drawing.Point(721, 5);
+            this.simpleButton2.Location = new System.Drawing.Point(450, 4);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(70, 31);
             this.simpleButton2.TabIndex = 3;
@@ -721,7 +658,7 @@
             // simpleButton3
             // 
             this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
-            this.simpleButton3.Location = new System.Drawing.Point(921, 4);
+            this.simpleButton3.Location = new System.Drawing.Point(650, 3);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(70, 31);
             this.simpleButton3.TabIndex = 3;
@@ -731,7 +668,7 @@
             // btXuatDuLieu
             // 
             this.btXuatDuLieu.Image = ((System.Drawing.Image)(resources.GetObject("btXuatDuLieu.Image")));
-            this.btXuatDuLieu.Location = new System.Drawing.Point(808, 5);
+            this.btXuatDuLieu.Location = new System.Drawing.Point(537, 4);
             this.btXuatDuLieu.Name = "btXuatDuLieu";
             this.btXuatDuLieu.Size = new System.Drawing.Size(103, 31);
             this.btXuatDuLieu.TabIndex = 3;
@@ -741,7 +678,7 @@
             // btXem
             // 
             this.btXem.Image = ((System.Drawing.Image)(resources.GetObject("btXem.Image")));
-            this.btXem.Location = new System.Drawing.Point(631, 6);
+            this.btXem.Location = new System.Drawing.Point(360, 5);
             this.btXem.Name = "btXem";
             this.btXem.Size = new System.Drawing.Size(70, 31);
             this.btXem.TabIndex = 3;
@@ -839,7 +776,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(191, 29);
+            this.labelControl9.Location = new System.Drawing.Point(191, 28);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(50, 13);
             this.labelControl9.TabIndex = 0;
@@ -847,7 +784,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(202, 87);
+            this.labelControl13.Location = new System.Drawing.Point(202, 86);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(39, 13);
             this.labelControl13.TabIndex = 0;
@@ -855,7 +792,7 @@
             // 
             // labelControl15
             // 
-            this.labelControl15.Location = new System.Drawing.Point(249, 118);
+            this.labelControl15.Location = new System.Drawing.Point(249, 117);
             this.labelControl15.Name = "labelControl15";
             this.labelControl15.Size = new System.Drawing.Size(20, 13);
             this.labelControl15.TabIndex = 0;
@@ -863,7 +800,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(5, 118);
+            this.labelControl14.Location = new System.Drawing.Point(5, 117);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(35, 13);
             this.labelControl14.TabIndex = 0;
@@ -871,7 +808,7 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(5, 87);
+            this.labelControl12.Location = new System.Drawing.Point(5, 86);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(53, 13);
             this.labelControl12.TabIndex = 0;
@@ -879,7 +816,7 @@
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(205, 58);
+            this.labelControl11.Location = new System.Drawing.Point(205, 57);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(36, 13);
             this.labelControl11.TabIndex = 0;
@@ -887,7 +824,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(5, 58);
+            this.labelControl10.Location = new System.Drawing.Point(5, 57);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(68, 13);
             this.labelControl10.TabIndex = 0;
@@ -895,7 +832,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(5, 29);
+            this.labelControl8.Location = new System.Drawing.Point(5, 28);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(59, 13);
             this.labelControl8.TabIndex = 0;
@@ -996,7 +933,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(510, 59);
+            this.labelControl5.Location = new System.Drawing.Point(510, 58);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(66, 13);
             this.labelControl5.TabIndex = 0;
@@ -1004,7 +941,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(8, 105);
+            this.labelControl7.Location = new System.Drawing.Point(8, 104);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(37, 13);
             this.labelControl7.TabIndex = 0;
@@ -1012,7 +949,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(7, 59);
+            this.labelControl4.Location = new System.Drawing.Point(7, 58);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(34, 13);
             this.labelControl4.TabIndex = 0;
@@ -1020,7 +957,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(5, 31);
+            this.labelControl2.Location = new System.Drawing.Point(5, 30);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(78, 13);
             this.labelControl2.TabIndex = 0;
@@ -1028,7 +965,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(504, 31);
+            this.labelControl1.Location = new System.Drawing.Point(504, 30);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(74, 13);
             this.labelControl1.TabIndex = 0;
@@ -1408,8 +1345,6 @@
             this.gridView3.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
             this.gridView3.OptionsDetail.AutoZoomDetail = true;
             this.gridView3.OptionsSelection.MultiSelect = true;
-            this.gridView3.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView3.OptionsView.EnableAppearanceOddRow = true;
             this.gridView3.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView3.OptionsView.RowAutoHeight = true;
             this.gridView3.OptionsView.ShowAutoFilterRow = true;
@@ -1617,8 +1552,6 @@
             this.gridView4.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
             this.gridView4.OptionsDetail.AutoZoomDetail = true;
             this.gridView4.OptionsSelection.MultiSelect = true;
-            this.gridView4.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView4.OptionsView.EnableAppearanceOddRow = true;
             this.gridView4.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView4.OptionsView.RowAutoHeight = true;
             this.gridView4.OptionsView.ShowAutoFilterRow = true;
@@ -1738,8 +1671,6 @@
             this.gridView1.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
             this.gridView1.OptionsDetail.AutoZoomDetail = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridView1.OptionsView.EnableAppearanceOddRow = true;
             this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -1921,6 +1852,24 @@
             this.toolStripMenuItem2.Text = "Xóa";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
+            // printingSystem1
+            // 
+            this.printingSystem1.Links.AddRange(new object[] {
+            this.printableComponentLink1});
+            // 
+            // printableComponentLink1
+            // 
+            this.printableComponentLink1.Component = this.gridControl3;
+            // 
+            // 
+            // 
+            this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
+            this.printableComponentLink1.Margins = new System.Drawing.Printing.Margins(40, 40, 40, 40);
+            this.printableComponentLink1.PrintingSystem = this.printingSystem1;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
+            this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
+            this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
+            // 
             // frmHoaDonXuat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1965,13 +1914,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pnThoiGian)).EndInit();
-            this.pnThoiGian.ResumeLayout(false);
-            this.pnThoiGian.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBD.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBD.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).EndInit();
             this.panel_info.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -2025,6 +1967,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
             this.contextMenuStrip3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2132,11 +2076,6 @@
         private DevExpress.XtraEditors.DateEdit dateTu;
         private DevExpress.XtraEditors.LabelControl lbDen;
         private DevExpress.XtraEditors.LabelControl lbTu;
-        private DevExpress.XtraEditors.PanelControl pnThoiGian;
-        private DevExpress.XtraEditors.DateEdit dateBD;
-        private DevExpress.XtraEditors.LabelControl lbDen1;
-        private DevExpress.XtraEditors.DateEdit dateKetThuc;
-        private DevExpress.XtraEditors.LabelControl lbtu1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton btXuatDuLieu;
@@ -2190,6 +2129,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn47;
+        private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
+        private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
     }
     
 }

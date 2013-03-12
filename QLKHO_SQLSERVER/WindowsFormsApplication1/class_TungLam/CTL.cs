@@ -410,6 +410,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETCTHOADONNHAP(MAHDN);
         }
+        public DataTable GETINCTHOADONNHAP(string MAHDN)
+        {
+            return DAO.GETinCTHOADONNHAP(MAHDN);
+        }
         public DataTable GETtraHOADONNHAP(DTO dto)
         {
             return DAO.GETtraHOADONNHAP(dto);

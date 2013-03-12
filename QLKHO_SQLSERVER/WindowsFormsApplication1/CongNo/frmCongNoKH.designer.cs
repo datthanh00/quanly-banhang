@@ -86,6 +86,10 @@
             this.btXuat = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.btThutien = new DevExpress.XtraEditors.SimpleButton();
+            this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
+            this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.printingSystem2 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
+            this.printableComponentLink2 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -116,6 +120,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink2.ImageCollection)).BeginInit();
             this.SuspendLayout();
             // 
             // dockManager1
@@ -679,6 +687,41 @@
             this.btThutien.Text = "Thu Tiền";
             this.btThutien.Click += new System.EventHandler(this.btThutien_Click);
             // 
+            // printingSystem1
+            // 
+            this.printingSystem1.Links.AddRange(new object[] {
+            this.printableComponentLink1});
+            // 
+            // printableComponentLink1
+            // 
+            this.printableComponentLink1.Component = this.gridControl1;
+            // 
+            // 
+            // 
+            this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
+            this.printableComponentLink1.PrintingSystem = this.printingSystem2;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem2;
+            this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
+            this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
+            // 
+            // printingSystem2
+            // 
+            this.printingSystem2.Links.AddRange(new object[] {
+            this.printableComponentLink1,
+            this.printableComponentLink2});
+            // 
+            // printableComponentLink2
+            // 
+            this.printableComponentLink2.Component = this.gridControl2;
+            // 
+            // 
+            // 
+            this.printableComponentLink2.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink2.ImageCollection.ImageStream")));
+            this.printableComponentLink2.PrintingSystem = this.printingSystem2;
+            this.printableComponentLink2.PrintingSystemBase = this.printingSystem2;
+            this.printableComponentLink2.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink2_CreateReportFooterArea);
+            this.printableComponentLink2.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink2_CreateReportHeaderArea);
+            // 
             // frmCongNoKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -729,6 +772,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink2.ImageCollection)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -793,6 +840,10 @@
         private DevExpress.XtraEditors.LabelControl lbDen;
         private DevExpress.XtraEditors.LabelControl lbTu;
         private DevExpress.XtraEditors.DateEdit dateTu;
+        private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
+        private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
+        private DevExpress.XtraPrinting.PrintingSystem printingSystem2;
+        private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink2;
        // private WindowsFormsApplication1.XUAT_NHAPTONDataSet4TableAdapters.GETONEPTTableAdapter gETONEPTTableAdapter1;
     }
 }

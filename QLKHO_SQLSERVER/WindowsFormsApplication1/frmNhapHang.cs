@@ -14,6 +14,7 @@ using DevExpress.XtraEditors.DXErrorProvider;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraTreeList.StyleFormatConditions;
 using DevExpress.XtraGrid;
+using DevExpress.XtraPrinting;
 
 namespace WindowsFormsApplication1
 {
@@ -91,7 +92,7 @@ namespace WindowsFormsApplication1
             string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
             View_phieunhap(dtr["MAHDN"].ToString());
             txtNgay.Text = dtr["NGAYNHAP"].ToString();
-            txtlohang.Text = "LO_" + dtr["MAHDN"].ToString();
+            txtlohang.Text = dtr["MAHDN"].ToString();
             loadgridNhacCungCap(MANCC);
 
             Load_TTNCC();
@@ -161,11 +162,18 @@ namespace WindowsFormsApplication1
             this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEdit1.Mask.UseMaskAsDisplayFormat = true;
 
-           /* gridCTHOADON.Columns["_HSD"].ColumnEdit = this.repositoryItemDateEdit1;
+            //gridCTHOADON.Columns["_HSD"].ColumnEdit = this.repositoryItemDateEdit1;
+            //this.repositoryItemDateEdit1.Mask.EditMask = "dd/MM/yyyy";
+            //this.repositoryItemDateEdit1.DisplayFormat.FormatString = "dd/MM/yyyy";
+            //this.repositoryItemDateEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+           // this.repositoryItemDateEdit1.Mask.UseMaskAsDisplayFormat = true;
+            /*
+            gridCTHOADON.Columns["_HSD"].ColumnEdit = this.repositoryItemDateEdit1;
             this.repositoryItemDateEdit1.Mask.EditMask = "d";
             this.repositoryItemDateEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.DateTime;
             this.repositoryItemDateEdit1.Mask.UseMaskAsDisplayFormat = true;
             */
+           
             if (!PublicVariable.isHSD)
             {
                 gridCTHOADON.Columns["_HSD"].Visible = false;
@@ -419,6 +427,7 @@ namespace WindowsFormsApplication1
         {
             if (XtraMessageBox.Show("Bạn có muốn Nhập Những Mặt Hàng Này Không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                
                 int i = 0;
             }
             else
@@ -462,6 +471,7 @@ namespace WindowsFormsApplication1
                         for (int i = 0; i < rowcount; i++)
                         {
                             DataRow dtr = gridCTHOADON.GetDataRow(i);
+                        
                             //insert_HoadonChitiet(txtMaHD.Text, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
                             if (dtr["_HSD"].ToString() == "")
                             {
@@ -531,6 +541,11 @@ namespace WindowsFormsApplication1
                         if (SUA == "False")
                         {
                             MessageBox.Show("KHÔNG CÓ QUYỀN SỬA");
+                            return;
+                        }
+                        if (PublicVariable.TATCA == "False")
+                        {
+                            MessageBox.Show("TRÙNG MÃ HÓA ĐƠN");
                             return;
                         }
 
@@ -695,7 +710,7 @@ namespace WindowsFormsApplication1
         
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.IN == "0")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -708,7 +723,7 @@ namespace WindowsFormsApplication1
                     //dt = gridCTHOADON.DataSource;
                     //gridControl1.da
                     DataTable dt = new DataTable();
-                    dt = ctlNCC.GETCTHOADONNHAP(txtMaHD.Text);
+                    dt = ctlNCC.GETINCTHOADONNHAP(txtMaHD.Text);
 
                     In rep = new In(dt, txtMANCC.Text, cboTenNCC.Text, double.Parse(cbotientra.Text), double.Parse(txtNo.Text), double.Parse(txtthanhtien.Text), txtMaHD.Text,"");
                     rep.ShowPreviewDialog();
@@ -743,7 +758,7 @@ namespace WindowsFormsApplication1
         public void loadmahdn()
         {
             txtMaHD.Text = connect.sTuDongDienMaHoaDonNhap(txtMaHD.Text);
-            txtlohang.Text = "LO_"+txtMaHD.Text;
+            txtlohang.Text = txtMaHD.Text;
             txtNgay.Text = DateTime.Now.ToString("dd/MM/yyy");
         }
 
@@ -873,10 +888,16 @@ namespace WindowsFormsApplication1
         {
             if (e.KeyCode == Keys.Delete && gridCTHOADON.State != DevExpress.XtraGrid.Views.Grid.GridState.Editing)
             {
+                DataRow dtr1 = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
+                if (dtr1["ID"].ToString() != "")
+                {
+                    return;
+                }
+                
                 if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int focusrow=gridCTHOADON.FocusedRowHandle;
-                    DataRow dtr = dtr = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
+                    DataRow  dtr = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
                    // bool isinsert = ctlNCC.ISINSERTCTHOADONNHAP(txtMaHD.Text, focusrow+1);
                    // if (!isinsert)
                        // ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, focusrow+1);
@@ -924,7 +945,7 @@ namespace WindowsFormsApplication1
         private void DeleteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             
-
+             
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int focusrow = gridCTHOADON.FocusedRowHandle;
@@ -994,6 +1015,15 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
+                        gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
+
+                        gettotal();
+                        dtoNCC.MANCC = txtMANCC.Text;
+                        dtoNCC.GHICHU = textBoxX1.Text;
+                        dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
+                        dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
+                        dtoNCC.MAHDN = txtMaHD.Text;
+                        dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
                         return;
                     }
 
@@ -1058,7 +1088,7 @@ namespace WindowsFormsApplication1
             loadgridCTHOADON(MAHDN);
   
             txtMaHD.Text = MAHDN;
-            txtlohang.Text ="LO_"+ MAHDN;
+            txtlohang.Text =MAHDN;
             string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
             DataTable DT = ctlNCC.GETDATA(SQL);
             txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
@@ -1130,8 +1160,10 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-            gridControl3.ShowPrintPreview();
+           // gridControl3.ShowPrintPreview();
+            printableComponentLink1.CreateDocument();
 
+            printableComponentLink1.ShowPreview();
            
 
         }
@@ -1160,6 +1192,14 @@ namespace WindowsFormsApplication1
         }
         private void loadgrid()
         {
+            int ingaybd = Convert.ToInt32(dateTu.Text.Substring(6, 4)) + Convert.ToInt32(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu.Text.Substring(0, 2)) * 365;
+            int ingaykt = Convert.ToInt32(dateDen.Text.Substring(6, 4)) + Convert.ToInt32(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen.Text.Substring(0, 2)) * 365;
+            if (ingaybd > ingaykt)
+            {
+                MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
+                return;
+            }
+
             if (gridControl3.MainView == gridView4)
             {
                 loadgridPHIEUNHAP();
@@ -1228,6 +1268,28 @@ namespace WindowsFormsApplication1
             {
                 gridControl1.ExportToXls(saveFileDialog1.FileName);
             }
+        }
+
+        private void printableComponentLink1_CreateReportHeaderArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            CTL ctlbc = new CTL();
+            String SQL = "select TENKHO, convert(varchar,getDate(),103) AS NGAY FROM KHO WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            DataTable dt = ctlbc.GETDATA(SQL);
+            string reportHeader = "Báo Cáo Nhập Hàng Kho " + dt.Rows[0]["TENKHO"].ToString() + " -- Ngày: " + dt.Rows[0]["NGAY"].ToString() + "";
+
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 11, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void printableComponentLink1_CreateReportFooterArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            string reportHeader = "Chủ Cửa Hàng                  Thủ Kho                  Kế Toán";
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 10, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
 

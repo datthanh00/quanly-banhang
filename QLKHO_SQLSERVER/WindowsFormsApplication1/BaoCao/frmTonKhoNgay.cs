@@ -14,6 +14,7 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.Utils;
 using System.Globalization;
 using System.Threading;
+using DevExpress.XtraPrinting;
 
 
 namespace WindowsFormsApplication1
@@ -303,7 +304,10 @@ namespace WindowsFormsApplication1
 
             }
             */
-            gridControl2.ShowPrintPreview();
+           // gridControl2.ShowPrintPreview();
+
+            printableComponentLink1.CreateDocument();
+            printableComponentLink1.ShowPreview();
         }
 
    
@@ -453,6 +457,28 @@ namespace WindowsFormsApplication1
                    
                 }
                 
+        }
+
+        private void printableComponentLink1_CreateReportFooterArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            string reportHeader = "Chủ Cửa Hàng                  Thủ Kho                  Kế Toán";
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 10, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void printableComponentLink1_CreateReportHeaderArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            CTL ctlbc = new CTL();
+            String SQL = "select TENKHO, convert(varchar,getDate(),103) AS NGAY FROM KHO WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            DataTable dt = ctlbc.GETDATA(SQL);
+            string reportHeader = "Báo Cáo Tồn Kho ngày kho " + dt.Rows[0]["TENKHO"].ToString() + " -- Ngày: " + dt.Rows[0]["NGAY"].ToString() + "";
+
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 11, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
         

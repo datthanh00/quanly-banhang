@@ -9,6 +9,7 @@ using DevExpress.XtraEditors;
 using DevComponents.DotNetBar;
 using System.Globalization;
 using System.Threading;
+using DevExpress.XtraPrinting;
 
 namespace WindowsFormsApplication1
 {
@@ -239,6 +240,14 @@ namespace WindowsFormsApplication1
             dto.NGAYBD = dateNgayBD;
             dto.NGAYKT = dateNgayKT;
 
+            int ingaybd = Convert.ToInt32(dateTu.Text.Substring(6, 4)) + Convert.ToInt32(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu.Text.Substring(0, 2)) * 365;
+            int ingaykt = Convert.ToInt32(dateDen.Text.Substring(6, 4)) + Convert.ToInt32(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen.Text.Substring(0, 2)) * 365;
+            if (ingaybd > ingaykt)
+            {
+                MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
+                return;
+            }
+
             if (isxemclick == false)
             {
                 gridControl6.DataSource = null;
@@ -436,7 +445,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            gridControl6.ShowPrintPreview();
+            //gridControl6.ShowPrintPreview();
            /* if (gridView1.RowCount > 0)
             {
                 reportBaoCaoDoanhThu rep = new reportBaoCaoDoanhThu(tb, iNgonNgu);
@@ -447,6 +456,9 @@ namespace WindowsFormsApplication1
                 XtraMessageBox.Show("Dữ liệu không có", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             * */
+
+            printableComponentLink1.CreateDocument();
+            printableComponentLink1.ShowPreview();
         }
 
         private void cbThoiGian_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -538,6 +550,29 @@ namespace WindowsFormsApplication1
             cbkhachhang.Visible = false;
             cbncc.Visible = false;
             cbsanpham.Visible = true;
+        }
+
+        private void printableComponentLink1_CreateReportHeaderArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            CTL ctlbc = new CTL();
+            String SQL = "select TENKHO, convert(varchar,getDate(),103) AS NGAY FROM KHO WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            DataTable dt = ctlbc.GETDATA(SQL);
+            string reportHeader = "Báo Cáo Kho " + dt.Rows[0]["TENKHO"].ToString() + " -- Ngày: " + dt.Rows[0]["NGAY"].ToString() + "";
+
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 11, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+			
+        }
+
+        private void printableComponentLink1_CreateReportFooterArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            string reportHeader = "Chủ Cửa Hàng                  Thủ Kho                  Kế Toán";
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 10, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
 

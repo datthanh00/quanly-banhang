@@ -407,9 +407,11 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            gridControl1.ShowPrintPreview();
+           // gridControl1.ShowPrintPreview();
            // reporthansudung hansudung = new reporthansudung(dt, iNgonNgu);
            // hansudung.ShowPreviewDialog();
+            printableComponentLink1.CreateDocument();
+            printableComponentLink1.ShowPreview();
         }
 
      
@@ -519,6 +521,28 @@ namespace WindowsFormsApplication1
         private void labelControl2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void printableComponentLink1_CreateReportFooterArea(object sender, CreateAreaEventArgs e)
+        {
+            string reportHeader = "Chủ Cửa Hàng                  Thủ Kho                  Kế Toán";
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 10, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void printableComponentLink1_CreateReportHeaderArea(object sender, CreateAreaEventArgs e)
+        {
+            CTL ctlbc = new CTL();
+            String SQL = "select TENKHO, convert(varchar,getDate(),103) AS NGAY FROM KHO WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            DataTable dt = ctlbc.GETDATA(SQL);
+            string reportHeader = "Báo Cáo Tồn Phân Lô Kho " + dt.Rows[0]["TENKHO"].ToString() + " -- Ngày: " + dt.Rows[0]["NGAY"].ToString() + "";
+
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 11, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
     }
 }

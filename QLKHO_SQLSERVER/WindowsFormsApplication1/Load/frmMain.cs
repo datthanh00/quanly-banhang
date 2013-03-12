@@ -242,6 +242,7 @@ namespace WindowsFormsApplication1
 
                 int imacn = Convert.ToInt32(MACN);
 
+                PublicVariable.TATCA = PhanQuyen.Rows[imacn - 1]["TATCA"].ToString();
                 PublicVariable.XEM = PhanQuyen.Rows[imacn - 1]["TRUYCAP"].ToString();
                 PublicVariable.THEM = PhanQuyen.Rows[imacn - 1]["THEM"].ToString();
                 PublicVariable.XOA = PhanQuyen.Rows[imacn - 1]["XOA"].ToString();
@@ -641,7 +642,7 @@ namespace WindowsFormsApplication1
             cbkho.Properties.View.BestFitColumns();
             cbkho.Properties.PopupFormWidth = 200;
             CTL ctl = new CTL();
-            String SQL = "select TENKHO,KHO.MAKHO from phankho,KHO WHERE KHO.MAKHO=PHANKHO.MAKHO AND MABP='" + sBoPhan + "' and quanly=1";
+            String SQL = "select TENKHO,KHO.MAKHO from phankho,KHO WHERE KHO.MAKHO=PHANKHO.MAKHO AND MABP='" + sBoPhan + "' and quanly=1 AND KHO.TINHTRANG='TRUE'";
             
             cbkho.Properties.DataSource = ctl.GETDATA(SQL);
             gridcbkho.SelectRow(0);
@@ -1660,9 +1661,34 @@ namespace WindowsFormsApplication1
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-         
-                Application.Exit();
+
+            Application.Exit();
             
+        }
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (iNgonNgu == 0)
+            {
+                if (XtraMessageBox.Show("Bạn có muốn thoát hay không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+                {
+                    e.Cancel = false;
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                if (XtraMessageBox.Show("Do you want to exit ? ", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+                {
+                    e.Cancel = false;
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
         }
 
         private void btCongNoNCC_ItemClick(object sender, ItemClickEventArgs e)
@@ -1984,6 +2010,7 @@ namespace WindowsFormsApplication1
             //{
                 tabControl12.Tabs.Clear();
             //}
+                load_KHOHANGNGAY();
 
         }
 
@@ -2126,7 +2153,7 @@ namespace WindowsFormsApplication1
                     break;
             }
 
-
+            PublicVariable.TATCA = PhanQuyen.Rows[imacn - 1]["TATCA"].ToString();
             PublicVariable.XEM = PhanQuyen.Rows[imacn - 1]["TRUYCAP"].ToString();
             PublicVariable.THEM = PhanQuyen.Rows[imacn - 1]["THEM"].ToString();
             PublicVariable.XOA = PhanQuyen.Rows[imacn - 1]["XOA"].ToString();
@@ -2203,5 +2230,7 @@ namespace WindowsFormsApplication1
             }
             ld.simpleCloseWait();
         }
+
+
     }
 }

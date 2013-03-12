@@ -62,6 +62,7 @@
             this.gridBand9 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn33 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand11 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.bandedGridColumn30 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn38 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn39 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand14 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -139,6 +140,8 @@
             this.gridBand13 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand10 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
+            this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -161,6 +164,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
             this.SuspendLayout();
             // 
             // dockManager1
@@ -192,7 +197,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(705, 13);
+            this.labelControl1.Location = new System.Drawing.Point(708, 16);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(69, 13);
             this.labelControl1.TabIndex = 33;
@@ -285,7 +290,7 @@
             // 
             // lbloc
             // 
-            this.lbloc.Location = new System.Drawing.Point(471, 11);
+            this.lbloc.Location = new System.Drawing.Point(474, 14);
             this.lbloc.Name = "lbloc";
             this.lbloc.Size = new System.Drawing.Size(47, 13);
             this.lbloc.TabIndex = 30;
@@ -293,7 +298,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(289, 13);
+            this.lbDen.Location = new System.Drawing.Point(292, 16);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -301,7 +306,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(140, 13);
+            this.lbTu.Location = new System.Drawing.Point(143, 16);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -456,6 +461,7 @@
             this.gridBand16});
             this.advBandedGridView2.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.bandedGridColumn33,
+            this.bandedGridColumn30,
             this.bandedGridColumn38,
             this.bandedGridColumn39,
             this.bandedGridColumn40,
@@ -503,11 +509,23 @@
             this.gridBand11.AppearanceHeader.Options.UseTextOptions = true;
             this.gridBand11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridBand11.Caption = "Đầu kì";
+            this.gridBand11.Columns.Add(this.bandedGridColumn30);
             this.gridBand11.Columns.Add(this.bandedGridColumn38);
             this.gridBand11.Columns.Add(this.bandedGridColumn39);
             this.gridBand11.MinWidth = 20;
             this.gridBand11.Name = "gridBand11";
-            this.gridBand11.Width = 150;
+            this.gridBand11.Width = 225;
+            // 
+            // bandedGridColumn30
+            // 
+            this.bandedGridColumn30.Caption = "Số Lượng";
+            this.bandedGridColumn30.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn30.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.bandedGridColumn30.FieldName = "TONDAU";
+            this.bandedGridColumn30.Name = "bandedGridColumn30";
+            this.bandedGridColumn30.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.bandedGridColumn30.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.bandedGridColumn30.Visible = true;
             // 
             // bandedGridColumn38
             // 
@@ -549,7 +567,7 @@
             // bandedGridColumn40
             // 
             this.bandedGridColumn40.Caption = "Số lượng";
-            this.bandedGridColumn40.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn40.DisplayFormat.FormatString = "{0:0,0}";
             this.bandedGridColumn40.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn40.FieldName = "NHAP";
             this.bandedGridColumn40.Name = "bandedGridColumn40";
@@ -583,7 +601,7 @@
             // bandedGridColumn43
             // 
             this.bandedGridColumn43.Caption = "KH trả";
-            this.bandedGridColumn43.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn43.DisplayFormat.FormatString = "{0:0,0}";
             this.bandedGridColumn43.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn43.FieldName = "TRAXUAT";
             this.bandedGridColumn43.Name = "bandedGridColumn43";
@@ -665,7 +683,7 @@
             // bandedGridColumn49
             // 
             this.bandedGridColumn49.Caption = "Trả CTY";
-            this.bandedGridColumn49.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn49.DisplayFormat.FormatString = "{0:0,0}";
             this.bandedGridColumn49.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn49.FieldName = "TRANHAP";
             this.bandedGridColumn49.Name = "bandedGridColumn49";
@@ -710,7 +728,7 @@
             // bandedGridColumn52
             // 
             this.bandedGridColumn52.Caption = "Số lượng";
-            this.bandedGridColumn52.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn52.DisplayFormat.FormatString = "{0:0,0}";
             this.bandedGridColumn52.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn52.FieldName = "TONCUOI";
             this.bandedGridColumn52.Name = "bandedGridColumn52";
@@ -1376,6 +1394,26 @@
             // 
             this.gridBand10.Name = "gridBand10";
             // 
+            // printingSystem1
+            // 
+            this.printingSystem1.Links.AddRange(new object[] {
+            this.printableComponentLink1});
+            // 
+            // printableComponentLink1
+            // 
+            this.printableComponentLink1.Component = this.gridControl2;
+            // 
+            // 
+            // 
+            this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
+            this.printableComponentLink1.Landscape = true;
+            this.printableComponentLink1.Margins = new System.Drawing.Printing.Margins(40, 40, 40, 40);
+            this.printableComponentLink1.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            this.printableComponentLink1.PrintingSystem = this.printingSystem1;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
+            this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
+            this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
+            // 
             // frmBaoCaoTonKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1411,6 +1449,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1506,29 +1546,32 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridCuoiKi;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn17;
         private DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView advBandedGridView2;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand9;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn33;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand11;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn38;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn39;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand14;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn40;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn41;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn42;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn43;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn44;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn45;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand15;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn46;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn47;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn48;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn49;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn50;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn51;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand16;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn52;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn53;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn54;
+        private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
+        private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand9;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand11;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn30;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand14;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand15;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand16;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHOTableAdapter kHOTableAdapter;
     }
 }

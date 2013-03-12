@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraGrid;
+using DevExpress.XtraPrinting;
 
 namespace WindowsFormsApplication1.HoaDonXuat
 {
@@ -303,7 +304,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 }
                                 else
                                 {
-                                    System.Windows.Forms.MessageBox.Show("Chưa có mã hàng này");
+                                    System.Windows.Forms.MessageBox.Show("Chưa có mã hàng:" + dtr["_MaMH"].ToString() + " trong kho");
                                     return;
                                 }
                             }
@@ -328,7 +329,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
                             }
-
+                            if (PublicVariable.TATCA == "False")
+                            {
+                                MessageBox.Show("TRÙNG MÃ HÓA ĐƠN");
+                                return;
+                            }
                             dtoNCC.IsUPDATE = true;
                             ctlNCC.UPDATEHOADONXUAT(dtoNCC);
 
@@ -701,6 +706,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
         {
             if (e.KeyCode == Keys.Delete && gridCTHOADON.State != DevExpress.XtraGrid.Views.Grid.GridState.Editing)
             {
+                DataRow dtr1 = gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
+                if (dtr1["ID"].ToString() != "")
+                {
+                    return;
+                }
+
                 if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int focusrow=gridCTHOADON.FocusedRowHandle;
@@ -798,6 +809,21 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     }
                     else
                     {
+                        gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
+                        gettotal();
+
+                        dtoNCC.MAKH = txtmakh.Text;
+                        dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
+                        dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
+                        dtoNCC.MAHDX = txtMaHD.Text;
+                        if (cbotientra.Text == "")
+                        {
+                            cbotientra.Text = "0";
+                        }
+                        dtoNCC.GHICHU = textBoxX1.Text;
+
+                        dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
+
                         return;
                     }
                     gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
@@ -822,7 +848,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
         public void View_phieuxuat(string MAHDX)
         {
             loadgridCTHOADON(MAHDX);
-
             txtMaHD.Text = MAHDX;
             string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
@@ -926,10 +951,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            gridControl3.ShowPrintPreview();
-
-         
-
+           // gridControl3.ShowPrintPreview();
+            gridView1.Columns["MAHDX"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+            printableComponentLink1.CreateDocument();
+            printableComponentLink1.ShowPreview();
+            gridView1.Columns["MAHDX"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
         }
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
@@ -1020,6 +1046,14 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void loadgrid()
         {
+            int ingaybd = Convert.ToInt32(dateTu.Text.Substring(6, 4)) + Convert.ToInt32(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu.Text.Substring(0, 2)) * 365;
+            int ingaykt = Convert.ToInt32(dateDen.Text.Substring(6, 4)) + Convert.ToInt32(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen.Text.Substring(0, 2)) * 365;
+            if (ingaybd > ingaykt)
+            {
+                MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
+                return;
+            }
+
             if (gridControl3.MainView == gridView4)
             {
                 loadgridPHIEUXUAT();
@@ -1137,6 +1171,28 @@ namespace WindowsFormsApplication1.HoaDonXuat
             gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();
            // mahdtam = "";
             MessageBox.Show("Đã Lưu Tạm Hóa Đơn");
+        }
+
+        private void printableComponentLink1_CreateReportHeaderArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            CTL ctlbc = new CTL();
+            String SQL = "select TENKHO, convert(varchar,getDate(),103) AS NGAY FROM KHO WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            DataTable dt = ctlbc.GETDATA(SQL);
+            string reportHeader = "Báo Cáo Xuất Hàng Kho " + dt.Rows[0]["TENKHO"].ToString() + " -- Ngày: " + dt.Rows[0]["NGAY"].ToString() + "";
+
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 11, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void printableComponentLink1_CreateReportFooterArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
+        {
+            string reportHeader = "Chủ Cửa Hàng                  Thủ Kho                  Kế Toán";
+            e.Graph.StringFormat = new BrickStringFormat(StringAlignment.Center);
+            e.Graph.Font = new Font("Tahoma", 10, FontStyle.Bold);
+            RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
+            e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
 
