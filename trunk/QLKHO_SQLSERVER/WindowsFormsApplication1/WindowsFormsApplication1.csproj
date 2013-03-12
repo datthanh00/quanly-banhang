@@ -792,6 +792,14 @@
       <DependentUpon>frmTraNCC.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Xoahoadon\frmxoahd.resx">
+      <DependentUpon>frmxoahd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xoahoadon\Inhdx.resx">
+      <DependentUpon>Inhdx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -844,6 +852,18 @@
     </Compile>
     <Compile Include="Trahang\frmTraNCC.designer.cs">
       <DependentUpon>frmTraNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xoahoadon\frmxoahd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Xoahoadon\frmxoahd.designer.cs">
+      <DependentUpon>frmxoahd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xoahoadon\Inhdx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xoahoadon\Inhdx.designer.cs">
+      <DependentUpon>Inhdx.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

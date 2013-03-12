@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
         NhapHangDAO mh = new NhapHangDAO();
         //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
         public string THEM, XOA, SUA, IN, XEM;
-      
+       
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
             XEM = PublicVariable.XEM;
@@ -944,8 +944,13 @@ namespace WindowsFormsApplication1
 
         private void DeleteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            
-             
+            if (XOA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN XÓA ");
+                return;
+            }
+        
+
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int focusrow = gridCTHOADON.FocusedRowHandle;
@@ -955,11 +960,7 @@ namespace WindowsFormsApplication1
                     String sID = dtr["ID"].ToString();
                     if (sID != "")
                     {
-                        if (XOA == "False")
-                        {
-                            MessageBox.Show("KHÔNG CÓ QUYỀN XÓA ");
-                            return;
-                        }
+                       
 
                         string SQLNGAY="SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
                          DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
@@ -978,10 +979,23 @@ namespace WindowsFormsApplication1
                                 MessageBox.Show("Mặt hàng trong Lô Hàng này đã Xuất nên không thể xóa  ");
                                 return;
                             }
+                            PublicVariable.TMPtring = "";
+                            frmxoahd xhd = new frmxoahd();
+                            xhd.MAHD = txtMaHD.Text;
+                            xhd.MAMH = dtr["_MaMH"].ToString();
+                            xhd.TENMH = dtr["_TenMH"].ToString();
+
+                            xhd.ShowDialog();
+                            if (PublicVariable.TMPtring=="")
+                            {
+                                return;
+                            }
+                            
 
                             ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["_MaMH"].ToString());
 
                             ctlNCC.DELETE_KHOHANG(dtr["_MaMH"].ToString(), txtlohang.Text);
+                            PublicVariable.TMPtring = "";
                         }
                         else
                         {
@@ -1000,9 +1014,22 @@ namespace WindowsFormsApplication1
                                 }
                                 else
                                 {
-                                    ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["_MaMH"].ToString());
+                                    PublicVariable.TMPtring = "";
+                                    frmxoahd xhd = new frmxoahd();
+                                    xhd.MAHD = txtMaHD.Text;
+                                    xhd.MAMH = dtr["_MaMH"].ToString();
+                                    xhd.TENMH = dtr["_TenMH"].ToString();
 
+                                    xhd.ShowDialog();
+                                    if (PublicVariable.TMPtring == "")
+                                    {
+                                        return;
+                                    }
+                                    
+
+                                    ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["_MaMH"].ToString());
                                     ctlNCC.UPDATE_KHOHANG_NX(dtr["_MaMH"].ToString(), "1", (-soluonghientai).ToString(), "0", "0", "0");
+                                    PublicVariable.TMPtring = "";
                                 }
                             }
                             else
