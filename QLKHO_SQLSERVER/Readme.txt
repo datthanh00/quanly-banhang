@@ -1,29 +1,27 @@
-
+ï»¿
 {0:0.##}
 
 {0:0,0}
 
-if (!PublicVariable.isKHOILUONG)
-            {
-                gridView7.Columns["KHOILUONG"].Visible = false;
-            }
-
-BAO CAO THEO CONG TY
-
-THEO TRONG LUONG CHO BAO CAO
-
-LOI EROR KHONG CO QUYEN
-
- loi xuat hang khi nhap so tien tra
- 
- 
-
-
-khohang chua co j
+CTL ctlNgay = new CTL();
+string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
+                      DataTable dtn = ctlNgay.GETDATA(SQLNGAY);
+                      dtn.Rows[0][0].ToString();
 
 
 
-nguyen thi loan  ------- bán le cám
+					  
+					  
+ton kho theo ngay bi nham gua kh tra va tra hang cty
+
+them mat hang moi thi chua update tonkhott
+
+			
+
+
+
+
+nguyen thi loan  
 
 
 Dao thi huyen ----- vac xin
