@@ -278,6 +278,10 @@ namespace WindowsFormsApplication1.KHtra
          
                         if (PublicVariable.isHSD)
                         {
+                            string SQL1 = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
+                            DataTable dttime = ctlNCC.GETDATA(SQL1);
+                            String timenow = dttime.Rows[0][0].ToString();
+
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
@@ -287,7 +291,7 @@ namespace WindowsFormsApplication1.KHtra
                                     MessageBox.Show("Mã Hàng:" + dtr["_MaMH"].ToString() + " Chưa có Hạn Sử Dụng ");
                                     return;
                                 }
-                                else if (DateTime.Now >= DateTime.Parse(dtr["_HSD"].ToString()))
+                                else if (DateTime.Parse(timenow) >= DateTime.Parse(dtr["_HSD"].ToString()))
                                 {
                                     MessageBox.Show("Mã Hàng:" + dtr["_MaMH"].ToString() + " Hạn Sử Dụng Quá Ngắn ");
                                     return;
@@ -1115,9 +1119,28 @@ namespace WindowsFormsApplication1.KHtra
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+
+            DataTable printtable = (DataTable)gridControl3.DataSource;
+            if (gridControl3.MainView == gridView4)
+            {
+                Inhd rep = new Inhd(printtable, 6);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView1)
+            {
+                Inhd rep = new Inhd(printtable, 7);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView3)
+            {
+                Inhd rep = new Inhd(printtable, 8);
+                rep.ShowPreviewDialog();
+            }
            // gridControl3.ShowPrintPreview();
+            /*
             printableComponentLink1.CreateDocument();
             printableComponentLink1.ShowPreview();
+             * */
         }
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
