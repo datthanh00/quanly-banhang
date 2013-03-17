@@ -468,6 +468,13 @@ namespace WindowsFormsApplication1
 
                     if (PublicVariable.isHSD)
                     {
+                        
+                        
+
+                        string SQL1 = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
+                        DataTable dttime = ctlNCC.GETDATA(SQL1);
+                        String timenow = dttime.Rows[0][0].ToString();
+
                         for (int i = 0; i < rowcount; i++)
                         {
                             DataRow dtr = gridCTHOADON.GetDataRow(i);
@@ -478,7 +485,7 @@ namespace WindowsFormsApplication1
                                 MessageBox.Show("Mã Hàng:" + dtr["_MaMH"].ToString() + " Chưa có Hạn Sử Dụng ");
                                 return;
                             }
-                            else if (DateTime.Now >= DateTime.Parse(dtr["_HSD"].ToString()))
+                            else if (DateTime.Parse(timenow) >= DateTime.Parse(dtr["_HSD"].ToString()))
                             {
                                 MessageBox.Show("Mã Hàng:" + dtr["_MaMH"].ToString() + " Hạn Sử Dụng Quá Ngắn ");
                                 return;
@@ -1188,9 +1195,34 @@ namespace WindowsFormsApplication1
             }
 
            // gridControl3.ShowPrintPreview();
-            printableComponentLink1.CreateDocument();
 
-            printableComponentLink1.ShowPreview();
+
+            if (gridControl3.MainView == gridView4)
+            {
+                DataTable printtable = (DataTable)gridControl3.DataSource;
+                Inhd rep = new Inhd(printtable, 0);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView5)
+            {
+                DataTable printtable = (DataTable)gridControl3.DataSource;
+                Inhd rep = new Inhd(printtable, 1);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView7)
+            {
+                DataTable printtable = (DataTable)gridControl3.DataSource;
+                Inhd rep = new Inhd(printtable, 2);
+               
+                rep.ShowPreviewDialog();
+            }
+                
+       
+            
+
+            //printableComponentLink1.CreateDocument();
+
+            //printableComponentLink1.ShowPreview();
            
 
         }

@@ -966,11 +966,31 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+
+            DataTable printtable = (DataTable)gridControl3.DataSource;
+            if (gridControl3.MainView == gridView4)
+            {
+                Inhd rep = new Inhd(printtable, 3);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView1)
+            {
+                Inhd rep = new Inhd(printtable, 4);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView3)
+            {
+                Inhd rep = new Inhd(printtable, 5);
+                rep.ShowPreviewDialog();
+            }
+
            // gridControl3.ShowPrintPreview();
-            gridView1.Columns["MAHDX"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
+
+            /*gridView1.Columns["MAHDX"].SortOrder = DevExpress.Data.ColumnSortOrder.Ascending;
             printableComponentLink1.CreateDocument();
             printableComponentLink1.ShowPreview();
             gridView1.Columns["MAHDX"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
+             * */
         }
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
