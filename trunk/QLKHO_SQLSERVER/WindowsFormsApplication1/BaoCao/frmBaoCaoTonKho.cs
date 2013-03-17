@@ -465,8 +465,21 @@ namespace WindowsFormsApplication1
             pcl.ShowPreviewDialog();
              * */
 
-            printableComponentLink1.CreateDocument();
-            printableComponentLink1.ShowPreview(); 
+            //printableComponentLink1.CreateDocument();
+            //printableComponentLink1.ShowPreview(); 
+            if (gridControl2.MainView == advBandedGridView2)
+            {
+                DataTable printtable = (DataTable)gridControl2.DataSource;
+                Inhd rep = new Inhd(printtable, 18);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl2.MainView == advBandedGridView3)
+            {
+                DataTable printtable = (DataTable)gridControl2.DataSource;
+                Inhd rep = new Inhd(printtable, 19);
+                rep.ShowPreviewDialog();
+            }
+
         }
 
         private void cbThoiGian_SelectedIndexChanged(object sender, EventArgs e)
