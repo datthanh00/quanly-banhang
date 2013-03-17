@@ -306,8 +306,11 @@ namespace WindowsFormsApplication1
             */
            // gridControl2.ShowPrintPreview();
 
-            printableComponentLink1.CreateDocument();
-            printableComponentLink1.ShowPreview();
+           // printableComponentLink1.CreateDocument();
+          //  printableComponentLink1.ShowPreview();
+            DataTable printtable = (DataTable)gridControl2.DataSource;
+            Inhd rep = new Inhd(printtable, 17);
+            rep.ShowPreviewDialog();
         }
 
    
