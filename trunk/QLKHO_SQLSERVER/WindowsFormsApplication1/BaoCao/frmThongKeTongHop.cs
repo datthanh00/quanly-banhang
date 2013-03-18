@@ -412,8 +412,11 @@ namespace WindowsFormsApplication1
            // gridControl1.ShowPrintPreview();
            // reporthansudung hansudung = new reporthansudung(dt, iNgonNgu);
            // hansudung.ShowPreviewDialog();
-            printableComponentLink1.CreateDocument();
-            printableComponentLink1.ShowPreview();
+           // printableComponentLink1.CreateDocument();
+           // printableComponentLink1.ShowPreview();
+            DataTable printtable = (DataTable)gridControl1.DataSource;
+            Inhd rep = new Inhd(printtable, 20);
+            rep.ShowPreviewDialog();
         }
 
      
