@@ -65,7 +65,6 @@ namespace WindowsFormsApplication1
 
             if (!PublicVariable.isKHOILUONG)
             {
-                
                 advBandedGridView3.Columns["KLTONDAU"].Visible = false;
                 advBandedGridView3.Columns["KLNHAP"].Visible = false;
                 advBandedGridView3.Columns["KLTRANHAP"].Visible = false;
