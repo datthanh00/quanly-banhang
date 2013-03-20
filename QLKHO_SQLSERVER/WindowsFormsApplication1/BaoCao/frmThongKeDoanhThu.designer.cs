@@ -97,12 +97,6 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colNgayXuat = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ColTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colKhucVuc = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTongDanhThu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
             this.cbkhachhang = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridkhachhang = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -177,7 +171,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).BeginInit();
             this.panelControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbkhachhang.Properties)).BeginInit();
@@ -236,9 +229,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 460);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 459);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -265,7 +258,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(194, 460);
+            this.navBarControl1.Size = new System.Drawing.Size(194, 459);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -401,7 +394,7 @@
             this.xtraTabPage5.Controls.Add(this.panelControl9);
             this.xtraTabPage5.Controls.Add(this.panelControl10);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 459);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 458);
             this.xtraTabPage5.Text = "Doanh Thu Theo Khu Vực";
             // 
             // panelControl9
@@ -410,7 +403,7 @@
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl9.Location = new System.Drawing.Point(0, 39);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(1005, 420);
+            this.panelControl9.Size = new System.Drawing.Size(1005, 419);
             this.panelControl9.TabIndex = 7;
             // 
             // gridControl6
@@ -419,10 +412,10 @@
             gridLevelNode1.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl6.Location = new System.Drawing.Point(3, 3);
+            this.gridControl6.Location = new System.Drawing.Point(2, 2);
             this.gridControl6.MainView = this.gridView4;
             this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(999, 414);
+            this.gridControl6.Size = new System.Drawing.Size(1001, 415);
             this.gridControl6.TabIndex = 1;
             this.gridControl6.UseEmbeddedNavigator = true;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -432,8 +425,7 @@
             this.gridView8,
             this.gridView7,
             this.gridView6,
-            this.gridView5,
-            this.gridView1});
+            this.gridView5});
             // 
             // gridView4
             // 
@@ -928,80 +920,6 @@
             this.gridColumn4.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 4;
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colNgayXuat,
-            this.ColTenKhachHang,
-            this.colKhucVuc,
-            this.gridColumn43,
-            this.colTongDanhThu});
-            this.gridView1.GridControl = this.gridControl6;
-            this.gridView1.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.Hidden;
-            this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tên khách hàng", this.colTongDanhThu, "(Tổng doanh thu:  {0,0 vnđ})"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "Tên Khách hàng", this.colNgayXuat, "Count")});
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
-            this.gridView1.OptionsView.RowAutoHeight = true;
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowChildrenInGroupPanel = true;
-            this.gridView1.OptionsView.ShowFooter = true;
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colNgayXuat, DevExpress.Data.ColumnSortOrder.Descending)});
-            // 
-            // colNgayXuat
-            // 
-            this.colNgayXuat.Caption = "Ngày xuất";
-            this.colNgayXuat.FieldName = "NGAYXUAT";
-            this.colNgayXuat.Name = "colNgayXuat";
-            this.colNgayXuat.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count;
-            this.colNgayXuat.Visible = true;
-            this.colNgayXuat.VisibleIndex = 0;
-            // 
-            // ColTenKhachHang
-            // 
-            this.ColTenKhachHang.Caption = "Tên Khách hàng";
-            this.ColTenKhachHang.FieldName = "Tên Khách hàng";
-            this.ColTenKhachHang.Name = "ColTenKhachHang";
-            this.ColTenKhachHang.SummaryItem.DisplayFormat = "Tổng số : {0}";
-            this.ColTenKhachHang.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Count;
-            this.ColTenKhachHang.Visible = true;
-            this.ColTenKhachHang.VisibleIndex = 2;
-            // 
-            // colKhucVuc
-            // 
-            this.colKhucVuc.Caption = "Tên khu vực";
-            this.colKhucVuc.FieldName = "TENKV";
-            this.colKhucVuc.Name = "colKhucVuc";
-            this.colKhucVuc.Visible = true;
-            this.colKhucVuc.VisibleIndex = 1;
-            // 
-            // gridColumn43
-            // 
-            this.gridColumn43.Caption = "Khối Lượng";
-            this.gridColumn43.DisplayFormat.FormatString = "{0:0,0}";
-            this.gridColumn43.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn43.FieldName = "KHOILUONG";
-            this.gridColumn43.Name = "gridColumn43";
-            this.gridColumn43.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.gridColumn43.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            this.gridColumn43.Visible = true;
-            this.gridColumn43.VisibleIndex = 3;
-            // 
-            // colTongDanhThu
-            // 
-            this.colTongDanhThu.Caption = "Tổng doanh thu";
-            this.colTongDanhThu.DisplayFormat.FormatString = "{0:0,0}";
-            this.colTongDanhThu.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTongDanhThu.FieldName = "TongDoanhThu";
-            this.colTongDanhThu.Name = "colTongDanhThu";
-            this.colTongDanhThu.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.colTongDanhThu.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            this.colTongDanhThu.Visible = true;
-            this.colTongDanhThu.VisibleIndex = 4;
             // 
             // panelControl10
             // 
@@ -1553,7 +1471,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl10)).EndInit();
             this.panelControl10.ResumeLayout(false);
             this.panelControl10.PerformLayout();
@@ -1635,14 +1552,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraBars.BarSubItem barSubItem1;
         private DevExpress.XtraEditors.SimpleButton btIn;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private DevExpress.XtraGrid.Columns.GridColumn colNgayXuat;
-        private DevExpress.XtraGrid.Columns.GridColumn ColTenKhachHang;
-        private DevExpress.XtraGrid.Columns.GridColumn colKhucVuc;
-        private DevExpress.XtraGrid.Columns.GridColumn colTongDanhThu;
         private DevExpress.XtraNavBar.NavBarGroup NBmuahang;
         private DevExpress.XtraNavBar.NavBarItem NBI_MH_ngay;
         private DevExpress.XtraNavBar.NavBarItem NBI_MH_NCC;
@@ -1716,7 +1628,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn40;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn42;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
         private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
         private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
     }
