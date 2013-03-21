@@ -130,12 +130,38 @@ namespace WindowsFormsApplication1
             SQL = "INSERT INTO [TONKHOTT]([NGAY],[MAMH],[MAKHO],[TONTT],[TONKHONGAY])  VALUES(convert(varchar,getDate(),101) ,'"+dto.MAMH+"','"+PublicVariable.MAKHO+"',0,0)";
             executeNonQuery(SQL);
 
+            SQL = "INSERT INTO [BANGGIAMATHANG]([MABG],[MAMH],[GIABAN])  SELECT MABG,'" + dto .MAMH+ "' AS MAMH,0 AS GIABAN FROM BANGGIA WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            executeNonQuery(SQL);
+
         }
         public void UPDATEMATHANG(DTO dto)
         {
            String SQL = "update MATHANG set MANCC= '"+dto.MANCC+"',MATH= '"+dto.MATH+"',MAKHO= '"+dto.MAKHO+"',TENMH= N'"+dto.TENMH+"',MADVT= '"+dto.MADVT+"',KLDVT= '"+dto.KLDVT+"',HANSUDUNG= '"+dto.HANSUDUNG+"',GIAMUA= "+dto.GIAMUA+",GIABAN= "+dto.GIABAN+", MOTA= N'"+dto.MOTA+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MAMH='"+dto.MAMH+"'";
             executeNonQuery(SQL);
 
+        }
+
+        public void addBanggia(DTO dto)
+        {
+            string SQL = "insert into BANGGIA(MABG,TENBG,MAKHO,GHICHU)"
+            + " values('" + dto.MABG + "',N'" + dto.TENBG + "','" + PublicVariable.MAKHO + "',N'" + dto.GHICHU + "')";
+            executeNonQuery(SQL);
+
+            SQL = "insert into BANGGIAMATHANG(MABG,MAMH,GIABAN) SELECT '"+dto.MABG+"' AS MABG, MAMH, 0 AS GIABAN FROM MATHANG  WHERE TINHTRANG='TRUE' AND MAKHO='" + PublicVariable.MAKHO + "'";
+            executeNonQuery(SQL);
+        }
+
+        public void updateBanggia(DTO dto)
+        {
+            String SQL = "update BANGGIA set TENBG= N'" + dto.TENBG + "',MAKHO= '" + PublicVariable.MAKHO + "',GHICHU= N'" + dto.GHICHU + "' WHERE MABG='" + dto.MABG + "'";
+            executeNonQuery(SQL);
+        }
+        public void deleteBanggia(String MABG)
+        {
+            string SQL = "delete from BANGGIA where 	MABG='"+MABG+"'";
+            executeNonQuery(SQL);
+            SQL = "delete from BANGGIAMATHANG where 	MABG='" + MABG + "'";
+            executeNonQuery(SQL);
         }
         public void DELELEKHACHHANG(DTO dto)
         {
@@ -174,6 +200,13 @@ namespace WindowsFormsApplication1
         {
             string SQL = "delete from MATHANG where 	MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
+
+            SQL = "delete from TONKHOTT where 	MAMH='" + dto.MAMH + "'";
+            executeNonQuery(SQL);
+
+            SQL = "delete from BANGGIAMATHANG where 	MAMH='" + dto.MAMH + "'";
+            executeNonQuery(SQL);
+
         }
         public Boolean isDELELEMATHANG(DTO dto)
         {
@@ -196,6 +229,19 @@ namespace WindowsFormsApplication1
             dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
+
+            return true;
+        }
+
+
+        public Boolean isDELETEBANGGIA(String MABG)
+        {
+            string SQL = "select TOP 1 MABG from KHACHHANG where 	MABG='" + MABG + "' ";
+            DataTable dt = getdata(SQL);
+            if (dt.Rows.Count > 0)
+            {
+                return false;
+            }
 
             return true;
         }
@@ -382,6 +428,11 @@ namespace WindowsFormsApplication1
         public DataTable GETMATHANG()
         {
             string SQL = "select 	mathang.MAMH,DONVITINH,TENMH,MATH,MANH,KLDVT,mathang.MANCC,mathang.MAKHO,TENNCC,mathang.MADVT,SOLUONGMH,convert(varchar,HANSUDUNG,103) as HANSUDUNG,GIAMUA,GIABAN,MOTA,mathang.TINHTRANG, GIAMUA*SOLUONGMH AS THANHTIEN from  MATHANG,NHACUNGCAP,DONVITINH WHERE MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MADVT=DONVITINH.MADVT AND mathang.MAKHO='" + PublicVariable.MAKHO + "' ";
+            return GET_DATA(SQL);
+        }
+        public DataTable GETBANGGIA(string MABG)
+        {
+            string SQL = "select 	mathang.MAMH,DONVITINH,TENMH,MATH,MANH,KLDVT,mathang.MANCC,mathang.MAKHO,TENNCC,mathang.MADVT,SOLUONGMH,convert(varchar,HANSUDUNG,103) as HANSUDUNG,BANGGIAMATHANG.GIABAN,MOTA,mathang.TINHTRANG, BANGGIAMATHANG.GIABAN*SOLUONGMH AS THANHTIEN from  MATHANG,NHACUNGCAP,DONVITINH,BANGGIAMATHANG WHERE BANGGIAMATHANG.MABG='" + MABG + "' AND MATHANG.MAMH=BANGGIAMATHANG.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MADVT=DONVITINH.MADVT AND mathang.MAKHO='" + PublicVariable.MAKHO + "' ";
             return GET_DATA(SQL);
         }
         public DataTable GETMATHANG1()

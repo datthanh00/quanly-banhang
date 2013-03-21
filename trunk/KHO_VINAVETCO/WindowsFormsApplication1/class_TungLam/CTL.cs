@@ -79,6 +79,18 @@ namespace WindowsFormsApplication1
         {
             DAO.addMatHang(dto);
         }
+        public void addBanggia(DTO dto)
+        {
+            DAO.addBanggia(dto);
+        }
+        public void updateBanggia(DTO dto)
+        {
+            DAO.updateBanggia(dto);
+        }
+        public void deleteBanggia(string MABG)
+        {
+            DAO.deleteBanggia(MABG);
+        }
         public void UPDATEMATHANG(DTO dto)
         {
             DAO.UPDATEMATHANG(dto);
@@ -119,6 +131,10 @@ namespace WindowsFormsApplication1
         public Boolean isDELETEMATHANG(DTO DTO)
         {
             return DAO.isDELELEMATHANG(DTO);
+        }
+        public Boolean isDELETEBANGGIA(string MABG)
+        {
+            return DAO.isDELETEBANGGIA(MABG);
         }
         public void DELETENHOMHANG(DTO DTO)
         {
@@ -208,6 +224,10 @@ namespace WindowsFormsApplication1
         public DataTable GETMATHANG()
         {
             return DAO.GETMATHANG();
+        }
+        public DataTable GETBANGGIA(String MABG)
+        {
+            return DAO.GETBANGGIA(MABG);
         }
         public DataTable GETMATHANG1()
         {

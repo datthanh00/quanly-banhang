@@ -30,7 +30,13 @@ namespace WindowsFormsApplication1
             string SQL = "SELECT MAPT ,HOADONXUAT.MANV ,HOADONXUAT.MAHDX ,convert(varchar,ngaythu ,103)AS NGAYTHU,sotientra_pt as TIENDATRA FROM PHIEUTHU,HOADONXUAT WHERE PHIEUTHU.MAHDX=HOADONXUAT.MAHDX AND HOADONXUAT.MAHDX='" + sMahdx + "'";
             return pv.getdata(SQL);
         }
-
+        public  DataTable GETBANGGIA()
+        {
+            Provider pv = new Provider();
+            string SQL = "SELECT * FROM BANGGIA WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            return pv.getdata(SQL);
+        }
+        
         public  void THEM_PHIEUTHU_DAO(PHIEUTHU_DTO dto)
         {
             Provider pv = new Provider();

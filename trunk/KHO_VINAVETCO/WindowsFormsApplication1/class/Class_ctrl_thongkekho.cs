@@ -64,6 +64,10 @@ namespace WindowsFormsApplication1
         {
             return dao.get_NCC();
         }
+        public DataTable dtGetBG()
+        {
+            return dao.get_BG();
+        }
         public DataTable dtGetKH()
         {
             return dao.get_KH();

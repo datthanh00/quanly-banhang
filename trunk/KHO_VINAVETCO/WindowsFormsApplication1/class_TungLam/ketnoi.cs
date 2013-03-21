@@ -298,6 +298,55 @@ namespace WindowsFormsApplication1
             return sMaDVT;
           
         }
+        public string sTuDongDienMaBG(string sMaDVT)
+        {
+            int maxmaphieu = 0;
+            String SQL = "Select MAX(convert(int,SUBSTRING(MABG,7,len(MABG)-6))) from BANGGIA";
+            DataTable dt = getdata(SQL);
+            if (dt.Rows[0][0].ToString() != "")
+            {
+                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
+            }
+            Maxa = maxmaphieu + 1;
+
+            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
+            if (subso.Length < 2)
+            {
+                subso = "0" + subso;
+            }
+            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
+            if (subso2.Length < 2)
+            {
+                subso2 = "0" + subso2;
+            }
+            subso = subso + subso2;
+            string subMAHD = "BG" + subso;
+
+
+            if (Maxa < 10)
+            {
+                sMaDVT = string.Concat(subMAHD, "0000", Maxa);
+            }
+            if (Maxa >= 10)
+            {
+                sMaDVT = string.Concat(subMAHD, "000", Maxa);
+            }
+            if (Maxa >= 100)
+            {
+                sMaDVT = string.Concat(subMAHD, "00", Maxa);
+            }
+            if (Maxa >= 1000)
+            {
+                sMaDVT = string.Concat(subMAHD, "0", Maxa);
+            }
+            if (Maxa >= 10000)
+            {
+                sMaDVT = string.Concat(subMAHD, Maxa);
+            }
+
+            return sMaDVT;
+
+        }
         /////------------load thue---------------------
         public string sTuDongDienMaThue(string sMaDVT)
         {

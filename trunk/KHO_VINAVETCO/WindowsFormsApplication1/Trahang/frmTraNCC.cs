@@ -267,6 +267,7 @@ namespace WindowsFormsApplication1
             DataTable dt=ctlNCC.GETDANHSACHNCC(MANCC);
             cboTenNCC.Properties.DataSource = dt;
            // cboTenNCC.SelectedText = dt.Rows[0]["TENNCC"].ToString();
+            if (dt.Rows.Count > 0)
             cboTenNCC.Text = dt.Rows[0]["MANCC"].ToString();
       
         }
