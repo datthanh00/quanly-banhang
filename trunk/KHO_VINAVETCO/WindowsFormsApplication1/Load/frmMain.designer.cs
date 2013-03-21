@@ -129,6 +129,7 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbkho = new DevExpress.XtraEditors.LabelControl();
+            this.btnbanggia = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeZone1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWeekOfMonth1)).BeginInit();
@@ -206,9 +207,10 @@
             this.btnlog,
             this.btnimportexcell,
             this.barButtonItem1,
-            this.btnphanlo});
+            this.btnphanlo,
+            this.btnbanggia});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 112;
+            this.ribbon.MaxItemId = 113;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.btAnh);
             this.ribbon.PageHeaderItemLinks.Add(this.btNgonNguViet);
@@ -224,7 +226,7 @@
             this.repositoryItemComboBox2,
             this.repositoryItemComboBox3});
             this.ribbon.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ribbon.SelectedPage = this.ribChucNang;
+            this.ribbon.SelectedPage = this.ribDanhMuc;
             this.ribbon.Size = new System.Drawing.Size(1182, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ItemLinks.Add(this.barSubItem1);
@@ -711,6 +713,7 @@
             this.ribKhoHang.ItemLinks.Add(this.btKho);
             this.ribKhoHang.ItemLinks.Add(this.btNhomHang);
             this.ribKhoHang.ItemLinks.Add(this.btMatHang);
+            this.ribKhoHang.ItemLinks.Add(this.btnbanggia);
             this.ribKhoHang.ItemLinks.Add(this.btDonViTinh);
             this.ribKhoHang.Name = "ribKhoHang";
             this.ribKhoHang.ShowCaptionButton = false;
@@ -1030,6 +1033,15 @@
             this.lbkho.TabIndex = 27;
             this.lbkho.Text = "Kho Hàng";
             // 
+            // btnbanggia
+            // 
+            this.btnbanggia.Caption = "Bảng Giá";
+            this.btnbanggia.Id = 112;
+            this.btnbanggia.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.cno;
+            this.btnbanggia.LargeWidth = 70;
+            this.btnbanggia.Name = "btnbanggia";
+            this.btnbanggia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1164,5 +1176,6 @@
         private DevExpress.XtraBars.BarButtonItem btnimportexcell;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnphanlo;
+        private DevExpress.XtraBars.BarButtonItem btnbanggia;
     }
 }

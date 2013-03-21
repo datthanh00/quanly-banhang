@@ -1119,6 +1119,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AddResources\" />
+    <Folder Include="Banggia\" />
     <Folder Include="NgonNgu\" />
     <Folder Include="Service References\" />
   </ItemGroup>
