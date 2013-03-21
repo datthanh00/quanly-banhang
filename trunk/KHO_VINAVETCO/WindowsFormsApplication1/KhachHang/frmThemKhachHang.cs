@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
         public string MACHUYEN;
         DataTable dt = new DataTable();
         public string Nhan;
-        public string TenKH, sMaKV,sTenKV, DIACHI, SDT, SOTK, NGANHANG, MASOTHUE, FAX, YAHOO, WEBSITE, SKYPE, TINHTRANG;
+        public string TenKH, sMaKV, sMaNV, sMaBG, sTenKV, DIACHI, SDT, SOTK, NGANHANG, MASOTHUE, FAX, YAHOO, WEBSITE, SKYPE, TINHTRANG;
         public int kiemtra;
         public void loadma()
         {
@@ -102,7 +102,8 @@ namespace WindowsFormsApplication1
 
                         DTO.MAKH = txtmakh.Text;
                         DTO.MAKV = sMaKV;
-
+                        DTO.MANV = sMaNV;
+                        DTO.MABG = sMaBG;
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
@@ -126,7 +127,8 @@ namespace WindowsFormsApplication1
                         DTO.MAKH = txtmakh.Text;
                         txtmakh.Enabled = false;
                         DTO.MAKV = sMaKV;
-
+                        DTO.MANV = sMaNV;
+                        DTO.MABG = sMaBG;
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
@@ -198,7 +200,8 @@ namespace WindowsFormsApplication1
 
                         DTO.MAKH = txtmakh.Text;
                         DTO.MAKV = sMaKV;
-
+                        DTO.MANV = sMaNV;
+                        DTO.MABG = sMaBG;
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
@@ -222,7 +225,8 @@ namespace WindowsFormsApplication1
                         DTO.MAKH = txtmakh.Text;
                         txtmakh.Enabled = false;
                         DTO.MAKV = sMaKV;
-
+                        DTO.MANV = sMaNV;
+                        DTO.MABG = sMaBG;
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
@@ -316,8 +320,16 @@ namespace WindowsFormsApplication1
             cmbtenkhuvuc.Properties.DisplayMember = "TENKV";
             cmbtenkhuvuc.Properties.ValueMember = "MAKV";
             cmbtenkhuvuc.Properties.View.BestFitColumns();
-            cmbtenkhuvuc.Properties.PopupFormWidth = 300;
+            cmbtenkhuvuc.Properties.PopupFormWidth = 400;
             cmbtenkhuvuc.Properties.DataSource = CTRL.GETKHUVUC();
+
+            cmbtennhanvien.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cmbtennhanvien.Properties.DataSource = dvdropdow;
+            cmbtennhanvien.Properties.DisplayMember = "TENNV";
+            cmbtennhanvien.Properties.ValueMember = "MANV";
+            cmbtennhanvien.Properties.View.BestFitColumns();
+            cmbtennhanvien.Properties.PopupFormWidth = 400;
+            cmbtennhanvien.Properties.DataSource = CTRL.GETNV();
 
           
         }
@@ -341,6 +353,7 @@ namespace WindowsFormsApplication1
                 txtmakh.Text = MACHUYEN;
                 txttenkh.Text = TenKH;
                 cmbtenkhuvuc.Text = sMaKV;
+                cmbtennhanvien.Text = sMaNV;
                 txtdiachi.Text = DIACHI;
                 txtmasothue.Text = MASOTHUE;
                 txtnganhang.Text = NGANHANG;
@@ -556,6 +569,16 @@ namespace WindowsFormsApplication1
         private void txtsdt_EditValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbtennhanvien_Validating(object sender, CancelEventArgs e)
+        {
+            sMaNV= gridView1.GetFocusedRowCellValue("MANV").ToString();
+        }
+
+        private void cmbbanggia_EditValueChanged(object sender, EventArgs e)
+        {
+            sMaBG = gridView2.GetFocusedRowCellValue("MABG").ToString();
         }
 
       

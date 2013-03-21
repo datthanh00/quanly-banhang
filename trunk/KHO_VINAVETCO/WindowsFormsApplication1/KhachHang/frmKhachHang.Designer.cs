@@ -49,8 +49,9 @@
             this.girdcontrol = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMAKV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAKV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOTAIKHOAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGANHANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMASOTHUE = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,6 +63,8 @@
             this.colSKYPE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.girdcontrol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -223,8 +226,9 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAKH,
-            this.colMAKV,
             this.colTENKH,
+            this.colMAKV,
+            this.gridColumn1,
             this.colSOTAIKHOAN,
             this.colNGANHANG,
             this.colMASOTHUE,
@@ -234,7 +238,9 @@
             this.colWEBSITE,
             this.colYAHOO,
             this.colSKYPE,
-            this.colTINHTRANG});
+            this.colTINHTRANG,
+            this.gridColumn2,
+            this.gridColumn3});
             this.gridView1.GridControl = this.girdcontrol;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -256,19 +262,25 @@
             this.colMAKH.Name = "colMAKH";
             this.colMAKH.OptionsColumn.AllowEdit = false;
             // 
-            // colMAKV
-            // 
-            resources.ApplyResources(this.colMAKV, "colMAKV");
-            this.colMAKV.FieldName = "MAKV";
-            this.colMAKV.Name = "colMAKV";
-            this.colMAKV.OptionsColumn.AllowEdit = false;
-            // 
             // colTENKH
             // 
             resources.ApplyResources(this.colTENKH, "colTENKH");
             this.colTENKH.FieldName = "TENKH";
             this.colTENKH.Name = "colTENKH";
             this.colTENKH.OptionsColumn.AllowEdit = false;
+            // 
+            // colMAKV
+            // 
+            resources.ApplyResources(this.colMAKV, "colMAKV");
+            this.colMAKV.FieldName = "TENKV";
+            this.colMAKV.Name = "colMAKV";
+            this.colMAKV.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn1
+            // 
+            resources.ApplyResources(this.gridColumn1, "gridColumn1");
+            this.gridColumn1.FieldName = "TENNV";
+            this.gridColumn1.Name = "gridColumn1";
             // 
             // colSOTAIKHOAN
             // 
@@ -344,6 +356,18 @@
             // 
             this.dxErrorProvider1.ContainerControl = this;
             // 
+            // gridColumn2
+            // 
+            resources.ApplyResources(this.gridColumn2, "gridColumn2");
+            this.gridColumn2.FieldName = "MAKV";
+            this.gridColumn2.Name = "gridColumn2";
+            // 
+            // gridColumn3
+            // 
+            resources.ApplyResources(this.gridColumn3, "gridColumn3");
+            this.gridColumn3.FieldName = "MANV";
+            this.gridColumn3.Name = "gridColumn3";
+            // 
             // frmKhachHang
             // 
             resources.ApplyResources(this, "$this");
@@ -398,5 +422,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colYAHOO;
         private DevExpress.XtraGrid.Columns.GridColumn colSKYPE;
         private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

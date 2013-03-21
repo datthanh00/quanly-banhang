@@ -53,7 +53,7 @@ namespace WindowsFormsApplication1
 
         private void SaveRegistry(String CODERUNT)
         {
-            Registry.SetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "ACTIVE", CODERUNT);
+            Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ACTIVE", CODERUNT);
         }
      
 

@@ -1195,9 +1195,34 @@ namespace WindowsFormsApplication1
             }
 
            // gridControl3.ShowPrintPreview();
-            printableComponentLink1.CreateDocument();
 
-            printableComponentLink1.ShowPreview();
+
+            if (gridControl3.MainView == gridView4)
+            {
+                DataTable printtable = (DataTable)gridControl3.DataSource;
+                Inhd rep = new Inhd(printtable, 0);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView5)
+            {
+                DataTable printtable = (DataTable)gridControl3.DataSource;
+                Inhd rep = new Inhd(printtable, 1);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView7)
+            {
+                DataTable printtable = (DataTable)gridControl3.DataSource;
+                Inhd rep = new Inhd(printtable, 2);
+               
+                rep.ShowPreviewDialog();
+            }
+                
+       
+            
+
+            //printableComponentLink1.CreateDocument();
+
+            //printableComponentLink1.ShowPreview();
            
 
         }

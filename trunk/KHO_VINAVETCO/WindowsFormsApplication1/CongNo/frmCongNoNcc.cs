@@ -326,8 +326,11 @@ namespace WindowsFormsApplication1
                 return;
             }
            // gridControl1.ShowPrintPreview();
-            printableComponentLink1.CreateDocument();
-            printableComponentLink1.ShowPreview();
+            //printableComponentLink1.CreateDocument();
+            //printableComponentLink1.ShowPreview();
+            DataTable printtable = (DataTable)gridControl1.DataSource;
+            Inhd rep = new Inhd(printtable, 14);
+            rep.ShowPreviewDialog();
         }
 
         private void btXuat_Click(object sender, EventArgs e)
@@ -358,8 +361,11 @@ namespace WindowsFormsApplication1
             }
 
             //gridControl2.ShowPrintPreview();
-            printableComponentLink2.CreateDocument();
-            printableComponentLink2.ShowPreview();
+           // printableComponentLink2.CreateDocument();
+           // printableComponentLink2.ShowPreview();
+            DataTable printtable = (DataTable)gridControl2.DataSource;
+            Inhd rep = new Inhd(printtable, 15);
+            rep.ShowPreviewDialog();
         }
 
         private void simpleButton5_Click(object sender, EventArgs e)

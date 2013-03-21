@@ -97,7 +97,7 @@ namespace WindowsFormsApplication1
 
         }
         //private bool thoat = false;
-        string sma, sten,smakv,sdiachi,sdodt,ssoTK,snganhang,smasothue,sfax,syahoo,snickskype,stinhtrang;
+        string sma, sten,smakv,smanv,sdiachi,ssodt,ssoTK,snganhang,smasothue,sfax,syahoo,snickskype,stinhtrang;
        
         DTO DTO = new DTO();
         CTL ctl= new CTL();
@@ -245,7 +245,7 @@ namespace WindowsFormsApplication1
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             colMAKH.Caption = LamVN.MAKH.ToString();
             colTENKH.Caption = LamVN.TENKH.ToString();
-            colMAKV.Caption = LamVN.MAKV.ToString();
+           // colMAKV.Caption = LamVN.MAKV.ToString();
             colSOTAIKHOAN.Caption = LamVN.SOTAIKHOAN.ToString();
             colNGANHANG.Caption = LamVN.NGANHANG.ToString();
             colMASOTHUE.Caption = LamVN.MASOTHUE.ToString();
@@ -271,7 +271,7 @@ namespace WindowsFormsApplication1
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             colMAKH.Caption = LamEL.MAKH.ToString();
             colTENKH.Caption = LamEL.TENKH.ToString();
-            colMAKV.Caption = LamEL.MAKV.ToString();
+            //colMAKV.Caption = LamEL.MAKV.ToString();
             colSOTAIKHOAN.Caption = LamEL.SOTAIKHOAN.ToString();
             colNGANHANG.Caption = LamEL.NGANHANG.ToString();
             colMASOTHUE.Caption = LamEL.MASOTHUE.ToString();
@@ -332,22 +332,23 @@ namespace WindowsFormsApplication1
             {
                 DataTable dt = new DataTable();
                 DataRow dtr = gridView1.GetDataRow(e.RowHandle);
-                sma = dtr[0].ToString();
+                sma = dtr["MAKH"].ToString();
                 
-                sten = dtr[2].ToString();
+                sten = dtr["TENKH"].ToString();
                 
-                smakv = dtr[1].ToString();
-                
-                ssoTK = dtr[3].ToString();
-                snganhang = dtr[4].ToString();
-                smasothue = dtr[5].ToString();
-                sdiachi = dtr[6].ToString();
-                sSDT = dtr[7].ToString();
-                sfax = dtr[8].ToString();
-                sWebsite = dtr[9].ToString();
-                syahoo = dtr[10].ToString();
-                snickskype = dtr[11].ToString();
-                stinhtrang = dtr[12].ToString();
+                smakv = dtr["MAKV"].ToString();
+
+                ssoTK = dtr["SOTAIKHOAN"].ToString();
+                snganhang = dtr["NGANHANG"].ToString();
+                smasothue = dtr["MASOTHUE"].ToString();
+                sdiachi = dtr["DIACHI"].ToString();
+                sSDT = dtr["SDT"].ToString();
+                sfax = dtr["FAX"].ToString();
+                sWebsite = dtr["WEBSITE"].ToString();
+                syahoo = dtr["YAHOO"].ToString();
+                snickskype = dtr["SKYPE"].ToString();
+                stinhtrang = dtr["TINHTRANG"].ToString();
+                smanv= dtr["MANV"].ToString();
             }
             catch (Exception ex)
             {
@@ -371,6 +372,7 @@ namespace WindowsFormsApplication1
             sua.MACHUYEN = sma;
             sua.TenKH = sten;
             sua.sMaKV = smakv;
+            sua.sMaNV = smanv;
             sua.SOTK = ssoTK;
             sua.NGANHANG = snganhang;
             sua.MASOTHUE = smasothue;
@@ -444,6 +446,7 @@ namespace WindowsFormsApplication1
                     sua.MACHUYEN = sma;
                     sua.TenKH = sten;
                     sua.sMaKV = smakv;
+                    sua.sMaNV = smanv;
                     sua.SOTK = ssoTK;
                     sua.NGANHANG = snganhang;
                     sua.MASOTHUE = smasothue;

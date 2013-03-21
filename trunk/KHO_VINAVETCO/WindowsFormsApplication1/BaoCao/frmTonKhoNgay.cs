@@ -65,7 +65,6 @@ namespace WindowsFormsApplication1
 
             if (!PublicVariable.isKHOILUONG)
             {
-                
                 advBandedGridView3.Columns["KLTONDAU"].Visible = false;
                 advBandedGridView3.Columns["KLNHAP"].Visible = false;
                 advBandedGridView3.Columns["KLTRANHAP"].Visible = false;
@@ -306,8 +305,11 @@ namespace WindowsFormsApplication1
             */
            // gridControl2.ShowPrintPreview();
 
-            printableComponentLink1.CreateDocument();
-            printableComponentLink1.ShowPreview();
+           // printableComponentLink1.CreateDocument();
+          //  printableComponentLink1.ShowPreview();
+            DataTable printtable = (DataTable)gridControl2.DataSource;
+            Inhd rep = new Inhd(printtable, 17);
+            rep.ShowPreviewDialog();
         }
 
    

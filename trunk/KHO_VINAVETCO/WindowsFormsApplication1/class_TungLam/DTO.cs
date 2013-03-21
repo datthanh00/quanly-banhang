@@ -225,6 +225,22 @@ namespace WindowsFormsApplication1
                 set { _TENQL = value; }
             }
 
+
+            private String _MABG;
+
+            public String MABG
+            {
+                get { return _MABG; }
+                set { _MABG = value; }
+            }
+            private String _TENBG;
+
+            public String TENBG
+            {
+                get { return _TENBG; }
+                set { _TENBG = value; }
+            }
+
         //-------------------Nhà Cung cấp------------------------
 
         private String _MANCC;
