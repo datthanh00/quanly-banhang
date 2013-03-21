@@ -552,7 +552,17 @@ namespace WindowsFormsApplication1
                             btThongTin.Enabled = false;
                             break;
                         }
-
+                    case "26":
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
+                        {
+                            btnbanggia.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            btnbanggia.Enabled = false;
+                            break;
+                        }
                 }
             }
                
@@ -1155,6 +1165,18 @@ namespace WindowsFormsApplication1
                     {
                         item.Text = "Customner return product";
 
+                    }
+
+                }
+                if (item.Name == "BANGGIA")
+                {
+                    if (iNgonNgu == 0)
+                    {
+                        item.Text = "Bảng Giá";
+                    }
+                    else
+                    {
+                        item.Text = "Bảng Giá";
                     }
 
                 }
@@ -2151,6 +2173,9 @@ namespace WindowsFormsApplication1
                 case "import_excell":
                     imacn = 23;
                     break;
+                case "BANGGIA":
+                    imacn = 26;
+                    break;
             }
 
             PublicVariable.TATCA = PhanQuyen.Rows[imacn - 1]["TATCA"].ToString();
@@ -2222,6 +2247,42 @@ namespace WindowsFormsApplication1
                 dt.deDongTab = new frmTonphanlo._deDongTab(vDOngTab);
                 dt.frm = this;
                 dt.iNgonNgu = iNgonNgu;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetPhanQuyen("26");
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            bKTraMoTab = true;
+            sTieuDe = "";
+            if (iNgonNgu == 0)
+            {
+                sTieuDe = resVietNam.btMatHang.ToString();
+
+            }
+            if (iNgonNgu == 1)
+            {
+                sTieuDe = resEngLand.btMatHang.ToString();
+
+            }
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "BANGGIA";
+                frmMatHang dt = new frmMatHang();
+                dt.deDongTab = new frmMatHang._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.iNgonNgu = iNgonNgu;
+                dt.sMaBP = sBoPhan;
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(dt);
