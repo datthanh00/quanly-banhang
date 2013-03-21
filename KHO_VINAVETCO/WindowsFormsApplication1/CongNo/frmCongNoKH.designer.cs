@@ -257,15 +257,14 @@
             // 
             // colTênkháchhàng
             // 
-            this.colTênkháchhàng.FieldName = "TENKHACHHANG";
+            this.colTênkháchhàng.Caption = "Khách Hàng";
+            this.colTênkháchhàng.FieldName = "TENKH";
             this.colTênkháchhàng.Name = "colTênkháchhàng";
             // 
             // colMãkháchhàng
             // 
             this.colMãkháchhàng.FieldName = "MAKH";
             this.colMãkháchhàng.Name = "colMãkháchhàng";
-            this.colMãkháchhàng.Visible = true;
-            this.colMãkháchhàng.VisibleIndex = 2;
             // 
             // colTiềnphảitrả
             // 
@@ -276,7 +275,7 @@
             this.colTiềnphảitrả.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colTiềnphảitrả.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colTiềnphảitrả.Visible = true;
-            this.colTiềnphảitrả.VisibleIndex = 3;
+            this.colTiềnphảitrả.VisibleIndex = 2;
             // 
             // colTiềnđãtrả
             // 
@@ -287,7 +286,7 @@
             this.colTiềnđãtrả.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colTiềnđãtrả.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colTiềnđãtrả.Visible = true;
-            this.colTiềnđãtrả.VisibleIndex = 4;
+            this.colTiềnđãtrả.VisibleIndex = 3;
             // 
             // colCònlại
             // 
@@ -299,7 +298,7 @@
             this.colCònlại.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colCònlại.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colCònlại.Visible = true;
-            this.colCònlại.VisibleIndex = 5;
+            this.colCònlại.VisibleIndex = 4;
             // 
             // groupControl_congno
             // 
@@ -699,8 +698,8 @@
             // 
             // 
             this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
-            this.printableComponentLink1.PrintingSystem = this.printingSystem2;
-            this.printableComponentLink1.PrintingSystemBase = this.printingSystem2;
+            this.printableComponentLink1.PrintingSystem = this.printingSystem1;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 

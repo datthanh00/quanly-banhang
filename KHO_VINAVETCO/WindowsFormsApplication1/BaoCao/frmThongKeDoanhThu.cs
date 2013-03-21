@@ -55,10 +55,11 @@ namespace WindowsFormsApplication1
             xtraTabPage5.Text = "Chọn Thông Kê Doanh Thu";
 
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-            colTongDanhThu.Caption = resVietNam.colTongDanhThu.ToString();
+          /*  colTongDanhThu.Caption = resVietNam.colTongDanhThu.ToString();
             colKhucVuc.Caption = resVietNam.colTenKhuVuc.ToString();
             ColTenKhachHang.Caption = resVietNam.colKhachHang.ToString();
             colNgayXuat.Caption = resVietNam.colNgay.ToString();
+           */ 
             btXem.Text = resVietNam.btXem.ToString();
             btXuatDuLieu.Text = resVietNam.btXuat.ToString();
             btIn.Text = resVietNam.btIn.ToString();
@@ -79,10 +80,6 @@ namespace WindowsFormsApplication1
             xtraTabPage5.Text = "Select sales statistics";
 
              CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-            colTongDanhThu.Caption = resEngLand.colTongDanhThu.ToString();
-            colKhucVuc.Caption = resEngLand.colTenKhuVuc.ToString();
-            ColTenKhachHang.Caption = resEngLand.colKhachHang.ToString();
-            colNgayXuat.Caption = resEngLand.colNgay.ToString();
             btXem.Text = resEngLand.btXem.ToString();
             btXuatDuLieu.Text = resEngLand.btXuat.ToString();
             btIn.Text = resEngLand.btIn.ToString();
@@ -457,8 +454,45 @@ namespace WindowsFormsApplication1
             }
             * */
 
-            printableComponentLink1.CreateDocument();
-            printableComponentLink1.ShowPreview();
+            DataTable printtable = (DataTable)gridControl6.DataSource;
+            if (gridControl6.MainView == gridView4)
+            {
+                Inhdoanhthu rep = new Inhdoanhthu(printtable, 0);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl6.MainView == gridView5)
+            {
+                Inhdoanhthu rep = new Inhdoanhthu(printtable, 1);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl6.MainView == gridView6)
+            {
+                Inhdoanhthu rep = new Inhdoanhthu(printtable, 2);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl6.MainView == gridView7)
+            {
+                Inhdoanhthu rep = new Inhdoanhthu(printtable, 3);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl6.MainView == gridView8)
+            {
+                Inhdoanhthu rep = new Inhdoanhthu(printtable, 4);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl6.MainView == gridView9)
+            {
+                Inhdoanhthu rep = new Inhdoanhthu(printtable, 5);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl6.MainView == gridView10)
+            {
+                Inhdoanhthu rep = new Inhdoanhthu(printtable, 6);
+                rep.ShowPreviewDialog();
+            }
+
+           // printableComponentLink1.CreateDocument();
+           // printableComponentLink1.ShowPreview();
         }
 
         private void cbThoiGian_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -471,6 +505,10 @@ namespace WindowsFormsApplication1
             baocaotype = "MH_NGAY";
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView4;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView4.Columns["KHOILUONG"].Visible = false;
+            }
             //gridView4.Columns.Clear();
             load();
             lbloc.Text = "";
@@ -485,6 +523,10 @@ namespace WindowsFormsApplication1
             gridControl6.DataSource = null;
             //gridView4.Columns.Clear();
             gridControl6.MainView = gridView5;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView5.Columns["KHOILUONG"].Visible = false;
+            }
             load();
             lbloc.Text = "Nhà cung cấp";
             cbkhachhang.Visible = false;
@@ -497,6 +539,10 @@ namespace WindowsFormsApplication1
             baocaotype = "BH_NGAY";
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView7;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView7.Columns["KHOILUONG"].Visible = false;
+            }
             load();
             lbloc.Text = "";
             cbkhachhang.Visible = false;
@@ -509,6 +555,10 @@ namespace WindowsFormsApplication1
             baocaotype = "BH_KH";
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView8;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView8.Columns["KHOILUONG"].Visible = false;
+            }
             load();
             lbloc.Text = "Khách Hàng";
             cbkhachhang.Visible = true;
@@ -521,6 +571,10 @@ namespace WindowsFormsApplication1
             baocaotype = "DS_NV";
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView10;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView10.Columns["KHOILUONG"].Visible = false;
+            }
             load();
             lbloc.Text = "";
             cbkhachhang.Visible = false;
@@ -533,6 +587,10 @@ namespace WindowsFormsApplication1
             baocaotype = "BH_SP";
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView9;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView9.Columns["KHOILUONG"].Visible = false;
+            }
             load();
             lbloc.Text = "Sản phẩm";
             cbkhachhang.Visible = false;
@@ -545,6 +603,10 @@ namespace WindowsFormsApplication1
             baocaotype = "MH_SP";
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView6;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView6.Columns["KHOILUONG"].Visible = false;
+            }
             load();
             lbloc.Text = "Sản phẩm";
             cbkhachhang.Visible = false;

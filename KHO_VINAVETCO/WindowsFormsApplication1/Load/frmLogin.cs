@@ -160,26 +160,26 @@ namespace WindowsFormsApplication1
             if (checkNho.Checked == true)
             {
 
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "Chk", "1");
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "ID", txtTenTaiKhoan.Text);
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "PSS", txtMatKhau.Text);
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "Chk", "1");
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ID", txtTenTaiKhoan.Text);
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "PSS", txtMatKhau.Text);
             }
             else if (checkNho.Checked == false)
             {
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "Chk", "0");
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "ID", "");
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "PSS", "");
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "Chk", "0");
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ID", "");
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "PSS", "");
             }
         }
         private void LoadRegistry()
         {
-            txtTenTaiKhoan.Text = (string)(Registry.GetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "ID", null));
-            txtMatKhau.Text = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "PSS", null);
-            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "Chk", null) == "1")
+            txtTenTaiKhoan.Text = (string)(Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ID", null));
+            txtMatKhau.Text = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "PSS", null);
+            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "Chk", null) == "1")
             {
                 checkNho.Checked = true;
             }
-            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "Chk", null) == "0")
+            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "Chk", null) == "0")
             {
                 checkNho.Checked = false;
             }
@@ -188,7 +188,7 @@ namespace WindowsFormsApplication1
             String SQL = "SELECT CODERUNT from THONGTINCT";
             DataTable dt = ctl.GETDATA(SQL);
 
-            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\SaveUserAndPassword", "ACTIVE", null) != dt.Rows[0]["CODERUNT"].ToString())
+            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ACTIVE", null) != dt.Rows[0]["CODERUNT"].ToString())
             {
                 frmActive active = new frmActive();
                 active.ShowDialog();

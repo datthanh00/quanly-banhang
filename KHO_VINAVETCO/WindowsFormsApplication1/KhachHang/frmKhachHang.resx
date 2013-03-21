@@ -258,15 +258,6 @@
   <data name="colMAKH.VisibleIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="colMAKV.Caption" xml:space="preserve">
-    <value>Mã Khu Vực</value>
-  </data>
-  <data name="colMAKV.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colMAKV.VisibleIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="colTENKH.Caption" xml:space="preserve">
     <value>Tên Khách Hàng</value>
   </data>
@@ -274,7 +265,25 @@
     <value>True</value>
   </data>
   <data name="colTENKH.VisibleIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="colMAKV.Caption" xml:space="preserve">
+    <value>Khu Vực</value>
+  </data>
+  <data name="colMAKV.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colMAKV.VisibleIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="gridColumn1.Caption" xml:space="preserve">
+    <value>Nhân Viên Phụ Trách</value>
+  </data>
+  <data name="gridColumn1.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn1.VisibleIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="colSOTAIKHOAN.Caption" xml:space="preserve">
     <value>Số Tài Khoản</value>
@@ -283,7 +292,7 @@
     <value>True</value>
   </data>
   <data name="colSOTAIKHOAN.VisibleIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="colNGANHANG.Caption" xml:space="preserve">
     <value>Ngân Hàng</value>
@@ -292,16 +301,10 @@
     <value>True</value>
   </data>
   <data name="colNGANHANG.VisibleIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="colMASOTHUE.Caption" xml:space="preserve">
     <value>Mã Số Thuế</value>
-  </data>
-  <data name="colMASOTHUE.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colMASOTHUE.VisibleIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="colDIACHI.Caption" xml:space="preserve">
     <value>Địa Chỉ</value>
@@ -324,38 +327,14 @@
   <data name="colFAX.Caption" xml:space="preserve">
     <value>Số Fax</value>
   </data>
-  <data name="colFAX.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colFAX.VisibleIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
   <data name="colWEBSITE.Caption" xml:space="preserve">
     <value>WebSite</value>
-  </data>
-  <data name="colWEBSITE.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colWEBSITE.VisibleIndex" type="System.Int32, mscorlib">
-    <value>9</value>
   </data>
   <data name="colYAHOO.Caption" xml:space="preserve">
     <value>Yahoo</value>
   </data>
-  <data name="colYAHOO.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colYAHOO.VisibleIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
   <data name="colSKYPE.Caption" xml:space="preserve">
     <value>Nick Skype</value>
-  </data>
-  <data name="colSKYPE.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colSKYPE.VisibleIndex" type="System.Int32, mscorlib">
-    <value>11</value>
   </data>
   <data name="colTINHTRANG.Caption" xml:space="preserve">
     <value>Tình Trạng</value>
@@ -364,7 +343,13 @@
     <value>True</value>
   </data>
   <data name="colTINHTRANG.VisibleIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+    <value>8</value>
+  </data>
+  <data name="gridColumn2.Caption" xml:space="preserve">
+    <value>MAKV</value>
+  </data>
+  <data name="gridColumn3.Caption" xml:space="preserve">
+    <value>MANV</value>
   </data>
   <data name="girdcontrol.Size" type="System.Drawing.Size, System.Drawing">
     <value>994, 405</value>
@@ -471,16 +456,22 @@
   <data name="&gt;&gt;colMAKH.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;colTENKH.Name" xml:space="preserve">
+    <value>colTENKH</value>
+  </data>
+  <data name="&gt;&gt;colTENKH.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;colMAKV.Name" xml:space="preserve">
     <value>colMAKV</value>
   </data>
   <data name="&gt;&gt;colMAKV.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;colTENKH.Name" xml:space="preserve">
-    <value>colTENKH</value>
+  <data name="&gt;&gt;gridColumn1.Name" xml:space="preserve">
+    <value>gridColumn1</value>
   </data>
-  <data name="&gt;&gt;colTENKH.Type" xml:space="preserve">
+  <data name="&gt;&gt;gridColumn1.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;colSOTAIKHOAN.Name" xml:space="preserve">
@@ -548,6 +539,18 @@
   </data>
   <data name="&gt;&gt;dxErrorProvider1.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider, DevExpress.XtraEditors.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn2.Name" xml:space="preserve">
+    <value>gridColumn2</value>
+  </data>
+  <data name="&gt;&gt;gridColumn2.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn3.Name" xml:space="preserve">
+    <value>gridColumn3</value>
+  </data>
+  <data name="&gt;&gt;gridColumn3.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmKhachHang</value>

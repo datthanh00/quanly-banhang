@@ -1119,9 +1119,28 @@ namespace WindowsFormsApplication1.KHtra
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+
+            DataTable printtable = (DataTable)gridControl3.DataSource;
+            if (gridControl3.MainView == gridView4)
+            {
+                Inhd rep = new Inhd(printtable, 6);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView1)
+            {
+                Inhd rep = new Inhd(printtable, 7);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView3)
+            {
+                Inhd rep = new Inhd(printtable, 8);
+                rep.ShowPreviewDialog();
+            }
            // gridControl3.ShowPrintPreview();
+            /*
             printableComponentLink1.CreateDocument();
             printableComponentLink1.ShowPreview();
+             * */
         }
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)

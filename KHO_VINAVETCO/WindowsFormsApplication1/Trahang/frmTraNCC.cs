@@ -219,7 +219,7 @@ namespace WindowsFormsApplication1
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNHOMHANG, TENKHO, DONVITINH, sum(SOLUONGNHAP*KLDVT) as KHOILUONG, sum(SOLUONGNHAP) as SOLUONGNHAP, GIANHAP, SUM(SOLUONGNHAP*GIANHAP) AS TONGTIEN FROM MATHANG,NHOMHANG,KHO,DONVITINH,(select MAMH,SOLUONGNHAP, GIANHAP FROM TRACHITIETHDN, TRAHOADONNHAP WHERE TRACHITIETHDN.MAHDN=TRAHOADONNHAP.MAHDN AND NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDN WHERE MATHANG.MANH=NHOMHANG.MANH AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND KHO.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNHOMHANG, TENKHO, DONVITINH,GIANHAP";
+            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC,KLDVT, TENKHO, DONVITINH, sum(SOLUONGNHAP*KLDVT) as KHOILUONG, sum(SOLUONGNHAP) as SOLUONGNHAP, GIANHAP, SUM(SOLUONGNHAP*GIANHAP) AS TONGTIEN FROM MATHANG,NHACUNGCAP,KHO,DONVITINH,(select MAMH,SOLUONGNHAP, GIANHAP FROM TRACHITIETHDN, TRAHOADONNHAP WHERE TRACHITIETHDN.MAHDN=TRAHOADONNHAP.MAHDN AND NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDN WHERE MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND KHO.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC,KLDVT, TENKHO, DONVITINH,GIANHAP";
            
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
@@ -1037,9 +1037,28 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-           // gridControl3.ShowPrintPreview();
+
+            DataTable printtable = (DataTable)gridControl3.DataSource;
+            if (gridControl3.MainView == gridView4)
+            {
+                Inhd rep = new Inhd(printtable, 9);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView5)
+            {
+                Inhd rep = new Inhd(printtable, 10);
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == gridView7)
+            {
+                Inhd rep = new Inhd(printtable, 11);
+                rep.ShowPreviewDialog();
+            }
+           /*
+            // gridControl3.ShowPrintPreview();
             printableComponentLink1.CreateDocument();
             printableComponentLink1.ShowPreview();
+            * */
         }
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
