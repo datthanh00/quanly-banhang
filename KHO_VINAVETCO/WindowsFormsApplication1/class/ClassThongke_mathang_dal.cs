@@ -253,6 +253,13 @@ namespace WindowsFormsApplication1
             String SQL = "select 	MANCC ,TENNCC from  NHACUNGCAP WHERE MAKHO='"+PublicVariable.MAKHO+"'";
             return getdata(SQL);
         }
+        public DataTable get_BG()
+        {
+            // List<MySqlParameter> sql = new List<MySqlParameter>();
+            //return executeNonQuerya("[NHOMHANG_getall]", sql);
+            String SQL = "select MABG ,TENBG from  BANGGIA WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+            return getdata(SQL);
+        }
         public DataTable get_KH()
         {
             // List<MySqlParameter> sql = new List<MySqlParameter>();

@@ -33,6 +33,10 @@ namespace WindowsFormsApplication1
         {
             return CNKH.get1pt_dao(MaHDX);
         }
+        public DataTable GETBANGGIA()
+        {
+            return CNKH.GETBANGGIA();
+        }
         public  void THEM_PHIEUTHU_ctrl(PHIEUTHU_DTO dt)
         {
               CNKH.THEM_PHIEUTHU_DAO(dt);

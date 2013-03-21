@@ -1646,7 +1646,7 @@ namespace WindowsFormsApplication1
                 t.Name = "NhomHang";
                 frmnhomhang dt = new frmnhomhang();
                 dt.deDongTab = new frmnhomhang._deDongTab(vDOngTab);
-           dt.frm = this;
+                dt.frm = this;
                 dt.iNgonNgu = iNgonNgu;
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
@@ -2263,26 +2263,15 @@ namespace WindowsFormsApplication1
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
             bKTraMoTab = true;
-            sTieuDe = "";
-            if (iNgonNgu == 0)
-            {
-                sTieuDe = resVietNam.btMatHang.ToString();
-
-            }
-            if (iNgonNgu == 1)
-            {
-                sTieuDe = resEngLand.btMatHang.ToString();
-
-            }
+            sTieuDe = "Bảng Giá Mặt Hàng";
+           
             if (!checkOpenTabs(sTieuDe))
             {
                 TabItem t = tabControl12.CreateTab(sTieuDe);
                 t.Name = "BANGGIA";
-                frmMatHang dt = new frmMatHang();
-                dt.deDongTab = new frmMatHang._deDongTab(vDOngTab);
+                frmBanggia dt = new frmBanggia();
+                dt.deDongTab = new frmBanggia._deDongTab(vDOngTab);
                 dt.frm = this;
-                dt.iNgonNgu = iNgonNgu;
-                dt.sMaBP = sBoPhan;
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(dt);
