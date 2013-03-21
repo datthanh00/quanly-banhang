@@ -174,6 +174,8 @@ namespace WindowsFormsApplication1
         {
             string SQL = "delete from MATHANG where 	MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
+            SQL = "delete from TONKHOTT where 	MAMH='" + dto.MAMH + "'";
+            executeNonQuery(SQL);
         }
         public Boolean isDELELEMATHANG(DTO dto)
         {

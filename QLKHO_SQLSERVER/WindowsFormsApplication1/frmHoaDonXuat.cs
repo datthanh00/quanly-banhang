@@ -55,6 +55,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cboTenKH.Properties.PopupFormWidth = 300;
             DataTable dt = ctlNCC.GETKHACHHANG(MAKH);
             cboTenKH.Properties.DataSource = dt;
+            if (dt.Rows.Count > 0)
             cboTenKH.Text = dt.Rows[0]["MAKH"].ToString();
 
         }
