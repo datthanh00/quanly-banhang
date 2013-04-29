@@ -58,7 +58,13 @@ namespace WindowsFormsApplication1
                 LoadTV();
 
 
-            } 
+            }
+            if (PublicVariable.isBANGGIA)
+            {
+                gridView1.Columns["colGIAMUA"].Visible = false;
+                gridView1.Columns["colGIABAN"].Visible = false;
+                gridView1.Columns["colTHANHTIEN"].Visible = false;
+            }
         }
         public int iNgonNgu;
         public void LoadTV()
@@ -76,7 +82,7 @@ namespace WindowsFormsApplication1
             colGIABAN.Caption = LamVN.GIABAN.ToString();
             colMAKHO.Caption = LamVN.MAKHO.ToString();
             colMOTA.Caption = LamVN.MOTA.ToString();
-            colTINHTRANG.Caption = LamVN.TINHTRANG.ToString();
+            colTHANHTIEN.Caption = LamVN.TINHTRANG.ToString();
             barThem.Caption = LamVN.THEM.ToString();
             barXoa.Caption = LamVN.XOA.ToString();
             barSua.Caption = LamVN.SUA.ToString();
@@ -102,7 +108,7 @@ namespace WindowsFormsApplication1
             colGIABAN.Caption = LamEL.GIABAN.ToString();
             colMAKHO.Caption = LamEL.MAKHO.ToString();
             colMOTA.Caption = LamEL.MOTA.ToString();
-            colTINHTRANG.Caption = LamEL.TINHTRANG.ToString();
+            colTHANHTIEN.Caption = LamEL.TINHTRANG.ToString();
             barThem.Caption = LamEL.THEM.ToString();
             barXoa.Caption = LamEL.XOA.ToString();
             barSua.Caption = LamEL.SUA.ToString();

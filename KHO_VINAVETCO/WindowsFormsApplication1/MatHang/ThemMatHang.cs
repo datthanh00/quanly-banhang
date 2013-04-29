@@ -133,6 +133,15 @@ namespace WindowsFormsApplication1
         public string sBoPhan;
         private void ThemMatHang_Load(object sender, EventArgs e)
         {
+
+            if (PublicVariable.isBANGGIA)
+            {
+                txtGiaBan.Text = "0";
+                txtGiaBan.Enabled = false;
+                txtGiaMua.Text = "0";
+                txtGiaMua.Enabled = false;
+            }
+
             txtSoLuong.Text = "0";
 
             if (sBoPhan == "MABP00004")
@@ -315,6 +324,7 @@ namespace WindowsFormsApplication1
                             DTO.KLDVT = calKLDVT.Text;
                             DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = "";
+                    
                             DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
                             DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();
 

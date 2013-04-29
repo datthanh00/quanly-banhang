@@ -90,6 +90,7 @@
             this.btnimportexcell = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnphanlo = new DevExpress.XtraBars.BarButtonItem();
+            this.btnbanggia = new DevExpress.XtraBars.BarButtonItem();
             this.ribDanhMuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribDoiTac = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribKhoHang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -129,7 +130,6 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbkho = new DevExpress.XtraEditors.LabelControl();
-            this.btnbanggia = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeZone1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWeekOfMonth1)).BeginInit();
@@ -690,6 +690,15 @@
             this.btnphanlo.Name = "btnphanlo";
             this.btnphanlo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnphanlo_ItemClick);
             // 
+            // btnbanggia
+            // 
+            this.btnbanggia.Caption = "Bảng Giá";
+            this.btnbanggia.Id = 112;
+            this.btnbanggia.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.cno;
+            this.btnbanggia.LargeWidth = 70;
+            this.btnbanggia.Name = "btnbanggia";
+            this.btnbanggia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
             // ribDanhMuc
             // 
             this.ribDanhMuc.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -1032,15 +1041,6 @@
             this.lbkho.Size = new System.Drawing.Size(46, 13);
             this.lbkho.TabIndex = 27;
             this.lbkho.Text = "Kho Hàng";
-            // 
-            // btnbanggia
-            // 
-            this.btnbanggia.Caption = "Bảng Giá";
-            this.btnbanggia.Id = 112;
-            this.btnbanggia.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.cno;
-            this.btnbanggia.LargeWidth = 70;
-            this.btnbanggia.Name = "btnbanggia";
-            this.btnbanggia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
             // 
             // frmMain
             // 

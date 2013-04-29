@@ -72,6 +72,9 @@ namespace WindowsFormsApplication1
 
                 dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
                 dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
+                cktien.Text = "0";
+                ckphantram.Text = "0";
+                txtthanhtien.Text = "0";
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -428,7 +431,6 @@ namespace WindowsFormsApplication1
         {
             if (XtraMessageBox.Show("Bạn có muốn Nhập Những Mặt Hàng Này Không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                
                 int i = 0;
             }
             else
@@ -453,6 +455,7 @@ namespace WindowsFormsApplication1
                     dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                     dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
                     dtoNCC.MAHDN = txtMaHD.Text;
+                    dtoNCC.CKTIEN = cktien.Value;
                     if (cbotientra.Text == "")
                     {
                         cbotientra.Text = "0";
@@ -686,18 +689,9 @@ namespace WindowsFormsApplication1
             finally { }
         }
 
-        private void cbotientra_EditValueChanged(object sender, EventArgs e)
-        {
 
-        }
         double conlai,thanhtien,tientra;
-        private void cbotientra_TextChanged(object sender, EventArgs e)
-        {
-            thanhtien = double.Parse(txtthanhtien.Text);
-            tientra = double.Parse(cbotientra.Text);
-            conlai = thanhtien - tientra;
-            txtconLai.Text = conlai.ToString();
-        }
+  
 
         private void cboTenMH_EditValueChanged(object sender, EventArgs e)
         {
@@ -864,7 +858,7 @@ namespace WindowsFormsApplication1
             gettotal();
          
         }
-
+        private int tienchuack = 0;
         public void gettotal()
         {
             int rowcount = gridCTHOADON.RowCount;
@@ -882,7 +876,11 @@ namespace WindowsFormsApplication1
                     }
                 }
             }
+            tienchuack = Convert.ToInt32(total);
+            total = total - Convert.ToInt32(cktien.Text);
+
             txtthanhtien.Text = total.ToString();
+            
             if (cbotientra.Text != "")
             {
                 thanhtien = double.Parse(txtthanhtien.Text);
@@ -1351,6 +1349,46 @@ namespace WindowsFormsApplication1
             RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
+        private void cbotientra_Validated(object sender, EventArgs e)
+        {
+            thanhtien = double.Parse(txtthanhtien.Text);
+            tientra = double.Parse(cbotientra.Text);
+            conlai = thanhtien - tientra;
+            txtconLai.Text = conlai.ToString();
+        }
+
+        private void ckphantram_Validated(object sender, EventArgs e)
+        {
+            Double thanhtien = tienchuack;
+            int _cktien= Convert.ToInt32(thanhtien * Convert.ToDouble(ckphantram.Value) / 100);
+            thanhtien = thanhtien - _cktien;
+            txtthanhtien.Text = thanhtien.ToString();
+            cktien.Value = _cktien;
+            if (cbotientra.Text != "")
+            {
+                tientra = double.Parse(cbotientra.Text);
+                conlai = thanhtien - tientra;
+                txtconLai.Text = conlai.ToString();
+            }
+        }
+
+        private void cktien_Validated(object sender, EventArgs e)
+        {
+            Double thanhtien = tienchuack;
+            int _cktien = Convert.ToInt32(cktien.Value);
+            ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+            thanhtien = thanhtien - _cktien;
+            txtthanhtien.Text = thanhtien.ToString();
+            if (cbotientra.Text != "")
+            {
+                tientra = double.Parse(cbotientra.Text);
+                conlai = thanhtien - tientra;
+                txtconLai.Text = conlai.ToString();
+            }
+          
+        }
+
+        
 
 
    
