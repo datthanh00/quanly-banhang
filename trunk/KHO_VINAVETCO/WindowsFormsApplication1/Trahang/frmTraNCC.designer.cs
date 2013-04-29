@@ -143,6 +143,10 @@
             this.panel_info1 = new DevExpress.XtraEditors.PanelControl();
             this.panel_info = new DevExpress.XtraEditors.GroupControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.cktien = new DevExpress.XtraEditors.CalcEdit();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.ckphantram = new DevExpress.XtraEditors.CalcEdit();
             this.txtMANCC = new DevExpress.XtraEditors.TextEdit();
             this.btAdd = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -179,6 +183,8 @@
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -243,6 +249,8 @@
             this.panel_info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cktien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckphantram.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMANCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).BeginInit();
@@ -727,6 +735,8 @@
             this.gridColumn8,
             this.gridColumn22,
             this.gridColumn25,
+            this.gridColumn43,
+            this.gridColumn21,
             this.ID});
             this.gridCTHOADON.GridControl = this.gridControl1;
             this.gridCTHOADON.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -1475,6 +1485,10 @@
             // 
             // panelControl5
             // 
+            this.panelControl5.Controls.Add(this.labelControl12);
+            this.panelControl5.Controls.Add(this.cktien);
+            this.panelControl5.Controls.Add(this.labelControl13);
+            this.panelControl5.Controls.Add(this.ckphantram);
             this.panelControl5.Controls.Add(this.txtMANCC);
             this.panelControl5.Controls.Add(this.btAdd);
             this.panelControl5.Controls.Add(this.textBoxX1);
@@ -1493,6 +1507,50 @@
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(658, 135);
             this.panelControl5.TabIndex = 8;
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(399, 113);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(36, 13);
+            this.labelControl12.TabIndex = 35;
+            this.labelControl12.Text = "Tiền CK";
+            // 
+            // cktien
+            // 
+            this.cktien.Location = new System.Drawing.Point(444, 109);
+            this.cktien.Name = "cktien";
+            this.cktien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cktien.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.cktien.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cktien.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.cktien.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cktien.Size = new System.Drawing.Size(206, 20);
+            this.cktien.TabIndex = 36;
+            this.cktien.Validated += new System.EventHandler(this.cktien_Validated);
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(124, 113);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(27, 13);
+            this.labelControl13.TabIndex = 33;
+            this.labelControl13.Text = "% CK";
+            // 
+            // ckphantram
+            // 
+            this.ckphantram.Location = new System.Drawing.Point(158, 109);
+            this.ckphantram.Name = "ckphantram";
+            this.ckphantram.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ckphantram.Properties.DisplayFormat.FormatString = "{0:N3} %";
+            this.ckphantram.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.ckphantram.Properties.EditFormat.FormatString = "{0:N3} %";
+            this.ckphantram.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.ckphantram.Size = new System.Drawing.Size(206, 20);
+            this.ckphantram.TabIndex = 34;
+            this.ckphantram.Validated += new System.EventHandler(this.ckphantram_Validated);
             // 
             // txtMANCC
             // 
@@ -1518,10 +1576,10 @@
             // 
             this.textBoxX1.Border.Class = "TextBoxBorder";
             this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(119, 51);
+            this.textBoxX1.Location = new System.Drawing.Point(119, 54);
             this.textBoxX1.Multiline = true;
             this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(533, 52);
+            this.textBoxX1.Size = new System.Drawing.Size(533, 50);
             this.textBoxX1.TabIndex = 18;
             // 
             // txtEmail
@@ -1715,6 +1773,7 @@
             this.txtNo.Enabled = false;
             this.txtNo.Location = new System.Drawing.Point(262, 48);
             this.txtNo.Name = "txtNo";
+            this.txtNo.Properties.ReadOnly = true;
             this.txtNo.Size = new System.Drawing.Size(115, 20);
             this.txtNo.TabIndex = 4;
             // 
@@ -1805,7 +1864,7 @@
             this.cbotientra.Properties.Mask.EditMask = "n0";
             this.cbotientra.Size = new System.Drawing.Size(115, 20);
             this.cbotientra.TabIndex = 6;
-            this.cbotientra.TextChanged += new System.EventHandler(this.cbotientra_TextChanged);
+            this.cbotientra.Validated += new System.EventHandler(this.cbotientra_Validated_1);
             // 
             // printingSystem1
             // 
@@ -1824,6 +1883,18 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "HSD";
+            this.gridColumn21.FieldName = "HSD";
+            this.gridColumn21.Name = "gridColumn21";
+            // 
+            // gridColumn43
+            // 
+            this.gridColumn43.Caption = "GIÁ NHẬP";
+            this.gridColumn43.FieldName = "GIANHAP";
+            this.gridColumn43.Name = "gridColumn43";
             // 
             // frmTraNCC
             // 
@@ -1908,6 +1979,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cktien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckphantram.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMANCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).EndInit();
@@ -2086,6 +2159,12 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
         private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.CalcEdit cktien;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.CalcEdit ckphantram;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet2TableAdapters.MATHANGTableAdapter mATHANGTableAdapter1;
     }
 }

@@ -42,6 +42,14 @@ namespace WindowsFormsApplication1
             set { _LOHANG = value; }
         }
 
+        private string _CKTIEN;
+
+        public string CKTIEN
+        {
+            get { return _CKTIEN; }
+            set { _CKTIEN = value; }
+        }
+
         private string _KLDVT;
 
         public string  KLDVT
@@ -548,6 +556,7 @@ namespace WindowsFormsApplication1
         private String _s1MAMH;
         private Double _SOLUONGNHAP;
         private int _GIANHAP;
+        private int _GIATRANHAP;
         private String _s1TINHTRANG;
 
         public String s1MAHDN
@@ -572,6 +581,11 @@ namespace WindowsFormsApplication1
         {
             get { return _GIANHAP; }
             set { _GIANHAP = value; }
+        }
+        public int GIATRANHAP
+        {
+            get { return _GIATRANHAP; }
+            set { _GIATRANHAP = value; }
         }
 
         public string s1TINHTRANG

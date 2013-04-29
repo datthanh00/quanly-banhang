@@ -85,10 +85,6 @@ namespace WindowsFormsApplication1
                         return;
                     }
 
-
-
-
-
                    
                     else if (cmbtenkhuvuc.Text == "")
                     {
@@ -97,13 +93,38 @@ namespace WindowsFormsApplication1
                         return;
                     }
 
-                    else if (kiemtra == 1)
+                    if (!PublicVariable.isBANGGIA)
+                    {
+                        if (cmbtennhanvien.Text == "")
+                        {
+                            XtraMessageBox.Show("Vui lòng Chọn Tên Nhân Viên Phụ Trách");
+                            cmbtennhanvien.Focus();
+                            return;
+                        }
+
+                        if (cmbbanggia.Text == "")
+                        {
+                            XtraMessageBox.Show("Vui lòng Chọn Bảng Giá Cho Đại Lý Này");
+                            cmbbanggia.Focus();
+                            return;
+                        }
+                    }
+
+                    if (kiemtra == 1)
                     {
 
                         DTO.MAKH = txtmakh.Text;
                         DTO.MAKV = sMaKV;
-                        DTO.MANV = sMaNV;
-                        DTO.MABG = sMaBG;
+                        if (PublicVariable.isBANGGIA)
+                        {
+                            DTO.MANV = sMaNV;
+                            DTO.MABG = sMaBG;
+                        }
+                        else
+                        {
+                            DTO.MANV = "";
+                            DTO.MABG = "";
+                        }
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
@@ -127,8 +148,16 @@ namespace WindowsFormsApplication1
                         DTO.MAKH = txtmakh.Text;
                         txtmakh.Enabled = false;
                         DTO.MAKV = sMaKV;
-                        DTO.MANV = sMaNV;
-                        DTO.MABG = sMaBG;
+                        if (PublicVariable.isBANGGIA)
+                        {
+                            DTO.MANV = sMaNV;
+                            DTO.MABG = sMaBG;
+                        }
+                        else
+                        {
+                            DTO.MANV = "";
+                            DTO.MABG = "";
+                        }
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
@@ -377,9 +406,13 @@ namespace WindowsFormsApplication1
                 loadma();
                 loadgirdlookupKV();
             }
-            
-            
-           
+
+
+            if (PublicVariable.isBANGGIA)
+            {
+                cmbtennhanvien.Enabled = false;
+                cmbbanggia.Enabled = false;
+            }
             
         }
 

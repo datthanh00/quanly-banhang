@@ -56,7 +56,7 @@
             this.colGIAMUA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGIABAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMOTA = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTHANHTIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -236,7 +236,7 @@
             this.colGIAMUA,
             this.colGIABAN,
             this.colMOTA,
-            this.colTINHTRANG,
+            this.colTHANHTIEN,
             this.colMAKHO,
             this.gridColumn2,
             this.gridColumn1,
@@ -356,17 +356,17 @@
             this.colMOTA.VisibleIndex = 7;
             this.colMOTA.Width = 117;
             // 
-            // colTINHTRANG
+            // colTHANHTIEN
             // 
-            this.colTINHTRANG.Caption = "Thành Tiền";
-            this.colTINHTRANG.FieldName = "THANHTIEN";
-            this.colTINHTRANG.Name = "colTINHTRANG";
-            this.colTINHTRANG.OptionsColumn.AllowEdit = false;
-            this.colTINHTRANG.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.colTINHTRANG.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            this.colTINHTRANG.Visible = true;
-            this.colTINHTRANG.VisibleIndex = 6;
-            this.colTINHTRANG.Width = 123;
+            this.colTHANHTIEN.Caption = "Thành Tiền";
+            this.colTHANHTIEN.FieldName = "THANHTIEN";
+            this.colTHANHTIEN.Name = "colTHANHTIEN";
+            this.colTHANHTIEN.OptionsColumn.AllowEdit = false;
+            this.colTHANHTIEN.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.colTHANHTIEN.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.colTHANHTIEN.Visible = true;
+            this.colTHANHTIEN.VisibleIndex = 6;
+            this.colTHANHTIEN.Width = 123;
             // 
             // colMAKHO
             // 
@@ -462,7 +462,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colGIAMUA;
         private DevExpress.XtraGrid.Columns.GridColumn colGIABAN;
         private DevExpress.XtraGrid.Columns.GridColumn colMOTA;
-        private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
+        private DevExpress.XtraGrid.Columns.GridColumn colTHANHTIEN;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;

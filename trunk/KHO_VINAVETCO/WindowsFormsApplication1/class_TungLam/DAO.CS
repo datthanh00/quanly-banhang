@@ -422,7 +422,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETMATHANG(string MAMH, String LOHANG)
         {
-            string SQL = "SELECT T3.TENMH,T3.MAMH,T3.SOLUONGMH,T3.GIABAN,T3.MADVT, T4.DONVITINH,LOHANG FROM (SELECT LOHANG,T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT FROM (SELECT MATHANG.*,LOHANG FROM MATHANG,KHOHANG WHERE MATHANG.MAMH=KHOHANG.MAMH AND KHOHANG.MAMH='" + MAMH + "' AND KHOHANG.LOHANG='" + LOHANG + "') AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT";
+            string SQL = "SELECT T3.TENMH,T3.MAMH,T3.SOLUONGMH,T3.GIABAN,T3.MADVT, T4.DONVITINH,LOHANG,HSD,GIANHAP FROM (SELECT LOHANG,T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT,HSD,GIANHAP FROM (SELECT MATHANG.*,LOHANG,KHOHANG.HSD,KHOHANG.GIAMUA AS GIANHAP FROM MATHANG,KHOHANG WHERE MATHANG.MAMH=KHOHANG.MAMH AND KHOHANG.MAMH='" + MAMH + "' AND KHOHANG.LOHANG='" + LOHANG + "') AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT";
             return getdata(SQL);
         }
         public DataTable GETMATHANG()
@@ -557,6 +557,23 @@ namespace WindowsFormsApplication1
         public DataTable GETMMH()
         {
             string SQL = "";
+            
+                if (PublicVariable.isHSD)
+                {
+                    SQL = "SELECT  MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,HSD,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+                }
+                else
+                {
+                    SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+                }
+            
+            return getdata(SQL);
+        }
+
+        public DataTable GETMMH_BG(string MAKH)
+        {
+            string SQL = "";
+
             if (PublicVariable.isHSD)
             {
                 SQL = "SELECT  MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,HSD,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
@@ -565,6 +582,7 @@ namespace WindowsFormsApplication1
             {
                 SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
             }
+
             return getdata(SQL);
         }
         public DataTable GETMMH(string MANCC)
@@ -616,8 +634,8 @@ namespace WindowsFormsApplication1
                 NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             }
 
-            string SQL = "insert into traHOADONNHAP(MAHDN,MANCC,MANV,MAKHO,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',"+NGAYNHAP+"," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
+            string SQL = "insert into traHOADONNHAP(MAHDN,MANCC,MANV,MAKHO,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN)"
+            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + NGAYNHAP + "," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "'," + dto.CKTIEN + ")";
             executeNonQuery(SQL);
         }
         public void INSERTHOADONNHAP(DTO dto)
@@ -627,8 +645,8 @@ namespace WindowsFormsApplication1
             {
                 NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             }
-            string SQL = "insert into HOADONNHAP(MAHDN,MANCC,MANV,MAKHO,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',"+NGAYNHAP+"," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
+            string SQL = "insert into HOADONNHAP(MAHDN,MANCC,MANV,MAKHO,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN)"
+            + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + NGAYNHAP + "," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "'," + dto.CKTIEN + ")";
             executeNonQuery(SQL);
         }
         public bool isINSERTHOADONNHAP(string MAHDN)
@@ -676,12 +694,12 @@ namespace WindowsFormsApplication1
         }
         public void UPDATEtraHOADONNHAP(DTO dto)
         {
-            string SQL = "update traHOADONNHAP set MANCC='" + dto.MANCC + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
+            string SQL = "update traHOADONNHAP set MANCC='" + dto.MANCC + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "', CKTIEN= '" + dto.CKTIEN + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
             executeNonQuery(SQL);
         }
         public void UPDATEHOADONNHAP(DTO dto)
         {
-            string SQL = "update HOADONNHAP set MANCC='" + dto.MANCC + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
+            string SQL = "update HOADONNHAP set MANCC='" + dto.MANCC + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "', CKTIEN= '" + dto.CKTIEN + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
             executeNonQuery(SQL);
         }
 
@@ -726,7 +744,7 @@ namespace WindowsFormsApplication1
         public void INSERTtraCTHOADONNHAP(DTO dto)
         {
 
-            String SQL = "INSERT INTO traCHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,GIANHAP,TINHTRANG,LOHANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.GIANHAP + ",'" + dto.TINHTRANG + "','" + dto.LOHANG + "')";
+            String SQL = "INSERT INTO traCHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,GIANHAP,TINHTRANG,LOHANG,GIATRANHAP,HSD) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.GIANHAP + ",'" + dto.TINHTRANG + "','" + dto.LOHANG + "'," + dto.GIATRANHAP + ",'" + dto.HSD + "')";
             executeNonQuery(SQL);
 
            SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
@@ -1091,7 +1109,7 @@ namespace WindowsFormsApplication1
             }
 
 
-            SQL = "update traCHITIETHDN set SOLUONGNHAP=" + dto.SOLUONGNHAP + ",GIANHAP=" + dto.GIANHAP + ", TINHTRANG= 1 where (MAHDN='" + dto.MAHDN + "' AND ID=" + dto.ID + ")";
+            SQL = "update traCHITIETHDN set SOLUONGNHAP=" + dto.SOLUONGNHAP + ",GIANHAP=" + dto.GIANHAP + ",GIATRANHAP=" + dto.GIATRANHAP + ",HSD=" + dto.HSD + ", TINHTRANG= 1 where (MAHDN='" + dto.MAHDN + "' AND ID=" + dto.ID + ")";
             executeNonQuery(SQL);
 
           
@@ -1241,8 +1259,8 @@ namespace WindowsFormsApplication1
             {
                 NGAYNHAP = "'"+DateTime.Now.ToString("MM-dd-yyyy")+"'";
             }
-            string SQL = "insert into HOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','"+PublicVariable.MAKHO+"',"+NGAYNHAP+",'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "')";
+            string SQL = "insert into HOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN)"
+            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + NGAYNHAP + ",'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "'," + dto.CKTIEN + ")";
             executeNonQuery(SQL);
         }
         public void INSERTtraHOADONXUAT(DTO dto)
@@ -1252,8 +1270,8 @@ namespace WindowsFormsApplication1
             {
                 NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
             }
-            string SQL = "insert into traHOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "',"+NGAYNHAP+",'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "')";
+            string SQL = "insert into traHOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN)"
+            + " values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + NGAYNHAP + ",'" + dto.TIENPHAITRA + "','" + dto.TIENDATRA + "','" + dto.TIENDATRA + "','" + dto.GHICHU + "',N'" + dto.TINHTRANG + "'," + dto.CKTIEN + ")";
             executeNonQuery(SQL);
         }
         public bool isINSERTHOADONXUAT(string MAHDX)
@@ -1277,12 +1295,12 @@ namespace WindowsFormsApplication1
         public void UPDATEHOADONXUAT(DTO dto)
         {
 
-            string SQL = "update HOADONXUAT set MAKH='" + dto.MAKH + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDX='" + dto.MAHDX + "' )";
+            string SQL = "update HOADONXUAT set MAKH='" + dto.MAKH + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "', CKTIEN= '" + dto.CKTIEN + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDX='" + dto.MAHDX + "' )";
             executeNonQuery(SQL);
         }
         public void UPDATEtraHOADONXUAT(DTO dto)
         {
-            string SQL = "update traHOADONXUAT set MAKH='" + dto.MAKH + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDX='" + dto.MAHDX + "' )";
+            string SQL = "update traHOADONXUAT set MAKH='" + dto.MAKH + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "', CKTIEN= '" + dto.CKTIEN + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDX='" + dto.MAHDX + "' )";
             executeNonQuery(SQL);
         }
         public void INSERTCTHOADONXUAT(DTO dto)
@@ -1294,7 +1312,7 @@ namespace WindowsFormsApplication1
             }
 
 
-            string SQL = "INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,LOHANG,NGAYXUAT,SOLUONGXUAT,GIATIEN,TINHTRANG,TIENTHU) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "','" + dto.LOHANG + "'," + NGAYNHAP + "," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "'," + dto.TIENTHU + ")";
+            string SQL = "INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,LOHANG,NGAYXUAT,SOLUONGXUAT,GIATIEN,TINHTRANG,TIENTHU,GIANHAP,HSD) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "','" + dto.LOHANG + "'," + NGAYNHAP + "," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "'," + dto.TIENTHU + "," + dto.GIANHAP + ",'" + dto.HSD + "')";
             executeNonQuery(SQL);
 
             SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
@@ -1327,7 +1345,7 @@ namespace WindowsFormsApplication1
         }
         public void INSERTtraCTHOADONXUAT(DTO dto)
         {
-            string SQL = "INSERT INTO traCHITIETHDX (ID, MAHDX, MAMH,SOLUONGXUAT,GIATIEN,TINHTRANG,LOHANG,TIENTHU) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "'," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "','" + dto.LOHANG + "','" + dto.TIENTHU + "')";
+            string SQL = "INSERT INTO traCHITIETHDX (ID, MAHDX, MAMH,SOLUONGXUAT,GIATIEN,TINHTRANG,LOHANG,TIENTHU,GIABAN,HSD) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "'," + dto.SOLUONGXUAT + "," + dto.GIATIEN + ",'" + dto.TINHTRANG + "','" + dto.LOHANG + "','" + dto.TIENTHU + "','" + dto.GIABAN + "','" + dto.HSD + "')";
             executeNonQuery(SQL);
 
             SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
@@ -1409,7 +1427,7 @@ namespace WindowsFormsApplication1
                 giatiencu = Convert.ToInt32(dt.Rows[0]["GIATIEN"].ToString());
             }
 
-            SQL = "update CHITIETHDX set SOLUONGXUAT=" + dto.SOLUONGXUAT + "   ,GIATIEN=" + dto.GIATIEN + ",TIENTHU=" + dto.TIENTHU + " where (MAHDX='" + dto.MAHDX + "' AND ID=" + dto.ID.ToString() + ")";
+            SQL = "update CHITIETHDX set SOLUONGXUAT=" + dto.SOLUONGXUAT + "   ,GIATIEN=" + dto.GIATIEN + ",GIANHAP=" + dto.GIANHAP + ",HSD=" + dto.HSD + ",TIENTHU=" + dto.TIENTHU + " where (MAHDX='" + dto.MAHDX + "' AND ID=" + dto.ID.ToString() + ")";
             executeNonQuery(SQL);
 
     
@@ -1463,7 +1481,7 @@ namespace WindowsFormsApplication1
                 giatiencu = Convert.ToInt32(dt.Rows[0]["GIATIEN"].ToString());
             }
 
-            SQL = "update traCHITIETHDX set SOLUONGXUAT=" + dto.SOLUONGXUAT + "   ,GIATIEN=" + dto.GIATIEN + ",GIATIEN=" + dto.GIATIEN + " where (MAHDX='" + dto.MAHDX + "' AND ID=" + dto.ID.ToString() + ")";
+            SQL = "update traCHITIETHDX set SOLUONGXUAT=" + dto.SOLUONGXUAT + "   ,GIATIEN=" + dto.GIATIEN + ",GIABAN=" + dto.GIABAN + ",HSD='" + dto.HSD + "' where (MAHDX='" + dto.MAHDX + "' AND ID=" + dto.ID.ToString() + ")";
             executeNonQuery(SQL);
 
 

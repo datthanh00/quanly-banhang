@@ -32,6 +32,7 @@ namespace WindowsFormsApplication1
            
         }
         public frmBaoCaoTonKho frmTonKho;
+        public Boolean isclose;
         private void btKhachHang_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetPhanQuyen("11");
@@ -623,6 +624,7 @@ namespace WindowsFormsApplication1
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
             ld.simpleCloseWait();
             timer1.Enabled = true;
+            isclose = false;
             notifyIcon();
             load_KHOHANGNGAY();
         }
@@ -707,6 +709,17 @@ namespace WindowsFormsApplication1
             else
             {
                 PublicVariable.isKHOILUONG = false;
+            }
+
+            if (chucnang.IndexOf("BANGGIA") >= 0)
+            {
+                PublicVariable.isBANGGIA = true;
+                btnbanggia.Enabled = true;
+            }
+            else
+            {
+                PublicVariable.isBANGGIA = false;
+                btnbanggia.Enabled = false;
             }
         }
         void OnPaintStyleClick(object sender, ItemClickEventArgs e)
@@ -1683,8 +1696,10 @@ namespace WindowsFormsApplication1
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-
-            Application.Exit();
+            if (isclose == true)
+            {
+                Application.Exit();
+            }
             
         }
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -1693,10 +1708,12 @@ namespace WindowsFormsApplication1
             {
                 if (XtraMessageBox.Show("Bạn có muốn thoát hay không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
+                    isclose = true;
                     e.Cancel = false;
                 }
                 else
                 {
+                    isclose = false;
                     e.Cancel = true;
                 }
             }
@@ -1704,10 +1721,12 @@ namespace WindowsFormsApplication1
             {
                 if (XtraMessageBox.Show("Do you want to exit ? ", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
+                    isclose = true;
                     e.Cancel = false;
                 }
                 else
                 {
+                    isclose = false;
                     e.Cancel = true;
                 }
             }

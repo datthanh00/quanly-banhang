@@ -309,6 +309,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMMH();
         }
+        public DataTable GETMMH_BG(string MAKH)
+        {
+            return DAO.GETMMH_BG(MAKH);
+        }
         public DataTable GETMMH2()
         {
             return DAO.GETMMH2();

@@ -177,7 +177,9 @@ namespace WindowsFormsApplication1.KHtra
             Load_panel_create();
             dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
             dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
-
+            cktien.Text = "0";
+            ckphantram.Text = "0";
+            txtthanhtien.Text = "0";
             gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();
             if (!PublicVariable.isKHOILUONG)
             {
@@ -252,7 +254,7 @@ namespace WindowsFormsApplication1.KHtra
                         dtoNCC.TENKH = cboTenKH.Text;
                         dtoNCC.DIACHI = txtDiachi.Text;
                         dtoNCC.SDT = txtSDT.Text;
-                       
+                        dtoNCC.CKTIEN = cktien.Value;
                         // dtoNCC.WEBSITE = txtWeb.Text;
                         dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
                         dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
@@ -372,7 +374,6 @@ namespace WindowsFormsApplication1.KHtra
                                         {
                                             dtoNCC.LOHANG = txtMaHD.Text;
                                             ctlNCC.INSERT_KHOHANG(dtr["_MaMH"].ToString(), txtMaHD.Text,dtr["_DonGia"].ToString(), "0", HSD);
-                                            
                                         }
                                         else
                                         {
@@ -401,7 +402,7 @@ namespace WindowsFormsApplication1.KHtra
                                         }
                                     }
                                 }
-                                insert_HoadonChitietxuat(txtMaHD.Text, dtoNCC.LOHANG, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()));
+                                insert_HoadonChitietxuat(txtMaHD.Text, dtoNCC.LOHANG, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString());
                             }
                         }
                         else
@@ -424,11 +425,11 @@ namespace WindowsFormsApplication1.KHtra
 
                                 if (sID != "")
                                 {
-                                    update_HoadonChitietxuat(txtMaHD.Text, Convert.ToInt32(sID), dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()));
+                                    update_HoadonChitietxuat(txtMaHD.Text, Convert.ToInt32(sID), dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString());
                                 }
                                 else
                                 {
-                                    insert_HoadonChitietxuat(txtMaHD.Text, dtoNCC.LOHANG, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()));
+                                    insert_HoadonChitietxuat(txtMaHD.Text, dtoNCC.LOHANG, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString());
                                 }
                             }
 
@@ -460,25 +461,19 @@ namespace WindowsFormsApplication1.KHtra
             
         }
         double conlai, thanhtien, tientra;
-        private void cbotientra_TextChanged(object sender, EventArgs e)
-        {
-            thanhtien = double.Parse(txtthanhtien.Text);
-            tientra = double.Parse(cbotientra.Text);
-            conlai = thanhtien - tientra;
-            txtconLai.Text = conlai.ToString();
-        }
-        public void insert_HoadonChitietxuat(string mahdx, string lohang, String mamh, Double SoLuong, int DonGia,int tienthu)
+
+        public void insert_HoadonChitietxuat(string mahdx, string lohang, String mamh, Double SoLuong, int DonGia, int tienthu, string HSD)
         {
             try
             {
-              
-
                 dtoNCC.MAHDX = mahdx;
                 dtoNCC.LOHANG = lohang;
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGXUAT = SoLuong;
                 dtoNCC.GIATIEN = DonGia;
+                dtoNCC.GIABAN = DonGia;
                 dtoNCC.TIENTHU = tienthu;
+                dtoNCC.HSD = HSD;
                 string SQL = "SELECT MAX(ID) FROM traCHITIETHDX WHERE MAHDX='" + mahdx + "'";
                 DataTable dt = ctlNCC.GETDATA(SQL);
                 dtoNCC.ID = 1;
@@ -494,7 +489,7 @@ namespace WindowsFormsApplication1.KHtra
             catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu", "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
         }
-        public void update_HoadonChitietxuat(string mahdx,int ID, String mamh, Double SoLuong, int DonGia,int tienthu)
+        public void update_HoadonChitietxuat(string mahdx,int ID, String mamh, Double SoLuong, int DonGia,int tienthu,string HSD)
         {
             try
             {
@@ -502,6 +497,8 @@ namespace WindowsFormsApplication1.KHtra
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGXUAT = SoLuong;
                 dtoNCC.GIATIEN = DonGia;
+                dtoNCC.GIABAN = DonGia;
+                dtoNCC.HSD = HSD;
                 dtoNCC.ID = ID;
                 dtoNCC.TIENTHU = tienthu;
                 
@@ -726,7 +723,6 @@ namespace WindowsFormsApplication1.KHtra
                         dtr["_DonGia"] = dtmh.Rows[0]["GIABAN"];
                         //dtr["_Thue"] = dtmh.Rows[0]["SOTHUE"];
                         dtr["_DVT"] = dtmh.Rows[0]["DONVITINH"];
-                        //dtr["_TenMH"] = dtmh.Rows[0]["TENMH"];
                         dtr["_Total"] = "0";
                         dtr["TIENTHU"] = "0";
                     }
@@ -822,6 +818,7 @@ namespace WindowsFormsApplication1.KHtra
                 contextMenuStrip1.Show(view.GridControl, e.Point);
             }
         }
+        private int tienchuack = 0;
         public void gettotal()
         {
             int rowcount = gridCTHOADON.RowCount;
@@ -839,6 +836,8 @@ namespace WindowsFormsApplication1.KHtra
                     }
                 }
             }
+            tienchuack = Convert.ToInt32(total);
+            total = total - Convert.ToInt32(cktien.Text);
             txtthanhtien.Text = total.ToString();
             if (cbotientra.Text != "")
             {
@@ -1286,9 +1285,48 @@ namespace WindowsFormsApplication1.KHtra
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
+        private void ckphantram_Validated(object sender, EventArgs e)
+        {
+            Double thanhtien = tienchuack;
+            int _cktien = Convert.ToInt32(thanhtien * Convert.ToDouble(ckphantram.Value) / 100);
+            thanhtien = thanhtien - _cktien;
+            txtthanhtien.Text = thanhtien.ToString();
+            cktien.Value = _cktien;
+            if (cbotientra.Text != "")
+            {
+                tientra = double.Parse(cbotientra.Text);
+                conlai = thanhtien - tientra;
+                txtconLai.Text = conlai.ToString();
+            }
+        }
+
+        private void cktien_Validated(object sender, EventArgs e)
+        {
+            Double thanhtien = tienchuack;
+            int _cktien = Convert.ToInt32(cktien.Value);
+            ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+            thanhtien = thanhtien - _cktien;
+            txtthanhtien.Text = thanhtien.ToString();
+            if (cbotientra.Text != "")
+            {
+                tientra = double.Parse(cbotientra.Text);
+                conlai = thanhtien - tientra;
+                txtconLai.Text = conlai.ToString();
+            }
+
+        }
+
+        private void cbotientra_Validated(object sender, EventArgs e)
+        {
+            thanhtien = double.Parse(txtthanhtien.Text);
+            tientra = double.Parse(cbotientra.Text);
+            conlai = thanhtien - tientra;
+            txtconLai.Text = conlai.ToString();
+        }
 
 
-   
+
+
 
     }
 }
