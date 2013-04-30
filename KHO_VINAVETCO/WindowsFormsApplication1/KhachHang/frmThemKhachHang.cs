@@ -115,16 +115,10 @@ namespace WindowsFormsApplication1
 
                         DTO.MAKH = txtmakh.Text;
                         DTO.MAKV = sMaKV;
-                        if (PublicVariable.isBANGGIA)
-                        {
-                            DTO.MANV = sMaNV;
-                            DTO.MABG = sMaBG;
-                        }
-                        else
-                        {
-                            DTO.MANV = "";
-                            DTO.MABG = "";
-                        }
+                     
+                        DTO.MANV = sMaNV;
+                        DTO.MABG = sMaBG;
+                    
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
@@ -148,16 +142,10 @@ namespace WindowsFormsApplication1
                         DTO.MAKH = txtmakh.Text;
                         txtmakh.Enabled = false;
                         DTO.MAKV = sMaKV;
-                        if (PublicVariable.isBANGGIA)
-                        {
-                            DTO.MANV = sMaNV;
-                            DTO.MABG = sMaBG;
-                        }
-                        else
-                        {
-                            DTO.MANV = "";
-                            DTO.MABG = "";
-                        }
+            
+                        DTO.MANV = sMaNV;
+                        DTO.MABG = sMaBG;
+                    
                         DTO.TENKH = txttenkh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
@@ -360,6 +348,13 @@ namespace WindowsFormsApplication1
             cmbtennhanvien.Properties.PopupFormWidth = 400;
             cmbtennhanvien.Properties.DataSource = CTRL.GETNV();
 
+            cmbbanggia.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cmbbanggia.Properties.DataSource = dvdropdow;
+            cmbbanggia.Properties.DisplayMember = "TENBG";
+            cmbbanggia.Properties.ValueMember = "MABG";
+            cmbbanggia.Properties.View.BestFitColumns();
+            cmbbanggia.Properties.PopupFormWidth = 400;
+            cmbbanggia.Properties.DataSource = CTRL.GETBG();
           
         }
         private void frmThemKhachHang_Load(object sender, EventArgs e)
@@ -383,6 +378,7 @@ namespace WindowsFormsApplication1
                 txttenkh.Text = TenKH;
                 cmbtenkhuvuc.Text = sMaKV;
                 cmbtennhanvien.Text = sMaNV;
+                cmbbanggia.Text = sMaBG;
                 txtdiachi.Text = DIACHI;
                 txtmasothue.Text = MASOTHUE;
                 txtnganhang.Text = NGANHANG;

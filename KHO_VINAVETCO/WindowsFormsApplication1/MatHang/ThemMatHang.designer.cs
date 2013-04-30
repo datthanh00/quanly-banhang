@@ -37,21 +37,12 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtGiaMua = new DevExpress.XtraEditors.CalcEdit();
             this.txtSoLuong = new DevExpress.XtraEditors.CalcEdit();
-            this.txtGiaBan = new DevExpress.XtraEditors.CalcEdit();
-            this.lbgiamua = new DevExpress.XtraEditors.LabelControl();
             this.lbsoluong = new DevExpress.XtraEditors.LabelControl();
-            this.lbgiaban = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
-            this.txthansudung = new DevExpress.XtraEditors.DateEdit();
             this.txtmota = new DevExpress.XtraEditors.TextEdit();
-            this.lbhansudung = new DevExpress.XtraEditors.LabelControl();
             this.lbmota = new DevExpress.XtraEditors.LabelControl();
             this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
@@ -84,11 +75,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.calKLDVT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGiaMua.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txthansudung.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txthansudung.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmota.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbthue.Properties)).BeginInit();
@@ -149,9 +136,7 @@
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl3);
             this.panelControl1.Controls.Add(this.labelControl14);
-            this.panelControl1.Controls.Add(this.txthansudung);
             this.panelControl1.Controls.Add(this.txtmota);
-            this.panelControl1.Controls.Add(this.lbhansudung);
             this.panelControl1.Controls.Add(this.lbmota);
             this.panelControl1.Controls.Add(this.checkTT);
             this.panelControl1.Controls.Add(this.simpleButton3);
@@ -175,7 +160,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(583, 383);
+            this.panelControl1.Size = new System.Drawing.Size(583, 316);
             this.panelControl1.TabIndex = 3;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
             // 
@@ -211,112 +196,33 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.labelControl7);
-            this.groupControl1.Controls.Add(this.labelControl6);
-            this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Controls.Add(this.txtGiaMua);
             this.groupControl1.Controls.Add(this.txtSoLuong);
-            this.groupControl1.Controls.Add(this.txtGiaBan);
-            this.groupControl1.Controls.Add(this.lbgiamua);
             this.groupControl1.Controls.Add(this.lbsoluong);
-            this.groupControl1.Controls.Add(this.lbgiaban);
-            this.groupControl1.Location = new System.Drawing.Point(12, 175);
+            this.groupControl1.Location = new System.Drawing.Point(20, 145);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(555, 112);
+            this.groupControl1.Size = new System.Drawing.Size(533, 70);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Thông tin giao dịch";
             // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl7.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl7.Appearance.Options.UseBackColor = true;
-            this.labelControl7.Appearance.Options.UseForeColor = true;
-            this.labelControl7.Location = new System.Drawing.Point(125, 87);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(14, 13);
-            this.labelControl7.TabIndex = 163;
-            this.labelControl7.Text = "(*)";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl6.Appearance.Options.UseBackColor = true;
-            this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(125, 61);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(14, 13);
-            this.labelControl6.TabIndex = 162;
-            this.labelControl6.Text = "(*)";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl5.Appearance.Options.UseBackColor = true;
-            this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Location = new System.Drawing.Point(125, 35);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(14, 13);
-            this.labelControl5.TabIndex = 161;
-            this.labelControl5.Text = "(*)";
-            // 
-            // txtGiaMua
-            // 
-            this.txtGiaMua.Location = new System.Drawing.Point(145, 59);
-            this.txtGiaMua.Name = "txtGiaMua";
-            this.txtGiaMua.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtGiaMua.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtGiaMua.Size = new System.Drawing.Size(100, 20);
-            this.txtGiaMua.TabIndex = 8;
-            // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(145, 85);
+            this.txtSoLuong.Location = new System.Drawing.Point(143, 37);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtSoLuong.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txtSoLuong.Properties.ReadOnly = true;
             this.txtSoLuong.Size = new System.Drawing.Size(100, 20);
             this.txtSoLuong.TabIndex = 9;
             // 
-            // txtGiaBan
-            // 
-            this.txtGiaBan.Location = new System.Drawing.Point(145, 33);
-            this.txtGiaBan.Name = "txtGiaBan";
-            this.txtGiaBan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtGiaBan.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtGiaBan.Size = new System.Drawing.Size(100, 20);
-            this.txtGiaBan.TabIndex = 7;
-            // 
-            // lbgiamua
-            // 
-            this.lbgiamua.Location = new System.Drawing.Point(8, 59);
-            this.lbgiamua.Name = "lbgiamua";
-            this.lbgiamua.Size = new System.Drawing.Size(38, 13);
-            this.lbgiamua.TabIndex = 152;
-            this.lbgiamua.Text = "Giá mua";
-            this.lbgiamua.Click += new System.EventHandler(this.lbgiamua_Click);
-            // 
             // lbsoluong
             // 
-            this.lbsoluong.Location = new System.Drawing.Point(8, 85);
+            this.lbsoluong.Location = new System.Drawing.Point(6, 37);
             this.lbsoluong.Name = "lbsoluong";
             this.lbsoluong.Size = new System.Drawing.Size(42, 13);
             this.lbsoluong.TabIndex = 151;
             this.lbsoluong.Text = "Số lượng";
             this.lbsoluong.Click += new System.EventHandler(this.lbsoluong_Click);
-            // 
-            // lbgiaban
-            // 
-            this.lbgiaban.Location = new System.Drawing.Point(8, 33);
-            this.lbgiaban.Name = "lbgiaban";
-            this.lbgiaban.Size = new System.Drawing.Size(36, 13);
-            this.lbgiaban.TabIndex = 150;
-            this.lbgiaban.Text = "Giá bán";
             // 
             // labelControl4
             // 
@@ -354,26 +260,6 @@
             this.labelControl14.TabIndex = 157;
             this.labelControl14.Text = "(*)";
             // 
-            // txthansudung
-            // 
-            this.txthansudung.EditValue = null;
-            this.txthansudung.Enabled = false;
-            this.txthansudung.Location = new System.Drawing.Point(424, 136);
-            this.txthansudung.Name = "txthansudung";
-            this.txthansudung.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txthansudung.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
-            this.txthansudung.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txthansudung.Properties.EditFormat.FormatString = "dd/MM/yyyy";
-            this.txthansudung.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txthansudung.Properties.Mask.EditMask = "dd/MM/yyyy";
-            this.txthansudung.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.txthansudung.Size = new System.Drawing.Size(127, 20);
-            this.txthansudung.TabIndex = 100;
-            this.txthansudung.EditValueChanged += new System.EventHandler(this.txthansudung_EditValueChanged);
-            this.txthansudung.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txthansudung_KeyPress);
-            // 
             // txtmota
             // 
             this.txtmota.Location = new System.Drawing.Point(128, 73);
@@ -382,16 +268,6 @@
             this.txtmota.TabIndex = 4;
             this.txtmota.EditValueChanged += new System.EventHandler(this.txtmota_EditValueChanged);
             this.txtmota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbthue_KeyPress);
-            // 
-            // lbhansudung
-            // 
-            this.lbhansudung.Enabled = false;
-            this.lbhansudung.Location = new System.Drawing.Point(313, 140);
-            this.lbhansudung.Name = "lbhansudung";
-            this.lbhansudung.Size = new System.Drawing.Size(63, 13);
-            this.lbhansudung.TabIndex = 154;
-            this.lbhansudung.Text = "Hạn Sử Dụng";
-            this.lbhansudung.Click += new System.EventHandler(this.lbhansudung_Click);
             // 
             // lbmota
             // 
@@ -407,7 +283,7 @@
             this.checkTT.Location = new System.Drawing.Point(127, 105);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 18);
+            this.checkTT.Size = new System.Drawing.Size(82, 19);
             this.checkTT.TabIndex = 5;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
@@ -581,7 +457,7 @@
             // 
             // lbCHUY
             // 
-            this.lbCHUY.Location = new System.Drawing.Point(178, 294);
+            this.lbCHUY.Location = new System.Drawing.Point(176, 230);
             this.lbCHUY.Name = "lbCHUY";
             this.lbCHUY.Size = new System.Drawing.Size(246, 13);
             this.lbCHUY.TabIndex = 53;
@@ -593,7 +469,7 @@
             this.labelControl19.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl19.Appearance.Options.UseBackColor = true;
             this.labelControl19.Appearance.Options.UseForeColor = true;
-            this.labelControl19.Location = new System.Drawing.Point(155, 294);
+            this.labelControl19.Location = new System.Drawing.Point(153, 230);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(14, 13);
             this.labelControl19.TabIndex = 52;
@@ -615,7 +491,7 @@
             // btLuu
             // 
             this.btLuu.Image = global::WindowsFormsApplication1.Properties.Resources.save1;
-            this.btLuu.Location = new System.Drawing.Point(176, 323);
+            this.btLuu.Location = new System.Drawing.Point(175, 259);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(95, 38);
             this.btLuu.TabIndex = 10;
@@ -625,7 +501,7 @@
             // btDong
             // 
             this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close2;
-            this.btDong.Location = new System.Drawing.Point(298, 323);
+            this.btDong.Location = new System.Drawing.Point(297, 259);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(98, 38);
             this.btDong.TabIndex = 11;
@@ -644,7 +520,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 383);
+            this.ClientSize = new System.Drawing.Size(583, 316);
             this.Controls.Add(this.panelControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ThemMatHang";
@@ -660,11 +536,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGiaMua.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txthansudung.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txthansudung.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmota.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbthue.Properties)).EndInit();
@@ -698,12 +570,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl19;
         private DevExpress.XtraGrid.Columns.GridColumn colmanh;
         private DevExpress.XtraGrid.Columns.GridColumn colten;
-        private DevExpress.XtraEditors.LabelControl lbgiaban;
-        private DevExpress.XtraEditors.LabelControl lbsoluong;
-        private DevExpress.XtraEditors.LabelControl lbgiamua;
-        private DevExpress.XtraEditors.CalcEdit txtGiaBan;
-        private DevExpress.XtraEditors.CalcEdit txtGiaMua;
-        private DevExpress.XtraEditors.CalcEdit txtSoLuong;
         private DevExpress.XtraEditors.CheckEdit checkTT;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton btThemKhuVuc;
@@ -722,19 +588,16 @@
         private DevExpress.XtraEditors.LabelControl lbmamh;
         private DevExpress.XtraEditors.TextEdit txtMaMH;
         private DevExpress.XtraEditors.TextEdit txtTenMH;
-        private DevExpress.XtraEditors.LabelControl lbhansudung;
         private DevExpress.XtraEditors.LabelControl lbmota;
-        private DevExpress.XtraEditors.DateEdit txthansudung;
         private DevExpress.XtraEditors.TextEdit txtmota;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl14;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.CalcEdit calKLDVT;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.CalcEdit txtSoLuong;
+        private DevExpress.XtraEditors.LabelControl lbsoluong;
     }
 }

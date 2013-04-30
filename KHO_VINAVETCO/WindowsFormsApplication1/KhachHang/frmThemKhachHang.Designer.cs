@@ -369,7 +369,7 @@
             this.checkTT.Location = new System.Drawing.Point(117, 226);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 18);
+            this.checkTT.Size = new System.Drawing.Size(82, 19);
             this.checkTT.TabIndex = 4;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
@@ -534,16 +534,16 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Mã Nhân Viên";
-            this.gridColumn3.FieldName = "MANV";
+            this.gridColumn3.Caption = "Mã Bảng Giá";
+            this.gridColumn3.FieldName = "MABG";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "Tên Nhân Viên";
-            this.gridColumn4.FieldName = "TENNV";
+            this.gridColumn4.Caption = "Tên Bảng Giá";
+            this.gridColumn4.FieldName = "TENBG";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 1;

@@ -36,8 +36,7 @@ namespace WindowsFormsApplication1
             lbtinhtrang.Text = LamVN.TINHTRANG.ToString();
             //lbhinhanh.Text = LamVN.HINHANH.ToString();
             lbmathue.Text = LamVN.MASOTHUE.ToString();
-            lbgiaban.Text = LamVN.GIABAN.ToString();
-            lbgiamua.Text = LamVN.GIAMUA.ToString();
+            
             lbsoluong.Text = LamVN.SOLUONGMH.ToString();
             lbCHUY.Text = LamVN.CHUY.ToString();
             btLuu.Text = LamVN.LUU.ToString();
@@ -63,11 +62,10 @@ namespace WindowsFormsApplication1
             lbtinhtrang.Text = LamEL.TINHTRANG.ToString();
             //lbhinhanh.Text = LamEL.HINHANH.ToString();
             lbmathue.Text = LamEL.MASOTHUE.ToString();
-            lbgiaban.Text = LamEL.GIABAN.ToString();
-            lbgiamua.Text = LamEL.GIAMUA.ToString();
+        
             lbsoluong.Text = LamEL.SOLUONGMH.ToString();
             lbmota.Text = LamEL.MOTA.ToString();
-            lbhansudung.Text = LamEL.HANSUDUNG.ToString();
+           
             lbCHUY.Text = LamEL.CHUY.ToString();
             btLuu.Text = LamEL.LUU.ToString();
             btDong.Text = LamEL.DONG.ToString();
@@ -82,7 +80,7 @@ namespace WindowsFormsApplication1
            
             this.Text = "Form Insert && Update Products";
         }
-        public string MANHOMHANG, MANCC, TENMATHANG, MAMH, DVT, TINHTRANG, HINHANH, MASOTHUE, GIABAN, GIANUA, SOLUONG, MOTA, HANSUDUNG, MAKHO, MADVT,KLDVT;
+        public string MANHOMHANG, MANCC, TENMATHANG, MAMH, DVT, TINHTRANG, HINHANH, MASOTHUE, SOLUONG, MOTA, MAKHO, MADVT,KLDVT;
         DataView dvdropdow;
         public void loadgirdlookupTHUE()
         {
@@ -134,13 +132,7 @@ namespace WindowsFormsApplication1
         private void ThemMatHang_Load(object sender, EventArgs e)
         {
 
-            if (PublicVariable.isBANGGIA)
-            {
-                txtGiaBan.Text = "0";
-                txtGiaBan.Enabled = false;
-                txtGiaMua.Text = "0";
-                txtGiaMua.Enabled = false;
-            }
+
 
             txtSoLuong.Text = "0";
 
@@ -183,8 +175,7 @@ namespace WindowsFormsApplication1
                 calKLDVT.Text = KLDVT;
 
                 cbthue.Text = MASOTHUE;
-                txthansudung.Text = HANSUDUNG;
-
+              
                 txtSoLuong.Text = SOLUONG;
                 if (PublicVariable.XOA == "False")
                 {
@@ -197,8 +188,7 @@ namespace WindowsFormsApplication1
                 
                 
                 txtmota.Text = MOTA;
-                txtGiaBan.Text = GIABAN;
-                txtGiaMua.Text = GIANUA;
+        
                 
                 if (TINHTRANG == "True")
                 {
@@ -272,18 +262,7 @@ namespace WindowsFormsApplication1
                     
          
                    
-                    else if (txtGiaBan.Text == "")
-                    {
-                        XtraMessageBox.Show("Vui lòng điền Giá Bán ");
-                        txtGiaBan.Focus();
-                        return;
-                    }
-                    else if (txtGiaMua.Text == "" )
-                    {
-                        XtraMessageBox.Show("Vui lòng điền Giá mua ");
-                        txtGiaMua.Focus();
-                        return;
-                    }
+                  
                     
                     else if ( txtSoLuong.Text == "")
                     {
@@ -325,9 +304,7 @@ namespace WindowsFormsApplication1
                             DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = "";
                     
-                            DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
-                            DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();
-
+                          
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
                             CTL.addMatHangCtrl(DTO);
@@ -351,9 +328,7 @@ namespace WindowsFormsApplication1
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = "";
-                            DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
-                            DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();
-
+                    
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
                             CTL.UPDATEMATHANG(DTO);
@@ -390,19 +365,8 @@ namespace WindowsFormsApplication1
                         return;
                     }
 
-                    else if (txtGiaBan.Text == "")
-                    {
-                        XtraMessageBox.Show("Vui lòng điền Giá Bán ");
-                        txtGiaBan.Focus();
-                        return;
-                    }
-                    
-                    else if (txtGiaMua.Text == "")
-                    {
-                        XtraMessageBox.Show("Vui lòng điền Giá mua ");
-                        cbthue.Focus();
-                        return;
-                    }
+           
+                   
                     
                     else if (txtSoLuong.Text == "")
                     {
@@ -440,9 +404,7 @@ namespace WindowsFormsApplication1
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.SOLUONGMH = txtSoLuong.Text;
-                            DTO.HANSUDUNG = DateTime.Parse(txthansudung.Text).ToString();
-                            DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
-                            DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();
+                           
 
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
@@ -468,10 +430,7 @@ namespace WindowsFormsApplication1
                             DTO.TENMH = txtTenMH.Text;
 
                             DTO.SOLUONGMH = txtSoLuong.Text;
-                            DTO.HANSUDUNG = DateTime.Parse(txthansudung.Text).ToString();
-                            DTO.GIAMUA = int.Parse(txtGiaMua.Text).ToString();
-                            DTO.GIABAN = int.Parse(txtGiaBan.Text).ToString();
-
+                 
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
                             CTL.UPDATEMATHANG(DTO);

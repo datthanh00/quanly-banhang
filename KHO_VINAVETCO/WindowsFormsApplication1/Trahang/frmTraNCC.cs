@@ -400,7 +400,7 @@ namespace WindowsFormsApplication1
                         dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                         dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
                         dtoNCC.MAHDN = txtMaHD.Text;
-                        dtoNCC.CKTIEN = cktien.Value;
+                        dtoNCC.CKTIEN = cktien.Value.ToString();
                         if (cbotientra.Text == "")
                         {
                             cbotientra.Text = "0";

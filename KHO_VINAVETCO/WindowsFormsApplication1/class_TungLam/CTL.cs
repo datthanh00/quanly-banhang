@@ -254,6 +254,11 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETNHANVIEN();
         }
+
+        public DataTable GETBG()
+        {
+            return DAO.GETBG();
+        }
         public DataTable GETQL()
         {
             return DAO.GETQUANLY();

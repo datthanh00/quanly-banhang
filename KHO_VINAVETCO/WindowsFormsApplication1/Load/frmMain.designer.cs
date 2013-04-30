@@ -226,7 +226,7 @@
             this.repositoryItemComboBox2,
             this.repositoryItemComboBox3});
             this.ribbon.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ribbon.SelectedPage = this.ribDanhMuc;
+            this.ribbon.SelectedPage = this.ribChucNang;
             this.ribbon.Size = new System.Drawing.Size(1182, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ItemLinks.Add(this.barSubItem1);
@@ -997,7 +997,7 @@
             // 
             // cbkho
             // 
-            this.cbkho.Location = new System.Drawing.Point(991, 92);
+            this.cbkho.Location = new System.Drawing.Point(992, 92);
             this.cbkho.Name = "cbkho";
             this.cbkho.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});

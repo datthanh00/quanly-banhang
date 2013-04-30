@@ -97,5 +97,34 @@ namespace WindowsFormsApplication1
             gridView1.ExpandAllGroups();
         }
 
+        private void advBandedGridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+
+            DataRow dtr = advBandedGridView2.GetDataRow(advBandedGridView2.FocusedRowHandle);
+
+            if (dtr != null)
+            {
+
+                if (e.Column.FieldName.ToString() == "GIABAN")
+                {
+                    Double THANHTIEN1=0;
+                    try
+                    {
+
+                     THANHTIEN1 = (Convert.ToInt32(dtr["GIABAN"].ToString())) * (Convert.ToDouble(dtr["SOLUONGMH"].ToString()));
+                    }catch(Exception ex)
+                    {
+                        MessageBox.Show("Giá bán phải là số nguyên");
+                        dtr["GIABAN"] = "0";
+                        return;
+                    }
+
+                    dtr["THANHTIEN"] = Convert.ToInt32(THANHTIEN1).ToString();
+                }
+
+            }
+                
+        }
+
     }
 }
