@@ -771,6 +771,7 @@
             this.txtNo.Name = "txtNo";
             this.txtNo.Properties.Mask.EditMask = "{0:0,0}";
             this.txtNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtNo.Properties.ReadOnly = true;
             this.txtNo.Size = new System.Drawing.Size(99, 20);
             this.txtNo.TabIndex = 22;
             // 

@@ -834,6 +834,7 @@
             this.txtNo.Enabled = false;
             this.txtNo.Location = new System.Drawing.Point(249, 54);
             this.txtNo.Name = "txtNo";
+            this.txtNo.Properties.ReadOnly = true;
             this.txtNo.Size = new System.Drawing.Size(99, 20);
             this.txtNo.TabIndex = 22;
             // 
