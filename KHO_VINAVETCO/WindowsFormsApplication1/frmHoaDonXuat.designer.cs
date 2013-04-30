@@ -122,6 +122,8 @@
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.resTENMATHANG = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
@@ -189,8 +191,9 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn51 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn52 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -1098,6 +1101,7 @@
             this.gridColumn7,
             this.gridColumn8,
             this.gridColumn22,
+            this.gridColumn51,
             this.gridColumn25,
             this.gridColumn4,
             this.gridColumn49,
@@ -1209,7 +1213,7 @@
             this.gridColumn25.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn25.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 6;
+            this.gridColumn25.VisibleIndex = 7;
             // 
             // gridColumn4
             // 
@@ -1221,7 +1225,19 @@
             this.gridColumn4.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn4.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 7;
+            this.gridColumn4.VisibleIndex = 8;
+            // 
+            // gridColumn49
+            // 
+            this.gridColumn49.Caption = "HSD";
+            this.gridColumn49.FieldName = "HSD";
+            this.gridColumn49.Name = "gridColumn49";
+            // 
+            // gridColumn48
+            // 
+            this.gridColumn48.Caption = "Giá Nhập";
+            this.gridColumn48.FieldName = "GIANHAP";
+            this.gridColumn48.Name = "gridColumn48";
             // 
             // ID
             // 
@@ -1380,6 +1396,7 @@
             this.gridColumn40,
             this.gridColumn17,
             this.gridColumn41,
+            this.gridColumn50,
             this.gridColumn42,
             this.gridColumn11});
             this.gridView3.GridControl = this.gridControl3;
@@ -1488,7 +1505,7 @@
             this.gridColumn42.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn42.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn42.Visible = true;
-            this.gridColumn42.VisibleIndex = 8;
+            this.gridColumn42.VisibleIndex = 9;
             // 
             // gridColumn11
             // 
@@ -1498,7 +1515,7 @@
             this.gridColumn11.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 9;
+            this.gridColumn11.VisibleIndex = 10;
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -1701,6 +1718,7 @@
             this.gridColumn32,
             this.gridColumn47,
             this.gridColumn33,
+            this.gridColumn52,
             this.gridColumn44,
             this.gridColumn43,
             this.gridColumn18});
@@ -1919,17 +1937,29 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
-            // gridColumn48
+            // gridColumn50
             // 
-            this.gridColumn48.Caption = "Giá Nhập";
-            this.gridColumn48.FieldName = "GIANHAP";
-            this.gridColumn48.Name = "gridColumn48";
+            this.gridColumn50.Caption = "Khuyến Mãi";
+            this.gridColumn50.FieldName = "KMAI";
+            this.gridColumn50.Name = "gridColumn50";
+            this.gridColumn50.Visible = true;
+            this.gridColumn50.VisibleIndex = 8;
             // 
-            // gridColumn49
+            // gridColumn51
             // 
-            this.gridColumn49.Caption = "HSD";
-            this.gridColumn49.FieldName = "HSD";
-            this.gridColumn49.Name = "gridColumn49";
+            this.gridColumn51.Caption = "Khuyến Mãi";
+            this.gridColumn51.FieldName = "KMAI";
+            this.gridColumn51.Name = "gridColumn51";
+            this.gridColumn51.Visible = true;
+            this.gridColumn51.VisibleIndex = 6;
+            // 
+            // gridColumn52
+            // 
+            this.gridColumn52.Caption = "Khuyến Mãi";
+            this.gridColumn52.FieldName = "KMAI";
+            this.gridColumn52.Name = "gridColumn52";
+            this.gridColumn52.Visible = true;
+            this.gridColumn52.VisibleIndex = 8;
             // 
             // frmHoaDonXuat
             // 
@@ -2199,6 +2229,9 @@
         private DevExpress.XtraEditors.CalcEdit ckphantram;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn49;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn48;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn50;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn51;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn52;
     }
     
 }

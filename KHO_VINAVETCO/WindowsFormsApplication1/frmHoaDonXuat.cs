@@ -84,6 +84,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dt.Columns.Add(new DataColumn("_TenMH"));
             dt.Columns.Add(new DataColumn("_LOHANG"));
             dt.Columns.Add(new DataColumn("_SoLuong"));
+            dt.Columns.Add(new DataColumn("KMAI"));
             dt.Columns.Add(new DataColumn("_DonGia"));
             //dt.Columns.Add(new DataColumn("_Thue"));
             dt.Columns.Add(new DataColumn("_DVT"));
@@ -332,7 +333,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
 
-                                insert_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString());
+                                insert_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString());
                             }
                         }
                         else
@@ -357,11 +358,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
                                 if (sID != "")
                                 {
-                                    update_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), Convert.ToInt32(sID), dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString());
+                                    update_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), Convert.ToInt32(sID), dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString());
                                 }
                                 else
                                 {
-                                    insert_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString());
+                                    insert_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString());
                                 }
                             }
 
@@ -394,8 +395,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
             
         }
         double conlai, thanhtien, tientra;
-    
-        public void insert_HoadonChitietxuat(string mahdx, string lohang, String mamh, Double SoLuong, int DonGia,int tienthu,string GIANHAP, string HSD)
+
+        public void insert_HoadonChitietxuat(string mahdx, string lohang, String mamh, Double SoLuong, int DonGia, int tienthu, string GIANHAP, string HSD, String _KMAI)
         {
             try
             {
@@ -422,7 +423,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu", "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
         }
-        public void update_HoadonChitietxuat(string mahdx, string lohang, int ID, String mamh, Double SoLuong, int DonGia, int tienthu, string GIANHAP, string HSD)
+        public void update_HoadonChitietxuat(string mahdx, string lohang, int ID, String mamh, Double SoLuong, int DonGia, int tienthu, string GIANHAP, string HSD, String _KMAI)
         {
             try
             {
@@ -660,6 +661,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         dtr["_MaMH"] = dtmh.Rows[0]["MAMH"];
                         dtr["_LOHANG"] = dtmh.Rows[0]["LOHANG"];
                         dtr["_SoLuong"] = "0";
+                        dtr["KMAI"] = "0";
                         dtr["_DonGia"] = dtmh.Rows[0]["GIABAN"];
                         //dtr["_Thue"] = dtmh.Rows[0]["SOTHUE"];
                         dtr["_DVT"] = dtmh.Rows[0]["DONVITINH"];
@@ -703,6 +705,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         else
                         {
                             dtr["_SoLuong"] = "0";
+                            dtr["KMAI"] = "0";
                             dtr["_Total"] = "0";
                             dtr["TIENTHU"] = "0";
                         }

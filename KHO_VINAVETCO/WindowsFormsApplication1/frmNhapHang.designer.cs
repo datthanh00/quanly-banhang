@@ -183,6 +183,9 @@
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -1085,6 +1088,7 @@
             this.gridColumn6,
             this.gridColumn5,
             this.gridColumn7,
+            this.gridColumn43,
             this.gridColumn10,
             this.gridColumn8,
             this.gridColumn22,
@@ -1217,7 +1221,7 @@
             this.gridColumn25.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn25.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn25.Visible = true;
-            this.gridColumn25.VisibleIndex = 6;
+            this.gridColumn25.VisibleIndex = 7;
             // 
             // ID
             // 
@@ -1367,6 +1371,7 @@
             this.gridColumn35,
             this.gridColumn36,
             this.gridColumn37,
+            this.gridColumn44,
             this.gridColumn21,
             this.gridColumn38,
             this.gridColumn20,
@@ -1472,7 +1477,7 @@
             this.gridColumn39.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn39.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn39.Visible = true;
-            this.gridColumn39.VisibleIndex = 6;
+            this.gridColumn39.VisibleIndex = 7;
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -1676,6 +1681,7 @@
             this.gridColumn42,
             this.gridColumn11,
             this.gridColumn31,
+            this.gridColumn45,
             this.gridColumn41,
             this.gridColumn32});
             this.gridView5.GridControl = this.gridControl3;
@@ -1809,7 +1815,7 @@
             this.gridColumn41.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn41.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn41.Visible = true;
-            this.gridColumn41.VisibleIndex = 9;
+            this.gridColumn41.VisibleIndex = 10;
             // 
             // gridColumn32
             // 
@@ -1818,7 +1824,7 @@
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 10;
+            this.gridColumn32.VisibleIndex = 11;
             // 
             // contextMenuStrip1
             // 
@@ -1873,6 +1879,30 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
+            // 
+            // gridColumn43
+            // 
+            this.gridColumn43.Caption = "Khuyến Mãi";
+            this.gridColumn43.FieldName = "KMAI";
+            this.gridColumn43.Name = "gridColumn43";
+            this.gridColumn43.Visible = true;
+            this.gridColumn43.VisibleIndex = 6;
+            // 
+            // gridColumn44
+            // 
+            this.gridColumn44.Caption = "Khuyến Mãi";
+            this.gridColumn44.FieldName = "KMAI";
+            this.gridColumn44.Name = "gridColumn44";
+            this.gridColumn44.Visible = true;
+            this.gridColumn44.VisibleIndex = 6;
+            // 
+            // gridColumn45
+            // 
+            this.gridColumn45.Caption = "Khuyến Mãi";
+            this.gridColumn45.FieldName = "KMAI";
+            this.gridColumn45.Name = "gridColumn45";
+            this.gridColumn45.Visible = true;
+            this.gridColumn45.VisibleIndex = 9;
             // 
             // frmNhapHang
             // 
@@ -2138,6 +2168,9 @@
         private DevExpress.XtraEditors.CalcEdit cktien;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.CalcEdit ckphantram;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn44;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn45;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet2TableAdapters.MATHANGTableAdapter mATHANGTableAdapter1;
     }
 }

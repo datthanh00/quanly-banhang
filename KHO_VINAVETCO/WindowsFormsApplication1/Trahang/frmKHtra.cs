@@ -84,6 +84,7 @@ namespace WindowsFormsApplication1.KHtra
             dt.Columns.Add(new DataColumn("_TenMH"));
             dt.Columns.Add(new DataColumn("_HSD"));
             dt.Columns.Add(new DataColumn("_SoLuong"));
+            dt.Columns.Add(new DataColumn("KMAI"));
             dt.Columns.Add(new DataColumn("_DonGia"));
             //dt.Columns.Add(new DataColumn("_Thue"));
             dt.Columns.Add(new DataColumn("_DVT"));
@@ -402,7 +403,7 @@ namespace WindowsFormsApplication1.KHtra
                                         }
                                     }
                                 }
-                                insert_HoadonChitietxuat(txtMaHD.Text, dtoNCC.LOHANG, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString());
+                                insert_HoadonChitietxuat(txtMaHD.Text, dtoNCC.LOHANG, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());
                             }
                         }
                         else
@@ -425,11 +426,11 @@ namespace WindowsFormsApplication1.KHtra
 
                                 if (sID != "")
                                 {
-                                    update_HoadonChitietxuat(txtMaHD.Text, Convert.ToInt32(sID), dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString());
+                                    update_HoadonChitietxuat(txtMaHD.Text, Convert.ToInt32(sID), dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());
                                 }
                                 else
                                 {
-                                    insert_HoadonChitietxuat(txtMaHD.Text, dtoNCC.LOHANG, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString());
+                                    insert_HoadonChitietxuat(txtMaHD.Text, dtoNCC.LOHANG, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());
                                 }
                             }
 
@@ -462,7 +463,7 @@ namespace WindowsFormsApplication1.KHtra
         }
         double conlai, thanhtien, tientra;
 
-        public void insert_HoadonChitietxuat(string mahdx, string lohang, String mamh, Double SoLuong, int DonGia, int tienthu, string HSD)
+        public void insert_HoadonChitietxuat(string mahdx, string lohang, String mamh, Double SoLuong, int DonGia, int tienthu, string HSD, String _KMAI)
         {
             try
             {
@@ -489,7 +490,7 @@ namespace WindowsFormsApplication1.KHtra
             catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu", "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
         }
-        public void update_HoadonChitietxuat(string mahdx,int ID, String mamh, Double SoLuong, int DonGia,int tienthu,string HSD)
+        public void update_HoadonChitietxuat(string mahdx, int ID, String mamh, Double SoLuong, int DonGia, int tienthu, string HSD, String _KMAI)
         {
             try
             {
@@ -715,6 +716,7 @@ namespace WindowsFormsApplication1.KHtra
                         DataTable dtmh = ctlNCC.GETMATHANG(dtr["_TenMH"].ToString());
                         dtr["_MaMH"] = dtmh.Rows[0]["MAMH"];
                         dtr["_SoLuong"] = "0";
+                        dtr["KMAI"] = "0";
                         try
                         {
                             dtr["_HSD"] = "";
@@ -740,6 +742,7 @@ namespace WindowsFormsApplication1.KHtra
                         else
                         {
                             dtr["_SoLuong"] = "0";
+                            dtr["KMAI"] = "0";
                             dtr["_Total"] = "0";
                             dtr["TIENTHU"] = "0";
                         }
