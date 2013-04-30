@@ -1076,8 +1076,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
             Inhdxuat rep2 = new Inhdxuat(dt2);
             rep2.ShowPreviewDialog();  
-
-            
         }
 
         private void loadgrid()

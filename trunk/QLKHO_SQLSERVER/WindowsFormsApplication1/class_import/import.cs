@@ -111,6 +111,7 @@ namespace WindowsFormsApplication1.class_import
                 else if (cbTable.SelectedIndex == 2)
                 {
                     string HSD = cot["HANSUDUNG"].ToString().Substring(0, 10);
+                    HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
                     lenh = "INSERT INTO [MATHANG]([MAMH],[MATH],[MANH],[MANCC],[MAKHO],[TENMH],[KLDVT],[MADVT],[SOLUONGMH],[HANSUDUNG],[GIAMUA],[GIABAN],[MOTA],[TINHTRANG]) "
                     + " VALUES ('" + cot["MAMH"] + "','" + cot["MATH"] + "','" + cot["MANH"] + "','" + cot["MANCC"] + "','" + cot["MAKHO"] + "',N'" + cot["TENMH"] + "','" + cot["KLDVT"] + "','" + cot["MADVT"] + "'," + cot["SOLUONGMH"] + ",'" + HSD + "'," + cot["GIAMUA"] + "," + cot["GIABAN"] + ",N'" + cot["MOTA"] + "'," + cot["TINHTRANG"] + ")";
                 }
@@ -132,12 +133,12 @@ namespace WindowsFormsApplication1.class_import
                 }
                 else if (cbTable.SelectedIndex == 6)
                 {
-                    //string HSD = cot["HANSUDUNG"].ToString().Substring(0, 10);
-                    //HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
-                    //lenh = "UPDATE   [MATHANG] "
-                   // + " SET  [TENMH]=N'" + cot["TENMH"] + "',[MANCC]=N'" + cot["MANCC"] + "',[KLDVT]='" + cot["KLDVT"] + "',[MADVT]='" + cot["MADVT"] + "',[SOLUONGMH]=" + cot["SOLUONGMH"] + ",[HANSUDUNG]='" + HSD + "',[GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + ",[MOTA]=N'" + cot["MOTA"] + "',[TINHTRANG]=" + cot["TINHTRANG"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
+                    string HSD = cot["HANSUDUNG"].ToString().Substring(0, 10);
+                    HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
                     lenh = "UPDATE   [MATHANG] "
-                    + " SET  [GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";                
+                    + " SET  [TENMH]=N'" + cot["TENMH"] + "',[MANCC]=N'" + cot["MANCC"] + "',[KLDVT]='" + cot["KLDVT"] + "',[MADVT]='" + cot["MADVT"] + "',[SOLUONGMH]=" + cot["SOLUONGMH"] + ",[HANSUDUNG]='" + HSD + "',[GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + ",[MOTA]=N'" + cot["MOTA"] + "',[TINHTRANG]=" + cot["TINHTRANG"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
+                   // lenh = "UPDATE   [MATHANG] "
+                   // + " SET  [GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";                
                 }
                 else if (cbTable.SelectedIndex == 7)
                 {
@@ -156,8 +157,11 @@ namespace WindowsFormsApplication1.class_import
                 }
                 else if (cbTable.SelectedIndex == 9)
                 {
-                    lenh = "UPDATE   [KHOHANG] "
-                    + " SET  [GIAMUA]=" + cot["GIAMUA"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
+                    String HSD = cot["HSD"].ToString().Substring(0, 10);
+                    HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
+
+                    lenh = "UPDATE   [KHOHANG]"
+                    + " SET  [TONKHO]=" + cot["TONKHO"] + " ,[NHAPKHO]=" + cot["NHAPKHO"] + " ,[XUATKHO]=" + cot["XUATKHO"] + " ,[TRANHAPKHO]=" + cot["TRANHAPKHO"] + " ,[TRAXUATKHO]=" + cot["TRAXUATKHO"] + ",[HSD]='" + HSD + "' WHERE [MAMH]='" + cot["MAMH"] + "' AND [LOHANG]='" + cot["LOHANG"] + "'";
                 }
                 else if (cbTable.SelectedIndex == 10)
                 {
@@ -174,7 +178,7 @@ namespace WindowsFormsApplication1.class_import
             DataTable dt = new DataTable();
            
         }
-
+     
         private void button4_Click(object sender, EventArgs e)
         {
             export exp = new export();
