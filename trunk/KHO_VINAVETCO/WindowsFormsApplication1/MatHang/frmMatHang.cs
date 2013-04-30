@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-        string sma, sten, smathue, smanhomhang, smadvt, ssoluong, shansudung, sgiamua, sgiaban, shinhanh, smota, stinhtrang, smakho, SKLDVT;
+        string sma, sten, smathue, smanhomhang, smadvt, ssoluong, shinhanh, smota, stinhtrang, smakho, SKLDVT;
         CTL CTL = new CTL();
         DAO DAO = new DAO();
         DTO DTO = new DTO();
@@ -59,12 +59,7 @@ namespace WindowsFormsApplication1
 
 
             }
-            if (PublicVariable.isBANGGIA)
-            {
-                gridView1.Columns["colGIAMUA"].Visible = false;
-                gridView1.Columns["colGIABAN"].Visible = false;
-                gridView1.Columns["colTHANHTIEN"].Visible = false;
-            }
+ 
         }
         public int iNgonNgu;
         public void LoadTV()
@@ -77,12 +72,10 @@ namespace WindowsFormsApplication1
             colTENMH.Caption = LamVN.TENMH.ToString();
             colMADVT.Caption = LamVN.MADVT.ToString();
             colSOLUONGMH.Caption = LamVN.SOLUONGMH.ToString();
-            colHANSUDUNG.Caption = LamVN.HANSUDUNG.ToString();
-            colGIAMUA.Caption = LamVN.GIAMUA.ToString();
-            colGIABAN.Caption = LamVN.GIABAN.ToString();
+            
             colMAKHO.Caption = LamVN.MAKHO.ToString();
             colMOTA.Caption = LamVN.MOTA.ToString();
-            colTHANHTIEN.Caption = LamVN.TINHTRANG.ToString();
+
             barThem.Caption = LamVN.THEM.ToString();
             barXoa.Caption = LamVN.XOA.ToString();
             barSua.Caption = LamVN.SUA.ToString();
@@ -103,12 +96,10 @@ namespace WindowsFormsApplication1
             colTENMH.Caption = LamEL.TENMH.ToString();
             colMADVT.Caption = LamEL.MADVT.ToString();
             colSOLUONGMH.Caption = LamEL.SOLUONGMH.ToString();
-            colHANSUDUNG.Caption = LamEL.HANSUDUNG.ToString();
-            colGIAMUA.Caption = LamEL.GIAMUA.ToString();
-            colGIABAN.Caption = LamEL.GIABAN.ToString();
+
             colMAKHO.Caption = LamEL.MAKHO.ToString();
             colMOTA.Caption = LamEL.MOTA.ToString();
-            colTHANHTIEN.Caption = LamEL.TINHTRANG.ToString();
+
             barThem.Caption = LamEL.THEM.ToString();
             barXoa.Caption = LamEL.XOA.ToString();
             barSua.Caption = LamEL.SUA.ToString();
@@ -223,12 +214,11 @@ namespace WindowsFormsApplication1
             sua.KLDVT = SKLDVT;
 
             sua.MASOTHUE = smathue;
-            sua.HANSUDUNG = shansudung;
+  
             sua.MOTA = smota;
             sua.SOLUONG = ssoluong;
 
-            sua.GIANUA = sgiamua;
-            sua.GIABAN = sgiaban;
+ 
 
             sua.sBoPhan = sMaBP;
            
@@ -336,18 +326,9 @@ namespace WindowsFormsApplication1
                 smanhomhang = dtr["MANCC"].ToString();
                 smadvt = dtr["MADVT"].ToString();
                 SKLDVT = dtr["KLDVT"].ToString();
-
                 smathue = dtr["MATH"].ToString();
-                
-                
-
                 smakho = dtr["MAKHO"].ToString();
-                
                 ssoluong = dtr["SOLUONGMH"].ToString();
-                shansudung = dtr["HANSUDUNG"].ToString();
-                sgiamua = dtr["GIAMUA"].ToString();
-                sgiaban = dtr["GIABAN"].ToString();
-                //shinhanh = dtr[9].ToString();
                 smota = dtr["MOTA"].ToString();
                 stinhtrang = dtr["TINHTRANG"].ToString();
                 
@@ -392,12 +373,11 @@ namespace WindowsFormsApplication1
                     sua.KLDVT = SKLDVT;
 
                     sua.MASOTHUE = smathue;
-                    sua.HANSUDUNG = shansudung;
+           
                     sua.MOTA = smota;
                     sua.SOLUONG = ssoluong;
 
-                    sua.GIANUA = sgiamua;
-                    sua.GIABAN = sgiaban;
+
 
                     sua.sBoPhan = sMaBP;
 

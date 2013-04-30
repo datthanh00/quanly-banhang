@@ -51,7 +51,7 @@
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this._TENNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOTAIKHOAN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNGANHANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMASOTHUE = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -62,9 +62,11 @@
             this.colYAHOO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSKYPE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this._TENBG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.girdcontrol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -228,7 +230,7 @@
             this.colMAKH,
             this.colTENKH,
             this.colMAKV,
-            this.gridColumn1,
+            this._TENNV,
             this.colSOTAIKHOAN,
             this.colNGANHANG,
             this.colMASOTHUE,
@@ -240,7 +242,9 @@
             this.colSKYPE,
             this.colTINHTRANG,
             this.gridColumn2,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.gridColumn4,
+            this._TENBG});
             this.gridView1.GridControl = this.girdcontrol;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -276,11 +280,11 @@
             this.colMAKV.Name = "colMAKV";
             this.colMAKV.OptionsColumn.AllowEdit = false;
             // 
-            // gridColumn1
+            // _TENNV
             // 
-            resources.ApplyResources(this.gridColumn1, "gridColumn1");
-            this.gridColumn1.FieldName = "TENNV";
-            this.gridColumn1.Name = "gridColumn1";
+            resources.ApplyResources(this._TENNV, "_TENNV");
+            this._TENNV.FieldName = "TENNV";
+            this._TENNV.Name = "_TENNV";
             // 
             // colSOTAIKHOAN
             // 
@@ -352,10 +356,6 @@
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.OptionsColumn.AllowEdit = false;
             // 
-            // dxErrorProvider1
-            // 
-            this.dxErrorProvider1.ContainerControl = this;
-            // 
             // gridColumn2
             // 
             resources.ApplyResources(this.gridColumn2, "gridColumn2");
@@ -367,6 +367,22 @@
             resources.ApplyResources(this.gridColumn3, "gridColumn3");
             this.gridColumn3.FieldName = "MANV";
             this.gridColumn3.Name = "gridColumn3";
+            // 
+            // gridColumn4
+            // 
+            resources.ApplyResources(this.gridColumn4, "gridColumn4");
+            this.gridColumn4.FieldName = "MABG";
+            this.gridColumn4.Name = "gridColumn4";
+            // 
+            // _TENBG
+            // 
+            resources.ApplyResources(this._TENBG, "_TENBG");
+            this._TENBG.FieldName = "TENBG";
+            this._TENBG.Name = "_TENBG";
+            // 
+            // dxErrorProvider1
+            // 
+            this.dxErrorProvider1.ContainerControl = this;
             // 
             // frmKhachHang
             // 
@@ -422,8 +438,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colYAHOO;
         private DevExpress.XtraGrid.Columns.GridColumn colSKYPE;
         private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn _TENNV;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn _TENBG;
     }
 }

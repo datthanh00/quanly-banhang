@@ -97,7 +97,7 @@ namespace WindowsFormsApplication1
 
         }
         //private bool thoat = false;
-        string sma, sten,smakv,smanv,sdiachi,ssodt,ssoTK,snganhang,smasothue,sfax,syahoo,snickskype,stinhtrang;
+        string sma, sten, smakv, smanv, smabg, sdiachi, ssodt, ssoTK, snganhang, smasothue, sfax, syahoo, snickskype, stinhtrang;
        
         DTO DTO = new DTO();
         CTL ctl= new CTL();
@@ -234,7 +234,14 @@ namespace WindowsFormsApplication1
                 LoadTV();
 
 
-            } 
+            }
+
+            if (!PublicVariable.isBANGGIA)
+            {
+                gridView1.Columns["TENNV"].Visible = false;
+                gridView1.Columns["TENBG"].Visible = false;
+                 
+            }
 
 
         }
@@ -349,6 +356,7 @@ namespace WindowsFormsApplication1
                 snickskype = dtr["SKYPE"].ToString();
                 stinhtrang = dtr["TINHTRANG"].ToString();
                 smanv= dtr["MANV"].ToString();
+                smabg = dtr["MABG"].ToString();
             }
             catch (Exception ex)
             {
@@ -373,6 +381,7 @@ namespace WindowsFormsApplication1
             sua.TenKH = sten;
             sua.sMaKV = smakv;
             sua.sMaNV = smanv;
+            sua.sMaBG = smabg;
             sua.SOTK = ssoTK;
             sua.NGANHANG = snganhang;
             sua.MASOTHUE = smasothue;
@@ -447,6 +456,7 @@ namespace WindowsFormsApplication1
                     sua.TenKH = sten;
                     sua.sMaKV = smakv;
                     sua.sMaNV = smanv;
+                    sua.sMaBG = smabg;
                     sua.SOTK = ssoTK;
                     sua.NGANHANG = snganhang;
                     sua.MASOTHUE = smasothue;

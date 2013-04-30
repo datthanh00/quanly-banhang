@@ -264,7 +264,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
                         dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
                         dtoNCC.MAHDX = txtMaHD.Text;
-                        dtoNCC.CKTIEN = cktien.Value;
+                        dtoNCC.CKTIEN = cktien.Value.ToString();
                         if (cbotientra.Text == "")
                         {
                             cbotientra.Text = "0";

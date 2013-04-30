@@ -254,7 +254,7 @@ namespace WindowsFormsApplication1.KHtra
                         dtoNCC.TENKH = cboTenKH.Text;
                         dtoNCC.DIACHI = txtDiachi.Text;
                         dtoNCC.SDT = txtSDT.Text;
-                        dtoNCC.CKTIEN = cktien.Value;
+                        dtoNCC.CKTIEN = cktien.Value.ToString();
                         // dtoNCC.WEBSITE = txtWeb.Text;
                         dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
                         dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
@@ -471,7 +471,7 @@ namespace WindowsFormsApplication1.KHtra
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGXUAT = SoLuong;
                 dtoNCC.GIATIEN = DonGia;
-                dtoNCC.GIABAN = DonGia;
+                dtoNCC.GIABAN = DonGia.ToString();
                 dtoNCC.TIENTHU = tienthu;
                 dtoNCC.HSD = HSD;
                 string SQL = "SELECT MAX(ID) FROM traCHITIETHDX WHERE MAHDX='" + mahdx + "'";
@@ -497,7 +497,7 @@ namespace WindowsFormsApplication1.KHtra
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGXUAT = SoLuong;
                 dtoNCC.GIATIEN = DonGia;
-                dtoNCC.GIABAN = DonGia;
+                dtoNCC.GIABAN = DonGia.ToString();
                 dtoNCC.HSD = HSD;
                 dtoNCC.ID = ID;
                 dtoNCC.TIENTHU = tienthu;

@@ -120,30 +120,6 @@
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="barThem.Caption" xml:space="preserve">
-    <value>&amp;Thêm</value>
-  </data>
-  <data name="barXoa.Caption" xml:space="preserve">
-    <value>Xóa</value>
-  </data>
-  <data name="barSua.Caption" xml:space="preserve">
-    <value>Sửa</value>
-  </data>
-  <data name="barNapLai.Caption" xml:space="preserve">
-    <value>Nạp Lại</value>
-  </data>
-  <data name="barIn.Caption" xml:space="preserve">
-    <value>In</value>
-  </data>
-  <data name="barXuat1.Caption" xml:space="preserve">
-    <value>Xuất Dữ Liệu</value>
-  </data>
-  <data name="barNhap.Caption" xml:space="preserve">
-    <value>Nhập Dữ Liệu</value>
-  </data>
-  <data name="barThoat.Caption" xml:space="preserve">
-    <value>Đóng</value>
-  </data>
   <data name="bar2.Text" xml:space="preserve">
     <value>Main menu</value>
   </data>
@@ -276,32 +252,20 @@
   <data name="colMAKV.VisibleIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="gridColumn1.Caption" xml:space="preserve">
+  <data name="_TENNV.Caption" xml:space="preserve">
     <value>Nhân Viên Phụ Trách</value>
   </data>
-  <data name="gridColumn1.Visible" type="System.Boolean, mscorlib">
+  <data name="_TENNV.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="gridColumn1.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="_TENNV.VisibleIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="colSOTAIKHOAN.Caption" xml:space="preserve">
     <value>Số Tài Khoản</value>
   </data>
-  <data name="colSOTAIKHOAN.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colSOTAIKHOAN.VisibleIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="colNGANHANG.Caption" xml:space="preserve">
     <value>Ngân Hàng</value>
-  </data>
-  <data name="colNGANHANG.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colNGANHANG.VisibleIndex" type="System.Int32, mscorlib">
-    <value>5</value>
   </data>
   <data name="colMASOTHUE.Caption" xml:space="preserve">
     <value>Mã Số Thuế</value>
@@ -313,7 +277,7 @@
     <value>True</value>
   </data>
   <data name="colDIACHI.VisibleIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="colSDT.Caption" xml:space="preserve">
     <value>Số Điện Thoại</value>
@@ -322,7 +286,7 @@
     <value>True</value>
   </data>
   <data name="colSDT.VisibleIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="colFAX.Caption" xml:space="preserve">
     <value>Số Fax</value>
@@ -343,13 +307,25 @@
     <value>True</value>
   </data>
   <data name="colTINHTRANG.VisibleIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="gridColumn2.Caption" xml:space="preserve">
     <value>MAKV</value>
   </data>
   <data name="gridColumn3.Caption" xml:space="preserve">
     <value>MANV</value>
+  </data>
+  <data name="gridColumn4.Caption" xml:space="preserve">
+    <value>Mã Bảng Gíá</value>
+  </data>
+  <data name="_TENBG.Caption" xml:space="preserve">
+    <value>Bảng Giá</value>
+  </data>
+  <data name="_TENBG.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_TENBG.VisibleIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="girdcontrol.Size" type="System.Drawing.Size, System.Drawing">
     <value>994, 405</value>
@@ -468,10 +444,10 @@
   <data name="&gt;&gt;colMAKV.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;gridColumn1.Name" xml:space="preserve">
-    <value>gridColumn1</value>
+  <data name="&gt;&gt;_TENNV.Name" xml:space="preserve">
+    <value>_TENNV</value>
   </data>
-  <data name="&gt;&gt;gridColumn1.Type" xml:space="preserve">
+  <data name="&gt;&gt;_TENNV.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;colSOTAIKHOAN.Name" xml:space="preserve">
@@ -534,12 +510,6 @@
   <data name="&gt;&gt;colTINHTRANG.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;dxErrorProvider1.Name" xml:space="preserve">
-    <value>dxErrorProvider1</value>
-  </data>
-  <data name="&gt;&gt;dxErrorProvider1.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider, DevExpress.XtraEditors.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
   <data name="&gt;&gt;gridColumn2.Name" xml:space="preserve">
     <value>gridColumn2</value>
   </data>
@@ -552,6 +522,24 @@
   <data name="&gt;&gt;gridColumn3.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;gridColumn4.Name" xml:space="preserve">
+    <value>gridColumn4</value>
+  </data>
+  <data name="&gt;&gt;gridColumn4.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;_TENBG.Name" xml:space="preserve">
+    <value>_TENBG</value>
+  </data>
+  <data name="&gt;&gt;_TENBG.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;dxErrorProvider1.Name" xml:space="preserve">
+    <value>dxErrorProvider1</value>
+  </data>
+  <data name="&gt;&gt;dxErrorProvider1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider, DevExpress.XtraEditors.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmKhachHang</value>
   </data>
@@ -560,6 +548,30 @@
   </data>
   <data name="barStaticItem1.Caption" xml:space="preserve">
     <value>s</value>
+  </data>
+  <data name="barThem.Caption" xml:space="preserve">
+    <value>&amp;Thêm</value>
+  </data>
+  <data name="barXoa.Caption" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="barSua.Caption" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="barNapLai.Caption" xml:space="preserve">
+    <value>Nạp Lại</value>
+  </data>
+  <data name="barIn.Caption" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="barXuat1.Caption" xml:space="preserve">
+    <value>Xuất Dữ Liệu</value>
+  </data>
+  <data name="barNhap.Caption" xml:space="preserve">
+    <value>Nhập Dữ Liệu</value>
+  </data>
+  <data name="barThoat.Caption" xml:space="preserve">
+    <value>Đóng</value>
   </data>
   <data name="barThem1.Caption" xml:space="preserve">
     <value>Thêm</value>
