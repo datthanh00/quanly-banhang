@@ -711,7 +711,7 @@ namespace WindowsFormsApplication1
         public void INSERTCTHOADONNHAP(DTO dto)
         {
 
-            string SQL = "INSERT INTO CHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,GIANHAP,HSD,LOHANG,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.GIANHAP + ",'" + dto.HSD + "','" + dto.LOHANG + "','" + dto.TINHTRANG + "')";
+            string SQL = "INSERT INTO CHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,KMAI,GIANHAP,HSD,LOHANG,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.KMAI + "," + dto.GIANHAP + ",'" + dto.HSD + "','" + dto.LOHANG + "','" + dto.TINHTRANG + "')";
             executeNonQuery(SQL);
 
             SQL = "SELECT SOLUONGMH FROM MATHANG WHERE MAMH='" + dto.MAMH + "'";
@@ -723,7 +723,7 @@ namespace WindowsFormsApplication1
                 tondau = (Double)Convert.ToDouble(dt.Rows[0][0].ToString());
             }
 
-            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =" + dto.SOLUONGNHAP.ToString() + " + SOLUONGMH WHERE MAMH='" + dto.MAMH + "'";
+            SQL = "UPDATE MATHANG  SET 	SOLUONGMH =" + dto.KMAI.ToString() + " + " + dto.SOLUONGNHAP.ToString() + " + SOLUONGMH WHERE MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 			//ymd
             SQL = "SELECT convert(varchar,NGAYNHAP,101) FROM HOADONNHAP where MAHDN = '" + dto.MAHDN + "'";

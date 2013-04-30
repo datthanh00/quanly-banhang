@@ -655,12 +655,17 @@ namespace WindowsFormsApplication1
 
         private Double _SOLUONGXUAT;
         
-
-
         public Double SOLUONGXUAT
         {
             get { return _SOLUONGXUAT; }
             set { _SOLUONGXUAT = value; }
+        }
+
+        private String _KMAI;
+        public String KMAI
+        {
+            get { return _KMAI; }
+            set { _KMAI = value; }
         }
 
         private int _GIATIEN;
