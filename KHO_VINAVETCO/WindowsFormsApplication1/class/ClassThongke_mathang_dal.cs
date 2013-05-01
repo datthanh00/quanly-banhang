@@ -201,7 +201,21 @@ namespace WindowsFormsApplication1
                  " GO delete from KHOHANG where 	MAMH='" + MAMH + "' AND LOHANG='" + LOHANG + "'";
             executeNonQuery(SQL);
         }
-
+        public DataTable getCONGNONKH_DAUKY()
+        {
+            string SQL = "";
+            SQL = " SELECT COUNT(TONDAUCONGNOKH.MAKH) FROM TONDAUCONGNOKH, KHACHHANG WHERE KHACHHANG.MAKH=TONDAUCONGNOKH.MAKH AND MAKHO='" + PublicVariable.MAKHO + "'";
+            DataTable DT = getdata(SQL);
+            if (DT.Rows[0][0].ToString() != "0")
+            {
+                SQL = "SELECT TENKH,KHACHHANG.MAKH, DIACHI, SDT,TONGTIENTRA FROM TONDAUCONGNOKH, KHACHHANG WHERE KHACHHANG.MAKH=TONDAUCONGNOKH.MAKH AND MAKHO='" + PublicVariable.MAKHO + "'";
+            }
+            else
+            {
+                SQL = "SELECT TENKH,MAKH, DIACHI, SDT,0 AS TONGTIENTRA FROM KHACHHANG WHERE  MAKHO='" + PublicVariable.MAKHO + "'";
+            }
+            return getdata(SQL);
+        }
         public DataTable getCONGNONCC_DAUKY()
         {
             string SQL = "";
