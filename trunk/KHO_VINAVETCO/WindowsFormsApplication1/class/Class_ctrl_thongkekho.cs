@@ -63,6 +63,10 @@ namespace WindowsFormsApplication1
         {
             return dao.getCONGNONCC_DAUKY();
         }
+        public DataTable getCONGNONKH_DAUKY()
+        {
+            return dao.getCONGNONKH_DAUKY();
+        }
         public DataTable dtGetNH()
         {
             return dao.get_NH();
