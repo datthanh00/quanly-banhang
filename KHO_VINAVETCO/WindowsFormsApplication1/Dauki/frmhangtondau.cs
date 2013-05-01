@@ -18,9 +18,9 @@ using DevExpress.Utils;
 
 namespace WindowsFormsApplication1
 {
-    public partial class frmTonphanlo : DevExpress.XtraEditors.XtraForm
+    public partial class frmhangtondau : DevExpress.XtraEditors.XtraForm
     {
-        public frmTonphanlo()
+        public frmhangtondau()
         {
             InitializeComponent();
         }
@@ -57,36 +57,35 @@ namespace WindowsFormsApplication1
 
             frm.LoadVI += new frmMain.Translate(loadcbVietNam);
             ////frm.LoadVI += new frmMain.Translate(loadGird);
-
             
             frm.LoadEN += new frmMain.Translate(loadcbEgLish);
             //frm.LoadEN += new frmMain.Translate(loadReSEG);
-
-
 
             if (iNgonNgu == 0)
             {
                 loadReSVN1();
                 loadcbVietNam();
-
             }
             else
             {
                 loadReSEG1();
                 loadcbEgLish();
-                
-
             } 
             vload();
-            vloadchitietmathang();
             load_cbhanghoa();
             loadngonngu();
-
             lbnhom.Visible = false;
-            lbsanpham.Visible = false;
-            cbnhomhang.Visible = false;
             cbncc.Visible = false;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView1.Columns["KHOILUONG"].Visible = false;
+            }
 
+            if (!PublicVariable.isTONTHUCTE)
+            {
+                gridView1.Columns["LOHANG"].Visible = false;
+                gridView1.Columns["HSD"].Visible = false;
+            }
         }
 
         private void loadReSVN1()
@@ -97,25 +96,20 @@ namespace WindowsFormsApplication1
             btdong.Text = resVietNam.btDong.ToString();
             //colmahang.Caption = resVietNam.colmahang.ToString();
             colmamhathang.Caption = resVietNam.colmahang.ToString();
-            colhinhanh.Caption = resVietNam.colhinhanh.ToString();
+            
             coltennhomhang.Caption = resVietNam.coltennhomhang.ToString();
             coltenmathang.Caption = resVietNam.coltenmathang.ToString();
             coltendonvi.Caption = resVietNam.coltendonvi.ToString();
             colsoluong.Caption = resVietNam.colsoluong.ToString();
             colhansudung.Caption = resVietNam.colhansudung.ToString();
-            colthanhtiennhap.Caption = resVietNam.colthanhtiennhap.ToString();
+            
             colgiaban.Caption = resVietNam.colgiaban.ToString();
-            colmota.Caption = resVietNam.colmota.ToString();
-            coltinhtrang.Caption = resVietNam.coltinhtrang.ToString();
-            colthue.Caption = resVietNam.colthue.ToString();
-            colthanhtienxuat.Caption = resVietNam.colthanhtienxuat.ToString();
+            
             colgiamua.Caption = resVietNam.colgiamua.ToString();
             lbnhom.Text = resVietNam.lbchonnhom.ToString();
             //labelControl2.Text = resVietNam.lbden.ToString();
-            colsongayhethan.Caption = resVietNam.colsongayconhan.ToString();
             //labelControl13.Text = resVietNam.lbtu.ToString();
             //labelControl14.Text = resVietNam.lbden.ToString();
-            labelControl2.Text = resVietNam.lbloai.ToString();
             //lbTu.Text = resVietNam.lbtu.ToString();
             //lbDen.Text = resVietNam.lbden.ToString();
             //lbNam.Text = resVietNam.lbNam.ToString();
@@ -131,25 +125,22 @@ namespace WindowsFormsApplication1
            btdong.Text = resEngLand.btDong.ToString();
             //colmahang.Caption = resVietNam.colmahang.ToString();
             colmamhathang.Caption = resEngLand.colmahang.ToString();
-            colhinhanh.Caption = resEngLand.colhinhanh.ToString();
+            
             coltennhomhang.Caption = resEngLand.coltennhomhang.ToString();
             coltenmathang.Caption = resEngLand.coltenmathang.ToString();
             coltendonvi.Caption = resEngLand.coltendonvi.ToString();
             colsoluong.Caption = resEngLand.colsoluong.ToString();
             colhansudung.Caption = resEngLand.colhansudung.ToString();
-            colthanhtiennhap.Caption = resEngLand.colthanhtiennhap.ToString();
+            
             colgiaban.Caption = resEngLand.colgiaban.ToString();
-            colmota.Caption = resEngLand.colmota.ToString();
-            coltinhtrang.Caption = resEngLand.coltinhtrang.ToString();
-            colthue.Caption = resEngLand.colthue.ToString();
-            colthanhtienxuat.Caption = resEngLand.colthanhtienxuat.ToString();
+           
             colgiamua.Caption = resEngLand.colgiamua.ToString();
             lbnhom.Text = resEngLand.lbchonnhom.ToString();
             //labelControl2.Text = resEngLand.l.ToString();
-            colsongayhethan.Caption = resEngLand.colsongayconhan.ToString();
+           
             //labelControl13.Text = resEngLand.lbtu.ToString();
             //labelControl14.Text = resEngLand.lbden.ToString();
-            labelControl2.Text = resEngLand.lbloai.ToString();
+            
             //lbTu.Text = resEngLand.lbtu.ToString();
             //lbDen.Text = resEngLand.lbden.ToString();
             //lbNam.Text = resEngLand.lbNam.ToString();
@@ -246,14 +237,7 @@ namespace WindowsFormsApplication1
         }
 
 
-        private void vloadchitietmathang()
-        {
-                cbloaihienthi.Properties.Items.Add("Tất Cả");
-                cbloaihienthi.Properties.Items.Add("Theo Hàng Hóa");
-                cbloaihienthi.Properties.Items.Add("Theo Nhà Cung Cấp");
-                cbloaihienthi.Properties.Items.Add("Hết Hạn");
-                cbloaihienthi.SelectedIndex = 0;
-        }
+
 
         private void vload()
         {
@@ -270,21 +254,14 @@ namespace WindowsFormsApplication1
         private void load_cbhanghoa()
         {
             cbncc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cbncc.Properties.DisplayMember = "TENSANPHAM";
-            cbncc.Properties.ValueMember = "MASANPHAM";
+            cbncc.Properties.DisplayMember = "TENNCC";
+            cbncc.Properties.ValueMember = "MANCC";
             cbncc.Properties.View.BestFitColumns();
             //cbmathang.Properties.PopupFormWidth = 200;
             Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
-            cbncc.Properties.DataSource = ctr1.dtGetsanpham();
+            cbncc.Properties.DataSource = ctr1.dtGetNCC();
             gridView2.BestFitColumns();
             //cbmathang.best
-
-            cbnhomhang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cbnhomhang.Properties.DisplayMember = "TENNCC";
-            cbnhomhang.Properties.ValueMember = "MANCC";
-            cbnhomhang.Properties.View.BestFitColumns();
-            cbnhomhang.Properties.PopupFormWidth = 300;
-            cbnhomhang.Properties.DataSource = ctr1.dtGetNCC();
         }
 
 
@@ -293,88 +270,20 @@ namespace WindowsFormsApplication1
             
                 if (cbncc.Text != "")
                 {
-                    dto.MANCC = gridView3.GetFocusedRowCellValue("MANCC").ToString();
+                    dto.MANCC = gridView2.GetFocusedRowCellValue("MANCC").ToString();
                 }
-
-
-                dt = ctr.geTthongke_ct_mathang_lo(dto.MANCC);
-                
-              
+                dt = ctr.getondauky_mathang(dto.MANCC);
                 gridControl1.DataSource = dt;
-               // DevExpress.XtraGrid.StyleFormatCondition cn;
-                //cn = new DevExpress.XtraGrid.StyleFormatCondition(FormatConditionEnum.Less, gridView1.Columns["SONGAYHETHANH"], null, 0);
-                //cn.Appearance.BackColor = Color.Yellow;
-                //gridView1.FormatConditions.Add(cn);
-                //cn.ApplyToRow = true;
-                //gridView1.FormatConditions.Add(cn);
                 gridView1.BestFitColumns();
-                if (!PublicVariable.isKHOILUONG)
-                {
-                    gridView1.Columns["KHOILUONG"].Visible = false;
-                }
-
-            }
-            //catch (Exception)
-            //{
-            //    if (iNgonNgu == 0)
-            //    {
-
-            //        MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Please enter enough information");
-
-            //    }
-
                
-        
+         }
 
 
-
-
-        private void linkNgayThang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-
-            //if (iNgonNgu == 0)
-            //{
-            //    dateBD.SelectedText = "Chọn Ngày";
-            //    dateKetThuc.SelectedText = "Chọn Ngày";
-
-            //    xtraTabPage3.Text = "Thống Kê Theo Ngày";
-
-            //}
-            //else
-            //{
-            //    dateBD.SelectedText = "Select Day";
-            //    dateKetThuc.SelectedText = "Select day";
-
-            //    xtraTabPage3.Text = "Day statistics";
-
-            //}
-
-
-
-            //pnThoiGian.Visible = true;
-            //pnThangNam.Visible = false;
-            //LoaiHT = "";
-            //dateNgayBD = DateTime.Now.ToShortDateString();
-            //dateNgayKT = DateTime.Now.ToShortDateString();
-
-            //LoaiTG = "ngay";
-        }
 
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
 
         }
-
-        private void navBarControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         private void simpleButton8_Click(object sender, EventArgs e)
         {
@@ -383,20 +292,12 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-           // gridControl1.ShowPrintPreview();
-           // reporthansudung hansudung = new reporthansudung(dt, iNgonNgu);
-           // hansudung.ShowPreviewDialog();
-          //  printableComponentLink1.CreateDocument();
-           // printableComponentLink1.ShowPreview();
 
             DataTable printtable = (DataTable)gridControl1.DataSource;
             Inhd rep = new Inhd(printtable, 16);
             rep.ShowPreviewDialog();
         }
 
-     
-
-        
 
         private void cbHienThiBatDau_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -435,63 +336,6 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void cmbloaihienthi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int loaihienthi = cbloaihienthi.SelectedIndex;
-            if (loaihienthi==0)
-            {
-                lbnhom.Visible = false;
-                lbsanpham.Visible = false;
-                cbnhomhang.Visible = false;
-                cbncc.Visible = false;
-            }
-            else if (loaihienthi == 1)
-            {
-                lbnhom.Visible = false;
-                lbsanpham.Visible = true;
-                cbnhomhang.Visible = false;
-                cbncc.Visible = true;
-            }
-            else
-            {
-                lbnhom.Visible = true;
-                lbsanpham.Visible = false;
-                cbnhomhang.Visible = true;
-                cbncc.Visible = false;
-            }
-
-        }
-
-
-
-        private void labelControl13_Click(object sender, EventArgs e)
-        {
-            //if (iNgonNgu == 2)
-            //{
-            //    labelControl13.pr = " Từ";
-
-
-
-            //}
-            //else
-            //{
-            //    labelControl13.TextChanged = " From";
-
-            //}
-        }
-
-        private void labelControl1_Click(object sender, EventArgs e)
-        {
-            if (iNgonNgu == 0)
-            {
-               //labelControl1.c
-            }
-        }
-
-        private void groupControl1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void cmbloaihienthi_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -524,6 +368,7 @@ namespace WindowsFormsApplication1
             RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
+
     }
 }
         
