@@ -193,6 +193,23 @@ namespace WindowsFormsApplication1
         
             return getdata(SQL);
         }
+
+        public DataTable getondauky_mathang(string  MANCC)
+        {
+            string SQL = "";
+            if (MANCC == "")
+            {//load tat ca
+
+                SQL = " SELECT MATHANG.MAMH,TENMH, TENNCC, LOHANG,KLDVT,DONVITINH, TONKHO AS SOLUONG, TONKHO * KLDVT AS KHOILUONG, TONDAUKHOHANG.GIAMUA, TONDAUKHOHANG.GIABAN, HSD FROM TONDAUKHOHANG, MATHANG,DONVITINH,NHACUNGCAP WHERE MATHANG.MAMH= TONDAUKHOHANG.MAMH AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MANCC= NHACUNGCAP.MANCC ";
+            }
+            else
+            {//mancc
+                SQL = "SELECT MATHANG.MAMH,TENMH, TENNCC, LOHANG,KLDVT,DONVITINH, TONKHO AS SOLUONG, TONKHO * KLDVT AS KHOILUONG, TONDAUKHOHANG.GIAMUA, TONDAUKHOHANG.GIABAN, HSD FROM TONDAUKHOHANG, MATHANG,DONVITINH,NHACUNGCAP WHERE MATHANG.MAMH= TONDAUKHOHANG.MAMH AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MANCC= NHACUNGCAP.MANCC and MATHANG.MANCC='"+MANCC+"'";
+                
+            }
+            return getdata(SQL);
+        }
+
         public DataTable load_ct_mathang_lo(Class_DTO_ThongKe dto)
         {
             //List<MySqlParameter> sql = new List<MySqlParameter>();

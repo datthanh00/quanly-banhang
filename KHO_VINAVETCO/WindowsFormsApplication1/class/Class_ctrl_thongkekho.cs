@@ -51,7 +51,10 @@ namespace WindowsFormsApplication1
         {
             return dao.load_ct_mathang_lo(dto1);
         }
-
+        public DataTable getondauky_mathang(String MANCC)
+        {
+            return dao.getondauky_mathang(MANCC);
+        }
         public DataTable dtGetNH()
         {
             return dao.get_NH();

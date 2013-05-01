@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
             lbnhom.Visible = false;
             lbsanpham.Visible = false;
             cbnhomhang.Visible = false;
-            cbmathang.Visible = false;
+            cbncc.Visible = false;
 
         }
 
@@ -269,13 +269,13 @@ namespace WindowsFormsApplication1
 
         private void load_cbhanghoa()
         {
-            cbmathang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cbmathang.Properties.DisplayMember = "TENSANPHAM";
-            cbmathang.Properties.ValueMember = "MASANPHAM";
-            cbmathang.Properties.View.BestFitColumns();
+            cbncc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbncc.Properties.DisplayMember = "TENSANPHAM";
+            cbncc.Properties.ValueMember = "MASANPHAM";
+            cbncc.Properties.View.BestFitColumns();
             //cbmathang.Properties.PopupFormWidth = 200;
             Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
-            cbmathang.Properties.DataSource = ctr1.dtGetsanpham();
+            cbncc.Properties.DataSource = ctr1.dtGetsanpham();
             gridView2.BestFitColumns();
             //cbmathang.best
 
@@ -290,38 +290,14 @@ namespace WindowsFormsApplication1
 
         private void simpleButton11_Click(object sender, EventArgs e)
         {
-            int loaihienthi = cbloaihienthi.SelectedIndex;
-            if (loaihienthi == 1)
-            {
-                if (cbmathang.Text == "")
-                {
-                    MessageBox.Show("Hãy Chọn một mã hàng");
-                    return;
-                }
-
-            }
-            else if (loaihienthi == 2)
-            {
-                if (cbnhomhang.Text == "")
-                {
-                    MessageBox.Show("Hãy Chọn một nhà cung cấp");
-                    return;
-                }
-            }
-
-                dto.Loai_HT = loaihienthi.ToString();
-
-                if (cbmathang.Text != "")
-                {
-                    dto.MAMH = gridView2.GetFocusedRowCellValue("MASANPHAM").ToString();
-                }
-                if (cbnhomhang.Text != "")
+            
+                if (cbncc.Text != "")
                 {
                     dto.MANCC = gridView3.GetFocusedRowCellValue("MANCC").ToString();
                 }
 
-            
-                dt = ctr.geTthongke_ct_mathang_lo(dto);
+
+                dt = ctr.geTthongke_ct_mathang_lo(dto.MANCC);
                 
               
                 gridControl1.DataSource = dt;
@@ -467,21 +443,21 @@ namespace WindowsFormsApplication1
                 lbnhom.Visible = false;
                 lbsanpham.Visible = false;
                 cbnhomhang.Visible = false;
-                cbmathang.Visible = false;
+                cbncc.Visible = false;
             }
             else if (loaihienthi == 1)
             {
                 lbnhom.Visible = false;
                 lbsanpham.Visible = true;
                 cbnhomhang.Visible = false;
-                cbmathang.Visible = true;
+                cbncc.Visible = true;
             }
             else
             {
                 lbnhom.Visible = true;
                 lbsanpham.Visible = false;
                 cbnhomhang.Visible = true;
-                cbmathang.Visible = false;
+                cbncc.Visible = false;
             }
 
         }
