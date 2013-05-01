@@ -77,6 +77,8 @@
             this.mATHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.xoalohangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -105,18 +107,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.mATHANGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // colsoluong
             // 
             this.colsoluong.Caption = "Số Lượng";
             this.colsoluong.ColumnEdit = this.repositoryItemCalcEdit1;
-            this.colsoluong.DisplayFormat.FormatString = "{0:0.##}";
+            this.colsoluong.DisplayFormat.FormatString = "{0:0,0}";
             this.colsoluong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colsoluong.FieldName = "SOLUONGMH";
+            this.colsoluong.FieldName = "SOLUONG";
             this.colsoluong.Name = "colsoluong";
-            this.colsoluong.OptionsColumn.AllowEdit = false;
             this.colsoluong.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.colsoluong.SummaryItem.FieldName = "SOLUONGMH";
             this.colsoluong.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colsoluong.Visible = true;
             this.colsoluong.VisibleIndex = 7;
@@ -191,15 +194,15 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1263, 527);
             this.groupControl1.TabIndex = 5;
-            this.groupControl1.Text = "DANH SÁCH TỒN KHO THEO LÔ HÀNG";
+            this.groupControl1.Text = "Danh Sách Tồn Đầu Kỳ Các Mặt Hàng";
             // 
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(2, 22);
+            this.xtraTabControl1.Location = new System.Drawing.Point(2, 21);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 503);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 504);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3});
@@ -209,8 +212,8 @@
             this.xtraTabPage3.Controls.Add(this.panelControl5);
             this.xtraTabPage3.Controls.Add(this.panelControl6);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 474);
-            this.xtraTabPage3.Text = "Tồn Theo Lô Hàng";
+            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 476);
+            this.xtraTabPage3.Text = "Tồn Đầu Kỳ";
             // 
             // panelControl5
             // 
@@ -218,23 +221,23 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(0, 39);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1252, 435);
+            this.panelControl5.Size = new System.Drawing.Size(1252, 437);
             this.panelControl5.TabIndex = 9;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(2, 2);
+            this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1248, 431);
+            this.groupControl2.Size = new System.Drawing.Size(1246, 431);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Chi Tiết Mặt Hàng";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 22);
+            this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
@@ -247,7 +250,7 @@
             this.repositoryItemRichTextEdit1,
             this.repositoryItemDateEdit1});
             this.gridControl1.ShowOnlyPredefinedDetails = true;
-            this.gridControl1.Size = new System.Drawing.Size(1244, 407);
+            this.gridControl1.Size = new System.Drawing.Size(1242, 408);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -282,7 +285,6 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
-            this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
             this.gridView1.OptionsFilter.UseNewCustomFilterDialog = true;
             this.gridView1.OptionsPrint.PrintPreview = true;
@@ -290,7 +292,7 @@
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.PreviewFieldName = "Báo Cáo Doanh Thu";
-            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridView1.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView1_ShowGridMenu);
             // 
             // coltenmathang
             // 
@@ -337,6 +339,7 @@
             this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "KLDVT";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 5;
             // 
@@ -357,6 +360,7 @@
             this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn11.FieldName = "KHOILUONG";
             this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
             this.gridColumn11.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn11.Visible = true;
@@ -370,7 +374,6 @@
             this.colgiamua.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgiamua.FieldName = "GIAMUA";
             this.colgiamua.Name = "colgiamua";
-            this.colgiamua.OptionsColumn.AllowEdit = false;
             this.colgiamua.Visible = true;
             this.colgiamua.VisibleIndex = 9;
             this.colgiamua.Width = 51;
@@ -389,7 +392,6 @@
             this.colgiaban.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colgiaban.FieldName = "GIABAN";
             this.colgiaban.Name = "colgiaban";
-            this.colgiaban.OptionsColumn.AllowEdit = false;
             this.colgiaban.Visible = true;
             this.colgiaban.VisibleIndex = 10;
             this.colgiaban.Width = 50;
@@ -398,9 +400,8 @@
             // 
             this.colhansudung.Caption = "Hạn Sử Dụng";
             this.colhansudung.ColumnEdit = this.repositoryItemDateEdit1;
-            this.colhansudung.FieldName = "HANSUDUNG";
+            this.colhansudung.FieldName = "HSD";
             this.colhansudung.Name = "colhansudung";
-            this.colhansudung.OptionsColumn.AllowEdit = false;
             this.colhansudung.Visible = true;
             this.colhansudung.VisibleIndex = 4;
             this.colhansudung.Width = 97;
@@ -460,6 +461,7 @@
             this.simpleButton1.Size = new System.Drawing.Size(107, 31);
             this.simpleButton1.TabIndex = 26;
             this.simpleButton1.Text = "Thêm Lô Hàng";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
             // cbncc
             // 
@@ -472,6 +474,7 @@
             this.cbncc.Properties.View = this.gridView2;
             this.cbncc.Size = new System.Drawing.Size(194, 20);
             this.cbncc.TabIndex = 25;
+            this.cbncc.Validated += new System.EventHandler(this.cbncc_Validated);
             // 
             // gridView2
             // 
@@ -539,12 +542,12 @@
             // 
             // btxem
             // 
-            this.btxem.Image = ((System.Drawing.Image)(resources.GetObject("btxem.Image")));
+            this.btxem.Image = global::WindowsFormsApplication1.Properties.Resources.save;
             this.btxem.Location = new System.Drawing.Point(440, 4);
             this.btxem.Name = "btxem";
             this.btxem.Size = new System.Drawing.Size(70, 31);
             this.btxem.TabIndex = 3;
-            this.btxem.Text = "Xem";
+            this.btxem.Text = "lưu";
             this.btxem.Click += new System.EventHandler(this.simpleButton11_Click);
             // 
             // printingSystem1
@@ -565,6 +568,20 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.xoalohangToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(168, 26);
+            // 
+            // xoalohangToolStripMenuItem
+            // 
+            this.xoalohangToolStripMenuItem.Name = "xoalohangToolStripMenuItem";
+            this.xoalohangToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.xoalohangToolStripMenuItem.Text = "Xóa Lô Hàng Này";
+            this.xoalohangToolStripMenuItem.Click += new System.EventHandler(this.xoalohangToolStripMenuItem_Click);
             // 
             // frmhangtondau
             // 
@@ -610,6 +627,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mATHANGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -663,5 +681,7 @@
         private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
         private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem xoalohangToolStripMenuItem;
     }
 }

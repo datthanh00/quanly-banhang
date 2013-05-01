@@ -194,6 +194,13 @@ namespace WindowsFormsApplication1
             return getdata(SQL);
         }
 
+
+        public void DELETE_LOHANGTONDAU(string MAMH, string LOHANG)
+        {
+            string SQL = "delete from TONDAUKHOHANG where 	MAMH='" + MAMH + "' AND LOHANG='" + LOHANG + "'" +
+                 " GO delete from KHOHANG where 	MAMH='" + MAMH + "' AND LOHANG='" + LOHANG + "'";
+            executeNonQuery(SQL);
+        }
         public DataTable getondauky_mathang(string  MANCC)
         {
             string SQL = "";
@@ -207,7 +214,22 @@ namespace WindowsFormsApplication1
                 SQL = "SELECT MATHANG.MAMH,TENMH, TENNCC, LOHANG,KLDVT,DONVITINH, TONKHO AS SOLUONG, TONKHO * KLDVT AS KHOILUONG, TONDAUKHOHANG.GIAMUA, TONDAUKHOHANG.GIABAN, HSD FROM TONDAUKHOHANG, MATHANG,DONVITINH,NHACUNGCAP WHERE MATHANG.MAMH= TONDAUKHOHANG.MAMH AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MANCC= NHACUNGCAP.MANCC and MATHANG.MANCC='"+MANCC+"'";
                 
             }
-            return getdata(SQL);
+            DataTable DT = getdata(SQL);
+            if (DT.Rows.Count <= 0)
+            {
+                if (MANCC == ""||MANCC ==null)
+                {//load tat ca
+
+                    SQL = "SELECT MATHANG.MAMH,TENMH, TENNCC, 'TONDAU' AS LOHANG,KLDVT,DONVITINH, 0 AS SOLUONG, 0 AS KHOILUONG, 0 AS GIAMUA, 0 AS GIABAN, '01/01/2020' AS HSD FROM MATHANG,DONVITINH,NHACUNGCAP WHERE  MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MANCC= NHACUNGCAP.MANCC ";
+                }
+                else
+                {//mancc
+                    SQL = "SELECT MATHANG.MAMH,TENMH, TENNCC, 'TONDAU' AS LOHANG,KLDVT,DONVITINH, 0 AS SOLUONG, 0 AS KHOILUONG, 0 AS GIAMUA, 0 AS GIABAN, '01/01/2020' AS HSD FROM MATHANG,DONVITINH,NHACUNGCAP WHERE  MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MANCC= NHACUNGCAP.MANCC and MATHANG.MANCC='" + MANCC + "'";
+                }
+                DT = getdata(SQL);
+            }
+
+            return DT;
         }
 
         public DataTable load_ct_mathang_lo(Class_DTO_ThongKe dto)

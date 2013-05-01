@@ -51,6 +51,10 @@ namespace WindowsFormsApplication1
         {
             return dao.load_ct_mathang_lo(dto1);
         }
+        public void  DELETE_LOHANGTONDAU(String MAMH,String LOHANG)
+        {
+            dao.DELETE_LOHANGTONDAU(MAMH,LOHANG);
+        }
         public DataTable getondauky_mathang(String MANCC)
         {
             return dao.getondauky_mathang(MANCC);

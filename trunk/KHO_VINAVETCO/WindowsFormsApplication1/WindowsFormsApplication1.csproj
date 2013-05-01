@@ -244,6 +244,12 @@
     <Compile Include="Dauki\frmhangtondau.designer.cs">
       <DependentUpon>frmhangtondau.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dauki\Themlohangtondau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dauki\Themlohangtondau.designer.cs">
+      <DependentUpon>Themlohangtondau.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHoaDonXuat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -612,6 +618,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dauki\frmhangtondau.resx">
       <DependentUpon>frmhangtondau.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dauki\Themlohangtondau.resx">
+      <DependentUpon>Themlohangtondau.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHoaDonXuat.resx">

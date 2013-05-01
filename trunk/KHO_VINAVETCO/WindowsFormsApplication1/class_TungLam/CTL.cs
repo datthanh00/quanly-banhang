@@ -79,6 +79,10 @@ namespace WindowsFormsApplication1
         {
             DAO.addMatHang(dto);
         }
+        public void addlohangtondau(DTO dto)
+        {
+            DAO.addlohangtondau(dto);
+        }
         public void addBanggia(DTO dto)
         {
             DAO.addBanggia(dto);
@@ -556,6 +560,10 @@ namespace WindowsFormsApplication1
         public void executeNonQuery(string SQL)
         {
              DAO.executeNonQuery(SQL);
+        }
+        public void executeNonQuery2(string SQL)
+        {
+            DAO.executeNonQuery2(SQL);
         }
 
 

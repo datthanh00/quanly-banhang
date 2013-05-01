@@ -14,6 +14,8 @@ using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraGrid;
 using DevExpress.Utils;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 
 namespace WindowsFormsApplication1
@@ -74,8 +76,7 @@ namespace WindowsFormsApplication1
             vload();
             load_cbhanghoa();
             loadngonngu();
-            lbnhom.Visible = false;
-            cbncc.Visible = false;
+         
             if (!PublicVariable.isKHOILUONG)
             {
                 gridView1.Columns["KHOILUONG"].Visible = false;
@@ -86,26 +87,17 @@ namespace WindowsFormsApplication1
                 gridView1.Columns["LOHANG"].Visible = false;
                 gridView1.Columns["HSD"].Visible = false;
             }
+
+            Load_mathang();
         }
 
         private void loadReSVN1()
         {
-            btxem.Text = resVietNam.btXem.ToString();
+            
             btin.Text = resVietNam.btIn.ToString();
             BtXuatdulieu.Text = resVietNam.btXuat.ToString();
             btdong.Text = resVietNam.btDong.ToString();
-            //colmahang.Caption = resVietNam.colmahang.ToString();
-            colmamhathang.Caption = resVietNam.colmahang.ToString();
-            
-            coltennhomhang.Caption = resVietNam.coltennhomhang.ToString();
-            coltenmathang.Caption = resVietNam.coltenmathang.ToString();
-            coltendonvi.Caption = resVietNam.coltendonvi.ToString();
-            colsoluong.Caption = resVietNam.colsoluong.ToString();
-            colhansudung.Caption = resVietNam.colhansudung.ToString();
-            
-            colgiaban.Caption = resVietNam.colgiaban.ToString();
-            
-            colgiamua.Caption = resVietNam.colgiamua.ToString();
+           
             lbnhom.Text = resVietNam.lbchonnhom.ToString();
             //labelControl2.Text = resVietNam.lbden.ToString();
             //labelControl13.Text = resVietNam.lbtu.ToString();
@@ -119,22 +111,11 @@ namespace WindowsFormsApplication1
         {
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
 
-           btxem.Text = resEngLand.btXem.ToString();
+       
            btin.Text = resEngLand.btIn.ToString();
            BtXuatdulieu.Text = resEngLand.btXuat.ToString();
            btdong.Text = resEngLand.btDong.ToString();
-            //colmahang.Caption = resVietNam.colmahang.ToString();
-            colmamhathang.Caption = resEngLand.colmahang.ToString();
-            
-            coltennhomhang.Caption = resEngLand.coltennhomhang.ToString();
-            coltenmathang.Caption = resEngLand.coltenmathang.ToString();
-            coltendonvi.Caption = resEngLand.coltendonvi.ToString();
-            colsoluong.Caption = resEngLand.colsoluong.ToString();
-            colhansudung.Caption = resEngLand.colhansudung.ToString();
-            
-            colgiaban.Caption = resEngLand.colgiaban.ToString();
-           
-            colgiamua.Caption = resEngLand.colgiamua.ToString();
+
             lbnhom.Text = resEngLand.lbchonnhom.ToString();
             //labelControl2.Text = resEngLand.l.ToString();
            
@@ -191,54 +172,6 @@ namespace WindowsFormsApplication1
 
 
 
-        private void LinkTheoqui_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-            //if (iNgonNgu == 0)
-            //{
-            //    cbHienThiBatDau.Text = "Chọn Quí";
-            //    cbHienThiKeThuc.Text = "Chọn Năm";
-            //    xtraTabPage3.Text = "Thống Kê Theo Quí";
-
-            //}
-            //else
-            //{
-            //    cbHienThiBatDau.Text = "Select quarter";
-            //    cbHienThiKeThuc.Text = "Select Year";
-            //    xtraTabPage3.Text = "Quarterly statistics";
-
-            //}
-
-
-            //LoaiHT = "thoigian";
-            //pnThangNam.Visible = true;
-            //pnThoiGian.Visible = false;
-            //cbHienThiKeThuc.Visible = true;
-            //lbNam.Visible = false;
-            //cbNam.Visible = false;
-            //lbDen.Visible = false;
-            //cbHienThiBatDau.Properties.Items.Clear();
-            //cbHienThiKeThuc.Properties.Items.Clear();
-            //if (DateTime.Now.Month > 4)
-            //{
-            //    for (int i = 1; i <= (12 / 3); i++)
-            //    {
-            //        cbHienThiBatDau.Properties.Items.Add(i.ToString());
-            //    }
-            //}
-            //for (int i = 2005; i < DateTime.Now.Year + 1; i++)
-            //{
-            //    cbHienThiKeThuc.Properties.Items.Add(i.ToString());
-            //}
-            //LoaiHT = "";
-            //dateNgayBD = DateTime.Now.ToShortDateString();
-            //dateNgayKT = DateTime.Now.ToShortDateString();
-
-            //LoaiTG = "QUI";
-        }
-
-
-
-
         private void vload()
         {
             if (iNgonNgu == 0)
@@ -260,6 +193,7 @@ namespace WindowsFormsApplication1
             //cbmathang.Properties.PopupFormWidth = 200;
             Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
             cbncc.Properties.DataSource = ctr1.dtGetNCC();
+
             gridView2.BestFitColumns();
             //cbmathang.best
         }
@@ -267,15 +201,56 @@ namespace WindowsFormsApplication1
 
         private void simpleButton11_Click(object sender, EventArgs e)
         {
-            
-                if (cbncc.Text != "")
-                {
-                    dto.MANCC = gridView2.GetFocusedRowCellValue("MANCC").ToString();
-                }
-                dt = ctr.getondauky_mathang(dto.MANCC);
-                gridControl1.DataSource = dt;
-                gridView1.BestFitColumns();
+           string SQL="",HSD;
+           CTL ctlNCC = new CTL();
+
+           SQL = "";
+
+           SQL = "select count(MATHANG.MAMH) from TONDAUKHOHANG,MATHANG WHERE TONDAUKHOHANG.MAMH=MATHANG.MAMH AND MAKHO='"+PublicVariable.MAKHO+"'";
+                
+           DataTable dt=ctlNCC.GETDATA(SQL);
+           SQL = "";
+           if (dt.Rows[0][0].ToString() == "0")
+           {
+               for (int i = 0; i < gridView1.DataRowCount; i++)
+               {
+
+                   for (int j = 0; j < 10&&i < gridView1.DataRowCount; j++)
+                   {
+                      
+                       DataRow dtr = gridView1.GetDataRow(i);
+                       HSD=dtr["HSD"].ToString();
+                       if(PublicVariable.isTONTHUCTE)
+                       {
+                            HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
+                       }
+                       SQL = SQL + " \r\nGO\r\n INSERT INTO TONDAUKHOHANG([MAMH],[LOHANG],[GIAMUA],[GIABAN],[TONKHO],[NGAYNHAP],[HSD])VALUES('" + dtr["MAMH"].ToString() + "','" + dtr["LOHANG"].ToString() + "'," + dtr["GIAMUA"].ToString() + "," + dtr["GIABAN"].ToString() + "," + dtr["SOLUONG"].ToString() + ",convert(varchar,getDate(),101),'" + HSD + "')  "
+                           + " \r\nGO\r\n INSERT INTO KHOHANG ([MAMH],[LOHANG],[GIAMUA],[TONKHO],[NHAPKHO],[XUATKHO],[TRANHAPKHO],[TRAXUATKHO],[NGAYNHAP],[HSD]) VALUES ('" + dtr["MAMH"].ToString() + "','" + dtr["LOHANG"].ToString() + "'," + dtr["GIAMUA"].ToString() + "," + dtr["SOLUONG"].ToString() + ",0,0,0,0,convert(varchar,getDate(),101),'" + HSD + "') ";
+                       i++;
+                   }
+                   ctlNCC.executeNonQuery2(SQL);
+               }
                
+           }  else
+           {
+               for (int i = 0; i < gridView1.DataRowCount; i++)
+               {
+              
+                   for (int j = 0; j < 10&&i < gridView1.DataRowCount; j++)
+                   {
+                       DataRow dtr = gridView1.GetDataRow(i);
+                        HSD=dtr["HSD"].ToString();
+                       if(PublicVariable.isTONTHUCTE)
+                       {
+                            HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
+                       }
+                       SQL = SQL + " \r\nGO\r\n UPDATE TONDAUKHOHANG SET [GIAMUA]=" + dtr["GIAMUA"].ToString() + ",[GIABAN]=" + dtr["GIABAN"].ToString() + ",[TONKHO]=" + dtr["SOLUONG"].ToString() + ",[HSD]='" + HSD + "' WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "'"
+                           + "  \r\nGO\r\n UPDATE KHOHANG SET [GIAMUA]=" + dtr["GIAMUA"].ToString() + ",[TONKHO]=" + dtr["SOLUONG"].ToString() + ",[HSD]='" + HSD + "' WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "'";
+                       i++;
+                   }
+                   ctlNCC.executeNonQuery2(SQL);
+               }
+           }
          }
 
 
@@ -284,6 +259,15 @@ namespace WindowsFormsApplication1
         {
 
         }
+        private void Load_mathang()
+        {
+            if (cbncc.Text != "")
+            {
+                dto.MANCC = gridView2.GetFocusedRowCellValue("MANCC").ToString();
+            }
+            gridControl1.DataSource = ctr.getondauky_mathang(dto.MANCC);
+        }
+        
 
         private void simpleButton8_Click(object sender, EventArgs e)
         {
@@ -368,6 +352,63 @@ namespace WindowsFormsApplication1
             RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
+
+        private void gridView1_ShowGridMenu(object sender, DevExpress.XtraGrid.Views.Grid.GridMenuEventArgs e)
+        {
+            GridView view = sender as GridView;
+            GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
+            if (hitInfo.InRow)
+            {
+                view.FocusedRowHandle = hitInfo.RowHandle;
+
+                contextMenuStrip1.Show(view.GridControl, e.Point);
+            }
+        }
+
+        private void xoalohangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.XOA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN XÓA ");
+                return;
+            }
+
+            if (XtraMessageBox.Show("Bạn Có Muốn Xóa Lô Hàng Này Không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int focusrow = gridView1.FocusedRowHandle;
+                DataRow dtr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                if (dtr != null)
+                {
+                    String sMAMH = dtr["MAMH"].ToString();
+                    String sLOHANG = dtr["LOHANG"].ToString();
+                    if (sMAMH != "")
+                    {
+                       ctr.DELETE_LOHANGTONDAU(sMAMH, sLOHANG);
+                    }
+                }
+            }
+            Load_mathang();
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            if (PublicVariable.THEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
+            Themlohangtondau frm = new Themlohangtondau();
+            frm.iNgonNgu = iNgonNgu;
+            frm.ShowDialog();
+            Load_mathang();
+        }
+
+        private void cbncc_Validated(object sender, EventArgs e)
+        {
+            Load_mathang();
+        }
+
 
     }
 }
