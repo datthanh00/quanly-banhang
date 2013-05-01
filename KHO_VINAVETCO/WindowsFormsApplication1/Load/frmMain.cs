@@ -579,11 +579,13 @@ namespace WindowsFormsApplication1
                         if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             barButtoncongnodau.Enabled = true;
+                            
                             break;
                         }
                         else
                         {
                             barButtoncongnodau.Enabled = false;
+                           
                             break;
                         }
                     case "29":
@@ -617,6 +619,17 @@ namespace WindowsFormsApplication1
                         else
                         {
                             barButtonketso.Enabled = false;
+                            break;
+                        }
+                    case "32":
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
+                        {
+                            barButtonphaithudauky.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            barButtonphaithudauky.Enabled = false;
                             break;
                         }
                 }
@@ -2265,6 +2278,9 @@ namespace WindowsFormsApplication1
                 case "CHOTSO":
                     imacn = 31;
                     break;
+                case "PHAITHUDAUKY":
+                    imacn = 32;
+                    break;
             }
 
             PublicVariable.TATCA = PhanQuyen.Rows[imacn - 1]["TATCA"].ToString();
@@ -2483,6 +2499,31 @@ namespace WindowsFormsApplication1
             {
                 TabItem t = tabControl12.CreateTab(sTieuDe);
                 t.Name = "CHOTSO";
+                frmBanggia dt = new frmBanggia();
+                dt.deDongTab = new frmBanggia._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
+        }
+
+        private void barButtonphaithudauky_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetPhanQuyen("32");
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            bKTraMoTab = true;
+            sTieuDe = "Phải Thu Đầu Kỳ";
+
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "PHAITHUDAUKY";
                 frmBanggia dt = new frmBanggia();
                 dt.deDongTab = new frmBanggia._deDongTab(vDOngTab);
                 dt.frm = this;
