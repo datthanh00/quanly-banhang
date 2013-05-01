@@ -6,6 +6,8 @@ using System.Configuration;
 using System.Windows.Forms;
 using System.IO;
 using System.Data;
+using Microsoft.SqlServer.Management.Common;
+using Microsoft.SqlServer.Management.Smo;
 namespace WindowsFormsApplication1
 {
     class Provider
@@ -93,7 +95,7 @@ namespace WindowsFormsApplication1
         {
                 if (File.Exists("App.config"))
                 {
-                    Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
+                    //Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
                    //strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
                   // strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_qlkho;User ID=nguyendat_thanh;Password=Xziojs1U98;";
                     strConnect = "server=IEC-96D31E9E831\\SQLEXPRESS;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123";
@@ -148,6 +150,16 @@ namespace WindowsFormsApplication1
             cmd.ExecuteNonQuery();
             disconnect();
         }
+         public void executeNonQuery2(string sql)
+        {
+            connect();
+            ServerConnection svrConnection = new ServerConnection(con);
+            Server server = new Server(svrConnection);
+            server.ConnectionContext.ExecuteNonQuery(sql);
+            disconnect();
+        }
+
+         
         public void executereader(string sql)
         {
             connect();

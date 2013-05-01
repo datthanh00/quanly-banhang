@@ -121,7 +121,18 @@ namespace WindowsFormsApplication1
             +" values('"+dto.MAQL+"','"+dto.USERNAME+"','"+dto.PASSWORD+"',N'"+dto.TENQL+"',N'"+dto.DIACHI+"','"+dto.NGAYSINH+"','"+dto.SCMND+"','"+dto.SDT+"','"+dto.TINHTRANG+"')";
             executeNonQuery(SQL);
         }
-      
+
+
+        public void addlohangtondau(DTO dto)
+        {
+            string SQL = "INSERT INTO TONDAUKHOHANG([MAMH],[LOHANG],[GIAMUA],[GIABAN],[TONKHO],[NGAYNHAP],[HSD])VALUES('" + dto.MAMH + "','" + dto.LOHANG + "'," + dto.GIAMUA + "," + dto.GIABAN + "," + dto.SOLUONGMH + ",convert(varchar,getDate(),101),'" + dto.HSD + "')  GO "
+                           + " INSERT INTO KHOHANG ([MAMH],[LOHANG],[GIAMUA],[TONKHO],[NHAPKHO],[XUATKHO],[TRANHAPKHO],[TRAXUATKHO],[NGAYNHAP],[HSD]) VALUES ('" + dto.MAMH + "','" + dto.LOHANG + "'," + dto.GIAMUA + "," + dto.SOLUONGMH + ",0,0,0,0,convert(varchar,getDate(),101),'" + dto.HSD + "') GO ";
+                       
+            executeNonQuery(SQL);
+
+        }
+
+
         public void addMatHang(DTO dto)
         {
             string SQL = "insert into MATHANG(MAMH,MATH,MANH,MAKHO,MANCC,TENMH,MADVT,KLDVT,SOLUONGMH,GIAMUA, MOTA,TINHTRANG)"
@@ -437,7 +448,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETMATHANG1()
         {
-            string SQL = "select 	MAMH,TENMH,SOLUONGMH FROM MATHANG";
+            string SQL = "select 	MAMH,TENMH,SOLUONGMH FROM MATHANG where MAKHO='" + PublicVariable.MAKHO + "' ";
             return GET_DATA(SQL);
         }
         public DataTable GETTHUE()
