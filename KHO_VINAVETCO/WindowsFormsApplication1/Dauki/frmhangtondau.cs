@@ -214,8 +214,8 @@ namespace WindowsFormsApplication1
            {
                for (int i = 0; i < gridView1.DataRowCount; i++)
                {
-
-                   for (int j = 0; j < 10&&i < gridView1.DataRowCount; j++)
+                   SQL = "";
+                   for (int j = 0; j < 20&&i < gridView1.DataRowCount; j++)
                    {
                       
                        DataRow dtr = gridView1.GetDataRow(i);
@@ -235,8 +235,8 @@ namespace WindowsFormsApplication1
            {
                for (int i = 0; i < gridView1.DataRowCount; i++)
                {
-              
-                   for (int j = 0; j < 10&&i < gridView1.DataRowCount; j++)
+                   SQL = "";
+                   for (int j = 0; j < 20&&i < gridView1.DataRowCount; j++)
                    {
                        DataRow dtr = gridView1.GetDataRow(i);
                         HSD=dtr["HSD"].ToString();
@@ -251,6 +251,7 @@ namespace WindowsFormsApplication1
                    ctlNCC.executeNonQuery2(SQL);
                }
            }
+            MessageBox.Show("ĐÃ LƯU TỒN DẦU KỲ KHO HÀNG");
          }
 
 
