@@ -252,6 +252,7 @@ namespace WindowsFormsApplication1
                }
            }
             MessageBox.Show("ĐÃ LƯU TỒN DẦU KỲ KHO HÀNG");
+            Load_mathang();
          }
 
 
