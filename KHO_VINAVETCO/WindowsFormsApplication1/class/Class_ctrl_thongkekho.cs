@@ -59,6 +59,10 @@ namespace WindowsFormsApplication1
         {
             return dao.getondauky_mathang(MANCC);
         }
+        public DataTable getCONGNONCC_DAUKY()
+        {
+            return dao.getCONGNONCC_DAUKY();
+        }
         public DataTable dtGetNH()
         {
             return dao.get_NH();

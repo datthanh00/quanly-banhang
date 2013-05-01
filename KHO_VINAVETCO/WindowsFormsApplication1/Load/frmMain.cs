@@ -2424,8 +2424,8 @@ namespace WindowsFormsApplication1
             {
                 TabItem t = tabControl12.CreateTab(sTieuDe);
                 t.Name = "CONGNODAUKY";
-                frmBanggia dt = new frmBanggia();
-                dt.deDongTab = new frmBanggia._deDongTab(vDOngTab);
+                frmnodauky dt = new frmnodauky();
+                dt.deDongTab = new frmnodauky._deDongTab(vDOngTab);
                 dt.frm = this;
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
