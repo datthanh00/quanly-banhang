@@ -78,7 +78,7 @@
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cbmathang = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.cbncc = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -119,7 +119,7 @@
             this.panelControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbnhomhang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbmathang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbncc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbloaihienthi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mATHANGBindingSource)).BeginInit();
@@ -561,7 +561,7 @@
             // panelControl6
             // 
             this.panelControl6.Controls.Add(this.cbnhomhang);
-            this.panelControl6.Controls.Add(this.cbmathang);
+            this.panelControl6.Controls.Add(this.cbncc);
             this.panelControl6.Controls.Add(this.lbsanpham);
             this.panelControl6.Controls.Add(this.btdong);
             this.panelControl6.Controls.Add(this.cbloaihienthi);
@@ -616,15 +616,15 @@
             // 
             // cbmathang
             // 
-            this.cbmathang.Location = new System.Drawing.Point(355, 9);
-            this.cbmathang.Name = "cbmathang";
-            this.cbmathang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cbncc.Location = new System.Drawing.Point(355, 9);
+            this.cbncc.Name = "cbmathang";
+            this.cbncc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbmathang.Properties.NullText = "";
-            this.cbmathang.Properties.PopupSizeable = false;
-            this.cbmathang.Properties.View = this.gridView2;
-            this.cbmathang.Size = new System.Drawing.Size(194, 20);
-            this.cbmathang.TabIndex = 25;
+            this.cbncc.Properties.NullText = "";
+            this.cbncc.Properties.PopupSizeable = false;
+            this.cbncc.Properties.View = this.gridView2;
+            this.cbncc.Size = new System.Drawing.Size(194, 20);
+            this.cbncc.TabIndex = 25;
             // 
             // gridView2
             // 
@@ -799,7 +799,7 @@
             this.panelControl6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbnhomhang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbmathang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbncc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbloaihienthi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mATHANGBindingSource)).EndInit();
