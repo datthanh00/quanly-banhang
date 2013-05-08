@@ -2474,8 +2474,8 @@ namespace WindowsFormsApplication1
             {
                 TabItem t = tabControl12.CreateTab(sTieuDe);
                 t.Name = "KHOASO";
-                frmBanggia dt = new frmBanggia();
-                dt.deDongTab = new frmBanggia._deDongTab(vDOngTab);
+                frmKhoaso dt = new frmKhoaso();
+                dt.deDongTab = new frmKhoaso._deDongTab(vDOngTab);
                 dt.frm = this;
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;

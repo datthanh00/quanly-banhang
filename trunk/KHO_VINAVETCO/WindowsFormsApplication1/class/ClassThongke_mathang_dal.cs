@@ -216,6 +216,14 @@ namespace WindowsFormsApplication1
             }
             return getdata(SQL);
         }
+
+
+        public DataTable getKHOASO()
+        {
+            string SQL = " SELECT * FROM KHOASO";
+            return getdata(SQL);
+        }
+             
         public DataTable getCONGNONCC_DAUKY()
         {
             string SQL = "";
