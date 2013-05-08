@@ -54,18 +54,18 @@
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltendonvi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCalcEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.colhansudung = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.repositoryItemCalcEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
+            this.repositoryItemCalcEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemRichTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemRichTextEdit();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cbncc = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btdong = new DevExpress.XtraEditors.SimpleButton();
             this.BtXuatdulieu = new DevExpress.XtraEditors.SimpleButton();
             this.lbnhom = new DevExpress.XtraEditors.LabelControl();
@@ -76,7 +76,6 @@
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.xoalohangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -91,12 +90,12 @@
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
@@ -114,7 +113,7 @@
             this.colsoluong.ColumnEdit = this.repositoryItemCalcEdit1;
             this.colsoluong.DisplayFormat.FormatString = "{0:0,0}";
             this.colsoluong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colsoluong.FieldName = "SOLUONG";
+            this.colsoluong.FieldName = "TONTT";
             this.colsoluong.Name = "colsoluong";
             this.colsoluong.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colsoluong.SummaryItem.FieldName = "SOLUONGMH";
@@ -362,13 +361,6 @@
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 8;
             // 
-            // repositoryItemCalcEdit3
-            // 
-            this.repositoryItemCalcEdit3.AutoHeight = false;
-            this.repositoryItemCalcEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemCalcEdit3.Name = "repositoryItemCalcEdit3";
-            // 
             // colhansudung
             // 
             this.colhansudung.Caption = "Hạn Sử Dụng";
@@ -406,6 +398,13 @@
             this.repositoryItemCalcEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemCalcEdit2.Name = "repositoryItemCalcEdit2";
+            // 
+            // repositoryItemCalcEdit3
+            // 
+            this.repositoryItemCalcEdit3.AutoHeight = false;
+            this.repositoryItemCalcEdit3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemCalcEdit3.Name = "repositoryItemCalcEdit3";
             // 
             // repositoryItemRichTextEdit1
             // 
@@ -452,25 +451,24 @@
             // gridView2
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
             this.gridColumn2});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn1
+            // gridColumn2
             // 
-            this.gridColumn1.Caption = "Mã Kì Kiểm";
-            this.gridColumn1.FieldName = "MAKIKIEM";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn2.Caption = "Kì Kiểm";
+            this.gridColumn2.FieldName = "NGAY";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
             // 
             // btdong
             // 
             this.btdong.Image = ((System.Drawing.Image)(resources.GetObject("btdong.Image")));
-            this.btdong.Location = new System.Drawing.Point(630, 4);
+            this.btdong.Location = new System.Drawing.Point(702, 4);
             this.btdong.Name = "btdong";
             this.btdong.Size = new System.Drawing.Size(79, 31);
             this.btdong.TabIndex = 7;
@@ -480,7 +478,7 @@
             // BtXuatdulieu
             // 
             this.BtXuatdulieu.Image = ((System.Drawing.Image)(resources.GetObject("BtXuatdulieu.Image")));
-            this.BtXuatdulieu.Location = new System.Drawing.Point(504, 4);
+            this.BtXuatdulieu.Location = new System.Drawing.Point(584, 4);
             this.BtXuatdulieu.Name = "BtXuatdulieu";
             this.BtXuatdulieu.Size = new System.Drawing.Size(103, 31);
             this.BtXuatdulieu.TabIndex = 3;
@@ -489,7 +487,7 @@
             // 
             // lbnhom
             // 
-            this.lbnhom.Location = new System.Drawing.Point(10, 18);
+            this.lbnhom.Location = new System.Drawing.Point(13, 17);
             this.lbnhom.Name = "lbnhom";
             this.lbnhom.Size = new System.Drawing.Size(41, 13);
             this.lbnhom.TabIndex = 3;
@@ -498,7 +496,7 @@
             // btin
             // 
             this.btin.Image = ((System.Drawing.Image)(resources.GetObject("btin.Image")));
-            this.btin.Location = new System.Drawing.Point(411, 4);
+            this.btin.Location = new System.Drawing.Point(500, 4);
             this.btin.Name = "btin";
             this.btin.Size = new System.Drawing.Size(70, 31);
             this.btin.TabIndex = 4;
@@ -508,7 +506,7 @@
             // btxem
             // 
             this.btxem.Image = global::WindowsFormsApplication1.Properties.Resources.save;
-            this.btxem.Location = new System.Drawing.Point(318, 4);
+            this.btxem.Location = new System.Drawing.Point(415, 5);
             this.btxem.Name = "btxem";
             this.btxem.Size = new System.Drawing.Size(70, 31);
             this.btxem.TabIndex = 3;
@@ -548,14 +546,6 @@
             this.xoalohangToolStripMenuItem.Text = "Xóa Lô Hàng Này";
             this.xoalohangToolStripMenuItem.Click += new System.EventHandler(this.xoalohangToolStripMenuItem_Click);
             // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Kì Kiểm";
-            this.gridColumn2.FieldName = "KIKIEM";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
             // frmKiemkho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,12 +575,12 @@
             this.groupControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
@@ -644,7 +634,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraEditors.GridLookUpEdit cbncc;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
