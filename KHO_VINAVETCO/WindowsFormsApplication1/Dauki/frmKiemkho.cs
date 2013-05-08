@@ -43,10 +43,7 @@ namespace WindowsFormsApplication1
         Class_ctrl_thongkekho ctr = new Class_ctrl_thongkekho();
 
         
-        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
-        {
-
-        }
+   
 
         private void frmThongKeTongHop_Load(object sender, EventArgs e)
         {
@@ -187,13 +184,17 @@ namespace WindowsFormsApplication1
         private void load_cbhanghoa()
         {
             cbncc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cbncc.Properties.DisplayMember = "TENNCC";
-            cbncc.Properties.ValueMember = "MANCC";
+            cbncc.Properties.DisplayMember = "NGAY";
+            cbncc.Properties.ValueMember = "NGAY";
             cbncc.Properties.View.BestFitColumns();
             //cbmathang.Properties.PopupFormWidth = 200;
             Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
-            cbncc.Properties.DataSource = ctr1.dtGetNCC();
-
+            DataTable dt = ctr1.dtGetKIKIEM();
+            cbncc.Properties.DataSource = dt;
+            if (dt.Rows.Count > 0)
+            {
+                cbncc.Text = dt.Rows[0][0].ToString();
+            }
             gridView2.BestFitColumns();
             //cbmathang.best
         }
@@ -206,52 +207,25 @@ namespace WindowsFormsApplication1
 
            SQL = "";
 
-           SQL = "select count(MATHANG.MAMH) from TONDAUKHOHANG,MATHANG WHERE TONDAUKHOHANG.MAMH=MATHANG.MAMH AND MAKHO='"+PublicVariable.MAKHO+"'";
-                
-           DataTable dt=ctlNCC.GETDATA(SQL);
-           SQL = "";
-           if (dt.Rows[0][0].ToString() == "0")
-           {
-               for (int i = 0; i < gridView1.DataRowCount; i++)
-               {
-                   SQL = "";
-                   for (int j = 0; j < 20&&i < gridView1.DataRowCount; j++)
-                   {
-                      
-                       DataRow dtr = gridView1.GetDataRow(i);
-                       HSD=dtr["HSD"].ToString();
-                       if(PublicVariable.isTONTHUCTE)
-                       {
-                            HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
-                       }
-                       SQL = SQL + " \r\nGO\r\n INSERT INTO TONDAUKHOHANG([MAMH],[LOHANG],[GIAMUA],[GIABAN],[TONKHO],[NGAYNHAP],[HSD])VALUES('" + dtr["MAMH"].ToString() + "','" + dtr["LOHANG"].ToString() + "'," + dtr["GIAMUA"].ToString() + "," + dtr["GIABAN"].ToString() + "," + dtr["SOLUONG"].ToString() + ",convert(varchar,getDate(),101),'" + HSD + "')  "
-                           + " \r\nGO\r\n INSERT INTO KHOHANG ([MAMH],[LOHANG],[GIAMUA],[TONKHO],[NHAPKHO],[XUATKHO],[TRANHAPKHO],[TRAXUATKHO],[NGAYNHAP],[HSD]) VALUES ('" + dtr["MAMH"].ToString() + "','" + dtr["LOHANG"].ToString() + "'," + dtr["GIAMUA"].ToString() + "," + dtr["SOLUONG"].ToString() + ",0,0,0,0,convert(varchar,getDate(),101),'" + HSD + "') ";
-                       i++;
-                   }
-                   ctlNCC.executeNonQuery2(SQL);
-               }
-               
-           }  else
-           {
+          
                for (int i = 0; i < gridView1.DataRowCount; i++)
                {
                    SQL = "";
                    for (int j = 0; j < 20&&i < gridView1.DataRowCount; j++)
                    {
                        DataRow dtr = gridView1.GetDataRow(i);
-                        HSD=dtr["HSD"].ToString();
+                        HSD=cbncc.Text;
                        if(PublicVariable.isTONTHUCTE)
                        {
                             HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
                        }
-                       SQL = SQL + " \r\nGO\r\n UPDATE TONDAUKHOHANG SET [GIAMUA]=" + dtr["GIAMUA"].ToString() + ",[GIABAN]=" + dtr["GIABAN"].ToString() + ",[TONKHO]=" + dtr["SOLUONG"].ToString() + ",[HSD]='" + HSD + "' WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "'"
-                           + "  \r\nGO\r\n UPDATE KHOHANG SET [GIAMUA]=" + dtr["GIAMUA"].ToString() + ",[TONKHO]=" + dtr["SOLUONG"].ToString() + ",[HSD]='" + HSD + "' WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "'";
+                       SQL = SQL + " \r\nGO\r\n UPDATE TONKIEMKHO SET [TONTT]=" + dtr["TONTT"].ToString() + " WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "' AND NGAY='" + HSD + "'";
                        i++;
                    }
                    ctlNCC.executeNonQuery2(SQL);
                }
-           }
-            MessageBox.Show("ĐÃ LƯU TỒN DẦU KỲ KHO HÀNG");
+          
+            MessageBox.Show("ĐÃ LƯU KIỂM THỰC TẾ KHO HÀNG");
             Load_mathang();
          }
 
@@ -263,11 +237,12 @@ namespace WindowsFormsApplication1
         }
         private void Load_mathang()
         {
+            string NGAYKIEMKHO = "";
             if (cbncc.Text != "")
             {
-                dto.MANCC = gridView2.GetFocusedRowCellValue("MANCC").ToString();
+                NGAYKIEMKHO = cbncc.Text;
             }
-            gridControl1.DataSource = ctr.getondauky_mathang(dto.MANCC);
+            gridControl1.DataSource = ctr.getonkiemkho(NGAYKIEMKHO);
         }
         
 
@@ -323,15 +298,6 @@ namespace WindowsFormsApplication1
         }
 
 
-        private void cmbloaihienthi_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = true;
-        }
-
-        private void labelControl2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void printableComponentLink1_CreateReportFooterArea(object sender, CreateAreaEventArgs e)
         {
@@ -399,15 +365,29 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+            if (XtraMessageBox.Show("Bạn có muốn Tạo Kì Kiểm Kho Mới Không ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
 
-            Themlohangtondau frm = new Themlohangtondau();
-            frm.iNgonNgu = iNgonNgu;
-            frm.ShowDialog();
+                ctr.createtonkiemkho();
+            }
+            else
+            {
+                return;
+            }
+            load_cbhanghoa();
             Load_mathang();
         }
 
         private void cbncc_Validated(object sender, EventArgs e)
         {
+            Load_mathang();
+        }
+
+        private void btnUPDATE_Click(object sender, EventArgs e)
+        {
+            
+           // ctr.createtonkiemkho();
+           
             Load_mathang();
         }
 

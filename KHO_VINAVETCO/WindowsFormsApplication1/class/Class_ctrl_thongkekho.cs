@@ -55,6 +55,18 @@ namespace WindowsFormsApplication1
         {
             dao.DELETE_LOHANGTONDAU(MAMH,LOHANG);
         }
+        public void updatetonkiemkho()
+        {
+            dao.updatetonkiemkho();
+        }
+        public void createtonkiemkho()
+        {
+            dao.createtonkiemkho();
+        }
+        public DataTable getonkiemkho(String KIKIEM)
+        {
+            return dao.getonkiemkho(KIKIEM);
+        }
         public DataTable getondauky_mathang(String MANCC)
         {
             return dao.getondauky_mathang(MANCC);
@@ -78,6 +90,10 @@ namespace WindowsFormsApplication1
         public DataTable dtGetNCC()
         {
             return dao.get_NCC();
+        }
+        public DataTable dtGetKIKIEM()
+        {
+            return dao.dtGetKIKIEM();
         }
         public DataTable dtGetBG()
         {

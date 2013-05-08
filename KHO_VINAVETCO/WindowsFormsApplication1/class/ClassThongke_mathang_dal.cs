@@ -231,6 +231,37 @@ namespace WindowsFormsApplication1
             }
             return getdata(SQL);
         }
+        public void updatetonkiemkho()
+        {
+            string SQL = "INSERT INTO [TONKIEMKHO]([NGAY],[MAMH],[LOHANG],[MAKHO],[TONTT]) select convert(varchar,getDate(),101) AS CurrentDateTime ,MATHANG.MAMH,LOHANG,MATHANG.MAKHO,TONKHO as TONTT FROM KHOHANG,MATHANG WHERE MATHANG.MAMH=KHOHANG.MAMH AND TINHTRANG='TRUE' AND TONKHO>0 AND MAKHO='" + PublicVariable.MAKHO + "'";
+            executeNonQuery(SQL);
+        }
+        public void createtonkiemkho()
+        {
+            string SQL = "SELECT * FROM TONKIEMKHO WHERE NGAY=convert(varchar,getDate(),101) AND MAKHO='" + PublicVariable.MAKHO + "'";
+            DataTable DT = getdata(SQL);
+            if (DT.Rows.Count <= 0)
+            {
+                SQL = "INSERT INTO [TONKIEMKHO]([NGAY],[MAMH],[LOHANG],[MAKHO],[TONTT]) select convert(varchar,getDate(),101) AS CurrentDateTime ,MATHANG.MAMH,LOHANG,MATHANG.MAKHO,TONKHO as TONTT FROM KHOHANG,MATHANG WHERE MATHANG.MAMH=KHOHANG.MAMH AND KHOHANG.TINHTRANG='TRUE' AND MATHANG.TINHTRANG='TRUE' AND TONKHO>0 AND MAKHO='" + PublicVariable.MAKHO + "'";
+                executeNonQuery(SQL);
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("NGÀY HÔM NAY ĐÃ KIỂM KHO RỒI NÊN KHÔNG THỂ TẠO NỮA");
+            }
+        }
+        public DataTable getonkiemkho(string KIKIEM)
+        {
+            string SQL = "";
+            if (KIKIEM.Length > 6)
+            {
+                KIKIEM = KIKIEM.Substring(6, 4) + "/" + KIKIEM.Substring(3, 2) + "/" + KIKIEM.Substring(0, 2);
+
+            }
+            SQL = " SELECT NGAY,MATHANG.MAMH,TENMH,KHOHANG.LOHANG,TENNCC,HSD,KLDVT,DONVITINH,KLDVT*TONKIEMKHO.TONTT AS KHOILUONG,TONTT FROM DONVITINH,NHACUNGCAP, TONKIEMKHO, MATHANG,KHOHANG WHERE MATHANG.MAMH=KHOHANG.MAMH AND MATHANG.MADVT=DONVITINH.MADVT AND MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH= TONKIEMKHO.MAMH AND TONKIEMKHO.MAKHO='" + PublicVariable.MAKHO + "' AND TONKIEMKHO.NGAY='" + KIKIEM + "'";
+            return getdata(SQL);
+        }
+
         public DataTable getondauky_mathang(string  MANCC)
         {
             string SQL = "";
@@ -326,6 +357,12 @@ namespace WindowsFormsApplication1
             // List<MySqlParameter> sql = new List<MySqlParameter>();
             //return executeNonQuerya("[NHOMHANG_getall]", sql);
             String SQL = "select 	MANH ,TENNHOMHANG from  NHOMHANG";
+            return getdata(SQL);
+        }
+
+        public DataTable dtGetKIKIEM()
+        {
+            String SQL = "select convert(varchar,NGAY,103)AS NGAY from  TONKIEMKHO WHERE  MAKHO='" + PublicVariable.MAKHO + "' GROUP BY NGAY ORDER BY NGAY DESC";
             return getdata(SQL);
         }
         public DataTable get_NCC()

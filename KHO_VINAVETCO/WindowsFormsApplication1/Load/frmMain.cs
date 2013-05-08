@@ -709,7 +709,7 @@ namespace WindowsFormsApplication1
             dt=ctlNCC.GETDATA(SQL);
             if (dt.Rows[0][0].ToString() == "0")
             {
-                SQL = "INSERT INTO [TONKHOTT]([NGAY],[MAMH],[MAKHO],[TONTT],[TONKHONGAY]) select convert(varchar,getDate(),101) AS CurrentDateTime ,MAMH,MAKHO,0 as TONTT,SOLUONGMH AS TONKHONGAY FROM MATHANG WHERE TINHTRANG='TRUE' AND MAKHO='" + PublicVariable.MAKHO + "'";
+                SQL = "INSERT INTO [TONKHOTT]([NGAY],[MAMH],[LOHANG],[MAKHO],[TONTT],[TONKHONGAY]) select convert(varchar,getDate(),101) AS CurrentDateTime ,MATHANG.MAMH,LOHANG,MAKHO,0 as TONTT,SOLUONGMH AS TONKHONGAY FROM MATHANG,KHOHANG WHERE MATHANG.MAMH=KHOHANG.MAMH AND KHOHANG.TINHTRANG='TRUE' AND MATHANG.TINHTRANG='TRUE' AND MAKHO='" + PublicVariable.MAKHO + "'";
                 ctlNCC.executeNonQuery(SQL);
             }
 
