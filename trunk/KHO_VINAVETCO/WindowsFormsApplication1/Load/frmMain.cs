@@ -2489,26 +2489,8 @@ namespace WindowsFormsApplication1
         private void barButtonketso_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetPhanQuyen("31");
-            ld.CreateWaitDialog();
-            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
-
-            bKTraMoTab = true;
-            sTieuDe = "Chốt Sổ";
-
-            if (!checkOpenTabs(sTieuDe))
-            {
-                TabItem t = tabControl12.CreateTab(sTieuDe);
-                t.Name = "CHOTSO";
-                frmBanggia dt = new frmBanggia();
-                dt.deDongTab = new frmBanggia._deDongTab(vDOngTab);
-                dt.frm = this;
-                dt.TopLevel = false;
-                dt.Dock = DockStyle.Fill;
-                t.AttachedControl.Controls.Add(dt);
-                dt.Show();
-                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
-            }
-            ld.simpleCloseWait();
+            frmKetso frmKetso1 = new frmKetso();
+            frmKetso1.ShowDialog();
         }
 
         private void barButtonphaithudauky_ItemClick(object sender, ItemClickEventArgs e)
