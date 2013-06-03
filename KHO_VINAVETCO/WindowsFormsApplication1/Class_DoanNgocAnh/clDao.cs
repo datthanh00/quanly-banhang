@@ -311,11 +311,14 @@ namespace WindowsFormsApplication1
             return getdata(SQL);
         }
         //--------------------Backup Restore---------------------------
+
+
+        public void KET_SO()
+        {
+
+        }
         public  void Backup(clDTO DTO)
         {
-            //List<MySqlParameter> sqlpa = new List<MySqlParameter>();
-            //sqlpa.Add(new MySqlParameter("@TENFILE",DTO.TENFILE));
-            //ChayProc("BACKUP_DATABASE", sqlpa);
             try
             {
                 Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");

@@ -84,6 +84,11 @@ namespace WindowsFormsApplication1
         {
             dao.Backup(dto);
         }
+
+        public void KET_SO()
+        {
+            dao.KET_SO();
+        }
         public void THEMNGUOIDUNG_UPDATE(clDTO dto)
         {
             dao.THEMNGUOIDUNG(dto);

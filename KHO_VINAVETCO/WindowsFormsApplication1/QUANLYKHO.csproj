@@ -364,6 +364,12 @@
     <Compile Include="SOHANG\frmKhoaso.designer.cs">
       <DependentUpon>frmKhoaso.cs</DependentUpon>
     </Compile>
+    <Compile Include="SOHANG\frmKetso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SOHANG\frmKetso.designer.cs">
+      <DependentUpon>frmKetso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Thue\frmThemThue.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -734,6 +740,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SOHANG\frmKhoaso.resx">
       <DependentUpon>frmKhoaso.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SOHANG\frmKetso.resx">
+      <DependentUpon>frmKetso.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Thue\frmThemThue.resx">
