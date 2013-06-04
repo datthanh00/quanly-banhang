@@ -392,7 +392,10 @@ namespace WindowsFormsApplication1
         {
             DAO.INSERTCTHOADONNHAP(DTO);
         }
-     
+        public void EXCUTE_SQL2(string SQL)
+        {
+            EXCUTE_SQL2(SQL);
+        }
         public bool ISINSERTCTHOADONNHAP(string MAHDN, int ID)
         {
             return DAO.ISINSERTCTHOADONNHAP(MAHDN, ID);
