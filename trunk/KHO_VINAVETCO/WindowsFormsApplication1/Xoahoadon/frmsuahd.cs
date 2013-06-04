@@ -17,7 +17,8 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
         clCtrl ctr = new clCtrl();
-        public string MAHD, TENMH,MAMH;
+        public string MAHD;
+        public DataTable LISTTRUOC, LISTSAU;
         private void frmxoahd_Load(object sender, EventArgs e)
         {
            
@@ -30,13 +31,13 @@ namespace WindowsFormsApplication1
             {
                 
                 PublicVariable.TMPtring = txtlydo.Text;
-                Inhdsua rep = new Inhdsua(MAHD, MAMH, TENMH, txtlydo.Text);
+                Inhdsua rep = new Inhdsua(MAHD,txtlydo.Text,LISTTRUOC,LISTSAU);
                 rep.ShowPreviewDialog();
                 this.Close();
             }
             else
             {
-                MessageBox.Show("lý do xóa quá ngắn");
+                MessageBox.Show("lý do Sửa quá ngắn");
                 return;
             }
         }

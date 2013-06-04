@@ -798,7 +798,6 @@ namespace WindowsFormsApplication1
          Loadingggg ld = new Loadingggg();
         private void timer1_Tick(object sender, EventArgs e)
         {
-
             barThoiGian.Caption = DateTime.Now.ToString();
         }
 
