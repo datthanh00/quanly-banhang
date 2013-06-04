@@ -58,7 +58,7 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(139, 31);
             this.simpleButton1.TabIndex = 6;
-            this.simpleButton1.Text = "Đóng và không xóa";
+            this.simpleButton1.Text = "Đóng và không Sửa";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
@@ -68,7 +68,7 @@
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(142, 31);
             this.simpleButton2.TabIndex = 5;
-            this.simpleButton2.Text = "Xóa và in hóa đơn";
+            this.simpleButton2.Text = "Sửa và in hóa đơn";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // lbPhanMem
@@ -77,9 +77,9 @@
             this.lbPhanMem.Appearance.Options.UseFont = true;
             this.lbPhanMem.Location = new System.Drawing.Point(33, 12);
             this.lbPhanMem.Name = "lbPhanMem";
-            this.lbPhanMem.Size = new System.Drawing.Size(378, 23);
+            this.lbPhanMem.Size = new System.Drawing.Size(373, 23);
             this.lbPhanMem.TabIndex = 4;
-            this.lbPhanMem.Text = "Bạn Có Chắc Muốn Xóa Mặt hàng này Không";
+            this.lbPhanMem.Text = "Bạn Có Chắc Muốn Sửa Hóa Đơn này Không";
             // 
             // txtlydo
             // 
@@ -100,9 +100,9 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(12, 60);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(173, 18);
+            this.labelControl1.Size = new System.Drawing.Size(166, 18);
             this.labelControl1.TabIndex = 20;
-            this.labelControl1.Text = "Lý Do Xóa Mặt Hàng Này:";
+            this.labelControl1.Text = "Lý Do Sửa Hóa Đơn Này:";
             // 
             // labelControl2
             // 
@@ -110,9 +110,9 @@
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Location = new System.Drawing.Point(33, 234);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(195, 13);
+            this.labelControl2.Size = new System.Drawing.Size(216, 13);
             this.labelControl2.TabIndex = 21;
-            this.labelControl2.Text = "Lưu ý chỉ xóa được mặt hàng trong ngày";
+            this.labelControl2.Text = "Lưu ý chỉ được sửa được hóa đơn trong ngày";
             // 
             // labelControl3
             // 
@@ -126,7 +126,7 @@
             this.labelControl3.TabIndex = 22;
             this.labelControl3.Text = "*";
             // 
-            // frmxoahd
+            // frmsuahd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,7 +138,7 @@
             this.Controls.Add(this.lbPhanMem);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmxoahd";
+            this.Name = "frmsuahd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmThongTinNhom";
             this.Load += new System.EventHandler(this.frmxoahd_Load);

@@ -250,6 +250,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMATHANG_FULL(MAMH);
         }
+        public DataTable GETMATHANG_MUA(string MAMH)
+        {
+            return DAO.GETMATHANG_MUA(MAMH);
+        }
         public DataTable GETTHUE()
         {
             return DAO.GETTHUE();
@@ -394,7 +398,7 @@ namespace WindowsFormsApplication1
         }
         public void EXCUTE_SQL2(string SQL)
         {
-            EXCUTE_SQL2(SQL);
+            DAO.EXCUTE_SQL2(SQL);
         }
         public bool ISINSERTCTHOADONNHAP(string MAHDN, int ID)
         {
@@ -408,9 +412,9 @@ namespace WindowsFormsApplication1
         {
             DAO.UPDATECTHOADONNHAP(DTO);
         }
-        public void DELETECTHOADONNHAP(string MAHDN, int ID, string MAMH)
+        public void DELETECTHOADONNHAP(string MAHDN, int ID, string MAMH, string LOHANG,string SOLUONG)
         {
-            DAO.DELETECTHOADONNHAP(MAHDN, ID, MAMH);
+            DAO.DELETECTHOADONNHAP(MAHDN, ID, MAMH,LOHANG,SOLUONG);
         }
         public void DELETECTHOADONXUATTAM(string MAHDX)
         {

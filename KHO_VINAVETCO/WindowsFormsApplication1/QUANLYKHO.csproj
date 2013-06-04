@@ -918,8 +918,16 @@
       <DependentUpon>frmTraNCC.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Xoahoadon\frmsuahd.resx">
+      <DependentUpon>frmsuahd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Xoahoadon\frmxoahd.resx">
       <DependentUpon>frmxoahd.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Xoahoadon\Inhdsua.resx">
+      <DependentUpon>Inhdsua.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Xoahoadon\Inhdx.resx">
@@ -979,11 +987,23 @@
     <Compile Include="Trahang\frmTraNCC.designer.cs">
       <DependentUpon>frmTraNCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Xoahoadon\frmsuahd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Xoahoadon\frmsuahd.designer.cs">
+      <DependentUpon>frmsuahd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Xoahoadon\frmxoahd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Xoahoadon\frmxoahd.designer.cs">
       <DependentUpon>frmxoahd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Xoahoadon\Inhdsua.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Xoahoadon\Inhdsua.designer.cs">
+      <DependentUpon>Inhdsua.cs</DependentUpon>
     </Compile>
     <Compile Include="Xoahoadon\Inhdx.cs">
       <SubType>Component</SubType>

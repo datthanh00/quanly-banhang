@@ -17,7 +17,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
         clCtrl ctr = new clCtrl();
-        public string MAHD, TENMH,MAMH;
+        public string MAHD, TENMH,MAMH,SOLUONG;
         private void frmxoahd_Load(object sender, EventArgs e)
         {
            
@@ -30,7 +30,7 @@ namespace WindowsFormsApplication1
             {
                 
                 PublicVariable.TMPtring = txtlydo.Text;
-                Inhdx rep = new Inhdx(MAHD, MAMH, TENMH, txtlydo.Text);
+                Inhdx rep = new Inhdx(MAHD, MAMH, TENMH,SOLUONG, txtlydo.Text);
                 rep.ShowPreviewDialog();
                 this.Close();
             }
