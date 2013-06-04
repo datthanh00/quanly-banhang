@@ -78,7 +78,7 @@ namespace WindowsFormsApplication1
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            PublicVariable.SQL_NHAP = "";
        
             btLuu.Enabled = false;
             loadgridCTHOADON();
@@ -404,7 +404,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            
+            PublicVariable.SQL_NHAP = "";
             Create_new();
             
         }
@@ -530,6 +530,13 @@ namespace WindowsFormsApplication1
 
 
                     bool isINSERTHOADONNHAP = ctlNCC.isINSERTHOADONNHAP(dtoNCC.MAHDN);
+
+                    dtoNCC.NGAYNHAP = "convert(varchar,getDate(),101)";
+                    if (PublicVariable.isUSE_COMPUTERDATE)
+                    {
+                        dtoNCC.NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
+                    }
+
                     if (isINSERTHOADONNHAP)
                     {
                         if (THEM == "False")
@@ -545,7 +552,7 @@ namespace WindowsFormsApplication1
                         {
                             
                             DataRow dtr = gridCTHOADON.GetDataRow(i);
-                            insert_HoadonChitiet(txtMaHD.Text, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());
+                            insert_HoadonChitiet(txtMaHD.Text, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString(),i);
                         }
                     }
                     else
@@ -556,11 +563,6 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("KHÔNG CÓ QUYỀN SỬA");
                             return;
                         }
-                        if (PublicVariable.TATCA == "False")
-                        {
-                            MessageBox.Show("TRÙNG MÃ HÓA ĐƠN");
-                            return;
-                        }
 
                         dtoNCC.IsUPDATE = true;
                         ctlNCC.UPDATEHOADONNHAP(dtoNCC);
@@ -568,10 +570,9 @@ namespace WindowsFormsApplication1
                         
                         for (int i = 0; i < rowcount; i++)
                         {
-                            DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
+                            DataRow dtr  = gridCTHOADON.GetDataRow(i);
                            
                             String sID = dtr["ID"].ToString();
-                            
 
                             if (sID != "")
                             {
@@ -579,12 +580,13 @@ namespace WindowsFormsApplication1
                             }
                             else
                             {
-                                insert_HoadonChitiet(txtMaHD.Text, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());
+                                insert_HoadonChitiet(txtMaHD.Text, dtr["_MaMH"].ToString(), Double.Parse(dtr["_SoLuong"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString(),i);
                             }
                         }
-
-                       
                     }
+                    ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
+                    PublicVariable.SQL_NHAP = "";
+
                     MessageBox.Show("Bạn Đã Thêm Thành Công");
                     Create_new();
                 }
@@ -619,7 +621,7 @@ namespace WindowsFormsApplication1
         {
           
         }
-        public void insert_HoadonChitiet(string mahdn, String mamh, Double SoLuong, int DonGia,string HSD,String _KMAI)
+        public void insert_HoadonChitiet(string mahdn, String mamh, Double SoLuong, int DonGia,string HSD,String _KMAI,int STT)
         {
             try
             {
@@ -649,7 +651,7 @@ namespace WindowsFormsApplication1
                 dtoNCC.ID = 1;
                 if (dt.Rows[0][0].ToString() != "")
                 {
-                    dtoNCC.ID = Convert.ToInt32(dt.Rows[0][0].ToString()) + 1;
+                    dtoNCC.ID = Convert.ToInt32(dt.Rows[0][0].ToString()) + 1 + STT;
                 }
                 ctlNCC.INSERTCTHOADONNHAP(dtoNCC);
 
@@ -960,7 +962,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN XÓA ");
                 return;
             }
-        
+            PublicVariable.SQL_NHAP = "";
 
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -1089,6 +1091,7 @@ namespace WindowsFormsApplication1
             Load_panel_create();
             Create_new();
             loadgridCTHOADON();
+            PublicVariable.SQL_NHAP = "";
         }
 
         private void linkTheoHoaDon_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -1143,6 +1146,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+            PublicVariable.SQL_NHAP = "";
             btLuu.Enabled = false;
             Load_panel_create();
             loadgridCTHOADON();
