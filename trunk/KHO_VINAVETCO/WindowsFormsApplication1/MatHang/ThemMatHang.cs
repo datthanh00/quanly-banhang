@@ -80,7 +80,7 @@ namespace WindowsFormsApplication1
            
             this.Text = "Form Insert && Update Products";
         }
-        public string MANHOMHANG, MANCC, TENMATHANG, MAMH, DVT, TINHTRANG, HINHANH, MASOTHUE, SOLUONG, MOTA, MAKHO, MADVT,KLDVT;
+        public string MANHOMHANG, MANCC, TENMATHANG, MAMH, DVT, TINHTRANG, HINHANH, MASOTHUE, SOLUONG, MOTA, MAKHO, MADVT,KLDVT,GIAMUA;
         DataView dvdropdow;
         public void loadgirdlookupTHUE()
         {
@@ -173,6 +173,7 @@ namespace WindowsFormsApplication1
                 cbNhomHang.Text = MANCC;
                 cbDvt.Text = DVT;
                 calKLDVT.Text = KLDVT;
+                txtgiamua.Text = GIAMUA;
 
                 cbthue.Text = MASOTHUE;
               
@@ -260,10 +261,6 @@ namespace WindowsFormsApplication1
                         return;
                     }
                     
-         
-                   
-                  
-                    
                     else if ( txtSoLuong.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng điền Số lượng ");
@@ -303,6 +300,7 @@ namespace WindowsFormsApplication1
                             DTO.KLDVT = calKLDVT.Text;
                             DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = "";
+                            DTO.GIAMUA= txtgiamua.Text;
                     
                           
                             DTO.MOTA = txtmota.Text;
@@ -328,6 +326,7 @@ namespace WindowsFormsApplication1
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.SOLUONGMH = txtSoLuong.Text;
                             DTO.HANSUDUNG = "";
+                            DTO.GIAMUA = txtgiamua.Text;
                     
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";

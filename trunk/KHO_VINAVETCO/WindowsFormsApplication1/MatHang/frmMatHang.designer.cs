@@ -58,6 +58,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -227,6 +228,7 @@
             this.colTENMH,
             this.colMADVT,
             this.colSOLUONGMH,
+            this.gridColumn3,
             this.colMOTA,
             this.colMAKHO,
             this.gridColumn2,
@@ -276,7 +278,7 @@
             this.colTENMH.OptionsColumn.AllowEdit = false;
             this.colTENMH.Visible = true;
             this.colTENMH.VisibleIndex = 0;
-            this.colTENMH.Width = 185;
+            this.colTENMH.Width = 199;
             // 
             // colMADVT
             // 
@@ -286,7 +288,7 @@
             this.colMADVT.OptionsColumn.AllowEdit = false;
             this.colMADVT.Visible = true;
             this.colMADVT.VisibleIndex = 2;
-            this.colMADVT.Width = 95;
+            this.colMADVT.Width = 166;
             // 
             // colSOLUONGMH
             // 
@@ -297,8 +299,8 @@
             this.colSOLUONGMH.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colSOLUONGMH.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSOLUONGMH.Visible = true;
-            this.colSOLUONGMH.VisibleIndex = 3;
-            this.colSOLUONGMH.Width = 101;
+            this.colSOLUONGMH.VisibleIndex = 4;
+            this.colSOLUONGMH.Width = 177;
             // 
             // colMOTA
             // 
@@ -307,8 +309,8 @@
             this.colMOTA.Name = "colMOTA";
             this.colMOTA.OptionsColumn.AllowEdit = false;
             this.colMOTA.Visible = true;
-            this.colMOTA.VisibleIndex = 4;
-            this.colMOTA.Width = 117;
+            this.colMOTA.VisibleIndex = 5;
+            this.colMOTA.Width = 205;
             // 
             // colMAKHO
             // 
@@ -337,11 +339,20 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 1;
-            this.gridColumn4.Width = 145;
+            this.gridColumn4.Width = 204;
             // 
             // repositoryItemPictureEdit1
             // 
             this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Giá Mua";
+            this.gridColumn3.FieldName = "GIAMUA";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 139;
             // 
             // frmMatHang
             // 
@@ -400,6 +411,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
       //  private XUAT_NHAPTONDataSet32 xUAT_NHAPTONDataSet32;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet32TableAdapters.MATHANGTableAdapter mATHANGTableAdapter1;
         //private XUAT_NHAPTONDataSet37 xUAT_NHAPTONDataSet37;

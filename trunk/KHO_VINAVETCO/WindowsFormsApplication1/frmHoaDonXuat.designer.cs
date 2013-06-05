@@ -120,6 +120,7 @@
             this.repositoryItemTextEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn51 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -149,6 +150,7 @@
             this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
@@ -179,6 +181,7 @@
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn47 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn52 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -191,9 +194,6 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn51 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn52 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -641,7 +641,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(168, 12);
+            this.lbDen.Location = new System.Drawing.Point(169, 13);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -649,7 +649,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(16, 12);
+            this.lbTu.Location = new System.Drawing.Point(17, 13);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -731,7 +731,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(414, 144);
+            this.labelControl3.Location = new System.Drawing.Point(414, 143);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(36, 13);
             this.labelControl3.TabIndex = 27;
@@ -753,7 +753,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(93, 144);
+            this.labelControl6.Location = new System.Drawing.Point(93, 143);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(27, 13);
             this.labelControl6.TabIndex = 25;
@@ -834,7 +834,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(191, 26);
+            this.labelControl9.Location = new System.Drawing.Point(191, 25);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(50, 13);
             this.labelControl9.TabIndex = 0;
@@ -842,7 +842,7 @@
             // 
             // labelControl13
             // 
-            this.labelControl13.Location = new System.Drawing.Point(202, 84);
+            this.labelControl13.Location = new System.Drawing.Point(202, 83);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(39, 13);
             this.labelControl13.TabIndex = 0;
@@ -850,7 +850,7 @@
             // 
             // labelControl14
             // 
-            this.labelControl14.Location = new System.Drawing.Point(5, 115);
+            this.labelControl14.Location = new System.Drawing.Point(5, 114);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(35, 13);
             this.labelControl14.TabIndex = 0;
@@ -858,7 +858,7 @@
             // 
             // labelControl12
             // 
-            this.labelControl12.Location = new System.Drawing.Point(5, 84);
+            this.labelControl12.Location = new System.Drawing.Point(5, 83);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(53, 13);
             this.labelControl12.TabIndex = 0;
@@ -866,7 +866,7 @@
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(205, 55);
+            this.labelControl11.Location = new System.Drawing.Point(205, 54);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(36, 13);
             this.labelControl11.TabIndex = 0;
@@ -874,7 +874,7 @@
             // 
             // labelControl10
             // 
-            this.labelControl10.Location = new System.Drawing.Point(5, 55);
+            this.labelControl10.Location = new System.Drawing.Point(5, 54);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(68, 13);
             this.labelControl10.TabIndex = 0;
@@ -882,7 +882,7 @@
             // 
             // labelControl8
             // 
-            this.labelControl8.Location = new System.Drawing.Point(5, 26);
+            this.labelControl8.Location = new System.Drawing.Point(5, 25);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(59, 13);
             this.labelControl8.TabIndex = 0;
@@ -983,7 +983,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(510, 56);
+            this.labelControl5.Location = new System.Drawing.Point(510, 55);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(66, 13);
             this.labelControl5.TabIndex = 0;
@@ -991,7 +991,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(8, 102);
+            this.labelControl7.Location = new System.Drawing.Point(8, 101);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(37, 13);
             this.labelControl7.TabIndex = 0;
@@ -999,7 +999,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(7, 56);
+            this.labelControl4.Location = new System.Drawing.Point(7, 55);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(34, 13);
             this.labelControl4.TabIndex = 0;
@@ -1007,7 +1007,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(5, 28);
+            this.labelControl2.Location = new System.Drawing.Point(5, 27);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(78, 13);
             this.labelControl2.TabIndex = 0;
@@ -1015,7 +1015,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(504, 28);
+            this.labelControl1.Location = new System.Drawing.Point(504, 27);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(74, 13);
             this.labelControl1.TabIndex = 0;
@@ -1126,7 +1126,7 @@
             // 
             this.gridColumn6.Caption = "Tên Mặt Hàng";
             this.gridColumn6.ColumnEdit = this.Grid_sanpham;
-            this.gridColumn6.FieldName = "_TenMH";
+            this.gridColumn6.FieldName = "TENMH";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 0;
@@ -1150,7 +1150,7 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Mã Mặt Hàng";
-            this.gridColumn5.FieldName = "_MaMH";
+            this.gridColumn5.FieldName = "MAMH";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.ReadOnly = true;
             this.gridColumn5.Visible = true;
@@ -1169,9 +1169,10 @@
             // 
             this.gridColumn7.Caption = "Số Lượng";
             this.gridColumn7.ColumnEdit = this.repositoryItemTextEdit3;
-            this.gridColumn7.FieldName = "_SoLuong";
+            this.gridColumn7.FieldName = "SOLUONG";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn7.SummaryItem.FieldName = "_SoLuong";
             this.gridColumn7.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
@@ -1201,6 +1202,14 @@
             this.gridColumn22.OptionsColumn.ReadOnly = true;
             this.gridColumn22.Visible = true;
             this.gridColumn22.VisibleIndex = 5;
+            // 
+            // gridColumn51
+            // 
+            this.gridColumn51.Caption = "Khuyến Mãi";
+            this.gridColumn51.FieldName = "KMAI";
+            this.gridColumn51.Name = "gridColumn51";
+            this.gridColumn51.Visible = true;
+            this.gridColumn51.VisibleIndex = 6;
             // 
             // gridColumn25
             // 
@@ -1494,6 +1503,14 @@
             this.gridColumn41.Name = "gridColumn41";
             this.gridColumn41.Visible = true;
             this.gridColumn41.VisibleIndex = 7;
+            // 
+            // gridColumn50
+            // 
+            this.gridColumn50.Caption = "Khuyến Mãi";
+            this.gridColumn50.FieldName = "KMAI";
+            this.gridColumn50.Name = "gridColumn50";
+            this.gridColumn50.Visible = true;
+            this.gridColumn50.VisibleIndex = 8;
             // 
             // gridColumn42
             // 
@@ -1838,6 +1855,14 @@
             this.gridColumn33.Visible = true;
             this.gridColumn33.VisibleIndex = 5;
             // 
+            // gridColumn52
+            // 
+            this.gridColumn52.Caption = "Khuyến Mãi";
+            this.gridColumn52.FieldName = "KMAI";
+            this.gridColumn52.Name = "gridColumn52";
+            this.gridColumn52.Visible = true;
+            this.gridColumn52.VisibleIndex = 8;
+            // 
             // gridColumn44
             // 
             this.gridColumn44.Caption = "Thành Tiền";
@@ -1903,19 +1928,19 @@
             this.toolStripMenuItem1,
             this.toolStripMenuItem2});
             this.contextMenuStrip3.Name = "contextMenuStrip2";
-            this.contextMenuStrip3.Size = new System.Drawing.Size(106, 48);
+            this.contextMenuStrip3.Size = new System.Drawing.Size(153, 70);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem1.Text = "Xem";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.toolStripMenuItem2.Text = "Xóa";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -1936,30 +1961,6 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
-            // 
-            // gridColumn50
-            // 
-            this.gridColumn50.Caption = "Khuyến Mãi";
-            this.gridColumn50.FieldName = "KMAI";
-            this.gridColumn50.Name = "gridColumn50";
-            this.gridColumn50.Visible = true;
-            this.gridColumn50.VisibleIndex = 8;
-            // 
-            // gridColumn51
-            // 
-            this.gridColumn51.Caption = "Khuyến Mãi";
-            this.gridColumn51.FieldName = "KMAI";
-            this.gridColumn51.Name = "gridColumn51";
-            this.gridColumn51.Visible = true;
-            this.gridColumn51.VisibleIndex = 6;
-            // 
-            // gridColumn52
-            // 
-            this.gridColumn52.Caption = "Khuyến Mãi";
-            this.gridColumn52.FieldName = "KMAI";
-            this.gridColumn52.Name = "gridColumn52";
-            this.gridColumn52.Visible = true;
-            this.gridColumn52.VisibleIndex = 8;
             // 
             // frmHoaDonXuat
             // 

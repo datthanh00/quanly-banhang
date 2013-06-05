@@ -946,7 +946,7 @@ namespace WindowsFormsApplication1
                 }
             }
             tienchuack = Convert.ToInt32(total);
-            total = total - Convert.ToInt32(cktien.Text);
+            total = total - Convert.ToInt32(cktien.Value);
 
             txtthanhtien.Text = total.ToString();
             
