@@ -406,8 +406,8 @@ namespace WindowsFormsApplication1
 
             if (PublicVariable.isBANGGIA)
             {
-                cmbtennhanvien.Enabled = false;
-                cmbbanggia.Enabled = false;
+                cmbtennhanvien.Enabled = true;
+                cmbbanggia.Enabled = true;
             }
             
         }

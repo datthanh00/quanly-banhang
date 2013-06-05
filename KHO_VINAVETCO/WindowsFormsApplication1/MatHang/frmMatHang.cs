@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-        string sma, sten, smathue, smanhomhang, smadvt, ssoluong, shinhanh, smota, stinhtrang, smakho, SKLDVT;
+        string sma, sten, smathue, smanhomhang, smadvt, ssoluong, shinhanh, smota, stinhtrang, smakho, SKLDVT, sgiamua;
         CTL CTL = new CTL();
         DAO DAO = new DAO();
         DTO DTO = new DTO();
@@ -229,6 +229,7 @@ namespace WindowsFormsApplication1
             sua.HINHANH = shinhanh;
             
             sua.TINHTRANG = stinhtrang;
+            sua.GIAMUA = sgiamua;
             if (sma == null||sma =="")
             {
                 if (iNgonNgu == 0)
@@ -331,6 +332,7 @@ namespace WindowsFormsApplication1
                 ssoluong = dtr["SOLUONGMH"].ToString();
                 smota = dtr["MOTA"].ToString();
                 stinhtrang = dtr["TINHTRANG"].ToString();
+                sgiamua = dtr["GIAMUA"].ToString();
                 
             }
             catch (Exception ex)
@@ -388,6 +390,7 @@ namespace WindowsFormsApplication1
                     sua.HINHANH = shinhanh;
 
                     sua.TINHTRANG = stinhtrang;
+                    sua.GIAMUA = sgiamua;
 
                     sua.ShowDialog();
                     loadmathang();
