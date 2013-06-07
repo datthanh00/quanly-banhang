@@ -76,7 +76,7 @@ namespace WindowsFormsApplication1
 
         private void btluu_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            if (XtraMessageBox.Show("Bạn có muốn lưu bảng giá này không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
             {
                 return;
             }
