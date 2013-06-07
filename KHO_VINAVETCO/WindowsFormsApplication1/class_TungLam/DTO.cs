@@ -439,6 +439,20 @@ namespace WindowsFormsApplication1
             get { return _GIABAN; }
             set { _GIABAN = value; }
         }
+        private String _GIABANTT;
+
+        public String GIABANTT
+        {
+            get { return _GIABANTT; }
+            set { _GIABANTT = value; }
+        }
+        private String _GIAXUATSS;
+
+        public String GIAXUATSS
+        {
+            get { return _GIAXUATSS; }
+            set { _GIAXUATSS = value; }
+        }
         private Byte[] _PICTURE;
 
         public Byte[] PICTURE
