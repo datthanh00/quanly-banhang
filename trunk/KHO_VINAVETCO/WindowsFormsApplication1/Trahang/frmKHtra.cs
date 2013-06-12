@@ -251,6 +251,7 @@ namespace WindowsFormsApplication1.KHtra
                     }
                     else
                     {
+                        PublicVariable.SQL_TRAXUAT = "";
                         dtoNCC.MAKH = txtmakh.Text;
                         dtoNCC.TENKH = cboTenKH.Text;
                         dtoNCC.DIACHI = txtDiachi.Text;

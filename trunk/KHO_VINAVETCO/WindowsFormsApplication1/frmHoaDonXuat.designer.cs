@@ -95,7 +95,7 @@
             this.txtMaHD = new DevExpress.XtraEditors.TextEdit();
             this.txtNgayXuat = new DevExpress.XtraEditors.DateEdit();
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtghichu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtSDT = new DevExpress.XtraEditors.TextEdit();
             this.txtDiachi = new DevExpress.XtraEditors.TextEdit();
             this.btAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -712,7 +712,7 @@
             this.groupControl1.Controls.Add(this.ckphantram);
             this.groupControl1.Controls.Add(this.txtmakh);
             this.groupControl1.Controls.Add(this.panelControl3);
-            this.groupControl1.Controls.Add(this.textBoxX1);
+            this.groupControl1.Controls.Add(this.txtghichu);
             this.groupControl1.Controls.Add(this.txtSDT);
             this.groupControl1.Controls.Add(this.txtDiachi);
             this.groupControl1.Controls.Add(this.btAdd);
@@ -941,18 +941,18 @@
             this.cbotientra.TabIndex = 21;
             this.cbotientra.Validated += new System.EventHandler(this.cbotientra_Validated);
             // 
-            // textBoxX1
+            // txtghichu
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(93, 80);
-            this.textBoxX1.Multiline = true;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(596, 50);
-            this.textBoxX1.TabIndex = 22;
+            this.txtghichu.Border.Class = "TextBoxBorder";
+            this.txtghichu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtghichu.Location = new System.Drawing.Point(93, 80);
+            this.txtghichu.Multiline = true;
+            this.txtghichu.Name = "txtghichu";
+            this.txtghichu.Size = new System.Drawing.Size(596, 50);
+            this.txtghichu.TabIndex = 22;
             // 
             // txtSDT
             // 
@@ -2104,7 +2104,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.TextEdit txtMaHD;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtghichu;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.TextEdit txtthanhtien;

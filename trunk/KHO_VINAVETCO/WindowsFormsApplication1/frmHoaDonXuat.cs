@@ -257,7 +257,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     }
                     else
                     {
-
+                        PublicVariable.SQL_XUAT = "";
                         dtoNCC.MAKH = txtmakh.Text;
                         dtoNCC.TENKH = cboTenKH.Text;
                         dtoNCC.DIACHI = txtDiachi.Text;
@@ -271,7 +271,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         {
                             cbotientra.Text = "0";
                         }
-                        dtoNCC.GHICHU = textBoxX1.Text;
+                        dtoNCC.GHICHU = txtghichu.Text;
 
                         dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
                         dtoNCC.TINHTRANG = "1";
@@ -308,13 +308,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                     if (SOLUONG<=0)
                                     {
                                         System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " KHÔNG THỂ XUẤT <=0");
-
                                         return;
                                     }
                                     if (slton <SOLUONG )
                                     {
                                         System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Không đủ số lượng để xuất");
-
                                         return;
                                     }
                                 }
@@ -352,17 +350,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
                             }
-                            if (PublicVariable.TATCA == "False")
-                            {
-                                MessageBox.Show("TRÙNG MÃ HÓA ĐƠN");
-                                return;
-                            }
+
                             dtoNCC.IsUPDATE = true;
                             ctlNCC.UPDATEHOADONXUAT(dtoNCC);
 
                             for (int i = 0; i < rowcount; i++)
                             {
-                                DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
+                                DataRow dtr = gridCTHOADON.GetDataRow(i);
                                 String sID = dtr["ID"].ToString();
 
                                 if (sID != "")
@@ -560,6 +554,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
             txtthanhtien.Text = "";
             mahdtam = "";
             btLuu.Enabled = true;
+            txtghichu.Text = "";
+            ckphantram.Text = "0";
+            cktien.Text = "0";
             PublicVariable.SQL_XUAT = "";
 
             loadmahdx();
@@ -869,10 +866,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         {
                             return;
                         }
-                        
 
-                        ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
-                        ctlNCC.UPDATE_KHOHANG_NX(dtr["MAMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "0", "-" + dtr["SOLUONG"].ToString(), "0");
+
+                        ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID), xhd.MAMH, dtr["_LOHANG"].ToString(), dtr["SOLUONG"].ToString());
+                       // ctlNCC.UPDATE_KHOHANG_NX(dtr["MAMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "0", "-" + dtr["SOLUONG"].ToString(), "0");
                         PublicVariable.TMPtring = "";
                     }
                     else
@@ -888,7 +885,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         {
                             cbotientra.Text = "0";
                         }
-                        dtoNCC.GHICHU = textBoxX1.Text;
+                        dtoNCC.GHICHU = txtghichu.Text;
 
                         dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
                         return;
@@ -904,11 +901,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     {
                         cbotientra.Text = "0";
                     }
-                    dtoNCC.GHICHU = textBoxX1.Text;
+                    dtoNCC.GHICHU = txtghichu.Text;
 
                     dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
 
                     ctlNCC.UPDATEHOADONXUAT(dtoNCC);
+                    ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
+                    MessageBox.Show(" Đã xóa và lưu thành công ");
                 }
             }
         }
@@ -916,12 +915,19 @@ namespace WindowsFormsApplication1.HoaDonXuat
         {
             loadgridCTHOADON(MAHDX);
             txtMaHD.Text = MAHDX;
-            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,GHICHU,CKTIEN  FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
             txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
             cbotientra.Text = DT.Rows[0]["TIENDATRA"].ToString();
             txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();
+            txtghichu.Text = DT.Rows[0]["GHICHU"].ToString();
+     
+            gettotal();
+            int _cktien = Convert.ToInt32(DT.Rows[0]["CKTIEN"].ToString());
+            cktien.Value = _cktien;
+            double thanhtien = tienchuack;
+            ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -955,7 +961,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 return;
             }
             PublicVariable.SQL_XUAT = "";
-            btLuu.Enabled = false;
+            btLuu.Enabled = true;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -1324,5 +1330,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             conlai = thanhtien - tientra;
             txtconLai.Text = conlai.ToString();
         }
+
+   
     }
 }
