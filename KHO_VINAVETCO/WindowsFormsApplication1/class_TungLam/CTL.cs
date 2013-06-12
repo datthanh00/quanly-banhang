@@ -519,9 +519,9 @@ namespace WindowsFormsApplication1
         {
             DAO.UPDATECTHOADONXUAT(DTO);
         }
-        public void DELETECTHOADONXUAT(string MAHDN, int ID)
+        public void DELETECTHOADONXUAT(string MAHDN, int ID, string MAMH, string LOHANG, string SOLUONG)
         {
-            DAO.DELETECTHOADONXUAT(MAHDN, ID);
+            DAO.DELETECTHOADONXUAT(MAHDN, ID,MAMH,LOHANG,SOLUONG);
         }
         public void UPDATE_KHOHANG_NX(string MAMH, string LOHANG, string NHAP, string TRANHAP, string XUAT, string TRAXUAT)
         {

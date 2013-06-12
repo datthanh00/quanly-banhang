@@ -392,6 +392,7 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
+                        PublicVariable.SQL_TRANHAP = "";
                         dtoNCC.MANCC = txtMANCC.Text;
                         dtoNCC.TENNCC = cboTenNCC.Text;
                         dtoNCC.SDT = txtSoDT.Text;

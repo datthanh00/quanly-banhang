@@ -480,6 +480,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
+                    PublicVariable.SQL_NHAP = "";
                     dtoNCC.MANCC = txtMANCC.Text;
                     dtoNCC.TENNCC = cboTenNCC.Text;
                     dtoNCC.SDT = txtSoDT.Text;
@@ -1149,7 +1150,7 @@ namespace WindowsFormsApplication1
         public void View_phieunhap(string MAHDN)
         {
             loadgridCTHOADON(MAHDN);
-            gettotal();
+           
             txtMaHD.Text = MAHDN;
             txtlohang.Text =MAHDN;
             string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) as NGAYNHAP ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA,T1.GHICHU ,T1.CKTIEN,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
@@ -1159,6 +1160,7 @@ namespace WindowsFormsApplication1
             cbotientra.Text = DT.Rows[0]["TIENDATRA"].ToString();
             txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();
             txtghichu.Text = DT.Rows[0]["GHICHU"].ToString();
+            gettotal();
             int _cktien = Convert.ToInt32(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
