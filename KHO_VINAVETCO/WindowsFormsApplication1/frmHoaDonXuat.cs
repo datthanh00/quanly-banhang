@@ -403,8 +403,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 dtoNCC.LOHANG = lohang;
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGXUAT = SoLuong;
-                dtoNCC.GIAXUATSS = DonGia.ToString();
-                dtoNCC.GIABANTT = tienthu.ToString();
+                dtoNCC.GIABAN = DonGia.ToString();
+                dtoNCC.TIENTHU = tienthu;
                 dtoNCC.GIANHAP =Convert.ToInt32(GIANHAP);
                 if (HSD.Length > 5)
                 {
@@ -440,9 +440,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 dtoNCC.LOHANG = lohang;
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGXUAT = SoLuong;
-                dtoNCC.GIAXUATSS = DonGia.ToString();
+                dtoNCC.GIABAN = DonGia.ToString();
                 dtoNCC.ID = ID;
-                dtoNCC.GIABANTT = tienthu.ToString();
+                dtoNCC.TIENTHU = tienthu;
                 dtoNCC.GIANHAP = Convert.ToInt32(GIANHAP);
                 if (HSD.Length > 5)
                 {
@@ -626,7 +626,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
             Load_panel_filter();
             //string SQL = "SELECT convert(varchar,T3.NGAYXUAT,103) AS NGAYXUAT,TENNCC,T3.TENKH ,T3.MAHDX , T3.MAMH , T4.TENMH ,T3.SOLUONGXUAT ,T3.SOLUONGXUAT*KLDVT as KHOILUONG,T3.GIATIEN,soluongxuat*giatien AS THANHTIEN,TIENTHU, GHICHU   FROM (select T2.NGAYXUAT,TIENTHU,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,GHICHU,t2.tenkh FROM (SELECT * FROM CHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh,GHICHU from hoadonxuat  as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  T9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN (select TENMH,TENNCC,MAMH,KLDVT FROM MATHANG,NHACUNGCAP WHERE MATHANG.MANCC=NHACUNGCAP.MANCC) AS T4 ON T3.MAMH =T4.MAMH";
-            string SQL = "SELECT convert(varchar,NGAYXUAT,103) AS NGAYXUAT,TENNCC,TENKH ,KMAI,HOADONXUAT.MAHDX , MATHANG.MAMH , TENMH ,SOLUONGXUAT ,SOLUONGXUAT*KLDVT as KHOILUONG,GIAXUATSS AS GIATIEN,SOLUONGXUAT*GIAXUATSS AS THANHTIEN,GIABANTT, GHICHU FROM HOADONXUAT,CHITIETHDX,MATHANG,NHACUNGCAP,KHACHHANG WHERE HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND CHITIETHDX.MAMH=MATHANG.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "'";
+            string SQL = "SELECT convert(varchar,NGAYXUAT,103) AS NGAYXUAT,TENNCC,TENKH ,KMAI,HOADONXUAT.MAHDX , MATHANG.MAMH , TENMH ,SOLUONGXUAT ,SOLUONGXUAT*KLDVT as KHOILUONG,GIABAN AS GIATIEN,SOLUONGXUAT*GIABAN AS THANHTIEN,TIENTHU, GHICHU FROM HOADONXUAT,CHITIETHDX,MATHANG,NHACUNGCAP,KHACHHANG WHERE HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND CHITIETHDX.MAMH=MATHANG.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "'";
             
             DataTable TBS = ctlNCC.GETDATA(SQL);
             gridControl3.MainView = gridView1;
@@ -655,7 +655,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC, KLDVT, DONVITINH,sum(KMAI) as KMAI, sum(SOLUONGXUAT) as SOLUONGXUAT, GIAXUATSS AS GIATIEN,SUM(GIABANTT) AS TIENTHU,SUM(SOLUONGXUAT*KLDVT) AS KHOILUONG, SUM(SOLUONGXUAT*GIABANTT) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIAXUATSS,GIABANTT,KMAI FROM CHITIETHDX,HOADONXUAT WHERE CHITIETHDX.MAHDX=HOADONXUAT.MAHDX AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as CHITIETHDX WHERE MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=CHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC, DONVITINH,GIAXUATSS,KLDVT ";
+            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC, KLDVT, DONVITINH,sum(KMAI) as KMAI, sum(SOLUONGXUAT) as SOLUONGXUAT, GIABAN AS GIATIEN,SUM(TIENTHU) AS TIENTHU,SUM(SOLUONGXUAT*KLDVT) AS KHOILUONG, SUM(SOLUONGXUAT*TIENTHU) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIABAN,TIENTHU,KMAI FROM CHITIETHDX,HOADONXUAT WHERE CHITIETHDX.MAHDX=HOADONXUAT.MAHDX AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as CHITIETHDX WHERE MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=CHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC, DONVITINH,GIABAN,KLDVT ";
            
             DataTable TBS = ctlNCC.GETDATA(SQL);
             gridControl3.MainView = gridView3;
@@ -898,10 +898,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         cbotientra.Text = "0";
                     }
                     dtoNCC.GHICHU = txtghichu.Text;
-
+                    dtoNCC.CKTIEN = cktien.Value.ToString();
                     dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
-
+                    dtoNCC.MANV = sMaNV;
                     ctlNCC.UPDATEHOADONXUAT(dtoNCC);
+
                     ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
                     MessageBox.Show(" Đã xóa và lưu thành công ");
                 }

@@ -1087,9 +1087,7 @@ namespace WindowsFormsApplication1
                         // ctlNCC.DELETE_KHOHANG(dtr["MAMH"].ToString(), txtlohang.Text);
                         PublicVariable.TMPtring = "";
 
-                        ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
-                        PublicVariable.SQL_NHAP = "";
-                        MessageBox.Show("Bạn Đã Xóa Thành Công");
+                       
                     }
                     else
                     {
@@ -1114,7 +1112,12 @@ namespace WindowsFormsApplication1
                     dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
                     dtoNCC.MAHDN = txtMaHD.Text;
                     dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
+                    dtoNCC.CKTIEN = cktien.Value.ToString();
                     ctlNCC.UPDATEHOADONNHAP(dtoNCC);
+
+                    ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
+                    PublicVariable.SQL_NHAP = "";
+                    MessageBox.Show("Bạn Đã Xóa Thành Công");
                 }
             }
         }
