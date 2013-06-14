@@ -373,11 +373,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             MessageBox.Show("Bạn Đã Sửa Thành Công");
                         }
 
-
-
-
-
-
                         loadGiaoDich();
                        
                         Create_new();
@@ -820,6 +815,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
+
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -923,11 +919,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
             txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();
             txtghichu.Text = DT.Rows[0]["GHICHU"].ToString();
      
-            gettotal();
+            
             int _cktien = Convert.ToInt32(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
             ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+            gettotal();
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
