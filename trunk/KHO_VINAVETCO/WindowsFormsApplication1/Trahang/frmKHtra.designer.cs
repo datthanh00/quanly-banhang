@@ -130,6 +130,7 @@
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn54 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.resTENMATHANG = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
@@ -197,7 +198,6 @@
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn54 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -651,7 +651,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(167, 15);
+            this.lbDen.Location = new System.Drawing.Point(165, 9);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -659,7 +659,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(15, 15);
+            this.lbTu.Location = new System.Drawing.Point(12, 8);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -1018,7 +1018,7 @@
             // 
             this.textBoxX1.Border.Class = "TextBoxBorder";
             this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(93, 80);
+            this.textBoxX1.Location = new System.Drawing.Point(93, 83);
             this.textBoxX1.Multiline = true;
             this.textBoxX1.Name = "textBoxX1";
             this.textBoxX1.Size = new System.Drawing.Size(596, 50);
@@ -1313,6 +1313,12 @@
             this.ID.Caption = "ID";
             this.ID.FieldName = "ID";
             this.ID.Name = "ID";
+            // 
+            // gridColumn54
+            // 
+            this.gridColumn54.Caption = "LÔ HÀNG";
+            this.gridColumn54.FieldName = "LOHANG";
+            this.gridColumn54.Name = "gridColumn54";
             // 
             // resTENMATHANG
             // 
@@ -2013,12 +2019,6 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
-            // 
-            // gridColumn54
-            // 
-            this.gridColumn54.Caption = "LÔ HÀNG";
-            this.gridColumn54.FieldName = "LOHANG";
-            this.gridColumn54.Name = "gridColumn54";
             // 
             // frmKHtra
             // 

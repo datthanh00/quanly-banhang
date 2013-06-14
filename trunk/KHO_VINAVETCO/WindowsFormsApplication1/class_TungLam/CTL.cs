@@ -245,6 +245,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMATHANG(MAMH,LOHANG);
         }
+        public DataTable GETMATHANG_TRANCC(string MAMH, String LOHANG)
+        {
+            return DAO.GETMATHANG_TRANCC(MAMH, LOHANG);
+        }
         public DataTable GETMATHANG_XUAT(string MAMH, String LOHANG, String MAKH)
         {
             return DAO.GETMATHANG_XUAT(MAMH, LOHANG,MAKH);
@@ -424,9 +428,9 @@ namespace WindowsFormsApplication1
         {
             DAO.DELETECTHOADONXUATTAM(MAHDX);
         }
-        public void DELETEtraCTHOADONNHAP(string MAHDN, int ID)
+        public void DELETEtraCTHOADONNHAP(string MAHDN, int ID, string MAMH, string LOHANG, string SOLUONG, string KMAI)
         {
-            DAO.DELETEtraCTHOADONNHAP(MAHDN, ID);
+            DAO.DELETEtraCTHOADONNHAP(MAHDN, ID, MAMH, LOHANG, SOLUONG, KMAI);
         }
         public int maxrowCTHOADONNHAP(string MHDN)
         {

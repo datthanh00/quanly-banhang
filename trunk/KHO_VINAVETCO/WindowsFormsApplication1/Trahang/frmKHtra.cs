@@ -240,7 +240,6 @@ namespace WindowsFormsApplication1.KHtra
         DataTable tbsanpham;
         private void btLuu_Click(object sender, EventArgs e)
         {
-
             if (XtraMessageBox.Show("Bạn có muốn Lưu Vào Hóa Đơn Khách Hàng Trả Không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 try
@@ -265,7 +264,6 @@ namespace WindowsFormsApplication1.KHtra
                             cbotientra.Text = "0";
                         }
                         dtoNCC.GHICHU = textBoxX1.Text;
-
                         dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
 
                         int rowcount = gridCTHOADON.DataRowCount;
@@ -425,7 +423,7 @@ namespace WindowsFormsApplication1.KHtra
         }
         double conlai, thanhtien, tientra;
 
-        public void insert_HoadonChitietxuat(string mahdx, String mamh, Double SoLuong, int DonGia, int tienthu, string HSD, String _KMAI,int STT)
+        public void insert_HoadonChitietxuat(string mahdx, String mamh, Double SoLuong, int DonGia, int tienthu, string HSD, String KMAI,int STT)
         {
             try
             {
@@ -435,7 +433,9 @@ namespace WindowsFormsApplication1.KHtra
                 dtoNCC.GIATIEN = DonGia;
                 dtoNCC.GIABAN = DonGia.ToString();
                 dtoNCC.TIENTHU = tienthu;
+                HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
                 dtoNCC.HSD = HSD;
+                dtoNCC.KMAI = KMAI;
                 string SQL = "SELECT MAX(ID) FROM traCHITIETHDX WHERE MAHDX='" + mahdx + "'";
                 DataTable dt = ctlNCC.GETDATA(SQL);
                 dtoNCC.ID = 1+STT;
@@ -451,7 +451,7 @@ namespace WindowsFormsApplication1.KHtra
             catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu", "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
         }
-        public void update_HoadonChitietxuat(string mahdx, int ID, String mamh, Double SoLuong, int DonGia, int tienthu, string HSD, String _KMAI)
+        public void update_HoadonChitietxuat(string mahdx, int ID, String mamh, Double SoLuong, int DonGia, int tienthu, string HSD, String KMAI)
         {
             try
             {
@@ -460,8 +460,10 @@ namespace WindowsFormsApplication1.KHtra
                 dtoNCC.SOLUONGXUAT = SoLuong;
                 dtoNCC.GIATIEN = DonGia;
                 dtoNCC.GIABAN = DonGia.ToString();
+                HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
                 dtoNCC.HSD = HSD;
                 dtoNCC.ID = ID;
+                dtoNCC.KMAI = KMAI;
                 dtoNCC.TIENTHU = tienthu;
                 
                 ctlNCC.UPDATEtraCTHOADONXUAT(dtoNCC);
@@ -801,7 +803,7 @@ namespace WindowsFormsApplication1.KHtra
                 }
             }
             tienchuack = Convert.ToInt32(total);
-            total = total - Convert.ToInt32(cktien.Text);
+            total = total - Convert.ToInt32(cktien.Value);
             txtthanhtien.Text = total.ToString();
             if (cbotientra.Text != "")
             {
@@ -872,9 +874,7 @@ namespace WindowsFormsApplication1.KHtra
                                 ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), dtr["LOHANG"].ToString(), dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
                                // ctlNCC.UPDATE_KHOHANG_NX(dtr["MAMH"].ToString(), "1", "0", "0", "0", (-soluonghientai).ToString());
                                // PublicVariable.TMPtring = "";
-                                ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRAXUAT);
-                                PublicVariable.SQL_TRAXUAT = "";
-                                MessageBox.Show("Bạn Đã Xóa Thành Công");
+                               
                             }
                         }
                     }
@@ -903,12 +903,12 @@ namespace WindowsFormsApplication1.KHtra
                     }
                     gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
                     gettotal();
-
+                    dtoNCC.MANV = sMaNV;
                     dtoNCC.MAKH = txtmakh.Text;
                     dtoNCC.TENKH = cboTenKH.Text;
                     dtoNCC.DIACHI = txtDiachi.Text;
                     dtoNCC.SDT = txtSDT.Text;
-
+                    dtoNCC.CKTIEN = cktien.Value.ToString();
                     // dtoNCC.WEBSITE = txtWeb.Text;
                     dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
                     dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
@@ -922,6 +922,9 @@ namespace WindowsFormsApplication1.KHtra
                     dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
 
                     ctlNCC.UPDATEtraHOADONXUAT(dtoNCC);
+                    ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRAXUAT);
+                    PublicVariable.SQL_TRAXUAT = "";
+                    MessageBox.Show("Bạn Đã Xóa Thành Công");
 
                 }
             }
