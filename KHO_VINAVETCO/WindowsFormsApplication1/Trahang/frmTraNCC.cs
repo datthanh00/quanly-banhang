@@ -128,12 +128,13 @@ namespace WindowsFormsApplication1
             dt.Columns.Add(new DataColumn("ID"));
             dt.Columns.Add(new DataColumn("GIANHAP"));
             dt.Columns.Add(new DataColumn("HSD"));
+            dt.Columns.Add(new DataColumn("TIENTRA"));
             gridControl1.MainView = gridCTHOADON;
             gridControl1.DataSource = dt;
             CountRowTBEdit = 0;
 
             gridCTHOADON.Columns["DONGIA"].ColumnEdit = this.repositoryItemTextEdit1;
-
+            gridCTHOADON.Columns["TIENTRA"].ColumnEdit = this.repositoryItemTextEdit1;
             gridCTHOADON.Columns["_Total"].ColumnEdit = this.repositoryItemTextEdit1;
             this.repositoryItemTextEdit1.Mask.EditMask = "n0";
             this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -706,6 +707,7 @@ namespace WindowsFormsApplication1
                         dtr["HSD"] = dtmh.Rows[0]["HSD"];
                         //dtr["TENMH"] = dtmh.Rows[0]["TENMH"];
                         dtr["_Total"] = "0";
+                        dtr["TIENTRA"] = "0";
                     }
                     else if (e.Column.FieldName.ToString() == "SOLUONG")
                     {
@@ -715,6 +717,7 @@ namespace WindowsFormsApplication1
                         {
                             Double total = Double.Parse(dtr["DONGIA"].ToString()) * Num;
                             dtr["_Total"] = total.ToString();
+                            dtr["TIENTRA"] = total.ToString();
                             gettotal();
                         }
                         else
@@ -722,17 +725,39 @@ namespace WindowsFormsApplication1
                             dtr["SOLUONG"] = "0";
                             dtr["KMAI"] = "0";
                             dtr["_Total"] = "0";
+                            dtr["TIENTRA"] = "0";
                         }
                     }
                     else if (e.Column.FieldName.ToString() == "DONGIA")
                     {
                         Double Num;
                         bool isNum = Double.TryParse(dtr["DONGIA"].ToString(), out Num);
-                        if (!isNum)
+                        if (isNum)
                         {
-                            dtr["DONGIA"] = "0";
+                            Double total = Double.Parse(dtr["DONGIA"].ToString()) * Num;
+                            dtr["_Total"] = total.ToString();
+                            dtr["TIENTRA"] = total.ToString();
+                            gettotal();
+                        }
+                        else
+                        {
+                            dtr["SOLUONG"] = "0";
+                            dtr["KMAI"] = "0";
+                            dtr["_Total"] = "0";
+                            dtr["TIENTRA"] = "0";
                         }
 
+                    }
+                    else if (e.Column.FieldName.ToString() == "_HSD")
+                    {
+                        string NGAY = dtr["_HSD"].ToString();
+                        if (NGAY.Length > 10)
+                            dtr["_HSD"] = NGAY.Substring(0, 10);
+                    }
+                    else if (e.Column.FieldName.ToString() == "TIENTRA")
+                    {
+
+                        gettotal();
                     }
                    
                 }
@@ -757,7 +782,7 @@ namespace WindowsFormsApplication1
                 if (dtr != null)
                 {
                     Double Num;
-                    bool isNum = Double.TryParse(dtr["_Total"].ToString(), out Num);
+                    bool isNum = Double.TryParse(dtr["TIENTRA"].ToString(), out Num);
                     if (isNum)
                     {
                         total += Num;

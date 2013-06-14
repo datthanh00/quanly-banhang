@@ -864,7 +864,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         }
 
 
-                        ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID), xhd.MAMH, dtr["_LOHANG"].ToString(), dtr["SOLUONG"].ToString());
+                        ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID), xhd.MAMH, dtr["_LOHANG"].ToString(), dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
                        // ctlNCC.UPDATE_KHOHANG_NX(dtr["MAMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "0", "-" + dtr["SOLUONG"].ToString(), "0");
                         PublicVariable.TMPtring = "";
                     }
