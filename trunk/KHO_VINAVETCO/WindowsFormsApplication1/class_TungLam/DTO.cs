@@ -695,6 +695,13 @@ namespace WindowsFormsApplication1
             get { return _TIENTHU; }
             set { _TIENTHU = value; }
         }
+
+        private string _TIENTRA;
+        public string TIENTRA
+        {
+            get { return _TIENTRA; }
+            set { _TIENTRA = value; }
+        }
         
     }
 }

@@ -416,9 +416,9 @@ namespace WindowsFormsApplication1
         {
             DAO.UPDATECTHOADONNHAP(DTO);
         }
-        public void DELETECTHOADONNHAP(string MAHDN, int ID, string MAMH, string LOHANG,string SOLUONG)
+        public void DELETECTHOADONNHAP(string MAHDN, int ID, string MAMH, string LOHANG,string SOLUONG, string KMAI)
         {
-            DAO.DELETECTHOADONNHAP(MAHDN, ID, MAMH,LOHANG,SOLUONG);
+            DAO.DELETECTHOADONNHAP(MAHDN, ID, MAMH,LOHANG,SOLUONG,KMAI);
         }
         public void DELETECTHOADONXUATTAM(string MAHDX)
         {
@@ -519,9 +519,9 @@ namespace WindowsFormsApplication1
         {
             DAO.UPDATECTHOADONXUAT(DTO);
         }
-        public void DELETECTHOADONXUAT(string MAHDN, int ID, string MAMH, string LOHANG, string SOLUONG)
+        public void DELETECTHOADONXUAT(string MAHDN, int ID, string MAMH, string LOHANG, string SOLUONG, string KMAI)
         {
-            DAO.DELETECTHOADONXUAT(MAHDN, ID,MAMH,LOHANG,SOLUONG);
+            DAO.DELETECTHOADONXUAT(MAHDN, ID,MAMH,LOHANG,SOLUONG,KMAI);
         }
         public void UPDATE_KHOHANG_NX(string MAMH, string LOHANG, string NHAP, string TRANHAP, string XUAT, string TRAXUAT)
         {
@@ -535,9 +535,9 @@ namespace WindowsFormsApplication1
         {
             DAO.DELETE_KHOHANG(MAMH, LOHANG);
         }
-        public void DELETEtraCTHOADONXUAT(string MAHDN, int ID)
+        public void DELETEtraCTHOADONXUAT(string MAHDN, int ID, string MAMH, string LOHANG, string SOLUONG, string KMAI)
         {
-            DAO.DELETEtraCTHOADONXUAT(MAHDN, ID);
+            DAO.DELETEtraCTHOADONXUAT(MAHDN, ID, MAMH, LOHANG, SOLUONG, KMAI);
         }
         public DataTable GETtraHOADONXUAT(DTO dto)
         {

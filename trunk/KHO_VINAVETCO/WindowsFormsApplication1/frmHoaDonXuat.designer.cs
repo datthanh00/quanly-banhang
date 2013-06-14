@@ -1192,7 +1192,7 @@
             this.gridColumn8.FieldName = "_DonGia";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 4;
+            this.gridColumn8.VisibleIndex = 5;
             // 
             // gridColumn22
             // 
@@ -1201,7 +1201,7 @@
             this.gridColumn22.Name = "gridColumn22";
             this.gridColumn22.OptionsColumn.ReadOnly = true;
             this.gridColumn22.Visible = true;
-            this.gridColumn22.VisibleIndex = 5;
+            this.gridColumn22.VisibleIndex = 6;
             // 
             // gridColumn51
             // 
@@ -1209,7 +1209,7 @@
             this.gridColumn51.FieldName = "KMAI";
             this.gridColumn51.Name = "gridColumn51";
             this.gridColumn51.Visible = true;
-            this.gridColumn51.VisibleIndex = 6;
+            this.gridColumn51.VisibleIndex = 4;
             // 
             // gridColumn25
             // 
@@ -1903,7 +1903,7 @@
             this.EditToolStripMenuItem,
             this.linkIntheomathang});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(169, 92);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(169, 70);
             // 
             // ViewToolStripMenuItem
             // 

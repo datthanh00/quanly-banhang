@@ -86,11 +86,11 @@ namespace WindowsFormsApplication1.KHtra
             dt.Columns.Add(new DataColumn("SOLUONG"));
             dt.Columns.Add(new DataColumn("KMAI"));
             dt.Columns.Add(new DataColumn("DONGIA"));
-            //dt.Columns.Add(new DataColumn("_Thue"));
             dt.Columns.Add(new DataColumn("_DVT"));
             dt.Columns.Add(new DataColumn("_Total"));
             dt.Columns.Add(new DataColumn("ID"));
             dt.Columns.Add(new DataColumn("TIENTHU"));
+            dt.Columns.Add(new DataColumn("LOHANG"));
             gridControl1.DataSource = dt;
             CountRowTBEdit = 0;
 
@@ -364,6 +364,9 @@ namespace WindowsFormsApplication1.KHtra
                                 }
                                 insert_HoadonChitietxuat(txtMaHD.Text, dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["DONGIA"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString(),i);
                             }
+                            ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRAXUAT);
+                            PublicVariable.SQL_TRAXUAT = "";
+                            MessageBox.Show("Bạn Đã Thêm Thành Công");
                         }
                         else
                         {
@@ -391,7 +394,9 @@ namespace WindowsFormsApplication1.KHtra
                                 }
                             }
 
-
+                            ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRAXUAT);
+                            PublicVariable.SQL_TRAXUAT = "";
+                            MessageBox.Show("Bạn Đã Sửa Thành Công");
                         }
 
 
@@ -400,7 +405,7 @@ namespace WindowsFormsApplication1.KHtra
 
 
                         loadGiaoDich();
-                        MessageBox.Show("Bạn Đã Thêm Thành Công");
+                       
                         Create_new();
                     }
                 }
@@ -812,6 +817,7 @@ namespace WindowsFormsApplication1.KHtra
            
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                PublicVariable.SQL_TRAXUAT = "";
                 int focusrow = gridCTHOADON.FocusedRowHandle;
                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(focusrow);
                 if (dtr != null)
@@ -831,89 +837,46 @@ namespace WindowsFormsApplication1.KHtra
                             MessageBox.Show("KHÔNG CÓ QUYỀN ");
                             return;
                         }
-                        string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
-                        DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
-                        if (txtNgayXuat.Text != dtn.Rows[0][0].ToString())
-                        {
-                            MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
-                            return;
-                        }
+   
                         string HSD = dtr["_HSD"].ToString();
                         HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
-                        if (PublicVariable.isHSD)
+
+                        String SQL = "Select tonkho from khohang where mamh='" + dtr["MAMH"].ToString() + "' and lohang='" + dtr["LOHANG"].ToString() + "' ";
+                        DataTable dt = ctlNCC.GETDATA(SQL);
+
+                        if (dt.Rows.Count > 0)
                         {
-                            String SQL = "select * from khohang where  mamh='" + dtr["MAMH"].ToString() + "' and HSD ='" + HSD + "'";
-                            DataTable dt = ctlNCC.GETDATA(SQL);
-                            if (dt.Rows.Count > 0)
+                            double soluongmh = Convert.ToDouble(dt.Rows[0][0].ToString());
+                            double soluonghientai = Convert.ToDouble(dtr["SOLUONG"].ToString());
+
+                            if (soluonghientai > soluongmh)
                             {
-                                dtoNCC.LOHANG = dt.Rows[0]["LOHANG"].ToString();
+                                MessageBox.Show("mặt hàng: " + dtr["MAMH"].ToString() + " này đã xuất nên không thể xóa");
+                                return;
                             }
                             else
                             {
-                                MessageBox.Show("Mặt hàng  " + dtr["MAMH"].ToString() + " không có lô hàng nên không thể xóa  ");
-                                return;
-                            }
+                                PublicVariable.TMPtring = "";
+                                frmxoahd xhd = new frmxoahd();
+                                xhd.MAHD = txtMaHD.Text;
+                                xhd.MAMH = dtr["MAMH"].ToString();
+                                xhd.TENMH = dtr["TENMH"].ToString();
 
-                            PublicVariable.TMPtring = "";
-                            frmxoahd xhd = new frmxoahd();
-                            xhd.MAHD = txtMaHD.Text;
-                            xhd.MAMH = dtr["MAMH"].ToString();
-                            xhd.TENMH = dtr["TENMH"].ToString();
-
-                            xhd.ShowDialog();
-                            if (PublicVariable.TMPtring == "")
-                            {
-                                return;
-                            }
-                           
-
-                            ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
-
-                            ctlNCC.UPDATE_KHOHANG_NX(dtr["MAMH"].ToString(), dtoNCC.LOHANG,  "0", "0", "0","-"+dtr["SOLUONG"].ToString());
-                            PublicVariable.TMPtring = "";
-                        }
-                        else
-                        {
-                            String SQL = "Select tonkho from khohang where mamh='" + dtr["MAMH"].ToString() + "' and lohang='1' ";
-                            DataTable dt = ctlNCC.GETDATA(SQL);
-
-                            if (dt.Rows.Count > 0)
-                            {
-                                double soluongmh = Convert.ToDouble(dt.Rows[0][0].ToString());
-                                double soluonghientai = Convert.ToDouble(dtr["SOLUONG"].ToString());
-
-                                if (soluonghientai > soluongmh)
+                                xhd.ShowDialog();
+                                if (PublicVariable.TMPtring == "")
                                 {
-                                    MessageBox.Show("mặt hàng " + dtr["MAMH"].ToString() + " này đã xuất nên không thể xóa");
                                     return;
                                 }
-                                else
-                                {
-                                    PublicVariable.TMPtring = "";
-                                    frmxoahd xhd = new frmxoahd();
-                                    xhd.MAHD = txtMaHD.Text;
-                                    xhd.MAMH = dtr["MAMH"].ToString();
-                                    xhd.TENMH = dtr["TENMH"].ToString();
 
-                                    xhd.ShowDialog();
-                                    if (PublicVariable.TMPtring == "")
-                                    {
-                                        return;
-                                    }
-                                    
 
-                                    ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID));
-                                    ctlNCC.UPDATE_KHOHANG_NX(dtr["MAMH"].ToString(), "1", "0", "0", "0", (-soluonghientai).ToString());
-                                    PublicVariable.TMPtring = "";
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("không có mặt hàng " + dtr["MAMH"].ToString() + " trong kho nên không thể xóa ");
-                                return;
+                                ctlNCC.DELETEtraCTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), dtr["LOHANG"].ToString(), dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
+                               // ctlNCC.UPDATE_KHOHANG_NX(dtr["MAMH"].ToString(), "1", "0", "0", "0", (-soluonghientai).ToString());
+                               // PublicVariable.TMPtring = "";
+                                ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRAXUAT);
+                                PublicVariable.SQL_TRAXUAT = "";
+                                MessageBox.Show("Bạn Đã Xóa Thành Công");
                             }
                         }
-                        
                     }
                     else
                     {

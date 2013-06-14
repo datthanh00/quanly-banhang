@@ -182,6 +182,7 @@ namespace WindowsFormsApplication1
             dt.Columns.Add(new DataColumn("_DVT"));
             dt.Columns.Add(new DataColumn("_Total"));
             dt.Columns.Add(new DataColumn("ID"));
+            dt.Columns.Add(new DataColumn("TIENTRA"));
            // gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
            // gridColumn8.DisplayFormat.FormatString = "{0:0,0}";
             gridControl1.MainView = gridCTHOADON;
@@ -190,7 +191,7 @@ namespace WindowsFormsApplication1
             CountRowTBEdit = 0;
 
             gridCTHOADON.Columns["_DonGia"].ColumnEdit = this.repositoryItemTextEdit1;
-           
+            gridCTHOADON.Columns["TIENTRA"].ColumnEdit = this.repositoryItemTextEdit1;
             gridCTHOADON.Columns["_Total"].ColumnEdit = this.repositoryItemTextEdit1;
             this.repositoryItemTextEdit1.Mask.EditMask = "n0";
             this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -579,7 +580,7 @@ namespace WindowsFormsApplication1
                             {
 
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
-                                insert_HoadonChitiet(txtMaHD.Text, dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString(), i);
+                                insert_HoadonChitiet(txtMaHD.Text, dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["TIENTRA"].ToString(), dtr["_HSD"].ToString(), dtr["KMAI"].ToString(), i);
                             }
 
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
@@ -607,11 +608,11 @@ namespace WindowsFormsApplication1
 
                                 if (sID != "")
                                 {
-                                    update_HoadonChitiet(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());
+                                    update_HoadonChitiet(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["TIENTRA"].ToString(), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());
                                 }
                                 else
                                 {
-                                    insert_HoadonChitiet(txtMaHD.Text, dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString(), i);
+                                    insert_HoadonChitiet(txtMaHD.Text, dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["TIENTRA"].ToString(), dtr["_HSD"].ToString(), dtr["KMAI"].ToString(), i);
                                 }
                             }
 
@@ -677,7 +678,7 @@ namespace WindowsFormsApplication1
         {
           
         }
-        public void insert_HoadonChitiet(string mahdn, String mamh, Double SoLuong, int DonGia,string HSD,String _KMAI,int STT)
+        public void insert_HoadonChitiet(string mahdn, String mamh, Double SoLuong, int DonGia, string TIENTRA, string HSD, String _KMAI, int STT)
         {
             try
             {
@@ -703,6 +704,7 @@ namespace WindowsFormsApplication1
 
                 dtoNCC.SOLUONGNHAP = SoLuong;
                 dtoNCC.GIANHAP = DonGia;
+                dtoNCC.TIENTRA = TIENTRA;
                 string SQL = "SELECT MAX(ID) FROM CHITIETHDN WHERE MAHDN='" + mahdn + "'";
                 DataTable dt = ctlNCC.GETDATA(SQL);
                 dtoNCC.ID = 1 + STT;
@@ -717,12 +719,13 @@ namespace WindowsFormsApplication1
             catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu", "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
         }
-        public void update_HoadonChitiet(string mahdn, int ID, String mamh, Double SoLuong, int DonGia, string HSD, String _KMAI)
+        public void update_HoadonChitiet(string mahdn, int ID, String mamh, Double SoLuong, int DonGia, string TIENTRA, string HSD, String _KMAI)
         {
             try
             {
                 dtoNCC.MAHDN = mahdn;
                 dtoNCC.KMAI = _KMAI;
+                dtoNCC.TIENTRA = TIENTRA;
                 if (PublicVariable.isHSD)
                 {
                     dtoNCC.LOHANG = txtlohang.Text;
@@ -875,6 +878,7 @@ namespace WindowsFormsApplication1
                         dtr["_DVT"] = dtmh.Rows[0]["DONVITINH"];
                         //dtr["TENMH"] = dtmh.Rows[0]["TENMH"];
                         dtr["_Total"] = "0";
+                        dtr["TIENTRA"] = "0";
                     }
                     else if (e.Column.FieldName.ToString() == "SOLUONG")
                     {
@@ -884,6 +888,7 @@ namespace WindowsFormsApplication1
                         {
                             Double total = Double.Parse(dtr["_DonGia"].ToString()) * Num;
                             dtr["_Total"] = total.ToString();
+                            dtr["TIENTRA"] = total.ToString();
                             gettotal();
                         }
                         else
@@ -891,15 +896,26 @@ namespace WindowsFormsApplication1
                             dtr["SOLUONG"] = "0";
                             dtr["KMAI"] = "0";
                             dtr["_Total"] = "0";
+                            dtr["TIENTRA"] = "0";
                         }
                     }
                     else if (e.Column.FieldName.ToString() == "_DonGia")
                     {
                         Double Num;
                         bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
-                        if (!isNum)
+                        if (isNum)
                         {
-                            dtr["_DonGia"] = "0";
+                            Double total = Double.Parse(dtr["_DonGia"].ToString()) * Num;
+                            dtr["_Total"] = total.ToString();
+                            dtr["TIENTRA"] = total.ToString();
+                            gettotal();
+                        }
+                        else
+                        {
+                            dtr["SOLUONG"] = "0";
+                            dtr["KMAI"] = "0";
+                            dtr["_Total"] = "0";
+                            dtr["TIENTRA"] = "0";
                         }
                        
                     }
@@ -908,6 +924,11 @@ namespace WindowsFormsApplication1
                         string NGAY= dtr["_HSD"].ToString();
                         if (NGAY.Length > 10)
                             dtr["_HSD"] = NGAY.Substring(0, 10);
+                    }
+                    else if (e.Column.FieldName.ToString() == "TIENTRA")
+                    {
+
+                        gettotal();
                     }
                     
                 }
@@ -933,7 +954,7 @@ namespace WindowsFormsApplication1
                 if (dtr != null)
                 {
                     Double Num;
-                    bool isNum = Double.TryParse(dtr["_Total"].ToString(), out Num);
+                    bool isNum = Double.TryParse(dtr["TIENTRA"].ToString(), out Num);
                     if (isNum)
                     {
                         total += Num;
@@ -1061,7 +1082,7 @@ namespace WindowsFormsApplication1
                         }
 
 
-                        ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), txtlohang.Text, dtr["SOLUONG"].ToString());
+                        ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), txtlohang.Text, dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
 
                         // ctlNCC.DELETE_KHOHANG(dtr["MAMH"].ToString(), txtlohang.Text);
                         PublicVariable.TMPtring = "";
