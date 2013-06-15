@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
             deDongTab();
         }
         int CountRowTBEdit = 0;
-        
+        Boolean isdelete = false;
         NhapHangDTO dto = new NhapHangDTO();
         NhapHangDAO mh = new NhapHangDAO();
         //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
@@ -79,7 +79,7 @@ namespace WindowsFormsApplication1
             txtthanhtien.Text = "0";
         }
         DataView dvdropdow;
-       
+        
         DTO dtoNCC = new DTO();
         CTL ctlNCC = new CTL();
         ketnoi connect = new ketnoi();
@@ -361,6 +361,7 @@ namespace WindowsFormsApplication1
             
         }
         public void Create_new(){
+            gridCTHOADON.OptionsBehavior.ReadOnly = false;
             loadgridNhacCungCap();
             txtMANCC.Text = "";
             cboTenNCC.Text = "";
@@ -370,6 +371,7 @@ namespace WindowsFormsApplication1
             txtMaHD.Text = "";
             txtNo.Text = "";
             btLuu.Enabled=true;
+            cboTenNCC.Enabled = true;
             txtghichu.Text = "";
             cktien.Text = "0";
             ckphantram.Text = "0";
@@ -381,7 +383,8 @@ namespace WindowsFormsApplication1
             //   cboTinhTrang.Text = "";
             //gridControl1.DataSource = null;
             //gridCTHOADON.RefreshData();
-
+            loadgridNhacCungCap();
+            Grid_sanpham.DataSource = null;
             loadgridCTHOADON();
         }
 
@@ -515,6 +518,28 @@ namespace WindowsFormsApplication1
                                 {
                                     insert_HoadonChitiet(txtMaHD.Text, dtr["_LOHANG"].ToString(), dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["DONGIA"].ToString()), dtr["GIANHAP"].ToString(), dtr["TIENTRA"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString(), i);
                                 }
+                            }
+                            DataTable TABLE_SAU = (DataTable)gridControl1.DataSource;
+
+                            for (int i = 0; i < TABLE_SAU.Rows.Count; i++)
+                            {
+                                DataTable dtname = ctlNCC.GETDATA("select TENMH from MATHANG where MAMH='" + TABLE_SAU.Rows[0]["MAMH"].ToString() + "'");
+                                TABLE_SAU.Rows[i]["TENMH"] = dtname.Rows[0][0].ToString();
+                            }
+
+
+                            DataTable TABLE_TRUOC = ctlNCC.GETDATA("SELECT MATHANG.MAMH,TENMH,SOLUONGNHAP AS SOLUONG,KMAI FROM MATHANG, TRACHITIETHDN WHERE MATHANG.MAMH=TRACHITIETHDN.MAMH AND MAHDN='" + txtMaHD.Text + "'");
+
+                            PublicVariable.TMPtring = "";
+                            frmsuahd SUAhd = new frmsuahd();
+                            SUAhd.MAHD = txtMaHD.Text;
+                            SUAhd.LISTTRUOC = TABLE_TRUOC;
+                            SUAhd.LISTSAU = TABLE_SAU;
+
+                            SUAhd.ShowDialog();
+                            if (PublicVariable.TMPtring == "")
+                            {
+                                return;
                             }
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRANHAP);
                             PublicVariable.SQL_TRANHAP = "";
@@ -845,7 +870,7 @@ namespace WindowsFormsApplication1
           //  {
                 GridView view = sender as GridView;
                 GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
-                if (hitInfo.InRow)
+                if (hitInfo.InRow && isdelete)
                 {
                     view.FocusedRowHandle = hitInfo.RowHandle;
                    
@@ -888,7 +913,7 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("KHÔNG CÓ QUYỀN ");
                             return;
                         }
-                        string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
+                        string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime , TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
                         DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
                         if (txtNgay.Text != dtn.Rows[0][0].ToString())
                         {
@@ -899,8 +924,8 @@ namespace WindowsFormsApplication1
                         frmxoahd xhd = new frmxoahd();
                         xhd.MAHD = txtMaHD.Text;
                         xhd.MAMH = dtr["MAMH"].ToString();
-                        xhd.TENMH = dtr["TENMH"].ToString();
-
+                        xhd.TENMH = dtn.Rows[0]["TENMH"].ToString();
+                        xhd.SOLUONG = dtr["SOLUONG"].ToString();
                         xhd.ShowDialog();
                         if (PublicVariable.TMPtring == "")
                         {
@@ -957,7 +982,10 @@ namespace WindowsFormsApplication1
                     dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
 
                     ctlNCC.UPDATEtraHOADONNHAP(dtoNCC);
-                    ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRANHAP);
+                    if (sID != "")
+                    {
+                        ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRANHAP);
+                    }
                     PublicVariable.SQL_TRANHAP = "";
                     MessageBox.Show("Bạn Đã Xóa Thành Công");
                 }
@@ -1010,7 +1038,16 @@ namespace WindowsFormsApplication1
             int _cktien = Convert.ToInt32(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
-            ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+            if (_cktien > 0)
+            {
+                ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+            }
+            else
+            {
+                ckphantram.Value = 0;
+                cktien.Value = 0;
+
+            }
 
             gettotal();
         }
@@ -1021,7 +1058,10 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN XEM");
                 return;
             }
+            gridCTHOADON.OptionsBehavior.ReadOnly = false;
             btLuu.Enabled = false;
+            isdelete = false;
+            cboTenNCC.Enabled = false;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -1049,7 +1089,10 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN SỬA");
                 return;
             }
+            gridCTHOADON.OptionsBehavior.ReadOnly = false;
             btLuu.Enabled=true;
+            isdelete = false;
+            cboTenNCC.Enabled = false;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -1306,7 +1349,16 @@ namespace WindowsFormsApplication1
         {
             Double thanhtien = tienchuack;
             int _cktien = Convert.ToInt32(cktien.Value);
-            ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+            if (_cktien > 0)
+            {
+                ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+            }
+            else
+            {
+                ckphantram.Value = 0;
+                cktien.Value = 0;
+
+            }
             thanhtien = thanhtien - _cktien;
             txtthanhtien.Text = thanhtien.ToString();
             if (cbotientra.Text != "")
@@ -1324,6 +1376,38 @@ namespace WindowsFormsApplication1
             conlai = thanhtien - tientra;
             txtconLai.Text = conlai.ToString();
         }
+
+        private void xToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (XOA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN XÓA");
+                return;
+            }
+            gridCTHOADON.OptionsBehavior.ReadOnly = true;
+            btLuu.Enabled = false;
+            isdelete = true;
+            cboTenNCC.Enabled = false;
+            Load_panel_create();
+            loadgridCTHOADON();
+            DataRow dtr;
+            if (gridControl3.MainView == gridView4)
+            {
+                dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+            }
+            else
+            {
+                dtr = gridView5.GetDataRow(gridView5.FocusedRowHandle);
+            }
+            string MANCC = ctlNCC.GETMANCCfromtraMHDN(dtr["MAHDN"].ToString());
+            View_phieunhap(dtr["MAHDN"].ToString());
+            txtNgay.Text = dtr["NGAYNHAP"].ToString();
+            loadgridNhacCungCap(MANCC);
+            Load_TTNCC();
+            loadGrid_sanpham(txtMaHD.Text);
+            
+        }
+
 
   
     }
