@@ -241,6 +241,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMATHANG(MAMH);
         }
+        public DataTable GETMATHANG_KHTRA(string MAMH, String LOHANG,string MAKH)
+        {
+            return DAO.GETMATHANG_KHTRA(MAMH, LOHANG,MAKH);
+        }
         public DataTable GETMATHANG(string MAMH,String LOHANG)
         {
             return DAO.GETMATHANG(MAMH,LOHANG);

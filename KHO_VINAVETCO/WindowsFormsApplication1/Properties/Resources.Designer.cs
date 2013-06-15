@@ -144,6 +144,13 @@ namespace WindowsFormsApplication1.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap CHOTSO1 {
+            get {
+                object obj = ResourceManager.GetObject("CHOTSO1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
@@ -326,9 +333,23 @@ namespace WindowsFormsApplication1.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap KHOASO1 {
+            get {
+                object obj = ResourceManager.GetObject("KHOASO1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap KIEMKEKHO {
             get {
                 object obj = ResourceManager.GetObject("KIEMKEKHO", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap KIEMKEKHO1 {
+            get {
+                object obj = ResourceManager.GetObject("KIEMKEKHO1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -392,6 +413,13 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap NONCCDAUKY {
             get {
                 object obj = ResourceManager.GetObject("NONCCDAUKY", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap NONCCDAUKY1 {
+            get {
+                object obj = ResourceManager.GetObject("NONCCDAUKY1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -511,6 +539,13 @@ namespace WindowsFormsApplication1.Properties {
         internal static System.Drawing.Bitmap TONDAUKY {
             get {
                 object obj = ResourceManager.GetObject("TONDAUKY", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap TONDAUKY1 {
+            get {
+                object obj = ResourceManager.GetObject("TONDAUKY1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
