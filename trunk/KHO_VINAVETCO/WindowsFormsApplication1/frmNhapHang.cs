@@ -36,6 +36,7 @@ namespace WindowsFormsApplication1
         int CountRowTBEdit = 0;
         NhapHangDTO dto = new NhapHangDTO();
         NhapHangDAO mh = new NhapHangDAO();
+        Boolean isdelete = false;
         //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
         public string THEM, XOA, SUA, IN, XEM;
        
@@ -83,9 +84,11 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+            gridCTHOADON.OptionsBehavior.ReadOnly = false;
+            isdelete = false;
             PublicVariable.SQL_NHAP = "";
             btLuu.Enabled = true;
-           
+            cboTenNCC.Enabled = false;
             loadgridCTHOADON();
             Load_panel_create();
             DataRow dtr;
@@ -108,8 +111,10 @@ namespace WindowsFormsApplication1
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PublicVariable.SQL_NHAP = "";
-       
+            isdelete = false;
+            gridCTHOADON.OptionsBehavior.ReadOnly = false;
             btLuu.Enabled = false;
+            cboTenNCC.Enabled = false;
             loadgridCTHOADON();
             Load_panel_create();
             DataRow dtr;
@@ -130,6 +135,7 @@ namespace WindowsFormsApplication1
 
             Load_TTNCC();
             loadGrid_sanpham();
+            
         }
         DataView dvdropdow;
        
@@ -318,7 +324,6 @@ namespace WindowsFormsApplication1
             Grid_sanpham.DataSource = ctlNCC.GETMMH(txtMANCC.Text);
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "MAMH";
-            
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
            
         }
@@ -452,12 +457,14 @@ namespace WindowsFormsApplication1
             cktien.Text = "0";
             ckphantram.Text = "";
             btLuu.Enabled = true;
-          
+            cboTenNCC.Enabled = true;
+            gridCTHOADON.OptionsBehavior.ReadOnly = false;
             loadmahdn();
             //   cboTinhTrang.Text = "";
             //gridControl1.DataSource = null;
             //gridCTHOADON.RefreshData();
-
+            loadgridNhacCungCap();
+            Grid_sanpham.DataSource = null;
             loadgridCTHOADON();
         }
 
@@ -1008,7 +1015,7 @@ namespace WindowsFormsApplication1
           //  {
                 GridView view = sender as GridView;
                 GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
-                if (hitInfo.InRow)
+                if (hitInfo.InRow&&isdelete)
                 {
                     view.FocusedRowHandle = hitInfo.RowHandle;
                    
@@ -1051,8 +1058,6 @@ namespace WindowsFormsApplication1
                     String sID = dtr["ID"].ToString();
                     if (sID != "")
                     {
-
-
                         string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime, TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
                         DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
                         if (txtNgay.Text != dtn.Rows[0][0].ToString())
@@ -1061,10 +1066,13 @@ namespace WindowsFormsApplication1
                             return;
                         }
 
-
-                        String SQL = "Select * from chitiethdx where mamh='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + txtMaHD.Text + "'";
+                        string SMAMH = dtr["TENMH"].ToString();
+                        int index = SMAMH.IndexOf("_");
+                        string LOHANG = SMAMH.Substring(index + 1, SMAMH.Length - index - 1);
+                        String SQL = "Select TONKHO from KHOHANG where mamh='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + LOHANG + "'";
                         DataTable dt = ctlNCC.GETDATA(SQL);
-                        if (dt.Rows.Count > 0)
+                        Double SOLUONGXUATHT=Convert.ToDouble(dtr["SOLUONG"].ToString())+Convert.ToDouble(dtr["KMAI"].ToString());
+                        if (SOLUONGXUATHT > Convert.ToDouble(dt.Rows[0]["TONKHO"].ToString()))
                         {
                             MessageBox.Show("Mặt hàng trong Lô Hàng này đã Xuất nên không thể xóa  ");
                             return;
@@ -1114,8 +1122,10 @@ namespace WindowsFormsApplication1
                     dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
                     dtoNCC.CKTIEN = cktien.Value.ToString();
                     ctlNCC.UPDATEHOADONNHAP(dtoNCC);
-
-                    ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
+                    if (sID != "")
+                    {
+                        ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
+                    }
                     PublicVariable.SQL_NHAP = "";
                     MessageBox.Show("Bạn Đã Xóa Thành Công");
                 }
@@ -1178,8 +1188,18 @@ namespace WindowsFormsApplication1
             int _cktien = Convert.ToInt32(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
-            ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
-            gettotal();
+            if (_cktien > 0)
+            {
+                ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+            }
+            else
+            {
+                ckphantram.Value = 0;
+                cktien.Value = 0;
+
+            }
+
+                gettotal();
         }
         
 
@@ -1404,7 +1424,16 @@ namespace WindowsFormsApplication1
         {
             Double thanhtien = tienchuack;
             int _cktien = Convert.ToInt32(cktien.Value);
-            ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+            if (_cktien > 0)
+            {
+                ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+            }
+            else
+            {
+                ckphantram.Value = 0;
+                cktien.Value = 0;
+
+            }
             thanhtien = thanhtien - _cktien;
             txtthanhtien.Text = thanhtien.ToString();
             if (cbotientra.Text != "")
@@ -1414,6 +1443,40 @@ namespace WindowsFormsApplication1
                 txtconLai.Text = conlai.ToString();
             }
           
+        }
+
+        private void xoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (XOA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN XÓA");
+                return;
+            }
+            gridCTHOADON.OptionsBehavior.ReadOnly = true;
+            PublicVariable.SQL_NHAP = "";
+            isdelete = true;
+            btLuu.Enabled = false;
+            cboTenNCC.Enabled = false;
+            loadgridCTHOADON();
+            Load_panel_create();
+            DataRow dtr;
+            if (gridControl3.MainView == gridView4)
+            {
+                dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+            }
+            else
+            {
+                dtr = gridView5.GetDataRow(gridView5.FocusedRowHandle);
+            }
+            string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
+            View_phieunhap(dtr["MAHDN"].ToString());
+            txtNgay.Text = dtr["NGAYNHAP"].ToString();
+            txtlohang.Text = dtr["MAHDN"].ToString();
+
+            loadgridNhacCungCap(MANCC);
+
+            Load_TTNCC();
+            loadGrid_sanpham();
         }
 
 
