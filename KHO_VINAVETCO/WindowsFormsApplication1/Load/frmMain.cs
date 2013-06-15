@@ -632,6 +632,28 @@ namespace WindowsFormsApplication1
                             barButtonphaithudauky.Enabled = false;
                             break;
                         }
+                    case "33":
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
+                        {
+                            barButtonnhapkhac.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            barButtonnhapkhac.Enabled = false;
+                            break;
+                        }
+                    case "34":
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
+                        {
+                            barButtonxuatkhac.Enabled = true;
+                            break;
+                        }
+                        else
+                        {
+                            barButtonxuatkhac.Enabled = false;
+                            break;
+                        }
                 }
             }
                
@@ -2280,6 +2302,12 @@ namespace WindowsFormsApplication1
                 case "PHAITHUDAUKY":
                     imacn = 32;
                     break;
+                case "NHAPKHAC":
+                    imacn = 33;
+                    break;
+                case "XUATKHAC":
+                    imacn = 34;
+                    break;
             }
 
             PublicVariable.TATCA = PhanQuyen.Rows[imacn - 1]["TATCA"].ToString();
@@ -2505,6 +2533,56 @@ namespace WindowsFormsApplication1
             {
                 TabItem t = tabControl12.CreateTab(sTieuDe);
                 t.Name = "PHAITHUDAUKY";
+                frmKHnodauky dt = new frmKHnodauky();
+                dt.deDongTab = new frmKHnodauky._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
+        }
+
+        private void barButtonnhapkhac_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetPhanQuyen("33");
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            bKTraMoTab = true;
+            sTieuDe = "Nhập Khác";
+
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "NHAPKHAC";
+                frmKHnodauky dt = new frmKHnodauky();
+                dt.deDongTab = new frmKHnodauky._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
+        }
+
+        private void barButtonxuatkhac_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            SetPhanQuyen("34");
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            bKTraMoTab = true;
+            sTieuDe = "Xuất Khác";
+
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "XUATKHAC";
                 frmKHnodauky dt = new frmKHnodauky();
                 dt.deDongTab = new frmKHnodauky._deDongTab(vDOngTab);
                 dt.frm = this;
