@@ -231,7 +231,7 @@ namespace WindowsFormsApplication1
             {
                 if (iNgonNgu == 0)
                 {
-                    bool KT;
+                    bool KT=false;
                     if (checkTT.Checked)
                     {
                         KT = true;

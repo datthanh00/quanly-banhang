@@ -351,7 +351,7 @@
             // 
             this.btCongNoKH.Caption = "Thu Tiền";
             this.btCongNoKH.Id = 21;
-            this.btCongNoKH.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.cno;
+            this.btCongNoKH.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.KIEMKEKHO1;
             this.btCongNoKH.LargeWidth = 60;
             this.btCongNoKH.Name = "btCongNoKH";
             this.btCongNoKH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btCongNoKH_ItemClick);
@@ -657,7 +657,7 @@
             // 
             this.BTTraNCC.Caption = "Trả Hàng CTY";
             this.BTTraNCC.Id = 106;
-            this.BTTraNCC.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
+            this.BTTraNCC.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.tonkho;
             this.BTTraNCC.LargeWidth = 60;
             this.BTTraNCC.Name = "BTTraNCC";
             this.BTTraNCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTTraNCC_ItemClick);
@@ -666,7 +666,7 @@
             // 
             this.BTKHtra.Caption = "Khách Trả Hàng";
             this.BTKHtra.Id = 107;
-            this.BTKHtra.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
+            this.BTKHtra.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.Hien;
             this.BTKHtra.LargeWidth = 60;
             this.BTKHtra.Name = "BTKHtra";
             this.BTKHtra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTKHtra_ItemClick);
@@ -720,7 +720,7 @@
             // 
             this.barButtoncongnodau.Caption = "Nợ Đầu Kỳ";
             this.barButtoncongnodau.Id = 114;
-            this.barButtoncongnodau.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.NONCCDAUKY;
+            this.barButtoncongnodau.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.NONCCDAUKY1;
             this.barButtoncongnodau.LargeWidth = 80;
             this.barButtoncongnodau.Name = "barButtoncongnodau";
             this.barButtoncongnodau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtoncongnodau_ItemClick);
@@ -729,7 +729,7 @@
             // 
             this.barButtontondau.Caption = "Hàng Tồn Đầu";
             this.barButtontondau.Id = 115;
-            this.barButtontondau.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.TONDAUKY;
+            this.barButtontondau.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.TONDAUKY1;
             this.barButtontondau.LargeWidth = 80;
             this.barButtontondau.Name = "barButtontondau";
             this.barButtontondau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtontondau_ItemClick);
@@ -738,7 +738,7 @@
             // 
             this.barButtonkiemkekho.Caption = "Kiểm Kê Kho";
             this.barButtonkiemkekho.Id = 116;
-            this.barButtonkiemkekho.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.KIEMKEKHO;
+            this.barButtonkiemkekho.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.KIEMKEKHO1;
             this.barButtonkiemkekho.LargeWidth = 80;
             this.barButtonkiemkekho.Name = "barButtonkiemkekho";
             this.barButtonkiemkekho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonkiemkekho_ItemClick);
@@ -747,7 +747,7 @@
             // 
             this.barButtonkhoaso.Caption = "Khóa Sổ";
             this.barButtonkhoaso.Id = 117;
-            this.barButtonkhoaso.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.KHOASO;
+            this.barButtonkhoaso.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.KHOASO1;
             this.barButtonkhoaso.LargeWidth = 70;
             this.barButtonkhoaso.Name = "barButtonkhoaso";
             this.barButtonkhoaso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonkhoaso_ItemClick);
@@ -756,7 +756,7 @@
             // 
             this.barButtonketso.Caption = "Kết Sổ";
             this.barButtonketso.Id = 118;
-            this.barButtonketso.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.CHOTSO;
+            this.barButtonketso.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.CHOTSO1;
             this.barButtonketso.LargeWidth = 70;
             this.barButtonketso.Name = "barButtonketso";
             this.barButtonketso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonketso_ItemClick);
