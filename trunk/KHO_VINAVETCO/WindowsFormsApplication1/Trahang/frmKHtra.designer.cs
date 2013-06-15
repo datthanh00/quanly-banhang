@@ -101,7 +101,7 @@
             this.txtMaHD = new DevExpress.XtraEditors.TextEdit();
             this.txtNgayXuat = new DevExpress.XtraEditors.DateEdit();
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
-            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtghichu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtSDT = new DevExpress.XtraEditors.TextEdit();
             this.txtDiachi = new DevExpress.XtraEditors.TextEdit();
             this.btAdd = new DevExpress.XtraEditors.SimpleButton();
@@ -160,6 +160,7 @@
             this.gridColumn52 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn55 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemCalcEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
@@ -388,9 +389,9 @@
             // controlContainer1
             // 
             this.controlContainer1.Controls.Add(this.navBarControl1);
-            this.controlContainer1.Location = new System.Drawing.Point(3, 24);
+            this.controlContainer1.Location = new System.Drawing.Point(3, 25);
             this.controlContainer1.Name = "controlContainer1";
-            this.controlContainer1.Size = new System.Drawing.Size(194, 232);
+            this.controlContainer1.Size = new System.Drawing.Size(194, 231);
             this.controlContainer1.TabIndex = 0;
             // 
             // navBarControl1
@@ -408,7 +409,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(194, 232);
+            this.navBarControl1.Size = new System.Drawing.Size(194, 231);
             this.navBarControl1.TabIndex = 2;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -472,9 +473,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.panelControl6);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 235);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 234);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // panelControl6
@@ -483,17 +484,17 @@
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl6.Location = new System.Drawing.Point(0, 0);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(194, 235);
+            this.panelControl6.Size = new System.Drawing.Size(194, 234);
             this.panelControl6.TabIndex = 0;
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(3, 3);
+            this.gridControl2.Location = new System.Drawing.Point(2, 2);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(188, 229);
+            this.gridControl2.Size = new System.Drawing.Size(190, 230);
             this.gridControl2.TabIndex = 19;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -582,9 +583,9 @@
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.panelControl10);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(1056, 42);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1056, 41);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // panelControl10
@@ -777,7 +778,7 @@
             this.groupControl1.Controls.Add(this.ckphantram);
             this.groupControl1.Controls.Add(this.txtmakh);
             this.groupControl1.Controls.Add(this.panelControl3);
-            this.groupControl1.Controls.Add(this.textBoxX1);
+            this.groupControl1.Controls.Add(this.txtghichu);
             this.groupControl1.Controls.Add(this.txtSDT);
             this.groupControl1.Controls.Add(this.txtDiachi);
             this.groupControl1.Controls.Add(this.btAdd);
@@ -788,9 +789,9 @@
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Controls.Add(this.cboTenKH);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 3);
+            this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1056, 169);
+            this.groupControl1.Size = new System.Drawing.Size(1058, 171);
             this.groupControl1.TabIndex = 1;
             this.groupControl1.Text = "Thông Tin Khách Hàng";
             // 
@@ -850,9 +851,9 @@
             // 
             this.panelControl3.Controls.Add(this.groupControl2);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl3.Location = new System.Drawing.Point(693, 21);
+            this.panelControl3.Location = new System.Drawing.Point(695, 22);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(361, 146);
+            this.panelControl3.Size = new System.Drawing.Size(361, 147);
             this.panelControl3.TabIndex = 23;
             // 
             // groupControl2
@@ -873,9 +874,9 @@
             this.groupControl2.Controls.Add(this.txtNgayXuat);
             this.groupControl2.Controls.Add(this.cbotientra);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 3);
+            this.groupControl2.Location = new System.Drawing.Point(2, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(355, 140);
+            this.groupControl2.Size = new System.Drawing.Size(357, 143);
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Phiếu Khách Trả";
             // 
@@ -1011,18 +1012,18 @@
             this.cbotientra.TabIndex = 21;
             this.cbotientra.Validated += new System.EventHandler(this.cbotientra_Validated);
             // 
-            // textBoxX1
+            // txtghichu
             // 
             // 
             // 
             // 
-            this.textBoxX1.Border.Class = "TextBoxBorder";
-            this.textBoxX1.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.textBoxX1.Location = new System.Drawing.Point(93, 83);
-            this.textBoxX1.Multiline = true;
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.Size = new System.Drawing.Size(596, 50);
-            this.textBoxX1.TabIndex = 22;
+            this.txtghichu.Border.Class = "TextBoxBorder";
+            this.txtghichu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.txtghichu.Location = new System.Drawing.Point(93, 83);
+            this.txtghichu.Multiline = true;
+            this.txtghichu.Name = "txtghichu";
+            this.txtghichu.Size = new System.Drawing.Size(596, 50);
+            this.txtghichu.TabIndex = 22;
             // 
             // txtSDT
             // 
@@ -1143,7 +1144,7 @@
             this.gridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControl1.EmbeddedNavigator.Buttons.Edit.ImageIndex = 0;
             this.gridControl1.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControl1.Location = new System.Drawing.Point(3, 3);
+            this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridCTHOADON;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1155,7 +1156,7 @@
             this.Grid_sanpham,
             this.repositoryItemTextEdit3,
             this.repositoryItemDateEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(1056, 105);
+            this.gridControl1.Size = new System.Drawing.Size(1058, 107);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridCTHOADON});
@@ -1450,7 +1451,7 @@
             this.gridControl3.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControl3.EmbeddedNavigator.Buttons.Edit.ImageIndex = 0;
             this.gridControl3.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControl3.Location = new System.Drawing.Point(3, 3);
+            this.gridControl3.Location = new System.Drawing.Point(2, 2);
             this.gridControl3.MainView = this.gridView3;
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1461,7 +1462,7 @@
             this.repositoryItemLookUpEdit3,
             this.repositoryItemGridLookUpEdit1,
             this.repositoryItemComboBox2});
-            this.gridControl3.Size = new System.Drawing.Size(1055, 101);
+            this.gridControl3.Size = new System.Drawing.Size(1057, 103);
             this.gridControl3.TabIndex = 19;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView3,
@@ -1484,7 +1485,8 @@
             this.gridColumn42,
             this.gridColumn52,
             this.gridColumn43,
-            this.gridColumn39});
+            this.gridColumn39,
+            this.gridColumn55});
             this.gridView3.GridControl = this.gridControl3;
             this.gridView3.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "OrderID", null, "")});
@@ -1617,6 +1619,12 @@
             this.gridColumn39.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn39.Visible = true;
             this.gridColumn39.VisibleIndex = 11;
+            // 
+            // gridColumn55
+            // 
+            this.gridColumn55.Caption = "MAHDX";
+            this.gridColumn55.FieldName = "MAHDX";
+            this.gridColumn55.Name = "gridColumn55";
             // 
             // repositoryItemLookUpEdit2
             // 
@@ -2270,7 +2278,7 @@
         private DevExpress.XtraEditors.TextEdit txtMaHD;
         private DevExpress.XtraEditors.DateEdit txtNgayXuat;
         private DevExpress.XtraEditors.CalcEdit cbotientra;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtghichu;
         private DevExpress.XtraEditors.TextEdit txtSDT;
         private DevExpress.XtraEditors.TextEdit txtDiachi;
         private DevExpress.XtraEditors.SimpleButton btAdd;
@@ -2303,6 +2311,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn53;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn51;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn54;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn55;
     }
     
 }

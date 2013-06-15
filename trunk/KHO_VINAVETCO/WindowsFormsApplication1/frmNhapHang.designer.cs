@@ -123,6 +123,7 @@
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.resTENMATHANG = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
@@ -186,7 +187,6 @@
             this.EditToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -517,7 +517,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(170, 12);
+            this.lbDen.Location = new System.Drawing.Point(167, 9);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -525,7 +525,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(16, 13);
+            this.lbTu.Location = new System.Drawing.Point(14, 9);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -1239,6 +1239,14 @@
             this.ID.Caption = "ID";
             this.ID.Name = "ID";
             // 
+            // gridColumn46
+            // 
+            this.gridColumn46.Caption = "Tiền Trả";
+            this.gridColumn46.FieldName = "TIENTRA";
+            this.gridColumn46.Name = "gridColumn46";
+            this.gridColumn46.Visible = true;
+            this.gridColumn46.VisibleIndex = 8;
+            // 
             // resTENMATHANG
             // 
             this.resTENMATHANG.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -1904,14 +1912,6 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
-            // 
-            // gridColumn46
-            // 
-            this.gridColumn46.Caption = "Tiền Trả";
-            this.gridColumn46.FieldName = "TIENTRA";
-            this.gridColumn46.Name = "gridColumn46";
-            this.gridColumn46.Visible = true;
-            this.gridColumn46.VisibleIndex = 8;
             // 
             // frmNhapHang
             // 
