@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
             lbnhom.Visible = false;
             lbsanpham.Visible = false;
             cbnhomhang.Visible = false;
-            cbncc.Visible = false;
+            cbmathang.Visible = false;
 
         }
 
@@ -104,11 +104,11 @@ namespace WindowsFormsApplication1
             colsoluong.Caption = resVietNam.colsoluong.ToString();
             colhansudung.Caption = resVietNam.colhansudung.ToString();
             colthanhtiennhap.Caption = resVietNam.colthanhtiennhap.ToString();
-            colgiaban.Caption = resVietNam.colgiaban.ToString();
+            
             colmota.Caption = resVietNam.colmota.ToString();
             coltinhtrang.Caption = resVietNam.coltinhtrang.ToString();
             colthue.Caption = resVietNam.colthue.ToString();
-            colthanhtienxuat.Caption = resVietNam.colthanhtienxuat.ToString();
+            
             colgiamua.Caption = resVietNam.colgiamua.ToString();
             lbnhom.Text = resVietNam.lbchonnhom.ToString();
             //labelControl2.Text = resVietNam.lbden.ToString();
@@ -138,11 +138,11 @@ namespace WindowsFormsApplication1
             colsoluong.Caption = resEngLand.colsoluong.ToString();
             colhansudung.Caption = resEngLand.colhansudung.ToString();
             colthanhtiennhap.Caption = resEngLand.colthanhtiennhap.ToString();
-            colgiaban.Caption = resEngLand.colgiaban.ToString();
+           
             colmota.Caption = resEngLand.colmota.ToString();
             coltinhtrang.Caption = resEngLand.coltinhtrang.ToString();
             colthue.Caption = resEngLand.colthue.ToString();
-            colthanhtienxuat.Caption = resEngLand.colthanhtienxuat.ToString();
+          
             colgiamua.Caption = resEngLand.colgiamua.ToString();
             lbnhom.Text = resEngLand.lbchonnhom.ToString();
             //labelControl2.Text = resEngLand.l.ToString();
@@ -269,13 +269,13 @@ namespace WindowsFormsApplication1
 
         private void load_cbhanghoa()
         {
-            cbncc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cbncc.Properties.DisplayMember = "TENSANPHAM";
-            cbncc.Properties.ValueMember = "MASANPHAM";
-            cbncc.Properties.View.BestFitColumns();
+            cbmathang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbmathang.Properties.DisplayMember = "TENSANPHAM";
+            cbmathang.Properties.ValueMember = "MASANPHAM";
+            cbmathang.Properties.View.BestFitColumns();
             //cbmathang.Properties.PopupFormWidth = 200;
             Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
-            cbncc.Properties.DataSource = ctr1.dtGetsanpham();
+            cbmathang.Properties.DataSource = ctr1.dtGetsanpham();
             gridView2.BestFitColumns();
             //cbmathang.best
 
@@ -293,7 +293,7 @@ namespace WindowsFormsApplication1
             int loaihienthi = cbloaihienthi.SelectedIndex;
             if (loaihienthi == 1)
             {
-                if (cbncc.Text == "")
+                if (cbmathang.Text == "")
                 {
                     MessageBox.Show("Hãy Chọn một mã hàng");
                     return;
@@ -311,7 +311,7 @@ namespace WindowsFormsApplication1
 
                 dto.Loai_HT = loaihienthi.ToString();
 
-                if (cbncc.Text != "")
+                if (cbmathang.Text != "")
                 {
                     dto.MAMH = gridView2.GetFocusedRowCellValue("MASANPHAM").ToString();
                 }
@@ -467,21 +467,21 @@ namespace WindowsFormsApplication1
                 lbnhom.Visible = false;
                 lbsanpham.Visible = false;
                 cbnhomhang.Visible = false;
-                cbncc.Visible = false;
+                cbmathang.Visible = false;
             }
             else if (loaihienthi == 1)
             {
                 lbnhom.Visible = false;
                 lbsanpham.Visible = true;
                 cbnhomhang.Visible = false;
-                cbncc.Visible = true;
+                cbmathang.Visible = true;
             }
             else
             {
                 lbnhom.Visible = true;
                 lbsanpham.Visible = false;
                 cbnhomhang.Visible = true;
-                cbncc.Visible = false;
+                cbmathang.Visible = false;
             }
 
         }
