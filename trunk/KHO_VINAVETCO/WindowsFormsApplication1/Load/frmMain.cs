@@ -1915,8 +1915,8 @@ namespace WindowsFormsApplication1
             {
                 TabItem t = tabControl12.CreateTab(sTieuDe);
                 t.Name = "TKTongHop";
-                frmBangKeXuatKhoTheoKHAchhangHangHoa dt = new frmBangKeXuatKhoTheoKHAchhangHangHoa();
-                dt.deDongTab = new frmBangKeXuatKhoTheoKHAchhangHangHoa._deDongTab(vDOngTab);
+                frmBaoCaoTongHop dt = new frmBaoCaoTongHop();
+                dt.deDongTab = new frmBaoCaoTongHop._deDongTab(vDOngTab);
                 dt.frm = this;
                 dt.iNgonNgu = iNgonNgu;
                 dt.TopLevel = false;
@@ -1935,23 +1935,13 @@ namespace WindowsFormsApplication1
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
             bKTraMoTab = true;
-            sTieuDe = "";
-            if (iNgonNgu == 0)
-            {
-                sTieuDe = "Thống kê" + resVietNam.btMatHang.ToString();
-
-            }
-            if (iNgonNgu == 1)
-            {
-                sTieuDe = "Static " + resEngLand.btMatHang.ToString();
-
-            }
+            sTieuDe = "Tồn Kho Theo Hàng Hóa";
             if (!checkOpenTabs(sTieuDe))
             {
                 TabItem t = tabControl12.CreateTab(sTieuDe);
                 t.Name = "TKMatHang";
-                frmThongKeTongHop dt = new frmThongKeTongHop();
-                dt.deDongTab = new frmThongKeTongHop._deDongTab(vDOngTab);
+                frmTonphanlo dt = new frmTonphanlo();
+                dt.deDongTab = new frmTonphanlo._deDongTab(vDOngTab);
                 dt.frm = this;
                 dt.iNgonNgu = iNgonNgu;
                 dt.TopLevel = false;
@@ -2551,16 +2541,19 @@ namespace WindowsFormsApplication1
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
-            bKTraMoTab = true;
+            //  bKTraMoTab = true;
             sTieuDe = "Nhập Khác";
 
             if (!checkOpenTabs(sTieuDe))
             {
                 TabItem t = tabControl12.CreateTab(sTieuDe);
                 t.Name = "NHAPKHAC";
-                frmKHnodauky dt = new frmKHnodauky();
-                dt.deDongTab = new frmKHnodauky._deDongTab(vDOngTab);
+                frmnhapkhac dt = new frmnhapkhac();
+                dt.deDongTab = new frmnhapkhac._deDongTab(vDOngTab);
                 dt.frm = this;
+                dt.sMaNV = sManv;
+                dt.sTenNV = sTennv;
+                dt.iNgonNgu = iNgonNgu;
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(dt);
@@ -2576,16 +2569,19 @@ namespace WindowsFormsApplication1
             ld.CreateWaitDialog();
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
-            bKTraMoTab = true;
+            //  bKTraMoTab = true;
             sTieuDe = "Xuất Khác";
 
             if (!checkOpenTabs(sTieuDe))
             {
                 TabItem t = tabControl12.CreateTab(sTieuDe);
                 t.Name = "XUATKHAC";
-                frmKHnodauky dt = new frmKHnodauky();
-                dt.deDongTab = new frmKHnodauky._deDongTab(vDOngTab);
+                frmxuatkhac dt = new frmxuatkhac();
+                dt.deDongTab = new frmxuatkhac._deDongTab(vDOngTab);
                 dt.frm = this;
+                dt.sMaNV = sManv;
+                dt.sTenNV = sTennv;
+                dt.iNgonNgu = iNgonNgu;
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(dt);
