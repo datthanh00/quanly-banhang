@@ -97,19 +97,21 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gv7colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn76 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gv7colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gv7colTHANHTIEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemImageEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemDateEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.gridView10 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grid_hoadontheo_NCC = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn52 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn84 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn75 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn53 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn61 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn60 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn77 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -180,7 +182,7 @@
             this.gridBand20 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridColumn51 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn21 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grid_hoadontheo_KHACHHANG = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colngayxuathoadon = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -243,10 +245,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_hoadontheo_NCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_hoadontheo_KHACHHANG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
             this.SuspendLayout();
@@ -334,9 +336,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 442);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 443);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -357,7 +359,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 194;
-            this.navBarControl1.Size = new System.Drawing.Size(181, 442);
+            this.navBarControl1.Size = new System.Drawing.Size(181, 443);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "Thống Kê";
             // 
@@ -382,7 +384,7 @@
             this.HDNCC.Caption = "Hóa Đơn Theo NCC";
             this.HDNCC.Name = "HDNCC";
             this.HDNCC.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
-            this.HDNCC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.loinhuan_LinkClicked);
+            this.HDNCC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.hoadontheoNCC_LinkClicked);
             // 
             // Khachhang
             // 
@@ -497,7 +499,7 @@
             // 
             // lbkhachhang
             // 
-            this.lbkhachhang.Location = new System.Drawing.Point(366, 13);
+            this.lbkhachhang.Location = new System.Drawing.Point(366, 11);
             this.lbkhachhang.Name = "lbkhachhang";
             this.lbkhachhang.Size = new System.Drawing.Size(56, 13);
             this.lbkhachhang.TabIndex = 26;
@@ -543,7 +545,7 @@
             // 
             // lbncc
             // 
-            this.lbncc.Location = new System.Drawing.Point(193, 13);
+            this.lbncc.Location = new System.Drawing.Point(193, 11);
             this.lbncc.Name = "lbncc";
             this.lbncc.Size = new System.Drawing.Size(36, 13);
             this.lbncc.TabIndex = 24;
@@ -598,7 +600,7 @@
             // 
             // lbmahang
             // 
-            this.lbmahang.Location = new System.Drawing.Point(10, 13);
+            this.lbmahang.Location = new System.Drawing.Point(10, 11);
             this.lbmahang.Name = "lbmahang";
             this.lbmahang.Size = new System.Drawing.Size(46, 13);
             this.lbmahang.TabIndex = 21;
@@ -632,7 +634,7 @@
             // 
             // cbThoiGian
             // 
-            this.cbThoiGian.Location = new System.Drawing.Point(2, 5);
+            this.cbThoiGian.Location = new System.Drawing.Point(6, 7);
             this.cbThoiGian.Name = "cbThoiGian";
             this.cbThoiGian.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -643,7 +645,7 @@
             // dateDen
             // 
             this.dateDen.EditValue = null;
-            this.dateDen.Location = new System.Drawing.Point(289, 5);
+            this.dateDen.Location = new System.Drawing.Point(293, 7);
             this.dateDen.Name = "dateDen";
             this.dateDen.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -656,7 +658,7 @@
             // 
             // lbDen
             // 
-            this.lbDen.Location = new System.Drawing.Point(257, 11);
+            this.lbDen.Location = new System.Drawing.Point(261, 11);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
             this.lbDen.TabIndex = 1;
@@ -664,7 +666,7 @@
             // 
             // lbTu
             // 
-            this.lbTu.Location = new System.Drawing.Point(121, 11);
+            this.lbTu.Location = new System.Drawing.Point(125, 11);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 1;
@@ -673,7 +675,7 @@
             // dateTu
             // 
             this.dateTu.EditValue = null;
-            this.dateTu.Location = new System.Drawing.Point(140, 5);
+            this.dateTu.Location = new System.Drawing.Point(144, 7);
             this.dateTu.Name = "dateTu";
             this.dateTu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -756,7 +758,7 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
             this.gridControl1.MainView = this.gridView7;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -764,14 +766,14 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
             this.repositoryItemDateEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1101, 393);
+            this.gridControl1.Size = new System.Drawing.Size(1099, 391);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView7,
-            this.gridView10,
+            this.grid_hoadontheo_NCC,
             this.gridView9,
             this.gridView8,
-            this.gridView2});
+            this.grid_hoadontheo_KHACHHANG});
             // 
             // gridView7
             // 
@@ -787,6 +789,7 @@
             this.gridColumn17,
             this.gv7colSOLUONG,
             this.gridColumn76,
+            this.gridColumn18,
             this.gv7colDONGIA,
             this.gv7colTHANHTIEN});
             this.gridView7.GridControl = this.gridControl1;
@@ -807,8 +810,6 @@
             this.GV7colMAMH.Caption = "Mã Hàng";
             this.GV7colMAMH.FieldName = "MAMH";
             this.GV7colMAMH.Name = "GV7colMAMH";
-            this.GV7colMAMH.Visible = true;
-            this.GV7colMAMH.VisibleIndex = 0;
             // 
             // GV7COLTENMH
             // 
@@ -816,7 +817,7 @@
             this.GV7COLTENMH.FieldName = "TENMH";
             this.GV7COLTENMH.Name = "GV7COLTENMH";
             this.GV7COLTENMH.Visible = true;
-            this.GV7COLTENMH.VisibleIndex = 1;
+            this.GV7COLTENMH.VisibleIndex = 0;
             // 
             // gridColumn73
             // 
@@ -826,7 +827,7 @@
             this.gridColumn73.FieldName = "KLDVT";
             this.gridColumn73.Name = "gridColumn73";
             this.gridColumn73.Visible = true;
-            this.gridColumn73.VisibleIndex = 4;
+            this.gridColumn73.VisibleIndex = 3;
             // 
             // GV7DONVI
             // 
@@ -834,7 +835,7 @@
             this.GV7DONVI.FieldName = "DONVITINH";
             this.GV7DONVI.Name = "GV7DONVI";
             this.GV7DONVI.Visible = true;
-            this.GV7DONVI.VisibleIndex = 5;
+            this.GV7DONVI.VisibleIndex = 4;
             // 
             // gv7coltenkho
             // 
@@ -848,7 +849,7 @@
             this.gv7colNHOMHANG.FieldName = "TENNCC";
             this.gv7colNHOMHANG.Name = "gv7colNHOMHANG";
             this.gv7colNHOMHANG.Visible = true;
-            this.gv7colNHOMHANG.VisibleIndex = 2;
+            this.gv7colNHOMHANG.VisibleIndex = 1;
             // 
             // gridColumn17
             // 
@@ -856,7 +857,7 @@
             this.gridColumn17.FieldName = "HSD";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 3;
+            this.gridColumn17.VisibleIndex = 2;
             // 
             // gv7colSOLUONG
             // 
@@ -868,7 +869,7 @@
             this.gv7colSOLUONG.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gv7colSOLUONG.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gv7colSOLUONG.Visible = true;
-            this.gv7colSOLUONG.VisibleIndex = 6;
+            this.gv7colSOLUONG.VisibleIndex = 5;
             // 
             // gridColumn76
             // 
@@ -881,6 +882,14 @@
             this.gridColumn76.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn76.Visible = true;
             this.gridColumn76.VisibleIndex = 7;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "Khuyến Mãi";
+            this.gridColumn18.FieldName = "KMAI";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 6;
             // 
             // gv7colDONGIA
             // 
@@ -938,11 +947,11 @@
             this.repositoryItemDateEdit3.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             // 
-            // gridView10
+            // grid_hoadontheo_NCC
             // 
-            this.gridView10.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView10.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView10.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grid_hoadontheo_NCC.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.grid_hoadontheo_NCC.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grid_hoadontheo_NCC.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn52,
             this.gridColumn78,
             this.gridColumn84,
@@ -950,6 +959,7 @@
             this.gridColumn53,
             this.gridColumn61,
             this.gridColumn60,
+            this.gridColumn19,
             this.gridColumn14,
             this.gridColumn12,
             this.gridColumn77,
@@ -964,21 +974,21 @@
             styleFormatCondition1.Column = this.gridColumn78;
             styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
             styleFormatCondition1.Expression = "[MAHDN] Like \'MATHDN%\'";
-            this.gridView10.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            this.grid_hoadontheo_NCC.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
             styleFormatCondition1});
-            this.gridView10.GridControl = this.gridControl1;
-            this.gridView10.GroupCount = 2;
-            this.gridView10.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.grid_hoadontheo_NCC.GridControl = this.gridControl1;
+            this.grid_hoadontheo_NCC.GroupCount = 2;
+            this.grid_hoadontheo_NCC.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
-            this.gridView10.Name = "gridView10";
-            this.gridView10.OptionsBehavior.Editable = false;
-            this.gridView10.OptionsSelection.MultiSelect = true;
-            this.gridView10.OptionsView.AllowCellMerge = true;
-            this.gridView10.OptionsView.ShowAutoFilterRow = true;
-            this.gridView10.OptionsView.ShowFooter = true;
-            this.gridView10.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            this.grid_hoadontheo_NCC.Name = "grid_hoadontheo_NCC";
+            this.grid_hoadontheo_NCC.OptionsBehavior.Editable = false;
+            this.grid_hoadontheo_NCC.OptionsSelection.MultiSelect = true;
+            this.grid_hoadontheo_NCC.OptionsView.AllowCellMerge = true;
+            this.grid_hoadontheo_NCC.OptionsView.ShowAutoFilterRow = true;
+            this.grid_hoadontheo_NCC.OptionsView.ShowFooter = true;
+            this.grid_hoadontheo_NCC.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn52, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn78, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn84, DevExpress.Data.ColumnSortOrder.Descending)});
@@ -1006,7 +1016,7 @@
             this.gridColumn84.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn84.Visible = true;
             this.gridColumn84.VisibleIndex = 0;
-            this.gridColumn84.Width = 80;
+            this.gridColumn84.Width = 97;
             // 
             // gridColumn75
             // 
@@ -1016,8 +1026,6 @@
             this.gridColumn75.Name = "gridColumn75";
             this.gridColumn75.OptionsColumn.AllowEdit = false;
             this.gridColumn75.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn75.Visible = true;
-            this.gridColumn75.VisibleIndex = 1;
             this.gridColumn75.Width = 80;
             // 
             // gridColumn53
@@ -1032,8 +1040,8 @@
             this.gridColumn53.OptionsColumn.AllowEdit = false;
             this.gridColumn53.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn53.Visible = true;
-            this.gridColumn53.VisibleIndex = 2;
-            this.gridColumn53.Width = 130;
+            this.gridColumn53.VisibleIndex = 1;
+            this.gridColumn53.Width = 136;
             // 
             // gridColumn61
             // 
@@ -1042,8 +1050,6 @@
             this.gridColumn61.Name = "gridColumn61";
             this.gridColumn61.OptionsColumn.AllowEdit = false;
             this.gridColumn61.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn61.Visible = true;
-            this.gridColumn61.VisibleIndex = 3;
             this.gridColumn61.Width = 80;
             // 
             // gridColumn60
@@ -1058,16 +1064,23 @@
             this.gridColumn60.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn60.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn60.Visible = true;
-            this.gridColumn60.VisibleIndex = 6;
-            this.gridColumn60.Width = 63;
+            this.gridColumn60.VisibleIndex = 4;
+            this.gridColumn60.Width = 78;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "Khuyến Mãi";
+            this.gridColumn19.FieldName = "KMAI";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 5;
+            this.gridColumn19.Width = 110;
             // 
             // gridColumn14
             // 
             this.gridColumn14.Caption = "KLDVT";
             this.gridColumn14.FieldName = "KLDVT";
             this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 4;
             // 
             // gridColumn12
             // 
@@ -1075,7 +1088,8 @@
             this.gridColumn12.FieldName = "HSD";
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 5;
+            this.gridColumn12.VisibleIndex = 2;
+            this.gridColumn12.Width = 93;
             // 
             // gridColumn77
             // 
@@ -1087,7 +1101,8 @@
             this.gridColumn77.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn77.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn77.Visible = true;
-            this.gridColumn77.VisibleIndex = 9;
+            this.gridColumn77.VisibleIndex = 3;
+            this.gridColumn77.Width = 93;
             // 
             // gridColumn72
             // 
@@ -1099,14 +1114,14 @@
             this.gridColumn72.OptionsColumn.AllowEdit = false;
             this.gridColumn72.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn72.Visible = true;
-            this.gridColumn72.VisibleIndex = 7;
-            this.gridColumn72.Width = 49;
+            this.gridColumn72.VisibleIndex = 6;
+            this.gridColumn72.Width = 97;
             // 
             // gridColumn80
             // 
             this.gridColumn80.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn80.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn80.Caption = "Thành Tiền";
+            this.gridColumn80.Caption = "Tiền Sổ Sách";
             this.gridColumn80.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn80.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn80.FieldName = "TIENNHAP";
@@ -1118,8 +1133,8 @@
             this.gridColumn80.SummaryItem.FieldName = "TIENXUAT";
             this.gridColumn80.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn80.Visible = true;
-            this.gridColumn80.VisibleIndex = 8;
-            this.gridColumn80.Width = 83;
+            this.gridColumn80.VisibleIndex = 7;
+            this.gridColumn80.Width = 103;
             // 
             // gridColumn81
             // 
@@ -1134,8 +1149,8 @@
             this.gridColumn81.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn81.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn81.Visible = true;
-            this.gridColumn81.VisibleIndex = 10;
-            this.gridColumn81.Width = 78;
+            this.gridColumn81.VisibleIndex = 8;
+            this.gridColumn81.Width = 88;
             // 
             // gridColumn82
             // 
@@ -1151,8 +1166,8 @@
             this.gridColumn82.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn82.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn82.Visible = true;
-            this.gridColumn82.VisibleIndex = 11;
-            this.gridColumn82.Width = 78;
+            this.gridColumn82.VisibleIndex = 9;
+            this.gridColumn82.Width = 89;
             // 
             // gridColumn83
             // 
@@ -1166,7 +1181,7 @@
             this.gridColumn83.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn83.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn83.Visible = true;
-            this.gridColumn83.VisibleIndex = 12;
+            this.gridColumn83.VisibleIndex = 10;
             this.gridColumn83.Width = 106;
             // 
             // gridView9
@@ -1932,11 +1947,11 @@
             this.bandedGridColumn21.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn21.Visible = true;
             // 
-            // gridView2
+            // grid_hoadontheo_KHACHHANG
             // 
-            this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grid_hoadontheo_KHACHHANG.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.grid_hoadontheo_KHACHHANG.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grid_hoadontheo_KHACHHANG.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn41,
             this.colngayxuathoadon,
@@ -1953,28 +1968,28 @@
             this.coltiendangno,
             this.coltienno,
             this.gridColumn13});
-            this.gridView2.CustomizationFormBounds = new System.Drawing.Rectangle(1030, 432, 216, 178);
+            this.grid_hoadontheo_KHACHHANG.CustomizationFormBounds = new System.Drawing.Rectangle(1030, 432, 216, 178);
             styleFormatCondition6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             styleFormatCondition6.Appearance.Options.UseBackColor = true;
             styleFormatCondition6.ApplyToRow = true;
             styleFormatCondition6.Column = this.gridColumn41;
             styleFormatCondition6.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
             styleFormatCondition6.Expression = "[MAHDX] Like \'MATHDX%\'";
-            this.gridView2.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            this.grid_hoadontheo_KHACHHANG.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
             styleFormatCondition6});
-            this.gridView2.GridControl = this.gridControl1;
-            this.gridView2.GroupCount = 2;
-            this.gridView2.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.grid_hoadontheo_KHACHHANG.GridControl = this.gridControl1;
+            this.grid_hoadontheo_KHACHHANG.GroupCount = 2;
+            this.grid_hoadontheo_KHACHHANG.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, "")});
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsBehavior.Editable = false;
-            this.gridView2.OptionsSelection.MultiSelect = true;
-            this.gridView2.OptionsView.AllowCellMerge = true;
-            this.gridView2.OptionsView.ShowAutoFilterRow = true;
-            this.gridView2.OptionsView.ShowFooter = true;
-            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            this.grid_hoadontheo_KHACHHANG.Name = "grid_hoadontheo_KHACHHANG";
+            this.grid_hoadontheo_KHACHHANG.OptionsBehavior.Editable = false;
+            this.grid_hoadontheo_KHACHHANG.OptionsSelection.MultiSelect = true;
+            this.grid_hoadontheo_KHACHHANG.OptionsView.AllowCellMerge = true;
+            this.grid_hoadontheo_KHACHHANG.OptionsView.ShowAutoFilterRow = true;
+            this.grid_hoadontheo_KHACHHANG.OptionsView.ShowFooter = true;
+            this.grid_hoadontheo_KHACHHANG.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn41, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colngayxuathoadon, DevExpress.Data.ColumnSortOrder.Descending)});
@@ -2213,7 +2228,7 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
-            // frmBangKeXuatKhoTheoKHAchhangHangHoa
+            // frmBaoCaoTongHop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2223,7 +2238,7 @@
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.dockPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmBangKeXuatKhoTheoKHAchhangHangHoa";
+            this.Name = "frmBaoCaoTongHop";
             this.Text = "frmBaoCaoTonKho";
             this.Load += new System.EventHandler(this.frmBaoCaoTonKho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
@@ -2266,10 +2281,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_hoadontheo_NCC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_hoadontheo_KHACHHANG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
             this.ResumeLayout(false);
@@ -2305,7 +2320,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repositoryItemImageEdit1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Views.Grid.GridView grid_hoadontheo_KHACHHANG;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraNavBar.NavBarControl navBarControl1;
@@ -2380,7 +2395,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn66;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn gridColumn71;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView10;
+        private DevExpress.XtraGrid.Views.Grid.GridView grid_hoadontheo_NCC;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn52;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn53;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn60;
@@ -2450,6 +2465,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHOTableAdapter kHOTableAdapter;
     }
 }
