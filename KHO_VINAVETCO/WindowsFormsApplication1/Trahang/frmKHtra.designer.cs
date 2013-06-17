@@ -147,7 +147,7 @@
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Grid = new DevExpress.XtraEditors.PanelControl();
             this.gridControl3 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewTONGSANPHAM = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn37 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -169,7 +169,7 @@
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewSANPHAM = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -185,7 +185,7 @@
             this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewPHIEUTRA = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -272,7 +272,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_Grid)).BeginInit();
             this.panel_Grid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTONGSANPHAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
@@ -281,8 +281,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewSANPHAM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewPHIEUTRA)).BeginInit();
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
@@ -1453,7 +1453,7 @@
             this.gridControl3.EmbeddedNavigator.Buttons.Edit.ImageIndex = 0;
             this.gridControl3.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
             this.gridControl3.Location = new System.Drawing.Point(2, 2);
-            this.gridControl3.MainView = this.gridView3;
+            this.gridControl3.MainView = this.gridViewTONGSANPHAM;
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemLookUpEdit2,
@@ -1466,15 +1466,15 @@
             this.gridControl3.Size = new System.Drawing.Size(1057, 103);
             this.gridControl3.TabIndex = 19;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3,
-            this.gridView1,
-            this.gridView4});
+            this.gridViewTONGSANPHAM,
+            this.gridViewSANPHAM,
+            this.gridViewPHIEUTRA});
             // 
-            // gridView3
+            // gridViewTONGSANPHAM
             // 
-            this.gridView3.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView3.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewTONGSANPHAM.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridViewTONGSANPHAM.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewTONGSANPHAM.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn36,
             this.gridColumn37,
             this.gridColumn38,
@@ -1488,31 +1488,29 @@
             this.gridColumn43,
             this.gridColumn39,
             this.gridColumn55});
-            this.gridView3.GridControl = this.gridControl3;
-            this.gridView3.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.gridViewTONGSANPHAM.GridControl = this.gridControl3;
+            this.gridViewTONGSANPHAM.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "OrderID", null, "")});
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView3.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView3.OptionsBehavior.Editable = false;
-            this.gridView3.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
-            this.gridView3.OptionsDetail.AllowExpandEmptyDetails = true;
-            this.gridView3.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
-            this.gridView3.OptionsDetail.AutoZoomDetail = true;
-            this.gridView3.OptionsSelection.MultiSelect = true;
-            this.gridView3.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
-            this.gridView3.OptionsView.RowAutoHeight = true;
-            this.gridView3.OptionsView.ShowAutoFilterRow = true;
-            this.gridView3.OptionsView.ShowFooter = true;
-            this.gridView3.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.gridViewTONGSANPHAM.Name = "gridViewTONGSANPHAM";
+            this.gridViewTONGSANPHAM.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewTONGSANPHAM.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewTONGSANPHAM.OptionsBehavior.Editable = false;
+            this.gridViewTONGSANPHAM.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridViewTONGSANPHAM.OptionsDetail.AllowExpandEmptyDetails = true;
+            this.gridViewTONGSANPHAM.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
+            this.gridViewTONGSANPHAM.OptionsDetail.AutoZoomDetail = true;
+            this.gridViewTONGSANPHAM.OptionsSelection.MultiSelect = true;
+            this.gridViewTONGSANPHAM.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gridViewTONGSANPHAM.OptionsView.RowAutoHeight = true;
+            this.gridViewTONGSANPHAM.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewTONGSANPHAM.OptionsView.ShowFooter = true;
+            this.gridViewTONGSANPHAM.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             // 
             // gridColumn36
             // 
             this.gridColumn36.Caption = "Mã Mặt Hàng";
             this.gridColumn36.FieldName = "MAMH";
             this.gridColumn36.Name = "gridColumn36";
-            this.gridColumn36.Visible = true;
-            this.gridColumn36.VisibleIndex = 0;
             // 
             // gridColumn37
             // 
@@ -1520,15 +1518,13 @@
             this.gridColumn37.FieldName = "TENMH";
             this.gridColumn37.Name = "gridColumn37";
             this.gridColumn37.Visible = true;
-            this.gridColumn37.VisibleIndex = 1;
+            this.gridColumn37.VisibleIndex = 0;
             // 
             // gridColumn38
             // 
             this.gridColumn38.Caption = "Nhà Cung Cấp";
             this.gridColumn38.FieldName = "TENNCC";
             this.gridColumn38.Name = "gridColumn38";
-            this.gridColumn38.Visible = true;
-            this.gridColumn38.VisibleIndex = 2;
             // 
             // gridColumn2
             // 
@@ -1538,7 +1534,7 @@
             this.gridColumn2.FieldName = "KLDVT";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 3;
+            this.gridColumn2.VisibleIndex = 1;
             // 
             // gridColumn40
             // 
@@ -1546,7 +1542,7 @@
             this.gridColumn40.FieldName = "DONVITINH";
             this.gridColumn40.Name = "gridColumn40";
             this.gridColumn40.Visible = true;
-            this.gridColumn40.VisibleIndex = 4;
+            this.gridColumn40.VisibleIndex = 2;
             // 
             // gridColumn49
             // 
@@ -1554,12 +1550,10 @@
             this.gridColumn49.FieldName = "LOHANG";
             this.gridColumn49.Name = "gridColumn49";
             this.gridColumn49.OptionsColumn.ReadOnly = true;
-            this.gridColumn49.Visible = true;
-            this.gridColumn49.VisibleIndex = 5;
             // 
             // gridColumn41
             // 
-            this.gridColumn41.Caption = "Số Lượng Trả Về";
+            this.gridColumn41.Caption = "Số Lượng";
             this.gridColumn41.DisplayFormat.FormatString = "{0:0.##}";
             this.gridColumn41.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn41.FieldName = "SOLUONGXUAT";
@@ -1567,7 +1561,7 @@
             this.gridColumn41.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn41.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn41.Visible = true;
-            this.gridColumn41.VisibleIndex = 6;
+            this.gridColumn41.VisibleIndex = 3;
             // 
             // gridColumn48
             // 
@@ -1579,7 +1573,7 @@
             this.gridColumn48.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn48.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn48.Visible = true;
-            this.gridColumn48.VisibleIndex = 7;
+            this.gridColumn48.VisibleIndex = 5;
             // 
             // gridColumn42
             // 
@@ -1589,7 +1583,7 @@
             this.gridColumn42.FieldName = "GIATIEN";
             this.gridColumn42.Name = "gridColumn42";
             this.gridColumn42.Visible = true;
-            this.gridColumn42.VisibleIndex = 8;
+            this.gridColumn42.VisibleIndex = 6;
             // 
             // gridColumn52
             // 
@@ -1597,11 +1591,11 @@
             this.gridColumn52.FieldName = "KMAI";
             this.gridColumn52.Name = "gridColumn52";
             this.gridColumn52.Visible = true;
-            this.gridColumn52.VisibleIndex = 9;
+            this.gridColumn52.VisibleIndex = 4;
             // 
             // gridColumn43
             // 
-            this.gridColumn43.Caption = "Tổng Tiền";
+            this.gridColumn43.Caption = "Tiền Sổ Sách";
             this.gridColumn43.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn43.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn43.FieldName = "TONGTIEN";
@@ -1609,7 +1603,7 @@
             this.gridColumn43.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn43.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn43.Visible = true;
-            this.gridColumn43.VisibleIndex = 10;
+            this.gridColumn43.VisibleIndex = 7;
             // 
             // gridColumn39
             // 
@@ -1619,7 +1613,7 @@
             this.gridColumn39.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn39.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn39.Visible = true;
-            this.gridColumn39.VisibleIndex = 11;
+            this.gridColumn39.VisibleIndex = 8;
             // 
             // gridColumn55
             // 
@@ -1703,11 +1697,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemComboBox2.Name = "repositoryItemComboBox2";
             // 
-            // gridView1
+            // gridViewSANPHAM
             // 
-            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewSANPHAM.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridViewSANPHAM.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewSANPHAM.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn44,
             this.gridColumn28,
             this.gridColumn29,
@@ -1723,39 +1717,37 @@
             this.gridColumn35,
             this.gridColumn1,
             this.gridColumn46});
-            this.gridView1.GridControl = this.gridControl3;
-            this.gridView1.GroupCount = 1;
-            this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.gridViewSANPHAM.GridControl = this.gridControl3;
+            this.gridViewSANPHAM.GroupCount = 1;
+            this.gridViewSANPHAM.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THANHTIEN", this.gridColumn45, "{0:0,0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SOLUONGXUAT", this.gridColumn33, "{0:0,0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KHOILUONG", this.gridColumn47, "{0:0,0}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TIENTHU", this.gridColumn46, "{0:0,0}")});
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
-            this.gridView1.OptionsDetail.AllowExpandEmptyDetails = true;
-            this.gridView1.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
-            this.gridView1.OptionsDetail.AutoZoomDetail = true;
-            this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
-            this.gridView1.OptionsView.RowAutoHeight = true;
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowFooter = true;
-            this.gridView1.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            this.gridViewSANPHAM.Name = "gridViewSANPHAM";
+            this.gridViewSANPHAM.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewSANPHAM.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewSANPHAM.OptionsBehavior.Editable = false;
+            this.gridViewSANPHAM.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridViewSANPHAM.OptionsDetail.AllowExpandEmptyDetails = true;
+            this.gridViewSANPHAM.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
+            this.gridViewSANPHAM.OptionsDetail.AutoZoomDetail = true;
+            this.gridViewSANPHAM.OptionsSelection.MultiSelect = true;
+            this.gridViewSANPHAM.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gridViewSANPHAM.OptionsView.RowAutoHeight = true;
+            this.gridViewSANPHAM.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewSANPHAM.OptionsView.ShowFooter = true;
+            this.gridViewSANPHAM.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.gridViewSANPHAM.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn30, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn44, DevExpress.Data.ColumnSortOrder.Descending)});
-            this.gridView1.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
+            this.gridViewSANPHAM.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
             // 
             // gridColumn44
             // 
             this.gridColumn44.Caption = "Mã Hóa Đơn";
             this.gridColumn44.FieldName = "MAHDX";
             this.gridColumn44.Name = "gridColumn44";
-            this.gridColumn44.Visible = true;
-            this.gridColumn44.VisibleIndex = 0;
             // 
             // gridColumn28
             // 
@@ -1763,7 +1755,7 @@
             this.gridColumn28.FieldName = "NGAYXUAT";
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.Visible = true;
-            this.gridColumn28.VisibleIndex = 1;
+            this.gridColumn28.VisibleIndex = 0;
             // 
             // gridColumn29
             // 
@@ -1771,7 +1763,7 @@
             this.gridColumn29.FieldName = "TENKH";
             this.gridColumn29.Name = "gridColumn29";
             this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 2;
+            this.gridColumn29.VisibleIndex = 1;
             // 
             // gridColumn30
             // 
@@ -1784,8 +1776,6 @@
             this.gridColumn31.Caption = "Mã Hàng";
             this.gridColumn31.FieldName = "MAMH";
             this.gridColumn31.Name = "gridColumn31";
-            this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 3;
             // 
             // gridColumn32
             // 
@@ -1793,7 +1783,7 @@
             this.gridColumn32.FieldName = "TENMH";
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 4;
+            this.gridColumn32.VisibleIndex = 2;
             // 
             // gridColumn50
             // 
@@ -1801,7 +1791,7 @@
             this.gridColumn50.FieldName = "LOHANG";
             this.gridColumn50.Name = "gridColumn50";
             this.gridColumn50.Visible = true;
-            this.gridColumn50.VisibleIndex = 6;
+            this.gridColumn50.VisibleIndex = 3;
             // 
             // gridColumn33
             // 
@@ -1813,7 +1803,7 @@
             this.gridColumn33.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn33.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 7;
+            this.gridColumn33.VisibleIndex = 4;
             // 
             // gridColumn47
             // 
@@ -1825,7 +1815,7 @@
             this.gridColumn47.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn47.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn47.Visible = true;
-            this.gridColumn47.VisibleIndex = 8;
+            this.gridColumn47.VisibleIndex = 6;
             // 
             // gridColumn34
             // 
@@ -1835,7 +1825,7 @@
             this.gridColumn34.FieldName = "GIATIEN";
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 9;
+            this.gridColumn34.VisibleIndex = 7;
             // 
             // gridColumn53
             // 
@@ -1843,11 +1833,11 @@
             this.gridColumn53.FieldName = "KMAI";
             this.gridColumn53.Name = "gridColumn53";
             this.gridColumn53.Visible = true;
-            this.gridColumn53.VisibleIndex = 10;
+            this.gridColumn53.VisibleIndex = 5;
             // 
             // gridColumn45
             // 
-            this.gridColumn45.Caption = "Thành Tiền";
+            this.gridColumn45.Caption = "Tiền Sổ Sách";
             this.gridColumn45.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn45.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn45.FieldName = "THANHTIEN";
@@ -1855,7 +1845,7 @@
             this.gridColumn45.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn45.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn45.Visible = true;
-            this.gridColumn45.VisibleIndex = 11;
+            this.gridColumn45.VisibleIndex = 8;
             // 
             // gridColumn35
             // 
@@ -1868,8 +1858,6 @@
             this.gridColumn1.Caption = "Nhà Cung Cấp";
             this.gridColumn1.FieldName = "TENNCC";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
             // 
             // gridColumn46
             // 
@@ -1879,13 +1867,13 @@
             this.gridColumn46.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn46.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn46.Visible = true;
-            this.gridColumn46.VisibleIndex = 12;
+            this.gridColumn46.VisibleIndex = 9;
             // 
-            // gridView4
+            // gridViewPHIEUTRA
             // 
-            this.gridView4.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView4.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView4.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewPHIEUTRA.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridViewPHIEUTRA.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridViewPHIEUTRA.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn9,
             this.gridColumn21,
             this.gridColumn19,
@@ -1894,26 +1882,26 @@
             this.gridColumn24,
             this.gridColumn26,
             this.gridColumn27});
-            this.gridView4.GridControl = this.gridControl3;
-            this.gridView4.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            this.gridViewPHIEUTRA.GridControl = this.gridControl3;
+            this.gridViewPHIEUTRA.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "OrderID", null, "")});
-            this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView4.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
-            this.gridView4.OptionsBehavior.Editable = false;
-            this.gridView4.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
-            this.gridView4.OptionsDetail.AllowExpandEmptyDetails = true;
-            this.gridView4.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
-            this.gridView4.OptionsDetail.AutoZoomDetail = true;
-            this.gridView4.OptionsSelection.MultiSelect = true;
-            this.gridView4.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
-            this.gridView4.OptionsView.RowAutoHeight = true;
-            this.gridView4.OptionsView.ShowAutoFilterRow = true;
-            this.gridView4.OptionsView.ShowFooter = true;
-            this.gridView4.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
-            this.gridView4.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            this.gridViewPHIEUTRA.Name = "gridViewPHIEUTRA";
+            this.gridViewPHIEUTRA.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewPHIEUTRA.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewPHIEUTRA.OptionsBehavior.Editable = false;
+            this.gridViewPHIEUTRA.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
+            this.gridViewPHIEUTRA.OptionsDetail.AllowExpandEmptyDetails = true;
+            this.gridViewPHIEUTRA.OptionsDetail.AllowOnlyOneMasterRowExpanded = true;
+            this.gridViewPHIEUTRA.OptionsDetail.AutoZoomDetail = true;
+            this.gridViewPHIEUTRA.OptionsSelection.MultiSelect = true;
+            this.gridViewPHIEUTRA.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Bottom;
+            this.gridViewPHIEUTRA.OptionsView.RowAutoHeight = true;
+            this.gridViewPHIEUTRA.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewPHIEUTRA.OptionsView.ShowFooter = true;
+            this.gridViewPHIEUTRA.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
+            this.gridViewPHIEUTRA.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn19, DevExpress.Data.ColumnSortOrder.Descending)});
-            this.gridView4.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
+            this.gridViewPHIEUTRA.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
             // 
             // gridColumn9
             // 
@@ -1980,14 +1968,14 @@
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn26.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            this.gridColumn26.Visible = true;
-            this.gridColumn26.VisibleIndex = 6;
             // 
             // gridColumn27
             // 
             this.gridColumn27.Caption = "Ghi Chú";
             this.gridColumn27.FieldName = "GHICHU";
             this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 6;
             // 
             // contextMenuStrip2
             // 
@@ -2132,7 +2120,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_Grid)).EndInit();
             this.panel_Grid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewTONGSANPHAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
@@ -2141,8 +2129,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewSANPHAM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewPHIEUTRA)).EndInit();
             this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
@@ -2207,7 +2195,7 @@
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private DevExpress.XtraEditors.PanelControl panel_Grid;
         private DevExpress.XtraGrid.GridControl gridControl3;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewPHIEUTRA;
         public DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit2;
@@ -2238,8 +2226,8 @@
         private System.Windows.Forms.ToolStripMenuItem EditToolStripMenuItem;
         private DevExpress.XtraGrid.Columns.GridColumn ID;
         private DevExpress.XtraNavBar.NavBarItem tongsanpham;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewSANPHAM;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewTONGSANPHAM;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;

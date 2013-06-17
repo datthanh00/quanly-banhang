@@ -320,34 +320,25 @@ namespace WindowsFormsApplication1
             //sql.Add(new MySqlParameter("@LOAI_TG", dto.Loai_TG));
             //sql.Add(new MySqlParameter("@LOAI_HT", dto.Loai_HT));
             //return executeNonQuerya("THONGKE_CT_MATHANG2", sql);
-            string SQL = "";
-
-            if (dto.Loai_HT == "0")
-            {//load tat ca
-
-                SQL = "SELECT MATHANG.MAMH,MATHANG.MANCC,TENNCC,KLDVT,THUE.MATH,SOTHUE,MATHANG.MANH,TENNCC,TENMH,DONVITINH.MADVT,DONVITINH,TONKHO AS SOLUONGMH,TONKHO*KLDVT as KHOILUONG,HSD AS HANSUDUNG, cast(HSD-GETDATE() as int) as NGAYSUDUNG,KHOHANG.GIAMUA,LOHANG, CAST(((khohang.GIAMUA*TONKHO) + (SOTHUE * TONKHO * khohang.GIAMUA) / 100) as NUMERIC(18,0)) as thanhtien, GIABAN,CAST((mathang.GIABAN*TONKHO + (SOTHUE * TONKHO * mathang.GIABAN) / 100) as NUMERIC(18,0)) as thanhtienban, MOTA "
-                + " FROM THUE,NHACUNGCAP,MATHANG,DONVITINH,khohang WHERE THUE.MATH = MATHANG.MATH and MATHANG.MAMH=KHOHANG.MAMH and NHACUNGCAP.MANCC=MATHANG.MANCC and DONVITINH.madvt=MATHANG.madvt and MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
-            }
+            string SQL = "", SQL1="";
             if (dto.Loai_HT == "1")
-            {//con han
-
-                SQL = "SELECT MATHANG.MAMH,MATHANG.MANCC,TENNCC,KLDVT,THUE.MATH,SOTHUE,MATHANG.MANH,TENNCC,TENMH,DONVITINH.MADVT,DONVITINH,TONKHO AS SOLUONGMH,TONKHO*KLDVT as KHOILUONG,HSD AS HANSUDUNG, cast(HSD-GETDATE() as int) as NGAYSUDUNG,KHOHANG.GIAMUA,LOHANG, CAST(((khohang.GIAMUA*TONKHO) + (SOTHUE * TONKHO * khohang.GIAMUA) / 100) as NUMERIC(18,0)) as thanhtien, GIABAN,CAST((mathang.GIABAN*TONKHO + (SOTHUE * TONKHO * mathang.GIABAN) / 100) as NUMERIC(18,0)) as thanhtienban, MOTA "
-                + " FROM THUE,NHACUNGCAP,MATHANG,DONVITINH,khohang WHERE THUE.MATH = MATHANG.MATH and MATHANG.MAMH=KHOHANG.MAMH and NHACUNGCAP.MANCC=MATHANG.MANCC and DONVITINH.madvt=MATHANG.madvt AND MATHANG.MAMH='" + dto.MAMH + "' and MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
+            {
+                SQL1 = SQL1 + " AND MATHANG.MAMH='" + dto.MAMH + "'";
             }
             if (dto.Loai_HT == "2")
-            {//het han
-
-
-                SQL = "SELECT MATHANG.MAMH,MATHANG.MANCC,TENNCC,KLDVT,THUE.MATH,SOTHUE,MATHANG.MANH,TENNCC,TENMH,DONVITINH.MADVT,DONVITINH,TONKHO AS SOLUONGMH,TONKHO*KLDVT as KHOILUONG,HSD AS HANSUDUNG, cast(HSD-GETDATE() as int) as NGAYSUDUNG,KHOHANG.GIAMUA,LOHANG, CAST(((khohang.GIAMUA*TONKHO) + (SOTHUE * TONKHO * khohang.GIAMUA) / 100) as NUMERIC(18,0)) as thanhtien, GIABAN,CAST((mathang.GIABAN*TONKHO + (SOTHUE * TONKHO * mathang.GIABAN) / 100) as NUMERIC(18,0)) as thanhtienban, MOTA "
-                + " FROM THUE,NHACUNGCAP,MATHANG,DONVITINH,khohang WHERE THUE.MATH = MATHANG.MATH and MATHANG.MAMH=KHOHANG.MAMH and NHACUNGCAP.MANCC=MATHANG.MANCC and DONVITINH.madvt=MATHANG.madvt AND MATHANG.MANCC='" + dto.MANCC + "' and MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ";
-
-            } if (dto.Loai_HT == "3")
-            {//load tat ca
-
-                SQL = "SELECT MATHANG.MAMH,MATHANG.MANCC,TENNCC,KLDVT,THUE.MATH,SOTHUE,MATHANG.MANH,TENNCC,TENMH,DONVITINH.MADVT,DONVITINH,TONKHO AS SOLUONGMH,TONKHO*KLDVT as KHOILUONG,HSD AS HANSUDUNG, cast(HSD-GETDATE() as int) as NGAYSUDUNG,KHOHANG.GIAMUA,LOHANG, CAST(((khohang.GIAMUA*TONKHO) + (SOTHUE * TONKHO * khohang.GIAMUA) / 100) as NUMERIC(18,0)) as thanhtien, GIABAN,CAST((mathang.GIABAN*TONKHO + (SOTHUE * TONKHO * mathang.GIABAN) / 100) as NUMERIC(18,0)) as thanhtienban, MOTA "
-                + " FROM THUE,NHACUNGCAP,MATHANG,DONVITINH,khohang WHERE THUE.MATH = MATHANG.MATH and MATHANG.MAMH=KHOHANG.MAMH and NHACUNGCAP.MANCC=MATHANG.MANCC and DONVITINH.madvt=MATHANG.madvt and MATHANG.MAKHO='" + PublicVariable.MAKHO + "' and  cast(HSD-GETDATE() as int)<=0";
+            {
+                SQL1 = SQL1 + " AND MATHANG.MANCC='" + dto.MANCC + "'";
+            }
+            if (dto.Loai_HT == "3")
+            {
+                SQL1 = SQL1 + " and  cast(HSD-GETDATE() as int)<=0";
             }
 
+
+
+            SQL = "SELECT MATHANG.MAMH,MATHANG.MANCC,TENNCC,KLDVT,THUE.MATH,SOTHUE,MATHANG.MANH,TENNCC,TENMH,DONVITINH.MADVT,DONVITINH,TONKHO AS SOLUONGMH,TONKHO*KLDVT as KHOILUONG,HSD AS HANSUDUNG, cast(HSD-GETDATE() as int) as NGAYSUDUNG,KHOHANG.GIAMUA,LOHANG, CAST(((khohang.GIAMUA*TONKHO) + (SOTHUE * TONKHO * khohang.GIAMUA) / 100) as NUMERIC(18,0)) as thanhtien, MOTA "
+            + " FROM THUE,NHACUNGCAP,MATHANG,DONVITINH,khohang WHERE THUE.MATH = MATHANG.MATH and MATHANG.MAMH=KHOHANG.MAMH and NHACUNGCAP.MANCC=MATHANG.MANCC and DONVITINH.madvt=MATHANG.madvt and MATHANG.MAKHO='" + PublicVariable.MAKHO + "' " + SQL1;
+            
 
 
             return getdata(SQL);

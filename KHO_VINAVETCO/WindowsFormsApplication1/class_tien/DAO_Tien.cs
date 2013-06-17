@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1
         public  DataTable GETALLHDX_DAO(string NGAYBD,string NGAYKT)
         {
             Provider pv = new Provider();
-            string SQL = "SELECT MAHDX ,convert(varchar,NGAYXUAT,103) as NGAYXUAT,TENKH ,HOADONXUAT.MAKH ,TIENPHAITRA ,TIENDATRA , tienphaitra-tiendatra as CONLAI FROM HOADONXUAT,KHACHHANG WHERE HOADONXUAT.MAKH=KHACHHANG.MAKH AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra <> 0 and ngayxuat BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' group by hoadonxuat.mahdx,hoadonxuat.tienphaitra,hoadonxuat.tiendatra,khachhang.tenkh,hoadonxuat.makh,hoadonxuat.ngayxuat";
+            string SQL = "SELECT MAHDX ,convert(varchar,NGAYXUAT,103) as NGAYXUAT,TENKH ,HOADONXUAT.MAKH ,TIENPHAITRA ,TIENDATRA , tienphaitra-tiendatra as CONLAI FROM HOADONXUAT,KHACHHANG WHERE TYPE=1 AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra <> 0 and ngayxuat BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' group by hoadonxuat.mahdx,hoadonxuat.tienphaitra,hoadonxuat.tiendatra,khachhang.tenkh,hoadonxuat.makh,hoadonxuat.ngayxuat";
             return pv.getdata(SQL);
         }
         public DataTable GETALLPHIEUCHI_DAO(string NGAYBD, string NGAYKT)
@@ -78,7 +78,7 @@ namespace WindowsFormsApplication1
         {
 
             Provider pv = new Provider();
-            string SQL = "SELECT MAHDN ,convert(varchar,NGAYNHAP ,103)AS NGAYNHAP,TENNCC,HOADONnhap.MANCC,TIENPHAITRA ,TIENDATRA , tienphaitra-tiendatra as  CONLAI FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra<>0 and ngaynhap BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc,hoadonnhap.ngaynhap";
+            string SQL = "SELECT MAHDN ,convert(varchar,NGAYNHAP ,103)AS NGAYNHAP,TENNCC,HOADONnhap.MANCC,TIENPHAITRA ,TIENDATRA , tienphaitra-tiendatra as  CONLAI FROM HOADONnhap,nhacungcap WHERE TYPE=1 AND HOADONnhap.MAncc=nhacungcap.mancc AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra<>0 and ngaynhap BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc,hoadonnhap.ngaynhap";
             return pv.getdata(SQL);
         }
 

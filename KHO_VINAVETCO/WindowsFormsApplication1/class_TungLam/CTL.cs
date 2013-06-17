@@ -304,6 +304,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETDANHSACHNCC();
         }
+        public DataTable GETDANHSACHTYPE()
+        {
+            return DAO.GETDANHSACHTYPE();
+        }
         public DataTable GETDANHSACHNCC(String MANCC)
         {
             return DAO.GETDANHSACHNCC(MANCC);
@@ -345,6 +349,10 @@ namespace WindowsFormsApplication1
         public DataTable GETMMH(string MANCC)
         {
             return DAO.GETMMH(MANCC);
+        }
+        public DataTable GETMMH_NHAPKHAC()
+        {
+            return DAO.GETMMH_NHAPKHAC();
         }
         public DataTable GETMMH2(string MANCC)
         {

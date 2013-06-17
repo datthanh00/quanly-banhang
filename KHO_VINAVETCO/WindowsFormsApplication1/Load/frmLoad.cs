@@ -19,35 +19,7 @@ namespace WindowsFormsApplication1
         public int iNgonNgu;string sThongBao,sThongBao2,sThongBao3;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            
             z += 2;
-
-            //if (iNgonNgu==0)
-            //{
-            //    sThongBao = "Vui Lòng xin chờ ...";
-            //    sThongBao3 = "Đang kiểm tra sự hợp lệ...";
-            //    sThongBao2 = "Đang tải dữ liệu...";
-            //}
-            //if (iNgonNgu == 1)
-            //{
-            //    sThongBao = "Please waiting ...";
-            //    sThongBao2 = "Loading data...";
-            //    sThongBao3 = "check the validing...";
-            //}
-           
-            //if (z<=30)
-            //{
-            //    labelControl2.Text = sThongBao2;
-            //}
-            //if (z >= 50)
-            //{
-                
-            //}
-            //if (z<=100)
-            //{
-                
-            //}
-            
             if (z > 100)
             {
                 this.Hide();

@@ -41,6 +41,13 @@ namespace WindowsFormsApplication1
             get { return _LOHANG; }
             set { _LOHANG = value; }
         }
+        private string _TYPE;
+
+        public string TYPE
+        {
+            get { return _TYPE; }
+            set { _TYPE = value; }
+        }
 
         private string _CKTIEN;
 

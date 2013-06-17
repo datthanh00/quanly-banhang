@@ -32,6 +32,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         DataView dtvDVT = new DataView();
         DTO dtoNCC = new DTO();
         CTL ctlNCC = new CTL();
+        string Stype;
         public void loadgridKhachHang()
         {
             cboTenKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
@@ -43,7 +44,15 @@ namespace WindowsFormsApplication1.HoaDonXuat
             DataTable dt = ctlNCC.GETKHACHHANG();
             cboTenKH.Properties.DataSource = dt;
            // dtoNCC.MANCC = gridKH1.GetFocusedRowCellValue("TENKH").ToString();
-  
+            cbloai.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbloai.Properties.DisplayMember = "TYPE";
+            cbloai.Properties.ValueMember = "MATYPE";
+            cbloai.Properties.View.BestFitColumns();
+            cbloai.Properties.PopupFormWidth = 300;
+            DataTable dt1 = ctlNCC.GETDANHSACHTYPE();
+            cbloai.Properties.DataSource = dt1;
+            cbloai.Text = dt1.Rows[1]["MATYPE"].ToString();
+            Stype = dt1.Rows[1]["MATYPE"].ToString();
         }
         public void loadgridKhachHang(string MAKH)
         {
@@ -143,19 +152,19 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 Grid_sanpham.DataSource = ctlNCC.GETMMH();
             }
 
-          
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "LOHANG";
-           
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
 
+
+            
         }
 
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
         public int iNgonNgu;
         public frmMain frm;
-        public string sTenNV, sMaNV;
+        public string sTenNV, sMaNV, Sdiachi, Ssdt;
         public string THEM, XOA, SUA, IN, XEM;
     
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
@@ -210,8 +219,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
             if (rowselect != null)
             {
                 txtmakh.Text = gridKH1.GetFocusedRowCellValue("MAKH").ToString();
-                txtSDT.Text = gridKH1.GetFocusedRowCellValue("SDT").ToString();
-                txtDiachi.Text = gridKH1.GetFocusedRowCellValue("DIACHI").ToString();
+                Ssdt = gridKH1.GetFocusedRowCellValue("SDT").ToString();
+                Sdiachi = gridKH1.GetFocusedRowCellValue("DIACHI").ToString();
                 dtoNCC.MAKH = txtmakh.Text;  
                 DataTable tblayno = ctlNCC.LAYTIENNOKH(dtoNCC);
                 if (tblayno.Rows.Count > 0)
@@ -260,8 +269,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         PublicVariable.SQL_XUAT = "";
                         dtoNCC.MAKH = txtmakh.Text;
                         dtoNCC.TENKH = cboTenKH.Text;
-                        dtoNCC.DIACHI = txtDiachi.Text;
-                        dtoNCC.SDT = txtSDT.Text;
+                        dtoNCC.DIACHI = Sdiachi;
+                        dtoNCC.SDT = Ssdt;
                         // dtoNCC.WEBSITE = txtWeb.Text;
                         dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
                         dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
@@ -275,6 +284,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
                         dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
                         dtoNCC.TINHTRANG = "1";
+                        dtoNCC.TYPE = Stype;
 
                         int rowcount = gridCTHOADON.DataRowCount;
                         if (rowcount == 0)
@@ -509,7 +519,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 {
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETCTHOADONXUATIN(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text,cbotientra.Text, txtNo.Text, txtthanhtien.Text, txtMaHD.Text,"");
+                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, Sdiachi,cbotientra.Text, txtNo.Text, txtthanhtien.Text, txtMaHD.Text,"");
                     rep.ShowPreviewDialog();
                 }
                 else
@@ -562,9 +572,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         {
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             txtmakh.Text = "";
-            cboTenKH.Text = "";
-            txtDiachi.Text = "";
-            txtSDT.Text = "";           
+            cboTenKH.Text = "";         
             txtMaHD.Text = "";
             txtNgayXuat.Text = DateTime.Now.ToString("yyy/MM/dd");
             txtNo.Text = "0";
@@ -629,14 +637,14 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) AS NGAYXUAT,T1.MAHDX ,T1.TENKH ,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA)AS TONGTIEN ,T1.GHICHU  FROM (select t9.*,t8.tenkh from hoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  T9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
+            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) AS NGAYXUAT,T1.MAHDX ,T1.TENKH ,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA)AS TONGTIEN ,T1.GHICHU  FROM (select t9.*,t8.tenkh from hoadonxuat as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  TYPE<>1 AND T9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV ORDER BY T1.MAHDX DESC";
             
             DataTable TBS = ctlNCC.GETDATA(SQL);
-            gridControl3.MainView = gridView4;
+            gridControl3.MainView = gridViewTONGXUAT;
             gridControl3.DataSource = TBS;
-            gridView4.RefreshData();
+            gridViewTONGXUAT.RefreshData();
             gridControl3.RefreshDataSource();
-            gridView4.BestFitColumns();
+            gridViewTONGXUAT.BestFitColumns();
 
         }
         public void loadgridSANPHAM( )
@@ -652,20 +660,20 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
             Load_panel_filter();
             //string SQL = "SELECT convert(varchar,T3.NGAYXUAT,103) AS NGAYXUAT,TENNCC,T3.TENKH ,T3.MAHDX , T3.MAMH , T4.TENMH ,T3.SOLUONGXUAT ,T3.SOLUONGXUAT*KLDVT as KHOILUONG,T3.GIATIEN,soluongxuat*giatien AS THANHTIEN,TIENTHU, GHICHU   FROM (select T2.NGAYXUAT,TIENTHU,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,GHICHU,t2.tenkh FROM (SELECT * FROM CHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh,GHICHU from hoadonxuat  as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  T9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN (select TENMH,TENNCC,MAMH,KLDVT FROM MATHANG,NHACUNGCAP WHERE MATHANG.MANCC=NHACUNGCAP.MANCC) AS T4 ON T3.MAMH =T4.MAMH";
-            string SQL = "SELECT convert(varchar,NGAYXUAT,103) AS NGAYXUAT,TENNCC,TENKH ,KMAI,HOADONXUAT.MAHDX , MATHANG.MAMH , TENMH ,SOLUONGXUAT ,SOLUONGXUAT*KLDVT as KHOILUONG,GIABAN AS GIATIEN,SOLUONGXUAT*GIABAN AS THANHTIEN,TIENTHU, GHICHU FROM HOADONXUAT,CHITIETHDX,MATHANG,NHACUNGCAP,KHACHHANG WHERE HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND CHITIETHDX.MAMH=MATHANG.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "'";
+            string SQL = "SELECT convert(varchar,NGAYXUAT,103) AS NGAYXUAT,TENNCC,TENKH ,KMAI,HOADONXUAT.MAHDX , MATHANG.MAMH , TENMH ,SOLUONGXUAT ,SOLUONGXUAT*KLDVT as KHOILUONG,GIABAN AS GIATIEN,SOLUONGXUAT*GIABAN AS THANHTIEN,TIENTHU, GHICHU FROM HOADONXUAT,CHITIETHDX,MATHANG,NHACUNGCAP,KHACHHANG WHERE TYPE<>1 AND HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND CHITIETHDX.MAMH=MATHANG.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "'";
             
             DataTable TBS = ctlNCC.GETDATA(SQL);
-            gridControl3.MainView = gridView1;
+            gridControl3.MainView = gridViewMATHANG;
             gridControl3.DataSource = TBS;
             //gridView4.Columns["Mã Hóa Đơn"].Group();
             //gridView4.Columns["Mã Hóa Đơn"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
-            gridView1.ExpandAllGroups();
-            gridView1.RefreshData();
+            gridViewMATHANG.ExpandAllGroups();
+            gridViewMATHANG.RefreshData();
             gridControl3.RefreshDataSource();
-            gridView1.BestFitColumns();
+            gridViewMATHANG.BestFitColumns();
             if (!PublicVariable.isKHOILUONG)
             {
-                gridView1.Columns["KHOILUONG"].Visible = false;
+                gridViewMATHANG.Columns["KHOILUONG"].Visible = false;
             }
 
         }
@@ -681,19 +689,19 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC, KLDVT, DONVITINH,sum(KMAI) as KMAI, sum(SOLUONGXUAT) as SOLUONGXUAT, GIABAN AS GIATIEN,SUM(TIENTHU) AS TIENTHU,SUM(SOLUONGXUAT*KLDVT) AS KHOILUONG, SUM(SOLUONGXUAT*TIENTHU) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIABAN,TIENTHU,KMAI FROM CHITIETHDX,HOADONXUAT WHERE CHITIETHDX.MAHDX=HOADONXUAT.MAHDX AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as CHITIETHDX WHERE MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=CHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC, DONVITINH,GIABAN,KLDVT ";
+            string SQL = "SELECT MATHANG.MAMH, TENMH, TENNCC, KLDVT, DONVITINH,sum(KMAI) as KMAI, sum(SOLUONGXUAT) as SOLUONGXUAT, GIABAN AS GIATIEN,SUM(TIENTHU) AS TIENTHU,SUM(SOLUONGXUAT*KLDVT) AS KHOILUONG, SUM(SOLUONGXUAT*TIENTHU) AS TONGTIEN FROM MATHANG,NHACUNGCAP,DONVITINH,(select MAMH,SOLUONGXUAT, GIABAN,TIENTHU,KMAI FROM CHITIETHDX,HOADONXUAT WHERE TYPE<>1 AND CHITIETHDX.MAHDX=HOADONXUAT.MAHDX AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as CHITIETHDX WHERE MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=CHITIETHDX.MAMH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC, DONVITINH,GIABAN,KLDVT ";
            
             DataTable TBS = ctlNCC.GETDATA(SQL);
-            gridControl3.MainView = gridView3;
+            gridControl3.MainView = gridViewPHIEUXUAT;
             gridControl3.DataSource = TBS;
            // gridView4.Columns["Mã Hóa Đơn"].Group();
             //gridView4.Columns["Mã Hóa Đơn"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
            // gridView3.ExpandAllGroups();
-            gridView3.RefreshData();
+            gridViewPHIEUXUAT.RefreshData();
             gridControl3.RefreshDataSource();
             if (!PublicVariable.isKHOILUONG)
             {
-                gridView3.Columns["KHOILUONG"].Visible = false;
+                gridViewPHIEUXUAT.Columns["KHOILUONG"].Visible = false;
             }
         }
 
@@ -927,6 +935,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     dtoNCC.CKTIEN = cktien.Value.ToString();
                     dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
                     dtoNCC.MANV = sMaNV;
+                    dtoNCC.TYPE = Stype;
                     ctlNCC.UPDATEHOADONXUAT(dtoNCC);
                     if (sID != "")
                     {
@@ -940,15 +949,15 @@ namespace WindowsFormsApplication1.HoaDonXuat
         {
             loadgridCTHOADON(MAHDX);
             txtMaHD.Text = MAHDX;
-            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,GHICHU,CKTIEN  FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,GHICHU,CKTIEN,TYPE  FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
             txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
             cbotientra.Text = DT.Rows[0]["TIENDATRA"].ToString();
             txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();
             txtghichu.Text = DT.Rows[0]["GHICHU"].ToString();
-     
-            
+            cbloai.Text = DT.Rows[0]["TYPE"].ToString();
+            Stype = DT.Rows[0]["TYPE"].ToString();
             int _cktien = Convert.ToInt32(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
@@ -974,13 +983,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
-            if (gridControl3.MainView == gridView4)
+            if (gridControl3.MainView == gridViewTONGXUAT)
             {
-                dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+                dtr = gridViewTONGXUAT.GetDataRow(gridViewTONGXUAT.FocusedRowHandle);
             }
             else
             {
-                dtr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                dtr = gridViewMATHANG.GetDataRow(gridViewMATHANG.FocusedRowHandle);
             }
             string MAKH = ctlNCC.GETMAKHfromMHDX(dtr["MAHDX"].ToString());
             View_phieuxuat(dtr["MAHDX"].ToString());
@@ -1006,13 +1015,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
-            if (gridControl3.MainView == gridView4)
+            if (gridControl3.MainView == gridViewTONGXUAT)
             {
-                dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+                dtr = gridViewTONGXUAT.GetDataRow(gridViewTONGXUAT.FocusedRowHandle);
             }
             else
             {
-                dtr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                dtr = gridViewMATHANG.GetDataRow(gridViewMATHANG.FocusedRowHandle);
             }
             string MAKH = ctlNCC.GETMAKHfromMHDX(dtr["MAHDX"].ToString());
             View_phieuxuat(dtr["MAHDX"].ToString());
@@ -1069,17 +1078,17 @@ namespace WindowsFormsApplication1.HoaDonXuat
             }
 
             DataTable printtable = (DataTable)gridControl3.DataSource;
-            if (gridControl3.MainView == gridView4)
+            if (gridControl3.MainView == gridViewTONGXUAT)
             {
                 Inhd rep = new Inhd(printtable, 3);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl3.MainView == gridView1)
+            if (gridControl3.MainView == gridViewMATHANG)
             {
                 Inhd rep = new Inhd(printtable, 4);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl3.MainView == gridView3)
+            if (gridControl3.MainView == gridViewPHIEUXUAT)
             {
                 Inhd rep = new Inhd(printtable, 5);
                 rep.ShowPreviewDialog();
@@ -1118,21 +1127,21 @@ namespace WindowsFormsApplication1.HoaDonXuat
         private void linkIntheomathang_Click(object sender, EventArgs e)
         {
             ArrayList array1 = new ArrayList();
-            if (gridControl3.MainView == gridView4)
+            if (gridControl3.MainView == gridViewTONGXUAT)
             {
-                int[] row = gridView4.GetSelectedRows();
+                int[] row = gridViewTONGXUAT.GetSelectedRows();
                 for (int i = 0; i < row.Length; i++)
                 {
-                    DataRow dtr = gridView4.GetDataRow(row[i]);
+                    DataRow dtr = gridViewTONGXUAT.GetDataRow(row[i]);
                     array1.Add(dtr["MAHDX"].ToString());
                 }
             }
-            if (gridControl3.MainView == gridView1)
+            if (gridControl3.MainView == gridViewMATHANG)
             {
-                int[] row = gridView1.GetSelectedRows();
+                int[] row = gridViewMATHANG.GetSelectedRows();
                 for (int i = 0; i < row.Length; i++)
                 {
-                    DataRow dtr = gridView1.GetDataRow(row[i]);
+                    DataRow dtr = gridViewMATHANG.GetDataRow(row[i]);
                     string mahdn = dtr["MAHDX"].ToString();
                     if (array1.Contains(dtr["MAHDX"].ToString()) == false)
                     {
@@ -1190,15 +1199,15 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 return;
             }
 
-            if (gridControl3.MainView == gridView4)
+            if (gridControl3.MainView == gridViewTONGXUAT)
             {
                 loadgridPHIEUXUAT();
             }
-            else if (gridControl3.MainView == gridView1)
+            else if (gridControl3.MainView == gridViewMATHANG)
             {
                 loadgridSANPHAM();
             }
-            else if (gridControl3.MainView == gridView3)
+            else if (gridControl3.MainView == gridViewPHIEUXUAT)
             {
                 loadgridTONGSANPHAM();
             }
@@ -1400,13 +1409,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
-            if (gridControl3.MainView == gridView4)
+            if (gridControl3.MainView == gridViewTONGXUAT)
             {
-                dtr = gridView4.GetDataRow(gridView4.FocusedRowHandle);
+                dtr = gridViewTONGXUAT.GetDataRow(gridViewTONGXUAT.FocusedRowHandle);
             }
             else
             {
-                dtr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+                dtr = gridViewMATHANG.GetDataRow(gridViewMATHANG.FocusedRowHandle);
             }
             string MAKH = ctlNCC.GETMAKHfromMHDX(dtr["MAHDX"].ToString());
             View_phieuxuat(dtr["MAHDX"].ToString());
@@ -1414,6 +1423,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
             loadgridKhachHang(MAKH);
             LOAD_TTKH();
             loadGrid_sanpham();
+        }
+
+        private void cbloai_Validated(object sender, EventArgs e)
+        {
+            Stype = gridTYPE.GetFocusedRowCellValue("MATYPE").ToString();
         }
 
    

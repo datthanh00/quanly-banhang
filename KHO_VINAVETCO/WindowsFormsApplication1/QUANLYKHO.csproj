@@ -205,11 +205,11 @@
     <Compile Include="BaoCao\frmBangKeXuatKhoTheoKHAchhangHangHoa.designer.cs">
       <DependentUpon>frmBangKeXuatKhoTheoKHAchhangHangHoa.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaoCao\frmThongKeTongHop.cs">
+    <Compile Include="BaoCao\frmBCMatHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaoCao\frmThongKeTongHop.designer.cs">
-      <DependentUpon>frmThongKeTongHop.cs</DependentUpon>
+    <Compile Include="BaoCao\frmBCMatHang.designer.cs">
+      <DependentUpon>frmBCMatHang.cs</DependentUpon>
     </Compile>
     <Compile Include="class\PublicVariable.cs" />
     <Compile Include="class_import\export.cs">
@@ -351,6 +351,18 @@
     </Compile>
     <Compile Include="MatHang\ThemMatHang.designer.cs">
       <DependentUpon>ThemMatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhapxuatkhac\frmnhapkhac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhapxuatkhac\frmnhapkhac.designer.cs">
+      <DependentUpon>frmnhapkhac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhapxuatkhac\frmxuatkhac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhapxuatkhac\frmxuatkhac.designer.cs">
+      <DependentUpon>frmxuatkhac.cs</DependentUpon>
     </Compile>
     <Compile Include="PhanQuyen\frmPhanQuyenbophan.cs">
       <SubType>Form</SubType>
@@ -622,8 +634,8 @@
       <DependentUpon>frmReportTratienNCC.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\frmThongKeTongHop.resx">
-      <DependentUpon>frmThongKeTongHop.cs</DependentUpon>
+    <EmbeddedResource Include="BaoCao\frmBCMatHang.resx">
+      <DependentUpon>frmBCMatHang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\frmTonKhoNgay.resx">
@@ -732,6 +744,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MatHang\ThemMatHang.resx">
       <DependentUpon>ThemMatHang.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhapxuatkhac\frmnhapkhac.resx">
+      <DependentUpon>frmnhapkhac.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhapxuatkhac\frmxuatkhac.resx">
+      <DependentUpon>frmxuatkhac.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="PhanQuyen\frmPhanQuyenbophan.resx">
