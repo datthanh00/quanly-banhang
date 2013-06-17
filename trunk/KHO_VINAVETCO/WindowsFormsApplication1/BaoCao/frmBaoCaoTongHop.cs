@@ -106,7 +106,7 @@ namespace WindowsFormsApplication1
             NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
             dto.NGAYKTKHO = NGAYKT;
 
-            gridControl1.MainView = gridView10;
+            gridControl1.MainView = grid_hoadontheo_NCC;
             if (ISXEMCLICK){
             dt = ctr1.thongkhetheoNCC(dto);
                 gridControl1.DataSource = dt;
@@ -118,11 +118,11 @@ namespace WindowsFormsApplication1
             ISXEMCLICK = false;
             if (!PublicVariable.isKHOILUONG)
             {
-                gridView10.Columns["KHOILUONG"].Visible = false;
+                grid_hoadontheo_NCC.Columns["KHOILUONG"].Visible = false;
             }
             if (!PublicVariable.isHSD)
             {
-                gridView10.Columns["HSD"].Visible = false;
+                grid_hoadontheo_NCC.Columns["HSD"].Visible = false;
             }
            
         }
@@ -147,7 +147,7 @@ namespace WindowsFormsApplication1
             NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
             dto.NGAYKTKHO = NGAYKT;
 
-            gridControl1.MainView = gridView2;
+            gridControl1.MainView = grid_hoadontheo_KHACHHANG;
             if (ISXEMCLICK){
             dt = ctr1.thongkhetheokhachang(dto);
                 gridControl1.DataSource = dt;
@@ -157,14 +157,14 @@ namespace WindowsFormsApplication1
                 gridControl1.DataSource = null;
             }
             ISXEMCLICK = false;
-            gridView2.BestFitColumns();
+            grid_hoadontheo_KHACHHANG.BestFitColumns();
             if (!PublicVariable.isKHOILUONG)
             {
-                gridView2.Columns["KHOILUONG"].Visible = false;
+                grid_hoadontheo_KHACHHANG.Columns["KHOILUONG"].Visible = false;
             }
             if (!PublicVariable.isHSD)
             {
-                gridView2.Columns["HSD"].Visible = false;
+                grid_hoadontheo_KHACHHANG.Columns["HSD"].Visible = false;
             }
         }
        
@@ -556,12 +556,12 @@ namespace WindowsFormsApplication1
               }
               try
               {
-                  if (gridControl1.MainView == gridView10)
+                  if (gridControl1.MainView == grid_hoadontheo_NCC)
                   {
 
                       loadGird1();
                   }
-                  if (gridControl1.MainView == gridView2)
+                  if (gridControl1.MainView == grid_hoadontheo_KHACHHANG)
                   {
 
                       loadGird2();
@@ -601,12 +601,12 @@ namespace WindowsFormsApplication1
             //printableComponentLink1.CreateDocument();
            // printableComponentLink1.ShowPreview();
               DataTable printtable = (DataTable)gridControl1.DataSource;
-              if (gridControl1.MainView == gridView10)
+              if (gridControl1.MainView == grid_hoadontheo_NCC)
               {
                   Inhdoanhthu rep = new Inhdoanhthu(printtable, 7);
                   rep.ShowPreviewDialog();
               }
-              if (gridControl1.MainView == gridView2)
+              if (gridControl1.MainView == grid_hoadontheo_KHACHHANG)
               {
                   Inhdoanhthu rep = new Inhdoanhthu(printtable, 8);
                   rep.ShowPreviewDialog();
@@ -661,10 +661,10 @@ namespace WindowsFormsApplication1
         }
 
 
-        private void loinhuan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void hoadontheoNCC_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             loadGird1();
-            gridControl1.MainView = gridView10;
+            gridControl1.MainView = grid_hoadontheo_NCC;
             //gridControl1.DataSource = ctr1.LOINHUANKINHDOANH(dto);
            // dt = ctr1.LOINHUANKINHDOANH(dto);
             //pnkho.Visible = false;
