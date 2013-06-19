@@ -34,6 +34,7 @@ namespace WindowsFormsApplication1
         }
 
         int CountRowTBEdit = 0;
+        string IDNHAP = "0";
         NhapHangDTO dto = new NhapHangDTO();
         NhapHangDAO mh = new NhapHangDAO();
         Boolean isdelete = false;
@@ -92,6 +93,10 @@ namespace WindowsFormsApplication1
             loadgridCTHOADON();
             Load_panel_create();
             DataRow dtr;
+            if (gridViewHOADON.FocusedRowHandle < 0)
+            {
+                return;
+            }
             if (gridControl3.MainView == gridViewHOADON)
             {
                 dtr = gridViewHOADON.GetDataRow(gridViewHOADON.FocusedRowHandle);
@@ -118,6 +123,10 @@ namespace WindowsFormsApplication1
             loadgridCTHOADON();
             Load_panel_create();
             DataRow dtr;
+            if (gridViewHOADON.FocusedRowHandle < 0)
+            {
+                return;
+            }
             if (gridControl3.MainView == gridViewHOADON)
             {
                 dtr = gridViewHOADON.GetDataRow(gridViewHOADON.FocusedRowHandle);
@@ -577,6 +586,7 @@ namespace WindowsFormsApplication1
                                 return;
                             }
                             dtoNCC.IsUPDATE = false;
+                            dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
                             ctlNCC.INSERTHOADONNHAP(dtoNCC);
                             //insert hoa don chi tiet
 
@@ -601,6 +611,7 @@ namespace WindowsFormsApplication1
                             }
 
                             dtoNCC.IsUPDATE = true;
+                            dtoNCC.IDNHAP = IDNHAP;
                             ctlNCC.UPDATEHOADONNHAP(dtoNCC);
                             //update hoa don chi tiet
 
@@ -831,6 +842,7 @@ namespace WindowsFormsApplication1
             txtMaHD.Text = connect.sTuDongDienMaHoaDonNhap(txtMaHD.Text);
             txtlohang.Text = txtMaHD.Text;
             txtNgay.Text = DateTime.Now.ToString("dd/MM/yyy");
+
         }
 
         private void dockPanel1_Click(object sender, EventArgs e)
@@ -1045,7 +1057,10 @@ namespace WindowsFormsApplication1
                 return;
             }
             PublicVariable.SQL_NHAP = "";
-
+            if (gridViewHOADON.FocusedRowHandle < 0)
+            {
+                return;
+            }
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 int focusrow = gridCTHOADON.FocusedRowHandle;
@@ -1173,14 +1188,14 @@ namespace WindowsFormsApplication1
            
             txtMaHD.Text = MAHDN;
             txtlohang.Text =MAHDN;
-            string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) as NGAYNHAP ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA,T1.GHICHU ,T1.CKTIEN,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
+            string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) as NGAYNHAP ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA,T1.GHICHU ,T1.CKTIEN,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,IDNHAP FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
             DataTable DT = ctlNCC.GETDATA(SQL);
             txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
             cbotientra.Text = DT.Rows[0]["TIENDATRA"].ToString();
             txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();
             txtghichu.Text = DT.Rows[0]["GHICHU"].ToString();
-            
+            IDNHAP = DT.Rows[0]["IDNHAP"].ToString();
             int _cktien = Convert.ToInt32(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
@@ -1428,7 +1443,6 @@ namespace WindowsFormsApplication1
             {
                 ckphantram.Value = 0;
                 cktien.Value = 0;
-
             }
             thanhtien = thanhtien - _cktien;
             txtthanhtien.Text = thanhtien.ToString();
@@ -1438,7 +1452,6 @@ namespace WindowsFormsApplication1
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
-          
         }
 
         private void xoaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1468,9 +1481,7 @@ namespace WindowsFormsApplication1
             View_phieunhap(dtr["MAHDN"].ToString());
             txtNgay.Text = dtr["NGAYNHAP"].ToString();
             txtlohang.Text = dtr["MAHDN"].ToString();
-
             loadgridNhacCungCap(MANCC);
-
             Load_TTNCC();
             loadGrid_sanpham();
         }

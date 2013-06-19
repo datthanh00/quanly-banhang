@@ -193,7 +193,7 @@ namespace WindowsFormsApplication1
                 dto.MANCC = "";
             }
 
-            gridControl1.MainView = gridView7;
+            gridControl1.MainView = grid_tonkho_CUOIKY;
             if (ISXEMCLICK){
             dt = ctr1.TONKHOTONGHOP(dto);
                 gridControl1.DataSource = dt;
@@ -203,16 +203,16 @@ namespace WindowsFormsApplication1
                 gridControl1.DataSource = null;
             }
             ISXEMCLICK = false;
-            gridView7.RefreshData();
-            gridView7.BestFitColumns();
+            grid_tonkho_CUOIKY.RefreshData();
+            grid_tonkho_CUOIKY.BestFitColumns();
             gridControl1.RefreshDataSource();
             if (!PublicVariable.isKHOILUONG)
             {
-                gridView7.Columns["KHOILUONG"].Visible = false;
+                grid_tonkho_CUOIKY.Columns["KHOILUONG"].Visible = false;
             }
             if (!PublicVariable.isHSD)
             {
-                gridView7.Columns["HSD"].Visible = false;
+                grid_tonkho_CUOIKY.Columns["HSD"].Visible = false;
             }
         }
         private void loadGird_thekho()
@@ -253,7 +253,7 @@ namespace WindowsFormsApplication1
             //dto.MAKHO = cbkho.Text;
             //dto.MAMH = cbsanpham.Text;
 
-            gridControl1.MainView = gridView8;
+            gridControl1.MainView = grid_THEKHO;
             if (ISXEMCLICK){
             dt = ctr1.THEKHO(dto);
                 gridControl1.DataSource = dt;
@@ -263,22 +263,22 @@ namespace WindowsFormsApplication1
                 gridControl1.DataSource = null;
             }
             ISXEMCLICK = false;
-            gridView8.RefreshData();
+            grid_THEKHO.RefreshData();
             gridControl1.RefreshDataSource();
 
             //gridView6.Columns["Mã Hàng"].Group();
             //gridView6.Columns["Ngày"].SortOrder = DevExpress.Data.ColumnSortOrder.Descending;
 
-            gridView8.ExpandAllGroups();
-            gridView8.BestFitColumns();
+            grid_THEKHO.ExpandAllGroups();
+            grid_THEKHO.BestFitColumns();
             if (!PublicVariable.isKHOILUONG)
             {
-                gridView8.Columns["KLTONDAU"].Visible = false;
-                gridView8.Columns["KLNHAP"].Visible = false;
-                gridView8.Columns["KLTRANHAP"].Visible = false;
-                gridView8.Columns["KLXUAT"].Visible = false;
-                gridView8.Columns["KLTRAXUAT"].Visible = false;
-                gridView8.Columns["KLTONCUOI"].Visible = false;
+                grid_THEKHO.Columns["KLTONDAU"].Visible = false;
+                grid_THEKHO.Columns["KLNHAP"].Visible = false;
+                grid_THEKHO.Columns["KLTRANHAP"].Visible = false;
+                grid_THEKHO.Columns["KLXUAT"].Visible = false;
+                grid_THEKHO.Columns["KLTRAXUAT"].Visible = false;
+                grid_THEKHO.Columns["KLTONCUOI"].Visible = false;
             }
 
         }
@@ -567,11 +567,11 @@ namespace WindowsFormsApplication1
                       loadGird2();
                   }
               
-                  if (gridControl1.MainView == gridView7)
+                  if (gridControl1.MainView == grid_tonkho_CUOIKY)
                   {
                       loadGird_tonkhotonghop();
                   }
-                  if (gridControl1.MainView == gridView8)
+                  if (gridControl1.MainView == grid_THEKHO)
                   {
                       loadGird_thekho();
                   }
@@ -611,12 +611,12 @@ namespace WindowsFormsApplication1
                   Inhdoanhthu rep = new Inhdoanhthu(printtable, 8);
                   rep.ShowPreviewDialog();
               }
-              if (gridControl1.MainView == gridView7)
+              if (gridControl1.MainView == grid_tonkho_CUOIKY)
               {
                   Inhdoanhthu rep = new Inhdoanhthu(printtable, 9);
                   rep.ShowPreviewDialog();
               }
-              if (gridControl1.MainView == gridView8)
+              if (gridControl1.MainView == grid_THEKHO)
               {
                   Inhdoanhthu rep = new Inhdoanhthu(printtable, 10);
                   rep.ShowPreviewDialog();
@@ -731,7 +731,7 @@ namespace WindowsFormsApplication1
             cbkhachhang.Properties.DataSource = ctr1.dtGetKH();
 
         }
-        private void Linktonkhotonghop_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        private void LinktonkhoCUOIKY_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             optionload = "tonkhotonghop";
             //pnkho.Visible = true;

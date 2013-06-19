@@ -37,6 +37,7 @@ namespace WindowsFormsApplication1
         NhapHangDTO dto = new NhapHangDTO();
         NhapHangDAO mh = new NhapHangDAO();
         Boolean isdelete = false;
+        string IDNHAP = "0";
         //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
         public string THEM, XOA, SUA, IN, XEM;
         string Sdiachi, Ssdt,Sfax, Semail, Stype;
@@ -92,6 +93,7 @@ namespace WindowsFormsApplication1
             loadgridCTHOADON();
             Load_panel_create();
             DataRow dtr;
+     
             if (gridControl3.MainView == gridViewPHIEUNHAP)
             {
                 dtr = gridViewPHIEUNHAP.GetDataRow(gridViewPHIEUNHAP.FocusedRowHandle);
@@ -99,6 +101,10 @@ namespace WindowsFormsApplication1
             else
             {
                 dtr = gridViewMATHANG.GetDataRow(gridViewMATHANG.FocusedRowHandle);
+            }
+            if (dtr == null)
+            {
+                return;
             }
             string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
             View_phieunhap(dtr["MAHDN"].ToString());
@@ -118,6 +124,7 @@ namespace WindowsFormsApplication1
             loadgridCTHOADON();
             Load_panel_create();
             DataRow dtr;
+
             if (gridControl3.MainView == gridViewPHIEUNHAP)
             {
                 dtr = gridViewPHIEUNHAP.GetDataRow(gridViewPHIEUNHAP.FocusedRowHandle);
@@ -125,6 +132,10 @@ namespace WindowsFormsApplication1
             else
             {
                 dtr = gridViewMATHANG.GetDataRow(gridViewMATHANG.FocusedRowHandle);
+            }
+            if (dtr == null)
+            {
+                return;
             }
             string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
             View_phieunhap(dtr["MAHDN"].ToString());
@@ -589,6 +600,7 @@ namespace WindowsFormsApplication1
                                 return;
                             }
                             dtoNCC.IsUPDATE = false;
+                            dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
                             ctlNCC.INSERTHOADONNHAP(dtoNCC);
                             //insert hoa don chi tiet
 
@@ -613,6 +625,7 @@ namespace WindowsFormsApplication1
                             }
 
                             dtoNCC.IsUPDATE = true;
+                            dtoNCC.IDNHAP = IDNHAP;
                             ctlNCC.UPDATEHOADONNHAP(dtoNCC);
                             //update hoa don chi tiet
 
@@ -1188,7 +1201,7 @@ namespace WindowsFormsApplication1
            
             txtMaHD.Text = MAHDN;
             txtlohang.Text =MAHDN;
-            string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) as NGAYNHAP ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA,T1.GHICHU ,T1.CKTIEN,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO, TYPE FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
+            string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) as NGAYNHAP ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA,T1.GHICHU ,T1.CKTIEN,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO, TYPE,IDNHAP FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
             DataTable DT = ctlNCC.GETDATA(SQL);
             txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
@@ -1197,6 +1210,7 @@ namespace WindowsFormsApplication1
             txtghichu.Text = DT.Rows[0]["GHICHU"].ToString();
             cbloai.Text = DT.Rows[0]["TYPE"].ToString();
             Stype = DT.Rows[0]["TYPE"].ToString();
+            IDNHAP = DT.Rows[0]["IDNHAP"].ToString();
             int _cktien = Convert.ToInt32(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
@@ -1472,6 +1486,7 @@ namespace WindowsFormsApplication1
             loadgridCTHOADON();
             Load_panel_create();
             DataRow dtr;
+
             if (gridControl3.MainView == gridViewPHIEUNHAP)
             {
                 dtr = gridViewPHIEUNHAP.GetDataRow(gridViewPHIEUNHAP.FocusedRowHandle);
@@ -1479,6 +1494,10 @@ namespace WindowsFormsApplication1
             else
             {
                 dtr = gridViewMATHANG.GetDataRow(gridViewMATHANG.FocusedRowHandle);
+            }
+            if (dtr == null)
+            {
+                return;
             }
             string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
             View_phieunhap(dtr["MAHDN"].ToString());

@@ -826,7 +826,7 @@ namespace WindowsFormsApplication1
         private void btDoanhThu_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetPhanQuyen("9");
-            if (!checkOpenTabs("Báo Cáo Doanh Thu"))
+            if (!checkOpenTabs("Báo Cáo Chi Phí - Doanh Thu"))
             {
                 TabItem t = tabControl12.CreateTab("Báo Cáo Doanh Thu");
                 t.Name = "Doanhthu";

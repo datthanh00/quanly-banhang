@@ -19,6 +19,15 @@ namespace WindowsFormsApplication1
             get { return _ID; }
             set { _ID = value; }
         }
+
+        private string _IDNHAP;
+
+        public string IDNHAP
+        {
+            get { return _IDNHAP; }
+            set { _IDNHAP = value; }
+        }
+
         private int _STT;
 
         public int STT
@@ -40,6 +49,13 @@ namespace WindowsFormsApplication1
         {
             get { return _LOHANG; }
             set { _LOHANG = value; }
+        }
+        private string _CHENHLECH;
+
+        public string CHENHLECH
+        {
+            get { return _CHENHLECH; }
+            set { _CHENHLECH = value; }
         }
         private string _TYPE;
 

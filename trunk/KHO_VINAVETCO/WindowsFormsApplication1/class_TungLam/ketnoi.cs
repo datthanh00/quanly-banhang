@@ -853,6 +853,17 @@ namespace WindowsFormsApplication1
             return sMahdx;
             
         }
+        public string MAXID_TONKHO()
+        {
+            String SQL = "Select MAX(ID) from TONKHO";
+            DataTable dt = getdata(SQL);
+            int MAXID = 0;
+            if (dt.Rows[0][0].ToString() != "")
+            {
+                MAXID = int.Parse(dt.Rows[0][0].ToString());
+            }
+            return (MAXID + 1).ToString();
+        }
         public string sTuDongDienMaHoaDonNhap(string sMahdn)
         {
 

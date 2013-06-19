@@ -10,6 +10,10 @@ namespace WindowsFormsApplication1
         {
             DAO.insertKhachHang(DTO);
         }
+        public String getIDNHAP()
+        {
+            return DAO.getIDNHAP();
+        }
         public void updateKhachHang(DTO DTO)
         {
             DAO.updateKhachHang(DTO);
@@ -79,9 +83,9 @@ namespace WindowsFormsApplication1
         {
             DAO.addMatHang(dto);
         }
-        public void addlohangtondau(DTO dto)
+        public void UPDATElohangtondau(DTO dto)
         {
-            DAO.addlohangtondau(dto);
+            DAO.UPDATElohangtondau(dto);
         }
         public void addBanggia(DTO dto)
         {

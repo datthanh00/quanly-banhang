@@ -67,9 +67,9 @@ namespace WindowsFormsApplication1
         {
             return dao.getonkiemkho(KIKIEM);
         }
-        public DataTable getondauky_mathang(String MANCC)
+        public DataTable getondauky_mathang()
         {
-            return dao.getondauky_mathang(MANCC);
+            return dao.getondauky_mathang();
         }
         public DataTable getCONGNONCC_DAUKY()
         {
