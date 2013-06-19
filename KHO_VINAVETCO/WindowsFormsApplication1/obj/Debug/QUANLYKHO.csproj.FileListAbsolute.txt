@@ -14,11 +14,9 @@ e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\QUANLYKHO.csproj
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBanggia.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmDsbanggia.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.ThemBanggia.resources
-e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBangKeXuatKhoTheoKHAchhangHangHoa.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTonKho.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportThutienKH.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmReportTratienNCC.resources
-e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmThongKeTongHop.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTonKhoNgay.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTonphanlo.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBoPhan.resources
@@ -102,3 +100,7 @@ e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsAppl
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmKetso.resources
 E:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmsuahd.resources
 E:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Inhdsua.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBaoCaoTongHop.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBCMatHang.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhapkhac.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonXuat.frmxuatkhac.resources

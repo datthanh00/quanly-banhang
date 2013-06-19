@@ -251,8 +251,6 @@ namespace WindowsFormsApplication1
                 return;
             }
             
-            //gridControl6.DataSource = ctr.getDoanhThu(dto);
-            //tb = ctr.getDoanhThu(dto);
             if (baocaotype == "MH_NGAY")
             {
                gridControl6.DataSource = ctr.getcpmuahangngay(dto);
@@ -455,22 +453,22 @@ namespace WindowsFormsApplication1
             * */
 
             DataTable printtable = (DataTable)gridControl6.DataSource;
-            if (gridControl6.MainView == gridView4)
+            if (gridControl6.MainView == grid_MUAHANG_NGAY)
             {
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 0);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl6.MainView == gridView5)
+            if (gridControl6.MainView == grid_MUAHANG_NCC)
             {
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 1);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl6.MainView == gridView6)
+            if (gridControl6.MainView == gridMUAHANG_SANPHAM)
             {
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 2);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl6.MainView == gridView7)
+            if (gridControl6.MainView == grid_BANHANG_NGAY)
             {
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 3);
                 rep.ShowPreviewDialog();
@@ -504,11 +502,8 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "MH_NGAY";
             gridControl6.DataSource = null;
-            gridControl6.MainView = gridView4;
-            if (!PublicVariable.isKHOILUONG)
-            {
-                gridView4.Columns["KHOILUONG"].Visible = false;
-            }
+            gridControl6.MainView = grid_MUAHANG_NGAY;
+        
             //gridView4.Columns.Clear();
             load();
             lbloc.Text = "";
@@ -522,11 +517,8 @@ namespace WindowsFormsApplication1
             baocaotype = "MH_NCC";
             gridControl6.DataSource = null;
             //gridView4.Columns.Clear();
-            gridControl6.MainView = gridView5;
-            if (!PublicVariable.isKHOILUONG)
-            {
-                gridView5.Columns["KHOILUONG"].Visible = false;
-            }
+            gridControl6.MainView = grid_MUAHANG_NCC;
+
             load();
             lbloc.Text = "Nhà cung cấp";
             cbkhachhang.Visible = false;
@@ -538,11 +530,7 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "BH_NGAY";
             gridControl6.DataSource = null;
-            gridControl6.MainView = gridView7;
-            if (!PublicVariable.isKHOILUONG)
-            {
-                gridView7.Columns["KHOILUONG"].Visible = false;
-            }
+            gridControl6.MainView = grid_BANHANG_NGAY;
             load();
             lbloc.Text = "";
             cbkhachhang.Visible = false;
@@ -602,10 +590,11 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "MH_SP";
             gridControl6.DataSource = null;
-            gridControl6.MainView = gridView6;
+            gridControl6.MainView = gridMUAHANG_SANPHAM;
             if (!PublicVariable.isKHOILUONG)
             {
-                gridView6.Columns["KHOILUONG"].Visible = false;
+                gridMUAHANG_SANPHAM.Columns["KLNHAP"].Visible = false;
+                gridMUAHANG_SANPHAM.Columns["KLTRAXUAT"].Visible = false;
             }
             load();
             lbloc.Text = "Sản phẩm";

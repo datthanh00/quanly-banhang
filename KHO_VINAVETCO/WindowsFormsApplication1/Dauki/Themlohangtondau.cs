@@ -21,6 +21,7 @@ namespace WindowsFormsApplication1
         }
         ketnoi connect = new ketnoi();
         public int iNgonNgu;
+        public string SMAMH, SLOHANG, SHSD, SSOLUONG, SGIAMUA;
         public void LoadTV()
         {
             iNgonNgu = 0;
@@ -78,6 +79,11 @@ namespace WindowsFormsApplication1
 
                 
             loadgirdlookupMATHANG();
+            cbmathang.Text = SMAMH;
+            txtlohang.Text = SLOHANG;
+            cbhsd.Text = SHSD;
+            txtsoluong.Text = SSOLUONG;
+            txtgiamua.Text = SGIAMUA;
         }
 
         DTO dto = new DTO();
@@ -117,24 +123,68 @@ namespace WindowsFormsApplication1
                 XtraMessageBox.Show("Vui lòng điền giá mua ");
                 txtgiamua.Focus();
                 return;
-            }else if (txtgiaban.Text == "")
-            {
-                XtraMessageBox.Show("Vui lòng điền giá bán ");
-                txtgiaban.Focus();
-                return;
             }
             
 
-            dto.MAMH = gridLookUpEdit1View.GetFocusedRowCellValue("MAMH").ToString();
-            dto.LOHANG = txtlohang.Text;
+            dto.MAMH = SMAMH;
+            dto.LOHANG = SLOHANG;
             dto.HSD = cbhsd.Text;
             dto.HSD = dto.HSD.Substring(6, 4) + "/" + dto.HSD.Substring(3, 2) + "/" + dto.HSD.Substring(0, 2);
             dto.SOLUONGMH =txtsoluong.Value.ToString();
             dto.GIAMUA = txtgiamua.Value.ToString();
-            dto.GIABAN = txtgiamua.Value.ToString();
+            
+            double TONKHO=0, TONDAUMIN=0, NHAP=0, TRANHAP=0, XUAT=0, TRAXUAT=0;
+            DataTable DT1;
+            string SQL;
 
-            ctl.addlohangtondau(dto);
-            XtraMessageBox.Show("Bạn Đã Thêm Thành Công");
+            SQL = "SELECT TONKHO FROM TONDAUKHOHANG WHERE MAMH='" + SMAMH + "' AND LOHANG='" + SLOHANG + "'";
+            DT1 = ctl.GETDATA(SQL);
+            if (DT1.Rows.Count > 0)
+            {
+                TONKHO = Convert.ToDouble(DT1.Rows[0][0].ToString());
+
+                SQL = "SELECT SUM(SOLUONGNHAP)+SUM(KMAI) FROM CHITIETHDN WHERE MAMH='" + SMAMH + "' AND LOHANG='" + SLOHANG + "'";
+                DT1 = ctl.GETDATA(SQL);
+                if (DT1.Rows[0][0].ToString()!="")
+                {
+                    NHAP = Convert.ToDouble(DT1.Rows[0][0].ToString());
+                }
+
+                SQL = "SELECT SUM(SOLUONGXUAT)+SUM(KMAI) FROM CHITIETHDX WHERE MAMH='" + SMAMH + "' AND LOHANG='" + SLOHANG + "'";
+                DT1 = ctl.GETDATA(SQL);
+                if (DT1.Rows[0][0].ToString() != "")
+                {
+                    XUAT = Convert.ToDouble(DT1.Rows[0][0].ToString());
+                }
+
+                SQL = "SELECT SUM(SOLUONGNHAP)+SUM(KMAI) FROM TRACHITIETHDN WHERE MAMH='" + SMAMH + "' AND LOHANG='" + SLOHANG + "'";
+                DT1 = ctl.GETDATA(SQL);
+                if (DT1.Rows[0][0].ToString() != "")
+                {
+                    TRANHAP = Convert.ToDouble(DT1.Rows[0][0].ToString());
+                }
+
+                SQL = "SELECT SUM(SOLUONGXUAT)+SUM(KMAI) FROM TRACHITIETHDX WHERE MAMH='" + SMAMH + "' AND LOHANG='" + SLOHANG + "'";
+                DT1 = ctl.GETDATA(SQL);
+                if (DT1.Rows[0][0].ToString() != "")
+                {
+                    TRAXUAT = Convert.ToDouble(DT1.Rows[0][0].ToString());
+                }
+
+                TONDAUMIN = XUAT + TRANHAP - NHAP - TRAXUAT;
+
+                double SOLUONGMH1= Convert.ToDouble(dto.SOLUONGMH); 
+
+                if(TONDAUMIN>SOLUONGMH1)
+                {
+                     XtraMessageBox.Show("Tồn đầu không thể nhỏ hơn: "+TONDAUMIN.ToString());
+                     return;
+                }
+
+                dto.CHENHLECH = (SOLUONGMH1 - TONKHO).ToString();
+                ctl.UPDATElohangtondau(dto);
+                XtraMessageBox.Show("Bạn Đã Sửa Thành Công");
+            }
             this.Close();
         }
 

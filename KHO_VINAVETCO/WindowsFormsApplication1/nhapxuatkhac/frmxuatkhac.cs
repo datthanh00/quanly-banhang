@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         DTO dtoNCC = new DTO();
         CTL ctlNCC = new CTL();
         string Stype;
+        string IDNHAP = "0";
         public void loadgridKhachHang()
         {
             cboTenKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
@@ -341,6 +342,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             dtoNCC.NGAYXUAT = NGAYXUAT;
 
                             dtoNCC.IsUPDATE = false;
+                            dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
                             ctlNCC.INSERTHOADONXUAT(dtoNCC);
                             //insert hoa don chi tiet
 
@@ -362,6 +364,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             }
 
                             dtoNCC.IsUPDATE = true;
+                            dtoNCC.IDNHAP = IDNHAP;
                             ctlNCC.UPDATEHOADONXUAT(dtoNCC);
 
                             for (int i = 0; i < rowcount; i++)
@@ -949,7 +952,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         {
             loadgridCTHOADON(MAHDX);
             txtMaHD.Text = MAHDX;
-            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,GHICHU,CKTIEN,TYPE  FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,GHICHU,CKTIEN,TYPE,IDNHAP  FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
             txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
@@ -958,6 +961,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             txtghichu.Text = DT.Rows[0]["GHICHU"].ToString();
             cbloai.Text = DT.Rows[0]["TYPE"].ToString();
             Stype = DT.Rows[0]["TYPE"].ToString();
+            IDNHAP = DT.Rows[0]["IDNHAP"].ToString();
             int _cktien = Convert.ToInt32(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
@@ -983,6 +987,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
+            
             if (gridControl3.MainView == gridViewTONGXUAT)
             {
                 dtr = gridViewTONGXUAT.GetDataRow(gridViewTONGXUAT.FocusedRowHandle);
@@ -990,6 +995,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
             else
             {
                 dtr = gridViewMATHANG.GetDataRow(gridViewMATHANG.FocusedRowHandle);
+            }
+            if (dtr == null)
+            {
+                return;
             }
             string MAKH = ctlNCC.GETMAKHfromMHDX(dtr["MAHDX"].ToString());
             View_phieuxuat(dtr["MAHDX"].ToString());
@@ -1022,6 +1031,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
             else
             {
                 dtr = gridViewMATHANG.GetDataRow(gridViewMATHANG.FocusedRowHandle);
+            }
+            if (dtr == null)
+            {
+                return;
             }
             string MAKH = ctlNCC.GETMAKHfromMHDX(dtr["MAHDX"].ToString());
             View_phieuxuat(dtr["MAHDX"].ToString());
@@ -1260,6 +1273,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
+            if (gridView2.FocusedRowHandle<0)
+            {
+                return;
+            }
             dtr = gridView2.GetDataRow(gridView2.FocusedRowHandle);
 
             mahdtam = dtr["MAHDX"].ToString();
@@ -1273,6 +1290,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
             PublicVariable.SQL_XUAT = "";
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                if (gridView2.FocusedRowHandle<0)
+                {
+                    return;
+                }
                 int focusrow = gridView2.FocusedRowHandle;
                 DataRow dtr = dtr = gridView2.GetDataRow(focusrow);
                 if (dtr != null)

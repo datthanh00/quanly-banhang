@@ -199,11 +199,11 @@
     <Compile Include="class\ClassThongke_mathang_dal.cs" />
     <Compile Include="class\Class_ctrl_thongkekho.cs" />
     <Compile Include="class\Class_DTO_ThongKe.cs" />
-    <Compile Include="BaoCao\frmBangKeXuatKhoTheoKHAchhangHangHoa.cs">
+    <Compile Include="BaoCao\frmBaoCaoTongHop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BaoCao\frmBangKeXuatKhoTheoKHAchhangHangHoa.designer.cs">
-      <DependentUpon>frmBangKeXuatKhoTheoKHAchhangHangHoa.cs</DependentUpon>
+    <Compile Include="BaoCao\frmBaoCaoTongHop.designer.cs">
+      <DependentUpon>frmBaoCaoTongHop.cs</DependentUpon>
     </Compile>
     <Compile Include="BaoCao\frmBCMatHang.cs">
       <SubType>Form</SubType>
@@ -618,8 +618,8 @@
       <DependentUpon>ThemBanggia.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="BaoCao\frmBangKeXuatKhoTheoKHAchhangHangHoa.resx">
-      <DependentUpon>frmBangKeXuatKhoTheoKHAchhangHangHoa.cs</DependentUpon>
+    <EmbeddedResource Include="BaoCao\frmBaoCaoTongHop.resx">
+      <DependentUpon>frmBaoCaoTongHop.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\frmBaoCaoTonKho.resx">
