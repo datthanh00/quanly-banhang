@@ -118,6 +118,11 @@ namespace WindowsFormsApplication1
         {
             return dao.getcpmuahangncc(dto);
         }
+
+        public DataTable getcpmuahang_KHTRA(clDTO dto)
+        {
+            return dao.getcpmuahang_KHTRA(dto);
+        }
         public DataTable getDoanhThungay(clDTO dto)
         {
             return dao.getDoanhThungay(dto);
