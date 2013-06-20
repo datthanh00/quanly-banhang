@@ -323,6 +323,35 @@ namespace WindowsFormsApplication1
                 gridControl6.DataSource = ctr.getcpmuahangsp(dto);
 
             }
+            else if (baocaotype == "BH_TRANCC")
+            {
+                if (cbncc.Text != "")
+                {
+                    dto.MANCC = gridncc.GetFocusedRowCellValue("MANCC").ToString();
+                    gridncc.ClearSelection();
+                    cbncc.Text = "";
+                }
+                else
+                {
+                    dto.MANCC = "";
+                }
+                gridControl6.DataSource = ctr.getcpmuahangncc(dto);
+            }
+            else if (baocaotype == "MH_KHTRA")
+            {
+                if (cbkhachhang.Text != "")
+                {
+                    dto.MAKH = gridkhachhang.GetFocusedRowCellValue("MAKH").ToString();
+                    gridkhachhang.ClearSelection();
+                    cbkhachhang.Text = "";
+                }
+                else
+                {
+                    dto.MAKH = "";
+                }
+
+                gridControl6.DataSource = ctr.getcpmuahang_KHTRA(dto);
+            }
 
         }
         private void load_cbhanghoa()
@@ -473,7 +502,7 @@ namespace WindowsFormsApplication1
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 3);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl6.MainView == gridView8)
+            if (gridControl6.MainView == grid_BANHANG_KHACHHANG)
             {
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 4);
                 rep.ShowPreviewDialog();
@@ -542,11 +571,7 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "BH_KH";
             gridControl6.DataSource = null;
-            gridControl6.MainView = gridView8;
-            if (!PublicVariable.isKHOILUONG)
-            {
-                gridView8.Columns["KHOILUONG"].Visible = false;
-            }
+            gridControl6.MainView = grid_BANHANG_KHACHHANG;
             load();
             lbloc.Text = "Khách Hàng";
             cbkhachhang.Visible = true;
@@ -572,6 +597,18 @@ namespace WindowsFormsApplication1
 
         private void NBI_BH_SP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+            baocaotype = "BH_TRANCC";
+            gridControl6.DataSource = null;
+            gridControl6.MainView = grid_BANHANG_TRANCC;
+            load();
+            lbloc.Text = "Sản phẩm";
+            cbkhachhang.Visible = false;
+            cbncc.Visible = false;
+            cbsanpham.Visible = true;
+        }
+
+        private void BANHANG_SANPHAM_ItemChanged(object sender, EventArgs e)
+        {
             baocaotype = "BH_SP";
             gridControl6.DataSource = null;
             gridControl6.MainView = gridView9;
@@ -586,7 +623,19 @@ namespace WindowsFormsApplication1
             cbsanpham.Visible = true;
         }
 
+
         private void NBI_MH_SP_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            baocaotype = "MH_KHTRA";
+            gridControl6.DataSource = null;
+            gridControl6.MainView = grid_MUAHANG_KHACHHANGTRA;
+            load();
+            lbloc.Text = "Sản phẩm";
+            cbkhachhang.Visible = false;
+            cbncc.Visible = false;
+            cbsanpham.Visible = true;
+        }
+        private void muahang_sanpham_ItemChanged(object sender, EventArgs e)
         {
             baocaotype = "MH_SP";
             gridControl6.DataSource = null;
@@ -626,6 +675,7 @@ namespace WindowsFormsApplication1
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
+        
 
 
       

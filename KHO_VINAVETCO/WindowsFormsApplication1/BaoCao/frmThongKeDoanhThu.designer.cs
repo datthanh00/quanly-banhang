@@ -38,11 +38,13 @@
             this.NBmuahang = new DevExpress.XtraNavBar.NavBarGroup();
             this.NBI_MH_ngay = new DevExpress.XtraNavBar.NavBarItem();
             this.NBI_MH_NCC = new DevExpress.XtraNavBar.NavBarItem();
-            this.NBI_MH_SP = new DevExpress.XtraNavBar.NavBarItem();
+            this.khachhang_trahang = new DevExpress.XtraNavBar.NavBarItem();
+            this.muahang_sanpham = new DevExpress.XtraNavBar.NavBarItem();
             this.NBbanhang = new DevExpress.XtraNavBar.NavBarGroup();
             this.NBI_BH_ngay = new DevExpress.XtraNavBar.NavBarItem();
             this.NBI_BH_KH = new DevExpress.XtraNavBar.NavBarItem();
-            this.NBI_BH_SP = new DevExpress.XtraNavBar.NavBarItem();
+            this.TRAHANG_NCC = new DevExpress.XtraNavBar.NavBarItem();
+            this.BANHANG_SANPHAM = new DevExpress.XtraNavBar.NavBarItem();
             this.NBdoanhso = new DevExpress.XtraNavBar.NavBarGroup();
             this.NBI_DS_NV = new DevExpress.XtraNavBar.NavBarItem();
             this.linkTheoTuan = new DevExpress.XtraNavBar.NavBarItem();
@@ -55,6 +57,15 @@
             this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl9 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl6 = new DevExpress.XtraGrid.GridControl();
+            this.grid_MUAHANG_KHACHHANGTRA = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn47 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn48 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grid_BANHANG_TRANCC = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grid_MUAHANG_NGAY = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn36 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -72,11 +83,9 @@
             this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView8 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.grid_BANHANG_KHACHHANG = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.grid_BANHANG_NGAY = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -98,7 +107,6 @@
             this.grid_MUAHANG_NCC = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn43 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl10 = new DevExpress.XtraEditors.PanelControl();
             this.cbkhachhang = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -167,10 +175,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).BeginInit();
             this.panelControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_MUAHANG_KHACHHANGTRA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_BANHANG_TRANCC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_MUAHANG_NGAY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_BANHANG_KHACHHANG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_BANHANG_NGAY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMUAHANG_SANPHAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_MUAHANG_NCC)).BeginInit();
@@ -232,9 +242,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 460);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 459);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -256,12 +266,14 @@
             this.NBI_BH_ngay,
             this.NBI_BH_KH,
             this.NBI_DS_NV,
-            this.NBI_MH_SP,
-            this.NBI_BH_SP});
+            this.khachhang_trahang,
+            this.TRAHANG_NCC,
+            this.muahang_sanpham,
+            this.BANHANG_SANPHAM});
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(194, 460);
+            this.navBarControl1.Size = new System.Drawing.Size(194, 459);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -272,7 +284,8 @@
             this.NBmuahang.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_MH_ngay),
             new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_MH_NCC),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_MH_SP)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.khachhang_trahang),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.muahang_sanpham)});
             this.NBmuahang.Name = "NBmuahang";
             // 
             // NBI_MH_ngay
@@ -289,12 +302,19 @@
             this.NBI_MH_NCC.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
             this.NBI_MH_NCC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_NCC_LinkClicked);
             // 
-            // NBI_MH_SP
+            // khachhang_trahang
             // 
-            this.NBI_MH_SP.Caption = "Theo sản phẩm";
-            this.NBI_MH_SP.Name = "NBI_MH_SP";
-            this.NBI_MH_SP.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
-            this.NBI_MH_SP.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_SP_LinkClicked);
+            this.khachhang_trahang.Caption = "Theo KH trả Hàng";
+            this.khachhang_trahang.Name = "khachhang_trahang";
+            this.khachhang_trahang.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.khachhang_trahang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_SP_LinkClicked);
+            // 
+            // muahang_sanpham
+            // 
+            this.muahang_sanpham.Caption = "Theo Sản Phẩm";
+            this.muahang_sanpham.Name = "muahang_sanpham";
+            this.muahang_sanpham.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.muahang_sanpham.ItemChanged += new System.EventHandler(this.muahang_sanpham_ItemChanged);
             // 
             // NBbanhang
             // 
@@ -303,7 +323,8 @@
             this.NBbanhang.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_BH_ngay),
             new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_BH_KH),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.NBI_BH_SP)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.TRAHANG_NCC),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.BANHANG_SANPHAM)});
             this.NBbanhang.Name = "NBbanhang";
             // 
             // NBI_BH_ngay
@@ -315,17 +336,24 @@
             // 
             // NBI_BH_KH
             // 
-            this.NBI_BH_KH.Caption = "Khách Hàng";
+            this.NBI_BH_KH.Caption = "Theo Khách Hàng";
             this.NBI_BH_KH.Name = "NBI_BH_KH";
             this.NBI_BH_KH.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
             this.NBI_BH_KH.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_KH_LinkClicked);
             // 
-            // NBI_BH_SP
+            // TRAHANG_NCC
             // 
-            this.NBI_BH_SP.Caption = "Theo sản phẩm";
-            this.NBI_BH_SP.Name = "NBI_BH_SP";
-            this.NBI_BH_SP.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
-            this.NBI_BH_SP.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_SP_LinkClicked);
+            this.TRAHANG_NCC.Caption = "Theo Trả Hàng NCC";
+            this.TRAHANG_NCC.Name = "TRAHANG_NCC";
+            this.TRAHANG_NCC.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.TRAHANG_NCC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_SP_LinkClicked);
+            // 
+            // BANHANG_SANPHAM
+            // 
+            this.BANHANG_SANPHAM.Caption = "Theo Sản Phẩm";
+            this.BANHANG_SANPHAM.Name = "BANHANG_SANPHAM";
+            this.BANHANG_SANPHAM.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.BANHANG_SANPHAM.ItemChanged += new System.EventHandler(this.BANHANG_SANPHAM_ItemChanged);
             // 
             // NBdoanhso
             // 
@@ -397,7 +425,7 @@
             this.xtraTabPage5.Controls.Add(this.panelControl9);
             this.xtraTabPage5.Controls.Add(this.panelControl10);
             this.xtraTabPage5.Name = "xtraTabPage5";
-            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 459);
+            this.xtraTabPage5.Size = new System.Drawing.Size(1005, 458);
             this.xtraTabPage5.Text = "Doanh Thu Theo Khu Vực";
             // 
             // panelControl9
@@ -406,7 +434,7 @@
             this.panelControl9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl9.Location = new System.Drawing.Point(0, 39);
             this.panelControl9.Name = "panelControl9";
-            this.panelControl9.Size = new System.Drawing.Size(1005, 420);
+            this.panelControl9.Size = new System.Drawing.Size(1005, 419);
             this.panelControl9.TabIndex = 7;
             // 
             // gridControl6
@@ -415,20 +443,137 @@
             gridLevelNode1.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl6.Location = new System.Drawing.Point(3, 3);
-            this.gridControl6.MainView = this.grid_MUAHANG_NGAY;
+            this.gridControl6.Location = new System.Drawing.Point(2, 2);
+            this.gridControl6.MainView = this.grid_MUAHANG_KHACHHANGTRA;
             this.gridControl6.Name = "gridControl6";
-            this.gridControl6.Size = new System.Drawing.Size(999, 414);
+            this.gridControl6.Size = new System.Drawing.Size(1001, 415);
             this.gridControl6.TabIndex = 1;
             this.gridControl6.UseEmbeddedNavigator = true;
             this.gridControl6.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.grid_MUAHANG_KHACHHANGTRA,
+            this.grid_BANHANG_TRANCC,
             this.grid_MUAHANG_NGAY,
             this.gridView10,
             this.gridView9,
-            this.gridView8,
+            this.grid_BANHANG_KHACHHANG,
             this.grid_BANHANG_NGAY,
             this.gridMUAHANG_SANPHAM,
             this.grid_MUAHANG_NCC});
+            // 
+            // grid_MUAHANG_KHACHHANGTRA
+            // 
+            this.grid_MUAHANG_KHACHHANGTRA.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.grid_MUAHANG_KHACHHANGTRA.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grid_MUAHANG_KHACHHANGTRA.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn47,
+            this.gridColumn48,
+            this.gridColumn50});
+            this.grid_MUAHANG_KHACHHANGTRA.GridControl = this.gridControl6;
+            this.grid_MUAHANG_KHACHHANGTRA.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.Hidden;
+            this.grid_MUAHANG_KHACHHANGTRA.Name = "grid_MUAHANG_KHACHHANGTRA";
+            this.grid_MUAHANG_KHACHHANGTRA.OptionsBehavior.Editable = false;
+            this.grid_MUAHANG_KHACHHANGTRA.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
+            this.grid_MUAHANG_KHACHHANGTRA.OptionsView.RowAutoHeight = true;
+            this.grid_MUAHANG_KHACHHANGTRA.OptionsView.ShowAutoFilterRow = true;
+            this.grid_MUAHANG_KHACHHANGTRA.OptionsView.ShowChildrenInGroupPanel = true;
+            this.grid_MUAHANG_KHACHHANGTRA.OptionsView.ShowFooter = true;
+            this.grid_MUAHANG_KHACHHANGTRA.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn48, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // gridColumn47
+            // 
+            this.gridColumn47.Caption = "Mã KH";
+            this.gridColumn47.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn47.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn47.FieldName = "MAKH";
+            this.gridColumn47.Name = "gridColumn47";
+            this.gridColumn47.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn47.SummaryItem.FieldName = "MANCC";
+            this.gridColumn47.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn47.Visible = true;
+            this.gridColumn47.VisibleIndex = 0;
+            // 
+            // gridColumn48
+            // 
+            this.gridColumn48.Caption = "Khách Hàng";
+            this.gridColumn48.FieldName = "TENKH";
+            this.gridColumn48.Name = "gridColumn48";
+            this.gridColumn48.Visible = true;
+            this.gridColumn48.VisibleIndex = 1;
+            // 
+            // gridColumn50
+            // 
+            this.gridColumn50.Caption = "Chi Phí Nhận Lại Hàng";
+            this.gridColumn50.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn50.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn50.FieldName = "TIENMUAHANG";
+            this.gridColumn50.Name = "gridColumn50";
+            this.gridColumn50.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn50.SummaryItem.FieldName = "CHIPHI";
+            this.gridColumn50.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn50.Visible = true;
+            this.gridColumn50.VisibleIndex = 2;
+            // 
+            // grid_BANHANG_TRANCC
+            // 
+            this.grid_BANHANG_TRANCC.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.grid_BANHANG_TRANCC.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grid_BANHANG_TRANCC.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn45,
+            this.gridColumn46});
+            this.grid_BANHANG_TRANCC.GridControl = this.gridControl6;
+            this.grid_BANHANG_TRANCC.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.Hidden;
+            this.grid_BANHANG_TRANCC.Name = "grid_BANHANG_TRANCC";
+            this.grid_BANHANG_TRANCC.OptionsBehavior.Editable = false;
+            this.grid_BANHANG_TRANCC.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
+            this.grid_BANHANG_TRANCC.OptionsView.RowAutoHeight = true;
+            this.grid_BANHANG_TRANCC.OptionsView.ShowAutoFilterRow = true;
+            this.grid_BANHANG_TRANCC.OptionsView.ShowChildrenInGroupPanel = true;
+            this.grid_BANHANG_TRANCC.OptionsView.ShowFooter = true;
+            this.grid_BANHANG_TRANCC.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn17, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "Mã NCC";
+            this.gridColumn16.FieldName = "MAKH";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 0;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "Tên Nhà Cung Cấp";
+            this.gridColumn17.FieldName = "TENKH";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 1;
+            // 
+            // gridColumn45
+            // 
+            this.gridColumn45.Caption = "Khối Lượng";
+            this.gridColumn45.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn45.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn45.FieldName = "KHOILUONG";
+            this.gridColumn45.Name = "gridColumn45";
+            this.gridColumn45.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn45.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn45.Visible = true;
+            this.gridColumn45.VisibleIndex = 2;
+            // 
+            // gridColumn46
+            // 
+            this.gridColumn46.Caption = "Tiền Thu Về";
+            this.gridColumn46.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn46.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn46.FieldName = "DOANHTHU";
+            this.gridColumn46.Name = "gridColumn46";
+            this.gridColumn46.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn46.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn46.Visible = true;
+            this.gridColumn46.VisibleIndex = 3;
             // 
             // grid_MUAHANG_NGAY
             // 
@@ -635,27 +780,25 @@
             this.gridColumn23.Visible = true;
             this.gridColumn23.VisibleIndex = 6;
             // 
-            // gridView8
+            // grid_BANHANG_KHACHHANG
             // 
-            this.gridView8.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridView8.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView8.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.grid_BANHANG_KHACHHANG.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.grid_BANHANG_KHACHHANG.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.grid_BANHANG_KHACHHANG.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn14,
             this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17,
             this.gridColumn39,
             this.gridColumn18});
-            this.gridView8.GridControl = this.gridControl6;
-            this.gridView8.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.Hidden;
-            this.gridView8.Name = "gridView8";
-            this.gridView8.OptionsBehavior.Editable = false;
-            this.gridView8.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
-            this.gridView8.OptionsView.RowAutoHeight = true;
-            this.gridView8.OptionsView.ShowAutoFilterRow = true;
-            this.gridView8.OptionsView.ShowChildrenInGroupPanel = true;
-            this.gridView8.OptionsView.ShowFooter = true;
-            this.gridView8.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            this.grid_BANHANG_KHACHHANG.GridControl = this.gridControl6;
+            this.grid_BANHANG_KHACHHANG.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.Hidden;
+            this.grid_BANHANG_KHACHHANG.Name = "grid_BANHANG_KHACHHANG";
+            this.grid_BANHANG_KHACHHANG.OptionsBehavior.Editable = false;
+            this.grid_BANHANG_KHACHHANG.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
+            this.grid_BANHANG_KHACHHANG.OptionsView.RowAutoHeight = true;
+            this.grid_BANHANG_KHACHHANG.OptionsView.ShowAutoFilterRow = true;
+            this.grid_BANHANG_KHACHHANG.OptionsView.ShowChildrenInGroupPanel = true;
+            this.grid_BANHANG_KHACHHANG.OptionsView.ShowFooter = true;
+            this.grid_BANHANG_KHACHHANG.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn15, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridColumn14
@@ -674,22 +817,6 @@
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 1;
             // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "Số Điện Thoại";
-            this.gridColumn16.FieldName = "SDT";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 2;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "Khu Vực";
-            this.gridColumn17.FieldName = "TENKV";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 3;
-            // 
             // gridColumn39
             // 
             this.gridColumn39.Caption = "Khối Lượng";
@@ -700,7 +827,7 @@
             this.gridColumn39.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn39.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn39.Visible = true;
-            this.gridColumn39.VisibleIndex = 4;
+            this.gridColumn39.VisibleIndex = 2;
             // 
             // gridColumn18
             // 
@@ -712,7 +839,7 @@
             this.gridColumn18.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn18.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 5;
+            this.gridColumn18.VisibleIndex = 3;
             // 
             // grid_BANHANG_NGAY
             // 
@@ -895,7 +1022,6 @@
             this.grid_MUAHANG_NCC.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn5,
             this.gridColumn3,
-            this.gridColumn43,
             this.gridColumn4});
             this.grid_MUAHANG_NCC.GridControl = this.gridControl6;
             this.grid_MUAHANG_NCC.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.Hidden;
@@ -929,14 +1055,6 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
             // 
-            // gridColumn43
-            // 
-            this.gridColumn43.Caption = "Chi phí KH Trả Hàng";
-            this.gridColumn43.FieldName = "TIENTRAXUAT";
-            this.gridColumn43.Name = "gridColumn43";
-            this.gridColumn43.Visible = true;
-            this.gridColumn43.VisibleIndex = 2;
-            // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Chi Phí Mua Hàng";
@@ -948,7 +1066,7 @@
             this.gridColumn4.SummaryItem.FieldName = "CHIPHI";
             this.gridColumn4.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 2;
             // 
             // panelControl10
             // 
@@ -1493,10 +1611,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl9)).EndInit();
             this.panelControl9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_MUAHANG_KHACHHANGTRA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_BANHANG_TRANCC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_MUAHANG_NGAY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grid_BANHANG_KHACHHANG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_BANHANG_NGAY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridMUAHANG_SANPHAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grid_MUAHANG_NCC)).EndInit();
@@ -1599,8 +1719,8 @@
         private DevExpress.XtraEditors.DateEdit dateTu;
         private DevExpress.XtraEditors.DateEdit dateDen;
         private DevExpress.XtraGrid.Views.Grid.GridView grid_MUAHANG_NGAY;
-        private DevExpress.XtraNavBar.NavBarItem NBI_MH_SP;
-        private DevExpress.XtraNavBar.NavBarItem NBI_BH_SP;
+        private DevExpress.XtraNavBar.NavBarItem khachhang_trahang;
+        private DevExpress.XtraNavBar.NavBarItem TRAHANG_NCC;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Views.Grid.GridView grid_MUAHANG_NCC;
@@ -1616,11 +1736,9 @@
         private DevExpress.XtraGrid.Views.Grid.GridView grid_BANHANG_NGAY;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView8;
+        private DevExpress.XtraGrid.Views.Grid.GridView grid_BANHANG_KHACHHANG;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
@@ -1656,11 +1774,21 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn41;
         private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
         private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn44;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn42;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn40;
+        private DevExpress.XtraGrid.Views.Grid.GridView grid_BANHANG_TRANCC;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn45;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn46;
+        private DevExpress.XtraNavBar.NavBarItem muahang_sanpham;
+        private DevExpress.XtraNavBar.NavBarItem BANHANG_SANPHAM;
+        private DevExpress.XtraGrid.Views.Grid.GridView grid_MUAHANG_KHACHHANGTRA;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn47;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn48;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn50;
     }
 }
