@@ -716,26 +716,9 @@ namespace WindowsFormsApplication1
             timer1.Enabled = true;
             isclose = false;
             notifyIcon();
-            load_KHOHANGNGAY();
+         
         }
-        private void load_KHOHANGNGAY()
-        {
-            CTL ctlNCC = new CTL();
-            string SQL = "";
-            SQL = "SELECT convert(varchar,getDate(),101) AS CurrentDateTime ";
-            DataTable dt = ctlNCC.GETDATA(SQL);
-
-            string NGAY = dt.Rows[0][0].ToString();
-            SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAY + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                
-            dt=ctlNCC.GETDATA(SQL);
-            if (dt.Rows[0][0].ToString() == "0")
-            {
-                SQL = "INSERT INTO [TONKHOTT]([NGAY],[MAMH],[LOHANG],[MAKHO],[TONTT],[TONKHONGAY]) select convert(varchar,getDate(),101) AS CurrentDateTime ,MATHANG.MAMH,LOHANG,MAKHO,0 as TONTT,SOLUONGMH AS TONKHONGAY FROM MATHANG,KHOHANG WHERE MATHANG.MAMH=KHOHANG.MAMH AND KHOHANG.TINHTRANG='TRUE' AND MATHANG.TINHTRANG='TRUE' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                ctlNCC.executeNonQuery(SQL);
-            }
-
-        }
+ 
         private void load_cbkho()
         {
             cbkho.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
@@ -2130,8 +2113,7 @@ namespace WindowsFormsApplication1
             //{
                 tabControl12.Tabs.Clear();
             //}
-                load_KHOHANGNGAY();
-
+          
         }
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)

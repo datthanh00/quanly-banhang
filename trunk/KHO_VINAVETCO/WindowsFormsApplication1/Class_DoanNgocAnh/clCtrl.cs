@@ -131,6 +131,10 @@ namespace WindowsFormsApplication1
         {
             return dao.getDoanhThukh(dto);
         }
+        public DataTable getDoanhThuTRANCC(clDTO dto)
+        {
+            return dao.getDoanhThuTRANCC(dto);
+        }
         public DataTable getDoanhsonv(clDTO dto)
         {
             return dao.getDoanhsonv(dto);
