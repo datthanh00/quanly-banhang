@@ -335,7 +335,7 @@ namespace WindowsFormsApplication1
                 {
                     dto.MANCC = "";
                 }
-                gridControl6.DataSource = ctr.getcpmuahangncc(dto);
+                gridControl6.DataSource = ctr.getDoanhThuTRANCC(dto);
             }
             else if (baocaotype == "MH_KHTRA")
             {
@@ -507,12 +507,12 @@ namespace WindowsFormsApplication1
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 4);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl6.MainView == gridView9)
+            if (gridControl6.MainView == grid_BANHANG_SANPHAM)
             {
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 5);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl6.MainView == gridView10)
+            if (gridControl6.MainView == grid_BANHANG_NHANVIEN)
             {
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 6);
                 rep.ShowPreviewDialog();
@@ -583,10 +583,10 @@ namespace WindowsFormsApplication1
         {
             baocaotype = "DS_NV";
             gridControl6.DataSource = null;
-            gridControl6.MainView = gridView10;
+            gridControl6.MainView = grid_BANHANG_NHANVIEN;
             if (!PublicVariable.isKHOILUONG)
             {
-                gridView10.Columns["KHOILUONG"].Visible = false;
+                grid_BANHANG_NHANVIEN.Columns["KHOILUONG"].Visible = false;
             }
             load();
             lbloc.Text = "";
@@ -607,14 +607,14 @@ namespace WindowsFormsApplication1
             cbsanpham.Visible = true;
         }
 
-        private void BANHANG_SANPHAM_ItemChanged(object sender, EventArgs e)
+        private void BANHANG_SANPHAM_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             baocaotype = "BH_SP";
             gridControl6.DataSource = null;
-            gridControl6.MainView = gridView9;
+            gridControl6.MainView = grid_BANHANG_SANPHAM;
             if (!PublicVariable.isKHOILUONG)
             {
-                gridView9.Columns["KHOILUONG"].Visible = false;
+                grid_BANHANG_SANPHAM.Columns["KHOILUONG"].Visible = false;
             }
             load();
             lbloc.Text = "Sản phẩm";
@@ -635,8 +635,11 @@ namespace WindowsFormsApplication1
             cbncc.Visible = false;
             cbsanpham.Visible = true;
         }
-        private void muahang_sanpham_ItemChanged(object sender, EventArgs e)
+
+        private void muahang_sanpham_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
+
+   
             baocaotype = "MH_SP";
             gridControl6.DataSource = null;
             gridControl6.MainView = gridMUAHANG_SANPHAM;
@@ -674,11 +677,6 @@ namespace WindowsFormsApplication1
             RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
-
-        
-
-
-      
         
     }
 }

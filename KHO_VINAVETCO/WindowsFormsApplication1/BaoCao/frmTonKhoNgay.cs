@@ -98,8 +98,7 @@ namespace WindowsFormsApplication1
             iNgonNgu = 0;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             btXem.Text = resVietNam.btXem.ToString();
-            colNhomHang.Caption = resVietNam.colNhomHang.ToString();
-            colNhomHang.Caption = resVietNam.colNhomHang.ToString();
+   
            // colNgay.Caption = resVietNam.colNgay.ToString();
             colMa.Caption = resVietNam.colMa.ToString();
             colDonViTInh.Caption = resVietNam.colDonViTInh.ToString();
@@ -132,8 +131,7 @@ namespace WindowsFormsApplication1
             iNgonNgu = 1;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             btXem.Text = resEngLand.btXem.ToString();
-            colNhomHang.Caption = resEngLand.colNhomHang.ToString();
-            colNhomHang.Caption = resEngLand.colNhomHang.ToString();
+    
            // colNgay.Caption = resEngLand.colNgay.ToString();
             colMa.Caption = resEngLand.colMa.ToString();
             colDonViTInh.Caption = resEngLand.colDonViTInh.ToString();
@@ -163,10 +161,6 @@ namespace WindowsFormsApplication1
 
         private void loadGird()
         {
-            
-           // dto.MAKHO = gView.GetFocusedRowCellValue("MAKHO").ToString();
-            
-
             string NGAYBD = dateTu.Text;
             dto.NGAYBD = NGAYBD;
 
@@ -185,10 +179,7 @@ namespace WindowsFormsApplication1
 
             if (dt.Rows[0][0].ToString() != "0" || dt2.Rows[0][0].ToString() == dateTu.Text)
             {
-
                 gridControl2.MainView = advBandedGridView3;
-
-
                 if (cbsanpham.Text != "")
                 {
                     dto.MAMH = gridsanpham.GetFocusedRowCellValue("MAMH").ToString();
@@ -210,17 +201,19 @@ namespace WindowsFormsApplication1
                     dto.MANCC = "";
                 }
 
-                SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' AND TONTT <> 0 ";
+                SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' AND TONKHONGAY <> 0 ";
 
                 dt = ctlNCC.GETDATA(SQL);
                 string s123 = dt.Rows[0][0].ToString();
                 if (dt.Rows[0][0].ToString() != "0")
                 {
-                    gridControl2.DataSource = ctr.getTonKhoTTngay2(dto);
+                    // LAY TON KHO NGAY DA CO TRONG TONKHONGAY
+                    gridControl2.DataSource = ctr.getTonKhoTTngay(dto);
                 }
                 else
                 {
-                    gridControl2.DataSource = ctr.getTonKhoTTngay(dto);
+                    // LAY TON KHO NGAY CHUA CO TRONG TONKHONGAY
+                    gridControl2.DataSource = ctr.getTonKhoTTngay2(dto);
                 }
 
 
@@ -433,9 +426,30 @@ namespace WindowsFormsApplication1
                 {
                     for (int i = 0; i < advBandedGridView3.DataRowCount; i++)
                     {
-                        DataRow dtr = advBandedGridView3.GetDataRow(i);
-                        SQL = "UPDATE  [TONKHOTT] SET TONTT='" + dtr["TONTT"].ToString() + "' WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                        ctlNCC.executeNonQuery(SQL);
+                        SQL = "";
+                        for (int j = 0; j < 20 && i < advBandedGridView3.DataRowCount; j++)
+                        {
+                            DataRow dtr = advBandedGridView3.GetDataRow(i);
+                            SQL = SQL + " \r\nGO\r\n UPDATE  [TONKHOTT] SET TONKHONGAY=" + dtr["TONTT"].ToString() + " WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "' AND NGAY='" + NGAYBD + "' ";
+
+                            i++;
+                        }
+                        ctlNCC.executeNonQuery2(SQL);
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < advBandedGridView3.DataRowCount; i++)
+                    {
+                        SQL = "";
+                        for (int j = 0; j < 20 && i < advBandedGridView3.DataRowCount; j++)
+                        {
+                            DataRow dtr = advBandedGridView3.GetDataRow(i);
+                            SQL = SQL + " \r\nGO\r\n INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[LOHANG],[TONKHONGAY],[MAKHO]) VALUES (convert(varchar,GETDATE(),101),'" + dtr["MAMH"].ToString() + "','" + dtr["LOHANG"].ToString() + "'," + dtr["TONTT"].ToString() + ",'" + PublicVariable.MAKHO+ "')";
+
+                            i++;
+                        }
+                        ctlNCC.executeNonQuery2(SQL);
                     }
                 }
                 

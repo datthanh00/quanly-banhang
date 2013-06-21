@@ -63,7 +63,7 @@
             this.bandedGridColumn12 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colMa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colHangHoa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colNhomHang = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn14 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colDonViTInh = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -100,6 +100,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.bandedGridColumn21 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -368,10 +369,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 2);
+            this.gridControl2.Location = new System.Drawing.Point(3, 3);
             this.gridControl2.MainView = this.advBandedGridView3;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1288, 393);
+            this.gridControl2.Size = new System.Drawing.Size(1286, 391);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -391,10 +392,11 @@
             this.gridXuatKho,
             this.gridCuoiKi});
             this.advBandedGridView3.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.bandedGridColumn21,
             this.bandedGridColumn12,
-            this.colNhomHang,
             this.colMa,
             this.colHangHoa,
+            this.bandedGridColumn14,
             this.bandedGridColumn3,
             this.bandedGridColumn2,
             this.colDonViTInh,
@@ -449,14 +451,14 @@
             this.gridThongTin.Columns.Add(this.bandedGridColumn12);
             this.gridThongTin.Columns.Add(this.colMa);
             this.gridThongTin.Columns.Add(this.colHangHoa);
-            this.gridThongTin.Columns.Add(this.colNhomHang);
+            this.gridThongTin.Columns.Add(this.bandedGridColumn14);
             this.gridThongTin.Columns.Add(this.bandedGridColumn3);
             this.gridThongTin.Columns.Add(this.bandedGridColumn2);
             this.gridThongTin.Columns.Add(this.colDonViTInh);
             this.gridThongTin.Columns.Add(this.bandedGridColumn8);
             this.gridThongTin.MinWidth = 20;
             this.gridThongTin.Name = "gridThongTin";
-            this.gridThongTin.Width = 688;
+            this.gridThongTin.Width = 678;
             // 
             // bandedGridColumn12
             // 
@@ -471,7 +473,6 @@
             this.colMa.FieldName = "MAMH";
             this.colMa.Name = "colMa";
             this.colMa.OptionsColumn.AllowEdit = false;
-            this.colMa.Visible = true;
             this.colMa.Width = 85;
             // 
             // colHangHoa
@@ -483,13 +484,12 @@
             this.colHangHoa.Visible = true;
             this.colHangHoa.Width = 157;
             // 
-            // colNhomHang
+            // bandedGridColumn14
             // 
-            this.colNhomHang.Caption = "Nhóm hàng";
-            this.colNhomHang.FieldName = "TENNHOMHANG";
-            this.colNhomHang.Name = "colNhomHang";
-            this.colNhomHang.OptionsColumn.AllowEdit = false;
-            this.colNhomHang.Width = 119;
+            this.bandedGridColumn14.Caption = "Lô Hàng";
+            this.bandedGridColumn14.FieldName = "LOHANG";
+            this.bandedGridColumn14.Name = "bandedGridColumn14";
+            this.bandedGridColumn14.Visible = true;
             // 
             // bandedGridColumn3
             // 
@@ -498,6 +498,7 @@
             this.bandedGridColumn3.Name = "bandedGridColumn3";
             this.bandedGridColumn3.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn3.Visible = true;
+            this.bandedGridColumn3.Width = 95;
             // 
             // bandedGridColumn2
             // 
@@ -508,6 +509,7 @@
             this.bandedGridColumn2.Name = "bandedGridColumn2";
             this.bandedGridColumn2.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn2.Visible = true;
+            this.bandedGridColumn2.Width = 107;
             // 
             // colDonViTInh
             // 
@@ -516,7 +518,7 @@
             this.colDonViTInh.Name = "colDonViTInh";
             this.colDonViTInh.OptionsColumn.AllowEdit = false;
             this.colDonViTInh.Visible = true;
-            this.colDonViTInh.Width = 146;
+            this.colDonViTInh.Width = 89;
             // 
             // bandedGridColumn8
             // 
@@ -527,6 +529,7 @@
             this.bandedGridColumn8.Name = "bandedGridColumn8";
             this.bandedGridColumn8.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn8.Visible = true;
+            this.bandedGridColumn8.Width = 80;
             // 
             // gridBand4
             // 
@@ -854,6 +857,13 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
+            // bandedGridColumn21
+            // 
+            this.bandedGridColumn21.Caption = "MAMH";
+            this.bandedGridColumn21.FieldName = "MAMH";
+            this.bandedGridColumn21.Name = "bandedGridColumn21";
+            this.bandedGridColumn21.Visible = true;
+            // 
             // frmTonKhoNgay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -915,7 +925,6 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView advBandedGridView3;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colNhomHang;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colMa;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHangHoa;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colDonViTInh;
@@ -958,11 +967,13 @@
         private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
         private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridThongTin;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn14;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridDauKi;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridNhapKho;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridXuatKho;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridCuoiKi;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn21;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHOTableAdapter kHOTableAdapter;
     }
 }
