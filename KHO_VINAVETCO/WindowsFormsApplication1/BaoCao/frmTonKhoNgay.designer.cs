@@ -91,6 +91,7 @@
             this.colSLTOn = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn20 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colThanhTienTOn = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn21 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -100,7 +101,6 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.bandedGridColumn21 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -171,7 +171,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(368, 18);
+            this.labelControl1.Location = new System.Drawing.Point(369, 19);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(69, 13);
             this.labelControl1.TabIndex = 33;
@@ -264,7 +264,7 @@
             // 
             // lbloc
             // 
-            this.lbloc.Location = new System.Drawing.Point(134, 16);
+            this.lbloc.Location = new System.Drawing.Point(135, 17);
             this.lbloc.Name = "lbloc";
             this.lbloc.Size = new System.Drawing.Size(47, 13);
             this.lbloc.TabIndex = 30;
@@ -814,6 +814,13 @@
             this.colThanhTienTOn.Visible = true;
             this.colThanhTienTOn.Width = 103;
             // 
+            // bandedGridColumn21
+            // 
+            this.bandedGridColumn21.Caption = "MAMH";
+            this.bandedGridColumn21.FieldName = "MAMH";
+            this.bandedGridColumn21.Name = "bandedGridColumn21";
+            this.bandedGridColumn21.Visible = true;
+            // 
             // gridBand2
             // 
             this.gridBand2.Name = "gridBand2";
@@ -856,13 +863,6 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
-            // 
-            // bandedGridColumn21
-            // 
-            this.bandedGridColumn21.Caption = "MAMH";
-            this.bandedGridColumn21.FieldName = "MAMH";
-            this.bandedGridColumn21.Name = "bandedGridColumn21";
-            this.bandedGridColumn21.Visible = true;
             // 
             // frmTonKhoNgay
             // 

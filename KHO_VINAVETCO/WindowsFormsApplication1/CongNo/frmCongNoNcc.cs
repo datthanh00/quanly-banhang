@@ -118,9 +118,9 @@ namespace WindowsFormsApplication1
                 if (hitInfo.InRow)
                 {
                     DataRow dtr = gridView1.GetDataRow(hitInfo.RowHandle);
-                    sMahdn = dtr[0].ToString();
-                    smaNcc = dtr[2].ToString();
-                    sTienno = dtr[6].ToString();
+                    sMahdn = dtr["MAHDN"].ToString();
+                    smaNcc = dtr["MANCC"].ToString();
+                    sTienno = dtr["CONLAI"].ToString();
                     loadfrm_tratien();
                 }
         }
@@ -131,9 +131,9 @@ namespace WindowsFormsApplication1
             try
             {
                 DataRow dtr = gridView1.GetDataRow(e.RowHandle);
-                sMahdn = dtr[0].ToString();
-                smaNcc = dtr[2].ToString();
-                sTienno = dtr[6].ToString();
+                sMahdn = dtr["MAHDN"].ToString();
+                smaNcc = dtr["MANCC"].ToString();
+                sTienno = dtr["CONLAI"].ToString();
 
             }
             catch
@@ -214,7 +214,7 @@ namespace WindowsFormsApplication1
             {
                 frm.Nhan = "Them";
                 frm.MaChuyen = sMahdn;
-                
+                frm.MaNcc = smaNcc;
                 frm.Tienno = sTienno;
                 frm.sMaNV = sMaNV;
                 frm.sTenNV = sTenNV;
@@ -237,7 +237,7 @@ namespace WindowsFormsApplication1
             {
                 DataRow dtr1 = gridView2.GetDataRow(e.RowHandle);
                 smpc = dtr1["MAPC"].ToString();
-                //sMaNV = dtr1["MANV"].ToString();
+               // smaNcc = dtr1["MANCC"].ToString();
                 smahdn = dtr1["MAHDN"].ToString();
                 stientra = dtr1["TIENDATRA"].ToString();
             }
@@ -278,7 +278,8 @@ namespace WindowsFormsApplication1
                 
                 frm.iNgonNgu = this.iNgonNgu;
                 frm.ShowDialog();
-                loadGetAllHDN();
+                loadGetAllphieuchi();
+                load_phieuchi();
                 //loadctncc();
             }
         }

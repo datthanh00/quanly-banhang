@@ -137,10 +137,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 22);
+            this.gridControl2.Location = new System.Drawing.Point(2, 21);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1082, 205);
+            this.gridControl2.Size = new System.Drawing.Size(1082, 206);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -220,10 +220,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 22);
+            this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1078, 215);
+            this.gridControl1.Size = new System.Drawing.Size(1078, 216);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -417,9 +417,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 483);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 484);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -435,7 +435,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(194, 483);
+            this.navBarControl1.Size = new System.Drawing.Size(194, 484);
             this.navBarControl1.TabIndex = 2;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -450,14 +450,14 @@
             // 
             // linkcongno
             // 
-            this.linkcongno.Caption = "Công Nợ Nhà Cung Cấp";
+            this.linkcongno.Caption = "Công Nợ";
             this.linkcongno.Name = "linkcongno";
             this.linkcongno.SmallImage = ((System.Drawing.Image)(resources.GetObject("linkcongno.SmallImage")));
             this.linkcongno.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.linkcongno_LinkClicked);
             // 
             // linkphieuchi
             // 
-            this.linkphieuchi.Caption = "Phiếu Chi Nhà Cung Cấp";
+            this.linkphieuchi.Caption = "Phiếu Chi";
             this.linkphieuchi.Name = "linkphieuchi";
             this.linkphieuchi.SmallImage = ((System.Drawing.Image)(resources.GetObject("linkphieuchi.SmallImage")));
             this.linkphieuchi.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.linkphieuchi_LinkClicked);

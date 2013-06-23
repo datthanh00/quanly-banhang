@@ -143,35 +143,15 @@ namespace WindowsFormsApplication1
             {
                 TONKHO = Convert.ToDouble(DT1.Rows[0][0].ToString());
 
-                SQL = "SELECT SUM(SOLUONGNHAP)+SUM(KMAI) FROM CHITIETHDN WHERE MAMH='" + SMAMH + "' AND LOHANG='" + SLOHANG + "'";
+                SQL = "SELECT (-(SELECT CASE WHEN NHAP IS NULL THEN 0 ELSE NHAP END) + (SELECT CASE WHEN XUAT IS NULL THEN 0 ELSE XUAT END)+ (SELECT CASE WHEN TRANHAP IS NULL THEN 0 ELSE TRANHAP END) - (SELECT CASE WHEN TRAXUAT IS NULL THEN 0 ELSE TRAXUAT END)) FROM(SELECT (SELECT SUM(NHAPXUAT) FROM TONKHO WHERE MANHAPXUAT='N' AND MAMH='" + SMAMH + "' AND LOHANG='" +  SLOHANG + "') AS NHAP,  (SELECT -SUM(NHAPXUAT) FROM TONKHO WHERE MANHAPXUAT='X' AND MAMH='" + SMAMH + "' AND LOHANG='" +  SLOHANG + "') AS XUAT, (SELECT -SUM(NHAPXUAT) FROM TONKHO WHERE MANHAPXUAT='TN' AND MAMH='" + SMAMH + "' AND LOHANG='" +  SLOHANG + "') AS TRANHAP,(SELECT SUM(NHAPXUAT) FROM TONKHO WHERE MANHAPXUAT='TX' AND MAMH='" + SMAMH + "' AND LOHANG='" +  SLOHANG + "') AS TRAXUAT) AS T1";
                 DT1 = ctl.GETDATA(SQL);
-                if (DT1.Rows[0][0].ToString()!="")
-                {
-                    NHAP = Convert.ToDouble(DT1.Rows[0][0].ToString());
-                }
-
-                SQL = "SELECT SUM(SOLUONGXUAT)+SUM(KMAI) FROM CHITIETHDX WHERE MAMH='" + SMAMH + "' AND LOHANG='" + SLOHANG + "'";
-                DT1 = ctl.GETDATA(SQL);
+            
                 if (DT1.Rows[0][0].ToString() != "")
                 {
-                    XUAT = Convert.ToDouble(DT1.Rows[0][0].ToString());
+                    TONDAUMIN = Convert.ToDouble(DT1.Rows[0][0].ToString());
                 }
 
-                SQL = "SELECT SUM(SOLUONGNHAP)+SUM(KMAI) FROM TRACHITIETHDN WHERE MAMH='" + SMAMH + "' AND LOHANG='" + SLOHANG + "'";
-                DT1 = ctl.GETDATA(SQL);
-                if (DT1.Rows[0][0].ToString() != "")
-                {
-                    TRANHAP = Convert.ToDouble(DT1.Rows[0][0].ToString());
-                }
-
-                SQL = "SELECT SUM(SOLUONGXUAT)+SUM(KMAI) FROM TRACHITIETHDX WHERE MAMH='" + SMAMH + "' AND LOHANG='" + SLOHANG + "'";
-                DT1 = ctl.GETDATA(SQL);
-                if (DT1.Rows[0][0].ToString() != "")
-                {
-                    TRAXUAT = Convert.ToDouble(DT1.Rows[0][0].ToString());
-                }
-
-                TONDAUMIN = XUAT + TRANHAP - NHAP - TRAXUAT;
+               
 
                 double SOLUONGMH1= Convert.ToDouble(dto.SOLUONGMH); 
 

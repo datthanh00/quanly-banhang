@@ -68,7 +68,13 @@ namespace WindowsFormsApplication1
         public void loadctkh()
         {
             //DataTable dt = new DataTable();
-            dt = CTR.get1pthdx_ctrl(txtMahd.Text);
+            string MAHD1 = txtMahd.Text;
+            if (txtMahd.Text == "CONGNODAUKY")
+            {
+                MAHD1 = MaKH;
+            }
+
+            dt = CTR.get1pthdx_ctrl(MAHD1);
             gridControl1.DataSource = dt;
         }
         public void Luu()
@@ -111,7 +117,10 @@ namespace WindowsFormsApplication1
                 dto.NgayThu = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
                 dto.Mahoadonxuat = txtMahd.Text;
                 dto.SoTienDaTra = double.Parse(txtSoTienTra.Text);
-
+                if (dto.Mahoadonxuat == "CONGNODAUKY")
+                {
+                    dto.Mahoadonxuat = MaKH;
+                }
                 CTR.SUAPHIEUTHU_ctrl(dto);
                 if (iNgonNgu == 0)
                 {
@@ -131,7 +140,10 @@ namespace WindowsFormsApplication1
                 dto.NgayThu = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
                 dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
                 dto.Mahoadonxuat = txtMahd.Text;
-
+                if (dto.Mahoadonxuat == "CONGNODAUKY")
+                {
+                    dto.Mahoadonxuat = MaKH;
+                }
                 CTR.THEM_PHIEUTHU_ctrl(dto);
                 if (iNgonNgu == 0)
                 {
