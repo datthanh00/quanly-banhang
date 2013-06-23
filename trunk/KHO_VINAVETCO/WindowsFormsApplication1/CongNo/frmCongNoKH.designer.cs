@@ -185,14 +185,14 @@
             // 
             // linkcongno
             // 
-            this.linkcongno.Caption = "Công Nợ Khách Hàng";
+            this.linkcongno.Caption = "Công Nợ";
             this.linkcongno.Name = "linkcongno";
             this.linkcongno.SmallImage = ((System.Drawing.Image)(resources.GetObject("linkcongno.SmallImage")));
             this.linkcongno.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.linkcongno_LinkClicked);
             // 
             // linkphieuthu
             // 
-            this.linkphieuthu.Caption = "Phiếu Thu Khách Hàng";
+            this.linkphieuthu.Caption = "Phiếu Thu";
             this.linkphieuthu.Name = "linkphieuthu";
             this.linkphieuthu.SmallImage = ((System.Drawing.Image)(resources.GetObject("linkphieuthu.SmallImage")));
             this.linkphieuthu.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.linkphieuthu_LinkClicked);
@@ -698,8 +698,8 @@
             // 
             // 
             this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
-            this.printableComponentLink1.PrintingSystem = this.printingSystem1;
-            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
+            this.printableComponentLink1.PrintingSystem = this.printingSystem2;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem2;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 

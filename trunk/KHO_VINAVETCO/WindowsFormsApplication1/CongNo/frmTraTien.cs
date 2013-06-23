@@ -32,7 +32,14 @@ namespace WindowsFormsApplication1
         Ctrl_Tien CTR = new Ctrl_Tien();
         public void loadctncc()
         {
-            dt = CTR.get1pthdn_ctrl(txtMahd.Text);
+            string MAHD1 = txtMahd.Text;
+            if (txtMahd.Text == "CONGNODAUKY")
+            {
+                MAHD1 = MaNcc;
+            }
+
+     
+            dt = CTR.get1pthdn_ctrl(MAHD1);
             gridControl1.DataSource = dt;
         }
 
@@ -108,7 +115,10 @@ namespace WindowsFormsApplication1
                 dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
                 dto.Mahoadonnhap = txtMahd.Text;
                 //dto.SoTienDaTra = double.Parse(txtSoTienTra.Text);
-
+                if (dto.Mahoadonnhap=="CONGNODAUKY")
+                {
+                    dto.Mahoadonnhap=MaNcc;
+                }
                 CTR.SUAPHIEUCHI(dto);
                 if (iNgonNgu == 0)
                 {
@@ -127,7 +137,10 @@ namespace WindowsFormsApplication1
                 dto.NgayChi = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
                 dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
                 dto.Mahoadonnhap = txtMahd.Text;
-
+                if (dto.Mahoadonnhap=="CONGNODAUKY")
+                {
+                    dto.Mahoadonnhap=MaNcc;
+                }
                 CTR.THEM_PHIEUCHI_ctrl(dto);
                 if (iNgonNgu == 0)
                 {

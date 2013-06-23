@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
             dt = CTR.GETALLHDX_ctrl(NGAYBD,NGAYKT);
             gridControl1.DataSource = dt;
         }
-        public void loadGetAllPHIEUCHI()
+        public void loadGetAllPHIEUTHU()
         {
             string NGAYBD = dateTu1.Text;
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1
             NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
 
 
-            dt = CTR.GETALLPHIEUCHI_ctrl(NGAYBD, NGAYKT);
+            dt = CTR.GETALLPHIEUTHU_ctrl(NGAYBD, NGAYKT);
             gridControl2.DataSource = dt;
         }
         public frmMain frm;
@@ -92,7 +92,7 @@ namespace WindowsFormsApplication1
                 DataRow dtr = gridView1.GetDataRow(e.RowHandle);
                 sMahdx = dtr["MAHDX"].ToString();
                 smaKH = dtr["MAKH"].ToString();
-                sTienno = dtr["TIENPHAITRA"].ToString();
+                sTienno = dtr["CONLAI"].ToString();
                 //dt = CTR.get1pthdx_ctrl(dtr[0].ToString());
                 //gridControl2.DataSource = dt;
             }
@@ -157,6 +157,7 @@ namespace WindowsFormsApplication1
                 frm.iNgonNgu = this.iNgonNgu;
                 frm.sMaNV = sMaNV;
                 frm.sTenNV = sTenNV;
+                frm.MaKH = smaKH;
                 frm.ShowDialog();
                 loadGetAllHDX();
                 //loadctkh();
@@ -194,7 +195,7 @@ namespace WindowsFormsApplication1
                 
                 frm.sTenNV = sTenNV;
                 frm.ShowDialog();
-                loadGetAllHDX();
+                loadGetAllPHIEUTHU();
                 //loadctkh();
                 load_phieuthu();
             }
@@ -208,7 +209,7 @@ namespace WindowsFormsApplication1
             {
                 DataRow dtr1 = gridView2.GetDataRow(e.RowHandle);
                 smpt = dtr1["MAPT"].ToString();
-                //sMaNV = dtr1["MANV"].ToString();
+               // smaKH = dtr1["MAKH"].ToString();
                 smahdx=dtr1["MAHDX"].ToString();
                 stientra = dtr1["TIENDATRA"].ToString();
                
@@ -235,7 +236,7 @@ namespace WindowsFormsApplication1
                 DataRow dtr = gridView1.GetDataRow(hitInfo.RowHandle);
                 sMahdx = dtr["MAHDX"].ToString();
                 smaKH = dtr["MAKH"].ToString();
-                sTienno = dtr["TIENPHAITRA"].ToString();
+                sTienno = dtr["CONLAI"].ToString();
 
 
                 loadfrm_thutien();
@@ -329,7 +330,7 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-            loadGetAllPHIEUCHI();
+            loadGetAllPHIEUTHU();
             load_phieuthu();
         }
 
@@ -431,7 +432,7 @@ namespace WindowsFormsApplication1
         {
             if (e.KeyChar == (char)13)
             {
-                loadGetAllPHIEUCHI();
+                loadGetAllPHIEUTHU();
             }
         }
 
@@ -439,7 +440,7 @@ namespace WindowsFormsApplication1
         {
             if (e.KeyChar == (char)13)
             {
-                loadGetAllPHIEUCHI();
+                loadGetAllPHIEUTHU();
             }
         }
 

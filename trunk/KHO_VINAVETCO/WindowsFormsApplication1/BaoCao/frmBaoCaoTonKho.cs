@@ -205,16 +205,7 @@ namespace WindowsFormsApplication1
             {
                 dto.MANCC = "";
             }
-            string SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYKT + "' AND MAKHO='" + PublicVariable.MAKHO + "' ";
-            CTL ctl = new CTL();
-            DataTable dt = ctl.GETDATA(SQL);
-
-            if (dt.Rows[0][0].ToString() == "0")
-            {
-
-                MessageBox.Show("ngày kết thúc kỳ này không có dữ liệu");
-                return;
-            }
+      
                 
 
             gridControl2.DataSource = ctr.getTonKho(dto);
@@ -394,10 +385,7 @@ namespace WindowsFormsApplication1
             }
 
         }
-        private void gridControl1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void btXem_Click(object sender, EventArgs e)
         {
@@ -596,16 +584,7 @@ namespace WindowsFormsApplication1
                 NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
                 dto.NGAYKTKHO = NGAYKT;
 
-                string SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYKT + "' AND MAKHO='" + PublicVariable.MAKHO + "' ";
-                CTL ctl = new CTL();
-                DataTable dt = ctl.GETDATA(SQL);
 
-                if (dt.Rows[0][0].ToString() == "0")
-                {
-
-                    MessageBox.Show("ngày kết thúc kỳ này không có dữ liệu");
-                    return;
-                }
 
                 gridControl2.MainView = advBandedGridView2;
                 gridControl2.DataSource = ctr.getTonKhoncc(dto);

@@ -24,9 +24,9 @@ namespace WindowsFormsApplication1
             return CNKH.GETALLHDX_DAO(NGAYBD, NGAYKT);
             
         }
-        public DataTable GETALLPHIEUCHI_ctrl(string NGAYBD, string NGAYKT)
+        public DataTable GETALLPHIEUTHU_ctrl(string NGAYBD, string NGAYKT)
         {
-            return CNKH.GETALLPHIEUCHI_DAO(NGAYBD, NGAYKT);
+            return CNKH.GETALLPHIEUTHU_DAO(NGAYBD, NGAYKT);
 
         }
         public  DataTable get1pthdx_ctrl(string MaHDX)
