@@ -195,8 +195,8 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
-                String SQL = "BACKUP DATABASE " + AppC.AppSettings.Settings["database"].Value.ToString() + " TO DISK = '" + DTO.TENFILE + "'";
+               
+                String SQL = "BACKUP DATABASE KHO_VINAVETCO TO DISK = '" + DTO.TENFILE + "'";
                
                 executeNonQuery(SQL);
             }
