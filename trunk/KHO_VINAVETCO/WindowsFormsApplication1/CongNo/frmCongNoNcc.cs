@@ -266,6 +266,15 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYCHI FROM PHIEUCHI WHERE MAPC='" + smpc + "')>(SELECT NGAY FROM KHOASO WHERE ID=5)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=5) AS NGAY";
+                CTL ctlKHOA = new CTL();
+                DataTable DTKHOA = ctlKHOA.GETDATA(SQLKHOA);
+                if (DTKHOA.Rows[0][0].ToString() == "1")
+                {
+                    MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
+                    return;
+                }
+
                 frm.Nhan = "Sua";
                 frm.MaPC = smpc;
                 frm.HD = smahdn;
