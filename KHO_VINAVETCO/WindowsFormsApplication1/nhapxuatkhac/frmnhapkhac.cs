@@ -85,15 +85,8 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            gridCTHOADON.OptionsBehavior.ReadOnly = false;
-            isdelete = false;
-            PublicVariable.SQL_NHAP = "";
-            btLuu.Enabled = true;
-            cboTenNCC.Enabled = false;
-            loadgridCTHOADON();
-            Load_panel_create();
             DataRow dtr;
-     
+
             if (gridControl3.MainView == gridViewPHIEUNHAP)
             {
                 dtr = gridViewPHIEUNHAP.GetDataRow(gridViewPHIEUNHAP.FocusedRowHandle);
@@ -106,6 +99,21 @@ namespace WindowsFormsApplication1
             {
                 return;
             }
+            string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYNHAP FROM HOADONNHAP WHERE MAHDN='" + dtr["MAHDN"].ToString() + "')>(SELECT NGAY FROM KHOASO WHERE ID=2)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=2) AS NGAY";
+            DataTable DTKHOA = ctlNCC.GETDATA(SQLKHOA);
+            if (DTKHOA.Rows[0][0].ToString() == "1")
+            {
+                MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
+                return;
+            }
+            gridCTHOADON.OptionsBehavior.ReadOnly = false;
+            isdelete = false;
+            PublicVariable.SQL_NHAP = "";
+            btLuu.Enabled = true;
+            cboTenNCC.Enabled = false;
+            loadgridCTHOADON();
+            Load_panel_create();
+           
             string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
             View_phieunhap(dtr["MAHDN"].ToString());
             txtNgay.Text = dtr["NGAYNHAP"].ToString();
@@ -1478,13 +1486,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN XÓA");
                 return;
             }
-            gridCTHOADON.OptionsBehavior.ReadOnly = true;
-            PublicVariable.SQL_NHAP = "";
-            isdelete = true;
-            btLuu.Enabled = false;
-            cboTenNCC.Enabled = false;
-            loadgridCTHOADON();
-            Load_panel_create();
             DataRow dtr;
 
             if (gridControl3.MainView == gridViewPHIEUNHAP)
@@ -1499,6 +1500,21 @@ namespace WindowsFormsApplication1
             {
                 return;
             }
+            string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYNHAP FROM HOADONNHAP WHERE MAHDN='" + dtr["MAHDN"].ToString() + "')>(SELECT NGAY FROM KHOASO WHERE ID=2)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=2) AS NGAY";
+            DataTable DTKHOA = ctlNCC.GETDATA(SQLKHOA);
+            if (DTKHOA.Rows[0][0].ToString() == "1")
+            {
+                MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
+                return;
+            }
+            gridCTHOADON.OptionsBehavior.ReadOnly = true;
+            PublicVariable.SQL_NHAP = "";
+            isdelete = true;
+            btLuu.Enabled = false;
+            cboTenNCC.Enabled = false;
+            loadgridCTHOADON();
+            Load_panel_create();
+            
             string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
             View_phieunhap(dtr["MAHDN"].ToString());
             txtNgay.Text = dtr["NGAYNHAP"].ToString();
