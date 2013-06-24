@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
         {
             Provider pv = new Provider();
             string SQL = " SELECT T1.*, TENKH  FROM KHACHHANG, (SELECT MAHDX,MAKH, TIENPHAITRA,TIENDATRA, tienphaitra-tiendatra as CONLAI ,convert(varchar,NGAYXUAT ,103)AS NGAYXUAT FROM HOADONXUAT WHERE  TYPE=1 AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra<>0 and NGAYXUAT BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'"
-            + " UNION SELECT 'CONGNODAUKY' AS MAHDX,MAKH,TONGTIENTRA AS TIENPHAITRA, TIENDATRA,TONGTIENTRA- TIENDATRA AS CONLAI,convert(varchar,NGAY ,103)AS NGAYXUAT  FROM TONDAUCONGNOKH WHERE TONGTIENTRA-TIENDATRA<>0 AND NGAY BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "') AS T1 WHERE T1.MAKH=KHACHHANG.MAKH"
+            + " UNION SELECT 'CONGNODAUKY' AS MAHDX,MA AS MAKH,TONGTIENTRA AS TIENPHAITRA, TIENDATRA,TONGTIENTRA- TIENDATRA AS CONLAI,convert(varchar,NGAY ,103)AS NGAYXUAT  FROM TONDAUPHAITHU WHERE TONGTIENTRA-TIENDATRA<>0 AND NGAY BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "') AS T1 WHERE T1.MAKH=KHACHHANG.MAKH"
             + " UNION SELECT MAHDN AS MAHDX,NHACUNGCAP.MANCC AS MAKH, TIENPHAITRA,TIENDATRA, tienphaitra-tiendatra as CONLAI ,convert(varchar,NGAYNHAP ,103)AS NGAYXUAT,TENNCC AS TENKH FROM TRAHOADONNHAP,NHACUNGCAP WHERE  TYPE=1 AND TRAHOADONNHAP.MANCC=NHACUNGCAP.MANCC AND TRAHOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra<>0 and NGAYNHAP BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
             return pv.getdata(SQL);
         }
@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1
             Provider pv = new Provider();
             string SQL = "SELECT MAPT ,TENNV ,HOADONXUAT.MAHDX ,convert(varchar,NGAYTHU ,103)AS  NGAYTHU ,SoTienTra_PT AS TIENDATRA FROM PHIEUTHU, NHANVIEN,HOADONXUAT WHERE PHIEUTHU.MANV=NHANVIEN.MANV AND PHIEUTHU.MAHDX=HOADONXUAT.MAHDX AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and ngaythu BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'"
                 + " UNION SELECT MAPT ,TENNV ,MAHDX ,convert(varchar,NGAYTHU ,103)AS  NGAYTHU ,SoTienTra_PT AS TIENDATRA FROM PHIEUTHU, NHANVIEN,TRAHOADONNHAP WHERE PHIEUTHU.MANV=NHANVIEN.MANV AND PHIEUTHU.MAHDX=TRAHOADONNHAP.MAHDN AND TRAHOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and ngaythu BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'"
-                + " UNION SELECT MAPT ,TENNV ,MAHDX ,convert(varchar,NGAYTHU ,103)AS  NGAYTHU ,SoTienTra_PT AS TIENDATRA FROM PHIEUTHU, NHANVIEN,TONDAUCONGNOKH WHERE PHIEUTHU.MANV=NHANVIEN.MANV AND PHIEUTHU.MAHDX=TONDAUCONGNOKH.MAKH and ngaythu BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
+                + " UNION SELECT MAPT ,TENNV ,MAHDX ,convert(varchar,NGAYTHU ,103)AS  NGAYTHU ,SoTienTra_PT AS TIENDATRA FROM PHIEUTHU, NHANVIEN,TONDAUPHAITHU WHERE PHIEUTHU.MANV=NHANVIEN.MANV AND PHIEUTHU.MAHDX=TONDAUPHAITHU.MA and ngaythu BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
             return pv.getdata(SQL);
         }
         public  DataTable get1pt_dao(string sMahdx)
@@ -54,7 +54,7 @@ namespace WindowsFormsApplication1
             SQL = "";
             SQL = SQL + "\r\nGO\r\n UPDATE hoadonxuat set TIENDATRA=tiendatra+(select SUM(SOTIENTRA_PT) FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "') WHERE MAHDX='" + dto.Mahoadonxuat + "'";
             SQL = SQL + "\r\nGO\r\n update TRAHOADONNHAP SET TIENDATRA=tiendatra+(select SUM(SOTIENTRA_PT) FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "') WHERE MAHDN='" + dto.Mahoadonxuat + "'";
-            SQL = SQL + "\r\nGO\r\n update TONDAUCONGNOKH SET TIENDATRA=tiendatra+(select SUM(SOTIENTRA_PT) FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "') WHERE MAKH='" + dto.Mahoadonxuat + "' ";
+            SQL = SQL + "\r\nGO\r\n update TONDAUPHAITHU SET TIENDATRA=tiendatra+(select SUM(SOTIENTRA_PT) FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "') WHERE MAKH='" + dto.Mahoadonxuat + "' ";
             pv.executeNonQuery2(SQL);
 
         }
@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
             string SQL = "";
             SQL = SQL + "\r\nGO\r\n UPDATE hoadonxuat set TIENDATRA=(tiendatra-(select SOTIENTRA_PT FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "'))+'" + dto.SoTienDaTra + "' where MAHDX='" + dto.Mahoadonxuat + "'";
             SQL = SQL + "\r\nGO\r\n update TRAHOADONNHAP SET TIENDATRA=(tiendatra-(select SOTIENTRA_PT FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "'))+'" + dto.SoTienDaTra + "' where MAHDN='" + dto.Mahoadonxuat + "'";
-            SQL = SQL + "\r\nGO\r\n update TONDAUCONGNOKH SET TIENDATRA=(tiendatra-(select SOTIENTRA_PT FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "'))+'" + dto.SoTienDaTra + "' where MAKH='" + dto.Mahoadonxuat + "'";
+            SQL = SQL + "\r\nGO\r\n update TONDAUPHAITHU SET TIENDATRA=(tiendatra-(select SOTIENTRA_PT FROM PHIEUTHU WHERE MAHDX='" + dto.Mahoadonxuat + "' AND MAPT='" + dto.MaPhieuThu + "'))+'" + dto.SoTienDaTra + "' where MAKH='" + dto.Mahoadonxuat + "'";
             pv.executeNonQuery2(SQL);
 
              SQL = " UPDATE  PHIEUTHU set MANV='" + dto.NhanVien + "',SoTienTra_PT='" + dto.SoTienDaTra + "' WHERE MAPT='" + dto.MaPhieuThu + "' and MAHDX='" + dto.Mahoadonxuat + "'";
@@ -96,7 +96,7 @@ namespace WindowsFormsApplication1
 
             Provider pv = new Provider();
             string SQL = " SELECT T1.*, TENNCC  FROM NHACUNGCAP, (SELECT MAHDN,MANCC, TIENPHAITRA,TIENDATRA, tienphaitra-tiendatra as CONLAI ,convert(varchar,NGAYNHAP ,103)AS NGAYNHAP FROM HOADONNHAP WHERE  TYPE=1 AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra<>0 and ngaynhap BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'"
-            + " UNION SELECT 'CONGNODAUKY' AS MAHDN,MANCC,TONGTIENTRA AS TIENPHAITRA, TIENDATRA,TONGTIENTRA- TIENDATRA AS CONLAI,convert(varchar,NGAY ,103)AS NGAYNHAP  FROM TONDAUCONGNONCC WHERE TONGTIENTRA-TIENDATRA<>0 AND NGAY BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "') AS T1 WHERE T1.MANCC=NHACUNGCAP.MANCC"
+            + " UNION SELECT 'CONGNODAUKY' AS MAHDN,MANCC,TONGTIENTRA AS TIENPHAITRA, TIENDATRA,TONGTIENTRA- TIENDATRA AS CONLAI,convert(varchar,NGAY ,103)AS NGAYNHAP  FROM TONDAUPHAITRA WHERE TONGTIENTRA-TIENDATRA<>0 AND NGAY BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "') AS T1 WHERE T1.MANCC=NHACUNGCAP.MANCC"
             + " UNION SELECT MAHDX AS MAHDN,KHACHHANG.MAKH AS MANCC, TIENPHAITRA,TIENDATRA, tienphaitra-tiendatra as CONLAI ,convert(varchar,NGAYXUAT ,103)AS NGAYNHAP,TENKH AS TENNCC FROM TRAHOADONXUAT,KHACHHANG WHERE  TYPE=1 AND TRAHOADONXUAT.MAKH=KHACHHANG.MAKH AND TRAHOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra<>0 and NGAYXUAT BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
             return pv.getdata(SQL);
         }
@@ -135,7 +135,7 @@ namespace WindowsFormsApplication1
         {
 
             Provider pv = new Provider();
-            string SQL = String.Format("SELECT MAPC ,TENNV ,HOADONNHAP.MAHDN ,convert(varchar,NGAYCHI ,103)AS  NGAYCHI ,SoTienDaTra_PC AS TIENDATRA FROM PHIEUCHI, NHANVIEN,HOADONNHAP WHERE PHIEUCHI.MANV=NHANVIEN.MANV AND PHIEUCHI.MAHDN=HOADONNHAP.MAHDN AND HOADONNHAP.MAKHO='{0}' and ngaychi BETWEEN '{1}' and '{2}' UNION SELECT MAPC ,TENNV ,MAHDN ,convert(varchar,NGAYCHI ,103)AS  NGAYCHI ,SoTienDaTra_PC AS TIENDATRA FROM PHIEUCHI, NHANVIEN,TRAHOADONXUAT WHERE PHIEUCHI.MANV=NHANVIEN.MANV AND PHIEUCHI.MAHDN=TRAHOADONXUAT.MAHDX AND TRAHOADONXUAT.MAKHO='{0}' and ngaychi BETWEEN '{1}' and '{2}'UNION SELECT MAPC ,TENNV ,MAHDN ,convert(varchar,NGAYCHI ,103)AS  NGAYCHI ,SoTienDaTra_PC AS TIENDATRA FROM PHIEUCHI, NHANVIEN,TONDAUCONGNONCC WHERE PHIEUCHI.MANV=NHANVIEN.MANV AND PHIEUCHI.MAHDN=TONDAUCONGNONCC.MANCC and ngaychi BETWEEN '{1}' and '{2}'", PublicVariable.MAKHO, NGAYBD, NGAYKT);
+            string SQL = String.Format("SELECT MAPC ,TENNV ,HOADONNHAP.MAHDN ,convert(varchar,NGAYCHI ,103)AS  NGAYCHI ,SoTienDaTra_PC AS TIENDATRA FROM PHIEUCHI, NHANVIEN,HOADONNHAP WHERE PHIEUCHI.MANV=NHANVIEN.MANV AND PHIEUCHI.MAHDN=HOADONNHAP.MAHDN AND HOADONNHAP.MAKHO='{0}' and ngaychi BETWEEN '{1}' and '{2}' UNION SELECT MAPC ,TENNV ,MAHDN ,convert(varchar,NGAYCHI ,103)AS  NGAYCHI ,SoTienDaTra_PC AS TIENDATRA FROM PHIEUCHI, NHANVIEN,TRAHOADONXUAT WHERE PHIEUCHI.MANV=NHANVIEN.MANV AND PHIEUCHI.MAHDN=TRAHOADONXUAT.MAHDX AND TRAHOADONXUAT.MAKHO='{0}' and ngaychi BETWEEN '{1}' and '{2}'UNION SELECT MAPC ,TENNV ,MAHDN ,convert(varchar,NGAYCHI ,103)AS  NGAYCHI ,SoTienDaTra_PC AS TIENDATRA FROM PHIEUCHI, NHANVIEN,TONDAUPHAITRA WHERE PHIEUCHI.MANV=NHANVIEN.MANV AND PHIEUCHI.MAHDN=TONDAUPHAITRA.MANCC and ngaychi BETWEEN '{1}' and '{2}'", PublicVariable.MAKHO, NGAYBD, NGAYKT);
             return pv.getdata(SQL);
 
         }
@@ -146,7 +146,7 @@ namespace WindowsFormsApplication1
             string SQL = "";
             SQL = SQL + "\r\nGO\r\n update hoadonnhap set TIENDATRA=(tiendatra-(select SoTienDaTra_PC FROM PHIEUCHI WHERE MAHDN='" + dto.Mahoadonnhap + "' AND MAPC='" + dto.MaPhieuChi + "'))+'" + dto.SoTienDaTra + "' where MAHDN='" + dto.Mahoadonnhap + "'";
             SQL = SQL + "\r\nGO\r\n update TRAHOADONXUAT SET TIENDATRA=(tiendatra-(select SoTienDaTra_PC FROM PHIEUCHI WHERE MAHDN='" + dto.Mahoadonnhap + "' AND MAPC='" + dto.MaPhieuChi + "'))+'" + dto.SoTienDaTra + "' where MAHDX='" + dto.Mahoadonnhap + "'";
-            SQL = SQL + "\r\nGO\r\n update TONDAUCONGNONCC SET TIENDATRA=tiendatra+(select SUM(SoTienDaTra_PC) FROM PHIEUCHI WHERE MAHDN='" + dto.Mahoadonnhap + "' AND MAPC='" + dto.MaPhieuChi + "') WHERE MANCC='" + dto.Mahoadonnhap + "' ";
+            SQL = SQL + "\r\nGO\r\n update TONDAUPHAITRA SET TIENDATRA=tiendatra+(select SUM(SoTienDaTra_PC) FROM PHIEUCHI WHERE MAHDN='" + dto.Mahoadonnhap + "' AND MAPC='" + dto.MaPhieuChi + "') WHERE MANCC='" + dto.Mahoadonnhap + "' ";
             pv.executeNonQuery2(SQL);
 
             SQL = " UPDATE  PHIEUCHI set MANV='" + dto.NhanVien + "',SoTienDaTra_PC='" + dto.SoTienDaTra + "' WHERE MAPC='" + dto.MaPhieuChi + "' and MAHDN='" + dto.Mahoadonnhap + "'";
@@ -164,7 +164,7 @@ namespace WindowsFormsApplication1
             SQL = "";
             SQL = SQL + "\r\nGO\r\n update hoadonnhap set TIENDATRA=tiendatra+(select SUM(SoTienDaTra_PC) FROM PHIEUCHI WHERE MAHDN='" + dto.Mahoadonnhap + "' AND MAPC='" + dto.MaPhieuChi + "') WHERE MAHDN='" + dto.Mahoadonnhap + "' ";
             SQL = SQL + "\r\nGO\r\n update TRAHOADONXUAT SET TIENDATRA=tiendatra+(select SUM(SoTienDaTra_PC) FROM PHIEUCHI WHERE MAHDN='" + dto.Mahoadonnhap + "' AND MAPC='" + dto.MaPhieuChi + "') WHERE MAHDX='" + dto.Mahoadonnhap + "' ";
-            SQL = SQL + "\r\nGO\r\n update TONDAUCONGNONCC SET TIENDATRA=tiendatra+(select SUM(SoTienDaTra_PC) FROM PHIEUCHI WHERE MAHDN='" + dto.Mahoadonnhap + "' AND MAPC='" + dto.MaPhieuChi + "') WHERE MANCC='" + dto.Mahoadonnhap + "' ";
+            SQL = SQL + "\r\nGO\r\n update TONDAUPHAITRA SET TIENDATRA=tiendatra+(select SUM(SoTienDaTra_PC) FROM PHIEUCHI WHERE MAHDN='" + dto.Mahoadonnhap + "' AND MAPC='" + dto.MaPhieuChi + "') WHERE MANCC='" + dto.Mahoadonnhap + "' ";
             pv.executeNonQuery2(SQL);
 
         }
