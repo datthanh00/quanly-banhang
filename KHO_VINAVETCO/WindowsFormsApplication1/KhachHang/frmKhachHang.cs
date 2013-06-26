@@ -197,6 +197,7 @@ namespace WindowsFormsApplication1
         
         private void LOADDANHSACHKHACHHANG()
         {
+            girdcontrol.MainView = gridViewKHACHHANG;
             girdcontrol.DataSource = ctl.GETDANHSACHKH();
            
             
@@ -217,89 +218,11 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            // TODO: This line of code loads data into the 'xUAT_NHAPTONKhachHang.KHACHHANG' table. You can move, or remove it, as needed.
-           // this.kHACHHANGTableAdapter.Fill(this.xUAT_NHAPTONKhachHang.KHACHHANG);
-            frm.LoadVI += new frmMain.Translate(LoadTV);
-            frm.LoadEN += new frmMain.Translate(LoadEL);
 
             LOADDANHSACHKHACHHANG();
-            if (iNgonNgu == 1)
-            {
-                LoadEL();
-
-
-            }
-            else
-            {
-                LoadTV();
-
-
-            }
-
-            if (!PublicVariable.isBANGGIA)
-            {
-                gridView1.Columns["TENNV"].Visible = false;
-                gridView1.Columns["TENBG"].Visible = false;
-                 
-            }
-
-
         }
         public int iNgonNgu;
-        public void LoadTV()
-        {
-            iNgonNgu = 0;
-            CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-            colMAKH.Caption = LamVN.MAKH.ToString();
-            colTENKH.Caption = LamVN.TENKH.ToString();
-           // colMAKV.Caption = LamVN.MAKV.ToString();
-            colSOTAIKHOAN.Caption = LamVN.SOTAIKHOAN.ToString();
-            colNGANHANG.Caption = LamVN.NGANHANG.ToString();
-            colMASOTHUE.Caption = LamVN.MASOTHUE.ToString();
-            colDIACHI.Caption = LamVN.DIACHI.ToString();
-            colSDT.Caption = LamVN.SDT.ToString();
-            colFAX.Caption = LamVN.FAX.ToString();
-            colWEBSITE.Caption = LamVN.WEBSITE.ToString();
-            colYAHOO.Caption = LamVN.YAHOO.ToString();
-            colSKYPE.Caption = LamVN.SKYPE.ToString();
-            colTINHTRANG.Caption = LamVN.TINHTRANG.ToString();
-            barThem.Caption = LamVN.THEM.ToString();
-            barXoa.Caption = LamVN.XOA.ToString();
-            barSua.Caption = LamVN.SUA.ToString();
-            barNapLai.Caption = LamVN.NAPLAI.ToString();
-            barIn.Caption = LamVN.IN.ToString();
-            barXuat1.Caption = LamVN.XUATDULIEU.ToString();
-            barNhap.Caption = LamVN.NHAPDULIEU.ToString();
-            barThoat.Caption = LamVN.THOAT.ToString();
-        }
-        public void LoadEL()
-        {
-            iNgonNgu = 1;
-            CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-            colMAKH.Caption = LamEL.MAKH.ToString();
-            colTENKH.Caption = LamEL.TENKH.ToString();
-            //colMAKV.Caption = LamEL.MAKV.ToString();
-            colSOTAIKHOAN.Caption = LamEL.SOTAIKHOAN.ToString();
-            colNGANHANG.Caption = LamEL.NGANHANG.ToString();
-            colMASOTHUE.Caption = LamEL.MASOTHUE.ToString();
-            colDIACHI.Caption = LamEL.DIACHI.ToString();
-            colSDT.Caption = LamEL.SDT.ToString();
-            colFAX.Caption = LamEL.FAX.ToString();
-            colWEBSITE.Caption = LamEL.WEBSITE.ToString();
-            colYAHOO.Caption = LamEL.YAHOO.ToString();
-            colSKYPE.Caption = LamEL.SKYPE.ToString();
-            colTINHTRANG.Caption = LamEL.TINHTRANG.ToString();
-            barThem.Caption = LamEL.THEM.ToString();
-            barXoa.Caption = LamEL.XOA.ToString();
-            barSua.Caption = LamEL.SUA.ToString();
-            barNapLai.Caption = LamEL.NAPLAI.ToString();
-            barIn.Caption = LamEL.IN.ToString();
-            barXuat1.Caption = LamEL.XUATDULIEU.ToString();
-            barNhap.Caption = LamEL.NHAPDULIEU.ToString();
-            barThoat.Caption = LamEL.THOAT.ToString();
-        }
-       
-
+        
         private void btIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             if (PublicVariable.IN == "False")
@@ -338,7 +261,7 @@ namespace WindowsFormsApplication1
             try
             {
                 DataTable dt = new DataTable();
-                DataRow dtr = gridView1.GetDataRow(e.RowHandle);
+                DataRow dtr = gridViewKHACHHANG.GetDataRow(e.RowHandle);
                 sma = dtr["MAKH"].ToString();
                 
                 sten = dtr["TENKH"].ToString();

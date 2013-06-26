@@ -212,6 +212,16 @@ namespace WindowsFormsApplication1
                 loadVN();
             }
 
+            string current = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
+            System.Diagnostics.Process[] procs;
+            procs = System.Diagnostics.Process.GetProcessesByName(current);
+            if (procs.Length >= 2)
+            {
+                MessageBox.Show("chương trình đang chạy trên máy tính bạn rồi!");
+                Application.Exit();
+                return;
+            }
+
             txtTenTaiKhoan.Focus();
             LoadRegistry();
         }

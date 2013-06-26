@@ -10,7 +10,7 @@ namespace WindowsFormsApplication1
     {
         public void ReStore(clDTO DTO)
         {
-            string DATABASENAME = "XUAT_NHAPTON";
+            string DATABASENAME = "KHO_VINAVETCO";
             string SQL = "RESTORE FILELISTONLY FROM DISK = '" + DTO.TENFILE + "'";
             //executeNonQuery2(SQL);
             DataTable DT= getdata(SQL);

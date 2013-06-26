@@ -101,7 +101,7 @@ namespace WindowsFormsApplication1
 
            SQL = "";
 
-           SQL = " SELECT COUNT(TONDAUCONGNONCC.MANCC) FROM TONDAUCONGNONCC, NHACUNGCAP WHERE NHACUNGCAP.MANCC=TONDAUCONGNONCC.MANCC AND MAKHO='" + PublicVariable.MAKHO + "'";
+           SQL = " SELECT COUNT(TONDAUPHAITHU.MA) FROM TONDAUPHAITHU, NHACUNGCAP WHERE NHACUNGCAP.MANCC=TONDAUPHAITHU.MA AND MAKHO='" + PublicVariable.MAKHO + "'";
                 
            DataTable dt=ctlNCC.GETDATA(SQL);
            SQL = "";
@@ -113,7 +113,7 @@ namespace WindowsFormsApplication1
                    for (int j = 0; j < 20&&i < gridView1.DataRowCount; j++)
                    {
                        DataRow dtr = gridView1.GetDataRow(i);
-                       SQL = SQL + " \r\nGO\r\n INSERT INTO TONDAUCONGNONCC([MANCC],[TONGTIENTRA])VALUES('" + dtr["MANCC"].ToString() + "'," + dtr["TONGTIENTRA"].ToString() + ")  ";
+                       SQL = SQL + " \r\nGO\r\n INSERT INTO TONDAUPHAITHU([MA],[TONGTIENTRA])VALUES('" + dtr["MANCC"].ToString() + "'," + dtr["TONGTIENTRA"].ToString() + ")  ";
                          //  + " \r\nGO\r\n INSERT INTO CONGNONCC ([MANCC],[TONGTIENTRA],[TONGTIENDATRA]) VALUES ('" + dtr["MANCC"].ToString() + "'," + dtr["TONGTIENTRA"].ToString() + ",0) ";
                        i++;
                    }
@@ -129,7 +129,7 @@ namespace WindowsFormsApplication1
                    {
                        DataRow dtr = gridView1.GetDataRow(i);
 
-                       SQL = SQL + " \r\nGO\r\n UPDATE TONDAUCONGNONCC SET [TONGTIENTRA]=" + dtr["TONGTIENTRA"].ToString() + " WHERE MANCC='" + dtr["MANCC"].ToString() + "'";
+                       SQL = SQL + " \r\nGO\r\n UPDATE TONDAUPHAITHU SET [TONGTIENTRA]=" + dtr["TONGTIENTRA"].ToString() + " WHERE MA='" + dtr["MANCC"].ToString() + "'";
                           // + "  \r\nGO\r\n UPDATE CONGNONCC SET [TONGTIENTRA]=" + dtr["TONGTIENTRA"].ToString() + " WHERE MANCC='" + dtr["MANCC"].ToString() + "'";
                        i++;
                    }

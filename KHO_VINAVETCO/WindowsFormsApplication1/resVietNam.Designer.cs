@@ -2248,7 +2248,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chứ năng.
+        ///   Looks up a localized string similar to Chức năng.
         /// </summary>
         internal static string nvaChucNang {
             get {
@@ -2257,7 +2257,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chứ năng.
+        ///   Looks up a localized string similar to Chức năng.
         /// </summary>
         internal static string nvaChucNang1 {
             get {
