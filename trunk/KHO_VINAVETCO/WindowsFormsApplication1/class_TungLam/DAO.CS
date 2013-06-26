@@ -229,6 +229,15 @@ namespace WindowsFormsApplication1
             SQL = "delete from TONKHOTT where 	MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 
+            SQL = "delete from KHOHANG where 	MAMH='" + dto.MAMH + "'";
+            executeNonQuery(SQL);
+
+            SQL = "delete from TONDAUKHOHANG where 	MAMH='" + dto.MAMH + "'";
+            executeNonQuery(SQL);
+
+            SQL = "delete from TONDAUMATHANG where 	MAMH='" + dto.MAMH + "'";
+            executeNonQuery(SQL);
+
             SQL = "delete from BANGGIAMATHANG where 	MAMH='" + dto.MAMH + "'";
             executeNonQuery(SQL);
 

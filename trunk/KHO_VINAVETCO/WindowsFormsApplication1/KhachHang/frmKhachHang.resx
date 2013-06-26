@@ -120,6 +120,30 @@
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="barThem.Caption" xml:space="preserve">
+    <value>&amp;Thêm</value>
+  </data>
+  <data name="barXoa.Caption" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="barSua.Caption" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="barNapLai.Caption" xml:space="preserve">
+    <value>Nạp Lại</value>
+  </data>
+  <data name="barIn.Caption" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="barXuat1.Caption" xml:space="preserve">
+    <value>Xuất Dữ Liệu</value>
+  </data>
+  <data name="barNhap.Caption" xml:space="preserve">
+    <value>Nhập Dữ Liệu</value>
+  </data>
+  <data name="barThoat.Caption" xml:space="preserve">
+    <value>Đóng</value>
+  </data>
   <data name="bar2.Text" xml:space="preserve">
     <value>Main menu</value>
   </data>
@@ -420,10 +444,10 @@
   <data name="&gt;&gt;barThem1.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;gridView1.Name" xml:space="preserve">
-    <value>gridView1</value>
+  <data name="&gt;&gt;gridViewKHACHHANG.Name" xml:space="preserve">
+    <value>gridViewKHACHHANG</value>
   </data>
-  <data name="&gt;&gt;gridView1.Type" xml:space="preserve">
+  <data name="&gt;&gt;gridViewKHACHHANG.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Views.Grid.GridView, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;colMAKH.Name" xml:space="preserve">
@@ -548,30 +572,6 @@
   </data>
   <data name="barStaticItem1.Caption" xml:space="preserve">
     <value>s</value>
-  </data>
-  <data name="barThem.Caption" xml:space="preserve">
-    <value>&amp;Thêm</value>
-  </data>
-  <data name="barXoa.Caption" xml:space="preserve">
-    <value>Xóa</value>
-  </data>
-  <data name="barSua.Caption" xml:space="preserve">
-    <value>Sửa</value>
-  </data>
-  <data name="barNapLai.Caption" xml:space="preserve">
-    <value>Nạp Lại</value>
-  </data>
-  <data name="barIn.Caption" xml:space="preserve">
-    <value>In</value>
-  </data>
-  <data name="barXuat1.Caption" xml:space="preserve">
-    <value>Xuất Dữ Liệu</value>
-  </data>
-  <data name="barNhap.Caption" xml:space="preserve">
-    <value>Nhập Dữ Liệu</value>
-  </data>
-  <data name="barThoat.Caption" xml:space="preserve">
-    <value>Đóng</value>
   </data>
   <data name="barThem1.Caption" xml:space="preserve">
     <value>Thêm</value>

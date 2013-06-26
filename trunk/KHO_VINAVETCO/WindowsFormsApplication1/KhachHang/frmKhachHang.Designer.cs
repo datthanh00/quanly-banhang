@@ -47,7 +47,7 @@
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.barThem1 = new DevExpress.XtraBars.BarButtonItem();
             this.girdcontrol = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewKHACHHANG = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -69,7 +69,7 @@
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.girdcontrol)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewKHACHHANG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -216,17 +216,17 @@
             // girdcontrol
             // 
             resources.ApplyResources(this.girdcontrol, "girdcontrol");
-            this.girdcontrol.MainView = this.gridView1;
+            this.girdcontrol.MainView = this.gridViewKHACHHANG;
             this.girdcontrol.MenuManager = this.barManager1;
             this.girdcontrol.Name = "girdcontrol";
             this.girdcontrol.UseEmbeddedNavigator = true;
             this.girdcontrol.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridViewKHACHHANG});
             this.girdcontrol.Click += new System.EventHandler(this.gridControl1_Click);
             // 
-            // gridView1
+            // gridViewKHACHHANG
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewKHACHHANG.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAKH,
             this.colTENKH,
             this.colMAKV,
@@ -245,19 +245,19 @@
             this.gridColumn3,
             this.gridColumn4,
             this._TENBG});
-            this.gridView1.GridControl = this.girdcontrol;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsPrint.EnableAppearanceEvenRow = true;
-            this.gridView1.OptionsPrint.EnableAppearanceOddRow = true;
-            this.gridView1.OptionsPrint.ExpandAllDetails = true;
-            this.gridView1.OptionsPrint.PrintDetails = true;
-            this.gridView1.OptionsPrint.PrintFilterInfo = true;
-            this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowFooter = true;
-            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
-            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
+            this.gridViewKHACHHANG.GridControl = this.girdcontrol;
+            this.gridViewKHACHHANG.Name = "gridViewKHACHHANG";
+            this.gridViewKHACHHANG.OptionsBehavior.Editable = false;
+            this.gridViewKHACHHANG.OptionsPrint.EnableAppearanceEvenRow = true;
+            this.gridViewKHACHHANG.OptionsPrint.EnableAppearanceOddRow = true;
+            this.gridViewKHACHHANG.OptionsPrint.ExpandAllDetails = true;
+            this.gridViewKHACHHANG.OptionsPrint.PrintDetails = true;
+            this.gridViewKHACHHANG.OptionsPrint.PrintFilterInfo = true;
+            this.gridViewKHACHHANG.OptionsSelection.MultiSelect = true;
+            this.gridViewKHACHHANG.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewKHACHHANG.OptionsView.ShowFooter = true;
+            this.gridViewKHACHHANG.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridViewKHACHHANG.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
             // colMAKH
             // 
@@ -398,7 +398,7 @@
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.girdcontrol)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewKHACHHANG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxErrorProvider1)).EndInit();
             this.ResumeLayout(false);
 
@@ -422,7 +422,7 @@
         private DevExpress.XtraBars.BarButtonItem barNhap;
         private DevExpress.XtraBars.BarButtonItem barThoat;
         private DevExpress.XtraGrid.GridControl girdcontrol;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewKHACHHANG;
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider1;
         private DevExpress.XtraBars.BarButtonItem barThem1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKH;

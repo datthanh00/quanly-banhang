@@ -367,7 +367,7 @@
     <value>Khu vực khách hàng</value>
   </data>
   <data name="nvaChucNang" xml:space="preserve">
-    <value>Chứ năng</value>
+    <value>Chức năng</value>
   </data>
   <data name="lbKhoHang" xml:space="preserve">
     <value>Kho hàng :</value>
@@ -907,7 +907,7 @@
     <value>Đến :</value>
   </data>
   <data name="nvaChucNang1" xml:space="preserve">
-    <value>Chứ năng</value>
+    <value>Chức năng</value>
   </data>
   <data name="ribBaoMat1" xml:space="preserve">
     <value>Bảo mật</value>

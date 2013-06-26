@@ -172,16 +172,9 @@ namespace WindowsFormsApplication1
         public DataTable getCONGNONKH_DAUKY()
         {
             string SQL = "";
-            SQL = " SELECT COUNT(TONDAUCONGNOKH.MAKH) FROM TONDAUCONGNOKH, KHACHHANG WHERE KHACHHANG.MAKH=TONDAUCONGNOKH.MAKH AND MAKHO='" + PublicVariable.MAKHO + "'";
-            DataTable DT = getdata(SQL);
-            if (DT.Rows[0][0].ToString() != "0")
-            {
-                SQL = "SELECT TENKH,KHACHHANG.MAKH, DIACHI, SDT,TONGTIENTRA FROM TONDAUCONGNOKH, KHACHHANG WHERE KHACHHANG.MAKH=TONDAUCONGNOKH.MAKH AND MAKHO='" + PublicVariable.MAKHO + "'";
-            }
-            else
-            {
-                SQL = "SELECT TENKH,MAKH, DIACHI, SDT,0 AS TONGTIENTRA FROM KHACHHANG WHERE  MAKHO='" + PublicVariable.MAKHO + "'";
-            }
+
+            SQL = "SELECT TENKH,KHACHHANG.MAKH, DIACHI, SDT,TONGTIENTRA FROM TONDAUPHAITRA, KHACHHANG WHERE KHACHHANG.MAKH=TONDAUPHAITRA.MA AND MAKHO='" + PublicVariable.MAKHO + "' UNION ALL SELECT TENNCC AS TENKH,NHACUNGCAP.MANCC AS MAKH, DIACHI, SDT,TONGTIENTRA FROM TONDAUPHAITRA, NHACUNGCAP WHERE NHACUNGCAP.MANCC=TONDAUPHAITRA.MA AND MAKHO='" + PublicVariable.MAKHO + "'";
+            
             return getdata(SQL);
         }
 
@@ -195,16 +188,8 @@ namespace WindowsFormsApplication1
         public DataTable getCONGNONCC_DAUKY()
         {
             string SQL = "";
-            SQL = " SELECT COUNT(TONDAUCONGNONCC.MANCC) FROM TONDAUCONGNONCC, NHACUNGCAP WHERE NHACUNGCAP.MANCC=TONDAUCONGNONCC.MANCC AND MAKHO='" + PublicVariable.MAKHO + "'";
-            DataTable DT = getdata(SQL);
-            if (DT.Rows[0][0].ToString() != "0")
-            {
-                SQL = "SELECT TENNCC,NHACUNGCAP.MANCC, DIACHI, SDT,TONGTIENTRA FROM TONDAUCONGNONCC, NHACUNGCAP WHERE NHACUNGCAP.MANCC=TONDAUCONGNONCC.MANCC AND MAKHO='" + PublicVariable.MAKHO + "'";
-            }
-            else
-            {
-                SQL = "SELECT TENNCC,MANCC, DIACHI, SDT,0 AS TONGTIENTRA FROM NHACUNGCAP WHERE  MAKHO='" + PublicVariable.MAKHO + "'";
-            }
+          
+            SQL = "SELECT TENNCC,NHACUNGCAP.MANCC, DIACHI, SDT,TONGTIENTRA FROM TONDAUPHAITHU, NHACUNGCAP WHERE NHACUNGCAP.MANCC=TONDAUPHAITHU.MA AND MAKHO='" + PublicVariable.MAKHO + "' UNION ALL SELECT TENKH AS TENNCC,KHACHHANG.MAKH AS MANCC, DIACHI, SDT,TONGTIENTRA FROM TONDAUPHAITHU, KHACHHANG WHERE KHACHHANG.MAKH=TONDAUPHAITHU.MA AND MAKHO='" + PublicVariable.MAKHO + "'";
             return getdata(SQL);
         }
         public void updatetonkiemkho()

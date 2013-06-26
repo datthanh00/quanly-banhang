@@ -1477,7 +1477,7 @@ namespace WindowsFormsApplication1
         {
             if (this.WindowState == FormWindowState.Minimized)
             {
-                this.Hide();
+              
                 if (iNgonNgu ==0)
                 {
                     notifyIcon1.ShowBalloonTip(1, "Thông báo", "Nhấn chuột phải chọn hiển thị lại để mở lại cửa sổ hoặc double click vào icon chương trình", ToolTipIcon.Info);
@@ -1492,7 +1492,7 @@ namespace WindowsFormsApplication1
         private void notifyIcon()
         {
            
-            notifyIcon1.Text = "ProMag";
+            notifyIcon1.Text = "Quản Lý Kho";
 
             if (iNgonNgu == 0)
             {
