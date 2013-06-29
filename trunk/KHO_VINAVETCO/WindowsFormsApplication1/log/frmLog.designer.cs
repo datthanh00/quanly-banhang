@@ -44,8 +44,6 @@
             this.barThoat = new DevExpress.XtraBars.BarButtonItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMAKV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTENKV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -168,8 +166,6 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMAKV,
-            this.colTENKV,
             this.colGHICHU,
             this.colTINHTRANG,
             this.gridColumn1});
@@ -183,32 +179,15 @@
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             // 
-            // colMAKV
-            // 
-            this.colMAKV.Caption = "Mã HĐ";
-            this.colMAKV.FieldName = "MAHD";
-            this.colMAKV.Name = "colMAKV";
-            this.colMAKV.OptionsColumn.AllowEdit = false;
-            this.colMAKV.Visible = true;
-            this.colMAKV.VisibleIndex = 0;
-            // 
-            // colTENKV
-            // 
-            this.colTENKV.Caption = "Mặt Hàng";
-            this.colTENKV.FieldName = "MAMH";
-            this.colTENKV.Name = "colTENKV";
-            this.colTENKV.OptionsColumn.AllowEdit = false;
-            this.colTENKV.Visible = true;
-            this.colTENKV.VisibleIndex = 1;
-            // 
             // colGHICHU
             // 
-            this.colGHICHU.Caption = "Số Lượng";
-            this.colGHICHU.FieldName = "SOLUONG";
+            this.colGHICHU.Caption = "Hóa Đơn";
+            this.colGHICHU.FieldName = "MAHD";
             this.colGHICHU.Name = "colGHICHU";
             this.colGHICHU.OptionsColumn.AllowEdit = false;
             this.colGHICHU.Visible = true;
-            this.colGHICHU.VisibleIndex = 2;
+            this.colGHICHU.VisibleIndex = 0;
+            this.colGHICHU.Width = 85;
             // 
             // colTINHTRANG
             // 
@@ -217,7 +196,8 @@
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.OptionsColumn.AllowEdit = false;
             this.colTINHTRANG.Visible = true;
-            this.colTINHTRANG.VisibleIndex = 3;
+            this.colTINHTRANG.VisibleIndex = 1;
+            this.colTINHTRANG.Width = 573;
             // 
             // gridColumn1
             // 
@@ -225,7 +205,8 @@
             this.gridColumn1.FieldName = "LYDO";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 4;
+            this.gridColumn1.VisibleIndex = 2;
+            this.gridColumn1.Width = 284;
             // 
             // frmLog
             // 
@@ -266,8 +247,6 @@
       //  private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHUVUCTableAdapter kHUVUCTableAdapter;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAKV;
-        private DevExpress.XtraGrid.Columns.GridColumn colTENKV;
         private DevExpress.XtraGrid.Columns.GridColumn colGHICHU;
         private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;

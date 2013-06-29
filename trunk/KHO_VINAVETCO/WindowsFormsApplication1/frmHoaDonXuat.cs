@@ -395,7 +395,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 return;
                             }
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
-                            ctlNCC.executeNonQuery("INSERT INTO [LOG]([LOG],[LYDO]) VALUES('" + PublicVariable.TMPlog + "','" + PublicVariable.TMPtring + "') ");
+                            ctlNCC.executeNonQuery("INSERT INTO [LOG]([MAHD],[LOG],[LYDO]) VALUES('" + txtMaHD.Text + "',N'" + PublicVariable.TMPlog + "',N'" + PublicVariable.TMPtring + "') ");
                             
                             PublicVariable.SQL_XUAT = "";
                             MessageBox.Show("Bạn Đã Sửa Thành Công");
@@ -584,7 +584,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
             ckphantram.Text = "0";
             cktien.Text = "0";
             PublicVariable.SQL_XUAT = "";
-
+            cbotientra.Properties.ReadOnly = false;
+            ckphantram.Properties.ReadOnly = false;
+            cktien.Properties.ReadOnly = false;
             loadmahdx();
             gridControl1.DataSource = null;
             gridCTHOADON.RefreshData();
@@ -944,7 +946,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     if (sID != "")
                     {
                         ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
-                        ctlNCC.executeNonQuery("INSERT INTO [LOG]([LOG],[LYDO]) VALUES('" + PublicVariable.TMPlog + "','" + PublicVariable.TMPtring + "') ");
+                        ctlNCC.executeNonQuery("INSERT INTO [LOG]([MAHD],[LOG],[LYDO]) VALUES('" + txtMaHD.Text + "',N'" + PublicVariable.TMPlog + "',N'" + PublicVariable.TMPtring + "') ");
                             
                     }
                     MessageBox.Show(" Đã xóa và lưu thành công ");
@@ -986,6 +988,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             btLuu.Enabled = false;
             isdelete = false;
             cboTenKH.Enabled = false;
+            cbotientra.Properties.ReadOnly = true;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -1044,6 +1047,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             btLuu.Enabled = true;
             isdelete = false;
             cboTenKH.Enabled = false;
+            cbotientra.Properties.ReadOnly = true;
             Load_panel_create();
             loadgridCTHOADON();
             
@@ -1454,6 +1458,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
             btLuu.Enabled = false;
             isdelete = true;
             cboTenKH.Enabled = false;
+            cbotientra.Properties.ReadOnly = true;
+            ckphantram.Properties.ReadOnly = true;
+            cktien.Properties.ReadOnly = true;
             Load_panel_create();
             loadgridCTHOADON();
             
