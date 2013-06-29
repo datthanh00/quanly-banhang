@@ -1360,7 +1360,7 @@ namespace WindowsFormsApplication1
         {
             PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n update HOADONXUAT set TYPE=" + dto.TYPE + ", MAKH='" + dto.MAKH + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "', CKTIEN= '" + dto.CKTIEN + "' , GHICHU= N'" + dto.GHICHU + "' where MAHDX='" + dto.MAHDX + "'  ";
 
-            string SQL = "SELECT CKTIEN FROM HOADONXUAT WHERE MAHDX='" + dto.MAHDN + "'";
+            string SQL = "SELECT CKTIEN FROM HOADONXUAT WHERE MAHDX='" + dto.MAHDX + "'";
             DataTable DT = getdata(SQL);
             Double CKTIENS = 0;
             if (DT.Rows.Count > 0)
@@ -1378,7 +1378,7 @@ namespace WindowsFormsApplication1
         {
             PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n update TRAHOADONXUAT set TYPE=" + dto.TYPE + ", MAKH='" + dto.MAKH + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= " + dto.TIENPHAITRA + ", TIENDATRA= " + dto.TIENDATRA + ", CKTIEN= " + dto.CKTIEN + " , GHICHU= N'" + dto.GHICHU + "' where (MAHDX='" + dto.MAHDX + "' )";
 
-            string SQL = "SELECT CKTIEN FROM TRAHOADONNHAP WHERE MAHDN='" + dto.MAHDN + "'";
+            string SQL = "SELECT CKTIEN FROM TRAHOADONXUAT WHERE MAHDX='" + dto.MAHDX + "'";
             DataTable DT = getdata(SQL);
             Double CKTIENS = 0;
             if (DT.Rows.Count > 0)

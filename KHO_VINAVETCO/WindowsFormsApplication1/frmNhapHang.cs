@@ -111,6 +111,7 @@ namespace WindowsFormsApplication1
             PublicVariable.SQL_NHAP = "";
             btLuu.Enabled = true;
             cboTenNCC.Enabled = false;
+            cbotientra.Properties.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();
            
@@ -130,6 +131,7 @@ namespace WindowsFormsApplication1
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             btLuu.Enabled = false;
             cboTenNCC.Enabled = false;
+            cbotientra.Properties.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();
             DataRow dtr;
@@ -479,6 +481,9 @@ namespace WindowsFormsApplication1
             cboTenNCC.Enabled = true;
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             loadmahdn();
+            cbotientra.Properties.ReadOnly = false;
+            ckphantram.Properties.ReadOnly = false;
+            cktien.Properties.ReadOnly = false;
             //   cboTinhTrang.Text = "";
             //gridControl1.DataSource = null;
             //gridCTHOADON.RefreshData();
@@ -666,7 +671,7 @@ namespace WindowsFormsApplication1
                             }
 
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
-                            ctlNCC.executeNonQuery("INSERT INTO [LOG]([LOG],[LYDO]) VALUES(N'" + PublicVariable.TMPlog + "',N'" + PublicVariable.TMPtring + "') ");
+                            ctlNCC.executeNonQuery("INSERT INTO [LOG]([MAHD],[LOG],[LYDO]) VALUES('" + txtMaHD.Text + "',N'" + PublicVariable.TMPlog + "',N'" + PublicVariable.TMPtring + "') ");
                             PublicVariable.SQL_NHAP = "";
                             MessageBox.Show("Bạn Đã Sửa Thành Công");
                         }
@@ -1154,7 +1159,7 @@ namespace WindowsFormsApplication1
                     if (sID != "")
                     {
                         ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
-                        ctlNCC.executeNonQuery("INSERT INTO [LOG]([LOG],[LYDO]) VALUES('" + PublicVariable.TMPlog + "','" + PublicVariable.TMPtring + "') ");
+                        ctlNCC.executeNonQuery("INSERT INTO [LOG]([MAHD],[LOG],[LYDO]) VALUES('" + txtMaHD.Text + "',N'" + PublicVariable.TMPlog + "',N'" + PublicVariable.TMPtring + "') ");
                             
                     }
                     PublicVariable.SQL_NHAP = "";
@@ -1503,6 +1508,9 @@ namespace WindowsFormsApplication1
             isdelete = true;
             btLuu.Enabled = false;
             cboTenNCC.Enabled = false;
+            cbotientra.Properties.ReadOnly = true;
+            ckphantram.Properties.ReadOnly = true;
+            cktien.Properties.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();
             
