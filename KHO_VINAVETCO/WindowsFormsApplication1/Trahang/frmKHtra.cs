@@ -385,6 +385,7 @@ namespace WindowsFormsApplication1.KHtra
                                 MessageBox.Show("KHÔNG CÓ QUYỀN SỬA HÓA ĐƠN");
                                 return;
                             }
+                            PublicVariable.TMPlog = "";
                             dtoNCC.IsUPDATE = true;
                             dtoNCC.IDNHAP = IDNHAP;
                             ctlNCC.UPDATEtraHOADONXUAT(dtoNCC);
@@ -425,6 +426,8 @@ namespace WindowsFormsApplication1.KHtra
                                 return;
                             }
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRAXUAT);
+                            ctlNCC.executeNonQuery("INSERT INTO [LOG]([LOG],[LYDO]) VALUES('" + PublicVariable.TMPlog + "','" + PublicVariable.TMPtring + "') ");
+                            
                             PublicVariable.SQL_TRAXUAT = "";
                             MessageBox.Show("Bạn Đã Sửa Thành Công");
                         }
@@ -852,6 +855,11 @@ namespace WindowsFormsApplication1.KHtra
                 }
             }
             tienchuack = Convert.ToInt32(total);
+            if (total == 0)
+            {
+                cktien.Value = 0;
+                ckphantram.Value = 0;
+            }
             total = total - Convert.ToInt32(cktien.Value);
             txtthanhtien.Text = total.ToString();
             if (cbotientra.Text != "")
@@ -888,6 +896,7 @@ namespace WindowsFormsApplication1.KHtra
                             MessageBox.Show("KHÔNG CÓ QUYỀN ");
                             return;
                         }
+                        PublicVariable.TMPlog = "";
                         string SMAMH = dtr["TENMH"].ToString();
                         int index = SMAMH.IndexOf("_");
                         string LOHANG = SMAMH.Substring(index + 1, SMAMH.Length - index - 1);
@@ -976,6 +985,8 @@ namespace WindowsFormsApplication1.KHtra
                     if (sID != "")
                     {
                         ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRAXUAT);
+                        ctlNCC.executeNonQuery("INSERT INTO [LOG]([LOG],[LYDO]) VALUES('" + PublicVariable.TMPlog + "','" + PublicVariable.TMPtring + "') ");
+                            
                     }
                     PublicVariable.SQL_TRAXUAT = "";
                     MessageBox.Show("Bạn Đã Xóa Thành Công");
@@ -1000,7 +1011,7 @@ namespace WindowsFormsApplication1.KHtra
             int _cktien = Convert.ToInt32(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
-            if (_cktien > 0)
+            if (_cktien > 0 && thanhtien > 0)
             {
                 ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
             }
@@ -1326,7 +1337,7 @@ namespace WindowsFormsApplication1.KHtra
         {
             Double thanhtien = tienchuack;
             int _cktien = Convert.ToInt32(cktien.Value);
-            if (_cktien > 0)
+            if (_cktien > 0 && thanhtien > 0)
             {
                 ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
             }

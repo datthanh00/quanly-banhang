@@ -37,8 +37,8 @@
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.txtSoLuong = new DevExpress.XtraEditors.CalcEdit();
-            this.lbsoluong = new DevExpress.XtraEditors.LabelControl();
+            this.txtgiamua = new DevExpress.XtraEditors.CalcEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
@@ -68,8 +68,7 @@
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.lbnhomhang = new DevExpress.XtraEditors.LabelControl();
-            this.txtgiamua = new DevExpress.XtraEditors.CalcEdit();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.cbNhomHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -77,7 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.calKLDVT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtgiamua.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmota.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbthue.Properties)).BeginInit();
@@ -86,7 +85,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtgiamua.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cbNhomHang
@@ -199,35 +197,32 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.txtgiamua);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.txtSoLuong);
-            this.groupControl1.Controls.Add(this.lbsoluong);
             this.groupControl1.Location = new System.Drawing.Point(20, 145);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(543, 70);
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Thông tin giao dịch";
             // 
-            // txtSoLuong
+            // txtgiamua
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(109, 34);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtgiamua.Location = new System.Drawing.Point(111, 34);
+            this.txtgiamua.Name = "txtgiamua";
+            this.txtgiamua.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtSoLuong.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtSoLuong.Properties.ReadOnly = true;
-            this.txtSoLuong.Size = new System.Drawing.Size(124, 20);
-            this.txtSoLuong.TabIndex = 9;
+            this.txtgiamua.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txtgiamua.Size = new System.Drawing.Size(124, 20);
+            this.txtgiamua.TabIndex = 152;
             // 
-            // lbsoluong
+            // labelControl1
             // 
-            this.lbsoluong.Location = new System.Drawing.Point(6, 37);
-            this.lbsoluong.Name = "lbsoluong";
-            this.lbsoluong.Size = new System.Drawing.Size(46, 13);
-            this.lbsoluong.TabIndex = 151;
-            this.lbsoluong.Text = "Số lượng:";
-            this.lbsoluong.Click += new System.EventHandler(this.lbsoluong_Click);
+            this.labelControl1.Location = new System.Drawing.Point(5, 37);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(42, 13);
+            this.labelControl1.TabIndex = 153;
+            this.labelControl1.Text = "Giá Mua:";
             // 
             // labelControl4
             // 
@@ -288,7 +283,7 @@
             this.checkTT.Location = new System.Drawing.Point(127, 105);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 18);
+            this.checkTT.Size = new System.Drawing.Size(82, 19);
             this.checkTT.TabIndex = 5;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
@@ -521,23 +516,17 @@
             this.lbnhomhang.TabIndex = 2;
             this.lbnhomhang.Text = "Nhà cung cấp";
             // 
-            // txtgiamua
+            // labelControl2
             // 
-            this.txtgiamua.Location = new System.Drawing.Point(407, 34);
-            this.txtgiamua.Name = "txtgiamua";
-            this.txtgiamua.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtgiamua.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtgiamua.Size = new System.Drawing.Size(124, 20);
-            this.txtgiamua.TabIndex = 152;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(301, 37);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(42, 13);
-            this.labelControl1.TabIndex = 153;
-            this.labelControl1.Text = "Giá Mua:";
+            this.labelControl2.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl2.Appearance.Options.UseBackColor = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(91, 37);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(14, 13);
+            this.labelControl2.TabIndex = 160;
+            this.labelControl2.Text = "(*)";
             // 
             // ThemMatHang
             // 
@@ -559,7 +548,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtgiamua.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmota.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbthue.Properties)).EndInit();
@@ -568,7 +557,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenMH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtgiamua.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -621,9 +609,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.CalcEdit calKLDVT;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.CalcEdit txtSoLuong;
-        private DevExpress.XtraEditors.LabelControl lbsoluong;
         private DevExpress.XtraEditors.CalcEdit txtgiamua;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }

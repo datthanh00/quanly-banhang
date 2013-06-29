@@ -10,7 +10,7 @@ namespace WindowsFormsApplication1
        public static Boolean isHSD, isBARCODE, isTONTHUCTE, isKHOILUONG, isBANGGIA;
        public static Boolean isUSE_COMPUTERDATE=false;
        public static DataTable KhoQL;
-       public static String TMPtring,SQL_NHAP,SQL_XUAT,SQL_TRANHAP,SQL_TRAXUAT;
+       public static String TMPtring, SQL_NHAP, SQL_XUAT, SQL_TRANHAP, SQL_TRAXUAT, TMPlog;
 	}
 
     
