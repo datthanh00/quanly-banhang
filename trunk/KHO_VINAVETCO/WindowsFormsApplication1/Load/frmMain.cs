@@ -1442,6 +1442,7 @@ namespace WindowsFormsApplication1
                 if (XtraMessageBox.Show("Bạn có muốn đăng xuất hay không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
                     frmLogin frm = new frmLogin();
+                    notifyIcon1.Dispose();
                     this.Hide();
                     frm.ShowDialog();
                 }
@@ -1451,6 +1452,7 @@ namespace WindowsFormsApplication1
                 if (XtraMessageBox.Show("Do you want to Log Off ? ", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
                     frmLogin frm = new frmLogin();
+                    notifyIcon1.Dispose();
                     this.Hide();
                     frm.ShowDialog();
                 }
@@ -1555,6 +1557,7 @@ namespace WindowsFormsApplication1
             {
                 if (DevComponents.DotNetBar.MessageBoxEx.Show("Bạn có muốn thoát hay không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
+                    notifyIcon1.Dispose();
                     Application.Exit();
                 }
             }
@@ -1562,6 +1565,7 @@ namespace WindowsFormsApplication1
             {
                 if (DevComponents.DotNetBar.MessageBoxEx.Show("Do you want to exit program? ", "Notifications", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
+                    notifyIcon1.Dispose();
                     Application.Exit();
                 }
             }
@@ -1754,6 +1758,7 @@ namespace WindowsFormsApplication1
             {
                 if (XtraMessageBox.Show("Bạn có muốn thoát hay không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
+                    notifyIcon1.Dispose();
                     Application.Exit();
                 }
             }
@@ -1761,6 +1766,7 @@ namespace WindowsFormsApplication1
             {
                 if (XtraMessageBox.Show("Do you want to exit ? ", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
+                    notifyIcon1.Dispose();
                     Application.Exit();
                 }
             }
@@ -1770,6 +1776,7 @@ namespace WindowsFormsApplication1
         {
             if (isclose == true)
             {
+                notifyIcon1.Dispose();
                 Application.Exit();
             }
             

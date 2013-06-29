@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
             //lbhinhanh.Text = LamVN.HINHANH.ToString();
             lbmathue.Text = LamVN.MASOTHUE.ToString();
             
-            lbsoluong.Text = LamVN.SOLUONGMH.ToString();
+           
             lbCHUY.Text = LamVN.CHUY.ToString();
             btLuu.Text = LamVN.LUU.ToString();
             btDong.Text = LamVN.DONG.ToString();
@@ -63,7 +63,7 @@ namespace WindowsFormsApplication1
             //lbhinhanh.Text = LamEL.HINHANH.ToString();
             lbmathue.Text = LamEL.MASOTHUE.ToString();
         
-            lbsoluong.Text = LamEL.SOLUONGMH.ToString();
+           
             lbmota.Text = LamEL.MOTA.ToString();
            
             lbCHUY.Text = LamEL.CHUY.ToString();
@@ -134,21 +134,9 @@ namespace WindowsFormsApplication1
 
 
 
-            txtSoLuong.Text = "0";
+            txtgiamua.Text = "0";
 
-            if (sBoPhan == "MABP00004")
-            {
-                txtSoLuong.Enabled = true;
-                cbthue.Enabled = true;
-                btThemKhuVuc.Enabled = true;
 
-            }
-            else
-            {
-                txtSoLuong.Enabled = false;
-                cbthue.Enabled = false;
-                btThemKhuVuc.Enabled = false;
-            }
            
             if (iNgonNgu == 1)
             {
@@ -176,21 +164,9 @@ namespace WindowsFormsApplication1
                 txtgiamua.Text = GIAMUA;
 
                 cbthue.Text = MASOTHUE;
-              
-                txtSoLuong.Text = SOLUONG;
-                if (PublicVariable.XOA == "False")
-                {
-                    txtSoLuong.Enabled = false;
-                }
-                else
-                {
-                    txtSoLuong.Enabled = true;
-                }
-                
-                
+
                 txtmota.Text = MOTA;
         
-                
                 if (TINHTRANG == "True")
                 {
                     checkTT.Checked = true;
@@ -207,15 +183,8 @@ namespace WindowsFormsApplication1
                 loadgirdlookupDVT();
                 loadgirdlookupTHUE();
                 loadma();
+                
             }
-            // TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet31.THUE' table. You can move, or remove it, as needed.
-            //this.tHUETableAdapter.Fill(this.xUAT_NHAPTONDataSet31.THUE);
-            //// TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet27.DONVITINH' table. You can move, or remove it, as needed.
-            //this.dONVITINHTableAdapter.Fill(this.xUAT_NHAPTONDataSet27.DONVITINH);
-            //// TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet26.NHOMHANG' table. You can move, or remove it, as needed.
-            //this.nHOMHANGTableAdapter.Fill(this.xUAT_NHAPTONDataSet26.NHOMHANG);
-            //// TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet25.KHO' table. You can move, or remove it, as needed.
-            //this.kHOTableAdapter.Fill(this.xUAT_NHAPTONDataSet25.KHO);
 
         }
         DataNavigator datanav;
@@ -260,19 +229,14 @@ namespace WindowsFormsApplication1
                         cbNhomHang.Focus();
                         return;
                     }
-                    
-                    else if ( txtSoLuong.Text == "")
+
+                    else if (txtgiamua.Text == "" || txtgiamua.Text == "0")
                     {
-                        XtraMessageBox.Show("Vui lòng điền Số lượng ");
-                        txtSoLuong.Focus();
+                        XtraMessageBox.Show("Vui lòng điền Số Giá Mua ");
+                        txtgiamua.Focus();
                         return;
                     }
-                    /*else if (cbthue.Text == "")
-                    {
-                        XtraMessageBox.Show("Vui lòng điền mã thuế ");
-                        cbthue.Focus();
-                        return;
-                    }*/
+      
                     else if (calKLDVT.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng điền khối lượng theo đơn vị tính ");
@@ -298,10 +262,10 @@ namespace WindowsFormsApplication1
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MADVT = DVT;
                             DTO.KLDVT = calKLDVT.Text;
-                            DTO.SOLUONGMH = txtSoLuong.Text;
+                            DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
                             DTO.GIAMUA= txtgiamua.Text;
-                    
+                            DTO.LOHANG = "TONDAU";
                           
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
@@ -324,7 +288,8 @@ namespace WindowsFormsApplication1
                             DTO.KLDVT = calKLDVT.Text;
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
-                            DTO.SOLUONGMH = txtSoLuong.Text;
+                            DTO.LOHANG = "TONDAU";
+                            DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
                             DTO.GIAMUA = txtgiamua.Text;
                     
@@ -364,19 +329,10 @@ namespace WindowsFormsApplication1
                         return;
                     }
 
-           
-                   
-                    
-                    else if (txtSoLuong.Text == "")
+                    else if (txtgiamua.Text == "" || txtgiamua.Text == "0")
                     {
-                        XtraMessageBox.Show("Vui lòng điền Số lượng ");
-                        txtSoLuong.Focus();
-                        return;
-                    }
-                    else if (cbthue.Text == "")
-                    {
-                        XtraMessageBox.Show("Vui lòng điền mã thuế ");
-                        txtSoLuong.Focus();
+                        XtraMessageBox.Show("Vui lòng điền Số Giá Mua ");
+                        txtgiamua.Focus();
                         return;
                     }
                     else if (calKLDVT.Text == "")
@@ -402,8 +358,10 @@ namespace WindowsFormsApplication1
                             DTO.KLDVT = calKLDVT.Text;
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
-                            DTO.SOLUONGMH = txtSoLuong.Text;
-                           
+                            DTO.SOLUONGMH = "0";
+                            DTO.HANSUDUNG = "";
+                            DTO.GIAMUA = txtgiamua.Text;
+                            DTO.LOHANG = "TONDAU";
 
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
@@ -427,8 +385,10 @@ namespace WindowsFormsApplication1
                             DTO.KLDVT = calKLDVT.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
-
-                            DTO.SOLUONGMH = txtSoLuong.Text;
+                            DTO.LOHANG = "TONDAU";
+                            DTO.SOLUONGMH = "0";
+                            DTO.HANSUDUNG = "";
+                            DTO.GIAMUA = txtgiamua.Text;
                  
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";

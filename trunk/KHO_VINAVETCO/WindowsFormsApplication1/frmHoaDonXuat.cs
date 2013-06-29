@@ -294,7 +294,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 return;
                             }
 
-
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
@@ -353,7 +352,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
                             }
-
+                            PublicVariable.TMPlog = "";
                             dtoNCC.IsUPDATE = true;
                             dtoNCC.IDNHAP = IDNHAP;
                             ctlNCC.UPDATEHOADONXUAT(dtoNCC);
@@ -396,6 +395,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 return;
                             }
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
+                            ctlNCC.executeNonQuery("INSERT INTO [LOG]([LOG],[LYDO]) VALUES('" + PublicVariable.TMPlog + "','" + PublicVariable.TMPtring + "') ");
+                            
                             PublicVariable.SQL_XUAT = "";
                             MessageBox.Show("Bạn Đã Sửa Thành Công");
                         }
@@ -836,6 +837,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 }
             }
             tienchuack = Convert.ToInt32(total);
+            if (total == 0)
+            {
+                cktien.Value = 0;
+                ckphantram.Value = 0;
+            }
             total = total - Convert.ToInt32(cktien.Value);
             txtthanhtien.Text = total.ToString();
 
@@ -874,6 +880,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             MessageBox.Show("KHÔNG CÓ QUYỀN ");
                             return;
                         }
+                        PublicVariable.TMPlog = "";
                         string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime , TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
                         DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
                         if (txtNgayXuat.Text != dtn.Rows[0][0].ToString())
@@ -937,6 +944,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     if (sID != "")
                     {
                         ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
+                        ctlNCC.executeNonQuery("INSERT INTO [LOG]([LOG],[LYDO]) VALUES('" + PublicVariable.TMPlog + "','" + PublicVariable.TMPtring + "') ");
+                            
                     }
                     MessageBox.Show(" Đã xóa và lưu thành công ");
                 }
@@ -958,7 +967,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             int _cktien = Convert.ToInt32(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
-            if (_cktien > 0)
+            if (_cktien > 0 && thanhtien > 0)
             {
                 ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
             }
@@ -1386,7 +1395,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         {
             Double thanhtien = tienchuack;
             int _cktien = Convert.ToInt32(cktien.Value);
-            if (_cktien > 0)
+            if (_cktien > 0 && thanhtien > 0)
             {
                 ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
             }
