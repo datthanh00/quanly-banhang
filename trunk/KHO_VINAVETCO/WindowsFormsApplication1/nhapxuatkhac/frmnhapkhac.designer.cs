@@ -391,7 +391,7 @@
             this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
             this.dockPanel1.Size = new System.Drawing.Size(200, 261);
             this.dockPanel1.Text = "Giao Dịch";
-            this.dockPanel1.Click += new System.EventHandler(this.dockPanel1_Click);
+            
             // 
             // dockPanel1_Container
             // 

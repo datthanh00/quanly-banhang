@@ -48,6 +48,8 @@ namespace WindowsFormsApplication1
             
             if (isthem)
             {
+            int COUNTSTART = 0;
+            START_EXCUTIVE:
                 if (PublicVariable.THEM == "False")
                 {
                     MessageBox.Show("KHÔNG CÓ QUYỀN ");
@@ -70,7 +72,27 @@ namespace WindowsFormsApplication1
                 DTO.MABG = txtMaBG.Text;
                 DTO.TENBG = txttenbg.Text;
 
+                string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='BG' AND MAKHO='" + PublicVariable.MAKHO + "'";
+                DataTable DTstart = connect.getdata(SQLstart);
+                if (DTstart.Rows.Count>0)
+                if (DTstart.Rows[0][0].ToString() == "True" && COUNTSTART < 20)
+                {
+                    COUNTSTART = COUNTSTART + 1;
+                    connect.dealTimer();
+                    if (COUNTSTART == 19)
+                    {
+                        MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
+                        return;
+                    }
+                    goto START_EXCUTIVE;
+                    
+                }
+                loadma();
+                DTO.MABG = txtMaBG.Text;
+                connect.ACTIVEINSERT("BG");
+
                 CTL.addBanggia(DTO);
+                connect.UNACTIVEINSERT("BG");
                 this.Close();
 
             }

@@ -154,9 +154,8 @@ namespace WindowsFormsApplication1
             SQL = " UPDATE  PHIEUCHI set MANV='" + dto.NhanVien + "',SoTienDaTra_PC='" + dto.SoTienDaTra + "' WHERE MAPC='" + dto.MaPhieuChi + "' and MAHDN='" + dto.Mahoadonnhap + "'";
             pv.executeNonQuery(SQL);
 
-
-
         }
+
         public  void THEM_PHIEUCHI_DAO(PHIEUCHI_DTO dto)
         {
 

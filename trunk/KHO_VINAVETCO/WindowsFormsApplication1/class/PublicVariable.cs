@@ -6,7 +6,7 @@ namespace WindowsFormsApplication1
 {
 	class PublicVariable
 	{
-       public static string TATCA,XEM,THEM, XOA, SUA, IN, MAKHO,MANV;
+       public static string TATCA,XEM,THEM, XOA, SUA, IN, MAKHO,MANV,CODEKHO;
        public static Boolean isHSD, isBARCODE, isTONTHUCTE, isKHOILUONG, isBANGGIA;
        public static Boolean isUSE_COMPUTERDATE=false;
        public static DataTable KhoQL;

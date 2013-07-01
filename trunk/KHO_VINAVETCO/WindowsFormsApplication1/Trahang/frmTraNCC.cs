@@ -35,7 +35,7 @@ namespace WindowsFormsApplication1
             deDongTab();
         }
         int CountRowTBEdit = 0;
-        Boolean isdelete = false;
+        Boolean isdelete = false,isnhap = true;
         NhapHangDTO dto = new NhapHangDTO();
         NhapHangDAO mh = new NhapHangDAO();
         string IDNHAP = "0";
@@ -362,6 +362,7 @@ namespace WindowsFormsApplication1
             
         }
         public void Create_new(){
+            isnhap = true;
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             loadgridNhacCungCap();
             txtMANCC.Text = "";
@@ -405,6 +406,8 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
+                        int COUNTSTART = 0;
+                    START_EXCUTIVE:
                         PublicVariable.SQL_TRANHAP = "";
                         dtoNCC.MANCC = txtMANCC.Text;
                         dtoNCC.TENNCC = cboTenNCC.Text;
@@ -472,6 +475,29 @@ namespace WindowsFormsApplication1
                         }
 
                         dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
+
+                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='THDN' AND MAKHO='" + PublicVariable.MAKHO + "'";
+                        DataTable DTstart = connect.getdata(SQLstart);
+                        if (DTstart.Rows.Count>0)
+                        if (DTstart.Rows[0][0].ToString() == "True"&&COUNTSTART<20)
+                        {
+                            COUNTSTART = COUNTSTART + 1;
+                            connect.dealTimer();
+                            if (COUNTSTART == 19)
+                            {
+                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
+                                return;
+                            }
+                            goto START_EXCUTIVE;
+                            
+                        }
+
+                        if (isnhap)
+                        {
+                            loadmahdn();
+                            dtoNCC.MAHDN = txtMaHD.Text;
+                        }
+
                         bool isINSERTHOADONNHAP = ctlNCC.isINSERTtraHOADONNHAP(dtoNCC.MAHDN);
                         if (isINSERTHOADONNHAP)
                         {
@@ -480,7 +506,7 @@ namespace WindowsFormsApplication1
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
                             }
-
+                            connect.ACTIVEINSERT("THDN");
                             dtoNCC.IsUPDATE = false;
                             dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
                             ctlNCC.INSERTtraHOADONNHAP(dtoNCC);
@@ -493,6 +519,7 @@ namespace WindowsFormsApplication1
                             }
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRANHAP);
                             PublicVariable.SQL_TRANHAP = "";
+                            connect.UNACTIVEINSERT("THDN");
                             MessageBox.Show("Bạn Đã Thêm Thành Công");
                         }
                         else
@@ -1076,6 +1103,8 @@ namespace WindowsFormsApplication1
             }
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             btLuu.Enabled = false;
+            isnhap = false;
+
             isdelete = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
@@ -1134,6 +1163,7 @@ namespace WindowsFormsApplication1
             }
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             btLuu.Enabled=true;
+            isnhap = false;
             isdelete = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
@@ -1444,6 +1474,8 @@ namespace WindowsFormsApplication1
            
             gridCTHOADON.OptionsBehavior.ReadOnly = true;
             btLuu.Enabled = false;
+            isnhap = false;
+       
             isdelete = true;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
