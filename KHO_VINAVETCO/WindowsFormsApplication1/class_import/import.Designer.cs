@@ -51,6 +51,7 @@
             this.txtlohang = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.lbmathue = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.btnEDITMAHD = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.luoi)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTable.Properties)).BeginInit();
@@ -190,7 +191,7 @@
             this.button5.ForeColor = System.Drawing.Color.DarkBlue;
             this.button5.Image = global::WindowsFormsApplication1.Properties.Resources.check;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(726, 425);
+            this.button5.Location = new System.Drawing.Point(577, 425);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(108, 43);
             this.button5.TabIndex = 36;
@@ -302,11 +303,26 @@
             this.labelControl1.TabIndex = 138;
             this.labelControl1.Text = "Lo Hang";
             // 
+            // btnEDITMAHD
+            // 
+            this.btnEDITMAHD.ForeColor = System.Drawing.Color.DarkBlue;
+            this.btnEDITMAHD.Image = global::WindowsFormsApplication1.Properties.Resources.undo;
+            this.btnEDITMAHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEDITMAHD.Location = new System.Drawing.Point(750, 485);
+            this.btnEDITMAHD.Name = "btnEDITMAHD";
+            this.btnEDITMAHD.Size = new System.Drawing.Size(108, 33);
+            this.btnEDITMAHD.TabIndex = 139;
+            this.btnEDITMAHD.Text = "EDIT MAHD";
+            this.btnEDITMAHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEDITMAHD.UseVisualStyleBackColor = true;
+            this.btnEDITMAHD.Click += new System.EventHandler(this.btnEDITMAHD_Click);
+            // 
             // import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 568);
+            this.Controls.Add(this.btnEDITMAHD);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.lbmathue);
             this.Controls.Add(this.txtlohang);
@@ -355,5 +371,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtlohang;
         private DevExpress.XtraEditors.LabelControl lbmathue;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private System.Windows.Forms.Button btnEDITMAHD;
     }
 }
