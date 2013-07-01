@@ -1,6 +1,7 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Timers;
 
 namespace WindowsFormsApplication1
 {
@@ -12,97 +13,26 @@ namespace WindowsFormsApplication1
 
         public string sTuDongDienMapc(string sMaPC)
         {
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MAPC,7,len(MAPC)-6))) from PHIEUCHI";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "PC", MAHD = "MAPC", TABLE = "PHIEUCHI";
+            int LENHEAD = HEAD.Length+2;
+            string SQL = "";
+      
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaPC = DT.Rows[0][0].ToString();
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "PC" + subso;
-            
-
-
-            if (Maxa < 10)
-            {
-                sMaPC = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaPC = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaPC = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaPC = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaPC = string.Concat(subMAHD, Maxa);
-            }
             return sMaPC;
-            
         }
         public string sTuDongDienMapt(string sMaPT)
         {
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MAPT,7,len(MAPT)-6))) from PHIEUTHU";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "PT", MAHD = "MAPT", TABLE = "PHIEUTHU";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "PT" + subso;
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaPT = DT.Rows[0][0].ToString();
 
-            if (Maxa < 10)
-            {
-                sMaPT = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaPT = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaPT = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaPT = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaPT = string.Concat(subMAHD, Maxa);
-            }
             return sMaPT;
             
         }
@@ -110,49 +40,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaKH(string sMaKH)
         {
 
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MAKH,7,len(MAKH)-6))) from KHACHHANG";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "KH", MAHD = "MAKH", TABLE = "KHACHHANG";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "KH" + subso;
-
-
-            if (Maxa < 10)
-            {
-                sMaKH = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaKH = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaKH = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaKH = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaKH = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaKH = DT.Rows[0][0].ToString();
             
             return sMaKH;
            
@@ -162,287 +56,84 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaKho(string sMaKHO)
         {
 
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(MAKHO) from KHO";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString().Substring(5, 5));
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "", MAHD = "MAKHO", TABLE = "KHO";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '1' ELSE T1 END FROM (SELECT  convert(VARCHAR,(SELECT MAX(convert(int," + MAHD + ")) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaKHO = DT.Rows[0][0].ToString();
 
-            if (Maxa < 10)
-            {
-                sMaKHO = string.Concat("MAKHO", "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaKHO = string.Concat("MAKHO", "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaKHO = string.Concat("MAKHO", "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaKHO = string.Concat("MAKHO", "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaKHO= string.Concat("MAKHO", Maxa);
-            }
-            
             return sMaKHO;
             
         }
         ////--------------------load ma tu dong DVT--------------------------
         public string sTuDongDienMaDVT(string sMaDVT)
         {
+            string HEAD = "DVT", MAHD = "MADVT", TABLE = "DONVITINH";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MADVT,8,len(MADVT)-7))) from DONVITINH";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
-
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "DVT" + subso;
-
-
-            if (Maxa < 10)
-            {
-                sMaDVT = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaDVT = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaDVT = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaDVT = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaDVT = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaDVT = DT.Rows[0][0].ToString();
             
             return sMaDVT;
            
         }
         //--------------load ma MH----------
-        public string sTuDongDienMaMH(string sMaDVT)
+        public string sTuDongDienMaMH(string sMaMH)
         {
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MAMH,7,len(MAMH)-6))) from MATHANG";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "MH", MAHD = "MAMH", TABLE = "MATHANG";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "MH" + subso;
-
-
-            if (Maxa < 10)
-            {
-                sMaDVT = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaDVT = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaDVT = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaDVT = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaDVT = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaMH = DT.Rows[0][0].ToString();
             
-            return sMaDVT;
+            return sMaMH;
           
         }
-        public string sTuDongDienMaBG(string sMaDVT)
+        public string sTuDongDienMaBG(string sMaBG)
         {
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MABG,7,len(MABG)-6))) from BANGGIA";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "BG", MAHD = "MABG", TABLE = "BANGGIA";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "BG" + subso;
-
-
-            if (Maxa < 10)
-            {
-                sMaDVT = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaDVT = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaDVT = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaDVT = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaDVT = string.Concat(subMAHD, Maxa);
-            }
-
-            return sMaDVT;
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaBG = DT.Rows[0][0].ToString();
+            return sMaBG;
 
         }
         /////------------load thue---------------------
-        public string sTuDongDienMaThue(string sMaDVT)
+        public string sTuDongDienMaThue(string sMaTH)
         {
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MATH,7,len(MATH)-6))) from THUE";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "TH", MAHD = "MATH", TABLE = "THUE";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "TH" + subso;
-
-            if (Maxa < 10)
-            {
-                sMaDVT = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaDVT = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaDVT = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaDVT = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaDVT = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaTH = DT.Rows[0][0].ToString();
             
-            return sMaDVT;
+            return sMaTH;
             
         }
         ///---------------------------------load ma tu dong khhu vuc---------------
 
-        public string sTuDongDienMaKV(string sMaKHO)
+        public string sTuDongDienMaKV(string sMaKV)
         {
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MAKV,9,len(MAKV)-8))) from KHUVUC";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "KV", MAHD = "MAKV", TABLE = "KHUVUC";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "MAKV" + subso;
-            if (Maxa < 10)
-            {
-                sMaKHO = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaKHO = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaKHO = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaKHO = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaKHO = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaKV = DT.Rows[0][0].ToString();
             
-            return sMaKHO;
+            return sMaKV;
             
         }
         //----------------------load ma nhan vien-------------------
@@ -452,150 +143,31 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaNV(string sMaNV)
         {
 
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MANV,9,len(MANV)-8))) from NHANVIEN";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "NV", MAHD = "MANV", TABLE = "NHANVIEN";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "MANV" + subso;
-
-
-            if (Maxa < 10)
-            {
-                sMaNV = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaNV = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaNV = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaNV = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaNV = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaNV = DT.Rows[0][0].ToString();
             
             return sMaNV;
            
         }
         //-----------------------------load ma tu dong quan ly----------------
-        public string sTuDongDienMaQL(string sMaNV)
-        {
-
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MAQL,9,len(MAQL)-8))) from QUANLY";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
-
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "MAQL" + subso;
-
-            if (Maxa < 10)
-            {
-                sMaNV = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaNV = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaNV = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaNV = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaNV = string.Concat(subMAHD, Maxa);
-            }
-            
-            return sMaNV;
-           
-        }
+     
 
 //----------------------load ma tu dong Bo Phan---------------
         public string sTuDongDienMaBP(string sMaBP)
         {
 
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MABP,9,len(MABP)-8))) from BOPHAN";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "BP", MAHD = "MABP", TABLE = "BOPHAN";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "MABP" + subso;
-
-            if (Maxa < 10)
-            {
-                sMaBP = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaBP = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaBP = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaBP = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaBP = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaBP = DT.Rows[0][0].ToString();
             
             return sMaBP;
            
@@ -605,201 +177,72 @@ namespace WindowsFormsApplication1
 
         public string sTuDongDienMaNhomHang(string sMaNH)
         {
+            string HEAD = "NH", MAHD = "MANH", TABLE = "NHOMHANG";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MANH,7,len(MANH)-6))) from NHOMHANG";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
-
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "NH" + subso;
-
-            if (Maxa < 10)
-            {
-                sMaNH = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaNH = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaNH = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaNH = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaNH = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaNH = DT.Rows[0][0].ToString();
             
             return sMaNH;
            
         }
         //-------------------load ma nha Cung cap-----------------------//
        
-        public string sTuDongDienMaNCC(string sMaKHO)
+        public string sTuDongDienMaNCC(string sMaNCC)
         {
+            string HEAD = "NCC", MAHD = "MANCC", TABLE = "NHACUNGCAP";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MANCC,10,len(MANCC)-9))) from NHACUNGCAP";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
-
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "MANCC" + subso;
-
-            if (Maxa < 10)
-            {
-                sMaKHO = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMaKHO = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMaKHO = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMaKHO = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMaKHO = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaNCC = DT.Rows[0][0].ToString();
             
-            return sMaKHO;
+            return sMaNCC;
            
         }
 
         public string sTuDongDienMaHoaDonXuat(string sMahdx)
         {
 
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MAHDX,10,len(MAHDX)-9))) from HOADONXUAT";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "HDX", MAHD = "MAHDX", TABLE = "HOADONXUAT";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "MAHDX" + subso;
-
-            if (Maxa < 10)
-            {
-                sMahdx = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMahdx = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMahdx = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMahdx = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMahdx = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMahdx = DT.Rows[0][0].ToString();
             
             return sMahdx;
            
         }
+
+        public string sTuDongDienMaHoaDonXuatKHAC(string sMahdx)
+        {
+
+            string HEAD = "HDXK", MAHD = "MAHDX", TABLE = "HOADONXUAT";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
+
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMahdx = DT.Rows[0][0].ToString();
+
+            return sMahdx;
+
+        }
         public string sTuDongDienMaHoaDonXuattam(string sMahdx)
         {
 
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MAHDX,10,len(MAHDX)-9))) from CHITIETHDXTAM";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "HDX", MAHD = "MAHDX", TABLE = "HOADONXUAT";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "MAHDX" + subso;
-
-            if (Maxa < 10)
-            {
-                sMahdx = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMahdx = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMahdx = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMahdx = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMahdx = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMahdx = DT.Rows[0][0].ToString();
 
             return sMahdx;
 
@@ -808,47 +251,13 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMatraHoaDonXuat(string sMahdx)
         {
 
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MAHDX,11,len(MAHDX)-10))) from traHOADONXUAT";
-            DataTable dt = getdata(SQL);
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            string HEAD = "THDX", MAHD = "MAHDX", TABLE = "TRAHOADONXUAT";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "MATHDX" + subso;
-            if (Maxa < 10)
-            {
-                sMahdx = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMahdx = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMahdx = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMahdx = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMahdx = string.Concat(subMAHD, Maxa);
-            }
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMahdx = DT.Rows[0][0].ToString();
             
             return sMahdx;
             
@@ -867,104 +276,73 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaHoaDonNhap(string sMahdn)
         {
 
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MAHDN,10,len(MAHDN)-9))) from HOADONNHAP";
-            DataTable dt = getdata(SQL);
+            string HEAD = "HDN", MAHD = "MAHDN", TABLE = "HOADONNHAP";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
 
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMahdn = DT.Rows[0][0].ToString();
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-            string subMAHD = "MAHDN" + subso;
-            if (Maxa < 10)
-            {
-                sMahdn = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMahdn = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMahdn = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMahdn = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMahdn = string.Concat(subMAHD, Maxa);
-            }
+            
+            return sMahdn;
+            
+        }
+        public string sTuDongDienMaHoaDonNhapKHAC(string sMahdn)
+        {
+
+            string HEAD = "HDNK", MAHD = "MAHDN", TABLE = "HOADONNHAP";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
+
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMahdn = DT.Rows[0][0].ToString();
+            return sMahdn;
+
+        }
+        public string sTuDongDienMatraHoaDonNhap(string sMahdn)
+        {
+
+            string HEAD = "THDN", MAHD = "MAHDN", TABLE = "TRAHOADONNHAP";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
+
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "01' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMahdn = DT.Rows[0][0].ToString();
             
             return sMahdn;
             
         }
 
-        public string sTuDongDienMatraHoaDonNhap(string sMahdn)
+        public void ACTIVEINSERT(string TYPE)
         {
+           string  SQL = "";
+           SQL = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='"+TYPE+"' AND MAKHO='" + PublicVariable.MAKHO + "'";
 
-            int maxmaphieu = 0;
-            String SQL = "Select MAX(convert(int,SUBSTRING(MAHDN,11,len(MAHDN)-10))) from traHOADONNHAP";
-            DataTable dt = getdata(SQL);
+           DataTable DTstart = getdata(SQL);
+           if (DTstart.Rows.Count > 0)
+           {
+               SQL = "UPDATE MAHDARRAY SET ACTIVE =1 WHERE TYPE='" + TYPE + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
+           }
+           else
+           {
+               SQL = "INSERT INTO MAHDARRAY ([TYPE],[MAKHO],[ACTIVE]) VALUES ('" + TYPE + "','" + PublicVariable.MAKHO + "',1)";
+           }
+          
+           executeNonQuery(SQL);
+        }
 
-            if (dt.Rows[0][0].ToString() != "")
-            {
-                maxmaphieu = int.Parse(dt.Rows[0][0].ToString());
-            }
-            Maxa = maxmaphieu + 1;
+        public void UNACTIVEINSERT(string TYPE)
+        {
+            string SQLstart = "UPDATE MAHDARRAY SET ACTIVE =0 WHERE TYPE='" + TYPE + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
+            executeNonQuery(SQLstart);
+        }
 
-            string subso = int.Parse(PublicVariable.MAKHO.Substring(5, 5)).ToString();
-            if (subso.Length < 2)
-            {
-                subso = "0" + subso;
-            }
-
-            string subso2 = int.Parse(PublicVariable.MANV.Substring(4, 5)).ToString();
-            if (subso2.Length < 2)
-            {
-                subso2 = "0" + subso2;
-            }
-            subso = subso + subso2;
-
-            string subMAHD = "MATHDN" + subso;
-
-            if (Maxa < 10)
-            {
-                sMahdn = string.Concat(subMAHD, "0000", Maxa);
-            }
-            if (Maxa >= 10)
-            {
-                sMahdn = string.Concat(subMAHD, "000", Maxa);
-            }
-            if (Maxa >= 100)
-            {
-                sMahdn = string.Concat(subMAHD, "00", Maxa);
-            }
-            if (Maxa >= 1000)
-            {
-                sMahdn = string.Concat(subMAHD, "0", Maxa);
-            }
-            if (Maxa >= 10000)
-            {
-                sMahdn = string.Concat(subMAHD, Maxa);
-            }
-            
-            return sMahdn;
-            
+        public void dealTimer()
+        {
+            System.Threading.Thread.Sleep(2000);
         }
 
 

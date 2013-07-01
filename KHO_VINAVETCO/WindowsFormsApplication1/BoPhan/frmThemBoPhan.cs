@@ -60,10 +60,33 @@ namespace WindowsFormsApplication1
                     //{
                     if (kiemtra == 1)
                     {
+                        int COUNTSTART = 0;
+                    START_EXCUTIVE:
                         DTO.MABP = txtma.Text;
                         DTO.TENBOPHAN = txtten.Text;
                         DTO.TINHTRANG = KT;
+
+                        
+                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='BP' AND MAKHO='" + PublicVariable.MAKHO + "'";
+                        DataTable DTstart = connect.getdata(SQLstart);
+                        if (DTstart.Rows.Count>0)
+                        if (DTstart.Rows[0][0].ToString() == "True" && COUNTSTART < 20)
+                        {
+                            COUNTSTART = COUNTSTART + 1;
+                            connect.dealTimer();
+                            if (COUNTSTART == 19)
+                            {
+                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
+                                return;
+                            }
+                            goto START_EXCUTIVE;
+                           
+                        }
+                        loadma();
+                        DTO.MABP = txtma.Text;
+                        connect.ACTIVEINSERT("BP");
                         CTL.INSERTBOPHAN(DTO);
+                        connect.UNACTIVEINSERT("BP");
                         XtraMessageBox.Show("Bạn Đã Thêm Thành Công");
                         this.Close();
                     }

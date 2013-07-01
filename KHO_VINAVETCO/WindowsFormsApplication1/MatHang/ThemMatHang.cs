@@ -249,11 +249,8 @@ namespace WindowsFormsApplication1
                     {
                         if (kiemtra == 1)
                         {
-                            //MemoryStream ms = new MemoryStream();
-                            //pictureEdit1.Image.Save(ms, pictureEdit1.Image.RawFormat);
-                            //imageData = ms.GetBuffer();
-                            //ms.Close();
-                            //DTO.PICTURE = imageData;
+                            int COUNTSTART = 0;
+                        START_EXCUTIVE:
                             DTO.MAMH = txtMaMH.Text;
                             DTO.MATH = "TH00001";//gridView2.GetFocusedRowCellValue("MATH").ToString();
 
@@ -269,7 +266,28 @@ namespace WindowsFormsApplication1
                           
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
+
+                            string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='MH' AND MAKHO='" + PublicVariable.MAKHO + "'";
+                            DataTable DTstart = connect.getdata(SQLstart);
+                            if (DTstart.Rows.Count>0)
+                            if (DTstart.Rows[0][0].ToString() == "True" && COUNTSTART < 20)
+                            {
+                                COUNTSTART = COUNTSTART + 1;
+                                connect.dealTimer();
+                                if (COUNTSTART == 19)
+                                {
+                                    MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
+                                    return;
+                                }
+                                goto START_EXCUTIVE;
+                                
+                            }
+                            loadma();
+                            DTO.MAMH = txtMaMH.Text;
+
+                            connect.ACTIVEINSERT("MH");
                             CTL.addMatHangCtrl(DTO);
+                            connect.UNACTIVEINSERT("MH");
                             XtraMessageBox.Show("Bạn Đã Thêm Thành Công");
                             loadma();
                             this.Close();

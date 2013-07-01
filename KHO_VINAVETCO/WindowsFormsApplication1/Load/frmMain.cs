@@ -727,7 +727,7 @@ namespace WindowsFormsApplication1
             cbkho.Properties.View.BestFitColumns();
             cbkho.Properties.PopupFormWidth = 200;
             CTL ctl = new CTL();
-            String SQL = "select TENKHO,KHO.MAKHO from phankho,KHO WHERE KHO.MAKHO=PHANKHO.MAKHO AND MABP='" + sBoPhan + "' and quanly=1 AND KHO.TINHTRANG='TRUE'";
+            String SQL = "select TENKHO,KHO.MAKHO,CODEKHO from phankho,KHO WHERE KHO.MAKHO=PHANKHO.MAKHO AND MABP='" + sBoPhan + "' and quanly=1 AND KHO.TINHTRANG='TRUE'";
             
             cbkho.Properties.DataSource = ctl.GETDATA(SQL);
             gridcbkho.SelectRow(0);
@@ -735,6 +735,7 @@ namespace WindowsFormsApplication1
             cbkho.Text = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
           
             PublicVariable.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+            PublicVariable.CODEKHO = gridcbkho.GetFocusedRowCellValue("CODEKHO").ToString();
             LOAD_CHUCNANGKHO();
             
         }
@@ -2115,6 +2116,7 @@ namespace WindowsFormsApplication1
         {
             
             PublicVariable.MAKHO = gridcbkho.GetFocusedRowCellValue("MAKHO").ToString();
+            PublicVariable.CODEKHO = gridcbkho.GetFocusedRowCellValue("CODEKHO").ToString();
             LOAD_CHUCNANGKHO();
             //for (int i = 0; i < tabControl12.Tabs.Count; i++)
             //{

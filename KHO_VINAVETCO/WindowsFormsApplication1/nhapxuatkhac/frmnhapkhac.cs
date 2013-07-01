@@ -36,7 +36,7 @@ namespace WindowsFormsApplication1
         int CountRowTBEdit = 0;
         NhapHangDTO dto = new NhapHangDTO();
         NhapHangDAO mh = new NhapHangDAO();
-        Boolean isdelete = false;
+        Boolean isdelete = false, isnhap = true;
         string IDNHAP = "0";
         //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
         public string THEM, XOA, SUA, IN, XEM;
@@ -110,6 +110,7 @@ namespace WindowsFormsApplication1
             isdelete = false;
             PublicVariable.SQL_NHAP = "";
             btLuu.Enabled = true;
+            isnhap = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
             loadgridCTHOADON();
@@ -129,6 +130,7 @@ namespace WindowsFormsApplication1
             isdelete = false;
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             btLuu.Enabled = false;
+            isnhap = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
             loadgridCTHOADON();
@@ -475,6 +477,7 @@ namespace WindowsFormsApplication1
             
         }
         public void Create_new(){
+            isnhap = true;
             loadgridNhacCungCap();
             txtMANCC.Text = "";
             cboTenNCC.Text = "";
@@ -510,6 +513,8 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
+                        int COUNTSTART = 0;
+                    START_EXCUTIVE:
                         PublicVariable.SQL_NHAP = "";
                         dtoNCC.MANCC = txtMANCC.Text;
                         dtoNCC.TENNCC = cboTenNCC.Text;
@@ -594,6 +599,27 @@ namespace WindowsFormsApplication1
                             }
                         }
 
+                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='HDNK' AND MAKHO='" + PublicVariable.MAKHO + "'";
+                        DataTable DTstart = connect.getdata(SQLstart);
+                        if (DTstart.Rows.Count>0)
+                        if (DTstart.Rows[0][0].ToString() == "True"&&COUNTSTART<20)
+                        {
+                            COUNTSTART = COUNTSTART + 1;
+                            connect.dealTimer();
+                            if (COUNTSTART == 19)
+                            {
+                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
+                                return;
+                            }
+                            goto START_EXCUTIVE;
+                            
+                        }
+
+                        if (isnhap)
+                        {
+                            loadmahdn();
+                            dtoNCC.MAHDN = txtMaHD.Text;
+                        }
 
                         bool isINSERTHOADONNHAP = ctlNCC.isINSERTHOADONNHAP(dtoNCC.MAHDN);
 
@@ -610,6 +636,7 @@ namespace WindowsFormsApplication1
                                 MessageBox.Show("KHÔNG CÓ QUYỀN THÊM");
                                 return;
                             }
+                            connect.ACTIVEINSERT("HDNK");
                             dtoNCC.IsUPDATE = false;
                             dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
                             ctlNCC.INSERTHOADONNHAP(dtoNCC);
@@ -624,6 +651,7 @@ namespace WindowsFormsApplication1
 
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
                             PublicVariable.SQL_NHAP = "";
+                            connect.UNACTIVEINSERT("HDNK");
                             MessageBox.Show("Bạn Đã Thêm Thành Công");
                         }
                         else
@@ -866,20 +894,12 @@ namespace WindowsFormsApplication1
 
         public void loadmahdn()
         {
-            txtMaHD.Text = connect.sTuDongDienMaHoaDonNhap(txtMaHD.Text);
+            txtMaHD.Text = connect.sTuDongDienMaHoaDonNhapKHAC(txtMaHD.Text);
             txtlohang.Text = txtMaHD.Text;
             txtNgay.Text = DateTime.Now.ToString("dd/MM/yyy");
         }
 
-        private void dockPanel1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void cboNhanVienLap_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btAddMH_Click(object sender, EventArgs e)
         {
@@ -1524,6 +1544,7 @@ namespace WindowsFormsApplication1
             PublicVariable.SQL_NHAP = "";
             isdelete = true;
             btLuu.Enabled = false;
+            isnhap = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
             ckphantram.Properties.ReadOnly = true;

@@ -25,7 +25,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         int CountRowTBEdit = 0;
         string mahdtam = "";
-        Boolean isdelete = false;
+        Boolean isdelete = false,isnhap = true;
         DataView dtvKH = new DataView();
         DataView dtvNhanVien = new DataView();
         DataView dtvMH = new DataView();
@@ -258,6 +258,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     }
                     else
                     {
+                        int COUNTSTART = 0;
+                    START_EXCUTIVE:
                         PublicVariable.SQL_XUAT = "";
                         dtoNCC.MAKH = txtmakh.Text;
                         dtoNCC.TENKH = cboTenKH.Text;
@@ -285,6 +287,28 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             return;
                         }
 
+                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='HDX' AND MAKHO='" + PublicVariable.MAKHO + "'";
+                        DataTable DTstart = connect.getdata(SQLstart);
+                        if (DTstart.Rows.Count>0)
+                        if (DTstart.Rows[0][0].ToString() == "True"&&COUNTSTART<20)
+                        {
+                            COUNTSTART = COUNTSTART + 1;
+                            connect.dealTimer();
+                            if (COUNTSTART == 19)
+                            {
+                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
+                                return;
+                            }
+                            goto START_EXCUTIVE;
+                            
+                        }
+
+                        if (isnhap)
+                        {
+                            loadmahdx();
+                            dtoNCC.MAHDX = txtMaHD.Text;
+                        }
+
                         bool isINSERTHOADONXUAT = ctlNCC.isINSERTHOADONXUAT(dtoNCC.MAHDX);
                         if (isINSERTHOADONXUAT)
                         {
@@ -293,7 +317,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
                             }
-
+                            
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
@@ -330,7 +354,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 NGAYXUAT = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
                             }
                             dtoNCC.NGAYXUAT = NGAYXUAT;
-
+                            connect.ACTIVEINSERT("HDX");
                             dtoNCC.IsUPDATE = false;
                             dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
                             ctlNCC.INSERTHOADONXUAT(dtoNCC);
@@ -343,6 +367,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             }
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
                             PublicVariable.SQL_XUAT = "";
+                            connect.UNACTIVEINSERT("HDX");
                             MessageBox.Show("Bạn Đã Thêm Thành Công");
                         }
                         else
@@ -566,6 +591,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         public void Create_new()
         {
+            isnhap = true;
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             txtmakh.Text = "";
             cboTenKH.Text = "";
@@ -986,6 +1012,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             PublicVariable.SQL_XUAT = "";
             btLuu.Enabled = false;
+            isnhap = false;
             isdelete = false;
             cboTenKH.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
@@ -1045,6 +1072,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             PublicVariable.SQL_XUAT = "";
             btLuu.Enabled = true;
+            isnhap = false;
             isdelete = false;
             cboTenKH.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
@@ -1456,6 +1484,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             gridCTHOADON.OptionsBehavior.ReadOnly = true;
             PublicVariable.SQL_XUAT = "";
             btLuu.Enabled = false;
+            isnhap = false;
             isdelete = true;
             cboTenKH.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
