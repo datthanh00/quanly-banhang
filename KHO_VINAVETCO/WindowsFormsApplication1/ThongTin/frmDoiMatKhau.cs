@@ -89,7 +89,7 @@ namespace WindowsFormsApplication1
                     XtraMessageBox.Show("Comfirm pass incortect");
                     return;
                 }
-                txtPassXacNhan.Focus();
+                //txtPassXacNhan.Focus();
             }
             dto.MATKHAU = txtPassCu.Text;
             dto.MANV = sMaNV;

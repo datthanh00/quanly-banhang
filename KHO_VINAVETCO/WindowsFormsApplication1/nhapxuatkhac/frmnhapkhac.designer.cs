@@ -87,10 +87,7 @@
             this.txtlohang = new System.Windows.Forms.TextBox();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.txtnhanvienlap = new DevExpress.XtraEditors.TextEdit();
-            this.txtconLai = new System.Windows.Forms.TextBox();
-            this.txtthanhtien = new System.Windows.Forms.TextBox();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txtNo = new DevExpress.XtraEditors.TextEdit();
             this.txtMaHD = new DevExpress.XtraEditors.TextEdit();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
@@ -148,6 +145,7 @@
             this.gridColumn38 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn39 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemCalcEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
@@ -179,6 +177,7 @@
             this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn41 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.DeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -187,8 +186,9 @@
             this.xoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtNo = new DevExpress.XtraEditors.CalcEdit();
+            this.txtconLai = new DevExpress.XtraEditors.CalcEdit();
+            this.txtthanhtien = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -226,7 +226,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).BeginInit();
@@ -270,6 +269,9 @@
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dockManager1
@@ -391,7 +393,6 @@
             this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
             this.dockPanel1.Size = new System.Drawing.Size(200, 261);
             this.dockPanel1.Text = "Giao Dịch";
-            
             // 
             // dockPanel1_Container
             // 
@@ -818,13 +819,13 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.txtthanhtien);
+            this.groupControl2.Controls.Add(this.txtconLai);
+            this.groupControl2.Controls.Add(this.txtNo);
             this.groupControl2.Controls.Add(this.txtlohang);
             this.groupControl2.Controls.Add(this.labelControl11);
             this.groupControl2.Controls.Add(this.txtnhanvienlap);
-            this.groupControl2.Controls.Add(this.txtconLai);
-            this.groupControl2.Controls.Add(this.txtthanhtien);
             this.groupControl2.Controls.Add(this.labelControl8);
-            this.groupControl2.Controls.Add(this.txtNo);
             this.groupControl2.Controls.Add(this.txtMaHD);
             this.groupControl2.Controls.Add(this.labelControl18);
             this.groupControl2.Controls.Add(this.labelControl17);
@@ -865,24 +866,6 @@
             this.txtnhanvienlap.Size = new System.Drawing.Size(118, 20);
             this.txtnhanvienlap.TabIndex = 7;
             // 
-            // txtconLai
-            // 
-            this.txtconLai.Location = new System.Drawing.Point(87, 105);
-            this.txtconLai.Name = "txtconLai";
-            this.txtconLai.ReadOnly = true;
-            this.txtconLai.Size = new System.Drawing.Size(118, 21);
-            this.txtconLai.TabIndex = 2;
-            // 
-            // txtthanhtien
-            // 
-            this.txtthanhtien.Location = new System.Drawing.Point(87, 74);
-            this.txtthanhtien.Name = "txtthanhtien";
-            this.txtthanhtien.ReadOnly = true;
-            this.txtthanhtien.Size = new System.Drawing.Size(118, 21);
-            this.txtthanhtien.TabIndex = 2;
-            this.txtthanhtien.Text = "0";
-            this.txtthanhtien.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // labelControl8
             // 
             this.labelControl8.Location = new System.Drawing.Point(211, 27);
@@ -890,15 +873,6 @@
             this.labelControl8.Size = new System.Drawing.Size(45, 13);
             this.labelControl8.TabIndex = 0;
             this.labelControl8.Text = "Ngày Lập";
-            // 
-            // txtNo
-            // 
-            this.txtNo.Enabled = false;
-            this.txtNo.Location = new System.Drawing.Point(262, 48);
-            this.txtNo.Name = "txtNo";
-            this.txtNo.Properties.ReadOnly = true;
-            this.txtNo.Size = new System.Drawing.Size(115, 20);
-            this.txtNo.TabIndex = 4;
             // 
             // txtMaHD
             // 
@@ -910,7 +884,7 @@
             // 
             // labelControl18
             // 
-            this.labelControl18.Location = new System.Drawing.Point(12, 109);
+            this.labelControl18.Location = new System.Drawing.Point(15, 109);
             this.labelControl18.Name = "labelControl18";
             this.labelControl18.Size = new System.Drawing.Size(35, 13);
             this.labelControl18.TabIndex = 0;
@@ -926,7 +900,7 @@
             // 
             // labelControl16
             // 
-            this.labelControl16.Location = new System.Drawing.Point(13, 78);
+            this.labelControl16.Location = new System.Drawing.Point(13, 80);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(53, 13);
             this.labelControl16.TabIndex = 0;
@@ -1499,6 +1473,13 @@
             this.gridColumn39.Visible = true;
             this.gridColumn39.VisibleIndex = 6;
             // 
+            // gridColumn49
+            // 
+            this.gridColumn49.Caption = "Tiền Trả";
+            this.gridColumn49.Name = "gridColumn49";
+            this.gridColumn49.Visible = true;
+            this.gridColumn49.VisibleIndex = 7;
+            // 
             // repositoryItemLookUpEdit2
             // 
             this.repositoryItemLookUpEdit2.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -1847,6 +1828,13 @@
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             // 
+            // gridColumn50
+            // 
+            this.gridColumn50.Caption = "Thành Tiền";
+            this.gridColumn50.Name = "gridColumn50";
+            this.gridColumn50.Visible = true;
+            this.gridColumn50.VisibleIndex = 9;
+            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1909,19 +1897,41 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
-            // gridColumn49
+            // txtNo
             // 
-            this.gridColumn49.Caption = "Tiền Trả";
-            this.gridColumn49.Name = "gridColumn49";
-            this.gridColumn49.Visible = true;
-            this.gridColumn49.VisibleIndex = 7;
+            this.txtNo.Location = new System.Drawing.Point(262, 50);
+            this.txtNo.Name = "txtNo";
+            this.txtNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNo.Properties.Mask.EditMask = "n0";
+            this.txtNo.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtNo.Properties.ReadOnly = true;
+            this.txtNo.Size = new System.Drawing.Size(115, 20);
+            this.txtNo.TabIndex = 25;
             // 
-            // gridColumn50
+            // txtconLai
             // 
-            this.gridColumn50.Caption = "Thành Tiền";
-            this.gridColumn50.Name = "gridColumn50";
-            this.gridColumn50.Visible = true;
-            this.gridColumn50.VisibleIndex = 9;
+            this.txtconLai.Location = new System.Drawing.Point(87, 106);
+            this.txtconLai.Name = "txtconLai";
+            this.txtconLai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtconLai.Properties.Mask.EditMask = "n0";
+            this.txtconLai.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtconLai.Properties.ReadOnly = true;
+            this.txtconLai.Size = new System.Drawing.Size(118, 20);
+            this.txtconLai.TabIndex = 26;
+            // 
+            // txtthanhtien
+            // 
+            this.txtthanhtien.Location = new System.Drawing.Point(87, 77);
+            this.txtthanhtien.Name = "txtthanhtien";
+            this.txtthanhtien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtthanhtien.Properties.Mask.EditMask = "n0";
+            this.txtthanhtien.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtthanhtien.Properties.ReadOnly = true;
+            this.txtthanhtien.Size = new System.Drawing.Size(118, 20);
+            this.txtthanhtien.TabIndex = 27;
             // 
             // frmnhapkhac
             // 
@@ -1979,7 +1989,6 @@
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgay.Properties)).EndInit();
@@ -2023,6 +2032,9 @@
             this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2064,13 +2076,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private System.Windows.Forms.TextBox txtthanhtien;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraEditors.LabelControl labelControl16;
         private DevExpress.XtraEditors.LabelControl labelControl17;
         private DevExpress.XtraEditors.CalcEdit cbotientra;
-        private System.Windows.Forms.TextBox txtconLai;
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider1;
         private DevExpress.XtraBars.Docking.DockPanel panelContainer1;
@@ -2183,7 +2193,6 @@
         private DevExpress.XtraEditors.TextEdit txtMANCC;
         private DevExpress.XtraEditors.SimpleButton btAdd;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.TextEdit txtNo;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.GridLookUpEdit cbloai;
@@ -2192,6 +2201,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn48;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn49;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn50;
+        private DevExpress.XtraEditors.CalcEdit txtthanhtien;
+        private DevExpress.XtraEditors.CalcEdit txtconLai;
+        private DevExpress.XtraEditors.CalcEdit txtNo;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet2TableAdapters.MATHANGTableAdapter mATHANGTableAdapter1;
     }
 }

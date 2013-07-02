@@ -23,12 +23,12 @@ namespace WindowsFormsApplication1
         {
             txtmakho.Text = connect.sTuDongDienMaKho(txtmakho.Text);
         }
-        DataView dvdropdow;
+   
         public void loadgirdlookupKV()
         {
 
             txtmanv.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            txtmanv.Properties.DataSource = dvdropdow;
+     
             txtmanv.Properties.DisplayMember = "MANV";
             txtmanv.Properties.ValueMember = "MANV";
             txtmanv.Properties.View.BestFitColumns();

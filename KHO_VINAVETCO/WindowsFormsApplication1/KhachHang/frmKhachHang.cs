@@ -66,13 +66,9 @@ namespace WindowsFormsApplication1
             set { sSofax = value; }
         }
         string sWebsite;
-        string sYahoo;
-        string sNickSkype;
-        string sTinhTrang;
-
-
-         public frmMain frm;
-                 public delegate void _deDongTab();
+    
+        public frmMain frm;
+        public delegate void _deDongTab();
         public _deDongTab deDongTab;
            
         public string TenKH { get { return sTenKH; } set { sTenKH = value; } }
@@ -97,7 +93,7 @@ namespace WindowsFormsApplication1
 
         }
         //private bool thoat = false;
-        string sma, sten, smakv, smanv, smabg, sdiachi, ssodt, ssoTK, snganhang, smasothue, sfax, syahoo, snickskype, stinhtrang;
+        string sma, sten, smakv, smanv, smabg, sdiachi, ssoTK, snganhang, smasothue, sfax, syahoo, snickskype, stinhtrang;
        
         DTO DTO = new DTO();
         CTL ctl= new CTL();

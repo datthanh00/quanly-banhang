@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
             string hostname = "";
             System.Net.IPHostEntry ip = new IPHostEntry();
             hostname = System.Net.Dns.GetHostName();
-            ip = System.Net.Dns.GetHostByName(hostname);
+            ip = System.Net.Dns.GetHostEntry(hostname);
             lblHostName.Text = ":" + ip.HostName;
 
             foreach (System.Net.IPAddress listip in ip.AddressList)

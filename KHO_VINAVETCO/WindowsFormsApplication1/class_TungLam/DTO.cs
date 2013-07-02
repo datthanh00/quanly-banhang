@@ -502,21 +502,21 @@ namespace WindowsFormsApplication1
         }
 
         //-------------Khu Vuc---------------
-        string sMaKV;
+        private string _sMaKV;
 
         public string SMaKV
         {
-            get { return sMaKV; }
-            set { sMaKV = value; }
+            get { return _sMaKV; }
+            set { _sMaKV = value; }
         }
-        string sTenKV;
+        string _sTenKV;
 
         public string STenKV
         {
-            get { return sTenKV; }
-            set { sTenKV = value; }
+            get { return _sTenKV; }
+            set { _sTenKV = value; }
         }
-        string sGhiChu;
+        private string sGhiChu;
 
 
         public string SGhiChu
@@ -524,16 +524,16 @@ namespace WindowsFormsApplication1
             get { return sGhiChu; }
             set { sGhiChu = value; }
         }
-        string sTinhTrang;
+        private string _sTinhTrang;
 
         public string STinhTrang
         {
-            get { return sTinhTrang; }
-            set { sTinhTrang = value; }
+            get { return _sTinhTrang; }
+            set { _sTinhTrang = value; }
         }
         //  -------------------Hoa Doan Nhap------------------------
         private String _MAHDN;
-        private String _sMANV;
+        private String _s1MANV;
         private String _sMANCC;
         private string _NGAYNHAP;
         private int _TIENPHAITRA;
@@ -553,10 +553,10 @@ namespace WindowsFormsApplication1
             set { _sMANCC = value; }
         }
 
-        public string sMANV
+        public string s1MANV
         {
-            get { return _sMANV; }
-            set { _sMANV = value; }
+            get { return _s1MANV; }
+            set { _s1MANV = value; }
         }
 
         public string NGAYNHAP
@@ -589,17 +589,17 @@ namespace WindowsFormsApplication1
             set { _sTINHTRANG = value; }
         }
         //------------------CHITIETHOADONNHAP------------------------
-        private String _s1MAHDN;
+        private String _sMAHDN;
         private String _s1MAMH;
         private Double _SOLUONGNHAP;
         private int _GIANHAP;
         private int _GIATRANHAP;
         private String _s1TINHTRANG;
 
-        public String s1MAHDN
+        public String sMAHDN
         {
-            get { return _s1MAHDN; }
-            set { _MAHDN = value; }
+            get { return _sMAHDN; }
+            set { _sMAHDN = value; }
         }
 
         public String s1MAMH
@@ -632,8 +632,8 @@ namespace WindowsFormsApplication1
         }
         //---------------hoaDonXuat-----------
         private String _MAHDX;
-        private String _s1MAKH;
-        private String _s1MANV;
+        private String _sMAKH;
+ 
         private string _NGAYXUAT;
         private int _s1TIENPHAITRA;
         private int _s1TIENDATRA;
@@ -646,15 +646,15 @@ namespace WindowsFormsApplication1
             set { _MAHDX = value; }
         }
 
-        public String s1MAKH
+        public String sMAKH
         {
-            get { return _s1MAKH; }
-            set { _s1MAKH = value; }
+            get { return _sMAKH; }
+            set { _sMAKH = value; }
         }
 
-        public String s1MANV
+        public String sMANV
         {
-            get { return _s1MANV; }
+            get { return _MANV; }
             set { _MANV = value; }
         }
 

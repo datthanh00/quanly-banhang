@@ -228,13 +228,7 @@ namespace WindowsFormsApplication1
             get { return _NGAYKT; }
             set { _NGAYKT = value; }
         }
-        private string _THEHIEN;
 
-        //public string THEHIEN
-        //{
-        //    get { return _THEHIEN; }
-        //    set { _THEHIEN = value; }
-        //}
         private string _LOAITG;
 
         public string LOAITG

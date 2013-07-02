@@ -114,7 +114,7 @@ namespace WindowsFormsApplication1
                      THANHTIEN1 = (Convert.ToInt32(dtr["GIABAN"].ToString())) * (Convert.ToDouble(dtr["SOLUONGMH"].ToString()));
                     }catch(Exception ex)
                     {
-                        MessageBox.Show("Giá bán phải là số nguyên");
+                        MessageBox.Show("Giá bán phải là số nguyên" + ex.ToString());
                         dtr["GIABAN"] = "0";
                         return;
                     }

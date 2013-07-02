@@ -18,7 +18,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-        string sma, sten, smathue, smanhomhang, smadvt, ssoluong, shinhanh, smota, stinhtrang, smakho, SKLDVT, sgiamua;
+        string sma, sten, smathue, smanhomhang, smadvt, ssoluong, smota, stinhtrang, smakho, SKLDVT, sgiamua;
         CTL CTL = new CTL();
         DAO DAO = new DAO();
         DTO DTO = new DTO();
@@ -226,7 +226,7 @@ namespace WindowsFormsApplication1
             
             sua.MAKHO = smakho;
             
-            sua.HINHANH = shinhanh;
+            sua.HINHANH = "";
             
             sua.TINHTRANG = stinhtrang;
             sua.GIAMUA = sgiamua;
@@ -387,7 +387,7 @@ namespace WindowsFormsApplication1
 
                     sua.MAKHO = smakho;
 
-                    sua.HINHANH = shinhanh;
+                    sua.HINHANH = "";
 
                     sua.TINHTRANG = stinhtrang;
                     sua.GIAMUA = sgiamua;

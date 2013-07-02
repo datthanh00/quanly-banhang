@@ -96,7 +96,7 @@ namespace WindowsFormsApplication1
         {
             gridControl1.DataSource = CTL.GETBP();
         }
-        string loadma;
+  
         ketnoi connect = new ketnoi();
         private void barThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

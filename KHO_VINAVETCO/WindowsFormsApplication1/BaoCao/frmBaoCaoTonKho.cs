@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
             cbncc.Properties.DataSource = ctr1.dtGetNCC();
 
         }
-        DataView dvdropdow;
+   
         private void loadReSVN()
         {
             iNgonNgu = 0;

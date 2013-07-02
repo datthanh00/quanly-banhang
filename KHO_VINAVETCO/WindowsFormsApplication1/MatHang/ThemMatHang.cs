@@ -81,12 +81,12 @@ namespace WindowsFormsApplication1
             this.Text = "Form Insert && Update Products";
         }
         public string MANHOMHANG, MANCC, TENMATHANG, MAMH, DVT, TINHTRANG, HINHANH, MASOTHUE, SOLUONG, MOTA, MAKHO, MADVT,KLDVT,GIAMUA;
-        DataView dvdropdow;
+  
         public void loadgirdlookupTHUE()
         {
             
             cbthue.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cbthue.Properties.DataSource = dvdropdow;
+            
             cbthue.Properties.DisplayMember = "SOTHUE";
             cbthue.Properties.ValueMember = "MATH";
             cbthue.Properties.View.BestFitColumns();
@@ -99,7 +99,6 @@ namespace WindowsFormsApplication1
         {
 
             cbDvt.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cbDvt.Properties.DataSource = dvdropdow;
             cbDvt.Properties.DisplayMember = "DONVITINH";
             cbDvt.Properties.ValueMember = "MADVT";
             cbDvt.Properties.View.BestFitColumns();
@@ -112,7 +111,6 @@ namespace WindowsFormsApplication1
         {
 
             cbNhomHang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cbNhomHang.Properties.DataSource = dvdropdow;
             cbNhomHang.Properties.DisplayMember = "TENNCC";
             cbNhomHang.Properties.ValueMember = "MANCC";
             cbNhomHang.Properties.View.BestFitColumns();
@@ -187,12 +185,9 @@ namespace WindowsFormsApplication1
             }
 
         }
-        DataNavigator datanav;
-        DataView dvMain;
-        //DataView dvdropdow;
         DTO DTO = new DTO();
         CTL CTL = new CTL();
-        byte[] imageData;
+    
         public int kiemtra;
         private void btLuu_Click(object sender, EventArgs e)
         {
@@ -200,16 +195,6 @@ namespace WindowsFormsApplication1
             {
                 if (iNgonNgu == 0)
                 {
-                    bool KT=false;
-                    if (checkTT.Checked)
-                    {
-                        KT = true;
-
-                    }
-                    else
-                    {
-                        KT = false;
-                    }
                     if (txtTenMH.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng Nhập Tên Mặt Hàng");
@@ -249,6 +234,7 @@ namespace WindowsFormsApplication1
                     {
                         if (kiemtra == 1)
                         {
+                           
                             int COUNTSTART = 0;
                         START_EXCUTIVE:
                             DTO.MAMH = txtMaMH.Text;
@@ -322,16 +308,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    bool KT;
-                    if (checkTT.Checked)
-                    {
-                        KT = true;
-
-                    }
-                    else
-                    {
-                        KT = false;
-                    }
+                    
                     if (txtTenMH.Text == "")
                     {
                         XtraMessageBox.Show("Please Enter The Name Of Product");

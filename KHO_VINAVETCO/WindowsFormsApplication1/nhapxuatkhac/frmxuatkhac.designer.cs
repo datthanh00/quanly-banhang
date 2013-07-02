@@ -87,7 +87,6 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.txtnhanvienlap = new DevExpress.XtraEditors.TextEdit();
-            this.txtNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
@@ -95,8 +94,6 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txtconLai = new DevExpress.XtraEditors.TextEdit();
-            this.txtthanhtien = new DevExpress.XtraEditors.TextEdit();
             this.txtMaHD = new DevExpress.XtraEditors.TextEdit();
             this.txtNgayXuat = new DevExpress.XtraEditors.DateEdit();
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
@@ -196,6 +193,9 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.txtNo = new DevExpress.XtraEditors.CalcEdit();
+            this.txtconLai = new DevExpress.XtraEditors.CalcEdit();
+            this.txtthanhtien = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -234,9 +234,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayXuat.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayXuat.Properties)).BeginInit();
@@ -275,6 +272,9 @@
             this.contextMenuStrip3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_tool
@@ -839,8 +839,10 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.txtnhanvienlap);
+            this.groupControl2.Controls.Add(this.txtthanhtien);
+            this.groupControl2.Controls.Add(this.txtconLai);
             this.groupControl2.Controls.Add(this.txtNo);
+            this.groupControl2.Controls.Add(this.txtnhanvienlap);
             this.groupControl2.Controls.Add(this.labelControl9);
             this.groupControl2.Controls.Add(this.labelControl13);
             this.groupControl2.Controls.Add(this.labelControl14);
@@ -848,8 +850,6 @@
             this.groupControl2.Controls.Add(this.labelControl11);
             this.groupControl2.Controls.Add(this.labelControl10);
             this.groupControl2.Controls.Add(this.labelControl8);
-            this.groupControl2.Controls.Add(this.txtconLai);
-            this.groupControl2.Controls.Add(this.txtthanhtien);
             this.groupControl2.Controls.Add(this.txtMaHD);
             this.groupControl2.Controls.Add(this.txtNgayXuat);
             this.groupControl2.Controls.Add(this.cbotientra);
@@ -867,17 +867,6 @@
             this.txtnhanvienlap.Properties.ReadOnly = true;
             this.txtnhanvienlap.Size = new System.Drawing.Size(99, 20);
             this.txtnhanvienlap.TabIndex = 23;
-            // 
-            // txtNo
-            // 
-            this.txtNo.Enabled = false;
-            this.txtNo.Location = new System.Drawing.Point(249, 54);
-            this.txtNo.Name = "txtNo";
-            this.txtNo.Properties.Mask.EditMask = "{0:0,0}";
-            this.txtNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtNo.Properties.ReadOnly = true;
-            this.txtNo.Size = new System.Drawing.Size(99, 20);
-            this.txtNo.TabIndex = 22;
             // 
             // labelControl9
             // 
@@ -934,25 +923,6 @@
             this.labelControl8.Size = new System.Drawing.Size(59, 13);
             this.labelControl8.TabIndex = 0;
             this.labelControl8.Text = "Mã Hóa Đơn";
-            // 
-            // txtconLai
-            // 
-            this.txtconLai.Location = new System.Drawing.Point(78, 114);
-            this.txtconLai.Name = "txtconLai";
-            this.txtconLai.Properties.ReadOnly = true;
-            this.txtconLai.Size = new System.Drawing.Size(100, 20);
-            this.txtconLai.TabIndex = 21;
-            // 
-            // txtthanhtien
-            // 
-            this.txtthanhtien.EditValue = "0";
-            this.txtthanhtien.Location = new System.Drawing.Point(78, 83);
-            this.txtthanhtien.Name = "txtthanhtien";
-            this.txtthanhtien.Properties.Mask.EditMask = "{0:0,0}";
-            this.txtthanhtien.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtthanhtien.Properties.ReadOnly = true;
-            this.txtthanhtien.Size = new System.Drawing.Size(99, 20);
-            this.txtthanhtien.TabIndex = 21;
             // 
             // txtMaHD
             // 
@@ -1914,7 +1884,7 @@
             this.xoaStripMenuItem,
             this.linkIntheomathang});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(169, 114);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(169, 92);
             // 
             // ViewToolStripMenuItem
             // 
@@ -1984,6 +1954,42 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
+            // txtNo
+            // 
+            this.txtNo.Location = new System.Drawing.Point(249, 55);
+            this.txtNo.Name = "txtNo";
+            this.txtNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNo.Properties.Mask.EditMask = "n0";
+            this.txtNo.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtNo.Properties.ReadOnly = true;
+            this.txtNo.Size = new System.Drawing.Size(99, 20);
+            this.txtNo.TabIndex = 25;
+            // 
+            // txtconLai
+            // 
+            this.txtconLai.Location = new System.Drawing.Point(78, 113);
+            this.txtconLai.Name = "txtconLai";
+            this.txtconLai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtconLai.Properties.Mask.EditMask = "n0";
+            this.txtconLai.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtconLai.Properties.ReadOnly = true;
+            this.txtconLai.Size = new System.Drawing.Size(99, 20);
+            this.txtconLai.TabIndex = 26;
+            // 
+            // txtthanhtien
+            // 
+            this.txtthanhtien.Location = new System.Drawing.Point(78, 83);
+            this.txtthanhtien.Name = "txtthanhtien";
+            this.txtthanhtien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtthanhtien.Properties.Mask.EditMask = "n0";
+            this.txtthanhtien.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtthanhtien.Properties.ReadOnly = true;
+            this.txtthanhtien.Size = new System.Drawing.Size(99, 20);
+            this.txtthanhtien.TabIndex = 27;
+            // 
             // frmxuatkhac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2044,9 +2050,6 @@
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayXuat.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayXuat.Properties)).EndInit();
@@ -2085,6 +2088,9 @@
             this.contextMenuStrip3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2121,10 +2127,8 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtghichu;
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.TextEdit txtthanhtien;
         private DevExpress.XtraEditors.DateEdit txtNgayXuat;
         private DevExpress.XtraEditors.LabelControl labelControl14;
-        private DevExpress.XtraEditors.TextEdit txtconLai;
         private DevExpress.XtraEditors.PanelControl panel_Create;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private DevExpress.XtraGrid.GridControl gridControl2;
@@ -2147,7 +2151,6 @@
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider1;
         private DevExpress.XtraEditors.CalcEdit cbotientra;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraEditors.TextEdit txtNo;
         private DevExpress.XtraBars.Docking.DockPanel panelContainer1;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
         private DevExpress.XtraBars.Docking.ControlContainer controlContainer1;
@@ -2257,6 +2260,9 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridTYPE;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn53;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn54;
+        private DevExpress.XtraEditors.CalcEdit txtthanhtien;
+        private DevExpress.XtraEditors.CalcEdit txtconLai;
+        private DevExpress.XtraEditors.CalcEdit txtNo;
     }
     
 }

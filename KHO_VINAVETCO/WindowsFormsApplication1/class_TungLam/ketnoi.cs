@@ -7,10 +7,9 @@ namespace WindowsFormsApplication1
 {
     class ketnoi:Provider
     {
-        public MySqlDataAdapter da;
-        //public Mysqlchange MSQL = new Mysqlchange();
-        int Maxa = 1;
 
+
+    
         public string sTuDongDienMapc(string sMaPC)
         {
             string HEAD = "PC", MAHD = "MAPC", TABLE = "PHIEUCHI";

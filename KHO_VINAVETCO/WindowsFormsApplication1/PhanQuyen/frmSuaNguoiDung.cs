@@ -70,11 +70,10 @@ namespace WindowsFormsApplication1
             colTenBP.Caption = LamEL.TENBP.ToString();
 
         }
-        DataView dvdropdow;
+
         private void loadGLVaiTro()
         {
             gridLookUpEdit1.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            gridLookUpEdit1.Properties.DataSource = dvdropdow;
             gridLookUpEdit1.Properties.DisplayMember = "TENBOPHAN";
             gridLookUpEdit1.Properties.ValueMember = "MABP";
             gridLookUpEdit1.Properties.View.BestFitColumns();

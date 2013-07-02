@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
         clCtrl ctr = new clCtrl();
-        DataView dvdropdow;
+     
         public string tennv, manv, tendangnh, stinhtrang, machucvu;
         private void frmThemNguoiDung_Load(object sender, EventArgs e)
         {
@@ -75,7 +75,6 @@ namespace WindowsFormsApplication1
         private void loadGLVaiTro()
         {
             glVaiTro.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            glVaiTro.Properties.DataSource = dvdropdow;
             glVaiTro.Properties.DisplayMember = "TENBOPHAN";
             glVaiTro.Properties.ValueMember = "MABP";
             glVaiTro.Properties.View.BestFitColumns();
@@ -87,7 +86,6 @@ namespace WindowsFormsApplication1
         private void LoadGLNhanVien()
         {
             glNhanVien.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            glNhanVien.Properties.DataSource = dvdropdow;
             glNhanVien.Properties.DisplayMember = "TENNV";
             glNhanVien.Properties.ValueMember = "MANV";
             glNhanVien.Properties.View.BestFitColumns();
@@ -161,7 +159,7 @@ namespace WindowsFormsApplication1
 
         }
         clDTO dto = new clDTO();
-        bool tinhtrang;
+      
         public int iNgonNgu=1;
         public string KT;
         private void btLuu_Click(object sender, EventArgs e)

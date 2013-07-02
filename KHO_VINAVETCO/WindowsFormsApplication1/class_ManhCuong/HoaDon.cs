@@ -14,14 +14,14 @@ namespace WindowsFormsApplication1.Class_ManhCuong
       
      
    
-     public Cart(String MaMH,String TenMH,int SoLuong,int DonGia, int Thue, String DVT)
+     public Cart(String sMaMH,String sTenMH,int sSoLuong,int sDonGia, int sThue, String sDVT)
         {
-            MaMH = MaMH;
-            TenMH = TenMH;
-            SoLuong = SoLuong;
-            DonGia = DonGia;
-            Thue = Thue;
-            DVT = DVT;
+            MaMH = sMaMH;
+            TenMH = sTenMH;
+            SoLuong = sSoLuong;
+            DonGia = sDonGia;
+            Thue = sThue;
+            DVT = sDVT;
   
         }
      public String _MaMH

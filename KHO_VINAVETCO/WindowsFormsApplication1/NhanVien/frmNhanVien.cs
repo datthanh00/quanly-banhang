@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
 
-        string sma, sten, susername, spassword, schucvu, smabp, sdiachi, sscmnd, ssdt, stinhtrang, sngaysinh;
+        string sma, sten, sdiachi, sscmnd, ssdt, stinhtrang, sngaysinh;
        // DateTime sngaysinh;
         DTO DTO = new DTO();
         CTL CTL = new CTL();
