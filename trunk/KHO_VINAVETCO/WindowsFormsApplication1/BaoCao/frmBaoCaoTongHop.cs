@@ -83,7 +83,7 @@ namespace WindowsFormsApplication1
         Class_DTO_ThongKe dto = new Class_DTO_ThongKe();
         Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
         DataTable dt = new DataTable();
-        DataView dvdropdow;
+     
         private void loadGird1()
         {
             if (cbncc.Text != "")

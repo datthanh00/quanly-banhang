@@ -196,6 +196,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             ckphantram.Text = "0";
             txtthanhtien.Text = "0";
             gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();
+            Create_new();
         }
 
         private void cboTenKH_Validated(object sender, EventArgs e)
@@ -267,7 +268,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         dtoNCC.SDT = txtSDT.Text;
                         // dtoNCC.WEBSITE = txtWeb.Text;
                         dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
-                        dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
+                        dtoNCC.TIENPHAITRA = Convert.ToInt32(txtthanhtien.Value);
                         dtoNCC.MAHDX = txtMaHD.Text;
                         dtoNCC.CKTIEN = cktien.Value.ToString();
                         if (cbotientra.Text == "")
@@ -276,7 +277,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         }
                         dtoNCC.GHICHU = txtghichu.Text;
 
-                        dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
+                        dtoNCC.TIENDATRA = Convert.ToInt32(cbotientra.Value);
                         dtoNCC.TINHTRANG = "1";
                         dtoNCC.TYPE = "1";
 
@@ -363,7 +364,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
-                                insert_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString(),i);
+                                insert_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), dtr["MAMH"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["_DonGia"].ToString()), Convert.ToInt32(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString(),i);
                             }
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
                             PublicVariable.SQL_XUAT = "";
@@ -389,11 +390,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
                                 if (sID != "")
                                 {
-                                    update_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), Convert.ToInt32(sID), dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString());
+                                    update_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), Convert.ToInt32(sID), dtr["MAMH"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["_DonGia"].ToString()), Convert.ToInt32(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString());
                                 }
                                 else
                                 {
-                                    insert_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), int.Parse(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString(),i);
+                                    insert_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), dtr["MAMH"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["_DonGia"].ToString()), Convert.ToInt32(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString(),i);
                                 }
                             }
 
@@ -482,7 +483,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
       
                 //ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
             }
-            catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu", "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu" + ex.ToString(), "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
         }
         public void update_HoadonChitietxuat(string mahdx, string lohang, int ID, String mamh, Double SoLuong, int DonGia, int tienthu, string GIANHAP, string HSD, String _KMAI)
@@ -511,11 +512,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
                 //ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
             }
-            catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu", "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+            catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu" + ex.ToString(), "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
         }
 
-        int kiemtra;
+      
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmThemKhachHang tkh = new frmThemKhachHang();
@@ -539,7 +540,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 {
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETCTHOADONXUATIN(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text,cbotientra.Text, txtNo.Text, txtthanhtien.Text, txtMaHD.Text,"");
+                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text,cbotientra.Value.ToString(), txtNo.Value.ToString(), txtthanhtien.Value.ToString(), txtMaHD.Text,"");
                     rep.ShowPreviewDialog();
                 }
                 else
@@ -602,7 +603,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
             txtNo.Text = "0";
             txtconLai.Text = "0";
             cbotientra.Text = "0";
-            txtthanhtien.Text = "";
+            txtthanhtien.Text = "0";
+            txtNo.Text = "0";
+            txtconLai.Text = "0";
+           
+
+            txtthanhtien.Text = "0";
             mahdtam = "";
             btLuu.Enabled = true;
             cboTenKH.Enabled = true;
@@ -763,7 +769,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Double.Parse(dtr["SOLUONG"].ToString()) * Num;
+                            Double total = Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num;
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTHU"] = total.ToString();
                             gettotal();
@@ -783,7 +789,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         bool isNum = Double.TryParse(dtr["SOLUONG"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Double.Parse(dtr["_DonGia"].ToString()) * Num;
+                            Double total = Convert.ToDouble(dtr["_DonGia"].ToString()) * Num;
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTHU"] = total.ToString();
                             gettotal();
@@ -875,8 +881,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
             if (cbotientra.Text != "")
             {
-                thanhtien = double.Parse(txtthanhtien.Text);
-                tientra = double.Parse(cbotientra.Text);
+                thanhtien = Convert.ToDouble(txtthanhtien.Value);
+                tientra = Convert.ToDouble(cbotientra.Value);
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
@@ -928,8 +934,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         {
                             return;
                         }
-
-
                         ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID), xhd.MAMH, dtr["_LOHANG"].ToString(), dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
                        // ctlNCC.UPDATE_KHOHANG_NX(dtr["MAMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "0", "-" + dtr["SOLUONG"].ToString(), "0");
                         PublicVariable.TMPtring = "";
@@ -941,7 +945,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
                         dtoNCC.MAKH = txtmakh.Text;
                         dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
-                        dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
+                        dtoNCC.TIENPHAITRA = Convert.ToInt32(txtthanhtien.Value);
                         dtoNCC.MAHDX = txtMaHD.Text;
                         if (cbotientra.Text == "")
                         {
@@ -949,7 +953,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         }
                         dtoNCC.GHICHU = txtghichu.Text;
 
-                        dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
+                        dtoNCC.TIENDATRA = Convert.ToInt32(cbotientra.Value);
                         return;
                     }
                     gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
@@ -957,7 +961,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
                     dtoNCC.MAKH = txtmakh.Text;
                     dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
-                    dtoNCC.TIENPHAITRA = int.Parse(txtthanhtien.Text);
+                    dtoNCC.TIENPHAITRA = Convert.ToInt32(txtthanhtien.Value);
                     dtoNCC.MAHDX = txtMaHD.Text;
                     if (cbotientra.Text == "")
                     {
@@ -966,14 +970,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     dtoNCC.TYPE = "1";
                     dtoNCC.GHICHU = txtghichu.Text;
                     dtoNCC.CKTIEN = cktien.Value.ToString();
-                    dtoNCC.TIENDATRA = int.Parse(cbotientra.Text);
+                    dtoNCC.TIENDATRA = Convert.ToInt32(cbotientra.Value);
                     dtoNCC.MANV = sMaNV;
                     ctlNCC.UPDATEHOADONXUAT(dtoNCC);
                     if (sID != "")
                     {
                         ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
                         ctlNCC.executeNonQuery("INSERT INTO [LOG]([MAHD],[LOG],[LYDO]) VALUES('" + txtMaHD.Text + "',N'" + PublicVariable.TMPlog + "',N'" + PublicVariable.TMPtring + "') ");
-                            
                     }
                     MessageBox.Show(" Đã xóa và lưu thành công ");
                 }
@@ -1417,7 +1420,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cktien.Value = _cktien;
             if (cbotientra.Text != "")
             {
-                tientra = double.Parse(cbotientra.Text);
+                tientra = Convert.ToDouble(cbotientra.Value);
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
@@ -1441,7 +1444,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             txtthanhtien.Text = thanhtien.ToString();
             if (cbotientra.Text != "")
             {
-                tientra = double.Parse(cbotientra.Text);
+                tientra = Convert.ToDouble(cbotientra.Value);
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
@@ -1450,8 +1453,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void cbotientra_Validated(object sender, EventArgs e)
         {
-            thanhtien = double.Parse(txtthanhtien.Text);
-            tientra = double.Parse(cbotientra.Text);
+            thanhtien = Convert.ToDouble(txtthanhtien.Value);
+            tientra = Convert.ToDouble(cbotientra.Value);
             conlai = thanhtien - tientra;
             txtconLai.Text = conlai.ToString();
         }

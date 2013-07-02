@@ -89,8 +89,7 @@ namespace WindowsFormsApplication1
         }
         
         protected static string strConnect;
-        public static string sPass;
-        public static string sUser;
+
         public static SqlConnection get_Connect()
         {
                 if (File.Exists("App.config"))

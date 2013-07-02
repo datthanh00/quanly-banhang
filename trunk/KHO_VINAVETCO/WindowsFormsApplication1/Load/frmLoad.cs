@@ -16,7 +16,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
         int z;
-        public int iNgonNgu;string sThongBao,sThongBao2,sThongBao3;
+        public int iNgonNgu;
         private void timer1_Tick(object sender, EventArgs e)
         {
             z += 2;

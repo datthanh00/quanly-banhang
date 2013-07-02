@@ -46,14 +46,13 @@ namespace WindowsFormsApplication1
             this.Text = "Form Insert && Update Products";
         }
         public string MANHOMHANG, MANCC, TENMATHANG, MAMH, DVT, TINHTRANG, HINHANH, MASOTHUE, SOLUONG, MOTA, MAKHO, MADVT,KLDVT;
-        DataView dvdropdow;
+      
 
 
         public void loadgirdlookupMATHANG()
         {
 
             cbmathang.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cbmathang.Properties.DataSource = dvdropdow;
             cbmathang.Properties.DisplayMember = "TENMH";
             cbmathang.Properties.ValueMember = "MAMH";
             cbmathang.Properties.View.BestFitColumns();
@@ -133,7 +132,7 @@ namespace WindowsFormsApplication1
             dto.SOLUONGMH =txtsoluong.Value.ToString();
             dto.GIAMUA = txtgiamua.Value.ToString();
             
-            double TONKHO=0, TONDAUMIN=0, NHAP=0, TRANHAP=0, XUAT=0, TRAXUAT=0;
+            double TONKHO=0, TONDAUMIN=0;
             DataTable DT1;
             string SQL;
 

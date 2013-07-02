@@ -26,8 +26,6 @@ namespace WindowsFormsApplication1
          */
         string dateNgayBD, dateNgayKT;
         string baocaotype = "";
-        string sLoaiThoiGian = "";
-        string sTheHien;
         clCtrl ctr = new clCtrl();
         clDTO dto = new clDTO();
         DataTable tb = new DataTable();

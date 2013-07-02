@@ -136,12 +136,11 @@ namespace WindowsFormsApplication1
         }
 
         ketnoi connect = new ketnoi();
-        DataView dvdropdow;
+    
         public void loadgirdlookupKV()
         {
 
             cmbmaKV.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cmbmaKV.Properties.DataSource = dvdropdow;
             cmbmaKV.Properties.DisplayMember = "TENKV";
             cmbmaKV.Properties.ValueMember = "MAKV";
             cmbmaKV.Properties.View.BestFitColumns();

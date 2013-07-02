@@ -105,7 +105,7 @@ namespace WindowsFormsApplication1
             loadNguoiDung();
 
         }
-        string sMaNV, ssMaBOPhan, sTenDangNhap,sTenNhanVien,sTenBP;
+        string sMaNV, sTenDangNhap,sTenNhanVien,sTenBP;
         string bTinhTrang;
         private void gridView2_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
@@ -172,23 +172,15 @@ namespace WindowsFormsApplication1
         {
             try
             {
-              
-                    DataRow dtr = gridView2.GetDataRow(e.RowHandle);
-                        sMaNV = dtr[0].ToString();
-                        sTenNhanVien = dtr[5].ToString();
-                        sTenDangNhap = dtr[2].ToString();
-                        bTinhTrang = dtr[3].ToString(); 
-                
-             
+                DataRow dtr = gridView2.GetDataRow(e.RowHandle);
+                sMaNV = dtr[0].ToString();
+                sTenNhanVien = dtr[5].ToString();
+                sTenDangNhap = dtr[2].ToString();
+                bTinhTrang = dtr[3].ToString();
             }
-            catch 
+            catch
             {
-               
-             
             }
-            
-        
-           
         }
     
         public void loadVN()

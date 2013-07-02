@@ -119,7 +119,7 @@ namespace WindowsFormsApplication1
 
         }
         public int iNgonNgu;
-        Image newImage;
+       
      
         private void frmThongTin_Load(object sender, EventArgs e)
         {

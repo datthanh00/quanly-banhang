@@ -350,12 +350,11 @@ namespace WindowsFormsApplication1
             this.Text = "Form Insert Custommer"; 
         }
 
-        DataView dvdropdow;
+    
         public void loadgirdlookupKV()
         {
 
             cmbtenkhuvuc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cmbtenkhuvuc.Properties.DataSource = dvdropdow;
             cmbtenkhuvuc.Properties.DisplayMember = "TENKV";
             cmbtenkhuvuc.Properties.ValueMember = "MAKV";
             cmbtenkhuvuc.Properties.View.BestFitColumns();
@@ -363,7 +362,6 @@ namespace WindowsFormsApplication1
             cmbtenkhuvuc.Properties.DataSource = CTRL.GETKHUVUC();
 
             cmbtennhanvien.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cmbtennhanvien.Properties.DataSource = dvdropdow;
             cmbtennhanvien.Properties.DisplayMember = "TENNV";
             cmbtennhanvien.Properties.ValueMember = "MANV";
             cmbtennhanvien.Properties.View.BestFitColumns();
@@ -371,7 +369,6 @@ namespace WindowsFormsApplication1
             cmbtennhanvien.Properties.DataSource = CTRL.GETNV();
 
             cmbbanggia.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-            cmbbanggia.Properties.DataSource = dvdropdow;
             cmbbanggia.Properties.DisplayMember = "TENBG";
             cmbbanggia.Properties.ValueMember = "MABG";
             cmbbanggia.Properties.View.BestFitColumns();
