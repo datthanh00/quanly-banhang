@@ -540,7 +540,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 {
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETCTHOADONXUATIN(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text,cbotientra.Value.ToString(), txtNo.Value.ToString(), txtthanhtien.Value.ToString(), txtMaHD.Text,"");
+                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text,cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), txtMaHD.Text,"");
                     rep.ShowPreviewDialog();
                 }
                 else
@@ -692,7 +692,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
             Load_panel_filter();
             //string SQL = "SELECT convert(varchar,T3.NGAYXUAT,103) AS NGAYXUAT,TENNCC,T3.TENKH ,T3.MAHDX , T3.MAMH , T4.TENMH ,T3.SOLUONGXUAT ,T3.SOLUONGXUAT*KLDVT as KHOILUONG,T3.GIATIEN,soluongxuat*giatien AS THANHTIEN,TIENTHU, GHICHU   FROM (select T2.NGAYXUAT,TIENTHU,T1.MAHDX,T1.MAMH,T1.SOLUONGXUAT,T1.GIATIEN,GHICHU,t2.tenkh FROM (SELECT * FROM CHITIETHDX ) AS T1 INNER JOIN (select t9.ngayxuat,t9.mahdx,t9.makh,t8.tenkh,GHICHU from hoadonxuat  as t9  INNER JOIN khachhang as t8 on t9.makh=t8.makh WHERE  T9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDX =T2.MAHDX) as T3 INNER JOIN (select TENMH,TENNCC,MAMH,KLDVT FROM MATHANG,NHACUNGCAP WHERE MATHANG.MANCC=NHACUNGCAP.MANCC) AS T4 ON T3.MAMH =T4.MAMH";
-            string SQL = "SELECT convert(varchar,NGAYXUAT,103) AS NGAYXUAT,TENNCC,TENKH ,KMAI,HOADONXUAT.MAHDX , MATHANG.MAMH , TENMH ,SOLUONGXUAT ,SOLUONGXUAT*KLDVT as KHOILUONG,GIABAN AS GIATIEN,SOLUONGXUAT*GIABAN AS THANHTIEN,TIENTHU, GHICHU FROM HOADONXUAT,CHITIETHDX,MATHANG,NHACUNGCAP,KHACHHANG WHERE TYPE=1 AND HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND CHITIETHDX.MAMH=MATHANG.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "'";
+            string SQL = "SELECT convert(varchar,NGAYXUAT,103) AS NGAYXUAT,TENNCC,TENKH ,KMAI,HOADONXUAT.MAHDX , MATHANG.MAMH , TENMH ,SOLUONGXUAT ,SOLUONGXUAT*KLDVT as KHOILUONG,GIABAN AS GIATIEN,SOLUONGXUAT*GIABAN AS THANHTIEN,TIENTHU, GHICHU,HSD FROM HOADONXUAT,CHITIETHDX,MATHANG,NHACUNGCAP,KHACHHANG WHERE TYPE=1 AND HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND CHITIETHDX.MAMH=MATHANG.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYXUAT BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "'";
             
             DataTable TBS = ctlNCC.GETDATA(SQL);
             gridControl3.MainView = gridViewSANPHAMXUAT;
@@ -1025,10 +1025,18 @@ namespace WindowsFormsApplication1.HoaDonXuat
          
             if (gridControl3.MainView == gridViewPHIEUXUAT)
             {
+                if (gridViewPHIEUXUAT.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewPHIEUXUAT.GetDataRow(gridViewPHIEUXUAT.FocusedRowHandle);
             }
             else
             {
+                if (gridViewSANPHAMXUAT.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewSANPHAMXUAT.GetDataRow(gridViewSANPHAMXUAT.FocusedRowHandle);
             }
             if (dtr == null)

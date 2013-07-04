@@ -194,7 +194,7 @@ namespace WindowsFormsApplication1
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT convert(varchar,T3.NGAYNHAP,103)AS NGAYNHAP ,T3.MAHDN ,T3.TENNCC , T3.MAMH , T4.TENMH ,T3.SOLUONGNHAP,T3.SOLUONGNHAP*KLDVT AS KHOILUONG ,T3.GIANHAP, soluongnhap * gianhap AS THANHTIEN,GHICHU,KMAI,TIENTRANHAPTT AS TIENTHU  FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T2.tenncc ,T1.SOLUONGNHAP,T1.GIANHAP,ghichu,KMAI,TIENTRANHAPTT FROM (SELECT * FROM TRACHITIETHDN )AS T1 INNER JOIN (select t9.ngaynhap,t9.mahdn,t9.mancc,t8.tenncc,ghichu from TRAHOADONNHAP  as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc where  TYPE=1 AND t9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH order by T3.MAHDN desc";
+            string SQL = "SELECT convert(varchar,T3.NGAYNHAP,103)AS NGAYNHAP ,T3.MAHDN ,T3.TENNCC , T3.MAMH , T4.TENMH ,T3.SOLUONGNHAP,T3.SOLUONGNHAP*KLDVT AS KHOILUONG ,T3.GIANHAP, soluongnhap * gianhap AS THANHTIEN,GHICHU,KMAI,TIENTRANHAPTT AS TIENTHU,HSD  FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T2.tenncc ,T1.SOLUONGNHAP,T1.GIANHAP,ghichu,KMAI,TIENTRANHAPTT,HSD FROM (SELECT * FROM TRACHITIETHDN )AS T1 INNER JOIN (select t9.ngaynhap,t9.mahdn,t9.mancc,t8.tenncc,ghichu from TRAHOADONNHAP  as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc where  TYPE=1 AND t9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH order by T3.MAHDN desc";
             
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
@@ -704,9 +704,9 @@ namespace WindowsFormsApplication1
                 {
                     string ten = "Trả hàng cho nhà cung cấp";
                     DataTable dt = new DataTable();
-                    dt = ctlNCC.GETtraCTHOADONNHAP(txtMaHD.Text);
+                    dt = ctlNCC.GETinTRACTHOADONNHAP(txtMaHD.Text);
 
-                    In rep = new In(dt, "", "", Convert.ToDouble(cbotientra.Value), 0, Convert.ToDouble(txtthanhtien.Value), txtMaHD.Text,ten);
+                    In rep = new In(dt, txtMANCC.Text, cboTenNCC.Text, Convert.ToDouble(cbotientra.Value), Convert.ToDouble(txtconLai.Value), Convert.ToDouble(txtthanhtien.Value), txtMaHD.Text, ten);
                     rep.ShowPreviewDialog();
                 }
                 else
@@ -1114,10 +1114,18 @@ namespace WindowsFormsApplication1
       
             if (gridControl3.MainView == gridViewPHIEUTRA)
             {
+                if (gridViewPHIEUTRA.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewPHIEUTRA.GetDataRow(gridViewPHIEUTRA.FocusedRowHandle);
             }
             else
             {
+                if (gridViewSANPHAM.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewSANPHAM.GetDataRow(gridViewSANPHAM.FocusedRowHandle);
             }
             if (dtr == null)

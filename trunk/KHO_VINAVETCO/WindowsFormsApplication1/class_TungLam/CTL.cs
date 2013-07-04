@@ -465,7 +465,10 @@ namespace WindowsFormsApplication1
             return DAO.maxrowtraCTHOADONXUAT(MHDX);
         }
 
-
+        public DataTable GETinTRACTHOADONNHAP(string MAHDN)
+        {
+            return DAO.GETinTRACTHOADONNHAP(MAHDN);
+        }
         public DataTable GETtraCTHOADONNHAP(string MAHDN)
         {
             return DAO.GETtraCTHOADONNHAP(MAHDN);
@@ -586,6 +589,11 @@ namespace WindowsFormsApplication1
         public DataTable GETtraCTHOADONXUAT(string MAHDX)
         {
             return DAO.GETtraCTHOADONXUAT(MAHDX);
+        }
+
+        public DataTable GETTRACTHOADONXUATIN(string MAHDX)
+        {
+            return DAO.GETTRACTHOADONXUATIN(MAHDX);
         }
 
         public void executeNonQuery(string SQL)
