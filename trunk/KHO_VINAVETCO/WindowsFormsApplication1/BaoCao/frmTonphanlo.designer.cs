@@ -129,7 +129,7 @@
             // 
             this.colsoluong.Caption = "Số Lượng";
             this.colsoluong.ColumnEdit = this.repositoryItemCalcEdit1;
-            this.colsoluong.DisplayFormat.FormatString = "{0:0.##}";
+            this.colsoluong.DisplayFormat.FormatString = "{0:0,0.##}";
             this.colsoluong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsoluong.FieldName = "SOLUONGMH";
             this.colsoluong.Name = "colsoluong";
@@ -656,7 +656,7 @@
             // 
             // lbsanpham
             // 
-            this.lbsanpham.Location = new System.Drawing.Point(229, 15);
+            this.lbsanpham.Location = new System.Drawing.Point(230, 16);
             this.lbsanpham.Name = "lbsanpham";
             this.lbsanpham.Size = new System.Drawing.Size(78, 13);
             this.lbsanpham.TabIndex = 24;
@@ -696,7 +696,7 @@
             // 
             // lbnhom
             // 
-            this.lbnhom.Location = new System.Drawing.Point(229, 15);
+            this.lbnhom.Location = new System.Drawing.Point(230, 16);
             this.lbnhom.Name = "lbnhom";
             this.lbnhom.Size = new System.Drawing.Size(53, 13);
             this.lbnhom.TabIndex = 3;
@@ -725,7 +725,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(11, 15);
+            this.labelControl2.Location = new System.Drawing.Point(12, 16);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
             this.labelControl2.TabIndex = 1;

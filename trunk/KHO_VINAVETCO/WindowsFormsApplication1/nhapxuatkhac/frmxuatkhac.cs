@@ -548,9 +548,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
             {
                 if (gridCTHOADON.RowCount > 0)
                 {
+                    string ten = "Xuất hàng Chỉnh Kho";
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETCTHOADONXUATIN(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, Sdiachi,cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), txtMaHD.Text,"");
+                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, Sdiachi,cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(),cktien.Value.ToString(), txtMaHD.Text,ten);
                     rep.ShowPreviewDialog();
                 }
                 else

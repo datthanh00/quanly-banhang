@@ -734,11 +734,6 @@ namespace WindowsFormsApplication1
         private void LinktonkhoCUOIKY_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             optionload = "tonkhotonghop";
-            //pnkho.Visible = true;
-           
-            //lbkho.Visible=true;
-            //cbkho.Visible=true;
-
             gridControl1.DataSource = null;
             //gridView6.Columns.Clear();
             loadGird_tonkhotonghop();

@@ -540,7 +540,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 {
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETCTHOADONXUATIN(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text,cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), txtMaHD.Text,"");
+                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text, cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), cktien.Value.ToString(), txtMaHD.Text, "");
                     rep.ShowPreviewDialog();
                 }
                 else

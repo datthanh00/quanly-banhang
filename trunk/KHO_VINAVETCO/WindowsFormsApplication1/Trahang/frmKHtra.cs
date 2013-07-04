@@ -560,7 +560,7 @@ namespace WindowsFormsApplication1.KHtra
                     string ten = "Khách trả hàng";
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETTRACTHOADONXUATIN(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text, cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), txtMaHD.Text, ten);
+                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text, cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(),cktien.Value.ToString(), txtMaHD.Text, ten);
                     rep.ShowPreviewDialog();
                 }
                 else

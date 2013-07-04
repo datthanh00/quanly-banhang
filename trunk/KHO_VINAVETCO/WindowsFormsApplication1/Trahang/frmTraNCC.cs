@@ -706,7 +706,7 @@ namespace WindowsFormsApplication1
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETinTRACTHOADONNHAP(txtMaHD.Text);
 
-                    In rep = new In(dt, txtMANCC.Text, cboTenNCC.Text, Convert.ToDouble(cbotientra.Value), Convert.ToDouble(txtconLai.Value), Convert.ToDouble(txtthanhtien.Value), txtMaHD.Text, ten);
+                    In rep = new In(dt, txtMANCC.Text, cboTenNCC.Text, cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), cktien.Value.ToString(), txtMaHD.Text, ten);
                     rep.ShowPreviewDialog();
                 }
                 else

@@ -552,7 +552,7 @@
             // colSLDau
             // 
             this.colSLDau.Caption = "Số lượng";
-            this.colSLDau.DisplayFormat.FormatString = "{0:0.##}";
+            this.colSLDau.DisplayFormat.FormatString = "{0:0,0.##}";
             this.colSLDau.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLDau.FieldName = "TONDAU";
             this.colSLDau.Name = "colSLDau";
@@ -586,7 +586,7 @@
             // colSLNhap
             // 
             this.colSLNhap.Caption = "Số lượng";
-            this.colSLNhap.DisplayFormat.FormatString = "{0:0.##}";
+            this.colSLNhap.DisplayFormat.FormatString = "{0:0,0.##}";
             this.colSLNhap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLNhap.FieldName = "NHAP";
             this.colSLNhap.Name = "colSLNhap";
@@ -620,7 +620,7 @@
             // bandedGridColumn1
             // 
             this.bandedGridColumn1.Caption = "KH trả";
-            this.bandedGridColumn1.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn1.DisplayFormat.FormatString = "{0:0,0.##}";
             this.bandedGridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn1.FieldName = "TRAXUAT";
             this.bandedGridColumn1.Name = "bandedGridColumn1";
@@ -653,7 +653,7 @@
             // colSLXuat
             // 
             this.colSLXuat.Caption = "Số lượng";
-            this.colSLXuat.DisplayFormat.FormatString = "{0:0.##}";
+            this.colSLXuat.DisplayFormat.FormatString = "{0:0,0.##}";
             this.colSLXuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLXuat.FieldName = "XUAT";
             this.colSLXuat.Name = "colSLXuat";
@@ -687,7 +687,7 @@
             // bandedGridColumn7
             // 
             this.bandedGridColumn7.Caption = "Trả CTY";
-            this.bandedGridColumn7.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn7.DisplayFormat.FormatString = "{0:0,0.##}";
             this.bandedGridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn7.FieldName = "TRANHAP";
             this.bandedGridColumn7.Name = "bandedGridColumn7";
@@ -720,7 +720,7 @@
             // colSLTOn
             // 
             this.colSLTOn.Caption = "Số lượng";
-            this.colSLTOn.DisplayFormat.FormatString = "{0:0.##}";
+            this.colSLTOn.DisplayFormat.FormatString = "{0:0,0.##}";
             this.colSLTOn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLTOn.FieldName = "TONCUOI";
             this.colSLTOn.Name = "colSLTOn";
@@ -954,7 +954,7 @@
             // bandedGridColumn46
             // 
             this.bandedGridColumn46.Caption = "Số lượng";
-            this.bandedGridColumn46.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn46.DisplayFormat.FormatString = "{0:0,0.##}";
             this.bandedGridColumn46.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn46.FieldName = "XUAT";
             this.bandedGridColumn46.Name = "bandedGridColumn46";
@@ -1130,7 +1130,7 @@
             // bandedGridColumn18
             // 
             this.bandedGridColumn18.Caption = "Số lượng";
-            this.bandedGridColumn18.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn18.DisplayFormat.FormatString = "{0:0,0.##}";
             this.bandedGridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn18.FieldName = "TONDAU";
             this.bandedGridColumn18.Name = "bandedGridColumn18";
@@ -1166,7 +1166,7 @@
             // bandedGridColumn20
             // 
             this.bandedGridColumn20.Caption = "Số lượng";
-            this.bandedGridColumn20.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn20.DisplayFormat.FormatString = "{0:0,0.##}";
             this.bandedGridColumn20.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn20.FieldName = "NHAP";
             this.bandedGridColumn20.Name = "bandedGridColumn20";
@@ -1189,7 +1189,7 @@
             // bandedGridColumn21
             // 
             this.bandedGridColumn21.Caption = "KH trả";
-            this.bandedGridColumn21.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn21.DisplayFormat.FormatString = "{0:0,0.##}";
             this.bandedGridColumn21.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn21.FieldName = "TRAXUAT";
             this.bandedGridColumn21.Name = "bandedGridColumn21";
@@ -1224,7 +1224,7 @@
             // bandedGridColumn24
             // 
             this.bandedGridColumn24.Caption = "Số lượng";
-            this.bandedGridColumn24.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn24.DisplayFormat.FormatString = "{0:0,0.##}";
             this.bandedGridColumn24.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn24.FieldName = "XUAT";
             this.bandedGridColumn24.Name = "bandedGridColumn24";
@@ -1247,7 +1247,7 @@
             // bandedGridColumn26
             // 
             this.bandedGridColumn26.Caption = "Trả CTY";
-            this.bandedGridColumn26.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn26.DisplayFormat.FormatString = "{0:0,0.##}";
             this.bandedGridColumn26.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn26.FieldName = "TRANHAP";
             this.bandedGridColumn26.Name = "bandedGridColumn26";
@@ -1280,7 +1280,7 @@
             // bandedGridColumn28
             // 
             this.bandedGridColumn28.Caption = "Số lượng";
-            this.bandedGridColumn28.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn28.DisplayFormat.FormatString = "{0:0,0.##}";
             this.bandedGridColumn28.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn28.FieldName = "TONCUOI";
             this.bandedGridColumn28.Name = "bandedGridColumn28";
