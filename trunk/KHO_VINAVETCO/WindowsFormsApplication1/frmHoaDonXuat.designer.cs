@@ -1177,11 +1177,11 @@
             // 
             this.gridColumn7.Caption = "Số Lượng";
             this.gridColumn7.ColumnEdit = this.repositoryItemTextEdit3;
-            this.gridColumn7.DisplayFormat.FormatString = "{0:0.##}";
+            this.gridColumn7.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "SOLUONG";
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0.##}";
+            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn7.SummaryItem.FieldName = "_SoLuong";
             this.gridColumn7.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn7.Visible = true;
@@ -1216,11 +1216,11 @@
             // gridColumn51
             // 
             this.gridColumn51.Caption = "Khuyến Mãi";
-            this.gridColumn51.DisplayFormat.FormatString = "{0:0.##}";
+            this.gridColumn51.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn51.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn51.FieldName = "KMAI";
             this.gridColumn51.Name = "gridColumn51";
-            this.gridColumn51.SummaryItem.DisplayFormat = "{0:0.##}";
+            this.gridColumn51.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn51.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn51.Visible = true;
             this.gridColumn51.VisibleIndex = 4;
@@ -1483,11 +1483,11 @@
             // gridColumn40
             // 
             this.gridColumn40.Caption = "Số Lượng Xuất";
-            this.gridColumn40.DisplayFormat.FormatString = "{0:0.##}";
+            this.gridColumn40.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn40.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn40.FieldName = "SOLUONGXUAT";
             this.gridColumn40.Name = "gridColumn40";
-            this.gridColumn40.SummaryItem.DisplayFormat = "{0:0.##}";
+            this.gridColumn40.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn40.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn40.Visible = true;
             this.gridColumn40.VisibleIndex = 3;
@@ -1495,11 +1495,11 @@
             // gridColumn17
             // 
             this.gridColumn17.Caption = "Khối Lượng";
-            this.gridColumn17.DisplayFormat.FormatString = "{0:0.##}";
+            this.gridColumn17.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn17.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn17.FieldName = "KHOILUONG";
             this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.SummaryItem.DisplayFormat = "{0:0.##}";
+            this.gridColumn17.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn17.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn17.Visible = true;
             this.gridColumn17.VisibleIndex = 5;
@@ -1517,11 +1517,11 @@
             // gridColumn50
             // 
             this.gridColumn50.Caption = "Khuyến Mãi";
-            this.gridColumn50.DisplayFormat.FormatString = "{0:0.##}";
+            this.gridColumn50.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn50.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn50.FieldName = "KMAI";
             this.gridColumn50.Name = "gridColumn50";
-            this.gridColumn50.SummaryItem.DisplayFormat = "{0:0.##}";
+            this.gridColumn50.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn50.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn50.Visible = true;
             this.gridColumn50.VisibleIndex = 4;
@@ -1541,6 +1541,8 @@
             // gridColumn11
             // 
             this.gridColumn11.Caption = "Tiền Thu";
+            this.gridColumn11.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn11.FieldName = "TIENTHU";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.SummaryItem.DisplayFormat = "{0:0,0}";
@@ -1757,10 +1759,10 @@
             this.gridViewSANPHAMXUAT.GroupCount = 1;
             this.gridViewSANPHAMXUAT.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THANHTIEN", this.gridColumn44, "{0:0,0}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SOLUONGXUAT", this.gridColumn32, "{0:0.##}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KHOILUONG", this.gridColumn47, "{0:0.##}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SOLUONGXUAT", this.gridColumn32, "{0:0,0.##}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KHOILUONG", this.gridColumn47, "{0:0,0.##}"),
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TIENTHU", this.gridColumn18, "{0:0,0}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KMAI", this.gridColumn52, "{0:0.##}")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KMAI", this.gridColumn52, "{0:0,0.##}")});
             this.gridViewSANPHAMXUAT.Name = "gridViewSANPHAMXUAT";
             this.gridViewSANPHAMXUAT.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridViewSANPHAMXUAT.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
@@ -1835,12 +1837,12 @@
             // gridColumn32
             // 
             this.gridColumn32.Caption = "Số Lượng Xuất";
-            this.gridColumn32.DisplayFormat.FormatString = "{0:0.##}";
+            this.gridColumn32.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn32.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn32.FieldName = "SOLUONGXUAT";
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn32.SummaryItem.DisplayFormat = "{0:0.##}";
+            this.gridColumn32.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn32.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn32.Visible = true;
             this.gridColumn32.VisibleIndex = 2;
@@ -1848,11 +1850,11 @@
             // gridColumn47
             // 
             this.gridColumn47.Caption = "Khối Lượng";
-            this.gridColumn47.DisplayFormat.FormatString = "{0:0.##}";
+            this.gridColumn47.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn47.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn47.FieldName = "KHOILUONG";
             this.gridColumn47.Name = "gridColumn47";
-            this.gridColumn47.SummaryItem.DisplayFormat = "{0:0.##}";
+            this.gridColumn47.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn47.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn47.Visible = true;
             this.gridColumn47.VisibleIndex = 4;
@@ -1871,11 +1873,11 @@
             // gridColumn52
             // 
             this.gridColumn52.Caption = "Khuyến Mãi";
-            this.gridColumn52.DisplayFormat.FormatString = "{0:0.##}";
+            this.gridColumn52.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn52.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn52.FieldName = "KMAI";
             this.gridColumn52.Name = "gridColumn52";
-            this.gridColumn52.SummaryItem.DisplayFormat = "{0:0.##}";
+            this.gridColumn52.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn52.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn52.Visible = true;
             this.gridColumn52.VisibleIndex = 3;
@@ -1902,6 +1904,8 @@
             // gridColumn18
             // 
             this.gridColumn18.Caption = "Tiền Thu";
+            this.gridColumn18.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn18.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn18.FieldName = "TIENTHU";
             this.gridColumn18.Name = "gridColumn18";
             this.gridColumn18.SummaryItem.DisplayFormat = "{0:0,0}";

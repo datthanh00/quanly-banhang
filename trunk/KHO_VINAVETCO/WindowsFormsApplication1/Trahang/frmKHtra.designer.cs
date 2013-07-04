@@ -86,6 +86,9 @@
             this.txtmakh = new DevExpress.XtraEditors.TextEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtthanhtien = new DevExpress.XtraEditors.CalcEdit();
+            this.txtconLai = new DevExpress.XtraEditors.CalcEdit();
+            this.txtNo = new DevExpress.XtraEditors.CalcEdit();
             this.txtnhanvienlap = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -197,9 +200,6 @@
             this.xoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.txtNo = new DevExpress.XtraEditors.CalcEdit();
-            this.txtconLai = new DevExpress.XtraEditors.CalcEdit();
-            this.txtthanhtien = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -241,6 +241,9 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHD.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayXuat.Properties.VistaTimeProperties)).BeginInit();
@@ -283,9 +286,6 @@
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_tool
@@ -881,6 +881,42 @@
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Phiếu Khách Trả";
             // 
+            // txtthanhtien
+            // 
+            this.txtthanhtien.Location = new System.Drawing.Point(78, 84);
+            this.txtthanhtien.Name = "txtthanhtien";
+            this.txtthanhtien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtthanhtien.Properties.Mask.EditMask = "n0";
+            this.txtthanhtien.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtthanhtien.Properties.ReadOnly = true;
+            this.txtthanhtien.Size = new System.Drawing.Size(99, 20);
+            this.txtthanhtien.TabIndex = 27;
+            // 
+            // txtconLai
+            // 
+            this.txtconLai.Location = new System.Drawing.Point(78, 115);
+            this.txtconLai.Name = "txtconLai";
+            this.txtconLai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtconLai.Properties.Mask.EditMask = "n0";
+            this.txtconLai.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtconLai.Properties.ReadOnly = true;
+            this.txtconLai.Size = new System.Drawing.Size(163, 20);
+            this.txtconLai.TabIndex = 26;
+            // 
+            // txtNo
+            // 
+            this.txtNo.Location = new System.Drawing.Point(249, 56);
+            this.txtNo.Name = "txtNo";
+            this.txtNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNo.Properties.Mask.EditMask = "n0";
+            this.txtNo.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtNo.Properties.ReadOnly = true;
+            this.txtNo.Size = new System.Drawing.Size(99, 20);
+            this.txtNo.TabIndex = 25;
+            // 
             // txtnhanvienlap
             // 
             this.txtnhanvienlap.Location = new System.Drawing.Point(78, 54);
@@ -983,6 +1019,7 @@
             this.cbotientra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbotientra.Properties.Mask.EditMask = "n0";
+            this.cbotientra.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.cbotientra.Size = new System.Drawing.Size(99, 20);
             this.cbotientra.TabIndex = 21;
             this.cbotientra.Validated += new System.EventHandler(this.cbotientra_Validated);
@@ -1206,7 +1243,7 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "Số Lượng";
-            this.gridColumn7.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn7.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "SOLUONG";
             this.gridColumn7.Name = "gridColumn7";
@@ -1254,6 +1291,8 @@
             // gridColumn51
             // 
             this.gridColumn51.Caption = "Khuyến Mãi";
+            this.gridColumn51.DisplayFormat.FormatString = "{0:0,0.##}";
+            this.gridColumn51.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn51.FieldName = "KMAI";
             this.gridColumn51.Name = "gridColumn51";
             this.gridColumn51.Visible = true;
@@ -1528,11 +1567,11 @@
             // gridColumn41
             // 
             this.gridColumn41.Caption = "Số Lượng";
-            this.gridColumn41.DisplayFormat.FormatString = "{0:0.##}";
+            this.gridColumn41.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn41.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn41.FieldName = "SOLUONGXUAT";
             this.gridColumn41.Name = "gridColumn41";
-            this.gridColumn41.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn41.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn41.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn41.Visible = true;
             this.gridColumn41.VisibleIndex = 3;
@@ -1540,11 +1579,11 @@
             // gridColumn48
             // 
             this.gridColumn48.Caption = "Khối Lượng";
-            this.gridColumn48.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn48.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn48.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn48.FieldName = "KHOILUONG";
             this.gridColumn48.Name = "gridColumn48";
-            this.gridColumn48.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn48.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn48.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn48.Visible = true;
             this.gridColumn48.VisibleIndex = 5;
@@ -1562,8 +1601,12 @@
             // gridColumn52
             // 
             this.gridColumn52.Caption = "Khuyến Mãi";
+            this.gridColumn52.DisplayFormat.FormatString = "{0:0,0.##}";
+            this.gridColumn52.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn52.FieldName = "KMAI";
             this.gridColumn52.Name = "gridColumn52";
+            this.gridColumn52.SummaryItem.DisplayFormat = "{0:0,0.##}";
+            this.gridColumn52.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn52.Visible = true;
             this.gridColumn52.VisibleIndex = 4;
             // 
@@ -1582,6 +1625,8 @@
             // gridColumn39
             // 
             this.gridColumn39.Caption = "Tiền Thu";
+            this.gridColumn39.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn39.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn39.FieldName = "TIENTHU";
             this.gridColumn39.Name = "gridColumn39";
             this.gridColumn39.SummaryItem.DisplayFormat = "{0:0,0}";
@@ -1695,9 +1740,10 @@
             this.gridViewSANPHAM.GroupCount = 1;
             this.gridViewSANPHAM.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "THANHTIEN", this.gridColumn45, "{0:0,0}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SOLUONGXUAT", this.gridColumn33, "{0:0,0}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KHOILUONG", this.gridColumn47, "{0:0,0}"),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TIENTHU", this.gridColumn46, "{0:0,0}")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SOLUONGXUAT", this.gridColumn33, "{0:0,0.##}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KHOILUONG", this.gridColumn47, "{0:0,0.##}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TIENTHU", this.gridColumn46, "{0:0,0}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "KMAI", this.gridColumn53, "{0:0,0.##}")});
             this.gridViewSANPHAM.Name = "gridViewSANPHAM";
             this.gridViewSANPHAM.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.True;
             this.gridViewSANPHAM.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.True;
@@ -1770,11 +1816,11 @@
             // gridColumn33
             // 
             this.gridColumn33.Caption = "Số Lượng Trả";
-            this.gridColumn33.DisplayFormat.FormatString = "{0:0.##}";
+            this.gridColumn33.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn33.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn33.FieldName = "SOLUONGXUAT";
             this.gridColumn33.Name = "gridColumn33";
-            this.gridColumn33.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn33.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn33.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn33.Visible = true;
             this.gridColumn33.VisibleIndex = 4;
@@ -1782,11 +1828,11 @@
             // gridColumn47
             // 
             this.gridColumn47.Caption = "Khối Lượng";
-            this.gridColumn47.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn47.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn47.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn47.FieldName = "KHOILUONG";
             this.gridColumn47.Name = "gridColumn47";
-            this.gridColumn47.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn47.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn47.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn47.Visible = true;
             this.gridColumn47.VisibleIndex = 6;
@@ -1804,8 +1850,12 @@
             // gridColumn53
             // 
             this.gridColumn53.Caption = "Khuyến Mãi";
+            this.gridColumn53.DisplayFormat.FormatString = "{0:0,0.##}";
+            this.gridColumn53.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn53.FieldName = "KMAI";
             this.gridColumn53.Name = "gridColumn53";
+            this.gridColumn53.SummaryItem.DisplayFormat = "{0:0,0.##}";
+            this.gridColumn53.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn53.Visible = true;
             this.gridColumn53.VisibleIndex = 5;
             // 
@@ -1836,6 +1886,8 @@
             // gridColumn46
             // 
             this.gridColumn46.Caption = "Tiền Thu";
+            this.gridColumn46.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn46.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn46.FieldName = "TIENTHU";
             this.gridColumn46.Name = "gridColumn46";
             this.gridColumn46.SummaryItem.DisplayFormat = "{0:0,0}";
@@ -1999,42 +2051,6 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
-            // txtNo
-            // 
-            this.txtNo.Location = new System.Drawing.Point(249, 56);
-            this.txtNo.Name = "txtNo";
-            this.txtNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNo.Properties.Mask.EditMask = "n0";
-            this.txtNo.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtNo.Properties.ReadOnly = true;
-            this.txtNo.Size = new System.Drawing.Size(99, 20);
-            this.txtNo.TabIndex = 25;
-            // 
-            // txtconLai
-            // 
-            this.txtconLai.Location = new System.Drawing.Point(78, 115);
-            this.txtconLai.Name = "txtconLai";
-            this.txtconLai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtconLai.Properties.Mask.EditMask = "n0";
-            this.txtconLai.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtconLai.Properties.ReadOnly = true;
-            this.txtconLai.Size = new System.Drawing.Size(163, 20);
-            this.txtconLai.TabIndex = 26;
-            // 
-            // txtthanhtien
-            // 
-            this.txtthanhtien.Location = new System.Drawing.Point(78, 84);
-            this.txtthanhtien.Name = "txtthanhtien";
-            this.txtthanhtien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtthanhtien.Properties.Mask.EditMask = "n0";
-            this.txtthanhtien.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtthanhtien.Properties.ReadOnly = true;
-            this.txtthanhtien.Size = new System.Drawing.Size(99, 20);
-            this.txtthanhtien.TabIndex = 27;
-            // 
             // frmKHtra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2099,6 +2115,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
             this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnhanvienlap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHD.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayXuat.Properties.VistaTimeProperties)).EndInit();
@@ -2141,9 +2160,6 @@
             this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
