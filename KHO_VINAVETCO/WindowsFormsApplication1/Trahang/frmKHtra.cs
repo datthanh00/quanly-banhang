@@ -559,8 +559,8 @@ namespace WindowsFormsApplication1.KHtra
                 {
                     string ten = "Khách trả hàng";
                     DataTable dt = new DataTable();
-                    dt = ctlNCC.GETtraCTHOADONXUAT(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, "", "",cbotientra.Value.ToString(), "", txtthanhtien.Value.ToString(), txtMaHD.Text,ten);
+                    dt = ctlNCC.GETTRACTHOADONXUATIN(txtMaHD.Text);
+                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text, cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), txtMaHD.Text, ten);
                     rep.ShowPreviewDialog();
                 }
                 else
@@ -1069,10 +1069,18 @@ namespace WindowsFormsApplication1.KHtra
  
             if (gridControl3.MainView == gridViewPHIEUTRA)
             {
+                if (gridViewPHIEUTRA.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewPHIEUTRA.GetDataRow(gridViewPHIEUTRA.FocusedRowHandle);
             }
             else
             {
+                if (gridViewSANPHAM.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewSANPHAM.GetDataRow(gridViewSANPHAM.FocusedRowHandle);
             }
             if (dtr == null)

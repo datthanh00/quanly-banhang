@@ -550,7 +550,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 {
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETCTHOADONXUATIN(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, Sdiachi,cbotientra.Value.ToString(), txtNo.Value.ToString(), txtthanhtien.Value.ToString(), txtMaHD.Text,"");
+                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, Sdiachi,cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), txtMaHD.Text,"");
                     rep.ShowPreviewDialog();
                 }
                 else
@@ -1029,10 +1029,18 @@ namespace WindowsFormsApplication1.HoaDonXuat
             
             if (gridControl3.MainView == gridViewTONGXUAT)
             {
+                if (gridViewTONGXUAT.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewTONGXUAT.GetDataRow(gridViewTONGXUAT.FocusedRowHandle);
             }
             else
             {
+                if (gridViewMATHANG.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewMATHANG.GetDataRow(gridViewMATHANG.FocusedRowHandle);
             }
             if (dtr == null)

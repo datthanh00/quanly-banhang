@@ -143,16 +143,21 @@ namespace WindowsFormsApplication1
             loadgridCTHOADON();
             Load_panel_create();
             DataRow dtr;
-            if (gridViewHOADON.FocusedRowHandle < 0)
-            {
-                return;
-            }
+           
             if (gridControl3.MainView == gridViewHOADON)
             {
+                if (gridViewHOADON.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewHOADON.GetDataRow(gridViewHOADON.FocusedRowHandle);
             }
             else
             {
+                if (gridViewTHEOMATHANG.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewTHEOMATHANG.GetDataRow(gridViewTHEOMATHANG.FocusedRowHandle);
             }
             string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
@@ -862,7 +867,7 @@ namespace WindowsFormsApplication1
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETINCTHOADONNHAP(txtMaHD.Text);
 
-                    In rep = new In(dt, txtMANCC.Text, cboTenNCC.Text, Convert.ToDouble(cbotientra.Value), Convert.ToDouble(txtNo.Value), Convert.ToDouble(txtthanhtien.Value), txtMaHD.Text, "");
+                    In rep = new In(dt, txtMANCC.Text, cboTenNCC.Text, Convert.ToDouble(cbotientra.Value), Convert.ToDouble(txtconLai.Value), Convert.ToDouble(txtthanhtien.Value), txtMaHD.Text, "");
                     rep.ShowPreviewDialog();
 
                     //gridControl1.ShowPrintPreview();

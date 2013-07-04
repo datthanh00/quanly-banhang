@@ -140,10 +140,18 @@ namespace WindowsFormsApplication1
 
             if (gridControl3.MainView == gridViewPHIEUNHAP)
             {
+                if (gridViewPHIEUNHAP.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewPHIEUNHAP.GetDataRow(gridViewPHIEUNHAP.FocusedRowHandle);
             }
             else
             {
+                if (gridViewMATHANG.FocusedRowHandle < 0)
+                {
+                    return;
+                }
                 dtr = gridViewMATHANG.GetDataRow(gridViewMATHANG.FocusedRowHandle);
             }
             if (dtr == null)
@@ -860,7 +868,7 @@ namespace WindowsFormsApplication1
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETINCTHOADONNHAP(txtMaHD.Text);
 
-                    In rep = new In(dt, txtMANCC.Text, cboTenNCC.Text, Convert.ToDouble(cbotientra.Value), Convert.ToDouble(txtNo.Text), Convert.ToDouble(txtthanhtien.Value), txtMaHD.Text,"");
+                    In rep = new In(dt, txtMANCC.Text, cboTenNCC.Text, Convert.ToDouble(cbotientra.Value), Convert.ToDouble(txtconLai.Text), Convert.ToDouble(txtthanhtien.Value), txtMaHD.Text,"");
                     rep.ShowPreviewDialog();
 
                     //gridControl1.ShowPrintPreview();
