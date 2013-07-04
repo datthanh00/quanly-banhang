@@ -127,7 +127,7 @@
             // 
             this.colsoluong.Caption = "Số Lượng";
             this.colsoluong.ColumnEdit = this.repositoryItemCalcEdit1;
-            this.colsoluong.DisplayFormat.FormatString = "{0:0.##}";
+            this.colsoluong.DisplayFormat.FormatString = "{0:0,0.##}";
             this.colsoluong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsoluong.FieldName = "SOLUONGMH";
             this.colsoluong.Name = "colsoluong";
