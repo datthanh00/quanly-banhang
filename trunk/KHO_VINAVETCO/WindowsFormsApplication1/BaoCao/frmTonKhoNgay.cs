@@ -267,7 +267,7 @@ namespace WindowsFormsApplication1
             CTL ctltk = new CTL();
             string NGAYBD = dateTu.Text;
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
-            string SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' AND TONTT <>0";
+            string SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' ";
 
             DataTable dt = ctltk.GETDATA(SQL);
             if (dt.Rows[0][0].ToString() == "0")

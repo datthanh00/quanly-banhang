@@ -584,7 +584,17 @@ namespace WindowsFormsApplication1
                 NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
                 dto.NGAYKTKHO = NGAYKT;
 
-
+                if (cbncc.Text != "")
+                {
+                    dto.MANCC = gridncc.GetFocusedRowCellValue("MANCC").ToString();
+                    gridncc.ClearSelection();
+                    cbncc.Text = "";
+                }
+                else
+                {
+                    dto.MANCC = "";
+                }
+      
 
                 gridControl2.MainView = advBandedGridView2;
                 gridControl2.DataSource = ctr.getTonKhoncc(dto);
