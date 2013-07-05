@@ -490,7 +490,7 @@ namespace WindowsFormsApplication1
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 1);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl6.MainView == gridMUAHANG_SANPHAM)
+            if (gridControl6.MainView == grid_MUAHANG_KHACHHANGTRA)
             {
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 2);
                 rep.ShowPreviewDialog();
@@ -505,7 +505,7 @@ namespace WindowsFormsApplication1
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 4);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl6.MainView == grid_BANHANG_SANPHAM)
+            if (gridControl6.MainView == grid_BANHANG_TRANCC)
             {
                 Inhdoanhthu rep = new Inhdoanhthu(printtable, 5);
                 rep.ShowPreviewDialog();
