@@ -260,8 +260,7 @@ namespace WindowsFormsApplication1.KHtra
                     }
                     else
                     {
-                        int COUNTSTART = 0;
-                    START_EXCUTIVE:
+                      
                         PublicVariable.SQL_TRAXUAT = "";
                         dtoNCC.MAKH = txtmakh.Text;
                         dtoNCC.TENKH = cboTenKH.Text;
@@ -348,30 +347,10 @@ namespace WindowsFormsApplication1.KHtra
                         }
                         dtoNCC.NGAYXUAT = dtoNCC.NGAYNHAP;
 
-                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='THDX' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                        DataTable DTstart = connect.getdata(SQLstart);
-                        if (DTstart.Rows.Count>0)
-                        if (DTstart.Rows[0][0].ToString() == "1"&&COUNTSTART<20)
-                        {
-                            COUNTSTART = COUNTSTART + 1;
-                            connect.dealTimer();
-                            if (COUNTSTART == 19)
-                            {
-                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
-                                return;
-                            }
-                            goto START_EXCUTIVE;
+                        
                             
-                        }
 
                         if (isnhap)
-                        {
-                            loadmahdx();
-                            dtoNCC.MAHDX = txtMaHD.Text;
-                        }
-
-                        bool isINSERTHOADONXUAT = ctlNCC.isINSERTtraHOADONXUAT(dtoNCC.MAHDX);
-                        if (isINSERTHOADONXUAT)
                         {
                             if (THEM == "False")
                             {
@@ -379,12 +358,36 @@ namespace WindowsFormsApplication1.KHtra
                                 return;
                             }
 
-                            connect.ACTIVEINSERT("THDX");
+                        
                             dtoNCC.IsUPDATE = false;
                             dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
-                            ctlNCC.INSERTtraHOADONXUAT(dtoNCC);
+                            
                             //insert hoa don chi tiet
-
+                            
+                            loadmahdx();
+                            dtoNCC.MAHDX = txtMaHD.Text;
+                           
+                            ctlNCC.INSERTtraHOADONXUAT(dtoNCC);
+                            try
+                            {
+                                ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRAXUAT);
+                                PublicVariable.SQL_TRAXUAT = "";
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Vui lòng thử lưu lại");
+                                return;
+                            }
+                            if (PublicVariable.isHSD)
+                            {
+                                dtoNCC.LOHANG = txtlohang.Text;
+                                txtlohang.Text = txtMaHD.Text;
+                            }
+                            else
+                            {
+                                dtoNCC.LOHANG = "1";
+                                txtlohang.Text = "1";
+                            }
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
@@ -395,11 +398,11 @@ namespace WindowsFormsApplication1.KHtra
                                 {
                                     HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
                                 }
-                                insert_HoadonChitietxuat(txtMaHD.Text, dtr["MAMH"].ToString(), dtr["LOHANG"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["DONGIA"].ToString()), Convert.ToInt32(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString(), i);
+                                insert_HoadonChitietxuat(txtMaHD.Text, dtr["MAMH"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["DONGIA"].ToString()), Convert.ToInt32(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString(), i);
                             }
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRAXUAT);
                             PublicVariable.SQL_TRAXUAT = "";
-                            connect.UNACTIVEINSERT("THDX");
+                     
                             MessageBox.Show("Bạn Đã Thêm Thành Công");
                         }
                         else
@@ -426,7 +429,7 @@ namespace WindowsFormsApplication1.KHtra
                                 }
                                 else
                                 {
-                                    insert_HoadonChitietxuat(txtMaHD.Text, dtr["MAMH"].ToString(), dtr["LOHANG"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["DONGIA"].ToString()), Convert.ToInt32(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString(), i);
+                                    insert_HoadonChitietxuat(txtMaHD.Text, dtr["MAMH"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["DONGIA"].ToString()), Convert.ToInt32(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString(), i);
                                 }
                             }
                             DataTable TABLE_SAU = (DataTable)gridControl1.DataSource;
@@ -483,7 +486,7 @@ namespace WindowsFormsApplication1.KHtra
         }
         double conlai, thanhtien, tientra;
 
-        public void insert_HoadonChitietxuat(string mahdx, String mamh, string LOHANG, Double SoLuong, int DonGia, int tienthu, string HSD, String KMAI,int STT)
+        public void insert_HoadonChitietxuat(string mahdx, String mamh, Double SoLuong, int DonGia, int tienthu, string HSD, String KMAI,int STT)
         {
             try
             {
@@ -491,7 +494,7 @@ namespace WindowsFormsApplication1.KHtra
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGXUAT = SoLuong;
                 dtoNCC.GIATIEN = DonGia;
-                dtoNCC.LOHANG = LOHANG;
+                
                 dtoNCC.GIABAN = DonGia.ToString();
                 dtoNCC.TIENTHU = tienthu;
                 HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
@@ -504,7 +507,14 @@ namespace WindowsFormsApplication1.KHtra
                 {
                     dtoNCC.ID = Convert.ToInt32(dt.Rows[0][0].ToString()) + 1 + STT;
                 }
-               
+                if (PublicVariable.isHSD)
+                {
+                    dtoNCC.LOHANG = txtlohang.Text;
+                }
+                else
+                {
+                    dtoNCC.LOHANG = "1";
+                }
                 ctlNCC.INSERTtraCTHOADONXUAT(dtoNCC);
       
                 //ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
@@ -637,6 +647,7 @@ namespace WindowsFormsApplication1.KHtra
             txtthanhtien.Text = "0";
             txtconLai.Text = "0";
             cbotientra.Properties.ReadOnly = false;
+            txtlohang.ReadOnly = false;
             ckphantram.Properties.ReadOnly = false;
             cktien.Properties.ReadOnly = false;
             loadmahdx();
@@ -1063,6 +1074,7 @@ namespace WindowsFormsApplication1.KHtra
             isdelete = false;
             cboTenKH.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
+            txtlohang.ReadOnly = true;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -1129,6 +1141,7 @@ namespace WindowsFormsApplication1.KHtra
             isdelete = false;
             cboTenKH.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
+            txtlohang.ReadOnly = true;
             Load_panel_create();
             loadgridCTHOADON();
            
@@ -1442,6 +1455,7 @@ namespace WindowsFormsApplication1.KHtra
             isdelete = true;
             cboTenKH.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
+            txtlohang.ReadOnly = true;
             ckphantram.Properties.ReadOnly = true;
             cktien.Properties.ReadOnly = true;
             Load_panel_create();

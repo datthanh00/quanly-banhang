@@ -114,6 +114,7 @@ namespace WindowsFormsApplication1
             isnhap = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
+            txtlohang.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();
            
@@ -134,6 +135,7 @@ namespace WindowsFormsApplication1
             isnhap = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
+            txtlohang.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();
             DataRow dtr;
@@ -498,6 +500,7 @@ namespace WindowsFormsApplication1
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             loadmahdn();
             cbotientra.Properties.ReadOnly = false;
+            txtlohang.ReadOnly = false;
             ckphantram.Properties.ReadOnly = false;
             cktien.Properties.ReadOnly = false;
             
@@ -519,8 +522,7 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        int COUNTSTART = 0;
-                    START_EXCUTIVE:
+                   
                         PublicVariable.SQL_NHAP = "";
                         dtoNCC.MANCC = txtMANCC.Text;
                         dtoNCC.TENNCC = cboTenNCC.Text;
@@ -605,49 +607,54 @@ namespace WindowsFormsApplication1
                             }
                         }
 
-                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='HDNK' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                        DataTable DTstart = connect.getdata(SQLstart);
-                        if (DTstart.Rows.Count>0)
-                        if (DTstart.Rows[0][0].ToString() == "True"&&COUNTSTART<20)
-                        {
-                            COUNTSTART = COUNTSTART + 1;
-                            connect.dealTimer();
-                            if (COUNTSTART == 19)
-                            {
-                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
-                                return;
-                            }
-                            goto START_EXCUTIVE;
-                            
-                        }
-
-                        if (isnhap)
-                        {
-                            loadmahdn();
-                            dtoNCC.MAHDN = txtMaHD.Text;
-                        }
-
-                        bool isINSERTHOADONNHAP = ctlNCC.isINSERTHOADONNHAP(dtoNCC.MAHDN);
-
+                        
+                     
                         dtoNCC.NGAYNHAP = "convert(varchar,getDate(),101)";
                         if (PublicVariable.isUSE_COMPUTERDATE)
                         {
                             dtoNCC.NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
                         }
 
-                        if (isINSERTHOADONNHAP)
+                        if (isnhap)
                         {
                             if (THEM == "False")
                             {
                                 MessageBox.Show("KHÔNG CÓ QUYỀN THÊM");
                                 return;
                             }
-                            connect.ACTIVEINSERT("HDNK");
+                            
                             dtoNCC.IsUPDATE = false;
                             dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
-                            ctlNCC.INSERTHOADONNHAP(dtoNCC);
-                            //insert hoa don chi tiet
 
+                        
+                            //insert hoa don chi tiet
+                            
+
+                            loadmahdn();
+                            dtoNCC.MAHDN = txtMaHD.Text;
+
+                            ctlNCC.INSERTHOADONNHAP(dtoNCC);
+                            try
+                            {
+                                ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
+                                PublicVariable.SQL_NHAP = "";
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Vui lòng thử lưu lại");
+                                return;
+                            }
+
+                            if (PublicVariable.isHSD)
+                            {
+                                dtoNCC.LOHANG = txtlohang.Text;
+                                txtlohang.Text = txtMaHD.Text;
+                            }
+                            else
+                            {
+                                dtoNCC.LOHANG = "1";
+                                txtlohang.Text = "1";
+                            }
                             for (int i = 0; i < rowcount; i++)
                             {
 
@@ -657,7 +664,7 @@ namespace WindowsFormsApplication1
 
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
                             PublicVariable.SQL_NHAP = "";
-                            connect.UNACTIVEINSERT("HDNK");
+                          
                             MessageBox.Show("Bạn Đã Thêm Thành Công");
                         }
                         else
@@ -1552,6 +1559,7 @@ namespace WindowsFormsApplication1
             isnhap = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
+            txtlohang.ReadOnly = true;
             ckphantram.Properties.ReadOnly = true;
             cktien.Properties.ReadOnly = true;
             loadgridCTHOADON();

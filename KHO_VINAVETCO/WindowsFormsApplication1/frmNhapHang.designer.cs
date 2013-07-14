@@ -903,7 +903,6 @@
             // 
             this.txtlohang.Location = new System.Drawing.Point(262, 105);
             this.txtlohang.Name = "txtlohang";
-            this.txtlohang.ReadOnly = true;
             this.txtlohang.Size = new System.Drawing.Size(115, 21);
             this.txtlohang.TabIndex = 9;
             // 

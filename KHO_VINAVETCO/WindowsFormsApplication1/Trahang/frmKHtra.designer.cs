@@ -92,7 +92,6 @@
             this.txtnhanvienlap = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -200,6 +199,8 @@
             this.xoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.txtlohang = new System.Windows.Forms.TextBox();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -859,13 +860,14 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.txtlohang);
+            this.groupControl2.Controls.Add(this.labelControl15);
             this.groupControl2.Controls.Add(this.txtthanhtien);
             this.groupControl2.Controls.Add(this.txtconLai);
             this.groupControl2.Controls.Add(this.txtNo);
             this.groupControl2.Controls.Add(this.txtnhanvienlap);
             this.groupControl2.Controls.Add(this.labelControl9);
             this.groupControl2.Controls.Add(this.labelControl13);
-            this.groupControl2.Controls.Add(this.labelControl15);
             this.groupControl2.Controls.Add(this.labelControl14);
             this.groupControl2.Controls.Add(this.labelControl12);
             this.groupControl2.Controls.Add(this.labelControl11);
@@ -902,7 +904,7 @@
             this.txtconLai.Properties.Mask.EditMask = "n0";
             this.txtconLai.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtconLai.Properties.ReadOnly = true;
-            this.txtconLai.Size = new System.Drawing.Size(163, 20);
+            this.txtconLai.Size = new System.Drawing.Size(99, 20);
             this.txtconLai.TabIndex = 26;
             // 
             // txtNo
@@ -940,14 +942,6 @@
             this.labelControl13.Size = new System.Drawing.Size(39, 13);
             this.labelControl13.TabIndex = 0;
             this.labelControl13.Text = "Tiền Trả";
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Location = new System.Drawing.Point(249, 117);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(20, 13);
-            this.labelControl15.TabIndex = 0;
-            this.labelControl15.Text = "VND";
             // 
             // labelControl14
             // 
@@ -2051,6 +2045,21 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
+            // txtlohang
+            // 
+            this.txtlohang.Location = new System.Drawing.Point(248, 114);
+            this.txtlohang.Name = "txtlohang";
+            this.txtlohang.Size = new System.Drawing.Size(100, 21);
+            this.txtlohang.TabIndex = 29;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(200, 117);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(39, 13);
+            this.labelControl15.TabIndex = 28;
+            this.labelControl15.Text = "Lô Hàng";
+            // 
             // frmKHtra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2289,7 +2298,6 @@
         private DevExpress.XtraEditors.TextEdit txtnhanvienlap;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.LabelControl labelControl15;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl11;
@@ -2336,6 +2344,8 @@
         private DevExpress.XtraEditors.CalcEdit txtthanhtien;
         private DevExpress.XtraEditors.CalcEdit txtconLai;
         private DevExpress.XtraEditors.CalcEdit txtNo;
+        private System.Windows.Forms.TextBox txtlohang;
+        private DevExpress.XtraEditors.LabelControl labelControl15;
     }
     
 }

@@ -406,8 +406,7 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        int COUNTSTART = 0;
-                    START_EXCUTIVE:
+        
                         PublicVariable.SQL_TRANHAP = "";
                         dtoNCC.MANCC = txtMANCC.Text;
                         dtoNCC.TENNCC = cboTenNCC.Text;
@@ -433,41 +432,7 @@ namespace WindowsFormsApplication1
                             return;
                         }
 
-                        for (int i = 0; i < rowcount; i++)
-                        {
-                            DataRow dtr = gridCTHOADON.GetDataRow(i);
-                            Double soluongtra = 0;
-                            Double soluongnhap = 0;
-                            
-
-                            for (int k = i; k < rowcount; k++)
-                            {
-                                DataRow dtr2 = gridCTHOADON.GetDataRow(k);
-                                if (dtr["MAMH"].ToString() == dtr2["MAMH"].ToString())
-                                {
-                                    soluongtra = soluongtra + Convert.ToDouble(dtr2["SOLUONG"].ToString()) + Convert.ToDouble(dtr2["KMAI"].ToString());
-                                }
-                            }
-                           // string lohang = gridCTHOADON.GetFocusedRowCellValue("LOHANG").ToString();
-                            String SQL = "Select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["_LOHANG"].ToString() + "'";
-                            DataTable dt = ctlNCC.GETDATA(SQL);
-
-                            if (dt.Rows.Count > 0)
-                            {
-                                soluongnhap =Convert.ToDouble(dt.Rows[0][0].ToString());
-                            }
-                            if (soluongtra > soluongnhap)
-                            {
-                                MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không thể nhiều hơn số lượng tồn");
-                                return;
-                            }
-
-                            if (Convert.ToDouble(dtr["SOLUONG"].ToString())<=0)
-                            {
-                                MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không được <=0");
-                                return;
-                            }
-                        }
+                        
                         dtoNCC.NGAYNHAP = "convert(varchar,getDate(),101)";
                         if (PublicVariable.isUSE_COMPUTERDATE)
                         {
@@ -476,41 +441,80 @@ namespace WindowsFormsApplication1
 
                         dtoNCC.TIENDATRA = Convert.ToInt32(cbotientra.Value);
 
-                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='THDN' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                        DataTable DTstart = connect.getdata(SQLstart);
-                        if (DTstart.Rows.Count>0)
-                        if (DTstart.Rows[0][0].ToString() == "True"&&COUNTSTART<20)
-                        {
-                            COUNTSTART = COUNTSTART + 1;
-                            connect.dealTimer();
-                            if (COUNTSTART == 19)
-                            {
-                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
-                                return;
-                            }
-                            goto START_EXCUTIVE;
-                            
-                        }
+
+                     
 
                         if (isnhap)
-                        {
-                            loadmahdn();
-                            dtoNCC.MAHDN = txtMaHD.Text;
-                        }
-
-                        bool isINSERTHOADONNHAP = ctlNCC.isINSERTtraHOADONNHAP(dtoNCC.MAHDN);
-                        if (isINSERTHOADONNHAP)
                         {
                             if (THEM == "False")
                             {
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
                             }
-                            connect.ACTIVEINSERT("THDN");
+                     
                             dtoNCC.IsUPDATE = false;
                             dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
-                            ctlNCC.INSERTtraHOADONNHAP(dtoNCC);
+                            
                             //insert hoa don chi tiet
+                            for (int i = 0; i < rowcount; i++)
+                            {
+                                DataRow dtr = gridCTHOADON.GetDataRow(i);
+                                Double soluongtra = 0;
+                                Double soluongnhap = 0;
+
+
+                                for (int k = i; k < rowcount; k++)
+                                {
+                                    DataRow dtr2 = gridCTHOADON.GetDataRow(k);
+                                    if (dtr["MAMH"].ToString() == dtr2["MAMH"].ToString())
+                                    {
+                                        soluongtra = soluongtra + Convert.ToDouble(dtr2["SOLUONG"].ToString()) + Convert.ToDouble(dtr2["KMAI"].ToString());
+                                    }
+                                }
+                                // string lohang = gridCTHOADON.GetFocusedRowCellValue("LOHANG").ToString();
+                                String SQL = "Select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["_LOHANG"].ToString() + "'";
+                                DataTable dt = ctlNCC.GETDATA(SQL);
+
+                                if (dt.Rows.Count > 0)
+                                {
+                                    soluongnhap = Convert.ToDouble(dt.Rows[0][0].ToString());
+                                }
+                                if (soluongtra > soluongnhap)
+                                {
+                                    MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không thể nhiều hơn số lượng tồn");
+                                    return;
+                                }
+
+                                if (Convert.ToDouble(dtr["SOLUONG"].ToString()) <= 0)
+                                {
+                                    MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không được <=0");
+                                    return;
+                                }
+                            }
+                        
+                             loadmahdn();
+                             dtoNCC.MAHDN = txtMaHD.Text;
+                            
+
+                            ctlNCC.INSERTtraHOADONNHAP(dtoNCC);
+                            try
+                            {
+                                ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRANHAP);
+                                PublicVariable.SQL_TRANHAP = "";
+                            }
+                            catch
+                            {
+                                MessageBox.Show("Vui lòng thử lưu lại");
+                                return;
+                            }
+                            if (PublicVariable.isHSD)
+                            {
+                                dtoNCC.LOHANG = txtMaHD.Text;
+                            }
+                            else
+                            {
+                                dtoNCC.LOHANG = "1";
+                            }
 
                             for (int i = 0; i < rowcount; i++)
                             {
@@ -519,7 +523,7 @@ namespace WindowsFormsApplication1
                             }
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRANHAP);
                             PublicVariable.SQL_TRANHAP = "";
-                            connect.UNACTIVEINSERT("THDN");
+                      
                             MessageBox.Show("Bạn Đã Thêm Thành Công");
                         }
                         else
@@ -534,7 +538,43 @@ namespace WindowsFormsApplication1
                             dtoNCC.IDNHAP = IDNHAP;
                             ctlNCC.UPDATEtraHOADONNHAP(dtoNCC);
                             //update hoa don chi tiet
+                            for (int i = 0; i < rowcount; i++)
+                            {
+                                DataRow dtr = gridCTHOADON.GetDataRow(i);
+                                Double soluongtra = 0;
+                                Double soluongnhap = 0;
 
+
+                                for (int k = i; k < rowcount; k++)
+                                {
+                                    DataRow dtr2 = gridCTHOADON.GetDataRow(k);
+                                    if (dtr["MAMH"].ToString() == dtr2["MAMH"].ToString())
+                                    {
+                                        soluongtra = soluongtra + Convert.ToDouble(dtr2["SOLUONG"].ToString()) + Convert.ToDouble(dtr2["KMAI"].ToString());
+                                    }
+                                }
+                                // string lohang = gridCTHOADON.GetFocusedRowCellValue("LOHANG").ToString();
+                               // String SQL = "Select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["_LOHANG"].ToString() + "'";
+                                string SQL = "select TONKHO+SOLUONGXUAT+KMAI AS TONKHO from KHOHANG,CHITIETHDX where KHOHANG.MAMH='" + dtr["MAMH"].ToString() + "' AND KHOHANG.LOHANG='" + dtr["_LOHANG"].ToString() + "' AND KHOHANG.MAMH=CHITIETHDX.MAMH";
+                               
+                                DataTable dt = ctlNCC.GETDATA(SQL);
+
+                                if (dt.Rows.Count > 0)
+                                {
+                                    soluongnhap = Convert.ToDouble(dt.Rows[0][0].ToString());
+                                }
+                                if (soluongtra > soluongnhap)
+                                {
+                                    MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không thể nhiều hơn số lượng tồn");
+                                    return;
+                                }
+
+                                if (Convert.ToDouble(dtr["SOLUONG"].ToString()) <= 0)
+                                {
+                                    MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không được <=0");
+                                    return;
+                                }
+                            }
 
 
                             for (int i = 0; i < rowcount; i++)
