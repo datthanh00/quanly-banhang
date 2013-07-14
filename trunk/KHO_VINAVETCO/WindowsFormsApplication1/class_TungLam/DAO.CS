@@ -1347,7 +1347,6 @@ namespace WindowsFormsApplication1
         }
         public void INSERTHOADONXUAT(DTO dto)
         {
-
             PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n insert into HOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN,TYPE,IDNHAP) values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + dto.NGAYXUAT + "," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "'," + dto.TINHTRANG + "," + dto.CKTIEN + "," + dto.TYPE + "," + dto.IDNHAP + ")";
            
         }

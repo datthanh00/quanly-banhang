@@ -118,6 +118,7 @@ namespace WindowsFormsApplication1
             isnhap = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
+            txtlohang.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();
            
@@ -140,6 +141,7 @@ namespace WindowsFormsApplication1
             isnhap = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
+            txtlohang.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();
             DataRow dtr;
@@ -492,11 +494,9 @@ namespace WindowsFormsApplication1
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             loadmahdn();
             cbotientra.Properties.ReadOnly = false;
+            txtlohang.ReadOnly = false;
             ckphantram.Properties.ReadOnly = false;
             cktien.Properties.ReadOnly = false;
-            //   cboTinhTrang.Text = "";
-            //gridControl1.DataSource = null;
-            //gridCTHOADON.RefreshData();
             loadgridNhacCungCap();
             Grid_sanpham.DataSource = null;
             loadgridCTHOADON();
@@ -515,8 +515,7 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                        int COUNTSTART = 0;
-                    START_EXCUTIVE:
+                     
                         PublicVariable.SQL_NHAP = "";
                         dtoNCC.MANCC = txtMANCC.Text;
                         dtoNCC.TENNCC = cboTenNCC.Text;
@@ -529,6 +528,7 @@ namespace WindowsFormsApplication1
                         dtoNCC.MAHDN = txtMaHD.Text;
                         dtoNCC.CKTIEN = cktien.Value.ToString();
                         dtoNCC.TYPE = "1";
+                     
                         if (cbotientra.Text == "")
                         {
                             cbotientra.Text = "0";
@@ -602,35 +602,7 @@ namespace WindowsFormsApplication1
                             dtoNCC.NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
                         }
 
-
-                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='HDN' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                        DataTable DTstart = connect.getdata(SQLstart);
-                        if (DTstart.Rows.Count>0)
-                        if (DTstart.Rows[0][0].ToString() == "True" && COUNTSTART<20)
-                        {
-                            COUNTSTART = COUNTSTART + 1;
-                            connect.dealTimer();
-                            if (COUNTSTART == 19)
-                            {
-                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
-                                return;
-                            }
-                            goto START_EXCUTIVE;
-                           
-                        }
-
                         if (isnhap)
-                        {
-                            loadmahdn();
-                            dtoNCC.MAHDN = txtMaHD.Text;
-                        }
-
-                        bool isINSERTHOADONNHAP = ctlNCC.isINSERTHOADONNHAP(dtoNCC.MAHDN);
-
-
-                       
-
-                        if (isINSERTHOADONNHAP)
                         {
                             if (THEM == "False")
                             {
@@ -638,14 +610,35 @@ namespace WindowsFormsApplication1
                                 return;
                             }
 
-                            connect.ACTIVEINSERT("HDN");
+                           
                            
                             dtoNCC.IsUPDATE = false;
                             dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
-                        
-                            ctlNCC.INSERTHOADONNHAP(dtoNCC);
                             //insert hoa don chi tiet
                             
+                            loadmahdn();
+                            dtoNCC.MAHDN = txtMaHD.Text;
+                            txtlohang.Text = txtMaHD.Text;
+
+                            ctlNCC.INSERTHOADONNHAP(dtoNCC);
+                            try
+                            {
+                                ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
+                                PublicVariable.SQL_NHAP = "";
+                            }catch{
+                            MessageBox.Show("Vui lòng thử lưu lại");
+                                return;
+                            }
+                            if (PublicVariable.isHSD)
+                            {
+                                dtoNCC.LOHANG = txtlohang.Text;
+                                txtlohang.Text = txtMaHD.Text;
+                            }
+                            else
+                            {
+                                dtoNCC.LOHANG = "1";
+                                txtlohang.Text = "1";
+                            }
                             for (int i = 0; i < rowcount; i++)
                             {
 
@@ -655,7 +648,7 @@ namespace WindowsFormsApplication1
 
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
                             PublicVariable.SQL_NHAP = "";
-                            connect.UNACTIVEINSERT("HDN");
+                         
                             MessageBox.Show("Bạn Đã Thêm Thành Công");
 
                         }
@@ -760,6 +753,7 @@ namespace WindowsFormsApplication1
                 dtoNCC.MAHDN = mahdn;
                 dtoNCC.MAMH = mamh;
                 dtoNCC.KMAI = _KMAI;
+               
                 if (HSD.Length > 5)
                 {
                     dtoNCC.HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
@@ -1554,6 +1548,7 @@ namespace WindowsFormsApplication1
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
             ckphantram.Properties.ReadOnly = true;
+            txtlohang.ReadOnly = true;
             cktien.Properties.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();

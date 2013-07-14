@@ -259,8 +259,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     }
                     else
                     {
-                        int COUNTSTART = 0;
-                    START_EXCUTIVE:
+                      
                         PublicVariable.SQL_XUAT = "";
                         dtoNCC.MAKH = txtmakh.Text;
                         dtoNCC.TENKH = cboTenKH.Text;
@@ -288,36 +287,17 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             return;
                         }
 
-                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='HDX' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                        DataTable DTstart = connect.getdata(SQLstart);
-                        if (DTstart.Rows.Count>0)
-                        if (DTstart.Rows[0][0].ToString() == "True"&&COUNTSTART<20)
-                        {
-                            COUNTSTART = COUNTSTART + 1;
-                            connect.dealTimer();
-                            if (COUNTSTART == 19)
-                            {
-                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
-                                return;
-                            }
-                            goto START_EXCUTIVE;
-                            
-                        }
 
                         if (isnhap)
-                        {
-                            loadmahdx();
-                            dtoNCC.MAHDX = txtMaHD.Text;
-                        }
-
-                        bool isINSERTHOADONXUAT = ctlNCC.isINSERTHOADONXUAT(dtoNCC.MAHDX);
-                        if (isINSERTHOADONXUAT)
                         {
                             if (THEM == "False")
                             {
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
                             }
+
+                           
+                            
                             
                             for (int i = 0; i < rowcount; i++)
                             {
@@ -330,7 +310,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 if (dt.Rows.Count > 0)
                                 {
                                     Double slton = Convert.ToDouble(dt.Rows[0]["TONKHO"].ToString());
-                                    Double SOLUONG=Convert.ToDouble(dtr["SOLUONG"].ToString());
+                                    Double SOLUONG = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
                                     if (SOLUONG<=0)
                                     {
                                         System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " KHÔNG THỂ XUẤT <=0");
@@ -355,20 +335,32 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 NGAYXUAT = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
                             }
                             dtoNCC.NGAYXUAT = NGAYXUAT;
-                            connect.ACTIVEINSERT("HDX");
+                        
                             dtoNCC.IsUPDATE = false;
                             dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
+
+                            loadmahdx();
+                            dtoNCC.MAHDX = txtMaHD.Text;
                             ctlNCC.INSERTHOADONXUAT(dtoNCC);
+                            try
+                            {
+                                ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
+                                PublicVariable.SQL_XUAT = "";
+                            }catch{
+                            MessageBox.Show("Vui lòng thử lưu lại");
+                                return;
+                            }
+                           
                             //insert hoa don chi tiet
 
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
-                                insert_HoadonChitietxuat(txtMaHD.Text, dtr["_LOHANG"].ToString(), dtr["MAMH"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["_DonGia"].ToString()), Convert.ToInt32(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString(),i);
+                                insert_HoadonChitietxuat(dtoNCC.MAHDX, dtr["_LOHANG"].ToString(), dtr["MAMH"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["_DonGia"].ToString()), Convert.ToInt32(dtr["TIENTHU"].ToString()), dtr["GIANHAP"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString(), i);
                             }
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
                             PublicVariable.SQL_XUAT = "";
-                            connect.UNACTIVEINSERT("HDX");
+                          
                             MessageBox.Show("Bạn Đã Thêm Thành Công");
                         }
                         else
@@ -382,6 +374,35 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             dtoNCC.IsUPDATE = true;
                             dtoNCC.IDNHAP = IDNHAP;
                             ctlNCC.UPDATEHOADONXUAT(dtoNCC);
+                            for (int i = 0; i < rowcount; i++)
+                            {
+                                DataRow dtr = gridCTHOADON.GetDataRow(i);
+
+
+                                string SQL = "select TONKHO+SOLUONGXUAT+KMAI AS TONKHO from KHOHANG,CHITIETHDX where KHOHANG.MAMH='" + dtr["MAMH"].ToString() + "' AND KHOHANG.LOHANG='" + dtr["_LOHANG"].ToString() + "' AND KHOHANG.MAMH=CHITIETHDX.MAMH";
+                                DataTable dt = ctlNCC.GETDATA(SQL);
+
+                                if (dt.Rows.Count > 0)
+                                {
+                                    Double slton = Convert.ToDouble(dt.Rows[0]["TONKHO"].ToString());
+                                    Double SOLUONG = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
+                                    if (SOLUONG <= 0)
+                                    {
+                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " KHÔNG THỂ XUẤT <=0");
+                                        return;
+                                    }
+                                    if (slton < SOLUONG)
+                                    {
+                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Không đủ số lượng để xuất");
+                                        return;
+                                    }
+                                }
+                                else
+                                {
+                                    System.Windows.Forms.MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " trong kho");
+                                    return;
+                                }
+                            }
 
                             for (int i = 0; i < rowcount; i++)
                             {
@@ -593,6 +614,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         public void Create_new()
         {
             isnhap = true;
+           
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             txtmakh.Text = "";
             cboTenKH.Text = "";
