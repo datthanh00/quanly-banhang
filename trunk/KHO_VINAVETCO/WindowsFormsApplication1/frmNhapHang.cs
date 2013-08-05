@@ -610,8 +610,6 @@ namespace WindowsFormsApplication1
                                 return;
                             }
 
-                           
-                           
                             dtoNCC.IsUPDATE = false;
                             dtoNCC.IDNHAP = ctlNCC.getIDNHAP();
                             //insert hoa don chi tiet
@@ -648,7 +646,6 @@ namespace WindowsFormsApplication1
 
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
                             PublicVariable.SQL_NHAP = "";
-                         
                             MessageBox.Show("Bạn Đã Thêm Thành Công");
 
                         }

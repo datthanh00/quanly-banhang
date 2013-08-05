@@ -234,9 +234,8 @@ namespace WindowsFormsApplication1
                     {
                         if (kiemtra == 1)
                         {
-                           
-                            int COUNTSTART = 0;
-                        START_EXCUTIVE:
+
+                            loadma();
                             DTO.MAMH = txtMaMH.Text;
                             DTO.MATH = "TH00001";//gridView2.GetFocusedRowCellValue("MATH").ToString();
 
@@ -253,27 +252,17 @@ namespace WindowsFormsApplication1
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
 
-                            string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='MH' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                            DataTable DTstart = connect.getdata(SQLstart);
-                            if (DTstart.Rows.Count>0)
-                            if (DTstart.Rows[0][0].ToString() == "True" && COUNTSTART < 20)
+                            try
                             {
-                                COUNTSTART = COUNTSTART + 1;
-                                connect.dealTimer();
-                                if (COUNTSTART == 19)
-                                {
-                                    MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
-                                    return;
-                                }
-                                goto START_EXCUTIVE;
-                                
+                                CTL.addMatHangCtrl(DTO);
                             }
-                            loadma();
-                            DTO.MAMH = txtMaMH.Text;
-
-                            connect.ACTIVEINSERT("MH");
-                            CTL.addMatHangCtrl(DTO);
-                            connect.UNACTIVEINSERT("MH");
+                            catch
+                            {
+                                XtraMessageBox.Show("Vui Lòng Thử Lại");
+                                return;
+                            }
+                           
+                        
                             XtraMessageBox.Show("Bạn Đã Thêm Thành Công");
                             loadma();
                             this.Close();
@@ -346,6 +335,7 @@ namespace WindowsFormsApplication1
                             //    imageData = ms.GetBuffer();
                             //    ms.Close();
                             //    DTO.PICTURE = imageData;
+                            loadma();
                             DTO.MAMH = txtMaMH.Text;
                             DTO.MATH = MASOTHUE;
                             DTO.MANCC = MANCC;
@@ -360,7 +350,15 @@ namespace WindowsFormsApplication1
 
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
-                            CTL.addMatHangCtrl(DTO);
+                            try
+                            {
+                                CTL.addMatHangCtrl(DTO);
+                            }
+                            catch
+                            {
+                                XtraMessageBox.Show("Try again");
+                                return;
+                            }
                             XtraMessageBox.Show("You Added Succeesful");
                             loadma();
                             this.Close();

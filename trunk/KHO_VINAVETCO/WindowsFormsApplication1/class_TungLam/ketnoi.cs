@@ -416,36 +416,5 @@ namespace WindowsFormsApplication1
             SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='" + PublicVariable.MAKHO + "')+1)  AS T1) AS T2";
             return SQL;
         }
-
-        public void ACTIVEINSERT(string TYPE)
-        {
-           string  SQL = "";
-           SQL = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='"+TYPE+"' AND MAKHO='" + PublicVariable.MAKHO + "'";
-
-           DataTable DTstart = getdata(SQL);
-           if (DTstart.Rows.Count > 0)
-           {
-               SQL = "UPDATE MAHDARRAY SET ACTIVE =1 WHERE TYPE='" + TYPE + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
-           }
-           else
-           {
-               SQL = "INSERT INTO MAHDARRAY ([TYPE],[MAKHO],[ACTIVE]) VALUES ('" + TYPE + "','" + PublicVariable.MAKHO + "',1)";
-           }
-          
-           executeNonQuery(SQL);
-        }
-
-        public void UNACTIVEINSERT(string TYPE)
-        {
-            string SQLstart = "UPDATE MAHDARRAY SET ACTIVE =0 WHERE TYPE='" + TYPE + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
-            executeNonQuery(SQLstart);
-        }
-
-        public void dealTimer()
-        {
-            System.Threading.Thread.Sleep(2000);
-        }
-
-
     }
 }

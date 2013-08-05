@@ -112,8 +112,7 @@ namespace WindowsFormsApplication1
 
                     if (kiemtra == 1)
                     {
-                        int COUNTSTART = 0;
-                    START_EXCUTIVE:
+                        loadma();
                         DTO.MAKH = txtmakh.Text;
                         DTO.MAKV = sMaKV;
                      
@@ -133,27 +132,17 @@ namespace WindowsFormsApplication1
                         DTO.SKYPE = txtnickskype.Text;
                         DTO.TINHTRANG = KT;
 
-                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='KH' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                        DataTable DTstart = connect.getdata(SQLstart);
-
-                        if (DTstart.Rows.Count>0)
-                        if (DTstart.Rows[0][0].ToString() == "True" && COUNTSTART < 20)
+                        try
                         {
-                            COUNTSTART = COUNTSTART + 1;
-                            connect.dealTimer();
-                            if (COUNTSTART == 19)
-                            {
-                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
-                                return;
-                            }
-                            goto START_EXCUTIVE;
-                           
+                            CTRL.insertKhachHang(DTO);
                         }
-                        loadma();
-                        DTO.MAKH = txtmakh.Text;
-                        connect.ACTIVEINSERT("KH");
-                        CTRL.insertKhachHang(DTO);
-                        connect.UNACTIVEINSERT("KH");
+                        catch
+                        {
+                            XtraMessageBox.Show("Vui Lòng Thử Lại");
+                            return;
+                        }
+                        
+                      
                         XtraMessageBox.Show("Bạn Đã Thêm Thành Công");
 
                         this.Close();
@@ -236,7 +225,7 @@ namespace WindowsFormsApplication1
 
                     else if (kiemtra == 1)
                     {
-
+                        loadma();
                         DTO.MAKH = txtmakh.Text;
                         DTO.MAKV = sMaKV;
                         DTO.MANV = sMaNV;
@@ -253,7 +242,15 @@ namespace WindowsFormsApplication1
                         DTO.YAHOO = txtyahoo.Text;
                         DTO.SKYPE = txtnickskype.Text;
                         DTO.TINHTRANG = KT;
-                        CTRL.insertKhachHang(DTO);
+                        try
+                        {
+                            CTRL.insertKhachHang(DTO);
+                        }
+                        catch
+                        {
+                            XtraMessageBox.Show("Vui Lòng Thử Lại");
+                            return;
+                        }
                         XtraMessageBox.Show("You Added Succeesful");
 
                         this.Close();

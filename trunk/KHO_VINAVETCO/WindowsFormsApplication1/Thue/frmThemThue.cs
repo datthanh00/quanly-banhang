@@ -46,10 +46,18 @@ namespace WindowsFormsApplication1
                     }
                     if (kiemtra == 1)
                     {
+                        loadma();
                         DTO.MATH = txtma.Text;
                         DTO.SOTHUE = txtsothue.Text;
-
-                        CTL.INSERTTHUE(DTO);
+                        try
+                        {
+                            CTL.INSERTTHUE(DTO);
+                        }
+                        catch
+                        {
+                            XtraMessageBox.Show("Vui Lòng Thử Lại");
+                            return;
+                        }
                         XtraMessageBox.Show("Bạn Đã Thêm Thành Công");
                         this.Close();
                     }
@@ -73,10 +81,18 @@ namespace WindowsFormsApplication1
                     }
                     if (kiemtra == 1)
                     {
+                        loadma();
                         DTO.MATH = txtma.Text;
                         DTO.SOTHUE = txtsothue.Text;
-
-                        CTL.INSERTTHUE(DTO);
+                        try
+                        {
+                            CTL.INSERTTHUE(DTO);
+                        }
+                        catch
+                        {
+                            XtraMessageBox.Show("try again");
+                            return;
+                        }
                         XtraMessageBox.Show("You Added Successful");
                         this.Close();
                     }

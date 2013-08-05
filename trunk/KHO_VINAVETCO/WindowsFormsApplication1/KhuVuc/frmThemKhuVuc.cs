@@ -129,35 +129,24 @@ namespace WindowsFormsApplication1
 
                     if (kiemtra == 1)
                     {
-                        int COUNTSTART = 0;
-                    START_EXCUTIVE:
+                        loadma();
                         DTO.MAKV = txtma.Text;
                         DTO.TENKV = txtten.Text;
 
                         DTO.GHICHU = txtghichu.Text;
                         DTO.TINHTRANG = KT;
 
-                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='KV' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                        DataTable DTstart = connect.getdata(SQLstart);
-                        if (DTstart.Rows.Count>0)
-                        if (DTstart.Rows[0][0].ToString() == "True" && COUNTSTART < 20)
+                        try
                         {
-                            COUNTSTART = COUNTSTART + 1;
-                            connect.dealTimer();
-                            if (COUNTSTART == 19)
-                            {
-                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
-                                return;
-                            }
-                            goto START_EXCUTIVE;
-                            
+                            CTL.INSERTKHUVUC(DTO);
                         }
-                        loadma();
-                        DTO.MAKV = txtma.Text;
+                        catch
+                        {
+                            XtraMessageBox.Show("Vui Lòng Thử Lại");
+                            return;
+                        }
 
-                        connect.ACTIVEINSERT("KV");
-                        CTL.INSERTKHUVUC(DTO);
-                        connect.UNACTIVEINSERT("KV");
+                   
                         XtraMessageBox.Show("Bạn Đã Thêm Thành Công");
                         this.Close();
                     }
@@ -207,12 +196,21 @@ namespace WindowsFormsApplication1
                     //}
                     if (kiemtra == 1)
                     {
+                        loadma();
                         DTO.MAKV = txtma.Text;
                         DTO.TENKV = txtten.Text;
 
                         DTO.GHICHU = txtghichu.Text;
                         DTO.TINHTRANG = KT;
-                        CTL.INSERTKHUVUC(DTO);
+                        try
+                        {
+                            CTL.INSERTKHUVUC(DTO);
+                        }
+                        catch
+                        {
+                            XtraMessageBox.Show("Vui Lòng Thử Lại");
+                            return;
+                        }
                         XtraMessageBox.Show("You Added Successful");
                         this.Close();
                     }
