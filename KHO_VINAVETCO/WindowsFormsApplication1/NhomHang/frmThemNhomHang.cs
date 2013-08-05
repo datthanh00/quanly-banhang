@@ -105,40 +105,28 @@ namespace WindowsFormsApplication1
               
                     if (kiemtra == 1)
                     {
-                        int COUNTSTART = 0;
-                    START_EXCUTIVE:
+                        loadma();
                         DTO.MANH = txtma.Text;
                         DTO.TENNHOMHANG = txtten.Text;
 
                         DTO.GHICHU = txtghichu.Text;
 
-                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='NH' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                        DataTable DTstart = connect.getdata(SQLstart);
-                        if (DTstart.Rows.Count>0)
-                        if (DTstart.Rows[0][0].ToString() == "True" && COUNTSTART < 20)
+                        try
                         {
-                            COUNTSTART = COUNTSTART + 1;
-                            connect.dealTimer();
-                            if (COUNTSTART == 19)
-                            {
-                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
-                                return;
-                            }
-                            goto START_EXCUTIVE;
-                            
+                            CTL.INSERTNHOMHANG(DTO);
                         }
-                        loadma();
-                        DTO.MANH = txtma.Text;
-
-                        connect.ACTIVEINSERT("NH");
-                        CTL.INSERTNHOMHANG(DTO);
-                        connect.UNACTIVEINSERT("NH");
+                        catch
+                        {
+                            XtraMessageBox.Show("Vui Lòng Thử Lại");
+                            return;
+                        }
+                     
                         XtraMessageBox.Show("Bạn Đã Thêm Thành Công");
                         this.Close();
                     }
                     else
                     {
-
+                        
                         DTO.MANH = txtma.Text;
                         DTO.TENNHOMHANG = txtten.Text;
 
@@ -161,12 +149,21 @@ namespace WindowsFormsApplication1
    
                     if (kiemtra == 1)
                     {
+                        loadma();
                         DTO.MANH = txtma.Text;
                         DTO.TENNHOMHANG = txtten.Text;
 
                         DTO.GHICHU = txtghichu.Text;
 
-                        CTL.INSERTNHOMHANG(DTO);
+                        try
+                        {
+                            CTL.INSERTNHOMHANG(DTO);
+                        }
+                        catch
+                        {
+                            XtraMessageBox.Show("try again");
+                            return;
+                        }
                         XtraMessageBox.Show("You Added Successful");
                         this.Close();
                     }

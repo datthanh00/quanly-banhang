@@ -131,8 +131,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                int COUNTSTART = 0;
-            START_EXCUTIVE:
+               
                 PHIEUCHI_DTO dto = new PHIEUCHI_DTO();//may lam form nao za tratien uh nhacc hay khach hang frncorm chhinh dau
                 dto.MaPhieuChi = txtPC.Text;
                 dto.NhanVien = sMaNV;
@@ -144,27 +143,20 @@ namespace WindowsFormsApplication1
                     dto.Mahoadonnhap=MaNcc;
                 }
 
-                string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='PC' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                DataTable DTstart = connect.getdata(SQLstart);
-                if (DTstart.Rows.Count>0)
-                if (DTstart.Rows[0][0].ToString() == "True" && COUNTSTART < 20)
-                {
-                    COUNTSTART = COUNTSTART + 1;
-                    connect.dealTimer();
-                    if (COUNTSTART == 19)
-                    {
-                        MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
-                        return;
-                    }
-                    goto START_EXCUTIVE;
-                    
-                }
+               
                 txtPC.Text = connect.sTuDongDienMapc(txtPC.Text);
                 dto.MaPhieuChi = txtPC.Text;
 
-                connect.ACTIVEINSERT("PC");
-                CTR.THEM_PHIEUCHI_ctrl(dto);
-                connect.UNACTIVEINSERT("PC");
+                try
+                {
+                    CTR.THEM_PHIEUCHI_ctrl(dto);
+                }
+                catch
+                {
+                    XtraMessageBox.Show("Vui Lòng Thử Lại");
+                    return;
+                }
+         
                 if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Bạn đã lưu thành công");

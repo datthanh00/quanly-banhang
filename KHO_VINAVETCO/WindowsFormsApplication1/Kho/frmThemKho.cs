@@ -94,6 +94,7 @@ namespace WindowsFormsApplication1
                     //}
                     if (kiemtra == 1)
                     {
+                        loadma();
                         DTO.MAKHO = txtmakho.Text;
                         DTO.MANV = txtmanv.Text;
                         DTO.TENKHO = txttenkho.Text;
@@ -104,7 +105,16 @@ namespace WindowsFormsApplication1
                         DTO.FAX = txtfax.Text;
                         DTO.GHICHU = txtghichu.Text;
                         DTO.TINHTRANG = KT;
-                        CTL.INSERTKHO(DTO);
+                        try
+                        {
+                            CTL.INSERTKHO(DTO);
+                        }
+                        catch
+                        {
+                            XtraMessageBox.Show("Vui Lòng Thử Lại");
+                            return;
+                        }
+                        
                         XtraMessageBox.Show("Bạn Đã Thêm Thành Công");
                         this.Close();
                     }
@@ -157,8 +167,7 @@ namespace WindowsFormsApplication1
                     //}
                     if (kiemtra == 1)
                     {
-                        int COUNTSTART = 0;
-                    START_EXCUTIVE:
+                        loadma();
                         DTO.MAKHO = txtmakho.Text;
                         DTO.MANV = txtmanv.Text;
                         DTO.TENKHO = txttenkho.Text;
@@ -170,27 +179,15 @@ namespace WindowsFormsApplication1
                         DTO.GHICHU = txtghichu.Text;
                         DTO.TINHTRANG = KT;
 
-                        string SQLstart = "SELECT ACTIVE FROM MAHDARRAY WHERE TYPE='KHO' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                        DataTable DTstart = connect.getdata(SQLstart);
-                        if (DTstart.Rows.Count>0)
-                        if (DTstart.Rows[0][0].ToString() == "True" && COUNTSTART < 20)
+                        try
                         {
-                            COUNTSTART = COUNTSTART + 1;
-                            connect.dealTimer();
-                            if (COUNTSTART == 19)
-                            {
-                                MessageBox.Show("CHƯA THÊM ĐƯỢC VUI LÒNG THỬ LẠI ");
-                                return;
-                            }
-                            goto START_EXCUTIVE;
-                            
+                            CTL.INSERTKHO(DTO);
                         }
-                        loadma();
-                        DTO.MAKHO = txtmakho.Text;
-
-                        connect.ACTIVEINSERT("KHO");
-                        CTL.INSERTKHO(DTO);
-                        connect.UNACTIVEINSERT("KHO");
+                        catch
+                        {
+                            XtraMessageBox.Show("Try again");
+                            return;
+                        }
                         XtraMessageBox.Show("You Added Succeesful");
                         this.Close();
                     }
