@@ -150,8 +150,6 @@ namespace WindowsFormsApplication1
                     TONDAUMIN = Convert.ToDouble(DT1.Rows[0][0].ToString());
                 }
 
-               
-
                 double SOLUONGMH1= Convert.ToDouble(dto.SOLUONGMH); 
 
                 if(TONDAUMIN>SOLUONGMH1)
