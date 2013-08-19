@@ -58,7 +58,7 @@ namespace WindowsFormsApplication1
             string HEAD = "KH", MAHD = "MAKH", TABLE = "KHACHHANG";
             int LENHEAD = HEAD.Length + 2;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='"+PublicVariable.MAKHO+"' WHERE MAKHO='"+PublicVariable.MAKHO+"'WHERE MAKHO='"+PublicVariable.MAKHO+"')+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='"+PublicVariable.MAKHO+"' )+1)  AS T1) AS T2";
             DataTable DT = getdata(SQL);
             sMaKH = DT.Rows[0][0].ToString();
             return sMaKH;
@@ -69,36 +69,36 @@ namespace WindowsFormsApplication1
             string HEAD = "KH", MAHD = "MAKH", TABLE = "KHACHHANG";
             int LENHEAD = HEAD.Length + 2;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='" + PublicVariable.MAKHO + "' WHERE MAKHO='" + PublicVariable.MAKHO + "'WHERE MAKHO='" + PublicVariable.MAKHO + "')+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='"+PublicVariable.MAKHO+"' )+1)  AS T1) AS T2";
             return SQL;
         }
         //----------------------------------------------------------////
         
         public string sTuDongDienMaKho(string sMaKHO)
         {
-            string HEAD = "", MAHD = "MAKHO", TABLE = "KHO";
-            int LENHEAD = HEAD.Length + 2;
+            string HEAD = "KHO", MAHD = "MAKHO", TABLE = "KHO";
+            int LENHEAD = HEAD.Length;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             DataTable DT = getdata(SQL);
             sMaKHO = DT.Rows[0][0].ToString();
             return sMaKHO;
         }
         public string sTuDongDienMaKho()
         {
-            string HEAD = "", MAHD = "MAKHO", TABLE = "KHO";
-            int LENHEAD = HEAD.Length + 2;
+            string HEAD = "KHO", MAHD = "MAKHO", TABLE = "KHO";
+            int LENHEAD = HEAD.Length;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             return SQL;
         }
         ////--------------------load ma tu dong DVT--------------------------
         public string sTuDongDienMaDVT(string sMaDVT)
         {
             string HEAD = "DVT", MAHD = "MADVT", TABLE = "DONVITINH";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             DataTable DT = getdata(SQL);
             sMaDVT = DT.Rows[0][0].ToString();
             return sMaDVT;
@@ -106,9 +106,9 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaDVT()
         {
             string HEAD = "DVT", MAHD = "MADVT", TABLE = "DONVITINH";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             return SQL;
         }
         //--------------load ma MH----------
@@ -152,9 +152,9 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaThue(string sMaTH)
         {
             string HEAD = "TH", MAHD = "MATH", TABLE = "THUE";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length ;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='"+PublicVariable.MAKHO+"')+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             DataTable DT = getdata(SQL);
             sMaTH = DT.Rows[0][0].ToString();
             return sMaTH;
@@ -162,9 +162,9 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaThue()
         {
             string HEAD = "TH", MAHD = "MATH", TABLE = "THUE";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length ;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='" + PublicVariable.MAKHO + "')+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             return SQL;
         }
         ///---------------------------------load ma tu dong khhu vuc---------------
@@ -172,9 +172,9 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaKV(string sMaKV)
         {
             string HEAD = "KV", MAHD = "MAKV", TABLE = "KHUVUC";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length ;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             DataTable DT = getdata(SQL);
             sMaKV = DT.Rows[0][0].ToString();
             return sMaKV;
@@ -182,9 +182,9 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaKV()
         {
             string HEAD = "KV", MAHD = "MAKV", TABLE = "KHUVUC";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length ;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             return SQL;
         }
         //----------------------load ma nhan vien-------------------
@@ -194,9 +194,9 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaNV(string sMaNV)
         {
             string HEAD = "NV", MAHD = "MANV", TABLE = "NHANVIEN";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             DataTable DT = getdata(SQL);
             sMaNV = DT.Rows[0][0].ToString();
             return sMaNV;
@@ -204,9 +204,9 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaNV()
         {
             string HEAD = "NV", MAHD = "MANV", TABLE = "NHANVIEN";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             return SQL;
         }
         //-----------------------------load ma tu dong quan ly----------------
@@ -216,9 +216,9 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaBP(string sMaBP)
         {
             string HEAD = "BP", MAHD = "MABP", TABLE = "BOPHAN";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             DataTable DT = getdata(SQL);
             sMaBP = DT.Rows[0][0].ToString();
             return sMaBP;
@@ -227,9 +227,9 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaBP()
         {
             string HEAD = "BP", MAHD = "MABP", TABLE = "BOPHAN";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             return SQL;
         }
 
@@ -238,9 +238,9 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaNhomHang(string sMaNH)
         {
             string HEAD = "NH", MAHD = "MANH", TABLE = "NHOMHANG";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             DataTable DT = getdata(SQL);
             sMaNH = DT.Rows[0][0].ToString();
             return sMaNH;
@@ -249,9 +249,9 @@ namespace WindowsFormsApplication1
         public string sTuDongDienMaNhomHang()
         {
             string HEAD = "NH", MAHD = "MANH", TABLE = "NHOMHANG";
-            int LENHEAD = HEAD.Length + 2;
+            int LENHEAD = HEAD.Length;
             string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "01' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + "1' ELSE T1 END FROM (SELECT '" + HEAD + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + ")+1)  AS T1) AS T2";
             return SQL;
         }
         //-------------------load ma nha Cung cap-----------------------//

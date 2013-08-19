@@ -42,8 +42,6 @@
             this.txtmanv = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colmanv = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmabp = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colchucvu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltennv = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTinhtrang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
@@ -137,7 +135,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(443, 302);
+            this.groupControl1.Size = new System.Drawing.Size(480, 302);
             this.groupControl1.TabIndex = 37;
             this.groupControl1.Text = "Thông Tin Kho";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
@@ -154,9 +152,9 @@
             // 
             this.labelControl2.Location = new System.Drawing.Point(87, 230);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(264, 13);
+            this.labelControl2.Size = new System.Drawing.Size(338, 13);
             this.labelControl2.TabIndex = 130;
-            this.labelControl2.Text = "HSD--BARCODE--TONTHUCTE--KHOILUONG--BANGGIA";
+            this.labelControl2.Text = "HSD--BARCODE--TONTHUCTE--KHOILUONG--BANGGIA--TONTHUCTE1";
             // 
             // labelControl1
             // 
@@ -232,8 +230,6 @@
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colmanv,
-            this.colmabp,
-            this.colchucvu,
             this.coltennv,
             this.colTinhtrang});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
@@ -249,29 +245,13 @@
             this.colmanv.Visible = true;
             this.colmanv.VisibleIndex = 0;
             // 
-            // colmabp
-            // 
-            this.colmabp.Caption = "Mã Bộ Phận";
-            this.colmabp.FieldName = "MABP";
-            this.colmabp.Name = "colmabp";
-            this.colmabp.Visible = true;
-            this.colmabp.VisibleIndex = 1;
-            // 
-            // colchucvu
-            // 
-            this.colchucvu.Caption = "Chức Vụ";
-            this.colchucvu.FieldName = "CHUCVU";
-            this.colchucvu.Name = "colchucvu";
-            this.colchucvu.Visible = true;
-            this.colchucvu.VisibleIndex = 3;
-            // 
             // coltennv
             // 
             this.coltennv.Caption = "Tên Nhân Viên";
             this.coltennv.FieldName = "TENNV";
             this.coltennv.Name = "coltennv";
             this.coltennv.Visible = true;
-            this.coltennv.VisibleIndex = 2;
+            this.coltennv.VisibleIndex = 1;
             // 
             // colTinhtrang
             // 
@@ -279,7 +259,7 @@
             this.colTinhtrang.FieldName = "TINHTRANG";
             this.colTinhtrang.Name = "colTinhtrang";
             this.colTinhtrang.Visible = true;
-            this.colTinhtrang.VisibleIndex = 4;
+            this.colTinhtrang.VisibleIndex = 2;
             // 
             // labelControl13
             // 
@@ -454,7 +434,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 360);
+            this.ClientSize = new System.Drawing.Size(480, 367);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.btDong);
             this.Controls.Add(this.btluu);
@@ -517,8 +497,6 @@
         private DevExpress.XtraEditors.LabelControl lbchuy;
         private DevExpress.XtraEditors.CheckEdit checkTT;
         private DevExpress.XtraGrid.Columns.GridColumn colmanv;
-        private DevExpress.XtraGrid.Columns.GridColumn colmabp;
-        private DevExpress.XtraGrid.Columns.GridColumn colchucvu;
         private DevExpress.XtraGrid.Columns.GridColumn coltennv;
         private DevExpress.XtraGrid.Columns.GridColumn colTinhtrang;
         private DevExpress.XtraEditors.LabelControl labelControl1;

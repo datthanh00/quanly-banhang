@@ -33,13 +33,21 @@ namespace WindowsFormsApplication1
         
         private void ThemMatHang_Load(object sender, EventArgs e)
         {
-            
+
             if (MABG == "")
             {
                 loadma();
+                MABG = txtMaBG.Text;
+            }
+            else
+            {
+                txtMaBG.Text = MABG;
+                txttenbg.Text = TENBG;
+                txtghichu.Text = GHICHU;
+
             }
 
-            MABG = txtMaBG.Text;
+            
 
         }
        

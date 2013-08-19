@@ -338,9 +338,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 443);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(181, 442);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -361,7 +361,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 194;
-            this.navBarControl1.Size = new System.Drawing.Size(181, 443);
+            this.navBarControl1.Size = new System.Drawing.Size(181, 442);
             this.navBarControl1.TabIndex = 0;
             this.navBarControl1.Text = "Thống Kê";
             // 
@@ -761,7 +761,7 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 3);
+            this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.grid_tonkho_CUOIKY;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -769,7 +769,7 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
             this.repositoryItemDateEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1099, 391);
+            this.gridControl1.Size = new System.Drawing.Size(1101, 393);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grid_tonkho_CUOIKY,
@@ -807,7 +807,9 @@
             this.grid_tonkho_CUOIKY.OptionsView.ShowAutoFilterRow = true;
             this.grid_tonkho_CUOIKY.OptionsView.ShowFooter = true;
             this.grid_tonkho_CUOIKY.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.GV7colMAMH, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.GV7colMAMH, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gv7colNHOMHANG, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.GV7COLTENMH, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // GV7colMAMH
             // 
@@ -1007,7 +1009,8 @@
             this.grid_hoadontheo_NCC.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn52, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn78, DevExpress.Data.ColumnSortOrder.Descending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn84, DevExpress.Data.ColumnSortOrder.Descending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn84, DevExpress.Data.ColumnSortOrder.Descending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn53, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridColumn52
             // 
@@ -1271,7 +1274,8 @@
             this.gridView9.OptionsView.ShowFooter = true;
             this.gridView9.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn55, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn56, DevExpress.Data.ColumnSortOrder.Descending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn56, DevExpress.Data.ColumnSortOrder.Descending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn59, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridBand4
             // 
@@ -1688,7 +1692,7 @@
             this.grid_THEKHO.OptionsView.ShowFooter = true;
             this.grid_THEKHO.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn26, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn49, DevExpress.Data.ColumnSortOrder.Descending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn50, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // gridBand5
             // 
@@ -2019,8 +2023,7 @@
             this.grid_hoadontheo_KHACHHANG.OptionsView.ShowFooter = true;
             this.grid_hoadontheo_KHACHHANG.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn41, DevExpress.Data.ColumnSortOrder.Descending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colngayxuathoadon, DevExpress.Data.ColumnSortOrder.Descending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn41, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // gridColumn1
             // 

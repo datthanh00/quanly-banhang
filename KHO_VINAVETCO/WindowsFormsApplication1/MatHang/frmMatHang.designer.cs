@@ -52,13 +52,13 @@
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMADVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOLUONGMH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMOTA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -207,13 +207,13 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 3);
+            this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(1228, 417);
+            this.gridControl1.Size = new System.Drawing.Size(1230, 419);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -235,14 +235,15 @@
             this.gridColumn1,
             this.gridColumn4});
             this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsSelection.MultiSelect = true;
+            this.gridView1.OptionsView.AllowCellMerge = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn2, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn2, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTENMH, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick_1);
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick_1);
             // 
@@ -252,6 +253,9 @@
             this.colMAMH.FieldName = "MAMH";
             this.colMAMH.Name = "colMAMH";
             this.colMAMH.OptionsColumn.AllowEdit = false;
+            this.colMAMH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.colMAMH.Visible = true;
+            this.colMAMH.VisibleIndex = 0;
             this.colMAMH.Width = 99;
             // 
             // colMATH
@@ -260,6 +264,7 @@
             this.colMATH.FieldName = "MATH";
             this.colMATH.Name = "colMATH";
             this.colMATH.OptionsColumn.AllowEdit = false;
+            this.colMATH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colMATH.Width = 99;
             // 
             // colMANH
@@ -268,6 +273,7 @@
             this.colMANH.FieldName = "MANH";
             this.colMANH.Name = "colMANH";
             this.colMANH.OptionsColumn.AllowEdit = false;
+            this.colMANH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colMANH.Width = 106;
             // 
             // colTENMH
@@ -276,8 +282,9 @@
             this.colTENMH.FieldName = "TENMH";
             this.colTENMH.Name = "colTENMH";
             this.colTENMH.OptionsColumn.AllowEdit = false;
+            this.colTENMH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.colTENMH.Visible = true;
-            this.colTENMH.VisibleIndex = 0;
+            this.colTENMH.VisibleIndex = 1;
             this.colTENMH.Width = 199;
             // 
             // colMADVT
@@ -286,8 +293,9 @@
             this.colMADVT.FieldName = "DONVITINH";
             this.colMADVT.Name = "colMADVT";
             this.colMADVT.OptionsColumn.AllowEdit = false;
+            this.colMADVT.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colMADVT.Visible = true;
-            this.colMADVT.VisibleIndex = 2;
+            this.colMADVT.VisibleIndex = 4;
             this.colMADVT.Width = 166;
             // 
             // colSOLUONGMH
@@ -296,11 +304,22 @@
             this.colSOLUONGMH.FieldName = "SOLUONGMH";
             this.colSOLUONGMH.Name = "colSOLUONGMH";
             this.colSOLUONGMH.OptionsColumn.AllowEdit = false;
+            this.colSOLUONGMH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colSOLUONGMH.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colSOLUONGMH.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSOLUONGMH.Visible = true;
-            this.colSOLUONGMH.VisibleIndex = 4;
+            this.colSOLUONGMH.VisibleIndex = 6;
             this.colSOLUONGMH.Width = 177;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Giá Mua";
+            this.gridColumn3.FieldName = "GIAMUA";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 5;
+            this.gridColumn3.Width = 139;
             // 
             // colMOTA
             // 
@@ -308,8 +327,9 @@
             this.colMOTA.FieldName = "MOTA";
             this.colMOTA.Name = "colMOTA";
             this.colMOTA.OptionsColumn.AllowEdit = false;
+            this.colMOTA.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colMOTA.Visible = true;
-            this.colMOTA.VisibleIndex = 5;
+            this.colMOTA.VisibleIndex = 7;
             this.colMOTA.Width = 205;
             // 
             // colMAKHO
@@ -317,12 +337,16 @@
             this.colMAKHO.Caption = "Mã Kho";
             this.colMAKHO.FieldName = "MAKHO";
             this.colMAKHO.Name = "colMAKHO";
+            this.colMAKHO.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Công Ty";
             this.gridColumn2.FieldName = "TENNCC";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
             this.gridColumn2.Width = 138;
             // 
             // gridColumn1
@@ -330,6 +354,7 @@
             this.gridColumn1.Caption = "Mã CTY";
             this.gridColumn1.FieldName = "MANCC";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn1.Width = 133;
             // 
             // gridColumn4
@@ -337,22 +362,14 @@
             this.gridColumn4.Caption = "Theo ĐVT";
             this.gridColumn4.FieldName = "KLDVT";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.VisibleIndex = 3;
             this.gridColumn4.Width = 204;
             // 
             // repositoryItemPictureEdit1
             // 
             this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Giá Mua";
-            this.gridColumn3.FieldName = "GIAMUA";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 139;
             // 
             // frmMatHang
             // 

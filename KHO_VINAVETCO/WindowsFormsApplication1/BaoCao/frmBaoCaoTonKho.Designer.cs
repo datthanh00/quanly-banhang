@@ -436,10 +436,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(3, 3);
+            this.gridControl2.Location = new System.Drawing.Point(2, 2);
             this.gridControl2.MainView = this.advBandedGridView3;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1286, 391);
+            this.gridControl2.Size = new System.Drawing.Size(1288, 393);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -491,6 +491,9 @@
             this.advBandedGridView3.OptionsSelection.MultiSelect = true;
             this.advBandedGridView3.OptionsView.ShowAutoFilterRow = true;
             this.advBandedGridView3.OptionsView.ShowFooter = true;
+            this.advBandedGridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn3, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colHangHoa, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridThongTin
             // 
@@ -520,6 +523,7 @@
             this.colHangHoa.Caption = "Hàng hoá";
             this.colHangHoa.FieldName = "TENMH";
             this.colHangHoa.Name = "colHangHoa";
+            this.colHangHoa.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.colHangHoa.Visible = true;
             this.colHangHoa.Width = 140;
             // 
@@ -860,6 +864,8 @@
             this.advBandedGridView2.OptionsSelection.MultiSelect = true;
             this.advBandedGridView2.OptionsView.ShowAutoFilterRow = true;
             this.advBandedGridView2.OptionsView.ShowFooter = true;
+            this.advBandedGridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn33, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridBand9
             // 
@@ -1167,6 +1173,8 @@
             this.advBandedGridView1.OptionsSelection.MultiSelect = true;
             this.advBandedGridView1.OptionsView.ShowAutoFilterRow = true;
             this.advBandedGridView1.OptionsView.ShowFooter = true;
+            this.advBandedGridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn14, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridBand4
             // 

@@ -629,17 +629,38 @@ namespace WindowsFormsApplication1
 
         private void cbNhomHang_Validated(object sender, EventArgs e)
         {
-            MANCC=gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
+            try
+            {
+                MANCC = gridLookUpEdit1View.GetFocusedRowCellValue("MANCC").ToString();
+            }
+            catch
+            {
+
+            }
         }
 
         private void cbDvt_Validated(object sender, EventArgs e)
         {
-            DVT=gridView1.GetFocusedRowCellValue("MADVT").ToString();
+            try
+            {
+                DVT = gridView1.GetFocusedRowCellValue("MADVT").ToString();
+            }
+            catch
+            {
+
+            }
         }
 
         private void cbthue_Validated(object sender, EventArgs e)
         {
-            MASOTHUE = gridView2.GetFocusedRowCellValue("MATH").ToString();
+            try
+            {
+                MASOTHUE = gridView2.GetFocusedRowCellValue("MATH").ToString();
+            }
+            catch
+            {
+
+            }
         }
         
       

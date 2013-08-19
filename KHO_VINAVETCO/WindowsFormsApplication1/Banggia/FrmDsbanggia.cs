@@ -64,7 +64,7 @@ namespace WindowsFormsApplication1
              Boolean isdeletemathang = CTL.isDELETEBANGGIA(sMaBG);
              if (!isdeletemathang)
              {
-                 MessageBox.Show("Bảng Giá Đã áp dụng cho đại lý nên không thể xóa");
+                 MessageBox.Show("Bảng Giá đang áp dụng cho khách hàng nên không thể xóa");
                  return;
              }
 
@@ -104,6 +104,23 @@ namespace WindowsFormsApplication1
             {
                 XtraMessageBox.Show(ex.Message);
             }
+        }
+
+        private void gridControl1_DoubleClick(object sender, EventArgs e)
+        {
+            if (sMaBG == "")
+            {
+                MessageBox.Show("Vui lòng chọn thông tin cần sửa");
+                return;
+            }
+
+            ThemBanggia suaBG = new ThemBanggia();
+            suaBG.isthem = false;
+            suaBG.MABG = sMaBG;
+            suaBG.TENBG = sTenBG;
+            suaBG.GHICHU = sGhichu;
+            suaBG.ShowDialog();
+            loadctkh();
         }
 
     }

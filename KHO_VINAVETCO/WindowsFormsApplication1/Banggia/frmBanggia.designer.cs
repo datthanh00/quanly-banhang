@@ -57,10 +57,10 @@
             this.gridBand11 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn34 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn36 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.bandedGridColumn37 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn31 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.advBandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
             this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn14 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -131,8 +131,8 @@
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
@@ -247,6 +247,7 @@
             this.btIn.Size = new System.Drawing.Size(75, 29);
             this.btIn.TabIndex = 2;
             this.btIn.Text = "In";
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
             // btXuat
             // 
@@ -256,6 +257,7 @@
             this.btXuat.Size = new System.Drawing.Size(102, 29);
             this.btXuat.TabIndex = 1;
             this.btXuat.Text = "Xuất";
+            this.btXuat.Click += new System.EventHandler(this.btXuat_Click);
             // 
             // btluu
             // 
@@ -318,6 +320,9 @@
             this.advBandedGridView2.OptionsSelection.MultiSelect = true;
             this.advBandedGridView2.OptionsView.ShowAutoFilterRow = true;
             this.advBandedGridView2.OptionsView.ShowFooter = true;
+            this.advBandedGridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn38, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn32, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.advBandedGridView2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.advBandedGridView2_CellValueChanged);
             // 
             // gridBand9
@@ -423,13 +428,15 @@
             this.bandedGridColumn36.Visible = true;
             this.bandedGridColumn36.Width = 139;
             // 
-            // repositoryItemTextEdit1
+            // repositoryItemCalcEdit1
             // 
-            this.repositoryItemTextEdit1.AutoHeight = false;
-            this.repositoryItemTextEdit1.EditFormat.FormatString = "n0";
-            this.repositoryItemTextEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryItemTextEdit1.Mask.EditMask = "n0";
-            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            this.repositoryItemCalcEdit1.AutoHeight = false;
+            this.repositoryItemCalcEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemCalcEdit1.Mask.EditMask = "n0";
+            this.repositoryItemCalcEdit1.Mask.ShowPlaceHolders = false;
+            this.repositoryItemCalcEdit1.Mask.UseMaskAsDisplayFormat = true;
+            this.repositoryItemCalcEdit1.Name = "repositoryItemCalcEdit1";
             // 
             // bandedGridColumn37
             // 
@@ -450,15 +457,13 @@
             this.bandedGridColumn31.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn31.Visible = true;
             // 
-            // repositoryItemCalcEdit1
+            // repositoryItemTextEdit1
             // 
-            this.repositoryItemCalcEdit1.AutoHeight = false;
-            this.repositoryItemCalcEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemCalcEdit1.Mask.EditMask = "n0";
-            this.repositoryItemCalcEdit1.Mask.ShowPlaceHolders = false;
-            this.repositoryItemCalcEdit1.Mask.UseMaskAsDisplayFormat = true;
-            this.repositoryItemCalcEdit1.Name = "repositoryItemCalcEdit1";
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.EditFormat.FormatString = "n0";
+            this.repositoryItemTextEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemTextEdit1.Mask.EditMask = "n0";
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // advBandedGridView1
             // 
@@ -1135,8 +1140,8 @@
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();

@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
                         return;
                     }
 
-                    if (!PublicVariable.isBANGGIA)
+                    if (PublicVariable.isBANGGIA)
                     {
                         if (cmbtennhanvien.Text == "")
                         {
@@ -588,7 +588,13 @@ namespace WindowsFormsApplication1
             //Validate_EmptyStringRule(sender as BaseEdit);
             //cmbtenkhuvuc.Focus();
             //return;
-            sMaKV= gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+            try
+            {
+                sMaKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+            }
+            catch
+            {
+            }
         }
 
         private void txttenkh_Validating(object sender, CancelEventArgs e)
@@ -618,12 +624,26 @@ namespace WindowsFormsApplication1
 
         private void cmbtennhanvien_Validating(object sender, CancelEventArgs e)
         {
-            sMaNV= gridView1.GetFocusedRowCellValue("MANV").ToString();
+            try
+            {
+                sMaNV = gridView1.GetFocusedRowCellValue("MANV").ToString();
+            }
+            catch
+            {
+
+            }
         }
 
         private void cmbbanggia_EditValueChanged(object sender, EventArgs e)
         {
-            sMaBG = gridView2.GetFocusedRowCellValue("MABG").ToString();
+            try
+            {
+                sMaBG = gridView2.GetFocusedRowCellValue("MABG").ToString();
+            }
+            catch
+            {
+
+            }
         }
 
       
