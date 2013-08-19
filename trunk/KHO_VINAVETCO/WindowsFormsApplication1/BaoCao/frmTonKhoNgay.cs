@@ -251,9 +251,7 @@ namespace WindowsFormsApplication1
 
         private void btXem_Click(object sender, EventArgs e)
         {
-
            loadGird();
-         
         }
 
         private void btIn_Click(object sender, EventArgs e)

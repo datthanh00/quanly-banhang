@@ -255,8 +255,8 @@ namespace WindowsFormsApplication1
             btluu.Text = LamEL.LUU.ToString();
             btDong.Text = LamEL.DONG.ToString(); checkTT.Text = LamEL.CHECKTINHTRANG.ToString();
             colmanv.Caption = LamEL.MANV.ToString();
-            colmabp.Caption = LamEL.MABP.ToString();
-            colchucvu.Caption = LamEL.CHUCVU.ToString();
+            //colmabp.Caption = LamEL.MABP.ToString();
+            //colchucvu.Caption = LamEL.CHUCVU.ToString();
             colTinhtrang.Caption = LamEL.TINHTRANG.ToString();
             coltennv.Caption = LamEL.TENNV.ToString();    
             this.Text = "Form Insert Store";

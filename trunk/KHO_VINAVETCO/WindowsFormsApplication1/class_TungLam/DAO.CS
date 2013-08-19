@@ -508,7 +508,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETTHUE()
         {
-            string SQL = "select 	MATH,SOTHUE from  THUE";
+            string SQL = "select MATH,SOTHUE from  THUE";
             return GET_DATA(SQL);
         }
         public DataTable GETNHANVIEN()
@@ -629,7 +629,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETMMH2()
         {
-            string SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC FROM MATHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+            string SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC FROM MATHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ORDER BY TENNCC,TENMH ASC";
             return getdata(SQL);
         }
         public DataTable GETMMH()
@@ -638,11 +638,11 @@ namespace WindowsFormsApplication1
             
                 if (PublicVariable.isHSD)
                 {
-                    SQL = "SELECT  MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,HSD,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+                    SQL = "SELECT  MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,HSD,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ORDER BY TENNCC,TENMH ASC";
                 }
                 else
                 {
-                    SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+                    SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ORDER BY TENNCC,TENMH ASC";
                 }
             
             return getdata(SQL);
@@ -654,23 +654,23 @@ namespace WindowsFormsApplication1
 
             if (PublicVariable.isHSD)
             {
-                SQL = "SELECT  MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,HSD,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+                SQL = "SELECT  MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,HSD,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ORDER BY TENNCC,TENMH ASC";
             }
             else
             {
-                SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+                SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAMH=KHOHANG.MAMH  AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ORDER BY TENNCC,TENMH ASC";
             }
 
             return getdata(SQL);
         }
         public DataTable GETMMH_NHAPKHAC()
         {
-            string SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC FROM MATHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+            string SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC FROM MATHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ORDER BY TENNCC,TENMH ASC";
             return getdata(SQL);
         }
         public DataTable GETMMH(string MANCC)
         {
-            string SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC FROM MATHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND NHACUNGCAP.MANCC='" + MANCC + "' AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+            string SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC FROM MATHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND NHACUNGCAP.MANCC='" + MANCC + "' AND MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ORDER BY TENNCC,TENMH ASC";
             return getdata(SQL);
         }
 
@@ -679,23 +679,23 @@ namespace WindowsFormsApplication1
             string SQL = "";
             if (PublicVariable.isHSD)
             {
-                SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,HSD,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND NHACUNGCAP.MANCC='" + MANCC + "' AND MATHANG.MAMH=KHOHANG.MAMH AND KHOHANG.TONKHO>0 AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+                SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,HSD,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND NHACUNGCAP.MANCC='" + MANCC + "' AND MATHANG.MAMH=KHOHANG.MAMH AND KHOHANG.TONKHO>0 AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ORDER BY TENNCC,TENMH ASC";
             }
             else
             {
-                SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND NHACUNGCAP.MANCC='" + MANCC + "' AND MATHANG.MAMH=KHOHANG.MAMH AND KHOHANG.TONKHO>0 AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+                SQL = "SELECT MATHANG.MAMH,TENMH,TENNCC,MATHANG.MAMH+'_'+LOHANG AS LOHANG,TONKHO FROM MATHANG,KHOHANG,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND NHACUNGCAP.MANCC='" + MANCC + "' AND MATHANG.MAMH=KHOHANG.MAMH AND KHOHANG.TONKHO>0 AND  MATHANG.MAKHO='" + PublicVariable.MAKHO + "' ORDER BY TENNCC,TENMH ASC";
             }
             return getdata(SQL);
         }
 
         public DataTable GETMMHN(String MAHDN)
         {
-            string SQL = "SELECT mathang.MAMH,TENMH,TENNCC,SOLUONGNHAP-SOLUONGTRANHAP AS SOLUONGNHAP FROM MATHANG, chitiethdn,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND mathang.mamh=chitiethdn.mamh  and MAHDN='" + MAHDN + "'and soluongnhap-SOLUONGTRANHAP>0  and mathang.MAKHO='" + PublicVariable.MAKHO + "'";
+            string SQL = "SELECT mathang.MAMH,TENMH,TENNCC,SOLUONGNHAP-SOLUONGTRANHAP AS SOLUONGNHAP FROM MATHANG, chitiethdn,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND mathang.mamh=chitiethdn.mamh  and MAHDN='" + MAHDN + "'and soluongnhap-SOLUONGTRANHAP>0  and mathang.MAKHO='" + PublicVariable.MAKHO + "' ORDER BY TENNCC,TENMH ASC";
             return getdata(SQL);
         }
         public DataTable GETMMHX(String MAHDX)
         {
-            string SQL = "SELECT mathang.MAMH,TENMH,TENNCC,soluongxuat-SOLUONGTRAXUAT AS SOLUONGXUAT FROM MATHANG, chitiethdx,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND mathang.mamh=chitiethdx.mamh and MAHDX='" + MAHDX + "'  and soluongxuat-soluongtraxuat>0 and mathang.MAKHO='" + PublicVariable.MAKHO + "'";
+            string SQL = "SELECT mathang.MAMH,TENMH,TENNCC,soluongxuat-SOLUONGTRAXUAT AS SOLUONGXUAT FROM MATHANG, chitiethdx,NHACUNGCAP where MATHANG.MANCC=NHACUNGCAP.MANCC AND mathang.mamh=chitiethdx.mamh and MAHDX='" + MAHDX + "'  and soluongxuat-soluongtraxuat>0 and mathang.MAKHO='" + PublicVariable.MAKHO + "' ORDER BY TENNCC,TENMH ASC";
             return getdata(SQL);
         }
 
@@ -1548,11 +1548,46 @@ namespace WindowsFormsApplication1
 
         public DataTable GETtraHOADONXUAT(DTO dto)
         {
-            string SQL = "select 	MAHDX,MAKH,MANV,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG from  traHOADONXUAT where NGAYXUAT='" + dto.NGAYXUAT + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
+            string SQL = "select MAHDX,MAKH,MANV,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG from  traHOADONXUAT where NGAYXUAT='" + dto.NGAYXUAT + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
             return getdata(SQL);
         }
 
+        public string getmaxidNHAP(string MAHD)
+        {
+            string SQL = "select MAX(ID) FROM CHITIETHDN WHERE MAHDN='" + MAHD + "'";
+            DataTable DT= getdata(SQL);
+            if (DT.Rows[0][0].ToString() != "")
+                return DT.Rows[0][0].ToString();
 
+            return "0";
+        }
+        public string getmaxidXUAT(string MAHD)
+        {
+            string SQL = "select MAX(ID) FROM CHITIETHDX WHERE MAHDX='" + MAHD + "'";
+            DataTable DT = getdata(SQL);
+            if (DT.Rows[0][0].ToString() != "")
+                return DT.Rows[0][0].ToString();
+
+            return "0";
+        }
+        public string getmaxidTRANHAP(string MAHD)
+        {
+            string SQL = "select MAX(ID) FROM TRACHITIETHDN WHERE MAHDN='" + MAHD + "'";
+            DataTable DT = getdata(SQL);
+            if (DT.Rows[0][0].ToString() != "")
+                return DT.Rows[0][0].ToString();
+
+            return "0";
+        }
+        public string getmaxidTRAXUAT(string MAHD)
+        {
+            string SQL = "select MAX(ID) FROM TRACHITIETHDX WHERE MAHDX='" + MAHD + "'";
+            DataTable DT = getdata(SQL);
+            if (DT.Rows[0][0].ToString() != "")
+                return DT.Rows[0][0].ToString();
+
+            return "0";
+        }
 
 
         

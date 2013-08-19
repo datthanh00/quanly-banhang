@@ -174,7 +174,7 @@ namespace WindowsFormsApplication1
                     }
 
 
-                    if (cmbmaKV.Properties.ValueMember.ToString() == "")
+                    if (cmbmaKV.Text == "")
                     {
                         XtraMessageBox.Show("Vui Lòng Chọn Khu Vực ", "Thông Báo");
                         cmbmaKV.Focus();
@@ -489,7 +489,14 @@ namespace WindowsFormsApplication1
 
         private void cmbmaKV_Validated(object sender, EventArgs e)
         {
-            MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+            try
+            {
+                MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+            }
+            catch
+            {
+
+            }
         }
 
         

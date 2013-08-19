@@ -604,6 +604,22 @@ namespace WindowsFormsApplication1
         {
             DAO.executeNonQuery2(SQL);
         }
+        public string getmaxidNHAP(string MAHD)
+        {
+            return DAO.getmaxidNHAP(MAHD);
+        }
+        public string getmaxidXUAT(string MAHD)
+        {
+            return DAO.getmaxidXUAT(MAHD);
+        }
+        public string getmaxidTRANHAP(string MAHD)
+        {
+            return DAO.getmaxidTRANHAP(MAHD);
+        }
+        public string getmaxidTRAXUAT(string MAHD)
+        {
+            return DAO.getmaxidTRAXUAT(MAHD);
+        }
 
 
 

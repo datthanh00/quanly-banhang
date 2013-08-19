@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
        // public delegate void _deDongTab();
        // public _deDongTab deDongTab;
         public int iNgonNgu;
-        
+
         private void frmThue_Load(object sender, EventArgs e)
         {
 
@@ -43,31 +43,18 @@ namespace WindowsFormsApplication1
             }
 
             LoadT();
-           
-         frm.LoadVI += new frmMain.Translate(LoadTV);
+
+            frm.LoadVI += new frmMain.Translate(LoadTV);
             frm.LoadEN += new frmMain.Translate(LoadEL);
-            // TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet37.MATHANG' table. You can move, or remove it, as needed.
-            //this.mATHANGTableAdapter2.Fill(this.xUAT_NHAPTONDataSet37.MATHANG);
-            //// TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet32.MATHANG' table. You can move, or remove it, as needed.
-            //this.mATHANGTableAdapter1.Fill(this.xUAT_NHAPTONDataSet32.MATHANG);
-            
-            //// TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet20.MATHANG' table. You can move, or remove it, as needed.
-            //this.mATHANGTableAdapter.Fill(this.xUAT_NHAPTONDataSet20.MATHANG);
+
             if (iNgonNgu == 1)
             {
                 LoadEL();
-
-
             }
             else
             {
                 LoadTV();
-
-
-            } 
-            // TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet17.THUE' table. You can move, or remove it, as needed.
-            //this.tHUETableAdapter.Fill(this.xUAT_NHAPTONDataSet17.THUE);
-
+            }
         }
 
        

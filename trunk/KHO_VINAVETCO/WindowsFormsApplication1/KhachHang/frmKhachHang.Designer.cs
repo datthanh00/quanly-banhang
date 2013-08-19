@@ -256,6 +256,8 @@
             this.gridViewKHACHHANG.OptionsSelection.MultiSelect = true;
             this.gridViewKHACHHANG.OptionsView.ShowAutoFilterRow = true;
             this.gridViewKHACHHANG.OptionsView.ShowFooter = true;
+            this.gridViewKHACHHANG.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTENKH, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridViewKHACHHANG.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridViewKHACHHANG.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 

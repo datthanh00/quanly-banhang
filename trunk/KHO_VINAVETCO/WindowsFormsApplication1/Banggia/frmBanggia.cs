@@ -92,9 +92,18 @@ namespace WindowsFormsApplication1
 
         private void cbbanggia_Validated(object sender, EventArgs e)
         {
-            dto.MABG = gridView1.GetFocusedRowCellValue("MABG").ToString();
-            gridControl2.DataSource = CTL.GETBANGGIA(dto.MABG);
-            gridView1.ExpandAllGroups();
+            try
+            {
+                dto.MABG = gridView1.GetFocusedRowCellValue("MABG").ToString();
+            
+                gridControl2.DataSource = CTL.GETBANGGIA(dto.MABG);
+
+                gridView1.ExpandAllGroups();
+            }
+            catch
+            {
+                MessageBox.Show("Chưa có bản giá vui lòng nhấn vào danh sách bảng giá để tạo bảng giá mới");
+            }
         }
 
         private void advBandedGridView2_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -124,6 +133,35 @@ namespace WindowsFormsApplication1
 
             }
                 
+        }
+
+        private void btXuat_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel|*.xls";
+            saveFileDialog1.Title = "Save an File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                gridControl2.ExportToXls(saveFileDialog1.FileName);
+
+            }
+        }
+
+        private void btIn_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            gridControl2.ShowPrintPreview();
         }
 
     }
