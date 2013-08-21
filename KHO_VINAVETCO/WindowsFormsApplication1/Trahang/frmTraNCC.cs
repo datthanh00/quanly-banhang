@@ -507,15 +507,6 @@ namespace WindowsFormsApplication1
                                 MessageBox.Show("Vui lòng thử lưu lại");
                                 return;
                             }
-                            if (PublicVariable.isHSD)
-                            {
-                                dtoNCC.LOHANG = txtMaHD.Text;
-                            }
-                            else
-                            {
-                                dtoNCC.LOHANG = "TONDAU";
-                            }
-
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
@@ -584,7 +575,7 @@ namespace WindowsFormsApplication1
 
                                 if (sID != "")
                                 {
-                                    update_HoadonChitiet(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["DONGIA"].ToString()), dtr["GIANHAP"].ToString(), dtr["TIENTRA"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString());
+                                    update_HoadonChitiet(txtMaHD.Text, dtr["_LOHANG"].ToString(), Convert.ToInt32(sID), dtr["MAMH"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["DONGIA"].ToString()), dtr["GIANHAP"].ToString(), dtr["TIENTRA"].ToString(), dtr["HSD"].ToString(), dtr["KMAI"].ToString());
                                 }
                                 else
                                 {
@@ -684,11 +675,12 @@ namespace WindowsFormsApplication1
             catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu" + ex.ToString(), "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
         }
-        public void update_HoadonChitiet(string mahdn, int ID, String mamh, Double SoLuong, int DonGia, string GIANHAP, string TIENTRA, string HSD, String KMAI)
+        public void update_HoadonChitiet(string mahdn, string lohang, int ID, String mamh, Double SoLuong, int DonGia, string GIANHAP, string TIENTRA, string HSD, String KMAI)
         {
             try
             {
                 dtoNCC.MAHDN = mahdn;
+                dtoNCC.LOHANG = lohang;
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGNHAP = SoLuong;
                 dtoNCC.GIATRANHAP = DonGia;

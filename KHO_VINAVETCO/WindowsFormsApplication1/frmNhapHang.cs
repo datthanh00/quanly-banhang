@@ -521,7 +521,6 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                     
                         PublicVariable.SQL_NHAP = "";
                         dtoNCC.MANCC = txtMANCC.Text;
                         dtoNCC.TENNCC = cboTenNCC.Text;
@@ -633,16 +632,7 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("Vui lòng thử lưu lại");
                                 return;
                             }
-                            if (PublicVariable.isHSD)
-                            {
-                                dtoNCC.LOHANG = txtlohang.Text;
-                                txtlohang.Text = txtMaHD.Text;
-                            }
-                            else
-                            {
-                                dtoNCC.LOHANG = "TONDAU";
-                                txtlohang.Text = "1";
-                            }
+                            
                             for (int i = 0; i < rowcount; i++)
                             {
 
@@ -678,7 +668,7 @@ namespace WindowsFormsApplication1
 
                                 if (sID != "")
                                 {
-                                    update_HoadonChitiet(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["TIENTRA"].ToString(), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());
+                                    update_HoadonChitiet(txtMaHD.Text, txtlohang.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["TIENTRA"].ToString(), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());
                                 }
                                 else
                                 {
@@ -771,7 +761,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    dtoNCC.LOHANG = "TONDAU";
+                    dtoNCC.LOHANG = PublicVariable.LOHANG;
                 }
 
                 dtoNCC.SOLUONGNHAP = SoLuong;
@@ -791,10 +781,12 @@ namespace WindowsFormsApplication1
             catch (SqlException ex) { MessageBox.Show("Có lỗi sảy ra tại hệ thống cơ sở dữ liệu"+ex.ToString(), "error", MessageBoxButtons.OK, MessageBoxIcon.Information); }
             finally { }
         }
-        public void update_HoadonChitiet(string mahdn, int ID, String mamh, Double SoLuong, int DonGia, string TIENTRA, string HSD, String _KMAI)
+        public void update_HoadonChitiet(string mahdn,string lohang, int ID, String mamh, Double SoLuong, int DonGia, string TIENTRA, string HSD, String _KMAI)
         {
             try
             {
+               
+
                 dtoNCC.MAHDN = mahdn;
                 dtoNCC.KMAI = _KMAI;
                 dtoNCC.TIENTRA = TIENTRA;
@@ -804,8 +796,9 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    dtoNCC.LOHANG = "TONDAU";
+                    dtoNCC.LOHANG = PublicVariable.LOHANG;
                 }
+
                 if (HSD.Length > 5)
                 {
                     dtoNCC.HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
@@ -814,7 +807,7 @@ namespace WindowsFormsApplication1
                 {
                     dtoNCC.HSD = "";
                 }
-                
+
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGNHAP = SoLuong;
                 dtoNCC.GIANHAP = DonGia;

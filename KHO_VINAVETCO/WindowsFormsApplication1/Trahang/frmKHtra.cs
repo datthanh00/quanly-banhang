@@ -378,16 +378,7 @@ namespace WindowsFormsApplication1.KHtra
                                 MessageBox.Show("Vui lòng thử lưu lại");
                                 return;
                             }
-                            if (PublicVariable.isHSD)
-                            {
-                                dtoNCC.LOHANG = txtlohang.Text;
-                                txtlohang.Text = txtMaHD.Text;
-                            }
-                            else
-                            {
-                                dtoNCC.LOHANG = "TONDAU";
-                                txtlohang.Text = "1";
-                            }
+                      
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
@@ -507,14 +498,16 @@ namespace WindowsFormsApplication1.KHtra
                 {
                     dtoNCC.ID = Convert.ToInt32(dt.Rows[0][0].ToString()) + 1 + STT;
                 }
+
                 if (PublicVariable.isHSD)
                 {
                     dtoNCC.LOHANG = txtlohang.Text;
                 }
                 else
                 {
-                    dtoNCC.LOHANG = "TONDAU";
+                    dtoNCC.LOHANG = PublicVariable.LOHANG;
                 }
+
                 ctlNCC.INSERTtraCTHOADONXUAT(dtoNCC);
       
                 //ctlNCC.INSERTCTHOADONXUAT(dtoNCC);
@@ -530,7 +523,15 @@ namespace WindowsFormsApplication1.KHtra
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGXUAT = SoLuong;
                 dtoNCC.GIATIEN = DonGia;
-                dtoNCC.LOHANG = LOHANG;
+
+                if (PublicVariable.isHSD)
+                {
+                    dtoNCC.LOHANG = txtlohang.Text;
+                }
+                else
+                {
+                    dtoNCC.LOHANG = PublicVariable.LOHANG;
+                }
                 dtoNCC.GIABAN = DonGia.ToString();
                 HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
                 dtoNCC.HSD = HSD;
