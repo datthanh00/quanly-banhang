@@ -414,6 +414,27 @@ namespace WindowsFormsApplication1.KHtra
                                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
                                 String sID = dtr["ID"].ToString();
 
+                                DataTable dtslconlai = ctlNCC.GETDATA("select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "'  AND LOHANG ='" + dtr["LOHANG"].ToString() + "'");
+                                if (dtslconlai.Rows.Count > 0)
+                                {
+                                    Double soluongconlai = Convert.ToDouble(dtslconlai.Rows[0][0].ToString());
+                                    DataTable dttraxuattruoc = ctlNCC.GETDATA("select SOLUONGXUAT + KMAI AS SOLUONGXUAT from TRACHITIETHDX where MAMH='" + dtr["MAMH"].ToString() + "' AND MAHDX='" + txtMaHD.Text + "' AND LOHANG ='" + dtoNCC.LOHANG + "'");
+                                    Double soluongtraxuatcu = Convert.ToDouble(dttraxuattruoc.Rows[0][0].ToString());
+                                    Double soluongtraxuatmoi = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
+                                    if ((soluongtraxuatcu - soluongconlai) > soluongtraxuatmoi || soluongtraxuatmoi < 0)
+                                    {
+                                        if (PublicVariable.isHSD)
+                                        {
+                                            MessageBox.Show("Số lượng + KM của mặt hàng: " + dtr["MAMH"].ToString() + " lô hàng: " + dtoNCC.LOHANG + " không thể nhỏ hơn " + (soluongtraxuatcu - soluongconlai) + " vì bạn đã xuất hoặc trả NCC");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Số lượng + KM của mặt hàng: " + dtr["MAMH"].ToString() + " không thể nhỏ hơn " + (soluongtraxuatcu - soluongconlai) + " vì bạn đã xuất hoặc trả NCC");
+                                        }
+                                        return;
+                                    }
+                                }
+
                                 if (sID != "")
                                 {
                                     update_HoadonChitietxuat(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), dtr["LOHANG"].ToString(), Convert.ToDouble(dtr["SOLUONG"].ToString()), Convert.ToInt32(dtr["DONGIA"].ToString()), Convert.ToInt32(dtr["TIENTHU"].ToString()), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());

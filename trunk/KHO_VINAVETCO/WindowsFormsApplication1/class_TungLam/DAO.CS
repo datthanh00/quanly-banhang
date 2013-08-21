@@ -1163,15 +1163,16 @@ namespace WindowsFormsApplication1
         }
         public void UPDATEtraCTHOADONNHAP(DTO dto)
         {
+            string SQL = "SELECT SOLUONGNHAP + KMAI AS SOLUONGNHAP, KMAI FROM TRACHITIETHDN WHERE MAHDN='" + dto.MAHDN + "' AND MAMH='" + dto.MAMH + "'";
+            DataTable dt = getdata(SQL);
             PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + " \r\nGO\r\n update TRACHITIETHDN SET  SOLUONGNHAP=" + dto.SOLUONGNHAP.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIANHAP=" + dto.GIANHAP + ", GIATRANHAP=" + dto.GIATRANHAP + ", TIENTRANHAPTT=" + dto.TIENTRA + ", HSD='" + dto.HSD + "' WHERE MAMH='" + dto.MAMH + "' AND MAHDN='" + dto.MAHDN + "' AND LOHANG='" + dto.LOHANG + "' ";
 
             //////////// BEGIN  UPDATE MATHANG/////////////
-            string SQL = "SELECT SOLUONGNHAP,KMAI FROM TRACHITIETHDN WHERE MAHDN='" + dto.MAHDN + "' AND MAMH='" + dto.MAMH + "'";
-            DataTable dt = getdata(SQL);
+            
             Double SOLUONGTRANHAPCU = 0;
             if (dt.Rows.Count > 0)
             {
-                SOLUONGTRANHAPCU = (Double)Convert.ToDouble(dt.Rows[0][0].ToString()) + (Double)Convert.ToDouble(dt.Rows[0][1].ToString());
+                SOLUONGTRANHAPCU = (Double)Convert.ToDouble(dt.Rows[0][0].ToString()) ;
             }
             if ((SOLUONGTRANHAPCU- (Convert.ToDouble(dto.SOLUONGNHAP.ToString()) - Convert.ToDouble(dto.KMAI.ToString()))) != 0)
             {
@@ -1187,16 +1188,17 @@ namespace WindowsFormsApplication1
 
         public void UPDATECTHOADONNHAP(DTO dto)
         {
+            string SQL = "SELECT SOLUONGNHAP + KMAI AS SOLUONGNHAP, KMAI  FROM CHITIETHDN WHERE MAHDN='" + dto.MAHDN + "' AND MAMH='" + dto.MAMH + "' AND LOHANG='" + dto.LOHANG + "'";
+            DataTable dt = getdata(SQL);
 
             PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n update CHITIETHDN SET  SOLUONGNHAP=" + dto.SOLUONGNHAP.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIANHAP=" + dto.GIANHAP + ",TIENNHAPTT=" + dto.TIENTRA + ", HSD='" + dto.HSD + "' WHERE MAMH='" + dto.MAMH + "' AND MAHDN='" + dto.MAHDN + "' AND LOHANG='" + dto.LOHANG + "' ";
            
             //////////// BEGIN  UPDATE MATHANG/////////////
-            string SQL = "SELECT SOLUONGNHAP,KMAI FROM CHITIETHDN WHERE MAHDN='" + dto.MAHDN + "' AND MAMH='" + dto.MAMH + "' AND LOHANG='" + dto.LOHANG + "'";
-            DataTable dt = getdata(SQL);
+            
             Double SOLUONGNHAPCU = 0;
             if (dt.Rows.Count > 0)
             {
-                SOLUONGNHAPCU = (Double)Convert.ToDouble(dt.Rows[0][0].ToString()) + (Double)Convert.ToDouble(dt.Rows[0][1].ToString());
+                SOLUONGNHAPCU = (Double)Convert.ToDouble(dt.Rows[0][0].ToString()) ;
             }
 
             if ((SOLUONGNHAPCU - Convert.ToDouble(dto.SOLUONGNHAP.ToString()) - Convert.ToDouble(dto.KMAI.ToString())) != 0)
@@ -1209,7 +1211,7 @@ namespace WindowsFormsApplication1
 
             //////////// BEGIN  INSERT KHOHANG/////////////
 
-            PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n UPDATE KHOHANG SET TONKHO =" + dto.KMAI.ToString() + " + " + dto.SOLUONGNHAP.ToString() + ", GIAMUA=" + dto.GIANHAP + ",HSD='" + dto.HSD + "'  WHERE MAMH='" + dto.MAMH + "' AND LOHANG='" + dto.LOHANG + "'";
+            PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n UPDATE KHOHANG SET TONKHO =TONKHO - " + SOLUONGNHAPCU + "+" + dto.KMAI.ToString() + " + " + dto.SOLUONGNHAP.ToString() + ", GIAMUA=" + dto.GIANHAP + ",HSD='" + dto.HSD + "'  WHERE MAMH='" + dto.MAMH + "' AND LOHANG='" + dto.LOHANG + "'";
          
             //////////  END INSERT KHOHANG //////////
 
@@ -1456,15 +1458,16 @@ namespace WindowsFormsApplication1
         }
         public void UPDATECTHOADONXUAT(DTO dto)
         {
+            string SQL = "SELECT SOLUONGXUAT + KMAI AS SOLUONGXUAT, KMAI FROM CHITIETHDX WHERE MAHDX='" + dto.MAHDX + "' AND MAMH='" + dto.MAMH + "'";
+            DataTable dt = getdata(SQL);
             PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n update CHITIETHDX SET  SOLUONGXUAT=" + dto.SOLUONGXUAT.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIABAN=" + dto.GIABAN + ", TIENTHU=" + dto.TIENTHU + ", GIANHAP=" + dto.GIANHAP + ", HSD='" + dto.HSD + "' WHERE MAMH='" + dto.MAMH + "' AND MAHDX='" + dto.MAHDX + "' AND LOHANG='" + dto.LOHANG + "' ";
 
             //////////// BEGIN  UPDATE MATHANG/////////////
-            string SQL = "SELECT SOLUONGXUAT,KMAI FROM CHITIETHDX WHERE MAHDX='" + dto.MAHDX + "' AND MAMH='" + dto.MAMH + "'";
-            DataTable dt = getdata(SQL);
+            
             Double SOLUONGXUATCU = 0;
             if (dt.Rows.Count > 0)
             {
-                SOLUONGXUATCU = (Double)Convert.ToDouble(dt.Rows[0][0].ToString()) + (Double)Convert.ToDouble(dt.Rows[0][1].ToString());
+                SOLUONGXUATCU = (Double)Convert.ToDouble(dt.Rows[0][0].ToString()) ;
             }
             if ((SOLUONGXUATCU - Convert.ToDouble(dto.SOLUONGXUAT.ToString()) - Convert.ToDouble(dto.KMAI.ToString())) != 0)
             {
@@ -1479,15 +1482,16 @@ namespace WindowsFormsApplication1
         }
         public void UPDATEtraCTHOADONXUAT(DTO dto)
         {
+            string SQL = "SELECT SOLUONGXUAT + KMAI AS SOLUONGXUAT, KMAI FROM TRACHITIETHDX WHERE MAHDX='" + dto.MAHDX + "' AND MAMH='" + dto.MAMH + "' ";
+            DataTable dt = getdata(SQL);
             PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n update TRACHITIETHDX SET  SOLUONGXUAT=" + dto.SOLUONGXUAT.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIABAN=" + dto.GIABAN + ", TIENTHU=" + dto.TIENTHU + ", GIANHAP=" + dto.GIANHAP + ", HSD='" + dto.HSD + "' WHERE MAMH='" + dto.MAMH + "' AND MAHDX='" + dto.MAHDX + "'  AND LOHANG='" + dto.LOHANG + "' ";
 
             //////////// BEGIN  UPDATE MATHANG/////////////
-            string SQL = "SELECT SOLUONGXUAT,KMAI FROM TRACHITIETHDX WHERE MAHDX='" + dto.MAHDX + "' AND MAMH='" + dto.MAMH + "' ";
-            DataTable dt = getdata(SQL);
+            
             Double SOLUONGTRAXUATCU = 0;
             if (dt.Rows.Count > 0)
             {
-                SOLUONGTRAXUATCU = (Double)Convert.ToDouble(dt.Rows[0][0].ToString()) + (Double)Convert.ToDouble(dt.Rows[0][1].ToString());
+                SOLUONGTRAXUATCU = (Double)Convert.ToDouble(dt.Rows[0][0].ToString()) ;
             }
             if ((SOLUONGTRAXUATCU -  Convert.ToDouble(dto.SOLUONGXUAT.ToString()) -  Convert.ToDouble(dto.KMAI.ToString())) != 0)
             {

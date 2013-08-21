@@ -584,7 +584,8 @@ namespace WindowsFormsApplication1
                             else
                             {
                                 Double soluong = Convert.ToDouble(dtr["SOLUONG"].ToString());
-                                if (soluong <= 0)
+                                Double slkmai = Convert.ToDouble(dtr["KMAI"].ToString());
+                                if (soluong + slkmai <= 0)
                                 {
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Số lượng quá ít ");
                                     return;
@@ -658,6 +659,15 @@ namespace WindowsFormsApplication1
                             dtoNCC.IsUPDATE = true;
                             dtoNCC.IDNHAP = IDNHAP;
                             ctlNCC.UPDATEHOADONNHAP(dtoNCC);
+
+                            if (PublicVariable.isHSD)
+                            {
+                                dtoNCC.LOHANG = txtlohang.Text;
+                            }
+                            else
+                            {
+                                dtoNCC.LOHANG = PublicVariable.LOHANG;
+                            }
                             //update hoa don chi tiet
                             int MAXID = Convert.ToInt32(ctlNCC.getmaxidNHAP(txtMaHD.Text));
                             for (int i = 0; i < rowcount; i++)
@@ -665,6 +675,29 @@ namespace WindowsFormsApplication1
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
 
                                 String sID =  dtr["ID"].ToString();
+
+
+
+                                DataTable dtslconlai = ctlNCC.GETDATA("select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "'  AND LOHANG ='" + dtoNCC.LOHANG + "'");
+                                if (dtslconlai.Rows.Count > 0)
+                                {
+                                    Double soluongconlai = Convert.ToDouble(dtslconlai.Rows[0][0].ToString());
+                                    DataTable dtnhaptruoc = ctlNCC.GETDATA("select SOLUONGNHAP+ KMAI AS SOLUONGNHAP from CHITIETHDN where MAMH='" + dtr["MAMH"].ToString() + "' AND MAHDN='" + txtMaHD.Text + "' AND LOHANG ='" + dtoNCC.LOHANG + "'");
+                                    Double soluongnhapcu = Convert.ToDouble(dtnhaptruoc.Rows[0][0].ToString());
+                                    Double soluongnhapmoi = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
+                                    if ((soluongnhapcu - soluongconlai) > soluongnhapmoi || soluongnhapmoi<0)
+                                    {
+                                        if (PublicVariable.isHSD)
+                                        {
+                                            MessageBox.Show("Số lượng + KM của mặt hàng: " + dtr["MAMH"].ToString() + " lô hàng: " + dtoNCC.LOHANG + " không thể nhỏ hơn " + (soluongnhapcu - soluongconlai) + " vì bạn đã xuất hoặc trả NCC");
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Số lượng + KM của mặt hàng: " + dtr["MAMH"].ToString() + " không thể nhỏ hơn " + (soluongnhapcu - soluongconlai) + " vì bạn đã xuất hoặc trả NCC");
+                                        }
+                                        return;
+                                    }
+                                }
 
                                 if (sID != "")
                                 {
@@ -916,18 +949,13 @@ namespace WindowsFormsApplication1
 
 
         private void gridCTHOADON_CellValuedChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            //MessageBox.Show("Cell value Changed");
-            
+        {          
             DataRow dtr= gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
-
                 if(dtr!=null)
                 if (dtr["TENMH"].ToString() != "")
                 {
                     if (e.Column.FieldName.ToString() == "TENMH")
                     {
-                        //
-
                         DataTable dtmh = ctlNCC.GETMATHANG_MUA(dtr["TENMH"].ToString());
                         string mamh = dtmh.Rows[0]["MAMH"].ToString();
                         for (int i = 0; i < gridCTHOADON.DataRowCount; i++)
