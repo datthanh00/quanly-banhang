@@ -459,35 +459,39 @@ namespace WindowsFormsApplication1
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
-                                Double soluongtra = 0;
-                                Double soluongnhap = 0;
+                                Double soluongtraNHAP = 0;
+                                Double soluongTON = 0;
 
-
-                                for (int k = i; k < rowcount; k++)
-                                {
-                                    DataRow dtr2 = gridCTHOADON.GetDataRow(k);
-                                    if (dtr["MAMH"].ToString() == dtr2["MAMH"].ToString())
-                                    {
-                                        soluongtra = soluongtra + Convert.ToDouble(dtr2["SOLUONG"].ToString()) + Convert.ToDouble(dtr2["KMAI"].ToString());
-                                    }
-                                }
-                                // string lohang = gridCTHOADON.GetFocusedRowCellValue("LOHANG").ToString();
+                                soluongtraNHAP = soluongtraNHAP + Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
                                 String SQL = "Select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["_LOHANG"].ToString() + "'";
                                 DataTable dt = ctlNCC.GETDATA(SQL);
 
                                 if (dt.Rows.Count > 0)
                                 {
-                                    soluongnhap = Convert.ToDouble(dt.Rows[0][0].ToString());
-                                }
-                                if (soluongtra > soluongnhap)
-                                {
-                                    MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không thể nhiều hơn số lượng tồn");
-                                    return;
-                                }
+                                    soluongTON = Convert.ToDouble(dt.Rows[0][0].ToString());
 
-                                if (Convert.ToDouble(dtr["SOLUONG"].ToString()) <= 0)
+                                    if (soluongtraNHAP > soluongTON)
+                                    {
+                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không thể nhiều hơn số lượng tồn");
+                                        return;
+                                    }
+
+                                    if (Convert.ToDouble(dtr["SOLUONG"].ToString()) <= 0 && Convert.ToDouble(dtr["KMAI"].ToString()) <= 0)
+                                    {
+                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không được <=0");
+                                        return;
+                                    }
+                                }
+                                else
                                 {
-                                    MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không được <=0");
+                                    if (PublicVariable.isHSD)
+                                    {
+                                        MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " với lô hàng " + dtr["_LOHANG"].ToString() + " trong kho");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " trong kho");
+                                    }
                                     return;
                                 }
                             }
@@ -532,37 +536,37 @@ namespace WindowsFormsApplication1
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
-                                Double soluongtra = 0;
-                                Double soluongnhap = 0;
-
-
-                                for (int k = i; k < rowcount; k++)
-                                {
-                                    DataRow dtr2 = gridCTHOADON.GetDataRow(k);
-                                    if (dtr["MAMH"].ToString() == dtr2["MAMH"].ToString())
-                                    {
-                                        soluongtra = soluongtra + Convert.ToDouble(dtr2["SOLUONG"].ToString()) + Convert.ToDouble(dtr2["KMAI"].ToString());
-                                    }
-                                }
-                                // string lohang = gridCTHOADON.GetFocusedRowCellValue("LOHANG").ToString();
-                               // String SQL = "Select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["_LOHANG"].ToString() + "'";
-                                string SQL = "select TONKHO+SOLUONGXUAT+KMAI AS TONKHO from KHOHANG,CHITIETHDX where KHOHANG.MAMH='" + dtr["MAMH"].ToString() + "' AND KHOHANG.LOHANG='" + dtr["_LOHANG"].ToString() + "' AND KHOHANG.MAMH=CHITIETHDX.MAMH";
-                               
+                                Double soluongtraNHAP = 0;
+                                Double soluongTONKHO = 0;
+                                soluongtraNHAP = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
+                                string SQL = "select TONKHO+SOLUONGNHAP+KMAI AS TONKHO from KHOHANG,TRACHITIETHDN where KHOHANG.MAMH='" + dtr["MAMH"].ToString() + "' AND KHOHANG.LOHANG='" + dtr["_LOHANG"].ToString() + "' AND KHOHANG.MAMH=TRACHITIETHDN.MAMH AND  TRACHITIETHDN.MAHDN='"+txtMaHD.Text+"'";
                                 DataTable dt = ctlNCC.GETDATA(SQL);
-
                                 if (dt.Rows.Count > 0)
                                 {
-                                    soluongnhap = Convert.ToDouble(dt.Rows[0][0].ToString());
-                                }
-                                if (soluongtra > soluongnhap)
-                                {
-                                    MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không thể nhiều hơn số lượng tồn");
-                                    return;
-                                }
+                                    soluongTONKHO = Convert.ToDouble(dt.Rows[0][0].ToString());
 
-                                if (Convert.ToDouble(dtr["SOLUONG"].ToString()) <= 0)
+                                    if (soluongtraNHAP > soluongTONKHO)
+                                    {
+                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không thể nhiều hơn số lượng tồn");
+                                        return;
+                                    }
+
+                                    if (Convert.ToDouble(dtr["SOLUONG"].ToString()) <= 0 && Convert.ToDouble(dtr["KMAI"].ToString()) <= 0)
+                                    {
+                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không được <=0");
+                                        return;
+                                    }
+                                } 
+                                else
                                 {
-                                    MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không được <=0");
+                                    if (PublicVariable.isHSD)
+                                    {
+                                        MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " với lô hàng " + dtr["_LOHANG"].ToString() + " trong kho");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " trong kho");
+                                    }
                                     return;
                                 }
                             }

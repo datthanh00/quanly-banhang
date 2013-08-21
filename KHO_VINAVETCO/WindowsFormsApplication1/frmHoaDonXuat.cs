@@ -259,7 +259,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     }
                     else
                     {
-                      
                         PublicVariable.SQL_XUAT = "";
                         dtoNCC.MAKH = txtmakh.Text;
                         dtoNCC.TENKH = cboTenKH.Text;
@@ -295,15 +294,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
                             }
-
-                           
-                            
-                            
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
-
-                               
                                 string SQL = "select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["_LOHANG"].ToString() + "'";
                                 DataTable dt = ctlNCC.GETDATA(SQL);
 
@@ -377,9 +370,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
-
-
-                                string SQL = "select TONKHO+SOLUONGXUAT+KMAI AS TONKHO from KHOHANG,CHITIETHDX where KHOHANG.MAMH='" + dtr["MAMH"].ToString() + "' AND KHOHANG.LOHANG='" + dtr["_LOHANG"].ToString() + "' AND KHOHANG.MAMH=CHITIETHDX.MAMH";
+                                string SQL = "select TONKHO+SOLUONGXUAT+KMAI AS TONKHO from KHOHANG,CHITIETHDX where KHOHANG.MAMH='" + dtr["MAMH"].ToString() + "' AND KHOHANG.LOHANG='" + dtr["_LOHANG"].ToString() + "' AND KHOHANG.MAMH=CHITIETHDX.MAMH AND CHITIETHDX.MAHDX='"+txtMaHD.Text+"'";
                                 DataTable dt = ctlNCC.GETDATA(SQL);
 
                                 if (dt.Rows.Count > 0)
@@ -399,7 +390,14 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 }
                                 else
                                 {
-                                    System.Windows.Forms.MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " trong kho");
+                                    if (PublicVariable.isHSD)
+                                    {
+                                        MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " với lô hàng " + dtr["_LOHANG"].ToString() + " trong kho");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " trong kho");
+                                    }
                                     return;
                                 }
                             }
@@ -969,7 +967,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 {
                     if (XOA == "False")
                     {
-                        MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                        MessageBox.Show("KHÔNG CÓ QUYỀN XÓA ");
                         return;
                     }
                     if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)

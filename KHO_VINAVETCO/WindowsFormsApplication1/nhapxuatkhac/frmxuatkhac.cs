@@ -297,10 +297,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             return;
                         }
 
-                       
-
-                            
-             
                         if (isnhap)
                         {
                             if (THEM == "False")
@@ -321,7 +317,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 if (dt.Rows.Count > 0)
                                 {
                                     Double slton = Convert.ToDouble(dt.Rows[0]["TONKHO"].ToString());
-                                    Double SOLUONG=Convert.ToDouble(dtr["SOLUONG"].ToString());
+                                    Double SOLUONG = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
                                     if (SOLUONG<=0)
                                     {
                                         System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " KHÔNG THỂ XUẤT <=0");
@@ -358,13 +354,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             {
                                 ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
                                 PublicVariable.SQL_XUAT = "";
-                            }
-                            catch
-                            {
+                            }catch{
                                 MessageBox.Show("Vui lòng thử lưu lại");
                                 return;
                             }
                             
+                            //insert hoa don chi tiet
 
                             for (int i = 0; i < rowcount; i++)
                             {
@@ -387,6 +382,41 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             dtoNCC.IsUPDATE = true;
                             dtoNCC.IDNHAP = IDNHAP;
                             ctlNCC.UPDATEHOADONXUAT(dtoNCC);
+
+                            for (int i = 0; i < rowcount; i++)
+                            {
+                                DataRow dtr = gridCTHOADON.GetDataRow(i);
+                                string SQL = "select TONKHO+SOLUONGXUAT+KMAI AS TONKHO from KHOHANG,CHITIETHDX where KHOHANG.MAMH='" + dtr["MAMH"].ToString() + "' AND KHOHANG.LOHANG='" + dtr["_LOHANG"].ToString() + "' AND KHOHANG.MAMH=CHITIETHDX.MAMH AND CHITIETHDX.MAHDX='" + txtMaHD.Text + "'";
+                                DataTable dt = ctlNCC.GETDATA(SQL);
+
+                                if (dt.Rows.Count > 0)
+                                {
+                                    Double slton = Convert.ToDouble(dt.Rows[0]["TONKHO"].ToString());
+                                    Double SOLUONG = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
+                                    if (SOLUONG <= 0)
+                                    {
+                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " KHÔNG THỂ XUẤT <=0");
+                                        return;
+                                    }
+                                    if (slton < SOLUONG)
+                                    {
+                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Không đủ số lượng để xuất");
+                                        return;
+                                    }
+                                }
+                                else
+                                {
+                                    if (PublicVariable.isHSD)
+                                    {
+                                        MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " với lô hàng " + dtr["_LOHANG"].ToString() + " trong kho");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " trong kho");
+                                    }
+                                    return;
+                                }
+                            }
                             int MAXID = Convert.ToInt32(ctlNCC.getmaxidXUAT(txtMaHD.Text));
                             for (int i = 0; i < rowcount; i++)
                             {
@@ -604,7 +634,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             txtthanhtien.Text = "0";
             txtNo.Text = "0";
             txtconLai.Text = "0";
-            txtthanhtien.Text = "";
+            txtthanhtien.Text = "0";
             mahdtam = "";
             btLuu.Enabled = true;
             cboTenKH.Enabled = true;
@@ -918,14 +948,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            PublicVariable.SQL_XUAT = "";
             if (gridCTHOADON.FocusedRowHandle < 0)
             {
                 return;
             }
-            PublicVariable.SQL_XUAT = "";
-
             int focusrow = gridCTHOADON.FocusedRowHandle;
-            DataRow dtr = dtr = gridCTHOADON.GetDataRow(focusrow);
+            DataRow dtr = gridCTHOADON.GetDataRow(focusrow);
             if (dtr != null)
             {
                 String sID = "";
