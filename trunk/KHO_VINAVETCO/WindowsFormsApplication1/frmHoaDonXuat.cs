@@ -489,8 +489,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 {
                     dtoNCC.HSD = "";
                 }
-      
-
                 dtoNCC.KMAI = _KMAI;
                 string SQL = "SELECT MAX(ID) FROM CHITIETHDX WHERE MAHDX='" + mahdx + "'";
                 DataTable dt = ctlNCC.GETDATA(SQL);

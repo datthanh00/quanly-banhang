@@ -653,16 +653,7 @@ namespace WindowsFormsApplication1
                                 return;
                             }
 
-                            if (PublicVariable.isHSD)
-                            {
-                                dtoNCC.LOHANG = txtlohang.Text;
-                                txtlohang.Text = txtMaHD.Text;
-                            }
-                            else
-                            {
-                                dtoNCC.LOHANG = "TONDAU";
-                                txtlohang.Text = "1";
-                            }
+                      
                             for (int i = 0; i < rowcount; i++)
                             {
 
@@ -790,7 +781,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    dtoNCC.LOHANG = "TONDAU";
+                    dtoNCC.LOHANG = PublicVariable.LOHANG;
                 }
 
                 dtoNCC.SOLUONGNHAP = SoLuong;
@@ -823,7 +814,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                 {
-                    dtoNCC.LOHANG = "TONDAU";
+                    dtoNCC.LOHANG = PublicVariable.LOHANG;
                 }
                 if (HSD.Length > 5)
                 {

@@ -247,7 +247,7 @@ namespace WindowsFormsApplication1
                             DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
                             DTO.GIAMUA= txtgiamua.Text;
-                            DTO.LOHANG = "TONDAU";
+                            DTO.LOHANG = PublicVariable.LOHANG;
                           
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
