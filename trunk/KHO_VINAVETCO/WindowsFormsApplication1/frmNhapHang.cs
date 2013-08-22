@@ -676,8 +676,6 @@ namespace WindowsFormsApplication1
 
                                 String sID =  dtr["ID"].ToString();
 
-
-
                                 DataTable dtslconlai = ctlNCC.GETDATA("select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "'  AND LOHANG ='" + dtoNCC.LOHANG + "'");
                                 if (dtslconlai.Rows.Count > 0)
                                 {
@@ -1035,10 +1033,6 @@ namespace WindowsFormsApplication1
                     }
                     
                 }
-                
-
-            //"MAMH"));
-           // dt.Columns.Add(new DataColumn("TENMH"));
         }
 
         private void gridCTHOADON_RowcountChanged(object sender, EventArgs e)
@@ -1136,9 +1130,6 @@ namespace WindowsFormsApplication1
                     view.FocusedRowHandle = hitInfo.RowHandle;
                     contextMenuStrip1.Show(view.GridControl, e.Point);
                 }
-
-               
-            //}
         }
         private void gridView4_ShowGridMenu(object sender, GridMenuEventArgs e)
         {
@@ -1190,13 +1181,19 @@ namespace WindowsFormsApplication1
                         return;
                     }
 
-
                     String SQL = "Select TONKHO from KHOHANG where mamh='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "'";
                     DataTable dt = ctlNCC.GETDATA(SQL);
                     Double SOLUONGXUATHT = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
                     if (SOLUONGXUATHT > Convert.ToDouble(dt.Rows[0]["TONKHO"].ToString()))
                     {
-                        MessageBox.Show("Mặt hàng trong Lô Hàng này đã Xuất nên không thể xóa  ");
+                        if (PublicVariable.isHSD)
+                        {
+                            MessageBox.Show("Mặt hàng trong Lô Hàng này đã Xuất nên không thể xóa");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Mặt hàng trong Trong đợt nhập hàng này đã Xuất nên không thể xóa");
+                        }
                         return;
                     }
                     PublicVariable.TMPtring = "";
