@@ -177,6 +177,7 @@
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn54 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn45 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn53 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -1748,6 +1749,7 @@
             this.gridColumn29,
             this.gridColumn30,
             this.gridColumn31,
+            this.gridColumn54,
             this.gridColumn45,
             this.gridColumn53,
             this.gridColumn32,
@@ -1832,6 +1834,14 @@
             this.gridColumn31.VisibleIndex = 1;
             this.gridColumn31.Width = 125;
             // 
+            // gridColumn54
+            // 
+            this.gridColumn54.Caption = "Lô Hàng";
+            this.gridColumn54.FieldName = "LOHANG";
+            this.gridColumn54.Name = "gridColumn54";
+            this.gridColumn54.Visible = true;
+            this.gridColumn54.VisibleIndex = 2;
+            // 
             // gridColumn45
             // 
             this.gridColumn45.Caption = "Nhà Cung Cấp";
@@ -1844,7 +1854,7 @@
             this.gridColumn53.FieldName = "HSD";
             this.gridColumn53.Name = "gridColumn53";
             this.gridColumn53.Visible = true;
-            this.gridColumn53.VisibleIndex = 2;
+            this.gridColumn53.VisibleIndex = 3;
             this.gridColumn53.Width = 110;
             // 
             // gridColumn32
@@ -1858,7 +1868,7 @@
             this.gridColumn32.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn32.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 3;
+            this.gridColumn32.VisibleIndex = 4;
             this.gridColumn32.Width = 111;
             // 
             // gridColumn47
@@ -1871,7 +1881,7 @@
             this.gridColumn47.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn47.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn47.Visible = true;
-            this.gridColumn47.VisibleIndex = 5;
+            this.gridColumn47.VisibleIndex = 6;
             this.gridColumn47.Width = 124;
             // 
             // gridColumn33
@@ -1883,7 +1893,7 @@
             this.gridColumn33.Name = "gridColumn33";
             this.gridColumn33.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 6;
+            this.gridColumn33.VisibleIndex = 7;
             this.gridColumn33.Width = 124;
             // 
             // gridColumn52
@@ -1896,7 +1906,7 @@
             this.gridColumn52.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn52.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn52.Visible = true;
-            this.gridColumn52.VisibleIndex = 4;
+            this.gridColumn52.VisibleIndex = 5;
             this.gridColumn52.Width = 124;
             // 
             // gridColumn44
@@ -1909,7 +1919,7 @@
             this.gridColumn44.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn44.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn44.Visible = true;
-            this.gridColumn44.VisibleIndex = 7;
+            this.gridColumn44.VisibleIndex = 8;
             this.gridColumn44.Width = 124;
             // 
             // gridColumn43
@@ -1929,7 +1939,7 @@
             this.gridColumn18.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn18.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 8;
+            this.gridColumn18.VisibleIndex = 9;
             this.gridColumn18.Width = 139;
             // 
             // contextMenuStrip2
@@ -2283,6 +2293,7 @@
         private DevExpress.XtraEditors.CalcEdit txtthanhtien;
         private DevExpress.XtraEditors.CalcEdit txtNo;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn53;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn54;
     }
     
 }

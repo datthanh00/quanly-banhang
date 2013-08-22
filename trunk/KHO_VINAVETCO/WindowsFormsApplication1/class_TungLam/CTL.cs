@@ -546,18 +546,7 @@ namespace WindowsFormsApplication1
         {
             DAO.DELETECTHOADONXUAT(MAHDN, ID,MAMH,LOHANG,SOLUONG,KMAI);
         }
-        public void UPDATE_KHOHANG_NX(string MAMH, string LOHANG, string NHAP, string TRANHAP, string XUAT, string TRAXUAT)
-        {
-            DAO.UPDATE_KHOHANG_NX(MAMH, LOHANG, NHAP, TRANHAP, XUAT, TRAXUAT);
-        }
-        public void INSERT_KHOHANG(string MAMH, string LOHANG, string GIAMUA, string SOLUONGNHAP, string HSD)
-        {
-            DAO.INSERT_KHOHANG(MAMH, LOHANG, GIAMUA, SOLUONGNHAP, HSD);
-        }
-        public void DELETE_KHOHANG(string MAMH, string LOHANG)
-        {
-            DAO.DELETE_KHOHANG(MAMH, LOHANG);
-        }
+
         public void DELETEtraCTHOADONXUAT(string MAHDN, int ID, string MAMH, string LOHANG, string SOLUONG, string KMAI)
         {
             DAO.DELETEtraCTHOADONXUAT(MAHDN, ID, MAMH, LOHANG, SOLUONG, KMAI);
