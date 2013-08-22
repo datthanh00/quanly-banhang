@@ -86,6 +86,8 @@
             this.txtmakh = new DevExpress.XtraEditors.TextEdit();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtlohang = new System.Windows.Forms.TextBox();
+            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.txtthanhtien = new DevExpress.XtraEditors.CalcEdit();
             this.txtconLai = new DevExpress.XtraEditors.CalcEdit();
             this.txtNo = new DevExpress.XtraEditors.CalcEdit();
@@ -176,6 +178,7 @@
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn32 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn56 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn47 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -199,8 +202,6 @@
             this.xoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.txtlohang = new System.Windows.Forms.TextBox();
-            this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -883,6 +884,21 @@
             this.groupControl2.TabIndex = 0;
             this.groupControl2.Text = "Phiếu Khách Trả";
             // 
+            // txtlohang
+            // 
+            this.txtlohang.Location = new System.Drawing.Point(248, 114);
+            this.txtlohang.Name = "txtlohang";
+            this.txtlohang.Size = new System.Drawing.Size(100, 21);
+            this.txtlohang.TabIndex = 29;
+            // 
+            // labelControl15
+            // 
+            this.labelControl15.Location = new System.Drawing.Point(200, 117);
+            this.labelControl15.Name = "labelControl15";
+            this.labelControl15.Size = new System.Drawing.Size(39, 13);
+            this.labelControl15.TabIndex = 28;
+            this.labelControl15.Text = "Lô Hàng";
+            // 
             // txtthanhtien
             // 
             this.txtthanhtien.Location = new System.Drawing.Point(78, 84);
@@ -1245,7 +1261,7 @@
             this.gridColumn7.SummaryItem.FieldName = "_SoLuong";
             this.gridColumn7.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 3;
+            this.gridColumn7.VisibleIndex = 2;
             // 
             // gridColumn17
             // 
@@ -1254,7 +1270,7 @@
             this.gridColumn17.FieldName = "_HSD";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 2;
+            this.gridColumn17.VisibleIndex = 4;
             // 
             // repositoryItemDateEdit1
             // 
@@ -1290,7 +1306,7 @@
             this.gridColumn51.FieldName = "KMAI";
             this.gridColumn51.Name = "gridColumn51";
             this.gridColumn51.Visible = true;
-            this.gridColumn51.VisibleIndex = 4;
+            this.gridColumn51.VisibleIndex = 3;
             // 
             // gridColumn25
             // 
@@ -1722,6 +1738,7 @@
             this.gridColumn31,
             this.gridColumn32,
             this.gridColumn50,
+            this.gridColumn56,
             this.gridColumn33,
             this.gridColumn47,
             this.gridColumn34,
@@ -1807,6 +1824,14 @@
             this.gridColumn50.Visible = true;
             this.gridColumn50.VisibleIndex = 3;
             // 
+            // gridColumn56
+            // 
+            this.gridColumn56.Caption = "Hạn Dùng";
+            this.gridColumn56.FieldName = "HSD";
+            this.gridColumn56.Name = "gridColumn56";
+            this.gridColumn56.Visible = true;
+            this.gridColumn56.VisibleIndex = 4;
+            // 
             // gridColumn33
             // 
             this.gridColumn33.Caption = "Số Lượng Trả";
@@ -1817,7 +1842,7 @@
             this.gridColumn33.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn33.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 4;
+            this.gridColumn33.VisibleIndex = 5;
             // 
             // gridColumn47
             // 
@@ -1829,7 +1854,7 @@
             this.gridColumn47.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn47.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn47.Visible = true;
-            this.gridColumn47.VisibleIndex = 6;
+            this.gridColumn47.VisibleIndex = 7;
             // 
             // gridColumn34
             // 
@@ -1839,7 +1864,7 @@
             this.gridColumn34.FieldName = "GIATIEN";
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 7;
+            this.gridColumn34.VisibleIndex = 8;
             // 
             // gridColumn53
             // 
@@ -1851,7 +1876,7 @@
             this.gridColumn53.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn53.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn53.Visible = true;
-            this.gridColumn53.VisibleIndex = 5;
+            this.gridColumn53.VisibleIndex = 6;
             // 
             // gridColumn45
             // 
@@ -1863,7 +1888,7 @@
             this.gridColumn45.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn45.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn45.Visible = true;
-            this.gridColumn45.VisibleIndex = 8;
+            this.gridColumn45.VisibleIndex = 9;
             // 
             // gridColumn35
             // 
@@ -1887,7 +1912,7 @@
             this.gridColumn46.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn46.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn46.Visible = true;
-            this.gridColumn46.VisibleIndex = 9;
+            this.gridColumn46.VisibleIndex = 10;
             // 
             // gridViewPHIEUTRA
             // 
@@ -2044,21 +2069,6 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
-            // 
-            // txtlohang
-            // 
-            this.txtlohang.Location = new System.Drawing.Point(248, 114);
-            this.txtlohang.Name = "txtlohang";
-            this.txtlohang.Size = new System.Drawing.Size(100, 21);
-            this.txtlohang.TabIndex = 29;
-            // 
-            // labelControl15
-            // 
-            this.labelControl15.Location = new System.Drawing.Point(200, 117);
-            this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(39, 13);
-            this.labelControl15.TabIndex = 28;
-            this.labelControl15.Text = "Lô Hàng";
             // 
             // frmKHtra
             // 
@@ -2346,6 +2356,7 @@
         private DevExpress.XtraEditors.CalcEdit txtNo;
         private System.Windows.Forms.TextBox txtlohang;
         private DevExpress.XtraEditors.LabelControl labelControl15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn56;
     }
     
 }
