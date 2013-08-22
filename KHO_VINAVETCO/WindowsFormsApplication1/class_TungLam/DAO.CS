@@ -803,7 +803,7 @@ namespace WindowsFormsApplication1
 
         public void INSERTCTHOADONNHAP(DTO dto)
         {
-            PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n INSERT INTO CHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,KMAI,GIANHAP,TIENNHAPTT,HSD,LOHANG,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.KMAI + "," + dto.GIANHAP + "," + dto.TIENTRA + ",'" + dto.HSD + "','" + dto.LOHANG + "','" + dto.TINHTRANG + "')";
+            PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n INSERT INTO CHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,KMAI,GIANHAP,TIENNHAPTT,LOHANG,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.KMAI + "," + dto.GIANHAP + "," + dto.TIENTRA + ",'" + dto.LOHANG + "','" + dto.TINHTRANG + "')";
             
 
             PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n UPDATE MATHANG  SET 	SOLUONGMH =" + dto.KMAI.ToString() + " + " + dto.SOLUONGNHAP.ToString() + " + SOLUONGMH WHERE MAMH='" + dto.MAMH + "'";
@@ -834,7 +834,7 @@ namespace WindowsFormsApplication1
         public void INSERTtraCTHOADONNHAP(DTO dto)
         {
 
-            PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + " \r\nGO\r\n INSERT INTO TRACHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,KMAI,GIANHAP,GIATRANHAP,TIENTRANHAPTT,HSD,LOHANG,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.KMAI + "," + dto.GIANHAP + "," + dto.GIATRANHAP + "," + dto.TIENTRA + ",'" + dto.HSD + "','" + dto.LOHANG + "',1)";
+            PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + " \r\nGO\r\n INSERT INTO TRACHITIETHDN (ID, MAHDN, MAMH,SOLUONGNHAP,KMAI,GIANHAP,GIATRANHAP,TIENTRANHAPTT,LOHANG,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDN + "','" + dto.MAMH + "'," + dto.SOLUONGNHAP + "," + dto.KMAI + "," + dto.GIANHAP + "," + dto.GIATRANHAP + "," + dto.TIENTRA + ",'" + dto.LOHANG + "',1)";
 
             PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + " \r\nGO\r\n UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH -" + dto.KMAI.ToString() + " - " + dto.SOLUONGNHAP.ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
 
@@ -846,311 +846,13 @@ namespace WindowsFormsApplication1
            
 
         }
-        public void INSERT_KHOHANG(string MAMH, string LOHANG, string GIAMUA, string SOLUONGNHAP, string HSD)
-        {
-            string SQL = "select mamh from khohang where mamh='" + MAMH + "' and lohang='" + LOHANG + "'";
-            DataTable dt = GET_DATA(SQL);
-
-            if (dt.Rows.Count > 0)
-            {
-                UPDATE_KHOHANG(MAMH, LOHANG, GIAMUA, SOLUONGNHAP, "0", "0", "0", HSD);
-            }
-            else
-            {
-                string NGAYNHAP = "convert(varchar,getDate(),101)";
-                if (PublicVariable.isUSE_COMPUTERDATE)
-                {
-                    NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
-                }
-
-                SQL = "INSERT INTO KHOHANG ([MAMH],[LOHANG],[GIAMUA] ,[TONKHO],[NHAPKHO] ,[XUATKHO] ,[TRANHAPKHO],[TRAXUATKHO],[NGAYNHAP] ,[HSD])"
-                          + " VALUES ('" + MAMH + "','" + LOHANG + "'," + GIAMUA + "," + SOLUONGNHAP + "," + SOLUONGNHAP + ",0, 0,0,"+NGAYNHAP+",'" + HSD + "')";
-                executeNonQuery(SQL);
-
-                SQL = "UPDATE MATHANG SET  GIAMUA=" + GIAMUA + " , GIABAN=GIABAN+" + GIAMUA + "- GIAMUA WHERE MAMH='" + MAMH + "' ";
-                executeNonQuery(SQL);
-            }
-                
-        }
-        public void DELETE_KHOHANG(string MAMH, string LOHANG)
-        {
-            string SQL = "DELETE FROM KHOHANG where LOHANG='" + LOHANG + "' AND MAMH='" + MAMH + "'";
-            executeNonQuery(SQL);
-        }
+       
         public void EXCUTE_SQL2(string SQL)
         {
             executeNonQuery2(SQL);
         }
 
-        public void UPDATE_KHOHANG(string MAMH, string LOHANG, string GIAMUA, string NHAP,string TRANHAP, string XUAT, string TRAXUAT, string HSD)
-        {
-            string TONKHO = (Convert.ToDouble(NHAP) + Convert.ToDouble(TRAXUAT) - Convert.ToDouble(XUAT) - Convert.ToDouble(TRANHAP)).ToString();
-
-            string SQL = "UPDATE KHOHANG SET  GIAMUA=" + GIAMUA + ", TONKHO=TONKHO+" + TONKHO + ", NHAPKHO=NHAPKHO+" + NHAP + ",XUATKHO=XUATKHO+" + XUAT + ",TRANHAPKHO=TRANHAPKHO+" + TRANHAP + ",TRAXUATKHO=TRAXUATKHO+" + TRAXUAT + ",HSD='" + HSD + "'  WHERE MAMH='" + MAMH + "' AND LOHANG='" + LOHANG + "'";
-            executeNonQuery(SQL);
-
-            SQL = "UPDATE MATHANG SET  GIAMUA=" + GIAMUA + " , GIABAN=GIABAN+" + GIAMUA + "-GIAMUA WHERE MAMH='" + MAMH + "' ";
-            executeNonQuery(SQL);
-        }
-
-        public void UPDATE_KHOHANG_NX(string MAMH, string LOHANG, string NHAP, string TRANHAP, string XUAT, string TRAXUAT)
-        {
-            string TONKHO = (Convert.ToDouble(NHAP) + Convert.ToDouble(TRAXUAT) - Convert.ToDouble(XUAT) - Convert.ToDouble(TRANHAP)).ToString();
-
-            string SQL = "UPDATE KHOHANG SET  TONKHO=TONKHO+" + TONKHO + ", NHAPKHO=NHAPKHO+" + NHAP + ",XUATKHO=XUATKHO+" + XUAT + ",TRANHAPKHO=TRANHAPKHO+" + TRANHAP + ",TRAXUATKHO=TRAXUATKHO+" + TRAXUAT + "  WHERE MAMH='" + MAMH + "' AND LOHANG='" + LOHANG + "'";
-            executeNonQuery(SQL);
-        }
-
-        public void INSERT_TONKHO(string ID, string MAHD, string MAMH,String MANV, string MADOITUONG, string NGAY, Double TONDAU, string NHAP, string XUAT, string GIA)
-        {
-           string SQL = "select  TOP 1 STT from tonkho where MAHD='" + MAHD + "' ";
-           DataTable dt = getdata(SQL);
-           string STT = "0";
-           if (dt.Rows.Count > 0)
-           {
-               STT = dt.Rows[0][0].ToString();
-           }
-           else
-           {
-               SQL = "select MAX(STT) from tonkho";
-               dt = getdata(SQL);
-               if (dt.Rows[0][0].ToString() != "")
-               {
-                   STT = (Convert.ToInt32(dt.Rows[0][0].ToString()) + 1).ToString();
-               }
-               else
-               {
-                   STT = "1";
-               }
-           }
-           double toncuoi = TONDAU + Convert.ToDouble(NHAP) - Convert.ToDouble(XUAT);
-           string TRANHAP = "0", TRAXUAT = "0";
-           string GIAMUA = "0", GIABAN = "0";
-           SQL = "select GIAMUA,GIABAN FROM MATHANG WHERE MAMH='" + MAMH + "'";
-           dt = getdata(SQL);
-
-           if (MAHD.Substring(0, 6) == "MATHDN")
-           {
-               TRANHAP = XUAT;
-               XUAT = "0";
-               GIAMUA = dt.Rows[0]["GIAMUA"].ToString();
-               GIABAN = GIA;
-           }
-           else if (MAHD.Substring(0, 5) == "MAHDN")
-           {
-               GIAMUA = GIA;
-               GIABAN = dt.Rows[0]["GIABAN"].ToString();
-           }
-           else if (MAHD.Substring(0, 6) == "MATHDX")
-           {
-               TRAXUAT = NHAP;
-               NHAP = "0";
-               GIAMUA = GIA;
-               GIABAN = dt.Rows[0]["GIABAN"].ToString();
-           }
-           else if (MAHD.Substring(0, 5) == "MAHDX")
-           {
-               GIAMUA = dt.Rows[0]["GIAMUA"].ToString();
-               GIABAN = GIA;
-           }
-
-           SQL = "INSERT TONKHO(STT,ID,MAHD,MAMH,MAKHO,MANV,MADOITUONG,NGAY,TONDAU,NHAP,TRANHAP,XUAT,TRAXUAT,TONCUOI,GIANHAP,GIAXUAT)"
-                  + " VALUES (" + STT + "," + ID + ",'" + MAHD + "','" + MAMH + "','" + PublicVariable.MAKHO + "','" + MANV + "','" + MADOITUONG + "','" + NGAY + "', " + TONDAU.ToString() + "," + NHAP + "," + TRANHAP + "," + XUAT + "," + TRAXUAT + "," + toncuoi.ToString() + "," + GIAMUA + "," + GIABAN + ")";
-
-           executeNonQuery(SQL);
-
-
-           SQL = "UPDATE TONKHOTT SET TONKHONGAY=" + toncuoi.ToString() + "  WHERE NGAY='" + NGAY + "' and MAMH='" + MAMH + "'";
-           executeNonQuery(SQL);
-           
-            
-        }
-        public void INSERT_TONKHO2(string ID, string MAHD, string MAMH,string MANV,string MADOITUONG, string NGAY, string NHAP, string XUAT,string GIA)
-        {
-            string SQL = "select TOP 1 STT from tonkho where MAHD='" + MAHD + "' ";
-            DataTable dt = getdata(SQL);
-            string STT = "0";
-            if (dt.Rows.Count > 0)
-            {
-                STT = dt.Rows[0][0].ToString();
-
-                SQL = "select * from tonkho where MAMH='" + MAMH + "' and STT=(select max(STT) from tonkho where MAMH='" + MAMH + "' AND (STT<" + STT + " OR  STT=" + STT + ")) ORDER BY ID DESC ";
-                dt = getdata(SQL);
-                string TONDAU = "0";
-                if (dt.Rows.Count > 0)
-                {
-                    TONDAU = dt.Rows[0]["toncuoi"].ToString();
-                }
-                else
-                {
-                    SQL = "select * from tonkho where STT=(select MIN(STT) from tonkho where MAMH='" + MAMH + "') ORDER BY ID DESC  ";
-                    dt = getdata(SQL);
-                    if (dt.Rows.Count > 0)
-                    {
-                        TONDAU = dt.Rows[0]["tondau"].ToString();
-                    }
-                    else
-                    {
-                        SQL = "select soluongmh from mathang  where MAMH='" + MAMH + "'";
-                        dt = getdata(SQL);
-                        if (dt.Rows.Count > 0)
-                        {
-                            TONDAU = dt.Rows[0]["soluongmh"].ToString();
-                        }
-                    }
-
-                }
-
-                double toncuoi = Convert.ToDouble(TONDAU) + Convert.ToDouble(NHAP) - Convert.ToDouble(XUAT);
-                string TRANHAP = "0", TRAXUAT = "0";
-                string GIAMUA="0", GIABAN="0";
-                SQL = "select GIAMUA,GIABAN FROM MATHANG WHERE MAMH='" + MAMH + "'";
-                dt = getdata(SQL);
-
-                if (MAHD.Substring(0, 6) == "MATHDN")
-                {
-                    TRANHAP = XUAT;
-                    XUAT = "0";
-                    GIAMUA = dt.Rows[0]["GIAMUA"].ToString();
-                    GIABAN = GIA;
-                }
-                else if (MAHD.Substring(0, 5) == "MAHDN")
-                {
-                    GIAMUA = GIA;
-                    GIABAN = dt.Rows[0]["GIABAN"].ToString();
-                }
-                else if (MAHD.Substring(0, 6) == "MATHDX")
-                {
-                    TRAXUAT = NHAP;
-                    NHAP = "0";
-                    GIAMUA = GIA;
-                    GIABAN = dt.Rows[0]["GIABAN"].ToString();
-                }
-                else if (MAHD.Substring(0, 5) == "MAHDX")
-                {
-                    GIAMUA = GIA;
-                    GIABAN = dt.Rows[0]["GIABAN"].ToString();
-                }
-
-                SQL = "INSERT TONKHO(STT,ID,MAHD,MAMH,MAKHO,MANV,MADOITUONG,NGAY,TONDAU,NHAP,TRANHAP,XUAT,TRAXUAT,TONCUOI,GIANHAP,GIAXUAT)"
-                       + " VALUES (" + STT + "," + ID + ",'" + MAHD + "','" + MAMH + "','" + PublicVariable.MAKHO + "','" + MANV + "','" + MADOITUONG + "','" + NGAY + "', " + TONDAU + "," + NHAP + "," + TRANHAP + "," + XUAT + "," + TRAXUAT + "," + toncuoi.ToString() + "," + GIAMUA + "," + GIABAN + ")";
-                executeNonQuery(SQL);
-
-                
-                if (NHAP == "0")
-                {
-                    NHAP = TRANHAP;
-                }
-                if (XUAT == "0")
-                {
-                    XUAT = TRAXUAT;
-                }
-                string sxuat = (-Convert.ToDouble(XUAT)).ToString();
-                //update cac dong sau
-                SQL = "UPDATE TONKHO SET  tondau=tondau+" + NHAP + "+" + sxuat + ",  toncuoi=toncuoi+" + NHAP + "+" + sxuat + "  WHERE STT>" + STT + " and MAMH='" + MAMH + "'";
-                executeNonQuery(SQL);
-
-                SQL = "UPDATE TONKHO SET  tondau=tondau+" + NHAP + "+" + sxuat + ",  toncuoi=toncuoi+" + NHAP + "+" + sxuat + "  WHERE STT=" + STT + " and MAMH='" + MAMH + "' and ID>" + ID;
-                executeNonQuery(SQL);
-
-                SQL = "UPDATE TONKHOTT SET TONKHONGAY=" + toncuoi.ToString() + "  WHERE NGAY='" + NGAY + "' and MAMH='" + MAMH + "'";
-                executeNonQuery(SQL);
-            }
-            
-            
-
-        }
-        public void UPDATE_TONKHO(string ID, string MAHD, string MAMH, string NHAP, string XUAT, String GIA)
-        {
-            string SQL = "select nhap,TRANHAP,xuat,TRAXUAT,STT from tonkho where MAHD='" + MAHD + "' AND ID='" + ID + "' ";
-            DataTable dt = getdata(SQL);
-            string STT = "1";
-            string SUANHAP = "0";
-            string SUAXUAT = "0";
-            
-            if (dt.Rows.Count > 0)
-            {
-                STT = dt.Rows[0]["STT"].ToString();
-                SUANHAP = (Convert.ToDouble(NHAP) - Convert.ToDouble(dt.Rows[0]["nhap"].ToString()) - Convert.ToDouble(dt.Rows[0]["TRANHAP"].ToString())).ToString();
-                SUAXUAT = (Convert.ToDouble(XUAT) - Convert.ToDouble(dt.Rows[0]["xuat"].ToString()) - Convert.ToDouble(dt.Rows[0]["TRAXUAT"].ToString())).ToString();
        
-            }
-
-            string TRANHAP="0", TRAXUAT="0";
-            string GIAMUA = "0", GIABAN = "0";
-            SQL = "select GIAMUA,GIABAN FROM MATHANG WHERE MAMH='" + MAMH + "'";
-            dt = getdata(SQL);
-            if (MAHD.Substring(0, 6) == "MATHDN")
-            {
-                TRANHAP = XUAT;
-                XUAT = "0";
-                GIAMUA = dt.Rows[0]["GIAMUA"].ToString();
-                GIABAN = GIA;
-            }
-            else if (MAHD.Substring(0, 5) == "MAHDN")
-            {
-                GIAMUA = GIA;
-                GIABAN = dt.Rows[0]["GIABAN"].ToString();
-            }
-            else if (MAHD.Substring(0, 6) == "MATHDX")
-            {
-                TRAXUAT = NHAP;
-                NHAP = "0";
-                GIAMUA = GIA;
-                GIABAN = dt.Rows[0]["GIABAN"].ToString();
-            }
-            else if (MAHD.Substring(0, 5) == "MAHDX")
-            {
-                GIAMUA = GIA;
-                GIABAN = dt.Rows[0]["GIABAN"].ToString();
-            }
-
-            string ssuaxuat = (-Convert.ToDouble(SUAXUAT)).ToString();
-
-            SQL = "UPDATE TONKHO SET  toncuoi=toncuoi+" + SUANHAP + "+" + ssuaxuat + " ,NHAP=" + NHAP + ",TRANHAP=" + TRANHAP + ",XUAT=" + XUAT + " ,TRAXUAT=" + TRAXUAT + " ,GIANHAP=" + GIAMUA + ", GIAXUAT=" + GIABAN + "  WHERE STT=" + STT + " and id= " + ID;
-            executeNonQuery(SQL);
-
-
-            SQL = "UPDATE TONKHO SET  tondau=tondau+" + SUANHAP + "+" + ssuaxuat + ",  toncuoi=toncuoi+" + SUANHAP + "+" + ssuaxuat + "  WHERE STT>" + STT + " and MAMH='" + MAMH + "'";
-            executeNonQuery(SQL);
-
-            SQL = "UPDATE TONKHO SET  tondau=tondau+" + SUANHAP + "+" + ssuaxuat + ",  toncuoi=toncuoi+" + SUANHAP + "+" + ssuaxuat + "  WHERE STT=" + STT + " and MAMH='" + MAMH + "' and ID>" + ID;
-            executeNonQuery(SQL);
-
-            SQL = " select convert(varchar,NGAY,101) AS NGAY FROM TONKHO WHERE STT=" + STT + " and id= " + ID;
-            dt = GET_DATA(SQL);
-            SQL = "UPDATE TONKHOTT SET TONKHONGAY=TONKHONGAY+" + SUANHAP + "+" + ssuaxuat + "  WHERE NGAY='" + dt.Rows[0][0].ToString() + "' and MAMH='" + MAMH + "'";
-            executeNonQuery(SQL);
-        }
-
-        public void DELETE_TONKHO(string ID, string MAHD)
-        {
-            string SQL = "select nhap,TRANHAP,TRAXUAT,xuat,STT,mamh,convert(varchar,NGAY,101) as ngay from tonkho where mahd='" + MAHD + "' and id=" + ID;
-            DataTable dt = getdata(SQL);
-            if (dt.Rows.Count > 0)
-            {
-                SQL = "delete from tonkho where STT=" + dt.Rows[0]["STT"].ToString()+" and ID="+ID;
-                executeNonQuery(SQL);
-
-                string CHENHLECH = (-(Convert.ToDouble(dt.Rows[0]["NHAP"].ToString()) - Convert.ToDouble(dt.Rows[0]["TRANHAP"].ToString()) + Convert.ToDouble(dt.Rows[0]["TRAXUAT"].ToString()) - Convert.ToDouble(dt.Rows[0]["XUAT"].ToString()))).ToString();
-
-            
-
-                SQL = "UPDATE TONKHO SET  TONDAU=TONDAU+ " + CHENHLECH + ", toncuoi=toncuoi+" + CHENHLECH + "  WHERE STT>" + dt.Rows[0]["STT"].ToString() + " and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "' ";
-                executeNonQuery(SQL);
-
-                SQL = "UPDATE TONKHO SET  TONDAU=TONDAU+ " + CHENHLECH + ", toncuoi=toncuoi+" + CHENHLECH + " WHERE STT=" + dt.Rows[0]["STT"].ToString() + " and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "' and ID>" + ID;
-                executeNonQuery(SQL);
-
-                SQL = "UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH +" + CHENHLECH + "  WHERE MAMH='" + dt.Rows[0]["MAMH"].ToString() + "'";
-                executeNonQuery(SQL);
-
-
-                SQL = "UPDATE TONKHOTT SET TONKHONGAY=TONKHONGAY+" + CHENHLECH + "  WHERE NGAY>='" + dt.Rows[0]["ngay"].ToString() + "' and MAMH='" + dt.Rows[0]["MAMH"].ToString() + "'";
-                executeNonQuery(SQL);
-
-            }
-        }
 
         public bool ISINSERTCTHOADONNHAP(string MAHDN, int ID)
         {
@@ -1163,9 +865,9 @@ namespace WindowsFormsApplication1
         }
         public void UPDATEtraCTHOADONNHAP(DTO dto)
         {
-            string SQL = "SELECT SOLUONGNHAP + KMAI AS SOLUONGNHAP, KMAI FROM TRACHITIETHDN WHERE MAHDN='" + dto.MAHDN + "' AND MAMH='" + dto.MAMH + "'";
+            string SQL = "SELECT SOLUONGNHAP + KMAI AS SOLUONGNHAP, KMAI FROM TRACHITIETHDN WHERE MAHDN='" + dto.MAHDN + "' AND MAMH='" + dto.MAMH + "' AND LOHANG='" + dto.LOHANG + "' ";
             DataTable dt = getdata(SQL);
-            PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + " \r\nGO\r\n update TRACHITIETHDN SET  SOLUONGNHAP=" + dto.SOLUONGNHAP.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIANHAP=" + dto.GIANHAP + ", GIATRANHAP=" + dto.GIATRANHAP + ", TIENTRANHAPTT=" + dto.TIENTRA + ", HSD='" + dto.HSD + "' WHERE MAMH='" + dto.MAMH + "' AND MAHDN='" + dto.MAHDN + "' AND LOHANG='" + dto.LOHANG + "' ";
+            PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + " \r\nGO\r\n update TRACHITIETHDN SET  SOLUONGNHAP=" + dto.SOLUONGNHAP.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIANHAP=" + dto.GIANHAP + ", GIATRANHAP=" + dto.GIATRANHAP + ", TIENTRANHAPTT=" + dto.TIENTRA + " WHERE MAMH='" + dto.MAMH + "' AND MAHDN='" + dto.MAHDN + "' AND LOHANG='" + dto.LOHANG + "' ";
 
             //////////// BEGIN  UPDATE MATHANG/////////////
             
@@ -1191,7 +893,7 @@ namespace WindowsFormsApplication1
             string SQL = "SELECT SOLUONGNHAP + KMAI AS SOLUONGNHAP, KMAI  FROM CHITIETHDN WHERE MAHDN='" + dto.MAHDN + "' AND MAMH='" + dto.MAMH + "' AND LOHANG='" + dto.LOHANG + "'";
             DataTable dt = getdata(SQL);
 
-            PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n update CHITIETHDN SET  SOLUONGNHAP=" + dto.SOLUONGNHAP.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIANHAP=" + dto.GIANHAP + ",TIENNHAPTT=" + dto.TIENTRA + ", HSD='" + dto.HSD + "' WHERE MAMH='" + dto.MAMH + "' AND MAHDN='" + dto.MAHDN + "' AND LOHANG='" + dto.LOHANG + "' ";
+            PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n update CHITIETHDN SET  SOLUONGNHAP=" + dto.SOLUONGNHAP.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIANHAP=" + dto.GIANHAP + ",TIENNHAPTT=" + dto.TIENTRA + " WHERE MAMH='" + dto.MAMH + "' AND MAHDN='" + dto.MAHDN + "' AND LOHANG='" + dto.LOHANG + "' ";
            
             //////////// BEGIN  UPDATE MATHANG/////////////
             
@@ -1262,36 +964,36 @@ namespace WindowsFormsApplication1
 
         public DataTable GETCTHOADONNHAP(string MAHDN)
         {
-            string SQL = "SELECT ID,T5.MAMH TENMH,LOHANG,HSD AS _HSD,T5.MAMH MAMH,T6.SOLUONGNHAP SOLUONG,T6.KMAI,T6.GIANHAP _DonGia, T5.DONVITINH _DVT, (T6.SOLUONGNHAP*T6.GIANHAP) _Total,TIENNHAPTT AS TIENTRA FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIAMUA,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH IN (SELECT MAMH FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "')) AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDN where MAHDN='" + MAHDN + "') T6 ON T6.MAMH =t5.MAMH";
+            string SQL = "SELECT ID,T5.MAMH TENMH,LOHANG,HSD AS _HSD,T5.MAMH MAMH,T6.SOLUONGNHAP SOLUONG,T6.KMAI,T6.GIANHAP _DonGia, T5.DONVITINH _DVT, (T6.SOLUONGNHAP*T6.GIANHAP) _Total,TIENNHAPTT AS TIENTRA FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIAMUA,T1.MADVT FROM (SELECT * FROM MATHANG WHERE MAMH IN (SELECT MAMH FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "')) AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDN where MAHDN='" + MAHDN + "') T6 ON T6.MAMH =t5.MAMH ORDER BY ID ASC";
             return getdata(SQL);
         }
         public DataTable GETinCTHOADONNHAP(string MAHDN)
         {
             //string SQL = "SELECT ID,T5.TENMH,HSD,T5.MAMH,T6.SOLUONGNHAP SOLUONG,T6.SOLUONGNHAP*KLDVT AS KHOILUONG,T6.KMAI,T6.GIANHAP AS DONGIA, T5.DONVITINH AS DVT, (T6.SOLUONGNHAP*T6.GIANHAP) AS THANHTIEN,TIENNHAPTT AS TIENTRA FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT,KLDVT FROM (SELECT * FROM MATHANG WHERE MAMH IN (SELECT MAMH,TIENNHAPTT,GIANHAP FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "')) AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDN where MAHDN='" + MAHDN + "') T6 ON T6.MAMH =t5.MAMH";
-            string SQL = "SELECT ID,TENMH,HSD,MATHANG.MAMH,SOLUONGNHAP AS SOLUONG,SOLUONGNHAP*KLDVT AS KHOILUONG,KMAI,GIANHAP AS DONGIA, DONVITINH AS DVT, (SOLUONGNHAP*GIANHAP) AS THANHTIEN,TIENNHAPTT AS TIENTRA FROM  CHITIETHDN,MATHANG,DONVITINH where CHITIETHDN.MAHDN='" + MAHDN + "' AND MATHANG.MAMH=CHITIETHDN.MAMH AND DONVITINH.MADVT=MATHANG.MADVT";
+            string SQL = "SELECT ID,TENMH,HSD,MATHANG.MAMH,SOLUONGNHAP AS SOLUONG,SOLUONGNHAP*KLDVT AS KHOILUONG,KMAI,GIANHAP AS DONGIA, DONVITINH AS DVT, (SOLUONGNHAP*GIANHAP) AS THANHTIEN,TIENNHAPTT AS TIENTRA FROM  CHITIETHDN,MATHANG,DONVITINH where CHITIETHDN.MAHDN='" + MAHDN + "' AND MATHANG.MAMH=CHITIETHDN.MAMH AND DONVITINH.MADVT=MATHANG.MADVT ORDER BY ID ASC";
             return getdata(SQL);
         }
         public DataTable GETtraCTHOADONNHAP(string MAHDN)
         {
-            string SQL = "SELECT ID,MATHANG.MAMH+'_'+LOHANG AS TENMH,MATHANG.MAMH MAMH,SOLUONGNHAP SOLUONG,GIANHAP DONGIA, DONVITINH _DVT, (SOLUONGNHAP*GIANHAP) _Total, LOHANG as _LOHANG, TIENTRANHAPTT AS TIENTRA,KMAI,GIANHAP,convert(varchar,HSD,103)as HSD FROM DONVITINH, MATHANG,TRACHITIETHDN WHERE MATHANG.MADVT=DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND MAHDN='" + MAHDN + "'";
+            string SQL = "SELECT ID,MATHANG.MAMH+'_'+LOHANG AS TENMH,MATHANG.MAMH MAMH,SOLUONGNHAP SOLUONG,GIANHAP DONGIA, DONVITINH _DVT, (SOLUONGNHAP*GIANHAP) _Total, LOHANG as _LOHANG, TIENTRANHAPTT AS TIENTRA,KMAI,GIANHAP,convert(varchar,HSD,103)as HSD FROM DONVITINH, MATHANG,TRACHITIETHDN WHERE MATHANG.MADVT=DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND MAHDN='" + MAHDN + "' ORDER BY ID ASC";
             return getdata(SQL);
         }
         public DataTable GETinTRACTHOADONNHAP(string MAHDN)
         {
             //string SQL = "SELECT ID,T5.TENMH,HSD,T5.MAMH,T6.SOLUONGNHAP SOLUONG,T6.SOLUONGNHAP*KLDVT AS KHOILUONG,T6.KMAI,T6.GIANHAP AS DONGIA, T5.DONVITINH AS DVT, (T6.SOLUONGNHAP*T6.GIANHAP) AS THANHTIEN,TIENNHAPTT AS TIENTRA FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT,KLDVT FROM (SELECT * FROM MATHANG WHERE MAMH IN (SELECT MAMH,TIENNHAPTT,GIANHAP FROM CHITIETHDN WHERE MAHDN='" + MAHDN + "')) AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDN where MAHDN='" + MAHDN + "') T6 ON T6.MAMH =t5.MAMH";
-            string SQL = "SELECT ID,TENMH,HSD,MATHANG.MAMH,SOLUONGNHAP AS SOLUONG,SOLUONGNHAP*KLDVT AS KHOILUONG,KMAI,GIATRANHAP AS DONGIA, DONVITINH AS DVT, (SOLUONGNHAP*GIATRANHAP) AS THANHTIEN,TIENTRANHAPTT AS TIENTRA FROM  TRACHITIETHDN,MATHANG,DONVITINH where TRACHITIETHDN.MAHDN='" + MAHDN + "' AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND DONVITINH.MADVT=MATHANG.MADVT";
+            string SQL = "SELECT ID,TENMH,HSD,MATHANG.MAMH,SOLUONGNHAP AS SOLUONG,SOLUONGNHAP*KLDVT AS KHOILUONG,KMAI,GIATRANHAP AS DONGIA, DONVITINH AS DVT, (SOLUONGNHAP*GIATRANHAP) AS THANHTIEN,TIENTRANHAPTT AS TIENTRA FROM  TRACHITIETHDN,MATHANG,DONVITINH where TRACHITIETHDN.MAHDN='" + MAHDN + "' AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND DONVITINH.MADVT=MATHANG.MADVT ORDER BY ID ASC";
             return getdata(SQL);
         }
         public DataTable GETCTHOADONXUAT(string MAHDX)
         {
             //string SQL = "SELECT ID,T5.MAMH+'_'+LOHANG AS TENMH,T5.MAMH MAMH,T6.SOLUONGXUAT SOLUONG,T6.GIATIEN _DonGia, T5.DONVITINH _DVT, (T6.SOLUONGXUAT*T6.GIATIEN) _Total, LOHANG as _LOHANG,TIENTHU FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT FROM (SELECT MATHANG.* FROM MATHANG WHERE  MATHANG.MAMH IN (SELECT MAMH FROM CHITIETHDX WHERE MAHDX='" + MAHDX + "')) AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDX where MAHDX='" + MAHDX + "') T6 ON T6.MAMH =t5.MAMH";
-            string SQL = "SELECT ID,MATHANG.MAMH+'_'+LOHANG AS TENMH,MATHANG.MAMH,KMAI,SOLUONGXUAT AS SOLUONG,GIABAN AS _DonGia, DONVITINH AS _DVT,(SOLUONGXUAT*GIABAN) AS _Total, LOHANG as _LOHANG,TIENTHU AS TIENTHU,HSD,GIANHAP FROM MATHANG,CHITIETHDX,DONVITINH WHERE MATHANG.MAMH=CHITIETHDX.MAMH AND DONVITINH.MADVT=MATHANG.MADVT AND MAHDX='" + MAHDX + "'";
+            string SQL = "SELECT ID,MATHANG.MAMH+'_'+LOHANG AS TENMH,MATHANG.MAMH,KMAI,SOLUONGXUAT AS SOLUONG,GIABAN AS _DonGia, DONVITINH AS _DVT,(SOLUONGXUAT*GIABAN) AS _Total, LOHANG as _LOHANG,TIENTHU AS TIENTHU,HSD,GIANHAP FROM MATHANG,CHITIETHDX,DONVITINH WHERE MATHANG.MAMH=CHITIETHDX.MAMH AND DONVITINH.MADVT=MATHANG.MADVT AND MAHDX='" + MAHDX + "' ORDER BY ID ASC";
             return getdata(SQL);
         }
         public DataTable GETCTHOADONXUATIN(string MAHDX)
         {
            // string SQL = "SELECT ID,T5.TENMH AS TENMH,T5.MAMH MAMH,T6.SOLUONGXUAT SOLUONG,T6.GIATIEN _DonGia, T5.DONVITINH _DVT, (T6.SOLUONGXUAT*T6.GIATIEN) _Total, LOHANG as _LOHANG,TIENTHU FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT FROM (SELECT MATHANG.* FROM MATHANG WHERE  MATHANG.MAMH IN (SELECT MAMH FROM CHITIETHDX WHERE MAHDX='" + MAHDX + "')) AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDX where MAHDX='" + MAHDX + "') T6 ON T6.MAMH =t5.MAMH";
-            string SQL = "SELECT ID,TENMH,HSD,MATHANG.MAMH,SOLUONGXUAT AS SOLUONG,SOLUONGXUAT*KLDVT AS KHOILUONG,KMAI,GIABAN AS DONGIA, DONVITINH AS DVT, (SOLUONGXUAT*GIABAN) AS THANHTIEN,TIENTHU FROM  CHITIETHDX,MATHANG,DONVITINH where CHITIETHDX.MAHDX='" + MAHDX + "' AND MATHANG.MAMH=CHITIETHDX.MAMH AND DONVITINH.MADVT=MATHANG.MADVT";
+            string SQL = "SELECT ID,TENMH,HSD,MATHANG.MAMH,SOLUONGXUAT AS SOLUONG,SOLUONGXUAT*KLDVT AS KHOILUONG,KMAI,GIABAN AS DONGIA, DONVITINH AS DVT, (SOLUONGXUAT*GIABAN) AS THANHTIEN,TIENTHU FROM  CHITIETHDX,MATHANG,DONVITINH where CHITIETHDX.MAHDX='" + MAHDX + "' AND MATHANG.MAMH=CHITIETHDX.MAMH AND DONVITINH.MADVT=MATHANG.MADVT ORDER BY ID ASC";
             
             return getdata(SQL);
         }
@@ -1300,13 +1002,13 @@ namespace WindowsFormsApplication1
         public DataTable GETTRACTHOADONXUATIN(string MAHDX)
         {
            // string SQL = "SELECT ID,T5.TENMH AS TENMH,T5.MAMH MAMH,T6.SOLUONGXUAT SOLUONG,T6.GIATIEN _DonGia, T5.DONVITINH _DVT, (T6.SOLUONGXUAT*T6.GIATIEN) _Total, LOHANG as _LOHANG,TIENTHU FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT FROM (SELECT MATHANG.* FROM MATHANG WHERE  MATHANG.MAMH IN (SELECT MAMH FROM CHITIETHDX WHERE MAHDX='" + MAHDX + "')) AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from CHITIETHDX where MAHDX='" + MAHDX + "') T6 ON T6.MAMH =t5.MAMH";
-            string SQL = "SELECT ID,TENMH,HSD,MATHANG.MAMH,SOLUONGXUAT AS SOLUONG,SOLUONGXUAT*KLDVT AS KHOILUONG,KMAI,GIABAN AS DONGIA, DONVITINH AS DVT, (SOLUONGXUAT*GIABAN) AS THANHTIEN,TIENTHU FROM  TRACHITIETHDX,MATHANG,DONVITINH where TRACHITIETHDX.MAHDX='" + MAHDX + "' AND MATHANG.MAMH=TRACHITIETHDX.MAMH AND DONVITINH.MADVT=MATHANG.MADVT";
+            string SQL = "SELECT ID,TENMH,HSD,MATHANG.MAMH,SOLUONGXUAT AS SOLUONG,SOLUONGXUAT*KLDVT AS KHOILUONG,KMAI,GIABAN AS DONGIA, DONVITINH AS DVT, (SOLUONGXUAT*GIABAN) AS THANHTIEN,TIENTHU FROM  TRACHITIETHDX,MATHANG,DONVITINH where TRACHITIETHDX.MAHDX='" + MAHDX + "' AND MATHANG.MAMH=TRACHITIETHDX.MAMH AND DONVITINH.MADVT=MATHANG.MADVT ORDER BY ID ASC";
             
             return getdata(SQL);
         }
         public DataTable GETCTHOADONXUATTAM(string MAHDX)
         {
-            string SQL = "SELECT '' as ID,LOHANG AS _LOHANG,CHITIETHDXTAM.MAMH +'_'+LOHANG AS  TENMH,CHITIETHDXTAM.MAMH MAMH,SOLUONGXUAT SOLUONG,GIATIEN _DonGia,DONVITINH _DVT,SOLUONGXUAT*GIATIEN _Total,TIENTHU,KMAI FROM  CHITIETHDXTAM,MATHANG,DONVITINH WHERE CHITIETHDXTAM.MAMH=MATHANG.MAMH AND MATHANG.MADVT=DONVITINH.MADVT and CHITIETHDXTAM.MAHDX='" + MAHDX + "'";
+            string SQL = "SELECT '' as ID,LOHANG AS _LOHANG,CHITIETHDXTAM.MAMH +'_'+LOHANG AS  TENMH,CHITIETHDXTAM.MAMH MAMH,SOLUONGXUAT SOLUONG,GIATIEN _DonGia,DONVITINH _DVT,SOLUONGXUAT*GIATIEN _Total,TIENTHU,KMAI FROM  CHITIETHDXTAM,MATHANG,DONVITINH WHERE CHITIETHDXTAM.MAMH=MATHANG.MAMH AND MATHANG.MADVT=DONVITINH.MADVT and CHITIETHDXTAM.MAHDX='" + MAHDX + "' ORDER BY ID ASC";
             return getdata(SQL);
         }
         public DataTable GETCTHOADONXUATTAM()
@@ -1316,7 +1018,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETtraCTHOADONXUAT(string MAHDX)
         {
-            string SQL = "SELECT ID,TRACHITIETHDX.MAMH+'_'+LOHANG AS TENMH,TRACHITIETHDX.MAMH,SOLUONGXUAT SOLUONG,GIABAN DONGIA, DONVITINH _DVT, (SOLUONGXUAT*GIABAN) _Total, HSD AS _HSD, TIENTHU,LOHANG,KMAI FROM TRACHITIETHDX, MATHANG, DONVITINH WHERE MATHANG.MAMH=TRACHITIETHDX.MAMH AND MATHANG.MADVT=DONVITINH.MADVT AND TRACHITIETHDX.MAHDX='" + MAHDX + "'";
+            string SQL = "SELECT ID,TRACHITIETHDX.MAMH+'_'+LOHANG AS TENMH,TRACHITIETHDX.MAMH,SOLUONGXUAT SOLUONG,GIABAN DONGIA, DONVITINH _DVT, (SOLUONGXUAT*GIABAN) _Total, HSD AS _HSD, TIENTHU,LOHANG,KMAI FROM TRACHITIETHDX, MATHANG, DONVITINH WHERE MATHANG.MAMH=TRACHITIETHDX.MAMH AND MATHANG.MADVT=DONVITINH.MADVT AND TRACHITIETHDX.MAHDX='" + MAHDX + "' ORDER BY ID ASC";
             return getdata(SQL);
             //string SQL = "SELECT ID,T5.MAMH TENMH,T5.MAMH MAMH,T6.SOLUONGXUAT SOLUONG,T6.GIATIEN _DonGia, T5.DONVITINH _DVT, (T6.SOLUONGXUAT*T6.GIATIEN) _Total, T5.HSD AS _HSD, TIENTHU FROM  (SELECT T3.*,T4.DONVITINH FROM (SELECT T1.TENMH,T1.MAMH,T1.SOLUONGMH,T1.GIABAN,T1.MADVT,HSD FROM (SELECT MATHANG.*,HSD FROM MATHANG,KHOHANG WHERE MATHANG.MAMH=KHOHANG.MAMH AND MATHANG.MAMH IN (SELECT MAMH FROM TRACHITIETHDX WHERE MAHDX='" + MAHDX + "')  AND KHOHANG.LOHANG IN (SELECT LOHANG FROM TRACHITIETHDX WHERE MAHDX='" + MAHDX + "')) AS T1) AS T3 INNER JOIN DONVITINH AS T4 ON T3.MADVT =T4.MADVT) AS T5 INNER JOIN (select * from TRACHITIETHDX where MAHDX='" + MAHDX + "') T6 ON T6.MAMH =t5.MAMH";
            // return getdata(SQL);
@@ -1410,7 +1112,7 @@ namespace WindowsFormsApplication1
 
         public void INSERTCTHOADONXUAT(DTO dto)
         {
-            PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,LOHANG,SOLUONGXUAT,KMAI,GIABAN,TIENTHU,GIANHAP,HSD,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "','" + dto.LOHANG + "'," + dto.SOLUONGXUAT + "," + dto.KMAI + "," + dto.GIABAN + "," + dto.TIENTHU + "," + dto.GIANHAP + ",'" + dto.HSD + "',1)";
+            PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n INSERT INTO CHITIETHDX (ID, MAHDX, MAMH,LOHANG,SOLUONGXUAT,KMAI,GIABAN,TIENTHU,GIANHAP,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "','" + dto.LOHANG + "'," + dto.SOLUONGXUAT + "," + dto.KMAI + "," + dto.GIABAN + "," + dto.TIENTHU + "," + dto.GIANHAP + ",1)";
 
             PublicVariable.TMPlog = PublicVariable.TMPlog +  "---- INSERT XUAT HANG MAMH:" + dto.MAMH + "  AS (" + dto.SOLUONGXUAT.ToString() + "+ " + dto.KMAI.ToString() + ")   ";
            
@@ -1423,7 +1125,7 @@ namespace WindowsFormsApplication1
 
         public void INSERTtraCTHOADONXUAT(DTO dto)
         {
-            PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n INSERT INTO TRACHITIETHDX (ID, MAHDX, MAMH,LOHANG,SOLUONGXUAT,KMAI,GIABAN,TIENTHU,GIANHAP,HSD,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "','" + dto.LOHANG + "'," + dto.SOLUONGXUAT + "," + dto.KMAI + "," + dto.GIABAN + "," + dto.TIENTHU + "," + dto.GIANHAP + ",'" + dto.HSD + "',1)";
+            PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n INSERT INTO TRACHITIETHDX (ID, MAHDX, MAMH,LOHANG,SOLUONGXUAT,KMAI,GIABAN,TIENTHU,GIANHAP,TINHTRANG) VALUES (" + dto.ID + ",'" + dto.MAHDX + "','" + dto.MAMH + "','" + dto.LOHANG + "'," + dto.SOLUONGXUAT + "," + dto.KMAI + "," + dto.GIABAN + "," + dto.TIENTHU + "," + dto.GIANHAP + ",1)";
 
             PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n UPDATE MATHANG  SET 	SOLUONGMH =SOLUONGMH + " + dto.KMAI.ToString() + " + " + dto.SOLUONGXUAT.ToString() + "  WHERE MAMH='" + dto.MAMH + "'";
 
@@ -1458,9 +1160,9 @@ namespace WindowsFormsApplication1
         }
         public void UPDATECTHOADONXUAT(DTO dto)
         {
-            string SQL = "SELECT SOLUONGXUAT + KMAI AS SOLUONGXUAT, KMAI FROM CHITIETHDX WHERE MAHDX='" + dto.MAHDX + "' AND MAMH='" + dto.MAMH + "'";
+            string SQL = "SELECT SOLUONGXUAT + KMAI AS SOLUONGXUAT, KMAI FROM CHITIETHDX WHERE MAHDX='" + dto.MAHDX + "' AND MAMH='" + dto.MAMH + "' AND LOHANG='" + dto.LOHANG + "' ";
             DataTable dt = getdata(SQL);
-            PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n update CHITIETHDX SET  SOLUONGXUAT=" + dto.SOLUONGXUAT.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIABAN=" + dto.GIABAN + ", TIENTHU=" + dto.TIENTHU + ", GIANHAP=" + dto.GIANHAP + ", HSD='" + dto.HSD + "' WHERE MAMH='" + dto.MAMH + "' AND MAHDX='" + dto.MAHDX + "' AND LOHANG='" + dto.LOHANG + "' ";
+            PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n update CHITIETHDX SET  SOLUONGXUAT=" + dto.SOLUONGXUAT.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIABAN=" + dto.GIABAN + ", TIENTHU=" + dto.TIENTHU + ", GIANHAP=" + dto.GIANHAP + " WHERE MAMH='" + dto.MAMH + "' AND MAHDX='" + dto.MAHDX + "' AND LOHANG='" + dto.LOHANG + "' ";
 
             //////////// BEGIN  UPDATE MATHANG/////////////
             
@@ -1482,9 +1184,9 @@ namespace WindowsFormsApplication1
         }
         public void UPDATEtraCTHOADONXUAT(DTO dto)
         {
-            string SQL = "SELECT SOLUONGXUAT + KMAI AS SOLUONGXUAT, KMAI FROM TRACHITIETHDX WHERE MAHDX='" + dto.MAHDX + "' AND MAMH='" + dto.MAMH + "' ";
+            string SQL = "SELECT SOLUONGXUAT + KMAI AS SOLUONGXUAT, KMAI FROM TRACHITIETHDX WHERE MAHDX='" + dto.MAHDX + "' AND MAMH='" + dto.MAMH + "' AND LOHANG='" + dto.LOHANG + "' ";
             DataTable dt = getdata(SQL);
-            PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n update TRACHITIETHDX SET  SOLUONGXUAT=" + dto.SOLUONGXUAT.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIABAN=" + dto.GIABAN + ", TIENTHU=" + dto.TIENTHU + ", GIANHAP=" + dto.GIANHAP + ", HSD='" + dto.HSD + "' WHERE MAMH='" + dto.MAMH + "' AND MAHDX='" + dto.MAHDX + "'  AND LOHANG='" + dto.LOHANG + "' ";
+            PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n update TRACHITIETHDX SET  SOLUONGXUAT=" + dto.SOLUONGXUAT.ToString() + ", KMAI=" + dto.KMAI.ToString() + ", GIABAN=" + dto.GIABAN + ", TIENTHU=" + dto.TIENTHU + ", GIANHAP=" + dto.GIANHAP + " WHERE MAMH='" + dto.MAMH + "' AND MAHDX='" + dto.MAHDX + "'  AND LOHANG='" + dto.LOHANG + "' ";
 
             //////////// BEGIN  UPDATE MATHANG/////////////
             

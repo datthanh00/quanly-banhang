@@ -602,19 +602,15 @@ namespace WindowsFormsApplication1.KHtra
             }
             catch (Exception ex)
             {
-
                 XtraMessageBox.Show(ex.Message);
             }
-           
-           
-            
-         
         }
         ketnoi connect = new ketnoi();
         public void loadmahdx()
         {
             txtMaHD.Text = connect.sTuDongDienMatraHoaDonXuat(txtMaHD.Text);
             txtNgayXuat.Text = DateTime.Now.ToString("dd/MM/yyy");
+            txtlohang.Text = txtMaHD.Text;
             
         }
 

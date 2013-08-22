@@ -1260,7 +1260,6 @@ namespace WindowsFormsApplication1
                 {
                     ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
                     ctlNCC.executeNonQuery("INSERT INTO [LOG]([MAHD],[LOG],[LYDO]) VALUES('" + txtMaHD.Text + "',N'" + PublicVariable.TMPlog + "',N'" + PublicVariable.TMPtring + "') ");
-
                 }
                 PublicVariable.SQL_NHAP = "";
                 MessageBox.Show("Bạn Đã Xóa Thành Công");
