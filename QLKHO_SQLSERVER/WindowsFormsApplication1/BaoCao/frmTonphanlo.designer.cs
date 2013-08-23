@@ -587,7 +587,7 @@
             // 
             // cbnhomhang
             // 
-            this.cbnhomhang.Location = new System.Drawing.Point(355, 11);
+            this.cbnhomhang.Location = new System.Drawing.Point(309, 11);
             this.cbnhomhang.Name = "cbnhomhang";
             this.cbnhomhang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -625,7 +625,7 @@
             // 
             // cbmathang
             // 
-            this.cbmathang.Location = new System.Drawing.Point(355, 9);
+            this.cbmathang.Location = new System.Drawing.Point(309, 9);
             this.cbmathang.Name = "cbmathang";
             this.cbmathang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -672,7 +672,7 @@
             // 
             // lbsanpham
             // 
-            this.lbsanpham.Location = new System.Drawing.Point(261, 18);
+            this.lbsanpham.Location = new System.Drawing.Point(227, 15);
             this.lbsanpham.Name = "lbsanpham";
             this.lbsanpham.Size = new System.Drawing.Size(78, 13);
             this.lbsanpham.TabIndex = 24;
@@ -681,7 +681,7 @@
             // btdong
             // 
             this.btdong.Image = ((System.Drawing.Image)(resources.GetObject("btdong.Image")));
-            this.btdong.Location = new System.Drawing.Point(902, 3);
+            this.btdong.Location = new System.Drawing.Point(841, 3);
             this.btdong.Name = "btdong";
             this.btdong.Size = new System.Drawing.Size(103, 31);
             this.btdong.TabIndex = 7;
@@ -690,7 +690,7 @@
             // 
             // cbloaihienthi
             // 
-            this.cbloaihienthi.Location = new System.Drawing.Point(79, 9);
+            this.cbloaihienthi.Location = new System.Drawing.Point(75, 9);
             this.cbloaihienthi.MenuManager = this.barManager1;
             this.cbloaihienthi.Name = "cbloaihienthi";
             this.cbloaihienthi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -703,7 +703,7 @@
             // BtXuatdulieu
             // 
             this.BtXuatdulieu.Image = ((System.Drawing.Image)(resources.GetObject("BtXuatdulieu.Image")));
-            this.BtXuatdulieu.Location = new System.Drawing.Point(780, 3);
+            this.BtXuatdulieu.Location = new System.Drawing.Point(719, 3);
             this.BtXuatdulieu.Name = "BtXuatdulieu";
             this.BtXuatdulieu.Size = new System.Drawing.Size(103, 31);
             this.BtXuatdulieu.TabIndex = 3;
@@ -712,7 +712,7 @@
             // 
             // lbnhom
             // 
-            this.lbnhom.Location = new System.Drawing.Point(254, 18);
+            this.lbnhom.Location = new System.Drawing.Point(220, 15);
             this.lbnhom.Name = "lbnhom";
             this.lbnhom.Size = new System.Drawing.Size(53, 13);
             this.lbnhom.TabIndex = 3;
@@ -722,7 +722,7 @@
             // btin
             // 
             this.btin.Image = ((System.Drawing.Image)(resources.GetObject("btin.Image")));
-            this.btin.Location = new System.Drawing.Point(672, 3);
+            this.btin.Location = new System.Drawing.Point(611, 3);
             this.btin.Name = "btin";
             this.btin.Size = new System.Drawing.Size(70, 31);
             this.btin.TabIndex = 4;
@@ -732,7 +732,7 @@
             // btxem
             // 
             this.btxem.Image = ((System.Drawing.Image)(resources.GetObject("btxem.Image")));
-            this.btxem.Location = new System.Drawing.Point(567, 3);
+            this.btxem.Location = new System.Drawing.Point(518, 3);
             this.btxem.Name = "btxem";
             this.btxem.Size = new System.Drawing.Size(70, 31);
             this.btxem.TabIndex = 3;
@@ -741,7 +741,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(16, 18);
+            this.labelControl2.Location = new System.Drawing.Point(8, 13);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
             this.labelControl2.TabIndex = 1;

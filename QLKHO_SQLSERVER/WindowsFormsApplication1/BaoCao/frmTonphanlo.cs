@@ -298,7 +298,6 @@ namespace WindowsFormsApplication1
                     MessageBox.Show("Hãy Chọn một mã hàng");
                     return;
                 }
-
             }
             else if (loaihienthi == 2)
             {
@@ -308,7 +307,6 @@ namespace WindowsFormsApplication1
                     return;
                 }
             }
-
                 dto.Loai_HT = loaihienthi.ToString();
 
                 if (cbmathang.Text != "")
@@ -319,41 +317,15 @@ namespace WindowsFormsApplication1
                 {
                     dto.MANCC = gridView3.GetFocusedRowCellValue("MANCC").ToString();
                 }
-
-            
                 dt = ctr.geTthongke_ct_mathang_lo(dto);
-                
-              
                 gridControl1.DataSource = dt;
-               // DevExpress.XtraGrid.StyleFormatCondition cn;
-                //cn = new DevExpress.XtraGrid.StyleFormatCondition(FormatConditionEnum.Less, gridView1.Columns["SONGAYHETHANH"], null, 0);
-                //cn.Appearance.BackColor = Color.Yellow;
-                //gridView1.FormatConditions.Add(cn);
-                //cn.ApplyToRow = true;
-                //gridView1.FormatConditions.Add(cn);
                 gridView1.BestFitColumns();
+                gridView1.ActiveFilterString = "[SOLUONGMH]>0";
                 if (!PublicVariable.isKHOILUONG)
                 {
                     gridView1.Columns["KHOILUONG"].Visible = false;
                 }
-
             }
-            //catch (Exception)
-            //{
-            //    if (iNgonNgu == 0)
-            //    {
-
-            //        MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Please enter enough information");
-
-            //    }
-
-               
-        
-
 
 
 
@@ -548,6 +520,7 @@ namespace WindowsFormsApplication1
             RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
+
     }
 }
         

@@ -972,7 +972,7 @@ namespace WindowsFormsApplication1
 
                         string SQLNGAY="SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
                          DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
-                         if (txtNgay.Text != dtn.Rows[0][0].ToString())
+                         if (txtNgay.Text != dtn.Rows[0][0].ToString()&&!PublicVariable.isUSE_COMPUTERDATE)
                          {
                              MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
                              return;

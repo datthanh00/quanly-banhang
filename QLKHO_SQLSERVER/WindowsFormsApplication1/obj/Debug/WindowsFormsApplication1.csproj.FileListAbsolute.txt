@@ -1046,3 +1046,9 @@ e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsAp
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTonKhoNgay.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.class_import.export.resources
 e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTonphanlo.resources
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Inhd.resources
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmxoahd.resources
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Inhdx.resources
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmActive.resources
+e:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Inhdoanhthu.resources
+E:\visualsudio\QLKHO_SQLSERVER\WindowsFormsApplication1\bin\Debug\Microsoft.SqlServer.Replication.dll

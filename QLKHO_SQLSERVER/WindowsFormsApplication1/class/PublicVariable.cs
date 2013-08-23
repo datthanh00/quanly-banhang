@@ -9,7 +9,7 @@ namespace WindowsFormsApplication1
 	{
         
        public static string TATCA,XEM,THEM, XOA, SUA, IN, MAKHO,MANV;
-       public static Boolean isHSD, isBARCODE, isTONTHUCTE,isKHOILUONG;
+       public static Boolean isHSD, isBARCODE, isTONTHUCTE, isTONTHUCTE1, isKHOILUONG;
        public static Boolean isUSE_COMPUTERDATE=false;
        public static DataTable KhoQL;
        public static String TMPtring; 
