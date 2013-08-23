@@ -691,6 +691,15 @@ namespace WindowsFormsApplication1
                 PublicVariable.isTONTHUCTE = false;
                 barButtonItem1.Enabled = false;
             }
+            if (chucnang.IndexOf("TONTHUCTE1") >= 0)
+            {
+                PublicVariable.isTONTHUCTE1 = true;
+               
+            }
+            else
+            {
+                PublicVariable.isTONTHUCTE1 = false;
+            }
 
             if (chucnang.IndexOf("KHOILUONG") >= 0)
             {

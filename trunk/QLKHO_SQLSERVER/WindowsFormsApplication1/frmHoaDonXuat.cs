@@ -801,7 +801,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         }
                         string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
                         DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
-                        if (txtNgayXuat.Text != dtn.Rows[0][0].ToString())
+                        if (txtNgayXuat.Text != dtn.Rows[0][0].ToString() && !PublicVariable.isUSE_COMPUTERDATE)
                         {
                             MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
                             return;

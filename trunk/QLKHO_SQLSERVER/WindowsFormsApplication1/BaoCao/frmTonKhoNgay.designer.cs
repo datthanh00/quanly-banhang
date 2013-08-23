@@ -51,6 +51,7 @@
             this.kHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHOgetallBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.btloc = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
@@ -295,6 +296,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.btloc);
             this.panelControl3.Controls.Add(this.simpleButton1);
             this.panelControl3.Controls.Add(this.btDong);
             this.panelControl3.Controls.Add(this.btIn);
@@ -306,10 +308,20 @@
             this.panelControl3.Size = new System.Drawing.Size(1292, 38);
             this.panelControl3.TabIndex = 2;
             // 
+            // btloc
+            // 
+            this.btloc.Image = global::WindowsFormsApplication1.Properties.Resources.check;
+            this.btloc.Location = new System.Drawing.Point(98, 4);
+            this.btloc.Name = "btloc";
+            this.btloc.Size = new System.Drawing.Size(70, 31);
+            this.btloc.TabIndex = 28;
+            this.btloc.Text = "Lọc";
+            this.btloc.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Image = global::WindowsFormsApplication1.Properties.Resources.save;
-            this.simpleButton1.Location = new System.Drawing.Point(103, 5);
+            this.simpleButton1.Location = new System.Drawing.Point(177, 5);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 29);
             this.simpleButton1.TabIndex = 4;
@@ -319,7 +331,7 @@
             // btDong
             // 
             this.btDong.Image = ((System.Drawing.Image)(resources.GetObject("btDong.Image")));
-            this.btDong.Location = new System.Drawing.Point(411, 6);
+            this.btDong.Location = new System.Drawing.Point(485, 6);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(75, 29);
             this.btDong.TabIndex = 3;
@@ -329,7 +341,7 @@
             // btIn
             // 
             this.btIn.Image = ((System.Drawing.Image)(resources.GetObject("btIn.Image")));
-            this.btIn.Location = new System.Drawing.Point(315, 6);
+            this.btIn.Location = new System.Drawing.Point(389, 6);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(75, 29);
             this.btIn.TabIndex = 2;
@@ -339,7 +351,7 @@
             // btXuat
             // 
             this.btXuat.Image = ((System.Drawing.Image)(resources.GetObject("btXuat.Image")));
-            this.btXuat.Location = new System.Drawing.Point(192, 6);
+            this.btXuat.Location = new System.Drawing.Point(266, 6);
             this.btXuat.Name = "btXuat";
             this.btXuat.Size = new System.Drawing.Size(102, 29);
             this.btXuat.TabIndex = 1;
@@ -368,10 +380,10 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 2);
+            this.gridControl2.Location = new System.Drawing.Point(3, 3);
             this.gridControl2.MainView = this.advBandedGridView3;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1288, 393);
+            this.gridControl2.Size = new System.Drawing.Size(1286, 391);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -963,6 +975,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridNhapKho;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridXuatKho;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridCuoiKi;
+        private DevExpress.XtraEditors.SimpleButton btloc;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHOTableAdapter kHOTableAdapter;
     }
 }

@@ -46,19 +46,25 @@ namespace WindowsFormsApplication1
             //frm.LoadVI += new frmMain.Translate(loadcbVietNam);
             frm.LoadVI += new frmMain.Translate(loadReSVN);
             frm.LoadEN += new frmMain.Translate(loadReSEG);
-            
-            if (iNgonNgu == 0)
-            {
-                
-                loadReSVN();
-               
 
+            if (PublicVariable.isTONTHUCTE1)
+            {
+                btloc.Enabled = true;
+                btXem.Enabled = false;
             }
             else
             {
+                btloc.Enabled = false;
+                btXem.Enabled = true;
+            }
 
+            if (iNgonNgu == 0)
+            {
+                loadReSVN();
+            }
+            else
+            {
                 loadReSEG();
-               
             }
             load_cbhanghoa();
             dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
@@ -161,7 +167,7 @@ namespace WindowsFormsApplication1
         }
         clDTO dto = new clDTO();
 
-        private void loadGird()
+        private void loadGird(int type)
         {
             
            // dto.MAKHO = gView.GetFocusedRowCellValue("MAKHO").ToString();
@@ -214,6 +220,7 @@ namespace WindowsFormsApplication1
 
                 dt = ctlNCC.GETDATA(SQL);
                 string s123 = dt.Rows[0][0].ToString();
+                dto.TYPE = type;
                 if (dt.Rows[0][0].ToString() != "0")
                 {
                     gridControl2.DataSource = ctr.getTonKhoTTngay2(dto);
@@ -259,7 +266,7 @@ namespace WindowsFormsApplication1
         private void btXem_Click(object sender, EventArgs e)
         {
 
-           loadGird();
+           loadGird(0);
          
         }
 
@@ -403,7 +410,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                loadGird();
+                loadGird(0);
             }
             catch (Exception)
             {
@@ -481,6 +488,11 @@ namespace WindowsFormsApplication1
             e.Graph.Font = new Font("Tahoma", 11, FontStyle.Bold);
             RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            loadGird(1);
         }
 
         
