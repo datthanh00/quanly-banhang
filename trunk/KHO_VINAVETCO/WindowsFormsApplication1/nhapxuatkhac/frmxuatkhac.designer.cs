@@ -1195,8 +1195,7 @@
             this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "SOLUONG";
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.gridColumn7.SummaryItem.FieldName = "_SoLuong";
+            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn7.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
@@ -1213,6 +1212,8 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Đơn Giá";
+            this.gridColumn8.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn8.FieldName = "_DonGia";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
@@ -1234,6 +1235,8 @@
             this.gridColumn51.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn51.FieldName = "KMAI";
             this.gridColumn51.Name = "gridColumn51";
+            this.gridColumn51.SummaryItem.DisplayFormat = "{0:0,0.##}";
+            this.gridColumn51.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn51.Visible = true;
             this.gridColumn51.VisibleIndex = 4;
             // 
@@ -1747,6 +1750,8 @@
             this.gridColumn26.Caption = "Ghi Chú";
             this.gridColumn26.FieldName = "GHICHU";
             this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 7;
             // 
             // gridViewMATHANG
             // 

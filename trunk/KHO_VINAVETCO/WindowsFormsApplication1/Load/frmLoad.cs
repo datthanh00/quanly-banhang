@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1
         public string sManv, sTennv, sBoPhan;
         private void frmLoad_Load(object sender, EventArgs e)
         {
-           
+            
             this.timer1.Enabled = false;
             this.timer1.Interval = 10;
             timer1.Start(); 

@@ -109,7 +109,10 @@ namespace WindowsFormsApplication1
                 }
                 dtr = gridViewTHEOMATHANG.GetDataRow(gridViewTHEOMATHANG.FocusedRowHandle);
             }
-
+            if (dtr == null)
+            {
+                return;
+            }
             string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYNHAP FROM HOADONNHAP WHERE MAHDN='" + dtr["MAHDN"].ToString() + "')>(SELECT NGAY FROM KHOASO WHERE ID=1)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=1) AS NGAY";
             DataTable DTKHOA = ctlNCC.GETDATA(SQLKHOA);
             if (DTKHOA.Rows[0][0].ToString() == "1")
@@ -123,7 +126,9 @@ namespace WindowsFormsApplication1
             btLuu.Enabled = true;
             isnhap = false;
             cboTenNCC.Enabled = false;
-            cbotientra.Properties.ReadOnly = true;
+            cbotientra.Properties.ReadOnly = false;
+            ckphantram.Properties.ReadOnly = false;
+            cktien.Properties.ReadOnly = false;
             txtlohang.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();
@@ -147,6 +152,8 @@ namespace WindowsFormsApplication1
             isnhap = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
+            ckphantram.Properties.ReadOnly = true;
+            cktien.Properties.ReadOnly = true;
             txtlohang.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();
@@ -167,6 +174,10 @@ namespace WindowsFormsApplication1
                     return;
                 }
                 dtr = gridViewTHEOMATHANG.GetDataRow(gridViewTHEOMATHANG.FocusedRowHandle);
+            }
+            if (dtr == null)
+            {
+                return;
             }
             string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
             View_phieunhap(dtr["MAHDN"].ToString());
@@ -313,7 +324,7 @@ namespace WindowsFormsApplication1
 
             Load_panel_filter();
           //  string SQL = "SELECT convert(varchar,T3.NGAYNHAP,103)AS NGAYNHAP ,T3.MAHDN ,T3.TENNCC , T3.MAMH , T4.TENMH ,T3.SOLUONGNHAP,T3.KMAI,T3.SOLUONGNHAP*KLDVT AS KHOILUONG ,T3.GIANHAP, soluongnhap*gianhap AS THANHTIEN,GHICHU,convert(varchar,HSD,103)AS HSD,TIENTRA  FROM (select T2.NGAYNHAP,T1.MAHDN,T1.MAMH,T2.tenncc ,T1.SOLUONGNHAP,T1.KMAI,T1.GIANHAP,GHICHU,HSD,TIENNHAPTT AS TIENTRA FROM (SELECT * FROM CHITIETHDN )AS T1 INNER JOIN (select t9.ngaynhap,t9.mahdn,t9.mancc,t8.tenncc,GHICHU from HOADONNHAP as t9  INNER JOIN nhacungcap as t8 on t9.mancc=t8.mancc  WHERE TYPE=1 AND T9.MAKHO='" + PublicVariable.MAKHO + "' AND NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') AS T2 ON T1.MAHDN =T2.MAHDN) as T3 INNER JOIN MATHANG AS T4 ON T3.MAMH =T4.MAMH ";
-            string SQL = "SELECT convert(varchar,KHOHANG.NGAYNHAP,103)AS NGAYNHAP ,HOADONNHAP.MAHDN ,KHOHANG.LOHANG,TENNCC , MATHANG.MAMH , TENMH ,SOLUONGNHAP,KMAI,(SOLUONGNHAP+KMAI)*KLDVT AS KHOILUONG ,GIANHAP, SOLUONGNHAP*GIANHAP AS THANHTIEN,GHICHU,convert(varchar,HSD,103)AS HSD,TIENNHAPTT AS TIENTRA FROM HOADONNHAP, CHITIETHDN, MATHANG, KHOHANG, NHACUNGCAP WHERE TYPE=1 AND MATHANG.MAMH=KHOHANG.MAMH AND HOADONNHAP.MAHDN=CHITIETHDN.MAHDN AND MATHANG.MAMH=CHITIETHDN.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND KHOHANG.LOHANG=CHITIETHDN.LOHANG AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' AND HOADONNHAP.NGAYNHAP BETWEEN  '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "' ";
+            string SQL = "SELECT convert(varchar,HOADONNHAP.NGAYNHAP,103)AS NGAYNHAP ,HOADONNHAP.MAHDN ,KHOHANG.LOHANG,TENNCC , MATHANG.MAMH , TENMH ,SOLUONGNHAP,KMAI,(SOLUONGNHAP+KMAI)*KLDVT AS KHOILUONG ,GIANHAP, SOLUONGNHAP*GIANHAP AS THANHTIEN,GHICHU,convert(varchar,HSD,103)AS HSD,TIENNHAPTT AS TIENTRA FROM HOADONNHAP, CHITIETHDN, MATHANG, KHOHANG, NHACUNGCAP WHERE TYPE=1 AND MATHANG.MAMH=KHOHANG.MAMH AND HOADONNHAP.MAHDN=CHITIETHDN.MAHDN AND MATHANG.MAMH=CHITIETHDN.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND KHOHANG.LOHANG=CHITIETHDN.LOHANG AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' AND HOADONNHAP.NGAYNHAP BETWEEN  '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "' ";
             
             DataTable TBS = ctlNCC.GETDATA(SQL);
             gridControl3.MainView = gridViewTHEOMATHANG;
@@ -501,7 +512,7 @@ namespace WindowsFormsApplication1
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             loadmahdn();
             cbotientra.Properties.ReadOnly = false;
-            txtlohang.ReadOnly = false;
+            txtlohang.ReadOnly = true;
             ckphantram.Properties.ReadOnly = false;
             cktien.Properties.ReadOnly = false;
             loadgridNhacCungCap();
@@ -630,7 +641,9 @@ namespace WindowsFormsApplication1
                             {
                                 ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
                                 PublicVariable.SQL_NHAP = "";
-                            }catch{
+                            }
+                            catch
+                            {
                             MessageBox.Show("Vui lòng thử lưu lại");
                                 return;
                             }
@@ -677,11 +690,11 @@ namespace WindowsFormsApplication1
 
                                 String sID =  dtr["ID"].ToString();
 
-                                DataTable dtslconlai = ctlNCC.GETDATA("select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "'  AND LOHANG ='" + dtoNCC.LOHANG + "'");
+                                DataTable dtslconlai = ctlNCC.GETDATA("select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "'  AND LOHANG ='" + dtr["LOHANG"].ToString() + "'");
                                 if (dtslconlai.Rows.Count > 0)
                                 {
                                     Double soluongconlai = Convert.ToDouble(dtslconlai.Rows[0][0].ToString());
-                                    DataTable dtnhaptruoc = ctlNCC.GETDATA("select SOLUONGNHAP+ KMAI AS SOLUONGNHAP from CHITIETHDN where MAMH='" + dtr["MAMH"].ToString() + "' AND MAHDN='" + txtMaHD.Text + "' AND LOHANG ='" + dtoNCC.LOHANG + "'");
+                                    DataTable dtnhaptruoc = ctlNCC.GETDATA("select SOLUONGNHAP+ KMAI AS SOLUONGNHAP from CHITIETHDN where MAMH='" + dtr["MAMH"].ToString() + "' AND MAHDN='" + txtMaHD.Text + "' AND LOHANG ='" + dtr["LOHANG"].ToString() + "'");
                                     Double soluongnhapcu = Convert.ToDouble(dtnhaptruoc.Rows[0][0].ToString());
                                     Double soluongnhapmoi = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
                                     if ((soluongnhapcu - soluongconlai) > soluongnhapmoi || soluongnhapmoi<0)
@@ -700,7 +713,7 @@ namespace WindowsFormsApplication1
 
                                 if (sID != "")
                                 {
-                                    update_HoadonChitiet(txtMaHD.Text, txtlohang.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["TIENTRA"].ToString(), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());
+                                    update_HoadonChitiet(txtMaHD.Text, dtr["LOHANG"].ToString(), Convert.ToInt32(sID), dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()), dtr["TIENTRA"].ToString(), dtr["_HSD"].ToString(), dtr["KMAI"].ToString());
                                 }
                                 else
                                 {
@@ -712,7 +725,7 @@ namespace WindowsFormsApplication1
 
                             for (int i = 0; i < TABLE_SAU.Rows.Count; i++)
                             {
-                                DataTable dtname = ctlNCC.GETDATA("select TENMH from MATHANG where MAMH='" + TABLE_SAU.Rows[0]["MAMH"].ToString() + "'");
+                                DataTable dtname = ctlNCC.GETDATA("select TENMH from MATHANG where MAMH='" + TABLE_SAU.Rows[i]["MAMH"].ToString() + "'");
                                 TABLE_SAU.Rows[i]["TENMH"] = dtname.Rows[0][0].ToString();
                             }
 
@@ -822,14 +835,9 @@ namespace WindowsFormsApplication1
                 dtoNCC.MAHDN = mahdn;
                 dtoNCC.KMAI = _KMAI;
                 dtoNCC.TIENTRA = TIENTRA;
-                if (PublicVariable.isHSD)
-                {
-                    dtoNCC.LOHANG = txtlohang.Text;
-                }
-                else
-                {
-                    dtoNCC.LOHANG = PublicVariable.LOHANG;
-                }
+
+                dtoNCC.LOHANG = lohang;
+            
 
                 if (HSD.Length > 5)
                 {
@@ -884,15 +892,10 @@ namespace WindowsFormsApplication1
             {
                 if (gridCTHOADON.RowCount > 0)
                 {
-                    //dt = gridCTHOADON.DataSource;
-                    //gridControl1.da
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETINCTHOADONNHAP(txtMaHD.Text);
-
                     In rep = new In(dt, txtMANCC.Text, cboTenNCC.Text, cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(),cktien.Value.ToString(), txtMaHD.Text, "");
                     rep.ShowPreviewDialog();
-
-                    //gridControl1.ShowPrintPreview();
                 }
                 else
                 {
@@ -901,7 +904,6 @@ namespace WindowsFormsApplication1
             }
             catch (Exception ex)
             {
-
                 XtraMessageBox.Show(ex.Message);
             }
            
@@ -927,15 +929,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void dockPanel1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void cboNhanVienLap_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btAddMH_Click(object sender, EventArgs e)
         {
@@ -988,7 +982,7 @@ namespace WindowsFormsApplication1
                         bool isNum = Double.TryParse(dtr["SOLUONG"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Double.Parse(dtr["_DonGia"].ToString()) * Num;
+                            Double total = Convert.ToDouble(dtr["_DonGia"].ToString()) * Num;
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTRA"] = total.ToString();
                             gettotal();
@@ -1007,7 +1001,7 @@ namespace WindowsFormsApplication1
                         bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Double.Parse(dtr["_DonGia"].ToString()) * Num;
+                            Double total = Convert.ToDouble(dtr["_DonGia"].ToString()) * Num;
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTRA"] = total.ToString();
                             gettotal();
@@ -1208,9 +1202,9 @@ namespace WindowsFormsApplication1
                     {
                         return;
                     }
+ 
 
-
-                    ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), txtlohang.Text, dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
+                    ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), dtr["LOHANG"].ToString(), dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
 
                     // ctlNCC.DELETE_KHOHANG(dtr["MAMH"].ToString(), txtlohang.Text);
                     PublicVariable.TMPtring = "";
@@ -1590,6 +1584,10 @@ namespace WindowsFormsApplication1
                 }
                 dtr = gridViewTHEOMATHANG.GetDataRow(gridViewTHEOMATHANG.FocusedRowHandle);
             }
+            if (dtr == null)
+            {
+                return;
+            }
             string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYNHAP FROM HOADONNHAP WHERE MAHDN='" + dtr["MAHDN"].ToString() + "')>(SELECT NGAY FROM KHOASO WHERE ID=1)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=1) AS NGAY";
             DataTable DTKHOA = ctlNCC.GETDATA(SQLKHOA);
             if (DTKHOA.Rows[0][0].ToString() == "1")
@@ -1606,12 +1604,11 @@ namespace WindowsFormsApplication1
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
             ckphantram.Properties.ReadOnly = true;
-            txtlohang.ReadOnly = true;
             cktien.Properties.ReadOnly = true;
+            txtlohang.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();
             
-
             string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
             View_phieunhap(dtr["MAHDN"].ToString());
             txtNgay.Text = dtr["NGAYNHAP"].ToString();

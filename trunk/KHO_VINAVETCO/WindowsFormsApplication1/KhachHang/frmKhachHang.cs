@@ -131,8 +131,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Khách hàng Có Hóa Đơn bạn không thể xóa");
                         return;
                     }
-
-                    ctl.DELETEKHACHHANG(DTO);
+                    try
+                    {
+                        ctl.DELETEKHACHHANG(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do khách hàng đang có hóa đơn hoặc công nợ đầu kỳ");
+                        return;
+                    }
                     LOADDANHSACHKHACHHANG();
                     sma = "";
 
@@ -166,7 +173,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Custommer is used you can not delete");
                         return;
                     }
-                    ctl.DELETEKHACHHANG(DTO);
+                    try
+                    {
+                        ctl.DELETEKHACHHANG(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do khách hàng đang có hóa đơn");
+                        return;
+                    }
                     LOADDANHSACHKHACHHANG();
                     sma = "";
 

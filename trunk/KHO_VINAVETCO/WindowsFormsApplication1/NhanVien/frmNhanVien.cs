@@ -165,7 +165,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Mã nhân viên này đã xuất hóa đơn cho khách, bạn có thể dổi tên nhân viên thay vì xóa");
                         return;
                     }
-                    CTL.DELETENHANVIEN(DTO);
+                    try
+                    {
+                        CTL.DELETENHANVIEN(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do nhân viên đã có hóa đơn làm việc ");
+                        return;
+                    }
                     loadnhanvien();
                     sma = "";
                     
@@ -192,7 +200,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Employee is used for bill can not delete");
                         return;
                     }
-                    CTL.DELETENHANVIEN(DTO);
+                    try
+                    {
+                        CTL.DELETENHANVIEN(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do nhân viên đã có hóa đơn làm việc ");
+                        return;
+                    }
                     loadnhanvien();
                     sma = "";
 

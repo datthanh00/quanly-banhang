@@ -1257,8 +1257,7 @@
             this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "SOLUONG";
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.gridColumn7.SummaryItem.FieldName = "_SoLuong";
+            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn7.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 2;
@@ -1284,6 +1283,8 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Đơn Giá";
+            this.gridColumn8.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn8.FieldName = "DONGIA";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
@@ -1305,6 +1306,8 @@
             this.gridColumn51.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn51.FieldName = "KMAI";
             this.gridColumn51.Name = "gridColumn51";
+            this.gridColumn51.SummaryItem.DisplayFormat = "{0:0,0.##}";
+            this.gridColumn51.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn51.Visible = true;
             this.gridColumn51.VisibleIndex = 3;
             // 
@@ -1955,6 +1958,7 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 0;
+            this.gridColumn9.Width = 136;
             // 
             // gridColumn21
             // 
@@ -1963,6 +1967,7 @@
             this.gridColumn21.Name = "gridColumn21";
             this.gridColumn21.Visible = true;
             this.gridColumn21.VisibleIndex = 2;
+            this.gridColumn21.Width = 136;
             // 
             // gridColumn19
             // 
@@ -1971,6 +1976,7 @@
             this.gridColumn19.Name = "gridColumn19";
             this.gridColumn19.Visible = true;
             this.gridColumn19.VisibleIndex = 1;
+            this.gridColumn19.Width = 136;
             // 
             // gridColumn20
             // 
@@ -1979,6 +1985,7 @@
             this.gridColumn20.Name = "gridColumn20";
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 3;
+            this.gridColumn20.Width = 136;
             // 
             // gridColumn23
             // 
@@ -1991,6 +1998,7 @@
             this.gridColumn23.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn23.Visible = true;
             this.gridColumn23.VisibleIndex = 4;
+            this.gridColumn23.Width = 136;
             // 
             // gridColumn24
             // 
@@ -2003,16 +2011,20 @@
             this.gridColumn24.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn24.Visible = true;
             this.gridColumn24.VisibleIndex = 5;
+            this.gridColumn24.Width = 136;
             // 
             // gridColumn26
             // 
-            this.gridColumn26.Caption = "Tổng Tiền";
+            this.gridColumn26.Caption = "Còn Lại";
             this.gridColumn26.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn26.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn26.FieldName = "TONGTIEN";
             this.gridColumn26.Name = "gridColumn26";
             this.gridColumn26.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn26.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 6;
+            this.gridColumn26.Width = 150;
             // 
             // gridColumn27
             // 
@@ -2020,7 +2032,8 @@
             this.gridColumn27.FieldName = "GHICHU";
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.Visible = true;
-            this.gridColumn27.VisibleIndex = 6;
+            this.gridColumn27.VisibleIndex = 7;
+            this.gridColumn27.Width = 124;
             // 
             // contextMenuStrip2
             // 

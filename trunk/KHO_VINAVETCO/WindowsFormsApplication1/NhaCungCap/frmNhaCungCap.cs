@@ -222,10 +222,18 @@ namespace WindowsFormsApplication1
                     Boolean isdeletencc = CTL.isDELETENCC(DTO);
                     if (!isdeletencc)
                     {
-                        MessageBox.Show("Nhà cung cấp đang có hóa đơn bạn không thể xóa");
+                        MessageBox.Show("Nhà cung cấp đang có hóa đơn hoặc tồn đầu công nợ nên bạn không thể xóa");
                         return;
                     }
-                    CTL.DELETENCC(DTO);
+                    try
+                    {
+                        CTL.DELETENCC(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do nhà cung cấp đang có hóa đơn");
+                        return;
+                    }
                     LOADNHACC();
                     sma = "";
 
@@ -256,7 +264,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Provider is curent used you can not delete");
                         return;
                     }
-                    CTL.DELETENCC(DTO);
+                    try
+                    {
+                        CTL.DELETENCC(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do nhà cung cấp đang có hóa đơn");
+                        return;
+                    }
                     LOADNHACC();
                     sma = "";
 

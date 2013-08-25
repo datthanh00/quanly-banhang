@@ -208,7 +208,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("khu vực đang được sử dụng bạn không thể xóa");
                         return;
                     }
-                    CTL.DELETEKV(DTO);
+                    try
+                    {
+                        CTL.DELETEKV(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do khu vực đang có khách hàng hoặc nhà cung cấp");
+                        return;
+                    }
                     loadkhuvuc();
                     sma = "";
                     //textEdit1.Text = sma;
@@ -233,7 +241,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Area is used, you cannot delete");
                         return;
                     }
-                    CTL.DELETEKV(DTO);
+                    try
+                    {
+                        CTL.DELETEKV(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do khu vực đang có khách hàng hoặc nhà cung cấp");
+                        return;
+                    }
                     loadkhuvuc();
                     sma = "";
                     //textEdit1.Text = sma;

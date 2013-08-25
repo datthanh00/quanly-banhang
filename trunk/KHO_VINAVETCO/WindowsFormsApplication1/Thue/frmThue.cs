@@ -133,7 +133,15 @@ namespace WindowsFormsApplication1
                          MessageBox.Show("Đã có sản phẩm sử dụng mã thuế này, bạn không thể xóa");
                          return;
                      }
-                     CTL.DELETETHUE(DTO);
+                     try
+                     {
+                         CTL.DELETETHUE(DTO);
+                     } 
+                     catch
+                     {
+                         MessageBox.Show("Bạn không thể xóa do thuế đã có mặt hàng sử dụng ");
+                         return;
+                     }
                      LoadT();
                      sma = "";
 
@@ -154,7 +162,15 @@ namespace WindowsFormsApplication1
                          MessageBox.Show("Tax Number is used you can not delete");
                          return;
                      }
-                     CTL.DELETETHUE(DTO);
+                     try
+                     {
+                         CTL.DELETETHUE(DTO);
+                     }
+                     catch
+                     {
+                         MessageBox.Show("Bạn không thể xóa do thuế đã có mặt hàng sử dụng ");
+                         return;
+                     }
                      LoadT();
 
                      sma = "";

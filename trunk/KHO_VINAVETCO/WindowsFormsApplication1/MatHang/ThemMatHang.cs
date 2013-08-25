@@ -237,7 +237,16 @@ namespace WindowsFormsApplication1
 
                             loadma();
                             DTO.MAMH = txtMaMH.Text;
-                            DTO.MATH = "TH00001";//gridView2.GetFocusedRowCellValue("MATH").ToString();
+                            if (cbthue.Text == "")
+                            {
+                                string sqlgetmath = "select math from thue";
+                                DataTable tbthue = CTL.GETDATA(sqlgetmath);
+                                DTO.MATH = tbthue.Rows[0]["MATH"].ToString();
+                            }
+                            else
+                            {
+                                DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
+                            }
 
                             DTO.MANCC = MANCC;
                             DTO.MAKHO = PublicVariable.MAKHO;

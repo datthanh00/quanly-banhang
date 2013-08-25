@@ -61,7 +61,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chương Trình Quản Lý Xuất - Nhập - Tồn VINAVETCO.
+        ///   Looks up a localized string similar to Chương Trình Quản Lý KHO THUỐC.
         /// </summary>
         internal static string barChuongTrinh {
             get {
@@ -70,7 +70,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chương Trình Quản Lý Xuất - Nhập - Tồn VINAVETCO.
+        ///   Looks up a localized string similar to Chương Trình Quản Lý KHO THUỐC.
         /// </summary>
         internal static string barChuongTrinh1 {
             get {
@@ -79,7 +79,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chương Trình Quản Lý Xuất - Nhập - Tồn VINAVETCO.
+        ///   Looks up a localized string similar to Chương Trình Quản Lý KHO THUỐC.
         /// </summary>
         internal static string barChuongTrinh11 {
             get {

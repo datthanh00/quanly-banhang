@@ -194,7 +194,7 @@ namespace WindowsFormsApplication1
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT convert(varchar,KHOHANG.NGAYNHAP,103)AS NGAYNHAP ,TRAHOADONNHAP.MAHDN ,TENNCC , MATHANG.MAMH , TENMH ,SOLUONGNHAP,KMAI,(SOLUONGNHAP+KMAI)*KLDVT AS KHOILUONG ,GIANHAP, SOLUONGNHAP * GIANHAP AS THANHTIEN,GHICHU,convert(varchar,HSD,103)AS HSD,TIENTRANHAPTT AS TIENTHU,KHOHANG.LOHANG  FROM TRAHOADONNHAP, TRACHITIETHDN, MATHANG, KHOHANG, NHACUNGCAP WHERE [TYPE]=1 AND MATHANG.MAMH=KHOHANG.MAMH AND TRAHOADONNHAP.MAHDN=TRACHITIETHDN.MAHDN AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND KHOHANG.LOHANG=TRACHITIETHDN.LOHANG AND TRAHOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' AND TRAHOADONNHAP.NGAYNHAP BETWEEN  '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "'  ";
+            string SQL = "SELECT convert(varchar,TRAHOADONNHAP.NGAYNHAP,103)AS NGAYNHAP ,TRAHOADONNHAP.MAHDN ,TENNCC , MATHANG.MAMH , TENMH ,SOLUONGNHAP,KMAI,(SOLUONGNHAP+KMAI)*KLDVT AS KHOILUONG ,GIANHAP, SOLUONGNHAP * GIANHAP AS THANHTIEN,GHICHU,convert(varchar,HSD,103)AS HSD,TIENTRANHAPTT AS TIENTHU,KHOHANG.LOHANG  FROM TRAHOADONNHAP, TRACHITIETHDN, MATHANG, KHOHANG, NHACUNGCAP WHERE [TYPE]=1 AND MATHANG.MAMH=KHOHANG.MAMH AND TRAHOADONNHAP.MAHDN=TRACHITIETHDN.MAHDN AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND KHOHANG.LOHANG=TRACHITIETHDN.LOHANG AND TRAHOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' AND TRAHOADONNHAP.NGAYNHAP BETWEEN  '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "'  ";
             
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
@@ -242,7 +242,14 @@ namespace WindowsFormsApplication1
         
         public void loadGrid_sanpham(string MAHDN)
         {
-            Grid_sanpham.DataSource = ctlNCC.GETMMH2(txtMANCC.Text);
+            if (isnhap)
+            {
+                Grid_sanpham.DataSource = ctlNCC.GETMMH2(txtMANCC.Text);
+            }
+            else
+            {
+                Grid_sanpham.DataSource = ctlNCC.GETMMH2_load(txtMANCC.Text);
+            }
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "LOHANG";
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
@@ -590,7 +597,7 @@ namespace WindowsFormsApplication1
 
                             for (int i = 0; i < TABLE_SAU.Rows.Count; i++)
                             {
-                                DataTable dtname = ctlNCC.GETDATA("select TENMH from MATHANG where MAMH='" + TABLE_SAU.Rows[0]["MAMH"].ToString() + "'");
+                                DataTable dtname = ctlNCC.GETDATA("select TENMH from MATHANG where MAMH='" + TABLE_SAU.Rows[i]["MAMH"].ToString() + "'");
                                 TABLE_SAU.Rows[i]["TENMH"] = dtname.Rows[0][0].ToString();
                             }
 
@@ -660,11 +667,15 @@ namespace WindowsFormsApplication1
                 dtoNCC.KMAI = KMAI;
                 dtoNCC.GIATRANHAP = DonGia;
                 dtoNCC.TIENTRA = TIENTRA;
-                dtoNCC.GIANHAP = Convert.ToInt32(GIANHAP); 
-                HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
-                dtoNCC.HSD = HSD;
-                
-
+                dtoNCC.GIANHAP = Convert.ToInt32(GIANHAP);
+                if (HSD.Length > 5)
+                {
+                    dtoNCC.HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
+                }
+                else
+                {
+                    dtoNCC.HSD = "";
+                }
                 string SQL = "SELECT MAX(ID) FROM traCHITIETHDN WHERE MAHDN='" + mahdn + "'";
                 dt = ctlNCC.GETDATA(SQL);
                 dtoNCC.ID = 1+STT;
@@ -690,8 +701,14 @@ namespace WindowsFormsApplication1
                 dtoNCC.GIATRANHAP = DonGia;
                 dtoNCC.TIENTRA = TIENTRA;
                 dtoNCC.GIANHAP = Convert.ToInt32(GIANHAP);
-                HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
-                dtoNCC.HSD = HSD;
+                if (HSD.Length > 5)
+                {
+                    dtoNCC.HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
+                }
+                else
+                {
+                    dtoNCC.HSD = "";
+                }
                 dtoNCC.ID = ID;
                 dtoNCC.KMAI = KMAI;
 
@@ -1047,7 +1064,7 @@ namespace WindowsFormsApplication1
                     {
                         return;
                     }
-
+        
 
                     ctlNCC.DELETEtraCTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), dtr["_LOHANG"].ToString(), dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
                     //ctlNCC.UPDATE_KHOHANG_NX(dtr["MAMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "-" + dtr["SOLUONG"].ToString(), "0", "0");
@@ -1182,6 +1199,8 @@ namespace WindowsFormsApplication1
             isdelete = false;
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
+            ckphantram.Properties.ReadOnly = true;
+            cktien.Properties.ReadOnly = true;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -1256,7 +1275,9 @@ namespace WindowsFormsApplication1
             isnhap = false;
             isdelete = false;
             cboTenNCC.Enabled = false;
-            cbotientra.Properties.ReadOnly = true;
+            cbotientra.Properties.ReadOnly = false;
+            ckphantram.Properties.ReadOnly = false;
+            cktien.Properties.ReadOnly = false;
             Load_panel_create();
             loadgridCTHOADON();
           
