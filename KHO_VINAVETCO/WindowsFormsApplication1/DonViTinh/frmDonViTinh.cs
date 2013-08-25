@@ -142,7 +142,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Đơn vị tính đang được sử dụng cho sản phẩm. bạn không thể xóa");
                         return;
                     }
-                    CTL.DELETEDVT(DTO);
+                    try
+                    {
+                        CTL.DELETEDVT(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do có mặt hàng đang dùng đơn vị tính này");
+                        return;
+                    }
                     LoadDVT();
                     sma = "";
 
@@ -165,7 +173,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Unit is curent us for product, you cant not delete it");
                         return;
                     }
-                    CTL.DELETEDVT(DTO);
+                    try
+                    {
+                        CTL.DELETEDVT(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do có mặt hàng đang dùng đơn vị tính này");
+                        return;
+                    }
                     LoadDVT();
                     sma = "";
 

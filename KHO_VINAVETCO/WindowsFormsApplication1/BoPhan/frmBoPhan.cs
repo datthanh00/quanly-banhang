@@ -188,7 +188,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Bộ phận này đang có nhân viên, bạn không thể xóa");
                         return;
                     }
-                    CTL.DELETEBOPHAN(DTO);
+                    try
+                    {
+                        CTL.DELETEBOPHAN(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do có nhân viên đang trong bộ phận này");
+                        return;
+                    }
                     loadbophan();
                     sma = "";
 
@@ -211,7 +219,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Department is not empty, you can not delete it");
                         return;
                     }
-                    CTL.DELETEBOPHAN(DTO);
+                    try
+                    {
+                        CTL.DELETEBOPHAN(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do có nhân viên đang trong bộ phận này");
+                        return;
+                    }
                     loadbophan();
                     sma = "";
 

@@ -124,6 +124,8 @@
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -192,8 +194,6 @@
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn49 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -810,8 +810,7 @@
             this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "SOLUONG";
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.gridColumn7.SummaryItem.FieldName = "_SoLuong";
+            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn7.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 3;
@@ -862,6 +861,8 @@
             this.gridColumn46.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn46.FieldName = "KMAI";
             this.gridColumn46.Name = "gridColumn46";
+            this.gridColumn46.SummaryItem.DisplayFormat = "{0:0,0.##}";
+            this.gridColumn46.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn46.Visible = true;
             this.gridColumn46.VisibleIndex = 4;
             // 
@@ -904,6 +905,8 @@
             this.gridColumn47.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn47.FieldName = "TIENTRA";
             this.gridColumn47.Name = "gridColumn47";
+            this.gridColumn47.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn47.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn47.Visible = true;
             this.gridColumn47.VisibleIndex = 8;
             // 
@@ -1301,6 +1304,22 @@
             this.gridColumn29.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn29.Visible = true;
             this.gridColumn29.VisibleIndex = 1;
+            // 
+            // gridColumn50
+            // 
+            this.gridColumn50.Caption = "Lô Hàng";
+            this.gridColumn50.FieldName = "LOHANG";
+            this.gridColumn50.Name = "gridColumn50";
+            this.gridColumn50.Visible = true;
+            this.gridColumn50.VisibleIndex = 2;
+            // 
+            // gridColumn49
+            // 
+            this.gridColumn49.Caption = "Hạn Dùng";
+            this.gridColumn49.FieldName = "HSD";
+            this.gridColumn49.Name = "gridColumn49";
+            this.gridColumn49.Visible = true;
+            this.gridColumn49.VisibleIndex = 3;
             // 
             // gridColumn30
             // 
@@ -1996,22 +2015,6 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
-            // 
-            // gridColumn49
-            // 
-            this.gridColumn49.Caption = "Hạn Dùng";
-            this.gridColumn49.FieldName = "HSD";
-            this.gridColumn49.Name = "gridColumn49";
-            this.gridColumn49.Visible = true;
-            this.gridColumn49.VisibleIndex = 3;
-            // 
-            // gridColumn50
-            // 
-            this.gridColumn50.Caption = "Lô Hàng";
-            this.gridColumn50.FieldName = "LOHANG";
-            this.gridColumn50.Name = "gridColumn50";
-            this.gridColumn50.Visible = true;
-            this.gridColumn50.VisibleIndex = 2;
             // 
             // frmTraNCC
             // 

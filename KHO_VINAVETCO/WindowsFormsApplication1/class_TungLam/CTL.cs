@@ -245,9 +245,9 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMATHANG(MAMH);
         }
-        public DataTable GETMATHANG_KHTRA(string MAMH, String LOHANG,string MAKH)
+        public DataTable GETMATHANG_KHTRA(string MAMH,string MAKH)
         {
-            return DAO.GETMATHANG_KHTRA(MAMH, LOHANG,MAKH);
+            return DAO.GETMATHANG_KHTRA(MAMH,MAKH);
         }
         public DataTable GETMATHANG(string MAMH,String LOHANG)
         {
@@ -342,9 +342,27 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMMH();
         }
+
+        public DataTable GETMMHKHTRA()
+        {
+            return DAO.GETMMHKHTRA();
+        }
+        public DataTable GETMMH_BGKHTRA(string MAKH)
+        {
+            return DAO.GETMMH_BGKHTRA(MAKH);
+        }
+
+        public DataTable GETMMH_nhap()
+        {
+            return DAO.GETMMH_nhap();
+        }
         public DataTable GETMMH_BG(string MAKH)
         {
             return DAO.GETMMH_BG(MAKH);
+        }
+        public DataTable GETMMH_BG_nhap(string MAKH)
+        {
+            return DAO.GETMMH_BG_nhap(MAKH);
         }
         public DataTable GETMMH2()
         {
@@ -357,6 +375,10 @@ namespace WindowsFormsApplication1
         public DataTable GETMMH_NHAPKHAC()
         {
             return DAO.GETMMH_NHAPKHAC();
+        }
+        public DataTable GETMMH2_load(string MANCC)
+        {
+            return DAO.GETMMH2_load(MANCC);
         }
         public DataTable GETMMH2(string MANCC)
         {

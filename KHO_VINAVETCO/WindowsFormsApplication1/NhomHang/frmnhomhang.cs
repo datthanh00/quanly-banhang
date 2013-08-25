@@ -145,7 +145,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Nhóm hàng đang có hàng không thể xóa");
                         return;
                     }
-                    CTL.DELETENHOMHANG(DTO);
+                    try
+                    {
+                        CTL.DELETENHOMHANG(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do nhóm hàng đã có mặt hàng sử dụng ");
+                        return;
+                    }
                     loadnhomhang();
                     sma = "";
                     //textEdit1.Text = sMANH;
@@ -166,7 +174,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Group Products not empty you can not delete");
                         return;
                     }
-                    CTL.DELETENHOMHANG(DTO);
+                    try
+                    {
+                        CTL.DELETENHOMHANG(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do nhóm hàng đã có mặt hàng sử dụng ");
+                        return;
+                    }
                     loadnhomhang();
                     sma = "";
                     //textEdit1.Text = sMANH;

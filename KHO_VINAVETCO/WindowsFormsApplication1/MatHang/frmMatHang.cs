@@ -171,7 +171,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Mặt hàng đã xuất hóa đơn bạn không thể xóa");
                         return;
                     }
-                    CTL.DELETEMATHANG(DTO);
+                    try
+                    {
+                        CTL.DELETEMATHANG(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do mặt hàng đang có hóa đơn hoặc tồn đầu kỳ");
+                        return;
+                    }
                     loadmathang();
                 }
             }
@@ -188,7 +196,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("product is have bill you can not delete");
                         return;
                     }
-                    CTL.DELETEMATHANG(DTO);
+                    try
+                    {
+                        CTL.DELETEMATHANG(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do mặt hàng đang có hóa đơn hoặc tồn đầu kỳ");
+                        return;
+                    }
                     loadmathang();
                 }
             }

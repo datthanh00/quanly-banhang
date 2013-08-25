@@ -175,6 +175,7 @@
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn42 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -191,7 +192,6 @@
             this.xoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn50 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -397,7 +397,6 @@
             this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 200);
             this.dockPanel1.Size = new System.Drawing.Size(200, 261);
             this.dockPanel1.Text = "Giao Dịch";
-            this.dockPanel1.Click += new System.EventHandler(this.dockPanel1_Click);
             // 
             // dockPanel1_Container
             // 
@@ -1192,11 +1191,8 @@
             this.gridColumn7.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.FieldName = "SOLUONG";
-            this.gridColumn7.GroupFormat.FormatString = "n2";
-            this.gridColumn7.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.gridColumn7.SummaryItem.FieldName = "_SoLuong";
+            this.gridColumn7.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn7.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 2;
@@ -1215,6 +1211,8 @@
             this.gridColumn43.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn43.FieldName = "KMAI";
             this.gridColumn43.Name = "gridColumn43";
+            this.gridColumn43.SummaryItem.DisplayFormat = "{0:0,0.##}";
+            this.gridColumn43.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn43.Visible = true;
             this.gridColumn43.VisibleIndex = 3;
             // 
@@ -1241,7 +1239,7 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "Đơn Giá";
-            this.gridColumn8.DisplayFormat.FormatString = "n3";
+            this.gridColumn8.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn8.FieldName = "_DonGia";
             this.gridColumn8.Name = "gridColumn8";
@@ -1279,8 +1277,12 @@
             // gridColumn46
             // 
             this.gridColumn46.Caption = "Tiền Trả";
+            this.gridColumn46.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn46.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn46.FieldName = "TIENTRA";
             this.gridColumn46.Name = "gridColumn46";
+            this.gridColumn46.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn46.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn46.Visible = true;
             this.gridColumn46.VisibleIndex = 8;
             // 
@@ -1846,6 +1848,14 @@
             this.gridColumn29.Visible = true;
             this.gridColumn29.VisibleIndex = 1;
             // 
+            // gridColumn50
+            // 
+            this.gridColumn50.Caption = "Lô Hàng";
+            this.gridColumn50.FieldName = "LOHANG";
+            this.gridColumn50.Name = "gridColumn50";
+            this.gridColumn50.Visible = true;
+            this.gridColumn50.VisibleIndex = 2;
+            // 
             // gridColumn30
             // 
             this.gridColumn30.Caption = "Số Lượng Nhập";
@@ -1994,14 +2004,6 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
-            // 
-            // gridColumn50
-            // 
-            this.gridColumn50.Caption = "Lô Hàng";
-            this.gridColumn50.FieldName = "LOHANG";
-            this.gridColumn50.Name = "gridColumn50";
-            this.gridColumn50.Visible = true;
-            this.gridColumn50.VisibleIndex = 2;
             // 
             // frmNhapHang
             // 

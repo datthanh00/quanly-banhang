@@ -199,6 +199,16 @@ namespace WindowsFormsApplication1
         public int iNgonNgu;
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            string current = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
+            System.Diagnostics.Process[] procs;
+            procs = System.Diagnostics.Process.GetProcessesByName(current);
+            if (procs.Length >= 2)
+            {
+                MessageBox.Show("chương trình đang chạy trên máy tính bạn rồi!");
+                Application.Exit();
+                return;
+            }
+
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = NgonNguVA.AppSettings.Settings["Skin"].Value;
             iNgonNgu = int.Parse(NgonNguVA.AppSettings.Settings["NgonNgu"].Value);
             if (iNgonNgu == 1)
@@ -212,15 +222,7 @@ namespace WindowsFormsApplication1
                 loadVN();
             }
 
-            string current = System.Diagnostics.Process.GetCurrentProcess().ProcessName;
-            System.Diagnostics.Process[] procs;
-            procs = System.Diagnostics.Process.GetProcessesByName(current);
-            if (procs.Length >= 2)
-            {
-                MessageBox.Show("chương trình đang chạy trên máy tính bạn rồi!");
-                Application.Exit();
-                return;
-            }
+            
 
             txtTenTaiKhoan.Focus();
             LoadRegistry();

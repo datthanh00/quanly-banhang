@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="barChuongTrinh" xml:space="preserve">
-    <value>Chương Trình Quản Lý Xuất - Nhập - Tồn VINAVETCO</value>
+    <value>Chương Trình Quản Lý KHO THUỐC</value>
   </data>
   <data name="btBoPhan" xml:space="preserve">
     <value>Bộ phận</value>
@@ -403,10 +403,10 @@
     <value>Tuỳ chọn</value>
   </data>
   <data name="barChuongTrinh1" xml:space="preserve">
-    <value>Chương Trình Quản Lý Xuất - Nhập - Tồn VINAVETCO</value>
+    <value>Chương Trình Quản Lý KHO THUỐC</value>
   </data>
   <data name="barChuongTrinh11" xml:space="preserve">
-    <value>Chương Trình Quản Lý Xuất - Nhập - Tồn VINAVETCO</value>
+    <value>Chương Trình Quản Lý KHO THUỐC</value>
   </data>
   <data name="btBoPhan1" xml:space="preserve">
     <value>Bộ phận</value>

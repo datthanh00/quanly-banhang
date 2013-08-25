@@ -221,7 +221,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Kho đang chứa hàng bạn không thể xóa");
                         return;
                     }
-                    CTL.DELETEKHO(DTO);
+                    try
+                    {
+                        CTL.DELETEKHO(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do kho đang có hàng hóa hoặc hóa đơn");
+                        return;
+                    }
                     loadKho();
                     sma = "";
                     //textEdit1.Text = sma.Trim().ToString();
@@ -251,7 +259,15 @@ namespace WindowsFormsApplication1
                         MessageBox.Show("Posibility is not empty you can not delete");
                         return;
                     }
-                    CTL.DELETEKHO(DTO);
+                    try
+                    {
+                        CTL.DELETEKHO(DTO);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Bạn không thể xóa do kho đang có hàng hóa hoặc hóa đơn");
+                        return;
+                    }
                     loadKho();
                     sma = "";
                     //textEdit1.Text = sma.Trim().ToString();

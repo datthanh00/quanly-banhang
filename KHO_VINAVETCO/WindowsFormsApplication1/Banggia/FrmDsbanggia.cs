@@ -67,8 +67,15 @@ namespace WindowsFormsApplication1
                  MessageBox.Show("Bảng Giá đang áp dụng cho khách hàng nên không thể xóa");
                  return;
              }
-
-             CTL.deleteBanggia(sMaBG);
+             try
+             {
+                 CTL.deleteBanggia(sMaBG);
+             }
+             catch
+             {
+                 MessageBox.Show("Bạn không thể xóa do có khách hàng đang sử dụng bảng giá này");
+                 return;
+             }
 
              loadctkh();
         }
