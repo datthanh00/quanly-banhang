@@ -124,10 +124,10 @@
     <value>Bộ phận</value>
   </data>
   <data name="btCongNoKH" xml:space="preserve">
-    <value>Thu Tiền</value>
+    <value>Khách Hàng</value>
   </data>
   <data name="btCongNoNCC" xml:space="preserve">
-    <value>Trả Tiền</value>
+    <value>Nhà Cung Cấp</value>
   </data>
   <data name="btDangXuat" xml:space="preserve">
     <value>Đăng xuất</value>
@@ -415,16 +415,16 @@
     <value>Bộ phận</value>
   </data>
   <data name="btCongNoKH1" xml:space="preserve">
-    <value>Khách hàng</value>
+    <value>Khách Hàng</value>
   </data>
   <data name="btCongNoKH11" xml:space="preserve">
-    <value>Khách hàng</value>
+    <value>Khách Hàng</value>
   </data>
   <data name="btCongNoNCC1" xml:space="preserve">
-    <value>Nhà cung cấp</value>
+    <value>Nhà Cung Cấp</value>
   </data>
   <data name="btCongNoNCC11" xml:space="preserve">
-    <value>Nhà cung cấp</value>
+    <value>Nhà Cung Cấp</value>
   </data>
   <data name="btDangXuat1" xml:space="preserve">
     <value>Đăng xuất</value>

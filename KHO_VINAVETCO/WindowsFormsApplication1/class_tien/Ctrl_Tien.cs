@@ -27,7 +27,10 @@ namespace WindowsFormsApplication1
         public DataTable GETALLPHIEUTHU_ctrl(string NGAYBD, string NGAYKT)
         {
             return CNKH.GETALLPHIEUTHU_DAO(NGAYBD, NGAYKT);
-
+        }
+        public DataTable GETALLHOADON_ctrl(string NGAYBD, string NGAYKT)
+        {
+            return CNKH.GETALLHOADON_ctrl(NGAYBD, NGAYKT);
         }
         public  DataTable get1pthdx_ctrl(string MaHDX)
         {
@@ -51,9 +54,13 @@ namespace WindowsFormsApplication1
             return CNNCC.GETALLHDN_DAO();
         }
 
-        public  DataTable GETALLcongno_ncc(string NGAYBD, string NGAYKT)
+        public  DataTable GETALLcongno_ncc()
         {
-            return CNNCC.GETALLcongno_ncc(NGAYBD, NGAYKT);
+            return CNNCC.GETALLcongno_ncc();
+        }
+        public DataTable GETALLcongno_kh()
+        {
+            return CNKH.GETALLcongno_kh();
         }
         public  string GETcongno_HDN(string MHDN)
         {
@@ -64,9 +71,22 @@ namespace WindowsFormsApplication1
             return CNNCC.GETcongno_HDX(MHDX);
         }
 
+        public string GETcongno_NCC(string MANCC)
+        {
+            return CNNCC.GETcongno_NCC(MANCC);
+        }
+        public string GETcongno_KH(string MAKH)
+        {
+            return CNNCC.GETcongno_KH(MAKH);
+        }
+
         public  DataTable Getall_phieuchi_Dao(string NGAYBD,string NGAYKT)
         {
             return CNNCC.Getall_phieuchi_Dao(NGAYBD, NGAYKT);
+        }
+        public DataTable Getall_hoadon_Dao(string NGAYBD, string NGAYKT)
+        {
+            return CNNCC.Getall_hoadon_Dao(NGAYBD, NGAYKT);
         }
         public  DataTable get1pthdn_ctrl(string MaHDn)
         {
