@@ -1831,7 +1831,7 @@ namespace WindowsFormsApplication1
             sTieuDe = "";
             if (iNgonNgu == 0)
             {
-                sTieuDe = "Trả Tiền";
+                sTieuDe = "Công Nợ NCC";
             }
             if (iNgonNgu == 1)
             {
@@ -1866,7 +1866,7 @@ namespace WindowsFormsApplication1
             sTieuDe = "";
             if (iNgonNgu == 0)
             {
-                sTieuDe = "Thu Tiền";
+                sTieuDe = "Công Nợ Khách Hàng";
 
             }
             if (iNgonNgu == 1)

@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
         public int iNgonNgu;
         public string Nhan;
         public string MaChuyen;
-        public string MaKH;
+        public string MaKH,TENKH;
         public string Tienno;
         public string MaPT;
         public string TIEN;
@@ -49,16 +49,15 @@ namespace WindowsFormsApplication1
             {
                 
                 DataTable dt = new DataTable();
-                //dt = CTR.MAPT_ctrl();
-                //textBoxX1.Text = dt.Rows[0]["mapt"].ToString();
+     
                 txtPT.Text = connect.sTuDongDienMapt(txtPT.Text);
-                txtMahd.Text = MaChuyen;
+                txtenkh.Text = TENKH;
                 txtSoTienNo.Text = Tienno;
                 txtSoTienTra.Text = Tienno;
             }
             else
             {
-                txtMahd.Text = HD;
+                txtenkh.Text = HD;
                 txtPT.Text = MaPT;
                 txtSoTienNo.Text = Tienno;
                 txtSoTienTra.Text = TIEN;
@@ -67,14 +66,7 @@ namespace WindowsFormsApplication1
         }
         public void loadctkh()
         {
-            //DataTable dt = new DataTable();
-            string MAHD1 = txtMahd.Text;
-            if (txtMahd.Text == "CONGNODAUKY")
-            {
-                MAHD1 = MaKH;
-            }
-
-            dt = CTR.get1pthdx_ctrl(MAHD1);
+            dt = CTR.get1pthdx_ctrl(MaKH);
             gridControl1.DataSource = dt;
         }
         public void Luu()
@@ -115,7 +107,7 @@ namespace WindowsFormsApplication1
                 dto.MaPhieuThu = txtPT.Text;
                 dto.NhanVien = sMaNV;
                 dto.NgayThu = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
-                dto.Mahoadonxuat = txtMahd.Text;
+                dto.Mahoadonxuat = txtenkh.Text;
                 dto.SoTienDaTra = double.Parse(txtSoTienTra.Text);
                 if (dto.Mahoadonxuat == "CONGNODAUKY")
                 {
@@ -140,7 +132,7 @@ namespace WindowsFormsApplication1
                 dto.NhanVien = sMaNV;
                 dto.NgayThu = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
                 dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
-                dto.Mahoadonxuat = txtMahd.Text;
+                dto.Mahoadonxuat = txtenkh.Text;
                 if (dto.Mahoadonxuat == "CONGNODAUKY")
                 {
                     dto.Mahoadonxuat = MaKH;
@@ -219,13 +211,13 @@ namespace WindowsFormsApplication1
             barSTluu.Caption = Tien_VN.barSTluu.ToString();
             barstDong.Caption = Tien_VN.barstDong.ToString();
             barIn.Caption = Tien_VN.barIn.ToString();
-            lbhdx.Text = Tien_VN.lbhdx.ToString();
+   
             lbNgaylap.Text = Tien_VN.lbNgaylap.ToString();
             lbNV.Text = Tien_VN.lbNV.ToString();
             lbPT.Text = Tien_VN.lbPT.ToString();
             lbTratien.Text = Tien_VN.lbTratien.ToString();
             lbTienno.Text = Tien_VN.lbTienno.ToString();
-            colMãhóađơnxuất.Caption = Tien_VN.colMãhóađơnxuất.ToString();
+   
             colMãnhânviên.Caption = Tien_VN.colMãnhânviên.ToString();
             colMãphiếuthu.Caption = Tien_VN.colMãphiếuthu.ToString();
             colNgàythu.Caption = Tien_VN.colNgàythu.ToString();
@@ -240,13 +232,13 @@ namespace WindowsFormsApplication1
             barSTluu.Caption = Tien_EL.barSTluu.ToString();
             barstDong.Caption = Tien_EL.barstDong.ToString();
             barIn.Caption = Tien_EL.barIn.ToString();
-            lbhdx.Text = Tien_EL.lbhdx.ToString();
+     
             lbNgaylap.Text = Tien_EL.lbNgaylap.ToString();
             lbNV.Text = Tien_EL.lbNV.ToString();
             lbPT.Text = Tien_EL.lbPT.ToString();
             lbTratien.Text = Tien_EL.lbTratien.ToString();
             lbTienno.Text = Tien_EL.lbTienno.ToString();
-            colMãhóađơnxuất.Caption = Tien_EL.colMãhóađơnxuất.ToString();
+   
             colMãnhânviên.Caption = Tien_EL.colMãnhânviên.ToString();
             colMãphiếuthu.Caption = Tien_EL.colMãphiếuthu.ToString();
             colNgàythu.Caption = Tien_EL.colNgàythu.ToString();
@@ -259,7 +251,7 @@ namespace WindowsFormsApplication1
         {
             if (gridView1.RowCount > 0)
             {
-                frmReportThutienKH re = new frmReportThutienKH(dt, this.iNgonNgu, txtPT.Text, txtMahd.Text,  txtSoTienTra.Text, txtSoTienNo.Text, dtNgayThu.Text,txtNV.Text);
+                frmReportThutienKH re = new frmReportThutienKH(dt, this.iNgonNgu, txtPT.Text, txtenkh.Text,  txtSoTienTra.Text, txtSoTienNo.Text, dtNgayThu.Text,txtNV.Text);
                 re.ShowPreviewDialog();
             }
             else 

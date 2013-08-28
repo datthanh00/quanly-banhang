@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
         public int iNgonNgu;
         public string Nhan;
         public string MaChuyen;
-        public string MaNcc;
+        public string MaNcc,TENNCC;
         public string Tienno;
         public string MaPC;
         public string TIEN;
@@ -32,14 +32,8 @@ namespace WindowsFormsApplication1
         Ctrl_Tien CTR = new Ctrl_Tien();
         public void loadctncc()
         {
-            string MAHD1 = txtMahd.Text;
-            if (txtMahd.Text == "CONGNODAUKY")
-            {
-                MAHD1 = MaNcc;
-            }
-
-     
-            dt = CTR.get1pthdn_ctrl(MAHD1);
+           
+            dt = CTR.get1pthdn_ctrl(MaNcc);
             gridControl1.DataSource = dt;
         }
 
@@ -60,14 +54,14 @@ namespace WindowsFormsApplication1
                 //textBoxX1.Text = dt.Rows[0]["mapt"].ToString();
                 //loadmatutang();
                 txtPC.Text = connect.sTuDongDienMapc(txtPC.Text);
-                txtMahd.Text = MaChuyen;
+                txttenncc.Text = TENNCC;
                 txtSoTienNo.Text = Tienno;
 
                 txtSoTienTra.Text = Tienno;
             }
             else
             {
-                txtMahd.Text = HD;
+                txttenncc.Text = TENNCC;
                 txtPC.Text = MaPC;
                 txtSoTienNo.Text = Tienno;
                 txtSoTienTra.Text = TIEN;
@@ -113,7 +107,7 @@ namespace WindowsFormsApplication1
                 dto.NhanVien = sMaNV;
                 dto.NgayChi = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
                 dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
-                dto.Mahoadonnhap = txtMahd.Text;
+                dto.Mahoadonnhap = txttenncc.Text;
                 //dto.SoTienDaTra = double.Parse(txtSoTienTra.Text);
                 if (dto.Mahoadonnhap=="CONGNODAUKY")
                 {
@@ -137,7 +131,7 @@ namespace WindowsFormsApplication1
                 dto.NhanVien = sMaNV;
                 dto.NgayChi = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
                 dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
-                dto.Mahoadonnhap = txtMahd.Text;
+                dto.Mahoadonnhap = txttenncc.Text;
                 if (dto.Mahoadonnhap=="CONGNODAUKY")
                 {
                     dto.Mahoadonnhap=MaNcc;
@@ -224,13 +218,13 @@ namespace WindowsFormsApplication1
             barSTluu.Caption = Tien_VN.barSTluu.ToString();
             barstDong.Caption = Tien_VN.barstDong.ToString();
             barIn.Caption = Tien_VN.barIn.ToString();
-            lbhdn.Text = Tien_VN.lbhdn.ToString();
+           
             lbTienno.Text = Tien_VN.lbTienno.ToString();
             lbTratien.Text = Tien_VN.lbTratien.ToString();
             lbPC.Text = Tien_VN.lbPC.ToString();
             lbNgaylap.Text = Tien_VN.lbNgaylap.ToString();
             lbNV.Text = Tien_VN.lbNV.ToString();
-            colMãhóađơnnhập.Caption = Tien_VN.colMãhóađơnnhập.ToString();
+          
             colMãnhânviên.Caption = Tien_VN.colMãnhânviên.ToString();
             colMãphiếuchi.Caption = Tien_VN.colMãphiếuchi.ToString();
             colNgàychi.Caption = Tien_VN.colNgàychi.ToString();
@@ -245,13 +239,12 @@ namespace WindowsFormsApplication1
             barSTluu.Caption = Tien_EL.barSTluu.ToString();
             barstDong.Caption = Tien_EL.barstDong.ToString();
             barIn.Caption = Tien_EL.barIn.ToString();
-            lbhdn.Text = Tien_EL.lbhdn.ToString();
+           
             lbTienno.Text = Tien_EL.lbTienno.ToString();
             lbTratien.Text = Tien_EL.lbTratien.ToString();
             lbPC.Text = Tien_EL.lbPC.ToString();
             lbNgaylap.Text = Tien_EL.lbNgaylap.ToString();
             lbNV.Text = Tien_EL.lbNV.ToString();
-            colMãhóađơnnhập.Caption = Tien_EL.colMãhóađơnnhập.ToString();
             colMãnhânviên.Caption = Tien_EL.colMãnhânviên.ToString();
             colMãphiếuchi.Caption = Tien_EL.colMãphiếuchi.ToString();
             colNgàychi.Caption = Tien_EL.colNgàychi.ToString();

@@ -44,8 +44,7 @@
             this.lbPT = new DevExpress.XtraEditors.LabelControl();
             this.lbTienno = new DevExpress.XtraEditors.LabelControl();
             this.lbTratien = new DevExpress.XtraEditors.LabelControl();
-            this.lbhdx = new DevExpress.XtraEditors.LabelControl();
-            this.txtMahd = new DevExpress.XtraEditors.TextEdit();
+            this.txtenkh = new DevExpress.XtraEditors.TextEdit();
             this.txtSoTienNo = new DevExpress.XtraEditors.TextEdit();
             this.txtNV = new DevExpress.XtraEditors.TextEdit();
             this.txtPT = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -56,13 +55,13 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMãphiếuthu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMãnhânviên = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMãhóađơnxuất = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgàythu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTiềnđãtrả = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupCtInFo)).BeginInit();
             this.groupCtInFo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMahd.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtenkh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienTra.Properties)).BeginInit();
@@ -153,13 +152,13 @@
             // 
             this.groupCtInFo.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.groupCtInFo.Appearance.Options.UseBackColor = true;
+            this.groupCtInFo.Controls.Add(this.labelControl1);
             this.groupCtInFo.Controls.Add(this.lbNV);
             this.groupCtInFo.Controls.Add(this.lbNgaylap);
             this.groupCtInFo.Controls.Add(this.lbPT);
             this.groupCtInFo.Controls.Add(this.lbTienno);
             this.groupCtInFo.Controls.Add(this.lbTratien);
-            this.groupCtInFo.Controls.Add(this.lbhdx);
-            this.groupCtInFo.Controls.Add(this.txtMahd);
+            this.groupCtInFo.Controls.Add(this.txtenkh);
             this.groupCtInFo.Controls.Add(this.txtSoTienNo);
             this.groupCtInFo.Controls.Add(this.txtNV);
             this.groupCtInFo.Controls.Add(this.txtPT);
@@ -174,7 +173,7 @@
             // 
             // lbNV
             // 
-            this.lbNV.Location = new System.Drawing.Point(358, 114);
+            this.lbNV.Location = new System.Drawing.Point(514, 119);
             this.lbNV.Name = "lbNV";
             this.lbNV.Size = new System.Drawing.Size(52, 13);
             this.lbNV.TabIndex = 47;
@@ -182,7 +181,7 @@
             // 
             // lbNgaylap
             // 
-            this.lbNgaylap.Location = new System.Drawing.Point(358, 81);
+            this.lbNgaylap.Location = new System.Drawing.Point(518, 88);
             this.lbNgaylap.Name = "lbNgaylap";
             this.lbNgaylap.Size = new System.Drawing.Size(48, 13);
             this.lbNgaylap.TabIndex = 47;
@@ -190,7 +189,7 @@
             // 
             // lbPT
             // 
-            this.lbPT.Location = new System.Drawing.Point(358, 30);
+            this.lbPT.Location = new System.Drawing.Point(514, 38);
             this.lbPT.Name = "lbPT";
             this.lbPT.Size = new System.Drawing.Size(49, 13);
             this.lbPT.TabIndex = 47;
@@ -212,42 +211,37 @@
             this.lbTratien.TabIndex = 47;
             this.lbTratien.Text = "Số tiền trả:";
             // 
-            // lbhdx
+            // txtenkh
             // 
-            this.lbhdx.Location = new System.Drawing.Point(13, 30);
-            this.lbhdx.Name = "lbhdx";
-            this.lbhdx.Size = new System.Drawing.Size(69, 13);
-            this.lbhdx.TabIndex = 47;
-            this.lbhdx.Text = "Hóa đơn xuất:";
-            // 
-            // txtMahd
-            // 
-            this.txtMahd.Location = new System.Drawing.Point(132, 28);
-            this.txtMahd.Name = "txtMahd";
-            this.txtMahd.Properties.DisplayFormat.FormatString = "0,0";
-            this.txtMahd.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtMahd.Properties.Mask.EditMask = "n0";
-            this.txtMahd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtMahd.Properties.ReadOnly = true;
-            this.txtMahd.Size = new System.Drawing.Size(200, 20);
-            this.txtMahd.TabIndex = 46;
+            this.txtenkh.Location = new System.Drawing.Point(101, 29);
+            this.txtenkh.Name = "txtenkh";
+            this.txtenkh.Properties.DisplayFormat.FormatString = "0,0";
+            this.txtenkh.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtenkh.Properties.Mask.EditMask = "n0";
+            this.txtenkh.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtenkh.Properties.ReadOnly = true;
+            this.txtenkh.Size = new System.Drawing.Size(298, 20);
+            this.txtenkh.TabIndex = 46;
             // 
             // txtSoTienNo
             // 
-            this.txtSoTienNo.Location = new System.Drawing.Point(132, 113);
+            this.txtSoTienNo.Location = new System.Drawing.Point(101, 114);
             this.txtSoTienNo.MenuManager = this.barManager1;
             this.txtSoTienNo.Name = "txtSoTienNo";
-            this.txtSoTienNo.Properties.DisplayFormat.FormatString = "0,0";
+            this.txtSoTienNo.Properties.DisplayFormat.FormatString = "{0:0,0}";
             this.txtSoTienNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoTienNo.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.txtSoTienNo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtSoTienNo.Properties.Mask.EditMask = "n0";
             this.txtSoTienNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtSoTienNo.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtSoTienNo.Properties.ReadOnly = true;
-            this.txtSoTienNo.Size = new System.Drawing.Size(200, 20);
+            this.txtSoTienNo.Size = new System.Drawing.Size(252, 20);
             this.txtSoTienNo.TabIndex = 46;
             // 
             // txtNV
             // 
-            this.txtNV.Location = new System.Drawing.Point(487, 115);
+            this.txtNV.Location = new System.Drawing.Point(595, 118);
             this.txtNV.MenuManager = this.barManager1;
             this.txtNV.Name = "txtNV";
             this.txtNV.Properties.ReadOnly = true;
@@ -261,7 +255,7 @@
             // 
             this.txtPT.Border.Class = "TextBoxBorder";
             this.txtPT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtPT.Location = new System.Drawing.Point(489, 29);
+            this.txtPT.Location = new System.Drawing.Point(597, 32);
             this.txtPT.Name = "txtPT";
             this.txtPT.ReadOnly = true;
             this.txtPT.Size = new System.Drawing.Size(165, 21);
@@ -272,20 +266,25 @@
             this.dtNgayThu.CustomFormat = "dddd dd/MM/yyyy";
             this.dtNgayThu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgayThu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayThu.Location = new System.Drawing.Point(487, 75);
+            this.dtNgayThu.Location = new System.Drawing.Point(595, 78);
             this.dtNgayThu.Name = "dtNgayThu";
             this.dtNgayThu.Size = new System.Drawing.Size(167, 23);
             this.dtNgayThu.TabIndex = 40;
             // 
             // txtSoTienTra
             // 
-            this.txtSoTienTra.Location = new System.Drawing.Point(132, 73);
+            this.txtSoTienTra.Location = new System.Drawing.Point(101, 74);
             this.txtSoTienTra.MenuManager = this.barManager1;
             this.txtSoTienTra.Name = "txtSoTienTra";
             this.txtSoTienTra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtSoTienTra.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.txtSoTienTra.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoTienTra.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.txtSoTienTra.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtSoTienTra.Properties.Mask.EditMask = "n0";
-            this.txtSoTienTra.Size = new System.Drawing.Size(200, 20);
+            this.txtSoTienTra.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtSoTienTra.Size = new System.Drawing.Size(252, 20);
             this.txtSoTienTra.TabIndex = 44;
             this.txtSoTienTra.TextChanged += new System.EventHandler(this.txtSoTienTra_TextChanged_1);
             // 
@@ -318,7 +317,6 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMãphiếuthu,
             this.colMãnhânviên,
-            this.colMãhóađơnxuất,
             this.colNgàythu,
             this.colTiềnđãtrả});
             this.gridView1.GridControl = this.gridControl1;
@@ -342,31 +340,32 @@
             this.colMãnhânviên.Visible = true;
             this.colMãnhânviên.VisibleIndex = 1;
             // 
-            // colMãhóađơnxuất
-            // 
-            this.colMãhóađơnxuất.Caption = "Mã Hóa Đơn Xuất";
-            this.colMãhóađơnxuất.FieldName = "MAHDX";
-            this.colMãhóađơnxuất.Name = "colMãhóađơnxuất";
-            this.colMãhóađơnxuất.Visible = true;
-            this.colMãhóađơnxuất.VisibleIndex = 2;
-            // 
             // colNgàythu
             // 
             this.colNgàythu.Caption = "Ngày Thu";
             this.colNgàythu.FieldName = "NGAYTHU";
             this.colNgàythu.Name = "colNgàythu";
             this.colNgàythu.Visible = true;
-            this.colNgàythu.VisibleIndex = 3;
+            this.colNgàythu.VisibleIndex = 2;
             // 
             // colTiềnđãtrả
             // 
-            this.colTiềnđãtrả.Caption = "Tiền Đã Trả";
+            this.colTiềnđãtrả.Caption = "Tiền Đã Thu";
             this.colTiềnđãtrả.DisplayFormat.FormatString = "0,0";
             this.colTiềnđãtrả.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTiềnđãtrả.FieldName = "TIENDATRA";
+            this.colTiềnđãtrả.FieldName = "SOTIEN";
             this.colTiềnđãtrả.Name = "colTiềnđãtrả";
+            this.colTiềnđãtrả.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colTiềnđãtrả.Visible = true;
-            this.colTiềnđãtrả.VisibleIndex = 4;
+            this.colTiềnđãtrả.VisibleIndex = 3;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(10, 32);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(61, 13);
+            this.labelControl1.TabIndex = 48;
+            this.labelControl1.Text = "Khách Hàng:";
             // 
             // FrmThuTien
             // 
@@ -387,7 +386,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupCtInFo)).EndInit();
             this.groupCtInFo.ResumeLayout(false);
             this.groupCtInFo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMahd.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtenkh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienTra.Properties)).EndInit();
@@ -417,19 +416,18 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtPT;
         private DevExpress.XtraGrid.Columns.GridColumn colMãphiếuthu;
         private DevExpress.XtraGrid.Columns.GridColumn colMãnhânviên;
-        private DevExpress.XtraGrid.Columns.GridColumn colMãhóađơnxuất;
         private DevExpress.XtraGrid.Columns.GridColumn colNgàythu;
         private DevExpress.XtraGrid.Columns.GridColumn colTiềnđãtrả;
         private DevExpress.XtraEditors.TextEdit txtNV;
         private DevExpress.XtraEditors.CalcEdit txtSoTienTra;
         private DevExpress.XtraEditors.TextEdit txtSoTienNo;
-        private DevExpress.XtraEditors.TextEdit txtMahd;
+        private DevExpress.XtraEditors.TextEdit txtenkh;
         private DevExpress.XtraEditors.LabelControl lbNgaylap;
         private DevExpress.XtraEditors.LabelControl lbPT;
         private DevExpress.XtraEditors.LabelControl lbTienno;
         private DevExpress.XtraEditors.LabelControl lbTratien;
-        private DevExpress.XtraEditors.LabelControl lbhdx;
         private DevExpress.XtraEditors.LabelControl lbNV;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet5TableAdapters.GETONEPTTableAdapter gETONEPTTableAdapter;
     }
 }

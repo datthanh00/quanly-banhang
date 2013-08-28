@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btKhachHang = new DevExpress.XtraBars.BarButtonItem();
@@ -345,19 +345,19 @@
             // 
             // btCongNoNCC
             // 
-            this.btCongNoNCC.Caption = "Trả Tiền";
+            this.btCongNoNCC.Caption = "Nhà Cung Cấp";
             this.btCongNoNCC.Id = 20;
             this.btCongNoNCC.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.cno;
-            this.btCongNoNCC.LargeWidth = 60;
+            this.btCongNoNCC.LargeWidth = 70;
             this.btCongNoNCC.Name = "btCongNoNCC";
             this.btCongNoNCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btCongNoNCC_ItemClick);
             // 
             // btCongNoKH
             // 
-            this.btCongNoKH.Caption = "Thu Tiền";
+            this.btCongNoKH.Caption = "Khách Hàng";
             this.btCongNoKH.Id = 21;
             this.btCongNoKH.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.KIEMKEKHO1;
-            this.btCongNoKH.LargeWidth = 60;
+            this.btCongNoKH.LargeWidth = 70;
             this.btCongNoKH.Name = "btCongNoKH";
             this.btCongNoKH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btCongNoKH_ItemClick);
             // 
@@ -505,12 +505,12 @@
             this.btAnh.Id = 70;
             this.btAnh.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources._64_restore;
             this.btAnh.Name = "btAnh";
-            toolTipTitleItem1.Text = "Language";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "English";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.btAnh.SuperTip = superToolTip1;
+            toolTipTitleItem3.Text = "Language";
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "English";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            this.btAnh.SuperTip = superToolTip3;
             this.btAnh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btAnh_ItemClick);
             // 
             // btViet
@@ -525,12 +525,12 @@
             this.btNgonNguViet.Glyph = global::WindowsFormsApplication1.Properties.Resources.vn;
             this.btNgonNguViet.Id = 74;
             this.btNgonNguViet.Name = "btNgonNguViet";
-            toolTipTitleItem2.Text = "Ngôn ngữ";
-            toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "Vietnamese\r\n";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.btNgonNguViet.SuperTip = superToolTip2;
+            toolTipTitleItem4.Text = "Ngôn ngữ";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "Vietnamese\r\n";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            superToolTip4.Items.Add(toolTipItem4);
+            this.btNgonNguViet.SuperTip = superToolTip4;
             this.btNgonNguViet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btNgonNguViet_ItemClick);
             // 
             // btHoaDonNhap
@@ -696,7 +696,7 @@
             // 
             // barButtonItem1
             // 
-            this.barButtonItem1.Caption = "Tồn Kho Theo Ngày";
+            this.barButtonItem1.Caption = "Tồn Kho theo ngày";
             this.barButtonItem1.Id = 110;
             this.barButtonItem1.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.store;
             this.barButtonItem1.LargeWidth = 68;

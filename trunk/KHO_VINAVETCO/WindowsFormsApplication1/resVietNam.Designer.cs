@@ -115,7 +115,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Thu Tiền.
+        ///   Looks up a localized string similar to Khách Hàng.
         /// </summary>
         internal static string btCongNoKH {
             get {
@@ -124,7 +124,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Khách hàng.
+        ///   Looks up a localized string similar to Khách Hàng.
         /// </summary>
         internal static string btCongNoKH1 {
             get {
@@ -133,7 +133,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Khách hàng.
+        ///   Looks up a localized string similar to Khách Hàng.
         /// </summary>
         internal static string btCongNoKH11 {
             get {
@@ -142,7 +142,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Trả Tiền.
+        ///   Looks up a localized string similar to Nhà Cung Cấp.
         /// </summary>
         internal static string btCongNoNCC {
             get {
@@ -151,7 +151,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nhà cung cấp.
+        ///   Looks up a localized string similar to Nhà Cung Cấp.
         /// </summary>
         internal static string btCongNoNCC1 {
             get {
@@ -160,7 +160,7 @@ namespace WindowsFormsApplication1 {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Nhà cung cấp.
+        ///   Looks up a localized string similar to Nhà Cung Cấp.
         /// </summary>
         internal static string btCongNoNCC11 {
             get {
