@@ -34,10 +34,8 @@
             this.lbNV = new DevExpress.XtraEditors.LabelControl();
             this.lbNgaylap = new DevExpress.XtraEditors.LabelControl();
             this.lbPC = new DevExpress.XtraEditors.LabelControl();
-            this.lbTienno = new DevExpress.XtraEditors.LabelControl();
             this.lbTratien = new DevExpress.XtraEditors.LabelControl();
             this.txttenncc = new DevExpress.XtraEditors.TextEdit();
-            this.txtSoTienNo = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSTluu = new DevExpress.XtraBars.BarButtonItem();
@@ -54,7 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupCtInFo)).BeginInit();
             this.groupCtInFo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txttenncc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienTra.Properties)).BeginInit();
@@ -68,10 +65,8 @@
             this.groupCtInFo.Controls.Add(this.lbNV);
             this.groupCtInFo.Controls.Add(this.lbNgaylap);
             this.groupCtInFo.Controls.Add(this.lbPC);
-            this.groupCtInFo.Controls.Add(this.lbTienno);
             this.groupCtInFo.Controls.Add(this.lbTratien);
             this.groupCtInFo.Controls.Add(this.txttenncc);
-            this.groupCtInFo.Controls.Add(this.txtSoTienNo);
             this.groupCtInFo.Controls.Add(this.txtNV);
             this.groupCtInFo.Controls.Add(this.txtPC);
             this.groupCtInFo.Controls.Add(this.dtNgayThu);
@@ -87,13 +82,13 @@
             // 
             this.labelControl1.Location = new System.Drawing.Point(12, 32);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(54, 13);
+            this.labelControl1.Size = new System.Drawing.Size(61, 13);
             this.labelControl1.TabIndex = 48;
-            this.labelControl1.Text = "Đối Tượng:";
+            this.labelControl1.Text = "Khách Hàng:";
             // 
             // lbNV
             // 
-            this.lbNV.Location = new System.Drawing.Point(518, 122);
+            this.lbNV.Location = new System.Drawing.Point(518, 114);
             this.lbNV.Name = "lbNV";
             this.lbNV.Size = new System.Drawing.Size(52, 13);
             this.lbNV.TabIndex = 47;
@@ -101,7 +96,7 @@
             // 
             // lbNgaylap
             // 
-            this.lbNgaylap.Location = new System.Drawing.Point(518, 82);
+            this.lbNgaylap.Location = new System.Drawing.Point(518, 75);
             this.lbNgaylap.Name = "lbNgaylap";
             this.lbNgaylap.Size = new System.Drawing.Size(45, 13);
             this.lbNgaylap.TabIndex = 47;
@@ -109,23 +104,15 @@
             // 
             // lbPC
             // 
-            this.lbPC.Location = new System.Drawing.Point(518, 35);
+            this.lbPC.Location = new System.Drawing.Point(518, 32);
             this.lbPC.Name = "lbPC";
             this.lbPC.Size = new System.Drawing.Size(46, 13);
             this.lbPC.TabIndex = 47;
             this.lbPC.Text = "Phiếu chi:";
             // 
-            // lbTienno
-            // 
-            this.lbTienno.Location = new System.Drawing.Point(10, 117);
-            this.lbTienno.Name = "lbTienno";
-            this.lbTienno.Size = new System.Drawing.Size(52, 13);
-            this.lbTienno.TabIndex = 47;
-            this.lbTienno.Text = "Số tiền nợ:";
-            // 
             // lbTratien
             // 
-            this.lbTratien.Location = new System.Drawing.Point(10, 77);
+            this.lbTratien.Location = new System.Drawing.Point(10, 75);
             this.lbTratien.Name = "lbTratien";
             this.lbTratien.Size = new System.Drawing.Size(55, 13);
             this.lbTratien.TabIndex = 47;
@@ -134,30 +121,13 @@
             // txttenncc
             // 
             this.txttenncc.Enabled = false;
-            this.txttenncc.Location = new System.Drawing.Point(131, 35);
+            this.txttenncc.Location = new System.Drawing.Point(131, 28);
             this.txttenncc.Name = "txttenncc";
             this.txttenncc.Properties.Mask.EditMask = "n0";
             this.txttenncc.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txttenncc.Properties.ReadOnly = true;
             this.txttenncc.Size = new System.Drawing.Size(351, 20);
             this.txttenncc.TabIndex = 46;
-            // 
-            // txtSoTienNo
-            // 
-            this.txtSoTienNo.Enabled = false;
-            this.txtSoTienNo.Location = new System.Drawing.Point(131, 119);
-            this.txtSoTienNo.MenuManager = this.barManager1;
-            this.txtSoTienNo.Name = "txtSoTienNo";
-            this.txtSoTienNo.Properties.DisplayFormat.FormatString = "{0:0,0}";
-            this.txtSoTienNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtSoTienNo.Properties.EditFormat.FormatString = "{0:0,0}";
-            this.txtSoTienNo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtSoTienNo.Properties.Mask.EditMask = "n0";
-            this.txtSoTienNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtSoTienNo.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtSoTienNo.Properties.ReadOnly = true;
-            this.txtSoTienNo.Size = new System.Drawing.Size(246, 20);
-            this.txtSoTienNo.TabIndex = 46;
             // 
             // barManager1
             // 
@@ -239,7 +209,7 @@
             // txtNV
             // 
             this.txtNV.Enabled = false;
-            this.txtNV.Location = new System.Drawing.Point(622, 116);
+            this.txtNV.Location = new System.Drawing.Point(622, 110);
             this.txtNV.MenuManager = this.barManager1;
             this.txtNV.Name = "txtNV";
             this.txtNV.Properties.ReadOnly = true;
@@ -254,7 +224,7 @@
             this.txtPC.Border.Class = "TextBoxBorder";
             this.txtPC.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtPC.Enabled = false;
-            this.txtPC.Location = new System.Drawing.Point(622, 32);
+            this.txtPC.Location = new System.Drawing.Point(622, 28);
             this.txtPC.Name = "txtPC";
             this.txtPC.ReadOnly = true;
             this.txtPC.Size = new System.Drawing.Size(165, 21);
@@ -266,14 +236,14 @@
             this.dtNgayThu.Enabled = false;
             this.dtNgayThu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgayThu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayThu.Location = new System.Drawing.Point(622, 78);
+            this.dtNgayThu.Location = new System.Drawing.Point(622, 70);
             this.dtNgayThu.Name = "dtNgayThu";
             this.dtNgayThu.Size = new System.Drawing.Size(165, 23);
             this.dtNgayThu.TabIndex = 40;
             // 
             // txtSoTienTra
             // 
-            this.txtSoTienTra.Location = new System.Drawing.Point(131, 81);
+            this.txtSoTienTra.Location = new System.Drawing.Point(131, 71);
             this.txtSoTienTra.MenuManager = this.barManager1;
             this.txtSoTienTra.Name = "txtSoTienTra";
             this.txtSoTienTra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -306,7 +276,6 @@
             this.groupCtInFo.ResumeLayout(false);
             this.groupCtInFo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txttenncc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienTra.Properties)).EndInit();
@@ -331,9 +300,7 @@
         private DevExpress.XtraEditors.TextEdit txtNV;
         private DevExpress.XtraEditors.CalcEdit txtSoTienTra;
         private DevExpress.XtraEditors.TextEdit txttenncc;
-        private DevExpress.XtraEditors.TextEdit txtSoTienNo;
         private DevExpress.XtraEditors.LabelControl lbPC;
-        private DevExpress.XtraEditors.LabelControl lbTienno;
         private DevExpress.XtraEditors.LabelControl lbTratien;
         private DevExpress.XtraEditors.LabelControl lbNgaylap;
         private DevExpress.XtraEditors.LabelControl lbNV;

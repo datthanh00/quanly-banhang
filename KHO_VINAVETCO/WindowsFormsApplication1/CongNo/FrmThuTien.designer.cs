@@ -164,9 +164,9 @@
             // 
             this.labelControl1.Location = new System.Drawing.Point(10, 32);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(54, 13);
+            this.labelControl1.Size = new System.Drawing.Size(61, 13);
             this.labelControl1.TabIndex = 48;
-            this.labelControl1.Text = "Đối Tượng:";
+            this.labelControl1.Text = "Khách Hàng:";
             // 
             // lbNV
             // 
