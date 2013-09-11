@@ -82,7 +82,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable getCONGNONKH_DAUKY()
         {
-            return dao.getCONGNONKH_DAUKY();
+            return dao.getCONGNOKH_DAUKY();
         }
         public DataTable dtGetNH()
         {

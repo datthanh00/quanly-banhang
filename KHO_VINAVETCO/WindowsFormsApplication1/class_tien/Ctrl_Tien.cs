@@ -26,7 +26,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETALLPHIEUTHU_ctrl(string NGAYBD, string NGAYKT)
         {
-            return CNKH.GETALLPHIEUTHU_DAO(NGAYBD, NGAYKT);
+            return CNKH.GETALL_PHIEUTHU_DAO(NGAYBD, NGAYKT);
         }
         public DataTable GETALLHOADON_ctrl(string NGAYBD, string NGAYKT)
         {

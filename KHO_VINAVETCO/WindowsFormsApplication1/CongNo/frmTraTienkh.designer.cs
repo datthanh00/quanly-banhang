@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class frmTraTien
+    partial class frmTraTienkh
     {
         /// <summary>
         /// Required designer variable.
@@ -256,7 +256,7 @@
             this.txtSoTienTra.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtSoTienTra.Size = new System.Drawing.Size(246, 20);
             this.txtSoTienTra.TabIndex = 44;
-            this.txtSoTienTra.TextChanged += new System.EventHandler(this.txtSoTienTra_TextChanged_1);
+         
             // 
             // frmTraTien
             // 

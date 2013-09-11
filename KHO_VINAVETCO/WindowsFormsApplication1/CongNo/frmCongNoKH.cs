@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
 
 
         }
-        public string smaKH,stenkh;
+        public string smaKH, stenkh, STYPE;
         public string scongno;
         public string sMahdx;
         public string smpt;
@@ -110,21 +110,26 @@ namespace WindowsFormsApplication1
         public void load_congno()
         {
             
-        
-
             panel_congno.Visible = true;
             panel_phieuchi.Visible = false;
-
-      
             groupControl_congno.Dock = System.Windows.Forms.DockStyle.Fill;
-
             gridcongnokh.ExpandAllGroups();
         }
         public void load_phieuthu()
         {
             panel_congno.Visible = false;
             panel_phieuchi.Visible = true;
+            groupControl_congno.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridphieuthu.ExpandAllGroups();
          
+        }
+        public void load_hoadon()
+        {
+            panel_congno.Visible = false;
+            panel_phieuchi.Visible = true;
+            groupControl_congno.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridhoadon.ExpandAllGroups();
+
         }
         private void btThutien_Click(object sender, EventArgs e)
         {
@@ -143,7 +148,7 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-            frmTraTien frm = new frmTraTien();
+            frmTraTienkh frm = new frmTraTienkh();
             if (this.smaKH == null)
             {
                 if (iNgonNgu == 0)
@@ -157,8 +162,8 @@ namespace WindowsFormsApplication1
             {
                 frm.Nhan = "Them";
                 frm.Type = "2";
-                frm.TENNCC = stenkh;
-                frm.MaNcc = smaKH;
+                frm.TENKH = stenkh;
+                frm.MaKH = smaKH;
                 frm.Tienno = "0";
                 frm.sMaNV = sMaNV;
                 frm.sTenNV = sTenNV;
@@ -203,11 +208,73 @@ namespace WindowsFormsApplication1
         }
         private void btneditthutien_Click(object sender, EventArgs e)
         {
+            if (STYPE != null)
+            {
+                if (STYPE == "PT")
+                {
+                    loadsua_phieuTHU();
+                }
+                else
+                {
+                    loadsua_phieuchi();
+                }
+            }
+
+
+        }
+        public void loadsua_phieuchi()
+        {
             if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
-            } 
+            }
+            frmTraTienkh frm = new frmTraTienkh();
+            if (smpt == null)
+            {
+                if (iNgonNgu == 0)
+                {
+                    XtraMessageBox.Show("Bạn phải chọn 1 phiếu chi để sửa tiền");
+                }
+                else
+                    XtraMessageBox.Show("You must select a bill to get money");
+            }
+            else
+            {
+                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYCHI FROM PHIEUCHI WHERE MAPC='" + smpt + "')>(SELECT NGAY FROM KHOASO WHERE ID=5)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=5) AS NGAY";
+                CTL ctlKHOA = new CTL();
+                DataTable DTKHOA = ctlKHOA.GETDATA(SQLKHOA);
+                if (DTKHOA.Rows[0][0].ToString() == "1")
+                {
+                    MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
+                    return;
+                }
+
+                frm.Nhan = "Sua";
+                frm.MaPC = smpt;
+                frm.MaKH = smaKH;
+                frm.TENKH = stenkh;
+                frm.TIEN = stientra;
+                frm.sMaNV = sMaNV;
+
+                frm.Tienno = "0";
+                frm.sTenNV = sTenNV;
+
+
+                frm.iNgonNgu = this.iNgonNgu;
+                frm.ShowDialog();
+                loadGetAllPHIEUTHU();
+                //loadctkh();
+                load_phieuthu();
+            }
+        }
+        public void loadsua_phieuTHU()
+        {
+            if (PublicVariable.SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             FrmThuTien frm = new FrmThuTien();
             if (this.smpt == null)
             {
@@ -231,13 +298,14 @@ namespace WindowsFormsApplication1
                 }
                 frm.Nhan = "Sua";
                 frm.MaPT = smpt;
-                frm.HD = smahdx;
+                frm.MaKH = smaKH;
+                frm.TENKH = stenkh;
                 frm.TIEN = stientra;
                 frm.sMaNV = sMaNV;
 
-                frm.Tienno = CTR.GETcongno_HDX(smahdx);
+                frm.Tienno = CTR.GETcongno_KH(smaKH);
                 frm.iNgonNgu = this.iNgonNgu;
-                
+
                 frm.sTenNV = sTenNV;
                 frm.ShowDialog();
                 loadGetAllPHIEUTHU();
@@ -245,7 +313,6 @@ namespace WindowsFormsApplication1
                 load_phieuthu();
             }
         }
- 
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
@@ -502,7 +569,7 @@ namespace WindowsFormsApplication1
             }
 
             loadGetAllHOADON();
-            load_phieuthu();
+            load_hoadon();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
@@ -527,46 +594,24 @@ namespace WindowsFormsApplication1
 
         private void gridphieuthu_DoubleClick(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "False")
+            GridView view = sender as GridView;
+            Point pt = view.GridControl.PointToClient(Control.MousePosition);
+            GridHitInfo hitInfo = view.CalcHitInfo(pt);
+            if (hitInfo.InRow)
             {
-                MessageBox.Show("KHÔNG CÓ QUYỀN ");
-                return;
-            }
-            FrmThuTien frm = new FrmThuTien();
-            if (this.smpt == null)
-            {
-                if (iNgonNgu == 0)
+                if (STYPE != null)
                 {
-                    XtraMessageBox.Show("Bạn phải chọn 1 phiếu thu để sửa lại số tiền vừa trả");
+                    if (STYPE == "PT")
+                    {
+                        loadsua_phieuTHU();
+                    }
+                    else
+                    {
+                        loadsua_phieuchi();
+                    }
                 }
-                else
-                    XtraMessageBox.Show("You must select a bill to update paid money!!!");
             }
-            else
-            {
-                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYTHU FROM PHIEUTHU WHERE MAPT='" + smpt + "')>(SELECT NGAY FROM KHOASO WHERE ID=6)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=6) AS NGAY";
-                CTL ctlKHOA = new CTL();
-                DataTable DTKHOA = ctlKHOA.GETDATA(SQLKHOA);
-                if (DTKHOA.Rows[0][0].ToString() == "1")
-                {
-                    MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
-                    return;
-                }
-                frm.Nhan = "Sua";
-                frm.MaPT = smpt;
-                frm.TIEN = scongno;
-                frm.sMaNV = sMaNV;
 
-                frm.Tienno = CTR.GETcongno_KH(smaKH);
-                frm.iNgonNgu = this.iNgonNgu;
-                frm.TENKH = stenkh;
-                frm.MaKH = smaKH;
-                frm.sTenNV = sTenNV;
-                frm.ShowDialog();
-                loadGetAllPHIEUTHU();
-                //loadctkh();
-                load_phieuthu();
-            }
         }
 
         private void gridphieuthu_Click(object sender, EventArgs e)
@@ -585,8 +630,9 @@ namespace WindowsFormsApplication1
                 DataRow dtr = gridphieuthu.GetDataRow(hitInfo.RowHandle);
                 smaKH = dtr["MAKH"].ToString();
                 stenkh = dtr["TENKH"].ToString();
-                scongno = dtr["SOTIEN"].ToString();
+                stientra = dtr["SOTIEN"].ToString();
                 smpt = dtr["MAPT"].ToString();
+                STYPE = dtr["TYPE"].ToString();
             }
         }
 
