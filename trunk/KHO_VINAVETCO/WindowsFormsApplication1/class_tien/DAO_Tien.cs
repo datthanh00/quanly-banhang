@@ -28,11 +28,11 @@ namespace WindowsFormsApplication1
             + " UNION ALL SELECT MAHDN AS MAHDX,NHACUNGCAP.MANCC AS MAKH, TIENPHAITRA,TIENDATRA, tienphaitra-tiendatra as CONLAI ,convert(varchar,NGAYNHAP ,103)AS NGAYXUAT,TENNCC AS TENKH FROM TRAHOADONNHAP,NHACUNGCAP WHERE  TYPE=1 AND TRAHOADONNHAP.MANCC=NHACUNGCAP.MANCC AND TRAHOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra<>0 and NGAYNHAP BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
             return pv.getdata(SQL);
         }
-        public DataTable GETALLPHIEUTHU_DAO(string NGAYBD, string NGAYKT)
+        public DataTable GETALL_PHIEUTHU_DAO(string NGAYBD, string NGAYKT)
         {
             Provider pv = new Provider();
-            string SQL = "SELECT KHACHHANG.MAKH,TENKH,MAPT,SOTIEN,NGAYTHU AS NGAY FROM PHIEUTHU, KHACHHANG WHERE KHACHHANG.MAKH=PHIEUTHU.MADOITUONG AND NGAYTHU BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'"
-                + " UNION ALL SELECT KHACHHANG.MAKH,TENKH,MAPC AS MAPT,-SOTIEN AS SOTIEN,NGAYCHI AS NGAY FROM PHIEUCHI, KHACHHANG WHERE KHACHHANG.MAKH=PHIEUCHI.MADOITUONG  AND NGAYCHI BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
+            string SQL = "SELECT 'PT' AS TYPE,KHACHHANG.MAKH,TENKH,MAPT,SOTIEN,NGAYTHU AS NGAY FROM PHIEUTHU, KHACHHANG WHERE KHACHHANG.MAKH=PHIEUTHU.MADOITUONG AND NGAYTHU BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'"
+                + " UNION ALL SELECT 'PC' AS TYPE, KHACHHANG.MAKH,TENKH,MAPC AS MAPT,-SOTIEN AS SOTIEN,NGAYCHI AS NGAY FROM PHIEUCHI, KHACHHANG WHERE KHACHHANG.MAKH=PHIEUCHI.MADOITUONG  AND NGAYCHI BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
             return pv.getdata(SQL);
         }
 
@@ -123,8 +123,8 @@ namespace WindowsFormsApplication1
         public DataTable Getall_phieuchi_Dao(string NGAYBD, string NGAYKT)
         {
             Provider pv = new Provider();
-            string SQL = "SELECT NHACUNGCAP.MANCC,TENNCC,MAPC,SOTIEN,NGAYCHI AS NGAY FROM PHIEUCHI, NHACUNGCAP WHERE NHACUNGCAP.MANCC=PHIEUCHI.MADOITUONG AND NGAYCHI BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'"
-                + " UNION ALL SELECT NHACUNGCAP.MANCC,TENNCC,MAPT AS MAPC,SOTIEN AS SOTIEN,NGAYTHU AS NGAY FROM PHIEUTHU, NHACUNGCAP WHERE NHACUNGCAP.MANCC=PHIEUTHU.MADOITUONG  AND NGAYTHU BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
+            string SQL = "SELECT 'PC' AS TYPE,NHACUNGCAP.MANCC,TENNCC,MAPC,SOTIEN,NGAYCHI AS NGAY FROM PHIEUCHI, NHACUNGCAP WHERE NHACUNGCAP.MANCC=PHIEUCHI.MADOITUONG AND NGAYCHI BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'"
+                + " UNION ALL  SELECT 'PT' AS TYPE,NHACUNGCAP.MANCC,TENNCC,MAPT AS MAPC,-SOTIEN AS SOTIEN,NGAYTHU AS NGAY FROM PHIEUTHU, NHACUNGCAP WHERE NHACUNGCAP.MANCC=PHIEUTHU.MADOITUONG  AND NGAYTHU BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
             return pv.getdata(SQL);
         }
 
@@ -213,7 +213,7 @@ namespace WindowsFormsApplication1
             string SQL = "";
             SQL = SQL + "\r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO + " + SOTIENCU + "- " + dto.SoTienDaTra + " WHERE MANCC='" + dto.MaDoituong + "' ";
             SQL = SQL + "\r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO - " + SOTIENCU + "+ " + dto.SoTienDaTra + " WHERE MAKH='" + dto.MaDoituong + "' ";
-            SQL = SQL + "\r\nGO\r\n  UPDATE  PHIEUCHI set MANV='" + dto.NhanVien + "',SoTienDaTra_PC='" + dto.SoTienDaTra + "' WHERE MAPC='" + dto.MaPhieuChi + "' and MAHDN='" + dto.Mahoadonnhap + "'";
+            SQL = SQL + "\r\nGO\r\n  UPDATE  PHIEUCHI set MANV='" + dto.NhanVien + "',SOTIEN='" + dto.SoTienDaTra + "' WHERE MAPC='" + dto.MaPhieuChi + "' ";
             pv.executeNonQuery2(SQL);
         }
 

@@ -39,6 +39,7 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridhoadon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,6 +72,7 @@
             this.linkhoadon = new DevExpress.XtraNavBar.NavBarItem();
             this.linkTheoTuan = new DevExpress.XtraNavBar.NavBarItem();
             this.panel_congno = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
             this.btXuat = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
@@ -90,7 +92,6 @@
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
             this.printableComponentLink2 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl_congno)).BeginInit();
             this.groupControl_congno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -150,7 +151,8 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn4,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.gridColumn14});
             this.gridphieuchi.GridControl = this.gridControl1;
             this.gridphieuchi.GroupCount = 1;
             this.gridphieuchi.Name = "gridphieuchi";
@@ -213,6 +215,12 @@
             this.gridColumn3.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "TYPE";
+            this.gridColumn14.FieldName = "TYPE";
+            this.gridColumn14.Name = "gridColumn14";
             // 
             // gridhoadon
             // 
@@ -516,6 +524,16 @@
             this.panel_congno.Size = new System.Drawing.Size(1092, 59);
             this.panel_congno.TabIndex = 11;
             // 
+            // simpleButton7
+            // 
+            this.simpleButton7.Image = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.simpleButton7.Location = new System.Drawing.Point(122, 10);
+            this.simpleButton7.Name = "simpleButton7";
+            this.simpleButton7.Size = new System.Drawing.Size(100, 35);
+            this.simpleButton7.TabIndex = 5;
+            this.simpleButton7.Text = "Thu Tiền";
+            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
+            // 
             // btIn
             // 
             this.btIn.Image = ((System.Drawing.Image)(resources.GetObject("btIn.Image")));
@@ -717,16 +735,6 @@
             this.printableComponentLink2.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink2_CreateReportFooterArea);
             this.printableComponentLink2.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink2_CreateReportHeaderArea);
             // 
-            // simpleButton7
-            // 
-            this.simpleButton7.Image = global::WindowsFormsApplication1.Properties.Resources.money;
-            this.simpleButton7.Location = new System.Drawing.Point(122, 10);
-            this.simpleButton7.Name = "simpleButton7";
-            this.simpleButton7.Size = new System.Drawing.Size(100, 35);
-            this.simpleButton7.TabIndex = 5;
-            this.simpleButton7.Text = "Thu Tiền";
-            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
-            // 
             // frmCongNoNcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -838,5 +846,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
     }
 }

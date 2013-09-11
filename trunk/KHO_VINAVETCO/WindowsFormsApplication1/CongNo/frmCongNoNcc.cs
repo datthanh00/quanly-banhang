@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
         }
         DataTable dt = new DataTable();
         public int iNgonNgu;
-        public string smaNcc,STENNCC;
+        public string smaNcc,STENNCC,STYPE;
         public string sTienno;
         public string sMahdn;
         public string smpc;
@@ -109,7 +109,13 @@ namespace WindowsFormsApplication1
         {
             panel_congno.Visible = false;
             panel_phieuchi.Visible = true;
-            //gridphieuchi.ExpandAllGroups();
+            gridphieuchi.ExpandAllGroups();
+        }
+        public void load_hoadon()
+        {
+            panel_congno.Visible = false;
+            panel_phieuchi.Visible = true;
+            gridhoadon.ExpandAllGroups();
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -181,6 +187,50 @@ namespace WindowsFormsApplication1
             }
             loadfrm_tratien();
         }
+        public void loadsua_phieuTHU()
+        {
+            if (PublicVariable.SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            FrmThuTienncc frm = new FrmThuTienncc();
+            if (this.smpc == null)
+            {
+                if (iNgonNgu == 0)
+                {
+                    XtraMessageBox.Show("Bạn phải chọn 1 phiếu thu để sửa lại số tiền vừa trả");
+                }
+                else
+                    XtraMessageBox.Show("You must select a bill to update paid money!!!");
+
+            }
+            else
+            {
+                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYTHU FROM PHIEUTHU WHERE MAPT='" + smpc + "')>(SELECT NGAY FROM KHOASO WHERE ID=6)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=6) AS NGAY";
+                CTL ctlKHOA = new CTL();
+                DataTable DTKHOA = ctlKHOA.GETDATA(SQLKHOA);
+                if (DTKHOA.Rows[0][0].ToString() == "1")
+                {
+                    MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
+                    return;
+                }
+                frm.Nhan = "Sua";
+                frm.MaPT = smpc;
+                frm.Mancc = smaNcc;
+                frm.TENNCC = STENNCC;
+                frm.TIEN = stientra;
+                frm.sMaNV = sMaNV;
+
+                frm.Tienno = "0";
+                frm.iNgonNgu = this.iNgonNgu;
+
+                frm.sTenNV = sTenNV;
+                frm.ShowDialog();
+                loadGetAllphieuchi();
+                load_phieuchi();
+            }
+        }
         public void loadsua_phieuchi()
         {
             if (PublicVariable.SUA == "False")
@@ -229,7 +279,7 @@ namespace WindowsFormsApplication1
         }
         public void loadfrm_thutien()
         {
-            FrmThuTien frm = new FrmThuTien();
+            FrmThuTienncc frm = new FrmThuTienncc();
             if (this.smaNcc == null)
             {
                 if (iNgonNgu == 0)
@@ -244,12 +294,12 @@ namespace WindowsFormsApplication1
             {
                 frm.Nhan = "Them";
                 frm.Type = "2";
-                frm.TENKH = STENNCC;
+                frm.TENNCC = STENNCC;
                 frm.Tienno = "0";
                 frm.iNgonNgu = this.iNgonNgu;
                 frm.sMaNV = sMaNV;
                 frm.sTenNV = sTenNV;
-                frm.MaKH = smaNcc;
+                frm.Mancc = smaNcc;
 
                 frm.ShowDialog();
                 loadGetAllHDN();
@@ -314,7 +364,17 @@ namespace WindowsFormsApplication1
         }
         private void bt_edittratien_Click(object sender, EventArgs e)
         {
-            loadsua_phieuchi();
+            if (STYPE != null)
+            {
+                if (STYPE == "PC")
+                {
+                    loadsua_phieuchi();
+                }
+                else
+                {
+                    loadsua_phieuTHU();
+                }
+            }
         }
 
         private void linkcongno_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -523,7 +583,7 @@ namespace WindowsFormsApplication1
 
             loadGetAllhoadon();
             
-            load_phieuchi();
+            load_hoadon();
         }
 
         private void gridcongno_DoubleClick(object sender, EventArgs e)
@@ -548,13 +608,20 @@ namespace WindowsFormsApplication1
             GridHitInfo hitInfo = view.CalcHitInfo(pt);
             if (hitInfo.InRow)
             {
-                DataRow dtr = gridphieuchi.GetDataRow(hitInfo.RowHandle);
-                smpc = dtr["MAPC"].ToString();
-                STENNCC = dtr["TENNCC"].ToString();
-                smaNcc = dtr["MANCC"].ToString();
-                stientra = dtr["SOTIEN"].ToString();
-                loadsua_phieuchi();
+                if (STYPE != null)
+                {
+                    if (STYPE == "PC")
+                    {
+                        loadsua_phieuchi();
+                    }
+                    else
+                    {
+                        loadsua_phieuTHU();
+                    }
+                }
             }
+
+            
             
         }
 
@@ -584,6 +651,7 @@ namespace WindowsFormsApplication1
                 STENNCC = dtr["TENNCC"].ToString();
                 smaNcc = dtr["MANCC"].ToString();
                 stientra = dtr["SOTIEN"].ToString();
+                STYPE = dtr["TYPE"].ToString();
             }
         }
 

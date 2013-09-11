@@ -2435,7 +2435,7 @@ namespace WindowsFormsApplication1
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
             bKTraMoTab = true;
-            sTieuDe = "Công Nợ Đầu Kỳ";
+            sTieuDe = "Công Nợ Nhà Cung Cấp Đầu Kỳ";
 
             if (!checkOpenTabs(sTieuDe))
             {
@@ -2517,7 +2517,7 @@ namespace WindowsFormsApplication1
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
             bKTraMoTab = true;
-            sTieuDe = "Phải Thu Đầu Kỳ";
+            sTieuDe = "Công Nợ Khách Hàng Đầu Kỳ";
 
             if (!checkOpenTabs(sTieuDe))
             {

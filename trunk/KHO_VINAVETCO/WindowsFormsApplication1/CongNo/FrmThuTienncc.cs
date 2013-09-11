@@ -11,9 +11,9 @@ using System.Threading;
 
 namespace WindowsFormsApplication1
 {
-    public partial class FrmThuTien : DevExpress.XtraEditors.XtraForm
+    public partial class FrmThuTienncc : DevExpress.XtraEditors.XtraForm
     {
-        public FrmThuTien()
+        public FrmThuTienncc()
         {
             InitializeComponent();
         }
@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
         public int iNgonNgu;
         public string Nhan,Type;
         public string MaChuyen;
-        public string MaKH,TENKH;
+        public string Mancc,TENNCC;
         public string Tienno;
         public string MaPT;
         public string TIEN;
@@ -51,16 +51,16 @@ namespace WindowsFormsApplication1
                 DataTable dt = new DataTable();
      
                 txtPT.Text = connect.sTuDongDienMapt(txtPT.Text);
-                txtenkh.Text = TENKH;
-                txtSoTienNo.Text = Tienno;
+                txtenkh.Text = TENNCC;
+      
                 txtSoTienTra.Text = Tienno;
             }
             else
             {
-                txtenkh.Text = TENKH;
+                txtenkh.Text = TENNCC;
                 txtPT.Text = MaPT;
-                txtSoTienNo.Text = Tienno;
-                txtSoTienTra.Text = TIEN;
+
+                txtSoTienTra.Text =(-Convert.ToInt32(TIEN)).ToString();
             }
          
         }
@@ -77,38 +77,18 @@ namespace WindowsFormsApplication1
                     XtraMessageBox.Show("You haven't type debt money yet!!!");
 
             }
-            else if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text)&&Nhan != "Sua")
-            {
-                if (iNgonNgu == 0)
-                {
-                    XtraMessageBox.Show("Số tiền trả không thể lớn hơn số tiền nợ");
-                }
-                else
-                    XtraMessageBox.Show("Pay money is not bigger than debt money!!!");
-
-            }
-            else if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text) && double.Parse(txtSoTienTra.Text) > double.Parse(TIEN) && Nhan == "Sua")
-            {
-                if (iNgonNgu == 0)
-                {
-                    XtraMessageBox.Show("Số tiền trả không thể lớn hơn số tiền nợ");
-                }
-                else
-                    XtraMessageBox.Show("Pay money is not bigger than debt money!!!");
-
-            }
-            else if (Nhan == "Sua")
+            if (Nhan == "Sua")
             {
                 PHIEUTHU_DTO dto = new PHIEUTHU_DTO();
                 dto.MaPhieuThu = txtPT.Text;
                 dto.NhanVien = sMaNV;
-                dto.MaDoituong = MaKH;
+                dto.MaDoituong = Mancc;
                 dto.NgayThu = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
                 dto.Mahoadonxuat = txtenkh.Text;
                 dto.SoTienDaTra = double.Parse(txtSoTienTra.Text);
                 if (dto.Mahoadonxuat == "CONGNODAUKY")
                 {
-                    dto.Mahoadonxuat = MaKH;
+                    dto.Mahoadonxuat = Mancc;
                 }
                 try
                 {
@@ -135,14 +115,14 @@ namespace WindowsFormsApplication1
                 PHIEUTHU_DTO dto = new PHIEUTHU_DTO();
                 dto.MaPhieuThu = txtPT.Text;
                 dto.NhanVien = sMaNV;
-                dto.MaDoituong = MaKH;
+                dto.MaDoituong = Mancc;
                 dto.NgayThu = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
                 dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
                 dto.Mahoadonxuat = txtenkh.Text;
 
                 if (dto.Mahoadonxuat == "CONGNODAUKY")
                 {
-                    dto.Mahoadonxuat = MaKH;
+                    dto.Mahoadonxuat = Mancc;
                 }
                 
                 txtPT.Text=connect.sTuDongDienMapt(txtPT.Text);
@@ -172,9 +152,9 @@ namespace WindowsFormsApplication1
         }
         private void vCapNhatSoTienNo()
         {
-            double bTienNo = double.Parse(string.Format("{0:0}", txtSoTienNo.Text));
+
             double bTienTra = double.Parse(txtSoTienTra.Text);
-            txtSoTienNo.Text = string.Format("{0:N0}", bTienNo - bTienTra);
+    
         }
 
         private void txtSoTienTra_TextChanged(object sender, EventArgs e)
@@ -194,22 +174,7 @@ namespace WindowsFormsApplication1
             catch (Exception ex) { XtraMessageBox.Show(ex.Message); }
         }
 
-        private void txtSoTienNo_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txtSoTienNo.Text == "")
-                {
-                    txtSoTienNo.Text = "0";
-                }
-                else
-                {
-                    txtSoTienNo.Text = string.Format("{0:N0}", double.Parse(txtSoTienNo.Text));
-                    txtSoTienNo.SelectionStart = txtSoTienNo.Text.Length;
-                }
-            }
-            catch (Exception ex) { XtraMessageBox.Show(ex.Message); }
-        }
+       
 
         public void loadVN()
         {
@@ -223,8 +188,6 @@ namespace WindowsFormsApplication1
             lbNV.Text = Tien_VN.lbNV.ToString();
             lbPT.Text = Tien_VN.lbPT.ToString();
             lbTratien.Text = Tien_VN.lbTratien.ToString();
-            lbTienno.Text = Tien_VN.lbTienno.ToString();
-   
 
             groupCtInFo.Text = Tien_VN.groupCtInFo.ToString();
         }
@@ -240,33 +203,10 @@ namespace WindowsFormsApplication1
             lbNV.Text = Tien_EL.lbNV.ToString();
             lbPT.Text = Tien_EL.lbPT.ToString();
             lbTratien.Text = Tien_EL.lbTratien.ToString();
-            lbTienno.Text = Tien_EL.lbTienno.ToString();
-   
 
             groupCtInFo.Text = Tien_EL.groupCtInFo.ToString();
         }
         public string rMapt,rHdx,rTientra,rTienno,rNgaythu,rNv;
-
- 
-        private void txtSoTienTra_TextChanged_1(object sender, EventArgs e)
-        {
-            /*try
-            {
-                if (txtSoTienTra.Text == "")
-                {
-                    txtSoTienTra.Text = "0";
-                }
-                else
-                {
-                    txtSoTienTra.Text = string.Format("{0:N0}", double.Parse(txtSoTienTra.Text));
-                    txtSoTienTra.SelectionStart = txtSoTienTra.Text.Length;
-                }
-            }
-            catch (Exception ex) { XtraMessageBox.Show(ex.Message); }
-             */
-        }
-
-
 
         private void barstDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

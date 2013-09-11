@@ -82,6 +82,7 @@
             this.btneditthutien = new DevExpress.XtraEditors.SimpleButton();
             this.btndelthutien = new DevExpress.XtraEditors.SimpleButton();
             this.panel_congno = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
             this.btXuat = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
@@ -90,7 +91,7 @@
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
             this.printingSystem2 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink2 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -209,7 +210,7 @@
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(2, 22);
-            this.gridControl1.MainView = this.gridcongnokh;
+            this.gridControl1.MainView = this.gridphieuthu;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(963, 158);
             this.gridControl1.TabIndex = 0;
@@ -275,7 +276,8 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn5,
-            this.gridColumn3});
+            this.gridColumn3,
+            this.gridColumn14});
             this.gridphieuthu.GridControl = this.gridControl1;
             this.gridphieuthu.GroupCount = 1;
             this.gridphieuthu.Name = "gridphieuthu";
@@ -641,6 +643,16 @@
             this.panel_congno.Size = new System.Drawing.Size(975, 47);
             this.panel_congno.TabIndex = 18;
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Image = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.simpleButton2.Location = new System.Drawing.Point(109, 8);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(90, 35);
+            this.simpleButton2.TabIndex = 7;
+            this.simpleButton2.Text = "Trả Tiền";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // btIn
             // 
             this.btIn.Image = ((System.Drawing.Image)(resources.GetObject("btIn.Image")));
@@ -693,8 +705,8 @@
             // 
             // 
             this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
-            this.printableComponentLink1.PrintingSystem = this.printingSystem1;
-            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
+            this.printableComponentLink1.PrintingSystem = this.printingSystem2;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem2;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
@@ -715,15 +727,11 @@
             this.printableComponentLink2.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink2_CreateReportFooterArea);
             this.printableComponentLink2.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink2_CreateReportHeaderArea);
             // 
-            // simpleButton2
+            // gridColumn14
             // 
-            this.simpleButton2.Image = global::WindowsFormsApplication1.Properties.Resources.money;
-            this.simpleButton2.Location = new System.Drawing.Point(109, 8);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(90, 35);
-            this.simpleButton2.TabIndex = 7;
-            this.simpleButton2.Text = "Trả Tiền";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            this.gridColumn14.Caption = "TYPE";
+            this.gridColumn14.FieldName = "TYPE";
+            this.gridColumn14.Name = "gridColumn14";
             // 
             // frmCongNoKH
             // 
@@ -838,6 +846,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
        // private WindowsFormsApplication1.XUAT_NHAPTONDataSet4TableAdapters.GETONEPTTableAdapter gETONEPTTableAdapter1;
     }
 }

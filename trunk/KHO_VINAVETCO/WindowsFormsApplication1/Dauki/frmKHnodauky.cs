@@ -101,7 +101,7 @@ namespace WindowsFormsApplication1
 
            SQL = "";
 
-           SQL = " SELECT COUNT(TONDAUPHAITRA.MA) FROM TONDAUPHAITRA, KHACHHANG WHERE KHACHHANG.MAKH=TONDAUPHAITRA.MA AND MAKHO='" + PublicVariable.MAKHO + "'";
+           SQL = " SELECT COUNT(TONDAUCONGNOKH.MAKH) FROM TONDAUCONGNOKH, KHACHHANG WHERE KHACHHANG.MAKH=TONDAUCONGNOKH.MAKH AND MAKHO='" + PublicVariable.MAKHO + "'";
                 
            DataTable dt=ctlNCC.GETDATA(SQL);
            SQL = "";
@@ -113,8 +113,9 @@ namespace WindowsFormsApplication1
                    for (int j = 0; j < 20&&i < gridView1.DataRowCount; j++)
                    {
                        DataRow dtr = gridView1.GetDataRow(i);
-                       SQL = SQL + " \r\nGO\r\n INSERT INTO TONDAUPHAITRA([MA],[TONGTIENTRA])VALUES('" + dtr["MAKH"].ToString() + "'," + dtr["TONGTIENTRA"].ToString() + ")  ";
+                       SQL = SQL + " \r\nGO\r\n INSERT INTO TONDAUCONGNOKH([MAKH],[CONGNO])VALUES('" + dtr["MAKH"].ToString() + "'," + dtr["TONGTIENTRA"].ToString() + ")  ";
                          //  + " \r\nGO\r\n INSERT INTO CONGNOKH ([MAKH],[TONGTIENTRA],[TONGTIENDATRA]) VALUES ('" + dtr["MAKH"].ToString() + "'," + dtr["TONGTIENTRA"].ToString() + ",0) ";
+                       SQL = SQL + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO + " + dtr["TONGTIENTRA"].ToString() + " WHERE MAKH='" + dtr["MAKH"].ToString() + "'";
                        i++;
                    }
                    ctlNCC.executeNonQuery2(SQL);
@@ -128,9 +129,14 @@ namespace WindowsFormsApplication1
                    for (int j = 0; j < 20&&i < gridView1.DataRowCount; j++)
                    {
                        DataRow dtr = gridView1.GetDataRow(i);
-
-                       SQL = SQL + " \r\nGO\r\n UPDATE TONDAUPHAITRA SET [TONGTIENTRA]=" + dtr["TONGTIENTRA"].ToString() + " WHERE MA='" + dtr["MAKH"].ToString() + "'";
+                       string SQL2 = "SELECT CONGNO FROM TONDAUCONGNOKH WHERE MAKH='" + dtr["MAKH"].ToString() + "'";
+                       DataTable DT1 = ctlNCC.GETDATA(SQL2);
+                       int CONGNOCU = Convert.ToInt32(DT1.Rows[0][0].ToString());
+                       int CONGNOMOI = Convert.ToInt32(dtr["TONGTIENTRA"].ToString());
+                       int CHENHLECH = CONGNOMOI - CONGNOCU;
+                       SQL = SQL + " \r\nGO\r\n UPDATE TONDAUCONGNOKH SET [CONGNO]=" + dtr["TONGTIENTRA"].ToString() + " WHERE MAKH='" + dtr["MAKH"].ToString() + "'";
                            //+ "  \r\nGO\r\n UPDATE CONGNOKH SET [TONGTIENTRA]=" + dtr["TONGTIENTRA"].ToString() + " WHERE MAKH='" + dtr["MAKH"].ToString() + "'";
+                       SQL = SQL + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO + " + CHENHLECH.ToString() + " WHERE MAKH='" + dtr["MAKH"].ToString() + "'";
                        i++;
                    }
                    ctlNCC.executeNonQuery2(SQL);
