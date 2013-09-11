@@ -42,6 +42,7 @@ namespace WindowsFormsApplication1
     public class PHIEUCHI_DTO
     {
         protected string sMaPhieuChi;
+        protected string sMaDoituong;
         protected string sNhanVien;
         protected DateTime dNgayChi;
         protected double dSoTienDaTra;
@@ -54,6 +55,7 @@ namespace WindowsFormsApplication1
         }
         
         public string MaPhieuChi { get { return sMaPhieuChi; } set { sMaPhieuChi = value; } }
+        public string MaDoituong { get { return sMaDoituong; } set { sMaDoituong = value; } }
         
         public string NhanVien { get { return sNhanVien; } set { sNhanVien = value; } }
         public DateTime NgayChi { get { return dNgayChi; } set { dNgayChi = value; } }
@@ -65,6 +67,7 @@ namespace WindowsFormsApplication1
     public class PHIEUTHU_DTO
     {
         protected string sMaPhieuThu;
+        protected string sMaDoituong;
         protected string sNhanVien;
         protected DateTime dNgayThu;
         private string sMahoadonxuat;
@@ -77,6 +80,7 @@ namespace WindowsFormsApplication1
         protected double dSoTienDaTra;
 
         public string MaPhieuThu { get { return sMaPhieuThu; } set { sMaPhieuThu = value; } }
+        public string MaDoituong { get { return sMaDoituong; } set { sMaDoituong = value; } }
         public string NhanVien { get { return sNhanVien; } set { sNhanVien = value; } }
         public DateTime NgayThu { get { return dNgayThu; } set { dNgayThu = value; } }
         public double SoTienDaTra { get { return dSoTienDaTra; } set { dSoTienDaTra = value; } }

@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
         }
         public  void THEM_PHIEUTHU_ctrl(PHIEUTHU_DTO dt)
         {
-              CNKH.THEM_PHIEUTHU_DAO(dt);
+              CNKH.THEMPHIEUTHU_DAO(dt);
         }
        /* public  DataTable MAPT_ctrl()
         {
@@ -98,7 +98,7 @@ namespace WindowsFormsApplication1
         }
         public  void THEM_PHIEUCHI_ctrl(PHIEUCHI_DTO dt)
         {
-            CNNCC.THEM_PHIEUCHI_DAO(dt);
+            CNNCC.THEMPHIEUCHI_DAO(dt);
         }
     }
 }
