@@ -109,7 +109,7 @@ namespace WindowsFormsApplication1
         {
             panel_congno.Visible = false;
             panel_phieuchi.Visible = true;
-            gridphieuchi.ExpandAllGroups();
+            //gridphieuchi.ExpandAllGroups();
         }
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
@@ -174,7 +174,11 @@ namespace WindowsFormsApplication1
 
         private void btTratien_Click(object sender, EventArgs e)
         {
-            
+            if (PublicVariable.THEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             loadfrm_tratien();
         }
         public void loadsua_phieuchi()
@@ -223,6 +227,35 @@ namespace WindowsFormsApplication1
                 //loadctncc();
             }
         }
+        public void loadfrm_thutien()
+        {
+            FrmThuTien frm = new FrmThuTien();
+            if (this.smaNcc == null)
+            {
+                if (iNgonNgu == 0)
+                {
+                    XtraMessageBox.Show("Bạn phải chọn 1 hóa đơn để thu tiền");
+                }
+                else
+                    XtraMessageBox.Show("You must select a bill to get money");
+
+            }
+            else
+            {
+                frm.Nhan = "Them";
+                frm.Type = "2";
+                frm.TENKH = STENNCC;
+                frm.Tienno = "0";
+                frm.iNgonNgu = this.iNgonNgu;
+                frm.sMaNV = sMaNV;
+                frm.sTenNV = sTenNV;
+                frm.MaKH = smaNcc;
+
+                frm.ShowDialog();
+                loadGetAllHDN();
+                load_congno();
+            }
+        }
         public void loadfrm_tratien()
         {
             if (PublicVariable.THEM == "False")
@@ -244,6 +277,7 @@ namespace WindowsFormsApplication1
             else
             {
                 frm.Nhan = "Them";
+                frm.Type = "1";
                 frm.TENNCC = STENNCC;
                 frm.MaNcc = smaNcc;
                 frm.Tienno = sTienno;
@@ -550,6 +584,19 @@ namespace WindowsFormsApplication1
                 STENNCC = dtr["TENNCC"].ToString();
                 smaNcc = dtr["MANCC"].ToString();
                 stientra = dtr["SOTIEN"].ToString();
+            }
+        }
+
+        private void simpleButton7_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.THEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            if (XtraMessageBox.Show("Bạn có muốn Nhận Tiền Từ Nhà Cung Cấp để Tăng Công Nợ NCC?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                loadfrm_thutien();
             }
         }
 

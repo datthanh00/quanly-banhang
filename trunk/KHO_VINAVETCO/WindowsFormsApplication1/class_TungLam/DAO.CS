@@ -810,12 +810,22 @@ namespace WindowsFormsApplication1
         {
             PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + "\r\nGO\r\n insert into TRAHOADONNHAP(MAHDN,MANCC,MANV,MAKHO,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN,TYPE,IDNHAP)"
             + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + dto.NGAYNHAP + "," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "',1," + dto.CKTIEN + "," + dto.TYPE + "," + dto.IDNHAP + ")";
-        
+            if (dto.TYPE == "1")
+            {
+                int TIENNO = dto.TIENPHAITRA - dto.TIENDATRA;
+                PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + "\r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO - " + TIENNO.ToString() + " WHERE MANCC='" + dto.MANCC + "'";
+            }
         }
         public void INSERTHOADONNHAP(DTO dto)
         {
             PublicVariable.SQL_NHAP= PublicVariable.SQL_NHAP + "\r\nGO\r\n insert into HOADONNHAP(MAHDN,MANCC,MANV,MAKHO,NGAYNHAP,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN,TYPE,IDNHAP)"
             + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + dto.NGAYNHAP + "," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "','" + dto.TINHTRANG + "'," + dto.CKTIEN + "," + dto.TYPE + "," + dto.IDNHAP + ")";
+
+            if (dto.TYPE == "1")
+            {
+                int TIENNO=dto.TIENPHAITRA-dto.TIENDATRA;
+                PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO + " + TIENNO.ToString() + " WHERE MANCC='" + dto.MANCC + "'";
+            }
         }
         public bool isINSERTHOADONNHAP(string MAHDN)
         {
@@ -863,10 +873,22 @@ namespace WindowsFormsApplication1
         public void UPDATEtraHOADONNHAP(DTO dto)
         {
             //string SQL = "update traHOADONNHAP set MANCC='" + dto.MANCC + "', MANV= '" + dto.MANV + "' , TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "', CKTIEN= '" + dto.CKTIEN + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
+            string SQL = "SELECT CKTIEN,TIENPHAITRA,TIENDATRA FROM TRAHOADONNHAP WHERE MAHDN='" + dto.MAHDN + "'";
+            DataTable DT = getdata(SQL);
+
+            if (dto.TYPE == "1")
+            {
+                int TIENPHAITRACU = Convert.ToInt32(DT.Rows[0]["TIENPHAITRA"].ToString());
+                int TIENDATRACU = Convert.ToInt32(DT.Rows[0]["TIENDATRA"].ToString());
+                int CONGNOCU = TIENPHAITRACU - TIENDATRACU;
+
+                int CONGNOMOI = dto.TIENPHAITRA - dto.TIENDATRA;
+                PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + " \r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO+ " + CONGNOCU.ToString() + " - " + CONGNOMOI.ToString() + " where MANCC='" + dto.MANCC + "'";
+            }
+
             PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + " \r\nGO\r\n update TRAHOADONNHAP set  TIENPHAITRA= " + dto.TIENPHAITRA + ", TIENDATRA= " + dto.TIENDATRA + ", CKTIEN= " + dto.CKTIEN + " , GHICHU= N'" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
 
-            string SQL = "SELECT CKTIEN FROM TRAHOADONNHAP WHERE MAHDN='" + dto.MAHDN + "'";
-            DataTable DT = getdata(SQL);
+
             Double CKTIENS = 0;
             if (DT.Rows.Count > 0)
             {
@@ -881,10 +903,22 @@ namespace WindowsFormsApplication1
         }
         public void UPDATEHOADONNHAP(DTO dto)
         {
+            string SQL = "SELECT CKTIEN,TIENPHAITRA,TIENDATRA FROM HOADONNHAP WHERE MAHDN='" + dto.MAHDN + "'";
+            DataTable DT = getdata(SQL);
+
+            if (dto.TYPE == "1")
+            {
+                int TIENPHAITRACU = Convert.ToInt32(DT.Rows[0]["TIENPHAITRA"].ToString());
+                int TIENDATRACU = Convert.ToInt32(DT.Rows[0]["TIENDATRA"].ToString());
+                int CONGNOCU = TIENPHAITRACU - TIENDATRACU;
+
+                int CONGNOMOI = dto.TIENPHAITRA - dto.TIENDATRA;
+                PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO- " + CONGNOCU.ToString() + " + " + CONGNOMOI.ToString()+" where MANCC='"+dto.MANCC+"'";
+            }
+
             PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n update HOADONNHAP set  TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "', CKTIEN= '" + dto.CKTIEN + "' , GHICHU= N'" + dto.GHICHU + "' where (MAHDN='" + dto.MAHDN + "' )";
 
-            string SQL = "SELECT CKTIEN FROM HOADONNHAP WHERE MAHDN='" + dto.MAHDN + "'";
-            DataTable DT = getdata(SQL);
+            
             Double CKTIENS = 0;
             if (DT.Rows.Count > 0)
             {
@@ -1146,11 +1180,20 @@ namespace WindowsFormsApplication1
         public void INSERTHOADONXUAT(DTO dto)
         {
             PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n insert into HOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN,TYPE,IDNHAP) values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + dto.NGAYXUAT + "," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "'," + dto.TINHTRANG + "," + dto.CKTIEN + "," + dto.TYPE + "," + dto.IDNHAP + ")";
-           
+            if (dto.TYPE == "1")
+            {
+                int CONGNO = dto.TIENPHAITRA - dto.TIENDATRA;
+                PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO+ " + CONGNO.ToString() + " WHERE MAKH='" + dto.MAKH + "'";
+            }
         }
         public void INSERTtraHOADONXUAT(DTO dto)
         {
-            PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n insert into TRAHOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN,TYPE,IDNHAP) values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + dto.NGAYNHAP + "," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "',1," + dto.CKTIEN + "," + dto.TYPE + "," + dto.IDNHAP + ")";   
+            PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n insert into TRAHOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN,TYPE,IDNHAP) values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + dto.NGAYNHAP + "," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "',1," + dto.CKTIEN + "," + dto.TYPE + "," + dto.IDNHAP + ")";
+            if (dto.TYPE == "1")
+            {
+                int CONGNO = dto.TIENPHAITRA - dto.TIENDATRA;
+                PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO- " + CONGNO.ToString() + " WHERE MAKH='" + dto.MAKH + "'";
+            }
         }
         public bool isINSERTHOADONXUAT(string MAHDX)
         {
@@ -1173,10 +1216,22 @@ namespace WindowsFormsApplication1
 
         public void UPDATEHOADONXUAT(DTO dto)
         {
+            string SQL = "SELECT CKTIEN,TIENPHAITRA,TIENDATRA FROM HOADONXUAT WHERE MAHDX='" + dto.MAHDX + "'";
+            DataTable DT = getdata(SQL);
+
+            if (dto.TYPE == "1")
+            {
+                int TIENPHAITRACU = Convert.ToInt32(DT.Rows[0]["TIENPHAITRA"].ToString());
+                int TIENDATRACU = Convert.ToInt32(DT.Rows[0]["TIENDATRA"].ToString());
+                int CONGNOCU = TIENPHAITRACU - TIENDATRACU;
+
+                int CONGNOMOI = dto.TIENPHAITRA - dto.TIENDATRA;
+                PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO- " + CONGNOCU.ToString() + " + " + CONGNOMOI.ToString() + " where MAKH='" + dto.MAKH + "'";
+            }
+
             PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n update HOADONXUAT set  TIENPHAITRA= '" + dto.TIENPHAITRA + "', TIENDATRA= '" + dto.TIENDATRA + "', CKTIEN= '" + dto.CKTIEN + "' , GHICHU= N'" + dto.GHICHU + "' where MAHDX='" + dto.MAHDX + "'  ";
 
-            string SQL = "SELECT CKTIEN FROM HOADONXUAT WHERE MAHDX='" + dto.MAHDX + "'";
-            DataTable DT = getdata(SQL);
+            
             Double CKTIENS = 0;
             if (DT.Rows.Count > 0)
             {
@@ -1191,10 +1246,21 @@ namespace WindowsFormsApplication1
 
         public void UPDATEtraHOADONXUAT(DTO dto)
         {
+            string SQL = "SELECT CKTIEN,TIENPHAITRA,TIENDATRA FROM TRAHOADONXUAT WHERE MAHDX='" + dto.MAHDX + "'";
+            DataTable DT = getdata(SQL);
+
+            if (dto.TYPE == "1")
+            {
+                int TIENPHAITRACU = Convert.ToInt32(DT.Rows[0]["TIENPHAITRA"].ToString());
+                int TIENDATRACU = Convert.ToInt32(DT.Rows[0]["TIENDATRA"].ToString());
+                int CONGNOCU = TIENPHAITRACU - TIENDATRACU;
+
+                int CONGNOMOI = dto.TIENPHAITRA - dto.TIENDATRA;
+                PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO+ " + CONGNOCU.ToString() + " - " + CONGNOMOI.ToString() + " where MAKH='" + dto.MAKH + "'";
+            }
             PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n update TRAHOADONXUAT set  TIENPHAITRA= " + dto.TIENPHAITRA + ", TIENDATRA= " + dto.TIENDATRA + ", CKTIEN= " + dto.CKTIEN + " , GHICHU= N'" + dto.GHICHU + "' where (MAHDX='" + dto.MAHDX + "' )";
 
-            string SQL = "SELECT CKTIEN FROM TRAHOADONXUAT WHERE MAHDX='" + dto.MAHDX + "'";
-            DataTable DT = getdata(SQL);
+     
             Double CKTIENS = 0;
             if (DT.Rows.Count > 0)
             {

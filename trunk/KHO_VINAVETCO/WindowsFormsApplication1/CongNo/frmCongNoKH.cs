@@ -135,6 +135,42 @@ namespace WindowsFormsApplication1
             } 
             loadfrm_thutien();
         }
+        public void loadfrm_tratien()
+        {
+            if (PublicVariable.THEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
+            frmTraTien frm = new frmTraTien();
+            if (this.smaKH == null)
+            {
+                if (iNgonNgu == 0)
+                {
+                    XtraMessageBox.Show("Bạn phải chọn 1 hóa đơn để thu tiền");
+                }
+                else
+                    XtraMessageBox.Show("You must select a bill to get money");
+            }
+            else
+            {
+                frm.Nhan = "Them";
+                frm.Type = "2";
+                frm.TENNCC = stenkh;
+                frm.MaNcc = smaKH;
+                frm.Tienno = "0";
+                frm.sMaNV = sMaNV;
+                frm.sTenNV = sTenNV;
+
+                frm.iNgonNgu = this.iNgonNgu;
+                frm.ShowDialog();
+                //loadctncc();
+                loadGetAll_CONGNO();
+                //loadctkh();
+                load_congno();
+            }
+        }
         public void loadfrm_thutien()
         {
             FrmThuTien frm = new FrmThuTien();
@@ -151,6 +187,7 @@ namespace WindowsFormsApplication1
             else
             {
                 frm.Nhan = "Them";
+                frm.Type = "1";
                 frm.TENKH = stenkh;
                 frm.Tienno = scongno;
                 frm.iNgonNgu = this.iNgonNgu;
@@ -488,8 +525,6 @@ namespace WindowsFormsApplication1
             load_phieuthu();
         }
 
-
-
         private void gridphieuthu_DoubleClick(object sender, EventArgs e)
         {
             if (PublicVariable.SUA == "False")
@@ -506,7 +541,6 @@ namespace WindowsFormsApplication1
                 }
                 else
                     XtraMessageBox.Show("You must select a bill to update paid money!!!");
-
             }
             else
             {
@@ -537,7 +571,6 @@ namespace WindowsFormsApplication1
 
         private void gridphieuthu_Click(object sender, EventArgs e)
         {
-
             if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
@@ -568,7 +601,19 @@ namespace WindowsFormsApplication1
                 smaKH = dtr["MAKH"].ToString();
                 stenkh = dtr["TENKH"].ToString();
                 scongno = dtr["CONGNO"].ToString();
-                loadfrm_thutien();
+            }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.THEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            if (XtraMessageBox.Show("Bạn có muốn Lập Phiếu Chi Cho Khách Hàng để Tăng Công Nợ KH?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                loadfrm_tratien();
             }
         }
 
