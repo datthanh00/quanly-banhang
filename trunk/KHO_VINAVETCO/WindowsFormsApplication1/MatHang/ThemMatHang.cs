@@ -252,10 +252,10 @@ namespace WindowsFormsApplication1
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MADVT = DVT;
-                            DTO.KLDVT = calKLDVT.Text;
+                            DTO.KLDVT = Convert.ToInt32(calKLDVT.Value).ToString();
                             DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
-                            DTO.GIAMUA= txtgiamua.Text;
+                            DTO.GIAMUA= Convert.ToInt32(txtgiamua.Value).ToString();
                             DTO.LOHANG = PublicVariable.LOHANG;
                           
                             DTO.MOTA = txtmota.Text;
@@ -279,21 +279,17 @@ namespace WindowsFormsApplication1
                         else
                         {
 
-                            MemoryStream ms = new MemoryStream();
-                            
-                           
-
                             DTO.MAMH = txtMaMH.Text;
-                            DTO.MATH = "TH00001";//gridView2.GetFocusedRowCellValue("MATH").ToString();
+                            DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
                             DTO.MANCC = MANCC;
                             DTO.MADVT = DVT;
-                            DTO.KLDVT = calKLDVT.Text;
+                            DTO.KLDVT = Convert.ToInt32(calKLDVT.Value).ToString();
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.LOHANG = "TONDAU";
                             DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
-                            DTO.GIAMUA = txtgiamua.Text;
+                            DTO.GIAMUA = Convert.ToInt32(txtgiamua.Value).ToString();
                     
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
@@ -349,12 +345,12 @@ namespace WindowsFormsApplication1
                             DTO.MATH = MASOTHUE;
                             DTO.MANCC = MANCC;
                             DTO.MADVT = DVT;
-                            DTO.KLDVT = calKLDVT.Text;
+                            DTO.KLDVT = Convert.ToInt32(calKLDVT.Value).ToString();
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
-                            DTO.GIAMUA = txtgiamua.Text;
+                            DTO.GIAMUA = Convert.ToInt32(txtgiamua.Value).ToString();
                             DTO.LOHANG = "TONDAU";
 
                             DTO.MOTA = txtmota.Text;
@@ -384,13 +380,13 @@ namespace WindowsFormsApplication1
                             DTO.MATH = MASOTHUE;
                             DTO.MANCC = MANCC;
                             DTO.MADVT = DVT;
-                            DTO.KLDVT = calKLDVT.Text;
+                            DTO.KLDVT = Convert.ToInt32(calKLDVT.Value).ToString();
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
                             DTO.LOHANG = "TONDAU";
                             DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
-                            DTO.GIAMUA = txtgiamua.Text;
+                            DTO.GIAMUA = Convert.ToInt32(txtgiamua.Value).ToString();
                  
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
@@ -405,7 +401,7 @@ namespace WindowsFormsApplication1
             catch 
             {
 
-                
+                XtraMessageBox.Show("CÓ LỖI XẢY RA");
             }
            
             
@@ -671,6 +667,8 @@ namespace WindowsFormsApplication1
 
             }
         }
+
+
         
       
     }

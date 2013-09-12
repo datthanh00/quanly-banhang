@@ -12,7 +12,7 @@ namespace WindowsFormsApplication1
             set { _IsUPDATE = value; }
         }
 
-        private int _ID;
+        private  int _ID;
 
         public int ID
         {
@@ -28,9 +28,9 @@ namespace WindowsFormsApplication1
             set { _IDNHAP = value; }
         }
 
-        private int _STT;
+        private string _STT;
 
-        public int STT
+        public string STT
         {
             get { return _STT; }
             set { _STT = value; }
@@ -536,8 +536,8 @@ namespace WindowsFormsApplication1
         private String _s1MANV;
         private String _sMANCC;
         private string _NGAYNHAP;
-        private int _TIENPHAITRA;
-        private int _TIENDATRA;
+        private string _TIENPHAITRA;
+        private string _TIENDATRA;
         private string _sGHICHU;
         private string _sTINHTRANG;
 
@@ -565,13 +565,13 @@ namespace WindowsFormsApplication1
             set { _NGAYNHAP = value; }
         }
 
-        public int TIENPHAITRA
+        public string TIENPHAITRA
         {
             get { return _TIENPHAITRA; }
             set { _TIENPHAITRA = value; }
         }
 
-        public int TIENDATRA
+        public string TIENDATRA
         {
             get { return _TIENDATRA; }
             set { _TIENDATRA = value; }
@@ -592,8 +592,8 @@ namespace WindowsFormsApplication1
         private String _sMAHDN;
         private String _s1MAMH;
         private Double _SOLUONGNHAP;
-        private int _GIANHAP;
-        private int _GIATRANHAP;
+        private string _GIANHAP;
+        private string _GIATRANHAP;
         private String _s1TINHTRANG;
 
         public String sMAHDN
@@ -614,12 +614,12 @@ namespace WindowsFormsApplication1
             set { _SOLUONGNHAP = value; }
         }
 
-        public int GIANHAP
+        public string GIANHAP
         {
             get { return _GIANHAP; }
             set { _GIANHAP = value; }
         }
-        public int GIATRANHAP
+        public string GIATRANHAP
         {
             get { return _GIATRANHAP; }
             set { _GIATRANHAP = value; }
@@ -635,8 +635,8 @@ namespace WindowsFormsApplication1
         private String _sMAKH;
  
         private string _NGAYXUAT;
-        private int _s1TIENPHAITRA;
-        private int _s1TIENDATRA;
+        private string _s1TIENPHAITRA;
+        private string _s1TIENDATRA;
         private String _s1GHICHU;
         private String _s2TINHTRANG;
 
@@ -664,13 +664,13 @@ namespace WindowsFormsApplication1
             set { _NGAYXUAT = value; }
         }
 
-        public int s1TIENPHAITRA
+        public string s1TIENPHAITRA
         {
             get { return _s1TIENPHAITRA; }
             set { _s1TIENPHAITRA = value; }
         }
 
-        public int s1TIENDATRA
+        public string s1TIENDATRA
         {
             get { return _s1TIENDATRA; }
             set { _s1TIENDATRA = value; }
@@ -705,15 +705,15 @@ namespace WindowsFormsApplication1
             set { _KMAI = value; }
         }
 
-        private int _GIATIEN;
-        public int GIATIEN
+        private string _GIATIEN;
+        public string GIATIEN
         {
             get { return _GIATIEN; }
             set { _GIATIEN = value; }
         }
 
-        private int _TIENTHU;
-        public int TIENTHU
+        private string _TIENTHU;
+        public string TIENTHU
         {
             get { return _TIENTHU; }
             set { _TIENTHU = value; }

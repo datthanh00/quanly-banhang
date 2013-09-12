@@ -138,7 +138,7 @@ namespace WindowsFormsApplication1
         {
             string SQL = "";
             SQL = SQL + "\r\nGO\r\n  UPDATE TONDAUMATHANG SET TONDAU=TONDAU + "+dto.CHENHLECH+" WHERE MAMH='"+dto.MAMH+"'";
-            SQL = SQL + "\r\nGO\r\n  UPDATE TONDAUKHOHANG SET TONKHO=TONKHO + "+dto.CHENHLECH+", GIAMUA="+dto.GIAMUA+", HSD='"+dto.HSD+"' WHERE MAMH='"+dto.MAMH+"' AND LOHANG='"+dto.LOHANG+"'";
+            SQL = SQL + "\r\nGO\r\n  UPDATE TONDAUKHOHANG SET TONKHO=TONKHO + "+dto.CHENHLECH+", GIAMUA="+dto.GIAMUA+" WHERE MAMH='"+dto.MAMH+"' AND LOHANG='"+dto.LOHANG+"'";
             SQL = SQL + "\r\nGO\r\n  UPDATE KHOHANG SET TONKHO=TONKHO + "+dto.CHENHLECH+", GIAMUA="+dto.GIAMUA+", HSD='"+dto.HSD+"' WHERE MAMH='"+dto.MAMH+"' AND LOHANG='"+dto.LOHANG+"'";
             SQL = SQL + "\r\nGO\r\n  UPDATE MATHANG SET SOLUONGMH=SOLUONGMH + "+dto.CHENHLECH+", GIAMUA="+dto.GIAMUA+" WHERE MAMH='"+dto.MAMH+"' ";
     
@@ -195,7 +195,6 @@ namespace WindowsFormsApplication1
         }
         public void DELELEKHACHHANG(DTO dto)
         {
-
             string SQL = "delete from KHACHHANG where 	MAKH='"+dto.MAKH+"'";
             executeNonQuery(SQL);
         }
@@ -211,15 +210,11 @@ namespace WindowsFormsApplication1
             if (dt.Rows.Count > 0)
                 return false;
 
-            SQL = "select TOP 1 MA from TONDAUPHAITHU where 	MA='" + dto.MAKH + "'";
+            SQL = "select TOP 1 MAKH from TONDAUCONGNOKH where 	MAKH='" + dto.MAKH + "'";
             dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
 
-            SQL = "select TOP 1 MA from TONDAUPHAITRA where 	MA='" + dto.MAKH + "'";
-            dt = getdata(SQL);
-            if (dt.Rows.Count > 0)
-                return false;
 
             return true;
         }
@@ -387,12 +382,7 @@ namespace WindowsFormsApplication1
             if (dt.Rows.Count > 0)
                 return false;
 
-            SQL = "select TOP 1 MA from TONDAUPHAITHU where 	MA='" + dto.MANCC + "' ";
-            dt = getdata(SQL);
-            if (dt.Rows.Count > 0)
-                return false;
-
-            SQL = "select TOP 1 MA from TONDAUPHAITRA where 	MA='" + dto.MANCC + "' ";
+            SQL = "select TOP 1 MANCC from TONDAUCONGNONCC where 	MANCC='" + dto.MANCC + "' ";
             dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
@@ -568,7 +558,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETDANHSACHKH()
         {
-            string SQL = "select 	MAKH,TENKV,KHACHHANG.MAKV,KHACHHANG.MANV,TENNV,BANGGIA.MABG,TENBG,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,KHACHHANG.DIACHI,KHACHHANG.SDT,KHACHHANG.FAX,KHACHHANG.WEBSITE,KHACHHANG.YAHOO,KHACHHANG.SKYPE,KHACHHANG.TINHTRANG from  KHACHHANG,KHUVUC,NHANVIEN,BANGGIA where KHACHHANG.MABG=BANGGIA.MABG AND KHACHHANG.MAKV=KHUVUC.MAKV AND KHACHHANG.MANV=NHANVIEN.MANV AND KHACHHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+            string SQL = "select 	MAKH,TENKV,KHACHHANG.MAKV,KHACHHANG.MANV,TENNV,BANGGIA.MABG,TENBG,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,KHACHHANG.DIACHI,KHACHHANG.SDT,KHACHHANG.FAX,KHACHHANG.WEBSITE,KHACHHANG.YAHOO,KHACHHANG.SKYPE,KHACHHANG.TINHTRANG from  KHACHHANG,KHUVUC,NHANVIEN,BANGGIA where KHACHHANG.MABG=BANGGIA.MABG AND KHACHHANG.MAKV=KHUVUC.MAKV AND KHACHHANG.MANV=NHANVIEN.MANV AND KHACHHANG.MAKHO='" + PublicVariable.MAKHO + "' order by TENKH ASC";
             return GET_DATA(SQL);
         }
         public DataTable GETDANHSACHKH(string MAKH)
@@ -582,7 +572,7 @@ namespace WindowsFormsApplication1
         public DataTable GETDANHSACHKH1()
         {
 
-            string SQL = "select 	MAKH,MAKV,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG from  KHACHHANG where makho='"+PublicVariable.MAKHO+"'";
+            string SQL = "select 	MAKH,MAKV,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG from  KHACHHANG where makho='" + PublicVariable.MAKHO + "' order by TENKH ASC";
             return GET_DATA(SQL);
         }
 
@@ -594,7 +584,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETDANHSACHNCC()
         {
-            string SQL = "select 	MANCC,MAKV,TENNCC,DIACHI,MASOTHUE,SOTAIKHOAN,NGANHANG,SDT,EMAIL,FAX,WEBSITE,TINHTRANG from  NHACUNGCAP where makho='" + PublicVariable.MAKHO + "'";
+            string SQL = "select 	MANCC,MAKV,TENNCC,DIACHI,MASOTHUE,SOTAIKHOAN,NGANHANG,SDT,EMAIL,FAX,WEBSITE,TINHTRANG from  NHACUNGCAP where makho='" + PublicVariable.MAKHO + "' order by TENNCC ASC";
             return GET_DATA(SQL);
         }
          public DataTable GETDANHSACHNCC(string MANCC)
@@ -812,7 +802,7 @@ namespace WindowsFormsApplication1
             + " values('" + dto.MAHDN + "','" + dto.MANCC + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + dto.NGAYNHAP + "," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "',1," + dto.CKTIEN + "," + dto.TYPE + "," + dto.IDNHAP + ")";
             if (dto.TYPE == "1")
             {
-                int TIENNO = dto.TIENPHAITRA - dto.TIENDATRA;
+                Int64 TIENNO = Convert.ToInt64(dto.TIENPHAITRA) - Convert.ToInt64(dto.TIENDATRA);
                 PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + "\r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO - " + TIENNO.ToString() + " WHERE MANCC='" + dto.MANCC + "'";
             }
         }
@@ -823,7 +813,7 @@ namespace WindowsFormsApplication1
 
             if (dto.TYPE == "1")
             {
-                int TIENNO=dto.TIENPHAITRA-dto.TIENDATRA;
+                Int64 TIENNO=Convert.ToInt64(dto.TIENPHAITRA)-Convert.ToInt64(dto.TIENDATRA);
                 PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO + " + TIENNO.ToString() + " WHERE MANCC='" + dto.MANCC + "'";
             }
         }
@@ -878,11 +868,11 @@ namespace WindowsFormsApplication1
 
             if (dto.TYPE == "1")
             {
-                int TIENPHAITRACU = Convert.ToInt32(DT.Rows[0]["TIENPHAITRA"].ToString());
-                int TIENDATRACU = Convert.ToInt32(DT.Rows[0]["TIENDATRA"].ToString());
-                int CONGNOCU = TIENPHAITRACU - TIENDATRACU;
+                Int64 TIENPHAITRACU = Convert.ToInt64(DT.Rows[0]["TIENPHAITRA"].ToString());
+                Int64 TIENDATRACU = Convert.ToInt64(DT.Rows[0]["TIENDATRA"].ToString());
+                Int64 CONGNOCU = TIENPHAITRACU - TIENDATRACU;
 
-                int CONGNOMOI = dto.TIENPHAITRA - dto.TIENDATRA;
+                Int64 CONGNOMOI = Convert.ToInt64(dto.TIENPHAITRA) - Convert.ToInt64(dto.TIENDATRA);
                 PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + " \r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO+ " + CONGNOCU.ToString() + " - " + CONGNOMOI.ToString() + " where MANCC='" + dto.MANCC + "'";
             }
 
@@ -908,11 +898,11 @@ namespace WindowsFormsApplication1
 
             if (dto.TYPE == "1")
             {
-                int TIENPHAITRACU = Convert.ToInt32(DT.Rows[0]["TIENPHAITRA"].ToString());
-                int TIENDATRACU = Convert.ToInt32(DT.Rows[0]["TIENDATRA"].ToString());
-                int CONGNOCU = TIENPHAITRACU - TIENDATRACU;
+                Int64 TIENPHAITRACU = Convert.ToInt64(DT.Rows[0]["TIENPHAITRA"].ToString());
+                Int64 TIENDATRACU = Convert.ToInt64(DT.Rows[0]["TIENDATRA"].ToString());
+                Int64 CONGNOCU = TIENPHAITRACU - TIENDATRACU;
 
-                int CONGNOMOI = dto.TIENPHAITRA - dto.TIENDATRA;
+                Int64 CONGNOMOI = Convert.ToInt64(dto.TIENPHAITRA) - Convert.ToInt64(dto.TIENDATRA);
                 PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO- " + CONGNOCU.ToString() + " + " + CONGNOMOI.ToString()+" where MANCC='"+dto.MANCC+"'";
             }
 
@@ -1182,7 +1172,7 @@ namespace WindowsFormsApplication1
             PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n insert into HOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN,TYPE,IDNHAP) values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + dto.NGAYXUAT + "," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "'," + dto.TINHTRANG + "," + dto.CKTIEN + "," + dto.TYPE + "," + dto.IDNHAP + ")";
             if (dto.TYPE == "1")
             {
-                int CONGNO = dto.TIENPHAITRA - dto.TIENDATRA;
+                Int64 CONGNO = Convert.ToInt64(dto.TIENPHAITRA) - Convert.ToInt64(dto.TIENDATRA);
                 PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO+ " + CONGNO.ToString() + " WHERE MAKH='" + dto.MAKH + "'";
             }
         }
@@ -1191,7 +1181,7 @@ namespace WindowsFormsApplication1
             PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n insert into TRAHOADONXUAT(MAHDX,MAKH,MANV,MAKHO,NGAYXUAT,TIENPHAITRA,TIENDATRA,GHICHU,TINHTRANG,CKTIEN,TYPE,IDNHAP) values('" + dto.MAHDX + "','" + dto.MAKH + "','" + dto.MANV + "','" + PublicVariable.MAKHO + "'," + dto.NGAYNHAP + "," + dto.TIENPHAITRA + "," + dto.TIENDATRA + ",N'" + dto.GHICHU + "',1," + dto.CKTIEN + "," + dto.TYPE + "," + dto.IDNHAP + ")";
             if (dto.TYPE == "1")
             {
-                int CONGNO = dto.TIENPHAITRA - dto.TIENDATRA;
+                Int64 CONGNO = Convert.ToInt64(dto.TIENPHAITRA) - Convert.ToInt64(dto.TIENDATRA);
                 PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO- " + CONGNO.ToString() + " WHERE MAKH='" + dto.MAKH + "'";
             }
         }
@@ -1221,11 +1211,11 @@ namespace WindowsFormsApplication1
 
             if (dto.TYPE == "1")
             {
-                int TIENPHAITRACU = Convert.ToInt32(DT.Rows[0]["TIENPHAITRA"].ToString());
-                int TIENDATRACU = Convert.ToInt32(DT.Rows[0]["TIENDATRA"].ToString());
-                int CONGNOCU = TIENPHAITRACU - TIENDATRACU;
+                Int64 TIENPHAITRACU = Convert.ToInt64(DT.Rows[0]["TIENPHAITRA"].ToString());
+                Int64 TIENDATRACU = Convert.ToInt64(DT.Rows[0]["TIENDATRA"].ToString());
+                Int64 CONGNOCU = TIENPHAITRACU - TIENDATRACU;
 
-                int CONGNOMOI = dto.TIENPHAITRA - dto.TIENDATRA;
+                Int64 CONGNOMOI = Convert.ToInt64(dto.TIENPHAITRA) - Convert.ToInt64(dto.TIENDATRA);
                 PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO- " + CONGNOCU.ToString() + " + " + CONGNOMOI.ToString() + " where MAKH='" + dto.MAKH + "'";
             }
 
@@ -1251,11 +1241,11 @@ namespace WindowsFormsApplication1
 
             if (dto.TYPE == "1")
             {
-                int TIENPHAITRACU = Convert.ToInt32(DT.Rows[0]["TIENPHAITRA"].ToString());
-                int TIENDATRACU = Convert.ToInt32(DT.Rows[0]["TIENDATRA"].ToString());
-                int CONGNOCU = TIENPHAITRACU - TIENDATRACU;
+                Int64 TIENPHAITRACU = Convert.ToInt64(DT.Rows[0]["TIENPHAITRA"].ToString());
+                Int64 TIENDATRACU = Convert.ToInt64(DT.Rows[0]["TIENDATRA"].ToString());
+                Int64 CONGNOCU = TIENPHAITRACU - TIENDATRACU;
 
-                int CONGNOMOI = dto.TIENPHAITRA - dto.TIENDATRA;
+                Int64 CONGNOMOI = Convert.ToInt64(dto.TIENPHAITRA) - Convert.ToInt64(dto.TIENDATRA);
                 PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO+ " + CONGNOCU.ToString() + " - " + CONGNOMOI.ToString() + " where MAKH='" + dto.MAKH + "'";
             }
             PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + " \r\nGO\r\n update TRAHOADONXUAT set  TIENPHAITRA= " + dto.TIENPHAITRA + ", TIENDATRA= " + dto.TIENDATRA + ", CKTIEN= " + dto.CKTIEN + " , GHICHU= N'" + dto.GHICHU + "' where (MAHDX='" + dto.MAHDX + "' )";

@@ -30,13 +30,12 @@
         {
             this.cbNhomHang = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colmanh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colten = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.calKLDVT = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtgiamua = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -49,12 +48,8 @@
             this.btThemKhuVuc = new DevExpress.XtraEditors.SimpleButton();
             this.cbthue = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colmathue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsothue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbDvt = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colmadvt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldvt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbDVT = new DevExpress.XtraEditors.LabelControl();
             this.lbmathue = new DevExpress.XtraEditors.LabelControl();
             this.lbtenmh = new DevExpress.XtraEditors.LabelControl();
@@ -68,7 +63,12 @@
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.lbnhomhang = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.colmathue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsothue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmadvt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldvt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colmanh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colten = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cbNhomHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -113,21 +113,6 @@
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
-            // colmanh
-            // 
-            this.colmanh.FieldName = "MANCC";
-            this.colmanh.Name = "colmanh";
-            this.colmanh.Visible = true;
-            this.colmanh.VisibleIndex = 0;
-            // 
-            // colten
-            // 
-            this.colten.Caption = "gridColumn2";
-            this.colten.FieldName = "TENNCC";
-            this.colten.Name = "colten";
-            this.colten.Visible = true;
-            this.colten.VisibleIndex = 1;
-            // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.calKLDVT);
@@ -171,7 +156,8 @@
             this.calKLDVT.Name = "calKLDVT";
             this.calKLDVT.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.calKLDVT.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.calKLDVT.Properties.Mask.EditMask = "N0";
+            this.calKLDVT.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.calKLDVT.Size = new System.Drawing.Size(126, 20);
             this.calKLDVT.TabIndex = 164;
             // 
@@ -206,13 +192,26 @@
             this.groupControl1.TabIndex = 6;
             this.groupControl1.Text = "Thông tin giao dịch";
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
+            this.labelControl2.Appearance.Options.UseBackColor = true;
+            this.labelControl2.Appearance.Options.UseForeColor = true;
+            this.labelControl2.Location = new System.Drawing.Point(91, 37);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(14, 13);
+            this.labelControl2.TabIndex = 160;
+            this.labelControl2.Text = "(*)";
+            // 
             // txtgiamua
             // 
             this.txtgiamua.Location = new System.Drawing.Point(111, 34);
             this.txtgiamua.Name = "txtgiamua";
             this.txtgiamua.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtgiamua.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txtgiamua.Properties.Mask.EditMask = "N0";
+            this.txtgiamua.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtgiamua.Size = new System.Drawing.Size(124, 20);
             this.txtgiamua.TabIndex = 152;
             // 
@@ -339,22 +338,6 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // colmathue
-            // 
-            this.colmathue.Caption = "Mã Thuế";
-            this.colmathue.FieldName = "MATH";
-            this.colmathue.Name = "colmathue";
-            this.colmathue.Visible = true;
-            this.colmathue.VisibleIndex = 0;
-            // 
-            // colsothue
-            // 
-            this.colsothue.Caption = "Số Thuế";
-            this.colsothue.FieldName = "SOTHUE";
-            this.colsothue.Name = "colsothue";
-            this.colsothue.Visible = true;
-            this.colsothue.VisibleIndex = 1;
-            // 
             // cbDvt
             // 
             this.cbDvt.Location = new System.Drawing.Point(427, 38);
@@ -380,22 +363,6 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // colmadvt
-            // 
-            this.colmadvt.Caption = "Mã DVT";
-            this.colmadvt.FieldName = "MADVT";
-            this.colmadvt.Name = "colmadvt";
-            this.colmadvt.Visible = true;
-            this.colmadvt.VisibleIndex = 0;
-            // 
-            // coldvt
-            // 
-            this.coldvt.Caption = "Đơn Vị Tính";
-            this.coldvt.FieldName = "DONVITINH";
-            this.coldvt.Name = "coldvt";
-            this.coldvt.Visible = true;
-            this.coldvt.VisibleIndex = 1;
             // 
             // lbDVT
             // 
@@ -516,17 +483,52 @@
             this.lbnhomhang.TabIndex = 2;
             this.lbnhomhang.Text = "Nhà cung cấp";
             // 
-            // labelControl2
+            // colmathue
             // 
-            this.labelControl2.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
-            this.labelControl2.Appearance.Options.UseBackColor = true;
-            this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(91, 37);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(14, 13);
-            this.labelControl2.TabIndex = 160;
-            this.labelControl2.Text = "(*)";
+            this.colmathue.Caption = "Mã Thuế";
+            this.colmathue.FieldName = "MATH";
+            this.colmathue.Name = "colmathue";
+            this.colmathue.Visible = true;
+            this.colmathue.VisibleIndex = 0;
+            // 
+            // colsothue
+            // 
+            this.colsothue.Caption = "Số Thuế";
+            this.colsothue.FieldName = "SOTHUE";
+            this.colsothue.Name = "colsothue";
+            this.colsothue.Visible = true;
+            this.colsothue.VisibleIndex = 1;
+            // 
+            // colmadvt
+            // 
+            this.colmadvt.Caption = "Mã DVT";
+            this.colmadvt.FieldName = "MADVT";
+            this.colmadvt.Name = "colmadvt";
+            this.colmadvt.Visible = true;
+            this.colmadvt.VisibleIndex = 0;
+            // 
+            // coldvt
+            // 
+            this.coldvt.Caption = "Đơn Vị Tính";
+            this.coldvt.FieldName = "DONVITINH";
+            this.coldvt.Name = "coldvt";
+            this.coldvt.Visible = true;
+            this.coldvt.VisibleIndex = 1;
+            // 
+            // colmanh
+            // 
+            this.colmanh.FieldName = "MANCC";
+            this.colmanh.Name = "colmanh";
+            this.colmanh.Visible = true;
+            this.colmanh.VisibleIndex = 0;
+            // 
+            // colten
+            // 
+            this.colten.Caption = "gridColumn2";
+            this.colten.FieldName = "TENNCC";
+            this.colten.Name = "colten";
+            this.colten.Visible = true;
+            this.colten.VisibleIndex = 1;
             // 
             // ThemMatHang
             // 
