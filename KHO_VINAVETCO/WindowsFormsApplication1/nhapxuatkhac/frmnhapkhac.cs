@@ -561,12 +561,13 @@ namespace WindowsFormsApplication1
                             XtraMessageBox.Show("Hãy chọn một sản phẩm trước khi lưu");
                             return;
                         }
-
+                        if (txtthanhtien.Value > 100000000000)
+                        {
+                            XtraMessageBox.Show("Hóa đơn giá trị quá lớn bạn không thể lưu");
+                            return;
+                        }
                         if (PublicVariable.isHSD)
                         {
-
-
-
                             string SQL1 = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
                             DataTable dttime = ctlNCC.GETDATA(SQL1);
                             String timenow = dttime.Rows[0][0].ToString();
@@ -608,6 +609,11 @@ namespace WindowsFormsApplication1
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Số lượng quá ít ");
                                     return;
                                 }
+                                if (soluong + slkmai > 1000000)
+                                {
+                                    System.Windows.Forms.MessageBox.Show("Số Lượng Mã Hàng:" + dtr["MAMH"].ToString() + " Quá Lớn");
+                                    return;
+                                }
                             }
                             for (int j = i + 1; j < rowcount; j++)
                             {
@@ -620,8 +626,6 @@ namespace WindowsFormsApplication1
                             }
                         }
 
-                        
-                     
                         dtoNCC.NGAYNHAP = "convert(varchar,getDate(),101)";
                         if (PublicVariable.isUSE_COMPUTERDATE)
                         {
@@ -1017,7 +1021,7 @@ namespace WindowsFormsApplication1
                         bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Convert.ToDouble(dtr["_DonGia"].ToString()) * Num;
+                            Double total = Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num;
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTRA"] = total.ToString();
                             gettotal();

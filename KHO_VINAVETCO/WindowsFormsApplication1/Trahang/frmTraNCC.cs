@@ -438,7 +438,11 @@ namespace WindowsFormsApplication1
                             XtraMessageBox.Show("Hãy chọn một sản phẩm trả trước khi lưu");
                             return;
                         }
-
+                        if (txtthanhtien.Value > 100000000000)
+                        {
+                            XtraMessageBox.Show("Hóa đơn giá trị quá lớn bạn không thể lưu");
+                            return;
+                        }
                         
                         dtoNCC.NGAYNHAP = "convert(varchar,getDate(),101)";
                         if (PublicVariable.isUSE_COMPUTERDATE)
@@ -448,7 +452,16 @@ namespace WindowsFormsApplication1
 
                         dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
 
-
+                        for (int i = 0; i < rowcount; i++)
+                        {
+                            DataRow dtrSLX = gridCTHOADON.GetDataRow(i);
+                            Double SLXUAT = Convert.ToDouble(dtrSLX["SOLUONG"].ToString()) + Convert.ToDouble(dtrSLX["KMAI"].ToString());
+                            if ((SLXUAT) > 1000000)
+                            {
+                                System.Windows.Forms.MessageBox.Show("Số Lượng Mã Hàng:" + dtrSLX["MAMH"].ToString() + " Quá Lớn");
+                                return;
+                            }
+                        }
                      
 
                         if (isnhap)
@@ -488,6 +501,7 @@ namespace WindowsFormsApplication1
                                         MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không được <=0");
                                         return;
                                     }
+                                   
                                 }
                                 else
                                 {
@@ -877,7 +891,7 @@ namespace WindowsFormsApplication1
                         bool isNum = Double.TryParse(dtr["DONGIA"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Convert.ToDouble(dtr["DONGIA"].ToString()) * Num;
+                            Double total = Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num;
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTRA"] = total.ToString();
                             gettotal();
