@@ -558,6 +558,11 @@ namespace WindowsFormsApplication1
                             XtraMessageBox.Show("Hãy chọn một sản phẩm trước khi lưu");
                             return;
                         }
+                        if(txtthanhtien.Value>100000000000)
+                        {
+                            XtraMessageBox.Show("Hóa đơn giá trị quá lớn bạn không thể lưu");
+                            return;
+                         }
 
                         if (PublicVariable.isHSD)
                         {
@@ -600,6 +605,11 @@ namespace WindowsFormsApplication1
                                 if (soluong + slkmai <= 0)
                                 {
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Số lượng quá ít ");
+                                    return;
+                                }
+                                if ((soluong+slkmai) > 1000000)
+                                {
+                                    System.Windows.Forms.MessageBox.Show("Số Lượng Mã Hàng:" + dtr["MAMH"].ToString() + " Quá Lớn để xuất");
                                     return;
                                 }
                             }
@@ -1001,7 +1011,8 @@ namespace WindowsFormsApplication1
                         bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Convert.ToDouble(dtr["_DonGia"].ToString()) * Num;
+
+                            Double total = Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num;
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTRA"] = total.ToString();
                             gettotal();

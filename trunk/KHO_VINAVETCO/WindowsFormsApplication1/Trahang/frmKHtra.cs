@@ -285,8 +285,12 @@ namespace WindowsFormsApplication1.KHtra
                             XtraMessageBox.Show("Hãy chọn một sản phẩm trước khi lưu");
                             return;
                         }
-                       
-                 
+
+                        if (txtthanhtien.Value > 100000000000)
+                        {
+                            XtraMessageBox.Show("Hóa đơn giá trị quá lớn bạn không thể lưu");
+                            return;
+                        }
          
                         if (PublicVariable.isHSD)
                         {
@@ -324,9 +328,15 @@ namespace WindowsFormsApplication1.KHtra
                             else
                             {
                                 Double soluong = Convert.ToDouble(dtr["SOLUONG"].ToString());
+                                Double kmai = Convert.ToDouble(dtr["KMAI"].ToString());
                                 if (soluong <= 0)
                                 {
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Số lượng quá ít ");
+                                    return;
+                                }
+                                if (soluong+kmai > 1000000)
+                                {
+                                    System.Windows.Forms.MessageBox.Show("Số Lượng Mã Hàng:" + dtr["MAMH"].ToString() + " Quá Lớn");
                                     return;
                                 }
                             }
@@ -845,7 +855,7 @@ namespace WindowsFormsApplication1.KHtra
                         bool isNum = Double.TryParse(dtr["DONGIA"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Convert.ToDouble(dtr["DONGIA"].ToString()) * Num;
+                            Double total = Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num;
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTHU"] = total.ToString();
                             gettotal();

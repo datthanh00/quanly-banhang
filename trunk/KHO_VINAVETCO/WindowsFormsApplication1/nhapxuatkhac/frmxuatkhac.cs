@@ -314,6 +314,22 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             XtraMessageBox.Show("Hãy chọn một sản phẩm trước khi lưu");
                             return;
                         }
+                        if (txtthanhtien.Value > 100000000000)
+                        {
+                            XtraMessageBox.Show("Hóa đơn giá trị quá lớn bạn không thể lưu");
+                            return;
+                        }
+
+                        for (int i = 0; i < rowcount; i++)
+                        {
+                            DataRow dtrSLX = gridCTHOADON.GetDataRow(i);
+                            Double SLXUAT = Convert.ToDouble(dtrSLX["SOLUONG"].ToString()) + Convert.ToDouble(dtrSLX["KMAI"].ToString());
+                            if ((SLXUAT) > 1000000)
+                            {
+                                System.Windows.Forms.MessageBox.Show("Số Lượng Mã Hàng:" + dtrSLX["MAMH"].ToString() + " Quá Lớn");
+                                return;
+                            }
+                        }
 
                         if (isnhap)
                         {
@@ -346,6 +362,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                         System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Không đủ số lượng để xuất");
                                         return;
                                     }
+                              
                                 }
                                 else
                                 {
