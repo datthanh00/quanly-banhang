@@ -36,7 +36,6 @@
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cbhsd = new DevExpress.XtraEditors.DateEdit();
             this.txtlohang = new DevExpress.XtraEditors.TextEdit();
             this.lbmota = new DevExpress.XtraEditors.LabelControl();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
@@ -44,15 +43,16 @@
             this.lbnhomhang = new DevExpress.XtraEditors.LabelControl();
             this.colmanh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colten = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cbhsd = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cbmathang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtgiamua.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsoluong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtlohang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtlohang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cbmathang
@@ -83,12 +83,12 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.cbhsd);
             this.panelControl1.Controls.Add(this.txtgiamua);
             this.panelControl1.Controls.Add(this.txtsoluong);
             this.panelControl1.Controls.Add(this.labelControl4);
             this.panelControl1.Controls.Add(this.labelControl2);
             this.panelControl1.Controls.Add(this.labelControl1);
-            this.panelControl1.Controls.Add(this.cbhsd);
             this.panelControl1.Controls.Add(this.txtlohang);
             this.panelControl1.Controls.Add(this.lbmota);
             this.panelControl1.Controls.Add(this.cbmathang);
@@ -111,6 +111,8 @@
             this.txtgiamua.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtgiamua.Properties.EditFormat.FormatString = "{0:0,0}";
             this.txtgiamua.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtgiamua.Properties.Mask.EditMask = "n0";
+            this.txtgiamua.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtgiamua.Size = new System.Drawing.Size(267, 20);
             this.txtgiamua.TabIndex = 169;
             // 
@@ -124,6 +126,8 @@
             this.txtsoluong.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtsoluong.Properties.EditFormat.FormatString = "{0:0,0}";
             this.txtsoluong.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtsoluong.Properties.Mask.EditMask = "n0";
+            this.txtsoluong.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtsoluong.Size = new System.Drawing.Size(267, 20);
             this.txtsoluong.TabIndex = 168;
             // 
@@ -150,20 +154,6 @@
             this.labelControl1.Size = new System.Drawing.Size(67, 13);
             this.labelControl1.TabIndex = 161;
             this.labelControl1.Text = "Hạn Sử Dụng:";
-            // 
-            // cbhsd
-            // 
-            this.cbhsd.EditValue = new System.DateTime(2010, 11, 27, 23, 39, 42, 143);
-            this.cbhsd.Location = new System.Drawing.Point(97, 94);
-            this.cbhsd.Name = "cbhsd";
-            this.cbhsd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbhsd.Properties.Mask.EditMask = "";
-            this.cbhsd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.cbhsd.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.cbhsd.Size = new System.Drawing.Size(267, 20);
-            this.cbhsd.TabIndex = 160;
             // 
             // txtlohang
             // 
@@ -225,6 +215,20 @@
             this.colten.Visible = true;
             this.colten.VisibleIndex = 1;
             // 
+            // cbhsd
+            // 
+            this.cbhsd.EditValue = null;
+            this.cbhsd.Location = new System.Drawing.Point(97, 90);
+            this.cbhsd.Name = "cbhsd";
+            this.cbhsd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbhsd.Properties.Mask.EditMask = "";
+            this.cbhsd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.cbhsd.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.cbhsd.Size = new System.Drawing.Size(267, 20);
+            this.cbhsd.TabIndex = 170;
+            // 
             // Themlohangtondau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,9 +247,9 @@
             this.panelControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtgiamua.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsoluong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtlohang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtlohang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,9 +276,9 @@
         private DevExpress.XtraEditors.TextEdit txtlohang;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
-        private DevExpress.XtraEditors.DateEdit cbhsd;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.CalcEdit txtgiamua;
         private DevExpress.XtraEditors.CalcEdit txtsoluong;
+        private DevExpress.XtraEditors.DateEdit cbhsd;
     }
 }

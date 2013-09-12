@@ -357,13 +357,18 @@ namespace WindowsFormsApplication1
 
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "False")
+            GridView view = sender as GridView;
+            Point pt = view.GridControl.PointToClient(Control.MousePosition);
+            GridHitInfo hitInfo = view.CalcHitInfo(pt);
+            if (hitInfo.InRow)
             {
-                MessageBox.Show("KHÔNG CÓ QUYỀN");
-                return;
-            }
-            try
-            {
+                if (PublicVariable.SUA == "False")
+                {
+                    MessageBox.Show("KHÔNG CÓ QUYỀN");
+                    return;
+                }
+                try
+                {
                     Themlohangtondau sua = new Themlohangtondau();
                     sua.iNgonNgu = iNgonNgu; sua.kiemtra = 0;
                     sua.SMAMH = SMAMH;
@@ -373,33 +378,40 @@ namespace WindowsFormsApplication1
                     sua.SGIAMUA = SGIAMUA;
                     sua.ShowDialog();
                     Load_mathang();
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    XtraMessageBox.Show(ex.Message);
+                }
             }
         }
         string SMAMH,SLOHANG,SHSD,SSOLUONG,SGIAMUA;
         private void gridView1_RowClick(object sender, RowClickEventArgs e)
         {
-            try
+            GridView view = sender as GridView;
+            Point pt = view.GridControl.PointToClient(Control.MousePosition);
+            GridHitInfo hitInfo = view.CalcHitInfo(pt);
+            if (hitInfo.InRow)
             {
-                DataTable dt = new DataTable();
-                DataRow dtr = gridView1.GetDataRow(e.RowHandle);
-                SMAMH = dtr["MAMH"].ToString();
+                try
+                {
+                    DataTable dt = new DataTable();
+                    DataRow dtr = gridView1.GetDataRow(e.RowHandle);
+                    SMAMH = dtr["MAMH"].ToString();
 
-                SLOHANG = dtr["LOHANG"].ToString();
+                    SLOHANG = dtr["LOHANG"].ToString();
 
-                SHSD = dtr["HSD"].ToString();
+                    SHSD = dtr["HSD"].ToString();
 
-                SSOLUONG = dtr["SOLUONG"].ToString();
-                SGIAMUA = dtr["GIAMUA"].ToString();
-                
-            }
-            catch (Exception ex)
-            {
+                    SSOLUONG = dtr["SOLUONG"].ToString();
+                    SGIAMUA = dtr["GIAMUA"].ToString();
 
-                XtraMessageBox.Show(ex.Message);
+                }
+                catch (Exception ex)
+                {
+
+                    XtraMessageBox.Show(ex.Message);
+                }
             }
         }
 
