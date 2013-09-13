@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
      
         public void Luu()
         {
-            if (double.Parse(txtSoTienTra.Text) == 0)
+            if (txtSoTienTra.Text == "")
             {
                 if (iNgonNgu == 0)
                 {
@@ -75,7 +75,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                     XtraMessageBox.Show("You haven't type debt money yet!!!");
-
+                return;
             }
             else if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text)&&Nhan != "Sua")
             {
@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                     XtraMessageBox.Show("Pay money is not bigger than debt money!!!");
-
+                return;
             }
             else if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text) && double.Parse(txtSoTienTra.Text) > double.Parse(TIEN) && Nhan == "Sua")
             {
@@ -95,7 +95,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                     XtraMessageBox.Show("Pay money is not bigger than debt money!!!");
-
+                return;
             }
             else if (Nhan == "Sua")
             {
@@ -131,7 +131,16 @@ namespace WindowsFormsApplication1
             }
             else
             {
-              
+                if (double.Parse(txtSoTienTra.Text) == 0)
+                {
+                    if (iNgonNgu == 0)
+                    {
+                        XtraMessageBox.Show("Bạn chưa nhập số tiền trả");
+                    }
+                    else
+                        XtraMessageBox.Show("You haven't type debt money yet!!!");
+                    return;
+                }
                 PHIEUTHU_DTO dto = new PHIEUTHU_DTO();
                 dto.MaPhieuThu = txtPT.Text;
                 dto.NhanVien = sMaNV;

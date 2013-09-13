@@ -200,9 +200,13 @@ namespace WindowsFormsApplication1
                 if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Bạn phải chọn 1 phiếu thu để sửa lại số tiền vừa trả");
+                    return;
                 }
                 else
+                {
                     XtraMessageBox.Show("You must select a bill to update paid money!!!");
+                    return;
+                }
 
             }
             else
@@ -289,6 +293,7 @@ namespace WindowsFormsApplication1
                 else
                     XtraMessageBox.Show("You must select a bill to get money");
 
+                return;
             }
             else
             {
@@ -323,6 +328,7 @@ namespace WindowsFormsApplication1
                 }
                 else
                     XtraMessageBox.Show("You must select a bill to get money");
+                return;
             }
             else
             {
@@ -667,13 +673,5 @@ namespace WindowsFormsApplication1
                 loadfrm_thutien();
             }
         }
-
-
-        
-
-       
-
-   
-
     }
 }

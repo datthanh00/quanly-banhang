@@ -318,6 +318,8 @@
             this.gridcongno.OptionsSelection.MultiSelect = true;
             this.gridcongno.OptionsView.ShowAutoFilterRow = true;
             this.gridcongno.OptionsView.ShowFooter = true;
+            this.gridcongno.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coltenncc, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridcongno.Click += new System.EventHandler(this.gridcongno_Click);
             this.gridcongno.DoubleClick += new System.EventHandler(this.gridcongno_DoubleClick);
             // 

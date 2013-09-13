@@ -71,28 +71,39 @@ namespace WindowsFormsApplication1
                 if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Số tiền trả không thể lớn hơn số tiền nợ");
+                    return;
                 }
                 else
+                {
                     XtraMessageBox.Show("Pay money is not bigger than debt money!!!");
+                }
             }
             else if (double.Parse(txtSoTienTra.Text) > double.Parse(txtSoTienNo.Text) && double.Parse(txtSoTienTra.Text) > double.Parse(TIEN) && Nhan == "Sua")
             {
                 if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Số tiền trả không thể lớn hơn số tiền nợ");
+                    return;
                 }
                 else
+                {
                     XtraMessageBox.Show("Pay money is not bigger than debt money!!!");
+                    return;
+                }
 
             }
-            else if (double.Parse(txtSoTienTra.Text) == 0)
+            else if (txtSoTienTra.Text == "")
             {
                 if (iNgonNgu == 0)
                 {
                     XtraMessageBox.Show("Bạn chưa nhập số tiền trả");
+                    return;
                 }
                 else
+                {
                     XtraMessageBox.Show("You haven't type debt money yet!!!");
+                    return;
+                }
             }
             
             if (Nhan == "Sua")
@@ -121,6 +132,16 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                if (double.Parse(txtSoTienTra.Text) == 0)
+                {
+                    if (iNgonNgu == 0)
+                    {
+                        XtraMessageBox.Show("Bạn chưa nhập số tiền trả");
+                    }
+                    else
+                        XtraMessageBox.Show("You haven't type debt money yet!!!");
+                    return;
+                }
                 PHIEUCHI_DTO dto = new PHIEUCHI_DTO();//may lam form nao za tratien uh nhacc hay khach hang frncorm chhinh dau
                 dto.MaPhieuChi = txtPC.Text;
                 dto.NhanVien = sMaNV;
