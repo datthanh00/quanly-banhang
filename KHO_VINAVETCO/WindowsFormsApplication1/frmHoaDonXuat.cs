@@ -1491,12 +1491,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
             for (int i = 0; i < gridCTHOADON.DataRowCount; i++)
             {
                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
-                PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n INSERT INTO [CHITIETHDXTAM] ([MAHDX],[MAMH],[LOHANG],[SOLUONGXUAT],[KMAI],[GIATIEN],[TONGGIATIEN],[MAKHO],[TIENTHU]) VALUES ( '" + mahdtam + "','" + dtr["MAMH"].ToString() + "','" + dtr["_LOHANG"].ToString() + "'," + dtr["SOLUONG"].ToString() + "," + dtr["KMAI"].ToString() + "," + dtr["_DonGia"].ToString() + "," + thanhtien + ",'" + PublicVariable.MAKHO + "'," + dtr["TIENTHU"].ToString() + ")";
+                PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n INSERT INTO [CHITIETHDXTAM] ([MAHDX],[MAMH],[ID],[LOHANG],[SOLUONGXUAT],[KMAI],[GIABAN],[TIENTHU],[GIANHAP],[TINHTRANG],[MAKHO])  VALUES ( '" + mahdtam + "','" + dtr["MAMH"].ToString() + "','" + dtr["ID"].ToString() + "','" + dtr["_LOHANG"].ToString() + "'," + dtr["SOLUONG"].ToString() + "," + dtr["KMAI"].ToString() + "," + dtr["_DonGia"].ToString() + "," + dtr["TIENTHU"].ToString() + "," + dtr["GIANHAP"].ToString() + ",1,'"+PublicVariable.MAKHO+"')";
                // ctlNCC.executeNonQuery(SQL);
             }
-            gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();
+           
            // mahdtam = "";
             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
+            gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();
             MessageBox.Show("Đã Lưu Tạm Hóa Đơn");
         }
 
