@@ -1116,7 +1116,7 @@ namespace WindowsFormsApplication1
           //  {
                 GridView view = sender as GridView;
                 GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
-                if (hitInfo.InRow)
+                if (hitInfo.RowHandle>=0)
                 {
                     DataRow dtr = gridCTHOADON.GetDataRow(hitInfo.RowHandle);
                     if (dtr != null)
@@ -1144,7 +1144,7 @@ namespace WindowsFormsApplication1
           //  {
                 GridView view = sender as GridView;
                 GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
-                if (hitInfo.InRow)
+                if (hitInfo.RowHandle>=0)
                 {
                     view.FocusedRowHandle = hitInfo.RowHandle;
 

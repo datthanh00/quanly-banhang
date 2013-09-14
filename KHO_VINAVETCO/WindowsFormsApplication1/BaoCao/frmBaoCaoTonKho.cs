@@ -99,8 +99,7 @@ namespace WindowsFormsApplication1
             iNgonNgu = 0;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             btXem.Text = resVietNam.btXem.ToString();
-            colNhomHang.Caption = resVietNam.colNhomHang.ToString();
-            colNhomHang.Caption = resVietNam.colNhomHang.ToString();
+
            // colNgay.Caption = resVietNam.colNgay.ToString();
             colMa.Caption = resVietNam.colMa.ToString();
             colDonViTInh.Caption = resVietNam.colDonViTInh.ToString();
@@ -133,8 +132,7 @@ namespace WindowsFormsApplication1
             iNgonNgu = 1;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             btXem.Text = resEngLand.btXem.ToString();
-            colNhomHang.Caption = resEngLand.colNhomHang.ToString();
-            colNhomHang.Caption = resEngLand.colNhomHang.ToString();
+
            // colNgay.Caption = resEngLand.colNgay.ToString();
             colMa.Caption = resEngLand.colMa.ToString();
             colDonViTInh.Caption = resEngLand.colDonViTInh.ToString();
@@ -182,7 +180,7 @@ namespace WindowsFormsApplication1
             }
                 
 
-            gridControl2.MainView = advBandedGridView3;
+            gridControl2.MainView = BandedGridView3;
 
 
             if (cbsanpham.Text != "")
@@ -209,17 +207,17 @@ namespace WindowsFormsApplication1
                 
 
             gridControl2.DataSource = ctr.getTonKho(dto);
-            advBandedGridView3.BestFitColumns();
+            BandedGridView3.BestFitColumns();
             //dt = ctr.getTonKho(dto);
 
             if (!PublicVariable.isKHOILUONG)
             {
-                advBandedGridView3.Columns["KLTONDAU"].Visible = false;
-                advBandedGridView3.Columns["KLNHAP"].Visible = false;
-                advBandedGridView3.Columns["KLTRANHAP"].Visible = false;
-                advBandedGridView3.Columns["KLXUAT"].Visible = false;
-                advBandedGridView3.Columns["KLTRAXUAT"].Visible = false;
-                advBandedGridView3.Columns["KLTONCUOI"].Visible = false;
+                BandedGridView3.Columns["KLTONDAU"].Visible = false;
+                BandedGridView3.Columns["KLNHAP"].Visible = false;
+                BandedGridView3.Columns["KLTRANHAP"].Visible = false;
+                BandedGridView3.Columns["KLXUAT"].Visible = false;
+                BandedGridView3.Columns["KLTRAXUAT"].Visible = false;
+                BandedGridView3.Columns["KLTONCUOI"].Visible = false;
             }
             
         }
@@ -408,60 +406,14 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             } 
-           /* if (advBandedGridView3.RowCount > 0)
-            {
-                reportTonKhoSoLuongGiaTri rep = new reportTonKhoSoLuongGiaTri(dt, iNgonNgu, PublicVariable.MAKHO, dateTu.Text, dateDen.Text);
-                rep.ShowPreviewDialog();
-            }
-            else
-            {
-                if (iNgonNgu == 0)
-                {
-                    MessageBox.Show("Không có dữ liệu để in", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-
-                    MessageBox.Show("Data null", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    
-                }
-
-
-            }
-            */
-
-           // gridControl2.ShowPrintPreview();
-            /*
-
-            PrintableComponentLink pcl = new PrintableComponentLink(printingSystem1);
-
-            pcl.Component = gridControl2;
-
-
-            PageHeaderFooter phf = pcl.PageHeaderFooter as PageHeaderFooter;
-
-            // Clear the PageHeaderFooter's contents.
-            phf.Header.Content.Clear();
-
-            // Add custom information to the link's header.
-            phf.Header.Content.AddRange(new string[] { "CỬA HÀNG THUỐC THÚY Y TUẤN HẠNH", "XUẤT NHẬP TỒN KHO", "[Date Printed] [Time Printed]" });
-            phf.Header.LineAlignment = BrickAlignment.Far;
-
-
-
-            //pcl.CreateDocument();
-            pcl.ShowPreviewDialog();
-             * */
-
-            //printableComponentLink1.CreateDocument();
-            //printableComponentLink1.ShowPreview(); 
+          
             if (gridControl2.MainView == advBandedGridView2)
             {
                 DataTable printtable = (DataTable)gridControl2.DataSource;
                 Inhd rep = new Inhd(printtable, 18);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl2.MainView == advBandedGridView3)
+            if (gridControl2.MainView == BandedGridView3)
             {
                 DataTable printtable = (DataTable)gridControl2.DataSource;
                 Inhd rep = new Inhd(printtable, 19);
