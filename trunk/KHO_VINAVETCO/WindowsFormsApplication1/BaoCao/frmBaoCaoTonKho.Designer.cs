@@ -58,11 +58,10 @@
             this.btXem = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.advBandedGridView3 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
+            this.BandedGridView3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.gridThongTin = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colMa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colHangHoa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colNhomHang = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colDonViTInh = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -161,7 +160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BandedGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
@@ -437,30 +436,29 @@
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl2.Location = new System.Drawing.Point(2, 2);
-            this.gridControl2.MainView = this.advBandedGridView3;
+            this.gridControl2.MainView = this.BandedGridView3;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.Size = new System.Drawing.Size(1288, 393);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.advBandedGridView3,
+            this.BandedGridView3,
             this.advBandedGridView2,
             this.advBandedGridView1});
             // 
-            // advBandedGridView3
+            // BandedGridView3
             // 
-            this.advBandedGridView3.Appearance.BandPanel.Options.UseTextOptions = true;
-            this.advBandedGridView3.Appearance.BandPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.advBandedGridView3.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.advBandedGridView3.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.advBandedGridView3.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.BandedGridView3.Appearance.BandPanel.Options.UseTextOptions = true;
+            this.BandedGridView3.Appearance.BandPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.BandedGridView3.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.BandedGridView3.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.BandedGridView3.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.gridThongTin,
             this.gridDauKi,
             this.gridNhapKho,
             this.gridXuatKho,
             this.gridCuoiKi});
-            this.advBandedGridView3.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
-            this.colNhomHang,
+            this.BandedGridView3.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.colMa,
             this.colHangHoa,
             this.bandedGridColumn3,
@@ -485,13 +483,16 @@
             this.colSLTOn,
             this.bandedGridColumn17,
             this.colThanhTienTOn});
-            this.advBandedGridView3.GridControl = this.gridControl2;
-            this.advBandedGridView3.Name = "advBandedGridView3";
-            this.advBandedGridView3.OptionsBehavior.Editable = false;
-            this.advBandedGridView3.OptionsSelection.MultiSelect = true;
-            this.advBandedGridView3.OptionsView.ShowAutoFilterRow = true;
-            this.advBandedGridView3.OptionsView.ShowFooter = true;
-            this.advBandedGridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            this.BandedGridView3.GridControl = this.gridControl2;
+            this.BandedGridView3.Name = "BandedGridView3";
+            this.BandedGridView3.OptionsBehavior.Editable = false;
+            this.BandedGridView3.OptionsSelection.MultiSelect = true;
+            this.BandedGridView3.OptionsView.AllowCellMerge = true;
+            this.BandedGridView3.OptionsView.ColumnAutoWidth = false;
+            this.BandedGridView3.OptionsView.ShowAutoFilterRow = true;
+            this.BandedGridView3.OptionsView.ShowFooter = true;
+            this.BandedGridView3.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.Default;
+            this.BandedGridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn3, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colHangHoa, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
@@ -502,7 +503,6 @@
             this.gridThongTin.Caption = "Thông tin";
             this.gridThongTin.Columns.Add(this.colMa);
             this.gridThongTin.Columns.Add(this.colHangHoa);
-            this.gridThongTin.Columns.Add(this.colNhomHang);
             this.gridThongTin.Columns.Add(this.bandedGridColumn3);
             this.gridThongTin.Columns.Add(this.bandedGridColumn2);
             this.gridThongTin.Columns.Add(this.colDonViTInh);
@@ -516,6 +516,7 @@
             this.colMa.Caption = "Mã";
             this.colMa.FieldName = "MAMH";
             this.colMa.Name = "colMa";
+            this.colMa.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colMa.Width = 85;
             // 
             // colHangHoa
@@ -527,18 +528,12 @@
             this.colHangHoa.Visible = true;
             this.colHangHoa.Width = 140;
             // 
-            // colNhomHang
-            // 
-            this.colNhomHang.Caption = "Nhóm hàng";
-            this.colNhomHang.FieldName = "TENNHOMHANG";
-            this.colNhomHang.Name = "colNhomHang";
-            this.colNhomHang.Width = 119;
-            // 
             // bandedGridColumn3
             // 
             this.bandedGridColumn3.Caption = "Tên Nhà Cung Cấp";
             this.bandedGridColumn3.FieldName = "TENNCC";
             this.bandedGridColumn3.Name = "bandedGridColumn3";
+            this.bandedGridColumn3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn3.Visible = true;
             this.bandedGridColumn3.Width = 126;
             // 
@@ -549,6 +544,7 @@
             this.bandedGridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn2.FieldName = "KLDVT";
             this.bandedGridColumn2.Name = "bandedGridColumn2";
+            this.bandedGridColumn2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn2.Visible = true;
             // 
             // colDonViTInh
@@ -556,6 +552,7 @@
             this.colDonViTInh.Caption = "Đơn vị tính";
             this.colDonViTInh.FieldName = "DONVITINH";
             this.colDonViTInh.Name = "colDonViTInh";
+            this.colDonViTInh.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colDonViTInh.Visible = true;
             this.colDonViTInh.Width = 70;
             // 
@@ -566,6 +563,7 @@
             this.bandedGridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn8.FieldName = "GIAMUA";
             this.bandedGridColumn8.Name = "bandedGridColumn8";
+            this.bandedGridColumn8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn8.Visible = true;
             this.bandedGridColumn8.Width = 103;
             // 
@@ -588,6 +586,7 @@
             this.colSLDau.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLDau.FieldName = "TONDAU";
             this.colSLDau.Name = "colSLDau";
+            this.colSLDau.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colSLDau.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.colSLDau.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSLDau.Visible = true;
@@ -600,6 +599,7 @@
             this.bandedGridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn11.FieldName = "KLTONDAU";
             this.bandedGridColumn11.Name = "bandedGridColumn11";
+            this.bandedGridColumn11.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn11.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.bandedGridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn11.Visible = true;
@@ -611,6 +611,7 @@
             this.bandedGridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn5.FieldName = "THANHTIENTONDAU";
             this.bandedGridColumn5.Name = "bandedGridColumn5";
+            this.bandedGridColumn5.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn5.SummaryItem.DisplayFormat = "{0:0,0}";
             this.bandedGridColumn5.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn5.Visible = true;
@@ -637,6 +638,7 @@
             this.colSLNhap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLNhap.FieldName = "NHAP";
             this.colSLNhap.Name = "colSLNhap";
+            this.colSLNhap.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colSLNhap.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.colSLNhap.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSLNhap.Visible = true;
@@ -649,6 +651,7 @@
             this.bandedGridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn12.FieldName = "KLNHAP";
             this.bandedGridColumn12.Name = "bandedGridColumn12";
+            this.bandedGridColumn12.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn12.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.bandedGridColumn12.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn12.Visible = true;
@@ -660,6 +663,7 @@
             this.bandedGridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn4.FieldName = "THANHTIENNHAP";
             this.bandedGridColumn4.Name = "bandedGridColumn4";
+            this.bandedGridColumn4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn4.SummaryItem.DisplayFormat = "{0:0,0}";
             this.bandedGridColumn4.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn4.Visible = true;
@@ -671,6 +675,7 @@
             this.bandedGridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn1.FieldName = "TRAXUAT";
             this.bandedGridColumn1.Name = "bandedGridColumn1";
+            this.bandedGridColumn1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn1.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.bandedGridColumn1.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn1.Visible = true;
@@ -682,6 +687,7 @@
             this.bandedGridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn13.FieldName = "KLTRAXUAT";
             this.bandedGridColumn13.Name = "bandedGridColumn13";
+            this.bandedGridColumn13.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn13.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.bandedGridColumn13.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn13.Visible = true;
@@ -693,6 +699,7 @@
             this.bandedGridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn9.FieldName = "THANHTIENTRAXUAT";
             this.bandedGridColumn9.Name = "bandedGridColumn9";
+            this.bandedGridColumn9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn9.SummaryItem.DisplayFormat = "{0:0,0}";
             this.bandedGridColumn9.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn9.Visible = true;
@@ -719,6 +726,7 @@
             this.colSLXuat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLXuat.FieldName = "XUAT";
             this.colSLXuat.Name = "colSLXuat";
+            this.colSLXuat.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colSLXuat.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.colSLXuat.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSLXuat.Visible = true;
@@ -731,6 +739,7 @@
             this.bandedGridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn15.FieldName = "KLXUAT";
             this.bandedGridColumn15.Name = "bandedGridColumn15";
+            this.bandedGridColumn15.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn15.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.bandedGridColumn15.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn15.Visible = true;
@@ -742,6 +751,7 @@
             this.bandedGridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn6.FieldName = "THANHTIENXUAT";
             this.bandedGridColumn6.Name = "bandedGridColumn6";
+            this.bandedGridColumn6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn6.SummaryItem.DisplayFormat = "{0:0,0}";
             this.bandedGridColumn6.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn6.Visible = true;
@@ -753,6 +763,7 @@
             this.bandedGridColumn7.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn7.FieldName = "TRANHAP";
             this.bandedGridColumn7.Name = "bandedGridColumn7";
+            this.bandedGridColumn7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn7.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.bandedGridColumn7.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn7.Visible = true;
@@ -764,6 +775,7 @@
             this.bandedGridColumn16.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn16.FieldName = "KLTRANHAP";
             this.bandedGridColumn16.Name = "bandedGridColumn16";
+            this.bandedGridColumn16.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn16.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.bandedGridColumn16.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn16.Visible = true;
@@ -775,6 +787,7 @@
             this.bandedGridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn10.FieldName = "THANHTIENTRANHAP";
             this.bandedGridColumn10.Name = "bandedGridColumn10";
+            this.bandedGridColumn10.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn10.SummaryItem.DisplayFormat = "{0:0,0}";
             this.bandedGridColumn10.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn10.Visible = true;
@@ -798,6 +811,7 @@
             this.colSLTOn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSLTOn.FieldName = "TONCUOI";
             this.colSLTOn.Name = "colSLTOn";
+            this.colSLTOn.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colSLTOn.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.colSLTOn.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSLTOn.Visible = true;
@@ -810,6 +824,7 @@
             this.bandedGridColumn17.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn17.FieldName = "KLTONCUOI";
             this.bandedGridColumn17.Name = "bandedGridColumn17";
+            this.bandedGridColumn17.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.bandedGridColumn17.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.bandedGridColumn17.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn17.Visible = true;
@@ -821,6 +836,7 @@
             this.colThanhTienTOn.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colThanhTienTOn.FieldName = "THANHTIENTONCUOI";
             this.colThanhTienTOn.Name = "colThanhTienTOn";
+            this.colThanhTienTOn.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colThanhTienTOn.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colThanhTienTOn.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colThanhTienTOn.Visible = true;
@@ -1455,7 +1471,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BandedGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
@@ -1492,16 +1508,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand10;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView advBandedGridView3;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colNhomHang;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colMa;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHangHoa;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colDonViTInh;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLDau;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLNhap;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLXuat;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLTOn;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colThanhTienTOn;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.GridLookUpEdit cbsanpham;
         private DevExpress.XtraGrid.Views.Grid.GridView gridsanpham;
@@ -1512,17 +1518,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colmancc;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
         private DevExpress.XtraEditors.LabelControl lbloc;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn3;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn2;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn5;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn4;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn7;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn8;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn9;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn10;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView advBandedGridView1;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
@@ -1543,12 +1539,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand8;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn28;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn29;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn11;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn12;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn13;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn15;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn16;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn17;
         private DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView advBandedGridView2;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn33;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn38;
@@ -1576,11 +1566,36 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand14;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand15;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand16;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView BandedGridView3;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridThongTin;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colMa;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHangHoa;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn3;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn2;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colDonViTInh;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn8;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridDauKi;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLDau;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn11;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn5;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridNhapKho;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLNhap;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn12;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn4;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn13;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn9;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridXuatKho;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLXuat;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn15;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn6;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn7;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn16;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn10;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridCuoiKi;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colSLTOn;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn17;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colThanhTienTOn;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHOTableAdapter kHOTableAdapter;
     }
 }

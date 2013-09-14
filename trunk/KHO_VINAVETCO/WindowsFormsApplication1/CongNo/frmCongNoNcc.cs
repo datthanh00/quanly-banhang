@@ -123,7 +123,7 @@ namespace WindowsFormsApplication1
             GridView view = sender as GridView;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             GridHitInfo hitInfo = view.CalcHitInfo(pt);
-                if (hitInfo.InRow)
+                if (hitInfo.RowHandle>=0)
                 {
                     DataRow dtr = gridcongno.GetDataRow(hitInfo.RowHandle);
                     sMahdn = dtr["MAHDN"].ToString();
@@ -597,7 +597,7 @@ namespace WindowsFormsApplication1
             GridView view = sender as GridView;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             GridHitInfo hitInfo = view.CalcHitInfo(pt);
-            if (hitInfo.InRow)
+            if (hitInfo.RowHandle>=0)
             {
                 DataRow dtr = gridcongno.GetDataRow(hitInfo.RowHandle);
                 STENNCC = dtr["TENNCC"].ToString();
@@ -612,7 +612,7 @@ namespace WindowsFormsApplication1
             GridView view = sender as GridView;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             GridHitInfo hitInfo = view.CalcHitInfo(pt);
-            if (hitInfo.InRow)
+            if (hitInfo.RowHandle>=0)
             {
                 if (STYPE != null)
                 {
@@ -636,7 +636,7 @@ namespace WindowsFormsApplication1
             GridView view = sender as GridView;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             GridHitInfo hitInfo = view.CalcHitInfo(pt);
-            if (hitInfo.InRow)
+            if (hitInfo.RowHandle>=0)
             {
                 DataRow dtr = gridcongno.GetDataRow(hitInfo.RowHandle);
                 STENNCC = dtr["TENNCC"].ToString();
@@ -650,7 +650,7 @@ namespace WindowsFormsApplication1
             GridView view = sender as GridView;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             GridHitInfo hitInfo = view.CalcHitInfo(pt);
-            if (hitInfo.InRow)
+            if (hitInfo.RowHandle>=0)
             {
                 DataRow dtr = gridphieuchi.GetDataRow(hitInfo.RowHandle);
                 smpc = dtr["MAPC"].ToString();

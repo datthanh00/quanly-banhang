@@ -40,6 +40,7 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridhoadon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -48,6 +49,7 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridcongno = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.coltenncc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colmancc = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -152,17 +154,20 @@
             this.gridColumn2,
             this.gridColumn4,
             this.gridColumn3,
-            this.gridColumn14});
+            this.gridColumn14,
+            this.gridColumn15});
             this.gridphieuchi.GridControl = this.gridControl1;
             this.gridphieuchi.GroupCount = 1;
             this.gridphieuchi.Name = "gridphieuchi";
             this.gridphieuchi.OptionsBehavior.Editable = false;
+            this.gridphieuchi.OptionsCustomization.AllowSort = false;
             this.gridphieuchi.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
             this.gridphieuchi.OptionsSelection.MultiSelect = true;
             this.gridphieuchi.OptionsView.ShowAutoFilterRow = true;
             this.gridphieuchi.OptionsView.ShowFooter = true;
             this.gridphieuchi.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn15, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridphieuchi.Click += new System.EventHandler(this.gridphieuchi_Click);
             this.gridphieuchi.DoubleClick += new System.EventHandler(this.gridphieuchi_DoubleClick);
             // 
@@ -222,6 +227,12 @@
             this.gridColumn14.FieldName = "TYPE";
             this.gridColumn14.Name = "gridColumn14";
             // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "IDNHAP";
+            this.gridColumn15.FieldName = "IDNHAP";
+            this.gridColumn15.Name = "gridColumn15";
+            // 
             // gridhoadon
             // 
             this.gridhoadon.Appearance.HeaderPanel.Options.UseTextOptions = true;
@@ -233,17 +244,19 @@
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn11,
-            this.gridColumn10});
+            this.gridColumn10,
+            this.gridColumn16});
             this.gridhoadon.GridControl = this.gridControl1;
             this.gridhoadon.GroupCount = 1;
             this.gridhoadon.Name = "gridhoadon";
             this.gridhoadon.OptionsBehavior.Editable = false;
+            this.gridhoadon.OptionsCustomization.AllowSort = false;
             this.gridhoadon.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
-            this.gridhoadon.OptionsSelection.MultiSelect = true;
             this.gridhoadon.OptionsView.ShowAutoFilterRow = true;
             this.gridhoadon.OptionsView.ShowFooter = true;
             this.gridhoadon.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn7, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn7, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn16, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridColumn6
             // 
@@ -302,6 +315,12 @@
             this.gridColumn10.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 4;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "IDNHAP";
+            this.gridColumn16.FieldName = "IDNHAP";
+            this.gridColumn16.Name = "gridColumn16";
             // 
             // gridcongno
             // 
@@ -849,5 +868,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
     }
 }

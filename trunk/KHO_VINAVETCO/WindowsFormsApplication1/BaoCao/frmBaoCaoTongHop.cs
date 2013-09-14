@@ -203,9 +203,9 @@ namespace WindowsFormsApplication1
                 gridControl1.DataSource = null;
             }
             ISXEMCLICK = false;
-            grid_tonkho_CUOIKY.RefreshData();
+            //grid_tonkho_CUOIKY.RefreshData();
             grid_tonkho_CUOIKY.BestFitColumns();
-            gridControl1.RefreshDataSource();
+           // gridControl1.RefreshDataSource();
             if (!PublicVariable.isKHOILUONG)
             {
                 grid_tonkho_CUOIKY.Columns["KHOILUONG"].Visible = false;

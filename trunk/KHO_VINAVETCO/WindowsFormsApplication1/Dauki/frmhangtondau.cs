@@ -301,7 +301,7 @@ namespace WindowsFormsApplication1
         {
             GridView view = sender as GridView;
             GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
-            if (hitInfo.InRow)
+            if (hitInfo.RowHandle>=0)
             {
                 view.FocusedRowHandle = hitInfo.RowHandle;
 
@@ -360,7 +360,7 @@ namespace WindowsFormsApplication1
             GridView view = sender as GridView;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             GridHitInfo hitInfo = view.CalcHitInfo(pt);
-            if (hitInfo.InRow)
+            if (hitInfo.RowHandle>=0)
             {
                 if (PublicVariable.SUA == "False")
                 {
@@ -391,7 +391,7 @@ namespace WindowsFormsApplication1
             GridView view = sender as GridView;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);
             GridHitInfo hitInfo = view.CalcHitInfo(pt);
-            if (hitInfo.InRow)
+            if (hitInfo.RowHandle>=0)
             {
                 try
                 {
