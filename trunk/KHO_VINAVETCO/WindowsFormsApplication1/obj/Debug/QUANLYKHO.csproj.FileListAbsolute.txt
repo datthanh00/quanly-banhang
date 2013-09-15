@@ -104,3 +104,5 @@ e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsAppl
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmBCMatHang.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmnhapkhac.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.HoaDonXuat.frmxuatkhac.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.FrmThuTienncc.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmTraTienkh.resources

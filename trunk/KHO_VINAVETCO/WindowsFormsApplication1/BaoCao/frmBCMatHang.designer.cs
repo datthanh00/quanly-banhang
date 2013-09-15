@@ -90,6 +90,7 @@
             this.mATHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -278,6 +279,7 @@
             this.colmamhathang,
             this.coltennhomhang,
             this.coltenmathang,
+            this.gridColumn10,
             this.colthue,
             this.gridColumn7,
             this.coltendonvi,
@@ -337,8 +339,6 @@
             this.coltennhomhang.Name = "coltennhomhang";
             this.coltennhomhang.OptionsColumn.AllowEdit = false;
             this.coltennhomhang.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.coltennhomhang.Visible = true;
-            this.coltennhomhang.VisibleIndex = 0;
             this.coltennhomhang.Width = 71;
             // 
             // coltenmathang
@@ -349,7 +349,7 @@
             this.coltenmathang.OptionsColumn.AllowEdit = false;
             this.coltenmathang.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.coltenmathang.Visible = true;
-            this.coltenmathang.VisibleIndex = 2;
+            this.coltenmathang.VisibleIndex = 0;
             this.coltenmathang.Width = 91;
             // 
             // colthue
@@ -729,6 +729,16 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Lô Hàng";
+            this.gridColumn10.FieldName = "LOHANG";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 2;
+            // 
             // frmBCMatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -842,5 +852,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
         private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
     }
 }

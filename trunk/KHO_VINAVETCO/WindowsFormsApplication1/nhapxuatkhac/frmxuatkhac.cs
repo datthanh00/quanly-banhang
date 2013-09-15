@@ -628,7 +628,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         ketnoi connect = new ketnoi();
         public void loadmahdx()
         {
-            txtMaHD.Text = connect.sTuDongDienMaHoaDonXuatKHAC(txtMaHD.Text);
+            txtMaHD.Text = connect.sTuDongDienMaHoaDonXuat(txtMaHD.Text);
             txtNgayXuat.Text = DateTime.Now.ToString("dd/MM/yyy");
         }
 

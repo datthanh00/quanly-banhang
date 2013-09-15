@@ -94,14 +94,7 @@ namespace WindowsFormsApplication1
             btin.Text = resVietNam.btIn.ToString();
             BtXuatdulieu.Text = resVietNam.btXuat.ToString();
             btdong.Text = resVietNam.btDong.ToString();
-           
-            lbnhom.Text = resVietNam.lbchonnhom.ToString();
-            //labelControl2.Text = resVietNam.lbden.ToString();
-            //labelControl13.Text = resVietNam.lbtu.ToString();
-            //labelControl14.Text = resVietNam.lbden.ToString();
-            //lbTu.Text = resVietNam.lbtu.ToString();
-            //lbDen.Text = resVietNam.lbden.ToString();
-            //lbNam.Text = resVietNam.lbNam.ToString();
+
         }
 
         private void loadReSEG1()
@@ -112,16 +105,6 @@ namespace WindowsFormsApplication1
            btin.Text = resEngLand.btIn.ToString();
            BtXuatdulieu.Text = resEngLand.btXuat.ToString();
            btdong.Text = resEngLand.btDong.ToString();
-
-            lbnhom.Text = resEngLand.lbchonnhom.ToString();
-            //labelControl2.Text = resEngLand.l.ToString();
-           
-            //labelControl13.Text = resEngLand.lbtu.ToString();
-            //labelControl14.Text = resEngLand.lbden.ToString();
-            
-            //lbTu.Text = resEngLand.lbtu.ToString();
-            //lbDen.Text = resEngLand.lbden.ToString();
-            //lbNam.Text = resEngLand.lbNam.ToString();
         }
      
 
@@ -219,7 +202,7 @@ namespace WindowsFormsApplication1
                        {
                             HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
                        }
-                       SQL = SQL + " \r\nGO\r\n UPDATE TONKIEMKHO SET [TONTT]=" + dtr["TONTT"].ToString() + " WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "' AND NGAY='" + HSD + "'";
+                       SQL = SQL + " \r\nGO\r\n UPDATE TONKIEMKHO SET [TONTT]=" + dtr["TONTT"].ToString() + ",[TONKHO]=" + dtr["TONKHO"].ToString() + " WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "' AND NGAY='" + HSD + "'";
                        i++;
                    }
                    ctlNCC.executeNonQuery2(SQL);
@@ -389,6 +372,22 @@ namespace WindowsFormsApplication1
            // ctr.createtonkiemkho();
            
             Load_mathang();
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            DataRow dtr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+
+            if (dtr != null)
+            {
+
+                if (e.Column.FieldName.ToString() == "TONTT")
+                {
+
+                    dtr["CHENHLECH"] = (Convert.ToDouble(dtr["TONTT"].ToString()) - Convert.ToDouble(dtr["TONKHO"].ToString())).ToString();
+                }
+
+            }
         }
 
 

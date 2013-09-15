@@ -11,19 +11,12 @@ namespace WindowsFormsApplication1
         {
             CNKH.SUAPHIEUTHU_DAO(dt);
         }
-        public  DataTable TONGHOPTHU_KHD12()
-        {
-            return CNKH.GETALLHDX_DAO("","");
-        }
+
         /// <summary>
         /// //////////////Lại từ đầu
         /// </summary>
         /// <returns></returns>
-        public  DataTable GETALLHDX_ctrl(string NGAYBD,string NGAYKT)
-        {
-            return CNKH.GETALLHDX_DAO(NGAYBD, NGAYKT);
-            
-        }
+
         public DataTable GETALLPHIEUTHU_ctrl(string NGAYBD, string NGAYKT)
         {
             return CNKH.GETALL_PHIEUTHU_DAO(NGAYBD, NGAYKT);

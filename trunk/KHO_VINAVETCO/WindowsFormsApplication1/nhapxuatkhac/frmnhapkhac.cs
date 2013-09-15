@@ -939,7 +939,7 @@ namespace WindowsFormsApplication1
 
         public void loadmahdn()
         {
-            txtMaHD.Text = connect.sTuDongDienMaHoaDonNhapKHAC(txtMaHD.Text);
+            txtMaHD.Text = connect.sTuDongDienMaHoaDonNhap(txtMaHD.Text);
             txtlohang.Text = txtMaHD.Text;
             txtNgay.Text = DateTime.Now.ToString("dd/MM/yyy");
         }

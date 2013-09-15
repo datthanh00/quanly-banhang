@@ -495,6 +495,22 @@ namespace WindowsFormsApplication1
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
+        private void advBandedGridView3_CellValueChanged_1(object sender, CellValueChangedEventArgs e)
+        {
+            DataRow dtr = advBandedGridView3.GetDataRow(advBandedGridView3.FocusedRowHandle);
+
+            if (dtr != null)
+            {
+
+                if (e.Column.FieldName.ToString() == "TONTT")
+                {
+
+                    dtr["CHENHLECH"] = (Convert.ToDouble(dtr["TONTT"].ToString()) - Convert.ToDouble(dtr["TONCUOI"].ToString())).ToString();
+                }
+
+            }
+        }
+
         
     }
 }
