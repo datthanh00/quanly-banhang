@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly manifestVersion="1.0" xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1">
   <asmv1:assemblyIdentity version="1.0.0.10" name="WindowsFormsApplication1.exe" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="QLDT.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="WindowsFormsApplication1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -342,14 +343,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsFormsApplication1.exe" size="2695680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="WindowsFormsApplication1.exe" size="2891264">
       <assemblyIdentity name="WindowsFormsApplication1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>EDFe+k+4tVYO4uqCNHD2FS52p+8=</dsig:DigestValue>
+        <dsig:DigestValue>+LaVbifRuT4AawtQS/uuRJJosl0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -361,10 +362,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>ATrZFOltpCrq6hZ79eEOawX38XM=</dsig:DigestValue>
+        <dsig:DigestValue>BqeEwQ7+MXMcbyjCJ3OSIC/cyKI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="QLDT.ico" size="161862">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>yEiF5wf/QxjRpCzCACtm9V9yezk=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Resources\CHOTSO.png" size="4212">
     <hash>
       <dsig:Transforms>
@@ -410,13 +420,13 @@
       <dsig:DigestValue>Nhhlb1wMwz0SxI+00htBrtj8l2s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="WindowsFormsApplication1.exe.config" size="709">
+  <file name="WindowsFormsApplication1.exe.config" size="736">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>obp5JAKbZh4KFH1W35lU+z+zj7M=</dsig:DigestValue>
+      <dsig:DigestValue>hKDA/3X3WqesQy5MHT50BCB9leo=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

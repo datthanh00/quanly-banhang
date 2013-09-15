@@ -19,15 +19,7 @@ namespace WindowsFormsApplication1
              return pv.getdata(SQL);
 
         }
-        public  DataTable GETALLHDX_DAO(string NGAYBD,string NGAYKT)
-        {
-            Provider pv = new Provider();
-            string SQL = " SELECT T1.*, TENKH  FROM KHACHHANG, (SELECT MAHDX,MAKH, TIENPHAITRA,TIENDATRA, tienphaitra-tiendatra as CONLAI ,convert(varchar,NGAYXUAT ,103)AS NGAYXUAT FROM HOADONXUAT WHERE  TYPE=1 AND HOADONXUAT.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra<>0 and NGAYXUAT BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'"
-            + " UNION ALL SELECT 'CONGNODAUKY' AS MAHDX,MA AS MAKH,TONGTIENTRA AS TIENPHAITRA, TIENDATRA,TONGTIENTRA- TIENDATRA AS CONLAI,convert(varchar,NGAY ,103)AS NGAYXUAT  FROM TONDAUPHAITHU WHERE TONGTIENTRA-TIENDATRA<>0 AND NGAY BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "') AS T1 WHERE T1.MAKH=KHACHHANG.MAKH"
-            + " UNION ALL SELECT 'CONGNODAUKY' AS MAHDX,MA AS MAKH,TONGTIENTRA AS TIENPHAITRA, TIENDATRA,TONGTIENTRA- TIENDATRA AS CONLAI,convert(varchar,NGAY ,103)AS NGAYXUAT,TENNCC  FROM TONDAUPHAITHU,NHACUNGCAP WHERE TONGTIENTRA-TIENDATRA<>0 AND NGAY BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND TONDAUPHAITHU.MA=NHACUNGCAP.MANCC"
-            + " UNION ALL SELECT MAHDN AS MAHDX,NHACUNGCAP.MANCC AS MAKH, TIENPHAITRA,TIENDATRA, tienphaitra-tiendatra as CONLAI ,convert(varchar,NGAYNHAP ,103)AS NGAYXUAT,TENNCC AS TENKH FROM TRAHOADONNHAP,NHACUNGCAP WHERE  TYPE=1 AND TRAHOADONNHAP.MANCC=NHACUNGCAP.MANCC AND TRAHOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and tienphaitra-tiendatra<>0 and NGAYNHAP BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'";
-            return pv.getdata(SQL);
-        }
+
         public DataTable GETALL_PHIEUTHU_DAO(string NGAYBD, string NGAYKT)
         {
             Provider pv = new Provider();
@@ -41,8 +33,8 @@ namespace WindowsFormsApplication1
             Provider pv = new Provider();
             string SQL = "SELECT KHACHHANG.MAKH,TENKH,MAPT AS MAHD,-SOTIEN AS SOTIEN,NGAYTHU AS NGAY,N'Khách Trả Tiền' AS CHUCNANG,IDNHAP FROM PHIEUTHU, KHACHHANG WHERE KHACHHANG.MAKH=PHIEUTHU.MADOITUONG AND NGAYTHU BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND KHACHHANG.MAKHO='" + PublicVariable.MAKHO + "'"
                 + " UNION ALL SELECT KHACHHANG.MAKH,TENKH,MAPC  AS MAHD,SOTIEN AS SOTIEN,NGAYCHI AS NGAY,N'Khách Nhận Tiền' AS CHUCNANG,IDNHAP FROM PHIEUCHI, KHACHHANG WHERE KHACHHANG.MAKH=PHIEUCHI.MADOITUONG  AND NGAYCHI BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND KHACHHANG.MAKHO='" + PublicVariable.MAKHO + "'"
-                + " UNION ALL SELECT KHACHHANG.MAKH,TENKH,MAHDX  AS MAHD,TIENPHAITRA AS SOTIEN,NGAYXUAT AS NGAY,N'Mua Hàng' AS CHUCNANG,IDNHAP FROM HOADONXUAT, KHACHHANG WHERE KHACHHANG.MAKH=HOADONXUAT.MAKH  AND NGAYXUAT BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND KHACHHANG.MAKHO='" + PublicVariable.MAKHO + "'"
-                + " UNION ALL SELECT KHACHHANG.MAKH,TENKH,MAHDX  AS MAHD,-TIENPHAITRA AS SOTIEN,NGAYXUAT AS NGAY,N'Trả Hàng' AS CHUCNANG,IDNHAP FROM TRAHOADONXUAT, KHACHHANG WHERE KHACHHANG.MAKH=TRAHOADONXUAT.MAKH  AND NGAYXUAT BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND KHACHHANG.MAKHO='" + PublicVariable.MAKHO + "'";
+                + " UNION ALL SELECT KHACHHANG.MAKH,TENKH,MAHDX  AS MAHD,TIENPHAITRA AS SOTIEN,NGAYXUAT AS NGAY,N'Mua Hàng' AS CHUCNANG,IDNHAP FROM HOADONXUAT, KHACHHANG WHERE KHACHHANG.MAKH=HOADONXUAT.MAKH  AND NGAYXUAT BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND KHACHHANG.MAKHO='" + PublicVariable.MAKHO + "' AND TYPE=1"
+                + " UNION ALL SELECT KHACHHANG.MAKH,TENKH,MAHDX  AS MAHD,-TIENPHAITRA AS SOTIEN,NGAYXUAT AS NGAY,N'Trả Hàng' AS CHUCNANG,IDNHAP FROM TRAHOADONXUAT, KHACHHANG WHERE KHACHHANG.MAKH=TRAHOADONXUAT.MAKH  AND NGAYXUAT BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND KHACHHANG.MAKHO='" + PublicVariable.MAKHO + "' AND TYPE=1";
             return pv.getdata(SQL);
         }
         
@@ -145,8 +137,8 @@ namespace WindowsFormsApplication1
             Provider pv = new Provider();
             string SQL = "SELECT NHACUNGCAP.MANCC,TENNCC,MAPT AS MAHD,SOTIEN ,NGAYTHU AS NGAY,N'Nhận Tiền NCC' AS CHUCNANG,IDNHAP FROM PHIEUTHU, NHACUNGCAP WHERE NHACUNGCAP.MANCC=PHIEUTHU.MADOITUONG AND NGAYTHU BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "'  AND NHACUNGCAP.MAKHO='" + PublicVariable.MAKHO + "'"
                 + " UNION ALL SELECT NHACUNGCAP.MANCC,TENNCC,MAPC  AS MAHD,-SOTIEN AS SOTIEN,NGAYCHI AS NGAY,N'Trả Tiền NCC' AS CHUCNANG,IDNHAP FROM PHIEUCHI, NHACUNGCAP WHERE NHACUNGCAP.MANCC=PHIEUCHI.MADOITUONG  AND NGAYCHI BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND NHACUNGCAP.MAKHO='" + PublicVariable.MAKHO + "'"
-                + " UNION ALL SELECT NHACUNGCAP.MANCC,TENNCC,MAHDN  AS MAHD,TIENPHAITRA AS SOTIEN,NGAYNHAP AS NGAY,N'Mua Hàng' AS CHUCNANG,IDNHAP FROM HOADONNHAP, NHACUNGCAP WHERE NHACUNGCAP.MANCC=HOADONNHAP.MANCC  AND NGAYNHAP BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND NHACUNGCAP.MAKHO='" + PublicVariable.MAKHO + "'"
-                + " UNION ALL SELECT NHACUNGCAP.MANCC,TENNCC,MAHDN  AS MAHD,-TIENPHAITRA AS SOTIEN,NGAYNHAP AS NGAY,N'Trả Hàng' AS CHUCNANG,IDNHAP FROM TRAHOADONNHAP, NHACUNGCAP WHERE NHACUNGCAP.MANCC=TRAHOADONNHAP.MANCC  AND NGAYNHAP BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND NHACUNGCAP.MAKHO='" + PublicVariable.MAKHO + "'";
+                + " UNION ALL SELECT NHACUNGCAP.MANCC,TENNCC,MAHDN  AS MAHD,TIENPHAITRA AS SOTIEN,NGAYNHAP AS NGAY,N'Mua Hàng' AS CHUCNANG,IDNHAP FROM HOADONNHAP, NHACUNGCAP WHERE NHACUNGCAP.MANCC=HOADONNHAP.MANCC  AND NGAYNHAP BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND NHACUNGCAP.MAKHO='" + PublicVariable.MAKHO + "' AND TYPE=1"
+                + " UNION ALL SELECT NHACUNGCAP.MANCC,TENNCC,MAHDN  AS MAHD,-TIENPHAITRA AS SOTIEN,NGAYNHAP AS NGAY,N'Trả Hàng' AS CHUCNANG,IDNHAP FROM TRAHOADONNHAP, NHACUNGCAP WHERE NHACUNGCAP.MANCC=TRAHOADONNHAP.MANCC  AND NGAYNHAP BETWEEN '" + NGAYBD + "' and '" + NGAYKT + "' AND NHACUNGCAP.MAKHO='" + PublicVariable.MAKHO + "' AND TYPE=1";
             return pv.getdata(SQL);
         }
         public  DataTable GETALLHDN_DAO()
@@ -154,7 +146,7 @@ namespace WindowsFormsApplication1
 
             Provider pv = new Provider();
             string SQL = "SELECT MAHDN ,TENNCC,HOADONnhap.MANCC,TIENPHAITRA ,TIENDATRA, tienphaitra-tiendatra as CONLAI"
-            +" FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc AND HOADONNHAP.MAKHO='"+PublicVariable.MAKHO+"' and hoadonnhap.tinhtrang='false' "
+            + " FROM HOADONnhap,nhacungcap WHERE HOADONnhap.MAncc=nhacungcap.mancc AND HOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' and hoadonnhap.tinhtrang='false' AND TYPE=1"
             +" group by hoadonnhap.mahdn,hoadonnhap.tienphaitra,hoadonnhap.tiendatra,nhacungcap.tenncc,hoadonnhap.mancc";
             return pv.getdata(SQL);
         }
@@ -164,7 +156,7 @@ namespace WindowsFormsApplication1
         {
    
             Provider pv = new Provider();
-            string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONnhap where MAHDN='"+MHDN+"' ";
+            string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONnhap where MAHDN='" + MHDN + "' AND TYPE=1";
             DataTable dt = new DataTable();
             dt= pv.getdata(SQL);
             if (dt.Rows.Count > 0)
@@ -175,7 +167,7 @@ namespace WindowsFormsApplication1
         {
 
             Provider pv = new Provider();
-            string SQL = "SELECT CONGNO FROM NHACUNGCAP where MANCC='" + MANCC + "' ";
+            string SQL = "SELECT CONGNO FROM NHACUNGCAP where MANCC='" + MANCC + "'";
             DataTable dt = new DataTable();
             dt = pv.getdata(SQL);
             if (dt.Rows.Count > 0)
@@ -198,7 +190,7 @@ namespace WindowsFormsApplication1
         {
       
             Provider pv = new Provider();
-            string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONXUAT where MAHDX='" + MHDX + "' ";
+            string SQL = "SELECT tienphaitra-tiendatra conlai FROM HOADONXUAT where MAHDX='" + MHDX + "' AND TYPE=1 ";
             DataTable dt = new DataTable();
             dt = pv.getdata(SQL);
             if (dt.Rows.Count > 0)

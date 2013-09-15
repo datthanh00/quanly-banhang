@@ -4,14 +4,14 @@
   <description asmv2:publisher="3/1 đường Bắc Kạn, TP TN" asmv2:product="WindowsFormsApplication1" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="WindowsFormsApplication1.exe.manifest" size="23772">
+    <dependentAssembly dependencyType="install" codebase="WindowsFormsApplication1.exe.manifest" size="24228">
       <assemblyIdentity name="WindowsFormsApplication1.exe" version="1.0.0.10" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>oFMUMh4OB4QMZ/t4qWWdGm+0Lb8=</dsig:DigestValue>
+        <dsig:DigestValue>U/wwgWnpXRPzEbcS9zcjTUzvyRU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

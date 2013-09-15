@@ -16,11 +16,9 @@ e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\ResolveAssembl
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmBanggia.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.FrmDsbanggia.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.ThemBanggia.resources
-e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmBangKeXuatKhoTheoKHAchhangHangHoa.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmBaoCaoTonKho.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmReportThutienKH.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmReportTratienNCC.resources
-e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmThongKeTongHop.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmTonKhoNgay.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmTonphanlo.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmBoPhan.resources
@@ -102,3 +100,9 @@ e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\af-ZA\WindowsF
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.TrustInfo.xml
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.exe.manifest
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.application
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmBaoCaoTongHop.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmBCMatHang.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.FrmThuTienncc.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmTraTienkh.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmnhapkhac.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.HoaDonXuat.frmxuatkhac.resources
