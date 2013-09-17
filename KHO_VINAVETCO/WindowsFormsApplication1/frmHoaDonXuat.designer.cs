@@ -38,6 +38,8 @@
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.controlContainer2 = new DevExpress.XtraBars.Docking.ControlContainer();
             this.panelContainer1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
             this.controlContainer1 = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -200,6 +202,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.dockPanel2.SuspendLayout();
             this.panelContainer1.SuspendLayout();
             this.dockPanel1.SuspendLayout();
             this.controlContainer1.SuspendLayout();
@@ -355,6 +358,8 @@
             // dockManager1
             // 
             this.dockManager1.Form = this;
+            this.dockManager1.HiddenPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel2});
             this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
             this.panelContainer1,
             this.Panel_filter});
@@ -364,6 +369,26 @@
             "System.Windows.Forms.StatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
             "DevExpress.XtraBars.Ribbon.RibbonControl"});
+            // 
+            // dockPanel2
+            // 
+            this.dockPanel2.Controls.Add(this.controlContainer2);
+            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Float;
+            this.dockPanel2.ID = new System.Guid("e125d13c-55cb-418b-8cef-28a92517f7cb");
+            this.dockPanel2.Location = new System.Drawing.Point(-32768, -32768);
+            this.dockPanel2.Name = "dockPanel2";
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel2.SavedIndex = 2;
+            this.dockPanel2.Size = new System.Drawing.Size(200, 200);
+            this.dockPanel2.Text = "dockPanel2";
+            this.dockPanel2.Visibility = DevExpress.XtraBars.Docking.DockVisibility.Hidden;
+            // 
+            // controlContainer2
+            // 
+            this.controlContainer2.Location = new System.Drawing.Point(2, 24);
+            this.controlContainer2.Name = "controlContainer2";
+            this.controlContainer2.Size = new System.Drawing.Size(196, 174);
+            this.controlContainer2.TabIndex = 0;
             // 
             // panelContainer1
             // 
@@ -384,7 +409,7 @@
             this.dockPanel1.ID = new System.Guid("2b930c00-3b06-4461-abef-100ce4af92b7");
             this.dockPanel1.Location = new System.Drawing.Point(0, 0);
             this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 249);
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 201);
             this.dockPanel1.Size = new System.Drawing.Size(200, 201);
             this.dockPanel1.Text = "Giao dịch";
             // 
@@ -468,7 +493,7 @@
             this.dock.Location = new System.Drawing.Point(0, 201);
             this.dock.Name = "dock";
             this.dock.Options.ShowCloseButton = false;
-            this.dock.OriginalSize = new System.Drawing.Size(200, 272);
+            this.dock.OriginalSize = new System.Drawing.Size(200, 320);
             this.dock.Size = new System.Drawing.Size(200, 320);
             this.dock.Text = "Hóa Đơn Lưu Tạm";
             // 
@@ -2053,6 +2078,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).EndInit();
             this.panel_tool.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.dockPanel2.ResumeLayout(false);
             this.panelContainer1.ResumeLayout(false);
             this.dockPanel1.ResumeLayout(false);
             this.controlContainer1.ResumeLayout(false);
@@ -2305,6 +2331,8 @@
         private DevExpress.XtraEditors.CalcEdit txtNo;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn53;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn54;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
+        private DevExpress.XtraBars.Docking.ControlContainer controlContainer2;
     }
     
 }

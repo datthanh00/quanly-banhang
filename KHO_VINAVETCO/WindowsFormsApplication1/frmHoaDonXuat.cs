@@ -754,6 +754,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
             {
                 gridViewSANPHAMXUAT.Columns["KHOILUONG"].Visible = false;
             }
+            if (!PublicVariable.isHSD)
+            {
+                gridViewSANPHAMXUAT.Columns["LOHANG"].Visible = false;
+                gridViewSANPHAMXUAT.Columns["HSD"].Visible = false;
+            }
 
         }
         public void loadgridTONGSANPHAM()
