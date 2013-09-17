@@ -93,7 +93,8 @@ namespace WindowsFormsApplication1
 
             dateDen1.Text = DateTime.Now.ToString("dd/MM/yyy");
             dateTu1.Text = "01/" + DateTime.Now.ToString("MM/yyy");
-
+            dateDen.Text = DateTime.Now.ToString("dd/MM/yyy");
+            dateTu.Text = "01/" + DateTime.Now.ToString("MM/yyy");
             loadGetAllHDN();
             load_congno();
         }
@@ -101,7 +102,8 @@ namespace WindowsFormsApplication1
         {
             panel_congno.Visible = true;
             panel_phieuchi.Visible = false;
-            groupControl_congno.Dock = System.Windows.Forms.DockStyle.Fill;
+            panelhoadon.Visible = false;
+    
             gridcongno.ExpandAllGroups();
         }
 
@@ -109,12 +111,14 @@ namespace WindowsFormsApplication1
         {
             panel_congno.Visible = false;
             panel_phieuchi.Visible = true;
+            panelhoadon.Visible = false;
             gridphieuchi.ExpandAllGroups();
         }
         public void load_hoadon()
         {
             panel_congno.Visible = false;
-            panel_phieuchi.Visible = true;
+            panel_phieuchi.Visible = false;
+            panelhoadon.Visible = true;
             gridhoadon.ExpandAllGroups();
         }
 
@@ -453,10 +457,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-
-            //gridControl2.ShowPrintPreview();
-           // printableComponentLink2.CreateDocument();
-           // printableComponentLink2.ShowPreview();
             DataTable printtable = (DataTable)gridControl1.DataSource;
             Inhd rep = new Inhd(printtable, 15);
             rep.ShowPreviewDialog();
@@ -566,14 +566,9 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
                 return;
             }
-            if (gridControl1.MainView == gridphieuchi)
-            {
+
                 loadGetAllphieuchi();
-            }
-            else
-            {
-                loadGetAllhoadon();
-            }
+   
             load_phieuchi();
         }
 
@@ -673,5 +668,80 @@ namespace WindowsFormsApplication1
                 loadfrm_thutien();
             }
         }
+
+
+
+
+
+
+
+        private void simpleButton8_Click_1(object sender, EventArgs e)
+        {
+            int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
+            int ingaykt = Convert.ToInt32(dateDen1.Text.Substring(6, 4)) + Convert.ToInt32(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen1.Text.Substring(0, 2)) * 365;
+            if (ingaybd > ingaykt)
+            {
+                MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
+                return;
+            }
+            loadGetAllhoadon();
+
+            load_hoadon();
+        }
+
+        private void simpleButton8_Click_2(object sender, EventArgs e)
+        {
+            int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
+            int ingaykt = Convert.ToInt32(dateDen1.Text.Substring(6, 4)) + Convert.ToInt32(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen1.Text.Substring(0, 2)) * 365;
+            if (ingaybd > ingaykt)
+            {
+                MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
+                return;
+            }
+
+            loadGetAllhoadon();
+
+            load_phieuchi();
+        }
+
+        private void simpleButton9_Click_1(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            DataTable printtable = (DataTable)gridControl1.DataSource;
+            Inhd rep = new Inhd(printtable, 22);
+            rep.ShowPreviewDialog();
+        }
+
+        private void simpleButton10_Click_1(object sender, EventArgs e)
+        {
+            if (PublicVariable.IN == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Filter = "Excel|*.xls";
+            saveFileDialog1.Title = "Save an File";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                gridControl1.ExportToXls(saveFileDialog1.FileName);
+            }
+        }
+
+        private void simpleButton11_Click_1(object sender, EventArgs e)
+        {
+            deDongTab();
+        }
+
+
+
+
+
+
     }
 }

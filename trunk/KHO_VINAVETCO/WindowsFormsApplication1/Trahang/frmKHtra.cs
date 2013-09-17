@@ -759,8 +759,15 @@ namespace WindowsFormsApplication1.KHtra
             gridViewSANPHAM.ExpandAllGroups();
             gridViewSANPHAM.RefreshData();
             gridControl3.RefreshDataSource();
-            gridViewSANPHAM.BestFitColumns();
-            
+            gridViewSANPHAM.BestFitColumns(); if (!PublicVariable.isKHOILUONG)
+            {
+                gridViewTONGSANPHAM.Columns["KHOILUONG"].Visible = false;
+            }
+            if (!PublicVariable.isHSD)
+            {
+                gridViewSANPHAM.Columns["LOHANG"].Visible = false;
+                gridViewSANPHAM.Columns["HSD"].Visible = false;
+            }
         }
 
         public void loadgridTONGSANPHAM()

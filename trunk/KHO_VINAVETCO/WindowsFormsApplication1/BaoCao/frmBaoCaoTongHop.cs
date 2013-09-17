@@ -213,6 +213,7 @@ namespace WindowsFormsApplication1
             if (!PublicVariable.isHSD)
             {
                 grid_tonkho_CUOIKY.Columns["HSD"].Visible = false;
+                grid_tonkho_CUOIKY.Columns["LOHANG"].Visible = false;
             }
         }
         private void loadGird_thekho()

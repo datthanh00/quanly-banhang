@@ -132,6 +132,7 @@
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn54 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn57 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.resTENMATHANG = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
@@ -202,7 +203,6 @@
             this.xoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn57 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -1350,6 +1350,12 @@
             this.gridColumn54.FieldName = "LOHANG";
             this.gridColumn54.Name = "gridColumn54";
             // 
+            // gridColumn57
+            // 
+            this.gridColumn57.Caption = "Giá Nhập";
+            this.gridColumn57.FieldName = "GIANHAP";
+            this.gridColumn57.Name = "gridColumn57";
+            // 
             // resTENMATHANG
             // 
             this.resTENMATHANG.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -1909,7 +1915,7 @@
             // 
             // gridColumn46
             // 
-            this.gridColumn46.Caption = "Tiền Thu";
+            this.gridColumn46.Caption = "Tiền Trả";
             this.gridColumn46.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn46.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn46.FieldName = "TIENTHU";
@@ -2084,12 +2090,6 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
-            // 
-            // gridColumn57
-            // 
-            this.gridColumn57.Caption = "Giá Nhập";
-            this.gridColumn57.FieldName = "GIANHAP";
-            this.gridColumn57.Name = "gridColumn57";
             // 
             // frmKHtra
             // 

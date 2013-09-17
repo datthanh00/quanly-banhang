@@ -309,83 +309,40 @@ namespace WindowsFormsApplication1
                 }
             }
 
-                dto.Loai_HT = loaihienthi.ToString();
+            dto.Loai_HT = loaihienthi.ToString();
 
-                if (cbmathang.Text != "")
-                {
-                    dto.MAMH = gridView2.GetFocusedRowCellValue("MASANPHAM").ToString();
-                }
-                if (cbnhomhang.Text != "")
-                {
-                    dto.MANCC = gridView3.GetFocusedRowCellValue("MANCC").ToString();
-                }
-
-            
-                dt = ctr.geTthongke_ct_mathang_lo(dto);
-                
-              
-                gridControl1.DataSource = dt;
-               // DevExpress.XtraGrid.StyleFormatCondition cn;
-                //cn = new DevExpress.XtraGrid.StyleFormatCondition(FormatConditionEnum.Less, gridView1.Columns["SONGAYHETHANH"], null, 0);
-                //cn.Appearance.BackColor = Color.Yellow;
-                //gridView1.FormatConditions.Add(cn);
-                //cn.ApplyToRow = true;
-                //gridView1.FormatConditions.Add(cn);
-                gridView1.BestFitColumns();
-                if (!PublicVariable.isKHOILUONG)
-                {
-                    gridView1.Columns["KHOILUONG"].Visible = false;
-                }
-
+            if (cbmathang.Text != "")
+            {
+                dto.MAMH = gridView2.GetFocusedRowCellValue("MASANPHAM").ToString();
             }
-            //catch (Exception)
-            //{
-            //    if (iNgonNgu == 0)
-            //    {
-
-            //        MessageBox.Show("Vui lòng nhập đầy đủ thông tin");
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Please enter enough information");
-
-            //    }
-
-               
-        
+            if (cbnhomhang.Text != "")
+            {
+                dto.MANCC = gridView3.GetFocusedRowCellValue("MANCC").ToString();
+            }
 
 
+            dt = ctr.geTthongke_ct_mathang_lo(dto);
 
+
+            gridControl1.DataSource = dt;
+
+            gridView1.BestFitColumns();
+            if (!PublicVariable.isKHOILUONG)
+            {
+                gridView1.Columns["KHOILUONG"].Visible = false;
+            }
+            if (!PublicVariable.isHSD)
+            {
+                gridView1.Columns["LOHANG"].Visible = false;
+                gridView1.Columns["NGAYSUDUNG"].Visible = false;
+                gridView1.Columns["HANSUDUNG"].Visible = false;
+            }
+        }
 
         private void linkNgayThang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
 
-            //if (iNgonNgu == 0)
-            //{
-            //    dateBD.SelectedText = "Chọn Ngày";
-            //    dateKetThuc.SelectedText = "Chọn Ngày";
 
-            //    xtraTabPage3.Text = "Thống Kê Theo Ngày";
-
-            //}
-            //else
-            //{
-            //    dateBD.SelectedText = "Select Day";
-            //    dateKetThuc.SelectedText = "Select day";
-
-            //    xtraTabPage3.Text = "Day statistics";
-
-            //}
-
-
-
-            //pnThoiGian.Visible = true;
-            //pnThangNam.Visible = false;
-            //LoaiHT = "";
-            //dateNgayBD = DateTime.Now.ToShortDateString();
-            //dateNgayKT = DateTime.Now.ToShortDateString();
-
-            //LoaiTG = "ngay";
         }
 
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -407,11 +364,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-           // gridControl1.ShowPrintPreview();
-           // reporthansudung hansudung = new reporthansudung(dt, iNgonNgu);
-           // hansudung.ShowPreviewDialog();
-          //  printableComponentLink1.CreateDocument();
-           // printableComponentLink1.ShowPreview();
 
             DataTable printtable = (DataTable)gridControl1.DataSource;
             Inhd rep = new Inhd(printtable, 16);
@@ -490,18 +442,7 @@ namespace WindowsFormsApplication1
 
         private void labelControl13_Click(object sender, EventArgs e)
         {
-            //if (iNgonNgu == 2)
-            //{
-            //    labelControl13.pr = " Từ";
 
-
-
-            //}
-            //else
-            //{
-            //    labelControl13.TextChanged = " From";
-
-            //}
         }
 
         private void labelControl1_Click(object sender, EventArgs e)

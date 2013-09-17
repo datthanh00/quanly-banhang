@@ -342,6 +342,12 @@ namespace WindowsFormsApplication1
                 gridViewTHEOMATHANG.Columns["KHOILUONG"].Visible = false;
                
             }
+            if (!PublicVariable.isHSD)
+            {
+                gridViewTHEOMATHANG.Columns["LOHANG"].Visible = false;
+                gridViewTHEOMATHANG.Columns["HSD"].Visible = false;
+
+            }
 
         }
         public void loadgridtongSANPHAM()

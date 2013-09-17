@@ -210,6 +210,11 @@ namespace WindowsFormsApplication1
             {
                 gridViewSANPHAM.Columns["KHOILUONG"].Visible = false;
             }
+            if (!PublicVariable.isHSD)
+            {
+                gridViewSANPHAM.Columns["LOHANG"].Visible = false;
+                gridViewSANPHAM.Columns["HSD"].Visible = false;
+            }
         }
 
         public void loadgridTONGSANPHAM()
