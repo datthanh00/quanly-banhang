@@ -219,6 +219,10 @@ namespace WindowsFormsApplication1
                 BandedGridView3.Columns["KLTRAXUAT"].Visible = false;
                 BandedGridView3.Columns["KLTONCUOI"].Visible = false;
             }
+            if (!PublicVariable.isHSD)
+            {
+                BandedGridView3.Columns["LOHANG"].Visible = false;
+            }
             
         }
 

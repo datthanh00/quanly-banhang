@@ -82,10 +82,11 @@ namespace WindowsFormsApplication1
                 gridView1.Columns["KHOILUONG"].Visible = false;
             }
 
-            if (!PublicVariable.isTONTHUCTE)
+            if (!PublicVariable.isHSD)
             {
                 gridView1.Columns["LOHANG"].Visible = false;
-                gridView1.Columns["HSD"].Visible = false;
+                gridView1.Columns["NGAYSUDUNG"].Visible = false;
+                gridView1.Columns["HANSUDUNG"].Visible = false;
             }
 
             Load_mathang();
@@ -222,7 +223,7 @@ namespace WindowsFormsApplication1
             }
 
             DataTable printtable = (DataTable)gridControl1.DataSource;
-            Inhd rep = new Inhd(printtable, 16);
+            Inhd rep = new Inhd(printtable, 23);
             rep.ShowPreviewDialog();
         }
 
@@ -401,9 +402,9 @@ namespace WindowsFormsApplication1
 
                     SLOHANG = dtr["LOHANG"].ToString();
 
-                    SHSD = dtr["HSD"].ToString();
+                    SHSD = dtr["HANSUDUNG"].ToString();
 
-                    SSOLUONG = dtr["SOLUONG"].ToString();
+                    SSOLUONG = dtr["SOLUONGMH"].ToString();
                     SGIAMUA = dtr["GIAMUA"].ToString();
 
                 }

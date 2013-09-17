@@ -551,6 +551,11 @@ namespace WindowsFormsApplication1
             cbkhachhang.Visible = false;
             cbncc.Visible = true;
             cbsanpham.Visible = false;
+
+            if (!PublicVariable.isKHOILUONG)
+            {
+                grid_MUAHANG_NCC.Columns["KHOILUONG"].Visible = false;
+            }
         }
 
         private void NBI_BH_ngay_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -575,6 +580,10 @@ namespace WindowsFormsApplication1
             cbkhachhang.Visible = true;
             cbncc.Visible = false;
             cbsanpham.Visible = false;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                grid_BANHANG_KHACHHANG.Columns["KHOILUONG"].Visible = false;
+            }
         }
 
         private void NBI_DS_NV_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -603,6 +612,10 @@ namespace WindowsFormsApplication1
             cbkhachhang.Visible = false;
             cbncc.Visible = false;
             cbsanpham.Visible = true;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                grid_BANHANG_TRANCC.Columns["KHOILUONG"].Visible = false;
+            }
         }
 
         private void BANHANG_SANPHAM_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -632,6 +645,10 @@ namespace WindowsFormsApplication1
             cbkhachhang.Visible = false;
             cbncc.Visible = false;
             cbsanpham.Visible = true;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                grid_MUAHANG_KHACHHANGTRA.Columns["KHOILUONG"].Visible = false;
+            }
         }
 
         private void muahang_sanpham_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
