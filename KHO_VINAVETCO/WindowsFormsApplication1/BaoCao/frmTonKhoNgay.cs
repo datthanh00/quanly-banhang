@@ -221,13 +221,16 @@ namespace WindowsFormsApplication1
                 //dt = ctr.getTonKho(dto);
                 if (!PublicVariable.isKHOILUONG)
                 {
-                    
                     advBandedGridView3.Columns["KLTONDAU"].Visible = false;
                     advBandedGridView3.Columns["KLNHAP"].Visible = false;
                     advBandedGridView3.Columns["KLTRANHAP"].Visible = false;
                     advBandedGridView3.Columns["KLXUAT"].Visible = false;
                     advBandedGridView3.Columns["KLTRAXUAT"].Visible = false;
                     advBandedGridView3.Columns["KLTONCUOI"].Visible = false;
+                }
+                if (!PublicVariable.isKHOILUONG)
+                {
+                    advBandedGridView3.Columns["LOHANG"].Visible = false;
                 }
             }
             else
@@ -274,30 +277,7 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-           /* if (advBandedGridView3.RowCount > 0)
-            {
-                reportTonKhoSoLuongGiaTri rep = new reportTonKhoSoLuongGiaTri(dt, iNgonNgu, PublicVariable.MAKHO, dateTu.Text, dateDen.Text);
-                rep.ShowPreviewDialog();
-            }
-            else
-            {
-                if (iNgonNgu == 0)
-                {
-                    MessageBox.Show("Không có dữ liệu để in", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    MessageBox.Show("Data null", "Infomation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    
-                }
-
-
-            }
-            */
-           // gridControl2.ShowPrintPreview();
-
-           // printableComponentLink1.CreateDocument();
-          //  printableComponentLink1.ShowPreview();
+          
             DataTable printtable = (DataTable)gridControl2.DataSource;
             Inhd rep = new Inhd(printtable, 17);
             rep.ShowPreviewDialog();
