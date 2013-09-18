@@ -3,7 +3,7 @@
 "VSVersion" = "3:800"
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
-"ProjectName" = "8:KHO_VINAVETCO"
+"ProjectName" = "8:QUANLYKHO_DB"
 "LanguageId" = "3:1033"
 "CodePage" = "3:1252"
 "UILanguageId" = "3:1033"
@@ -17,6 +17,12 @@
         {
         "MsmKey" = "8:_06EA070A7E52E7989282F26674DE6426"
         "OwnerKey" = "8:_35EE29DA23C94C0B8563E4DA1B947D2E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_06EA070A7E52E7989282F26674DE6426"
+        "OwnerKey" = "8:_1A162D418DA82BCA4C1CDD7A3565A95C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -207,6 +213,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1A162D418DA82BCA4C1CDD7A3565A95C"
+        "OwnerKey" = "8:_35EE29DA23C94C0B8563E4DA1B947D2E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1A43CFE7DEAC1F998A081E4114643B92"
         "OwnerKey" = "8:_9C19804861B56352D8A9ED0AF754FEDE"
         "MsmSig" = "8:_UNDEFINED"
@@ -311,6 +323,12 @@
         {
         "MsmKey" = "8:_34FF02C71BD311B6E8E11F41CA8DE33E"
         "OwnerKey" = "8:_35EE29DA23C94C0B8563E4DA1B947D2E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_34FF02C71BD311B6E8E11F41CA8DE33E"
+        "OwnerKey" = "8:_1A162D418DA82BCA4C1CDD7A3565A95C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -581,6 +599,12 @@
         {
         "MsmKey" = "8:_65A8875AFED70468EFA339626A2527CE"
         "OwnerKey" = "8:_217CA4DF92FBF4EF4AA21F8E63F6D34C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_65A8875AFED70468EFA339626A2527CE"
+        "OwnerKey" = "8:_1A162D418DA82BCA4C1CDD7A3565A95C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -880,6 +904,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C50C4DFB3C70DF97C935E710E1D82891"
+        "OwnerKey" = "8:_1A162D418DA82BCA4C1CDD7A3565A95C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C50C4DFB3C70DF97C935E710E1D82891"
         "OwnerKey" = "8:_35EE29DA23C94C0B8563E4DA1B947D2E"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1138,6 +1168,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1A162D418DA82BCA4C1CDD7A3565A95C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_A292A194C5CB814E847DDD95685B330A"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1323,7 +1359,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\QLKHOVINAVETCO.msi"
+        "OutputFilename" = "8:Debug\\QUANLYKHO.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -1342,10 +1378,10 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.2.0"
                     {
-                    "Name" = "8:.NET Framework 3.5"
-                    "ProductCode" = "8:Microsoft.Net.Framework.3.5"
+                    "Name" = "8:.NET Framework 2.0 (x86)"
+                    "ProductCode" = "8:Microsoft.Net.Framework.2.0"
                     }
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
                     {
@@ -1578,6 +1614,37 @@
                     }
                 }
             "SourcePath" = "8:Microsoft.Office.Interop.Excel.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3D833512D94B4DD08488EDCF4ECEF472"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1A162D418DA82BCA4C1CDD7A3565A95C"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:TRUE"
+            "AssemblyAsmDisplayName" = "8:Microsoft.SqlServer.Replication, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=x86"
+                "ScatterAssemblies"
+                {
+                    "_1A162D418DA82BCA4C1CDD7A3565A95C"
+                    {
+                    "Name" = "8:Microsoft.SqlServer.Replication.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Microsoft.SqlServer.Replication.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_3D833512D94B4DD08488EDCF4ECEF472"
