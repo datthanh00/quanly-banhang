@@ -402,7 +402,7 @@
             this.gridColumn3.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn3.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 9;
+            this.gridColumn3.VisibleIndex = 10;
             this.gridColumn3.Width = 92;
             // 
             // gridColumn11
@@ -416,6 +416,8 @@
             this.gridColumn11.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn11.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 9;
             this.gridColumn11.Width = 99;
             // 
             // colhansudung

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmnodauky));
             this.colsoluong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
@@ -185,10 +185,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(2, 21);
+            this.xtraTabControl1.Location = new System.Drawing.Point(2, 22);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 504);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 503);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3});
@@ -198,7 +198,7 @@
             this.xtraTabPage3.Controls.Add(this.panelControl5);
             this.xtraTabPage3.Controls.Add(this.panelControl6);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 476);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 474);
             this.xtraTabPage3.Text = "Chi Tiết";
             // 
             // panelControl5
@@ -207,23 +207,23 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(0, 39);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1252, 437);
+            this.panelControl5.Size = new System.Drawing.Size(1252, 435);
             this.panelControl5.TabIndex = 9;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 3);
+            this.groupControl2.Location = new System.Drawing.Point(2, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1246, 431);
+            this.groupControl2.Size = new System.Drawing.Size(1248, 431);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Danh Sách Nhà Cung Cấp";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 21);
+            this.gridControl1.Location = new System.Drawing.Point(2, 22);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
@@ -236,7 +236,7 @@
             this.repositoryItemRichTextEdit1,
             this.repositoryItemDateEdit1});
             this.gridControl1.ShowOnlyPredefinedDetails = true;
-            this.gridControl1.Size = new System.Drawing.Size(1242, 408);
+            this.gridControl1.Size = new System.Drawing.Size(1244, 407);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -252,13 +252,13 @@
             this.gridColumn2,
             this.colsoluong});
             this.gridView1.CustomizationFormBounds = new System.Drawing.Rectangle(846, 478, 216, 178);
-            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            styleFormatCondition2.Appearance.Options.UseBackColor = true;
-            styleFormatCondition2.Column = this.colsoluong;
-            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
-            styleFormatCondition2.Expression = "1 == 1";
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.Column = this.colsoluong;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Expression;
+            styleFormatCondition1.Expression = "1 == 1";
             this.gridView1.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition2});
+            styleFormatCondition1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.None, "", null, ""),
@@ -277,13 +277,13 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "MANCC";
+            this.gridColumn3.Caption = "Mã NCC";
             this.gridColumn3.FieldName = "MANCC";
             this.gridColumn3.Name = "gridColumn3";
             // 
             // coltennhomhang
             // 
-            this.coltennhomhang.Caption = "Khách Hàng - NCC";
+            this.coltennhomhang.Caption = "Nhà Cung Cấp";
             this.coltennhomhang.FieldName = "TENNCC";
             this.coltennhomhang.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.coltennhomhang.Name = "coltennhomhang";

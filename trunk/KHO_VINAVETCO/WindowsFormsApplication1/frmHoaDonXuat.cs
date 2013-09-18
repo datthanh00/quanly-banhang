@@ -507,7 +507,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 dtoNCC.LOHANG = lohang;
                 dtoNCC.MAMH = mamh;
                 dtoNCC.SOLUONGXUAT = SoLuong;
-                dtoNCC.GIABAN = DonGia;
+                dtoNCC.GIABAN = DonGia.ToString();
                 dtoNCC.TIENTHU = tienthu;
                 dtoNCC.GIANHAP =GIANHAP;
                 if (HSD.Length > 5)
