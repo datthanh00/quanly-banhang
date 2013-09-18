@@ -52,11 +52,13 @@
             this.lbmathue = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnEDITMAHD = new System.Windows.Forms.Button();
+            this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.luoi)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbTable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTenNCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tientrinh
@@ -77,6 +79,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkTT);
             this.groupBox1.Controls.Add(this.btncomputerdate);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.cbTable);
@@ -85,7 +88,7 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(11, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(808, 57);
+            this.groupBox1.Size = new System.Drawing.Size(872, 57);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao Tác";
@@ -95,7 +98,7 @@
             this.btncomputerdate.ForeColor = System.Drawing.Color.DarkBlue;
             this.btncomputerdate.Image = global::WindowsFormsApplication1.Properties.Resources.check;
             this.btncomputerdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btncomputerdate.Location = new System.Drawing.Point(702, 20);
+            this.btncomputerdate.Location = new System.Drawing.Point(739, 20);
             this.btncomputerdate.Name = "btncomputerdate";
             this.btncomputerdate.Size = new System.Drawing.Size(122, 30);
             this.btncomputerdate.TabIndex = 40;
@@ -109,7 +112,7 @@
             this.button4.ForeColor = System.Drawing.Color.DarkBlue;
             this.button4.Image = global::WindowsFormsApplication1.Properties.Resources.excel;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(453, 20);
+            this.button4.Location = new System.Drawing.Point(530, 20);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(114, 30);
             this.button4.TabIndex = 39;
@@ -124,7 +127,7 @@
             this.cbTable.Name = "cbTable";
             this.cbTable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbTable.Size = new System.Drawing.Size(168, 20);
+            this.cbTable.Size = new System.Drawing.Size(171, 20);
             this.cbTable.TabIndex = 38;
             // 
             // button3
@@ -132,7 +135,7 @@
             this.button3.ForeColor = System.Drawing.Color.DarkBlue;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(597, 20);
+            this.button3.Location = new System.Drawing.Point(652, 20);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 30);
             this.button3.TabIndex = 37;
@@ -146,7 +149,7 @@
             this.button2.ForeColor = System.Drawing.Color.DarkBlue;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(299, 20);
+            this.button2.Location = new System.Drawing.Point(386, 20);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 30);
             this.button2.TabIndex = 36;
@@ -317,11 +320,20 @@
             this.btnEDITMAHD.UseVisualStyleBackColor = true;
             this.btnEDITMAHD.Click += new System.EventHandler(this.btnEDITMAHD_Click);
             // 
+            // checkTT
+            // 
+            this.checkTT.EditValue = true;
+            this.checkTT.Location = new System.Drawing.Point(291, 26);
+            this.checkTT.Name = "checkTT";
+            this.checkTT.Properties.Caption = "Update";
+            this.checkTT.Size = new System.Drawing.Size(82, 19);
+            this.checkTT.TabIndex = 41;
+            // 
             // import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(895, 568);
+            this.ClientSize = new System.Drawing.Size(996, 568);
             this.Controls.Add(this.btnEDITMAHD);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.lbmathue);
@@ -342,6 +354,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cbTable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTenNCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +385,6 @@
         private DevExpress.XtraEditors.LabelControl lbmathue;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.Button btnEDITMAHD;
+        private DevExpress.XtraEditors.CheckEdit checkTT;
     }
 }

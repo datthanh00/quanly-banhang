@@ -19,24 +19,21 @@ namespace WindowsFormsApplication1.class_import
         {
             excell  = new importexcell();
 
-            cbTable.Properties.Items.Add("Thêm NHà Cung Cấp");
-            cbTable.Properties.Items.Add("Thêm Khách Hàng");
-            cbTable.Properties.Items.Add("Thêm Mặt Hàng");
-            cbTable.Properties.Items.Add("Thêm Đơn Vị Tính");
-            cbTable.Properties.Items.Add("Update Nhà Cung Cấp");
-            cbTable.Properties.Items.Add("Update Khách Hàng");
-            cbTable.Properties.Items.Add("Update Mặt Hàng");
-            cbTable.Properties.Items.Add("Update Đơn Vị Tính");
-            cbTable.Properties.Items.Add("Thêm Kho Hàng");
-            cbTable.Properties.Items.Add("update Kho Hàng");
-            cbTable.Properties.Items.Add("THÊM TỒN KHO THUC TẾ");
+            cbTable.Properties.Items.Add("KHO");
+            cbTable.Properties.Items.Add("THUẾ");
+            cbTable.Properties.Items.Add("ĐƠN VỊ TÍNH");
+            cbTable.Properties.Items.Add("NHÓM HÀNG");
+            cbTable.Properties.Items.Add("KHU VỰC");
+            cbTable.Properties.Items.Add("MẶT HÀNG");
+            cbTable.Properties.Items.Add("NHÀ CUNG CẤP");
+            cbTable.Properties.Items.Add("KHÁCH HÀNG");
             button2.Enabled = false;
             loadgridMatHang();
-
         }
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
         importexcell excell;
+        Boolean isupdate = false;
         public void loadgridMatHang()
         {
             CTL ctlNCC = new CTL();
@@ -68,105 +65,297 @@ namespace WindowsFormsApplication1.class_import
 
         private void button2_Click(object sender, EventArgs e)
         {
-           DataTable dulieu = new DataTable();
-           Provider pv = new Provider();
-           pv.connect();
-            String lenh;
+            if (checkTT.Checked)
+            {
+                isupdate = true;
+            }
+            else
+            {
+                isupdate = false;
+            }
+            DataTable dulieu = new DataTable();
+            Provider pv = new Provider();
+            pv.connect();
+            String lenh = ""; ;
             dulieu = (DataTable)(luoi.DataSource);
             tientrinh.Maximum = dulieu.Rows.Count;
             tientrinh.Minimum = 0;
             tientrinh.Step = 1;
-            foreach (System.Data.DataRow duyet_dong in dulieu.Rows)
+
+            //INSERT KHO 0
+            if (cbTable.SelectedIndex == 0 && !isupdate)
             {
-                lenh = nhap_tien_tc(duyet_dong);
-                try
+                string MA = "(";
+                foreach (System.Data.DataRow DONG in dulieu.Rows)
                 {
-                    pv.executeNonQuery(lenh);
+                    MA = MA + "'" + DONG["MAKHO"] + ",'";
                 }
-                catch
+                MA = MA.Substring(0, MA.Length - 2) + ")";
+
+                string SQL2 = "Select MAKHO FROM KHO WHERE MAKHO IN "+ MA;
+                DataTable TBMA=pv.getdata(SQL2);
+                if (TBMA.Rows.Count > 0)
                 {
-                    MessageBox.Show("CỘT TRONG FILE EXCELL KHÔNG HỢP LỆ"+lenh+"");
+                    MessageBox.Show("MÃ KHO NÀY: "+TBMA.Rows[0][0].ToString()+" ĐÃ TỒN TẠI");
+                    return;
                 }
-                tientrinh.PerformStep();
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [KHO]([MAKHO],[CODEKHO],[MANV],[TENKHO],[DIACHI],[SDTB],[DTDD],[NGUOILH],[FAX],[GHICHU],[TINHTRANG]) VALUES ('" + COT["MAKHO"] + "','" + COT["CODEKHO"] + "','" + PublicVariable.MANV + "','" + COT["TENKHO"] + "','" + COT["DIACHI"] + "','" + COT["SDTB"] + "','" + COT["DTDD"] + "','" + COT["NGUOILH"] + "','" + COT["FAX"] + "','" + COT["GHICHU"] + "',1)";
+                }
+          
             }
+            //UPDATE KHO 0
+            else if (cbTable.SelectedIndex == 0&&isupdate)
+            {
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n UPDATE [KHO] SET [CODEKHO] ='" + COT["CODEKHO"] + "',[MANV] ='" + PublicVariable.MANV + "',[TENKHO] ='" + COT["TENKHO"] + "',[DIACHI] ='" + COT["DIACHI"] + "',[SDTB] ='" + COT["SDTB"] + "',[DTDD] ='" + COT["DTDD"] + "',[NGUOILH] ='" + COT["NGUOILH"] + "',[FAX] ='" + COT["FAX"] + "',[GHICHU] ='" + COT["GHICHU"] + "' WHERE [MAKHO] ='" + COT["MAKHO"] + "'";
+                }
+            }
+            //INSERT THUẾ
+            else if (cbTable.SelectedIndex == 1 && !isupdate)
+            {
+                string MA = "(";
+                foreach (System.Data.DataRow DONG in dulieu.Rows)
+                {
+                    MA = MA + "'" + DONG["MATH"] + ",'";
+                }
+                MA = MA.Substring(0, MA.Length - 2) + ")";
+
+                string SQL2 = "Select MATH FROM THUE WHERE MATH IN " + MA;
+                DataTable TBMA = pv.getdata(SQL2);
+                if (TBMA.Rows.Count > 0)
+                {
+                    MessageBox.Show("MÃ THUẾ NÀY: " + TBMA.Rows[0][0].ToString() + " ĐÃ TỒN TẠI");
+                    return;
+                }
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [THUE]([MATH],[SOTHUE]) VALUES('" + COT["MATH"] + "','" + COT["SOTHUE"] + "')";
+                }
+            }
+            //UPDATE THUẾ
+            else if (cbTable.SelectedIndex == 1&&isupdate)
+            {
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n UPDATE [THUE] SET SOTHUE='" + COT["SOTHUE"] + "' WHERE MATH='" + COT["MATH"] + "'";
+                }
+            }
+            //INSERT ĐƠN VỊ TÍNH
+            else if (cbTable.SelectedIndex == 2 && !isupdate)
+            {
+                string MA = "(";
+                foreach (System.Data.DataRow DONG in dulieu.Rows)
+                {
+                    MA = MA + "'" + DONG["MADVT"] + ",'";
+                }
+                MA = MA.Substring(0, MA.Length - 2) + ")";
+
+                string SQL2 = "Select MADVT FROM DONVITINH WHERE MADVT IN " + MA;
+                DataTable TBMA = pv.getdata(SQL2);
+                if (TBMA.Rows.Count > 0)
+                {
+                    MessageBox.Show("MÃ ĐƠN VỊ TÍNH NÀY: " + TBMA.Rows[0][0].ToString() + " ĐÃ TỒN TẠI");
+                    return;
+                }
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [DONVITINH]([MADVT],[DONVITINH]) VALUES('" + COT["MADVT"] + "','" + COT["DONVITINH"] + "')";
+                }
+            }
+            //UPDATE ĐƠN VỊ TÍNH
+            else if (cbTable.SelectedIndex == 2&&isupdate)
+            {
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n UPDATE [DONVITINH] SET DONVITINH='" + COT["DONVITINH"] + "' WHERE MADVT='" + COT["MADVT"] + "'";
+                }
+            }
+            //INSERT NHÓM HÀNG
+            else if (cbTable.SelectedIndex == 3 && !isupdate)
+            {
+                string MA = "(";
+                foreach (System.Data.DataRow DONG in dulieu.Rows)
+                {
+                    MA = MA + "'" + DONG["MANH"] + ",'";
+                }
+                MA = MA.Substring(0, MA.Length - 2) + ")";
+
+                string SQL2 = "Select MANH FROM NHOMHANG WHERE MANH IN " + MA;
+                DataTable TBMA = pv.getdata(SQL2);
+                if (TBMA.Rows.Count > 0)
+                {
+                    MessageBox.Show("MÃ NHÓM HÀNG NÀY: " + TBMA.Rows[0][0].ToString() + " ĐÃ TỒN TẠI");
+                    return;
+                }
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [NHOMHANG]([MANH],[TENNHOMHANG],GHICHU) VALUES('" + COT["MANH"] + "','" + COT["TENNHOMHANG"] + "','" + COT["GHICHU"] + "')";
+                }
+            }
+            // UPDATE NHÓM HÀNG
+            else if (cbTable.SelectedIndex == 3 && isupdate)
+            {
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n UPDATE [NHOMHANG] SET TENNHOMHANG='" + COT["TENNHOMHANG"] + "',GHICHU='" + COT["GHICHU"] + "' WHERE MANH='" + COT["MANH"] + "'";
+                }
+            }
+            //INSERT KHU VỰC
+            else if (cbTable.SelectedIndex == 4 && !isupdate)
+            {
+                string MA = "(";
+                foreach (System.Data.DataRow DONG in dulieu.Rows)
+                {
+                    MA = MA + "'" + DONG["MAKV"] + ",'";
+                }
+                MA = MA.Substring(0, MA.Length - 2) + ")";
+
+                string SQL2 = "Select MAKV FROM KHUVUC WHERE MAKV IN " + MA;
+                DataTable TBMA = pv.getdata(SQL2);
+                if (TBMA.Rows.Count > 0)
+                {
+                    MessageBox.Show("MÃ KHU VUC NÀY: " + TBMA.Rows[0][0].ToString() + " ĐÃ TỒN TẠI");
+                    return;
+                }
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [KHUVUC]([MAKV],[TENKV],GHICHU,TINHTRANG) VALUES('" + COT["MAKV"] + "','" + COT["TENKV"] + "','" + COT["GHICHU"] + "',1)";
+                }
+            }
+            // UPDATE KHU VỰC
+            else if (cbTable.SelectedIndex == 4 && isupdate)
+            {
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n UPDATE [KHUVUC] SET TENKV='" + COT["TENKV"] + "',GHICHU='" + COT["GHICHU"] + "' WHERE MAKV='" + COT["MAKV"] + "'";
+                }
+            }
+            // INSERT MẶT HÀNG
+            else if (cbTable.SelectedIndex == 5 && !isupdate)
+            {
+                string MA = "(";
+                foreach (System.Data.DataRow DONG in dulieu.Rows)
+                {
+                    MA = MA + "'" + DONG["MAMH"] + ",'";
+                }
+                MA = MA.Substring(0, MA.Length - 2) + ")";
+
+                string SQL2 = "Select MAMH FROM MATHANG WHERE MAMH IN " + MA;
+                DataTable TBMA = pv.getdata(SQL2);
+                if (TBMA.Rows.Count > 0)
+                {
+                    MessageBox.Show("MÃ MẶT HÀNG NÀY: " + TBMA.Rows[0][0].ToString() + " ĐÃ TỒN TẠI");
+                    return;
+                }
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [MATHANG]([MAMH],[MATH],[MANH],[MAKHO],[TENMH],[MADVT],[SOLUONGMH],[GIAMUA],[MOTA],[TINHTRANG],[MANCC],[KLDVT]) VALUES('" + COT["MAMH"] + "','" + COT["MATH"] + "','" + COT["MANH"] + "','" + COT["MAKHO"] + "','" + COT["TENMH"] + "','" + COT["MADVT"] + "','" + COT["SOLUONGMH"] + "','" + COT["GIAMUA"] + "','" + COT["MOTA"] + "','" + COT["TINHTRANG"] + "','" + COT["MANCC"] + "','" + COT["KLDVT"] + "')";
+                }
+                // INSERT KHO HÀNG
+            }
+            // UPDATE MẶT HÀNG\
+            else if (cbTable.SelectedIndex == 5 && isupdate)
+            {
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n UPDATE [MATHANG] SET MATH='" + COT["MATH"] + "',MANH='" + COT["MANH"] + "',MAKHO='" + COT["MAKHO"] + "',TENMH='" + COT["TENMH"] + "',MADVT='" + COT["MADVT"] + "',SOLUONGMH='" + COT["SOLUONGMH"] + "',GIAMUA='" + COT["GIAMUA"] + "',MOTA='" + COT["MOTA"] + "' WHERE MAMH='" + COT["MAMH"] + "'";
+                }
+                //UPDATE KHO HÀNG
+            }
+            //INSERT NHÀ CUNG CẤP
+            else if (cbTable.SelectedIndex == 6 && !isupdate)
+            {
+                string MA = "(";
+                foreach (System.Data.DataRow DONG in dulieu.Rows)
+                {
+                    MA = MA + "'" + DONG["MANCC"] + ",'";
+                }
+                MA = MA.Substring(0, MA.Length - 2) + ")";
+
+                string SQL2 = "Select MANCC FROM NHACUNGCAP WHERE MANCC IN " + MA;
+                DataTable TBMA = pv.getdata(SQL2);
+                if (TBMA.Rows.Count > 0)
+                {
+                    MessageBox.Show("MÃ NHÀ CUNG CẤP NÀY: " + TBMA.Rows[0][0].ToString() + " ĐÃ TỒN TẠI");
+                    return;
+                }
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [NHACUNGCAP]([MANCC],[MAKV],[TENNCC],[DIACHI],[MASOTHUE],[SOTAIKHOAN],[NGANHANG],[SDT],[EMAIL],[FAX],[WEBSITE],[TINHTRANG],[MAKHO],[CONGNO]) VALUES('" + COT["MANCC"] + "','" + COT["MAKV"] + "','" + COT["TENNCC"] + "','" + COT["DIACHI"] + "','" + COT["MASOTHUE"] + "','" + COT["SOTAIKHOAN"] + "','" + COT["NGANHANG"] + "','" + COT["SDT"] + "','" + COT["FAX"] + "','" + COT["WEBSITE"] + "',1,'" + COT["MAKHO"] + "','" + COT["CONGNO"] + "')";
+                }
+            }
+            //UPDATE NHÀ CUNG CẤP
+            else if (cbTable.SelectedIndex == 6 && isupdate)
+            {
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n UPDATE [NHACUNGCAP] SET MAKV='" + COT["MAKV"] + "',TENNCC='" + COT["TENNCC"] + "',DIACHI='" + COT["DIACHI"] + "',MASOTHUE='" + COT["MASOTHUE"] + "',SOTAIKHOAN='" + COT["SOTAIKHOAN"] + "',NGANHANG='" + COT["NGANHANG"] + "',SDT='" + COT["SDT"] + "',EMAIL='" + COT["EMAIL"] + "',FAX='" + COT["FAX"] + "',WEBSITE='" + COT["WEBSITE"] + "',MAKHO='" + COT["MAKHO"] + "',CONGNO='" + COT["CONGNO"] + "' WHERE MANCC='" + COT["MANCC"] + "'";
+                }
+            }
+            //INSERT KHÁCH HÀNG
+            else if (cbTable.SelectedIndex == 7 && !isupdate)
+            {
+                string MA = "(";
+                foreach (System.Data.DataRow DONG in dulieu.Rows)
+                {
+                    MA = MA + "'" + DONG["MAKH"] + ",'";
+                }
+                MA = MA.Substring(0, MA.Length - 2) + ")";
+
+                string SQL2 = "Select MAKH FROM KHACHHANG WHERE MAKH IN " + MA;
+                DataTable TBMA = pv.getdata(SQL2);
+                if (TBMA.Rows.Count > 0)
+                {
+                    MessageBox.Show("MÃ KHÁCH HÀNG NÀY: " + TBMA.Rows[0][0].ToString() + " ĐÃ TỒN TẠI");
+                    return;
+                }
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [KHACHHANG]([MAKH],[MAKV],[MANV],[MABG],[TENKH],[SOTAIKHOAN],[NGANHANG],[MASOTHUE],[DIACHI],[SDT],[FAX],[WEBSITE],[YAHOO],[SKYPER],[TINHTRANG],[MAKHO],[CONGNO]) VALUES('" + COT["MAKH"] + "','" + COT["MAKV"] + "','" + COT["MANV"] + "','" + COT["MABG"] + "','" + COT["TENKH"] + "','" + COT["SOTAIKHOAN"] + "','" + COT["NGANHANG"] + "','" + COT["MASOTHUE"] + "','" + COT["DIACHI"] + "','" + COT["SDT"] + "','" + COT["FAX"] + "','" + COT["WEBSITE"] + "','" + COT["YAHOO"] + "','" + COT["SKYPER"] + "',1,'" + COT["MAKHO"] + "','" + COT["CONGNO"] + "')";
+                }
+            }
+            //UPDATE KHÁCH HÀNG
+            else if (cbTable.SelectedIndex == 7 && isupdate)
+            {
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n UPDATE [KHACHHANG] SET MAKV='" + COT["MAKV"] + "', MANV='" + COT["MANV"] + "', MABG='" + COT["MABG"] + "',TENKH='" + COT["TENKH"] + "',DIACHI='" + COT["DIACHI"] + "',MASOTHUE='" + COT["MASOTHUE"] + "',SOTAIKHOAN='" + COT["SOTAIKHOAN"] + "',NGANHANG='" + COT["NGANHANG"] + "',SDT='" + COT["SDT"] + "',EMAIL='" + COT["EMAIL"] + "',FAX='" + COT["FAX"] + "',WEBSITE='" + COT["WEBSITE"] + "', YAHOO='" + COT["YAHOO"] + "', SKYPER='" + COT["SKYPER"] + "',MAKHO='" + COT["MAKHO"] + "',CONGNO='" + COT["CONGNO"] + "' WHERE MAKH='" + COT["MAKH"] + "'";
+                }
+            }
+
+            try
+            {
+                pv.executeNonQuery2(lenh);
+            }
+            catch(Exception EX)
+            {
+                MessageBox.Show("LỖI: "+EX.Message.ToString());
+            }
+            tientrinh.PerformStep();
+
             MessageBox.Show("Quá trình đưa dữ liệu đã hoàn tất.", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             tientrinh.Value = 0;
         }
-        private String nhap_tien_tc(System.Data.DataRow cot)
-        {
-            String lenh = "";
-            
-                
-                if (cbTable.SelectedIndex == 0)
-                {
-                    lenh = "INSERT INTO [NHACUNGCAP]([MANCC],[MAKV],[MAKHO],[TENNCC],[DIACHI],[MASOTHUE],[SOTAIKHOAN],[NGANHANG],[SDT],[EMAIL],[FAX],[WEBSITE],[TINHTRANG]) "
-                    + " VALUES ('" + cot["MANCC"] + "','" + cot["MAKV"] + "','" + cot["MAKHO"] + "',N'" + cot["TENNCC"] + "',N'" + cot["DIACHI"] + "','" + cot["MASOTHUE"] + "','" + cot["SOTAIKHOAN"] + "',N'" + cot["NGANHANG"] + "','" + cot["SDT"] + "','" + cot["EMAIL"] + "','" + cot["FAX"] + "','" + cot["WEBSITE"] + "'," + cot["TINHTRANG"] + ") ";
-                }
-                else if (cbTable.SelectedIndex == 1)
-                {
-                    lenh = "INSERT INTO [KHACHHANG] ([MAKH],[MAKV],[MAKHO],[TENKH],[SOTAIKHOAN],[NGANHANG],[MASOTHUE],[DIACHI],[SDT],[FAX],[WEBSITE],[YAHOO],[SKYPE],[TINHTRANG]) "
-                + " VALUES ('" + cot["MAKH"] + "','" + cot["MAKV"] + "','" + cot["MAKHO"] + "',N'" + cot["TENKH"] + "','" + cot["SOTAIKHOAN"] + "',N'" + cot["NGANHANG"] + "','" + cot["MASOTHUE"] + "',N'" + cot["DIACHI"] + "','" + cot["SDT"] + "','" + cot["FAX"] + "','" + cot["WEBSITE"] + "','" + cot["YAHOO"] + "','" + cot["SKYPE"] + "'," + cot["TINHTRANG"] + ") ";
 
-                }
-                else if (cbTable.SelectedIndex == 2)
-                {
-                    string HSD = cot["HANSUDUNG"].ToString().Substring(0, 10);
-                    lenh = "INSERT INTO [MATHANG]([MAMH],[MATH],[MANH],[MANCC],[MAKHO],[TENMH],[KLDVT],[MADVT],[SOLUONGMH],[HANSUDUNG],[GIAMUA],[GIABAN],[MOTA],[TINHTRANG]) "
-                    + " VALUES ('" + cot["MAMH"] + "','" + cot["MATH"] + "','" + cot["MANH"] + "','" + cot["MANCC"] + "','" + cot["MAKHO"] + "',N'" + cot["TENMH"] + "','" + cot["KLDVT"] + "','" + cot["MADVT"] + "'," + cot["SOLUONGMH"] + ",'" + HSD + "'," + cot["GIAMUA"] + "," + cot["GIABAN"] + ",N'" + cot["MOTA"] + "'," + cot["TINHTRANG"] + ")";
-                }
-                else if (cbTable.SelectedIndex == 3)
-                {
-                    lenh = "INSERT INTO [DONVITINH]([MADVT],[DONVITINH]) "
-                    + " VALUES ('" + cot["MADVT"] + "',N'" + cot["DONVITINH"] + "')";
-                }
-                else if (cbTable.SelectedIndex == 4)
-                {
-                    lenh = "UPDATE  [NHACUNGCAP] "
-                    + " SET  [TENNCC]= N'" + cot["TENNCC"] + "',[DIACHI]=N'" + cot["DIACHI"] + "',[MASOTHUE]='" + cot["MASOTHUE"] + "',[SOTAIKHOAN]='" + cot["SOTAIKHOAN"] + "',[NGANHANG]=N'" + cot["NGANHANG"] + "',[SDT]='" + cot["SDT"] + "',[EMAIL]='" + cot["EMAIL"] + "',[FAX]='" + cot["FAX"] + "',[WEBSITE]='" + cot["WEBSITE"] + "',[TINHTRANG]=" + cot["TINHTRANG"] + " WHERE [MANCC]='" + cot["MANCC"] + "'";
-                }
-                else if (cbTable.SelectedIndex == 5)
-                {
-                    lenh = "UPDATE   [KHACHHANG] "
-                + " SET  [TENKH]=N'" + cot["TENKH"] + "',[SOTAIKHOAN]='" + cot["SOTAIKHOAN"] + "',[NGANHANG]=N'" + cot["NGANHANG"] + "',[MASOTHUE]='" + cot["MASOTHUE"] + "',[DIACHI]=N'" + cot["DIACHI"] + "',[SDT]='" + cot["SDT"] + "',[FAX]='" + cot["FAX"] + "',[WEBSITE]='" + cot["WEBSITE"] + "',[YAHOO]='" + cot["YAHOO"] + "',[SKYPE]='" + cot["SKYPE"] + "',[TINHTRANG]=" + cot["TINHTRANG"] + " WHERE [MAKH]='" + cot["MAKH"] + "'";
-
-                }
-                else if (cbTable.SelectedIndex == 6)
-                {
-                    //string HSD = cot["HANSUDUNG"].ToString().Substring(0, 10);
-                    //HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
-                    //lenh = "UPDATE   [MATHANG] "
-                   // + " SET  [TENMH]=N'" + cot["TENMH"] + "',[MANCC]=N'" + cot["MANCC"] + "',[KLDVT]='" + cot["KLDVT"] + "',[MADVT]='" + cot["MADVT"] + "',[SOLUONGMH]=" + cot["SOLUONGMH"] + ",[HANSUDUNG]='" + HSD + "',[GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + ",[MOTA]=N'" + cot["MOTA"] + "',[TINHTRANG]=" + cot["TINHTRANG"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
-                    lenh = "UPDATE   [MATHANG] "
-                    + " SET  [GIAMUA]=" + cot["GIAMUA"] + ",[GIABAN]=" + cot["GIABAN"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";                
-                }
-                else if (cbTable.SelectedIndex == 7)
-                {
-                    lenh = "UPDATE   [DONVITINH] "
-                    + " SET  [DONVITINH]= N'" + cot["DONVITINH"] + "' WHERE [MADVT]='" + cot["MADVT"] + "'";
-                }
-                else if (cbTable.SelectedIndex == 8)
-                {
-                    String HSD = cot["HSD"].ToString().Substring(0, 10);
-                    HSD = HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2) + "/" + HSD.Substring(6, 4);
-                
-                    String NGAYNHAP = cot["NGAYNHAP"].ToString().Substring(0, 10);
-                    NGAYNHAP = NGAYNHAP.Substring(3, 2) + "/" + NGAYNHAP.Substring(0, 2) + "/" + NGAYNHAP.Substring(6, 4);
-                    lenh = "INSERT INTO [KHOHANG]([MAMH],[LOHANG],[HSD],[GIAMUA],[TONKHO],[NHAPKHO],[XUATKHO],[TRANHAPKHO],[TRAXUATKHO],[NGAYNHAP]) "
-                    + " VALUES ('" + cot["MAMH"].ToString() + "',N'" + cot["LOHANG"].ToString() + "',N'" + HSD + "'," + cot["GIAMUA"].ToString() + "," + cot["TONKHO"].ToString() + "," + cot["NHAPKHO"].ToString() + "," + cot["XUATKHO"] + "," + cot["TRANHAPKHO"].ToString() + "," + cot["TRAXUATKHO"].ToString() + ",N'" + NGAYNHAP + "')";
-                }
-                else if (cbTable.SelectedIndex == 9)
-                {
-                    lenh = "UPDATE   [KHOHANG] "
-                    + " SET  [GIAMUA]=" + cot["GIAMUA"] + " WHERE [MAMH]='" + cot["MAMH"] + "'";
-                }
-                else if (cbTable.SelectedIndex == 10)
-                {
-                    lenh = "INSERT INTO [TONKHOTT]([NGAY],[MAMH],[MAKHO],[TONTT],[TONKHONGAY]) "
-              + " VALUES ('" + cot["NGAY"].ToString() + "','" + cot["MAMH"].ToString() + "','" + cot["MAKHO"].ToString() + "'," + cot["TONTT"].ToString() + "," + cot["TONKHONGAY"].ToString() + ")";
-               
-                }
-            return lenh;
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {

@@ -166,8 +166,8 @@ namespace WindowsFormsApplication1
         public void DELETE_LOHANGTONDAU(string MAMH, string LOHANG)
         {
             string SQL = "delete from TONDAUKHOHANG where 	MAMH='" + MAMH + "' AND LOHANG='" + LOHANG + "'" +
-                 " GO delete from KHOHANG where 	MAMH='" + MAMH + "' AND LOHANG='" + LOHANG + "'";
-            executeNonQuery(SQL);
+                 " \r\nGO\r\n delete from KHOHANG where 	MAMH='" + MAMH + "' AND LOHANG='" + LOHANG + "'";
+            executeNonQuery2(SQL);
         }
         public DataTable getCONGNOKH_DAUKY()
         {
