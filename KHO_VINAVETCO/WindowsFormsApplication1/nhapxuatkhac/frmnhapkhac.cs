@@ -335,6 +335,12 @@ namespace WindowsFormsApplication1
                 gridViewMATHANG.Columns["KHOILUONG"].Visible = false;
                
             }
+            if (!PublicVariable.isHSD)
+            {
+                gridViewMATHANG.Columns["LOHANG"].Visible = false;
+                gridViewMATHANG.Columns["HSD"].Visible = false;
+
+            }
 
         }
         public void loadgridtongSANPHAM()
@@ -609,9 +615,9 @@ namespace WindowsFormsApplication1
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Số lượng quá ít ");
                                     return;
                                 }
-                                if (soluong + slkmai > 1000000)
+                                if ((soluong+slkmai) > 1000000)
                                 {
-                                    System.Windows.Forms.MessageBox.Show("Số Lượng Mã Hàng:" + dtr["MAMH"].ToString() + " Quá Lớn");
+                                    System.Windows.Forms.MessageBox.Show("Số Lượng Mã Hàng:" + dtr["MAMH"].ToString() + " Quá Lớn để xuất");
                                     return;
                                 }
                             }

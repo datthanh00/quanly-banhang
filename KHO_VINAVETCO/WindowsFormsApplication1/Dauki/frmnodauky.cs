@@ -164,7 +164,7 @@ namespace WindowsFormsApplication1
             }
 
             DataTable printtable = (DataTable)gridControl1.DataSource;
-            Inhd rep = new Inhd(printtable, 16);
+            Inhdoanhthu rep = new Inhdoanhthu(printtable, 14);
             rep.ShowPreviewDialog();
         }
 

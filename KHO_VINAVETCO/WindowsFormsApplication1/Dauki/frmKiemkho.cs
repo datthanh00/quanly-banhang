@@ -79,7 +79,7 @@ namespace WindowsFormsApplication1
                 gridView1.Columns["KHOILUONG"].Visible = false;
             }
 
-            if (!PublicVariable.isTONTHUCTE)
+            if (!PublicVariable.isHSD)
             {
                 gridView1.Columns["LOHANG"].Visible = false;
                 gridView1.Columns["HSD"].Visible = false;
@@ -238,7 +238,7 @@ namespace WindowsFormsApplication1
             }
 
             DataTable printtable = (DataTable)gridControl1.DataSource;
-            Inhd rep = new Inhd(printtable, 16);
+            Inhdoanhthu rep = new Inhdoanhthu(printtable, 15);
             rep.ShowPreviewDialog();
         }
 
