@@ -13,6 +13,4 @@ namespace WindowsFormsApplication1
        public static String TMPtring, SQL_NHAP, SQL_XUAT, SQL_TRANHAP, SQL_TRAXUAT, TMPlog;
        public static String LOHANG = "TONDAU";
 	}
-
-    
 }

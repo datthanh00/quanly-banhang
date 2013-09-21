@@ -818,7 +818,7 @@ namespace WindowsFormsApplication1
                 }
                 if (PublicVariable.isHSD)
                 {
-                    dtoNCC.LOHANG = txtlohang.Text;
+                    dtoNCC.LOHANG = txtlohang.Text+"_"+dtoNCC.IDNHAP;
                 }
                 else
                 {
