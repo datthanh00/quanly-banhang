@@ -113,7 +113,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n INSERT INTO [KHO]([MAKHO],[CODEKHO],[MANV],[TENKHO],[DIACHI],[SDTB],[DTDD],[NGUOILH],[FAX],[GHICHU],[TINHTRANG]) VALUES ('" + COT["MAKHO"] + "','" + COT["CODEKHO"] + "','" + PublicVariable.MANV + "','" + COT["TENKHO"] + "','" + COT["DIACHI"] + "','" + COT["SDTB"] + "','" + COT["DTDD"] + "','" + COT["NGUOILH"] + "','" + COT["FAX"] + "','" + COT["GHICHU"] + "',1)";
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [KHO]([MAKHO],[CODEKHO],[MANV],[TENKHO],[DIACHI],[SDTB],[DTDD],[NGUOILH],[FAX],[GHICHU],[TINHTRANG]) VALUES ('" + COT["MAKHO"] + "','" + COT["CODEKHO"] + "','" + PublicVariable.MANV + "',N'" + COT["TENKHO"] + "',N'" + COT["DIACHI"] + "','" + COT["SDTB"] + "','" + COT["DTDD"] + "',N'" + COT["NGUOILH"] + "','" + COT["FAX"] + "',N'" + COT["GHICHU"] + "',1)";
                 }
           
             }
@@ -123,7 +123,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n UPDATE [KHO] SET [CODEKHO] ='" + COT["CODEKHO"] + "',[MANV] ='" + PublicVariable.MANV + "',[TENKHO] ='" + COT["TENKHO"] + "',[DIACHI] ='" + COT["DIACHI"] + "',[SDTB] ='" + COT["SDTB"] + "',[DTDD] ='" + COT["DTDD"] + "',[NGUOILH] ='" + COT["NGUOILH"] + "',[FAX] ='" + COT["FAX"] + "',[GHICHU] ='" + COT["GHICHU"] + "' WHERE [MAKHO] ='" + COT["MAKHO"] + "'";
+                    lenh = lenh + " \r\nGO\r\n UPDATE [KHO] SET [CODEKHO] ='" + COT["CODEKHO"] + "',[MANV] ='" + PublicVariable.MANV + "',[TENKHO] =N'" + COT["TENKHO"] + "',[DIACHI] =N'" + COT["DIACHI"] + "',[SDTB] ='" + COT["SDTB"] + "',[DTDD] ='" + COT["DTDD"] + "',[NGUOILH] =N'" + COT["NGUOILH"] + "',[FAX] ='" + COT["FAX"] + "',[GHICHU] =N'" + COT["GHICHU"] + "' WHERE [MAKHO] ='" + COT["MAKHO"] + "'";
                 }
             }
             //INSERT THUẾ
@@ -178,7 +178,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n INSERT INTO [DONVITINH]([MADVT],[DONVITINH]) VALUES('" + COT["MADVT"] + "','" + COT["DONVITINH"] + "')";
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [DONVITINH]([MADVT],[DONVITINH]) VALUES('" + COT["MADVT"] + "',N'" + COT["DONVITINH"] + "')";
                 }
             }
             //UPDATE ĐƠN VỊ TÍNH
@@ -187,7 +187,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n UPDATE [DONVITINH] SET DONVITINH='" + COT["DONVITINH"] + "' WHERE MADVT='" + COT["MADVT"] + "'";
+                    lenh = lenh + " \r\nGO\r\n UPDATE [DONVITINH] SET DONVITINH=N'" + COT["DONVITINH"] + "' WHERE MADVT='" + COT["MADVT"] + "'";
                 }
             }
             //INSERT NHÓM HÀNG
@@ -210,7 +210,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n INSERT INTO [NHOMHANG]([MANH],[TENNHOMHANG],GHICHU) VALUES('" + COT["MANH"] + "','" + COT["TENNHOMHANG"] + "','" + COT["GHICHU"] + "')";
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [NHOMHANG]([MANH],[TENNHOMHANG],GHICHU) VALUES('" + COT["MANH"] + "',N'" + COT["TENNHOMHANG"] + "',N'" + COT["GHICHU"] + "')";
                 }
             }
             // UPDATE NHÓM HÀNG
@@ -219,7 +219,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n UPDATE [NHOMHANG] SET TENNHOMHANG='" + COT["TENNHOMHANG"] + "',GHICHU='" + COT["GHICHU"] + "' WHERE MANH='" + COT["MANH"] + "'";
+                    lenh = lenh + " \r\nGO\r\n UPDATE [NHOMHANG] SET TENNHOMHANG=N'" + COT["TENNHOMHANG"] + "',GHICHU=N'" + COT["GHICHU"] + "' WHERE MANH='" + COT["MANH"] + "'";
                 }
             }
             //INSERT KHU VỰC
@@ -242,7 +242,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n INSERT INTO [KHUVUC]([MAKV],[TENKV],GHICHU,TINHTRANG) VALUES('" + COT["MAKV"] + "','" + COT["TENKV"] + "','" + COT["GHICHU"] + "',1)";
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [KHUVUC]([MAKV],[TENKV],GHICHU,TINHTRANG) VALUES('" + COT["MAKV"] + "',N'" + COT["TENKV"] + "',N'" + COT["GHICHU"] + "',1)";
                 }
             }
             // UPDATE KHU VỰC
@@ -251,7 +251,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n UPDATE [KHUVUC] SET TENKV='" + COT["TENKV"] + "',GHICHU='" + COT["GHICHU"] + "' WHERE MAKV='" + COT["MAKV"] + "'";
+                    lenh = lenh + " \r\nGO\r\n UPDATE [KHUVUC] SET TENKV=N'" + COT["TENKV"] + "',GHICHU=N'" + COT["GHICHU"] + "' WHERE MAKV='" + COT["MAKV"] + "'";
                 }
             }
             // INSERT BẢNG GIÁ
@@ -274,7 +274,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n INSERT INTO [BANGGIA]([MABG],[MAKHO],TENBG,GHICHU) VALUES('" + COT["MABG"] + "','" + COT["MAKHO"] + "','" + COT["TENBG"] + "','" + COT["GHICHU"] + "')";
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [BANGGIA]([MABG],[MAKHO],TENBG,GHICHU) VALUES('" + COT["MABG"] + "','" + COT["MAKHO"] + "',N'" + COT["TENBG"] + "',N'" + COT["GHICHU"] + "')";
                 }
       
             }
@@ -284,7 +284,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n UPDATE [BANGGIA] SET MAKHO='" + COT["MAKHO"] + "',GHICHU='" + COT["GHICHU"] + "',TENBG='" + COT["TENBG"] + "' WHERE MABG='" + COT["MABG"] + "'";
+                    lenh = lenh + " \r\nGO\r\n UPDATE [BANGGIA] SET MAKHO='" + COT["MAKHO"] + "',GHICHU=N'" + COT["GHICHU"] + "',TENBG=N'" + COT["TENBG"] + "' WHERE MABG='" + COT["MABG"] + "'";
                 }
             }
             //INSERT NHÀ CUNG CẤP
@@ -307,7 +307,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n INSERT INTO [NHACUNGCAP]([MANCC],[MAKV],[TENNCC],[DIACHI],[MASOTHUE],[SOTAIKHOAN],[NGANHANG],[SDT],[EMAIL],[FAX],[WEBSITE],[TINHTRANG],[MAKHO],[CONGNO]) VALUES('" + COT["MANCC"] + "','" + COT["MAKV"] + "','" + COT["TENNCC"] + "','" + COT["DIACHI"] + "','" + COT["MASOTHUE"] + "','" + COT["SOTAIKHOAN"] + "','" + COT["NGANHANG"] + "','" + COT["SDT"] + "','" + COT["EMAIL"] + "','" + COT["FAX"] + "','" + COT["WEBSITE"] + "',1,'" + COT["MAKHO"] + "','" + COT["CONGNO"] + "')";
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [NHACUNGCAP]([MANCC],[MAKV],[TENNCC],[DIACHI],[MASOTHUE],[SOTAIKHOAN],[NGANHANG],[SDT],[EMAIL],[FAX],[WEBSITE],[TINHTRANG],[MAKHO],[CONGNO]) VALUES('" + COT["MANCC"] + "','" + COT["MAKV"] + "',N'" + COT["TENNCC"] + "',N'" + COT["DIACHI"] + "','" + COT["MASOTHUE"] + "','" + COT["SOTAIKHOAN"] + "',N'" + COT["NGANHANG"] + "','" + COT["SDT"] + "','" + COT["EMAIL"] + "','" + COT["FAX"] + "','" + COT["WEBSITE"] + "',1,'" + COT["MAKHO"] + "','" + COT["CONGNO"] + "')";
                     lenh = lenh + " \r\nGO\r\n INSERT INTO [TONDAUCONGNONCC]([MANCC],[CONGNO]) VALUES('" + COT["MANCC"] + "','" + COT["CONGNO"] + "')";
                 }
             }
@@ -317,7 +317,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n UPDATE [NHACUNGCAP] SET MAKV='" + COT["MAKV"] + "',TENNCC='" + COT["TENNCC"] + "',DIACHI='" + COT["DIACHI"] + "',MASOTHUE='" + COT["MASOTHUE"] + "',SOTAIKHOAN='" + COT["SOTAIKHOAN"] + "',NGANHANG='" + COT["NGANHANG"] + "',SDT='" + COT["SDT"] + "',EMAIL='" + COT["EMAIL"] + "',FAX='" + COT["FAX"] + "',WEBSITE='" + COT["WEBSITE"] + "',MAKHO='" + COT["MAKHO"] + "',CONGNO='" + COT["CONGNO"] + "' WHERE MANCC='" + COT["MANCC"] + "'";
+                    lenh = lenh + " \r\nGO\r\n UPDATE [NHACUNGCAP] SET MAKV='" + COT["MAKV"] + "',TENNCC=N'" + COT["TENNCC"] + "',DIACHI=N'" + COT["DIACHI"] + "',MASOTHUE='" + COT["MASOTHUE"] + "',SOTAIKHOAN='" + COT["SOTAIKHOAN"] + "',NGANHANG=N'" + COT["NGANHANG"] + "',SDT='" + COT["SDT"] + "',EMAIL='" + COT["EMAIL"] + "',FAX='" + COT["FAX"] + "',WEBSITE='" + COT["WEBSITE"] + "',MAKHO='" + COT["MAKHO"] + "',CONGNO='" + COT["CONGNO"] + "' WHERE MANCC='" + COT["MANCC"] + "'";
                     lenh = lenh + " \r\nGO\r\n UPDATE [TONDAUCONGNONCC] SET CONGNO='" + COT["CONGNO"] + "' WHERE MANCC='" + COT["MANCC"]+"'";
                 }
             }
@@ -341,7 +341,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n INSERT INTO [KHACHHANG]([MAKH],[MAKV],[MANV],[MABG],[TENKH],[SOTAIKHOAN],[NGANHANG],[MASOTHUE],[DIACHI],[SDT],[FAX],[WEBSITE],[YAHOO],[SKYPER],[TINHTRANG],[MAKHO],[CONGNO]) VALUES('" + COT["MAKH"] + "','" + COT["MAKV"] + "','" + COT["MANV"] + "','" + COT["MABG"] + "','" + COT["TENKH"] + "','" + COT["SOTAIKHOAN"] + "','" + COT["NGANHANG"] + "','" + COT["MASOTHUE"] + "','" + COT["DIACHI"] + "','" + COT["SDT"] + "','" + COT["FAX"] + "','" + COT["WEBSITE"] + "','" + COT["YAHOO"] + "','" + COT["SKYPER"] + "',1,'" + COT["MAKHO"] + "','" + COT["CONGNO"] + "')";
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [KHACHHANG]([MAKH],[MAKV],[MANV],[MABG],[TENKH],[SOTAIKHOAN],[NGANHANG],[MASOTHUE],[DIACHI],[SDT],[FAX],[WEBSITE],[YAHOO],[SKYPE],[TINHTRANG],[MAKHO],[CONGNO]) VALUES('" + COT["MAKH"] + "','" + COT["MAKV"] + "','" + COT["MANV"] + "','" + COT["MABG"] + "',N'" + COT["TENKH"] + "','" + COT["SOTAIKHOAN"] + "',N'" + COT["NGANHANG"] + "','" + COT["MASOTHUE"] + "',N'" + COT["DIACHI"] + "','" + COT["SDT"] + "','" + COT["FAX"] + "','" + COT["WEBSITE"] + "','" + COT["YAHOO"] + "','" + COT["SKYPER"] + "',1,'" + COT["MAKHO"] + "','" + COT["CONGNO"] + "')";
                     lenh = lenh + " \r\nGO\r\n INSERT INTO [TONDAUCONGNOKH]([MAKH],[CONGNO]) VALUES('" + COT["MAKH"] + "','" + COT["CONGNO"] + "')";
                 }
             }
@@ -351,7 +351,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n UPDATE [KHACHHANG] SET MAKV='" + COT["MAKV"] + "', MANV='" + COT["MANV"] + "', MABG='" + COT["MABG"] + "',TENKH='" + COT["TENKH"] + "',DIACHI='" + COT["DIACHI"] + "',MASOTHUE='" + COT["MASOTHUE"] + "',SOTAIKHOAN='" + COT["SOTAIKHOAN"] + "',NGANHANG='" + COT["NGANHANG"] + "',SDT='" + COT["SDT"] + "',EMAIL='" + COT["EMAIL"] + "',FAX='" + COT["FAX"] + "',WEBSITE='" + COT["WEBSITE"] + "', YAHOO='" + COT["YAHOO"] + "', SKYPER='" + COT["SKYPER"] + "',MAKHO='" + COT["MAKHO"] + "',CONGNO='" + COT["CONGNO"] + "' WHERE MAKH='" + COT["MAKH"] + "'";
+                    lenh = lenh + " \r\nGO\r\n UPDATE [KHACHHANG] SET MAKV='" + COT["MAKV"] + "', MANV='" + COT["MANV"] + "', MABG='" + COT["MABG"] + "',TENKH=N'" + COT["TENKH"] + "',DIACHI=N'" + COT["DIACHI"] + "',MASOTHUE='" + COT["MASOTHUE"] + "',SOTAIKHOAN='" + COT["SOTAIKHOAN"] + "',NGANHANG=N'" + COT["NGANHANG"] + "',SDT='" + COT["SDT"] + "',EMAIL='" + COT["EMAIL"] + "',FAX='" + COT["FAX"] + "',WEBSITE='" + COT["WEBSITE"] + "', YAHOO='" + COT["YAHOO"] + "', SKYPE='" + COT["SKYPE"] + "',MAKHO='" + COT["MAKHO"] + "',CONGNO='" + COT["CONGNO"] + "' WHERE MAKH='" + COT["MAKH"] + "'";
                     lenh = lenh + " \r\nGO\r\n UPDATE [TONDAUCONGNOKH] SET CONGNO='" + COT["CONGNO"] + "' WHERE MAKH='" + COT["MAKH"] + "'";
                 }
             } // INSERT MẶT HÀNG
@@ -374,7 +374,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n INSERT INTO [MATHANG]([MAMH],[MATH],[MANH],[MAKHO],[TENMH],[MADVT],[SOLUONGMH],[GIAMUA],[MOTA],[TINHTRANG],[MANCC],[KLDVT]) VALUES('" + COT["MAMH"] + "','" + COT["MATH"] + "','" + COT["MANH"] + "','" + COT["MAKHO"] + "','" + COT["TENMH"] + "','" + COT["MADVT"] + "','" + COT["SOLUONGMH"] + "','" + COT["GIAMUA"] + "','" + COT["MOTA"] + "','" + COT["TINHTRANG"] + "','" + COT["MANCC"] + "','" + COT["KLDVT"] + "')";
+                    lenh = lenh + " \r\nGO\r\n INSERT INTO [MATHANG]([MAMH],[MATH],[MANH],[MAKHO],[TENMH],[MADVT],[SOLUONGMH],[GIAMUA],[MOTA],[TINHTRANG],[MANCC],[KLDVT]) VALUES('" + COT["MAMH"] + "','" + COT["MATH"] + "','" + COT["MANH"] + "','" + COT["MAKHO"] + "',N'" + COT["TENMH"] + "','" + COT["MADVT"] + "','" + COT["SOLUONGMH"] + "','" + COT["GIAMUA"] + "','" + COT["MOTA"] + "','" + COT["TINHTRANG"] + "','" + COT["MANCC"] + "','" + COT["KLDVT"] + "')";
                     lenh = lenh + "\r\nGO\r\n  INSERT INTO BANGGIAMATHANG ([MABG],[MAMH],[GIABAN])  SELECT MABG,'" + COT["MAMH"] + "' AS MAMH,0 AS GIABAN FROM BANGGIA WHERE MAKHO='" + COT["MAKHO"] + "'";
                     lenh = lenh + "\r\nGO\r\n  INSERT INTO TONDAUMATHANG([MAMH],[TONDAU]) VALUES ('" + COT["MAMH"] + "','" + COT["SOLUONGMH"] + "')";
 
@@ -386,10 +386,10 @@ namespace WindowsFormsApplication1.class_import
                             if (COT["SLLO" + i.ToString()].ToString() != null && COT["SLLO" + i.ToString()].ToString() != "")
                             {
                                 int SL = Convert.ToInt32(COT["SLLO" + i.ToString()]);
-                                if (SL > 0)
+                                if (SL >= 0)
                                 {
                                     lenh = lenh + " \r\nGO\r\n INSERT INTO [KHOHANG] ([MAMH],[LOHANG],[GIAMUA],[TONKHO],[NGAYNHAP],[HSD],[TINHTRANG]) VALUES('" + COT["MAMH"] + "','" + COT["LO" + i.ToString()] + "','" + COT["GIAMUA"] + "','" + COT["SLLO" + i.ToString()] + "',convert(varchar,getDate(),101),'" + COT["HSD" + i.ToString()] + "',1)";
-                                    lenh = lenh + "\r\nGO\r\n  INSERT INTO [TONDAUKHOHANG] ([MAMH],[LOHANG],[GIAMUA],[TONKHO]) VALUES ('" + COT["MAMH"] + "','" + COT["LOHANG"] + "'," + COT["GIAMUA"] + "," + COT["SLLO" + i.ToString()] + ")";
+                                    lenh = lenh + "\r\nGO\r\n  INSERT INTO [TONDAUKHOHANG] ([MAMH],[LOHANG],[GIAMUA],[TONKHO]) VALUES ('" + COT["MAMH"] + "','" + COT["LO" + i.ToString()] + "'," + COT["GIAMUA"] + "," + COT["SLLO" + i.ToString()] + ")";
                                 }
                             }
                         }
@@ -405,7 +405,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n UPDATE [MATHANG] SET MATH='" + COT["MATH"] + "',MANH='" + COT["MANH"] + "',MAKHO='" + COT["MAKHO"] + "',TENMH='" + COT["TENMH"] + "',MADVT='" + COT["MADVT"] + "',SOLUONGMH='" + COT["SOLUONGMH"] + "',GIAMUA='" + COT["GIAMUA"] + "',MOTA='" + COT["MOTA"] + "' WHERE MAMH='" + COT["MAMH"] + "'";
+                    lenh = lenh + " \r\nGO\r\n UPDATE [MATHANG] SET MATH='" + COT["MATH"] + "',MANH='" + COT["MANH"] + "',MAKHO='" + COT["MAKHO"] + "',TENMH=N'" + COT["TENMH"] + "',MADVT='" + COT["MADVT"] + "',SOLUONGMH='" + COT["SOLUONGMH"] + "',GIAMUA='" + COT["GIAMUA"] + "',MOTA='" + COT["MOTA"] + "' WHERE MAMH='" + COT["MAMH"] + "'";
                     lenh = lenh + "\r\nGO\r\n  UPDATE TONDAUMATHANG SET TONDAU='" + COT["SOLUONGMH"] + "' WHERE MAMH='" + COT["MANH"] + "'";
 
 
