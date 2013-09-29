@@ -88,24 +88,7 @@ namespace WindowsFormsApplication1
         public string smpt;
         public string smahdx;
         public string stientra;
-        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
-        {
-            try
-            {
-                
-                DataRow dtr = gridcongnokh.GetDataRow(e.RowHandle);
-                sMahdx = dtr["MAHDX"].ToString();
-                smaKH = dtr["MAKH"].ToString();
-                scongno = dtr["CONLAI"].ToString();
-                //dt = CTR.get1pthdx_ctrl(dtr[0].ToString());
-                //gridControl2.DataSource = dt;
-            }
-            catch 
-            {
 
-               // MessageBox.Show(ex.Message);
-            }
-        }
         public string sMaNV, sTenNV;
 
         public void load_congno()
@@ -334,7 +317,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void gridView1_DoubleClick(object sender, EventArgs e)
+        private void gridcongnokh_DoubleClick(object sender, EventArgs e)
         {
             if (PublicVariable.THEM == "False")
             {
@@ -353,6 +336,22 @@ namespace WindowsFormsApplication1
                 scongno = dtr["CONGNO"].ToString();
                 loadfrm_thutien();
             }
+        }
+
+        private void gridcongnokh_Click(object sender, EventArgs e)
+        {
+            GridView view = sender as GridView;
+            Point pt = view.GridControl.PointToClient(Control.MousePosition);
+            GridHitInfo hitInfo = view.CalcHitInfo(pt);
+            if (hitInfo.RowHandle >= 0)
+            {
+                DataRow dtr = gridcongnokh.GetDataRow(hitInfo.RowHandle);
+                smaKH = dtr["MAKH"].ToString();
+                stenkh = dtr["TENKH"].ToString();
+                scongno = dtr["CONGNO"].ToString();
+            }
+
+
         }
         public void loadctkh()
         {
@@ -645,19 +644,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void gridcongnokh_Click(object sender, EventArgs e)
-        {
-            GridView view = sender as GridView;
-            Point pt = view.GridControl.PointToClient(Control.MousePosition);
-            GridHitInfo hitInfo = view.CalcHitInfo(pt);
-            if (hitInfo.RowHandle>=0)
-            {
-                DataRow dtr = gridcongnokh.GetDataRow(hitInfo.RowHandle);
-                smaKH = dtr["MAKH"].ToString();
-                stenkh = dtr["TENKH"].ToString();
-                scongno = dtr["CONGNO"].ToString();
-            }
-        }
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
@@ -719,6 +705,8 @@ namespace WindowsFormsApplication1
             Inhd rep = new Inhd(printtable, 21);
             rep.ShowPreviewDialog();
         }
+
+  
 
 
 

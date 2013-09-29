@@ -633,7 +633,7 @@
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(200, 177);
-            this.gridControl1.MainView = this.gridphieuchi;
+            this.gridControl1.MainView = this.gridcongno;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(1092, 334);
             this.gridControl1.TabIndex = 26;
@@ -667,6 +667,8 @@
             this.gridphieuchi.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn15, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridphieuchi.Click += new System.EventHandler(this.gridphieuchi_Click);
+            this.gridphieuchi.DoubleClick += new System.EventHandler(this.gridphieuchi_DoubleClick);
             // 
             // gridColumn5
             // 
@@ -836,6 +838,8 @@
             this.gridcongno.OptionsView.ShowFooter = true;
             this.gridcongno.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coltenncc, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridcongno.Click += new System.EventHandler(this.gridcongno_Click);
+            this.gridcongno.DoubleClick += new System.EventHandler(this.gridcongno_DoubleClick);
             // 
             // coltenncc
             // 

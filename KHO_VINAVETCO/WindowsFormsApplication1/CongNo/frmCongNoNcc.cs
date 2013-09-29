@@ -669,12 +669,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-
-
-
-
-
-
         private void simpleButton8_Click_1(object sender, EventArgs e)
         {
             int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
