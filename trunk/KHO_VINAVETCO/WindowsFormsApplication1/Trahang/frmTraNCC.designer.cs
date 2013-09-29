@@ -1310,6 +1310,7 @@
             this.gridColumn50.Caption = "Lô Hàng";
             this.gridColumn50.FieldName = "LOHANG";
             this.gridColumn50.Name = "gridColumn50";
+            this.gridColumn50.OptionsColumn.AllowSize = false;
             this.gridColumn50.Visible = true;
             this.gridColumn50.VisibleIndex = 2;
             // 

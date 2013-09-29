@@ -1583,6 +1583,7 @@
             this.gridColumn49.Caption = "Lô Hàng";
             this.gridColumn49.FieldName = "LOHANG";
             this.gridColumn49.Name = "gridColumn49";
+            this.gridColumn49.OptionsColumn.AllowSize = false;
             this.gridColumn49.OptionsColumn.ReadOnly = true;
             // 
             // gridColumn41

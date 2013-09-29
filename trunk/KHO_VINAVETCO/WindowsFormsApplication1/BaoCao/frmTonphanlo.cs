@@ -298,7 +298,6 @@ namespace WindowsFormsApplication1
                     MessageBox.Show("Hãy Chọn một mã hàng");
                     return;
                 }
-
             }
             else if (loaihienthi == 2)
             {
@@ -323,7 +322,6 @@ namespace WindowsFormsApplication1
 
             dt = ctr.geTthongke_ct_mathang_lo(dto);
 
-
             gridControl1.DataSource = dt;
 
             gridView1.BestFitColumns();
@@ -341,21 +339,16 @@ namespace WindowsFormsApplication1
 
         private void linkNgayThang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
-
         }
 
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-
         }
 
         private void navBarControl1_Click(object sender, EventArgs e)
         {
 
         }
-
-
 
         private void simpleButton8_Click(object sender, EventArgs e)
         {
@@ -369,10 +362,6 @@ namespace WindowsFormsApplication1
             Inhd rep = new Inhd(printtable, 16);
             rep.ShowPreviewDialog();
         }
-
-     
-
-        
 
         private void cbHienThiBatDau_KeyPress(object sender, KeyPressEventArgs e)
         {

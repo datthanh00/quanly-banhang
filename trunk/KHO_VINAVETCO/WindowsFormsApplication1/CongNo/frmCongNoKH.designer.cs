@@ -81,6 +81,10 @@
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton8 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridcongnokh = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colTenkhachhang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMakhachhang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colcongno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridphieuthu = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -90,10 +94,6 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridcongnokh = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colTenkhachhang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMakhachhang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colcongno = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridhoadon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -132,8 +132,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridphieuthu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridcongnokh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridphieuthu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridhoadon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -493,8 +493,8 @@
             // 
             // 
             this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
-            this.printableComponentLink1.PrintingSystem = this.printingSystem2;
-            this.printableComponentLink1.PrintingSystemBase = this.printingSystem2;
+            this.printableComponentLink1.PrintingSystem = this.printingSystem1;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
@@ -627,14 +627,62 @@
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(200, 140);
-            this.gridControl1.MainView = this.gridphieuthu;
+            this.gridControl1.MainView = this.gridcongnokh;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(975, 353);
             this.gridControl1.TabIndex = 31;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridphieuthu,
             this.gridcongnokh,
+            this.gridphieuthu,
             this.gridhoadon});
+            // 
+            // gridcongnokh
+            // 
+            this.gridcongnokh.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridcongnokh.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridcongnokh.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colTenkhachhang,
+            this.colMakhachhang,
+            this.colcongno});
+            this.gridcongnokh.GridControl = this.gridControl1;
+            this.gridcongnokh.Name = "gridcongnokh";
+            this.gridcongnokh.OptionsBehavior.Editable = false;
+            this.gridcongnokh.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
+            this.gridcongnokh.OptionsSelection.MultiSelect = true;
+            this.gridcongnokh.OptionsView.ShowAutoFilterRow = true;
+            this.gridcongnokh.OptionsView.ShowFooter = true;
+            this.gridcongnokh.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTenkhachhang, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridcongnokh.Click += new System.EventHandler(this.gridcongnokh_Click);
+            this.gridcongnokh.DoubleClick += new System.EventHandler(this.gridcongnokh_DoubleClick);
+            // 
+            // colTenkhachhang
+            // 
+            this.colTenkhachhang.Caption = "Khách Hàng";
+            this.colTenkhachhang.FieldName = "TENKH";
+            this.colTenkhachhang.Name = "colTenkhachhang";
+            this.colTenkhachhang.Visible = true;
+            this.colTenkhachhang.VisibleIndex = 0;
+            // 
+            // colMakhachhang
+            // 
+            this.colMakhachhang.Caption = "Mã Khách";
+            this.colMakhachhang.FieldName = "MAKH";
+            this.colMakhachhang.Name = "colMakhachhang";
+            // 
+            // colcongno
+            // 
+            this.colcongno.Caption = "Công Nợ";
+            this.colcongno.DisplayFormat.FormatString = "{0:0,0}";
+            this.colcongno.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colcongno.FieldName = "CONGNO";
+            this.colcongno.Name = "colcongno";
+            this.colcongno.OptionsColumn.ReadOnly = true;
+            this.colcongno.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.colcongno.SummaryItem.FieldName = "CONLAI";
+            this.colcongno.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.colcongno.Visible = true;
+            this.colcongno.VisibleIndex = 1;
             // 
             // gridphieuthu
             // 
@@ -662,6 +710,8 @@
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn1, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn2, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn15, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridphieuthu.Click += new System.EventHandler(this.gridphieuthu_Click);
+            this.gridphieuthu.DoubleClick += new System.EventHandler(this.gridphieuthu_DoubleClick);
             // 
             // gridColumn4
             // 
@@ -724,52 +774,6 @@
             this.gridColumn15.Caption = "IDNHAP";
             this.gridColumn15.FieldName = "IDNHAP";
             this.gridColumn15.Name = "gridColumn15";
-            // 
-            // gridcongnokh
-            // 
-            this.gridcongnokh.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridcongnokh.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridcongnokh.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colTenkhachhang,
-            this.colMakhachhang,
-            this.colcongno});
-            this.gridcongnokh.GridControl = this.gridControl1;
-            this.gridcongnokh.Name = "gridcongnokh";
-            this.gridcongnokh.OptionsBehavior.Editable = false;
-            this.gridcongnokh.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
-            this.gridcongnokh.OptionsSelection.MultiSelect = true;
-            this.gridcongnokh.OptionsView.ShowAutoFilterRow = true;
-            this.gridcongnokh.OptionsView.ShowFooter = true;
-            this.gridcongnokh.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTenkhachhang, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // colTenkhachhang
-            // 
-            this.colTenkhachhang.Caption = "Khách Hàng";
-            this.colTenkhachhang.FieldName = "TENKH";
-            this.colTenkhachhang.Name = "colTenkhachhang";
-            this.colTenkhachhang.Visible = true;
-            this.colTenkhachhang.VisibleIndex = 0;
-            // 
-            // colMakhachhang
-            // 
-            this.colMakhachhang.Caption = "Mã Khách";
-            this.colMakhachhang.FieldName = "MAKH";
-            this.colMakhachhang.Name = "colMakhachhang";
-            // 
-            // colcongno
-            // 
-            this.colcongno.Caption = "Công Nợ";
-            this.colcongno.DisplayFormat.FormatString = "{0:0,0}";
-            this.colcongno.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colcongno.FieldName = "CONGNO";
-            this.colcongno.Name = "colcongno";
-            this.colcongno.OptionsColumn.ReadOnly = true;
-            this.colcongno.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.colcongno.SummaryItem.FieldName = "CONLAI";
-            this.colcongno.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
-            this.colcongno.Visible = true;
-            this.colcongno.VisibleIndex = 1;
             // 
             // gridhoadon
             // 
@@ -910,8 +914,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridphieuthu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridcongnokh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridphieuthu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridhoadon)).EndInit();
             this.ResumeLayout(false);
 
