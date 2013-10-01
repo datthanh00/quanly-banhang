@@ -46,13 +46,42 @@ namespace WindowsFormsApplication1
             string SQL = "SELECT MAPT ,MANV ,convert(varchar,ngaythu ,103)AS NGAYTHU,SOTIEN as TIENDATRA FROM PHIEUTHU WHERE  MADOITUONG='" + sMahdx + "'";
             return pv.getdata(SQL);
         }
+        public DataTable GETCODEACTIVE()
+        {
+            Provider pv = new Provider();
+            string SQL = "SELECT ACTIVE,CODE,ACTIVE+'-'+CODE AS CODEACTIVE, TYPE FROM ACTIVE";
+            return pv.getdata(SQL);
+        }
         public  DataTable GETBANGGIA()
         {
             Provider pv = new Provider();
             string SQL = "SELECT * FROM BANGGIA WHERE MAKHO='" + PublicVariable.MAKHO + "'";
             return pv.getdata(SQL);
         }
-        
+
+        public void DELETECODEACTIVE(string ACTIVE)
+        {
+
+            Provider pv = new Provider();
+            string SQL = "DELETE ACTIVE WHERE ACTIVE="+ACTIVE+"";
+            pv.executeNonQuery(SQL);
+        }
+        public void INSERTCODEACTIVE()
+        {
+            Random Rd = new Random();
+            string CODE = Convert.ToString(Rd.Next(1, 9));
+            string CODERUN = Convert.ToString(Rd.Next(1, 9));
+            Provider pv = new Provider();
+            string SQL = "INSERT TO  ACTIVE  ([CODE],[CODERUN])  VALUES ('" + CODE + "','" + CODERUN + "')";
+            pv.executeNonQuery(SQL);
+        }
+
+        public void ACTIVE_CODEACTIVE(string ACTIVE)
+        {
+            Provider pv = new Provider();
+            string SQL = "UPDATE ACTIVE  SET TYPE=TRUE WHWRE ACTIVE='" + ACTIVE + "'";
+             pv.executeNonQuery(SQL);
+        }
         public  void THEMPHIEUTHU_DAO(PHIEUTHU_DTO dto)
         {
             Provider pv = new Provider();

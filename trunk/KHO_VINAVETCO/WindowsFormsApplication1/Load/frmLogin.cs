@@ -184,12 +184,24 @@ namespace WindowsFormsApplication1
                 checkNho.Checked = false;
             }
 
-            CTL ctl = new CTL();
-            String SQL = "SELECT CODERUNT from THONGTINCT";
-            DataTable dt = ctl.GETDATA(SQL);
-
-            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ACTIVE", null) != dt.Rows[0]["CODERUNT"].ToString())
+           
+            string ACTIVE=(string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ACTIVE", null);
+            string CODERUN = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "CODERUN", null);
+            if (ACTIVE != "" && CODERUN != "")
             {
+                CTL ctl = new CTL();
+                String SQL = "SELECT CODERUN from ACTIVE WHERE ACTIVE='" + ACTIVE + "' AND CODERUN='" + CODERUN + "'";
+                DataTable dt = ctl.GETDATA(SQL);
+
+                if (dt.Rows.Count <= 0)
+                {
+                    frmActive active = new frmActive();
+                    active.ShowDialog();
+                }
+            }
+            else
+            {
+
                 frmActive active = new frmActive();
                 active.ShowDialog();
             }
