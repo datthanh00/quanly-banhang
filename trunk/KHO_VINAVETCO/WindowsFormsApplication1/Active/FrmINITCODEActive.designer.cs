@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
+            this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnthem = new DevExpress.XtraBars.BarButtonItem();
@@ -43,7 +45,6 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAACTIVE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupCtDetails = new System.Windows.Forms.GroupBox();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -52,6 +53,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupCtDetails.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // colTINHTRANG
+            // 
+            this.colTINHTRANG.Caption = "Tình Trạng";
+            this.colTINHTRANG.FieldName = "TYPE";
+            this.colTINHTRANG.Name = "colTINHTRANG";
+            this.colTINHTRANG.OptionsColumn.AllowEdit = false;
+            this.colTINHTRANG.Visible = true;
+            this.colTINHTRANG.VisibleIndex = 3;
+            this.colTINHTRANG.Width = 102;
             // 
             // barManager1
             // 
@@ -137,7 +148,7 @@
             this.gridControl1.Location = new System.Drawing.Point(3, 19);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(826, 338);
+            this.gridControl1.Size = new System.Drawing.Size(826, 344);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -149,25 +160,40 @@
             this.gridColumn1,
             this.colMAACTIVE,
             this.colTINHTRANG});
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.colTINHTRANG;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
+            styleFormatCondition1.Value1 = true;
+            this.gridView1.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colMAACTIVE, DevExpress.Data.ColumnSortOrder.Ascending)});
-            this.gridView1.Click += new System.EventHandler(this.gridView1_Click);
+            this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "ACTIVE";
             this.gridColumn2.FieldName = "ACTIVE";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 375;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "CODE";
             this.gridColumn1.FieldName = "CODE";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 386;
             // 
             // colMAACTIVE
             // 
@@ -175,28 +201,21 @@
             this.colMAACTIVE.FieldName = "CODEACTIVE";
             this.colMAACTIVE.Name = "colMAACTIVE";
             this.colMAACTIVE.Visible = true;
-            this.colMAACTIVE.VisibleIndex = 0;
-            // 
-            // colTINHTRANG
-            // 
-            this.colTINHTRANG.Caption = "Tình Trạng";
-            this.colTINHTRANG.FieldName = "TYPE";
-            this.colTINHTRANG.Name = "colTINHTRANG";
-            this.colTINHTRANG.Visible = true;
-            this.colTINHTRANG.VisibleIndex = 1;
+            this.colMAACTIVE.VisibleIndex = 2;
+            this.colMAACTIVE.Width = 227;
             // 
             // groupCtDetails
             // 
             this.groupCtDetails.Controls.Add(this.gridControl1);
-            this.groupCtDetails.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupCtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupCtDetails.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupCtDetails.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupCtDetails.Location = new System.Drawing.Point(0, 48);
+            this.groupCtDetails.Location = new System.Drawing.Point(0, 42);
             this.groupCtDetails.Name = "groupCtDetails";
-            this.groupCtDetails.Size = new System.Drawing.Size(832, 360);
+            this.groupCtDetails.Size = new System.Drawing.Size(832, 366);
             this.groupCtDetails.TabIndex = 41;
             this.groupCtDetails.TabStop = false;
-            this.groupCtDetails.Text = "Danh Sách Bảng Giá";
+            this.groupCtDetails.Text = "Danh Sách code Active";
             // 
             // barButtonItem1
             // 
@@ -212,7 +231,7 @@
             this.barButtonItem2.Id = 2;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // FrmActive
+            // FrmINITCODEActive
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -223,7 +242,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "FrmActive";
+            this.Name = "FrmINITCODEActive";
             this.Text = "Danh Sách Bảng Giá";
             this.Load += new System.EventHandler(this.FrmDsbanggia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

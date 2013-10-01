@@ -190,9 +190,16 @@ namespace WindowsFormsApplication1
             if (ACTIVE != "" && CODERUN != "")
             {
                 CTL ctl = new CTL();
-                String SQL = "SELECT CODERUN from ACTIVE WHERE ACTIVE='" + ACTIVE + "' AND CODERUN='" + CODERUN + "'";
-                DataTable dt = ctl.GETDATA(SQL);
+                String SQL = "SELECT CODERUN from ACTIVE WHERE ACTIVE='" + ACTIVE + "' AND CODERUN='" + CODERUN + "' AND TYPE=1";
+                DataTable dt=new DataTable();
+                try
+                {
+                    dt = ctl.GETDATA(SQL);
+                }
+                catch
+                {
 
+                }
                 if (dt.Rows.Count <= 0)
                 {
                     frmActive active = new frmActive();
