@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip3 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem3 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem3 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip4 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem4 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.ToolTipItem toolTipItem4 = new DevExpress.Utils.ToolTipItem();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.btKhachHang = new DevExpress.XtraBars.BarButtonItem();
@@ -143,6 +143,7 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbkho = new DevExpress.XtraEditors.LabelControl();
+            this.ButtonACTIVE = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTimeZone1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemWeekOfMonth1)).BeginInit();
@@ -229,9 +230,10 @@
             this.barButtonketso,
             this.barButtonphaithudauky,
             this.barButtonnhapkhac,
-            this.barButtonxuatkhac});
+            this.barButtonxuatkhac,
+            this.ButtonACTIVE});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 123;
+            this.ribbon.MaxItemId = 124;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.btAnh);
             this.ribbon.PageHeaderItemLinks.Add(this.btNgonNguViet);
@@ -248,7 +250,7 @@
             this.repositoryItemComboBox2,
             this.repositoryItemComboBox3});
             this.ribbon.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ribbon.SelectedPage = this.ribChucNang;
+            this.ribbon.SelectedPage = this.ribTroGiup;
             this.ribbon.Size = new System.Drawing.Size(1182, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ItemLinks.Add(this.barSubItem1);
@@ -505,12 +507,12 @@
             this.btAnh.Id = 70;
             this.btAnh.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources._64_restore;
             this.btAnh.Name = "btAnh";
-            toolTipTitleItem1.Text = "Language";
-            toolTipItem1.LeftIndent = 6;
-            toolTipItem1.Text = "English";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            superToolTip1.Items.Add(toolTipItem1);
-            this.btAnh.SuperTip = superToolTip1;
+            toolTipTitleItem3.Text = "Language";
+            toolTipItem3.LeftIndent = 6;
+            toolTipItem3.Text = "English";
+            superToolTip3.Items.Add(toolTipTitleItem3);
+            superToolTip3.Items.Add(toolTipItem3);
+            this.btAnh.SuperTip = superToolTip3;
             this.btAnh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btAnh_ItemClick);
             // 
             // btViet
@@ -525,12 +527,12 @@
             this.btNgonNguViet.Glyph = global::WindowsFormsApplication1.Properties.Resources.vn;
             this.btNgonNguViet.Id = 74;
             this.btNgonNguViet.Name = "btNgonNguViet";
-            toolTipTitleItem2.Text = "Ngôn ngữ";
-            toolTipItem2.LeftIndent = 6;
-            toolTipItem2.Text = "Vietnamese\r\n";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            superToolTip2.Items.Add(toolTipItem2);
-            this.btNgonNguViet.SuperTip = superToolTip2;
+            toolTipTitleItem4.Text = "Ngôn ngữ";
+            toolTipItem4.LeftIndent = 6;
+            toolTipItem4.Text = "Vietnamese\r\n";
+            superToolTip4.Items.Add(toolTipTitleItem4);
+            superToolTip4.Items.Add(toolTipItem4);
+            this.btNgonNguViet.SuperTip = superToolTip4;
             this.btNgonNguViet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btNgonNguViet_ItemClick);
             // 
             // btHoaDonNhap
@@ -958,6 +960,7 @@
             this.btTroGiupBar.ItemLinks.Add(this.btHuongDan);
             this.btTroGiupBar.ItemLinks.Add(this.btLienHe);
             this.btTroGiupBar.ItemLinks.Add(this.btTacGia);
+            this.btTroGiupBar.ItemLinks.Add(this.ButtonACTIVE);
             this.btTroGiupBar.Name = "btTroGiupBar";
             this.btTroGiupBar.ShowCaptionButton = false;
             this.btTroGiupBar.Text = "Trợ Giúp";
@@ -1175,6 +1178,15 @@
             this.lbkho.TabIndex = 27;
             this.lbkho.Text = "Kho Hàng";
             // 
+            // ButtonACTIVE
+            // 
+            this.ButtonACTIVE.Caption = "Active";
+            this.ButtonACTIVE.Id = 123;
+            this.ButtonACTIVE.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.barcode;
+            this.ButtonACTIVE.LargeWidth = 70;
+            this.ButtonACTIVE.Name = "ButtonACTIVE";
+            this.ButtonACTIVE.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonACTIVE_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1323,5 +1335,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonnhapkhac;
         private DevExpress.XtraBars.BarButtonItem barButtonxuatkhac;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
+        private DevExpress.XtraBars.BarButtonItem ButtonACTIVE;
     }
 }

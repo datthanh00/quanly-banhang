@@ -2582,6 +2582,11 @@ namespace WindowsFormsApplication1
             ld.simpleCloseWait();
         }
 
+        private void ButtonACTIVE_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
 
     }
 }
