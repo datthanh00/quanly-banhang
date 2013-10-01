@@ -624,11 +624,6 @@ namespace WindowsFormsApplication1
 
         private void gridphieuthu_Click(object sender, EventArgs e)
         {
-            if (PublicVariable.SUA == "False")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN ");
-                return;
-            }
 
             GridView view = sender as GridView;
             Point pt = view.GridControl.PointToClient(Control.MousePosition);

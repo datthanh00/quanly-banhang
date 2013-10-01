@@ -19,7 +19,8 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-
+        public delegate void _deDongTab();
+        public _deDongTab deDongTab;
         Ctrl_Tien CTR = new Ctrl_Tien();
         private string SACTIVE, SCODEACTIVE, STYPE;
 
@@ -36,7 +37,7 @@ namespace WindowsFormsApplication1
  
         private void barstDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Close();
+            deDongTab();
         }
 
         private void btnthem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -52,7 +53,7 @@ namespace WindowsFormsApplication1
 
         private void barXóa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+            if (XtraMessageBox.Show("Bạn có muốn xóa ID: " + SACTIVE + "   không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
             {
                 return;
             }
@@ -72,17 +73,21 @@ namespace WindowsFormsApplication1
         }
 
        
-        private void gridView1_Click(object sender, EventArgs e)
+
+
+        private void gridView1_RowClick(object sender, RowClickEventArgs e)
         {
-            GridView view = sender as GridView;
-            Point pt = view.GridControl.PointToClient(Control.MousePosition);
-            GridHitInfo hitInfo = view.CalcHitInfo(pt);
-            if (hitInfo.RowHandle >= 0)
+            try
             {
-                DataRow dtr = gridView1.GetDataRow(hitInfo.RowHandle);
+                DataTable dt = new DataTable();
+                DataRow dtr = gridView1.GetDataRow(e.RowHandle);
                 SACTIVE = dtr["ACTIVE"].ToString();
                 SCODEACTIVE = dtr["CODEACTIVE"].ToString();
                 STYPE = dtr["TYPE"].ToString();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
             }
         }
 

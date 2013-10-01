@@ -654,6 +654,17 @@ namespace WindowsFormsApplication1
                             barButtonxuatkhac.Enabled = false;
                             break;
                         }
+                    case "35":
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
+                        {
+                            ButtonACTIVE.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                            break;
+                        }
+                        else
+                        {
+                            ButtonACTIVE.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                            break;
+                        }
                 }
             }
                
@@ -2289,6 +2300,9 @@ namespace WindowsFormsApplication1
                 case "XUATKHAC":
                     imacn = 34;
                     break;
+                case "CODEACTIVE":
+                    imacn = 35;
+                    break;
             }
 
             PublicVariable.TATCA = PhanQuyen.Rows[imacn - 1]["TATCA"].ToString();
@@ -2584,7 +2598,27 @@ namespace WindowsFormsApplication1
 
         private void ButtonACTIVE_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("35");
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
+            //  bKTraMoTab = true;
+            sTieuDe = "Code Active";
+
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "CODEACTIVE";
+                FrmINITCODEActive dt = new FrmINITCODEActive();
+                dt.deDongTab = new FrmINITCODEActive._deDongTab(vDOngTab);
+                
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
         }
 
 
