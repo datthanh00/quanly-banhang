@@ -1208,7 +1208,7 @@ namespace WindowsFormsApplication1.KHtra
             {
                 return;
             }
-            string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYXUAT FROM TRAHOADONXUAT WHERE MAHDX='" + dtr["MAHDX"].ToString() + "')>(SELECT NGAY FROM KHOASO WHERE ID=7)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=7) AS NGAY";
+            string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYXUAT FROM TRAHOADONXUAT WHERE MAHDX='" + dtr["MAHDX"].ToString() + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=7)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=7) AS NGAY";
             DataTable DTKHOA = ctlNCC.GETDATA(SQLKHOA);
             if (DTKHOA.Rows[0][0].ToString() == "1")
             {
@@ -1532,7 +1532,7 @@ namespace WindowsFormsApplication1.KHtra
             {
                 return;
             }
-            string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYXUAT FROM TRAHOADONXUAT WHERE MAHDX='" + dtr["MAHDX"].ToString() + "')>(SELECT NGAY FROM KHOASO WHERE ID=7)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=7) AS NGAY";
+            string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYXUAT FROM TRAHOADONXUAT WHERE MAHDX='" + dtr["MAHDX"].ToString() + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=7)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=7) AS NGAY";
             DataTable DTKHOA = ctlNCC.GETDATA(SQLKHOA);
             if (DTKHOA.Rows[0][0].ToString() == "1")
             {

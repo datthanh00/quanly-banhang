@@ -215,7 +215,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYTHU FROM PHIEUTHU WHERE MAPT='" + smpc + "')>(SELECT NGAY FROM KHOASO WHERE ID=6)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=6) AS NGAY";
+                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYTHU FROM PHIEUTHU WHERE MAPT='" + smpc + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=6)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=6) AS NGAY";
                 CTL ctlKHOA = new CTL();
                 DataTable DTKHOA = ctlKHOA.GETDATA(SQLKHOA);
                 if (DTKHOA.Rows[0][0].ToString() == "1")
@@ -258,7 +258,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYCHI FROM PHIEUCHI WHERE MAPC='" + smpc + "')>(SELECT NGAY FROM KHOASO WHERE ID=5)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASO WHERE ID=5) AS NGAY";
+                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYCHI FROM PHIEUCHI WHERE MAPC='" + smpc + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=5)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=5) AS NGAY";
                 CTL ctlKHOA = new CTL();
                 DataTable DTKHOA = ctlKHOA.GETDATA(SQLKHOA);
                 if (DTKHOA.Rows[0][0].ToString() == "1")
