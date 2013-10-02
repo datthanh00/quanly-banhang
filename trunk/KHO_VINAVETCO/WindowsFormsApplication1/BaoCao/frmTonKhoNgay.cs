@@ -207,6 +207,11 @@ namespace WindowsFormsApplication1
                 string s123 = dt.Rows[0][0].ToString();
                 if (dt.Rows[0][0].ToString() != "0")
                 {
+                    //INSERT CAP NHAT
+                    SQL = "INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[LOHANG],[TONKHONGAY],[MAKHO]) SELECT convert(varchar,NGAYNHAP,101) AS NGAY, MAMH,LOHANG,TONKHO,'" + PublicVariable.MAKHO + "' AS MAKHO FROM KHOHANG WHERE NGAYNHAP='" + NGAYBD + "' AND MAMH+LOHANG NOT IN(SELECT MAMH+LOHANG FROM TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "') AND MAMH +LOHANG IN (SELECT MAMH+LOHANG FROM TONKHO WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "') ";
+
+                    ctlNCC.executeNonQuery(SQL);
+
                     // LAY TON KHO NGAY DA CO TRONG TONKHONGAY
                     gridControl2.DataSource = ctr.getTonKhoTTngay(dto);
                 }

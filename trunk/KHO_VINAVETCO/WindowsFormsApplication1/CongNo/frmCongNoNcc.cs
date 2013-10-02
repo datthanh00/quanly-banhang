@@ -215,10 +215,10 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYTHU FROM PHIEUTHU WHERE MAPT='" + smpc + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=6)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=6) AS NGAY";
+                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYTHU FROM PHIEUTHU WHERE MAPT='" + smpc + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=5)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=5) AS NGAY,(SELECT TINHTRANG  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=5) AS TINHTRANG";
                 CTL ctlKHOA = new CTL();
                 DataTable DTKHOA = ctlKHOA.GETDATA(SQLKHOA);
-                if (DTKHOA.Rows[0][0].ToString() == "1")
+                if (DTKHOA.Rows[0][0].ToString() == "1"&& DTKHOA.Rows[0]["TINHTRANG"].ToString()=="True")
                 {
                     MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
                     return;
@@ -258,10 +258,10 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYCHI FROM PHIEUCHI WHERE MAPC='" + smpc + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=5)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE AND MAKHO='"+PublicVariable.MAKHO+"' AND ID=5) AS NGAY";
+                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYCHI FROM PHIEUCHI WHERE MAPC='" + smpc + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=5)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=5) AS NGAY,(SELECT TINHTRANG  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=5) AS TINHTRANG";
                 CTL ctlKHOA = new CTL();
                 DataTable DTKHOA = ctlKHOA.GETDATA(SQLKHOA);
-                if (DTKHOA.Rows[0][0].ToString() == "1")
+                if (DTKHOA.Rows[0][0].ToString() == "1"&& DTKHOA.Rows[0]["TINHTRANG"].ToString()=="True")
                 {
                     MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
                     return;
