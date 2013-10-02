@@ -113,13 +113,14 @@ namespace WindowsFormsApplication1
             {
                 return;
             }
-            string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYNHAP FROM HOADONNHAP WHERE MAHDN='" + dtr["MAHDN"].ToString() + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=1)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=1) AS NGAY";
+            string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYNHAP FROM HOADONNHAP WHERE MAHDN='" + dtr["MAHDN"].ToString() + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=1)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=1) AS NGAY,(SELECT TINHTRANG  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=1) AS TINHTRANG";
             DataTable DTKHOA = ctlNCC.GETDATA(SQLKHOA);
-            if (DTKHOA.Rows[0][0].ToString() == "1")
+            if (DTKHOA.Rows[0][0].ToString() == "1" && DTKHOA.Rows[0]["TINHTRANG"].ToString()=="True")
             {
                 MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
                 return;
             }
+
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             isdelete = false;
             PublicVariable.SQL_NHAP = "";
@@ -650,8 +651,7 @@ namespace WindowsFormsApplication1
                             
                             loadmahdn();
                             dtoNCC.MAHDN = txtMaHD.Text;
-                            txtlohang.Text = txtMaHD.Text;
-
+                          
                             ctlNCC.INSERTHOADONNHAP(dtoNCC);
                             try
                             {
@@ -692,7 +692,7 @@ namespace WindowsFormsApplication1
 
                             if (PublicVariable.isHSD)
                             {
-                                dtoNCC.LOHANG = txtlohang.Text;
+                                dtoNCC.LOHANG = txtlohang.Text + "_" + dtoNCC.IDNHAP;
                             }
                             else
                             {
@@ -1605,9 +1605,9 @@ namespace WindowsFormsApplication1
             {
                 return;
             }
-            string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYNHAP FROM HOADONNHAP WHERE MAHDN='" + dtr["MAHDN"].ToString() + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=1 )  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=1) AS NGAY";
+            string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYNHAP FROM HOADONNHAP WHERE MAHDN='" + dtr["MAHDN"].ToString() + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=1 )  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=1) AS NGAY,(SELECT TINHTRANG  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=1) AS TINHTRANG";
             DataTable DTKHOA = ctlNCC.GETDATA(SQLKHOA);
-            if (DTKHOA.Rows[0][0].ToString() == "1")
+            if (DTKHOA.Rows[0][0].ToString() == "1" && DTKHOA.Rows[0]["TINHTRANG"].ToString()=="True")
             {
                 MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
                 return;
