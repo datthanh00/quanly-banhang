@@ -99,7 +99,7 @@ namespace WindowsFormsApplication1
                             TINHTRANG = "1";
                         }
 
-                        SQL = SQL + " \r\nGO\r\n UPDATE KHOASO SET [TINHTRANG]=" + TINHTRANG + ", NGAY='" + NGAY + "' WHERE ID='" + dtr["ID"].ToString() + "'";                            
+                        SQL = SQL + " \r\nGO\r\n UPDATE KHOASOTHEOKHO SET [TINHTRANG]=" + TINHTRANG + ", NGAY='" + NGAY + "' WHERE ID='" + dtr["ID"].ToString() + "' AND MAKHO='"+PublicVariable.MAKHO+"'";                            
                         i++;
                     }
                     ctlNCC.executeNonQuery2(SQL);

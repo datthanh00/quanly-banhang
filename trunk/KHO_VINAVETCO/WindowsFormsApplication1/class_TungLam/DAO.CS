@@ -95,6 +95,9 @@ namespace WindowsFormsApplication1
 
             SQL = "insert into PHANKHO(MABP,MAKHO) SELECT  MABP,'" + dto.MAKHO + "' AS MAKHO FROM BOPHAN";
             executeNonQuery(SQL);
+
+            SQL = "insert into KHOASOTHEOKHO (ID,MAKHO,NGAY) SELECT  ID, '" + PublicVariable.MAKHO + "' AS MAKHO, convert(varchar,GETDATE(),101) AS NGAY  FROM KHOASO";
+            executeNonQuery(SQL);
         }
         public void INSERTDVT(DTO dto)
         {
