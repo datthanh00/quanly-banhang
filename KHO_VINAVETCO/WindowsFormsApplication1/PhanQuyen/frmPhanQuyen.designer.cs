@@ -37,7 +37,6 @@
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
             this.btnphankho = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,7 +58,6 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnphanquyen = new DevExpress.XtraEditors.SimpleButton();
             this.dockPanelBoPhan = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -88,7 +86,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.dockPanelBoPhan.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -150,7 +147,7 @@
             this.dockPanel2.ID = new System.Guid("8e207668-36ad-4c37-b4bb-3173e75da749");
             this.dockPanel2.Location = new System.Drawing.Point(0, 0);
             this.dockPanel2.Name = "dockPanel2";
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 96);
             this.dockPanel2.Size = new System.Drawing.Size(200, 96);
             this.dockPanel2.Text = "Quản Lý Bộ Phận";
             // 
@@ -158,9 +155,9 @@
             // 
             this.dockPanel2_Container.Controls.Add(this.btnphankho);
             this.dockPanel2_Container.Controls.Add(this.btnphanquyen);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(194, 69);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(194, 68);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // btnphankho
@@ -175,7 +172,6 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.btDong);
             this.layoutControl1.Controls.Add(this.gridControl2);
             this.layoutControl1.Controls.Add(this.btThem);
             this.layoutControl1.Controls.Add(this.btSua);
@@ -188,23 +184,12 @@
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // btDong
-            // 
-            this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close3;
-            this.btDong.Location = new System.Drawing.Point(281, 45);
-            this.btDong.Name = "btDong";
-            this.btDong.Size = new System.Drawing.Size(87, 38);
-            this.btDong.StyleController = this.layoutControl1;
-            this.btDong.TabIndex = 12;
-            this.btDong.Text = "Đóng";
-            this.btDong.Click += new System.EventHandler(this.btDong_Click);
-            // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(31, 89);
+            this.gridControl2.Location = new System.Drawing.Point(31, 90);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1030, 375);
+            this.gridControl2.Size = new System.Drawing.Size(1030, 374);
             this.gridControl2.TabIndex = 5;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -270,7 +255,7 @@
             // btThem
             // 
             this.btThem.Image = global::WindowsFormsApplication1.Properties.Resources.add;
-            this.btThem.Location = new System.Drawing.Point(26, 47);
+            this.btThem.Location = new System.Drawing.Point(26, 48);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(74, 38);
             this.btThem.StyleController = this.layoutControl1;
@@ -281,7 +266,7 @@
             // btSua
             // 
             this.btSua.Image = global::WindowsFormsApplication1.Properties.Resources.edit2;
-            this.btSua.Location = new System.Drawing.Point(104, 45);
+            this.btSua.Location = new System.Drawing.Point(104, 46);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(83, 38);
             this.btSua.StyleController = this.layoutControl1;
@@ -292,7 +277,7 @@
             // btXoa
             // 
             this.btXoa.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
-            this.btXoa.Location = new System.Drawing.Point(191, 45);
+            this.btXoa.Location = new System.Drawing.Point(191, 46);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(86, 38);
             this.btXoa.StyleController = this.layoutControl1;
@@ -325,8 +310,7 @@
             this.simpleSeparator6,
             this.layoutControlItem3,
             this.layoutControlItem4,
-            this.layoutControlItem6,
-            this.layoutControlItem1});
+            this.layoutControlItem6});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(1065, 468);
@@ -338,7 +322,7 @@
             this.layoutControlItem2.CustomizationFormText = " ";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 46);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1041, 379);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1041, 378);
             this.layoutControlItem2.Text = " ";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(3, 13);
             // 
@@ -361,9 +345,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(348, 2);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(257, 2);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(693, 44);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(784, 44);
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -411,18 +395,6 @@
             this.layoutControlItem6.TextToControlDistance = 0;
             this.layoutControlItem6.TextVisible = false;
             // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.btDong;
-            this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(257, 2);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(91, 44);
-            this.layoutControlItem1.Text = "layoutControlItem1";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextToControlDistance = 0;
-            this.layoutControlItem1.TextVisible = false;
-            // 
             // btnphanquyen
             // 
             this.btnphanquyen.Location = new System.Drawing.Point(9, 3);
@@ -441,16 +413,16 @@
             this.dockPanelBoPhan.Location = new System.Drawing.Point(0, 96);
             this.dockPanelBoPhan.Name = "dockPanelBoPhan";
             this.dockPanelBoPhan.Options.ShowCloseButton = false;
-            this.dockPanelBoPhan.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanelBoPhan.OriginalSize = new System.Drawing.Size(200, 392);
             this.dockPanelBoPhan.Size = new System.Drawing.Size(200, 392);
             this.dockPanelBoPhan.Text = "dockPanel1";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.gridControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 365);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 364);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // gridControl1
@@ -459,7 +431,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(194, 365);
+            this.gridControl1.Size = new System.Drawing.Size(194, 364);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -516,10 +488,10 @@
             this.ClientSize = new System.Drawing.Size(1285, 488);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.panelContainer1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmPhanQuyen";
-            this.Text = "frmPhanQuyen";
             this.Load += new System.EventHandler(this.frmPhanQuyen_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPhanQuyen_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.dockPanel1.ResumeLayout(false);
             this.panelContainer1.ResumeLayout(false);
@@ -539,7 +511,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.dockPanelBoPhan.ResumeLayout(false);
             this.dockPanel1_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -581,8 +552,6 @@
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
         private DevExpress.XtraBars.Docking.DockPanel dockPanelBoPhan;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
-        private DevExpress.XtraEditors.SimpleButton btDong;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
         private DevExpress.XtraBars.Docking.ControlContainer controlContainer1;
         private DevExpress.XtraBars.Docking.DockPanel panelContainer1;

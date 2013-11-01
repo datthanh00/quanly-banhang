@@ -67,6 +67,8 @@
             this.colTENKHUVUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsodt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnganhang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfax.Properties)).BeginInit();
@@ -81,11 +83,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbmaKV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txtsodt
             // 
-            this.txtsodt.Location = new System.Drawing.Point(441, 65);
+            this.txtsodt.Location = new System.Drawing.Point(441, 93);
             this.txtsodt.Name = "txtsodt";
             this.txtsodt.Size = new System.Drawing.Size(231, 20);
             this.txtsodt.TabIndex = 6;
@@ -93,7 +96,7 @@
             // 
             // txtnganhang
             // 
-            this.txtnganhang.Location = new System.Drawing.Point(441, 94);
+            this.txtnganhang.Location = new System.Drawing.Point(441, 122);
             this.txtnganhang.Name = "txtnganhang";
             this.txtnganhang.Size = new System.Drawing.Size(231, 20);
             this.txtnganhang.TabIndex = 8;
@@ -101,7 +104,7 @@
             // 
             // txtfax
             // 
-            this.txtfax.Location = new System.Drawing.Point(441, 127);
+            this.txtfax.Location = new System.Drawing.Point(441, 155);
             this.txtfax.Name = "txtfax";
             this.txtfax.Size = new System.Drawing.Size(231, 20);
             this.txtfax.TabIndex = 10;
@@ -149,7 +152,7 @@
             // 
             // lbsodt
             // 
-            this.lbsodt.Location = new System.Drawing.Point(354, 68);
+            this.lbsodt.Location = new System.Drawing.Point(354, 96);
             this.lbsodt.Name = "lbsodt";
             this.lbsodt.Size = new System.Drawing.Size(66, 13);
             this.lbsodt.TabIndex = 20;
@@ -218,7 +221,7 @@
             // 
             // lbnganhang
             // 
-            this.lbnganhang.Location = new System.Drawing.Point(354, 97);
+            this.lbnganhang.Location = new System.Drawing.Point(354, 125);
             this.lbnganhang.Name = "lbnganhang";
             this.lbnganhang.Size = new System.Drawing.Size(53, 13);
             this.lbnganhang.TabIndex = 27;
@@ -242,7 +245,7 @@
             // 
             // lbfax
             // 
-            this.lbfax.Location = new System.Drawing.Point(354, 130);
+            this.lbfax.Location = new System.Drawing.Point(354, 158);
             this.lbfax.Name = "lbfax";
             this.lbfax.Size = new System.Drawing.Size(18, 13);
             this.lbfax.TabIndex = 23;
@@ -266,7 +269,7 @@
             // 
             // lbMASOTHUE
             // 
-            this.lbMASOTHUE.Location = new System.Drawing.Point(354, 40);
+            this.lbMASOTHUE.Location = new System.Drawing.Point(354, 68);
             this.lbMASOTHUE.Name = "lbMASOTHUE";
             this.lbMASOTHUE.Size = new System.Drawing.Size(56, 13);
             this.lbMASOTHUE.TabIndex = 23;
@@ -274,7 +277,7 @@
             // 
             // txtmasothue
             // 
-            this.txtmasothue.Location = new System.Drawing.Point(441, 36);
+            this.txtmasothue.Location = new System.Drawing.Point(441, 64);
             this.txtmasothue.Name = "txtmasothue";
             this.txtmasothue.Size = new System.Drawing.Size(231, 20);
             this.txtmasothue.TabIndex = 4;
@@ -291,7 +294,7 @@
             // 
             // lbtinhtrang
             // 
-            this.lbtinhtrang.Location = new System.Drawing.Point(351, 161);
+            this.lbtinhtrang.Location = new System.Drawing.Point(8, 190);
             this.lbtinhtrang.Name = "lbtinhtrang";
             this.lbtinhtrang.Size = new System.Drawing.Size(51, 13);
             this.lbtinhtrang.TabIndex = 45;
@@ -304,7 +307,7 @@
             // btDong
             // 
             this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
-            this.btDong.Location = new System.Drawing.Point(372, 232);
+            this.btDong.Location = new System.Drawing.Point(372, 246);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(123, 40);
             this.btDong.TabIndex = 14;
@@ -314,7 +317,7 @@
             // btluu
             // 
             this.btluu.Image = global::WindowsFormsApplication1.Properties.Resources.save1;
-            this.btluu.Location = new System.Drawing.Point(219, 232);
+            this.btluu.Location = new System.Drawing.Point(219, 246);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(124, 40);
             this.btluu.TabIndex = 13;
@@ -348,7 +351,7 @@
             // 
             // lbchuy
             // 
-            this.lbchuy.Location = new System.Drawing.Point(61, 213);
+            this.lbchuy.Location = new System.Drawing.Point(61, 227);
             this.lbchuy.Name = "lbchuy";
             this.lbchuy.Size = new System.Drawing.Size(246, 13);
             this.lbchuy.TabIndex = 122;
@@ -357,7 +360,7 @@
             // checkTT
             // 
             this.checkTT.EditValue = true;
-            this.checkTT.Location = new System.Drawing.Point(439, 159);
+            this.checkTT.Location = new System.Drawing.Point(108, 188);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
             this.checkTT.Size = new System.Drawing.Size(82, 19);
@@ -420,12 +423,38 @@
             this.colTINHTRANG.Visible = true;
             this.colTINHTRANG.VisibleIndex = 3;
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(354, 42);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(70, 13);
+            this.labelControl1.TabIndex = 124;
+            this.labelControl1.Text = "Tiền Trả Trước";
+            // 
+            // cbotientra
+            // 
+            this.cbotientra.Location = new System.Drawing.Point(441, 37);
+            this.cbotientra.Name = "cbotientra";
+            this.cbotientra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbotientra.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.cbotientra.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cbotientra.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.cbotientra.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cbotientra.Properties.Mask.EditMask = "n0";
+            this.cbotientra.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.cbotientra.Properties.ReadOnly = true;
+            this.cbotientra.Size = new System.Drawing.Size(231, 20);
+            this.cbotientra.TabIndex = 125;
+            // 
             // frmThemNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 284);
+            this.ClientSize = new System.Drawing.Size(731, 295);
             this.ControlBox = false;
+            this.Controls.Add(this.cbotientra);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.cmbmaKV);
             this.Controls.Add(this.checkTT);
             this.Controls.Add(this.labelControl19);
@@ -477,6 +506,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbmaKV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -524,5 +554,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTENKHUVUC;
         private DevExpress.XtraGrid.Columns.GridColumn colGHICHU;
         private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.CalcEdit cbotientra;
     }
 }

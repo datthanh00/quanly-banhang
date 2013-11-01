@@ -72,7 +72,7 @@ namespace WindowsFormsApplication1
             barIn.Caption = LamVN.IN.ToString();
             barXuat.Caption = LamVN.XUATDULIEU.ToString();
             barNhap.Caption = LamVN.NHAPDULIEU.ToString();
-            barThoat.Caption = LamVN.THOAT.ToString();
+      
 
         }
         public void LoadEL()
@@ -89,7 +89,7 @@ namespace WindowsFormsApplication1
             barIn.Caption = LamEL.IN.ToString();
             barXuat.Caption = LamEL.XUATDULIEU.ToString();
             barNhap.Caption = LamEL.NHAPDULIEU.ToString();
-            barThoat.Caption = LamEL.THOAT.ToString();
+   
 
         }
         private void loadnhomhang()
@@ -326,6 +326,11 @@ namespace WindowsFormsApplication1
         private void barNapLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             loadnhomhang();
+        }
+
+        private void frmnhomhang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
     }
 }

@@ -28,23 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.lbThanhVien = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.SuspendLayout();
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Image = global::WindowsFormsApplication1.Properties.Resources.close4;
-            this.simpleButton2.Location = new System.Drawing.Point(245, 253);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 6;
-            this.simpleButton2.Text = "Kết thúc";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // lbThanhVien
             // 
@@ -93,13 +82,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(606, 296);
+            this.ClientSize = new System.Drawing.Size(606, 210);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.lbThanhVien);
-            this.Controls.Add(this.simpleButton2);
             this.Name = "frmLienHe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLienHe";
@@ -110,7 +98,6 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.LabelControl lbThanhVien;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl3;

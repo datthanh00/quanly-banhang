@@ -69,7 +69,6 @@
             this.cbncc = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btdong = new DevExpress.XtraEditors.SimpleButton();
             this.BtXuatdulieu = new DevExpress.XtraEditors.SimpleButton();
             this.lbnhom = new DevExpress.XtraEditors.LabelControl();
             this.btin = new DevExpress.XtraEditors.SimpleButton();
@@ -200,10 +199,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(2, 22);
+            this.xtraTabControl1.Location = new System.Drawing.Point(2, 21);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 503);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 504);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3});
@@ -213,7 +212,7 @@
             this.xtraTabPage3.Controls.Add(this.panelControl5);
             this.xtraTabPage3.Controls.Add(this.panelControl6);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 474);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 476);
             this.xtraTabPage3.Text = "Tồn Đầu Kỳ";
             // 
             // panelControl5
@@ -222,23 +221,23 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(0, 39);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1252, 435);
+            this.panelControl5.Size = new System.Drawing.Size(1252, 437);
             this.panelControl5.TabIndex = 9;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(2, 2);
+            this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1248, 431);
+            this.groupControl2.Size = new System.Drawing.Size(1246, 431);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Chi Tiết Mặt Hàng";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 22);
+            this.gridControl1.Location = new System.Drawing.Point(2, 21);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
@@ -251,7 +250,7 @@
             this.repositoryItemRichTextEdit1,
             this.repositoryItemDateEdit1});
             this.gridControl1.ShowOnlyPredefinedDetails = true;
-            this.gridControl1.Size = new System.Drawing.Size(1244, 407);
+            this.gridControl1.Size = new System.Drawing.Size(1242, 408);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -475,7 +474,6 @@
             // 
             this.panelControl6.Controls.Add(this.simpleButton1);
             this.panelControl6.Controls.Add(this.cbncc);
-            this.panelControl6.Controls.Add(this.btdong);
             this.panelControl6.Controls.Add(this.BtXuatdulieu);
             this.panelControl6.Controls.Add(this.lbnhom);
             this.panelControl6.Controls.Add(this.btin);
@@ -526,20 +524,10 @@
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
             // 
-            // btdong
-            // 
-            this.btdong.Image = ((System.Drawing.Image)(resources.GetObject("btdong.Image")));
-            this.btdong.Location = new System.Drawing.Point(702, 4);
-            this.btdong.Name = "btdong";
-            this.btdong.Size = new System.Drawing.Size(79, 31);
-            this.btdong.TabIndex = 7;
-            this.btdong.Text = "Thoát";
-            this.btdong.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // BtXuatdulieu
             // 
             this.BtXuatdulieu.Image = ((System.Drawing.Image)(resources.GetObject("BtXuatdulieu.Image")));
-            this.BtXuatdulieu.Location = new System.Drawing.Point(584, 4);
+            this.BtXuatdulieu.Location = new System.Drawing.Point(539, 4);
             this.BtXuatdulieu.Name = "BtXuatdulieu";
             this.BtXuatdulieu.Size = new System.Drawing.Size(103, 31);
             this.BtXuatdulieu.TabIndex = 3;
@@ -557,7 +545,7 @@
             // btin
             // 
             this.btin.Image = ((System.Drawing.Image)(resources.GetObject("btin.Image")));
-            this.btin.Location = new System.Drawing.Point(500, 4);
+            this.btin.Location = new System.Drawing.Point(455, 4);
             this.btin.Name = "btin";
             this.btin.Size = new System.Drawing.Size(70, 31);
             this.btin.TabIndex = 4;
@@ -567,7 +555,7 @@
             // btxem
             // 
             this.btxem.Image = global::WindowsFormsApplication1.Properties.Resources.save;
-            this.btxem.Location = new System.Drawing.Point(415, 5);
+            this.btxem.Location = new System.Drawing.Point(370, 5);
             this.btxem.Name = "btxem";
             this.btxem.Size = new System.Drawing.Size(70, 31);
             this.btxem.TabIndex = 3;
@@ -612,16 +600,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 527);
-            this.ControlBox = false;
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmKiemkho";
-            this.Text = "mã mặt hàng";
             this.Load += new System.EventHandler(this.frmThongKeTongHop_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmKiemkho_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -679,7 +666,6 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl lbnhom;
-        private DevExpress.XtraEditors.SimpleButton btdong;
         private DevExpress.XtraGrid.Columns.GridColumn colmamhathang;
         private DevExpress.XtraGrid.Columns.GridColumn coltenmathang;
         private DevExpress.XtraGrid.Columns.GridColumn coltendonvi;

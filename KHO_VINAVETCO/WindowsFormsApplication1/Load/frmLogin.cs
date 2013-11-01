@@ -39,7 +39,6 @@ namespace WindowsFormsApplication1
                     Application.Exit();
                 }
             }
-           
         }
 
         private void simpleButton3_Click(object sender, EventArgs e)
@@ -47,13 +46,13 @@ namespace WindowsFormsApplication1
             frmCauHinhHeThong cauhinh = new frmCauHinhHeThong();
             cauhinh.ShowDialog();
         }
+
         clCtrl ctr = new clCtrl();
         clDTO dto = new clDTO(); 
         public static string MaHoa(string cleanString)
         {
             Byte[] clearBytes = new UnicodeEncoding().GetBytes(cleanString);
             Byte[] hashedBytes = ((System.Security.Cryptography.HashAlgorithm)System.Security.Cryptography.CryptoConfig.CreateFromName("MD5")).ComputeHash(clearBytes);
-
             return BitConverter.ToString(hashedBytes);
         }
         

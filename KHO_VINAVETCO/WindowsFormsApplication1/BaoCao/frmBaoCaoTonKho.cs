@@ -117,7 +117,7 @@ namespace WindowsFormsApplication1
             gridCuoiKi.Caption = resVietNam.gridCuoiKi.ToString();
             gridNhapKho.Caption = resVietNam.gridNhapKho.ToString();
             gridXuatKho.Caption = resVietNam.gridXuatKho.ToString();
-            btDong.Text = resVietNam.btDong.ToString();
+     
             btIn.Text = resVietNam.btIn.ToString();
             btXuat.Text = resVietNam.btXuat.ToString();
             lbTu.Text = resVietNam.NgayBD.ToString();
@@ -150,7 +150,7 @@ namespace WindowsFormsApplication1
             gridCuoiKi.Caption = resEngLand.gridCuoiKi.ToString();
             gridNhapKho.Caption = resEngLand.gridNhapKho.ToString();
             gridXuatKho.Caption = resEngLand.gridXuatKho.ToString();
-            btDong.Text = resEngLand.btDong.ToString();
+    
             btIn.Text = resEngLand.btIn.ToString();
             btXuat.Text = resEngLand.btXuat.ToString();
             lbTu.Text = resEngLand.NgayBD.ToString();
@@ -593,6 +593,11 @@ namespace WindowsFormsApplication1
             e.Graph.Font = new Font("Tahoma", 10, FontStyle.Bold);
             RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void frmBaoCaoTonKho_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
 
         

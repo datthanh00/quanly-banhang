@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btLuu = new DevExpress.XtraEditors.SimpleButton();
+            this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.txtPassMoi = new DevExpress.XtraEditors.TextEdit();
             this.txtPassXacNhan = new DevExpress.XtraEditors.TextEdit();
             this.txtPassCu = new DevExpress.XtraEditors.TextEdit();
@@ -38,9 +40,7 @@
             this.lbXacNhan = new DevExpress.XtraLayout.LayoutControlItem();
             this.lbMatKhauMoi = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -72,6 +72,28 @@
             this.layoutControl1.Size = new System.Drawing.Size(365, 128);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btLuu
+            // 
+            this.btLuu.Image = global::WindowsFormsApplication1.Properties.Resources.check;
+            this.btLuu.Location = new System.Drawing.Point(139, 84);
+            this.btLuu.Name = "btLuu";
+            this.btLuu.Size = new System.Drawing.Size(105, 30);
+            this.btLuu.StyleController = this.layoutControl1;
+            this.btLuu.TabIndex = 8;
+            this.btLuu.Text = "simpleButton2";
+            this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
+            // 
+            // btDong
+            // 
+            this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close4;
+            this.btDong.Location = new System.Drawing.Point(248, 84);
+            this.btDong.Name = "btDong";
+            this.btDong.Size = new System.Drawing.Size(105, 30);
+            this.btDong.StyleController = this.layoutControl1;
+            this.btDong.TabIndex = 7;
+            this.btDong.Text = "simpleButton1";
+            this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
             // txtPassMoi
             // 
@@ -160,17 +182,6 @@
             this.emptySpaceItem1.Text = "emptySpaceItem1";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // btDong
-            // 
-            this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close4;
-            this.btDong.Location = new System.Drawing.Point(248, 84);
-            this.btDong.Name = "btDong";
-            this.btDong.Size = new System.Drawing.Size(105, 30);
-            this.btDong.StyleController = this.layoutControl1;
-            this.btDong.TabIndex = 7;
-            this.btDong.Text = "simpleButton1";
-            this.btDong.Click += new System.EventHandler(this.btDong_Click);
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btDong;
@@ -182,17 +193,6 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextToControlDistance = 0;
             this.layoutControlItem4.TextVisible = false;
-            // 
-            // btLuu
-            // 
-            this.btLuu.Image = global::WindowsFormsApplication1.Properties.Resources.check;
-            this.btLuu.Location = new System.Drawing.Point(139, 84);
-            this.btLuu.Name = "btLuu";
-            this.btLuu.Size = new System.Drawing.Size(105, 30);
-            this.btLuu.StyleController = this.layoutControl1;
-            this.btLuu.TabIndex = 8;
-            this.btLuu.Text = "simpleButton2";
-            this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
             // layoutControlItem5
             // 
@@ -216,10 +216,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(365, 128);
             this.Controls.Add(this.layoutControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmDoiMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDoiMatKhau";
+            this.Text = "Đổi mật khẩu";
             this.Load += new System.EventHandler(this.frmDoiMatKhau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

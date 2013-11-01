@@ -43,6 +43,7 @@
             this.colFAX = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colWEBSITE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -54,7 +55,6 @@
             this.barIn = new DevExpress.XtraBars.BarButtonItem();
             this.barXuat = new DevExpress.XtraBars.BarButtonItem();
             this.barNhap = new DevExpress.XtraBars.BarButtonItem();
-            this.barThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -94,7 +94,8 @@
             this.colEMAIL,
             this.colFAX,
             this.colWEBSITE,
-            this.colTINHTRANG});
+            this.colTINHTRANG,
+            this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -114,7 +115,7 @@
             this.colMANCC.OptionsColumn.AllowEdit = false;
             this.colMANCC.Visible = true;
             this.colMANCC.VisibleIndex = 0;
-            this.colMANCC.Width = 100;
+            this.colMANCC.Width = 85;
             // 
             // colMAKV
             // 
@@ -122,9 +123,7 @@
             this.colMAKV.FieldName = "MAKV";
             this.colMAKV.Name = "colMAKV";
             this.colMAKV.OptionsColumn.AllowEdit = false;
-            this.colMAKV.Visible = true;
-            this.colMAKV.VisibleIndex = 1;
-            this.colMAKV.Width = 100;
+            this.colMAKV.Width = 85;
             // 
             // colTENNCC
             // 
@@ -133,8 +132,8 @@
             this.colTENNCC.Name = "colTENNCC";
             this.colTENNCC.OptionsColumn.AllowEdit = false;
             this.colTENNCC.Visible = true;
-            this.colTENNCC.VisibleIndex = 2;
-            this.colTENNCC.Width = 140;
+            this.colTENNCC.VisibleIndex = 1;
+            this.colTENNCC.Width = 119;
             // 
             // colDIACHI
             // 
@@ -144,7 +143,7 @@
             this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 3;
-            this.colDIACHI.Width = 116;
+            this.colDIACHI.Width = 94;
             // 
             // colMASOTHUE
             // 
@@ -152,9 +151,7 @@
             this.colMASOTHUE.FieldName = "MASOTHUE";
             this.colMASOTHUE.Name = "colMASOTHUE";
             this.colMASOTHUE.OptionsColumn.AllowEdit = false;
-            this.colMASOTHUE.Visible = true;
-            this.colMASOTHUE.VisibleIndex = 4;
-            this.colMASOTHUE.Width = 95;
+            this.colMASOTHUE.Width = 77;
             // 
             // colSOTK
             // 
@@ -163,8 +160,8 @@
             this.colSOTK.Name = "colSOTK";
             this.colSOTK.OptionsColumn.AllowEdit = false;
             this.colSOTK.Visible = true;
-            this.colSOTK.VisibleIndex = 5;
-            this.colSOTK.Width = 91;
+            this.colSOTK.VisibleIndex = 4;
+            this.colSOTK.Width = 73;
             // 
             // colNGANHANG
             // 
@@ -173,8 +170,8 @@
             this.colNGANHANG.Name = "colNGANHANG";
             this.colNGANHANG.OptionsColumn.AllowEdit = false;
             this.colNGANHANG.Visible = true;
-            this.colNGANHANG.VisibleIndex = 6;
-            this.colNGANHANG.Width = 91;
+            this.colNGANHANG.VisibleIndex = 5;
+            this.colNGANHANG.Width = 73;
             // 
             // colSDT
             // 
@@ -183,8 +180,8 @@
             this.colSDT.Name = "colSDT";
             this.colSDT.OptionsColumn.AllowEdit = false;
             this.colSDT.Visible = true;
-            this.colSDT.VisibleIndex = 7;
-            this.colSDT.Width = 91;
+            this.colSDT.VisibleIndex = 6;
+            this.colSDT.Width = 73;
             // 
             // colEMAIL
             // 
@@ -193,8 +190,8 @@
             this.colEMAIL.Name = "colEMAIL";
             this.colEMAIL.OptionsColumn.AllowEdit = false;
             this.colEMAIL.Visible = true;
-            this.colEMAIL.VisibleIndex = 8;
-            this.colEMAIL.Width = 91;
+            this.colEMAIL.VisibleIndex = 7;
+            this.colEMAIL.Width = 73;
             // 
             // colFAX
             // 
@@ -203,7 +200,8 @@
             this.colFAX.Name = "colFAX";
             this.colFAX.OptionsColumn.AllowEdit = false;
             this.colFAX.Visible = true;
-            this.colFAX.VisibleIndex = 9;
+            this.colFAX.VisibleIndex = 8;
+            this.colFAX.Width = 60;
             // 
             // colWEBSITE
             // 
@@ -212,8 +210,8 @@
             this.colWEBSITE.Name = "colWEBSITE";
             this.colWEBSITE.OptionsColumn.AllowEdit = false;
             this.colWEBSITE.Visible = true;
-            this.colWEBSITE.VisibleIndex = 10;
-            this.colWEBSITE.Width = 98;
+            this.colWEBSITE.VisibleIndex = 9;
+            this.colWEBSITE.Width = 79;
             // 
             // colTINHTRANG
             // 
@@ -222,8 +220,19 @@
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.OptionsColumn.AllowEdit = false;
             this.colTINHTRANG.Visible = true;
-            this.colTINHTRANG.VisibleIndex = 11;
-            this.colTINHTRANG.Width = 113;
+            this.colTINHTRANG.VisibleIndex = 10;
+            this.colTINHTRANG.Width = 100;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Tiền trả trước";
+            this.gridColumn1.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn1.FieldName = "TIENTRATRUOC";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 2;
+            this.gridColumn1.Width = 99;
             // 
             // repositoryItemGridLookUpEdit1
             // 
@@ -256,8 +265,7 @@
             this.barNapLai,
             this.barIn,
             this.barXuat,
-            this.barNhap,
-            this.barThoat});
+            this.barNhap});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 9;
             // 
@@ -274,8 +282,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barNapLai, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barIn, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barXuat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barNhap, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barNhap, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.OptionsBar.DrawDragBorder = false;
             this.bar2.OptionsBar.MultiLine = true;
@@ -337,14 +344,6 @@
             this.barNhap.Id = 7;
             this.barNhap.Name = "barNhap";
             // 
-            // barThoat
-            // 
-            this.barThoat.Caption = "Đóng";
-            this.barThoat.Glyph = global::WindowsFormsApplication1.Properties.Resources.close2;
-            this.barThoat.Id = 8;
-            this.barThoat.Name = "barThoat";
-            this.barThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
-            // 
             // barDockControlTop
             // 
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -379,10 +378,10 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmNhaCungCap";
-            this.Text = "frmNhaCungCap";
             this.Load += new System.EventHandler(this.frmNhaCungCap_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmNhaCungCap_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1)).EndInit();
@@ -409,7 +408,6 @@
         private DevExpress.XtraBars.BarButtonItem barIn;
         private DevExpress.XtraBars.BarButtonItem barXuat;
         private DevExpress.XtraBars.BarButtonItem barNhap;
-        private DevExpress.XtraBars.BarButtonItem barThoat;
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
        // private XUAT_NHAPTONDataSet2 xUAT_NHAPTONDataSet2;
@@ -426,5 +424,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFAX;
         private DevExpress.XtraGrid.Columns.GridColumn colWEBSITE;
         private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

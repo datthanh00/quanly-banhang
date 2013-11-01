@@ -30,6 +30,8 @@
         {
             this.cbNhomHang = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmanh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colten = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.calKLDVT = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -48,8 +50,12 @@
             this.btThemKhuVuc = new DevExpress.XtraEditors.SimpleButton();
             this.cbthue = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmathue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsothue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cbDvt = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmadvt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coldvt = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbDVT = new DevExpress.XtraEditors.LabelControl();
             this.lbmathue = new DevExpress.XtraEditors.LabelControl();
             this.lbtenmh = new DevExpress.XtraEditors.LabelControl();
@@ -63,12 +69,6 @@
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.lbnhomhang = new DevExpress.XtraEditors.LabelControl();
-            this.colmathue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colsothue = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmadvt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.coldvt = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colmanh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colten = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.cbNhomHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -112,6 +112,21 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colmanh
+            // 
+            this.colmanh.FieldName = "MANCC";
+            this.colmanh.Name = "colmanh";
+            this.colmanh.Visible = true;
+            this.colmanh.VisibleIndex = 0;
+            // 
+            // colten
+            // 
+            this.colten.Caption = "gridColumn2";
+            this.colten.FieldName = "TENNCC";
+            this.colten.Name = "colten";
+            this.colten.Visible = true;
+            this.colten.VisibleIndex = 1;
             // 
             // panelControl1
             // 
@@ -338,6 +353,22 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
+            // colmathue
+            // 
+            this.colmathue.Caption = "Mã Thuế";
+            this.colmathue.FieldName = "MATH";
+            this.colmathue.Name = "colmathue";
+            this.colmathue.Visible = true;
+            this.colmathue.VisibleIndex = 0;
+            // 
+            // colsothue
+            // 
+            this.colsothue.Caption = "Số Thuế";
+            this.colsothue.FieldName = "SOTHUE";
+            this.colsothue.Name = "colsothue";
+            this.colsothue.Visible = true;
+            this.colsothue.VisibleIndex = 1;
+            // 
             // cbDvt
             // 
             this.cbDvt.Location = new System.Drawing.Point(427, 38);
@@ -363,6 +394,22 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colmadvt
+            // 
+            this.colmadvt.Caption = "Mã DVT";
+            this.colmadvt.FieldName = "MADVT";
+            this.colmadvt.Name = "colmadvt";
+            this.colmadvt.Visible = true;
+            this.colmadvt.VisibleIndex = 0;
+            // 
+            // coldvt
+            // 
+            this.coldvt.Caption = "Đơn Vị Tính";
+            this.coldvt.FieldName = "DONVITINH";
+            this.coldvt.Name = "coldvt";
+            this.coldvt.Visible = true;
+            this.coldvt.VisibleIndex = 1;
             // 
             // lbDVT
             // 
@@ -482,53 +529,6 @@
             this.lbnhomhang.Size = new System.Drawing.Size(65, 13);
             this.lbnhomhang.TabIndex = 2;
             this.lbnhomhang.Text = "Nhà cung cấp";
-            // 
-            // colmathue
-            // 
-            this.colmathue.Caption = "Mã Thuế";
-            this.colmathue.FieldName = "MATH";
-            this.colmathue.Name = "colmathue";
-            this.colmathue.Visible = true;
-            this.colmathue.VisibleIndex = 0;
-            // 
-            // colsothue
-            // 
-            this.colsothue.Caption = "Số Thuế";
-            this.colsothue.FieldName = "SOTHUE";
-            this.colsothue.Name = "colsothue";
-            this.colsothue.Visible = true;
-            this.colsothue.VisibleIndex = 1;
-            // 
-            // colmadvt
-            // 
-            this.colmadvt.Caption = "Mã DVT";
-            this.colmadvt.FieldName = "MADVT";
-            this.colmadvt.Name = "colmadvt";
-            this.colmadvt.Visible = true;
-            this.colmadvt.VisibleIndex = 0;
-            // 
-            // coldvt
-            // 
-            this.coldvt.Caption = "Đơn Vị Tính";
-            this.coldvt.FieldName = "DONVITINH";
-            this.coldvt.Name = "coldvt";
-            this.coldvt.Visible = true;
-            this.coldvt.VisibleIndex = 1;
-            // 
-            // colmanh
-            // 
-            this.colmanh.FieldName = "MANCC";
-            this.colmanh.Name = "colmanh";
-            this.colmanh.Visible = true;
-            this.colmanh.VisibleIndex = 0;
-            // 
-            // colten
-            // 
-            this.colten.Caption = "gridColumn2";
-            this.colten.FieldName = "TENNCC";
-            this.colten.Name = "colten";
-            this.colten.Visible = true;
-            this.colten.VisibleIndex = 1;
             // 
             // ThemMatHang
             // 

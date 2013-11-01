@@ -88,8 +88,7 @@ namespace WindowsFormsApplication1
             barIn.Caption = LamVN.IN.ToString();
             barXuat.Caption = LamVN.XUATDULIEU.ToString();
             barNhap.Caption = LamVN.NHAPDULIEU.ToString();
-            barThoat.Caption = LamVN.THOAT.ToString();
-
+      
         }
         public void LoadEL()
         {
@@ -106,7 +105,7 @@ namespace WindowsFormsApplication1
             barIn.Caption = LamEL.IN.ToString();
             barXuat.Caption = LamEL.XUATDULIEU.ToString();
             barNhap.Caption = LamEL.NHAPDULIEU.ToString();
-            barThoat.Caption = LamEL.THOAT.ToString();
+     
         }
         private void loadkhuvuc()
         {
@@ -381,6 +380,11 @@ namespace WindowsFormsApplication1
         private void gridView1_CustomSummaryExists(object sender, DevExpress.Data.CustomSummaryExistEventArgs e)
         {
 
+        }
+
+        private void frmKhuVuc_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
 
     }

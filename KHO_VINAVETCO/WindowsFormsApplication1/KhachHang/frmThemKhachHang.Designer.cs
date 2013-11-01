@@ -78,6 +78,8 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txttenkh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdiachi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnganhang.Properties)).BeginInit();
@@ -97,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbbanggia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // colMAKH
@@ -200,7 +203,7 @@
             // 
             this.txttenkh.Location = new System.Drawing.Point(114, 35);
             this.txttenkh.Name = "txttenkh";
-            this.txttenkh.Size = new System.Drawing.Size(562, 20);
+            this.txttenkh.Size = new System.Drawing.Size(228, 20);
             this.txttenkh.TabIndex = 1;
             this.txttenkh.Validating += new System.ComponentModel.CancelEventHandler(this.txttenkh_Validating);
             this.txttenkh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttenkh_KeyPress);
@@ -562,11 +565,35 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(356, 77);
+            this.labelControl4.Location = new System.Drawing.Point(358, 77);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(42, 13);
             this.labelControl4.TabIndex = 25;
             this.labelControl4.Text = "Bảng Giá";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(358, 42);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(70, 13);
+            this.labelControl5.TabIndex = 28;
+            this.labelControl5.Text = "Tiền Trả Trước";
+            // 
+            // cbotientra
+            // 
+            this.cbotientra.Location = new System.Drawing.Point(445, 39);
+            this.cbotientra.Name = "cbotientra";
+            this.cbotientra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbotientra.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.cbotientra.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cbotientra.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.cbotientra.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cbotientra.Properties.Mask.EditMask = "n0";
+            this.cbotientra.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.cbotientra.Properties.ReadOnly = true;
+            this.cbotientra.Size = new System.Drawing.Size(231, 20);
+            this.cbotientra.TabIndex = 126;
             // 
             // frmThemKhachHang
             // 
@@ -574,6 +601,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 330);
             this.ControlBox = false;
+            this.Controls.Add(this.cbotientra);
+            this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.cmbbanggia);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl4);
@@ -637,6 +666,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbbanggia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -696,5 +726,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.CalcEdit cbotientra;
     }
 }

@@ -20,7 +20,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
        
-        string sma, sten, smakv,sdiachi,smasothue,ssotaikhoan,snganhang,ssdt,semail,sfax,swebsite, stinhtrang;
+        string sma, sten, smakv,sdiachi,smasothue,ssotaikhoan,snganhang,ssdt,semail,sfax,swebsite, stinhtrang,stientratruoc;
         DTO DTO = new DTO();
         CTL CTL = new CTL();
         
@@ -94,8 +94,7 @@ namespace WindowsFormsApplication1
             barIn.Caption = LamVN.IN.ToString();
             barXuat.Caption = LamVN.XUATDULIEU.ToString();
             barNhap.Caption = LamVN.NHAPDULIEU.ToString();
-            barThoat.Caption = LamVN.THOAT.ToString();
-
+      
         }
         public void LoadEL()
         {
@@ -120,8 +119,7 @@ namespace WindowsFormsApplication1
             barIn.Caption = LamEL.IN.ToString();
             barXuat.Caption = LamEL.XUATDULIEU.ToString();
             barNhap.Caption = LamEL.NHAPDULIEU.ToString();
-            barThoat.Caption = LamEL.THOAT.ToString();
-
+     
         }
         private void LOADNHACC()
         {
@@ -183,6 +181,7 @@ namespace WindowsFormsApplication1
                 sfax = dtr[9].ToString();
                 swebsite = dtr[10].ToString();
                 stinhtrang = dtr[11].ToString();
+                stientratruoc = dtr[12].ToString();
             }
             catch (Exception ex)
             {
@@ -249,6 +248,7 @@ namespace WindowsFormsApplication1
                     sfax = "";
                     swebsite ="";
                     stinhtrang ="";
+                    stientratruoc = "";
                 }
             }
             else
@@ -288,6 +288,7 @@ namespace WindowsFormsApplication1
                     sfax = "";
                     swebsite = "";
                     stinhtrang = "";
+                    stientratruoc = "";
                 }
             }
             
@@ -330,7 +331,7 @@ namespace WindowsFormsApplication1
                 sua.WEBSITE = swebsite;
                 sua.TINHTRANG = stinhtrang;
                 sua.EMAIL = semail;
-
+                sua.TIENTRATRUOC = stientratruoc;
                 sua.ShowDialog();
                 LOADNHACC();
             }
@@ -375,6 +376,7 @@ namespace WindowsFormsApplication1
                     sua.MASOTHUE = smasothue;
                     sua.FAX = sfax;
                     sua.SOTAIKHOAN = ssotaikhoan;
+                    sua.TIENTRATRUOC = stientratruoc;
                     sua.NGANHANG = snganhang;
                     sua.WEBSITE = swebsite;
                     sua.TINHTRANG = stinhtrang;
@@ -392,6 +394,11 @@ namespace WindowsFormsApplication1
         private void barNapLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LOADNHACC();
+        }
+
+        private void frmNhaCungCap_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
     }
 }

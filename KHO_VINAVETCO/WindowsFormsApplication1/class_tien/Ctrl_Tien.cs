@@ -33,6 +33,11 @@ namespace WindowsFormsApplication1
         {
             return CNKH.GETCODEACTIVE();
         }
+        public DataTable GETTIENTRATRUOC()
+        {
+            return CNKH.GETTIENTRATRUOC();
+        }
+
         public DataTable GETBANGGIA()
         {
             return CNKH.GETBANGGIA();

@@ -701,6 +701,11 @@ namespace WindowsFormsApplication1
             rep.ShowPreviewDialog();
         }
 
+        private void frmCongNoKH_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
+        }
+
   
 
 

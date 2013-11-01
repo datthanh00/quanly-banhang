@@ -39,7 +39,6 @@
             this.barIn = new DevExpress.XtraBars.BarButtonItem();
             this.barXuat1 = new DevExpress.XtraBars.BarButtonItem();
             this.barNhap = new DevExpress.XtraBars.BarButtonItem();
-            this.barThoat = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -66,6 +65,7 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this._TENBG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.girdcontrol)).BeginInit();
@@ -91,7 +91,6 @@
             this.barIn,
             this.barXuat1,
             this.barNhap,
-            this.barThoat,
             this.barThem1});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 10;
@@ -111,8 +110,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barNapLai, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barIn, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barXuat1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barNhap, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barThoat, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barNhap, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -175,14 +173,6 @@
             this.barNhap.Name = "barNhap";
             this.barNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNhap_ItemClick);
             // 
-            // barThoat
-            // 
-            resources.ApplyResources(this.barThoat, "barThoat");
-            this.barThoat.Glyph = global::WindowsFormsApplication1.Properties.Resources.close2;
-            this.barThoat.Id = 8;
-            this.barThoat.Name = "barThoat";
-            this.barThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
-            // 
             // barDockControlTop
             // 
             resources.ApplyResources(this.barDockControlTop, "barDockControlTop");
@@ -244,7 +234,8 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
-            this._TENBG});
+            this._TENBG,
+            this.gridColumn1});
             this.gridViewKHACHHANG.GridControl = this.girdcontrol;
             this.gridViewKHACHHANG.Name = "gridViewKHACHHANG";
             this.gridViewKHACHHANG.OptionsBehavior.Editable = false;
@@ -382,6 +373,14 @@
             this._TENBG.FieldName = "TENBG";
             this._TENBG.Name = "_TENBG";
             // 
+            // gridColumn1
+            // 
+            resources.ApplyResources(this.gridColumn1, "gridColumn1");
+            this.gridColumn1.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn1.FieldName = "TIENTRATRUOC";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
             // dxErrorProvider1
             // 
             this.dxErrorProvider1.ContainerControl = this;
@@ -395,9 +394,10 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmKhachHang";
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmKhachHang_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.girdcontrol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewKHACHHANG)).EndInit();
@@ -422,7 +422,6 @@
         private DevExpress.XtraBars.BarButtonItem barIn;
         private DevExpress.XtraBars.BarButtonItem barXuat1;
         private DevExpress.XtraBars.BarButtonItem barNhap;
-        private DevExpress.XtraBars.BarButtonItem barThoat;
         private DevExpress.XtraGrid.GridControl girdcontrol;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewKHACHHANG;
         private DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider dxErrorProvider1;
@@ -445,5 +444,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn _TENBG;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
     }
 }

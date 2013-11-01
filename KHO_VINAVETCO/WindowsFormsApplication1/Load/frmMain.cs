@@ -665,6 +665,17 @@ namespace WindowsFormsApplication1
                             ButtonACTIVE.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
                             break;
                         }
+                    case "36":
+                        if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
+                        {
+                            buttonNOPTIENTRUOC.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+                            break;
+                        }
+                        else
+                        {
+                            buttonNOPTIENTRUOC.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+                            break;
+                        }
                 }
             }
                
@@ -1791,7 +1802,6 @@ namespace WindowsFormsApplication1
                 notifyIcon1.Dispose();
                 Application.Exit();
             }
-            
         }
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -2303,6 +2313,9 @@ namespace WindowsFormsApplication1
                 case "CODEACTIVE":
                     imacn = 35;
                     break;
+                case "NOPTIENTRUOC":
+                    imacn = 36;
+                    break;
             }
 
             PublicVariable.TATCA = PhanQuyen.Rows[imacn - 1]["TATCA"].ToString();
@@ -2612,6 +2625,31 @@ namespace WindowsFormsApplication1
                 FrmINITCODEActive dt = new FrmINITCODEActive();
                 dt.deDongTab = new FrmINITCODEActive._deDongTab(vDOngTab);
                 
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
+        }
+
+        private void barButtonItem2_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            SetPhanQuyen("36");
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            //  bKTraMoTab = true;
+            sTieuDe = "Nộp Tiền Trước";
+
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "NOPTIENTRUOC";
+                FrmNoptientruoc dt = new FrmNoptientruoc();
+                dt.deDongTab = new FrmNoptientruoc._deDongTab(vDOngTab);
+
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(dt);

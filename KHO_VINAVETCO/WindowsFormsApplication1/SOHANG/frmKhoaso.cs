@@ -111,17 +111,10 @@ namespace WindowsFormsApplication1
 
         }
 
-
-
-       
-      
-
-
-       
-
-
-
-
+        private void frmKhoaso_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
+        }
 
     }
 }

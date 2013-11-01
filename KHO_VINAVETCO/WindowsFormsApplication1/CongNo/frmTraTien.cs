@@ -232,7 +232,7 @@ namespace WindowsFormsApplication1
             iNgonNgu = 0;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             barSTluu.Caption = Tien_VN.barSTluu.ToString();
-            barstDong.Caption = Tien_VN.barstDong.ToString();
+  
             barIn.Caption = Tien_VN.barIn.ToString();
            
             lbTienno.Text = Tien_VN.lbTienno.ToString();
@@ -249,7 +249,7 @@ namespace WindowsFormsApplication1
             iNgonNgu = 1;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             barSTluu.Caption = Tien_EL.barSTluu.ToString();
-            barstDong.Caption = Tien_EL.barstDong.ToString();
+          
             barIn.Caption = Tien_EL.barIn.ToString();
            
             lbTienno.Text = Tien_EL.lbTienno.ToString();

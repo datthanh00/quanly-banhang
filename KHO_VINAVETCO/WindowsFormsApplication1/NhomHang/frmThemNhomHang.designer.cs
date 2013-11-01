@@ -175,7 +175,7 @@
             this.Controls.Add(this.lbghichu);
             this.Controls.Add(this.lbten);
             this.Controls.Add(this.lbma);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmThemNhomHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thêm Sửa Nhóm Hàng";

@@ -100,6 +100,7 @@
             this.barButtonnhapkhac = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonxuatkhac = new DevExpress.XtraBars.BarButtonItem();
             this.ButtonACTIVE = new DevExpress.XtraBars.BarButtonItem();
+            this.buttonNOPTIENTRUOC = new DevExpress.XtraBars.BarButtonItem();
             this.ribDanhMuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribDoiTac = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribKhoHang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -231,9 +232,10 @@
             this.barButtonphaithudauky,
             this.barButtonnhapkhac,
             this.barButtonxuatkhac,
-            this.ButtonACTIVE});
+            this.ButtonACTIVE,
+            this.buttonNOPTIENTRUOC});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 124;
+            this.ribbon.MaxItemId = 125;
             this.ribbon.Name = "ribbon";
             this.ribbon.PageHeaderItemLinks.Add(this.btAnh);
             this.ribbon.PageHeaderItemLinks.Add(this.btNgonNguViet);
@@ -251,7 +253,7 @@
             this.repositoryItemComboBox3});
             this.ribbon.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ribbon.SelectedPage = this.ribChucNang;
-            this.ribbon.Size = new System.Drawing.Size(1182, 148);
+            this.ribbon.Size = new System.Drawing.Size(1092, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ItemLinks.Add(this.barSubItem1);
             // 
@@ -804,6 +806,15 @@
             this.ButtonACTIVE.Name = "ButtonACTIVE";
             this.ButtonACTIVE.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonACTIVE_ItemClick);
             // 
+            // buttonNOPTIENTRUOC
+            // 
+            this.buttonNOPTIENTRUOC.Caption = "Nộp Tiền Trước";
+            this.buttonNOPTIENTRUOC.Id = 124;
+            this.buttonNOPTIENTRUOC.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.tonkho;
+            this.buttonNOPTIENTRUOC.LargeWidth = 70;
+            this.buttonNOPTIENTRUOC.Name = "buttonNOPTIENTRUOC";
+            this.buttonNOPTIENTRUOC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick_1);
+            // 
             // ribDanhMuc
             // 
             this.ribDanhMuc.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -931,6 +942,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtontondau);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtoncongnodau);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonphaithudauky);
+            this.ribbonPageGroup1.ItemLinks.Add(this.buttonNOPTIENTRUOC);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "Đầu Kỳ";
@@ -1019,7 +1031,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 452);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1182, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1092, 23);
             // 
             // clientPanel
             // 
@@ -1028,7 +1040,7 @@
             this.clientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientPanel.Location = new System.Drawing.Point(0, 148);
             this.clientPanel.Name = "clientPanel";
-            this.clientPanel.Size = new System.Drawing.Size(1182, 304);
+            this.clientPanel.Size = new System.Drawing.Size(1092, 304);
             this.clientPanel.TabIndex = 2;
             // 
             // tabControl12
@@ -1041,7 +1053,7 @@
             this.tabControl12.Name = "tabControl12";
             this.tabControl12.SelectedTabFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.tabControl12.SelectedTabIndex = -1;
-            this.tabControl12.Size = new System.Drawing.Size(1182, 304);
+            this.tabControl12.Size = new System.Drawing.Size(1092, 304);
             this.tabControl12.Style = DevComponents.DotNetBar.eTabStripStyle.Office2007Document;
             this.tabControl12.TabIndex = 5;
             this.tabControl12.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
@@ -1142,7 +1154,7 @@
             // 
             // cbkho
             // 
-            this.cbkho.Location = new System.Drawing.Point(989, 92);
+            this.cbkho.Location = new System.Drawing.Point(893, 92);
             this.cbkho.Name = "cbkho";
             this.cbkho.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -1181,7 +1193,7 @@
             // 
             // lbkho
             // 
-            this.lbkho.Location = new System.Drawing.Point(927, 96);
+            this.lbkho.Location = new System.Drawing.Point(841, 96);
             this.lbkho.Name = "lbkho";
             this.lbkho.Size = new System.Drawing.Size(46, 13);
             this.lbkho.TabIndex = 27;
@@ -1192,7 +1204,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1182, 475);
+            this.ClientSize = new System.Drawing.Size(1092, 475);
             this.Controls.Add(this.clientPanel);
             this.Controls.Add(this.cbkho);
             this.Controls.Add(this.ribbonStatusBar);
@@ -1336,5 +1348,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonxuatkhac;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem ButtonACTIVE;
+        private DevExpress.XtraBars.BarButtonItem buttonNOPTIENTRUOC;
     }
 }

@@ -24,6 +24,7 @@ namespace WindowsFormsApplication1
         {
 
         }
+      
         clDTO dto = new clDTO();
         clCtrl ctr = new clCtrl();
         //byte[] imageData; 

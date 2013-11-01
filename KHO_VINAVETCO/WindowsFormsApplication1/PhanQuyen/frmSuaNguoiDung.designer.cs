@@ -35,16 +35,16 @@
             this.txttendangnhap = new DevExpress.XtraEditors.TextEdit();
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gBoPhan = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colTenBP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMABP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtten = new DevExpress.XtraEditors.TextEdit();
             this.txtma = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
-            this.colTenBP = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMABP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -57,11 +57,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtten.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtma.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -145,6 +145,22 @@
             this.gBoPhan.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gBoPhan.OptionsView.ShowGroupPanel = false;
             // 
+            // colTenBP
+            // 
+            this.colTenBP.Caption = "gridColumn1";
+            this.colTenBP.FieldName = "TENBOPHAN";
+            this.colTenBP.Name = "colTenBP";
+            this.colTenBP.Visible = true;
+            this.colTenBP.VisibleIndex = 0;
+            // 
+            // colMABP
+            // 
+            this.colMABP.Caption = "gridColumn2";
+            this.colMABP.FieldName = "MABP";
+            this.colMABP.Name = "colMABP";
+            this.colMABP.Visible = true;
+            this.colMABP.VisibleIndex = 1;
+            // 
             // txtten
             // 
             this.txtten.Location = new System.Drawing.Point(88, 36);
@@ -182,39 +198,6 @@
             this.layoutControlGroup1.Text = "Root";
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 96);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(96, 39);
-            this.emptySpaceItem1.Text = "emptySpaceItem1";
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // simpleSeparator1
-            // 
-            this.simpleSeparator1.CustomizationFormText = "simpleSeparator1";
-            this.simpleSeparator1.Location = new System.Drawing.Point(314, 96);
-            this.simpleSeparator1.Name = "simpleSeparator1";
-            this.simpleSeparator1.Size = new System.Drawing.Size(2, 39);
-            this.simpleSeparator1.Text = "simpleSeparator1";
-            // 
-            // colTenBP
-            // 
-            this.colTenBP.Caption = "gridColumn1";
-            this.colTenBP.FieldName = "TENBOPHAN";
-            this.colTenBP.Name = "colTenBP";
-            this.colTenBP.Visible = true;
-            this.colTenBP.VisibleIndex = 0;
-            // 
-            // colMABP
-            // 
-            this.colMABP.Caption = "gridColumn2";
-            this.colMABP.FieldName = "MABP";
-            this.colMABP.Name = "colMABP";
-            this.colMABP.Visible = true;
-            this.colMABP.VisibleIndex = 1;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtten;
@@ -244,6 +227,23 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(316, 24);
             this.layoutControlItem4.Text = "Tên đăng nhập";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(72, 13);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 96);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(96, 39);
+            this.emptySpaceItem1.Text = "emptySpaceItem1";
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // simpleSeparator1
+            // 
+            this.simpleSeparator1.CustomizationFormText = "simpleSeparator1";
+            this.simpleSeparator1.Location = new System.Drawing.Point(314, 96);
+            this.simpleSeparator1.Name = "simpleSeparator1";
+            this.simpleSeparator1.Size = new System.Drawing.Size(2, 39);
+            this.simpleSeparator1.Text = "simpleSeparator1";
             // 
             // layoutControlItem6
             // 
@@ -288,7 +288,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmSuaNguoiDung";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmSuaNguoiDung";
+            this.Text = "Sửa Người Dùng";
             this.Load += new System.EventHandler(this.frmSuaNguoiDung_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -299,11 +299,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtten.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtma.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();

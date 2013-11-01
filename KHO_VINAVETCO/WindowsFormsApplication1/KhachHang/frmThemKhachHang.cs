@@ -37,7 +37,7 @@ namespace WindowsFormsApplication1
         public string MACHUYEN;
         DataTable dt = new DataTable();
         public string Nhan;
-        public string TenKH, sMaKV, sMaNV, sMaBG, sTenKV, DIACHI, SDT, SOTK, NGANHANG, MASOTHUE, FAX, YAHOO, WEBSITE, SKYPE, TINHTRANG;
+        public string TenKH, sMaKV, sMaNV, sMaBG, sTenKV, DIACHI, SDT, SOTK, NGANHANG, MASOTHUE, FAX, YAHOO, WEBSITE, SKYPE, TINHTRANG,TIENTRATRUOC;
         public int kiemtra;
         public void loadma()
         {
@@ -402,6 +402,7 @@ namespace WindowsFormsApplication1
                 txtwebsite.Text = WEBSITE;
                 txtyahoo.Text = YAHOO;
                 txtfax.Text = FAX;
+                cbotientra.Value = Convert.ToDecimal(TIENTRATRUOC);
                 if (TINHTRANG == "True")
                 {
                     checkTT.Checked = true;

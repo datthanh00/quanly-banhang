@@ -155,7 +155,7 @@ namespace WindowsFormsApplication1.KHtra
         public int iNgonNgu;
         public frmMain frm;
         public string sTenNV, sMaNV;
-        public string THEM, XOA, SUA, IN, XEM;
+        public string THEM, XOA, SUA, IN, XEM, STYPEMONEY;
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
         {
             XEM = PublicVariable.XEM;
@@ -213,8 +213,8 @@ namespace WindowsFormsApplication1.KHtra
             if (rowselect != null)
             {
                 txtmakh.Text = gridKH1.GetFocusedRowCellValue("MAKH").ToString();
-                txtSDT.Text = gridKH1.GetFocusedRowCellValue("SDT").ToString();
-                txtDiachi.Text = gridKH1.GetFocusedRowCellValue("DIACHI").ToString();
+                //txtSDT.Text = gridKH1.GetFocusedRowCellValue("SDT").ToString();
+                //txtDiachi.Text = gridKH1.GetFocusedRowCellValue("DIACHI").ToString();
                 dtoNCC.MAKH = txtmakh.Text;  
                 DataTable tblayno = ctlNCC.LAYTIENNOKH(dtoNCC);
                 if (tblayno.Rows.Count > 0)
@@ -265,8 +265,8 @@ namespace WindowsFormsApplication1.KHtra
                         PublicVariable.SQL_TRAXUAT = "";
                         dtoNCC.MAKH = txtmakh.Text;
                         dtoNCC.TENKH = cboTenKH.Text;
-                        dtoNCC.DIACHI = txtDiachi.Text;
-                        dtoNCC.SDT = txtSDT.Text;
+                        //dtoNCC.DIACHI = txtDiachi.Text;
+                        //dtoNCC.SDT = txtSDT.Text;
                         dtoNCC.CKTIEN = cktien.Value.ToString();
                         
                         dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
@@ -280,13 +280,31 @@ namespace WindowsFormsApplication1.KHtra
                         dtoNCC.TYPE = "1";
                         int rowcount = gridCTHOADON.DataRowCount;
 
+                        if (CheckGoiDau.Checked == true)
+                        {
+
+                            dtoNCC.TIENDATRA = dtoNCC.TIENPHAITRA;
+
+                        }
 
                         if (rowcount == 0)
                         {
                             XtraMessageBox.Show("Hãy chọn một sản phẩm trước khi lưu");
                             return;
                         }
-
+                        if (CheckTienmat.Checked == true)
+                        {
+                            if (cbotientra.Value <= 0)
+                            {
+                                XtraMessageBox.Show("bạn đã chọn thanh toán bằng tiền mặt nên số tiền trả phải lớn hơn 0");
+                                return;
+                            }
+                            else if (Convert.ToDouble(txtthanhtien.Value) < Convert.ToDouble(dtoNCC.TIENDATRA))
+                            {
+                                MessageBox.Show("Số tiền trả của bạn không thể lớn hơn số tiền trong hóa đơn");
+                                return;
+                            }
+                        }
                         if (txtthanhtien.Value > 100000000000)
                         {
                             XtraMessageBox.Show("Hóa đơn giá trị quá lớn bạn không thể lưu");
@@ -389,7 +407,7 @@ namespace WindowsFormsApplication1.KHtra
                                 MessageBox.Show("Vui lòng thử lưu lại");
                                 return;
                             }
-                      
+                            insert_PHIEUTHUCHI(dtoNCC.MAKH, dtoNCC.TIENDATRA, dtoNCC.MAHDX);
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
@@ -477,6 +495,9 @@ namespace WindowsFormsApplication1.KHtra
                             {
                                 return;
                             }
+
+                            update_PHIEUTHUCHI(dtoNCC.MAKH, dtoNCC.TIENDATRA, dtoNCC.MAHDX);
+
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_TRAXUAT);
                             ctlNCC.executeNonQuery("INSERT INTO [LOG]([MAHD],[LOG],[LYDO]) VALUES('" + txtMaHD.Text + "',N'" + PublicVariable.TMPlog + "',N'" + PublicVariable.TMPtring + "') ");
                             
@@ -504,7 +525,88 @@ namespace WindowsFormsApplication1.KHtra
             
         }
         double conlai, thanhtien, tientra;
+        //TYPEMONEY: 1: TIEN MAT, 2: TIEN GOI DAU, 3: CONG NO
+        public void insert_PHIEUTHUCHI(String MAKH, String SOTIEN, String MAHDX)
+        {
+            ketnoi connect = new ketnoi();
+            String MAPC = connect.sTuDongDienMatraHoaDonXuat("1");
+            String IDNHAP = connect.getIDNHAP();
+            if (CheckTienmat.Checked == true)
+            {
+                PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n  INSERT INTO PHIEUCHI (MAPC,MANV,NGAYCHI,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY) VALUES('" + MAPC + "', '" + sMaNV + "',convert(varchar,getDate(),101)," + SOTIEN + ",'" + PublicVariable.MAKHO + "','" + MAKH + "','" + IDNHAP + "',1)";
+                PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE TRAHOADONXUAT SET MAPC= '" + MAPC + "', TYPEMONEY=1 WHERE MAHDX='" + MAHDX + "' ";
+            }
+            else if (CheckGoiDau.Checked == true)
+            {
+                PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC+ " + SOTIEN + " WHERE MAKH='" + MAKH + "' ";
+                PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n INSERT INTO PHIEUCHI (MAPC,MANV,NGAYCHI,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY) VALUES('" + MAPC + "', '" + sMaNV + "',convert(varchar,getDate(),101)," + SOTIEN + ",'" + PublicVariable.MAKHO + "','" + MAKH + "','" + IDNHAP + "',2)";
+                PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE TRAHOADONXUAT SET MAPC= '" + MAPC + "', TYPEMONEY=2 WHERE MAHDX='" + MAHDX + "' ";
+            }
+            else
+            {
+                PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n INSERT INTO PHIEUCHI (MAPC,MANV,NGAYCHI,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY) VALUES('" + MAPC + "', '" + sMaNV + "',convert(varchar,getDate(),101),0,'" + PublicVariable.MAKHO + "','" + MAKH + "','" + IDNHAP + "',3)";
+                PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE TRAHOADONXUAT SET MAPC= '" + MAPC + "', TYPEMONEY=3 WHERE MAHDX='" + MAHDX + "' ";
+                
+            }
+        }
+        public void update_PHIEUTHUCHI(String MAKH, String SOTIEN, String MAHDX)
+        {
+            int OLD_TYPE = 0;
 
+            ketnoi connect = new ketnoi();
+            String SQL = "SELECT MAPC FROM TRAHOADONXUAT WHERE MAHDX='" + MAHDX + "'";
+            DataTable DTTYPE = connect.getdata(SQL);
+            OLD_TYPE = Convert.ToInt32(STYPEMONEY);
+            string MAPC = DTTYPE.Rows[0][0].ToString();
+
+            if (OLD_TYPE == PublicVariable.ComboTraXuat)
+            {
+                if (CheckTienmat.Checked == true)
+                {
+                    PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=" + SOTIEN + " WHERE MAPC ='" + MAPC + "'";
+
+                }
+                else if (CheckGoiDau.Checked == true)
+                {
+                    String SQL1 = "SELECT SOTIEN FROM PHIEUCHI WHERE MAPC ='" + MAPC + "'";
+                    DataTable DT = connect.getdata(SQL1);
+                    Int64 TIENTRUOC = Convert.ToInt64(DT.Rows[0][0].ToString());
+                    PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC- " + TIENTRUOC + "+" + SOTIEN + " WHERE MAKH='" + MAKH + "' ";
+                    PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=" + SOTIEN + " WHERE MAPC ='" + MAPC + "'";
+                }
+
+            }
+            else
+            {
+                if (OLD_TYPE == 2)
+                {
+                    String SQL1 = "SELECT SOTIEN FROM PHIEUCHI WHERE MAPC ='" + MAPC + "'";
+                    DataTable DT = connect.getdata(SQL1);
+                    Int64 TIENTRUOC = Convert.ToInt64(DT.Rows[0][0].ToString());
+                    PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC- " + TIENTRUOC + " WHERE MAKH='" + MAKH + "' ";
+                }
+
+                if (CheckTienmat.Checked == true)
+                {
+                    PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE PHIEUCHI SET SOTIEN=" + SOTIEN + " , TYPEMONEY=1 WHERE MAPC ='" + MAPC + "'";
+                    PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE TRAHOADONXUAT SET TYPEMONEY=1 WHERE MAHDX='" + MAHDX + "' ";
+                }
+                else if (CheckGoiDau.Checked == true)
+                {
+                    PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC+ " + SOTIEN + " WHERE MAKH='" + MAKH + "' ";
+
+                    PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=" + SOTIEN + " , TYPEMONEY=2 WHERE MAPC ='" + MAPC + "'";
+                    PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE TRAHOADONXUAT SET TYPEMONEY=2 WHERE MAHDX='" + MAHDX + "' ";
+
+                }
+                else
+                {
+                    PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=0 , TYPEMONEY=3 WHERE MAPC ='" + MAPC + "'";
+                    PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE TRAHOADONXUAT SET TYPEMONEY=3 WHERE MAHDX='" + MAHDX + "' ";
+                }
+                PublicVariable.TMPtring = "---SỬA PHƯƠNG THỨC TRẢ TIỀN ---";
+            }
+        }
         public void insert_HoadonChitietxuat(string mahdx, String mamh, Double SoLuong, string DonGia, string tienthu, string gianhap, string HSD, String KMAI, int STT)
         {
             try
@@ -607,7 +709,7 @@ namespace WindowsFormsApplication1.KHtra
                     string ten = "Khách trả hàng";
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETTRACTHOADONXUATIN(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text, cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(),cktien.Value.ToString(), txtMaHD.Text, ten);
+                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, "", cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(),cktien.Value.ToString(), txtMaHD.Text, ten);
                     rep.ShowPreviewDialog();
                 }
                 else
@@ -659,8 +761,8 @@ namespace WindowsFormsApplication1.KHtra
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             txtmakh.Text = "";
             cboTenKH.Text = "";
-            txtDiachi.Text = "";
-            txtSDT.Text = "";           
+            //txtDiachi.Text = "";
+            //txtSDT.Text = "";           
             txtMaHD.Text = "";
             txtNgayXuat.Text = DateTime.Now.ToString("yyy/MM/dd");
             txtNo.Text = "0";
@@ -689,6 +791,22 @@ namespace WindowsFormsApplication1.KHtra
             loadgridKhachHang();
             Grid_sanpham.DataSource = null;
             loadgridCTHOADON();
+
+            if (PublicVariable.ComboTraXuat == 1)
+            {
+                CheckTienmat.Checked = true;
+                cbotientra.Properties.ReadOnly = false;
+            }
+            else if (PublicVariable.ComboTraXuat == 2)
+            {
+                CheckGoiDau.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
+            else
+            {
+                CheckCongNo.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
         }
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -944,6 +1062,7 @@ namespace WindowsFormsApplication1.KHtra
         private Int64 tienchuack = 0;
         public void gettotal()
         {
+    
             int rowcount = gridCTHOADON.RowCount;
             Double total = 0;
             for (int i = 0; i < rowcount; i++)
@@ -967,6 +1086,10 @@ namespace WindowsFormsApplication1.KHtra
             }
             total = total - Convert.ToInt64(cktien.Value);
             txtthanhtien.Text = total.ToString();
+            if (PublicVariable.ComboTraXuat == 2)
+            {
+                cbotientra.Value = Convert.ToDecimal(txtthanhtien.Text);
+            }
             if (cbotientra.Text != "")
             {
                 thanhtien = Convert.ToDouble(txtthanhtien.Value);
@@ -1022,13 +1145,9 @@ namespace WindowsFormsApplication1.KHtra
                         return;
                     }
 
-                    string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime , TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
+                    string SQLNGAY = "SELECT  TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
                     DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
-                    if (txtNgayXuat.Text != dtn.Rows[0][0].ToString())
-                    {
-                        MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
-                        return;
-                    }
+         
 
                     PublicVariable.TMPtring = "";
                     frmxoahd xhd = new frmxoahd();
@@ -1056,8 +1175,8 @@ namespace WindowsFormsApplication1.KHtra
 
                     dtoNCC.MAKH = txtmakh.Text;
                     dtoNCC.TENKH = cboTenKH.Text;
-                    dtoNCC.DIACHI = txtDiachi.Text;
-                    dtoNCC.SDT = txtSDT.Text;
+                    //dtoNCC.DIACHI = txtDiachi.Text;
+                    //dtoNCC.SDT = txtSDT.Text;
 
                     // dtoNCC.WEBSITE = txtWeb.Text;
                     dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
@@ -1077,8 +1196,8 @@ namespace WindowsFormsApplication1.KHtra
                 dtoNCC.MANV = sMaNV;
                 dtoNCC.MAKH = txtmakh.Text;
                 dtoNCC.TENKH = cboTenKH.Text;
-                dtoNCC.DIACHI = txtDiachi.Text;
-                dtoNCC.SDT = txtSDT.Text;
+                //dtoNCC.DIACHI = txtDiachi.Text;
+                //dtoNCC.SDT = txtSDT.Text;
                 dtoNCC.CKTIEN = cktien.Value.ToString();
                 // dtoNCC.WEBSITE = txtWeb.Text;
                 dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
@@ -1111,7 +1230,7 @@ namespace WindowsFormsApplication1.KHtra
 
             txtMaHD.Text = MAHDX;
             txtlohang.Text = MAHDX;
-            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,GHICHU,CKTIEN,IDNHAP FROM (SELECT * FROM traHOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,GHICHU,CKTIEN,IDNHAP,TYPEMONEY FROM (SELECT * FROM traHOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
             txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
@@ -1119,7 +1238,21 @@ namespace WindowsFormsApplication1.KHtra
             txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();
             IDNHAP = DT.Rows[0]["IDNHAP"].ToString();
             txtghichu.Text = DT.Rows[0]["GHICHU"].ToString();
-
+            STYPEMONEY = DT.Rows[0]["TYPEMONEY"].ToString();
+            if (DT.Rows[0]["TYPEMONEY"].ToString() == "1")
+            {
+                CheckTienmat.Checked = true;
+            }
+            else if (DT.Rows[0]["TYPEMONEY"].ToString() == "2")
+            {
+                CheckGoiDau.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
+            else
+            {
+                CheckCongNo.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
             Int64 _cktien = Convert.ToInt64(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
@@ -1560,6 +1693,51 @@ namespace WindowsFormsApplication1.KHtra
             LOAD_TTKH();
             loadGrid_sanpham();
         }
+
+        private void CheckTienmat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckTienmat.Checked == true)
+            {
+                PublicVariable.ComboTraXuat = 1;
+                cbotientra.Properties.ReadOnly = false;
+                if (isnhap)
+                {
+                    cbotientra.Value = 0;
+                }
+                gettotal();
+            }
+        }
+
+        private void CheckGoiDau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckGoiDau.Checked == true)
+            {
+                PublicVariable.ComboTraXuat = 2;
+                cbotientra.Properties.ReadOnly = true;
+
+                    cbotientra.Value = Convert.ToDecimal(txtthanhtien.Text);
+                
+                gettotal();
+            }
+        }
+
+        private void CheckCongNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckCongNo.Checked == true)
+            {
+                PublicVariable.ComboTraXuat = 3;
+                cbotientra.Properties.ReadOnly = true;
+                cbotientra.Value = 0;
+                gettotal();
+            }
+        }
+
+        private void frmKHtra_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
+        }
+
+
 
     }
 }

@@ -94,7 +94,7 @@ namespace WindowsFormsApplication1
             btxem.Text = resVietNam.btXem.ToString();
             btin.Text = resVietNam.btIn.ToString();
             BtXuatdulieu.Text = resVietNam.btXuat.ToString();
-            btdong.Text = resVietNam.btDong.ToString();
+
             //colmahang.Caption = resVietNam.colmahang.ToString();
             colmamhathang.Caption = resVietNam.colmahang.ToString();
             colhinhanh.Caption = resVietNam.colhinhanh.ToString();
@@ -128,7 +128,7 @@ namespace WindowsFormsApplication1
            btxem.Text = resEngLand.btXem.ToString();
            btin.Text = resEngLand.btIn.ToString();
            BtXuatdulieu.Text = resEngLand.btXuat.ToString();
-           btdong.Text = resEngLand.btDong.ToString();
+    
             //colmahang.Caption = resVietNam.colmahang.ToString();
             colmamhathang.Caption = resEngLand.colmahang.ToString();
             colhinhanh.Caption = resEngLand.colhinhanh.ToString();
@@ -477,6 +477,11 @@ namespace WindowsFormsApplication1
             e.Graph.Font = new Font("Tahoma", 11, FontStyle.Bold);
             RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void frmTonphanlo_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
     }
 }

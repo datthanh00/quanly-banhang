@@ -97,8 +97,7 @@ namespace WindowsFormsApplication1
             
             btin.Text = resVietNam.btIn.ToString();
             BtXuatdulieu.Text = resVietNam.btXuat.ToString();
-            btdong.Text = resVietNam.btDong.ToString();
-           
+      
         }
 
         private void loadReSEG1()
@@ -106,7 +105,7 @@ namespace WindowsFormsApplication1
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
            btin.Text = resEngLand.btIn.ToString();
            BtXuatdulieu.Text = resEngLand.btXuat.ToString();
-           btdong.Text = resEngLand.btDong.ToString();
+ 
         }
      
 
@@ -414,6 +413,11 @@ namespace WindowsFormsApplication1
                     XtraMessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void frmhangtondau_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
 
 

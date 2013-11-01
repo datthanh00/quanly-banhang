@@ -61,7 +61,7 @@ namespace WindowsFormsApplication1
             btXem.Text = resVietNam.btXem.ToString();
             btXuatDuLieu.Text = resVietNam.btXuat.ToString();
             btIn.Text = resVietNam.btIn.ToString();
-            btDong.Text = resVietNam.btDong.ToString();
+      
             linkTheoNam.Caption = resVietNam.linkTheoNam.ToString();
             linkTheoThang.Caption = resVietNam.linkTheoThang.ToString();
             linkTheoQui.Caption = resVietNam.linkTheoQui.ToString();
@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
             btXem.Text = resEngLand.btXem.ToString();
             btXuatDuLieu.Text = resEngLand.btXuat.ToString();
             btIn.Text = resEngLand.btIn.ToString();
-            btDong.Text = resEngLand.btDong.ToString();
+    
             linkTheoNam.Caption = resEngLand.linkTheoNam.ToString();
             linkTheoThang.Caption = resEngLand.linkTheoThang.ToString();
             linkTheoQui.Caption = resEngLand.linkTheoQui.ToString();
@@ -608,10 +608,10 @@ namespace WindowsFormsApplication1
             gridControl6.DataSource = null;
             gridControl6.MainView = grid_BANHANG_TRANCC;
             load();
-            lbloc.Text = "Sản phẩm";
+            lbloc.Text = "Nhà Cung Cấp";
             cbkhachhang.Visible = false;
-            cbncc.Visible = false;
-            cbsanpham.Visible = true;
+            cbncc.Visible = true;
+            cbsanpham.Visible = false;
             if (!PublicVariable.isKHOILUONG)
             {
                 grid_BANHANG_TRANCC.Columns["KHOILUONG"].Visible = false;
@@ -641,10 +641,10 @@ namespace WindowsFormsApplication1
             gridControl6.DataSource = null;
             gridControl6.MainView = grid_MUAHANG_KHACHHANGTRA;
             load();
-            lbloc.Text = "Sản phẩm";
-            cbkhachhang.Visible = false;
+            lbloc.Text = "Khách Hàng";
+            cbkhachhang.Visible = true;
             cbncc.Visible = false;
-            cbsanpham.Visible = true;
+            cbsanpham.Visible = false;
             if (!PublicVariable.isKHOILUONG)
             {
                 grid_MUAHANG_KHACHHANGTRA.Columns["KHOILUONG"].Visible = false;
@@ -691,6 +691,11 @@ namespace WindowsFormsApplication1
             e.Graph.Font = new Font("Tahoma", 10, FontStyle.Bold);
             RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void frmThongKeDoanhThu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
         
     }

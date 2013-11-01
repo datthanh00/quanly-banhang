@@ -82,7 +82,6 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbsanpham = new DevExpress.XtraEditors.LabelControl();
-            this.btdong = new DevExpress.XtraEditors.SimpleButton();
             this.cbloaihienthi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.BtXuatdulieu = new DevExpress.XtraEditors.SimpleButton();
             this.lbnhom = new DevExpress.XtraEditors.LabelControl();
@@ -560,7 +559,6 @@
             this.panelControl6.Controls.Add(this.cbnhomhang);
             this.panelControl6.Controls.Add(this.cbmathang);
             this.panelControl6.Controls.Add(this.lbsanpham);
-            this.panelControl6.Controls.Add(this.btdong);
             this.panelControl6.Controls.Add(this.cbloaihienthi);
             this.panelControl6.Controls.Add(this.BtXuatdulieu);
             this.panelControl6.Controls.Add(this.lbnhom);
@@ -575,14 +573,14 @@
             // 
             // cbnhomhang
             // 
-            this.cbnhomhang.Location = new System.Drawing.Point(323, 11);
+            this.cbnhomhang.Location = new System.Drawing.Point(281, 11);
             this.cbnhomhang.Name = "cbnhomhang";
             this.cbnhomhang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbnhomhang.Properties.NullText = "";
             this.cbnhomhang.Properties.PopupSizeable = false;
             this.cbnhomhang.Properties.View = this.gridView3;
-            this.cbnhomhang.Size = new System.Drawing.Size(194, 20);
+            this.cbnhomhang.Size = new System.Drawing.Size(170, 20);
             this.cbnhomhang.TabIndex = 26;
             // 
             // gridView3
@@ -613,14 +611,14 @@
             // 
             // cbmathang
             // 
-            this.cbmathang.Location = new System.Drawing.Point(323, 11);
+            this.cbmathang.Location = new System.Drawing.Point(280, 11);
             this.cbmathang.Name = "cbmathang";
             this.cbmathang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbmathang.Properties.NullText = "";
             this.cbmathang.Properties.PopupSizeable = false;
             this.cbmathang.Properties.View = this.gridView2;
-            this.cbmathang.Size = new System.Drawing.Size(194, 20);
+            this.cbmathang.Size = new System.Drawing.Size(171, 20);
             this.cbmathang.TabIndex = 25;
             // 
             // gridView2
@@ -660,30 +658,20 @@
             // 
             // lbsanpham
             // 
-            this.lbsanpham.Location = new System.Drawing.Point(230, 16);
+            this.lbsanpham.Location = new System.Drawing.Point(200, 16);
             this.lbsanpham.Name = "lbsanpham";
             this.lbsanpham.Size = new System.Drawing.Size(78, 13);
             this.lbsanpham.TabIndex = 24;
             this.lbsanpham.Text = "Chọn Mặt Hàng:";
             // 
-            // btdong
-            // 
-            this.btdong.Image = ((System.Drawing.Image)(resources.GetObject("btdong.Image")));
-            this.btdong.Location = new System.Drawing.Point(830, 4);
-            this.btdong.Name = "btdong";
-            this.btdong.Size = new System.Drawing.Size(103, 31);
-            this.btdong.TabIndex = 7;
-            this.btdong.Text = "Thoát";
-            this.btdong.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // cbloaihienthi
             // 
-            this.cbloaihienthi.Location = new System.Drawing.Point(79, 11);
+            this.cbloaihienthi.Location = new System.Drawing.Point(78, 11);
             this.cbloaihienthi.MenuManager = this.barManager1;
             this.cbloaihienthi.Name = "cbloaihienthi";
             this.cbloaihienthi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbloaihienthi.Size = new System.Drawing.Size(137, 20);
+            this.cbloaihienthi.Size = new System.Drawing.Size(112, 20);
             this.cbloaihienthi.TabIndex = 8;
             this.cbloaihienthi.SelectedIndexChanged += new System.EventHandler(this.cmbloaihienthi_SelectedIndexChanged);
             this.cbloaihienthi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbloaihienthi_KeyPress);
@@ -691,7 +679,7 @@
             // BtXuatdulieu
             // 
             this.BtXuatdulieu.Image = ((System.Drawing.Image)(resources.GetObject("BtXuatdulieu.Image")));
-            this.BtXuatdulieu.Location = new System.Drawing.Point(709, 4);
+            this.BtXuatdulieu.Location = new System.Drawing.Point(609, 4);
             this.BtXuatdulieu.Name = "BtXuatdulieu";
             this.BtXuatdulieu.Size = new System.Drawing.Size(103, 31);
             this.BtXuatdulieu.TabIndex = 3;
@@ -710,7 +698,7 @@
             // btin
             // 
             this.btin.Image = ((System.Drawing.Image)(resources.GetObject("btin.Image")));
-            this.btin.Location = new System.Drawing.Point(621, 4);
+            this.btin.Location = new System.Drawing.Point(533, 4);
             this.btin.Name = "btin";
             this.btin.Size = new System.Drawing.Size(70, 31);
             this.btin.TabIndex = 4;
@@ -720,7 +708,7 @@
             // btxem
             // 
             this.btxem.Image = ((System.Drawing.Image)(resources.GetObject("btxem.Image")));
-            this.btxem.Location = new System.Drawing.Point(533, 4);
+            this.btxem.Location = new System.Drawing.Point(457, 4);
             this.btxem.Name = "btxem";
             this.btxem.Size = new System.Drawing.Size(70, 31);
             this.btxem.TabIndex = 3;
@@ -729,7 +717,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 16);
+            this.labelControl2.Location = new System.Drawing.Point(8, 16);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
             this.labelControl2.TabIndex = 1;
@@ -760,16 +748,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 527);
-            this.ControlBox = false;
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmTonphanlo";
-            this.Text = "mã mặt hàng";
             this.Load += new System.EventHandler(this.frmThongKeTongHop_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmTonphanlo_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -831,7 +818,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.ComboBoxEdit cbloaihienthi;
         private DevExpress.XtraEditors.LabelControl lbnhom;
-        private DevExpress.XtraEditors.SimpleButton btdong;
         private DevExpress.XtraGrid.Columns.GridColumn colmamhathang;
         private DevExpress.XtraGrid.Columns.GridColumn coltenmathang;
         private DevExpress.XtraGrid.Columns.GridColumn coltendonvi;

@@ -89,15 +89,24 @@ namespace WindowsFormsApplication1
         }
         
         protected static string strConnect;
-
+        
         public static SqlConnection get_Connect()
         {
+            System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
                 if (File.Exists("App.config"))
                 {
                   //Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
-                  //strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
-                  // strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_qlkho;User ID=nguyendat_thanh;Password=Xziojs1U98;";
-                    strConnect = "server=datthanh\\SQLEXPRESS;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123";
+                    if (PublicVariable.isUSELAN)
+                    {
+                        strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
+                    }
+                    else
+                    {
+                         //strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_qlkho;User ID=nguyendat_thanh;Password=Xziojs1U98;";
+                        strConnect = "server=datthanh\\SQLEXPRESS;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123";
+                    }
+                   // strConnect = "server=datthanh\\SQLEXPRESS;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123";
+
                 }
                 SqlConnection cn = new SqlConnection(strConnect);
            try

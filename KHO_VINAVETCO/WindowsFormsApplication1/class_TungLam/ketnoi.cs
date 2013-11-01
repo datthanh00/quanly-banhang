@@ -32,7 +32,17 @@ namespace WindowsFormsApplication1
             SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='" + PublicVariable.MAKHO + "')+1)  AS T1) AS T2";
             return SQL;
         }
-
+        public String getIDNHAP()
+        {
+            string IDTIME = "", IDDATE = "";
+            string SQLNGAY = "SELECT convert(varchar,getDATE(),12) AS DATE,convert(varchar,getDATE(),14) AS TIMER ";
+            Provider pv = new Provider();
+            DataTable dtn = pv.getdata(SQLNGAY);
+            IDTIME = dtn.Rows[0]["TIMER"].ToString();
+            IDDATE = dtn.Rows[0]["DATE"].ToString();
+            IDTIME = IDTIME.Substring(0, 2) + IDTIME.Substring(3, 2) + IDTIME.Substring(6, 2);
+            return IDDATE + IDTIME;
+        }
         public string sTuDongDienMapt(string sMaPT)
         {
             string HEAD = "PT", MAHD = "MAPT", TABLE = "PHIEUTHU";

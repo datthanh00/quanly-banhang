@@ -40,7 +40,6 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
             this.btXuat = new DevExpress.XtraEditors.SimpleButton();
             this.btluu = new DevExpress.XtraEditors.SimpleButton();
@@ -162,20 +161,19 @@
             this.panelControl3.Controls.Add(this.btdanhsach);
             this.panelControl3.Controls.Add(this.labelControl2);
             this.panelControl3.Controls.Add(this.cbbanggia);
-            this.panelControl3.Controls.Add(this.btDong);
             this.panelControl3.Controls.Add(this.btIn);
             this.panelControl3.Controls.Add(this.btXuat);
             this.panelControl3.Controls.Add(this.btluu);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(0, 0);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1292, 38);
+            this.panelControl3.Size = new System.Drawing.Size(1286, 38);
             this.panelControl3.TabIndex = 2;
             // 
             // btdanhsach
             // 
             this.btdanhsach.Image = global::WindowsFormsApplication1.Properties.Resources.excel;
-            this.btdanhsach.Location = new System.Drawing.Point(598, 5);
+            this.btdanhsach.Location = new System.Drawing.Point(331, 3);
             this.btdanhsach.Name = "btdanhsach";
             this.btdanhsach.Size = new System.Drawing.Size(150, 29);
             this.btdanhsach.TabIndex = 40;
@@ -184,7 +182,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(8, 11);
+            this.labelControl2.Location = new System.Drawing.Point(6, 11);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(42, 13);
             this.labelControl2.TabIndex = 39;
@@ -192,7 +190,7 @@
             // 
             // cbbanggia
             // 
-            this.cbbanggia.Location = new System.Drawing.Point(60, 8);
+            this.cbbanggia.Location = new System.Drawing.Point(54, 8);
             this.cbbanggia.Name = "cbbanggia";
             this.cbbanggia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -229,20 +227,10 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
             // 
-            // btDong
-            // 
-            this.btDong.Image = ((System.Drawing.Image)(resources.GetObject("btDong.Image")));
-            this.btDong.Location = new System.Drawing.Point(767, 4);
-            this.btDong.Name = "btDong";
-            this.btDong.Size = new System.Drawing.Size(75, 29);
-            this.btDong.TabIndex = 3;
-            this.btDong.Text = "Đóng";
-            this.btDong.Click += new System.EventHandler(this.btDong_Click);
-            // 
             // btIn
             // 
             this.btIn.Image = ((System.Drawing.Image)(resources.GetObject("btIn.Image")));
-            this.btIn.Location = new System.Drawing.Point(504, 3);
+            this.btIn.Location = new System.Drawing.Point(571, 4);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(75, 29);
             this.btIn.TabIndex = 2;
@@ -252,9 +240,9 @@
             // btXuat
             // 
             this.btXuat.Image = ((System.Drawing.Image)(resources.GetObject("btXuat.Image")));
-            this.btXuat.Location = new System.Drawing.Point(383, 3);
+            this.btXuat.Location = new System.Drawing.Point(487, 4);
             this.btXuat.Name = "btXuat";
-            this.btXuat.Size = new System.Drawing.Size(102, 29);
+            this.btXuat.Size = new System.Drawing.Size(78, 29);
             this.btXuat.TabIndex = 1;
             this.btXuat.Text = "Xuất";
             this.btXuat.Click += new System.EventHandler(this.btXuat_Click);
@@ -262,9 +250,9 @@
             // btluu
             // 
             this.btluu.Image = global::WindowsFormsApplication1.Properties.Resources.save;
-            this.btluu.Location = new System.Drawing.Point(241, 4);
+            this.btluu.Location = new System.Drawing.Point(223, 4);
             this.btluu.Name = "btluu";
-            this.btluu.Size = new System.Drawing.Size(123, 29);
+            this.btluu.Size = new System.Drawing.Size(102, 29);
             this.btluu.TabIndex = 0;
             this.btluu.Text = "Lưu Bảng Giá";
             this.btluu.Click += new System.EventHandler(this.btluu_Click);
@@ -275,7 +263,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 38);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1292, 432);
+            this.panelControl2.Size = new System.Drawing.Size(1286, 432);
             this.panelControl2.TabIndex = 3;
             // 
             // gridControl2
@@ -287,7 +275,7 @@
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCalcEdit1,
             this.repositoryItemTextEdit1});
-            this.gridControl2.Size = new System.Drawing.Size(1288, 428);
+            this.gridControl2.Size = new System.Drawing.Size(1282, 428);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -1121,13 +1109,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1292, 470);
+            this.ClientSize = new System.Drawing.Size(1286, 470);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmBanggia";
-            this.Text = "frmBaoCaoTonKho";
             this.Load += new System.EventHandler(this.frmBanggia_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBanggia_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kHOgetallBindingSource)).EndInit();
@@ -1154,7 +1142,6 @@
 
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.SimpleButton btDong;
         public DevExpress.XtraEditors.SimpleButton btIn;
         private DevExpress.XtraEditors.SimpleButton btXuat;
         private DevExpress.XtraEditors.SimpleButton btluu;

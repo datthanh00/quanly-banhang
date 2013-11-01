@@ -732,6 +732,13 @@ namespace WindowsFormsApplication1
             deDongTab();
         }
 
+        private void frmCongNoNcc_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
+        }
+
+
+
 
 
 
