@@ -106,3 +106,6 @@ e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsAp
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmTraTienkh.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmnhapkhac.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.HoaDonXuat.frmxuatkhac.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.FrmINITCODEActive.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmThemNoptientruoc.resources
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.FrmNoptientruoc.resources
