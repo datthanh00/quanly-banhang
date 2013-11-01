@@ -32,6 +32,7 @@
             this.tientrinh = new System.Windows.Forms.ProgressBar();
             this.luoi = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             this.btncomputerdate = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.cbTable = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -52,13 +53,12 @@
             this.lbmathue = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.btnEDITMAHD = new System.Windows.Forms.Button();
-            this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.luoi)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTable.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTenNCC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // tientrinh
@@ -92,6 +92,15 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao Tác";
+            // 
+            // checkTT
+            // 
+            this.checkTT.EditValue = true;
+            this.checkTT.Location = new System.Drawing.Point(291, 26);
+            this.checkTT.Name = "checkTT";
+            this.checkTT.Properties.Caption = "Update";
+            this.checkTT.Size = new System.Drawing.Size(82, 18);
+            this.checkTT.TabIndex = 41;
             // 
             // btncomputerdate
             // 
@@ -320,15 +329,6 @@
             this.btnEDITMAHD.UseVisualStyleBackColor = true;
             this.btnEDITMAHD.Click += new System.EventHandler(this.btnEDITMAHD_Click);
             // 
-            // checkTT
-            // 
-            this.checkTT.EditValue = true;
-            this.checkTT.Location = new System.Drawing.Point(291, 26);
-            this.checkTT.Name = "checkTT";
-            this.checkTT.Properties.Caption = "Update";
-            this.checkTT.Size = new System.Drawing.Size(82, 19);
-            this.checkTT.TabIndex = 41;
-            // 
             // import
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,15 +346,16 @@
             this.Controls.Add(this.tientrinh);
             this.Controls.Add(this.luoi);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "import";
-            this.Text = "import";
             this.Load += new System.EventHandler(this.import_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.import_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.luoi)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbTable.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cboTenNCC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

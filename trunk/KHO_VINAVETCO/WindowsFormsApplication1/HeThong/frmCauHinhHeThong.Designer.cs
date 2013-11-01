@@ -174,7 +174,7 @@
             // simpleButton2
             // 
             this.simpleButton2.Image = global::WindowsFormsApplication1.Properties.Resources.refresh1;
-            this.simpleButton2.Location = new System.Drawing.Point(492, 208);
+            this.simpleButton2.Location = new System.Drawing.Point(492, 210);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(26, 23);
             this.simpleButton2.TabIndex = 6;
@@ -183,7 +183,7 @@
             // simpleButton1
             // 
             this.simpleButton1.Image = global::WindowsFormsApplication1.Properties.Resources.refresh1;
-            this.simpleButton1.Location = new System.Drawing.Point(492, 71);
+            this.simpleButton1.Location = new System.Drawing.Point(491, 72);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(26, 23);
             this.simpleButton1.TabIndex = 1;

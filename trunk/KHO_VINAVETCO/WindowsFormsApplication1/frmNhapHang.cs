@@ -39,7 +39,8 @@ namespace WindowsFormsApplication1
         NhapHangDAO mh = new NhapHangDAO();
         Boolean isdelete = false, isnhap=true;
         //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
-        public string THEM, XOA, SUA, IN, XEM;
+        public string THEM, XOA, SUA, IN, XEM, STYPEMONEY;
+        double TIENTRATRUOC = 0;
        
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
@@ -469,14 +470,15 @@ namespace WindowsFormsApplication1
             if (rowselect != null)
             {
                 txtMANCC.Text = gridView3.GetFocusedRowCellValue("MANCC").ToString();
-                txtSoDT.Text = gridView3.GetFocusedRowCellValue("SDT").ToString();
-                txtFax.Text = gridView3.GetFocusedRowCellValue("FAX").ToString();
-                txtEmail.Text = gridView3.GetFocusedRowCellValue("EMAIL").ToString();
+                //txtSoDT.Text = gridView3.GetFocusedRowCellValue("SDT").ToString();
+                //txtFax.Text = gridView3.GetFocusedRowCellValue("FAX").ToString();
+                //txtEmail.Text = gridView3.GetFocusedRowCellValue("EMAIL").ToString();
                 dtoNCC.MANCC = txtMANCC.Text;
                 DataTable tblayno = ctlNCC.LAYTIENNO(dtoNCC);
                 if (tblayno.Rows.Count > 0)
                 {
                     txtNo.Text = tblayno.Rows[0]["TIENNO"].ToString();
+                    TIENTRATRUOC = Convert.ToDouble(tblayno.Rows[0]["TIENTRATRUOC"].ToString());
                 }
                 else
                 {
@@ -503,9 +505,9 @@ namespace WindowsFormsApplication1
             loadgridNhacCungCap();
             txtMANCC.Text = "";
             cboTenNCC.Text = "";
-            txtSoDT.Text = "";
-            txtFax.Text = "";
-            txtEmail.Text = "";
+            //txtSoDT.Text = "";
+            //txtFax.Text = "";
+            //txtEmail.Text = "";
             txtMaHD.Text = "";
             txtNo.Text = "0";
             txtghichu.Text = "";
@@ -525,6 +527,21 @@ namespace WindowsFormsApplication1
             loadgridNhacCungCap();
             Grid_sanpham.DataSource = null;
             loadgridCTHOADON();
+            if (PublicVariable.ComboNhap == 1)
+            {
+                CheckTienmat.Checked = true;
+                cbotientra.Properties.ReadOnly = false;
+            }
+            else if (PublicVariable.ComboNhap == 2)
+            {
+                CheckGoiDau.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
+            else
+            {
+                CheckCongNo.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
         }
 
         public int kiemtra;
@@ -543,9 +560,9 @@ namespace WindowsFormsApplication1
                         PublicVariable.SQL_NHAP = "";
                         dtoNCC.MANCC = txtMANCC.Text;
                         dtoNCC.TENNCC = cboTenNCC.Text;
-                        dtoNCC.SDT = txtSoDT.Text;
-                        dtoNCC.FAX = txtFax.Text;
-                        dtoNCC.EMAIL = txtEmail.Text;
+                        //dtoNCC.SDT = txtSoDT.Text;
+                        //dtoNCC.FAX = txtFax.Text;
+                        //dtoNCC.EMAIL = txtEmail.Text;
                         dtoNCC.GHICHU = txtghichu.Text;
                         dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                         dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
@@ -559,12 +576,49 @@ namespace WindowsFormsApplication1
                         }
                         dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
 
+                        if (CheckGoiDau.Checked == true)
+                        {
+                            if (TIENTRATRUOC <=0)
+                            {
+                                MessageBox.Show("SỐ TIỀN TRẢ TRƯỚC CỦA BẠN ĐÃ ĐƯỢC THANH TOÁN HẾT. HÃY CHỌN MỘT PHƯƠNG THỨC TRẢ TIỀN KHÁC");
+                                return;
+                            }
+                            if (TIENTRATRUOC < Convert.ToInt64(dtoNCC.TIENPHAITRA))
+                            {
+                                if (XtraMessageBox.Show("Số tiền trả trước của bạn nhỏ hơn giá trị hóa đơn. Hệ thống sẽ đưa phần nợ còn lại vào công nợ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+                                    dtoNCC.TIENDATRA = TIENTRATRUOC.ToString();
+                                }
+                                else
+                                {
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                dtoNCC.TIENDATRA = dtoNCC.TIENPHAITRA;
+                            }
+                        }
                         int rowcount = gridCTHOADON.DataRowCount;
                         if (rowcount == 0)
                         {
                             XtraMessageBox.Show("Hãy chọn một sản phẩm trước khi lưu");
                             return;
                         }
+                        if (CheckTienmat.Checked == true)
+                        {
+                            if (cbotientra.Value <= 0)
+                            {
+                                XtraMessageBox.Show("bạn đã chọn thanh toán bằng tiền mặt nên số tiền trả phải lớn hơn 0");
+                                return;
+                            }
+                            else if (Convert.ToDouble(txtthanhtien.Value) < Convert.ToDouble(dtoNCC.TIENDATRA))
+                            {
+                                MessageBox.Show("Số tiền trả của bạn không thể lớn hơn số tiền trong hóa đơn");
+                                return;
+                            }
+                        }
+                        
                         if(txtthanhtien.Value>100000000000)
                         {
                             XtraMessageBox.Show("Hóa đơn giá trị quá lớn bạn không thể lưu");
@@ -663,7 +717,7 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("Vui lòng thử lưu lại");
                                 return;
                             }
-                            
+                            insert_PHIEUTHUCHI(dtoNCC.MANCC, dtoNCC.TIENDATRA.ToString(), dtoNCC.MAHDN);
                             for (int i = 0; i < rowcount; i++)
                             {
 
@@ -759,7 +813,7 @@ namespace WindowsFormsApplication1
                             {
                                 return;
                             }
-
+                            update_PHIEUTHUCHI(dtoNCC.MANCC, dtoNCC.TIENDATRA.ToString(), dtoNCC.MAHDN);
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
                             ctlNCC.executeNonQuery("INSERT INTO [LOG]([MAHD],[LOG],[LYDO]) VALUES('" + txtMaHD.Text + "',N'" + PublicVariable.TMPlog + "',N'" + PublicVariable.TMPtring + "') ");
                             PublicVariable.SQL_NHAP = "";
@@ -800,6 +854,90 @@ namespace WindowsFormsApplication1
         {
           
         }
+        //TYPEMONEY: 1: TIEN MAT, 2: TIEN GOI DAU, 3: CONG NO
+        public void insert_PHIEUTHUCHI(String MANCC, String SOTIEN, String MAHDN)
+        {
+            ketnoi connect = new ketnoi();
+            String MAPC = connect.sTuDongDienMapc("1");
+            String IDNHAP = connect.getIDNHAP();
+            if (CheckTienmat.Checked == true)
+            {
+                PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n  INSERT INTO PHIEUCHI (MAPC,MANV,NGAYCHI,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY) VALUES('" + MAPC + "', '" + sMaNV + "',convert(varchar,getDate(),101)," + SOTIEN + ",'" + PublicVariable.MAKHO + "','" + MANCC + "','" + IDNHAP + "',1)";
+                PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE HOADONNHAP SET MAPC= '" + MAPC + "', TYPEMONEY=1 WHERE MAHDN='" + MAHDN + "' ";
+            }
+            else if (CheckGoiDau.Checked == true)
+            {
+                PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE NHACUNGCAP SET TIENTRATRUOC=TIENTRATRUOC- " + SOTIEN + " WHERE MANCC='" + MANCC + "' ";
+                PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n INSERT INTO PHIEUCHI (MAPC,MANV,NGAYCHI,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY) VALUES('" + MAPC + "', '" + sMaNV + "',convert(varchar,getDate(),101)," + SOTIEN + ",'" + PublicVariable.MAKHO + "','" + MANCC + "','" + IDNHAP + "',2)";
+                PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE HOADONNHAP SET MAPC= '" + MAPC + "', TYPEMONEY=2 WHERE MAHDN='" + MAHDN + "' ";
+            }
+            else
+            {
+                PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n INSERT INTO PHIEUCHI (MAPC,MANV,NGAYCHI,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY) VALUES('" + MAPC + "', '" + sMaNV + "',convert(varchar,getDate(),101),0,'" + PublicVariable.MAKHO + "','" + MANCC + "','" + IDNHAP + "',3)";
+                PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE HOADONNHAP SET MAPC= '" + MAPC + "', TYPEMONEY=3 WHERE MAHDN='" + MAHDN + "' ";
+                
+            }
+
+
+        }
+        public void update_PHIEUTHUCHI(String MANCC, String SOTIEN, String MAHDN)
+        {
+            int OLD_TYPE = 0;
+
+            ketnoi connect = new ketnoi();
+            String SQL = "SELECT MAPC FROM HOADONNHAP WHERE MAHDN='" + MAHDN + "'";
+            DataTable DTTYPE = connect.getdata(SQL);
+            OLD_TYPE = Convert.ToInt32(STYPEMONEY);
+            string MAPC = DTTYPE.Rows[0][0].ToString();
+
+            if (OLD_TYPE == PublicVariable.ComboNhap)
+            {
+                if (CheckTienmat.Checked == true)
+                {
+                    PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=" + SOTIEN + " WHERE MAPC ='" + MAPC + "'";
+
+                }
+                else if (CheckGoiDau.Checked == true)
+                {
+                    String SQL1 = "SELECT SOTIEN FROM PHIEUCHI WHERE MAPC ='" + MAPC + "'";
+                    DataTable DT = connect.getdata(SQL1);
+                    Int64 TIENTRUOC = Convert.ToInt64(DT.Rows[0][0].ToString());
+                    PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE NHACUNGCAP SET TIENTRATRUOC=TIENTRATRUOC+ " + TIENTRUOC + "-" + SOTIEN + " WHERE MANCC='" + MANCC + "' ";
+                    PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=" + SOTIEN + " WHERE MAPC ='" + MAPC + "'";
+                }
+
+            }
+            else
+            {
+                if (OLD_TYPE == 2)
+                {
+                    String SQL1 = "SELECT SOTIEN FROM PHIEUCHI WHERE MAPC ='" + MAPC + "'";
+                    DataTable DT = connect.getdata(SQL1);
+                    Int64 TIENTRUOC = Convert.ToInt64(DT.Rows[0][0].ToString());
+                    PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE NHACUNGCAP SET TIENTRATRUOC=TIENTRATRUOC+ " + TIENTRUOC + " WHERE MANCC='" + MANCC + "' ";
+                }
+
+                if (CheckTienmat.Checked == true)
+                {
+                    PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=" + SOTIEN + " , TYPEMONEY=1 WHERE MAPC ='" + MAPC + "'";
+                    PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE HOADONNHAP SET  TYPEMONEY=1 WHERE MAHDN='" + MAHDN + "' ";
+                }
+                else if (CheckGoiDau.Checked == true)
+                {
+                    PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE NHACUNGCAP SET TIENTRATRUOC=TIENTRATRUOC- " + SOTIEN + " WHERE MANCC='" + MANCC + "' ";
+
+                    PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=" + SOTIEN + " , TYPEMONEY=2 WHERE MAPC ='" + MAPC + "'";
+                    PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE HOADONNHAP SET  TYPEMONEY=2 WHERE MAHDN='" + MAHDN + "' ";
+                }
+                else
+                {
+                    PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=0 , TYPEMONEY=3 WHERE MAPC ='" + MAPC + "'";
+                    PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE HOADONNHAP SET TYPEMONEY=3 WHERE MAHDN='" + MAHDN + "' ";
+                }
+                PublicVariable.TMPtring = "---SỬA PHƯƠNG THỨC TRẢ TIỀN ---";
+            }
+        }
+
         public void insert_HoadonChitiet(string mahdn, String mamh, Double SoLuong, string DonGia, string TIENTRA, string HSD, String _KMAI, int STT)
         {
             try
@@ -1055,6 +1193,7 @@ namespace WindowsFormsApplication1
         private Int64 tienchuack = 0;
         public void gettotal()
         {
+           
             int rowcount = gridCTHOADON.RowCount;
             Double total = 0;
             for (int i = 0; i < rowcount; i++)
@@ -1079,7 +1218,10 @@ namespace WindowsFormsApplication1
             total = total - Convert.ToInt64(cktien.Value);
 
             txtthanhtien.Text = total.ToString();
-            
+            if (PublicVariable.ComboNhap == 2)
+            {
+                cbotientra.Value = Convert.ToDecimal(txtthanhtien.Text);
+            }
             if (cbotientra.Text != "")
             {
                 thanhtien = Convert.ToDouble(txtthanhtien.Value);
@@ -1087,6 +1229,8 @@ namespace WindowsFormsApplication1
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
+           
+      
         }
 
         private void gridCTHOADON_Keydown(object sender, KeyEventArgs e)
@@ -1185,13 +1329,9 @@ namespace WindowsFormsApplication1
                         return;
                     }
                     PublicVariable.TMPlog = "";
-                    string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime, TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
+                    string SQLNGAY = "SELECT  TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
                     DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
-                    if (txtNgay.Text != dtn.Rows[0][0].ToString())
-                    {
-                        MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
-                        return;
-                    }
+      
 
                     String SQL = "Select TONKHO from KHOHANG where mamh='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "'";
                     DataTable dt = ctlNCC.GETDATA(SQL);
@@ -1311,14 +1451,29 @@ namespace WindowsFormsApplication1
            
             txtMaHD.Text = MAHDN;
             txtlohang.Text =MAHDN;
-            string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) as NGAYNHAP ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA,T1.GHICHU ,T1.CKTIEN,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,IDNHAP FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
+            string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) as NGAYNHAP ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA,T1.GHICHU ,T1.CKTIEN,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,IDNHAP,TYPEMONEY FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
             DataTable DT = ctlNCC.GETDATA(SQL);
             txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
-            cbotientra.Text = DT.Rows[0]["TIENDATRA"].ToString();
+            cbotientra.Value = Convert.ToDecimal(DT.Rows[0]["TIENDATRA"].ToString());
             txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();
             txtghichu.Text = DT.Rows[0]["GHICHU"].ToString();
             IDNHAP = DT.Rows[0]["IDNHAP"].ToString();
+            STYPEMONEY = DT.Rows[0]["TYPEMONEY"].ToString();
+            if (DT.Rows[0]["TYPEMONEY"].ToString() == "1")
+            {
+                CheckTienmat.Checked = true;
+            }
+            else if (DT.Rows[0]["TYPEMONEY"].ToString() == "2")
+            {
+                CheckGoiDau.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
+            else
+            {
+                CheckCongNo.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
             Int64 _cktien = Convert.ToInt64(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             double thanhtien = tienchuack;
@@ -1635,10 +1790,50 @@ namespace WindowsFormsApplication1
             loadGrid_sanpham();
         }
 
+        private void CheckTienmat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckTienmat.Checked == true)
+            {
+                PublicVariable.ComboNhap = 1;
+                cbotientra.Properties.ReadOnly = false;
+                if (isnhap)
+                {
+                    cbotientra.Value = 0;
+                }
+                gettotal();
+            }
+        }
 
+        private void CheckGoiDau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckGoiDau.Checked == true)
+            {
+                PublicVariable.ComboNhap = 2;
+                cbotientra.Properties.ReadOnly = true;
+   
+                cbotientra.Value = Convert.ToDecimal(txtthanhtien.Text);
+                
+                gettotal();
+            }
+        }
 
+        private void CheckCongNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckCongNo.Checked == true)
+            {
+                PublicVariable.ComboNhap = 3;
+                cbotientra.Properties.ReadOnly = true;
+                cbotientra.Value = 0;
+                gettotal();
+            }
+        }
 
+        private void frmNhapHang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
+        }
 
+    
 
 
     }

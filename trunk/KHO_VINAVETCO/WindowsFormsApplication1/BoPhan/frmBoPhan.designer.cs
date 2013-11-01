@@ -39,7 +39,6 @@
             this.barIn = new DevExpress.XtraBars.BarButtonItem();
             this.barXuat = new DevExpress.XtraBars.BarButtonItem();
             this.barNhap = new DevExpress.XtraBars.BarButtonItem();
-            this.barThoat = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -82,8 +81,7 @@
             this.barNapLai,
             this.barIn,
             this.barXuat,
-            this.barNhap,
-            this.barThoat});
+            this.barNhap});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 9;
             this.barManager1.StatusBar = this.bar3;
@@ -101,8 +99,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barNapLai, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barIn, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barXuat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barNhap, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barThoat, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barNhap, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -162,14 +159,6 @@
             this.barNhap.Id = 7;
             this.barNhap.Name = "barNhap";
             // 
-            // barThoat
-            // 
-            this.barThoat.Caption = "Thoát";
-            this.barThoat.Glyph = global::WindowsFormsApplication1.Properties.Resources.close2;
-            this.barThoat.Id = 8;
-            this.barThoat.Name = "barThoat";
-            this.barThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barThoat_ItemClick);
-            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -225,10 +214,10 @@
             // 
             this.gridControl1.DataSource = this.bOPHANBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(776, 383);
+            this.gridControl1.Size = new System.Drawing.Size(774, 381);
             this.gridControl1.TabIndex = 2;
             this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -288,10 +277,10 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmBoPhan";
-            this.Text = "frmBoPhan";
             this.Load += new System.EventHandler(this.frmBoPhan_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBoPhan_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.bOPHANBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -323,7 +312,6 @@
         private DevExpress.XtraBars.BarButtonItem barIn;
         private DevExpress.XtraBars.BarButtonItem barXuat;
         private DevExpress.XtraBars.BarButtonItem barNhap;
-        private DevExpress.XtraBars.BarButtonItem barThoat;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMABP;

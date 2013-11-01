@@ -35,7 +35,6 @@
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnthem = new DevExpress.XtraBars.BarButtonItem();
             this.barXóa = new DevExpress.XtraBars.BarButtonItem();
-            this.barstDong = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -74,7 +73,6 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barstDong,
             this.barXóa,
             this.btnthem});
             this.barManager1.MainMenu = this.bar2;
@@ -88,8 +86,7 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnthem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barXóa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barstDong, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barXóa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -109,14 +106,6 @@
             this.barXóa.Id = 2;
             this.barXóa.Name = "barXóa";
             this.barXóa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barXóa_ItemClick);
-            // 
-            // barstDong
-            // 
-            this.barstDong.Caption = "Đóng";
-            this.barstDong.Glyph = global::WindowsFormsApplication1.Properties.Resources.cancel;
-            this.barstDong.Id = 1;
-            this.barstDong.Name = "barstDong";
-            this.barstDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barstDong_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -243,8 +232,9 @@
             this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "FrmINITCODEActive";
-            this.Text = "Danh Sách Bảng Giá";
+            this.Text = "Danh Sách Code Active";
             this.Load += new System.EventHandler(this.FrmDsbanggia_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmINITCODEActive_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -261,7 +251,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarButtonItem barstDong;
         private DevExpress.XtraBars.BarButtonItem barXóa;
         private DevExpress.XtraBars.BarButtonItem btnthem;
         private System.Windows.Forms.GroupBox groupCtDetails;

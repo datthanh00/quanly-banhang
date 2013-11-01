@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
 
             }
             load_cbhanghoa();
-            pnthoigian.Visible = false;
+            pnthoigian.Visible = true;
             lbmahang.Visible = true;
             cbsanpham.Visible = true;
 
@@ -363,8 +363,7 @@ namespace WindowsFormsApplication1
             btXem.Text = resVietNam.btXem.ToString();
             btIn.Text = resVietNam.btIn.ToString();
             btXuat.Text = resVietNam.btXuat.ToString();
-            btdong.Text = resEngLand.btDong.ToString();
-            
+     
               colngayxuathoadon.Caption = resVietNam.colngay11.ToString();
            
               gridColumn2.Caption = resVietNam.coltenmathang.ToString();
@@ -821,6 +820,11 @@ namespace WindowsFormsApplication1
             RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
 			
+        }
+
+        private void frmBaoCaoTongHop_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
         
 

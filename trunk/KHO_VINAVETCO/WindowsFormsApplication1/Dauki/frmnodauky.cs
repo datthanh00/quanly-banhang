@@ -61,14 +61,7 @@ namespace WindowsFormsApplication1
             
             btin.Text = resVietNam.btIn.ToString();
             BtXuatdulieu.Text = resVietNam.btXuat.ToString();
-            btdong.Text = resVietNam.btDong.ToString();
-  
-            //labelControl2.Text = resVietNam.lbden.ToString();
-            //labelControl13.Text = resVietNam.lbtu.ToString();
-            //labelControl14.Text = resVietNam.lbden.ToString();
-            //lbTu.Text = resVietNam.lbtu.ToString();
-            //lbDen.Text = resVietNam.lbden.ToString();
-            //lbNam.Text = resVietNam.lbNam.ToString();
+
         }
 
         private void loadReSEG1()
@@ -78,9 +71,7 @@ namespace WindowsFormsApplication1
        
            btin.Text = resEngLand.btIn.ToString();
            BtXuatdulieu.Text = resEngLand.btXuat.ToString();
-           btdong.Text = resEngLand.btDong.ToString();
 
-           
         }
      
 
@@ -216,6 +207,11 @@ namespace WindowsFormsApplication1
             e.Graph.Font = new Font("Tahoma", 11, FontStyle.Bold);
             RectangleF rec = new RectangleF(0, 0, e.Graph.ClientPageSize.Width, 50);
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
+        }
+
+        private void frmnodauky_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
 
         

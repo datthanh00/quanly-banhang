@@ -33,6 +33,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         DTO dtoNCC = new DTO();
         CTL ctlNCC = new CTL();
         string IDNHAP = "0";
+        double TIENTRATRUOC = 0;
         public void loadgridKhachHang()
         {
             cboTenKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
@@ -173,7 +174,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         public int iNgonNgu;
         public frmMain frm;
         public string sTenNV, sMaNV;
-        public string THEM, XOA, SUA, IN, XEM;
+        public string THEM, XOA, SUA, IN, XEM, STYPEMONEY;
     
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
         {
@@ -228,13 +229,14 @@ namespace WindowsFormsApplication1.HoaDonXuat
             if (rowselect != null)
             {
                 txtmakh.Text = gridKH1.GetFocusedRowCellValue("MAKH").ToString();
-                txtSDT.Text = gridKH1.GetFocusedRowCellValue("SDT").ToString();
-                txtDiachi.Text = gridKH1.GetFocusedRowCellValue("DIACHI").ToString();
+                //txtSDT.Text = gridKH1.GetFocusedRowCellValue("SDT").ToString();
+                //txtDiachi.Text = gridKH1.GetFocusedRowCellValue("DIACHI").ToString();
                 dtoNCC.MAKH = txtmakh.Text;  
                 DataTable tblayno = ctlNCC.LAYTIENNOKH(dtoNCC);
                 if (tblayno.Rows.Count > 0)
                 {
                     txtNo.Text = tblayno.Rows[0]["TIENNO"].ToString();
+                    TIENTRATRUOC = Convert.ToDouble(tblayno.Rows[0]["TIENTRATRUOC"].ToString());
                 }
                 else
                 {
@@ -278,8 +280,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         PublicVariable.SQL_XUAT = "";
                         dtoNCC.MAKH = txtmakh.Text;
                         dtoNCC.TENKH = cboTenKH.Text;
-                        dtoNCC.DIACHI = txtDiachi.Text;
-                        dtoNCC.SDT = txtSDT.Text;
+                        //dtoNCC.DIACHI = txtDiachi.Text;
+                        //dtoNCC.SDT = txtSDT.Text;
                         // dtoNCC.WEBSITE = txtWeb.Text;
                         dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
                         dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
@@ -294,14 +296,49 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                         dtoNCC.TINHTRANG = "1";
                         dtoNCC.TYPE = "1";
-
+                        if (CheckGoiDau.Checked == true)
+                        {
+                            if (TIENTRATRUOC <= 0)
+                            {
+                                MessageBox.Show("SỐ TIỀN TRẢ TRƯỚC CỦA BẠN ĐÃ ĐƯỢC THANH TOÁN HẾT. HÃY CHỌN MỘT PHƯƠNG THỨC TRẢ TIỀN KHÁC");
+                                return;
+                            }
+                            if (TIENTRATRUOC < Convert.ToInt64(dtoNCC.TIENPHAITRA))
+                            {
+                                if (XtraMessageBox.Show("Số tiền trả trước của bạn nhỏ hơn giá trị hóa đơn. Hệ thống sẽ đưa phần nợ còn lại vào công nợ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+                                    dtoNCC.TIENDATRA = TIENTRATRUOC.ToString();
+                                }
+                                else
+                                {
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                dtoNCC.TIENDATRA = dtoNCC.TIENPHAITRA;
+                            }
+                        }
                         int rowcount = gridCTHOADON.DataRowCount;
                         if (rowcount == 0)
                         {
                             XtraMessageBox.Show("Hãy chọn một sản phẩm trước khi lưu");
                             return;
                         }
-
+                        if (CheckTienmat.Checked == true)
+                        {
+                            if (cbotientra.Value <= 0)
+                            {
+                                XtraMessageBox.Show("bạn đã chọn thanh toán bằng tiền mặt nên số tiền trả phải lớn hơn 0");
+                                return;
+                            }
+                            else if (Convert.ToDouble(txtthanhtien.Value) < Convert.ToDouble(dtoNCC.TIENDATRA))
+                            {
+                                MessageBox.Show("Số tiền trả của bạn không thể lớn hơn số tiền trong hóa đơn");
+                                return;
+                            }
+                        }
+                        
                         if (txtthanhtien.Value > 100000000000)
                         {
                             XtraMessageBox.Show("Hóa đơn giá trị quá lớn bạn không thể lưu");
@@ -374,7 +411,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             MessageBox.Show("Vui lòng thử lưu lại");
                                 return;
                             }
-                           
+
+                            insert_phieuthuchi(dtoNCC.MAKH,dtoNCC.TIENDATRA,dtoNCC.MAHDX);
                             //insert hoa don chi tiet
 
                             for (int i = 0; i < rowcount; i++)
@@ -470,10 +508,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             {
                                 return;
                             }
+                            update_phieuthuchi(dtoNCC.MAKH, dtoNCC.TIENDATRA, dtoNCC.MAHDX);
                             ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_XUAT);
                             ctlNCC.executeNonQuery("INSERT INTO [LOG]([MAHD],[LOG],[LYDO]) VALUES('" + txtMaHD.Text + "',N'" + PublicVariable.TMPlog + "',N'" + PublicVariable.TMPtring + "') ");
                             
                             PublicVariable.SQL_XUAT = "";
+
+                            
                             MessageBox.Show("Bạn Đã Sửa Thành Công");
                         }
 
@@ -498,6 +539,89 @@ namespace WindowsFormsApplication1.HoaDonXuat
             
         }
         double conlai, thanhtien, tientra;
+        //TYPEMONEY: 1: TIEN MAT, 2: TIEN GOI DAU, 3: CONG NO
+        public void insert_phieuthuchi(String MAKH,String SOTIEN, String MAHDX)
+        {
+            ketnoi connect = new ketnoi();
+            String MAPT = connect.sTuDongDienMapt("1");
+            String IDNHAP= connect.getIDNHAP();
+            if (CheckTienmat.Checked == true)
+            {
+                PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n  INSERT INTO PHIEUTHU (MAPT,MANV,NGAYTHU,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY) VALUES('" + MAPT + "', '" + sMaNV + "',convert(varchar,getDate(),101)," + SOTIEN + ",'" + PublicVariable.MAKHO + "','" + MAKH + "','" + IDNHAP + "',1)";
+                PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n UPDATE HOADONXUAT SET MAPT= '" + MAPT + "', TYPEMONEY=1 WHERE MAHDX='" + MAHDX + "' ";
+            }
+            else if (CheckGoiDau.Checked == true)
+            {
+                PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC- " + SOTIEN + " WHERE MAKH='" + MAKH + "' ";
+                PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n INSERT INTO PHIEUTHU (MAPT,MANV,NGAYTHU,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY) VALUES('" + MAPT + "', '" + sMaNV + "',convert(varchar,getDate(),101)," + SOTIEN + ",'" + PublicVariable.MAKHO + "','" + MAKH + "','" + IDNHAP + "',2)";
+                PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n UPDATE HOADONXUAT SET MAPT= '" + MAPT + "', TYPEMONEY=2 WHERE MAHDX='" + MAHDX + "' ";
+            }
+            else
+            {
+                PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n INSERT INTO PHIEUTHU (MAPT,MANV,NGAYTHU,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY) VALUES('" + MAPT + "', '" + sMaNV + "',convert(varchar,getDate(),101),0,'" + PublicVariable.MAKHO + "','" + MAKH + "','" + IDNHAP + "',3)";
+                PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n UPDATE HOADONXUAT SET MAPT= '" + MAPT + "', TYPEMONEY=3 WHERE MAHDX='" + MAHDX + "' ";
+                
+            }
+
+            
+        }
+        public void update_phieuthuchi(String MAKH, String SOTIEN, String MAHDX)
+        {
+            int OLD_TYPE = 0;
+
+            ketnoi connect = new ketnoi();
+            String SQL = "SELECT MAPT FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "'";
+            DataTable DTTYPE = connect.getdata(SQL);
+            OLD_TYPE = Convert.ToInt32(STYPEMONEY);
+            string MAPT = DTTYPE.Rows[0][0].ToString();
+
+            if (OLD_TYPE == PublicVariable.ComboXuat)
+            {
+                if (CheckTienmat.Checked == true)
+                {
+                    PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n  UPDATE PHIEUTHU SET SOTIEN=" + SOTIEN + " WHERE MAPT ='"+MAPT+"'";
+
+                }
+                else if (CheckGoiDau.Checked == true)
+                {
+                    String SQL1 = "SELECT SOTIEN FROM PHIEUTHU WHERE MAPT ='" + MAPT + "'";
+                    DataTable DT = connect.getdata(SQL1);
+                    Int64 TIENTRUOC = Convert.ToInt64(DT.Rows[0][0].ToString());
+                    PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC+ " + TIENTRUOC + "-"+SOTIEN+" WHERE MAKH='" + MAKH + "' ";
+                    PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n  UPDATE PHIEUTHU SET SOTIEN=" + SOTIEN + " WHERE MAPT ='" + MAPT + "'";
+                }
+     
+            }
+            else
+            {
+                if (OLD_TYPE == 2)
+                {
+                    String SQL1 = "SELECT SOTIEN FROM PHIEUTHU WHERE MAPT ='" + MAPT + "'";
+                    DataTable DT = connect.getdata(SQL1);
+                    Int64 TIENTRUOC = Convert.ToInt64(DT.Rows[0][0].ToString());
+                    PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC+ " + TIENTRUOC + " WHERE MAKH='" + MAKH + "' ";
+                }
+
+                if (CheckTienmat.Checked == true)
+                {
+                    PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n  UPDATE PHIEUTHU SET SOTIEN=" + SOTIEN + " , TYPEMONEY=1 WHERE MAPT ='" + MAPT + "'";
+                    PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n UPDATE HOADONXUAT SET  TYPEMONEY=1 WHERE MAHDX='" + MAHDX + "' ";
+                }
+                else if (CheckGoiDau.Checked == true)
+                {
+                    PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC- " + SOTIEN + " WHERE MAKH='" + MAKH + "' ";
+
+                    PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n  UPDATE PHIEUTHU SET SOTIEN=" + SOTIEN + " , TYPEMONEY=2 WHERE MAPT ='" + MAPT + "'";
+                    PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n UPDATE HOADONXUAT SET TYPEMONEY=2 WHERE MAHDX='" + MAHDX + "' ";
+                }
+                else
+                {
+                    PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n  UPDATE PHIEUTHU SET SOTIEN=0, TYPEMONEY=3 WHERE MAPT ='" + MAPT + "'";
+                    PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n UPDATE HOADONXUAT SET  TYPEMONEY=3 WHERE MAHDX='" + MAHDX + "' ";
+                }
+                PublicVariable.TMPtring = "---SỬA PHƯƠNG THỨC TRẢ TIỀN ---";
+            }
+        }
 
         public void insert_HoadonChitietxuat(string mahdx, string lohang, String mamh, Double SoLuong, string DonGia, string tienthu, string GIANHAP, string HSD, String _KMAI, int STT)
         {
@@ -588,7 +712,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 {
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETCTHOADONXUATIN(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, txtDiachi.Text, cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), cktien.Value.ToString(), txtMaHD.Text, "");
+                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, "", cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), cktien.Value.ToString(), txtMaHD.Text, "");
                     rep.ShowPreviewDialog();
                 }
                 else
@@ -645,8 +769,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             txtmakh.Text = "";
             cboTenKH.Text = "";
-            txtDiachi.Text = "";
-            txtSDT.Text = "";           
+            //txtDiachi.Text = "";
+            //txtSDT.Text = "";           
             txtMaHD.Text = "";
             txtNgayXuat.Text = DateTime.Now.ToString("yyy/MM/dd");
             txtNo.Text = "0";
@@ -674,6 +798,22 @@ namespace WindowsFormsApplication1.HoaDonXuat
             loadgridKhachHang();
             Grid_sanpham.DataSource = null;
             loadgridCTHOADON();
+
+            if (PublicVariable.ComboXuat == 1)
+            {
+                CheckTienmat.Checked = true;
+                cbotientra.Properties.ReadOnly = false;
+            }
+            else if (PublicVariable.ComboXuat == 2)
+            {
+                CheckGoiDau.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
+            else
+            {
+                CheckCongNo.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
         }
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -943,6 +1083,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         private Int64 tienchuack = 0;
         public void gettotal()
         {
+   
             int rowcount = gridCTHOADON.RowCount;
             Double total = 0;
             for (int i = 0; i < rowcount; i++)
@@ -966,7 +1107,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
             }
             total = total - Convert.ToInt64(cktien.Value);
             txtthanhtien.Text = total.ToString();
-
+            if (PublicVariable.ComboXuat == 2)
+            {
+                cbotientra.Value = Convert.ToDecimal(txtthanhtien.Text);
+            }
             if (cbotientra.Text != "")
             {
                 thanhtien = Convert.ToDouble(txtthanhtien.Value);
@@ -1009,13 +1153,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         return;
                     }
                     PublicVariable.TMPlog = "";
-                    string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime , TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
+                    string SQLNGAY = "SELECT  TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
                     DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
-                    if (txtNgayXuat.Text != dtn.Rows[0][0].ToString())
-                    {
-                        MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
-                        return;
-                    }
+         
 
                     PublicVariable.TMPtring = "";
                     frmxoahd xhd = new frmxoahd();
@@ -1082,7 +1222,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             loadgridCTHOADON(MAHDX);
             txtMaHD.Text = MAHDX;
           
-            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,GHICHU,CKTIEN,IDNHAP  FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
+            string SQL = "SELECT convert(varchar,T1.NGAYXUAT,103) ,T1.MAHDX ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA ,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,GHICHU,CKTIEN,IDNHAP,TYPEMONEY  FROM (SELECT * FROM HOADONXUAT WHERE MAHDX='" + MAHDX + "' AND  MAKHO='" + PublicVariable.MAKHO + "') AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV";
             DataTable DT = ctlNCC.GETDATA(SQL);
             txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
@@ -1090,6 +1230,22 @@ namespace WindowsFormsApplication1.HoaDonXuat
             txtconLai.Text = DT.Rows[0]["TIENNO"].ToString();
             txtghichu.Text = DT.Rows[0]["GHICHU"].ToString();
             IDNHAP = DT.Rows[0]["IDNHAP"].ToString();
+            STYPEMONEY = DT.Rows[0]["TYPEMONEY"].ToString();
+            if (DT.Rows[0]["TYPEMONEY"].ToString() == "1")
+            {
+                CheckTienmat.Checked = true;
+                
+            }
+            else if (DT.Rows[0]["TYPEMONEY"].ToString() == "2")
+            {
+                CheckGoiDau.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
+            else
+            {
+                CheckCongNo.Checked = true;
+                cbotientra.Properties.ReadOnly = true;
+            }
             
             Int64 _cktien = Convert.ToInt64(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
@@ -1628,6 +1784,54 @@ namespace WindowsFormsApplication1.HoaDonXuat
             LOAD_TTKH();
             loadGrid_sanpham();
         }
+
+        private void CheckTienmat_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckTienmat.Checked == true)
+            {
+                PublicVariable.ComboXuat = 1;
+                cbotientra.Properties.ReadOnly = false;
+                if (isnhap)
+                {
+                    cbotientra.Value = 0;
+                }
+                gettotal();
+            }
+        }
+
+        private void CheckGoiDau_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckGoiDau.Checked == true)
+            {
+                PublicVariable.ComboXuat = 2;
+                cbotientra.Properties.ReadOnly = true;
+
+                cbotientra.Value = Convert.ToDecimal(txtthanhtien.Text);
+             
+                gettotal();
+            }
+        }
+
+        private void CheckCongNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CheckCongNo.Checked == true)
+            {
+                PublicVariable.ComboXuat = 3;
+                cbotientra.Properties.ReadOnly = true;
+            
+                cbotientra.Value = 0;
+                
+                gettotal();
+            }
+        }
+
+        private void frmHoaDonXuat_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
+        }
+
+
+
 
    
     }

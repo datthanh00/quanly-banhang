@@ -91,5 +91,10 @@ namespace WindowsFormsApplication1
             }
         }
 
+        private void FrmINITCODEActive_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
+        }
+
     }
 }

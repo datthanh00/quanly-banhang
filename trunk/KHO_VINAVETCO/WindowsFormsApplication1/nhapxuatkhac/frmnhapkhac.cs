@@ -1196,14 +1196,9 @@ namespace WindowsFormsApplication1
                     }
 
                     PublicVariable.TMPlog = "";
-                    string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime, TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
+                    string SQLNGAY = "SELECT  TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
                     DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
-                    if (txtNgay.Text != dtn.Rows[0][0].ToString())
-                    {
-                        MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
-                        return;
-                    }
-
+             
                     String SQL = "Select TONKHO from KHOHANG where mamh='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "'";
                     DataTable dt = ctlNCC.GETDATA(SQL);
                     Double SOLUONGXUATHT = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
@@ -1656,6 +1651,13 @@ namespace WindowsFormsApplication1
         {
             Stype = gridTYPE.GetFocusedRowCellValue("MATYPE").ToString();
         }
+
+        private void frmnhapkhac_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
+        }
+
+ 
 
 
 

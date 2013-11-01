@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class FrmDsbanggia
+    partial class FrmNoptientruoc
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,23 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnthem = new DevExpress.XtraBars.BarButtonItem();
-            this.barXóa = new DevExpress.XtraBars.BarButtonItem();
-            this.barsua = new DevExpress.XtraBars.BarButtonItem();
+            this.baredit = new DevExpress.XtraBars.BarButtonItem();
+            this.bardelete = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMãphiếuthu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNgàythu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTiềnđãtrả = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAACTIVE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupCtDetails = new System.Windows.Forms.GroupBox();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -51,6 +54,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.groupCtDetails.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // colTINHTRANG
+            // 
+            this.colTINHTRANG.Caption = "Số Tiền Nộp";
+            this.colTINHTRANG.DisplayFormat.FormatString = "{0:0,0}";
+            this.colTINHTRANG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTINHTRANG.FieldName = "SOTIEN";
+            this.colTINHTRANG.Name = "colTINHTRANG";
+            this.colTINHTRANG.OptionsColumn.AllowEdit = false;
+            this.colTINHTRANG.Visible = true;
+            this.colTINHTRANG.VisibleIndex = 3;
+            this.colTINHTRANG.Width = 225;
             // 
             // barManager1
             // 
@@ -62,11 +77,11 @@
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barsua,
-            this.barXóa,
-            this.btnthem});
+            this.bardelete,
+            this.btnthem,
+            this.baredit});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 4;
+            this.barManager1.MaxItemId = 5;
             // 
             // bar2
             // 
@@ -76,8 +91,8 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnthem, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barXóa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barsua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.baredit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.bardelete, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -90,33 +105,33 @@
             this.btnthem.Name = "btnthem";
             this.btnthem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnthem_ItemClick);
             // 
-            // barXóa
+            // baredit
             // 
-            this.barXóa.Caption = "Xóa";
-            this.barXóa.Glyph = global::WindowsFormsApplication1.Properties.Resources.close3;
-            this.barXóa.Id = 2;
-            this.barXóa.Name = "barXóa";
-            this.barXóa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barXóa_ItemClick);
+            this.baredit.Caption = "Sửa";
+            this.baredit.Glyph = global::WindowsFormsApplication1.Properties.Resources.edit2;
+            this.baredit.Id = 4;
+            this.baredit.Name = "baredit";
+            this.baredit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.baredit_ItemClick);
             // 
-            // barsua
+            // bardelete
             // 
-            this.barsua.Caption = "Sửa";
-            this.barsua.Glyph = global::WindowsFormsApplication1.Properties.Resources.edit2;
-            this.barsua.Id = 0;
-            this.barsua.Name = "barsua";
-            this.barsua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barsua_ItemClick);
+            this.bardelete.Caption = "Xóa";
+            this.bardelete.Glyph = global::WindowsFormsApplication1.Properties.Resources.close3;
+            this.bardelete.Id = 2;
+            this.bardelete.Name = "bardelete";
+            this.bardelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barXóa_ItemClick);
             // 
             // barDockControlTop
             // 
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(832, 42);
+            this.barDockControlTop.Size = new System.Drawing.Size(910, 42);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 408);
-            this.barDockControlBottom.Size = new System.Drawing.Size(832, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(910, 0);
             // 
             // barDockControlLeft
             // 
@@ -127,7 +142,7 @@
             // barDockControlRight
             // 
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(832, 42);
+            this.barDockControlRight.Location = new System.Drawing.Point(910, 42);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 366);
             // 
             // gridControl1
@@ -136,62 +151,82 @@
             this.gridControl1.Location = new System.Drawing.Point(3, 19);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(826, 338);
+            this.gridControl1.Size = new System.Drawing.Size(904, 344);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.DoubleClick += new System.EventHandler(this.gridControl1_DoubleClick);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMãphiếuthu,
-            this.colNgàythu,
-            this.colTiềnđãtrả});
+            this.gridColumn2,
+            this.gridColumn1,
+            this.colMAACTIVE,
+            this.colTINHTRANG,
+            this.gridColumn3});
+            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            styleFormatCondition2.Appearance.Options.UseBackColor = true;
+            styleFormatCondition2.ApplyToRow = true;
+            styleFormatCondition2.Column = this.colTINHTRANG;
+            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
+            styleFormatCondition2.Value1 = true;
+            this.gridView1.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
+            styleFormatCondition2});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
             this.gridView1.OptionsSelection.MultiSelect = true;
-            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colMãphiếuthu, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
+            this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
-            // colMãphiếuthu
+            // gridColumn2
             // 
-            this.colMãphiếuthu.Caption = "Mã Bảng Giá";
-            this.colMãphiếuthu.FieldName = "MABG";
-            this.colMãphiếuthu.Name = "colMãphiếuthu";
-            this.colMãphiếuthu.Visible = true;
-            this.colMãphiếuthu.VisibleIndex = 0;
+            this.gridColumn2.Caption = "Nhà Cung Cấp";
+            this.gridColumn2.FieldName = "TENNCC";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            this.gridColumn2.Width = 372;
             // 
-            // colNgàythu
+            // gridColumn1
             // 
-            this.colNgàythu.Caption = "Tên Bảng Giá";
-            this.colNgàythu.FieldName = "TENBG";
-            this.colNgàythu.Name = "colNgàythu";
-            this.colNgàythu.Visible = true;
-            this.colNgàythu.VisibleIndex = 1;
+            this.gridColumn1.Caption = "Khách Hàng";
+            this.gridColumn1.FieldName = "TENKH";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            this.gridColumn1.Width = 314;
             // 
-            // colTiềnđãtrả
+            // colMAACTIVE
             // 
-            this.colTiềnđãtrả.Caption = "Ghi Chú";
-            this.colTiềnđãtrả.FieldName = "GHICHI";
-            this.colTiềnđãtrả.Name = "colTiềnđãtrả";
-            this.colTiềnđãtrả.Visible = true;
-            this.colTiềnđãtrả.VisibleIndex = 2;
+            this.colMAACTIVE.Caption = "Ngày";
+            this.colMAACTIVE.FieldName = "NGAY";
+            this.colMAACTIVE.Name = "colMAACTIVE";
+            this.colMAACTIVE.Visible = true;
+            this.colMAACTIVE.VisibleIndex = 2;
+            this.colMAACTIVE.Width = 179;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "MADOITUONG";
+            this.gridColumn3.FieldName = "MADOITUONG";
+            this.gridColumn3.Name = "gridColumn3";
             // 
             // groupCtDetails
             // 
             this.groupCtDetails.Controls.Add(this.gridControl1);
-            this.groupCtDetails.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupCtDetails.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupCtDetails.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupCtDetails.ForeColor = System.Drawing.Color.DarkBlue;
-            this.groupCtDetails.Location = new System.Drawing.Point(0, 48);
+            this.groupCtDetails.Location = new System.Drawing.Point(0, 42);
             this.groupCtDetails.Name = "groupCtDetails";
-            this.groupCtDetails.Size = new System.Drawing.Size(832, 360);
+            this.groupCtDetails.Size = new System.Drawing.Size(910, 366);
             this.groupCtDetails.TabIndex = 41;
             this.groupCtDetails.TabStop = false;
-            this.groupCtDetails.Text = "Danh Sách Bảng Giá";
             // 
             // barButtonItem1
             // 
@@ -207,20 +242,21 @@
             this.barButtonItem2.Id = 2;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
-            // FrmDsbanggia
+            // FrmNoptientruoc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 408);
+            this.ClientSize = new System.Drawing.Size(910, 408);
             this.Controls.Add(this.groupCtDetails);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "FrmDsbanggia";
-            this.Text = "Danh Sách Bảng Giá";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "FrmNoptientruoc";
+            this.Text = "Danh Sách Nhà cung cấp - Khách Hàng nộp tiền trước";
             this.Load += new System.EventHandler(this.FrmDsbanggia_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNoptientruoc_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -237,17 +273,19 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarButtonItem barsua;
-        private DevExpress.XtraBars.BarButtonItem barXóa;
+        private DevExpress.XtraBars.BarButtonItem bardelete;
         private DevExpress.XtraBars.BarButtonItem btnthem;
         private System.Windows.Forms.GroupBox groupCtDetails;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMãphiếuthu;
-        private DevExpress.XtraGrid.Columns.GridColumn colNgàythu;
-        private DevExpress.XtraGrid.Columns.GridColumn colTiềnđãtrả;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAACTIVE;
+        private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraBars.BarButtonItem baredit;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet5TableAdapters.GETONEPTTableAdapter gETONEPTTableAdapter;
     }
 }

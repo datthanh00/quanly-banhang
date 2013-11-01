@@ -246,15 +246,13 @@ namespace WindowsFormsApplication1
             //DMO
             try
             {
-
-          
                 if (cbTenMayChu.Text == "")
                 {
                     MessageBox.Show("Tên máy chủ database rỗng!");
                     cbTenMayChu.Focus();
                     return;
                 }
-                if (cbDatabase.Text.Trim()!="XUAT_NHAPTON")
+                if (cbDatabase.Text=="")
                 {
                     MessageBox.Show("Sai Tên database");
                     cbDatabase.Focus();
@@ -295,6 +293,7 @@ namespace WindowsFormsApplication1
                     return;
                 }
                 DevComponents.DotNetBar.MessageBoxEx.Show("Đã lưu thành công");
+                PublicVariable.isUSELAN = true;
             }
             catch (Exception)
             {

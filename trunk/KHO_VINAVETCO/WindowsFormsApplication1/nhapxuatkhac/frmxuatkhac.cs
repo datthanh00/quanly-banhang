@@ -1020,13 +1020,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         return;
                     }
                     PublicVariable.TMPlog = "";
-                    string SQLNGAY = "SELECT convert(varchar,getDate(),103) AS CurrentDateTime , TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
+                    string SQLNGAY = "SELECT  TENMH FROM MATHANG WHERE MAMH='" + dtr["MAMH"].ToString() + "' ";
                     DataTable dtn = ctlNCC.GETDATA(SQLNGAY);
-                    if (txtNgayXuat.Text != dtn.Rows[0][0].ToString())
-                    {
-                        MessageBox.Show("Không phải hóa đơn hôm nay nên không thể xóa, chỉ có thể xóa hóa đơn trong ngày  ");
-                        return;
-                    }
+             
 
                     PublicVariable.TMPtring = "";
                     frmxoahd xhd = new frmxoahd();
@@ -1644,6 +1640,14 @@ namespace WindowsFormsApplication1.HoaDonXuat
         {
             Stype = gridTYPE.GetFocusedRowCellValue("MATYPE").ToString();
         }
+
+        private void frmxuatkhac_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
+        }
+
+
+
 
    
     }

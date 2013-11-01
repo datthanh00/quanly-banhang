@@ -36,7 +36,6 @@
             this.lbEmail = new DevExpress.XtraEditors.LabelControl();
             this.lbMaSoThue = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.txtten = new DevExpress.XtraEditors.TextEdit();
             this.txtFax = new DevExpress.XtraEditors.TextEdit();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
@@ -47,6 +46,7 @@
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.lbDiDong = new DevExpress.XtraEditors.LabelControl();
             this.txtDiDong = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtten.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
@@ -123,16 +123,6 @@
             this.simpleButton1.TabIndex = 9;
             this.simpleButton1.Text = "Đồng ý";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Image = global::WindowsFormsApplication1.Properties.Resources.close4;
-            this.simpleButton2.Location = new System.Drawing.Point(223, 228);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 10;
-            this.simpleButton2.Text = "Kết thúc";
-            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // txtten
             // 
@@ -211,6 +201,16 @@
             this.txtDiDong.TabIndex = 4;
             this.txtDiDong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiDong_KeyPress);
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Image = global::WindowsFormsApplication1.Properties.Resources.close4;
+            this.simpleButton2.Location = new System.Drawing.Point(223, 228);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.TabIndex = 10;
+            this.simpleButton2.Text = "Kết thúc";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // frmThongTin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,7 +264,6 @@
         private DevExpress.XtraEditors.LabelControl lbEmail;
         private DevExpress.XtraEditors.LabelControl lbMaSoThue;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.TextEdit txtten;
         private DevExpress.XtraEditors.TextEdit txtFax;
         private DevExpress.XtraEditors.TextEdit txtDiaChi;
@@ -275,5 +274,6 @@
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraEditors.LabelControl lbDiDong;
         private DevExpress.XtraEditors.TextEdit txtDiDong;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

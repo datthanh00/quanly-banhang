@@ -50,6 +50,7 @@
             this.colmamhathang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltennhomhang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.coltenmathang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colthue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCalcEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -80,7 +81,6 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lbsanpham = new DevExpress.XtraEditors.LabelControl();
-            this.btdong = new DevExpress.XtraEditors.SimpleButton();
             this.cbloaihienthi = new DevExpress.XtraEditors.ComboBoxEdit();
             this.BtXuatdulieu = new DevExpress.XtraEditors.SimpleButton();
             this.lbnhom = new DevExpress.XtraEditors.LabelControl();
@@ -90,7 +90,6 @@
             this.mATHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -352,6 +351,16 @@
             this.coltenmathang.VisibleIndex = 0;
             this.coltenmathang.Width = 91;
             // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Lô Hàng";
+            this.gridColumn10.FieldName = "LOHANG";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 2;
+            // 
             // colthue
             // 
             this.colthue.Caption = "Số Thuế";
@@ -534,7 +543,6 @@
             this.panelControl6.Controls.Add(this.cbnhomhang);
             this.panelControl6.Controls.Add(this.cbmathang);
             this.panelControl6.Controls.Add(this.lbsanpham);
-            this.panelControl6.Controls.Add(this.btdong);
             this.panelControl6.Controls.Add(this.cbloaihienthi);
             this.panelControl6.Controls.Add(this.BtXuatdulieu);
             this.panelControl6.Controls.Add(this.lbnhom);
@@ -549,14 +557,14 @@
             // 
             // cbnhomhang
             // 
-            this.cbnhomhang.Location = new System.Drawing.Point(355, 11);
+            this.cbnhomhang.Location = new System.Drawing.Point(287, 9);
             this.cbnhomhang.Name = "cbnhomhang";
             this.cbnhomhang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbnhomhang.Properties.NullText = "";
             this.cbnhomhang.Properties.PopupSizeable = false;
             this.cbnhomhang.Properties.View = this.gridView3;
-            this.cbnhomhang.Size = new System.Drawing.Size(194, 20);
+            this.cbnhomhang.Size = new System.Drawing.Size(158, 20);
             this.cbnhomhang.TabIndex = 26;
             // 
             // gridView3
@@ -587,14 +595,14 @@
             // 
             // cbmathang
             // 
-            this.cbmathang.Location = new System.Drawing.Point(355, 9);
+            this.cbmathang.Location = new System.Drawing.Point(287, 7);
             this.cbmathang.Name = "cbmathang";
             this.cbmathang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbmathang.Properties.NullText = "";
             this.cbmathang.Properties.PopupSizeable = false;
             this.cbmathang.Properties.View = this.gridView2;
-            this.cbmathang.Size = new System.Drawing.Size(194, 20);
+            this.cbmathang.Size = new System.Drawing.Size(158, 20);
             this.cbmathang.TabIndex = 25;
             // 
             // gridView2
@@ -634,30 +642,20 @@
             // 
             // lbsanpham
             // 
-            this.lbsanpham.Location = new System.Drawing.Point(258, 15);
+            this.lbsanpham.Location = new System.Drawing.Point(190, 13);
             this.lbsanpham.Name = "lbsanpham";
             this.lbsanpham.Size = new System.Drawing.Size(78, 13);
             this.lbsanpham.TabIndex = 24;
             this.lbsanpham.Text = "Chọn Mặt Hàng:";
             // 
-            // btdong
-            // 
-            this.btdong.Image = ((System.Drawing.Image)(resources.GetObject("btdong.Image")));
-            this.btdong.Location = new System.Drawing.Point(900, 3);
-            this.btdong.Name = "btdong";
-            this.btdong.Size = new System.Drawing.Size(103, 31);
-            this.btdong.TabIndex = 7;
-            this.btdong.Text = "Thoát";
-            this.btdong.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
             // cbloaihienthi
             // 
-            this.cbloaihienthi.Location = new System.Drawing.Point(79, 9);
+            this.cbloaihienthi.Location = new System.Drawing.Point(73, 9);
             this.cbloaihienthi.MenuManager = this.barManager1;
             this.cbloaihienthi.Name = "cbloaihienthi";
             this.cbloaihienthi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbloaihienthi.Size = new System.Drawing.Size(137, 20);
+            this.cbloaihienthi.Size = new System.Drawing.Size(106, 20);
             this.cbloaihienthi.TabIndex = 8;
             this.cbloaihienthi.SelectedIndexChanged += new System.EventHandler(this.cmbloaihienthi_SelectedIndexChanged);
             this.cbloaihienthi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbloaihienthi_KeyPress);
@@ -665,7 +663,7 @@
             // BtXuatdulieu
             // 
             this.BtXuatdulieu.Image = ((System.Drawing.Image)(resources.GetObject("BtXuatdulieu.Image")));
-            this.BtXuatdulieu.Location = new System.Drawing.Point(780, 3);
+            this.BtXuatdulieu.Location = new System.Drawing.Point(612, 2);
             this.BtXuatdulieu.Name = "BtXuatdulieu";
             this.BtXuatdulieu.Size = new System.Drawing.Size(103, 31);
             this.BtXuatdulieu.TabIndex = 3;
@@ -674,7 +672,7 @@
             // 
             // lbnhom
             // 
-            this.lbnhom.Location = new System.Drawing.Point(251, 15);
+            this.lbnhom.Location = new System.Drawing.Point(183, 13);
             this.lbnhom.Name = "lbnhom";
             this.lbnhom.Size = new System.Drawing.Size(53, 13);
             this.lbnhom.TabIndex = 3;
@@ -684,7 +682,7 @@
             // btin
             // 
             this.btin.Image = ((System.Drawing.Image)(resources.GetObject("btin.Image")));
-            this.btin.Location = new System.Drawing.Point(672, 3);
+            this.btin.Location = new System.Drawing.Point(534, 2);
             this.btin.Name = "btin";
             this.btin.Size = new System.Drawing.Size(70, 31);
             this.btin.TabIndex = 4;
@@ -694,7 +692,7 @@
             // btxem
             // 
             this.btxem.Image = ((System.Drawing.Image)(resources.GetObject("btxem.Image")));
-            this.btxem.Location = new System.Drawing.Point(567, 3);
+            this.btxem.Location = new System.Drawing.Point(454, 2);
             this.btxem.Name = "btxem";
             this.btxem.Size = new System.Drawing.Size(70, 31);
             this.btxem.TabIndex = 3;
@@ -703,7 +701,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(13, 15);
+            this.labelControl2.Location = new System.Drawing.Point(7, 15);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
             this.labelControl2.TabIndex = 1;
@@ -729,31 +727,20 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "Lô Hàng";
-            this.gridColumn10.FieldName = "LOHANG";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.OptionsColumn.AllowEdit = false;
-            this.gridColumn10.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 2;
-            // 
             // frmBCMatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1263, 527);
-            this.ControlBox = false;
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmBCMatHang";
-            this.Text = "mã mặt hàng";
             this.Load += new System.EventHandler(this.frmThongKeTongHop_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmBCMatHang_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -815,7 +802,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.ComboBoxEdit cbloaihienthi;
         private DevExpress.XtraEditors.LabelControl lbnhom;
-        private DevExpress.XtraEditors.SimpleButton btdong;
         private DevExpress.XtraGrid.Columns.GridColumn colmamhathang;
         private DevExpress.XtraGrid.Columns.GridColumn coltenmathang;
         private DevExpress.XtraGrid.Columns.GridColumn coltendonvi;

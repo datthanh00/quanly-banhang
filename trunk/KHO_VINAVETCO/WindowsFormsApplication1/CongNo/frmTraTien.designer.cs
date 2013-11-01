@@ -42,7 +42,6 @@
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSTluu = new DevExpress.XtraBars.BarButtonItem();
             this.barIn = new DevExpress.XtraBars.BarButtonItem();
-            this.barstDong = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -170,7 +169,6 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barSTluu,
-            this.barstDong,
             this.barIn});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 3;
@@ -183,8 +181,7 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barSTluu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barIn, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barstDong, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barIn, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -203,14 +200,6 @@
             this.barIn.Glyph = global::WindowsFormsApplication1.Properties.Resources.printer1;
             this.barIn.Id = 2;
             this.barIn.Name = "barIn";
-            // 
-            // barstDong
-            // 
-            this.barstDong.Caption = "Đóng";
-            this.barstDong.Glyph = global::WindowsFormsApplication1.Properties.Resources.close;
-            this.barstDong.Id = 1;
-            this.barstDong.Name = "barstDong";
-            this.barstDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barstDong_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -298,7 +287,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmTraTien";
             this.Text = "Phiếu Chi";
             this.Load += new System.EventHandler(this.frmTraTien_Load);
@@ -326,7 +315,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.BarButtonItem barSTluu;
-        private DevExpress.XtraBars.BarButtonItem barstDong;
         private DevExpress.XtraBars.BarButtonItem barIn;
         private DevExpress.XtraEditors.TextEdit txtNV;
         private DevExpress.XtraEditors.CalcEdit txtSoTienTra;

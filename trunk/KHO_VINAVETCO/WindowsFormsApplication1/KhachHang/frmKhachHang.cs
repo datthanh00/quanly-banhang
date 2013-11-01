@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
 
         }
         //private bool thoat = false;
-        string sma, sten, smakv, smanv, smabg, sdiachi, ssoTK, snganhang, smasothue, sfax, syahoo, snickskype, stinhtrang;
+        string sma, sten, smakv, smanv, smabg, sdiachi, ssoTK, snganhang, smasothue, sfax, syahoo, snickskype, stinhtrang,stientratruoc;
        
         DTO DTO = new DTO();
         CTL ctl= new CTL();
@@ -144,6 +144,7 @@ namespace WindowsFormsApplication1
                     sma = "";
 
                     sten = "";
+                    stientratruoc = "";
 
                     smakv = "";
 
@@ -199,6 +200,7 @@ namespace WindowsFormsApplication1
                     syahoo = "";
                     snickskype = "";
                     stinhtrang = "";
+                    stientratruoc = "";
                 }
             }
            
@@ -209,10 +211,7 @@ namespace WindowsFormsApplication1
         private void LOADDANHSACHKHACHHANG()
         {
             girdcontrol.MainView = gridViewKHACHHANG;
-            girdcontrol.DataSource = ctl.GETDANHSACHKH();
-           
-            
-            
+            girdcontrol.DataSource = ctl.GETDANHSACHKH();   
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -291,6 +290,7 @@ namespace WindowsFormsApplication1
                 stinhtrang = dtr["TINHTRANG"].ToString();
                 smanv= dtr["MANV"].ToString();
                 smabg = dtr["MABG"].ToString();
+                stientratruoc = dtr["TIENTRATRUOC"].ToString();
             }
             catch (Exception ex)
             {
@@ -326,6 +326,7 @@ namespace WindowsFormsApplication1
             sua.YAHOO = syahoo;
             sua.SKYPE = snickskype;
             sua.TINHTRANG = stinhtrang;
+            sua.TIENTRATRUOC = stientratruoc;
             if (sma == null||sma =="")
             {
                 if (iNgonNgu == 0)
@@ -401,7 +402,9 @@ namespace WindowsFormsApplication1
                     sua.YAHOO = syahoo;
                     sua.SKYPE = snickskype;
                     sua.TINHTRANG = stinhtrang;
+                    sua.TIENTRATRUOC = stientratruoc;
                     sua.ShowDialog();
+                    
                     LOADDANHSACHKHACHHANG();
                 }
             }
@@ -416,6 +419,11 @@ namespace WindowsFormsApplication1
         private void barNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void frmKhachHang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
        
     }

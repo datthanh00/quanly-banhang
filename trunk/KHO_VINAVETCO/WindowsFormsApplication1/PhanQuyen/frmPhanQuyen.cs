@@ -194,7 +194,7 @@ namespace WindowsFormsApplication1
             colUSERNAME.Caption = LamVN.USERNAME.ToString();
             colTINHTRANG1.Caption = LamVN.TINHTRANG.ToString();
             colTINHTRANG.Caption = LamVN.TINHTRANG.ToString();
-            btDong.Text = LamVN.DONG.ToString();
+      
             btXoa.Text = LamVN.XOA.ToString();
             btThem.Text = LamVN.THEM.ToString();
             btSua.Text = LamVN.SUA.ToString();
@@ -213,7 +213,7 @@ namespace WindowsFormsApplication1
             colUSERNAME.Caption = LamEL.USERNAME.ToString();
             colTINHTRANG1.Caption = LamEL.TINHTRANG.ToString();
             colTINHTRANG.Caption = LamEL.TINHTRANG.ToString();
-            btDong.Text = LamEL.DONG.ToString();
+           
             btXoa.Text = LamEL.XOA.ToString();
             btThem.Text = LamEL.THEM.ToString();
             btSua.Text = LamEL.SUA.ToString();
@@ -432,6 +432,11 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("chọn 1 bộ phận để phân quyền");
             }
+        }
+
+        private void frmPhanQuyen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
     }
 }

@@ -1157,6 +1157,11 @@ namespace WindowsFormsApplication1.class_import
             MessageBox.Show("ĐÃ HOÀN THÀNH");
         }
 
+        private void import_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
+        }
+
        
     }
 }

@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
         CTL CTRL = new CTL();
         public string MACHUYEN;
         DataTable dt = new DataTable();
-        public string MANCC, MAKV, TENNCC, DIACHI, MASOTHUE, SOTAIKHOAN, NGANHANG, SDT, EMAIL, FAX, WEBSITE, TINHTRANG;
+        public string MANCC, MAKV, TENNCC, DIACHI, MASOTHUE, SOTAIKHOAN, NGANHANG, SDT, EMAIL, FAX, WEBSITE, TINHTRANG,TIENTRATRUOC;
         public int kiemtra;
 
         public int iNgonNgu;
@@ -116,6 +116,7 @@ namespace WindowsFormsApplication1
                 txtemail.Text = EMAIL;
                 txtfax.Text = FAX;
                 txtwebsite.Text = WEBSITE;
+                cbotientra.Value =Convert.ToDecimal(TIENTRATRUOC);
                 if (TINHTRANG == "True")
                 {
                     checkTT.Checked = true;

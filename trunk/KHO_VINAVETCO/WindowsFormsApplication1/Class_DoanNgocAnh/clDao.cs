@@ -233,6 +233,7 @@ namespace WindowsFormsApplication1
             "\r\nGO\r\n DELETE CHITIETHDN " +
             "\r\nGO\r\n DELETE HOADONNHAP " +
             "\r\nGO\r\n DELETE CHITIETHDX " +
+            "\r\nGO\r\n DELETE CHITIETHDXTAM " +
             "\r\nGO\r\n DELETE HOADONXUAT " +
             "\r\nGO\r\n DELETE TRACHITIETHDN " +
             "\r\nGO\r\n DELETE TRAHOADONNHAP " +
@@ -243,6 +244,7 @@ namespace WindowsFormsApplication1
             "\r\nGO\r\n DELETE PHIEUTHU " +
             "\r\nGO\r\n DELETE TONKHO " +
             "\r\nGO\r\n DELETE TONKHOTT " +
+            "\r\nGO\r\n DELETE TIENTRATRUOC " +
             "\r\nGO\r\n DELETE TONKIEMKHO ";
             try
             {

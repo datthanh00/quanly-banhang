@@ -174,7 +174,7 @@
             this.checkTT.Location = new System.Drawing.Point(85, 259);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 19);
+            this.checkTT.Size = new System.Drawing.Size(82, 18);
             this.checkTT.TabIndex = 10;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
@@ -413,7 +413,7 @@
             // btDong
             // 
             this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
-            this.btDong.Location = new System.Drawing.Point(229, 308);
+            this.btDong.Location = new System.Drawing.Point(264, 308);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(123, 40);
             this.btDong.TabIndex = 1;
@@ -423,7 +423,7 @@
             // btluu
             // 
             this.btluu.Image = global::WindowsFormsApplication1.Properties.Resources.save1;
-            this.btluu.Location = new System.Drawing.Point(62, 308);
+            this.btluu.Location = new System.Drawing.Point(97, 308);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(124, 40);
             this.btluu.TabIndex = 0;

@@ -300,6 +300,14 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETNCC();
         }
+        public DataTable GETDANHSACHDOITUONGKH()
+        {
+            return DAO.GETDANHSACHDOITUONGKH();
+        }
+        public DataTable GETDANHSACHDOITUONGNCC()
+        {
+            return DAO.GETDANHSACHDOITUONGNCC();
+        }
         public DataTable GETDANHSACHKH()
         {
             return DAO.GETDANHSACHKH();
