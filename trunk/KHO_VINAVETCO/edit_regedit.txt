@@ -1,0 +1,9 @@
+HKEY_USERS\.Default\Control Panel\International
+
+sShortDate : dd/MM/yyyy
+
+sDecimal   : .
+
+
+
+sThousand   : ,
