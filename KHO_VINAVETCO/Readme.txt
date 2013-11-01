@@ -16,9 +16,6 @@ ton kho theo ngay bi nham gua kh tra va tra hang cty
 
 them mat hang moi thi chua update tonkhott
 
-			
-
-
 
 USE KHO_VINAVETCO
 SELECT T1.MAMH, TONDAU,NHAP,XUAT,TONCUOI,KLDVT, TENMH,TENNCC,DONVITINH,
