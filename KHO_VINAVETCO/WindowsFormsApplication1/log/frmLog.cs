@@ -31,6 +31,11 @@ namespace WindowsFormsApplication1
             gridControl1.DataSource = dt;
 
         }
+
+        private void frmLog_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
+        }
        
     }
 }
