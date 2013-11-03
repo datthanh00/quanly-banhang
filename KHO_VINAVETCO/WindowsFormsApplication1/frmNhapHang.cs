@@ -934,7 +934,7 @@ namespace WindowsFormsApplication1
                     PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=0 , TYPEMONEY=3 WHERE MAPC ='" + MAPC + "'";
                     PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE HOADONNHAP SET TYPEMONEY=3 WHERE MAHDN='" + MAHDN + "' ";
                 }
-                PublicVariable.TMPtring = "---SỬA PHƯƠNG THỨC TRẢ TIỀN ---";
+                PublicVariable.TMPlog= "---SỬA PHƯƠNG THỨC TRẢ TIỀN ---";
             }
         }
 
@@ -1348,6 +1348,7 @@ namespace WindowsFormsApplication1
                         }
                         return;
                     }
+
                     PublicVariable.TMPtring = "";
                     frmxoahd xhd = new frmxoahd();
                     xhd.MAHD = txtMaHD.Text;
@@ -1362,9 +1363,8 @@ namespace WindowsFormsApplication1
  
 
                     ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), dtr["LOHANG"].ToString(), dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
-
                     // ctlNCC.DELETE_KHOHANG(dtr["MAMH"].ToString(), txtlohang.Text);
-                    PublicVariable.TMPtring = "";
+                   // PublicVariable.TMPtring = "";
 
 
                 }
@@ -1385,6 +1385,7 @@ namespace WindowsFormsApplication1
                 gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
 
                 gettotal();
+
                 dtoNCC.TYPE = "1";
                 dtoNCC.MANCC = txtMANCC.Text;
                 dtoNCC.GHICHU = txtghichu.Text;
@@ -1393,6 +1394,13 @@ namespace WindowsFormsApplication1
                 dtoNCC.MAHDN = txtMaHD.Text;
                 dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                 dtoNCC.CKTIEN = cktien.Value.ToString();
+
+                if (Convert.ToInt64(txtthanhtien.Value) < Convert.ToInt64(cbotientra.Value))
+                {
+                    MessageBox.Show("");
+                    return;
+                }
+
                 ctlNCC.UPDATEHOADONNHAP(dtoNCC);
                 if (sID != "")
                 {
@@ -1831,6 +1839,11 @@ namespace WindowsFormsApplication1
         private void frmNhapHang_FormClosed(object sender, FormClosedEventArgs e)
         {
             deDongTab();
+        }
+
+        private void panelControl5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
     

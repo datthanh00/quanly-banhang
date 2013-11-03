@@ -1230,7 +1230,7 @@ namespace WindowsFormsApplication1
                     ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), dtr["LOHANG"].ToString(), dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
 
                     // ctlNCC.DELETE_KHOHANG(dtr["MAMH"].ToString(), txtlohang.Text);
-                    PublicVariable.TMPtring = "";
+                   // PublicVariable.TMPtring = "";
 
 
                 }

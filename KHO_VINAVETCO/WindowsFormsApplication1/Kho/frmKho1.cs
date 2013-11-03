@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using System.Threading;
+using Quanlykho;
 ////using WindowsFormsApplication1.class_TungLam;
 
 namespace WindowsFormsApplication1

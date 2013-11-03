@@ -11,6 +11,7 @@ using System.Globalization;
 using System.Threading;
 //////using WindowsFormsApplication1.class_TungLam;
 using DevExpress.XtraEditors.DXErrorProvider;
+using Quanlykho;
 
 namespace WindowsFormsApplication1
 {

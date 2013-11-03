@@ -9,6 +9,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.DXErrorProvider;
 using System.Globalization;
 using System.Threading;
+using Quanlykho;
 //using WindowsFormsApplication1.class_TungLam;
 
 namespace WindowsFormsApplication1

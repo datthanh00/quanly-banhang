@@ -14,6 +14,7 @@ using DevExpress.XtraPrinting;
 using DevExpress.XtraReports.UI;
 using DevExpress.XtraGrid;
 using DevExpress.Utils;
+using Quanlykho;
 
 
 namespace WindowsFormsApplication1

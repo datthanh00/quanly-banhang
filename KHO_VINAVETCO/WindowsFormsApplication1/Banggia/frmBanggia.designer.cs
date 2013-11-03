@@ -172,7 +172,7 @@
             // 
             // btdanhsach
             // 
-            this.btdanhsach.Image = global::WindowsFormsApplication1.Properties.Resources.excel;
+            this.btdanhsach.Image = global::Quanlykho.Properties.Resources.excel;
             this.btdanhsach.Location = new System.Drawing.Point(331, 3);
             this.btdanhsach.Name = "btdanhsach";
             this.btdanhsach.Size = new System.Drawing.Size(150, 29);
@@ -249,7 +249,7 @@
             // 
             // btluu
             // 
-            this.btluu.Image = global::WindowsFormsApplication1.Properties.Resources.save;
+            this.btluu.Image = global::Quanlykho.Properties.Resources.save;
             this.btluu.Location = new System.Drawing.Point(223, 4);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(102, 29);

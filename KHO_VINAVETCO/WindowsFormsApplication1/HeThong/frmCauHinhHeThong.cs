@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using System.IO;
-using System.Configuration;
-using WindowsFormsApplication1.Class_ManhCuong;
-using Microsoft.SqlServer.Management.Smo;
-using Microsoft.SqlServer.Management.Common;
 using System.Threading;
 using Microsoft.Win32;
-using System.Data.SqlClient;
-
+using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Management.Common;
+using System.Configuration;
+using System.IO;
 
 namespace WindowsFormsApplication1
 {

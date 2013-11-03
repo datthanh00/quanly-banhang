@@ -290,7 +290,7 @@
             // 
             // simpleButton5
             // 
-            this.simpleButton5.Image = global::WindowsFormsApplication1.Properties.Resources.save;
+            this.simpleButton5.Image = global::Quanlykho.Properties.Resources.save;
             this.simpleButton5.Location = new System.Drawing.Point(490, 5);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(96, 35);
@@ -310,7 +310,7 @@
             // 
             // btIn
             // 
-            this.btIn.Image = global::WindowsFormsApplication1.Properties.Resources.printer1;
+            this.btIn.Image = global::Quanlykho.Properties.Resources.printer1;
             this.btIn.Location = new System.Drawing.Point(254, 5);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(89, 35);
@@ -320,7 +320,7 @@
             // 
             // btLuu
             // 
-            this.btLuu.Image = global::WindowsFormsApplication1.Properties.Resources.save1;
+            this.btLuu.Image = global::Quanlykho.Properties.Resources.save1;
             this.btLuu.Location = new System.Drawing.Point(114, 5);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(122, 35);
@@ -330,7 +330,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Image = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.simpleButton1.Image = global::Quanlykho.Properties.Resources.add;
             this.simpleButton1.Location = new System.Drawing.Point(6, 5);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(90, 35);
@@ -459,7 +459,7 @@
             // 
             this.tongxuat.Caption = "Tổng Xuất";
             this.tongxuat.Name = "tongxuat";
-            this.tongxuat.SmallImage = global::WindowsFormsApplication1.Properties.Resources.report1;
+            this.tongxuat.SmallImage = global::Quanlykho.Properties.Resources.report1;
             this.tongxuat.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.tongxuat_LinkClicked);
             // 
             // linkTheoTuan
@@ -980,7 +980,7 @@
             // btAdd
             // 
             this.btAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btAdd.Image = global::WindowsFormsApplication1.Properties.Resources.plus;
+            this.btAdd.Image = global::Quanlykho.Properties.Resources.plus;
             this.btAdd.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btAdd.Location = new System.Drawing.Point(300, 9);
             this.btAdd.Name = "btAdd";

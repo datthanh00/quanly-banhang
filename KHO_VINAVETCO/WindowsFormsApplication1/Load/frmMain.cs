@@ -19,6 +19,7 @@ using WindowsFormsApplication1.HoaDonXuat;
 using System.Diagnostics;
 using WindowsFormsApplication1.KHtra;
 using WindowsFormsApplication1.class_import;
+using Quanlykho;
 //using DoanCuoi;
 
 

@@ -166,7 +166,7 @@
             // 
             // 
             this.ribbon.ExpandCollapseItem.Id = 0;
-            this.ribbon.ExpandCollapseItem.Name = global::WindowsFormsApplication1.resEngLand.ribQLCongNo;
+            this.ribbon.ExpandCollapseItem.Name = global::Quanlykho.resEngLand.ribQLCongNo;
             this.ribbon.ExpandCollapseItem.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText;
             this.ribbon.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbon.ExpandCollapseItem,
@@ -261,7 +261,7 @@
             // 
             this.btKhachHang.Caption = "Khách Hàng";
             this.btKhachHang.Id = 1;
-            this.btKhachHang.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.customer;
+            this.btKhachHang.LargeGlyph = global::Quanlykho.Properties.Resources.customer;
             this.btKhachHang.LargeWidth = 70;
             this.btKhachHang.Name = "btKhachHang";
             this.btKhachHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btKhachHang_ItemClick);
@@ -270,7 +270,7 @@
             // 
             this.btNhaCungCap.Caption = "Nhà Cung Cấp";
             this.btNhaCungCap.Id = 7;
-            this.btNhaCungCap.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.provider;
+            this.btNhaCungCap.LargeGlyph = global::Quanlykho.Properties.Resources.provider;
             this.btNhaCungCap.LargeWidth = 100;
             this.btNhaCungCap.Name = "btNhaCungCap";
             this.btNhaCungCap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btNhaCungCap_ItemClick);
@@ -279,7 +279,7 @@
             // 
             this.btKhuVuc.Caption = "Khu Vực";
             this.btKhuVuc.Id = 8;
-            this.btKhuVuc.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.my_network_places;
+            this.btKhuVuc.LargeGlyph = global::Quanlykho.Properties.Resources.my_network_places;
             this.btKhuVuc.LargeWidth = 70;
             this.btKhuVuc.Name = "btKhuVuc";
             this.btKhuVuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bKhuVuc_ItemClick);
@@ -288,7 +288,7 @@
             // 
             this.btKho.Caption = "Kho";
             this.btKho.Id = 9;
-            this.btKho.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.Shoppingcart_128x128;
+            this.btKho.LargeGlyph = global::Quanlykho.Properties.Resources.Shoppingcart_128x128;
             this.btKho.LargeWidth = 70;
             this.btKho.Name = "btKho";
             this.btKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btKho_ItemClick);
@@ -297,7 +297,7 @@
             // 
             this.btNhomHang.Caption = "Nhóm Hàng";
             this.btNhomHang.Id = 10;
-            this.btNhomHang.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.store;
+            this.btNhomHang.LargeGlyph = global::Quanlykho.Properties.Resources.store;
             this.btNhomHang.LargeWidth = 70;
             this.btNhomHang.Name = "btNhomHang";
             this.btNhomHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btNhomHang_ItemClick);
@@ -306,7 +306,7 @@
             // 
             this.btMatHang.Caption = "Mặt Hàng";
             this.btMatHang.Id = 11;
-            this.btMatHang.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
+            this.btMatHang.LargeGlyph = global::Quanlykho.Properties.Resources.product;
             this.btMatHang.LargeWidth = 70;
             this.btMatHang.Name = "btMatHang";
             this.btMatHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btMatHang_ItemClick);
@@ -315,7 +315,7 @@
             // 
             this.btNhanVien.Caption = "Nhân Viên";
             this.btNhanVien.Id = 15;
-            this.btNhanVien.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.member;
+            this.btNhanVien.LargeGlyph = global::Quanlykho.Properties.Resources.member;
             this.btNhanVien.LargeWidth = 70;
             this.btNhanVien.Name = "btNhanVien";
             this.btNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btNhanVien_ItemClick);
@@ -324,7 +324,7 @@
             // 
             this.btBoPhan.Caption = "Bộ Phận";
             this.btBoPhan.Id = 16;
-            this.btBoPhan.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.bophan;
+            this.btBoPhan.LargeGlyph = global::Quanlykho.Properties.Resources.bophan;
             this.btBoPhan.LargeWidth = 70;
             this.btBoPhan.Name = "btBoPhan";
             this.btBoPhan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btBoPhan_ItemClick);
@@ -333,7 +333,7 @@
             // 
             this.btNhapHang.Caption = "Nhập Hàng";
             this.btNhapHang.Id = 17;
-            this.btNhapHang.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.nhaphang;
+            this.btNhapHang.LargeGlyph = global::Quanlykho.Properties.Resources.nhaphang;
             this.btNhapHang.LargeWidth = 60;
             this.btNhapHang.Name = "btNhapHang";
             this.btNhapHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btNhapHang_ItemClick);
@@ -342,7 +342,7 @@
             // 
             this.btXuatHang.Caption = "Xuất Hàng";
             this.btXuatHang.Id = 18;
-            this.btXuatHang.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.xuathang;
+            this.btXuatHang.LargeGlyph = global::Quanlykho.Properties.Resources.xuathang;
             this.btXuatHang.LargeWidth = 60;
             this.btXuatHang.Name = "btXuatHang";
             this.btXuatHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btXuatHang_ItemClick);
@@ -351,7 +351,7 @@
             // 
             this.btCongNoNCC.Caption = "Nhà Cung Cấp";
             this.btCongNoNCC.Id = 20;
-            this.btCongNoNCC.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.cno;
+            this.btCongNoNCC.LargeGlyph = global::Quanlykho.Properties.Resources.cno;
             this.btCongNoNCC.LargeWidth = 70;
             this.btCongNoNCC.Name = "btCongNoNCC";
             this.btCongNoNCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btCongNoNCC_ItemClick);
@@ -360,7 +360,7 @@
             // 
             this.btCongNoKH.Caption = "Khách Hàng";
             this.btCongNoKH.Id = 21;
-            this.btCongNoKH.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.KIEMKEKHO1;
+            this.btCongNoKH.LargeGlyph = global::Quanlykho.Properties.Resources.KIEMKEKHO1;
             this.btCongNoKH.LargeWidth = 70;
             this.btCongNoKH.Name = "btCongNoKH";
             this.btCongNoKH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btCongNoKH_ItemClick);
@@ -369,7 +369,7 @@
             // 
             this.btSaoluu.Caption = "Sao Lưu";
             this.btSaoluu.Id = 25;
-            this.btSaoluu.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.backup;
+            this.btSaoluu.LargeGlyph = global::Quanlykho.Properties.Resources.backup;
             this.btSaoluu.LargeWidth = 70;
             this.btSaoluu.Name = "btSaoluu";
             this.btSaoluu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem18_ItemClick);
@@ -378,7 +378,7 @@
             // 
             this.btPhuchoi.Caption = "Phục Hồi";
             this.btPhuchoi.Id = 26;
-            this.btPhuchoi.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources._64_restore1;
+            this.btPhuchoi.LargeGlyph = global::Quanlykho.Properties.Resources._64_restore1;
             this.btPhuchoi.LargeWidth = 70;
             this.btPhuchoi.Name = "btPhuchoi";
             this.btPhuchoi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem19_ItemClick);
@@ -387,7 +387,7 @@
             // 
             this.btHuongDan.Caption = "Hướng Dẫn";
             this.btHuongDan.Id = 34;
-            this.btHuongDan.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.help;
+            this.btHuongDan.LargeGlyph = global::Quanlykho.Properties.Resources.help;
             this.btHuongDan.LargeWidth = 70;
             this.btHuongDan.Name = "btHuongDan";
             this.btHuongDan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btHuongDan_ItemClick);
@@ -396,7 +396,7 @@
             // 
             this.btLienHe.Caption = "Liên Hệ";
             this.btLienHe.Id = 35;
-            this.btLienHe.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.contact_icon;
+            this.btLienHe.LargeGlyph = global::Quanlykho.Properties.Resources.contact_icon;
             this.btLienHe.LargeWidth = 70;
             this.btLienHe.Name = "btLienHe";
             this.btLienHe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btLienHe_ItemClick);
@@ -405,7 +405,7 @@
             // 
             this.btTacGia.Caption = "Tác Giả";
             this.btTacGia.Id = 36;
-            this.btTacGia.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.licence;
+            this.btTacGia.LargeGlyph = global::Quanlykho.Properties.Resources.licence;
             this.btTacGia.LargeWidth = 70;
             this.btTacGia.Name = "btTacGia";
             this.btTacGia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btTacGia_ItemClick);
@@ -414,7 +414,7 @@
             // 
             this.btDonViTinh.Caption = "Đơn Vị Tính";
             this.btDonViTinh.Id = 37;
-            this.btDonViTinh.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.btDonViTinh.LargeGlyph = global::Quanlykho.Properties.Resources.money;
             this.btDonViTinh.LargeWidth = 70;
             this.btDonViTinh.Name = "btDonViTinh";
             this.btDonViTinh.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btDonViTinh_ItemClick);
@@ -480,7 +480,7 @@
             // 
             this.barStaticNhanVien.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.barStaticNhanVien.Caption = "barStaticItem3";
-            this.barStaticNhanVien.Glyph = global::WindowsFormsApplication1.Properties.Resources.member;
+            this.barStaticNhanVien.Glyph = global::Quanlykho.Properties.Resources.member;
             this.barStaticNhanVien.Id = 66;
             this.barStaticNhanVien.Name = "barStaticNhanVien";
             this.barStaticNhanVien.TextAlignment = System.Drawing.StringAlignment.Center;
@@ -497,7 +497,7 @@
             // 
             this.barDatabase.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
             this.barDatabase.Caption = "barStaticItem5";
-            this.barDatabase.Glyph = global::WindowsFormsApplication1.Properties.Resources.xuathang;
+            this.barDatabase.Glyph = global::Quanlykho.Properties.Resources.xuathang;
             this.barDatabase.Id = 69;
             this.barDatabase.Name = "barDatabase";
             this.barDatabase.TextAlignment = System.Drawing.StringAlignment.Near;
@@ -505,9 +505,9 @@
             // btAnh
             // 
             this.btAnh.Caption = "English";
-            this.btAnh.Glyph = global::WindowsFormsApplication1.Properties.Resources.england;
+            this.btAnh.Glyph = global::Quanlykho.Properties.Resources.england;
             this.btAnh.Id = 70;
-            this.btAnh.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources._64_restore;
+            this.btAnh.LargeGlyph = global::Quanlykho.Properties.Resources._64_restore;
             this.btAnh.Name = "btAnh";
             toolTipTitleItem1.Text = "Language";
             toolTipItem1.LeftIndent = 6;
@@ -526,7 +526,7 @@
             // btNgonNguViet
             // 
             this.btNgonNguViet.Caption = "barButtonItem29";
-            this.btNgonNguViet.Glyph = global::WindowsFormsApplication1.Properties.Resources.vn;
+            this.btNgonNguViet.Glyph = global::Quanlykho.Properties.Resources.vn;
             this.btNgonNguViet.Id = 74;
             this.btNgonNguViet.Name = "btNgonNguViet";
             toolTipTitleItem2.Text = "Ngôn ngữ";
@@ -541,7 +541,7 @@
             // 
             this.btHoaDonNhap.Caption = "Hoá đơn nhập";
             this.btHoaDonNhap.Id = 80;
-            this.btHoaDonNhap.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.hoadon;
+            this.btHoaDonNhap.LargeGlyph = global::Quanlykho.Properties.Resources.hoadon;
             this.btHoaDonNhap.LargeWidth = 80;
             this.btHoaDonNhap.Name = "btHoaDonNhap";
             // 
@@ -549,7 +549,7 @@
             // 
             this.btHoaDonXuat.Caption = "Hoá Đơn Xuất";
             this.btHoaDonXuat.Id = 81;
-            this.btHoaDonXuat.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.hoadon;
+            this.btHoaDonXuat.LargeGlyph = global::Quanlykho.Properties.Resources.hoadon;
             this.btHoaDonXuat.LargeWidth = 80;
             this.btHoaDonXuat.Name = "btHoaDonXuat";
             // 
@@ -557,7 +557,7 @@
             // 
             this.btTonKho.Caption = "Tổng Hợp Tồn";
             this.btTonKho.Id = 82;
-            this.btTonKho.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.tonkho;
+            this.btTonKho.LargeGlyph = global::Quanlykho.Properties.Resources.tonkho;
             this.btTonKho.LargeWidth = 74;
             this.btTonKho.Name = "btTonKho";
             this.btTonKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btTonKho_ItemClick);
@@ -566,7 +566,7 @@
             // 
             this.btTongHop.Caption = "Tổng hợp";
             this.btTongHop.Id = 83;
-            this.btTongHop.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.report;
+            this.btTongHop.LargeGlyph = global::Quanlykho.Properties.Resources.report;
             this.btTongHop.LargeWidth = 60;
             this.btTongHop.Name = "btTongHop";
             this.btTongHop.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btTongHop_ItemClick_1);
@@ -575,7 +575,7 @@
             // 
             this.btDoanhThu.Caption = "Doanh thu";
             this.btDoanhThu.Id = 84;
-            this.btDoanhThu.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.doanhthu;
+            this.btDoanhThu.LargeGlyph = global::Quanlykho.Properties.Resources.doanhthu;
             this.btDoanhThu.LargeWidth = 60;
             this.btDoanhThu.Name = "btDoanhThu";
             this.btDoanhThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btDoanhThu_ItemClick_1);
@@ -584,7 +584,7 @@
             // 
             this.btPhanQuyen.Caption = "Phân quyền";
             this.btPhanQuyen.Id = 85;
-            this.btPhanQuyen.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.key;
+            this.btPhanQuyen.LargeGlyph = global::Quanlykho.Properties.Resources.key;
             this.btPhanQuyen.LargeWidth = 100;
             this.btPhanQuyen.Name = "btPhanQuyen";
             this.btPhanQuyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btPhanQuyen_ItemClick);
@@ -593,7 +593,7 @@
             // 
             this.btDangXuat.Caption = "Đăng xuất";
             this.btDangXuat.Id = 86;
-            this.btDangXuat.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.logout;
+            this.btDangXuat.LargeGlyph = global::Quanlykho.Properties.Resources.logout;
             this.btDangXuat.LargeWidth = 70;
             this.btDangXuat.Name = "btDangXuat";
             this.btDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btDangXuat_ItemClick_1);
@@ -602,7 +602,7 @@
             // 
             this.btDoiMatKhau.Caption = "Đổi mật khẩu";
             this.btDoiMatKhau.Id = 87;
-            this.btDoiMatKhau.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.changepass;
+            this.btDoiMatKhau.LargeGlyph = global::Quanlykho.Properties.Resources.changepass;
             this.btDoiMatKhau.LargeWidth = 70;
             this.btDoiMatKhau.Name = "btDoiMatKhau";
             this.btDoiMatKhau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btDoiMatKhau_ItemClick);
@@ -611,7 +611,7 @@
             // 
             this.btThongTin.Caption = "Thông tin";
             this.btThongTin.Id = 88;
-            this.btThongTin.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.info;
+            this.btThongTin.LargeGlyph = global::Quanlykho.Properties.Resources.info;
             this.btThongTin.LargeWidth = 70;
             this.btThongTin.Name = "btThongTin";
             this.btThongTin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btThongTin_ItemClick);
@@ -620,7 +620,7 @@
             // 
             this.btKetThuc.Caption = "Kết thúc";
             this.btKetThuc.Id = 89;
-            this.btKetThuc.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources._out;
+            this.btKetThuc.LargeGlyph = global::Quanlykho.Properties.Resources._out;
             this.btKetThuc.LargeWidth = 70;
             this.btKetThuc.Name = "btKetThuc";
             this.btKetThuc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btKetThuc_ItemClick);
@@ -631,7 +631,7 @@
             this.barMayChu.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.barMayChu.Appearance.Options.UseForeColor = true;
             this.barMayChu.Caption = "barStaticItem1";
-            this.barMayChu.Glyph = global::WindowsFormsApplication1.Properties.Resources.my_network_places;
+            this.barMayChu.Glyph = global::Quanlykho.Properties.Resources.my_network_places;
             this.barMayChu.Id = 92;
             this.barMayChu.Name = "barMayChu";
             this.barMayChu.TextAlignment = System.Drawing.StringAlignment.Near;
@@ -639,7 +639,7 @@
             // barSubItem1
             // 
             this.barSubItem1.Caption = "barSubItem1";
-            this.barSubItem1.Glyph = global::WindowsFormsApplication1.Properties.Resources.emblem_art21;
+            this.barSubItem1.Glyph = global::Quanlykho.Properties.Resources.emblem_art21;
             this.barSubItem1.Id = 102;
             this.barSubItem1.Name = "barSubItem1";
             this.barSubItem1.Popup += new System.EventHandler(this.barSubItem1_Popup);
@@ -648,7 +648,7 @@
             // 
             this.btmathangthongkhe.Caption = "Tồn Kho";
             this.btmathangthongkhe.Id = 104;
-            this.btmathangthongkhe.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.product;
+            this.btmathangthongkhe.LargeGlyph = global::Quanlykho.Properties.Resources.product;
             this.btmathangthongkhe.LargeWidth = 60;
             this.btmathangthongkhe.Name = "btmathangthongkhe";
             this.btmathangthongkhe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btmathangthongkhe_ItemClick);
@@ -657,7 +657,7 @@
             // 
             this.btThue.Caption = "Thuế";
             this.btThue.Id = 105;
-            this.btThue.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.licence;
+            this.btThue.LargeGlyph = global::Quanlykho.Properties.Resources.licence;
             this.btThue.LargeWidth = 70;
             this.btThue.Name = "btThue";
             this.btThue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btThue_ItemClick);
@@ -666,7 +666,7 @@
             // 
             this.BTTraNCC.Caption = "Trả Hàng CTY";
             this.BTTraNCC.Id = 106;
-            this.BTTraNCC.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.tonkho;
+            this.BTTraNCC.LargeGlyph = global::Quanlykho.Properties.Resources.tonkho;
             this.BTTraNCC.LargeWidth = 60;
             this.BTTraNCC.Name = "BTTraNCC";
             this.BTTraNCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTTraNCC_ItemClick);
@@ -675,7 +675,7 @@
             // 
             this.BTKHtra.Caption = "Khách Trả Hàng";
             this.BTKHtra.Id = 107;
-            this.BTKHtra.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.Hien;
+            this.BTKHtra.LargeGlyph = global::Quanlykho.Properties.Resources.Hien;
             this.BTKHtra.LargeWidth = 60;
             this.BTKHtra.Name = "BTKHtra";
             this.BTKHtra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTKHtra_ItemClick);
@@ -684,7 +684,7 @@
             // 
             this.btnlog.Caption = "LOG";
             this.btnlog.Id = 108;
-            this.btnlog.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.hitchhikeguidetogalaxy5_lock;
+            this.btnlog.LargeGlyph = global::Quanlykho.Properties.Resources.hitchhikeguidetogalaxy5_lock;
             this.btnlog.LargeWidth = 70;
             this.btnlog.Name = "btnlog";
             this.btnlog.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
@@ -693,7 +693,7 @@
             // 
             this.btnimportexcell.Caption = "Import excell";
             this.btnimportexcell.Id = 109;
-            this.btnimportexcell.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.excel;
+            this.btnimportexcell.LargeGlyph = global::Quanlykho.Properties.Resources.excel;
             this.btnimportexcell.LargeWidth = 70;
             this.btnimportexcell.Name = "btnimportexcell";
             this.btnimportexcell.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
@@ -702,7 +702,7 @@
             // 
             this.barButtonItem1.Caption = "Tồn Kho theo ngày";
             this.barButtonItem1.Id = 110;
-            this.barButtonItem1.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.store;
+            this.barButtonItem1.LargeGlyph = global::Quanlykho.Properties.Resources.store;
             this.barButtonItem1.LargeWidth = 68;
             this.barButtonItem1.Name = "barButtonItem1";
             this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_2);
@@ -711,7 +711,7 @@
             // 
             this.btnphanlo.Caption = "Tồn   Phân Lô";
             this.btnphanlo.Id = 111;
-            this.btnphanlo.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.listvn;
+            this.btnphanlo.LargeGlyph = global::Quanlykho.Properties.Resources.listvn;
             this.btnphanlo.LargeWidth = 60;
             this.btnphanlo.Name = "btnphanlo";
             this.btnphanlo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnphanlo_ItemClick);
@@ -720,7 +720,7 @@
             // 
             this.btnbanggia.Caption = "Bảng Giá";
             this.btnbanggia.Id = 112;
-            this.btnbanggia.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.cno;
+            this.btnbanggia.LargeGlyph = global::Quanlykho.Properties.Resources.cno;
             this.btnbanggia.LargeWidth = 70;
             this.btnbanggia.Name = "btnbanggia";
             this.btnbanggia.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
@@ -729,7 +729,7 @@
             // 
             this.barButtoncongnodau.Caption = "Công Nợ NCC";
             this.barButtoncongnodau.Id = 114;
-            this.barButtoncongnodau.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.NONCCDAUKY1;
+            this.barButtoncongnodau.LargeGlyph = global::Quanlykho.Properties.Resources.NONCCDAUKY1;
             this.barButtoncongnodau.LargeWidth = 80;
             this.barButtoncongnodau.Name = "barButtoncongnodau";
             this.barButtoncongnodau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtoncongnodau_ItemClick);
@@ -738,7 +738,7 @@
             // 
             this.barButtontondau.Caption = "Hàng Tồn Đầu";
             this.barButtontondau.Id = 115;
-            this.barButtontondau.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.TONDAUKY1;
+            this.barButtontondau.LargeGlyph = global::Quanlykho.Properties.Resources.TONDAUKY1;
             this.barButtontondau.LargeWidth = 80;
             this.barButtontondau.Name = "barButtontondau";
             this.barButtontondau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtontondau_ItemClick);
@@ -747,7 +747,7 @@
             // 
             this.barButtonkiemkekho.Caption = "Kiểm Kê Kho";
             this.barButtonkiemkekho.Id = 116;
-            this.barButtonkiemkekho.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.KIEMKEKHO1;
+            this.barButtonkiemkekho.LargeGlyph = global::Quanlykho.Properties.Resources.KIEMKEKHO1;
             this.barButtonkiemkekho.LargeWidth = 80;
             this.barButtonkiemkekho.Name = "barButtonkiemkekho";
             this.barButtonkiemkekho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonkiemkekho_ItemClick);
@@ -756,7 +756,7 @@
             // 
             this.barButtonkhoaso.Caption = "Khóa Sổ";
             this.barButtonkhoaso.Id = 117;
-            this.barButtonkhoaso.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.KHOASO1;
+            this.barButtonkhoaso.LargeGlyph = global::Quanlykho.Properties.Resources.KHOASO1;
             this.barButtonkhoaso.LargeWidth = 70;
             this.barButtonkhoaso.Name = "barButtonkhoaso";
             this.barButtonkhoaso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonkhoaso_ItemClick);
@@ -765,7 +765,7 @@
             // 
             this.barButtonketso.Caption = "Kết Sổ";
             this.barButtonketso.Id = 118;
-            this.barButtonketso.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.CHOTSO1;
+            this.barButtonketso.LargeGlyph = global::Quanlykho.Properties.Resources.CHOTSO1;
             this.barButtonketso.LargeWidth = 70;
             this.barButtonketso.Name = "barButtonketso";
             this.barButtonketso.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonketso_ItemClick);
@@ -774,7 +774,7 @@
             // 
             this.barButtonphaithudauky.Caption = "Công Nợ KH";
             this.barButtonphaithudauky.Id = 119;
-            this.barButtonphaithudauky.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.doanhthu;
+            this.barButtonphaithudauky.LargeGlyph = global::Quanlykho.Properties.Resources.doanhthu;
             this.barButtonphaithudauky.LargeWidth = 70;
             this.barButtonphaithudauky.Name = "barButtonphaithudauky";
             this.barButtonphaithudauky.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonphaithudauky_ItemClick);
@@ -783,7 +783,7 @@
             // 
             this.barButtonnhapkhac.Caption = "Nhập Khác";
             this.barButtonnhapkhac.Id = 121;
-            this.barButtonnhapkhac.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.nhaphang;
+            this.barButtonnhapkhac.LargeGlyph = global::Quanlykho.Properties.Resources.nhaphang;
             this.barButtonnhapkhac.LargeWidth = 80;
             this.barButtonnhapkhac.Name = "barButtonnhapkhac";
             this.barButtonnhapkhac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonnhapkhac_ItemClick);
@@ -792,7 +792,7 @@
             // 
             this.barButtonxuatkhac.Caption = "Xuất Khác";
             this.barButtonxuatkhac.Id = 122;
-            this.barButtonxuatkhac.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.xuathang;
+            this.barButtonxuatkhac.LargeGlyph = global::Quanlykho.Properties.Resources.xuathang;
             this.barButtonxuatkhac.LargeWidth = 80;
             this.barButtonxuatkhac.Name = "barButtonxuatkhac";
             this.barButtonxuatkhac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonxuatkhac_ItemClick);
@@ -801,7 +801,7 @@
             // 
             this.ButtonACTIVE.Caption = "Active";
             this.ButtonACTIVE.Id = 123;
-            this.ButtonACTIVE.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.barcode;
+            this.ButtonACTIVE.LargeGlyph = global::Quanlykho.Properties.Resources.barcode;
             this.ButtonACTIVE.LargeWidth = 70;
             this.ButtonACTIVE.Name = "ButtonACTIVE";
             this.ButtonACTIVE.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ButtonACTIVE_ItemClick);
@@ -810,7 +810,7 @@
             // 
             this.buttonNOPTIENTRUOC.Caption = "Nộp Tiền Trước";
             this.buttonNOPTIENTRUOC.Id = 124;
-            this.buttonNOPTIENTRUOC.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.tonkho;
+            this.buttonNOPTIENTRUOC.LargeGlyph = global::Quanlykho.Properties.Resources.tonkho;
             this.buttonNOPTIENTRUOC.LargeWidth = 70;
             this.buttonNOPTIENTRUOC.Name = "buttonNOPTIENTRUOC";
             this.buttonNOPTIENTRUOC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick_1);
@@ -1068,7 +1068,7 @@
             // 
             this.barButtonItem25.Caption = "Kết Thúc";
             this.barButtonItem25.Id = 32;
-            this.barButtonItem25.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources._out;
+            this.barButtonItem25.LargeGlyph = global::Quanlykho.Properties.Resources._out;
             this.barButtonItem25.LargeWidth = 70;
             this.barButtonItem25.Name = "barButtonItem25";
             // 
@@ -1076,7 +1076,7 @@
             // 
             this.barButtonItem24.Caption = "Thông Tin";
             this.barButtonItem24.Id = 31;
-            this.barButtonItem24.LargeGlyph = global::WindowsFormsApplication1.Properties.Resources.info;
+            this.barButtonItem24.LargeGlyph = global::Quanlykho.Properties.Resources.info;
             this.barButtonItem24.LargeWidth = 70;
             this.barButtonItem24.Name = "barButtonItem24";
             // 
@@ -1101,7 +1101,7 @@
             // 
             // phụcHồiDữLiệuToolStripMenuItem
             // 
-            this.phụcHồiDữLiệuToolStripMenuItem.Image = global::WindowsFormsApplication1.Properties.Resources.refresh;
+            this.phụcHồiDữLiệuToolStripMenuItem.Image = global::Quanlykho.Properties.Resources.refresh;
             this.phụcHồiDữLiệuToolStripMenuItem.Name = "phụcHồiDữLiệuToolStripMenuItem";
             this.phụcHồiDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.phụcHồiDữLiệuToolStripMenuItem.Text = "Phục hồi dữ liệu";
@@ -1109,7 +1109,7 @@
             // 
             // saoLưuDữLiệuToolStripMenuItem
             // 
-            this.saoLưuDữLiệuToolStripMenuItem.Image = global::WindowsFormsApplication1.Properties.Resources.backup;
+            this.saoLưuDữLiệuToolStripMenuItem.Image = global::Quanlykho.Properties.Resources.backup;
             this.saoLưuDữLiệuToolStripMenuItem.Name = "saoLưuDữLiệuToolStripMenuItem";
             this.saoLưuDữLiệuToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.saoLưuDữLiệuToolStripMenuItem.Text = "Sao lưu dữ liệu";
@@ -1117,7 +1117,7 @@
             // 
             // ẩnToolStripMenuItem
             // 
-            this.ẩnToolStripMenuItem.Image = global::WindowsFormsApplication1.Properties.Resources.an;
+            this.ẩnToolStripMenuItem.Image = global::Quanlykho.Properties.Resources.an;
             this.ẩnToolStripMenuItem.Name = "ẩnToolStripMenuItem";
             this.ẩnToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.ẩnToolStripMenuItem.Text = "Ẩn";
@@ -1125,7 +1125,7 @@
             // 
             // hiệnToolStripMenuItem
             // 
-            this.hiệnToolStripMenuItem.Image = global::WindowsFormsApplication1.Properties.Resources.Hien;
+            this.hiệnToolStripMenuItem.Image = global::Quanlykho.Properties.Resources.Hien;
             this.hiệnToolStripMenuItem.Name = "hiệnToolStripMenuItem";
             this.hiệnToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.hiệnToolStripMenuItem.Text = "Hiện ";
@@ -1133,7 +1133,7 @@
             // 
             // thoátToolStripMenuItem
             // 
-            this.thoátToolStripMenuItem.Image = global::WindowsFormsApplication1.Properties.Resources.close4;
+            this.thoátToolStripMenuItem.Image = global::Quanlykho.Properties.Resources.close4;
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
             this.thoátToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";

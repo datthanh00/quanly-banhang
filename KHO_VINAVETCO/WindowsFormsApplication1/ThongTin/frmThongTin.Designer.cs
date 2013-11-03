@@ -116,7 +116,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Image = global::WindowsFormsApplication1.Properties.Resources.check;
+            this.simpleButton1.Image = global::Quanlykho.Properties.Resources.check;
             this.simpleButton1.Location = new System.Drawing.Point(130, 228);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
@@ -203,7 +203,7 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Image = global::WindowsFormsApplication1.Properties.Resources.close4;
+            this.simpleButton2.Image = global::Quanlykho.Properties.Resources.close4;
             this.simpleButton2.Location = new System.Drawing.Point(223, 228);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);

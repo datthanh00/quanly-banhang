@@ -346,28 +346,28 @@
             // 
             this.linkTaoMoi.Caption = "Tạo Mới";
             this.linkTaoMoi.Name = "linkTaoMoi";
-            this.linkTaoMoi.SmallImage = global::WindowsFormsApplication1.Properties.Resources.report1;
+            this.linkTaoMoi.SmallImage = global::Quanlykho.Properties.Resources.report1;
             this.linkTaoMoi.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.linkTaoMoi_Clicked);
             // 
             // linkTheoHoaDon
             // 
             this.linkTheoHoaDon.Caption = "Phiếu Nhập";
             this.linkTheoHoaDon.Name = "linkTheoHoaDon";
-            this.linkTheoHoaDon.SmallImage = global::WindowsFormsApplication1.Properties.Resources.report1;
+            this.linkTheoHoaDon.SmallImage = global::Quanlykho.Properties.Resources.report1;
             this.linkTheoHoaDon.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.linkTheoHoaDon_Clicked);
             // 
             // linkTheoSanPham
             // 
             this.linkTheoSanPham.Caption = "Mặt Hàng Nhập";
             this.linkTheoSanPham.Name = "linkTheoSanPham";
-            this.linkTheoSanPham.SmallImage = global::WindowsFormsApplication1.Properties.Resources.report1;
+            this.linkTheoSanPham.SmallImage = global::Quanlykho.Properties.Resources.report1;
             this.linkTheoSanPham.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.linkTheoSanPham_Clicked);
             // 
             // navBarItem1
             // 
             this.navBarItem1.Caption = "Tổng Nhập";
             this.navBarItem1.Name = "navBarItem1";
-            this.navBarItem1.SmallImage = global::WindowsFormsApplication1.Properties.Resources.report1;
+            this.navBarItem1.SmallImage = global::Quanlykho.Properties.Resources.report1;
             this.navBarItem1.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem1_LinkClicked);
             // 
             // linkTheoTuan
@@ -611,6 +611,7 @@
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(1096, 135);
             this.panelControl5.TabIndex = 8;
+            this.panelControl5.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl5_Paint);
             // 
             // txtconLai
             // 
@@ -838,7 +839,7 @@
             // 
             // btAdd
             // 
-            this.btAdd.Image = global::WindowsFormsApplication1.Properties.Resources.plus;
+            this.btAdd.Image = global::Quanlykho.Properties.Resources.plus;
             this.btAdd.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btAdd.Location = new System.Drawing.Point(317, 6);
             this.btAdd.Name = "btAdd";
@@ -977,7 +978,7 @@
             // 
             // btIn
             // 
-            this.btIn.Image = global::WindowsFormsApplication1.Properties.Resources.printer1;
+            this.btIn.Image = global::Quanlykho.Properties.Resources.printer1;
             this.btIn.Location = new System.Drawing.Point(279, 3);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(111, 35);
@@ -987,7 +988,7 @@
             // 
             // btLuu
             // 
-            this.btLuu.Image = global::WindowsFormsApplication1.Properties.Resources.save1;
+            this.btLuu.Image = global::Quanlykho.Properties.Resources.save1;
             this.btLuu.Location = new System.Drawing.Point(104, 3);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(159, 35);
@@ -997,7 +998,7 @@
             // 
             // btTaoMoi
             // 
-            this.btTaoMoi.Image = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.btTaoMoi.Image = global::Quanlykho.Properties.Resources.add;
             this.btTaoMoi.Location = new System.Drawing.Point(6, 3);
             this.btTaoMoi.Name = "btTaoMoi";
             this.btTaoMoi.Size = new System.Drawing.Size(80, 35);

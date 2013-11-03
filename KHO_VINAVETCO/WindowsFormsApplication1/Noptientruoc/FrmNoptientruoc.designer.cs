@@ -100,7 +100,7 @@
             // btnthem
             // 
             this.btnthem.Caption = "Thêm";
-            this.btnthem.Glyph = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.btnthem.Glyph = global::Quanlykho.Properties.Resources.add;
             this.btnthem.Id = 3;
             this.btnthem.Name = "btnthem";
             this.btnthem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnthem_ItemClick);
@@ -108,7 +108,7 @@
             // baredit
             // 
             this.baredit.Caption = "Sửa";
-            this.baredit.Glyph = global::WindowsFormsApplication1.Properties.Resources.edit2;
+            this.baredit.Glyph = global::Quanlykho.Properties.Resources.edit2;
             this.baredit.Id = 4;
             this.baredit.Name = "baredit";
             this.baredit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.baredit_ItemClick);
@@ -116,7 +116,7 @@
             // bardelete
             // 
             this.bardelete.Caption = "Xóa";
-            this.bardelete.Glyph = global::WindowsFormsApplication1.Properties.Resources.close3;
+            this.bardelete.Glyph = global::Quanlykho.Properties.Resources.close3;
             this.bardelete.Id = 2;
             this.bardelete.Name = "bardelete";
             this.bardelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barXóa_ItemClick);
@@ -231,14 +231,14 @@
             // barButtonItem1
             // 
             this.barButtonItem1.Caption = "In";
-            this.barButtonItem1.Glyph = global::WindowsFormsApplication1.Properties.Resources.close3;
+            this.barButtonItem1.Glyph = global::Quanlykho.Properties.Resources.close3;
             this.barButtonItem1.Id = 2;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "In";
-            this.barButtonItem2.Glyph = global::WindowsFormsApplication1.Properties.Resources.close3;
+            this.barButtonItem2.Glyph = global::Quanlykho.Properties.Resources.close3;
             this.barButtonItem2.Id = 2;
             this.barButtonItem2.Name = "barButtonItem2";
             // 

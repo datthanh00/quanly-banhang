@@ -123,7 +123,7 @@
             // barThem
             // 
             this.barThem.Caption = "Thêm";
-            this.barThem.Glyph = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.barThem.Glyph = global::Quanlykho.Properties.Resources.add;
             this.barThem.Id = 2;
             this.barThem.Name = "barThem";
             this.barThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
@@ -131,7 +131,7 @@
             // barXoa
             // 
             this.barXoa.Caption = "Xóa";
-            this.barXoa.Glyph = global::WindowsFormsApplication1.Properties.Resources.close1;
+            this.barXoa.Glyph = global::Quanlykho.Properties.Resources.close1;
             this.barXoa.Id = 3;
             this.barXoa.Name = "barXoa";
             this.barXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
@@ -139,7 +139,7 @@
             // barSua
             // 
             this.barSua.Caption = "Sửa";
-            this.barSua.Glyph = global::WindowsFormsApplication1.Properties.Resources.edit2;
+            this.barSua.Glyph = global::Quanlykho.Properties.Resources.edit2;
             this.barSua.Id = 4;
             this.barSua.Name = "barSua";
             this.barSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
@@ -147,7 +147,7 @@
             // barNapLai
             // 
             this.barNapLai.Caption = "Nạp Lại";
-            this.barNapLai.Glyph = global::WindowsFormsApplication1.Properties.Resources.refresh;
+            this.barNapLai.Glyph = global::Quanlykho.Properties.Resources.refresh;
             this.barNapLai.Id = 5;
             this.barNapLai.Name = "barNapLai";
             this.barNapLai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNapLai_ItemClick);
@@ -155,7 +155,7 @@
             // barIn
             // 
             this.barIn.Caption = "In";
-            this.barIn.Glyph = global::WindowsFormsApplication1.Properties.Resources.printer1;
+            this.barIn.Glyph = global::Quanlykho.Properties.Resources.printer1;
             this.barIn.Id = 6;
             this.barIn.Name = "barIn";
             this.barIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barIn_ItemClick);
@@ -163,7 +163,7 @@
             // barXuat
             // 
             this.barXuat.Caption = "Xuất Dữ Liệu";
-            this.barXuat.Glyph = global::WindowsFormsApplication1.Properties.Resources.export;
+            this.barXuat.Glyph = global::Quanlykho.Properties.Resources.export;
             this.barXuat.Id = 7;
             this.barXuat.Name = "barXuat";
             this.barXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barXuat_ItemClick);
@@ -171,7 +171,7 @@
             // barNhap
             // 
             this.barNhap.Caption = "Nhập Dữ Liệu";
-            this.barNhap.Glyph = global::WindowsFormsApplication1.Properties.Resources.excel;
+            this.barNhap.Glyph = global::Quanlykho.Properties.Resources.excel;
             this.barNhap.Id = 9;
             this.barNhap.Name = "barNhap";
             this.barNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNhap_ItemClick);
@@ -203,14 +203,14 @@
             // barButtonItem2
             // 
             this.barButtonItem2.Caption = "Thêm";
-            this.barButtonItem2.Glyph = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.barButtonItem2.Glyph = global::Quanlykho.Properties.Resources.add;
             this.barButtonItem2.Id = 0;
             this.barButtonItem2.Name = "barButtonItem2";
             // 
             // barButtonItem3
             // 
             this.barButtonItem3.Caption = "Thêm";
-            this.barButtonItem3.Glyph = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.barButtonItem3.Glyph = global::Quanlykho.Properties.Resources.add;
             this.barButtonItem3.Id = 0;
             this.barButtonItem3.Name = "barButtonItem3";
             // 

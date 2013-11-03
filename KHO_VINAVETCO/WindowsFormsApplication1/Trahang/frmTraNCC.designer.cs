@@ -371,7 +371,7 @@
             // 
             this.tongsanpham.Caption = "Tổng Sản Phẩm";
             this.tongsanpham.Name = "tongsanpham";
-            this.tongsanpham.SmallImage = global::WindowsFormsApplication1.Properties.Resources.report1;
+            this.tongsanpham.SmallImage = global::Quanlykho.Properties.Resources.report1;
             this.tongsanpham.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.tongsanpham_LinkClicked);
             // 
             // linkTheoTuan
@@ -552,7 +552,7 @@
             this.dateBD.Name = "dateBD";
             this.dateBD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBD.Properties.Mask.EditMask = global::WindowsFormsApplication1.resEngLand.btHoaDonXuat;
+            this.dateBD.Properties.Mask.EditMask = global::Quanlykho.resEngLand.btHoaDonXuat;
             this.dateBD.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.dateBD.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -574,7 +574,7 @@
             this.dateKetThuc.Name = "dateKetThuc";
             this.dateKetThuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateKetThuc.Properties.Mask.EditMask = global::WindowsFormsApplication1.resEngLand.btHoaDonXuat;
+            this.dateKetThuc.Properties.Mask.EditMask = global::Quanlykho.resEngLand.btHoaDonXuat;
             this.dateKetThuc.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.dateKetThuc.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -643,7 +643,7 @@
             // 
             // btIn
             // 
-            this.btIn.Image = global::WindowsFormsApplication1.Properties.Resources.printer1;
+            this.btIn.Image = global::Quanlykho.Properties.Resources.printer1;
             this.btIn.Location = new System.Drawing.Point(248, 5);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(87, 35);
@@ -653,7 +653,7 @@
             // 
             // btLuu
             // 
-            this.btLuu.Image = global::WindowsFormsApplication1.Properties.Resources.save1;
+            this.btLuu.Image = global::Quanlykho.Properties.Resources.save1;
             this.btLuu.Location = new System.Drawing.Point(112, 5);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(124, 35);
@@ -663,7 +663,7 @@
             // 
             // btTaoMoi
             // 
-            this.btTaoMoi.Image = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.btTaoMoi.Image = global::Quanlykho.Properties.Resources.add;
             this.btTaoMoi.Location = new System.Drawing.Point(6, 5);
             this.btTaoMoi.Name = "btTaoMoi";
             this.btTaoMoi.Size = new System.Drawing.Size(94, 35);
@@ -1764,6 +1764,7 @@
             this.cktien.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.cktien.Size = new System.Drawing.Size(120, 20);
             this.cktien.TabIndex = 39;
+            this.cktien.Validated += new System.EventHandler(this.cktien_Validated);
             // 
             // labelControl13
             // 
@@ -1793,6 +1794,7 @@
             this.ckphantram.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.ckphantram.Size = new System.Drawing.Size(90, 20);
             this.ckphantram.TabIndex = 37;
+            this.ckphantram.Validated += new System.EventHandler(this.ckphantram_Validated);
             // 
             // txtMANCC
             // 
@@ -1804,7 +1806,7 @@
             // 
             // btAdd
             // 
-            this.btAdd.Image = global::WindowsFormsApplication1.Properties.Resources.plus;
+            this.btAdd.Image = global::Quanlykho.Properties.Resources.plus;
             this.btAdd.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btAdd.Location = new System.Drawing.Point(313, 4);
             this.btAdd.Name = "btAdd";

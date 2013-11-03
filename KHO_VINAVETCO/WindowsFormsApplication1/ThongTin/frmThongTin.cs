@@ -10,6 +10,7 @@ using System.IO;
 using WindowsFormsApplication1.Class_ManhCuong;
 using System.Globalization;
 using System.Threading;
+using Quanlykho;
 
 namespace WindowsFormsApplication1
 {

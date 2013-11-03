@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Globalization;
 using System.Threading;
+using Quanlykho;
 
 namespace WindowsFormsApplication1
 {

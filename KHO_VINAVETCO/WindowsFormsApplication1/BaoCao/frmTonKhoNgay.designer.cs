@@ -309,7 +309,7 @@
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Image = global::WindowsFormsApplication1.Properties.Resources.save;
+            this.simpleButton1.Image = global::Quanlykho.Properties.Resources.save;
             this.simpleButton1.Location = new System.Drawing.Point(103, 5);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 29);
