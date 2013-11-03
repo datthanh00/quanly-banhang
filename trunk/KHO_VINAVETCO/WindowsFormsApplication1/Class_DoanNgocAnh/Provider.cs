@@ -8,6 +8,7 @@ using System.IO;
 using System.Data;
 using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
+
 namespace WindowsFormsApplication1
 {
     class Provider
@@ -103,7 +104,7 @@ namespace WindowsFormsApplication1
                     else
                     {
                          //strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_qlkho;User ID=nguyendat_thanh;Password=Xziojs1U98;";
-                        strConnect = "server=datthanh\\SQLEXPRESS;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123";
+                        strConnect = "server=DATTHANH\\MSSQLSERVER2008;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123";
                     }
                    // strConnect = "server=datthanh\\SQLEXPRESS;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123";
 

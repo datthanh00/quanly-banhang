@@ -97,56 +97,56 @@
             // barThem
             // 
             this.barThem.Caption = "Thêm";
-            this.barThem.Glyph = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.barThem.Glyph = global::Quanlykho.Properties.Resources.add;
             this.barThem.Id = 0;
             this.barThem.Name = "barThem";
             // 
             // barXoa
             // 
             this.barXoa.Caption = "Xóa";
-            this.barXoa.Glyph = global::WindowsFormsApplication1.Properties.Resources.close;
+            this.barXoa.Glyph = global::Quanlykho.Properties.Resources.close;
             this.barXoa.Id = 1;
             this.barXoa.Name = "barXoa";
             // 
             // barSua
             // 
             this.barSua.Caption = "Sửa";
-            this.barSua.Glyph = global::WindowsFormsApplication1.Properties.Resources.edit2;
+            this.barSua.Glyph = global::Quanlykho.Properties.Resources.edit2;
             this.barSua.Id = 2;
             this.barSua.Name = "barSua";
             // 
             // barNapLai
             // 
             this.barNapLai.Caption = "Nạp Lại";
-            this.barNapLai.Glyph = global::WindowsFormsApplication1.Properties.Resources.refresh;
+            this.barNapLai.Glyph = global::Quanlykho.Properties.Resources.refresh;
             this.barNapLai.Id = 3;
             this.barNapLai.Name = "barNapLai";
             // 
             // barIn
             // 
             this.barIn.Caption = "In";
-            this.barIn.Glyph = global::WindowsFormsApplication1.Properties.Resources.printer1;
+            this.barIn.Glyph = global::Quanlykho.Properties.Resources.printer1;
             this.barIn.Id = 4;
             this.barIn.Name = "barIn";
             // 
             // barXuat
             // 
             this.barXuat.Caption = "Xuất Dữ Liệu";
-            this.barXuat.Glyph = global::WindowsFormsApplication1.Properties.Resources.export;
+            this.barXuat.Glyph = global::Quanlykho.Properties.Resources.export;
             this.barXuat.Id = 5;
             this.barXuat.Name = "barXuat";
             // 
             // barNhap
             // 
             this.barNhap.Caption = "Nhập Dữ Liệu";
-            this.barNhap.Glyph = global::WindowsFormsApplication1.Properties.Resources.excel;
+            this.barNhap.Glyph = global::Quanlykho.Properties.Resources.excel;
             this.barNhap.Id = 6;
             this.barNhap.Name = "barNhap";
             // 
             // barThoat
             // 
             this.barThoat.Caption = "Đóng";
-            this.barThoat.Glyph = global::WindowsFormsApplication1.Properties.Resources.close2;
+            this.barThoat.Glyph = global::Quanlykho.Properties.Resources.close2;
             this.barThoat.Id = 7;
             this.barThoat.Name = "barThoat";
             // 

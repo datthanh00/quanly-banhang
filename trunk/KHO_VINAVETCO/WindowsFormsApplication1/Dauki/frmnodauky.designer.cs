@@ -379,7 +379,7 @@
             // 
             // btxem
             // 
-            this.btxem.Image = global::WindowsFormsApplication1.Properties.Resources.save;
+            this.btxem.Image = global::Quanlykho.Properties.Resources.save;
             this.btxem.Location = new System.Drawing.Point(8, 4);
             this.btxem.Name = "btxem";
             this.btxem.Size = new System.Drawing.Size(70, 31);

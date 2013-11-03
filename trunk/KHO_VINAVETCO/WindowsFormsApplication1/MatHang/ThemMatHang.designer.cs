@@ -305,8 +305,8 @@
             // 
             this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.add;
-            this.simpleButton3.Image = global::WindowsFormsApplication1.Properties.Resources.plus;
+            this.simpleButton3.BackgroundImage = global::Quanlykho.Properties.Resources.add;
+            this.simpleButton3.Image = global::Quanlykho.Properties.Resources.plus;
             this.simpleButton3.Location = new System.Drawing.Point(530, 38);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(25, 19);
@@ -318,8 +318,8 @@
             // 
             this.btThemKhuVuc.Appearance.ForeColor = System.Drawing.Color.White;
             this.btThemKhuVuc.Appearance.Options.UseForeColor = true;
-            this.btThemKhuVuc.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.add;
-            this.btThemKhuVuc.Image = global::WindowsFormsApplication1.Properties.Resources.plus;
+            this.btThemKhuVuc.BackgroundImage = global::Quanlykho.Properties.Resources.add;
+            this.btThemKhuVuc.Image = global::Quanlykho.Properties.Resources.plus;
             this.btThemKhuVuc.Location = new System.Drawing.Point(528, 102);
             this.btThemKhuVuc.Name = "btThemKhuVuc";
             this.btThemKhuVuc.Size = new System.Drawing.Size(24, 19);
@@ -493,8 +493,8 @@
             // 
             this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.add;
-            this.simpleButton2.Image = global::WindowsFormsApplication1.Properties.Resources.plus;
+            this.simpleButton2.BackgroundImage = global::Quanlykho.Properties.Resources.add;
+            this.simpleButton2.Image = global::Quanlykho.Properties.Resources.plus;
             this.simpleButton2.Location = new System.Drawing.Point(229, 40);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(24, 19);
@@ -504,7 +504,7 @@
             // 
             // btLuu
             // 
-            this.btLuu.Image = global::WindowsFormsApplication1.Properties.Resources.save1;
+            this.btLuu.Image = global::Quanlykho.Properties.Resources.save1;
             this.btLuu.Location = new System.Drawing.Point(175, 259);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(95, 38);
@@ -514,7 +514,7 @@
             // 
             // btDong
             // 
-            this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close2;
+            this.btDong.Image = global::Quanlykho.Properties.Resources.close2;
             this.btDong.Location = new System.Drawing.Point(297, 259);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(98, 38);

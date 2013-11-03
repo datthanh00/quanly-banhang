@@ -11,6 +11,7 @@ using System.Threading;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraPrinting;
+using Quanlykho;
 
 namespace WindowsFormsApplication1
 {

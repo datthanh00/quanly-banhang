@@ -176,14 +176,14 @@
             // barTraTien
             // 
             this.barTraTien.Caption = "Trả tiền";
-            this.barTraTien.Glyph = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.barTraTien.Glyph = global::Quanlykho.Properties.Resources.add;
             this.barTraTien.Id = 0;
             this.barTraTien.Name = "barTraTien";
             // 
             // barSuaTien
             // 
             this.barSuaTien.Caption = "Sửa tiền đã trả";
-            this.barSuaTien.Glyph = global::WindowsFormsApplication1.Properties.Resources.edit2;
+            this.barSuaTien.Glyph = global::Quanlykho.Properties.Resources.edit2;
             this.barSuaTien.Id = 1;
             this.barSuaTien.Name = "barSuaTien";
             // 
@@ -204,7 +204,7 @@
             // barBtDong
             // 
             this.barBtDong.Caption = "Đóng";
-            this.barBtDong.Glyph = global::WindowsFormsApplication1.Properties.Resources.close1;
+            this.barBtDong.Glyph = global::Quanlykho.Properties.Resources.close1;
             this.barBtDong.Id = 3;
             this.barBtDong.Name = "barBtDong";
             this.barBtDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
@@ -286,7 +286,7 @@
             // 
             this.linkhoadon.Caption = "Hóa Đơn";
             this.linkhoadon.Name = "linkhoadon";
-            this.linkhoadon.SmallImage = global::WindowsFormsApplication1.Properties.Resources.paper;
+            this.linkhoadon.SmallImage = global::Quanlykho.Properties.Resources.paper;
             this.linkhoadon.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.linkhoadon_LinkClicked);
             // 
             // linkTheoTuan
@@ -309,7 +309,7 @@
             // 
             // simpleButton7
             // 
-            this.simpleButton7.Image = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.simpleButton7.Image = global::Quanlykho.Properties.Resources.money;
             this.simpleButton7.Location = new System.Drawing.Point(106, 6);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(90, 35);
@@ -339,7 +339,7 @@
             // 
             // btTratien
             // 
-            this.btTratien.Image = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.btTratien.Image = global::Quanlykho.Properties.Resources.add;
             this.btTratien.Location = new System.Drawing.Point(6, 6);
             this.btTratien.Name = "btTratien";
             this.btTratien.Size = new System.Drawing.Size(90, 35);
@@ -363,7 +363,7 @@
             // 
             // simpleButton6
             // 
-            this.simpleButton6.Image = global::WindowsFormsApplication1.Properties.Resources.preview_file;
+            this.simpleButton6.Image = global::Quanlykho.Properties.Resources.preview_file;
             this.simpleButton6.Location = new System.Drawing.Point(6, 5);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(70, 35);
@@ -450,7 +450,7 @@
             // 
             // simpleButton2
             // 
-            this.simpleButton2.Image = global::WindowsFormsApplication1.Properties.Resources.edit2;
+            this.simpleButton2.Image = global::Quanlykho.Properties.Resources.edit2;
             this.simpleButton2.Location = new System.Drawing.Point(164, 5);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(70, 35);
@@ -460,7 +460,7 @@
             // 
             // simpleButton3
             // 
-            this.simpleButton3.Image = global::WindowsFormsApplication1.Properties.Resources.close3;
+            this.simpleButton3.Image = global::Quanlykho.Properties.Resources.close3;
             this.simpleButton3.Location = new System.Drawing.Point(85, 5);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(70, 35);
@@ -510,7 +510,7 @@
             // 
             // simpleButton8
             // 
-            this.simpleButton8.Image = global::WindowsFormsApplication1.Properties.Resources.preview_file;
+            this.simpleButton8.Image = global::Quanlykho.Properties.Resources.preview_file;
             this.simpleButton8.Location = new System.Drawing.Point(6, 8);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(70, 35);

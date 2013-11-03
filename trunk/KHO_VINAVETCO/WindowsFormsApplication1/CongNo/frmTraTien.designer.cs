@@ -189,7 +189,7 @@
             // barSTluu
             // 
             this.barSTluu.Caption = "Lưu";
-            this.barSTluu.Glyph = global::WindowsFormsApplication1.Properties.Resources.save1;
+            this.barSTluu.Glyph = global::Quanlykho.Properties.Resources.save1;
             this.barSTluu.Id = 0;
             this.barSTluu.Name = "barSTluu";
             this.barSTluu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSTluu_ItemClick);
@@ -197,7 +197,7 @@
             // barIn
             // 
             this.barIn.Caption = "In";
-            this.barIn.Glyph = global::WindowsFormsApplication1.Properties.Resources.printer1;
+            this.barIn.Glyph = global::Quanlykho.Properties.Resources.printer1;
             this.barIn.Id = 2;
             this.barIn.Name = "barIn";
             // 

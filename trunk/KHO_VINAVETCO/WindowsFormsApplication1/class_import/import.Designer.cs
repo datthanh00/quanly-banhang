@@ -105,7 +105,7 @@
             // btncomputerdate
             // 
             this.btncomputerdate.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btncomputerdate.Image = global::WindowsFormsApplication1.Properties.Resources.check;
+            this.btncomputerdate.Image = global::Quanlykho.Properties.Resources.check;
             this.btncomputerdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btncomputerdate.Location = new System.Drawing.Point(739, 20);
             this.btncomputerdate.Name = "btncomputerdate";
@@ -119,7 +119,7 @@
             // button4
             // 
             this.button4.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button4.Image = global::WindowsFormsApplication1.Properties.Resources.excel;
+            this.button4.Image = global::Quanlykho.Properties.Resources.excel;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.Location = new System.Drawing.Point(530, 20);
             this.button4.Name = "button4";
@@ -201,7 +201,7 @@
             // button5
             // 
             this.button5.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button5.Image = global::WindowsFormsApplication1.Properties.Resources.check;
+            this.button5.Image = global::Quanlykho.Properties.Resources.check;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.Location = new System.Drawing.Point(577, 425);
             this.button5.Name = "button5";
@@ -274,7 +274,7 @@
             // button6
             // 
             this.button6.ForeColor = System.Drawing.Color.DarkBlue;
-            this.button6.Image = global::WindowsFormsApplication1.Properties.Resources.edit2;
+            this.button6.Image = global::Quanlykho.Properties.Resources.edit2;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button6.Location = new System.Drawing.Point(577, 485);
             this.button6.Name = "button6";
@@ -318,7 +318,7 @@
             // btnEDITMAHD
             // 
             this.btnEDITMAHD.ForeColor = System.Drawing.Color.DarkBlue;
-            this.btnEDITMAHD.Image = global::WindowsFormsApplication1.Properties.Resources.undo;
+            this.btnEDITMAHD.Image = global::Quanlykho.Properties.Resources.undo;
             this.btnEDITMAHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEDITMAHD.Location = new System.Drawing.Point(750, 485);
             this.btnEDITMAHD.Name = "btnEDITMAHD";

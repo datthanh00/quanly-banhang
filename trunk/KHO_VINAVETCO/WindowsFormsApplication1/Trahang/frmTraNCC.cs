@@ -717,7 +717,7 @@ namespace WindowsFormsApplication1
         public void insert_phieuthuchi(String MANCC, String SOTIEN, String MAHDN)
         {
             ketnoi connect = new ketnoi();
-            String MAPT = connect.sTuDongDienMatraHoaDonNhap("1");
+            String MAPT = connect.sTuDongDienMapt("1");
             String IDNHAP = connect.getIDNHAP();
             if (CheckTienmat.Checked == true)
             {
@@ -791,10 +791,10 @@ namespace WindowsFormsApplication1
                 else
                 {
                     PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + "\r\nGO\r\n  UPDATE PHIEUTHU SET SOTIEN=0 , TYPEMONEY=3 WHERE MAPT ='" + MAPT + "'";
-                    PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + "\r\nGO\r\n UPDATE TRAHOADONNHAP TYPEMONEY=3 WHERE MAHDN='" + MAHDN + "' ";
+                    PublicVariable.SQL_TRANHAP = PublicVariable.SQL_TRANHAP + "\r\nGO\r\n UPDATE TRAHOADONNHAP SET TYPEMONEY=3 WHERE MAHDN='" + MAHDN + "' ";
 
                 }
-                PublicVariable.TMPtring = "---SỬA PHƯƠNG THỨC TRẢ TIỀN ---";
+                PublicVariable.TMPlog= "---SỬA PHƯƠNG THỨC TRẢ TIỀN ---";
             }
         }
         public void insert_HoadonChitiet(string mahdn, string lohang, String mamh, Double SoLuong, string DonGia, string GIANHAP, string TIENTRA, string HSD, String KMAI, int STT)
@@ -1210,7 +1210,7 @@ namespace WindowsFormsApplication1
 
                     ctlNCC.DELETEtraCTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), dtr["_LOHANG"].ToString(), dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
                     //ctlNCC.UPDATE_KHOHANG_NX(dtr["MAMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "-" + dtr["SOLUONG"].ToString(), "0", "0");
-                    PublicVariable.TMPtring = "";
+                    //PublicVariable.TMPtring = "";
 
                 }
                 else

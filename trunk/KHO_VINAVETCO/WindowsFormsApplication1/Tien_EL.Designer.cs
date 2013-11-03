@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApplication1 {
+namespace Quanlykho {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1 {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WindowsFormsApplication1.Tien_EL", typeof(Tien_EL).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Quanlykho.Tien_EL", typeof(Tien_EL).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

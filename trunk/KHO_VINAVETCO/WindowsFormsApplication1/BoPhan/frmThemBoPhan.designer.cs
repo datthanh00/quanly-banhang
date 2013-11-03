@@ -117,7 +117,7 @@
             // 
             // btDong
             // 
-            this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
+            this.btDong.Image = global::Quanlykho.Properties.Resources.close__2_;
             this.btDong.Location = new System.Drawing.Point(154, 135);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(123, 40);
@@ -127,7 +127,7 @@
             // 
             // btluu
             // 
-            this.btluu.Image = global::WindowsFormsApplication1.Properties.Resources.save1;
+            this.btluu.Image = global::Quanlykho.Properties.Resources.save1;
             this.btluu.Location = new System.Drawing.Point(24, 135);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(124, 40);

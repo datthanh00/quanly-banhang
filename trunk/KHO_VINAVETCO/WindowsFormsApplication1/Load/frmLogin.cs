@@ -12,6 +12,7 @@ using DevExpress.XtraEditors.DXErrorProvider;
 using System.Globalization;
 using System.Threading;
 using System.Configuration;
+using Quanlykho;
 
 
 namespace WindowsFormsApplication1

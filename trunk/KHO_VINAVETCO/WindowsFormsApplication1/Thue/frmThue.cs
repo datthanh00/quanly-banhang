@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.Globalization;
 using System.Threading;
 using DevExpress.XtraEditors;
+using Quanlykho;
 //using WindowsFormsApplication1.class_TungLam;
 
 namespace WindowsFormsApplication1

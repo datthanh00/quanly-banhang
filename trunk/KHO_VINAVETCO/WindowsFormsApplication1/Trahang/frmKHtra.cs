@@ -529,7 +529,7 @@ namespace WindowsFormsApplication1.KHtra
         public void insert_PHIEUTHUCHI(String MAKH, String SOTIEN, String MAHDX)
         {
             ketnoi connect = new ketnoi();
-            String MAPC = connect.sTuDongDienMatraHoaDonXuat("1");
+            String MAPC = connect.sTuDongDienMapc("1");
             String IDNHAP = connect.getIDNHAP();
             if (CheckTienmat.Checked == true)
             {
@@ -604,7 +604,7 @@ namespace WindowsFormsApplication1.KHtra
                     PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=0 , TYPEMONEY=3 WHERE MAPC ='" + MAPC + "'";
                     PublicVariable.SQL_TRAXUAT = PublicVariable.SQL_TRAXUAT + "\r\nGO\r\n UPDATE TRAHOADONXUAT SET TYPEMONEY=3 WHERE MAHDX='" + MAHDX + "' ";
                 }
-                PublicVariable.TMPtring = "---SỬA PHƯƠNG THỨC TRẢ TIỀN ---";
+                PublicVariable.TMPlog= "---SỬA PHƯƠNG THỨC TRẢ TIỀN ---";
             }
         }
         public void insert_HoadonChitietxuat(string mahdx, String mamh, Double SoLuong, string DonGia, string tienthu, string gianhap, string HSD, String KMAI, int STT)
@@ -1736,6 +1736,8 @@ namespace WindowsFormsApplication1.KHtra
         {
             deDongTab();
         }
+
+
 
 
 

@@ -295,28 +295,28 @@
             // 
             this.NBI_MH_ngay.Caption = "Theo ngày";
             this.NBI_MH_ngay.Name = "NBI_MH_ngay";
-            this.NBI_MH_ngay.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_MH_ngay.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.NBI_MH_ngay.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_ngay_LinkClicked);
             // 
             // NBI_MH_NCC
             // 
             this.NBI_MH_NCC.Caption = "Theo Nhà Cung Cấp";
             this.NBI_MH_NCC.Name = "NBI_MH_NCC";
-            this.NBI_MH_NCC.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_MH_NCC.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.NBI_MH_NCC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_NCC_LinkClicked);
             // 
             // khachhang_trahang
             // 
             this.khachhang_trahang.Caption = "Theo KH trả Hàng";
             this.khachhang_trahang.Name = "khachhang_trahang";
-            this.khachhang_trahang.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.khachhang_trahang.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.khachhang_trahang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_MH_SP_LinkClicked);
             // 
             // muahang_sanpham
             // 
             this.muahang_sanpham.Caption = "Theo Sản Phẩm";
             this.muahang_sanpham.Name = "muahang_sanpham";
-            this.muahang_sanpham.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.muahang_sanpham.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.muahang_sanpham.Visible = false;
             this.muahang_sanpham.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.muahang_sanpham_LinkClicked);
             // 
@@ -335,28 +335,28 @@
             // 
             this.NBI_BH_ngay.Caption = "Theo Ngày";
             this.NBI_BH_ngay.Name = "NBI_BH_ngay";
-            this.NBI_BH_ngay.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_BH_ngay.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.NBI_BH_ngay.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_ngay_LinkClicked);
             // 
             // NBI_BH_KH
             // 
             this.NBI_BH_KH.Caption = "Theo Khách Hàng";
             this.NBI_BH_KH.Name = "NBI_BH_KH";
-            this.NBI_BH_KH.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_BH_KH.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.NBI_BH_KH.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_KH_LinkClicked);
             // 
             // TRAHANG_NCC
             // 
             this.TRAHANG_NCC.Caption = "Theo Trả Hàng NCC";
             this.TRAHANG_NCC.Name = "TRAHANG_NCC";
-            this.TRAHANG_NCC.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.TRAHANG_NCC.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.TRAHANG_NCC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_BH_SP_LinkClicked);
             // 
             // BANHANG_SANPHAM
             // 
             this.BANHANG_SANPHAM.Caption = "Theo Sản Phẩm";
             this.BANHANG_SANPHAM.Name = "BANHANG_SANPHAM";
-            this.BANHANG_SANPHAM.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.BANHANG_SANPHAM.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.BANHANG_SANPHAM.Visible = false;
             this.BANHANG_SANPHAM.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.BANHANG_SANPHAM_LinkClicked);
             // 
@@ -373,7 +373,7 @@
             this.NBI_DS_NV.Caption = "Nhân Viên";
             this.NBI_DS_NV.Enabled = false;
             this.NBI_DS_NV.Name = "NBI_DS_NV";
-            this.NBI_DS_NV.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.NBI_DS_NV.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.NBI_DS_NV.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.NBI_DS_NV_LinkClicked);
             // 
             // linkTheoTuan
@@ -1454,7 +1454,7 @@
             this.dateEdit2.Name = "dateEdit2";
             this.dateEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit2.Properties.Mask.EditMask = global::WindowsFormsApplication1.resEngLand.btHoaDonXuat;
+            this.dateEdit2.Properties.Mask.EditMask = global::Quanlykho.resEngLand.btHoaDonXuat;
             this.dateEdit2.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.dateEdit2.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -1468,7 +1468,7 @@
             this.dateEdit3.Name = "dateEdit3";
             this.dateEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit3.Properties.Mask.EditMask = global::WindowsFormsApplication1.resEngLand.btHoaDonXuat;
+            this.dateEdit3.Properties.Mask.EditMask = global::Quanlykho.resEngLand.btHoaDonXuat;
             this.dateEdit3.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.dateEdit3.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -1525,7 +1525,7 @@
             this.dateEdit4.Name = "dateEdit4";
             this.dateEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit4.Properties.Mask.EditMask = global::WindowsFormsApplication1.resEngLand.btHoaDonXuat;
+            this.dateEdit4.Properties.Mask.EditMask = global::Quanlykho.resEngLand.btHoaDonXuat;
             this.dateEdit4.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.dateEdit4.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
@@ -1539,7 +1539,7 @@
             this.dateEdit5.Name = "dateEdit5";
             this.dateEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit5.Properties.Mask.EditMask = global::WindowsFormsApplication1.resEngLand.btHoaDonXuat;
+            this.dateEdit5.Properties.Mask.EditMask = global::Quanlykho.resEngLand.btHoaDonXuat;
             this.dateEdit5.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.dateEdit5.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});

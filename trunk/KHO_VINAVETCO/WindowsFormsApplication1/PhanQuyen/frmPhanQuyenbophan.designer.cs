@@ -125,7 +125,7 @@
             // 
             // btDong
             // 
-            this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close3;
+            this.btDong.Image = global::Quanlykho.Properties.Resources.close3;
             this.btDong.Location = new System.Drawing.Point(223, 45);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(212, 38);
@@ -297,7 +297,7 @@
             // 
             // btSave
             // 
-            this.btSave.Image = global::WindowsFormsApplication1.Properties.Resources.save1;
+            this.btSave.Image = global::Quanlykho.Properties.Resources.save1;
             this.btSave.Location = new System.Drawing.Point(26, 45);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(193, 38);

@@ -16,6 +16,7 @@ using DevExpress.XtraGrid;
 using DevExpress.Utils;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using Quanlykho;
 
 
 namespace WindowsFormsApplication1

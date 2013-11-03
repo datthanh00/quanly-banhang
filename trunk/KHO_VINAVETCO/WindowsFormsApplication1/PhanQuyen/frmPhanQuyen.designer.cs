@@ -254,7 +254,7 @@
             // 
             // btThem
             // 
-            this.btThem.Image = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.btThem.Image = global::Quanlykho.Properties.Resources.add;
             this.btThem.Location = new System.Drawing.Point(26, 48);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(74, 38);
@@ -265,7 +265,7 @@
             // 
             // btSua
             // 
-            this.btSua.Image = global::WindowsFormsApplication1.Properties.Resources.edit2;
+            this.btSua.Image = global::Quanlykho.Properties.Resources.edit2;
             this.btSua.Location = new System.Drawing.Point(104, 46);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(83, 38);
@@ -276,7 +276,7 @@
             // 
             // btXoa
             // 
-            this.btXoa.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
+            this.btXoa.Image = global::Quanlykho.Properties.Resources.close__2_;
             this.btXoa.Location = new System.Drawing.Point(191, 46);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(86, 38);

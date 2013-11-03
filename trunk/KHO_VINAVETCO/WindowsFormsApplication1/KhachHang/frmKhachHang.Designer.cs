@@ -119,7 +119,7 @@
             // barThem
             // 
             resources.ApplyResources(this.barThem, "barThem");
-            this.barThem.Glyph = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.barThem.Glyph = global::Quanlykho.Properties.Resources.add;
             this.barThem.Id = 1;
             this.barThem.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N));
             this.barThem.Name = "barThem";
@@ -128,7 +128,7 @@
             // barXoa
             // 
             resources.ApplyResources(this.barXoa, "barXoa");
-            this.barXoa.Glyph = global::WindowsFormsApplication1.Properties.Resources.close1;
+            this.barXoa.Glyph = global::Quanlykho.Properties.Resources.close1;
             this.barXoa.Id = 2;
             this.barXoa.Name = "barXoa";
             this.barXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
@@ -136,7 +136,7 @@
             // barSua
             // 
             resources.ApplyResources(this.barSua, "barSua");
-            this.barSua.Glyph = global::WindowsFormsApplication1.Properties.Resources.edit2;
+            this.barSua.Glyph = global::Quanlykho.Properties.Resources.edit2;
             this.barSua.Id = 3;
             this.barSua.Name = "barSua";
             this.barSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
@@ -144,7 +144,7 @@
             // barNapLai
             // 
             resources.ApplyResources(this.barNapLai, "barNapLai");
-            this.barNapLai.Glyph = global::WindowsFormsApplication1.Properties.Resources.refresh;
+            this.barNapLai.Glyph = global::Quanlykho.Properties.Resources.refresh;
             this.barNapLai.Id = 4;
             this.barNapLai.Name = "barNapLai";
             this.barNapLai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
@@ -152,7 +152,7 @@
             // barIn
             // 
             resources.ApplyResources(this.barIn, "barIn");
-            this.barIn.Glyph = global::WindowsFormsApplication1.Properties.Resources.printer1;
+            this.barIn.Glyph = global::Quanlykho.Properties.Resources.printer1;
             this.barIn.Id = 5;
             this.barIn.Name = "barIn";
             this.barIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btIn_ItemClick);
@@ -160,7 +160,7 @@
             // barXuat1
             // 
             resources.ApplyResources(this.barXuat1, "barXuat1");
-            this.barXuat1.Glyph = global::WindowsFormsApplication1.Properties.Resources.export;
+            this.barXuat1.Glyph = global::Quanlykho.Properties.Resources.export;
             this.barXuat1.Id = 6;
             this.barXuat1.Name = "barXuat1";
             this.barXuat1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
@@ -168,7 +168,7 @@
             // barNhap
             // 
             resources.ApplyResources(this.barNhap, "barNhap");
-            this.barNhap.Glyph = global::WindowsFormsApplication1.Properties.Resources.excel;
+            this.barNhap.Glyph = global::Quanlykho.Properties.Resources.excel;
             this.barNhap.Id = 7;
             this.barNhap.Name = "barNhap";
             this.barNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNhap_ItemClick);
@@ -199,7 +199,7 @@
             // barThem1
             // 
             resources.ApplyResources(this.barThem1, "barThem1");
-            this.barThem1.Glyph = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.barThem1.Glyph = global::Quanlykho.Properties.Resources.add;
             this.barThem1.Id = 9;
             this.barThem1.Name = "barThem1";
             // 

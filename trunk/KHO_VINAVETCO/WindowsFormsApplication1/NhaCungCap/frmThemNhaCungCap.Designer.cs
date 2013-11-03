@@ -306,7 +306,7 @@
             // 
             // btDong
             // 
-            this.btDong.Image = global::WindowsFormsApplication1.Properties.Resources.close__2_;
+            this.btDong.Image = global::Quanlykho.Properties.Resources.close__2_;
             this.btDong.Location = new System.Drawing.Point(372, 246);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(123, 40);
@@ -316,7 +316,7 @@
             // 
             // btluu
             // 
-            this.btluu.Image = global::WindowsFormsApplication1.Properties.Resources.save1;
+            this.btluu.Image = global::Quanlykho.Properties.Resources.save1;
             this.btluu.Location = new System.Drawing.Point(219, 246);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(124, 40);
@@ -328,8 +328,8 @@
             // 
             this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
             this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.add;
-            this.simpleButton2.Image = global::WindowsFormsApplication1.Properties.Resources.plus;
+            this.simpleButton2.BackgroundImage = global::Quanlykho.Properties.Resources.add;
+            this.simpleButton2.Image = global::Quanlykho.Properties.Resources.plus;
             this.simpleButton2.Location = new System.Drawing.Point(671, 8);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(26, 19);

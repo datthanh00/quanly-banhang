@@ -292,7 +292,7 @@
             // barThem
             // 
             this.barThem.Caption = "Thêm";
-            this.barThem.Glyph = global::WindowsFormsApplication1.Properties.Resources.add;
+            this.barThem.Glyph = global::Quanlykho.Properties.Resources.add;
             this.barThem.Id = 1;
             this.barThem.Name = "barThem";
             this.barThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btThem_ItemClick);
@@ -300,7 +300,7 @@
             // barXoa
             // 
             this.barXoa.Caption = "Xóa";
-            this.barXoa.Glyph = global::WindowsFormsApplication1.Properties.Resources.close;
+            this.barXoa.Glyph = global::Quanlykho.Properties.Resources.close;
             this.barXoa.Id = 2;
             this.barXoa.Name = "barXoa";
             this.barXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
@@ -308,7 +308,7 @@
             // barSua
             // 
             this.barSua.Caption = "Sửa";
-            this.barSua.Glyph = global::WindowsFormsApplication1.Properties.Resources.edit2;
+            this.barSua.Glyph = global::Quanlykho.Properties.Resources.edit2;
             this.barSua.Id = 3;
             this.barSua.Name = "barSua";
             this.barSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
@@ -316,7 +316,7 @@
             // barNapLai
             // 
             this.barNapLai.Caption = "Nạp Lại";
-            this.barNapLai.Glyph = global::WindowsFormsApplication1.Properties.Resources.refresh;
+            this.barNapLai.Glyph = global::Quanlykho.Properties.Resources.refresh;
             this.barNapLai.Id = 4;
             this.barNapLai.Name = "barNapLai";
             this.barNapLai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNapLai_ItemClick);
@@ -324,7 +324,7 @@
             // barIn
             // 
             this.barIn.Caption = "In";
-            this.barIn.Glyph = global::WindowsFormsApplication1.Properties.Resources.printer1;
+            this.barIn.Glyph = global::Quanlykho.Properties.Resources.printer1;
             this.barIn.Id = 5;
             this.barIn.Name = "barIn";
             this.barIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btIn_ItemClick);
@@ -332,7 +332,7 @@
             // barXuat
             // 
             this.barXuat.Caption = "Xuất Dữ Liệu";
-            this.barXuat.Glyph = global::WindowsFormsApplication1.Properties.Resources.export;
+            this.barXuat.Glyph = global::Quanlykho.Properties.Resources.export;
             this.barXuat.Id = 6;
             this.barXuat.Name = "barXuat";
             this.barXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btxuatexcel_ItemClick);
@@ -340,7 +340,7 @@
             // barNhap
             // 
             this.barNhap.Caption = "Nhập Dữ Liệu";
-            this.barNhap.Glyph = global::WindowsFormsApplication1.Properties.Resources.excel;
+            this.barNhap.Glyph = global::Quanlykho.Properties.Resources.excel;
             this.barNhap.Id = 7;
             this.barNhap.Name = "barNhap";
             // 

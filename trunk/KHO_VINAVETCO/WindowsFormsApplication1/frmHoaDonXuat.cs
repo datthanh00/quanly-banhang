@@ -619,7 +619,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n  UPDATE PHIEUTHU SET SOTIEN=0, TYPEMONEY=3 WHERE MAPT ='" + MAPT + "'";
                     PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + "\r\nGO\r\n UPDATE HOADONXUAT SET  TYPEMONEY=3 WHERE MAHDX='" + MAHDX + "' ";
                 }
-                PublicVariable.TMPtring = "---SỬA PHƯƠNG THỨC TRẢ TIỀN ---";
+                PublicVariable.TMPlog= "---SỬA PHƯƠNG THỨC TRẢ TIỀN ---";
             }
         }
 
@@ -1171,7 +1171,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         
                     ctlNCC.DELETECTHOADONXUAT(txtMaHD.Text, Convert.ToInt32(sID), xhd.MAMH, dtr["_LOHANG"].ToString(), dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
                     // ctlNCC.UPDATE_KHOHANG_NX(dtr["MAMH"].ToString(), dtr["_LOHANG"].ToString(), "0", "0", "-" + dtr["SOLUONG"].ToString(), "0");
-                    PublicVariable.TMPtring = "";
+                    //PublicVariable.TMPtring = "";
                 }
                 else
                 {

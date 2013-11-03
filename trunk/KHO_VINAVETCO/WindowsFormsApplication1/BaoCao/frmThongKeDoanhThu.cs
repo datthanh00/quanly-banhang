@@ -10,6 +10,7 @@ using DevComponents.DotNetBar;
 using System.Globalization;
 using System.Threading;
 using DevExpress.XtraPrinting;
+using Quanlykho;
 
 namespace WindowsFormsApplication1
 {

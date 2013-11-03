@@ -367,7 +367,7 @@
             // 
             // navthongke
             // 
-            this.navthongke.BackgroundImage = global::WindowsFormsApplication1.Properties.Resources.doanhthu;
+            this.navthongke.BackgroundImage = global::Quanlykho.Properties.Resources.doanhthu;
             this.navthongke.Caption = "Thống Kê";
             this.navthongke.Expanded = true;
             this.navthongke.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
@@ -385,49 +385,49 @@
             // 
             this.HDNCC.Caption = "Hóa Đơn Theo NCC";
             this.HDNCC.Name = "HDNCC";
-            this.HDNCC.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.HDNCC.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.HDNCC.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.hoadontheoNCC_LinkClicked);
             // 
             // Khachhang
             // 
             this.Khachhang.Caption = "Hóa Đơn Khách Hàng";
             this.Khachhang.Name = "Khachhang";
-            this.Khachhang.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.Khachhang.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.Khachhang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.Khachhang_LinkClicked);
             // 
             // Theokho
             // 
             this.Theokho.Caption = "Lịch Sử Hàng Hóa";
             this.Theokho.Name = "Theokho";
-            this.Theokho.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.Theokho.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.Theokho.Visible = false;
             // 
             // tenhang
             // 
             this.tenhang.Caption = "Tên Hàng";
             this.tenhang.Name = "tenhang";
-            this.tenhang.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.tenhang.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.tenhang.Visible = false;
             // 
             // TheoNhom
             // 
             this.TheoNhom.Caption = "Tồn Theo Nhóm";
             this.TheoNhom.Name = "TheoNhom";
-            this.TheoNhom.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.TheoNhom.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.TheoNhom.Visible = false;
             // 
             // Linktonkhotonghop
             // 
             this.Linktonkhotonghop.Caption = "Tồn Kho Cuối Kỳ";
             this.Linktonkhotonghop.Name = "Linktonkhotonghop";
-            this.Linktonkhotonghop.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.Linktonkhotonghop.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.Linktonkhotonghop.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.LinktonkhoCUOIKY_LinkClicked);
             // 
             // Linkthekho
             // 
             this.Linkthekho.Caption = "Thẻ Kho";
             this.Linkthekho.Name = "Linkthekho";
-            this.Linkthekho.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.Linkthekho.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.Linkthekho.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.Linkthekho_LinkClicked);
             // 
             // Linkchitiethanghoa
@@ -435,7 +435,7 @@
             this.Linkchitiethanghoa.Caption = "Sổ Chi Tiết Hàng Hóa";
             this.Linkchitiethanghoa.Enabled = false;
             this.Linkchitiethanghoa.Name = "Linkchitiethanghoa";
-            this.Linkchitiethanghoa.SmallImage = global::WindowsFormsApplication1.Properties.Resources.money;
+            this.Linkchitiethanghoa.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.Linkchitiethanghoa.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.Linkchitiethanghoa_LinkClicked);
             // 
             // panelControl1
