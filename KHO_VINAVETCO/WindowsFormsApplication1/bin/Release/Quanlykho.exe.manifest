@@ -188,12 +188,22 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.SqlServer.RegSvrEnum" version="10.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="Microsoft.SqlServer.ServiceBrokerEnum" version="10.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="Microsoft.SqlServer.Smo" version="10.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.SqlServer.SmoExtended" version="10.0.0.0" publicKeyToken="89845DCD8080CC91" language="neutral" processorArchitecture="msil" />
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -307,14 +317,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Quanlykho.exe" size="2848256">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Quanlykho.exe" size="2850304">
       <assemblyIdentity name="Quanlykho" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>hYXCNpeilexff0wmTZsTb5CbBmQ=</dsig:DigestValue>
+        <dsig:DigestValue>nSXOGhC8vJaosQ345zptltyNHM8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -326,7 +336,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>6s4wkKT5nvhoHXm4B5LIJx5uUn4=</dsig:DigestValue>
+        <dsig:DigestValue>gCqFmi/zeavNiQvfrrjuKTJP8RI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -339,13 +349,13 @@
       <dsig:DigestValue>yEiF5wf/QxjRpCzCACtm9V9yezk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Quanlykho.exe.config" size="709">
+  <file name="Quanlykho.exe.config" size="768">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>obp5JAKbZh4KFH1W35lU+z+zj7M=</dsig:DigestValue>
+      <dsig:DigestValue>zfJRiPi2p3oni+9hZCq87G1W4qc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\CHOTSO.png" size="4212">
