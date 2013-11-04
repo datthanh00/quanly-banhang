@@ -174,7 +174,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         public int iNgonNgu;
         public frmMain frm;
         public string sTenNV, sMaNV;
-        public string THEM, XOA, SUA, IN, XEM, STYPEMONEY;
+        public string THEM, XOA, SUA, IN, XEM, STYPEMONEY, MAHDXOA;
     
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
         {
@@ -792,6 +792,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cbotientra.Properties.ReadOnly = false;
             ckphantram.Properties.ReadOnly = false;
             cktien.Properties.ReadOnly = false;
+            CheckCongNo.Enabled = true;
+            CheckGoiDau.Enabled = true;
+            CheckTienmat.Enabled = true;
             loadmahdx();
             gridControl1.DataSource = null;
             gridCTHOADON.RefreshData();
@@ -1207,6 +1210,14 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 dtoNCC.CKTIEN = cktien.Value.ToString();
                 dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                 dtoNCC.MANV = sMaNV;
+
+                if (Convert.ToInt64(cbotientra.Value) > Convert.ToInt64(txtthanhtien.Value) && PublicVariable.ComboTraXuat == 1)
+                {
+                    MessageBox.Show("Bạn Không thể xóa sản phẩm này số tiền đã trả sẽ lớn hơn giá trị hóa đơn còn lại");
+                    View_phieuxuat(MAHDXOA);
+                    return;
+                }
+                update_phieuthuchi(dtoNCC.MAKH, dtoNCC.TIENDATRA.ToString(), dtoNCC.MAHDX);
                 ctlNCC.UPDATEHOADONXUAT(dtoNCC);
                 if (sID != "")
                 {
@@ -1273,6 +1284,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cbotientra.Properties.ReadOnly = true;
             ckphantram.Properties.ReadOnly = true;
             cktien.Properties.ReadOnly = true;
+            CheckCongNo.Enabled = false;
+            CheckGoiDau.Enabled = false;
+            CheckTienmat.Enabled = false;
             Load_panel_create();
             loadgridCTHOADON();
             DataRow dtr;
@@ -1351,6 +1365,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cbotientra.Properties.ReadOnly = false;
             ckphantram.Properties.ReadOnly = false;
             cktien.Properties.ReadOnly = false;
+            CheckCongNo.Enabled = true;
+            CheckGoiDau.Enabled = true;
+            CheckTienmat.Enabled = true;
             Load_panel_create();
             loadgridCTHOADON();
             
@@ -1774,11 +1791,15 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cbotientra.Properties.ReadOnly = true;
             ckphantram.Properties.ReadOnly = true;
             cktien.Properties.ReadOnly = true;
+            CheckCongNo.Enabled = false;
+            CheckGoiDau.Enabled = false;
+            CheckTienmat.Enabled = false;
             Load_panel_create();
             loadgridCTHOADON();
             
             string MAKH = ctlNCC.GETMAKHfromMHDX(dtr["MAHDX"].ToString());
             View_phieuxuat(dtr["MAHDX"].ToString());
+            MAHDXOA = dtr["MAHDX"].ToString();
             txtNgayXuat.Text = dtr["NGAYXUAT"].ToString();
             loadgridKhachHang(MAKH);
             LOAD_TTKH();
@@ -1830,9 +1851,5 @@ namespace WindowsFormsApplication1.HoaDonXuat
             deDongTab();
         }
 
-
-
-
-   
     }
 }

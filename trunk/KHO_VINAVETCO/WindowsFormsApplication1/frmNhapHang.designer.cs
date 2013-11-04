@@ -611,7 +611,6 @@
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(1096, 135);
             this.panelControl5.TabIndex = 8;
-            this.panelControl5.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl5_Paint);
             // 
             // txtconLai
             // 
@@ -1892,26 +1891,27 @@
             this.EditToolStripMenuItem,
             this.xoaToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(106, 70);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(153, 92);
+            
             // 
             // ViewToolStripMenuItem
             // 
             this.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
-            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ViewToolStripMenuItem.Text = "Xem";
             this.ViewToolStripMenuItem.Click += new System.EventHandler(this.ViewToolStripMenuItem_Click);
             // 
             // EditToolStripMenuItem
             // 
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
-            this.EditToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
             // xoaToolStripMenuItem
             // 
             this.xoaToolStripMenuItem.Name = "xoaToolStripMenuItem";
-            this.xoaToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.xoaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.xoaToolStripMenuItem.Text = "Xóa";
             this.xoaToolStripMenuItem.Click += new System.EventHandler(this.xoaToolStripMenuItem_Click);
             // 
