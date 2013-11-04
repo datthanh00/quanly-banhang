@@ -1942,7 +1942,7 @@
             this.xoaStripMenuItem,
             this.linkIntheomathang});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(169, 92);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(169, 114);
             // 
             // ViewToolStripMenuItem
             // 

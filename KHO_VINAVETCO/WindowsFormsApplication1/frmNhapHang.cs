@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1
         NhapHangDAO mh = new NhapHangDAO();
         Boolean isdelete = false, isnhap=true;
         //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
-        public string THEM, XOA, SUA, IN, XEM, STYPEMONEY;
+        public string THEM, XOA, SUA, IN, XEM, STYPEMONEY,MAHDXOA;
         double TIENTRATRUOC = 0;
        
         private void frmNhapHang_Load(object sender, EventArgs e)
@@ -132,6 +132,9 @@ namespace WindowsFormsApplication1
             ckphantram.Properties.ReadOnly = false;
             cktien.Properties.ReadOnly = false;
             txtlohang.ReadOnly = true;
+            CheckCongNo.Enabled = true;
+            CheckGoiDau.Enabled = true;
+            CheckTienmat.Enabled = true;
             loadgridCTHOADON();
             Load_panel_create();
            
@@ -156,6 +159,9 @@ namespace WindowsFormsApplication1
             cbotientra.Properties.ReadOnly = true;
             ckphantram.Properties.ReadOnly = true;
             cktien.Properties.ReadOnly = true;
+            CheckCongNo.Enabled = false;
+            CheckGoiDau.Enabled = false;
+            CheckTienmat.Enabled = false;
             txtlohang.ReadOnly = true;
             loadgridCTHOADON();
             Load_panel_create();
@@ -524,6 +530,9 @@ namespace WindowsFormsApplication1
             txtlohang.ReadOnly = true;
             ckphantram.Properties.ReadOnly = false;
             cktien.Properties.ReadOnly = false;
+            CheckCongNo.Enabled = true;
+            CheckGoiDau.Enabled = true;
+            CheckTienmat.Enabled = true;
             loadgridNhacCungCap();
             Grid_sanpham.DataSource = null;
             loadgridCTHOADON();
@@ -798,8 +807,6 @@ namespace WindowsFormsApplication1
                                 DataTable dtname = ctlNCC.GETDATA("select TENMH from MATHANG where MAMH='" + TABLE_SAU.Rows[i]["MAMH"].ToString() + "'");
                                 TABLE_SAU.Rows[i]["TENMH"] = dtname.Rows[0][0].ToString();
                             }
-
-
                             DataTable TABLE_TRUOC = ctlNCC.GETDATA("SELECT MATHANG.MAMH,TENMH,SOLUONGNHAP AS SOLUONG,KMAI FROM MATHANG, CHITIETHDN WHERE MATHANG.MAMH=CHITIETHDN.MAMH AND MAHDN='" + txtMaHD.Text + "'");
 
                             PublicVariable.TMPtring = "";
@@ -895,7 +902,6 @@ namespace WindowsFormsApplication1
                 if (CheckTienmat.Checked == true)
                 {
                     PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=" + SOTIEN + " WHERE MAPC ='" + MAPC + "'";
-
                 }
                 else if (CheckGoiDau.Checked == true)
                 {
@@ -905,7 +911,6 @@ namespace WindowsFormsApplication1
                     PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE NHACUNGCAP SET TIENTRATRUOC=TIENTRATRUOC+ " + TIENTRUOC + "-" + SOTIEN + " WHERE MANCC='" + MANCC + "' ";
                     PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n  UPDATE PHIEUCHI SET SOTIEN=" + SOTIEN + " WHERE MAPC ='" + MAPC + "'";
                 }
-
             }
             else
             {
@@ -1229,8 +1234,6 @@ namespace WindowsFormsApplication1
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
-           
-      
         }
 
         private void gridCTHOADON_Keydown(object sender, KeyEventArgs e)
@@ -1365,8 +1368,6 @@ namespace WindowsFormsApplication1
                     ctlNCC.DELETECTHOADONNHAP(txtMaHD.Text, Convert.ToInt32(sID), dtr["MAMH"].ToString(), dtr["LOHANG"].ToString(), dtr["SOLUONG"].ToString(), dtr["KMAI"].ToString());
                     // ctlNCC.DELETE_KHOHANG(dtr["MAMH"].ToString(), txtlohang.Text);
                    // PublicVariable.TMPtring = "";
-
-
                 }
                 else
                 {
@@ -1395,12 +1396,13 @@ namespace WindowsFormsApplication1
                 dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                 dtoNCC.CKTIEN = cktien.Value.ToString();
 
-                if (Convert.ToInt64(txtthanhtien.Value) < Convert.ToInt64(cbotientra.Value))
+                if (Convert.ToInt64(cbotientra.Value) > Convert.ToInt64(txtthanhtien.Value)&&PublicVariable.ComboNhap==1)
                 {
-                    MessageBox.Show("");
+                    MessageBox.Show("Bạn Không thể xóa sản phẩm này số tiền đã trả sẽ lớn hơn giá trị hóa đơn còn lại");
+                    View_phieunhap(MAHDXOA);
                     return;
                 }
-
+                update_PHIEUTHUCHI(dtoNCC.MANCC, dtoNCC.TIENDATRA.ToString(), dtoNCC.MAHDN);
                 ctlNCC.UPDATEHOADONNHAP(dtoNCC);
                 if (sID != "")
                 {
@@ -1456,7 +1458,6 @@ namespace WindowsFormsApplication1
         public void View_phieunhap(string MAHDN)
         {
             loadgridCTHOADON(MAHDN);
-           
             txtMaHD.Text = MAHDN;
             txtlohang.Text =MAHDN;
             string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) as NGAYNHAP ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA,T1.GHICHU ,T1.CKTIEN,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,IDNHAP,TYPEMONEY FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
@@ -1493,14 +1494,9 @@ namespace WindowsFormsApplication1
             {
                 ckphantram.Value = 0;
                 cktien.Value = 0;
-
             }
-
                 gettotal();
         }
-        
-
-       
 
         private void btXem_Click(object sender, EventArgs e)
         {
@@ -1786,11 +1782,15 @@ namespace WindowsFormsApplication1
             ckphantram.Properties.ReadOnly = true;
             cktien.Properties.ReadOnly = true;
             txtlohang.ReadOnly = true;
+            CheckCongNo.Enabled = false;
+            CheckGoiDau.Enabled = false;
+            CheckTienmat.Enabled = false;
             loadgridCTHOADON();
             Load_panel_create();
             
             string MANCC = ctlNCC.GETMANCCfromMHDN(dtr["MAHDN"].ToString());
             View_phieunhap(dtr["MAHDN"].ToString());
+            MAHDXOA = dtr["MAHDN"].ToString();
             txtNgay.Text = dtr["NGAYNHAP"].ToString();
             txtlohang.Text = dtr["MAHDN"].ToString();
             loadgridNhacCungCap(MANCC);
@@ -1841,13 +1841,6 @@ namespace WindowsFormsApplication1
             deDongTab();
         }
 
-        private void panelControl5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-    
-
-
+        
     }
 }
