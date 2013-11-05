@@ -32,7 +32,7 @@ namespace WindowsFormsApplication1
         public void updateThonTinCongTy(clDTO dto)
         {
              String SQL = "update THONGTINCT set MACT= '"+dto.MACT+"',TENCT= N'"+dto.TENCT+"',DIACHI= N'"+dto.DIACHI+"',SDT= '"+dto.SDT+"',"
-	        +" MOBILE= '"+dto.MOBILE+"',EMAIL= '"+dto.EMAIL+"',FAX= '"+dto.FAX+"',MASOTHUE= '"+dto.MASOTHUE+"',WEBSITE= '"+dto.WEBSITE+"'"
+            + " MOBILE= '" + dto.MOBILE + "',EMAIL= '" + dto.EMAIL + "',FAX= '" + dto.FAX + "',MASOTHUE= '" + dto.MASOTHUE + "',WEBSITE= '" + dto.WEBSITE + "',TTINTRAI= N'" + dto.TTINTRAI + "',TTINPHAI= N'" + dto.TTINPHAI + "',TTINGIUA= N'" + dto.TTINGIUA + "'   "
             +" where 	(MACT='"+dto.MACT+"')";
             executeNonQuery(SQL);
         }//----------------GET NHAN VIEN
@@ -55,7 +55,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable getThongTinCT(clDTO dto)
         {
-            String SQL = "select MACT,TENCT,DIACHI,SDT,MOBILE,EMAIL,FAX,LOGO,MASOTHUE,WEBSITE from  THONGTINCT where (MACT='"+dto.MACT+"')";
+            String SQL = "select * from  THONGTINCT where (MACT='"+dto.MACT+"')";
             return getdata(SQL);
         }
         public void delMatHang(clDTO dto)

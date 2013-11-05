@@ -51,7 +51,8 @@ namespace WindowsFormsApplication1
             {
                 SaveRegistry(dt.Rows[0]["ACTIVE"].ToString(), dt.Rows[0]["CODERUN"].ToString());
                 Ctrl_Tien CTR = new Ctrl_Tien();
-                CTR.ACTIVE_CODEACTIVE(ACTIVE);
+                string UserHost_ComputerName5 = Environment.MachineName;
+                CTR.ACTIVE_CODEACTIVE(ACTIVE, UserHost_ComputerName5);
                 this.Close();
             }
             else

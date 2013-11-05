@@ -258,7 +258,6 @@ namespace WindowsFormsApplication1
                             DTO.HANSUDUNG = "";
                             DTO.GIAMUA= Convert.ToInt32(txtgiamua.Value).ToString();
                             DTO.LOHANG = PublicVariable.LOHANG;
-                          
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
 

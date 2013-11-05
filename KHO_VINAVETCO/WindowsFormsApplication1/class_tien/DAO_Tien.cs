@@ -56,7 +56,7 @@ namespace WindowsFormsApplication1
         public DataTable GETCODEACTIVE()
         {
             Provider pv = new Provider();
-            string SQL = "SELECT ACTIVE,CODE,convert(varchar,ACTIVE) +'-'+convert(varchar,CODE) AS CODEACTIVE, TYPE FROM ACTIVE";
+            string SQL = "SELECT ACTIVE,CODE,convert(varchar,ACTIVE) +'-'+convert(varchar,CODE) AS CODEACTIVE, TYPE,COMPUTERNAME FROM ACTIVE";
             return pv.getdata(SQL);
         }
         public  DataTable GETBANGGIA()
@@ -84,14 +84,14 @@ namespace WindowsFormsApplication1
                 CODERUN = CODERUN+ Convert.ToString(Rd.Next(1, 9));
             }
             Provider pv = new Provider();
-            string SQL = "INSERT INTO  ACTIVE  ([CODE],[CODERUN])  VALUES ('" + CODE + "','" + CODERUN + "')";
+            string SQL = "INSERT INTO  ACTIVE  ([CODE],[CODERUN],COMPUTERNAME)  VALUES ('" + CODE + "','" + CODERUN + "','')";
             pv.executeNonQuery(SQL);
         }
 
-        public void ACTIVE_CODEACTIVE(string ACTIVE)
+        public void ACTIVE_CODEACTIVE(string ACTIVE, String COMPUTERNAME)
         {
             Provider pv = new Provider();
-            string SQL = "UPDATE ACTIVE  SET TYPE=1 WHERE ACTIVE=" + ACTIVE + "";
+            string SQL = "UPDATE ACTIVE  SET TYPE=1, COMPUTERNAME='"+COMPUTERNAME+"' WHERE ACTIVE=" + ACTIVE + "";
              pv.executeNonQuery(SQL);
         }
         public  void THEMPHIEUTHU_DAO(PHIEUTHU_DTO dto)

@@ -38,6 +38,7 @@ namespace WindowsFormsApplication1
             {
                 cbbanggia.Text = dt.Rows[0]["MABG"].ToString();
                 dto.MABG = gridView1.GetFocusedRowCellValue("MABG").ToString();
+                MABGNOW = dto.MABG;
             }
 
         }
@@ -89,13 +90,13 @@ namespace WindowsFormsApplication1
                 }
                 MessageBox.Show("Bạn Đã Lưu Thành Công");
         }
-
+        public String MABGNOW="";
         private void cbbanggia_Validated(object sender, EventArgs e)
         {
             try
             {
                 dto.MABG = gridView1.GetFocusedRowCellValue("MABG").ToString();
-            
+                MABGNOW = dto.MABG;
                 gridControl2.DataSource = CTL.GETBANGGIA(dto.MABG);
 
                 gridView1.ExpandAllGroups();
@@ -167,6 +168,23 @@ namespace WindowsFormsApplication1
         private void frmBanggia_FormClosed(object sender, FormClosedEventArgs e)
         {
             deDongTab();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            String hesonhan = cbohesonhan.Value.ToString();
+
+            if (MABGNOW != "")
+            {
+                gridControl2.DataSource = CTL.GETBANGGIA(dto.MABG,hesonhan);
+
+                gridView1.ExpandAllGroups();
+            }
+            else
+            {
+                MessageBox.Show("VUI LÒNG CHỌN 1 BẢNG GIÁ");
+            }
+
         }
 
     }

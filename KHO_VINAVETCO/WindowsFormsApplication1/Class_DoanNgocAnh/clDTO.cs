@@ -30,7 +30,24 @@ namespace WindowsFormsApplication1
             set { _MAKH = value; }
         }
 
-      
+        private String _TTINTRAI;
+        public String TTINTRAI
+        {
+            get { return _TTINTRAI; }
+            set { _TTINTRAI = value; }
+        }
+        private String _TTINPHAI;
+        public String TTINPHAI
+        {
+            get { return _TTINPHAI; }
+            set { _TTINPHAI = value; }
+        }
+        private String _TTINGIUA;
+        public String TTINGIUA
+        {
+            get { return _TTINGIUA; }
+            set { _TTINGIUA = value; }
+        }
         public String MANCC
         {
             get { return _MANCC; }

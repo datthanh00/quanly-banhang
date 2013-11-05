@@ -492,7 +492,7 @@
             // 
             // bandedGridColumn3
             // 
-            this.bandedGridColumn3.Caption = "Tên Nhà Cung Cấp";
+            this.bandedGridColumn3.Caption = "Nhà Cung Cấp";
             this.bandedGridColumn3.FieldName = "TENNCC";
             this.bandedGridColumn3.Name = "bandedGridColumn3";
             this.bandedGridColumn3.OptionsColumn.AllowEdit = false;

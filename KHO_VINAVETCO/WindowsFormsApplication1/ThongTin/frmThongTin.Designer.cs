@@ -47,6 +47,12 @@
             this.lbDiDong = new DevExpress.XtraEditors.LabelControl();
             this.txtDiDong = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtintrai = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtinphai = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txtingiua = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtten.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
@@ -56,6 +62,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaST.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiDong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtintrai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtinphai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtingiua.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTenDonVI
@@ -108,7 +117,7 @@
             // 
             // lbMaSoThue
             // 
-            this.lbMaSoThue.Location = new System.Drawing.Point(46, 209);
+            this.lbMaSoThue.Location = new System.Drawing.Point(46, 207);
             this.lbMaSoThue.Name = "lbMaSoThue";
             this.lbMaSoThue.Size = new System.Drawing.Size(53, 13);
             this.lbMaSoThue.TabIndex = 0;
@@ -117,7 +126,7 @@
             // simpleButton1
             // 
             this.simpleButton1.Image = global::Quanlykho.Properties.Resources.check;
-            this.simpleButton1.Location = new System.Drawing.Point(130, 228);
+            this.simpleButton1.Location = new System.Drawing.Point(130, 306);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 9;
@@ -174,13 +183,12 @@
             this.txtMaST.Name = "txtMaST";
             this.txtMaST.Size = new System.Drawing.Size(181, 20);
             this.txtMaST.TabIndex = 8;
-            this.txtMaST.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaST_KeyPress);
             // 
             // pictureEdit1
             // 
-            this.pictureEdit1.Location = new System.Drawing.Point(339, 78);
+            this.pictureEdit1.Location = new System.Drawing.Point(316, 78);
             this.pictureEdit1.Name = "pictureEdit1";
-            this.pictureEdit1.Size = new System.Drawing.Size(162, 120);
+            this.pictureEdit1.Size = new System.Drawing.Size(185, 142);
             this.pictureEdit1.TabIndex = 3;
             this.pictureEdit1.EditValueChanged += new System.EventHandler(this.pictureEdit1_EditValueChanged);
             // 
@@ -204,18 +212,69 @@
             // simpleButton2
             // 
             this.simpleButton2.Image = global::Quanlykho.Properties.Resources.close4;
-            this.simpleButton2.Location = new System.Drawing.Point(223, 228);
+            this.simpleButton2.Location = new System.Drawing.Point(223, 306);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
             this.simpleButton2.TabIndex = 10;
             this.simpleButton2.Text = "Kết thúc";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
+            // txtintrai
+            // 
+            this.txtintrai.Location = new System.Drawing.Point(130, 228);
+            this.txtintrai.Name = "txtintrai";
+            this.txtintrai.Size = new System.Drawing.Size(371, 20);
+            this.txtintrai.TabIndex = 12;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(47, 232);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(44, 13);
+            this.labelControl1.TabIndex = 11;
+            this.labelControl1.Text = "TT in Trái";
+            // 
+            // txtinphai
+            // 
+            this.txtinphai.Location = new System.Drawing.Point(130, 254);
+            this.txtinphai.Name = "txtinphai";
+            this.txtinphai.Size = new System.Drawing.Size(371, 20);
+            this.txtinphai.TabIndex = 14;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(47, 257);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(46, 13);
+            this.labelControl2.TabIndex = 13;
+            this.labelControl2.Text = "TT in Phải";
+            // 
+            // txtingiua
+            // 
+            this.txtingiua.Location = new System.Drawing.Point(129, 280);
+            this.txtingiua.Name = "txtingiua";
+            this.txtingiua.Size = new System.Drawing.Size(372, 20);
+            this.txtingiua.TabIndex = 16;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(47, 282);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(48, 13);
+            this.labelControl3.TabIndex = 15;
+            this.labelControl3.Text = "TT in Giữa";
+            // 
             // frmThongTin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 263);
+            this.ClientSize = new System.Drawing.Size(528, 341);
+            this.Controls.Add(this.txtingiua);
+            this.Controls.Add(this.labelControl3);
+            this.Controls.Add(this.txtinphai);
+            this.Controls.Add(this.labelControl2);
+            this.Controls.Add(this.txtintrai);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.pictureEdit1);
             this.Controls.Add(this.txtMaST);
             this.Controls.Add(this.txtEmail);
@@ -249,6 +308,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaST.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiDong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtintrai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtinphai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtingiua.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -275,5 +337,11 @@
         private DevExpress.XtraEditors.LabelControl lbDiDong;
         private DevExpress.XtraEditors.TextEdit txtDiDong;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.TextEdit txtintrai;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtinphai;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txtingiua;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
     }
 }

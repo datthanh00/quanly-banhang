@@ -47,6 +47,7 @@
             this.groupCtDetails = new System.Windows.Forms.GroupBox();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -60,8 +61,8 @@
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.OptionsColumn.AllowEdit = false;
             this.colTINHTRANG.Visible = true;
-            this.colTINHTRANG.VisibleIndex = 3;
-            this.colTINHTRANG.Width = 102;
+            this.colTINHTRANG.VisibleIndex = 4;
+            this.colTINHTRANG.Width = 162;
             // 
             // barManager1
             // 
@@ -148,6 +149,7 @@
             this.gridColumn2,
             this.gridColumn1,
             this.colMAACTIVE,
+            this.gridColumn3,
             this.colTINHTRANG});
             styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             styleFormatCondition1.Appearance.Options.UseBackColor = true;
@@ -172,7 +174,7 @@
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 375;
+            this.gridColumn2.Width = 181;
             // 
             // gridColumn1
             // 
@@ -182,7 +184,7 @@
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 1;
-            this.gridColumn1.Width = 386;
+            this.gridColumn1.Width = 213;
             // 
             // colMAACTIVE
             // 
@@ -191,7 +193,7 @@
             this.colMAACTIVE.Name = "colMAACTIVE";
             this.colMAACTIVE.Visible = true;
             this.colMAACTIVE.VisibleIndex = 2;
-            this.colMAACTIVE.Width = 227;
+            this.colMAACTIVE.Width = 240;
             // 
             // groupCtDetails
             // 
@@ -219,6 +221,15 @@
             this.barButtonItem2.Glyph = global::Quanlykho.Properties.Resources.close3;
             this.barButtonItem2.Id = 2;
             this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Computer Name";
+            this.gridColumn3.FieldName = "COMPUTERNAME";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 294;
             // 
             // FrmINITCODEActive
             // 
@@ -262,6 +273,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet5TableAdapters.GETONEPTTableAdapter gETONEPTTableAdapter;
     }
 }

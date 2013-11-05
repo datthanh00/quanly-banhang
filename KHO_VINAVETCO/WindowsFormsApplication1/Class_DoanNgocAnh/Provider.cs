@@ -106,8 +106,6 @@ namespace WindowsFormsApplication1
                          //strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_qlkho;User ID=nguyendat_thanh;Password=Xziojs1U98;";
                         strConnect = "server=DATTHANH\\SQLEXPRESS2008;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123";
                     }
-                   // strConnect = "server=datthanh\\SQLEXPRESS;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123";
-
                 }
                 SqlConnection cn = new SqlConnection(strConnect);
            try

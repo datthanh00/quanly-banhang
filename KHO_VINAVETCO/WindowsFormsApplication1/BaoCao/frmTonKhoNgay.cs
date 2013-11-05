@@ -234,7 +234,7 @@ namespace WindowsFormsApplication1
                     advBandedGridView3.Columns["KLTRAXUAT"].Visible = false;
                     advBandedGridView3.Columns["KLTONCUOI"].Visible = false;
                 }
-                if (!PublicVariable.isKHOILUONG)
+                if (!PublicVariable.isHSD)
                 {
                     advBandedGridView3.Columns["LOHANG"].Visible = false;
                 }
@@ -398,6 +398,11 @@ namespace WindowsFormsApplication1
             DataTable dt=ctlNCC.GETDATA(SQL);
 
             DataRow dtr1 = advBandedGridView3.GetDataRow(0);
+            if (dtr1 == null)
+            {
+                MessageBox.Show("vui lòng nhấn nút xem trước khi lưu");
+                return;
+            }
             string s1 = dtr1["NGAY"].ToString();
             string s2 = dt.Rows[0][0].ToString();
             if( dtr1["NGAY"].ToString() == dt.Rows[0][0].ToString()){
