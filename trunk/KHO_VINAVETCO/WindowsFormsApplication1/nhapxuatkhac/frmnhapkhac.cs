@@ -55,11 +55,7 @@ namespace WindowsFormsApplication1
                 this.Close();
                 return;
             }
-            if (PublicVariable.isUSE_COMPUTERDATE)
-            {
-                MessageBox.Show("Bạn đang sử dụng hệ thống ngày tháng của máy tính");
-
-            }
+           
                 loadgridNhacCungCap();
                 loadgridNhanVien();
                 loaddridmathang();
@@ -633,10 +629,6 @@ namespace WindowsFormsApplication1
                         }
 
                         dtoNCC.NGAYNHAP = "convert(varchar,getDate(),101)";
-                        if (PublicVariable.isUSE_COMPUTERDATE)
-                        {
-                            dtoNCC.NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
-                        }
 
                         if (isnhap)
                         {

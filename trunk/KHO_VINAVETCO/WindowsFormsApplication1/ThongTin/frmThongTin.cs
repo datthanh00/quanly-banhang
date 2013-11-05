@@ -71,6 +71,9 @@ namespace WindowsFormsApplication1
                 dto.LOGO = "";
                 dto.MASOTHUE = txtMaST.Text;
                 dto.WEBSITE = txtWeb.Text;
+                dto.TTINTRAI = txtintrai.Text;
+                dto.TTINPHAI = txtinphai.Text;
+                dto.TTINGIUA = txtingiua.Text;
                 ld.simpleCloseWait();
                 ctr.updateThongTinCT(dto);
                 
@@ -161,7 +164,9 @@ namespace WindowsFormsApplication1
                     txtEmail.Text = tb.Rows[i]["EMAIL"].ToString();
                     txtMaST.Text = tb.Rows[i]["MASOTHUE"].ToString();
                     txtWeb.Text = tb.Rows[i]["WEBSITE"].ToString();
-
+                    txtintrai.Text = tb.Rows[i]["TTINTRAI"].ToString();
+                    txtinphai.Text = tb.Rows[i]["TTINPHAI"].ToString();
+                    txtingiua.Text = tb.Rows[i]["TTINGIUA"].ToString();
                     /*imageData = (byte[])tb.Rows[i]["LOGO"];
 
                     //Initialize image variable
@@ -208,11 +213,7 @@ namespace WindowsFormsApplication1
                 e.Handled = true;
         }
 
-        private void txtMaST_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
-                e.Handled = true;
-        }
+
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {

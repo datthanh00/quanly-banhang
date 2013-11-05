@@ -169,11 +169,7 @@ namespace WindowsFormsApplication1.KHtra
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            if (PublicVariable.isUSE_COMPUTERDATE)
-            {
-                MessageBox.Show("Bạn đang sử dụng hệ thống ngày tháng của máy tính");
 
-            }
            // cbotientra.Text = "0";
             loadgridKhachHang();
             loadgridNhanVien();
@@ -370,10 +366,7 @@ namespace WindowsFormsApplication1.KHtra
                             }
                         }
                         dtoNCC.NGAYNHAP = "convert(varchar,getDate(),101)";
-                        if (PublicVariable.isUSE_COMPUTERDATE)
-                        {
-                            dtoNCC.NGAYNHAP = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
-                        }
+       
                         dtoNCC.NGAYXUAT = dtoNCC.NGAYNHAP;
 
                         
@@ -709,7 +702,7 @@ namespace WindowsFormsApplication1.KHtra
                     string ten = "Khách trả hàng";
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETTRACTHOADONXUATIN(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, "", cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(),cktien.Value.ToString(), txtMaHD.Text, ten);
+                    lbinphai rep = new lbinphai(dt, cboTenKH.Text, "", cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(),cktien.Value.ToString(), txtMaHD.Text, ten);
                     rep.ShowPreviewDialog();
                 }
                 else

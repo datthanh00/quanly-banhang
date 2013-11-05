@@ -51,9 +51,9 @@ namespace WindowsFormsApplication1
         {
             CNKH.INSERTCODEACTIVE();
         }
-        public void ACTIVE_CODEACTIVE(string ACTIVE)
+        public void ACTIVE_CODEACTIVE(string ACTIVE, String COMPUTERNAME)
         {
-            CNKH.ACTIVE_CODEACTIVE(ACTIVE);
+            CNKH.ACTIVE_CODEACTIVE(ACTIVE, COMPUTERNAME);
         }
         public  void THEM_PHIEUTHU_ctrl(PHIEUTHU_DTO dt)
         {

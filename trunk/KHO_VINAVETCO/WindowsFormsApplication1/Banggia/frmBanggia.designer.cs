@@ -34,6 +34,8 @@
             this.kHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHOgetallBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.cbohesonhan = new DevExpress.XtraEditors.CalcEdit();
             this.btdanhsach = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cbbanggia = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -124,6 +126,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.kHOgetallBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbohesonhan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbanggia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
@@ -158,6 +161,8 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.simpleButton1);
+            this.panelControl3.Controls.Add(this.cbohesonhan);
             this.panelControl3.Controls.Add(this.btdanhsach);
             this.panelControl3.Controls.Add(this.labelControl2);
             this.panelControl3.Controls.Add(this.cbbanggia);
@@ -169,6 +174,30 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1286, 38);
             this.panelControl3.TabIndex = 2;
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Image = global::Quanlykho.Properties.Resources.cancel;
+            this.simpleButton1.Location = new System.Drawing.Point(732, 4);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(110, 29);
+            this.simpleButton1.TabIndex = 42;
+            this.simpleButton1.Text = "Nhân Giá Gốc";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // cbohesonhan
+            // 
+            this.cbohesonhan.Location = new System.Drawing.Point(652, 8);
+            this.cbohesonhan.Name = "cbohesonhan";
+            this.cbohesonhan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbohesonhan.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.cbohesonhan.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cbohesonhan.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.cbohesonhan.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cbohesonhan.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.cbohesonhan.Size = new System.Drawing.Size(71, 20);
+            this.cbohesonhan.TabIndex = 41;
             // 
             // btdanhsach
             // 
@@ -1122,6 +1151,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbohesonhan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbbanggia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
@@ -1232,6 +1262,8 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand11;
         private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repositoryItemCalcEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        public DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.CalcEdit cbohesonhan;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHOTableAdapter kHOTableAdapter;
     }
 }

@@ -190,11 +190,6 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 this.Close();
                 return;
             }
-            if (PublicVariable.isUSE_COMPUTERDATE)
-            {
-                MessageBox.Show("Bạn đang sử dụng hệ thống ngày tháng của máy tính");
-              
-            }
             
            // cbotientra.Text = "0";
             loadgridKhachHang();
@@ -391,10 +386,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             }
 
                             string NGAYXUAT = "convert(varchar,getDate(),101)";
-                            if (PublicVariable.isUSE_COMPUTERDATE)
-                            {
-                                NGAYXUAT = "'" + DateTime.Now.ToString("MM-dd-yyyy") + "'";
-                            }
+                 
                             dtoNCC.NGAYXUAT = NGAYXUAT;
                         
                             dtoNCC.IsUPDATE = false;
@@ -712,7 +704,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 {
                     DataTable dt = new DataTable();
                     dt = ctlNCC.GETCTHOADONXUATIN(txtMaHD.Text);
-                    Inxuat rep = new Inxuat(dt, cboTenKH.Text, "", cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), cktien.Value.ToString(), txtMaHD.Text, "");
+                    lbinphai rep = new lbinphai(dt, cboTenKH.Text, "", cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), cktien.Value.ToString(), txtMaHD.Text, "");
                     rep.ShowPreviewDialog();
                 }
                 else

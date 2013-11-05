@@ -573,7 +573,7 @@
             // 
             // cbnhomhang
             // 
-            this.cbnhomhang.Location = new System.Drawing.Point(281, 11);
+            this.cbnhomhang.Location = new System.Drawing.Point(280, 9);
             this.cbnhomhang.Name = "cbnhomhang";
             this.cbnhomhang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -611,7 +611,7 @@
             // 
             // cbmathang
             // 
-            this.cbmathang.Location = new System.Drawing.Point(280, 11);
+            this.cbmathang.Location = new System.Drawing.Point(280, 9);
             this.cbmathang.Name = "cbmathang";
             this.cbmathang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -658,7 +658,7 @@
             // 
             // lbsanpham
             // 
-            this.lbsanpham.Location = new System.Drawing.Point(200, 16);
+            this.lbsanpham.Location = new System.Drawing.Point(196, 14);
             this.lbsanpham.Name = "lbsanpham";
             this.lbsanpham.Size = new System.Drawing.Size(78, 13);
             this.lbsanpham.TabIndex = 24;
@@ -688,7 +688,7 @@
             // 
             // lbnhom
             // 
-            this.lbnhom.Location = new System.Drawing.Point(230, 16);
+            this.lbnhom.Location = new System.Drawing.Point(210, 14);
             this.lbnhom.Name = "lbnhom";
             this.lbnhom.Size = new System.Drawing.Size(53, 13);
             this.lbnhom.TabIndex = 3;

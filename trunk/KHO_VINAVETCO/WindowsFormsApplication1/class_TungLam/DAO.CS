@@ -11,8 +11,8 @@ namespace WindowsFormsApplication1
         
         public void insertKhachHang(DTO dto)
         {
-            string SQL = "	insert into KHACHHANG(MAKH,MAKV,MANV,MABG,MAKHO,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG)"
-            + " values('" + dto.MAKH + "','" + dto.MAKV + "','" + dto.MANV + "','" + dto.MABG + "','" + PublicVariable.MAKHO + "',N'" + dto.TENKH + "','" + dto.SOTAIKHOAN + "',N'" + dto.NGANHANG + "','" + dto.MASOTHUE + "',N'" + dto.DIACHI + "','" + dto.SDT + "','" + dto.FAX + "','" + dto.WEBSITE + "','" + dto.YAHOO + "','" + dto.SKYPE + "','" + dto.TINHTRANG + "')";
+            string SQL = "	insert into KHACHHANG(MAKH,MAKV,MANV,MABG,MAKHO,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG,CONGNO,TIENTRATRUOC)"
+            + " values('" + dto.MAKH + "','" + dto.MAKV + "','" + dto.MANV + "','" + dto.MABG + "','" + PublicVariable.MAKHO + "',N'" + dto.TENKH + "','" + dto.SOTAIKHOAN + "',N'" + dto.NGANHANG + "','" + dto.MASOTHUE + "',N'" + dto.DIACHI + "','" + dto.SDT + "','" + dto.FAX + "','" + dto.WEBSITE + "','" + dto.YAHOO + "','" + dto.SKYPE + "','" + dto.TINHTRANG + "',0,0)";
             executeNonQuery(SQL);
 
         }
@@ -76,8 +76,8 @@ namespace WindowsFormsApplication1
         }
         public void INSERTNHACC(DTO dto)
         {
-            string SQL = "insert into NHACUNGCAP(MANCC,MAKV,MAKHO,TENNCC,DIACHI,MASOTHUE,SOTAIKHOAN,NGANHANG,SDT,EMAIL,FAX,WEBSITE,TINHTRANG)"
-            +" values('"+dto.MANCC+"','"+dto.MAKV+"','"+PublicVariable.MAKHO+"',N'"+dto.TENNCC+"',N'"+dto.DIACHI+"','"+dto.MASOTHUE+"','"+dto.SOTAIKHOAN+"',N'"+dto.NGANHANG+"','"+dto.SDT+"','"+dto.EMAIL+"','"+dto.FAX+"','"+dto.WEBSITE+"','"+dto.TINHTRANG+"')";
+            string SQL = "insert into NHACUNGCAP(MANCC,MAKV,MAKHO,TENNCC,DIACHI,MASOTHUE,SOTAIKHOAN,NGANHANG,SDT,EMAIL,FAX,WEBSITE,TINHTRANG,CONGNO,TIENTRATRUOC)"
+            +" values('"+dto.MANCC+"','"+dto.MAKV+"','"+PublicVariable.MAKHO+"',N'"+dto.TENNCC+"',N'"+dto.DIACHI+"','"+dto.MASOTHUE+"','"+dto.SOTAIKHOAN+"',N'"+dto.NGANHANG+"','"+dto.SDT+"','"+dto.EMAIL+"','"+dto.FAX+"','"+dto.WEBSITE+"','"+dto.TINHTRANG+"',0,0)";
             executeNonQuery(SQL);
         }
         public void UPDATENHACC(DTO dto)
@@ -94,7 +94,7 @@ namespace WindowsFormsApplication1
             SQL = "insert into PHANKHO(MABP,MAKHO) SELECT  MABP,'" + dto.MAKHO + "' AS MAKHO FROM BOPHAN";
             executeNonQuery(SQL);
 
-            SQL = "insert into KHOASOTHEOKHO (ID,MAKHO,NGAY) SELECT  ID, '" + PublicVariable.MAKHO + "' AS MAKHO, convert(varchar,GETDATE(),101) AS NGAY  FROM KHOASO";
+            SQL = "insert into KHOASOTHEOKHO (ID,MAKHO,NGAY) SELECT  ID, '" + dto.MAKHO + "' AS MAKHO, convert(varchar,GETDATE(),101) AS NGAY  FROM KHOASO";
             executeNonQuery(SQL);
         }
         public void INSERTDVT(DTO dto)
@@ -147,10 +147,10 @@ namespace WindowsFormsApplication1
 
         public void addMatHang(DTO dto)
         {
-            string sqlnhomhang = "select manh from nhomhang";
-            DataTable dt = getdata(sqlnhomhang);
+            string SQL = "select manh from nhomhang";
+            DataTable dt = getdata(SQL);
             
-            string SQL = "";
+            SQL = "";
             SQL = SQL + "\r\nGO\r\n  insert into MATHANG(MAMH,MATH,MANH,MAKHO,MANCC,TENMH,MADVT,KLDVT,SOLUONGMH,GIAMUA, MOTA,TINHTRANG) VALUES('" + dto.MAMH + "','" + dto.MATH + "','"+dt.Rows[0][0].ToString()+"','" + dto.MAKHO + "','" + dto.MANCC + "',N'" + dto.TENMH + "','" + dto.MADVT + "','" + dto.KLDVT + "',0," + dto.GIAMUA + ", N'" + dto.MOTA + "','" + dto.TINHTRANG + "')";
 
             SQL = SQL + "\r\nGO\r\n  INSERT INTO KHOHANG ([MAMH],[LOHANG],[GIAMUA],[TONKHO],[NGAYNHAP],[HSD],[TINHTRANG]) VALUES('" + dto.MAMH + "','" + dto.LOHANG + "'," + dto.GIAMUA + ",0,convert(varchar,GETDATE(),101),convert(varchar,GETDATE(),101),1)";
@@ -160,6 +160,14 @@ namespace WindowsFormsApplication1
             SQL = SQL + "\r\nGO\r\n  INSERT INTO TONDAUKHOHANG ([MAMH],[LOHANG],[GIAMUA],[TONKHO]) VALUES ('" + dto.MAMH + "','" + dto.LOHANG + "'," + dto.GIAMUA + ",0)";
 
             SQL = SQL + "\r\nGO\r\n  INSERT INTO BANGGIAMATHANG ([MABG],[MAMH],[GIABAN])  SELECT MABG,'" + dto.MAMH + "' AS MAMH,0 AS GIABAN FROM BANGGIA WHERE MAKHO='" + PublicVariable.MAKHO + "'";
+
+            String SQL2 = "select COUNT(*) from TONKHOTT WHERE NGAY=convert(varchar,GETDATE(),101) AND MAKHO='"+PublicVariable.MAKHO+"'";
+            dt = getdata(SQL2);
+            if (dt.Rows[0][0].ToString() != "0")
+            {
+                SQL = SQL + "\r\nGO\r\n  INSERT INTO TONKHOTT([NGAY],[MAMH],[LOHANG],[TONKHONGAY],[MAKHO]) VALUES (convert(varchar,GETDATE(),101),'" + dto.MAMH + "','" + dto.LOHANG + "',0,'"+PublicVariable.MAKHO+"')";
+            }
+
             executeNonQuery2(SQL);
 
         }
@@ -207,12 +215,6 @@ namespace WindowsFormsApplication1
             dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
-
-            SQL = "select TOP 1 MAKH from TONDAUCONGNOKH where 	MAKH='" + dto.MAKH + "'";
-            dt = getdata(SQL);
-            if (dt.Rows.Count > 0)
-                return false;
-
 
             return true;
         }
@@ -511,6 +513,11 @@ namespace WindowsFormsApplication1
         public DataTable GETBANGGIA(string MABG)
         {
             string SQL = "select 	mathang.MAMH,DONVITINH,TENMH,MATH,MANH,KLDVT,mathang.MANCC,mathang.MAKHO,TENNCC,mathang.MADVT,SOLUONGMH,BANGGIAMATHANG.GIABAN,MOTA,mathang.TINHTRANG, BANGGIAMATHANG.GIABAN*SOLUONGMH AS THANHTIEN from  MATHANG,NHACUNGCAP,DONVITINH,BANGGIAMATHANG WHERE BANGGIAMATHANG.MABG='" + MABG + "' AND MATHANG.MAMH=BANGGIAMATHANG.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MADVT=DONVITINH.MADVT AND mathang.MAKHO='" + PublicVariable.MAKHO + "' ";
+            return GET_DATA(SQL);
+        }
+        public DataTable GETBANGGIA(string MABG, String HESONHAN)
+        {
+            string SQL = "select 	mathang.MAMH,DONVITINH,TENMH,MATH,MANH,KLDVT,mathang.MANCC,mathang.MAKHO,TENNCC,mathang.MADVT,SOLUONGMH,CONVERT(INT, MATHANG.GIAMUA*" + HESONHAN + ") AS GIABAN,MOTA,mathang.TINHTRANG, CONVERT(INT, MATHANG.GIAMUA*" + HESONHAN + " *SOLUONGMH) AS THANHTIEN from  MATHANG,NHACUNGCAP,DONVITINH,BANGGIAMATHANG WHERE BANGGIAMATHANG.MABG='" + MABG + "' AND MATHANG.MAMH=BANGGIAMATHANG.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MADVT=DONVITINH.MADVT AND mathang.MAKHO='" + PublicVariable.MAKHO + "' ";
             return GET_DATA(SQL);
         }
         public DataTable GETMATHANG1()
