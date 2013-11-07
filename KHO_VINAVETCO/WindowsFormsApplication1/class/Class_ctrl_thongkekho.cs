@@ -63,6 +63,10 @@ namespace WindowsFormsApplication1
         {
             dao.createtonkiemkho();
         }
+        public void deletetonkiemkho()
+        {
+            dao.deletetonkiemkho();
+        }
         public DataTable getonkiemkho(String KIKIEM)
         {
             return dao.getonkiemkho(KIKIEM);

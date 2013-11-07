@@ -65,6 +65,7 @@
             this.repositoryItemCalcEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             this.repositoryItemRichTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemRichTextEdit();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.cbncc = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -76,8 +77,6 @@
             this.mATHANGBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.xoalohangToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCalcEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -106,7 +105,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mATHANGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // colsoluong
@@ -199,10 +197,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(2, 21);
+            this.xtraTabControl1.Location = new System.Drawing.Point(2, 22);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 504);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 503);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3});
@@ -212,7 +210,7 @@
             this.xtraTabPage3.Controls.Add(this.panelControl5);
             this.xtraTabPage3.Controls.Add(this.panelControl6);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 476);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 474);
             this.xtraTabPage3.Text = "Tồn Đầu Kỳ";
             // 
             // panelControl5
@@ -221,23 +219,23 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(0, 39);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1252, 437);
+            this.panelControl5.Size = new System.Drawing.Size(1252, 435);
             this.panelControl5.TabIndex = 9;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 3);
+            this.groupControl2.Location = new System.Drawing.Point(2, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1246, 431);
+            this.groupControl2.Size = new System.Drawing.Size(1248, 431);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Chi Tiết Mặt Hàng";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 21);
+            this.gridControl1.Location = new System.Drawing.Point(2, 22);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
@@ -250,7 +248,7 @@
             this.repositoryItemRichTextEdit1,
             this.repositoryItemDateEdit1});
             this.gridControl1.ShowOnlyPredefinedDetails = true;
-            this.gridControl1.Size = new System.Drawing.Size(1242, 408);
+            this.gridControl1.Size = new System.Drawing.Size(1244, 407);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -304,7 +302,6 @@
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coltennhomhang, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coltenmathang, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
-            this.gridView1.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView1_ShowGridMenu);
             // 
             // coltenmathang
             // 
@@ -472,6 +469,7 @@
             // 
             // panelControl6
             // 
+            this.panelControl6.Controls.Add(this.simpleButton2);
             this.panelControl6.Controls.Add(this.simpleButton1);
             this.panelControl6.Controls.Add(this.cbncc);
             this.panelControl6.Controls.Add(this.BtXuatdulieu);
@@ -484,10 +482,20 @@
             this.panelControl6.Size = new System.Drawing.Size(1252, 39);
             this.panelControl6.TabIndex = 8;
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Image = global::Quanlykho.Properties.Resources.close4;
+            this.simpleButton2.Location = new System.Drawing.Point(292, 4);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(135, 31);
+            this.simpleButton2.TabIndex = 27;
+            this.simpleButton2.Text = "Xóa kì Kiểm Hôm Nay";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // simpleButton1
             // 
             this.simpleButton1.Image = global::Quanlykho.Properties.Resources.plus;
-            this.simpleButton1.Location = new System.Drawing.Point(252, 4);
+            this.simpleButton1.Location = new System.Drawing.Point(204, 4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(81, 31);
             this.simpleButton1.TabIndex = 26;
@@ -496,7 +504,7 @@
             // 
             // cbncc
             // 
-            this.cbncc.Location = new System.Drawing.Point(85, 11);
+            this.cbncc.Location = new System.Drawing.Point(51, 11);
             this.cbncc.Name = "cbncc";
             this.cbncc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -527,7 +535,7 @@
             // BtXuatdulieu
             // 
             this.BtXuatdulieu.Image = ((System.Drawing.Image)(resources.GetObject("BtXuatdulieu.Image")));
-            this.BtXuatdulieu.Location = new System.Drawing.Point(539, 4);
+            this.BtXuatdulieu.Location = new System.Drawing.Point(591, 4);
             this.BtXuatdulieu.Name = "BtXuatdulieu";
             this.BtXuatdulieu.Size = new System.Drawing.Size(103, 31);
             this.BtXuatdulieu.TabIndex = 3;
@@ -536,7 +544,7 @@
             // 
             // lbnhom
             // 
-            this.lbnhom.Location = new System.Drawing.Point(13, 17);
+            this.lbnhom.Location = new System.Drawing.Point(9, 14);
             this.lbnhom.Name = "lbnhom";
             this.lbnhom.Size = new System.Drawing.Size(37, 13);
             this.lbnhom.TabIndex = 3;
@@ -545,7 +553,7 @@
             // btin
             // 
             this.btin.Image = ((System.Drawing.Image)(resources.GetObject("btin.Image")));
-            this.btin.Location = new System.Drawing.Point(455, 4);
+            this.btin.Location = new System.Drawing.Point(513, 4);
             this.btin.Name = "btin";
             this.btin.Size = new System.Drawing.Size(70, 31);
             this.btin.TabIndex = 4;
@@ -555,7 +563,7 @@
             // btxem
             // 
             this.btxem.Image = global::Quanlykho.Properties.Resources.save;
-            this.btxem.Location = new System.Drawing.Point(370, 5);
+            this.btxem.Location = new System.Drawing.Point(435, 4);
             this.btxem.Name = "btxem";
             this.btxem.Size = new System.Drawing.Size(70, 31);
             this.btxem.TabIndex = 3;
@@ -580,20 +588,6 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.xoalohangToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(168, 26);
-            // 
-            // xoalohangToolStripMenuItem
-            // 
-            this.xoalohangToolStripMenuItem.Name = "xoalohangToolStripMenuItem";
-            this.xoalohangToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.xoalohangToolStripMenuItem.Text = "Xóa Lô Hàng Này";
-            this.xoalohangToolStripMenuItem.Click += new System.EventHandler(this.xoalohangToolStripMenuItem_Click);
             // 
             // frmKiemkho
             // 
@@ -638,7 +632,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.mATHANGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -687,10 +680,9 @@
         private DevExpress.XtraPrinting.PrintingSystem printingSystem1;
         private DevExpress.XtraPrinting.PrintableComponentLink printableComponentLink1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem xoalohangToolStripMenuItem;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

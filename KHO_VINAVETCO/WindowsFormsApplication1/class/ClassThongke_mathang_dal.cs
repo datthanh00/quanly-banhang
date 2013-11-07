@@ -211,6 +211,11 @@ namespace WindowsFormsApplication1
                 System.Windows.Forms.MessageBox.Show("NGÀY HÔM NAY ĐÃ KIỂM KHO RỒI NÊN KHÔNG THỂ TẠO NỮA");
             }
         }
+        public void deletetonkiemkho()
+        {
+            string SQL = "DELETE FROM TONKIEMKHO WHERE NGAY=convert(varchar,getDate(),101) AND MAKHO='" + PublicVariable.MAKHO + "'";
+            executeNonQuery(SQL);
+        }
         public DataTable getonkiemkho(string KIKIEM)
         {
             string SQL = "";

@@ -209,7 +209,6 @@
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
             this.gridView2.OptionsFilter.ShowAllTableValuesInFilterPopup = true;
-            this.gridView2.OptionsSelection.InvertSelection = true;
             this.gridView2.OptionsSelection.MultiSelect = true;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView2_RowClick);
