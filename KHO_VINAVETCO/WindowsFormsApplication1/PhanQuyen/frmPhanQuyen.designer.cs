@@ -155,9 +155,9 @@
             // 
             this.dockPanel2_Container.Controls.Add(this.btnphankho);
             this.dockPanel2_Container.Controls.Add(this.btnphanquyen);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(194, 68);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(194, 69);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // btnphankho
@@ -166,7 +166,7 @@
             this.btnphankho.Name = "btnphankho";
             this.btnphankho.Size = new System.Drawing.Size(149, 24);
             this.btnphankho.StyleController = this.layoutControl1;
-            this.btnphankho.TabIndex = 13;
+            this.btnphankho.TabIndex = 5;
             this.btnphankho.Text = "Phân Kho";
             this.btnphankho.Click += new System.EventHandler(this.btnphankho_Click);
             // 
@@ -186,10 +186,10 @@
             // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(31, 90);
+            this.gridControl2.Location = new System.Drawing.Point(31, 89);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(1030, 374);
+            this.gridControl2.Size = new System.Drawing.Size(1030, 375);
             this.gridControl2.TabIndex = 5;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -254,33 +254,33 @@
             // btThem
             // 
             this.btThem.Image = global::Quanlykho.Properties.Resources.add;
-            this.btThem.Location = new System.Drawing.Point(26, 48);
+            this.btThem.Location = new System.Drawing.Point(26, 47);
             this.btThem.Name = "btThem";
             this.btThem.Size = new System.Drawing.Size(74, 38);
             this.btThem.StyleController = this.layoutControl1;
-            this.btThem.TabIndex = 9;
+            this.btThem.TabIndex = 1;
             this.btThem.Text = "Thêm";
             this.btThem.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btSua
             // 
             this.btSua.Image = global::Quanlykho.Properties.Resources.edit2;
-            this.btSua.Location = new System.Drawing.Point(104, 46);
+            this.btSua.Location = new System.Drawing.Point(104, 45);
             this.btSua.Name = "btSua";
             this.btSua.Size = new System.Drawing.Size(83, 38);
             this.btSua.StyleController = this.layoutControl1;
-            this.btSua.TabIndex = 10;
+            this.btSua.TabIndex = 2;
             this.btSua.Text = "Sửa";
             this.btSua.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // btXoa
             // 
             this.btXoa.Image = global::Quanlykho.Properties.Resources.close__2_;
-            this.btXoa.Location = new System.Drawing.Point(191, 46);
+            this.btXoa.Location = new System.Drawing.Point(191, 45);
             this.btXoa.Name = "btXoa";
             this.btXoa.Size = new System.Drawing.Size(86, 38);
             this.btXoa.StyleController = this.layoutControl1;
-            this.btXoa.TabIndex = 11;
+            this.btXoa.TabIndex = 3;
             this.btXoa.Text = "Xoá";
             this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
@@ -321,7 +321,7 @@
             this.layoutControlItem2.CustomizationFormText = " ";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 46);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1041, 378);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1041, 379);
             this.layoutControlItem2.Text = " ";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(3, 13);
             // 
@@ -400,7 +400,7 @@
             this.btnphanquyen.Name = "btnphanquyen";
             this.btnphanquyen.Size = new System.Drawing.Size(149, 24);
             this.btnphanquyen.StyleController = this.layoutControl1;
-            this.btnphanquyen.TabIndex = 11;
+            this.btnphanquyen.TabIndex = 4;
             this.btnphanquyen.Text = "Phân Quyền";
             this.btnphanquyen.Click += new System.EventHandler(this.btnphanquyen_Click);
             // 
@@ -419,9 +419,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.gridControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 364);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(194, 365);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // gridControl1
@@ -430,7 +430,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(194, 364);
+            this.gridControl1.Size = new System.Drawing.Size(194, 365);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

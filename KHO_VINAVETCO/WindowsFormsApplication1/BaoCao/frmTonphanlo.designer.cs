@@ -581,7 +581,7 @@
             this.cbnhomhang.Properties.PopupSizeable = false;
             this.cbnhomhang.Properties.View = this.gridView3;
             this.cbnhomhang.Size = new System.Drawing.Size(170, 20);
-            this.cbnhomhang.TabIndex = 26;
+            this.cbnhomhang.TabIndex = 2;
             // 
             // gridView3
             // 
@@ -619,7 +619,7 @@
             this.cbmathang.Properties.PopupSizeable = false;
             this.cbmathang.Properties.View = this.gridView2;
             this.cbmathang.Size = new System.Drawing.Size(171, 20);
-            this.cbmathang.TabIndex = 25;
+            this.cbmathang.TabIndex = 2;
             // 
             // gridView2
             // 
@@ -661,7 +661,7 @@
             this.lbsanpham.Location = new System.Drawing.Point(196, 14);
             this.lbsanpham.Name = "lbsanpham";
             this.lbsanpham.Size = new System.Drawing.Size(78, 13);
-            this.lbsanpham.TabIndex = 24;
+            this.lbsanpham.TabIndex = 0;
             this.lbsanpham.Text = "Chọn Mặt Hàng:";
             // 
             // cbloaihienthi
@@ -672,7 +672,7 @@
             this.cbloaihienthi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbloaihienthi.Size = new System.Drawing.Size(112, 20);
-            this.cbloaihienthi.TabIndex = 8;
+            this.cbloaihienthi.TabIndex = 1;
             this.cbloaihienthi.SelectedIndexChanged += new System.EventHandler(this.cmbloaihienthi_SelectedIndexChanged);
             this.cbloaihienthi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbloaihienthi_KeyPress);
             // 
@@ -682,7 +682,7 @@
             this.BtXuatdulieu.Location = new System.Drawing.Point(609, 4);
             this.BtXuatdulieu.Name = "BtXuatdulieu";
             this.BtXuatdulieu.Size = new System.Drawing.Size(103, 31);
-            this.BtXuatdulieu.TabIndex = 3;
+            this.BtXuatdulieu.TabIndex = 5;
             this.BtXuatdulieu.Text = "Xuất Dữ Liệu";
             this.BtXuatdulieu.Click += new System.EventHandler(this.BtXuatdulieu_Click);
             // 
@@ -691,7 +691,7 @@
             this.lbnhom.Location = new System.Drawing.Point(210, 14);
             this.lbnhom.Name = "lbnhom";
             this.lbnhom.Size = new System.Drawing.Size(53, 13);
-            this.lbnhom.TabIndex = 3;
+            this.lbnhom.TabIndex = 0;
             this.lbnhom.Text = "Chọn NCC:";
             this.lbnhom.Click += new System.EventHandler(this.labelControl1_Click);
             // 
@@ -720,7 +720,7 @@
             this.labelControl2.Location = new System.Drawing.Point(8, 16);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(64, 13);
-            this.labelControl2.TabIndex = 1;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Loại Hiển Thị:";
             this.labelControl2.Click += new System.EventHandler(this.labelControl2_Click);
             // 

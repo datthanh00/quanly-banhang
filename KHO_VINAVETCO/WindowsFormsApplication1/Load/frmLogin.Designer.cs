@@ -53,7 +53,7 @@
             this.lbTenTaiKhoan.Location = new System.Drawing.Point(100, 85);
             this.lbTenTaiKhoan.Name = "lbTenTaiKhoan";
             this.lbTenTaiKhoan.Size = new System.Drawing.Size(68, 13);
-            this.lbTenTaiKhoan.TabIndex = 1;
+            this.lbTenTaiKhoan.TabIndex = 0;
             this.lbTenTaiKhoan.Text = "Tên Tài Khoản";
             // 
             // lbMatKhau
@@ -61,7 +61,7 @@
             this.lbMatKhau.Location = new System.Drawing.Point(100, 111);
             this.lbMatKhau.Name = "lbMatKhau";
             this.lbMatKhau.Size = new System.Drawing.Size(45, 13);
-            this.lbMatKhau.TabIndex = 1;
+            this.lbMatKhau.TabIndex = 0;
             this.lbMatKhau.Text = "Mật Khẩu";
             // 
             // txtTenTaiKhoan
@@ -69,7 +69,7 @@
             this.txtTenTaiKhoan.Location = new System.Drawing.Point(176, 82);
             this.txtTenTaiKhoan.Name = "txtTenTaiKhoan";
             this.txtTenTaiKhoan.Size = new System.Drawing.Size(158, 20);
-            this.txtTenTaiKhoan.TabIndex = 0;
+            this.txtTenTaiKhoan.TabIndex = 1;
             this.txtTenTaiKhoan.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenTaiKhoan_Validating);
             // 
             // txtMatKhau
@@ -79,7 +79,7 @@
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(158, 20);
-            this.txtMatKhau.TabIndex = 1;
+            this.txtMatKhau.TabIndex = 2;
             this.txtMatKhau.Tag = "*";
             this.txtMatKhau.Validating += new System.ComponentModel.CancelEventHandler(this.txtMatKhau_Validating);
             this.txtMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhau_KeyPress);
@@ -91,7 +91,7 @@
             this.lbDangNhap.Location = new System.Drawing.Point(166, 35);
             this.lbDangNhap.Name = "lbDangNhap";
             this.lbDangNhap.Size = new System.Drawing.Size(124, 31);
-            this.lbDangNhap.TabIndex = 1;
+            this.lbDangNhap.TabIndex = 0;
             this.lbDangNhap.Text = "Đăng Nhập";
             // 
             // checkNho
@@ -100,14 +100,14 @@
             this.checkNho.Name = "checkNho";
             this.checkNho.Properties.Caption = "Nhớ Tài Khoản Và Mật Khẩu";
             this.checkNho.Size = new System.Drawing.Size(159, 18);
-            this.checkNho.TabIndex = 2;
+            this.checkNho.TabIndex = 3;
             // 
             // btDangNhap
             // 
             this.btDangNhap.Location = new System.Drawing.Point(190, 169);
             this.btDangNhap.Name = "btDangNhap";
             this.btDangNhap.Size = new System.Drawing.Size(75, 23);
-            this.btDangNhap.TabIndex = 3;
+            this.btDangNhap.TabIndex = 4;
             this.btDangNhap.Text = "Đăng Nhập";
             this.btDangNhap.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -116,7 +116,7 @@
             this.btKetThuc.Location = new System.Drawing.Point(271, 169);
             this.btKetThuc.Name = "btKetThuc";
             this.btKetThuc.Size = new System.Drawing.Size(75, 23);
-            this.btKetThuc.TabIndex = 4;
+            this.btKetThuc.TabIndex = 5;
             this.btKetThuc.Text = "Kết Thúc";
             this.btKetThuc.Click += new System.EventHandler(this.btKetThuc_Click);
             // 
@@ -125,7 +125,7 @@
             this.btTuyChon.Location = new System.Drawing.Point(12, 169);
             this.btTuyChon.Name = "btTuyChon";
             this.btTuyChon.Size = new System.Drawing.Size(75, 23);
-            this.btTuyChon.TabIndex = 5;
+            this.btTuyChon.TabIndex = 6;
             this.btTuyChon.Text = "Tùy Chọn";
             this.btTuyChon.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
@@ -136,7 +136,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Quanlykho.Properties.Resources.security;
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(97, 97);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

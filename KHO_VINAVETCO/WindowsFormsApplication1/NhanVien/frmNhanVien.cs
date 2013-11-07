@@ -157,6 +157,11 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MANV = sma;
+                    if (sma=="NV1")
+                    {
+                        MessageBox.Show("BẠN KHÔNG THỂ XÓA QUẢN LÝ HỆ THỐNG");
+                        return;
+                    }
                     Boolean isdeletenv = CTL.isDELETENHANVIEN(DTO);
                     if (!isdeletenv)
                     {

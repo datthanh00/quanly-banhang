@@ -80,7 +80,7 @@
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(105, 30);
             this.btLuu.StyleController = this.layoutControl1;
-            this.btLuu.TabIndex = 8;
+            this.btLuu.TabIndex = 4;
             this.btLuu.Text = "simpleButton2";
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
@@ -91,7 +91,7 @@
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(105, 30);
             this.btDong.StyleController = this.layoutControl1;
-            this.btDong.TabIndex = 7;
+            this.btDong.TabIndex = 5;
             this.btDong.Text = "simpleButton1";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
@@ -102,7 +102,7 @@
             this.txtPassMoi.Properties.PasswordChar = '*';
             this.txtPassMoi.Size = new System.Drawing.Size(227, 20);
             this.txtPassMoi.StyleController = this.layoutControl1;
-            this.txtPassMoi.TabIndex = 6;
+            this.txtPassMoi.TabIndex = 2;
             this.txtPassMoi.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassMoi_Validating);
             // 
             // txtPassXacNhan
@@ -112,7 +112,7 @@
             this.txtPassXacNhan.Properties.PasswordChar = '*';
             this.txtPassXacNhan.Size = new System.Drawing.Size(227, 20);
             this.txtPassXacNhan.StyleController = this.layoutControl1;
-            this.txtPassXacNhan.TabIndex = 5;
+            this.txtPassXacNhan.TabIndex = 3;
             // 
             // txtPassCu
             // 
@@ -121,7 +121,7 @@
             this.txtPassCu.Properties.PasswordChar = '*';
             this.txtPassCu.Size = new System.Drawing.Size(227, 20);
             this.txtPassCu.StyleController = this.layoutControl1;
-            this.txtPassCu.TabIndex = 4;
+            this.txtPassCu.TabIndex = 1;
             this.txtPassCu.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassCu_Validating);
             // 
             // layoutControlGroup1

@@ -129,7 +129,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(130, 306);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 9;
+            this.simpleButton1.TabIndex = 12;
             this.simpleButton1.Text = "Đồng ý";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -189,7 +189,7 @@
             this.pictureEdit1.Location = new System.Drawing.Point(316, 78);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Size = new System.Drawing.Size(185, 142);
-            this.pictureEdit1.TabIndex = 3;
+            this.pictureEdit1.TabIndex = 0;
             this.pictureEdit1.EditValueChanged += new System.EventHandler(this.pictureEdit1_EditValueChanged);
             // 
             // lbDiDong
@@ -215,7 +215,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(223, 306);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton2.TabIndex = 10;
+            this.simpleButton2.TabIndex = 13;
             this.simpleButton2.Text = "Kết thúc";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -224,14 +224,14 @@
             this.txtintrai.Location = new System.Drawing.Point(130, 228);
             this.txtintrai.Name = "txtintrai";
             this.txtintrai.Size = new System.Drawing.Size(371, 20);
-            this.txtintrai.TabIndex = 12;
+            this.txtintrai.TabIndex = 9;
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(47, 232);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(44, 13);
-            this.labelControl1.TabIndex = 11;
+            this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "TT in Trái";
             // 
             // txtinphai
@@ -239,14 +239,14 @@
             this.txtinphai.Location = new System.Drawing.Point(130, 254);
             this.txtinphai.Name = "txtinphai";
             this.txtinphai.Size = new System.Drawing.Size(371, 20);
-            this.txtinphai.TabIndex = 14;
+            this.txtinphai.TabIndex = 10;
             // 
             // labelControl2
             // 
             this.labelControl2.Location = new System.Drawing.Point(47, 257);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(46, 13);
-            this.labelControl2.TabIndex = 13;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "TT in Phải";
             // 
             // txtingiua
@@ -254,7 +254,7 @@
             this.txtingiua.Location = new System.Drawing.Point(129, 280);
             this.txtingiua.Name = "txtingiua";
             this.txtingiua.Size = new System.Drawing.Size(372, 20);
-            this.txtingiua.TabIndex = 16;
+            this.txtingiua.TabIndex = 11;
             // 
             // labelControl3
             // 

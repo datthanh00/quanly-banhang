@@ -104,7 +104,7 @@
             // 
             // colMAKH
             // 
-            this.colMAKH.Location = new System.Drawing.Point(12, 12);
+            this.colMAKH.Location = new System.Drawing.Point(12, 13);
             this.colMAKH.Name = "colMAKH";
             this.colMAKH.Size = new System.Drawing.Size(74, 13);
             this.colMAKH.TabIndex = 0;
@@ -112,7 +112,7 @@
             // 
             // colTENKH
             // 
-            this.colTENKH.Location = new System.Drawing.Point(12, 40);
+            this.colTENKH.Location = new System.Drawing.Point(12, 43);
             this.colTENKH.Name = "colTENKH";
             this.colTENKH.Size = new System.Drawing.Size(78, 13);
             this.colTENKH.TabIndex = 0;
@@ -120,7 +120,7 @@
             // 
             // colMAKV
             // 
-            this.colMAKV.Location = new System.Drawing.Point(362, 12);
+            this.colMAKV.Location = new System.Drawing.Point(367, 13);
             this.colMAKV.Name = "colMAKV";
             this.colMAKV.Size = new System.Drawing.Size(39, 13);
             this.colMAKV.TabIndex = 0;
@@ -144,7 +144,7 @@
             // 
             // colNGANHANG
             // 
-            this.colNGANHANG.Location = new System.Drawing.Point(358, 138);
+            this.colNGANHANG.Location = new System.Drawing.Point(367, 133);
             this.colNGANHANG.Name = "colNGANHANG";
             this.colNGANHANG.Size = new System.Drawing.Size(53, 13);
             this.colNGANHANG.TabIndex = 0;
@@ -152,7 +152,7 @@
             // 
             // colDIACHI
             // 
-            this.colDIACHI.Location = new System.Drawing.Point(12, 103);
+            this.colDIACHI.Location = new System.Drawing.Point(12, 104);
             this.colDIACHI.Name = "colDIACHI";
             this.colDIACHI.Size = new System.Drawing.Size(34, 13);
             this.colDIACHI.TabIndex = 0;
@@ -160,7 +160,7 @@
             // 
             // colSODT
             // 
-            this.colSODT.Location = new System.Drawing.Point(358, 107);
+            this.colSODT.Location = new System.Drawing.Point(367, 104);
             this.colSODT.Name = "colSODT";
             this.colSODT.Size = new System.Drawing.Size(66, 13);
             this.colSODT.TabIndex = 0;
@@ -168,7 +168,7 @@
             // 
             // colFAX
             // 
-            this.colFAX.Location = new System.Drawing.Point(358, 169);
+            this.colFAX.Location = new System.Drawing.Point(367, 163);
             this.colFAX.Name = "colFAX";
             this.colFAX.Size = new System.Drawing.Size(18, 13);
             this.colFAX.TabIndex = 0;
@@ -176,7 +176,7 @@
             // 
             // colNICKSKYPE
             // 
-            this.colNICKSKYPE.Location = new System.Drawing.Point(358, 231);
+            this.colNICKSKYPE.Location = new System.Drawing.Point(367, 229);
             this.colNICKSKYPE.Name = "colNICKSKYPE";
             this.colNICKSKYPE.Size = new System.Drawing.Size(51, 13);
             this.colNICKSKYPE.TabIndex = 0;
@@ -193,7 +193,7 @@
             // 
             // colWEBSITE
             // 
-            this.colWEBSITE.Location = new System.Drawing.Point(358, 200);
+            this.colWEBSITE.Location = new System.Drawing.Point(367, 193);
             this.colWEBSITE.Name = "colWEBSITE";
             this.colWEBSITE.Size = new System.Drawing.Size(39, 13);
             this.colWEBSITE.TabIndex = 0;
@@ -201,10 +201,10 @@
             // 
             // txttenkh
             // 
-            this.txttenkh.Location = new System.Drawing.Point(114, 35);
+            this.txttenkh.Location = new System.Drawing.Point(114, 39);
             this.txttenkh.Name = "txttenkh";
             this.txttenkh.Size = new System.Drawing.Size(228, 20);
-            this.txttenkh.TabIndex = 1;
+            this.txttenkh.TabIndex = 4;
             this.txttenkh.Validating += new System.ComponentModel.CancelEventHandler(this.txttenkh_Validating);
             this.txttenkh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttenkh_KeyPress);
             // 
@@ -213,28 +213,28 @@
             this.txtdiachi.Location = new System.Drawing.Point(114, 100);
             this.txtdiachi.Name = "txtdiachi";
             this.txtdiachi.Size = new System.Drawing.Size(228, 20);
-            this.txtdiachi.TabIndex = 2;
+            this.txtdiachi.TabIndex = 8;
             this.txtdiachi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdiachi_KeyPress);
             // 
             // txtnganhang
             // 
-            this.txtnganhang.Location = new System.Drawing.Point(445, 131);
+            this.txtnganhang.Location = new System.Drawing.Point(445, 129);
             this.txtnganhang.Name = "txtnganhang";
             this.txtnganhang.Size = new System.Drawing.Size(231, 20);
-            this.txtnganhang.TabIndex = 12;
+            this.txtnganhang.TabIndex = 11;
             this.txtnganhang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnganhang_KeyPress);
             // 
             // txtwebsite
             // 
-            this.txtwebsite.Location = new System.Drawing.Point(445, 193);
+            this.txtwebsite.Location = new System.Drawing.Point(445, 189);
             this.txtwebsite.Name = "txtwebsite";
             this.txtwebsite.Size = new System.Drawing.Size(231, 20);
-            this.txtwebsite.TabIndex = 16;
+            this.txtwebsite.TabIndex = 15;
             this.txtwebsite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtwebsite_KeyPress);
             // 
             // txtnickskype
             // 
-            this.txtnickskype.Location = new System.Drawing.Point(445, 224);
+            this.txtnickskype.Location = new System.Drawing.Point(445, 225);
             this.txtnickskype.Name = "txtnickskype";
             this.txtnickskype.Size = new System.Drawing.Size(231, 20);
             this.txtnickskype.TabIndex = 17;
@@ -246,7 +246,7 @@
             this.labelControl14.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl14.Appearance.Options.UseBackColor = true;
             this.labelControl14.Appearance.Options.UseForeColor = true;
-            this.labelControl14.Location = new System.Drawing.Point(94, 40);
+            this.labelControl14.Location = new System.Drawing.Point(94, 43);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(14, 13);
             this.labelControl14.TabIndex = 0;
@@ -258,7 +258,7 @@
             this.labelControl16.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl16.Appearance.Options.UseBackColor = true;
             this.labelControl16.Appearance.Options.UseForeColor = true;
-            this.labelControl16.Location = new System.Drawing.Point(425, 12);
+            this.labelControl16.Location = new System.Drawing.Point(421, 13);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Size = new System.Drawing.Size(14, 13);
             this.labelControl16.TabIndex = 0;
@@ -270,15 +270,15 @@
             this.txtmakh.Location = new System.Drawing.Point(114, 9);
             this.txtmakh.Name = "txtmakh";
             this.txtmakh.Size = new System.Drawing.Size(228, 20);
-            this.txtmakh.TabIndex = 15;
+            this.txtmakh.TabIndex = 1;
             this.txtmakh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmakh_KeyPress);
             // 
             // colTINHTRANG
             // 
-            this.colTINHTRANG.Location = new System.Drawing.Point(12, 228);
+            this.colTINHTRANG.Location = new System.Drawing.Point(12, 229);
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.Size = new System.Drawing.Size(51, 13);
-            this.colTINHTRANG.TabIndex = 16;
+            this.colTINHTRANG.TabIndex = 0;
             this.colTINHTRANG.Text = "Tình Trạng";
             // 
             // labelControl19
@@ -295,10 +295,10 @@
             // 
             // txtyahoo
             // 
-            this.txtyahoo.Location = new System.Drawing.Point(114, 193);
+            this.txtyahoo.Location = new System.Drawing.Point(114, 189);
             this.txtyahoo.Name = "txtyahoo";
             this.txtyahoo.Size = new System.Drawing.Size(228, 20);
-            this.txtyahoo.TabIndex = 15;
+            this.txtyahoo.TabIndex = 14;
             this.txtyahoo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtyahoo_KeyPress);
             // 
             // lbCHUY
@@ -318,7 +318,7 @@
             this.btThemKhuVuc.Location = new System.Drawing.Point(637, 10);
             this.btThemKhuVuc.Name = "btThemKhuVuc";
             this.btThemKhuVuc.Size = new System.Drawing.Size(26, 19);
-            this.btThemKhuVuc.TabIndex = 1;
+            this.btThemKhuVuc.TabIndex = 3;
             this.btThemKhuVuc.Text = "simpleButton1";
             this.btThemKhuVuc.Click += new System.EventHandler(this.btThemKhuVuc_Click);
             // 
@@ -328,7 +328,7 @@
             this.btDong.Location = new System.Drawing.Point(356, 278);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(123, 40);
-            this.btDong.TabIndex = 6;
+            this.btDong.TabIndex = 19;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
@@ -338,7 +338,7 @@
             this.btLuu.Location = new System.Drawing.Point(203, 278);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(124, 40);
-            this.btLuu.TabIndex = 5;
+            this.btLuu.TabIndex = 18;
             this.btLuu.Text = "Lưu";
             this.btLuu.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -350,20 +350,20 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtsdt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtsdt.Size = new System.Drawing.Size(231, 20);
-            this.txtsdt.TabIndex = 3;
+            this.txtsdt.TabIndex = 9;
             this.txtsdt.Validating += new System.ComponentModel.CancelEventHandler(this.txtsdt_Validating);
             this.txtsdt.EditValueChanged += new System.EventHandler(this.txtsdt_EditValueChanged);
             this.txtsdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsdt_KeyPress);
             // 
             // txtsotaikhan
             // 
-            this.txtsotaikhan.Location = new System.Drawing.Point(114, 131);
+            this.txtsotaikhan.Location = new System.Drawing.Point(114, 129);
             this.txtsotaikhan.Name = "txtsotaikhan";
             this.txtsotaikhan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtsotaikhan.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtsotaikhan.Size = new System.Drawing.Size(228, 20);
-            this.txtsotaikhan.TabIndex = 11;
+            this.txtsotaikhan.TabIndex = 10;
             this.txtsotaikhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsotaikhan_KeyPress);
             // 
             // checkTT
@@ -373,7 +373,7 @@
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
             this.checkTT.Size = new System.Drawing.Size(82, 19);
-            this.checkTT.TabIndex = 4;
+            this.checkTT.TabIndex = 16;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
             // cmbtenkhuvuc
@@ -389,7 +389,7 @@
             this.cmbtenkhuvuc.Properties.ValueMember = "TENKV";
             this.cmbtenkhuvuc.Properties.View = this.gridLookUpEdit1View;
             this.cmbtenkhuvuc.Size = new System.Drawing.Size(186, 20);
-            this.cmbtenkhuvuc.TabIndex = 0;
+            this.cmbtenkhuvuc.TabIndex = 2;
             this.cmbtenkhuvuc.Validating += new System.ComponentModel.CancelEventHandler(this.cmbtenkhuvuc_Validating);
             this.cmbtenkhuvuc.EditValueChanged += new System.EventHandler(this.cmbtenkhuvuc_EditValueChanged);
             this.cmbtenkhuvuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbtenkhuvuc_KeyPress);
@@ -422,25 +422,25 @@
             // 
             // txtfax
             // 
-            this.txtfax.Location = new System.Drawing.Point(445, 162);
+            this.txtfax.Location = new System.Drawing.Point(445, 159);
             this.txtfax.Name = "txtfax";
             this.txtfax.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtfax.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtfax.Size = new System.Drawing.Size(231, 20);
-            this.txtfax.TabIndex = 14;
+            this.txtfax.TabIndex = 13;
             this.txtfax.EditValueChanged += new System.EventHandler(this.textEdit7_EditValueChanged);
             this.txtfax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtfax_KeyPress);
             // 
             // txtmasothue
             // 
-            this.txtmasothue.Location = new System.Drawing.Point(114, 162);
+            this.txtmasothue.Location = new System.Drawing.Point(114, 159);
             this.txtmasothue.Name = "txtmasothue";
             this.txtmasothue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtmasothue.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtmasothue.Size = new System.Drawing.Size(228, 20);
-            this.txtmasothue.TabIndex = 13;
+            this.txtmasothue.TabIndex = 12;
             this.txtmasothue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmasothue_KeyPress);
             // 
             // dxErrorProvider1
@@ -451,7 +451,7 @@
             // 
             this.cmbtennhanvien.AllowDrop = true;
             this.cmbtennhanvien.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
-            this.cmbtennhanvien.Location = new System.Drawing.Point(114, 74);
+            this.cmbtennhanvien.Location = new System.Drawing.Point(114, 69);
             this.cmbtennhanvien.Name = "cmbtennhanvien";
             this.cmbtennhanvien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -460,7 +460,7 @@
             this.cmbtennhanvien.Properties.ValueMember = "TENKV";
             this.cmbtennhanvien.Properties.View = this.gridView1;
             this.cmbtennhanvien.Size = new System.Drawing.Size(228, 20);
-            this.cmbtennhanvien.TabIndex = 24;
+            this.cmbtennhanvien.TabIndex = 6;
             this.cmbtennhanvien.Validating += new System.ComponentModel.CancelEventHandler(this.cmbtennhanvien_Validating);
             // 
             // gridView1
@@ -495,7 +495,7 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl1.Appearance.Options.UseBackColor = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(94, 77);
+            this.labelControl1.Location = new System.Drawing.Point(94, 73);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(14, 13);
             this.labelControl1.TabIndex = 23;
@@ -503,7 +503,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 77);
+            this.labelControl2.Location = new System.Drawing.Point(12, 73);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 13);
             this.labelControl2.TabIndex = 22;
@@ -513,7 +513,7 @@
             // 
             this.cmbbanggia.AllowDrop = true;
             this.cmbbanggia.AllowHtmlTextInToolTip = DevExpress.Utils.DefaultBoolean.True;
-            this.cmbbanggia.Location = new System.Drawing.Point(445, 74);
+            this.cmbbanggia.Location = new System.Drawing.Point(445, 39);
             this.cmbbanggia.Name = "cmbbanggia";
             this.cmbbanggia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -522,7 +522,7 @@
             this.cmbbanggia.Properties.ValueMember = "TENKV";
             this.cmbbanggia.Properties.View = this.gridView2;
             this.cmbbanggia.Size = new System.Drawing.Size(231, 20);
-            this.cmbbanggia.TabIndex = 27;
+            this.cmbbanggia.TabIndex = 5;
             this.cmbbanggia.EditValueChanged += new System.EventHandler(this.cmbbanggia_EditValueChanged);
             // 
             // gridView2
@@ -557,7 +557,7 @@
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl3.Appearance.Options.UseBackColor = true;
             this.labelControl3.Appearance.Options.UseForeColor = true;
-            this.labelControl3.Location = new System.Drawing.Point(425, 77);
+            this.labelControl3.Location = new System.Drawing.Point(421, 43);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(14, 13);
             this.labelControl3.TabIndex = 26;
@@ -565,7 +565,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(358, 77);
+            this.labelControl4.Location = new System.Drawing.Point(367, 43);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(42, 13);
             this.labelControl4.TabIndex = 25;
@@ -573,7 +573,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(358, 42);
+            this.labelControl5.Location = new System.Drawing.Point(367, 73);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(70, 13);
             this.labelControl5.TabIndex = 28;
@@ -581,7 +581,7 @@
             // 
             // cbotientra
             // 
-            this.cbotientra.Location = new System.Drawing.Point(445, 39);
+            this.cbotientra.Location = new System.Drawing.Point(445, 69);
             this.cbotientra.Name = "cbotientra";
             this.cbotientra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -593,7 +593,7 @@
             this.cbotientra.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.cbotientra.Properties.ReadOnly = true;
             this.cbotientra.Size = new System.Drawing.Size(231, 20);
-            this.cbotientra.TabIndex = 126;
+            this.cbotientra.TabIndex = 7;
             // 
             // frmThemKhachHang
             // 

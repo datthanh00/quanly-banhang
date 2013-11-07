@@ -313,7 +313,7 @@
             this.simpleButton7.Location = new System.Drawing.Point(106, 6);
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(90, 35);
-            this.simpleButton7.TabIndex = 5;
+            this.simpleButton7.TabIndex = 2;
             this.simpleButton7.Text = "Thu Tiền";
             this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
@@ -323,7 +323,7 @@
             this.btIn.Location = new System.Drawing.Point(206, 6);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(70, 35);
-            this.btIn.TabIndex = 4;
+            this.btIn.TabIndex = 3;
             this.btIn.Text = "In";
             this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
@@ -333,7 +333,7 @@
             this.btXuat.Location = new System.Drawing.Point(286, 6);
             this.btXuat.Name = "btXuat";
             this.btXuat.Size = new System.Drawing.Size(70, 35);
-            this.btXuat.TabIndex = 3;
+            this.btXuat.TabIndex = 4;
             this.btXuat.Text = "Xuất";
             this.btXuat.Click += new System.EventHandler(this.btXuat_Click);
             // 
@@ -343,7 +343,7 @@
             this.btTratien.Location = new System.Drawing.Point(6, 6);
             this.btTratien.Name = "btTratien";
             this.btTratien.Size = new System.Drawing.Size(90, 35);
-            this.btTratien.TabIndex = 0;
+            this.btTratien.TabIndex = 1;
             this.btTratien.Text = "Trả Tiền";
             this.btTratien.Click += new System.EventHandler(this.btTratien_Click);
             // 
@@ -367,7 +367,7 @@
             this.simpleButton6.Location = new System.Drawing.Point(6, 5);
             this.simpleButton6.Name = "simpleButton6";
             this.simpleButton6.Size = new System.Drawing.Size(70, 35);
-            this.simpleButton6.TabIndex = 13;
+            this.simpleButton6.TabIndex = 1;
             this.simpleButton6.Text = "Xem";
             this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
@@ -394,7 +394,7 @@
             this.dateDen1.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateDen1.Size = new System.Drawing.Size(100, 20);
-            this.dateDen1.TabIndex = 0;
+            this.dateDen1.TabIndex = 7;
             this.dateDen1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateDen1_KeyPress);
             // 
             // labelControl1
@@ -402,7 +402,7 @@
             this.labelControl1.Location = new System.Drawing.Point(143, 9);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(20, 13);
-            this.labelControl1.TabIndex = 1;
+            this.labelControl1.TabIndex = 8;
             this.labelControl1.Text = "Đến";
             // 
             // labelControl2
@@ -410,7 +410,7 @@
             this.labelControl2.Location = new System.Drawing.Point(7, 9);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(13, 13);
-            this.labelControl2.TabIndex = 1;
+            this.labelControl2.TabIndex = 8;
             this.labelControl2.Text = "Từ";
             // 
             // dateTu1
@@ -425,7 +425,7 @@
             this.dateTu1.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateTu1.Size = new System.Drawing.Size(100, 20);
-            this.dateTu1.TabIndex = 0;
+            this.dateTu1.TabIndex = 6;
             this.dateTu1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTu1_KeyPress);
             // 
             // simpleButton4
@@ -434,7 +434,7 @@
             this.simpleButton4.Location = new System.Drawing.Point(243, 5);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(70, 35);
-            this.simpleButton4.TabIndex = 8;
+            this.simpleButton4.TabIndex = 4;
             this.simpleButton4.Text = "In";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
@@ -444,7 +444,7 @@
             this.simpleButton5.Location = new System.Drawing.Point(322, 5);
             this.simpleButton5.Name = "simpleButton5";
             this.simpleButton5.Size = new System.Drawing.Size(70, 35);
-            this.simpleButton5.TabIndex = 7;
+            this.simpleButton5.TabIndex = 5;
             this.simpleButton5.Text = "Xuất";
             this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
@@ -454,7 +454,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(164, 5);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(70, 35);
-            this.simpleButton2.TabIndex = 0;
+            this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "Sửa";
             this.simpleButton2.Click += new System.EventHandler(this.bt_edittratien_Click);
             // 
@@ -464,7 +464,7 @@
             this.simpleButton3.Location = new System.Drawing.Point(85, 5);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(70, 35);
-            this.simpleButton3.TabIndex = 0;
+            this.simpleButton3.TabIndex = 2;
             this.simpleButton3.Text = "Xóa";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
@@ -514,7 +514,7 @@
             this.simpleButton8.Location = new System.Drawing.Point(6, 8);
             this.simpleButton8.Name = "simpleButton8";
             this.simpleButton8.Size = new System.Drawing.Size(70, 35);
-            this.simpleButton8.TabIndex = 13;
+            this.simpleButton8.TabIndex = 1;
             this.simpleButton8.Text = "Xem";
             this.simpleButton8.Click += new System.EventHandler(this.simpleButton8_Click_2);
             // 
@@ -541,14 +541,14 @@
             this.dateDen.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateDen.Size = new System.Drawing.Size(100, 20);
-            this.dateDen.TabIndex = 0;
+            this.dateDen.TabIndex = 5;
             // 
             // labelControl3
             // 
             this.labelControl3.Location = new System.Drawing.Point(143, 9);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(20, 13);
-            this.labelControl3.TabIndex = 1;
+            this.labelControl3.TabIndex = 9;
             this.labelControl3.Text = "Đến";
             // 
             // labelControl4
@@ -556,7 +556,7 @@
             this.labelControl4.Location = new System.Drawing.Point(7, 9);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(13, 13);
-            this.labelControl4.TabIndex = 1;
+            this.labelControl4.TabIndex = 9;
             this.labelControl4.Text = "Từ";
             // 
             // dateTu
@@ -571,7 +571,7 @@
             this.dateTu.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateTu.Size = new System.Drawing.Size(100, 20);
-            this.dateTu.TabIndex = 0;
+            this.dateTu.TabIndex = 4;
             // 
             // simpleButton9
             // 
@@ -579,7 +579,7 @@
             this.simpleButton9.Location = new System.Drawing.Point(87, 8);
             this.simpleButton9.Name = "simpleButton9";
             this.simpleButton9.Size = new System.Drawing.Size(70, 35);
-            this.simpleButton9.TabIndex = 8;
+            this.simpleButton9.TabIndex = 2;
             this.simpleButton9.Text = "In";
             this.simpleButton9.Click += new System.EventHandler(this.simpleButton9_Click_1);
             // 
@@ -589,7 +589,7 @@
             this.simpleButton10.Location = new System.Drawing.Point(168, 8);
             this.simpleButton10.Name = "simpleButton10";
             this.simpleButton10.Size = new System.Drawing.Size(70, 35);
-            this.simpleButton10.TabIndex = 7;
+            this.simpleButton10.TabIndex = 3;
             this.simpleButton10.Text = "Xuất";
             this.simpleButton10.Click += new System.EventHandler(this.simpleButton10_Click_1);
             // 

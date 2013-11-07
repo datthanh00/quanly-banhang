@@ -154,52 +154,52 @@
             this.labelControl1.Location = new System.Drawing.Point(10, 32);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(61, 13);
-            this.labelControl1.TabIndex = 48;
+            this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Khách Hàng:";
             // 
             // lbNV
             // 
-            this.lbNV.Location = new System.Drawing.Point(514, 119);
+            this.lbNV.Location = new System.Drawing.Point(514, 104);
             this.lbNV.Name = "lbNV";
             this.lbNV.Size = new System.Drawing.Size(52, 13);
-            this.lbNV.TabIndex = 47;
+            this.lbNV.TabIndex = 0;
             this.lbNV.Text = "Nhân viên:";
             // 
             // lbNgaylap
             // 
-            this.lbNgaylap.Location = new System.Drawing.Point(518, 88);
+            this.lbNgaylap.Location = new System.Drawing.Point(519, 67);
             this.lbNgaylap.Name = "lbNgaylap";
             this.lbNgaylap.Size = new System.Drawing.Size(48, 13);
-            this.lbNgaylap.TabIndex = 47;
+            this.lbNgaylap.TabIndex = 0;
             this.lbNgaylap.Text = "Ngày thu:";
             // 
             // lbPT
             // 
-            this.lbPT.Location = new System.Drawing.Point(514, 38);
+            this.lbPT.Location = new System.Drawing.Point(514, 32);
             this.lbPT.Name = "lbPT";
             this.lbPT.Size = new System.Drawing.Size(49, 13);
-            this.lbPT.TabIndex = 47;
+            this.lbPT.TabIndex = 0;
             this.lbPT.Text = "Phiếu thu:";
             // 
             // lbTienno
             // 
-            this.lbTienno.Location = new System.Drawing.Point(10, 117);
+            this.lbTienno.Location = new System.Drawing.Point(10, 104);
             this.lbTienno.Name = "lbTienno";
             this.lbTienno.Size = new System.Drawing.Size(52, 13);
-            this.lbTienno.TabIndex = 47;
+            this.lbTienno.TabIndex = 0;
             this.lbTienno.Text = "Số tiền nợ:";
             // 
             // lbTratien
             // 
-            this.lbTratien.Location = new System.Drawing.Point(10, 75);
+            this.lbTratien.Location = new System.Drawing.Point(11, 67);
             this.lbTratien.Name = "lbTratien";
             this.lbTratien.Size = new System.Drawing.Size(56, 13);
-            this.lbTratien.TabIndex = 47;
+            this.lbTratien.TabIndex = 0;
             this.lbTratien.Text = "Số tiền thu:";
             // 
             // txtenkh
             // 
-            this.txtenkh.Location = new System.Drawing.Point(101, 29);
+            this.txtenkh.Location = new System.Drawing.Point(101, 28);
             this.txtenkh.Name = "txtenkh";
             this.txtenkh.Properties.DisplayFormat.FormatString = "0,0";
             this.txtenkh.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -207,11 +207,11 @@
             this.txtenkh.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtenkh.Properties.ReadOnly = true;
             this.txtenkh.Size = new System.Drawing.Size(298, 20);
-            this.txtenkh.TabIndex = 46;
+            this.txtenkh.TabIndex = 0;
             // 
             // txtSoTienNo
             // 
-            this.txtSoTienNo.Location = new System.Drawing.Point(101, 114);
+            this.txtSoTienNo.Location = new System.Drawing.Point(101, 100);
             this.txtSoTienNo.MenuManager = this.barManager1;
             this.txtSoTienNo.Name = "txtSoTienNo";
             this.txtSoTienNo.Properties.DisplayFormat.FormatString = "{0:0,0}";
@@ -223,16 +223,16 @@
             this.txtSoTienNo.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtSoTienNo.Properties.ReadOnly = true;
             this.txtSoTienNo.Size = new System.Drawing.Size(252, 20);
-            this.txtSoTienNo.TabIndex = 46;
+            this.txtSoTienNo.TabIndex = 0;
             // 
             // txtNV
             // 
-            this.txtNV.Location = new System.Drawing.Point(595, 118);
+            this.txtNV.Location = new System.Drawing.Point(595, 100);
             this.txtNV.MenuManager = this.barManager1;
             this.txtNV.Name = "txtNV";
             this.txtNV.Properties.ReadOnly = true;
             this.txtNV.Size = new System.Drawing.Size(167, 20);
-            this.txtNV.TabIndex = 45;
+            this.txtNV.TabIndex = 0;
             // 
             // txtPT
             // 
@@ -241,11 +241,11 @@
             // 
             this.txtPT.Border.Class = "TextBoxBorder";
             this.txtPT.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.txtPT.Location = new System.Drawing.Point(597, 32);
+            this.txtPT.Location = new System.Drawing.Point(595, 28);
             this.txtPT.Name = "txtPT";
             this.txtPT.ReadOnly = true;
             this.txtPT.Size = new System.Drawing.Size(165, 21);
-            this.txtPT.TabIndex = 43;
+            this.txtPT.TabIndex = 0;
             // 
             // dtNgayThu
             // 
@@ -253,14 +253,14 @@
             this.dtNgayThu.Enabled = false;
             this.dtNgayThu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgayThu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayThu.Location = new System.Drawing.Point(595, 78);
+            this.dtNgayThu.Location = new System.Drawing.Point(595, 62);
             this.dtNgayThu.Name = "dtNgayThu";
             this.dtNgayThu.Size = new System.Drawing.Size(167, 23);
-            this.dtNgayThu.TabIndex = 40;
+            this.dtNgayThu.TabIndex = 0;
             // 
             // txtSoTienTra
             // 
-            this.txtSoTienTra.Location = new System.Drawing.Point(101, 74);
+            this.txtSoTienTra.Location = new System.Drawing.Point(101, 63);
             this.txtSoTienTra.MenuManager = this.barManager1;
             this.txtSoTienTra.Name = "txtSoTienTra";
             this.txtSoTienTra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -272,7 +272,7 @@
             this.txtSoTienTra.Properties.Mask.EditMask = "n0";
             this.txtSoTienTra.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtSoTienTra.Size = new System.Drawing.Size(252, 20);
-            this.txtSoTienTra.TabIndex = 44;
+            this.txtSoTienTra.TabIndex = 1;
             this.txtSoTienTra.TextChanged += new System.EventHandler(this.txtSoTienTra_TextChanged_1);
             // 
             // FrmThuTien

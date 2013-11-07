@@ -192,14 +192,14 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1286, 35);
-            this.panelControl1.TabIndex = 0;
+            this.panelControl1.TabIndex = 1;
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(576, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(69, 13);
-            this.labelControl1.TabIndex = 33;
+            this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Nhà Cung Cấp";
             // 
             // cbsanpham
@@ -212,7 +212,7 @@
             this.cbsanpham.Properties.PopupSizeable = false;
             this.cbsanpham.Properties.View = this.gridsanpham;
             this.cbsanpham.Size = new System.Drawing.Size(138, 20);
-            this.cbsanpham.TabIndex = 32;
+            this.cbsanpham.TabIndex = 4;
             // 
             // gridsanpham
             // 
@@ -259,7 +259,7 @@
             this.cbncc.Properties.PopupSizeable = false;
             this.cbncc.Properties.View = this.gridncc;
             this.cbncc.Size = new System.Drawing.Size(132, 20);
-            this.cbncc.TabIndex = 31;
+            this.cbncc.TabIndex = 5;
             // 
             // gridncc
             // 
@@ -292,7 +292,7 @@
             this.lbloc.Location = new System.Drawing.Point(380, 11);
             this.lbloc.Name = "lbloc";
             this.lbloc.Size = new System.Drawing.Size(47, 13);
-            this.lbloc.TabIndex = 30;
+            this.lbloc.TabIndex = 0;
             this.lbloc.Text = "Sản Phẩm";
             // 
             // lbDen
@@ -300,7 +300,7 @@
             this.lbDen.Location = new System.Drawing.Point(246, 12);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
-            this.lbDen.TabIndex = 1;
+            this.lbDen.TabIndex = 0;
             this.lbDen.Text = "Đến";
             // 
             // lbTu
@@ -308,7 +308,7 @@
             this.lbTu.Location = new System.Drawing.Point(117, 12);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
-            this.lbTu.TabIndex = 1;
+            this.lbTu.TabIndex = 0;
             this.lbTu.Text = "Từ";
             // 
             // dateDen
@@ -378,27 +378,27 @@
             this.simpleButton1.Location = new System.Drawing.Point(95, 5);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(98, 29);
-            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.TabIndex = 7;
             this.simpleButton1.Text = "Theo NCC";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // btIn
             // 
             this.btIn.Image = ((System.Drawing.Image)(resources.GetObject("btIn.Image")));
-            this.btIn.Location = new System.Drawing.Point(321, 6);
+            this.btIn.Location = new System.Drawing.Point(321, 5);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(75, 29);
-            this.btIn.TabIndex = 2;
+            this.btIn.TabIndex = 9;
             this.btIn.Text = "In";
             this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
             // btXuat
             // 
             this.btXuat.Image = ((System.Drawing.Image)(resources.GetObject("btXuat.Image")));
-            this.btXuat.Location = new System.Drawing.Point(205, 6);
+            this.btXuat.Location = new System.Drawing.Point(205, 5);
             this.btXuat.Name = "btXuat";
             this.btXuat.Size = new System.Drawing.Size(102, 29);
-            this.btXuat.TabIndex = 1;
+            this.btXuat.TabIndex = 8;
             this.btXuat.Text = "Xuất";
             this.btXuat.Click += new System.EventHandler(this.btXuat_Click);
             // 
@@ -408,7 +408,7 @@
             this.btXem.Location = new System.Drawing.Point(11, 5);
             this.btXem.Name = "btXem";
             this.btXem.Size = new System.Drawing.Size(75, 29);
-            this.btXem.TabIndex = 0;
+            this.btXem.TabIndex = 6;
             this.btXem.Text = "Xem";
             this.btXem.Click += new System.EventHandler(this.btXem_Click);
             // 

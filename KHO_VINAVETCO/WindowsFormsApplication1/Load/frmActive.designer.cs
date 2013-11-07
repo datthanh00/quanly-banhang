@@ -47,7 +47,7 @@
             this.lbTenTaiKhoan.Location = new System.Drawing.Point(108, 52);
             this.lbTenTaiKhoan.Name = "lbTenTaiKhoan";
             this.lbTenTaiKhoan.Size = new System.Drawing.Size(58, 13);
-            this.lbTenTaiKhoan.TabIndex = 1;
+            this.lbTenTaiKhoan.TabIndex = 0;
             this.lbTenTaiKhoan.Text = "Code Active";
             // 
             // txtcode
@@ -55,7 +55,7 @@
             this.txtcode.Location = new System.Drawing.Point(178, 49);
             this.txtcode.Name = "txtcode";
             this.txtcode.Size = new System.Drawing.Size(198, 20);
-            this.txtcode.TabIndex = 0;
+            this.txtcode.TabIndex = 1;
             // 
             // lbDangNhap
             // 
@@ -64,7 +64,7 @@
             this.lbDangNhap.Location = new System.Drawing.Point(129, 12);
             this.lbDangNhap.Name = "lbDangNhap";
             this.lbDangNhap.Size = new System.Drawing.Size(247, 22);
-            this.lbDangNhap.TabIndex = 1;
+            this.lbDangNhap.TabIndex = 0;
             this.lbDangNhap.Text = "Nhập Mã Kích Hoạt Phần Mềm";
             // 
             // btDangNhap
@@ -72,7 +72,7 @@
             this.btDangNhap.Location = new System.Drawing.Point(178, 86);
             this.btDangNhap.Name = "btDangNhap";
             this.btDangNhap.Size = new System.Drawing.Size(101, 23);
-            this.btDangNhap.TabIndex = 3;
+            this.btDangNhap.TabIndex = 2;
             this.btDangNhap.Text = "Kích Hoạt";
             this.btDangNhap.Click += new System.EventHandler(this.btDangNhap_Click);
             // 
@@ -81,7 +81,7 @@
             this.btKetThuc.Location = new System.Drawing.Point(285, 86);
             this.btKetThuc.Name = "btKetThuc";
             this.btKetThuc.Size = new System.Drawing.Size(91, 23);
-            this.btKetThuc.TabIndex = 4;
+            this.btKetThuc.TabIndex = 3;
             this.btKetThuc.Text = "Kết Thúc";
             this.btKetThuc.Click += new System.EventHandler(this.btKetThuc_Click);
             // 

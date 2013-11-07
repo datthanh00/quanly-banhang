@@ -284,6 +284,7 @@
             // 
             // panelContainer1
             // 
+            this.panelContainer1.ActiveChild = this.dockPanel2;
             this.panelContainer1.Controls.Add(this.dockPanel2);
             this.panelContainer1.Controls.Add(this.dockPanel1);
             this.panelContainer1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
@@ -301,16 +302,16 @@
             this.dockPanel2.ID = new System.Guid("6b885871-96ee-44b2-90df-5344309e8fe8");
             this.dockPanel2.Location = new System.Drawing.Point(0, 0);
             this.dockPanel2.Name = "dockPanel2";
-            this.dockPanel2.OriginalSize = new System.Drawing.Size(200, 260);
-            this.dockPanel2.Size = new System.Drawing.Size(144, 260);
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(144, 260);
+            this.dockPanel2.Size = new System.Drawing.Size(144, 494);
             this.dockPanel2.Text = "Giao Dịch";
             // 
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(138, 232);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(138, 467);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -328,7 +329,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(138, 232);
+            this.navBarControl1.Size = new System.Drawing.Size(138, 467);
             this.navBarControl1.TabIndex = 1;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -382,19 +383,19 @@
             this.dockPanel1.Controls.Add(this.dockPanel1_Container);
             this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Fill;
             this.dockPanel1.ID = new System.Guid("8d323c97-3f0c-4887-a964-3b62b2bc7f59");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 260);
+            this.dockPanel1.Location = new System.Drawing.Point(0, 494);
             this.dockPanel1.Name = "dockPanel1";
             this.dockPanel1.Options.ShowCloseButton = false;
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(200, 261);
-            this.dockPanel1.Size = new System.Drawing.Size(144, 261);
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(144, 261);
+            this.dockPanel1.Size = new System.Drawing.Size(144, 27);
             this.dockPanel1.Text = "Giao Dịch";
             // 
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.gridControl2);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(138, 233);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(138, 0);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // gridControl2
@@ -403,7 +404,7 @@
             this.gridControl2.Location = new System.Drawing.Point(0, 0);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(138, 233);
+            this.gridControl2.Size = new System.Drawing.Size(138, 0);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -449,9 +450,9 @@
             // dockPanel3_Container
             // 
             this.dockPanel3_Container.Controls.Add(this.panelControl10);
-            this.dockPanel3_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel3_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(1111, 49);
+            this.dockPanel3_Container.Size = new System.Drawing.Size(1111, 50);
             this.dockPanel3_Container.TabIndex = 0;
             // 
             // panelControl10
@@ -464,7 +465,7 @@
             this.panelControl10.Location = new System.Drawing.Point(0, 0);
             this.panelControl10.Name = "panelControl10";
             this.panelControl10.Size = new System.Drawing.Size(1111, 39);
-            this.panelControl10.TabIndex = 7;
+            this.panelControl10.TabIndex = 2;
             // 
             // pnThangNam
             // 
@@ -475,7 +476,7 @@
             this.pnThangNam.Location = new System.Drawing.Point(5, 2);
             this.pnThangNam.Name = "pnThangNam";
             this.pnThangNam.Size = new System.Drawing.Size(325, 32);
-            this.pnThangNam.TabIndex = 6;
+            this.pnThangNam.TabIndex = 0;
             // 
             // dateDen
             // 
@@ -492,7 +493,7 @@
             this.dateDen.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateDen.Size = new System.Drawing.Size(115, 20);
-            this.dateDen.TabIndex = 6;
+            this.dateDen.TabIndex = 2;
             // 
             // dateTu
             // 
@@ -509,14 +510,14 @@
             this.dateTu.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateTu.Size = new System.Drawing.Size(115, 20);
-            this.dateTu.TabIndex = 5;
+            this.dateTu.TabIndex = 1;
             // 
             // lbDen
             // 
             this.lbDen.Location = new System.Drawing.Point(167, 9);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
-            this.lbDen.TabIndex = 1;
+            this.lbDen.TabIndex = 0;
             this.lbDen.Text = "Đến";
             // 
             // lbTu
@@ -524,7 +525,7 @@
             this.lbTu.Location = new System.Drawing.Point(14, 9);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
-            this.lbTu.TabIndex = 1;
+            this.lbTu.TabIndex = 0;
             this.lbTu.Text = "Từ";
             // 
             // simpleButton3
@@ -543,7 +544,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(422, 4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(70, 31);
-            this.simpleButton1.TabIndex = 3;
+            this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "In";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -553,7 +554,7 @@
             this.btXem.Location = new System.Drawing.Point(340, 5);
             this.btXem.Name = "btXem";
             this.btXem.Size = new System.Drawing.Size(70, 31);
-            this.btXem.TabIndex = 3;
+            this.btXem.TabIndex = 2;
             this.btXem.Text = "Xem";
             this.btXem.Click += new System.EventHandler(this.btXem_Click);
             // 
@@ -564,17 +565,17 @@
             this.panel_info1.Location = new System.Drawing.Point(144, 126);
             this.panel_info1.Name = "panel_info1";
             this.panel_info1.Size = new System.Drawing.Size(1117, 163);
-            this.panel_info1.TabIndex = 3;
+            this.panel_info1.TabIndex = 9;
             // 
             // panel_info
             // 
             this.panel_info.Controls.Add(this.panelControl5);
             this.panel_info.Controls.Add(this.panelControl4);
             this.panel_info.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_info.Location = new System.Drawing.Point(2, 2);
+            this.panel_info.Location = new System.Drawing.Point(3, 3);
             this.panel_info.Name = "panel_info";
-            this.panel_info.Size = new System.Drawing.Size(1113, 159);
-            this.panel_info.TabIndex = 2;
+            this.panel_info.Size = new System.Drawing.Size(1111, 157);
+            this.panel_info.TabIndex = 1;
             this.panel_info.Text = "Thông Tin Nhà Cung Cấp";
             // 
             // panelControl5
@@ -608,10 +609,10 @@
             this.panelControl5.Controls.Add(this.labelControl6);
             this.panelControl5.Controls.Add(this.cboTenNCC);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(2, 22);
+            this.panelControl5.Location = new System.Drawing.Point(2, 21);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1099, 135);
-            this.panelControl5.TabIndex = 8;
+            this.panelControl5.Size = new System.Drawing.Size(1097, 134);
+            this.panelControl5.TabIndex = 3;
             // 
             // txtconLai
             // 
@@ -698,7 +699,7 @@
             this.cbotientra.Properties.Mask.EditMask = "n0";
             this.cbotientra.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.cbotientra.Size = new System.Drawing.Size(120, 20);
-            this.cbotientra.TabIndex = 6;
+            this.cbotientra.TabIndex = 3;
             this.cbotientra.Validated += new System.EventHandler(this.cbotientra_Validated);
             // 
             // cbloai
@@ -711,7 +712,7 @@
             this.cbloai.Properties.PopupSizeable = false;
             this.cbloai.Properties.View = this.gridTYPE;
             this.cbloai.Size = new System.Drawing.Size(230, 20);
-            this.cbloai.TabIndex = 34;
+            this.cbloai.TabIndex = 2;
             this.cbloai.Validated += new System.EventHandler(this.cbloai_Validated);
             // 
             // gridTYPE
@@ -791,7 +792,7 @@
             this.cktien.Properties.EditFormat.FormatString = "{0:0,0}";
             this.cktien.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.cktien.Size = new System.Drawing.Size(206, 20);
-            this.cktien.TabIndex = 32;
+            this.cktien.TabIndex = 6;
             this.cktien.Validated += new System.EventHandler(this.cktien_Validated);
             // 
             // labelControl13
@@ -813,7 +814,7 @@
             this.ckphantram.Properties.EditFormat.FormatString = "{0:N3} %";
             this.ckphantram.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.ckphantram.Size = new System.Drawing.Size(154, 20);
-            this.ckphantram.TabIndex = 30;
+            this.ckphantram.TabIndex = 5;
             this.ckphantram.Validated += new System.EventHandler(this.ckphantram_Validated);
             // 
             // txtMANCC
@@ -839,7 +840,7 @@
             this.txtMaHD.Name = "txtMaHD";
             this.txtMaHD.Properties.ReadOnly = true;
             this.txtMaHD.Size = new System.Drawing.Size(120, 20);
-            this.txtMaHD.TabIndex = 4;
+            this.txtMaHD.TabIndex = 0;
             // 
             // btAdd
             // 
@@ -862,7 +863,7 @@
             this.txtghichu.Multiline = true;
             this.txtghichu.Name = "txtghichu";
             this.txtghichu.Size = new System.Drawing.Size(580, 20);
-            this.txtghichu.TabIndex = 18;
+            this.txtghichu.TabIndex = 4;
             // 
             // labelControl2
             // 
@@ -892,7 +893,7 @@
             this.txtNgay.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.txtNgay.Size = new System.Drawing.Size(120, 20);
-            this.txtNgay.TabIndex = 4;
+            this.txtNgay.TabIndex = 0;
             // 
             // labelControl6
             // 
@@ -912,7 +913,7 @@
             this.cboTenNCC.Properties.PopupSizeable = false;
             this.cboTenNCC.Properties.View = this.gridView3;
             this.cboTenNCC.Size = new System.Drawing.Size(230, 20);
-            this.cboTenNCC.TabIndex = 17;
+            this.cboTenNCC.TabIndex = 1;
             this.cboTenNCC.Validated += new System.EventHandler(this.cboTenNCC_Validated);
             // 
             // gridView3
@@ -945,16 +946,16 @@
             // 
             this.panelControl4.Controls.Add(this.splitterControl1);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl4.Location = new System.Drawing.Point(1101, 22);
+            this.panelControl4.Location = new System.Drawing.Point(1099, 21);
             this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(10, 135);
+            this.panelControl4.Size = new System.Drawing.Size(10, 134);
             this.panelControl4.TabIndex = 7;
             // 
             // splitterControl1
             // 
-            this.splitterControl1.Location = new System.Drawing.Point(2, 2);
+            this.splitterControl1.Location = new System.Drawing.Point(3, 3);
             this.splitterControl1.Name = "splitterControl1";
-            this.splitterControl1.Size = new System.Drawing.Size(6, 131);
+            this.splitterControl1.Size = new System.Drawing.Size(4, 128);
             this.splitterControl1.TabIndex = 0;
             this.splitterControl1.TabStop = false;
             // 
@@ -986,7 +987,7 @@
             this.btIn.Location = new System.Drawing.Point(234, 7);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(80, 35);
-            this.btIn.TabIndex = 0;
+            this.btIn.TabIndex = 3;
             this.btIn.Text = "In";
             this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
@@ -996,7 +997,7 @@
             this.btLuu.Location = new System.Drawing.Point(101, 7);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(122, 35);
-            this.btLuu.TabIndex = 0;
+            this.btLuu.TabIndex = 2;
             this.btLuu.Text = "Lưu Hóa Đơn";
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
@@ -1006,7 +1007,7 @@
             this.btTaoMoi.Location = new System.Drawing.Point(6, 7);
             this.btTaoMoi.Name = "btTaoMoi";
             this.btTaoMoi.Size = new System.Drawing.Size(85, 35);
-            this.btTaoMoi.TabIndex = 0;
+            this.btTaoMoi.TabIndex = 1;
             this.btTaoMoi.Text = "Tạo Mới";
             this.btTaoMoi.Click += new System.EventHandler(this.btTaoMoi_Click);
             // 
@@ -1016,7 +1017,7 @@
             this.panel_grid.Location = new System.Drawing.Point(200, 411);
             this.panel_grid.Name = "panel_grid";
             this.panel_grid.Size = new System.Drawing.Size(1061, 110);
-            this.panel_grid.TabIndex = 4;
+            this.panel_grid.TabIndex = 10;
             // 
             // gridControl1
             // 
@@ -1024,7 +1025,7 @@
             this.gridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControl1.EmbeddedNavigator.Buttons.Edit.ImageIndex = 0;
             this.gridControl1.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
             this.gridControl1.MainView = this.gridCTHOADON;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1038,7 +1039,7 @@
             this.repositoryItemTextEdit3,
             this.repositoryItemGridLookUpEdit2,
             this.repositoryItemDateEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(1057, 106);
+            this.gridControl1.Size = new System.Drawing.Size(1055, 104);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridCTHOADON});
@@ -1323,7 +1324,7 @@
             this.panel_grid2.Location = new System.Drawing.Point(200, 303);
             this.panel_grid2.Name = "panel_grid2";
             this.panel_grid2.Size = new System.Drawing.Size(1061, 110);
-            this.panel_grid2.TabIndex = 7;
+            this.panel_grid2.TabIndex = 11;
             // 
             // gridControl3
             // 
@@ -1331,7 +1332,7 @@
             this.gridControl3.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControl3.EmbeddedNavigator.Buttons.Edit.ImageIndex = 0;
             this.gridControl3.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControl3.Location = new System.Drawing.Point(2, 2);
+            this.gridControl3.Location = new System.Drawing.Point(3, 3);
             this.gridControl3.MainView = this.gridViewTONGNHAP;
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1342,7 +1343,7 @@
             this.repositoryItemLookUpEdit3,
             this.repositoryItemGridLookUpEdit1,
             this.repositoryItemComboBox2});
-            this.gridControl3.Size = new System.Drawing.Size(1057, 106);
+            this.gridControl3.Size = new System.Drawing.Size(1055, 104);
             this.gridControl3.TabIndex = 7;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTONGNHAP,

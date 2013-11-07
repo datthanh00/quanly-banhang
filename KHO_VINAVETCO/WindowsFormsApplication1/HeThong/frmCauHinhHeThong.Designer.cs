@@ -75,7 +75,7 @@
             this.labelControl2.Location = new System.Drawing.Point(285, 77);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(63, 13);
-            this.labelControl2.TabIndex = 1;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Tên Máy Chủ";
             // 
             // cbTenMayChu
@@ -85,7 +85,7 @@
             this.cbTenMayChu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTenMayChu.Size = new System.Drawing.Size(127, 20);
-            this.cbTenMayChu.TabIndex = 0;
+            this.cbTenMayChu.TabIndex = 1;
             // 
             // radioButton2
             // 
@@ -93,7 +93,7 @@
             this.radioButton2.Location = new System.Drawing.Point(359, 126);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(129, 17);
-            this.radioButton2.TabIndex = 3;
+            this.radioButton2.TabIndex = 4;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Tài Khoản SQL Server";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             this.radioButton1.Location = new System.Drawing.Point(359, 103);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(118, 17);
-            this.radioButton1.TabIndex = 2;
+            this.radioButton1.TabIndex = 3;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Tài Khoản Windows";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -116,7 +116,7 @@
             this.labelControl3.Location = new System.Drawing.Point(285, 160);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(47, 13);
-            this.labelControl3.TabIndex = 1;
+            this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "Tài Khoản";
             // 
             // txtTaiKhoan
@@ -124,14 +124,14 @@
             this.txtTaiKhoan.Location = new System.Drawing.Point(359, 157);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(127, 20);
-            this.txtTaiKhoan.TabIndex = 4;
+            this.txtTaiKhoan.TabIndex = 5;
             // 
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(285, 186);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(45, 13);
-            this.labelControl4.TabIndex = 1;
+            this.labelControl4.TabIndex = 0;
             this.labelControl4.Text = "Mật Khẩu";
             // 
             // labelControl5
@@ -139,7 +139,7 @@
             this.labelControl5.Location = new System.Drawing.Point(285, 214);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(57, 13);
-            this.labelControl5.TabIndex = 1;
+            this.labelControl5.TabIndex = 0;
             this.labelControl5.Text = "Tên Dữ Liệu";
             // 
             // cbDatabase
@@ -149,7 +149,7 @@
             this.cbDatabase.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbDatabase.Size = new System.Drawing.Size(127, 20);
-            this.cbDatabase.TabIndex = 2;
+            this.cbDatabase.TabIndex = 7;
             // 
             // simpleButton4
             // 
@@ -157,7 +157,7 @@
             this.simpleButton4.Location = new System.Drawing.Point(412, 250);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(94, 35);
-            this.simpleButton4.TabIndex = 8;
+            this.simpleButton4.TabIndex = 10;
             this.simpleButton4.Text = "Đóng";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
             // 
@@ -167,7 +167,7 @@
             this.simpleButton3.Location = new System.Drawing.Point(300, 250);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(94, 35);
-            this.simpleButton3.TabIndex = 7;
+            this.simpleButton3.TabIndex = 9;
             this.simpleButton3.Text = "Thực Hiện";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click);
             // 
@@ -177,7 +177,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(492, 210);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(26, 23);
-            this.simpleButton2.TabIndex = 6;
+            this.simpleButton2.TabIndex = 8;
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // simpleButton1
@@ -186,7 +186,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(491, 72);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(26, 23);
-            this.simpleButton1.TabIndex = 1;
+            this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // tab
@@ -205,7 +205,7 @@
             // 
             this.listnetwork.Controls.Add(this.listBoxnetwork);
             this.listnetwork.Name = "listnetwork";
-            this.listnetwork.Size = new System.Drawing.Size(258, 228);
+            this.listnetwork.Size = new System.Drawing.Size(258, 227);
             this.listnetwork.Text = "Mạng lan";
             // 
             // listBoxnetwork
@@ -213,7 +213,7 @@
             this.listBoxnetwork.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxnetwork.Location = new System.Drawing.Point(0, 0);
             this.listBoxnetwork.Name = "listBoxnetwork";
-            this.listBoxnetwork.Size = new System.Drawing.Size(258, 228);
+            this.listBoxnetwork.Size = new System.Drawing.Size(258, 227);
             this.listBoxnetwork.TabIndex = 0;
             this.listBoxnetwork.SelectedIndexChanged += new System.EventHandler(this.listBoxnetwork_SelectedIndexChanged);
             // 
@@ -221,7 +221,7 @@
             // 
             this.listLocal.Controls.Add(this.listBoxLocal);
             this.listLocal.Name = "listLocal";
-            this.listLocal.Size = new System.Drawing.Size(258, 228);
+            this.listLocal.Size = new System.Drawing.Size(258, 227);
             this.listLocal.Text = "Mạng nội bộ";
             // 
             // listBoxLocal
@@ -229,7 +229,7 @@
             this.listBoxLocal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBoxLocal.Location = new System.Drawing.Point(0, 0);
             this.listBoxLocal.Name = "listBoxLocal";
-            this.listBoxLocal.Size = new System.Drawing.Size(258, 228);
+            this.listBoxLocal.Size = new System.Drawing.Size(258, 227);
             this.listBoxLocal.TabIndex = 1;
             this.listBoxLocal.SelectedIndexChanged += new System.EventHandler(this.listBoxLocal_SelectedIndexChanged);
             // 
@@ -239,7 +239,7 @@
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(127, 20);
-            this.txtMatKhau.TabIndex = 5;
+            this.txtMatKhau.TabIndex = 6;
             // 
             // frmCauHinhHeThong
             // 

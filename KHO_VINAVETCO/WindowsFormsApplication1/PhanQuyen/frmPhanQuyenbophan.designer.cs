@@ -130,7 +130,7 @@
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(212, 38);
             this.btDong.StyleController = this.layoutControl1;
-            this.btDong.TabIndex = 12;
+            this.btDong.TabIndex = 2;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
@@ -302,7 +302,7 @@
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(193, 38);
             this.btSave.StyleController = this.layoutControl1;
-            this.btSave.TabIndex = 10;
+            this.btSave.TabIndex = 1;
             this.btSave.Text = "Lưu";
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 

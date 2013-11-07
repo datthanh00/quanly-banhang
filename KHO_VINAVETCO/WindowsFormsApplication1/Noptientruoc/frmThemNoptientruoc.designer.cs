@@ -52,7 +52,7 @@
             this.btDong.Location = new System.Drawing.Point(163, 156);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(123, 40);
-            this.btDong.TabIndex = 4;
+            this.btDong.TabIndex = 6;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
@@ -62,7 +62,7 @@
             this.btluu.Location = new System.Drawing.Point(33, 156);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(124, 40);
-            this.btluu.TabIndex = 3;
+            this.btluu.TabIndex = 5;
             this.btluu.Text = "Lưu";
             this.btluu.Click += new System.EventHandler(this.btluu_Click);
             // 
@@ -73,8 +73,8 @@
             this.Checkncc.Properties.Caption = "Nhà Cung Cấp";
             this.Checkncc.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
             this.Checkncc.Properties.RadioGroupIndex = 1;
-            this.Checkncc.Size = new System.Drawing.Size(140, 19);
-            this.Checkncc.TabIndex = 53;
+            this.Checkncc.Size = new System.Drawing.Size(140, 18);
+            this.Checkncc.TabIndex = 2;
             this.Checkncc.TabStop = false;
             this.Checkncc.CheckedChanged += new System.EventHandler(this.Checkncc_CheckedChanged);
             // 
@@ -86,8 +86,8 @@
             this.Checkkh.Properties.Caption = "Khách Hàng";
             this.Checkkh.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
             this.Checkkh.Properties.RadioGroupIndex = 1;
-            this.Checkkh.Size = new System.Drawing.Size(82, 19);
-            this.Checkkh.TabIndex = 52;
+            this.Checkkh.Size = new System.Drawing.Size(82, 18);
+            this.Checkkh.TabIndex = 1;
             this.Checkkh.CheckedChanged += new System.EventHandler(this.Checkkh_CheckedChanged);
             // 
             // labelControl2
@@ -108,7 +108,7 @@
             this.cboTenNCC.Properties.PopupSizeable = false;
             this.cboTenNCC.Properties.View = this.gridView3;
             this.cboTenNCC.Size = new System.Drawing.Size(252, 20);
-            this.cboTenNCC.TabIndex = 55;
+            this.cboTenNCC.TabIndex = 3;
             // 
             // gridView3
             // 
@@ -153,7 +153,7 @@
             this.cbotientra.Properties.Mask.EditMask = "n0";
             this.cbotientra.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.cbotientra.Size = new System.Drawing.Size(252, 20);
-            this.cbotientra.TabIndex = 57;
+            this.cbotientra.TabIndex = 4;
             // 
             // frmThemNoptientruoc
             // 

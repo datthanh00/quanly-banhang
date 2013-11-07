@@ -57,7 +57,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(285, 24);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(139, 31);
-            this.simpleButton1.TabIndex = 6;
+            this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "Đóng và không Sửa";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -67,7 +67,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(69, 24);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(142, 31);
-            this.simpleButton2.TabIndex = 5;
+            this.simpleButton2.TabIndex = 2;
             this.simpleButton2.Text = "Sửa và in hóa đơn";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -92,7 +92,7 @@
             this.txtlydo.Multiline = true;
             this.txtlydo.Name = "txtlydo";
             this.txtlydo.Size = new System.Drawing.Size(412, 138);
-            this.txtlydo.TabIndex = 19;
+            this.txtlydo.TabIndex = 1;
             // 
             // labelControl1
             // 

@@ -181,7 +181,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(732, 4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(110, 29);
-            this.simpleButton1.TabIndex = 42;
+            this.simpleButton1.TabIndex = 7;
             this.simpleButton1.Text = "Nhân Giá Gốc";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -197,7 +197,7 @@
             this.cbohesonhan.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.cbohesonhan.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.cbohesonhan.Size = new System.Drawing.Size(71, 20);
-            this.cbohesonhan.TabIndex = 41;
+            this.cbohesonhan.TabIndex = 6;
             // 
             // btdanhsach
             // 
@@ -205,7 +205,7 @@
             this.btdanhsach.Location = new System.Drawing.Point(331, 3);
             this.btdanhsach.Name = "btdanhsach";
             this.btdanhsach.Size = new System.Drawing.Size(150, 29);
-            this.btdanhsach.TabIndex = 40;
+            this.btdanhsach.TabIndex = 3;
             this.btdanhsach.Text = "Danh Sách Bảng Giá";
             this.btdanhsach.Click += new System.EventHandler(this.btdanhsach_Click);
             // 
@@ -214,7 +214,7 @@
             this.labelControl2.Location = new System.Drawing.Point(6, 11);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(42, 13);
-            this.labelControl2.TabIndex = 39;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Bảng Giá";
             // 
             // cbbanggia
@@ -227,7 +227,7 @@
             this.cbbanggia.Properties.PopupSizeable = false;
             this.cbbanggia.Properties.View = this.gridView1;
             this.cbbanggia.Size = new System.Drawing.Size(164, 20);
-            this.cbbanggia.TabIndex = 38;
+            this.cbbanggia.TabIndex = 1;
             this.cbbanggia.Validated += new System.EventHandler(this.cbbanggia_Validated);
             // 
             // gridView1
@@ -262,7 +262,7 @@
             this.btIn.Location = new System.Drawing.Point(571, 4);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(75, 29);
-            this.btIn.TabIndex = 2;
+            this.btIn.TabIndex = 5;
             this.btIn.Text = "In";
             this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
@@ -272,7 +272,7 @@
             this.btXuat.Location = new System.Drawing.Point(487, 4);
             this.btXuat.Name = "btXuat";
             this.btXuat.Size = new System.Drawing.Size(78, 29);
-            this.btXuat.TabIndex = 1;
+            this.btXuat.TabIndex = 4;
             this.btXuat.Text = "Xuất";
             this.btXuat.Click += new System.EventHandler(this.btXuat_Click);
             // 
@@ -282,7 +282,7 @@
             this.btluu.Location = new System.Drawing.Point(223, 4);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(102, 29);
-            this.btluu.TabIndex = 0;
+            this.btluu.TabIndex = 2;
             this.btluu.Text = "Lưu Bảng Giá";
             this.btluu.Click += new System.EventHandler(this.btluu_Click);
             // 
