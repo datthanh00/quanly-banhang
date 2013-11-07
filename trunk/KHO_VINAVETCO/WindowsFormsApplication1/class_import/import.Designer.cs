@@ -51,7 +51,7 @@
             this.tientrinh.Location = new System.Drawing.Point(11, 400);
             this.tientrinh.Name = "tientrinh";
             this.tientrinh.Size = new System.Drawing.Size(872, 19);
-            this.tientrinh.TabIndex = 5;
+            this.tientrinh.TabIndex = 9;
             // 
             // luoi
             // 
@@ -60,7 +60,7 @@
             this.luoi.Name = "luoi";
             this.luoi.RowTemplate.Height = 23;
             this.luoi.Size = new System.Drawing.Size(872, 330);
-            this.luoi.TabIndex = 4;
+            this.luoi.TabIndex = 9;
             // 
             // groupBox1
             // 
@@ -83,7 +83,7 @@
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Update";
             this.checkTT.Size = new System.Drawing.Size(82, 19);
-            this.checkTT.TabIndex = 41;
+            this.checkTT.TabIndex = 3;
             // 
             // button4
             // 
@@ -93,7 +93,7 @@
             this.button4.Location = new System.Drawing.Point(530, 20);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(114, 30);
-            this.button4.TabIndex = 39;
+            this.button4.TabIndex = 5;
             this.button4.Text = "Export excell";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
@@ -106,7 +106,7 @@
             this.cbTable.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbTable.Size = new System.Drawing.Size(171, 20);
-            this.cbTable.TabIndex = 38;
+            this.cbTable.TabIndex = 2;
             // 
             // button2
             // 
@@ -116,7 +116,7 @@
             this.button2.Location = new System.Drawing.Point(386, 20);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 30);
-            this.button2.TabIndex = 36;
+            this.button2.TabIndex = 4;
             this.button2.Text = "Lưu Vào Database";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
@@ -130,7 +130,7 @@
             this.button1.Location = new System.Drawing.Point(5, 20);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 30);
-            this.button1.TabIndex = 35;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Mở Excel";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
@@ -151,7 +151,7 @@
             this.txtsql.Multiline = true;
             this.txtsql.Name = "txtsql";
             this.txtsql.Size = new System.Drawing.Size(753, 52);
-            this.txtsql.TabIndex = 19;
+            this.txtsql.TabIndex = 6;
             // 
             // button5
             // 
@@ -161,7 +161,7 @@
             this.button5.Location = new System.Drawing.Point(775, 436);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(108, 43);
-            this.button5.TabIndex = 36;
+            this.button5.TabIndex = 7;
             this.button5.Text = "Truy Vấn SQL";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = true;

@@ -99,7 +99,7 @@
             this.cbNhomHang.Properties.ValueMember = "TENNHOMHANG";
             this.cbNhomHang.Properties.View = this.gridLookUpEdit1View;
             this.cbNhomHang.Size = new System.Drawing.Size(100, 20);
-            this.cbNhomHang.TabIndex = 3;
+            this.cbNhomHang.TabIndex = 2;
             this.cbNhomHang.Validated += new System.EventHandler(this.cbNhomHang_Validated);
             this.cbNhomHang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbNhomHang_KeyPress);
             // 
@@ -174,7 +174,7 @@
             this.calKLDVT.Properties.Mask.EditMask = "N0";
             this.calKLDVT.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.calKLDVT.Size = new System.Drawing.Size(126, 20);
-            this.calKLDVT.TabIndex = 164;
+            this.calKLDVT.TabIndex = 7;
             // 
             // labelControl9
             // 
@@ -204,7 +204,8 @@
             this.groupControl1.Location = new System.Drawing.Point(20, 145);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(543, 70);
-            this.groupControl1.TabIndex = 6;
+            this.groupControl1.TabIndex = 11;
+            this.groupControl1.TabStop = true;
             this.groupControl1.Text = "Thông tin giao dịch";
             // 
             // labelControl2
@@ -216,7 +217,7 @@
             this.labelControl2.Location = new System.Drawing.Point(91, 37);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(14, 13);
-            this.labelControl2.TabIndex = 160;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "(*)";
             // 
             // txtgiamua
@@ -228,14 +229,14 @@
             this.txtgiamua.Properties.Mask.EditMask = "N0";
             this.txtgiamua.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtgiamua.Size = new System.Drawing.Size(124, 20);
-            this.txtgiamua.TabIndex = 152;
+            this.txtgiamua.TabIndex = 11;
             // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(5, 37);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(42, 13);
-            this.labelControl1.TabIndex = 153;
+            this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Giá Mua:";
             // 
             // labelControl4
@@ -279,7 +280,7 @@
             this.txtmota.Location = new System.Drawing.Point(128, 73);
             this.txtmota.Name = "txtmota";
             this.txtmota.Size = new System.Drawing.Size(127, 20);
-            this.txtmota.TabIndex = 4;
+            this.txtmota.TabIndex = 6;
             this.txtmota.EditValueChanged += new System.EventHandler(this.txtmota_EditValueChanged);
             this.txtmota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbthue_KeyPress);
             // 
@@ -297,8 +298,8 @@
             this.checkTT.Location = new System.Drawing.Point(127, 105);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 19);
-            this.checkTT.TabIndex = 5;
+            this.checkTT.Size = new System.Drawing.Size(82, 18);
+            this.checkTT.TabIndex = 8;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
             // simpleButton3
@@ -310,7 +311,7 @@
             this.simpleButton3.Location = new System.Drawing.Point(530, 38);
             this.simpleButton3.Name = "simpleButton3";
             this.simpleButton3.Size = new System.Drawing.Size(25, 19);
-            this.simpleButton3.TabIndex = 40;
+            this.simpleButton3.TabIndex = 5;
             this.simpleButton3.Text = "simpleButton1";
             this.simpleButton3.Click += new System.EventHandler(this.simpleButton3_Click_1);
             // 
@@ -323,7 +324,7 @@
             this.btThemKhuVuc.Location = new System.Drawing.Point(528, 102);
             this.btThemKhuVuc.Name = "btThemKhuVuc";
             this.btThemKhuVuc.Size = new System.Drawing.Size(24, 19);
-            this.btThemKhuVuc.TabIndex = 60;
+            this.btThemKhuVuc.TabIndex = 10;
             this.btThemKhuVuc.Text = "simpleButton1";
             this.btThemKhuVuc.Click += new System.EventHandler(this.btThemKhuVuc_Click_1);
             // 
@@ -338,7 +339,7 @@
             this.cbthue.Properties.ValueMember = "SOTHUE";
             this.cbthue.Properties.View = this.gridView2;
             this.cbthue.Size = new System.Drawing.Size(100, 20);
-            this.cbthue.TabIndex = 50;
+            this.cbthue.TabIndex = 9;
             this.cbthue.EditValueChanged += new System.EventHandler(this.cbthue_EditValueChanged);
             this.cbthue.Validated += new System.EventHandler(this.cbthue_Validated);
             this.cbthue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbthue_KeyPress);
@@ -380,7 +381,7 @@
             this.cbDvt.Properties.ValueMember = "DONVITINH";
             this.cbDvt.Properties.View = this.gridView1;
             this.cbDvt.Size = new System.Drawing.Size(102, 20);
-            this.cbDvt.TabIndex = 2;
+            this.cbDvt.TabIndex = 4;
             this.cbDvt.EditValueChanged += new System.EventHandler(this.cbDvt_EditValueChanged);
             this.cbDvt.Validated += new System.EventHandler(this.cbDvt_Validated);
             this.cbDvt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cbDvt_KeyPress);
@@ -466,7 +467,7 @@
             this.txtTenMH.Location = new System.Drawing.Point(427, 5);
             this.txtTenMH.Name = "txtTenMH";
             this.txtTenMH.Size = new System.Drawing.Size(125, 20);
-            this.txtTenMH.TabIndex = 0;
+            this.txtTenMH.TabIndex = 1;
             this.txtTenMH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenMH_KeyPress);
             // 
             // lbCHUY
@@ -498,7 +499,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(229, 40);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(24, 19);
-            this.simpleButton2.TabIndex = 61;
+            this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "simpleButton1";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -508,7 +509,7 @@
             this.btLuu.Location = new System.Drawing.Point(175, 259);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(95, 38);
-            this.btLuu.TabIndex = 10;
+            this.btLuu.TabIndex = 12;
             this.btLuu.Text = "Lưu";
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
@@ -518,7 +519,7 @@
             this.btDong.Location = new System.Drawing.Point(297, 259);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(98, 38);
-            this.btDong.TabIndex = 11;
+            this.btDong.TabIndex = 13;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
@@ -527,7 +528,7 @@
             this.lbnhomhang.Location = new System.Drawing.Point(22, 46);
             this.lbnhomhang.Name = "lbnhomhang";
             this.lbnhomhang.Size = new System.Drawing.Size(65, 13);
-            this.lbnhomhang.TabIndex = 2;
+            this.lbnhomhang.TabIndex = 0;
             this.lbnhomhang.Text = "Nhà cung cấp";
             // 
             // ThemMatHang

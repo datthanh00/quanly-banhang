@@ -57,7 +57,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(285, 24);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(139, 31);
-            this.simpleButton1.TabIndex = 6;
+            this.simpleButton1.TabIndex = 3;
             this.simpleButton1.Text = "Đóng và không xóa";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -67,7 +67,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(69, 24);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(142, 31);
-            this.simpleButton2.TabIndex = 5;
+            this.simpleButton2.TabIndex = 2;
             this.simpleButton2.Text = "Xóa và in hóa đơn";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -78,7 +78,7 @@
             this.lbPhanMem.Location = new System.Drawing.Point(33, 12);
             this.lbPhanMem.Name = "lbPhanMem";
             this.lbPhanMem.Size = new System.Drawing.Size(378, 23);
-            this.lbPhanMem.TabIndex = 4;
+            this.lbPhanMem.TabIndex = 0;
             this.lbPhanMem.Text = "Bạn Có Chắc Muốn Xóa Mặt hàng này Không";
             // 
             // txtlydo
@@ -92,7 +92,7 @@
             this.txtlydo.Multiline = true;
             this.txtlydo.Name = "txtlydo";
             this.txtlydo.Size = new System.Drawing.Size(412, 138);
-            this.txtlydo.TabIndex = 19;
+            this.txtlydo.TabIndex = 1;
             // 
             // labelControl1
             // 
@@ -101,7 +101,7 @@
             this.labelControl1.Location = new System.Drawing.Point(12, 60);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(173, 18);
-            this.labelControl1.TabIndex = 20;
+            this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Lý Do Xóa Mặt Hàng Này:";
             // 
             // labelControl2
@@ -111,7 +111,7 @@
             this.labelControl2.Location = new System.Drawing.Point(33, 234);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(195, 13);
-            this.labelControl2.TabIndex = 21;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Lưu ý chỉ xóa được mặt hàng trong ngày";
             // 
             // labelControl3
@@ -123,7 +123,7 @@
             this.labelControl3.Location = new System.Drawing.Point(17, 232);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(11, 24);
-            this.labelControl3.TabIndex = 22;
+            this.labelControl3.TabIndex = 0;
             this.labelControl3.Text = "*";
             // 
             // frmxoahd

@@ -84,7 +84,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 32);
+            this.labelControl1.Location = new System.Drawing.Point(12, 33);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(73, 13);
             this.labelControl1.TabIndex = 48;
@@ -92,7 +92,7 @@
             // 
             // lbNV
             // 
-            this.lbNV.Location = new System.Drawing.Point(518, 122);
+            this.lbNV.Location = new System.Drawing.Point(517, 111);
             this.lbNV.Name = "lbNV";
             this.lbNV.Size = new System.Drawing.Size(52, 13);
             this.lbNV.TabIndex = 47;
@@ -100,7 +100,7 @@
             // 
             // lbNgaylap
             // 
-            this.lbNgaylap.Location = new System.Drawing.Point(518, 82);
+            this.lbNgaylap.Location = new System.Drawing.Point(519, 72);
             this.lbNgaylap.Name = "lbNgaylap";
             this.lbNgaylap.Size = new System.Drawing.Size(45, 13);
             this.lbNgaylap.TabIndex = 47;
@@ -108,7 +108,7 @@
             // 
             // lbPC
             // 
-            this.lbPC.Location = new System.Drawing.Point(518, 35);
+            this.lbPC.Location = new System.Drawing.Point(518, 33);
             this.lbPC.Name = "lbPC";
             this.lbPC.Size = new System.Drawing.Size(46, 13);
             this.lbPC.TabIndex = 47;
@@ -116,7 +116,7 @@
             // 
             // lbTienno
             // 
-            this.lbTienno.Location = new System.Drawing.Point(10, 117);
+            this.lbTienno.Location = new System.Drawing.Point(11, 111);
             this.lbTienno.Name = "lbTienno";
             this.lbTienno.Size = new System.Drawing.Size(52, 13);
             this.lbTienno.TabIndex = 47;
@@ -124,7 +124,7 @@
             // 
             // lbTratien
             // 
-            this.lbTratien.Location = new System.Drawing.Point(10, 77);
+            this.lbTratien.Location = new System.Drawing.Point(12, 72);
             this.lbTratien.Name = "lbTratien";
             this.lbTratien.Size = new System.Drawing.Size(55, 13);
             this.lbTratien.TabIndex = 47;
@@ -133,7 +133,7 @@
             // txttenncc
             // 
             this.txttenncc.Enabled = false;
-            this.txttenncc.Location = new System.Drawing.Point(131, 35);
+            this.txttenncc.Location = new System.Drawing.Point(131, 29);
             this.txttenncc.Name = "txttenncc";
             this.txttenncc.Properties.Mask.EditMask = "n0";
             this.txttenncc.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
@@ -144,7 +144,7 @@
             // txtSoTienNo
             // 
             this.txtSoTienNo.Enabled = false;
-            this.txtSoTienNo.Location = new System.Drawing.Point(131, 119);
+            this.txtSoTienNo.Location = new System.Drawing.Point(131, 107);
             this.txtSoTienNo.MenuManager = this.barManager1;
             this.txtSoTienNo.Name = "txtSoTienNo";
             this.txtSoTienNo.Properties.DisplayFormat.FormatString = "{0:0,0}";
@@ -228,7 +228,7 @@
             // txtNV
             // 
             this.txtNV.Enabled = false;
-            this.txtNV.Location = new System.Drawing.Point(622, 116);
+            this.txtNV.Location = new System.Drawing.Point(621, 107);
             this.txtNV.MenuManager = this.barManager1;
             this.txtNV.Name = "txtNV";
             this.txtNV.Properties.ReadOnly = true;
@@ -243,7 +243,7 @@
             this.txtPC.Border.Class = "TextBoxBorder";
             this.txtPC.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtPC.Enabled = false;
-            this.txtPC.Location = new System.Drawing.Point(622, 32);
+            this.txtPC.Location = new System.Drawing.Point(622, 29);
             this.txtPC.Name = "txtPC";
             this.txtPC.ReadOnly = true;
             this.txtPC.Size = new System.Drawing.Size(165, 21);
@@ -255,14 +255,14 @@
             this.dtNgayThu.Enabled = false;
             this.dtNgayThu.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtNgayThu.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtNgayThu.Location = new System.Drawing.Point(622, 78);
+            this.dtNgayThu.Location = new System.Drawing.Point(622, 71);
             this.dtNgayThu.Name = "dtNgayThu";
             this.dtNgayThu.Size = new System.Drawing.Size(165, 23);
             this.dtNgayThu.TabIndex = 40;
             // 
             // txtSoTienTra
             // 
-            this.txtSoTienTra.Location = new System.Drawing.Point(131, 81);
+            this.txtSoTienTra.Location = new System.Drawing.Point(131, 68);
             this.txtSoTienTra.MenuManager = this.barManager1;
             this.txtSoTienTra.Name = "txtSoTienTra";
             this.txtSoTienTra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {

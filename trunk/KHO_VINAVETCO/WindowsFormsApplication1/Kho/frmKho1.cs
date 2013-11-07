@@ -214,6 +214,7 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MAKHO = sma;
+    
                     Boolean isdeletekho = CTL.isDELETEKHO(DTO);
                     if (!isdeletekho)
                     {

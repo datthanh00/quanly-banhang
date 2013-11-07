@@ -65,7 +65,7 @@
             this.txtsql.Multiline = true;
             this.txtsql.Name = "txtsql";
             this.txtsql.Size = new System.Drawing.Size(789, 28);
-            this.txtsql.TabIndex = 39;
+            this.txtsql.TabIndex = 1;
             // 
             // button3
             // 
@@ -75,7 +75,7 @@
             this.button3.Location = new System.Drawing.Point(1047, 17);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 30);
-            this.button3.TabIndex = 37;
+            this.button3.TabIndex = 4;
             this.button3.Text = "Thoát";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
@@ -89,7 +89,7 @@
             this.button2.Location = new System.Drawing.Point(908, 17);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(124, 30);
-            this.button2.TabIndex = 36;
+            this.button2.TabIndex = 3;
             this.button2.Text = "Lưu Excell";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             this.button1.Location = new System.Drawing.Point(808, 17);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 30);
-            this.button1.TabIndex = 35;
+            this.button1.TabIndex = 2;
             this.button1.Text = "Mở Data";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;

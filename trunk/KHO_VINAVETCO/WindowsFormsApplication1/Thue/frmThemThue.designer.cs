@@ -44,11 +44,11 @@
             // 
             // txtma
             // 
-            this.txtma.Location = new System.Drawing.Point(84, 9);
+            this.txtma.Location = new System.Drawing.Point(84, 8);
             this.txtma.Name = "txtma";
             this.txtma.Properties.ReadOnly = true;
             this.txtma.Size = new System.Drawing.Size(192, 20);
-            this.txtma.TabIndex = 0;
+            this.txtma.TabIndex = 1;
             this.txtma.Tag = "";
             this.txtma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtma_KeyPress);
             // 
@@ -58,7 +58,7 @@
             this.labelControl14.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl14.Appearance.Options.UseBackColor = true;
             this.labelControl14.Appearance.Options.UseForeColor = true;
-            this.labelControl14.Location = new System.Drawing.Point(62, 40);
+            this.labelControl14.Location = new System.Drawing.Point(62, 37);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(14, 13);
             this.labelControl14.TabIndex = 64;
@@ -70,7 +70,7 @@
             this.labelControl12.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl12.Appearance.Options.UseBackColor = true;
             this.labelControl12.Appearance.Options.UseForeColor = true;
-            this.labelControl12.Location = new System.Drawing.Point(62, 12);
+            this.labelControl12.Location = new System.Drawing.Point(62, 11);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(14, 13);
             this.labelControl12.TabIndex = 62;
@@ -78,7 +78,7 @@
             // 
             // lbten
             // 
-            this.lbten.Location = new System.Drawing.Point(3, 42);
+            this.lbten.Location = new System.Drawing.Point(3, 39);
             this.lbten.Name = "lbten";
             this.lbten.Size = new System.Drawing.Size(39, 13);
             this.lbten.TabIndex = 65;
@@ -86,7 +86,7 @@
             // 
             // lbma
             // 
-            this.lbma.Location = new System.Drawing.Point(5, 12);
+            this.lbma.Location = new System.Drawing.Point(5, 11);
             this.lbma.Name = "lbma";
             this.lbma.Size = new System.Drawing.Size(41, 13);
             this.lbma.TabIndex = 63;
@@ -95,20 +95,20 @@
             // btDong
             // 
             this.btDong.Image = global::Quanlykho.Properties.Resources.close__2_;
-            this.btDong.Location = new System.Drawing.Point(140, 124);
+            this.btDong.Location = new System.Drawing.Point(140, 115);
             this.btDong.Name = "btDong";
-            this.btDong.Size = new System.Drawing.Size(123, 43);
-            this.btDong.TabIndex = 3;
+            this.btDong.Size = new System.Drawing.Size(123, 40);
+            this.btDong.TabIndex = 4;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
             // btluu
             // 
             this.btluu.Image = global::Quanlykho.Properties.Resources.save1;
-            this.btluu.Location = new System.Drawing.Point(10, 124);
+            this.btluu.Location = new System.Drawing.Point(10, 115);
             this.btluu.Name = "btluu";
-            this.btluu.Size = new System.Drawing.Size(124, 43);
-            this.btluu.TabIndex = 2;
+            this.btluu.Size = new System.Drawing.Size(124, 40);
+            this.btluu.TabIndex = 3;
             this.btluu.Text = "Lưu";
             this.btluu.Click += new System.EventHandler(this.btluu_Click);
             // 
@@ -118,7 +118,7 @@
             this.labelControl19.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl19.Appearance.Options.UseBackColor = true;
             this.labelControl19.Appearance.Options.UseForeColor = true;
-            this.labelControl19.Location = new System.Drawing.Point(8, 83);
+            this.labelControl19.Location = new System.Drawing.Point(8, 77);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(14, 13);
             this.labelControl19.TabIndex = 121;
@@ -126,7 +126,7 @@
             // 
             // lbchuy
             // 
-            this.lbchuy.Location = new System.Drawing.Point(31, 83);
+            this.lbchuy.Location = new System.Drawing.Point(31, 77);
             this.lbchuy.Name = "lbchuy";
             this.lbchuy.Size = new System.Drawing.Size(246, 13);
             this.lbchuy.TabIndex = 122;
@@ -134,20 +134,20 @@
             // 
             // txtsothue
             // 
-            this.txtsothue.Location = new System.Drawing.Point(84, 37);
+            this.txtsothue.Location = new System.Drawing.Point(84, 34);
             this.txtsothue.Name = "txtsothue";
             this.txtsothue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtsothue.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtsothue.Size = new System.Drawing.Size(192, 20);
-            this.txtsothue.TabIndex = 1;
+            this.txtsothue.TabIndex = 2;
             this.txtsothue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsothue_KeyPress);
             // 
             // frmThemThue
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 180);
+            this.ClientSize = new System.Drawing.Size(284, 167);
             this.Controls.Add(this.labelControl19);
             this.Controls.Add(this.lbchuy);
             this.Controls.Add(this.txtma);

@@ -183,6 +183,11 @@ namespace WindowsFormsApplication1
                 {
 
                     DTO.MABP = sma;
+                    if (sma == "BP1")
+                    {
+                        MessageBox.Show("BẠN KHÔNG THỂ XÓA BỘ PHẬN QUẢN LÝ HỆ THỐNG");
+                        return;
+                    }
                     Boolean isdeletebp = CTL.isDELETEBOPHAN(DTO);
                     if (!isdeletebp)
                     {

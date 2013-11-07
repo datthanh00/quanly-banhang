@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKeDoanhThu));
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockChucNang = new DevExpress.XtraBars.Docking.DockPanel();
@@ -446,9 +446,9 @@
             // gridControl6
             // 
             this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode1.RelationName = "Level1";
+            gridLevelNode2.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl6.Location = new System.Drawing.Point(2, 2);
             this.gridControl6.MainView = this.grid_MUAHANG_KHACHHANGTRA;
             this.gridControl6.Name = "gridControl6";
@@ -1159,7 +1159,7 @@
             this.panelControl10.Location = new System.Drawing.Point(0, 0);
             this.panelControl10.Name = "panelControl10";
             this.panelControl10.Size = new System.Drawing.Size(1032, 81);
-            this.panelControl10.TabIndex = 6;
+            this.panelControl10.TabIndex = 1;
             // 
             // cbkhachhang
             // 
@@ -1171,7 +1171,7 @@
             this.cbkhachhang.Properties.PopupSizeable = false;
             this.cbkhachhang.Properties.View = this.gridkhachhang;
             this.cbkhachhang.Size = new System.Drawing.Size(148, 20);
-            this.cbkhachhang.TabIndex = 29;
+            this.cbkhachhang.TabIndex = 1;
             // 
             // gridkhachhang
             // 
@@ -1209,7 +1209,7 @@
             // 
             // cbsanpham
             // 
-            this.cbsanpham.Location = new System.Drawing.Point(463, 10);
+            this.cbsanpham.Location = new System.Drawing.Point(466, 11);
             this.cbsanpham.Name = "cbsanpham";
             this.cbsanpham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -1217,7 +1217,7 @@
             this.cbsanpham.Properties.PopupSizeable = false;
             this.cbsanpham.Properties.View = this.gridsanpham;
             this.cbsanpham.Size = new System.Drawing.Size(148, 20);
-            this.cbsanpham.TabIndex = 28;
+            this.cbsanpham.TabIndex = 0;
             // 
             // gridsanpham
             // 
@@ -1264,7 +1264,7 @@
             this.cbncc.Properties.PopupSizeable = false;
             this.cbncc.Properties.View = this.gridncc;
             this.cbncc.Size = new System.Drawing.Size(148, 20);
-            this.cbncc.TabIndex = 27;
+            this.cbncc.TabIndex = 1;
             // 
             // gridncc
             // 
@@ -1297,7 +1297,7 @@
             this.lbloc.Location = new System.Drawing.Point(385, 14);
             this.lbloc.Name = "lbloc";
             this.lbloc.Size = new System.Drawing.Size(20, 13);
-            this.lbloc.TabIndex = 6;
+            this.lbloc.TabIndex = 100;
             this.lbloc.Text = "Đến";
             // 
             // pnThangNam
@@ -1310,7 +1310,7 @@
             this.pnThangNam.Location = new System.Drawing.Point(6, 4);
             this.pnThangNam.Name = "pnThangNam";
             this.pnThangNam.Size = new System.Drawing.Size(372, 32);
-            this.pnThangNam.TabIndex = 5;
+            this.pnThangNam.TabIndex = 0;
             // 
             // dateDen
             // 
@@ -1324,7 +1324,7 @@
             this.dateDen.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateDen.Size = new System.Drawing.Size(100, 20);
-            this.dateDen.TabIndex = 5;
+            this.dateDen.TabIndex = 3;
             // 
             // dateTu
             // 
@@ -1338,7 +1338,7 @@
             this.dateTu.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateTu.Size = new System.Drawing.Size(100, 20);
-            this.dateTu.TabIndex = 4;
+            this.dateTu.TabIndex = 2;
             // 
             // cbThoiGian
             // 
@@ -1347,7 +1347,7 @@
             this.cbThoiGian.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbThoiGian.Size = new System.Drawing.Size(81, 20);
-            this.cbThoiGian.TabIndex = 3;
+            this.cbThoiGian.TabIndex = 1;
             this.cbThoiGian.SelectedIndexChanged += new System.EventHandler(this.cbThoiGian_SelectedIndexChanged_1);
             // 
             // lbDen
@@ -1355,7 +1355,7 @@
             this.lbDen.Location = new System.Drawing.Point(227, 10);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
-            this.lbDen.TabIndex = 1;
+            this.lbDen.TabIndex = 0;
             this.lbDen.Text = "Đến";
             // 
             // lbTu
@@ -1363,7 +1363,7 @@
             this.lbTu.Location = new System.Drawing.Point(96, 10);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
-            this.lbTu.TabIndex = 1;
+            this.lbTu.TabIndex = 0;
             this.lbTu.Text = "Từ";
             // 
             // btIn
@@ -1382,7 +1382,7 @@
             this.btXuatDuLieu.Location = new System.Drawing.Point(161, 42);
             this.btXuatDuLieu.Name = "btXuatDuLieu";
             this.btXuatDuLieu.Size = new System.Drawing.Size(103, 31);
-            this.btXuatDuLieu.TabIndex = 3;
+            this.btXuatDuLieu.TabIndex = 4;
             this.btXuatDuLieu.Text = "Xuất Dữ Liệu";
             this.btXuatDuLieu.Click += new System.EventHandler(this.btXuatDuLieu_Click);
             // 
@@ -1392,7 +1392,7 @@
             this.btXem.Location = new System.Drawing.Point(6, 43);
             this.btXem.Name = "btXem";
             this.btXem.Size = new System.Drawing.Size(70, 31);
-            this.btXem.TabIndex = 3;
+            this.btXem.TabIndex = 2;
             this.btXem.Text = "Xem";
             this.btXem.Click += new System.EventHandler(this.simpleButton21_Click);
             // 

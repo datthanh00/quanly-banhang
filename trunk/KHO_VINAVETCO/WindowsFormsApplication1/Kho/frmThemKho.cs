@@ -25,19 +25,7 @@ namespace WindowsFormsApplication1
             txtmakho.Text = connect.sTuDongDienMaKho(txtmakho.Text);
         }
    
-        public void loadgirdlookupKV()
-        {
 
-            txtmanv.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
-     
-            txtmanv.Properties.DisplayMember = "MANV";
-            txtmanv.Properties.ValueMember = "MANV";
-            txtmanv.Properties.View.BestFitColumns();
-            txtmanv.Properties.PopupFormWidth = 300;
-            txtmanv.Properties.DataSource = CTL.GETNV();
-
-
-        }
         private void btDong_Click(object sender, EventArgs e)
         {
             //if (DevComponents.DotNetBar.MessageBoxEx.Show("Bạn có muốn thoát hay không ?", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
@@ -76,12 +64,6 @@ namespace WindowsFormsApplication1
                         txtmakho.Focus();
                         return;
                     }
-                    else if (txtmanv.Text == "")
-                    {
-                        XtraMessageBox.Show("Vui lòng Nhập Mã Nhân Viên");
-                        txtmanv.Focus();
-                        return;
-                    }
                     else if (txttenkho.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng Nhập Tên Kho");
@@ -97,7 +79,6 @@ namespace WindowsFormsApplication1
                     {
                         loadma();
                         DTO.MAKHO = txtmakho.Text;
-                        DTO.MANV = txtmanv.Text;
                         DTO.TENKHO = txttenkho.Text;
                         DTO.DIACHI = txtdiachi.Text;
                         DTO.SDTB = txtsodtB.Text;
@@ -122,7 +103,7 @@ namespace WindowsFormsApplication1
                     else
                     {
                         DTO.MAKHO = txtmakho.Text;
-                        DTO.MANV = txtmanv.Text;
+        
                         DTO.TENKHO = txttenkho.Text;
                         DTO.DIACHI = txtdiachi.Text;
                         DTO.SDTB = txtsodtB.Text;
@@ -155,12 +136,7 @@ namespace WindowsFormsApplication1
                         txtmakho.Focus();
                         return;
                     }
-                    else if (txtmanv.Text == "")
-                    {
-                        XtraMessageBox.Show("Please Insert Employee ID", "Warming");
-                        txtmanv.Focus();
-                        return;
-                    }
+
                     //else if (cmbtinhtrang.Text == "")
                     //{
                     //    XtraMessageBox.Show("Please Choose Status ", "Warming");
@@ -170,7 +146,7 @@ namespace WindowsFormsApplication1
                     {
                         loadma();
                         DTO.MAKHO = txtmakho.Text;
-                        DTO.MANV = txtmanv.Text;
+
                         DTO.TENKHO = txttenkho.Text;
                         DTO.DIACHI = txtdiachi.Text;
                         DTO.SDTB = txtsodtB.Text;
@@ -195,7 +171,6 @@ namespace WindowsFormsApplication1
                     else
                     {
                         DTO.MAKHO = txtmakho.Text;
-                        DTO.MANV = txtmanv.Text;
                         DTO.TENKHO = txttenkho.Text;
                         DTO.DIACHI = txtdiachi.Text;
                         DTO.SDTB = txtsodtB.Text;
@@ -225,7 +200,6 @@ namespace WindowsFormsApplication1
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             lbMakho.Text = LamVN.MAKHO.ToString();
             lbTenkho.Text = LamVN.TENKHO.ToString();
-            lbMaNhanvien.Text = LamVN.MANV.ToString();
             lbdiachi.Text = LamVN.DIACHI.ToString();
             lbsodtdd.Text = LamVN.SDT.ToString();
             lbsosdtban.Text = LamVN.SDTB.ToString();
@@ -244,7 +218,6 @@ namespace WindowsFormsApplication1
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             lbMakho.Text = LamEL.MAKHO.ToString();
             lbTenkho.Text = LamEL.TENKHO.ToString();
-            lbMaNhanvien.Text = LamEL.MANV.ToString();
             lbdiachi.Text = LamEL.DIACHI.ToString();
             lbsodtdd.Text = LamEL.SDT.ToString();
             lbsosdtban.Text = LamEL.SDTB.ToString();
@@ -255,11 +228,7 @@ namespace WindowsFormsApplication1
             lbchuy.Text = LamEL.CHUY.ToString();
             btluu.Text = LamEL.LUU.ToString();
             btDong.Text = LamEL.DONG.ToString(); checkTT.Text = LamEL.CHECKTINHTRANG.ToString();
-            colmanv.Caption = LamEL.MANV.ToString();
-            //colmabp.Caption = LamEL.MABP.ToString();
-            //colchucvu.Caption = LamEL.CHUCVU.ToString();
-            colTinhtrang.Caption = LamEL.TINHTRANG.ToString();
-            coltennv.Caption = LamEL.TENNV.ToString();    
+            
             this.Text = "Form Insert Store";
         }
         private void frmThemKho_Load(object sender, EventArgs e)
@@ -278,9 +247,7 @@ namespace WindowsFormsApplication1
             }
             if (kiemtra == 0)
             {
-                loadgirdlookupKV();
                 txtmakho.Text = MACHUYEN;
-                txtmanv.Text = MANV;
                 txtnguoiLH.Text = NGUOILIENHE;
                 txtsodtB.Text = SDTB;
                 txtsodtDD.Text = DTDD;
@@ -299,7 +266,6 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                loadgirdlookupKV();
                 loadma();
             }
             // TODO: This line of code loads data into the 'xUAT_NHAPTONDataSet30.NHANVIEN' table. You can move, or remove it, as needed.

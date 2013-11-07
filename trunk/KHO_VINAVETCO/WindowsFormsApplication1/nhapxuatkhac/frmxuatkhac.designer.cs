@@ -372,9 +372,9 @@
             // controlContainer1
             // 
             this.controlContainer1.Controls.Add(this.navBarControl1);
-            this.controlContainer1.Location = new System.Drawing.Point(3, 25);
+            this.controlContainer1.Location = new System.Drawing.Point(3, 24);
             this.controlContainer1.Name = "controlContainer1";
-            this.controlContainer1.Size = new System.Drawing.Size(137, 173);
+            this.controlContainer1.Size = new System.Drawing.Size(137, 174);
             this.controlContainer1.TabIndex = 0;
             // 
             // navBarControl1
@@ -392,7 +392,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(137, 173);
+            this.navBarControl1.Size = new System.Drawing.Size(137, 174);
             this.navBarControl1.TabIndex = 2;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -456,9 +456,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.panelControl6);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(137, 292);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(137, 293);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // panelControl6
@@ -467,17 +467,17 @@
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl6.Location = new System.Drawing.Point(0, 0);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(137, 292);
+            this.panelControl6.Size = new System.Drawing.Size(137, 293);
             this.panelControl6.TabIndex = 0;
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 2);
+            this.gridControl2.Location = new System.Drawing.Point(3, 3);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(133, 288);
+            this.gridControl2.Size = new System.Drawing.Size(131, 287);
             this.gridControl2.TabIndex = 19;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -557,9 +557,9 @@
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.panelControl10);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(1113, 41);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1113, 42);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // panelControl10
@@ -601,7 +601,7 @@
             this.dateDen.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateDen.Size = new System.Drawing.Size(115, 20);
-            this.dateDen.TabIndex = 6;
+            this.dateDen.TabIndex = 2;
             this.dateDen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateDen_KeyPress);
             // 
             // dateTu
@@ -619,7 +619,7 @@
             this.dateTu.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateTu.Size = new System.Drawing.Size(115, 20);
-            this.dateTu.TabIndex = 5;
+            this.dateTu.TabIndex = 1;
             this.dateTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTu_KeyPress);
             // 
             // lbDen
@@ -627,7 +627,7 @@
             this.lbDen.Location = new System.Drawing.Point(167, 8);
             this.lbDen.Name = "lbDen";
             this.lbDen.Size = new System.Drawing.Size(20, 13);
-            this.lbDen.TabIndex = 1;
+            this.lbDen.TabIndex = 0;
             this.lbDen.Text = "Đến";
             // 
             // lbTu
@@ -635,7 +635,7 @@
             this.lbTu.Location = new System.Drawing.Point(14, 8);
             this.lbTu.Name = "lbTu";
             this.lbTu.Size = new System.Drawing.Size(13, 13);
-            this.lbTu.TabIndex = 1;
+            this.lbTu.TabIndex = 0;
             this.lbTu.Text = "Từ";
             // 
             // simpleButton2
@@ -644,7 +644,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(450, 4);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(70, 31);
-            this.simpleButton2.TabIndex = 3;
+            this.simpleButton2.TabIndex = 5;
             this.simpleButton2.Text = "In";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -654,7 +654,7 @@
             this.btXuatDuLieu.Location = new System.Drawing.Point(537, 4);
             this.btXuatDuLieu.Name = "btXuatDuLieu";
             this.btXuatDuLieu.Size = new System.Drawing.Size(103, 31);
-            this.btXuatDuLieu.TabIndex = 3;
+            this.btXuatDuLieu.TabIndex = 6;
             this.btXuatDuLieu.Text = "Xuất Dữ Liệu";
             this.btXuatDuLieu.Click += new System.EventHandler(this.btXuatDuLieu_Click);
             // 
@@ -664,7 +664,7 @@
             this.btXem.Location = new System.Drawing.Point(360, 5);
             this.btXem.Name = "btXem";
             this.btXem.Size = new System.Drawing.Size(70, 31);
-            this.btXem.TabIndex = 3;
+            this.btXem.TabIndex = 4;
             this.btXem.Text = "Xem";
             this.btXem.Click += new System.EventHandler(this.btXem_Click);
             // 
@@ -706,9 +706,9 @@
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.cboTenKH);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(2, 2);
+            this.groupControl1.Location = new System.Drawing.Point(3, 3);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1115, 157);
+            this.groupControl1.Size = new System.Drawing.Size(1113, 155);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông Tin Hóa Đơn";
             // 
@@ -778,7 +778,7 @@
             this.cbloai.Properties.NullText = "";
             this.cbloai.Properties.View = this.gridTYPE;
             this.cbloai.Size = new System.Drawing.Size(230, 20);
-            this.cbloai.TabIndex = 30;
+            this.cbloai.TabIndex = 2;
             this.cbloai.Validated += new System.EventHandler(this.cbloai_Validated);
             // 
             // gridTYPE
@@ -828,7 +828,7 @@
             this.cbotientra.Properties.Mask.EditMask = "n0";
             this.cbotientra.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.cbotientra.Size = new System.Drawing.Size(120, 20);
-            this.cbotientra.TabIndex = 21;
+            this.cbotientra.TabIndex = 3;
             this.cbotientra.Validated += new System.EventHandler(this.cbotientra_Validated);
             // 
             // labelControl3
@@ -866,7 +866,7 @@
             this.cktien.Properties.EditFormat.FormatString = "{0:0,0}";
             this.cktien.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.cktien.Size = new System.Drawing.Size(217, 20);
-            this.cktien.TabIndex = 28;
+            this.cktien.TabIndex = 6;
             this.cktien.Validated += new System.EventHandler(this.cktien_Validated);
             // 
             // labelControl6
@@ -896,7 +896,7 @@
             this.ckphantram.Properties.EditFormat.FormatString = "{0:N3} %";
             this.ckphantram.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.ckphantram.Size = new System.Drawing.Size(141, 20);
-            this.ckphantram.TabIndex = 26;
+            this.ckphantram.TabIndex = 5;
             this.ckphantram.Validated += new System.EventHandler(this.ckphantram_Validated);
             // 
             // txtmakh
@@ -927,7 +927,7 @@
             this.txtghichu.Multiline = true;
             this.txtghichu.Name = "txtghichu";
             this.txtghichu.Size = new System.Drawing.Size(626, 20);
-            this.txtghichu.TabIndex = 22;
+            this.txtghichu.TabIndex = 4;
             // 
             // btAdd
             // 
@@ -997,7 +997,7 @@
             this.cboTenKH.Properties.NullText = "";
             this.cboTenKH.Properties.View = this.gridKH1;
             this.cboTenKH.Size = new System.Drawing.Size(398, 20);
-            this.cboTenKH.TabIndex = 21;
+            this.cboTenKH.TabIndex = 1;
             this.cboTenKH.Validated += new System.EventHandler(this.cboTenKH_Validated);
             // 
             // gridKH1
@@ -1040,7 +1040,7 @@
             this.gridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControl1.EmbeddedNavigator.Buttons.Edit.ImageIndex = 0;
             this.gridControl1.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
             this.gridControl1.MainView = this.gridCTHOADON;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1051,7 +1051,7 @@
             this.repositoryItemLookUpEdit1,
             this.Grid_sanpham,
             this.repositoryItemTextEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1058, 107);
+            this.gridControl1.Size = new System.Drawing.Size(1056, 105);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridCTHOADON});
@@ -1349,7 +1349,7 @@
             this.gridControl3.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControl3.EmbeddedNavigator.Buttons.Edit.ImageIndex = 0;
             this.gridControl3.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControl3.Location = new System.Drawing.Point(2, 2);
+            this.gridControl3.Location = new System.Drawing.Point(3, 3);
             this.gridControl3.MainView = this.gridViewTONGXUAT;
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1360,7 +1360,7 @@
             this.repositoryItemLookUpEdit3,
             this.repositoryItemGridLookUpEdit1,
             this.repositoryItemComboBox2});
-            this.gridControl3.Size = new System.Drawing.Size(1057, 103);
+            this.gridControl3.Size = new System.Drawing.Size(1055, 101);
             this.gridControl3.TabIndex = 19;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTONGXUAT,
@@ -1906,7 +1906,7 @@
             this.xoaStripMenuItem,
             this.linkIntheomathang});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(169, 114);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(169, 92);
             // 
             // ViewToolStripMenuItem
             // 

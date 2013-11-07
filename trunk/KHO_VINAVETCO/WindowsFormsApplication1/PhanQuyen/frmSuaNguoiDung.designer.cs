@@ -99,7 +99,7 @@
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(105, 30);
             this.btLuu.StyleController = this.layoutControl1;
-            this.btLuu.TabIndex = 10;
+            this.btLuu.TabIndex = 5;
             this.btLuu.Text = "simpleButton1";
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
@@ -110,7 +110,7 @@
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(105, 30);
             this.btDong.StyleController = this.layoutControl1;
-            this.btDong.TabIndex = 9;
+            this.btDong.TabIndex = 6;
             this.btDong.Text = "simpleButton2";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
@@ -120,7 +120,7 @@
             this.txttendangnhap.Name = "txttendangnhap";
             this.txttendangnhap.Size = new System.Drawing.Size(236, 20);
             this.txttendangnhap.StyleController = this.layoutControl1;
-            this.txttendangnhap.TabIndex = 7;
+            this.txttendangnhap.TabIndex = 3;
             // 
             // gridLookUpEdit1
             // 
@@ -131,7 +131,7 @@
             this.gridLookUpEdit1.Properties.View = this.gBoPhan;
             this.gridLookUpEdit1.Size = new System.Drawing.Size(236, 20);
             this.gridLookUpEdit1.StyleController = this.layoutControl1;
-            this.gridLookUpEdit1.TabIndex = 6;
+            this.gridLookUpEdit1.TabIndex = 4;
             // 
             // gBoPhan
             // 
@@ -167,7 +167,7 @@
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(236, 20);
             this.txtten.StyleController = this.layoutControl1;
-            this.txtten.TabIndex = 4;
+            this.txtten.TabIndex = 2;
             // 
             // txtma
             // 
@@ -175,7 +175,7 @@
             this.txtma.Name = "txtma";
             this.txtma.Size = new System.Drawing.Size(236, 20);
             this.txtma.StyleController = this.layoutControl1;
-            this.txtma.TabIndex = 5;
+            this.txtma.TabIndex = 1;
             // 
             // layoutControlGroup1
             // 

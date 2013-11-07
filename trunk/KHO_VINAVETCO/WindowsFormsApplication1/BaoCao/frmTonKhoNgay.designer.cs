@@ -175,7 +175,7 @@
             this.labelControl1.Location = new System.Drawing.Point(335, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(69, 13);
-            this.labelControl1.TabIndex = 33;
+            this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Nhà Cung Cấp";
             // 
             // cbsanpham
@@ -188,7 +188,7 @@
             this.cbsanpham.Properties.PopupSizeable = false;
             this.cbsanpham.Properties.View = this.gridsanpham;
             this.cbsanpham.Size = new System.Drawing.Size(148, 20);
-            this.cbsanpham.TabIndex = 32;
+            this.cbsanpham.TabIndex = 2;
             // 
             // gridsanpham
             // 
@@ -235,7 +235,7 @@
             this.cbncc.Properties.PopupSizeable = false;
             this.cbncc.Properties.View = this.gridncc;
             this.cbncc.Size = new System.Drawing.Size(148, 20);
-            this.cbncc.TabIndex = 31;
+            this.cbncc.TabIndex = 3;
             // 
             // gridncc
             // 
@@ -268,7 +268,7 @@
             this.lbloc.Location = new System.Drawing.Point(122, 13);
             this.lbloc.Name = "lbloc";
             this.lbloc.Size = new System.Drawing.Size(47, 13);
-            this.lbloc.TabIndex = 30;
+            this.lbloc.TabIndex = 0;
             this.lbloc.Text = "Sản Phẩm";
             // 
             // dateTu
@@ -283,7 +283,7 @@
             this.dateTu.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.dateTu.Size = new System.Drawing.Size(100, 20);
-            this.dateTu.TabIndex = 2;
+            this.dateTu.TabIndex = 1;
             this.dateTu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dateTu_KeyPress);
             this.dateTu.TextChanged += new System.EventHandler(this.dateTu_TextChanged);
             // 
@@ -305,7 +305,7 @@
             this.panelControl3.Location = new System.Drawing.Point(0, 35);
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1286, 38);
-            this.panelControl3.TabIndex = 2;
+            this.panelControl3.TabIndex = 1;
             // 
             // simpleButton1
             // 
@@ -313,7 +313,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(103, 5);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(75, 29);
-            this.simpleButton1.TabIndex = 4;
+            this.simpleButton1.TabIndex = 1;
             this.simpleButton1.Text = "Lưu";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -323,7 +323,7 @@
             this.btIn.Location = new System.Drawing.Point(315, 6);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(75, 29);
-            this.btIn.TabIndex = 2;
+            this.btIn.TabIndex = 3;
             this.btIn.Text = "In";
             this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
@@ -333,7 +333,7 @@
             this.btXuat.Location = new System.Drawing.Point(192, 6);
             this.btXuat.Name = "btXuat";
             this.btXuat.Size = new System.Drawing.Size(102, 29);
-            this.btXuat.TabIndex = 1;
+            this.btXuat.TabIndex = 2;
             this.btXuat.Text = "Xuất";
             this.btXuat.Click += new System.EventHandler(this.btXuat_Click);
             // 

@@ -51,7 +51,7 @@
             this.txtma.Location = new System.Drawing.Point(141, 12);
             this.txtma.Name = "txtma";
             this.txtma.Size = new System.Drawing.Size(192, 20);
-            this.txtma.TabIndex = 85;
+            this.txtma.TabIndex = 1;
             this.txtma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtma_KeyPress);
             // 
             // txtghichu
@@ -59,7 +59,7 @@
             this.txtghichu.Location = new System.Drawing.Point(141, 65);
             this.txtghichu.Name = "txtghichu";
             this.txtghichu.Size = new System.Drawing.Size(192, 20);
-            this.txtghichu.TabIndex = 1;
+            this.txtghichu.TabIndex = 3;
             this.txtghichu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtghichu_KeyPress);
             // 
             // txtten
@@ -67,7 +67,7 @@
             this.txtten.Location = new System.Drawing.Point(141, 38);
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(192, 20);
-            this.txtten.TabIndex = 0;
+            this.txtten.TabIndex = 2;
             this.txtten.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtten_KeyPress);
             // 
             // labelControl14
@@ -124,7 +124,7 @@
             this.btDong.Location = new System.Drawing.Point(193, 124);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(123, 40);
-            this.btDong.TabIndex = 3;
+            this.btDong.TabIndex = 5;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
@@ -134,7 +134,7 @@
             this.btluu.Location = new System.Drawing.Point(63, 124);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(124, 40);
-            this.btluu.TabIndex = 2;
+            this.btluu.TabIndex = 4;
             this.btluu.Text = "Lưu";
             this.btluu.Click += new System.EventHandler(this.btluu_Click);
             // 

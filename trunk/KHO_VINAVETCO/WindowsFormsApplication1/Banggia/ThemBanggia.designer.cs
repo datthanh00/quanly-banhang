@@ -72,10 +72,10 @@
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl2.Appearance.Options.UseBackColor = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(96, 45);
+            this.labelControl2.Location = new System.Drawing.Point(95, 44);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(14, 13);
-            this.labelControl2.TabIndex = 156;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "(*)";
             // 
             // txtghichu
@@ -83,43 +83,43 @@
             this.txtghichu.Location = new System.Drawing.Point(115, 74);
             this.txtghichu.Name = "txtghichu";
             this.txtghichu.Size = new System.Drawing.Size(281, 20);
-            this.txtghichu.TabIndex = 154;
+            this.txtghichu.TabIndex = 2;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(21, 80);
+            this.labelControl1.Location = new System.Drawing.Point(21, 78);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(37, 13);
-            this.labelControl1.TabIndex = 155;
+            this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Ghi Chú";
             // 
             // txttenbg
             // 
-            this.txttenbg.Location = new System.Drawing.Point(115, 40);
+            this.txttenbg.Location = new System.Drawing.Point(115, 41);
             this.txttenbg.Name = "txttenbg";
             this.txttenbg.Size = new System.Drawing.Size(281, 20);
-            this.txttenbg.TabIndex = 4;
+            this.txttenbg.TabIndex = 1;
             // 
             // lbmota
             // 
-            this.lbmota.Location = new System.Drawing.Point(21, 46);
+            this.lbmota.Location = new System.Drawing.Point(21, 44);
             this.lbmota.Name = "lbmota";
             this.lbmota.Size = new System.Drawing.Size(63, 13);
-            this.lbmota.TabIndex = 153;
+            this.lbmota.TabIndex = 0;
             this.lbmota.Text = "Tên Bảng Giá";
             // 
             // lbmamh
             // 
-            this.lbmamh.Location = new System.Drawing.Point(22, 12);
+            this.lbmamh.Location = new System.Drawing.Point(21, 12);
             this.lbmamh.Name = "lbmamh";
             this.lbmamh.Size = new System.Drawing.Size(59, 13);
-            this.lbmamh.TabIndex = 138;
+            this.lbmamh.TabIndex = 0;
             this.lbmamh.Text = "Mã Bảng Giá";
             // 
             // txtMaBG
             // 
             this.txtMaBG.Enabled = false;
-            this.txtMaBG.Location = new System.Drawing.Point(115, 5);
+            this.txtMaBG.Location = new System.Drawing.Point(115, 8);
             this.txtMaBG.Name = "txtMaBG";
             this.txtMaBG.Properties.ReadOnly = true;
             this.txtMaBG.Size = new System.Drawing.Size(281, 20);
@@ -127,10 +127,10 @@
             // 
             // lbCHUY
             // 
-            this.lbCHUY.Location = new System.Drawing.Point(145, 127);
+            this.lbCHUY.Location = new System.Drawing.Point(141, 126);
             this.lbCHUY.Name = "lbCHUY";
             this.lbCHUY.Size = new System.Drawing.Size(246, 13);
-            this.lbCHUY.TabIndex = 53;
+            this.lbCHUY.TabIndex = 0;
             this.lbCHUY.Text = "Xin Vui Lòng Nhập Những Thông Tin Bắt Buộc Nhập ";
             // 
             // labelControl19
@@ -139,10 +139,10 @@
             this.labelControl19.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl19.Appearance.Options.UseBackColor = true;
             this.labelControl19.Appearance.Options.UseForeColor = true;
-            this.labelControl19.Location = new System.Drawing.Point(122, 127);
+            this.labelControl19.Location = new System.Drawing.Point(118, 126);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(14, 13);
-            this.labelControl19.TabIndex = 52;
+            this.labelControl19.TabIndex = 0;
             this.labelControl19.Text = "(*)";
             // 
             // btLuu
@@ -151,7 +151,7 @@
             this.btLuu.Location = new System.Drawing.Point(143, 156);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(95, 38);
-            this.btLuu.TabIndex = 10;
+            this.btLuu.TabIndex = 3;
             this.btLuu.Text = "Lưu";
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
@@ -161,7 +161,7 @@
             this.btDong.Location = new System.Drawing.Point(265, 156);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(98, 38);
-            this.btDong.TabIndex = 11;
+            this.btDong.TabIndex = 4;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 

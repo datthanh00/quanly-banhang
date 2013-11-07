@@ -53,7 +53,7 @@
             this.txtghichu.Location = new System.Drawing.Point(98, 62);
             this.txtghichu.Name = "txtghichu";
             this.txtghichu.Size = new System.Drawing.Size(192, 20);
-            this.txtghichu.TabIndex = 1;
+            this.txtghichu.TabIndex = 3;
             this.txtghichu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtghichu_KeyPress);
             // 
             // labelControl14
@@ -110,7 +110,7 @@
             this.txtten.Location = new System.Drawing.Point(98, 35);
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(192, 20);
-            this.txtten.TabIndex = 0;
+            this.txtten.TabIndex = 2;
             this.txtten.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtten_KeyPress);
             // 
             // lbTINHTRANG
@@ -127,7 +127,7 @@
             this.txtma.Location = new System.Drawing.Point(98, 9);
             this.txtma.Name = "txtma";
             this.txtma.Size = new System.Drawing.Size(192, 20);
-            this.txtma.TabIndex = 48;
+            this.txtma.TabIndex = 1;
             this.txtma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtma_KeyPress);
             // 
             // btDong
@@ -136,7 +136,7 @@
             this.btDong.Location = new System.Drawing.Point(163, 156);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(123, 40);
-            this.btDong.TabIndex = 4;
+            this.btDong.TabIndex = 6;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
@@ -146,7 +146,7 @@
             this.btluu.Location = new System.Drawing.Point(33, 156);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(124, 40);
-            this.btluu.TabIndex = 3;
+            this.btluu.TabIndex = 5;
             this.btluu.Text = "Lưu";
             this.btluu.Click += new System.EventHandler(this.btluu_Click);
             // 
@@ -177,7 +177,7 @@
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
             this.checkTT.Size = new System.Drawing.Size(82, 18);
-            this.checkTT.TabIndex = 2;
+            this.checkTT.TabIndex = 4;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
             // frmThemKhuVuc

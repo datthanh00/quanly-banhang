@@ -98,13 +98,13 @@ namespace WindowsFormsApplication1
             string sThongBao;
             if (iNgonNgu == 0)
             {
-                sThongBao = " Phải nhập từ 6 đến 15 kí tự";
+                sThongBao = " Phải nhập từ 2 đến 15 kí tự";
             }
             else
             {
                 sThongBao = "You must enter from 6 to 15  character";
             }
-            if (control.Text.Length<6 || control.Text.Trim().Length >15) dxErrorProvider1.SetError(control, sThongBao,ErrorType.Warning);
+            if (control.Text.Length<2 || control.Text.Trim().Length >15) dxErrorProvider1.SetError(control, sThongBao,ErrorType.Warning);
             else dxErrorProvider1.SetError(control, "");
         }
         private void Validate_EmptyStringRule(BaseEdit control)
@@ -273,8 +273,9 @@ namespace WindowsFormsApplication1
                 {
 
                     XtraMessageBox.Show(ex.Message);
+                   
                 }
-            
+                this.Close();
         }
 
         private void btDong_Click(object sender, EventArgs e)

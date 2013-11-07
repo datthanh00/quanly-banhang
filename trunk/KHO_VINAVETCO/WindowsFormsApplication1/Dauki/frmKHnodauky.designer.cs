@@ -372,7 +372,7 @@
             this.btin.Location = new System.Drawing.Point(101, 4);
             this.btin.Name = "btin";
             this.btin.Size = new System.Drawing.Size(70, 31);
-            this.btin.TabIndex = 4;
+            this.btin.TabIndex = 2;
             this.btin.Text = "In";
             this.btin.Click += new System.EventHandler(this.simpleButton8_Click);
             // 
@@ -382,7 +382,7 @@
             this.btxem.Location = new System.Drawing.Point(8, 4);
             this.btxem.Name = "btxem";
             this.btxem.Size = new System.Drawing.Size(70, 31);
-            this.btxem.TabIndex = 3;
+            this.btxem.TabIndex = 1;
             this.btxem.Text = "lưu";
             this.btxem.Click += new System.EventHandler(this.simpleButton11_Click);
             // 

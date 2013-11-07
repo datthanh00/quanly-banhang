@@ -51,7 +51,7 @@
             this.txtma.Location = new System.Drawing.Point(89, 10);
             this.txtma.Name = "txtma";
             this.txtma.Size = new System.Drawing.Size(192, 20);
-            this.txtma.TabIndex = 61;
+            this.txtma.TabIndex = 1;
             this.txtma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtma_KeyPress);
             // 
             // txtten
@@ -59,7 +59,7 @@
             this.txtten.Location = new System.Drawing.Point(89, 36);
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(192, 20);
-            this.txtten.TabIndex = 0;
+            this.txtten.TabIndex = 2;
             this.txtten.Validating += new System.ComponentModel.CancelEventHandler(this.txtten_Validating);
             this.txtten.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtten_KeyPress);
             // 
@@ -72,7 +72,7 @@
             this.labelControl14.Location = new System.Drawing.Point(67, 39);
             this.labelControl14.Name = "labelControl14";
             this.labelControl14.Size = new System.Drawing.Size(14, 13);
-            this.labelControl14.TabIndex = 53;
+            this.labelControl14.TabIndex = 0;
             this.labelControl14.Text = "(*)";
             // 
             // labelControl12
@@ -84,7 +84,7 @@
             this.labelControl12.Location = new System.Drawing.Point(67, 13);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(14, 13);
-            this.labelControl12.TabIndex = 51;
+            this.labelControl12.TabIndex = 0;
             this.labelControl12.Text = "(*)";
             // 
             // lbDVT
@@ -92,7 +92,7 @@
             this.lbDVT.Location = new System.Drawing.Point(8, 41);
             this.lbDVT.Name = "lbDVT";
             this.lbDVT.Size = new System.Drawing.Size(54, 13);
-            this.lbDVT.TabIndex = 54;
+            this.lbDVT.TabIndex = 0;
             this.lbDVT.Text = "Đơn Vị Tính";
             // 
             // lbmaDVT
@@ -100,7 +100,7 @@
             this.lbmaDVT.Location = new System.Drawing.Point(10, 13);
             this.lbmaDVT.Name = "lbmaDVT";
             this.lbmaDVT.Size = new System.Drawing.Size(37, 13);
-            this.lbmaDVT.TabIndex = 52;
+            this.lbmaDVT.TabIndex = 0;
             this.lbmaDVT.Text = "Mã ĐVT";
             // 
             // btDong
@@ -109,7 +109,7 @@
             this.btDong.Location = new System.Drawing.Point(138, 100);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(123, 40);
-            this.btDong.TabIndex = 2;
+            this.btDong.TabIndex = 4;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
@@ -119,7 +119,7 @@
             this.btluu.Location = new System.Drawing.Point(8, 100);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(124, 40);
-            this.btluu.TabIndex = 1;
+            this.btluu.TabIndex = 3;
             this.btluu.Text = "Lưu";
             this.btluu.Click += new System.EventHandler(this.btluu_Click);
             // 

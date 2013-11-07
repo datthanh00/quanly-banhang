@@ -298,7 +298,7 @@ namespace WindowsFormsApplication1
             {
                 if (sMaNV != "")
                 {
-                    if (sTenDangNhap == "admin")
+                    if (sMaNV == "NV1")
                     {
                         if (iNgonNgu == 0)
                         {

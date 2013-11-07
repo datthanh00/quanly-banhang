@@ -94,15 +94,15 @@
             // txtmanv
             // 
             this.txtmanv.Enabled = false;
-            this.txtmanv.Location = new System.Drawing.Point(110, 12);
+            this.txtmanv.Location = new System.Drawing.Point(110, 9);
             this.txtmanv.Name = "txtmanv";
             this.txtmanv.Size = new System.Drawing.Size(228, 20);
-            this.txtmanv.TabIndex = 0;
+            this.txtmanv.TabIndex = 1;
             this.txtmanv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmanv_KeyPress);
             // 
             // txtdiachi
             // 
-            this.txtdiachi.Location = new System.Drawing.Point(110, 40);
+            this.txtdiachi.Location = new System.Drawing.Point(110, 38);
             this.txtdiachi.Name = "txtdiachi";
             this.txtdiachi.Size = new System.Drawing.Size(228, 20);
             this.txtdiachi.TabIndex = 2;
@@ -244,20 +244,20 @@
             // 
             // txtsdt
             // 
-            this.txtsdt.Location = new System.Drawing.Point(455, 35);
+            this.txtsdt.Location = new System.Drawing.Point(455, 38);
             this.txtsdt.Name = "txtsdt";
             this.txtsdt.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtsdt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtsdt.Size = new System.Drawing.Size(228, 20);
-            this.txtsdt.TabIndex = 57;
+            this.txtsdt.TabIndex = 3;
             // 
             // checkTT
             // 
             this.checkTT.Location = new System.Drawing.Point(108, 104);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 19);
+            this.checkTT.Size = new System.Drawing.Size(82, 18);
             this.checkTT.TabIndex = 140;
             // 
             // lbtinhtrang

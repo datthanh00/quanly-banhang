@@ -827,10 +827,6 @@ namespace WindowsFormsApplication1
         {
             deDongTab();
         }
-        
-
-
-
 
 
         

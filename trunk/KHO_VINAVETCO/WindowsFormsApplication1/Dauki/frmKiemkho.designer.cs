@@ -488,7 +488,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(292, 4);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(135, 31);
-            this.simpleButton2.TabIndex = 27;
+            this.simpleButton2.TabIndex = 3;
             this.simpleButton2.Text = "Xóa kì Kiểm Hôm Nay";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -498,7 +498,7 @@
             this.simpleButton1.Location = new System.Drawing.Point(204, 4);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(81, 31);
-            this.simpleButton1.TabIndex = 26;
+            this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "Thêm mới";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click_1);
             // 
@@ -512,7 +512,7 @@
             this.cbncc.Properties.PopupSizeable = false;
             this.cbncc.Properties.View = this.gridView2;
             this.cbncc.Size = new System.Drawing.Size(147, 20);
-            this.cbncc.TabIndex = 25;
+            this.cbncc.TabIndex = 1;
             this.cbncc.Validated += new System.EventHandler(this.cbncc_Validated);
             // 
             // gridView2
@@ -538,7 +538,7 @@
             this.BtXuatdulieu.Location = new System.Drawing.Point(591, 4);
             this.BtXuatdulieu.Name = "BtXuatdulieu";
             this.BtXuatdulieu.Size = new System.Drawing.Size(103, 31);
-            this.BtXuatdulieu.TabIndex = 3;
+            this.BtXuatdulieu.TabIndex = 6;
             this.BtXuatdulieu.Text = "Xuất Dữ Liệu";
             this.BtXuatdulieu.Click += new System.EventHandler(this.BtXuatdulieu_Click);
             // 
@@ -547,7 +547,7 @@
             this.lbnhom.Location = new System.Drawing.Point(9, 14);
             this.lbnhom.Name = "lbnhom";
             this.lbnhom.Size = new System.Drawing.Size(37, 13);
-            this.lbnhom.TabIndex = 3;
+            this.lbnhom.TabIndex = 0;
             this.lbnhom.Text = "Kì Kiểm:";
             // 
             // btin
@@ -556,7 +556,7 @@
             this.btin.Location = new System.Drawing.Point(513, 4);
             this.btin.Name = "btin";
             this.btin.Size = new System.Drawing.Size(70, 31);
-            this.btin.TabIndex = 4;
+            this.btin.TabIndex = 5;
             this.btin.Text = "In";
             this.btin.Click += new System.EventHandler(this.simpleButton8_Click);
             // 
@@ -566,7 +566,7 @@
             this.btxem.Location = new System.Drawing.Point(435, 4);
             this.btxem.Name = "btxem";
             this.btxem.Size = new System.Drawing.Size(70, 31);
-            this.btxem.TabIndex = 3;
+            this.btxem.TabIndex = 4;
             this.btxem.Text = "Lưu";
             this.btxem.Click += new System.EventHandler(this.simpleButton11_Click);
             // 

@@ -85,8 +85,8 @@ namespace WindowsFormsApplication1
         }
         public void INSERTKHO(DTO dto)
         {
-            string SQL = " \r\nGO\r\n insert into KHO(MAKHO,MANV,TENKHO,DIACHI,SDTB,DTDD,NGUOILH,FAX,GHICHU,TINHTRANG)"
-            + " values('" + dto.MAKHO + "','" + dto.MANV + "',N'" + dto.TENKHO + "',N'" + dto.DIACHI + "','" + dto.SDTB + "','" + dto.DTDD + "',N'" + dto.NGUOILH + "','" + dto.FAX + "','" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
+            string SQL = " \r\nGO\r\n insert into KHO(MAKHO,TENKHO,DIACHI,SDTB,DTDD,NGUOILH,FAX,GHICHU,TINHTRANG)"
+            + " values('" + dto.MAKHO + "',N'" + dto.TENKHO + "',N'" + dto.DIACHI + "','" + dto.SDTB + "','" + dto.DTDD + "',N'" + dto.NGUOILH + "','" + dto.FAX + "','" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
 
             SQL = SQL+ " \r\nGO\r\n insert into PHANKHO(MABP,MAKHO) SELECT  MABP,'" + dto.MAKHO + "' AS MAKHO FROM BOPHAN";
 
@@ -324,6 +324,11 @@ namespace WindowsFormsApplication1
             if (dt.Rows.Count > 0)
                 return false;
 
+            SQL = "select COUNT(*) from KHO";
+            dt = getdata(SQL);
+            if (dt.Rows.Count ==1)
+                return false;
+
             return true;
         }
         public void DELELEKV(DTO dto)
@@ -365,7 +370,7 @@ namespace WindowsFormsApplication1
         }
         public void DELELENHANVIEN(DTO dto)
         {
-            string SQL = "delete from NHANVIEN where 	MANV='" + dto.MANV + "'";
+            string SQL = "delete NHANVIEN where 	MANV='" + dto.MANV + "'";
             executeNonQuery(SQL); 
         }
         public Boolean isDELELENHANVIEN(DTO dto)
@@ -409,12 +414,12 @@ namespace WindowsFormsApplication1
         public void INSERTNHANVIEN(DTO dto)
         {
             string SQL = "insert into NHANVIEN(MANV,TENNV,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG)"
-            +" values('"+dto.MANV+"','"+dto.TENNV+"','"+dto.DIACHI+"','"+dto.NGAYSINH+"','"+dto.SCMND+"','"+dto.SDT+"','"+dto.TINHTRANG+"')";
+            +" values('"+dto.MANV+"',N'"+dto.TENNV+"',N'"+dto.DIACHI+"','"+dto.NGAYSINH+"','"+dto.SCMND+"','"+dto.SDT+"','"+dto.TINHTRANG+"')";
             executeNonQuery(SQL);
         }
         public void UPDATEKHO(DTO dto)
         {
-            string SQL = "update KHO set MAKHO= '"+dto.MAKHO+"',MANV= '"+dto.MANV+"',TENKHO= N'"+dto.TENKHO+"',DIACHI= N'"+dto.DIACHI+"',SDTB= '"+dto.SDTB+"',DTDD= '"+dto.DTDD+"',NGUOILH= N'"+dto.NGUOILH+"',FAX= '"+dto.FAX+"',GHICHU= '"+dto.GHICHU+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MAKHO='"+dto.MAKHO+"'";
+            string SQL = "update KHO set TENKHO= N'"+dto.TENKHO+"',DIACHI= N'"+dto.DIACHI+"',SDTB= '"+dto.SDTB+"',DTDD= '"+dto.DTDD+"',NGUOILH= N'"+dto.NGUOILH+"',FAX= '"+dto.FAX+"',GHICHU= '"+dto.GHICHU+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MAKHO='"+dto.MAKHO+"'";
             executeNonQuery(SQL);
         }
        

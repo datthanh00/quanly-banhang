@@ -54,7 +54,7 @@
             this.txtma.Location = new System.Drawing.Point(105, 13);
             this.txtma.Name = "txtma";
             this.txtma.Size = new System.Drawing.Size(192, 20);
-            this.txtma.TabIndex = 107;
+            this.txtma.TabIndex = 1;
             this.txtma.Validating += new System.ComponentModel.CancelEventHandler(this.txtma_Validating);
             this.txtma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtma_KeyPress);
             // 
@@ -63,7 +63,7 @@
             this.txtten.Location = new System.Drawing.Point(105, 39);
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(192, 20);
-            this.txtten.TabIndex = 0;
+            this.txtten.TabIndex = 2;
             this.txtten.Validating += new System.ComponentModel.CancelEventHandler(this.txtten_Validating);
             this.txtten.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtten_KeyPress);
             // 
@@ -112,7 +112,7 @@
             this.lbMABP.Location = new System.Drawing.Point(7, 16);
             this.lbMABP.Name = "lbMABP";
             this.lbMABP.Size = new System.Drawing.Size(56, 13);
-            this.lbMABP.TabIndex = 101;
+            this.lbMABP.TabIndex = 100;
             this.lbMABP.Text = "Mã Bộ Phận";
             // 
             // btDong
@@ -121,7 +121,7 @@
             this.btDong.Location = new System.Drawing.Point(154, 135);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(123, 40);
-            this.btDong.TabIndex = 3;
+            this.btDong.TabIndex = 5;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
@@ -131,7 +131,7 @@
             this.btluu.Location = new System.Drawing.Point(24, 135);
             this.btluu.Name = "btluu";
             this.btluu.Size = new System.Drawing.Size(124, 40);
-            this.btluu.TabIndex = 2;
+            this.btluu.TabIndex = 4;
             this.btluu.Text = "Lưu";
             this.btluu.Click += new System.EventHandler(this.btluu_Click);
             // 
@@ -166,7 +166,7 @@
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
             this.checkTT.Size = new System.Drawing.Size(82, 19);
-            this.checkTT.TabIndex = 1;
+            this.checkTT.TabIndex = 3;
             // 
             // frmThemBoPhan
             // 

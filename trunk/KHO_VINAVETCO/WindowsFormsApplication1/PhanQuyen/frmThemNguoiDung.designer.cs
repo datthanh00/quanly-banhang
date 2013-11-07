@@ -158,36 +158,36 @@
             // btLuu
             // 
             this.btLuu.Image = global::Quanlykho.Properties.Resources.check;
-            this.btLuu.Location = new System.Drawing.Point(104, 164);
+            this.btLuu.Location = new System.Drawing.Point(104, 163);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(79, 30);
             this.btLuu.StyleController = this.layoutControl1;
-            this.btLuu.TabIndex = 14;
+            this.btLuu.TabIndex = 6;
             this.btLuu.Text = "Lưu";
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
             // btDong
             // 
             this.btDong.Image = global::Quanlykho.Properties.Resources.close4;
-            this.btDong.Location = new System.Drawing.Point(187, 164);
+            this.btDong.Location = new System.Drawing.Point(187, 163);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(81, 30);
             this.btDong.StyleController = this.layoutControl1;
-            this.btDong.TabIndex = 13;
+            this.btDong.TabIndex = 7;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
             // glVaiTro
             // 
             this.glVaiTro.EditValue = "";
-            this.glVaiTro.Location = new System.Drawing.Point(76, 140);
+            this.glVaiTro.Location = new System.Drawing.Point(76, 139);
             this.glVaiTro.Name = "glVaiTro";
             this.glVaiTro.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.glVaiTro.Properties.View = this.glVaiTro1;
             this.glVaiTro.Size = new System.Drawing.Size(192, 20);
             this.glVaiTro.StyleController = this.layoutControl1;
-            this.glVaiTro.TabIndex = 12;
+            this.glVaiTro.TabIndex = 5;
             // 
             // glVaiTro1
             // 
@@ -219,44 +219,44 @@
             // 
             // txtXacNhan
             // 
-            this.txtXacNhan.Location = new System.Drawing.Point(76, 116);
+            this.txtXacNhan.Location = new System.Drawing.Point(76, 115);
             this.txtXacNhan.Name = "txtXacNhan";
             this.txtXacNhan.Properties.PasswordChar = '*';
             this.txtXacNhan.Size = new System.Drawing.Size(192, 20);
             this.txtXacNhan.StyleController = this.layoutControl1;
-            this.txtXacNhan.TabIndex = 8;
+            this.txtXacNhan.TabIndex = 4;
             this.txtXacNhan.Validating += new System.ComponentModel.CancelEventHandler(this.txtXacNhan_Validating);
             // 
             // txtMatKhau
             // 
-            this.txtMatKhau.Location = new System.Drawing.Point(76, 92);
+            this.txtMatKhau.Location = new System.Drawing.Point(76, 91);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(192, 20);
             this.txtMatKhau.StyleController = this.layoutControl1;
-            this.txtMatKhau.TabIndex = 6;
+            this.txtMatKhau.TabIndex = 3;
             this.txtMatKhau.Validating += new System.ComponentModel.CancelEventHandler(this.txtMatKhau_Validating);
             // 
             // txtTaiKhoan
             // 
-            this.txtTaiKhoan.Location = new System.Drawing.Point(76, 68);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(76, 67);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(192, 20);
             this.txtTaiKhoan.StyleController = this.layoutControl1;
-            this.txtTaiKhoan.TabIndex = 5;
+            this.txtTaiKhoan.TabIndex = 2;
             this.txtTaiKhoan.Validating += new System.ComponentModel.CancelEventHandler(this.txtTaiKhoan_Validating);
             // 
             // glNhanVien
             // 
             this.glNhanVien.EditValue = "n";
-            this.glNhanVien.Location = new System.Drawing.Point(76, 44);
+            this.glNhanVien.Location = new System.Drawing.Point(76, 43);
             this.glNhanVien.Name = "glNhanVien";
             this.glNhanVien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.glNhanVien.Properties.View = this.glNhanVien1;
             this.glNhanVien.Size = new System.Drawing.Size(192, 20);
             this.glNhanVien.StyleController = this.layoutControl1;
-            this.glNhanVien.TabIndex = 4;
+            this.glNhanVien.TabIndex = 1;
             // 
             // glNhanVien1
             // 
@@ -328,7 +328,7 @@
             this.emptySpaceItem5.CustomizationFormText = "emptySpaceItem5";
             this.emptySpaceItem5.Location = new System.Drawing.Point(0, 120);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(80, 44);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(80, 45);
             this.emptySpaceItem5.Text = "emptySpaceItem5";
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -388,7 +388,7 @@
             this.layoutControlItem6.CustomizationFormText = "layoutControlItem6";
             this.layoutControlItem6.Location = new System.Drawing.Point(163, 120);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(85, 44);
+            this.layoutControlItem6.Size = new System.Drawing.Size(85, 45);
             this.layoutControlItem6.Text = "layoutControlItem6";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextToControlDistance = 0;
@@ -400,7 +400,7 @@
             this.layoutControlItem8.CustomizationFormText = "layoutControlItem8";
             this.layoutControlItem8.Location = new System.Drawing.Point(80, 120);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(83, 44);
+            this.layoutControlItem8.Size = new System.Drawing.Size(83, 45);
             this.layoutControlItem8.Text = "layoutControlItem8";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextToControlDistance = 0;

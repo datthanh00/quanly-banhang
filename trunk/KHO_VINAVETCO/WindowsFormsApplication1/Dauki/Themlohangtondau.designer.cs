@@ -30,7 +30,10 @@
         {
             this.cbmathang = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colmanh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colten = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.cbhsd = new DevExpress.XtraEditors.DateEdit();
             this.txtgiamua = new DevExpress.XtraEditors.CalcEdit();
             this.txtsoluong = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
@@ -41,18 +44,15 @@
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.lbnhomhang = new DevExpress.XtraEditors.LabelControl();
-            this.colmanh = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colten = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cbhsd = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.cbmathang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtgiamua.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsoluong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlohang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cbmathang
@@ -68,7 +68,7 @@
             this.cbmathang.Properties.ValueMember = "TENNHOMHANG";
             this.cbmathang.Properties.View = this.gridLookUpEdit1View;
             this.cbmathang.Size = new System.Drawing.Size(267, 20);
-            this.cbmathang.TabIndex = 3;
+            this.cbmathang.TabIndex = 1;
             this.cbmathang.EditValueChanged += new System.EventHandler(this.cbmathang_EditValueChanged);
             // 
             // gridLookUpEdit1View
@@ -80,6 +80,22 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // colmanh
+            // 
+            this.colmanh.Caption = "Mã Hàng";
+            this.colmanh.FieldName = "MAMH";
+            this.colmanh.Name = "colmanh";
+            this.colmanh.Visible = true;
+            this.colmanh.VisibleIndex = 0;
+            // 
+            // colten
+            // 
+            this.colten.Caption = "Mặt Hàng";
+            this.colten.FieldName = "TENMH";
+            this.colten.Name = "colten";
+            this.colten.Visible = true;
+            this.colten.VisibleIndex = 1;
             // 
             // panelControl1
             // 
@@ -101,6 +117,20 @@
             this.panelControl1.Size = new System.Drawing.Size(404, 272);
             this.panelControl1.TabIndex = 3;
             // 
+            // cbhsd
+            // 
+            this.cbhsd.EditValue = null;
+            this.cbhsd.Location = new System.Drawing.Point(97, 90);
+            this.cbhsd.Name = "cbhsd";
+            this.cbhsd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbhsd.Properties.Mask.EditMask = "";
+            this.cbhsd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.cbhsd.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
+            this.cbhsd.Size = new System.Drawing.Size(267, 20);
+            this.cbhsd.TabIndex = 3;
+            // 
             // txtgiamua
             // 
             this.txtgiamua.Location = new System.Drawing.Point(97, 172);
@@ -114,7 +144,7 @@
             this.txtgiamua.Properties.Mask.EditMask = "n0";
             this.txtgiamua.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtgiamua.Size = new System.Drawing.Size(267, 20);
-            this.txtgiamua.TabIndex = 169;
+            this.txtgiamua.TabIndex = 5;
             // 
             // txtsoluong
             // 
@@ -129,14 +159,14 @@
             this.txtsoluong.Properties.Mask.EditMask = "n0";
             this.txtsoluong.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtsoluong.Size = new System.Drawing.Size(267, 20);
-            this.txtsoluong.TabIndex = 168;
+            this.txtsoluong.TabIndex = 4;
             // 
             // labelControl4
             // 
             this.labelControl4.Location = new System.Drawing.Point(21, 175);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(42, 13);
-            this.labelControl4.TabIndex = 165;
+            this.labelControl4.TabIndex = 0;
             this.labelControl4.Text = "Giá Mua:";
             // 
             // labelControl2
@@ -144,7 +174,7 @@
             this.labelControl2.Location = new System.Drawing.Point(21, 136);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(49, 13);
-            this.labelControl2.TabIndex = 163;
+            this.labelControl2.TabIndex = 0;
             this.labelControl2.Text = "Số Lượng:";
             // 
             // labelControl1
@@ -152,7 +182,7 @@
             this.labelControl1.Location = new System.Drawing.Point(21, 97);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(67, 13);
-            this.labelControl1.TabIndex = 161;
+            this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Hạn Sử Dụng:";
             // 
             // txtlohang
@@ -161,14 +191,14 @@
             this.txtlohang.Location = new System.Drawing.Point(97, 55);
             this.txtlohang.Name = "txtlohang";
             this.txtlohang.Size = new System.Drawing.Size(267, 20);
-            this.txtlohang.TabIndex = 4;
+            this.txtlohang.TabIndex = 2;
             // 
             // lbmota
             // 
             this.lbmota.Location = new System.Drawing.Point(21, 58);
             this.lbmota.Name = "lbmota";
             this.lbmota.Size = new System.Drawing.Size(43, 13);
-            this.lbmota.TabIndex = 153;
+            this.lbmota.TabIndex = 0;
             this.lbmota.Text = "Lô Hàng:";
             // 
             // btLuu
@@ -177,7 +207,7 @@
             this.btLuu.Location = new System.Drawing.Point(105, 218);
             this.btLuu.Name = "btLuu";
             this.btLuu.Size = new System.Drawing.Size(95, 38);
-            this.btLuu.TabIndex = 10;
+            this.btLuu.TabIndex = 6;
             this.btLuu.Text = "Lưu";
             this.btLuu.Click += new System.EventHandler(this.btLuu_Click);
             // 
@@ -187,7 +217,7 @@
             this.btDong.Location = new System.Drawing.Point(227, 218);
             this.btDong.Name = "btDong";
             this.btDong.Size = new System.Drawing.Size(98, 38);
-            this.btDong.TabIndex = 11;
+            this.btDong.TabIndex = 7;
             this.btDong.Text = "Đóng";
             this.btDong.Click += new System.EventHandler(this.btDong_Click);
             // 
@@ -196,38 +226,8 @@
             this.lbnhomhang.Location = new System.Drawing.Point(21, 19);
             this.lbnhomhang.Name = "lbnhomhang";
             this.lbnhomhang.Size = new System.Drawing.Size(50, 13);
-            this.lbnhomhang.TabIndex = 2;
+            this.lbnhomhang.TabIndex = 0;
             this.lbnhomhang.Text = "Mặt Hàng:";
-            // 
-            // colmanh
-            // 
-            this.colmanh.Caption = "Mã Hàng";
-            this.colmanh.FieldName = "MAMH";
-            this.colmanh.Name = "colmanh";
-            this.colmanh.Visible = true;
-            this.colmanh.VisibleIndex = 0;
-            // 
-            // colten
-            // 
-            this.colten.Caption = "Mặt Hàng";
-            this.colten.FieldName = "TENMH";
-            this.colten.Name = "colten";
-            this.colten.Visible = true;
-            this.colten.VisibleIndex = 1;
-            // 
-            // cbhsd
-            // 
-            this.cbhsd.EditValue = null;
-            this.cbhsd.Location = new System.Drawing.Point(97, 90);
-            this.cbhsd.Name = "cbhsd";
-            this.cbhsd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbhsd.Properties.Mask.EditMask = "";
-            this.cbhsd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.cbhsd.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.cbhsd.Size = new System.Drawing.Size(267, 20);
-            this.cbhsd.TabIndex = 170;
             // 
             // Themlohangtondau
             // 
@@ -245,11 +245,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtgiamua.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsoluong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtlohang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbhsd.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
