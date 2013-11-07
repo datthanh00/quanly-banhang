@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition2 = new DevExpress.XtraGrid.StyleFormatCondition();
+            DevExpress.XtraGrid.StyleFormatCondition styleFormatCondition1 = new DevExpress.XtraGrid.StyleFormatCondition();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -164,14 +164,14 @@
             this.colMAACTIVE,
             this.colTINHTRANG,
             this.gridColumn3});
-            styleFormatCondition2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            styleFormatCondition2.Appearance.Options.UseBackColor = true;
-            styleFormatCondition2.ApplyToRow = true;
-            styleFormatCondition2.Column = this.colTINHTRANG;
-            styleFormatCondition2.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
-            styleFormatCondition2.Value1 = true;
+            styleFormatCondition1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            styleFormatCondition1.Appearance.Options.UseBackColor = true;
+            styleFormatCondition1.ApplyToRow = true;
+            styleFormatCondition1.Column = this.colTINHTRANG;
+            styleFormatCondition1.Condition = DevExpress.XtraGrid.FormatConditionEnum.Equal;
+            styleFormatCondition1.Value1 = true;
             this.gridView1.FormatConditions.AddRange(new DevExpress.XtraGrid.StyleFormatCondition[] {
-            styleFormatCondition2});
+            styleFormatCondition1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -206,6 +206,7 @@
             this.colMAACTIVE.Caption = "Ngày";
             this.colMAACTIVE.FieldName = "NGAY";
             this.colMAACTIVE.Name = "colMAACTIVE";
+            this.colMAACTIVE.OptionsColumn.AllowEdit = false;
             this.colMAACTIVE.Visible = true;
             this.colMAACTIVE.VisibleIndex = 2;
             this.colMAACTIVE.Width = 179;
@@ -215,6 +216,7 @@
             this.gridColumn3.Caption = "MADOITUONG";
             this.gridColumn3.FieldName = "MADOITUONG";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
             // 
             // groupCtDetails
             // 

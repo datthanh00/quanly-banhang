@@ -197,7 +197,6 @@
             this.gridView1.OptionsBehavior.AllowIncrementalSearch = true;
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsCustomization.AllowRowSizing = true;
-            this.gridView1.OptionsSelection.InvertSelection = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;

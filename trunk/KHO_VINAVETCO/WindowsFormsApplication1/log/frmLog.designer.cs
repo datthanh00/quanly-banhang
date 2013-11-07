@@ -174,7 +174,6 @@
             this.gridView1.OptionsBehavior.AllowIncrementalSearch = true;
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsCustomization.AllowRowSizing = true;
-            this.gridView1.OptionsSelection.InvertSelection = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
@@ -204,6 +203,7 @@
             this.gridColumn1.Caption = "Ghi Chú";
             this.gridColumn1.FieldName = "LYDO";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 2;
             this.gridColumn1.Width = 284;

@@ -298,17 +298,6 @@ namespace WindowsFormsApplication1
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
-        private void gridView1_ShowGridMenu(object sender, DevExpress.XtraGrid.Views.Grid.GridMenuEventArgs e)
-        {
-            GridView view = sender as GridView;
-            GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
-            if (hitInfo.RowHandle>=0)
-            {
-                view.FocusedRowHandle = hitInfo.RowHandle;
-
-                contextMenuStrip1.Show(view.GridControl, e.Point);
-            }
-        }
 
         private void xoalohangToolStripMenuItem_Click(object sender, EventArgs e)
         {

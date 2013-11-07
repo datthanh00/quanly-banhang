@@ -304,17 +304,6 @@ namespace WindowsFormsApplication1
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
-        private void gridView1_ShowGridMenu(object sender, DevExpress.XtraGrid.Views.Grid.GridMenuEventArgs e)
-        {
-            GridView view = sender as GridView;
-            GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
-            if (hitInfo.RowHandle>=0)
-            {
-                view.FocusedRowHandle = hitInfo.RowHandle;
-
-                contextMenuStrip1.Show(view.GridControl, e.Point);
-            }
-        }
 
         private void xoalohangToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -393,6 +382,25 @@ namespace WindowsFormsApplication1
         private void frmKiemkho_FormClosed(object sender, FormClosedEventArgs e)
         {
             deDongTab();
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.XOA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            if (XtraMessageBox.Show("Bạn có muốn Xóa kì kiểm kho hôm nay Không ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ctr.deletetonkiemkho();
+            }
+            else
+            {
+                return;
+            }
+            load_cbhanghoa();
+            Load_mathang();
         }
 
 

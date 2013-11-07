@@ -11,9 +11,11 @@ namespace WindowsFormsApplication1
         
         public void insertKhachHang(DTO dto)
         {
-            string SQL = "	insert into KHACHHANG(MAKH,MAKV,MANV,MABG,MAKHO,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG,CONGNO,TIENTRATRUOC)"
+            string SQL = " \r\nGO\r\n insert into KHACHHANG(MAKH,MAKV,MANV,MABG,MAKHO,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG,CONGNO,TIENTRATRUOC)"
             + " values('" + dto.MAKH + "','" + dto.MAKV + "','" + dto.MANV + "','" + dto.MABG + "','" + PublicVariable.MAKHO + "',N'" + dto.TENKH + "','" + dto.SOTAIKHOAN + "',N'" + dto.NGANHANG + "','" + dto.MASOTHUE + "',N'" + dto.DIACHI + "','" + dto.SDT + "','" + dto.FAX + "','" + dto.WEBSITE + "','" + dto.YAHOO + "','" + dto.SKYPE + "','" + dto.TINHTRANG + "',0,0)";
-            executeNonQuery(SQL);
+
+            SQL = SQL + "\r\nGO\r\n INSERT INTO TONDAUCONGNOKH([MAKH],[CONGNO])VALUES ('" + dto.MAKH + "',0)";
+            executeNonQuery2(SQL);
 
         }
         public String getIDNHAP()
@@ -51,23 +53,17 @@ namespace WindowsFormsApplication1
         }
         public void INSERTBOPHAN(DTO dto)
         {
-            string SQL = "insert into BOPHAN(MABP,TENBOPHAN,TINHTRANG)"
-            +" values('"+dto.MABP+"',N'"+dto.TENBOPHAN+"','"+dto.TINHTRANG+"')";
-            executeNonQuery(SQL);
-
+            string SQL = " \r\nGO\r\n insert into BOPHAN(MABP,TENBOPHAN,TINHTRANG) values('"+dto.MABP+"',N'"+dto.TENBOPHAN+"','"+dto.TINHTRANG+"')";
             //PHAN KHO
-            SQL = "insert into PHANKHO(MABP,MAKHO) SELECT '" + dto.MABP + "' AS MABP,MAKHO FROM KHO";
-            executeNonQuery(SQL);
+            SQL = SQL + " \r\nGO\r\n insert into PHANKHO(MABP,MAKHO) SELECT '" + dto.MABP + "' AS MABP,MAKHO FROM KHO";
             //PHAN QUYEN
-            SQL = "insert into PHANQUYEN(MABP,MACN) SELECT '" + dto.MABP + "' AS MABP,MACN FROM CHUCNANG";
-            executeNonQuery(SQL);
-
+            SQL = SQL+  " \r\nGO\r\n insert into PHANQUYEN(MABP,MACN) SELECT '" + dto.MABP + "' AS MABP,MACN FROM CHUCNANG";
+            executeNonQuery2(SQL);
         }
         public void UPDATEBOPHAN(DTO dto)
         {
             string SQL = "update BOPHAN set MABP= '"+dto.MABP+"',TENBOPHAN= N'"+dto.TENBOPHAN+"',TINHTRANG= '"+dto.TINHTRANG+"' where 	MABP='"+dto.MABP+"'";
             executeNonQuery(SQL);
-
         }
         public void UPDATEKHUVUC(DTO dto)
         {
@@ -76,9 +72,11 @@ namespace WindowsFormsApplication1
         }
         public void INSERTNHACC(DTO dto)
         {
-            string SQL = "insert into NHACUNGCAP(MANCC,MAKV,MAKHO,TENNCC,DIACHI,MASOTHUE,SOTAIKHOAN,NGANHANG,SDT,EMAIL,FAX,WEBSITE,TINHTRANG,CONGNO,TIENTRATRUOC)"
+            string SQL = " \r\nGO\r\n insert into NHACUNGCAP(MANCC,MAKV,MAKHO,TENNCC,DIACHI,MASOTHUE,SOTAIKHOAN,NGANHANG,SDT,EMAIL,FAX,WEBSITE,TINHTRANG,CONGNO,TIENTRATRUOC)"
             +" values('"+dto.MANCC+"','"+dto.MAKV+"','"+PublicVariable.MAKHO+"',N'"+dto.TENNCC+"',N'"+dto.DIACHI+"','"+dto.MASOTHUE+"','"+dto.SOTAIKHOAN+"',N'"+dto.NGANHANG+"','"+dto.SDT+"','"+dto.EMAIL+"','"+dto.FAX+"','"+dto.WEBSITE+"','"+dto.TINHTRANG+"',0,0)";
-            executeNonQuery(SQL);
+
+            SQL = SQL + " \r\nGO\r\n INSERT INTO TONDAUCONGNONCC([MANCC],[CONGNO])VALUES ('" + dto.MANCC + "',0)";
+            executeNonQuery2(SQL);
         }
         public void UPDATENHACC(DTO dto)
         {
@@ -87,15 +85,13 @@ namespace WindowsFormsApplication1
         }
         public void INSERTKHO(DTO dto)
         {
-            string SQL = "insert into KHO(MAKHO,MANV,TENKHO,DIACHI,SDTB,DTDD,NGUOILH,FAX,GHICHU,TINHTRANG)"
+            string SQL = " \r\nGO\r\n insert into KHO(MAKHO,MANV,TENKHO,DIACHI,SDTB,DTDD,NGUOILH,FAX,GHICHU,TINHTRANG)"
             + " values('" + dto.MAKHO + "','" + dto.MANV + "',N'" + dto.TENKHO + "',N'" + dto.DIACHI + "','" + dto.SDTB + "','" + dto.DTDD + "',N'" + dto.NGUOILH + "','" + dto.FAX + "','" + dto.GHICHU + "','" + dto.TINHTRANG + "')";
-            executeNonQuery(SQL);
 
-            SQL = "insert into PHANKHO(MABP,MAKHO) SELECT  MABP,'" + dto.MAKHO + "' AS MAKHO FROM BOPHAN";
-            executeNonQuery(SQL);
+            SQL = SQL+ " \r\nGO\r\n insert into PHANKHO(MABP,MAKHO) SELECT  MABP,'" + dto.MAKHO + "' AS MAKHO FROM BOPHAN";
 
-            SQL = "insert into KHOASOTHEOKHO (ID,MAKHO,NGAY) SELECT  ID, '" + dto.MAKHO + "' AS MAKHO, convert(varchar,GETDATE(),101) AS NGAY  FROM KHOASO";
-            executeNonQuery(SQL);
+            SQL = SQL+ " \r\nGO\r\n insert into KHOASOTHEOKHO (ID,MAKHO,NGAY) SELECT  ID, '" + dto.MAKHO + "' AS MAKHO, convert(varchar,GETDATE(),101) AS NGAY  FROM KHOASO";
+            executeNonQuery2(SQL);
         }
         public void INSERTDVT(DTO dto)
         {
@@ -179,12 +175,11 @@ namespace WindowsFormsApplication1
 
         public void addBanggia(DTO dto)
         {
-            string SQL = "insert into BANGGIA(MABG,TENBG,MAKHO,GHICHU)"
+            string SQL = " \r\nGO\r\n insert into BANGGIA(MABG,TENBG,MAKHO,GHICHU)"
             + " values('" + dto.MABG + "',N'" + dto.TENBG + "','" + PublicVariable.MAKHO + "',N'" + dto.GHICHU + "')";
-            executeNonQuery(SQL);
 
-            SQL = "insert into BANGGIAMATHANG(MABG,MAMH,GIABAN) SELECT '"+dto.MABG+"' AS MABG, MAMH, 0 AS GIABAN FROM MATHANG  WHERE TINHTRANG='TRUE' AND MAKHO='" + PublicVariable.MAKHO + "'";
-            executeNonQuery(SQL);
+            SQL = SQL + " \r\nGO\r\n insert into BANGGIAMATHANG(MABG,MAMH,GIABAN) SELECT '" + dto.MABG + "' AS MABG, MAMH, 0 AS GIABAN FROM MATHANG  WHERE TINHTRANG='TRUE' AND MAKHO='" + PublicVariable.MAKHO + "'";
+            executeNonQuery2(SQL);
         }
 
         public void updateBanggia(DTO dto)
@@ -194,10 +189,10 @@ namespace WindowsFormsApplication1
         }
         public void deleteBanggia(String MABG)
         {
-            string SQL = "delete from BANGGIA where 	MABG='"+MABG+"'";
-            executeNonQuery(SQL);
-            SQL = "delete from BANGGIAMATHANG where 	MABG='" + MABG + "'";
-            executeNonQuery(SQL);
+            string SQL = " \r\nGO\r\n delete from BANGGIA where 	MABG='" + MABG + "'";
+
+            SQL =SQL+ "\r\nGO\r\n delete from BANGGIAMATHANG where 	MABG='" + MABG + "'";
+            executeNonQuery2(SQL);
         }
         public void DELELEKHACHHANG(DTO dto)
         {
@@ -220,14 +215,10 @@ namespace WindowsFormsApplication1
         }
         public void DELELEBOPHAN(DTO dto)
         {
-            string SQL = "delete from BOPHAN where 	MABP='" + dto.MABP + "'";
-            executeNonQuery(SQL);
-
-            SQL = "delete from PHANQUYEN where 	MABP='" + dto.MABP + "'";
-            executeNonQuery(SQL);
-
-            SQL = "delete from PHANKHO where 	MABP='" + dto.MABP + "'";
-            executeNonQuery(SQL);
+            string SQL = " \r\nGO\r\n delete from BOPHAN where 	MABP='" + dto.MABP + "'";
+            SQL = SQL + " \r\nGO\r\n delete from PHANQUYEN where 	MABP='" + dto.MABP + "'";
+            SQL = SQL + " \r\nGO\r\n delete from PHANKHO where 	MABP='" + dto.MABP + "'";
+            executeNonQuery2(SQL);
         }
         public Boolean isDELELEBOPHAN(DTO dto)
         {
@@ -240,24 +231,13 @@ namespace WindowsFormsApplication1
         }
         public void DELELEMATHANG(DTO dto)
         {
-            string SQL = "delete from MATHANG where 	MAMH='" + dto.MAMH + "'";
-            executeNonQuery(SQL);
-
-            SQL = "delete from TONKHOTT where 	MAMH='" + dto.MAMH + "'";
-            executeNonQuery(SQL);
-
-            SQL = "delete from KHOHANG where 	MAMH='" + dto.MAMH + "'";
-            executeNonQuery(SQL);
-
-            SQL = "delete from TONDAUKHOHANG where 	MAMH='" + dto.MAMH + "'";
-            executeNonQuery(SQL);
-
-            SQL = "delete from TONDAUMATHANG where 	MAMH='" + dto.MAMH + "'";
-            executeNonQuery(SQL);
-
-            SQL = "delete from BANGGIAMATHANG where 	MAMH='" + dto.MAMH + "'";
-            executeNonQuery(SQL);
-
+            string SQL = " \r\nGO\r\n delete from MATHANG where 	MAMH='" + dto.MAMH + "'";
+            SQL = SQL+ " \r\nGO\r\n delete from TONKHOTT where 	MAMH='" + dto.MAMH + "'";
+            SQL = SQL+ " \r\nGO\r\n delete from KHOHANG where 	MAMH='" + dto.MAMH + "'";
+            SQL = SQL+ " \r\nGO\r\n delete from TONDAUKHOHANG where 	MAMH='" + dto.MAMH + "'";
+            SQL = SQL+ " \r\nGO\r\n delete from TONDAUMATHANG where 	MAMH='" + dto.MAMH + "'";
+            SQL = SQL+ " \r\nGO\r\n delete from BANGGIAMATHANG where 	MAMH='" + dto.MAMH + "'";
+            executeNonQuery2(SQL);
         }
         public Boolean isDELELEMATHANG(DTO dto)
         {
@@ -332,10 +312,9 @@ namespace WindowsFormsApplication1
 
         public void DELELEKHO(DTO dto)
         {
-            string SQL = "delete from KHO where 	MAKHO='" + dto.MAKHO + "'";
-            executeNonQuery(SQL);
-            SQL = "delete from PHANKHO where 	MAKHO='" + dto.MAKHO + "'";
-            executeNonQuery(SQL);
+            string SQL = " \r\nGO\r\n delete from KHO where 	MAKHO='" + dto.MAKHO + "'";
+            SQL =SQL+ " \r\nGO\r\n delete from PHANKHO where 	MAKHO='" + dto.MAKHO + "'";
+            executeNonQuery2(SQL);
         }
 
         public Boolean isDELELEKHO(DTO dto)
@@ -378,11 +357,6 @@ namespace WindowsFormsApplication1
             if (dt.Rows.Count > 0)
                 return false;
             SQL = "select TOP 1 mancc from trahoadonnhap where 	MANCC='" + dto.MANCC + "' ";
-            dt = getdata(SQL);
-            if (dt.Rows.Count > 0)
-                return false;
-
-            SQL = "select TOP 1 MANCC from TONDAUCONGNONCC where 	MANCC='" + dto.MANCC + "' ";
             dt = getdata(SQL);
             if (dt.Rows.Count > 0)
                 return false;
