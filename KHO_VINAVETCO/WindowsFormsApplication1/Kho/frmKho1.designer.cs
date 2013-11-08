@@ -46,7 +46,6 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDTB = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -202,13 +201,11 @@
             this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
-            this.gridControl1.Click += new System.EventHandler(this.gridControl1_Click);
             // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAKHO,
-            this.colMANV,
             this.colTENKHO,
             this.colDIACHI,
             this.colSDTB,
@@ -235,22 +232,13 @@
             this.colMAKHO.VisibleIndex = 0;
             this.colMAKHO.Width = 105;
             // 
-            // colMANV
-            // 
-            this.colMANV.FieldName = "MANV";
-            this.colMANV.Name = "colMANV";
-            this.colMANV.OptionsColumn.AllowEdit = false;
-            this.colMANV.Visible = true;
-            this.colMANV.VisibleIndex = 1;
-            this.colMANV.Width = 105;
-            // 
             // colTENKHO
             // 
             this.colTENKHO.FieldName = "TENKHO";
             this.colTENKHO.Name = "colTENKHO";
             this.colTENKHO.OptionsColumn.AllowEdit = false;
             this.colTENKHO.Visible = true;
-            this.colTENKHO.VisibleIndex = 2;
+            this.colTENKHO.VisibleIndex = 1;
             this.colTENKHO.Width = 140;
             // 
             // colDIACHI
@@ -259,7 +247,7 @@
             this.colDIACHI.Name = "colDIACHI";
             this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.Visible = true;
-            this.colDIACHI.VisibleIndex = 3;
+            this.colDIACHI.VisibleIndex = 2;
             this.colDIACHI.Width = 150;
             // 
             // colSDTB
@@ -268,7 +256,7 @@
             this.colSDTB.Name = "colSDTB";
             this.colSDTB.OptionsColumn.AllowEdit = false;
             this.colSDTB.Visible = true;
-            this.colSDTB.VisibleIndex = 4;
+            this.colSDTB.VisibleIndex = 3;
             this.colSDTB.Width = 88;
             // 
             // colDTDD
@@ -277,7 +265,7 @@
             this.colDTDD.Name = "colDTDD";
             this.colDTDD.OptionsColumn.AllowEdit = false;
             this.colDTDD.Visible = true;
-            this.colDTDD.VisibleIndex = 5;
+            this.colDTDD.VisibleIndex = 4;
             this.colDTDD.Width = 88;
             // 
             // colNGUOILH
@@ -286,7 +274,7 @@
             this.colNGUOILH.Name = "colNGUOILH";
             this.colNGUOILH.OptionsColumn.AllowEdit = false;
             this.colNGUOILH.Visible = true;
-            this.colNGUOILH.VisibleIndex = 6;
+            this.colNGUOILH.VisibleIndex = 5;
             this.colNGUOILH.Width = 116;
             // 
             // colFAX
@@ -295,7 +283,7 @@
             this.colFAX.Name = "colFAX";
             this.colFAX.OptionsColumn.AllowEdit = false;
             this.colFAX.Visible = true;
-            this.colFAX.VisibleIndex = 7;
+            this.colFAX.VisibleIndex = 6;
             this.colFAX.Width = 79;
             // 
             // colGHICHU
@@ -304,7 +292,7 @@
             this.colGHICHU.Name = "colGHICHU";
             this.colGHICHU.OptionsColumn.AllowEdit = false;
             this.colGHICHU.Visible = true;
-            this.colGHICHU.VisibleIndex = 8;
+            this.colGHICHU.VisibleIndex = 7;
             this.colGHICHU.Width = 107;
             // 
             // colTINHTRANG
@@ -313,7 +301,7 @@
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.OptionsColumn.AllowEdit = false;
             this.colTINHTRANG.Visible = true;
-            this.colTINHTRANG.VisibleIndex = 9;
+            this.colTINHTRANG.VisibleIndex = 8;
             this.colTINHTRANG.Width = 85;
             // 
             // frmKho1
@@ -354,7 +342,6 @@
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet28TableAdapters.KHOTableAdapter kHOTableAdapter;
         private DevExpress.XtraBars.BarButtonItem barThem;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
-        private DevExpress.XtraGrid.Columns.GridColumn colMANV;
         private DevExpress.XtraGrid.Columns.GridColumn colTENKHO;
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colSDTB;

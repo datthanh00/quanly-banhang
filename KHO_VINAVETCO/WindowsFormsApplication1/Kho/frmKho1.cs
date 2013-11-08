@@ -62,7 +62,7 @@ namespace WindowsFormsApplication1
             iNgonNgu = 0;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             colMAKHO.Caption = LamVN.MAKHO.ToString();
-            colMANV.Caption = LamVN.MANV.ToString();
+            
             colTENKHO.Caption = LamVN.TENKHO.ToString();
             colDIACHI.Caption = LamVN.DIACHI.ToString();
             colSDTB.Caption = LamVN.SDTB.ToString();
@@ -86,7 +86,7 @@ namespace WindowsFormsApplication1
             iNgonNgu = 1;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             colMAKHO.Caption = LamEL.MAKHO.ToString();
-            colMANV.Caption = LamEL.MANV.ToString();
+           
             colTENKHO.Caption = LamEL.TENKHO.ToString();
             colDIACHI.Caption = LamEL.DIACHI.ToString();
             colSDTB.Caption = LamEL.SDTB.ToString();
@@ -104,10 +104,7 @@ namespace WindowsFormsApplication1
             barNhap.Caption = LamEL.NHAPDULIEU.ToString();
      
         }
-        private void gridControl1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void barThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -167,18 +164,19 @@ namespace WindowsFormsApplication1
                 // smakv, sdiachi, ssodtB, ssodtDD, snguoilienhe, sfax,sghichu, stinhtrang;       
                 //DataTable dt = new DataTable();
                 DataRow dtr = gridView1.GetDataRow(e.RowHandle);
-                sma = dtr[0].ToString();
+                sma = dtr["MAKHO"].ToString();
                 //textEdit1.Text = sma.Trim().ToString();
-                sten = dtr[2].ToString();
+                sten = dtr["TENKHO"].ToString();
                 //textEdit2.Text = sten;
-                smakv = dtr[1].ToString();
-                sdiachi = dtr[3].ToString();
-                ssodtB = dtr[4].ToString();
-                ssodtDD = dtr[5].ToString();
-                snguoilienhe = dtr[6].ToString();
-                sfax = dtr[7].ToString();
-                sghichu = dtr[8].ToString();
-                stinhtrang = dtr[9].ToString();
+                smakv = dtr["MAKHO"].ToString();
+                sdiachi = dtr["DIACHI"].ToString();
+
+                ssodtB = dtr["SDTB"].ToString();
+                ssodtDD = dtr["DTDD"].ToString();
+                snguoilienhe = dtr["NGUOILH"].ToString();
+                sfax = dtr["FAX"].ToString();
+                sghichu = dtr["GHICHU"].ToString();
+                stinhtrang = dtr["TINHTRANG"].ToString();
             }
             catch (Exception ex)
             {
@@ -376,19 +374,19 @@ namespace WindowsFormsApplication1
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
             DataRow dtr = gridView1.GetDataRow(e.RowHandle);
-            sma = dtr[0].ToString();
+            sma = dtr["MAKHO"].ToString();
             //textEdit1.Text = sma.Trim().ToString();
-            sten = dtr[2].ToString();
+            sten = dtr["TENKHO"].ToString();
             //textEdit2.Text = sten;
-            smakv = dtr[1].ToString();
-            sdiachi = dtr[3].ToString();
-            
-            ssodtB = dtr[4].ToString();
-            ssodtDD = dtr[5].ToString();
-            snguoilienhe = dtr[6].ToString();
-            sfax = dtr[7].ToString();
-            sghichu = dtr[8].ToString();
-            stinhtrang = dtr[9].ToString();
+            smakv = dtr["MAKHO"].ToString();
+            sdiachi = dtr["DIACHI"].ToString();
+
+            ssodtB = dtr["SDTB"].ToString();
+            ssodtDD = dtr["DTDD"].ToString();
+            snguoilienhe = dtr["NGUOILH"].ToString();
+            sfax = dtr["FAX"].ToString();
+            sghichu = dtr["GHICHU"].ToString();
+            stinhtrang = dtr["TINHTRANG"].ToString();
         }
 
         private void barNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
