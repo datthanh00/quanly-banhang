@@ -304,7 +304,7 @@ namespace WindowsFormsApplication1
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             colMAKH.Text = LamVN.MAKH.ToString();
             colTENKH.Text = LamVN.TENKH.ToString();
-            colMAKV.Text = LamVN.TENKV.ToString();
+          
             colSOTK.Text = LamVN.SOTAIKHOAN.ToString();
             colNGANHANG.Text = LamVN.NGANHANG.ToString();
             colMASOTHUE.Text = LamVN.MASOTHUE.ToString();
@@ -328,7 +328,7 @@ namespace WindowsFormsApplication1
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             colMAKH.Text = LamEL.MAKH.ToString();
             colTENKH.Text = LamEL.TENKH.ToString();
-            colMAKV.Text = LamEL.MAKV.ToString();
+            
             colSOTK.Text = LamEL.SOTAIKHOAN.ToString();
             colNGANHANG.Text = LamEL.NGANHANG.ToString();
             colMASOTHUE.Text = LamEL.MASOTHUE.ToString();

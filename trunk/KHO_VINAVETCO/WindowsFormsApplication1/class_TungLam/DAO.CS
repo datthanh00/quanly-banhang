@@ -324,7 +324,7 @@ namespace WindowsFormsApplication1
             if (dt.Rows.Count > 0)
                 return false;
 
-            SQL = "select COUNT(*) from KHO";
+            SQL = "select MAKHO from KHO";
             dt = getdata(SQL);
             if (dt.Rows.Count ==1)
                 return false;
@@ -631,7 +631,7 @@ namespace WindowsFormsApplication1
             /*List<MySqlParameter> sqlpa = new List<MySqlParameter>();
             return executeNonQuerya("KHO_getall", sqlpa);
              */
-            string SQL = "select 	MAKHO,MANV,TENKHO,DIACHI,SDTB,DTDD,NGUOILH,FAX,GHICHU,TINHTRANG from  KHO";
+            string SQL = "select 	MAKHO,TENKHO,DIACHI,SDTB,DTDD,NGUOILH,FAX,GHICHU,TINHTRANG from  KHO";
             return GET_DATA(SQL);
         }
 

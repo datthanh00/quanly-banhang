@@ -67,11 +67,6 @@
             this.dateTu = new DevExpress.XtraEditors.DateEdit();
             this.lbDen = new DevExpress.XtraEditors.LabelControl();
             this.lbTu = new DevExpress.XtraEditors.LabelControl();
-            this.pnThoiGian = new DevExpress.XtraEditors.PanelControl();
-            this.dateBD = new DevExpress.XtraEditors.DateEdit();
-            this.lbDen1 = new DevExpress.XtraEditors.LabelControl();
-            this.dateKetThuc = new DevExpress.XtraEditors.DateEdit();
-            this.lbtu1 = new DevExpress.XtraEditors.LabelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.btXuatDuLieu = new DevExpress.XtraEditors.SimpleButton();
             this.btXem = new DevExpress.XtraEditors.SimpleButton();
@@ -221,12 +216,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pnThoiGian)).BeginInit();
-            this.pnThoiGian.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBD.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBD.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).BeginInit();
             this.panel_info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -577,7 +566,6 @@
             // panelControl10
             // 
             this.panelControl10.Controls.Add(this.pnThangNam);
-            this.panelControl10.Controls.Add(this.pnThoiGian);
             this.panelControl10.Controls.Add(this.simpleButton2);
             this.panelControl10.Controls.Add(this.btXuatDuLieu);
             this.panelControl10.Controls.Add(this.btXem);
@@ -593,7 +581,7 @@
             this.pnThangNam.Controls.Add(this.dateTu);
             this.pnThangNam.Controls.Add(this.lbDen);
             this.pnThangNam.Controls.Add(this.lbTu);
-            this.pnThangNam.Location = new System.Drawing.Point(6, 2);
+            this.pnThangNam.Location = new System.Drawing.Point(8, 3);
             this.pnThangNam.Name = "pnThangNam";
             this.pnThangNam.Size = new System.Drawing.Size(325, 32);
             this.pnThangNam.TabIndex = 4;
@@ -650,61 +638,6 @@
             this.lbTu.Size = new System.Drawing.Size(13, 13);
             this.lbTu.TabIndex = 0;
             this.lbTu.Text = "Từ";
-            // 
-            // pnThoiGian
-            // 
-            this.pnThoiGian.Controls.Add(this.dateBD);
-            this.pnThoiGian.Controls.Add(this.lbDen1);
-            this.pnThoiGian.Controls.Add(this.dateKetThuc);
-            this.pnThoiGian.Controls.Add(this.lbtu1);
-            this.pnThoiGian.Location = new System.Drawing.Point(6, 4);
-            this.pnThoiGian.Name = "pnThoiGian";
-            this.pnThoiGian.Size = new System.Drawing.Size(306, 32);
-            this.pnThoiGian.TabIndex = 4;
-            // 
-            // dateBD
-            // 
-            this.dateBD.EditValue = null;
-            this.dateBD.Location = new System.Drawing.Point(31, 5);
-            this.dateBD.Name = "dateBD";
-            this.dateBD.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateBD.Properties.Mask.EditMask = global::Quanlykho.resEngLand.btHoaDonXuat;
-            this.dateBD.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.dateBD.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateBD.Size = new System.Drawing.Size(112, 20);
-            this.dateBD.TabIndex = 2;
-            // 
-            // lbDen1
-            // 
-            this.lbDen1.Location = new System.Drawing.Point(155, 16);
-            this.lbDen1.Name = "lbDen1";
-            this.lbDen1.Size = new System.Drawing.Size(20, 13);
-            this.lbDen1.TabIndex = 0;
-            this.lbDen1.Text = "Đến";
-            // 
-            // dateKetThuc
-            // 
-            this.dateKetThuc.EditValue = null;
-            this.dateKetThuc.Location = new System.Drawing.Point(186, 5);
-            this.dateKetThuc.Name = "dateKetThuc";
-            this.dateKetThuc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateKetThuc.Properties.Mask.EditMask = global::Quanlykho.resEngLand.btHoaDonXuat;
-            this.dateKetThuc.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.dateKetThuc.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateKetThuc.Size = new System.Drawing.Size(112, 20);
-            this.dateKetThuc.TabIndex = 2;
-            // 
-            // lbtu1
-            // 
-            this.lbtu1.Location = new System.Drawing.Point(9, 16);
-            this.lbtu1.Name = "lbtu1";
-            this.lbtu1.Size = new System.Drawing.Size(13, 13);
-            this.lbtu1.TabIndex = 0;
-            this.lbtu1.Text = "Từ";
             // 
             // simpleButton2
             // 
@@ -2083,13 +2016,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateDen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pnThoiGian)).EndInit();
-            this.pnThoiGian.ResumeLayout(false);
-            this.pnThoiGian.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBD.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateBD.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateKetThuc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_info)).EndInit();
             this.panel_info.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -2223,11 +2149,6 @@
         private DevExpress.XtraEditors.DateEdit dateTu;
         private DevExpress.XtraEditors.LabelControl lbDen;
         private DevExpress.XtraEditors.LabelControl lbTu;
-        private DevExpress.XtraEditors.PanelControl pnThoiGian;
-        private DevExpress.XtraEditors.DateEdit dateBD;
-        private DevExpress.XtraEditors.LabelControl lbDen1;
-        private DevExpress.XtraEditors.DateEdit dateKetThuc;
-        private DevExpress.XtraEditors.LabelControl lbtu1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton btXuatDuLieu;
         private DevExpress.XtraEditors.SimpleButton btXem;
