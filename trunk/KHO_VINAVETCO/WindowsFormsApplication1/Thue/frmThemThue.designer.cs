@@ -138,7 +138,7 @@
             this.txtsothue.Name = "txtsothue";
             this.txtsothue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtsothue.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txtsothue.Properties.Mask.EditMask = "n0";
             this.txtsothue.Size = new System.Drawing.Size(192, 20);
             this.txtsothue.TabIndex = 2;
             this.txtsothue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsothue_KeyPress);

@@ -231,7 +231,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 if (tblayno.Rows.Count > 0)
                 {
                     txtNo.Text = tblayno.Rows[0]["TIENNO"].ToString();
-                    TIENTRATRUOC = Convert.ToDouble(tblayno.Rows[0]["TIENTRATRUOC"].ToString());
+                    TIENTRATRUOC = Convert.ToInt64(tblayno.Rows[0]["TIENTRATRUOC"].ToString());
                 }
                 else
                 {
@@ -281,7 +281,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
                         dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                         dtoNCC.MAHDX = txtMaHD.Text;
-                        dtoNCC.CKTIEN = cktien.Value.ToString();
+                        dtoNCC.CKTIEN = Convert.ToInt64(cktien.Value).ToString();
                         if (cbotientra.Text == "")
                         {
                             cbotientra.Text = "0";
@@ -327,7 +327,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 XtraMessageBox.Show("bạn đã chọn thanh toán bằng tiền mặt nên số tiền trả phải lớn hơn 0");
                                 return;
                             }
-                            else if (Convert.ToDouble(txtthanhtien.Value) < Convert.ToDouble(dtoNCC.TIENDATRA))
+                            else if (Convert.ToInt64(txtthanhtien.Value) < Convert.ToInt64(dtoNCC.TIENDATRA))
                             {
                                 MessageBox.Show("Số tiền trả của bạn không thể lớn hơn số tiền trong hóa đơn");
                                 return;
@@ -975,7 +975,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num;
+                            Int64 total = Convert.ToInt64(Convert.ToInt64(dtr["SOLUONG"].ToString()) * Num);
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTHU"] = total.ToString();
                             gettotal();
@@ -995,7 +995,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         bool isNum = Double.TryParse(dtr["SOLUONG"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Convert.ToDouble(dtr["_DonGia"].ToString()) * Num;
+                            Int64 total =Convert.ToInt64(Convert.ToInt64(dtr["_DonGia"].ToString()) * Num);
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTHU"] = total.ToString();
                             gettotal();
@@ -1108,8 +1108,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
             }
             if (cbotientra.Text != "")
             {
-                thanhtien = Convert.ToDouble(txtthanhtien.Value);
-                tientra = Convert.ToDouble(cbotientra.Value);
+                thanhtien =Convert.ToInt64(txtthanhtien.Value);
+                tientra = Convert.ToInt64(cbotientra.Value);
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
@@ -1199,7 +1199,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 }
                 dtoNCC.TYPE = "1";
                 dtoNCC.GHICHU = txtghichu.Text;
-                dtoNCC.CKTIEN = cktien.Value.ToString();
+                dtoNCC.CKTIEN = Convert.ToInt64(cktien.Value).ToString();
                 dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                 dtoNCC.MANV = sMaNV;
 
@@ -1702,7 +1702,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cktien.Value = _cktien;
             if (cbotientra.Text != "")
             {
-                tientra = Convert.ToDouble(cbotientra.Value);
+                tientra = Convert.ToInt64(cbotientra.Value);
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
@@ -1726,7 +1726,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             txtthanhtien.Text = thanhtien.ToString();
             if (cbotientra.Text != "")
             {
-                tientra = Convert.ToDouble(cbotientra.Value);
+                tientra = Convert.ToInt64(cbotientra.Value);
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
@@ -1735,8 +1735,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void cbotientra_Validated(object sender, EventArgs e)
         {
-            thanhtien = Convert.ToDouble(txtthanhtien.Value);
-            tientra = Convert.ToDouble(cbotientra.Value);
+            thanhtien =Convert.ToInt64(txtthanhtien.Value);
+            tientra = Convert.ToInt64(cbotientra.Value);
             conlai = thanhtien - tientra;
             txtconLai.Text = conlai.ToString();
         }

@@ -286,7 +286,8 @@ namespace WindowsFormsApplication1
                 textEdit2.Text = sten;
 
                 sdiachi = dtr[2].ToString();
-                sngaysinh = String.Format("{0:d}", dtr[3]);
+                sngaysinh = dtr[3].ToString();
+                sngaysinh = sngaysinh.Substring(3,2) + "/" + sngaysinh.Substring(0,2) + "/" + sngaysinh.Substring(6,4);
                 sscmnd = dtr[4].ToString();
                 ssdt = dtr[5].ToString();
                 stinhtrang = dtr[6].ToString();

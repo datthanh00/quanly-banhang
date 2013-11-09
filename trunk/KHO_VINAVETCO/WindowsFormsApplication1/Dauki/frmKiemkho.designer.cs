@@ -111,12 +111,12 @@
             // 
             this.colsoluong.Caption = "SL Thực Tế";
             this.colsoluong.ColumnEdit = this.repositoryItemCalcEdit1;
-            this.colsoluong.DisplayFormat.FormatString = "{0:0,0}";
+            this.colsoluong.DisplayFormat.FormatString = "{0:0,0.##}";
             this.colsoluong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colsoluong.FieldName = "TONTT";
             this.colsoluong.Name = "colsoluong";
             this.colsoluong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colsoluong.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.colsoluong.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.colsoluong.SummaryItem.FieldName = "SOLUONGMH";
             this.colsoluong.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colsoluong.Visible = true;
@@ -374,13 +374,13 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "SL Sổ Sách";
-            this.gridColumn1.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn1.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn1.FieldName = "TONKHO";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn1.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn1.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn1.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 8;
@@ -389,13 +389,13 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Chênh Lệch";
-            this.gridColumn3.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn3.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn3.FieldName = "CHENHLECH";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn3.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn3.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn3.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 10;

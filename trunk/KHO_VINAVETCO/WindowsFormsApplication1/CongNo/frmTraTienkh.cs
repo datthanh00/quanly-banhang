@@ -53,7 +53,7 @@ namespace WindowsFormsApplication1
             {
                 txttenncc.Text = TENKH;
                 txtPC.Text = MaPC;
-                txtSoTienTra.Text = (-Convert.ToInt32(TIEN)).ToString();
+                txtSoTienTra.Text = (-Convert.ToInt64(TIEN)).ToString();
             }
           
         }
@@ -78,9 +78,9 @@ namespace WindowsFormsApplication1
                 dto.NhanVien = sMaNV;
                 dto.MaDoituong = MaKH;
                 dto.NgayChi = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
-                dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
+                dto.SoTienDaTra = Convert.ToInt64(txtSoTienTra.Value);
                 dto.Mahoadonnhap = txttenncc.Text;
-                //dto.SoTienDaTra = double.Parse(txtSoTienTra.Text);
+                //dto.SoTienDaTra = Int64.Parse(txtSoTienTra.Text);
                 if (dto.Mahoadonnhap=="CONGNODAUKY")
                 {
                     dto.Mahoadonnhap=MaKH;
@@ -97,7 +97,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                if (double.Parse(txtSoTienTra.Text) == 0)
+                if (Convert.ToInt64(txtSoTienTra.Value) == 0)
                 {
                     if (iNgonNgu == 0)
                     {
@@ -112,7 +112,7 @@ namespace WindowsFormsApplication1
                 dto.NhanVien = sMaNV;
                 dto.MaDoituong = MaKH;
                 dto.NgayChi = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
-                dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
+                dto.SoTienDaTra = Convert.ToInt64(txtSoTienTra.Value);
                 dto.Mahoadonnhap = txttenncc.Text;
                 if (dto.Mahoadonnhap=="CONGNODAUKY")
                 {
@@ -141,30 +141,25 @@ namespace WindowsFormsApplication1
                 barSTluu.Enabled = false;
                 vCapNhatSoTienNo();
             }
-      
-
         }
+
         private void vCapNhatSoTienNo()
         {
-            double bTienTra = double.Parse(txtSoTienTra.Text);
+            Int64 bTienTra = Convert.ToInt64(txtSoTienTra.Value);
         }
 
-
-        
         private void barSTluu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Luu();
+            this.Close();
         }
         
-
         public void loadVN()
         {
             iNgonNgu = 0;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             barSTluu.Caption = Tien_VN.barSTluu.ToString();
-      
             barIn.Caption = Tien_VN.barIn.ToString();
-           
             lbTratien.Text = Tien_VN.lbTratien.ToString();
             lbPC.Text = Tien_VN.lbPC.ToString();
             lbNgaylap.Text = Tien_VN.lbNgaylap.ToString();

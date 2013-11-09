@@ -392,7 +392,7 @@ namespace WindowsFormsApplication1
                     SLOHANG = dtr["LOHANG"].ToString();
 
                     SHSD = dtr["HANSUDUNG"].ToString();
-
+                    SHSD = SHSD.Substring(3, 2) + "/" + SHSD.Substring(0, 2) + "/" + SHSD.Substring(6, 4);
                     SSOLUONG = dtr["SOLUONGMH"].ToString();
                     SGIAMUA = dtr["GIAMUA"].ToString();
 

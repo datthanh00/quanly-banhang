@@ -119,13 +119,15 @@
             // 
             // cbhsd
             // 
-            this.cbhsd.EditValue = null;
+            this.cbhsd.EditValue = new System.DateTime(2015, 10, 1, 0, 0, 0, 0);
             this.cbhsd.Location = new System.Drawing.Point(97, 90);
             this.cbhsd.Name = "cbhsd";
             this.cbhsd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbhsd.Properties.Mask.EditMask = "";
-            this.cbhsd.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.cbhsd.Properties.EditFormat.FormatString = "dd/MM/yyyy";
+            this.cbhsd.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cbhsd.Properties.Mask.EditMask = "dd/MM/yyyy";
+            this.cbhsd.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.cbhsd.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.cbhsd.Size = new System.Drawing.Size(267, 20);

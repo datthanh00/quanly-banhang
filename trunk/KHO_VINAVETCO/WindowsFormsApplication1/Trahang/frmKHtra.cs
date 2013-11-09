@@ -263,7 +263,7 @@ namespace WindowsFormsApplication1.KHtra
                         dtoNCC.TENKH = cboTenKH.Text;
                         //dtoNCC.DIACHI = txtDiachi.Text;
                         //dtoNCC.SDT = txtSDT.Text;
-                        dtoNCC.CKTIEN = cktien.Value.ToString();
+                        dtoNCC.CKTIEN = Convert.ToInt64(cktien.Value).ToString();
                         
                         dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                         dtoNCC.MAHDX = txtMaHD.Text;
@@ -295,7 +295,7 @@ namespace WindowsFormsApplication1.KHtra
                                 XtraMessageBox.Show("bạn đã chọn thanh toán bằng tiền mặt nên số tiền trả phải lớn hơn 0");
                                 return;
                             }
-                            else if (Convert.ToDouble(txtthanhtien.Value) < Convert.ToDouble(dtoNCC.TIENDATRA))
+                            else if (Convert.ToInt64(txtthanhtien.Value) < Convert.ToInt64(dtoNCC.TIENDATRA))
                             {
                                 MessageBox.Show("Số tiền trả của bạn không thể lớn hơn số tiền trong hóa đơn");
                                 return;
@@ -953,7 +953,7 @@ namespace WindowsFormsApplication1.KHtra
                         bool isNum = Double.TryParse(dtr["SOLUONG"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Convert.ToDouble(dtr["DONGIA"].ToString()) * Num;
+                            Int64 total = Convert.ToInt64(Convert.ToInt64(dtr["DONGIA"].ToString()) * Num);
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTHU"] = total.ToString();
                             gettotal();
@@ -978,7 +978,7 @@ namespace WindowsFormsApplication1.KHtra
                         bool isNum = Double.TryParse(dtr["DONGIA"].ToString(), out Num);
                         if (isNum)
                         {
-                            Double total = Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num;
+                            Int64 total =Convert.ToInt64(Convert.ToInt64(dtr["SOLUONG"].ToString()) * Num);
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTHU"] = total.ToString();
                             gettotal();
@@ -1088,8 +1088,8 @@ namespace WindowsFormsApplication1.KHtra
             }
             if (cbotientra.Text != "")
             {
-                thanhtien = Convert.ToDouble(txtthanhtien.Value);
-                tientra = Convert.ToDouble(cbotientra.Value);
+                thanhtien =Convert.ToInt64(txtthanhtien.Value);
+                tientra = Convert.ToInt64(cbotientra.Value);
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
@@ -1194,7 +1194,7 @@ namespace WindowsFormsApplication1.KHtra
                 dtoNCC.TENKH = cboTenKH.Text;
                 //dtoNCC.DIACHI = txtDiachi.Text;
                 //dtoNCC.SDT = txtSDT.Text;
-                dtoNCC.CKTIEN = cktien.Value.ToString();
+                dtoNCC.CKTIEN = Convert.ToInt64(cktien.Value).ToString();
                 // dtoNCC.WEBSITE = txtWeb.Text;
                 dtoNCC.NGAYXUAT = DateTime.Now.ToString("yyy/MM/dd");
                 dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
@@ -1607,7 +1607,7 @@ namespace WindowsFormsApplication1.KHtra
             cktien.Value = _cktien;
             if (cbotientra.Text != "")
             {
-                tientra = Convert.ToDouble(cbotientra.Value);
+                tientra = Convert.ToInt64(cbotientra.Value);
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
@@ -1631,7 +1631,7 @@ namespace WindowsFormsApplication1.KHtra
             txtthanhtien.Text = thanhtien.ToString();
             if (cbotientra.Text != "")
             {
-                tientra = Convert.ToDouble(cbotientra.Value);
+                tientra = Convert.ToInt64(cbotientra.Value);
                 conlai = thanhtien - tientra;
                 txtconLai.Text = conlai.ToString();
             }
@@ -1640,8 +1640,8 @@ namespace WindowsFormsApplication1.KHtra
 
         private void cbotientra_Validated(object sender, EventArgs e)
         {
-            thanhtien = Convert.ToDouble(txtthanhtien.Value);
-            tientra = Convert.ToDouble(cbotientra.Value);
+            thanhtien =Convert.ToInt64(txtthanhtien.Value);
+            tientra = Convert.ToInt64(cbotientra.Value);
             conlai = thanhtien - tientra;
             txtconLai.Text = conlai.ToString();
         }

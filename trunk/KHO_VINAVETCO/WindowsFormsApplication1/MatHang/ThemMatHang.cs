@@ -222,13 +222,26 @@ namespace WindowsFormsApplication1
                         txtgiamua.Focus();
                         return;
                     }
+                    else if (Convert.ToInt64(txtgiamua.Value) <= 0)
+                    {
+                        XtraMessageBox.Show("giá mua không thể nhỏ hơn 0 ");
+                        txtgiamua.Focus();
+                        return;
+                    }
       
                     else if (calKLDVT.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng điền khối lượng theo đơn vị tính ");
-                        cbthue.Focus();
+                        calKLDVT.Focus();
                         return;
                     }
+                    else if (Convert.ToInt64(calKLDVT.Value)<=0)
+                    {
+                        XtraMessageBox.Show("Khối Lượng không thể nhỏ hơn 0 ");
+                        calKLDVT.Focus();
+                        return;
+                    }
+
 
 
                     else
@@ -253,10 +266,10 @@ namespace WindowsFormsApplication1
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MADVT = DVT;
-                            DTO.KLDVT = Convert.ToInt32(calKLDVT.Value).ToString();
+                            DTO.KLDVT = Convert.ToInt64(calKLDVT.Value).ToString();
                             DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
-                            DTO.GIAMUA= Convert.ToInt32(txtgiamua.Value).ToString();
+                            DTO.GIAMUA= Convert.ToInt64(txtgiamua.Value).ToString();
                             DTO.LOHANG = PublicVariable.LOHANG;
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
@@ -283,13 +296,13 @@ namespace WindowsFormsApplication1
                             DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
                             DTO.MANCC = MANCC;
                             DTO.MADVT = DVT;
-                            DTO.KLDVT = Convert.ToInt32(calKLDVT.Value).ToString();
+                            DTO.KLDVT = Convert.ToInt64(calKLDVT.Value).ToString();
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.LOHANG = "TONDAU";
                             DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
-                            DTO.GIAMUA = Convert.ToInt32(txtgiamua.Value).ToString();
+                            DTO.GIAMUA = Convert.ToInt64(txtgiamua.Value).ToString();
                     
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";
@@ -345,12 +358,12 @@ namespace WindowsFormsApplication1
                             DTO.MATH = MASOTHUE;
                             DTO.MANCC = MANCC;
                             DTO.MADVT = DVT;
-                            DTO.KLDVT = Convert.ToInt32(calKLDVT.Value).ToString();
+                            DTO.KLDVT = Convert.ToInt64(calKLDVT.Value).ToString();
                             DTO.TENMH = txtTenMH.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
-                            DTO.GIAMUA = Convert.ToInt32(txtgiamua.Value).ToString();
+                            DTO.GIAMUA = Convert.ToInt64(txtgiamua.Value).ToString();
                             DTO.LOHANG = "TONDAU";
 
                             DTO.MOTA = txtmota.Text;
@@ -380,13 +393,13 @@ namespace WindowsFormsApplication1
                             DTO.MATH = MASOTHUE;
                             DTO.MANCC = MANCC;
                             DTO.MADVT = DVT;
-                            DTO.KLDVT = Convert.ToInt32(calKLDVT.Value).ToString();
+                            DTO.KLDVT = Convert.ToInt64(calKLDVT.Value).ToString();
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
                             DTO.LOHANG = "TONDAU";
                             DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
-                            DTO.GIAMUA = Convert.ToInt32(txtgiamua.Value).ToString();
+                            DTO.GIAMUA = Convert.ToInt64(txtgiamua.Value).ToString();
                  
                             DTO.MOTA = txtmota.Text;
                             DTO.TINHTRANG = "True";

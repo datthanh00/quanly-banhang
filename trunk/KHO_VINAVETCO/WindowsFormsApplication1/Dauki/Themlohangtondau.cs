@@ -106,22 +106,36 @@ namespace WindowsFormsApplication1
                 txtlohang.Focus();
                 return;
             }
-            else if (cbhsd.Text == "")
+            else if (cbhsd.Text == "" || cbhsd.Text == "0001/01/01")
             {
                 XtraMessageBox.Show("Vui lòng Nhập Hạn Dùng");
                 cbmathang.Focus();
                 return;
             }
+         
 
             else if (txtsoluong.Text == "")
             {
                 XtraMessageBox.Show("Vui lòng điền Số lượng ");
                 txtsoluong.Focus();
                 return;
-            }else if (txtgiamua.Text == "")
+            }
+            else if (Convert.ToInt64(txtsoluong.Value) < 0)
+            {
+                MessageBox.Show("Số lượng phải lớn hơn hoặc bằng 0");
+                txtsoluong.Value = 0;
+                return;
+            }
+            else if (txtgiamua.Text == "")
             {
                 XtraMessageBox.Show("Vui lòng điền giá mua ");
                 txtgiamua.Focus();
+                return;
+            }
+            else if (Convert.ToInt64(txtgiamua.Value) < 0)
+            {
+                MessageBox.Show("Giá Mua phải lớn hơn hoặc bằng 0");
+                txtgiamua.Value = 0;
                 return;
             }
             
@@ -130,8 +144,8 @@ namespace WindowsFormsApplication1
             dto.LOHANG = SLOHANG;
             dto.HSD = cbhsd.Text;
             dto.HSD = dto.HSD.Substring(6, 4) + "/" + dto.HSD.Substring(3, 2) + "/" + dto.HSD.Substring(0, 2);
-            dto.SOLUONGMH =txtsoluong.Value.ToString();
-            dto.GIAMUA = txtgiamua.Value.ToString();
+            dto.SOLUONGMH =Convert.ToDecimal(txtsoluong.Value).ToString();
+            dto.GIAMUA = Convert.ToInt64(txtgiamua.Value).ToString();
             
             double TONKHO=0, TONDAUMIN=0;
             DataTable DT1;

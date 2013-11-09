@@ -117,11 +117,17 @@ namespace WindowsFormsApplication1
 
                 if (e.Column.FieldName.ToString() == "GIABAN")
                 {
-                    Double THANHTIEN1=0;
+                    Int64 THANHTIEN1=0;
                     try
                     {
 
-                     THANHTIEN1 = (Convert.ToInt32(dtr["GIABAN"].ToString())) * (Convert.ToDouble(dtr["SOLUONGMH"].ToString()));
+                     THANHTIEN1 = Convert.ToInt64((Convert.ToInt64(dtr["GIABAN"].ToString())) * (Convert.ToDouble(dtr["SOLUONGMH"].ToString())));
+                     if (Convert.ToInt64(dtr["GIABAN"].ToString()) < 0)
+                     {
+                         MessageBox.Show("Giá bán phải lớn hơn hoặc bằng 0");
+                         dtr["GIABAN"] = "0";
+                         return;
+                     }
                     }catch(Exception ex)
                     {
                         MessageBox.Show("Giá bán phải là số nguyên" + ex.ToString());
@@ -129,7 +135,7 @@ namespace WindowsFormsApplication1
                         return;
                     }
 
-                    dtr["THANHTIEN"] = Convert.ToInt32(THANHTIEN1).ToString();
+                    dtr["THANHTIEN"] = Convert.ToInt64(THANHTIEN1).ToString();
                 }
 
             }
