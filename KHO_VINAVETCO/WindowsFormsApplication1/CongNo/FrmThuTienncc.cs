@@ -34,6 +34,7 @@ namespace WindowsFormsApplication1
         private void barSTluu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Luu();
+            this.Close();
         }
 
         private void FrmThuTien_Load(object sender, EventArgs e)
@@ -61,7 +62,7 @@ namespace WindowsFormsApplication1
                 txtenkh.Text = TENNCC;
                 txtPT.Text = MaPT;
 
-                txtSoTienTra.Text =(-Convert.ToInt32(TIEN)).ToString();
+                txtSoTienTra.Text = (-Convert.ToInt64(TIEN)).ToString();
             }
          
         }
@@ -86,7 +87,7 @@ namespace WindowsFormsApplication1
                 dto.MaDoituong = Mancc;
                 dto.NgayThu = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
                 dto.Mahoadonxuat = txtenkh.Text;
-                dto.SoTienDaTra = double.Parse(txtSoTienTra.Text);
+                dto.SoTienDaTra = Convert.ToInt64(txtSoTienTra.Value);
                 if (dto.Mahoadonxuat == "CONGNODAUKY")
                 {
                     dto.Mahoadonxuat = Mancc;
@@ -112,7 +113,7 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                if (double.Parse(txtSoTienTra.Text) == 0)
+                if (Convert.ToInt64(txtSoTienTra.Value) == 0)
                 {
                     if (iNgonNgu == 0)
                     {
@@ -127,7 +128,7 @@ namespace WindowsFormsApplication1
                 dto.NhanVien = sMaNV;
                 dto.MaDoituong = Mancc;
                 dto.NgayThu = DateTime.Parse(dtNgayThu.Value.ToShortDateString());
-                dto.SoTienDaTra = long.Parse(string.Format("{0:0}", double.Parse(txtSoTienTra.Text)));
+                dto.SoTienDaTra = Convert.ToInt64(txtSoTienTra.Value);
                 dto.Mahoadonxuat = txtenkh.Text;
 
                 if (dto.Mahoadonxuat == "CONGNODAUKY")
@@ -163,7 +164,7 @@ namespace WindowsFormsApplication1
         private void vCapNhatSoTienNo()
         {
 
-            double bTienTra = double.Parse(txtSoTienTra.Text);
+            Int64 bTienTra = Convert.ToInt64(txtSoTienTra.Value);
     
         }
 
@@ -175,11 +176,7 @@ namespace WindowsFormsApplication1
                 {
                     txtSoTienTra.Text = "0";
                 }
-                else
-                {
-                    txtSoTienTra.Text = string.Format("{0:N0}", double.Parse(txtSoTienTra.Text));
-                    txtSoTienTra.SelectionStart = txtSoTienTra.Text.Length;
-                }
+                
             }
             catch (Exception ex) { XtraMessageBox.Show(ex.Message); }
         }

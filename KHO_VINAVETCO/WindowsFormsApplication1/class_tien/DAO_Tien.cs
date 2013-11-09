@@ -98,7 +98,7 @@ namespace WindowsFormsApplication1
         {
             Provider pv = new Provider();
             string IDNHAP = getIDNHAP();
-            string SQL = "INSERT INTO PHIEUTHU (MAPT,MANV,NGAYTHU,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPE)"
+            string SQL = "INSERT INTO PHIEUTHU (MAPT,MANV,NGAYTHU,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY)"
             + " VALUES('" + dto.MaPhieuThu + "', '" + dto.NhanVien + "',convert(varchar,getDate(),101),'" + dto.SoTienDaTra + "','" + PublicVariable.MAKHO+ "','" + dto.MaDoituong + "','"+IDNHAP+"',3)";
             pv.executeNonQuery(SQL);
 
@@ -266,7 +266,7 @@ namespace WindowsFormsApplication1
         {
             Provider pv = new Provider();
             string IDNHAP = getIDNHAP();
-            string SQL = "INSERT INTO PHIEUCHI (MAPC,MANV,NGAYCHI,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPE)   VALUES('" + dto.MaPhieuChi + "', '" + dto.NhanVien + "',convert(varchar,getDate(),101),'" + dto.SoTienDaTra + "','" + PublicVariable.MAKHO + "','" + dto.MaDoituong + "','" + IDNHAP + "',3)";
+            string SQL = "INSERT INTO PHIEUCHI (MAPC,MANV,NGAYCHI,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY)   VALUES('" + dto.MaPhieuChi + "', '" + dto.NhanVien + "',convert(varchar,getDate(),101),'" + dto.SoTienDaTra + "','" + PublicVariable.MAKHO + "','" + dto.MaDoituong + "','" + IDNHAP + "',3)";
             pv.executeNonQuery(SQL);
             SQL = "";
             SQL = SQL + "\r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO- " + dto.SoTienDaTra + " WHERE MANCC='" + dto.MaDoituong + "' ";

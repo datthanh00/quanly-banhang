@@ -37,7 +37,6 @@
             this.lbTienno = new DevExpress.XtraEditors.LabelControl();
             this.lbTratien = new DevExpress.XtraEditors.LabelControl();
             this.txttenncc = new DevExpress.XtraEditors.TextEdit();
-            this.txtSoTienNo = new DevExpress.XtraEditors.TextEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSTluu = new DevExpress.XtraBars.BarButtonItem();
@@ -50,19 +49,21 @@
             this.txtPC = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dtNgayThu = new System.Windows.Forms.DateTimePicker();
             this.txtSoTienTra = new DevExpress.XtraEditors.CalcEdit();
+            this.txtSoTienNo = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupCtInFo)).BeginInit();
             this.groupCtInFo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txttenncc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienTra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupCtInFo
             // 
             this.groupCtInFo.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.groupCtInFo.Appearance.Options.UseBackColor = true;
+            this.groupCtInFo.Controls.Add(this.txtSoTienNo);
             this.groupCtInFo.Controls.Add(this.labelControl1);
             this.groupCtInFo.Controls.Add(this.lbNV);
             this.groupCtInFo.Controls.Add(this.lbNgaylap);
@@ -70,7 +71,6 @@
             this.groupCtInFo.Controls.Add(this.lbTienno);
             this.groupCtInFo.Controls.Add(this.lbTratien);
             this.groupCtInFo.Controls.Add(this.txttenncc);
-            this.groupCtInFo.Controls.Add(this.txtSoTienNo);
             this.groupCtInFo.Controls.Add(this.txtNV);
             this.groupCtInFo.Controls.Add(this.txtPC);
             this.groupCtInFo.Controls.Add(this.dtNgayThu);
@@ -140,23 +140,6 @@
             this.txttenncc.Properties.ReadOnly = true;
             this.txttenncc.Size = new System.Drawing.Size(351, 20);
             this.txttenncc.TabIndex = 46;
-            // 
-            // txtSoTienNo
-            // 
-            this.txtSoTienNo.Enabled = false;
-            this.txtSoTienNo.Location = new System.Drawing.Point(131, 107);
-            this.txtSoTienNo.MenuManager = this.barManager1;
-            this.txtSoTienNo.Name = "txtSoTienNo";
-            this.txtSoTienNo.Properties.DisplayFormat.FormatString = "{0:0,0}";
-            this.txtSoTienNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtSoTienNo.Properties.EditFormat.FormatString = "{0:0,0}";
-            this.txtSoTienNo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtSoTienNo.Properties.Mask.EditMask = "n0";
-            this.txtSoTienNo.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtSoTienNo.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtSoTienNo.Properties.ReadOnly = true;
-            this.txtSoTienNo.Size = new System.Drawing.Size(246, 20);
-            this.txtSoTienNo.TabIndex = 46;
             // 
             // barManager1
             // 
@@ -273,9 +256,26 @@
             this.txtSoTienTra.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtSoTienTra.Properties.Mask.EditMask = "n0";
             this.txtSoTienTra.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtSoTienTra.Size = new System.Drawing.Size(246, 20);
+            this.txtSoTienTra.Size = new System.Drawing.Size(252, 20);
             this.txtSoTienTra.TabIndex = 44;
-            this.txtSoTienTra.TextChanged += new System.EventHandler(this.txtSoTienTra_TextChanged_1);
+ 
+            // 
+            // txtSoTienNo
+            // 
+            this.txtSoTienNo.Location = new System.Drawing.Point(131, 108);
+            this.txtSoTienNo.MenuManager = this.barManager1;
+            this.txtSoTienNo.Name = "txtSoTienNo";
+            this.txtSoTienNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtSoTienNo.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.txtSoTienNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoTienNo.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.txtSoTienNo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoTienNo.Properties.Mask.EditMask = "n0";
+            this.txtSoTienNo.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtSoTienNo.Properties.ReadOnly = true;
+            this.txtSoTienNo.Size = new System.Drawing.Size(252, 20);
+            this.txtSoTienNo.TabIndex = 49;
             // 
             // frmTraTien
             // 
@@ -295,10 +295,10 @@
             this.groupCtInFo.ResumeLayout(false);
             this.groupCtInFo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txttenncc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienTra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -319,12 +319,12 @@
         private DevExpress.XtraEditors.TextEdit txtNV;
         private DevExpress.XtraEditors.CalcEdit txtSoTienTra;
         private DevExpress.XtraEditors.TextEdit txttenncc;
-        private DevExpress.XtraEditors.TextEdit txtSoTienNo;
         private DevExpress.XtraEditors.LabelControl lbPC;
         private DevExpress.XtraEditors.LabelControl lbTienno;
         private DevExpress.XtraEditors.LabelControl lbTratien;
         private DevExpress.XtraEditors.LabelControl lbNgaylap;
         private DevExpress.XtraEditors.LabelControl lbNV;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.CalcEdit txtSoTienNo;
     }
 }

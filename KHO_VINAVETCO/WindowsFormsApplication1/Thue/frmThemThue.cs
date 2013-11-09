@@ -45,11 +45,18 @@ namespace WindowsFormsApplication1
                         txtsothue.Focus();
                         return;
                     }
+                    else if (Convert.ToInt64(txtsothue.Value) < 0)
+                    {
+                        MessageBox.Show("Số Thuế phải lớn hơn hoặc bằng 0");
+                        txtsothue.Value = 0;
+                        return;
+                    }
+
                     if (kiemtra == 1)
                     {
                         loadma();
                         DTO.MATH = txtma.Text;
-                        DTO.SOTHUE = txtsothue.Text;
+                        DTO.SOTHUE = Convert.ToInt64(txtsothue.Value).ToString();
                         try
                         {
                             CTL.INSERTTHUE(DTO);
@@ -66,7 +73,7 @@ namespace WindowsFormsApplication1
                     {
 
                         DTO.MATH = txtma.Text;
-                        DTO.SOTHUE = txtsothue.Text;
+                        DTO.SOTHUE = Convert.ToInt64(txtsothue.Value).ToString();
 
                         CTL.UPDATETHUE(DTO);
                         XtraMessageBox.Show("Bạn Đã Sửa Thành Công");
@@ -84,7 +91,7 @@ namespace WindowsFormsApplication1
                     {
                         loadma();
                         DTO.MATH = txtma.Text;
-                        DTO.SOTHUE = txtsothue.Text;
+                        DTO.SOTHUE = Convert.ToInt64(txtsothue.Text).ToString();
                         try
                         {
                             CTL.INSERTTHUE(DTO);
@@ -101,7 +108,7 @@ namespace WindowsFormsApplication1
                     {
 
                         DTO.MATH = txtma.Text;
-                        DTO.SOTHUE = txtsothue.Text;
+                        DTO.SOTHUE = Convert.ToInt64(txtsothue.Text).ToString();
 
                         CTL.UPDATETHUE(DTO);
                         XtraMessageBox.Show("You Edited Successful");

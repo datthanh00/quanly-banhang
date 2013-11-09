@@ -81,28 +81,28 @@ namespace WindowsFormsApplication1
                 string MADOITUONG= gridView3.GetFocusedRowCellValue("MADOITUONG").ToString();
                 if (isthem)
                 {
-                    SQL = "\r\nGO\r\n INSERT INTO [TIENTRATRUOC]([MADOITUONG],[SOTIEN],[NGAY],[MAKHO])  VALUES  ('" + MADOITUONG + "'," + cbotientra.Value + ",convert(varchar,GETDATE(),101),'"+PublicVariable.MAKHO+"')";
+                    SQL = "\r\nGO\r\n INSERT INTO [TIENTRATRUOC]([MADOITUONG],[SOTIEN],[NGAY],[MAKHO])  VALUES  ('" + MADOITUONG + "'," + Convert.ToInt64(cbotientra.Value).ToString() + ",convert(varchar,GETDATE(),101),'"+PublicVariable.MAKHO+"')";
                     if (Checkkh.Checked == true)
                     {
-                        SQL = SQL + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC + " + cbotientra.Value + " WHERE MAKH='" + MADOITUONG + "'";
+                        SQL = SQL + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC + " + Convert.ToInt64(cbotientra.Value).ToString() + " WHERE MAKH='" + MADOITUONG + "'";
                     }
                     else
                     {
-                        SQL = SQL + "\r\nGO\r\n UPDATE NHACUNGCAP SET TIENTRATRUOC=TIENTRATRUOC + " + cbotientra.Value + " WHERE MANCC='" + MADOITUONG + "'";
+                        SQL = SQL + "\r\nGO\r\n UPDATE NHACUNGCAP SET TIENTRATRUOC=TIENTRATRUOC + " + Convert.ToInt64(cbotientra.Value).ToString() + " WHERE MANCC='" + MADOITUONG + "'";
                     }
                     ctlDOITUONG.EXCUTE_SQL2(SQL);
                     MessageBox.Show("bạn đã Thêm thành công");
                 }
                 else
                 {
-                    SQL = "\r\nGO\r\n UPDATE  [TIENTRATRUOC] SET [SOTIEN]=" + cbotientra.Value + " WHERE ID=" + ID;
+                    SQL = "\r\nGO\r\n UPDATE  [TIENTRATRUOC] SET [SOTIEN]=" + Convert.ToInt64(cbotientra.Value).ToString() + " WHERE ID=" + ID;
                     if (Checkkh.Checked == true)
                     {
-                        SQL = SQL + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC -" + SOTIEN + " + " + cbotientra.Value + " WHERE MAKH='" + MADOITUONG + "'";
+                        SQL = SQL + "\r\nGO\r\n UPDATE KHACHHANG SET TIENTRATRUOC=TIENTRATRUOC -" + SOTIEN + " + " + Convert.ToInt64(cbotientra.Value).ToString() + " WHERE MAKH='" + MADOITUONG + "'";
                     }
                     else
                     {
-                        SQL = SQL + "\r\nGO\r\n UPDATE NHACUNGCAP SET TIENTRATRUOC=TIENTRATRUOC  -" + SOTIEN + " + " + cbotientra.Value + " WHERE MANCC='" + MADOITUONG + "'";
+                        SQL = SQL + "\r\nGO\r\n UPDATE NHACUNGCAP SET TIENTRATRUOC=TIENTRATRUOC  -" + SOTIEN + " + " + Convert.ToInt64(cbotientra.Value).ToString() + " WHERE MANCC='" + MADOITUONG + "'";
                     }
                     ctlDOITUONG.EXCUTE_SQL2(SQL);
                     MessageBox.Show("bạn đã Sửa thành công");

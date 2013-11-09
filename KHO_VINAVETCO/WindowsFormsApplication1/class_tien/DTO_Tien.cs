@@ -45,7 +45,7 @@ namespace WindowsFormsApplication1
         protected string sMaDoituong;
         protected string sNhanVien;
         protected DateTime dNgayChi;
-        protected double dSoTienDaTra;
+        protected Int64 dSoTienDaTra;
         private string sMahoadonnhap;
 
         public string Mahoadonnhap
@@ -60,7 +60,7 @@ namespace WindowsFormsApplication1
         public string NhanVien { get { return sNhanVien; } set { sNhanVien = value; } }
         public DateTime NgayChi { get { return dNgayChi; } set { dNgayChi = value; } }
         
-        public double SoTienDaTra { get { return dSoTienDaTra; } set { dSoTienDaTra = value; } }
+        public Int64  SoTienDaTra { get { return dSoTienDaTra; } set { dSoTienDaTra = value; } }
     }
     #endregion
     #region CLASSPHIEUCHI
@@ -77,13 +77,13 @@ namespace WindowsFormsApplication1
             get { return sMahoadonxuat; }
             set { sMahoadonxuat = value; }
         }
-        protected double dSoTienDaTra;
+        protected Int64 dSoTienDaTra;
 
         public string MaPhieuThu { get { return sMaPhieuThu; } set { sMaPhieuThu = value; } }
         public string MaDoituong { get { return sMaDoituong; } set { sMaDoituong = value; } }
         public string NhanVien { get { return sNhanVien; } set { sNhanVien = value; } }
         public DateTime NgayThu { get { return dNgayThu; } set { dNgayThu = value; } }
-        public double SoTienDaTra { get { return dSoTienDaTra; } set { dSoTienDaTra = value; } }
+        public Int64 SoTienDaTra { get { return dSoTienDaTra; } set { dSoTienDaTra = value; } }
     }
     #endregion
     #region THEMPHIEUTHU
