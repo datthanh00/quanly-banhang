@@ -399,9 +399,9 @@
             // controlContainer1
             // 
             this.controlContainer1.Controls.Add(this.navBarControl1);
-            this.controlContainer1.Location = new System.Drawing.Point(3, 24);
+            this.controlContainer1.Location = new System.Drawing.Point(3, 25);
             this.controlContainer1.Name = "controlContainer1";
-            this.controlContainer1.Size = new System.Drawing.Size(139, 174);
+            this.controlContainer1.Size = new System.Drawing.Size(139, 173);
             this.controlContainer1.TabIndex = 0;
             // 
             // navBarControl1
@@ -419,7 +419,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(139, 174);
+            this.navBarControl1.Size = new System.Drawing.Size(139, 173);
             this.navBarControl1.TabIndex = 2;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -483,9 +483,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.panelControl6);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(139, 293);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(139, 292);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // panelControl6
@@ -494,17 +494,17 @@
             this.panelControl6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl6.Location = new System.Drawing.Point(0, 0);
             this.panelControl6.Name = "panelControl6";
-            this.panelControl6.Size = new System.Drawing.Size(139, 293);
+            this.panelControl6.Size = new System.Drawing.Size(139, 292);
             this.panelControl6.TabIndex = 0;
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(3, 3);
+            this.gridControl2.Location = new System.Drawing.Point(2, 2);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.MenuManager = this.barManager1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(133, 287);
+            this.gridControl2.Size = new System.Drawing.Size(135, 288);
             this.gridControl2.TabIndex = 19;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -584,9 +584,9 @@
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.panelControl10);
-            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(1111, 42);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(1111, 41);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // panelControl10
@@ -708,9 +708,9 @@
             // 
             this.groupControl1.Controls.Add(this.panelControl5);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(3, 3);
+            this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1111, 161);
+            this.groupControl1.Size = new System.Drawing.Size(1113, 163);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông Tin Hóa Đơn";
             // 
@@ -744,9 +744,9 @@
             this.panelControl5.Controls.Add(this.labelControl3);
             this.panelControl5.Controls.Add(this.cboTenKH);
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl5.Location = new System.Drawing.Point(2, 21);
+            this.panelControl5.Location = new System.Drawing.Point(2, 22);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1107, 138);
+            this.panelControl5.Size = new System.Drawing.Size(1109, 139);
             this.panelControl5.TabIndex = 127;
             // 
             // txtconLai
@@ -805,7 +805,7 @@
             this.CheckCongNo.Properties.Caption = "Công Nợ";
             this.CheckCongNo.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
             this.CheckCongNo.Properties.RadioGroupIndex = 1;
-            this.CheckCongNo.Size = new System.Drawing.Size(64, 18);
+            this.CheckCongNo.Size = new System.Drawing.Size(64, 19);
             this.CheckCongNo.TabIndex = 6;
             this.CheckCongNo.CheckedChanged += new System.EventHandler(this.CheckCongNo_CheckedChanged);
             // 
@@ -828,7 +828,7 @@
             this.CheckGoiDau.Properties.Caption = "Tiền Thanh Toán Trước";
             this.CheckGoiDau.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
             this.CheckGoiDau.Properties.RadioGroupIndex = 1;
-            this.CheckGoiDau.Size = new System.Drawing.Size(140, 18);
+            this.CheckGoiDau.Size = new System.Drawing.Size(140, 19);
             this.CheckGoiDau.TabIndex = 5;
             this.CheckGoiDau.TabStop = false;
             this.CheckGoiDau.CheckedChanged += new System.EventHandler(this.CheckGoiDau_CheckedChanged);
@@ -860,7 +860,7 @@
             this.CheckTienmat.Properties.Caption = "Tiền Mặt";
             this.CheckTienmat.Properties.CheckStyle = DevExpress.XtraEditors.Controls.CheckStyles.Radio;
             this.CheckTienmat.Properties.RadioGroupIndex = 1;
-            this.CheckTienmat.Size = new System.Drawing.Size(66, 18);
+            this.CheckTienmat.Size = new System.Drawing.Size(66, 19);
             this.CheckTienmat.TabIndex = 4;
             this.CheckTienmat.TabStop = false;
             this.CheckTienmat.CheckedChanged += new System.EventHandler(this.CheckTienmat_CheckedChanged);
@@ -1064,7 +1064,7 @@
             this.gridControl1.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControl1.EmbeddedNavigator.Buttons.Edit.ImageIndex = 0;
             this.gridControl1.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControl1.Location = new System.Drawing.Point(3, 3);
+            this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridCTHOADON;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1075,7 +1075,7 @@
             this.repositoryItemLookUpEdit1,
             this.Grid_sanpham,
             this.repositoryItemTextEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1056, 105);
+            this.gridControl1.Size = new System.Drawing.Size(1058, 107);
             this.gridControl1.TabIndex = 7;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridCTHOADON});
@@ -1171,8 +1171,6 @@
             // repositoryItemTextEdit3
             // 
             this.repositoryItemTextEdit3.AutoHeight = false;
-            this.repositoryItemTextEdit3.DisplayFormat.FormatString = "n2";
-            this.repositoryItemTextEdit3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.repositoryItemTextEdit3.Mask.EditMask = "n2";
             this.repositoryItemTextEdit3.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.repositoryItemTextEdit3.Name = "repositoryItemTextEdit3";
@@ -1199,6 +1197,7 @@
             // gridColumn51
             // 
             this.gridColumn51.Caption = "Khuyến Mãi";
+            this.gridColumn51.ColumnEdit = this.repositoryItemTextEdit3;
             this.gridColumn51.DisplayFormat.FormatString = "{0:0,0.##}";
             this.gridColumn51.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn51.FieldName = "KMAI";
@@ -1371,7 +1370,7 @@
             this.gridControl3.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.gridControl3.EmbeddedNavigator.Buttons.Edit.ImageIndex = 0;
             this.gridControl3.EmbeddedNavigator.Buttons.EndEdit.Visible = false;
-            this.gridControl3.Location = new System.Drawing.Point(3, 3);
+            this.gridControl3.Location = new System.Drawing.Point(2, 2);
             this.gridControl3.MainView = this.gridViewTONGXUAT;
             this.gridControl3.Name = "gridControl3";
             this.gridControl3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -1382,7 +1381,7 @@
             this.repositoryItemLookUpEdit3,
             this.repositoryItemGridLookUpEdit1,
             this.repositoryItemComboBox2});
-            this.gridControl3.Size = new System.Drawing.Size(1055, 101);
+            this.gridControl3.Size = new System.Drawing.Size(1057, 103);
             this.gridControl3.TabIndex = 19;
             this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTONGXUAT,

@@ -270,6 +270,7 @@
             this.gridView1.PreviewFieldName = "Báo Cáo Doanh Thu";
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coltennhomhang, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // gridColumn3
             // 

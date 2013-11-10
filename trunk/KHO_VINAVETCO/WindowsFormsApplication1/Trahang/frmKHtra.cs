@@ -155,16 +155,11 @@ namespace WindowsFormsApplication1.KHtra
         public int iNgonNgu;
         public frmMain frm;
         public string sTenNV, sMaNV;
-        public string THEM, XOA, SUA, IN, XEM, STYPEMONEY, MAHDXOA;
+        public string STYPEMONEY, MAHDXOA;
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
         {
-            XEM = PublicVariable.XEM;
-            THEM = PublicVariable.THEM;
-            XOA = PublicVariable.XOA;
-            SUA = PublicVariable.SUA;
-            IN = PublicVariable.IN;
 
-            if (XEM == "False")
+            if (PublicVariable.XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -374,7 +369,7 @@ namespace WindowsFormsApplication1.KHtra
 
                         if (isnhap)
                         {
-                            if (THEM == "False")
+                            if (PublicVariable.THEM == "False")
                             {
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
@@ -690,7 +685,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (IN == "False")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -740,7 +735,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (THEM == "False")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -807,7 +802,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            if (THEM == "False")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -920,7 +915,11 @@ namespace WindowsFormsApplication1.KHtra
                     if (e.Column.FieldName.ToString() == "TENMH")
                     {
                         string MAMH = dtr["TENMH"].ToString();
-                       
+                        if (MAMH == "")
+                        {
+                            MessageBox.Show("Hãy chọn một mặt hàng");
+                            return;
+                        }
                         for (int i = 0; i < gridCTHOADON.DataRowCount; i++)
                         {
                             DataRow dtr2 = gridCTHOADON.GetDataRow(i);
@@ -947,12 +946,41 @@ namespace WindowsFormsApplication1.KHtra
                         dtr["TIENTHU"] = "0";
                         dtr["LOHANG"] = "";
                     }
+                    else if (e.Column.FieldName.ToString() == "KMAI")
+                    {
+                        Double Num;
+                        bool isNum = Double.TryParse(dtr["KMAI"].ToString(), out Num);
+
+                        if (isNum)
+                        {
+                            if (Num < 0)
+                            {
+                                MessageBox.Show("Khuyến Mãi Phải lớn Hơn hoặc bằng 0");
+                                dtr["KMAI"] = "0";
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            dtr["KMAI"] = "0";
+                        }
+                    }
                     else if (e.Column.FieldName.ToString() == "SOLUONG")
                     {
                         Double Num;
                         bool isNum = Double.TryParse(dtr["SOLUONG"].ToString(), out Num);
                         if (isNum)
                         {
+                            if (Num < 0)
+                            {
+                                MessageBox.Show("Số Lượng Phải lớn Hơn hoặc bằng 0");
+                                dtr["SOLUONG"] = "0";
+                                dtr["_Total"] = "0";
+                                dtr["TIENTHU"] = "0";
+                                gettotal();
+                                return;
+                            }
+
                             Int64 total = Convert.ToInt64(Convert.ToInt64(dtr["DONGIA"].ToString()) * Num);
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTHU"] = total.ToString();
@@ -961,9 +989,9 @@ namespace WindowsFormsApplication1.KHtra
                         else
                         {
                             dtr["SOLUONG"] = "0";
-                            dtr["KMAI"] = "0";
                             dtr["_Total"] = "0";
                             dtr["TIENTHU"] = "0";
+                            gettotal();
                         }
                     }
                     else if (e.Column.FieldName.ToString() == "_HSD")
@@ -978,7 +1006,16 @@ namespace WindowsFormsApplication1.KHtra
                         bool isNum = Double.TryParse(dtr["DONGIA"].ToString(), out Num);
                         if (isNum)
                         {
-                            Int64 total =Convert.ToInt64(Convert.ToInt64(dtr["SOLUONG"].ToString()) * Num);
+                            if (Num < 0)
+                            {
+                                MessageBox.Show("Đơn giá Phải lớn Hơn hoặc bằng 0");
+                                dtr["DONGIA"] = "0";
+                                dtr["_Total"] = "0";
+                                dtr["TIENTHU"] = "0";
+                                gettotal();
+                                return;
+                            }
+                            Int64 total = Convert.ToInt64(Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num);
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTHU"] = total.ToString();
                             gettotal();
@@ -988,12 +1025,29 @@ namespace WindowsFormsApplication1.KHtra
                             dtr["DONGIA"] = "0";
                             dtr["_Total"] = "0";
                             dtr["TIENTHU"] = "0";
+                            gettotal();
                         }
 
                     }
                     else if (e.Column.FieldName.ToString() == "TIENTHU")
                     {
-
+                        Int64 Num;
+                        bool isNum = Int64.TryParse(dtr["TIENTHU"].ToString(), out Num);
+                        if (isNum)
+                        {
+                            Int64 tientrasl = Convert.ToInt64(dtr["TIENTHU"].ToString());
+                            if (tientrasl < 0)
+                            {
+                                MessageBox.Show("Tiền Trả Phải lớn Hơn hoặc bằng 0");
+                                dtr["TIENTHU"] = "0";
+                                gettotal();
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            dtr["TIENTHU"] = "0";
+                        }
                         gettotal();
                     }
                 }
@@ -1117,7 +1171,7 @@ namespace WindowsFormsApplication1.KHtra
 
                 if (sID != "")
                 {
-                    if (XOA == "False")
+                    if (PublicVariable.XOA == "False")
                     {
                         MessageBox.Show("KHÔNG CÓ QUYỀN XÓA ");
                         return;
@@ -1258,7 +1312,7 @@ namespace WindowsFormsApplication1.KHtra
             }
             Int64 _cktien = Convert.ToInt64(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
-            double thanhtien = tienchuack;
+            Int64 thanhtien = tienchuack;
             if (_cktien > 0 && thanhtien > 0)
             {
                 ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
@@ -1274,6 +1328,11 @@ namespace WindowsFormsApplication1.KHtra
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             btLuu.Enabled = false;
             isnhap = false;
@@ -1320,7 +1379,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SUA == "False")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1417,7 +1476,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void btXem_Click(object sender, EventArgs e)
         {
-            if (XEM == "False")
+            if (PublicVariable.XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1427,7 +1486,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (IN == "False")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1458,7 +1517,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
         {
-            if (IN == "False")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1561,7 +1620,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            if (IN == "False")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1600,8 +1659,15 @@ namespace WindowsFormsApplication1.KHtra
 
         private void ckphantram_Validated(object sender, EventArgs e)
         {
-            Double thanhtien = tienchuack;
-            Int64 _cktien = Convert.ToInt64(thanhtien * Convert.ToDouble(ckphantram.Value) / 100);
+            Int64 thanhtien = tienchuack;
+            Double _ckphantram = Convert.ToDouble(ckphantram.Value);
+            if (_ckphantram < 0)
+            {
+                MessageBox.Show("Chiết khấu không thể nhỏ hơn 0");
+                _ckphantram = 0;
+                ckphantram.Value = 0;
+            }
+            Int64 _cktien = Convert.ToInt64(thanhtien * _ckphantram / 100);
             thanhtien = thanhtien - _cktien;
             txtthanhtien.Text = thanhtien.ToString();
             cktien.Value = _cktien;
@@ -1615,7 +1681,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void cktien_Validated(object sender, EventArgs e)
         {
-            Double thanhtien = tienchuack;
+            Int64 thanhtien = tienchuack;
             Int64 _cktien = Convert.ToInt64(cktien.Value);
             if (_cktien > 0 && thanhtien > 0)
             {
@@ -1623,6 +1689,7 @@ namespace WindowsFormsApplication1.KHtra
             }
             else
             {
+                MessageBox.Show("Chiết khấu tiền hoặc thành tiền không thể nhỏ hơn 0");
                 ckphantram.Value = 0;
                 cktien.Value = 0;
 
@@ -1648,7 +1715,7 @@ namespace WindowsFormsApplication1.KHtra
 
         private void xoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (XOA == "False")
+            if (PublicVariable.XOA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN XÓA");
                 return;

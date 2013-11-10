@@ -20,6 +20,9 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
+        public frmMain frm;
+        public delegate void _deDongTab();
+        public _deDongTab deDongTab;
         public string sMaNV;
         DataTable tb = new DataTable();
         public int iNgonNgu;
@@ -165,7 +168,7 @@ namespace WindowsFormsApplication1
 
         private void btDong_Click(object sender, EventArgs e)
         {
-            this.Close();
+            deDongTab();
         }
 
         private void txtPassCu_Validating(object sender, CancelEventArgs e)
@@ -176,6 +179,11 @@ namespace WindowsFormsApplication1
         private void txtPassMoi_Validating(object sender, CancelEventArgs e)
         {
             Validate_EmptyStringRule(sender as BaseEdit);
+        }
+
+        private void frmDoiMatKhau_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
     }
 }

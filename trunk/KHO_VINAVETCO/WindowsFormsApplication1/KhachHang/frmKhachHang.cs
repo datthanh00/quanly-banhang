@@ -359,6 +359,12 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             LOADDANHSACHKHACHHANG();
         }
 

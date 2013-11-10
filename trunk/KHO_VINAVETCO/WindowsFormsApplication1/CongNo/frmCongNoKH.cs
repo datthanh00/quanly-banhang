@@ -204,6 +204,12 @@ namespace WindowsFormsApplication1
         }
         private void btneditthutien_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             if (STYPE != null)
             {
                 if (STYPE == "PT")
@@ -320,7 +326,7 @@ namespace WindowsFormsApplication1
 
         private void gridcongnokh_DoubleClick(object sender, EventArgs e)
         {
-            if (PublicVariable.THEM == "False")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -588,6 +594,12 @@ namespace WindowsFormsApplication1
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
             int ingaykt = Convert.ToInt32(dateDen1.Text.Substring(6, 4)) + Convert.ToInt32(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen1.Text.Substring(0, 2)) * 365;
             if (ingaybd > ingaykt)
@@ -656,6 +668,12 @@ namespace WindowsFormsApplication1
 
         private void simpleButton3_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             int ingaybd = Convert.ToInt32(dateTu.Text.Substring(6, 4)) + Convert.ToInt32(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu.Text.Substring(0, 2)) * 365;
             int ingaykt = Convert.ToInt32(dateDen.Text.Substring(6, 4)) + Convert.ToInt32(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen.Text.Substring(0, 2)) * 365;
             if (ingaybd > ingaykt)

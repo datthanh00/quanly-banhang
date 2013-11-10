@@ -28,7 +28,9 @@ namespace WindowsFormsApplication1
       
         clDTO dto = new clDTO();
         clCtrl ctr = new clCtrl();
-        //byte[] imageData; 
+        public frmMain frm;
+        public delegate void _deDongTab();
+        public _deDongTab deDongTab;
         Loadingggg ld = new Loadingggg();
         private void simpleButton1_Click(object sender, EventArgs e)
         {
@@ -37,16 +39,12 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            if (PublicVariable.THEM == "False")
+            if (PublicVariable.TATCA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            if (PublicVariable.XOA == "False")
-            {
-                MessageBox.Show("KHÔNG CÓ QUYỀN ");
-                return;
-            }
+       
 
             try
             {
@@ -218,6 +216,11 @@ namespace WindowsFormsApplication1
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmThongTin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            deDongTab();
         }
     }
 }

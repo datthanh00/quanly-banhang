@@ -370,6 +370,12 @@ namespace WindowsFormsApplication1
 
         private void barNapLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             loadkhuvuc();
         }
 
@@ -386,6 +392,16 @@ namespace WindowsFormsApplication1
         private void frmKhuVuc_FormClosed(object sender, FormClosedEventArgs e)
         {
             deDongTab();
+        }
+
+        private void barNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (PublicVariable.THEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
         }
 
     }

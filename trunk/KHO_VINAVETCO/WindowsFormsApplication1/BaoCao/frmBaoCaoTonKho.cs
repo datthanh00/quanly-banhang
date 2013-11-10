@@ -392,6 +392,11 @@ namespace WindowsFormsApplication1
 
         private void btXem_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             try
             {
 
@@ -531,6 +536,11 @@ namespace WindowsFormsApplication1
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             try
             {
                 string NGAYBD = dateTu.Text;

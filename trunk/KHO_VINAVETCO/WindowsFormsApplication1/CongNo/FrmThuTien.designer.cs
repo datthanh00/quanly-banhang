@@ -38,6 +38,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.groupCtInFo = new DevExpress.XtraEditors.GroupControl();
+            this.txtSoTienNo = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lbNV = new DevExpress.XtraEditors.LabelControl();
             this.lbNgaylap = new DevExpress.XtraEditors.LabelControl();
@@ -49,14 +50,13 @@
             this.txtPT = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dtNgayThu = new System.Windows.Forms.DateTimePicker();
             this.txtSoTienTra = new DevExpress.XtraEditors.CalcEdit();
-            this.txtSoTienNo = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupCtInFo)).BeginInit();
             this.groupCtInFo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtenkh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienTra.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -101,6 +101,7 @@
             this.barIn.Glyph = global::Quanlykho.Properties.Resources.printer1;
             this.barIn.Id = 2;
             this.barIn.Name = "barIn";
+            this.barIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barIn_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -148,6 +149,23 @@
             this.groupCtInFo.Size = new System.Drawing.Size(832, 154);
             this.groupCtInFo.TabIndex = 5;
             this.groupCtInFo.Text = "Thông tin thu tiền";
+            // 
+            // txtSoTienNo
+            // 
+            this.txtSoTienNo.Location = new System.Drawing.Point(101, 100);
+            this.txtSoTienNo.MenuManager = this.barManager1;
+            this.txtSoTienNo.Name = "txtSoTienNo";
+            this.txtSoTienNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtSoTienNo.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.txtSoTienNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoTienNo.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.txtSoTienNo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoTienNo.Properties.Mask.EditMask = "n0";
+            this.txtSoTienNo.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtSoTienNo.Properties.ReadOnly = true;
+            this.txtSoTienNo.Size = new System.Drawing.Size(252, 20);
+            this.txtSoTienNo.TabIndex = 2;
             // 
             // labelControl1
             // 
@@ -257,24 +275,6 @@
             this.txtSoTienTra.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtSoTienTra.Size = new System.Drawing.Size(252, 20);
             this.txtSoTienTra.TabIndex = 1;
-
-            // 
-            // txtSoTienNo
-            // 
-            this.txtSoTienNo.Location = new System.Drawing.Point(101, 100);
-            this.txtSoTienNo.MenuManager = this.barManager1;
-            this.txtSoTienNo.Name = "txtSoTienNo";
-            this.txtSoTienNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtSoTienNo.Properties.DisplayFormat.FormatString = "{0:0,0}";
-            this.txtSoTienNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtSoTienNo.Properties.EditFormat.FormatString = "{0:0,0}";
-            this.txtSoTienNo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtSoTienNo.Properties.Mask.EditMask = "n0";
-            this.txtSoTienNo.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtSoTienNo.Properties.ReadOnly = true;
-            this.txtSoTienNo.Size = new System.Drawing.Size(252, 20);
-            this.txtSoTienNo.TabIndex = 2;
             // 
             // FrmThuTien
             // 
@@ -294,10 +294,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupCtInFo)).EndInit();
             this.groupCtInFo.ResumeLayout(false);
             this.groupCtInFo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtenkh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienTra.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

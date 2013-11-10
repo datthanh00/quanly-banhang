@@ -291,6 +291,12 @@ namespace WindowsFormsApplication1
 
         private void simpleButton11_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             int loaihienthi = cbloaihienthi.SelectedIndex;
             if (loaihienthi == 1)
             {

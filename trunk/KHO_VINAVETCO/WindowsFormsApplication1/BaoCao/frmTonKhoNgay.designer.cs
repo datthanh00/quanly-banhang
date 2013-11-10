@@ -100,6 +100,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -119,6 +120,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // bandedGridColumn13
@@ -138,6 +140,7 @@
             // bandedGridColumn11
             // 
             this.bandedGridColumn11.Caption = "Tồn Thực Tế";
+            this.bandedGridColumn11.ColumnEdit = this.repositoryItemTextEdit1;
             this.bandedGridColumn11.DisplayFormat.FormatString = "{0:0,0.##}";
             this.bandedGridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn11.FieldName = "TONTT";
@@ -362,6 +365,8 @@
             this.gridControl2.Location = new System.Drawing.Point(2, 2);
             this.gridControl2.MainView = this.advBandedGridView3;
             this.gridControl2.Name = "gridControl2";
+            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit1});
             this.gridControl2.Size = new System.Drawing.Size(1282, 393);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.UseEmbeddedNavigator = true;
@@ -436,7 +441,7 @@
             this.advBandedGridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.bandedGridColumn3, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colHangHoa, DevExpress.Data.ColumnSortOrder.Ascending)});
-            this.advBandedGridView3.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.advBandedGridView3_CellValueChanged_1);
+            this.advBandedGridView3.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.advBandedGridView3_CellValueChanged);
             // 
             // gridThongTin
             // 
@@ -887,6 +892,13 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Mask.EditMask = "n2";
+            this.repositoryItemTextEdit1.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
             // frmTonKhoNgay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -919,6 +931,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -996,6 +1009,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridNhapKho;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridXuatKho;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridCuoiKi;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHOTableAdapter kHOTableAdapter;
     }
 }

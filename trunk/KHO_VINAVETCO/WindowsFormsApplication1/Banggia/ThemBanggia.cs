@@ -53,7 +53,11 @@ namespace WindowsFormsApplication1
        
         private void btLuu_Click(object sender, EventArgs e)
         {
-            
+            if (PublicVariable.SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             if (isthem)
             {
                 loadma();

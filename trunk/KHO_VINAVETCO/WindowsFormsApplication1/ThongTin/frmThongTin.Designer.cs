@@ -294,11 +294,12 @@
             this.Controls.Add(this.lbDT);
             this.Controls.Add(this.lbDiaChi);
             this.Controls.Add(this.lbTenDonVI);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmThongTin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thông tin công ty";
             this.Load += new System.EventHandler(this.frmThongTin_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmThongTin_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.txtten.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();

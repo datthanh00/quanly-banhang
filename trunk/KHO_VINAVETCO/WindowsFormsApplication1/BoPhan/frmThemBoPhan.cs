@@ -33,6 +33,12 @@ namespace WindowsFormsApplication1
         public int kiemtra;
         private void btluu_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             try
             {
                 if (iNgonNgu == 0)

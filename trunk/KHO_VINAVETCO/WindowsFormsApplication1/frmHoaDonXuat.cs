@@ -174,17 +174,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
         public int iNgonNgu;
         public frmMain frm;
         public string sTenNV, sMaNV;
-        public string THEM, XOA, SUA, IN, XEM, STYPEMONEY, MAHDXOA;
+        public string  STYPEMONEY, MAHDXOA;
     
         private void frmHoaDonXuat_Load(object sender, EventArgs e)
         {
-            XEM = PublicVariable.XEM;
-            THEM = PublicVariable.THEM;
-            XOA = PublicVariable.XOA;
-            SUA = PublicVariable.SUA;
-            IN = PublicVariable.IN;
-
-            if (XEM == "False")
+            if (PublicVariable.XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 this.Close();
@@ -351,7 +345,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         }
                         if (isnhap)
                         {
-                            if (THEM == "False")
+                            if (PublicVariable.THEM == "False")
                             {
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
@@ -419,7 +413,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         }
                         else
                         {
-                            if (SUA == "False")
+                            if (PublicVariable.SUA == "False")
                             {
                                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                                 return;
@@ -692,7 +686,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            if (IN == "False")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -746,7 +740,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (THEM == "False")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -813,7 +807,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void linkTaoMoi_Clicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            if (THEM == "False")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -936,6 +930,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         string SMAMH = dtr["TENMH"].ToString();
                         int index = SMAMH.IndexOf("_");
                         string MAMH = SMAMH.Substring(0,index);
+                        if (MAMH == "")
+                        {
+                            MessageBox.Show("Hãy chọn một mặt hàng");
+                            return;
+                        }
                         string LOHANG = SMAMH.Substring(index+1,SMAMH.Length-index-1);
                         for (int i = 0; i < gridCTHOADON.DataRowCount; i++)
                         {
@@ -975,7 +974,16 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
                         if (isNum)
                         {
-                            Int64 total = Convert.ToInt64(Convert.ToInt64(dtr["SOLUONG"].ToString()) * Num);
+                            if (Num < 0)
+                            {
+                                MessageBox.Show("Đơn giá Phải lớn Hơn hoặc bằng 0");
+                                dtr["_DonGia"] = "0";
+                                dtr["_Total"] = "0";
+                                dtr["TIENTHU"] = "0";
+                                gettotal();
+                                return;
+                            }
+                            Int64 total = Convert.ToInt64(Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num);
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTHU"] = total.ToString();
                             gettotal();
@@ -985,8 +993,28 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             dtr["_DonGia"] = "0";
                             dtr["_Total"] = "0";
                             dtr["TIENTHU"] = "0";
+                            gettotal();
                         }
 
+                    }
+                    else if (e.Column.FieldName.ToString() == "KMAI")
+                    {
+                        Double Num;
+                        bool isNum = Double.TryParse(dtr["KMAI"].ToString(), out Num);
+
+                        if (isNum)
+                        {
+                            if (Num < 0)
+                            {
+                                MessageBox.Show("Khuyến Mãi Phải lớn Hơn hoặc bằng 0");
+                                dtr["KMAI"] = "0";
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            dtr["KMAI"] = "0";
+                        }
                     }
                     else if (e.Column.FieldName.ToString() == "SOLUONG")
            
@@ -995,7 +1023,17 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         bool isNum = Double.TryParse(dtr["SOLUONG"].ToString(), out Num);
                         if (isNum)
                         {
-                            Int64 total =Convert.ToInt64(Convert.ToInt64(dtr["_DonGia"].ToString()) * Num);
+                            if (Num < 0)
+                            {
+                                MessageBox.Show("Số Lượng Phải lớn Hơn hoặc bằng 0");
+                                dtr["SOLUONG"] = "0";
+                                dtr["_Total"] = "0";
+                                dtr["TIENTHU"] = "0";
+                                gettotal();
+                                return;
+                            }
+
+                            Int64 total = Convert.ToInt64(Convert.ToInt64(dtr["_DonGia"].ToString()) * Num);
                             dtr["_Total"] = total.ToString();
                             dtr["TIENTHU"] = total.ToString();
                             gettotal();
@@ -1003,15 +1041,31 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         else
                         {
                             dtr["SOLUONG"] = "0";
-                            dtr["KMAI"] = "0";
                             dtr["_Total"] = "0";
                             dtr["TIENTHU"] = "0";
+                            gettotal();
                         }
                     }
                     else if (e.Column.FieldName.ToString() == "TIENTHU")
                     {
-                        
-                            gettotal();
+                        Int64 Num;
+                        bool isNum = Int64.TryParse(dtr["TIENTHU"].ToString(), out Num);
+                        if (isNum)
+                        {
+                            Int64 tientrasl = Convert.ToInt64(dtr["TIENTHU"].ToString());
+                            if (tientrasl < 0)
+                            {
+                                MessageBox.Show("Tiền Trả Phải lớn Hơn hoặc bằng 0");
+                                dtr["TIENTHU"] = "0";
+                                gettotal();
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            dtr["TIENTHU"] = "0";
+                        }
+                        gettotal();
                     }
                 }
         }
@@ -1138,7 +1192,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
                 if (sID != "")
                 {
-                    if (XOA == "False")
+                    if (PublicVariable.XOA == "False")
                     {
                         MessageBox.Show("KHÔNG CÓ QUYỀN XÓA ");
                         return;
@@ -1252,7 +1306,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             
             Int64 _cktien = Convert.ToInt64(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
-            double thanhtien = tienchuack;
+            Int64 thanhtien = tienchuack;
             if (_cktien > 0 && thanhtien > 0)
             {
                 ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
@@ -1267,6 +1321,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         private void ViewToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
             PublicVariable.SQL_XUAT = "";
             btLuu.Enabled = false;
@@ -1314,7 +1373,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void EditToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SUA == "False")
+            if (PublicVariable.SUA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1411,7 +1470,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            if (IN == "False")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1445,12 +1504,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void btXuatDuLieu_Click(object sender, EventArgs e)
         {
-            if (IN == "False")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-
 
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "Excel|*.xls";
@@ -1466,6 +1524,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void linkIntheomathang_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.IN == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             ArrayList array1 = new ArrayList();
             if (gridControl3.MainView == gridViewPHIEUXUAT)
             {
@@ -1554,6 +1617,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         private void btXem_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             loadgrid();
         }
         private void dateTu_KeyPress(object sender, KeyPressEventArgs e)
@@ -1579,7 +1647,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            if (IN == "False")
+            if (PublicVariable.IN == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -1596,6 +1664,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             PublicVariable.SQL_XUAT = "";
             Load_panel_create();
             loadgridCTHOADON();
@@ -1614,6 +1687,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
+
             PublicVariable.SQL_XUAT = "";
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -1646,6 +1720,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void simpleButton5_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.THEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             PublicVariable.SQL_XUAT = "";
             string thanhtien="0";
             if(txtthanhtien.Text!=""){
@@ -1695,8 +1775,15 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void ckphantram_Validated(object sender, EventArgs e)
         {
-            Double thanhtien = tienchuack;
-            Int64 _cktien = Convert.ToInt64(thanhtien * Convert.ToDouble(ckphantram.Value) / 100);
+            Int64 thanhtien = tienchuack;
+            Double _ckphantram = Convert.ToDouble(ckphantram.Value);
+            if (_ckphantram < 0)
+            {
+                MessageBox.Show("Chiết khấu không thể nhỏ hơn 0");
+                _ckphantram = 0;
+                ckphantram.Value = 0;
+            }
+            Int64 _cktien = Convert.ToInt64(thanhtien * _ckphantram / 100);
             thanhtien = thanhtien - _cktien;
             txtthanhtien.Text = thanhtien.ToString();
             cktien.Value = _cktien;
@@ -1710,7 +1797,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void cktien_Validated(object sender, EventArgs e)
         {
-            Double thanhtien = tienchuack;
+            Int64 thanhtien = tienchuack;
             Int64 _cktien = Convert.ToInt64(cktien.Value);
             if (_cktien > 0 && thanhtien > 0)
             {
@@ -1718,6 +1805,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             }
             else
             {
+                MessageBox.Show("Chiết khấu tiền hoặc thành tiền không thể nhỏ hơn 0");
                 ckphantram.Value = 0;
                 cktien.Value = 0;
 
@@ -1745,7 +1833,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void xoaStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (XOA == "False")
+            if (PublicVariable.XOA == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN XÓA");
                 return;

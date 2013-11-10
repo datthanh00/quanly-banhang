@@ -81,6 +81,11 @@ namespace WindowsFormsApplication1
             }
             if (Nhan == "Sua")
             {
+                if (PublicVariable.SUA == "False")
+                {
+                    MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                    return;
+                }
                 PHIEUTHU_DTO dto = new PHIEUTHU_DTO();
                 dto.MaPhieuThu = txtPT.Text;
                 dto.NhanVien = sMaNV;
@@ -113,6 +118,11 @@ namespace WindowsFormsApplication1
             }
             else
             {
+                if (PublicVariable.THEM == "False")
+                {
+                    MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                    return;
+                }
                 if (Convert.ToInt64(txtSoTienTra.Value) == 0)
                 {
                     if (iNgonNgu == 0)
@@ -218,6 +228,15 @@ namespace WindowsFormsApplication1
         private void barstDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void barIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (PublicVariable.IN == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
         }
 
     }

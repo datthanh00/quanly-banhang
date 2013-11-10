@@ -185,6 +185,11 @@ namespace WindowsFormsApplication1
 
         private void simpleButton11_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
            string SQL="",HSD;
            CTL ctlNCC = new CTL();
 
@@ -372,8 +377,25 @@ namespace WindowsFormsApplication1
 
                 if (e.Column.FieldName.ToString() == "TONTT")
                 {
-
-                    dtr["CHENHLECH"] = (Convert.ToDouble(dtr["TONTT"].ToString()) - Convert.ToDouble(dtr["TONKHO"].ToString())).ToString();
+                    try
+                    {
+                        double tontt = Convert.ToDouble(dtr["TONTT"].ToString());
+                        if (tontt < 0)
+                        {
+                            MessageBox.Show("Tồn Thực tế không thể nhỏ hơn 0");
+                            dtr["TONTT"] = "0";
+                        }
+                        else
+                        {
+                            dtr["CHENHLECH"] = (Convert.ToDouble(dtr["TONTT"].ToString()) - Convert.ToDouble(dtr["TONKHO"].ToString())).ToString();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Tồn thực tế phải là số");
+                        dtr["TONTT"] = "0";
+                        return;
+                    }
                 }
 
             }

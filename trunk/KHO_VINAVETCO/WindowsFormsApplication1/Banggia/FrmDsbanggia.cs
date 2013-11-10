@@ -39,6 +39,12 @@ namespace WindowsFormsApplication1
 
         private void btnthem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PublicVariable.THEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             ThemBanggia themBG = new ThemBanggia();
             themBG.isthem = true;
             themBG.MABG = "";
@@ -48,6 +54,11 @@ namespace WindowsFormsApplication1
 
         private void barXóa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PublicVariable.XOA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
             {
                 return;
@@ -82,6 +93,11 @@ namespace WindowsFormsApplication1
 
         private void barsua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PublicVariable.SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             if(sMaBG=="")
             {
                 MessageBox.Show("Vui lòng chọn thông tin cần sửa");
