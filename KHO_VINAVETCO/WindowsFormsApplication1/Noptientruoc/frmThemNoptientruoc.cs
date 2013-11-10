@@ -79,6 +79,17 @@ namespace WindowsFormsApplication1
             {
                 string SQL = "";
                 string MADOITUONG= gridView3.GetFocusedRowCellValue("MADOITUONG").ToString();
+                Int64 tientra = Convert.ToInt64(cbotientra.Value);
+                if (tientra < 0)
+                {
+                    MessageBox.Show("Số tiền trả không được nhỏ hơn 0");
+                    return;
+                }
+                else if (cboTenNCC.Text == "")
+                {
+                    MessageBox.Show("Vui lòng chọn nhà cung cấp hoặc khách hàng");
+                    return;
+                }
                 if (isthem)
                 {
                     SQL = "\r\nGO\r\n INSERT INTO [TIENTRATRUOC]([MADOITUONG],[SOTIEN],[NGAY],[MAKHO])  VALUES  ('" + MADOITUONG + "'," + Convert.ToInt64(cbotientra.Value).ToString() + ",convert(varchar,GETDATE(),101),'"+PublicVariable.MAKHO+"')";

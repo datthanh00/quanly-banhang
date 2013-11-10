@@ -30,13 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupCtInFo = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.lbNV = new DevExpress.XtraEditors.LabelControl();
-            this.lbNgaylap = new DevExpress.XtraEditors.LabelControl();
-            this.lbPC = new DevExpress.XtraEditors.LabelControl();
-            this.lbTienno = new DevExpress.XtraEditors.LabelControl();
-            this.lbTratien = new DevExpress.XtraEditors.LabelControl();
-            this.txttenncc = new DevExpress.XtraEditors.TextEdit();
+            this.txtSoTienNo = new DevExpress.XtraEditors.CalcEdit();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barSTluu = new DevExpress.XtraBars.BarButtonItem();
@@ -45,18 +39,24 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.lbNV = new DevExpress.XtraEditors.LabelControl();
+            this.lbNgaylap = new DevExpress.XtraEditors.LabelControl();
+            this.lbPC = new DevExpress.XtraEditors.LabelControl();
+            this.lbTienno = new DevExpress.XtraEditors.LabelControl();
+            this.lbTratien = new DevExpress.XtraEditors.LabelControl();
+            this.txttenncc = new DevExpress.XtraEditors.TextEdit();
             this.txtNV = new DevExpress.XtraEditors.TextEdit();
             this.txtPC = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dtNgayThu = new System.Windows.Forms.DateTimePicker();
             this.txtSoTienTra = new DevExpress.XtraEditors.CalcEdit();
-            this.txtSoTienNo = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupCtInFo)).BeginInit();
             this.groupCtInFo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txttenncc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txttenncc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienTra.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupCtInFo
@@ -81,6 +81,91 @@
             this.groupCtInFo.Size = new System.Drawing.Size(829, 165);
             this.groupCtInFo.TabIndex = 6;
             this.groupCtInFo.Text = "Thông tin Chi tiền";
+            // 
+            // txtSoTienNo
+            // 
+            this.txtSoTienNo.Location = new System.Drawing.Point(131, 108);
+            this.txtSoTienNo.MenuManager = this.barManager1;
+            this.txtSoTienNo.Name = "txtSoTienNo";
+            this.txtSoTienNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtSoTienNo.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.txtSoTienNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoTienNo.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.txtSoTienNo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtSoTienNo.Properties.Mask.EditMask = "n0";
+            this.txtSoTienNo.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtSoTienNo.Properties.ReadOnly = true;
+            this.txtSoTienNo.Size = new System.Drawing.Size(252, 20);
+            this.txtSoTienNo.TabIndex = 49;
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar2});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barSTluu,
+            this.barIn});
+            this.barManager1.MainMenu = this.bar2;
+            this.barManager1.MaxItemId = 3;
+            // 
+            // bar2
+            // 
+            this.bar2.BarName = "Main menu";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barSTluu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barIn, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            this.bar2.OptionsBar.MultiLine = true;
+            this.bar2.OptionsBar.UseWholeRow = true;
+            this.bar2.Text = "Main menu";
+            // 
+            // barSTluu
+            // 
+            this.barSTluu.Caption = "Lưu";
+            this.barSTluu.Glyph = global::Quanlykho.Properties.Resources.save1;
+            this.barSTluu.Id = 0;
+            this.barSTluu.Name = "barSTluu";
+            this.barSTluu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSTluu_ItemClick);
+            // 
+            // barIn
+            // 
+            this.barIn.Caption = "In";
+            this.barIn.Glyph = global::Quanlykho.Properties.Resources.printer1;
+            this.barIn.Id = 2;
+            this.barIn.Name = "barIn";
+            this.barIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barIn_ItemClick);
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(829, 42);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 207);
+            this.barDockControlBottom.Size = new System.Drawing.Size(829, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 165);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(829, 42);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 165);
             // 
             // labelControl1
             // 
@@ -141,73 +226,6 @@
             this.txttenncc.Size = new System.Drawing.Size(351, 20);
             this.txttenncc.TabIndex = 46;
             // 
-            // barManager1
-            // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar2});
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barSTluu,
-            this.barIn});
-            this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 3;
-            // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barSTluu, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barIn, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
-            // 
-            // barSTluu
-            // 
-            this.barSTluu.Caption = "Lưu";
-            this.barSTluu.Glyph = global::Quanlykho.Properties.Resources.save1;
-            this.barSTluu.Id = 0;
-            this.barSTluu.Name = "barSTluu";
-            this.barSTluu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSTluu_ItemClick);
-            // 
-            // barIn
-            // 
-            this.barIn.Caption = "In";
-            this.barIn.Glyph = global::Quanlykho.Properties.Resources.printer1;
-            this.barIn.Id = 2;
-            this.barIn.Name = "barIn";
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(829, 42);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 207);
-            this.barDockControlBottom.Size = new System.Drawing.Size(829, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 42);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 165);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(829, 42);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 165);
-            // 
             // txtNV
             // 
             this.txtNV.Enabled = false;
@@ -258,24 +276,6 @@
             this.txtSoTienTra.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtSoTienTra.Size = new System.Drawing.Size(252, 20);
             this.txtSoTienTra.TabIndex = 44;
- 
-            // 
-            // txtSoTienNo
-            // 
-            this.txtSoTienNo.Location = new System.Drawing.Point(131, 108);
-            this.txtSoTienNo.MenuManager = this.barManager1;
-            this.txtSoTienNo.Name = "txtSoTienNo";
-            this.txtSoTienNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtSoTienNo.Properties.DisplayFormat.FormatString = "{0:0,0}";
-            this.txtSoTienNo.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtSoTienNo.Properties.EditFormat.FormatString = "{0:0,0}";
-            this.txtSoTienNo.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtSoTienNo.Properties.Mask.EditMask = "n0";
-            this.txtSoTienNo.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtSoTienNo.Properties.ReadOnly = true;
-            this.txtSoTienNo.Size = new System.Drawing.Size(252, 20);
-            this.txtSoTienNo.TabIndex = 49;
             // 
             // frmTraTien
             // 
@@ -294,11 +294,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupCtInFo)).EndInit();
             this.groupCtInFo.ResumeLayout(false);
             this.groupCtInFo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txttenncc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txttenncc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoTienTra.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoTienNo.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -414,6 +414,11 @@ namespace WindowsFormsApplication1
         
         private void simpleButton21_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            } 
             try
             {
 

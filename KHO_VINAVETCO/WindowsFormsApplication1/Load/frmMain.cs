@@ -272,13 +272,11 @@ namespace WindowsFormsApplication1
                     case "1":
                         if (PhanQuyen.Rows[i]["TRUYCAP"].ToString()=="True")
                         {
-                            
                             btNhapHang.Enabled= true;
                             break;
                         }
                         else
                         {
-                           
                             btNhapHang.Enabled = false;
                             break;
                         }
@@ -286,26 +284,29 @@ namespace WindowsFormsApplication1
                         if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btXuatHang.Enabled = true;
-                            barButtonItem1.Enabled = true;
-                            btnphanlo.Enabled = true;
+                           
                             break;
                         }
                         else
                         {
                             btXuatHang.Enabled = false;
-                            barButtonItem1.Enabled = false;
-                            btnphanlo.Enabled = false;
+                            
                             break;
                         }
                     case "3":
                         if (PhanQuyen.Rows[i]["TRUYCAP"].ToString() == "True")
                         {
                             btmathangthongkhe.Enabled = true;
+                            barButtonItem1.Enabled = true;
+                            btnphanlo.Enabled = true;
+
                             break;
                         }
                         else
                         {
                             btmathangthongkhe.Enabled = false;
+                            barButtonItem1.Enabled = false;
+                            btnphanlo.Enabled = false;
                             break;
                         }
                     case "4":
@@ -830,21 +831,7 @@ namespace WindowsFormsApplication1
             barThoiGian.Caption = DateTime.Now.ToString();
         }
 
-        private void btDoanhThu_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            SetPhanQuyen("9");
-            if (!checkOpenTabs("Báo Cáo Chi Phí - Doanh Thu"))
-            {
-                TabItem t = tabControl12.CreateTab("Báo Cáo Doanh Thu");
-                t.Name = "Doanhthu";
-                frmThongKeDoanhThu dt = new frmThongKeDoanhThu();
-                dt.TopLevel = false;
-                dt.Dock = DockStyle.Fill;
-                t.AttachedControl.Controls.Add(dt);
-                dt.Show();
-                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
-            }           
-        }
+
 
         
         private void btDangXuat_ItemClick(object sender, ItemClickEventArgs e)
@@ -855,18 +842,52 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem18_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetPhanQuyen2("21");
-            frmSaoLuu frmsaoluu = new frmSaoLuu();
-            frmsaoluu.iNgonNgu = iNgonNgu;
-            frmsaoluu.ShowDialog();
+            SetPhanQuyen("21");
+
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+            bKTraMoTab = true;
+            sTieuDe = "Sao Lưu";
+           
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "Saoluu";
+                frmSaoLuu dt = new frmSaoLuu();
+                dt.deDongTab = new frmSaoLuu._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.iNgonNgu = iNgonNgu;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            } ld.simpleCloseWait();
         }
 
         private void barButtonItem19_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetPhanQuyen2("22");
-            frmKhoiPhuc frm = new frmKhoiPhuc();
-            frm.iNgonNgu = iNgonNgu;
-            frm.ShowDialog();
+            SetPhanQuyen("22");
+
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+            bKTraMoTab = true;
+            sTieuDe = "Khôi Phục";
+
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "khoiphuc";
+                frmKhoiPhuc dt = new frmKhoiPhuc();
+                dt.deDongTab = new frmKhoiPhuc._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.iNgonNgu = iNgonNgu;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            } ld.simpleCloseWait();
         }
 
         private void barButtonItem12_ItemClick(object sender, ItemClickEventArgs e)
@@ -1449,10 +1470,29 @@ namespace WindowsFormsApplication1
 
         private void btThongTin_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetPhanQuyen2("25");
-            frmThongTin frm = new frmThongTin();
-            frm.iNgonNgu = iNgonNgu;
-            frm.ShowDialog();
+            SetPhanQuyen("25");
+
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            bKTraMoTab = true;
+            sTieuDe = "Thông tin công ty";
+
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "thongtincongty";
+                frmThongTin dt = new frmThongTin();
+                dt.deDongTab = new frmThongTin._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.iNgonNgu = iNgonNgu;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
         }
 
       
@@ -2039,11 +2079,30 @@ namespace WindowsFormsApplication1
 
         private void btDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
         {
-            SetPhanQuyen2("24");
-            frmDoiMatKhau frm = new frmDoiMatKhau();
-            frm.sMaNV = sManv;
-            frm.iNgonNgu = iNgonNgu;
-            frm.ShowDialog();
+            SetPhanQuyen("24");
+
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            //  bKTraMoTab = true;
+            sTieuDe = "Đổi mật Khẩu";
+
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "doimatkhau";
+                frmDoiMatKhau dt = new frmDoiMatKhau();
+                dt.deDongTab = new frmDoiMatKhau._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.sMaNV = sManv;
+                dt.iNgonNgu = iNgonNgu;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
         }
 
         private void btHuongDan_ItemClick(object sender, ItemClickEventArgs e)
@@ -2051,8 +2110,6 @@ namespace WindowsFormsApplication1
             Process notePad = new Process();
 
             notePad.StartInfo.FileName = "Help.chm";
-           
-
             notePad.Start();
         }
 
@@ -2206,11 +2263,7 @@ namespace WindowsFormsApplication1
 
         private void tabControl12_SelectedTabChanged(object sender, TabStripTabChangedEventArgs e)
         {
-           
-
             TabItem ti = tabControl12.SelectedTab as TabItem;
-
-
             int imacn = 1;
             if(ti!=null)
             switch (ti.Name)
@@ -2222,6 +2275,12 @@ namespace WindowsFormsApplication1
                     imacn = 2;
                     break;
                 case "TKMatHang":
+                    imacn = 3;
+                    break;
+                case "tonkhongay":
+                    imacn = 3;
+                    break;
+                case "tonphanlo":
                     imacn = 3;
                     break;
                 case "TraNCC":
@@ -2275,6 +2334,12 @@ namespace WindowsFormsApplication1
                 case "Thue":
                     imacn = 20;
                     break;
+                case "Saoluu":
+                    imacn = 21;
+                    break;
+                case "khoiphuc":
+                    imacn = 22;
+                    break;
                 case "PhanQuyen":
                     imacn = 23;
                     break;
@@ -2284,6 +2349,14 @@ namespace WindowsFormsApplication1
                 case "import_excell":
                     imacn = 23;
                     break;
+
+                case "doimatkhau":
+                    imacn = 24;
+                    break;
+                case "thongtincongty":
+                    imacn = 25;
+                    break;
+                    
                 case "BANGGIA":
                     imacn = 26;
                     break;
@@ -2332,7 +2405,7 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem1_ItemClick_2(object sender, ItemClickEventArgs e)
         {
-
+            SetPhanQuyen("3");
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
             bKTraMoTab = true;
@@ -2366,6 +2439,7 @@ namespace WindowsFormsApplication1
 
         private void btnphanlo_ItemClick(object sender, ItemClickEventArgs e)
         {
+            SetPhanQuyen("3");
             ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
 
             bKTraMoTab = true;
@@ -2525,8 +2599,26 @@ namespace WindowsFormsApplication1
         private void barButtonketso_ItemClick(object sender, ItemClickEventArgs e)
         {
             SetPhanQuyen("31");
-            frmKetso frmKetso1 = new frmKetso();
-            frmKetso1.ShowDialog();
+            ld.CreateWaitDialog();
+            ld.SetWaitDialogCaption("Đang tải dữ liệu - Vui Lòng Chờ");
+
+            bKTraMoTab = true;
+            sTieuDe = "Kết Sổ";
+
+            if (!checkOpenTabs(sTieuDe))
+            {
+                TabItem t = tabControl12.CreateTab(sTieuDe);
+                t.Name = "CHOTSO";
+                frmKetso dt = new frmKetso();
+                dt.deDongTab = new frmKetso._deDongTab(vDOngTab);
+                dt.frm = this;
+                dt.TopLevel = false;
+                dt.Dock = DockStyle.Fill;
+                t.AttachedControl.Controls.Add(dt);
+                dt.Show();
+                tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
+            }
+            ld.simpleCloseWait();
         }
 
         private void barButtonphaithudauky_ItemClick(object sender, ItemClickEventArgs e)

@@ -27,7 +27,7 @@ namespace WindowsFormsApplication1
         
         private void btThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (PublicVariable.XEM == "False")
+            if (PublicVariable.THEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
@@ -394,6 +394,11 @@ namespace WindowsFormsApplication1
 
         private void barNapLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             LOADNHACC();
         }
 

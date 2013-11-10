@@ -116,6 +116,36 @@ namespace WindowsFormsApplication1
             deDongTab();
         }
 
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            DataRow dtr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+
+            if (dtr != null)
+            {
+
+                if (e.Column.FieldName.ToString() == "NGAY")
+                {
+                    try
+                    {
+                        String NGAY =dtr["NGAY"].ToString();
+                        if (NGAY == "")
+                        {
+                            MessageBox.Show("NGÀY KHÔNG ĐƯỢC ĐỂ TRỐNG");
+                            dtr["NGAY"] = DateTime.Now.ToString("dd/MM/yyyy");
+                        }
+                        
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("NGÀY LỖI");
+                        dtr["NGAY"] = DateTime.Now.ToString("dd/MM/yyyy");
+                        return;
+                    }
+                }
+
+            }
+        }
+
     }
 }
         

@@ -99,9 +99,6 @@
             this.colsoluong.ColumnEdit = this.repositoryItemDateEdit1;
             this.colsoluong.FieldName = "NGAY";
             this.colsoluong.Name = "colsoluong";
-            this.colsoluong.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.colsoluong.SummaryItem.FieldName = "SOLUONGMH";
-            this.colsoluong.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colsoluong.Visible = true;
             this.colsoluong.VisibleIndex = 2;
             this.colsoluong.Width = 44;
@@ -276,6 +273,7 @@
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.PreviewFieldName = "Báo Cáo Doanh Thu";
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // ID
             // 

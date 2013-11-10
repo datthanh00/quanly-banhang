@@ -147,6 +147,7 @@
             this.barNhap.Glyph = global::Quanlykho.Properties.Resources.excel;
             this.barNhap.Id = 6;
             this.barNhap.Name = "barNhap";
+            this.barNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNhap_ItemClick);
             // 
             // barDockControlTop
             // 

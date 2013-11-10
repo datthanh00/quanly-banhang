@@ -92,6 +92,11 @@ namespace WindowsFormsApplication1
         public int kiemtra;
         private void btLuu_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.THEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
 
             if (cbmathang.Text == "")
             {

@@ -57,6 +57,11 @@ namespace WindowsFormsApplication1
 
         private void btdanhsach_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             FrmDsbanggia DSBG = new FrmDsbanggia();
 
             DSBG.ShowDialog();
@@ -77,6 +82,11 @@ namespace WindowsFormsApplication1
 
         private void btluu_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             if (XtraMessageBox.Show("Bạn có muốn lưu bảng giá này không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
             {
                 return;
@@ -130,7 +140,7 @@ namespace WindowsFormsApplication1
                      }
                     }catch(Exception ex)
                     {
-                        MessageBox.Show("Giá bán phải là số nguyên" + ex.ToString());
+                        MessageBox.Show("Giá bán phải là số nguyên");
                         dtr["GIABAN"] = "0";
                         return;
                     }

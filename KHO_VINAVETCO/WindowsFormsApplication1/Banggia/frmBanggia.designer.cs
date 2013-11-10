@@ -298,13 +298,13 @@
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 2);
+            this.gridControl2.Location = new System.Drawing.Point(3, 3);
             this.gridControl2.MainView = this.advBandedGridView2;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCalcEdit1,
             this.repositoryItemTextEdit1});
-            this.gridControl2.Size = new System.Drawing.Size(1282, 428);
+            this.gridControl2.Size = new System.Drawing.Size(1280, 426);
             this.gridControl2.TabIndex = 0;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {

@@ -260,6 +260,11 @@ namespace WindowsFormsApplication1
 
         private void btXem_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
            loadGird();
         }
 
@@ -391,6 +396,11 @@ namespace WindowsFormsApplication1
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            if (PublicVariable.SUA == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
             string NGAYBD = dateTu.Text;
             CTL ctlNCC = new CTL();
             string SQL="";
@@ -448,21 +458,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void advBandedGridView3_CellValueChanged(object sender, CellValueChangedEventArgs e)
-        {
-            DataRow dtr = advBandedGridView3.GetDataRow(advBandedGridView3.FocusedRowHandle);
 
-            if (dtr != null){
-                
-                    if (e.Column.FieldName.ToString() == "TONTT")
-                    {
-
-                        dtr["CHENHLECH"] = (Convert.ToDouble(dtr["TONTT"].ToString()) - Convert.ToDouble(dtr["TONCUOI"].ToString())).ToString();
-                    }
-                   
-                }
-                
-        }
 
         private void printableComponentLink1_CreateReportFooterArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
         {
@@ -486,21 +482,37 @@ namespace WindowsFormsApplication1
             e.Graph.DrawString(reportHeader, Color.Black, rec, BorderSide.None);
         }
 
-        private void advBandedGridView3_CellValueChanged_1(object sender, CellValueChangedEventArgs e)
+        private void advBandedGridView3_CellValueChanged(object sender, CellValueChangedEventArgs e)
         {
             DataRow dtr = advBandedGridView3.GetDataRow(advBandedGridView3.FocusedRowHandle);
 
             if (dtr != null)
             {
-
                 if (e.Column.FieldName.ToString() == "TONTT")
                 {
-
-                    dtr["CHENHLECH"] = (Convert.ToDouble(dtr["TONTT"].ToString()) - Convert.ToDouble(dtr["TONCUOI"].ToString())).ToString();
+                    try
+                    {
+                        double tontt = Convert.ToDouble(dtr["TONTT"].ToString());
+                        if (tontt < 0)
+                        {
+                            MessageBox.Show("Tồn Thực tế không thể nhỏ hơn 0");
+                            dtr["TONTT"] = "0";
+                        }
+                        else
+                        {
+                            dtr["CHENHLECH"] = (Convert.ToDouble(dtr["TONTT"].ToString()) - Convert.ToDouble(dtr["TONCUOI"].ToString())).ToString();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Tồn thực tế phải là số");
+                        dtr["TONTT"] = "0";
+                        return;
+                    }
                 }
-
             }
         }
+
 
         private void frmTonKhoNgay_FormClosed(object sender, FormClosedEventArgs e)
         {

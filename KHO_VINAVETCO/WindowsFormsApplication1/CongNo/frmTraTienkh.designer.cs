@@ -180,6 +180,7 @@
             this.barIn.Glyph = global::Quanlykho.Properties.Resources.printer1;
             this.barIn.Id = 2;
             this.barIn.Name = "barIn";
+            this.barIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barIn_ItemClick);
             // 
             // barDockControlTop
             // 

@@ -24,6 +24,12 @@ namespace WindowsFormsApplication1
 
         private void frmLog_Load(object sender, EventArgs e)
         {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+
             CTL ctl = new CTL();
             string SQL = "select * from log";
             DataTable dt= ctl.GETDATA(SQL);

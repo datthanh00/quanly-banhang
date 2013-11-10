@@ -215,6 +215,29 @@ namespace WindowsFormsApplication1
             deDongTab();
         }
 
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            DataRow dtr = gridView1.GetDataRow(gridView1.FocusedRowHandle);
+            if (dtr != null)
+            {
+                if (e.Column.FieldName.ToString() == "TONGTIENTRA")
+                {
+                    Int64 TONGTIENTRA = 0;
+                    try
+                    {
+                        TONGTIENTRA = Convert.ToInt64(dtr["TONGTIENTRA"].ToString());
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Công nợ phải là số nguyên");
+                        dtr["TONGTIENTRA"] = "0";
+                        return;
+                    }
+                }
+            }
+        }
+
+       
         
 
 

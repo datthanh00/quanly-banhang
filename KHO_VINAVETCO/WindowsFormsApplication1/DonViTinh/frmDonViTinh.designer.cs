@@ -122,6 +122,7 @@
             this.barNapLai.Glyph = global::Quanlykho.Properties.Resources.refresh;
             this.barNapLai.Id = 4;
             this.barNapLai.Name = "barNapLai";
+            this.barNapLai.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNapLai_ItemClick);
             // 
             // barIn
             // 
@@ -145,6 +146,7 @@
             this.barNhap.Glyph = global::Quanlykho.Properties.Resources.excel;
             this.barNhap.Id = 6;
             this.barNhap.Name = "barNhap";
+            this.barNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNhap_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -182,10 +184,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 3);
+            this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(809, 392);
+            this.gridControl1.Size = new System.Drawing.Size(811, 394);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
