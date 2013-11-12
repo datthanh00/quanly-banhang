@@ -147,7 +147,7 @@ namespace WindowsFormsApplication1.KHtra
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "MAMH";
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-
+            gridCTHOADON.BestFitColumns();
         }
 
         public delegate void _deDongTab();

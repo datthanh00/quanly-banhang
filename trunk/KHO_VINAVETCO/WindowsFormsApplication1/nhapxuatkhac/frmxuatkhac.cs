@@ -175,7 +175,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "LOHANG";
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-
+            gridCTHOADON.BestFitColumns();
 
             
         }

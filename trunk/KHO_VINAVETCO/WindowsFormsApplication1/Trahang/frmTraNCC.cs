@@ -250,6 +250,7 @@ namespace WindowsFormsApplication1
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "LOHANG";
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            gridCTHOADON.BestFitColumns();
         }
         public void loadgridNhacCungCap()
         {
@@ -893,6 +894,10 @@ namespace WindowsFormsApplication1
 
                     In rep = new In(dt, txtMANCC.Text, cboTenNCC.Text, cbotientra.Value.ToString(), txtconLai.Value.ToString(), txtthanhtien.Value.ToString(), cktien.Value.ToString(), txtMaHD.Text, ten);
                     rep.ShowPreviewDialog();
+                    gridCTHOADON.OptionsView.ColumnAutoWidth = true;
+                    // gridControl3.MainView = gridViewSANPHAMXUAT;
+                    // gridControl3.MainView = gridViewPHIEUXUAT;
+                    gridCTHOADON.RefreshData();
                 }
                 else
                 {

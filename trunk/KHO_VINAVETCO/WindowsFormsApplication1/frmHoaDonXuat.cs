@@ -166,7 +166,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             Grid_sanpham.ValueMember = "LOHANG";
            
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-
+            gridCTHOADON.BestFitColumns();
         }
 
         public delegate void _deDongTab();
@@ -916,6 +916,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             {
                 gridViewTONGXUAT.Columns["KHOILUONG"].Visible = false;
             }
+            gridViewTONGXUAT.ExpandAllGroups();
         }
 
         private void gridCTHOADON_CellValuedChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

@@ -289,6 +289,9 @@ namespace WindowsFormsApplication1
             condition1.Condition = FormatConditionEnum.Expression;
             condition1.Expression = "[ID] >0";
             gridCTHOADON.FormatConditions.Add(condition1);
+          //  gridCTHOADON.OptionsView.ColumnAutoWidth = false;
+           
+
 
           
         }
@@ -311,6 +314,8 @@ namespace WindowsFormsApplication1
             gridControl3.DataSource = TBS;
             gridViewHOADON.RefreshData();
             gridControl3.RefreshDataSource();
+          
+          //  gridViewHOADON.OptionsView.ColumnAutoWidth = false;
             gridViewHOADON.BestFitColumns();
             
         }
@@ -349,6 +354,8 @@ namespace WindowsFormsApplication1
                 gridViewTHEOMATHANG.Columns["HSD"].Visible = false;
 
             }
+          //  gridViewTHEOMATHANG.OptionsView.ColumnAutoWidth = false;
+            gridViewTHEOMATHANG.BestFitColumns();
 
         }
         public void loadgridtongSANPHAM()
@@ -375,6 +382,9 @@ namespace WindowsFormsApplication1
             {
                 gridViewTHEOTONGNHAP.Columns["KHOILUONG"].Visible = false;
             }
+
+         //   gridViewTHEOTONGNHAP.OptionsView.ColumnAutoWidth = false;
+            gridViewTHEOTONGNHAP.BestFitColumns();
         }
         
         public void loadGrid_sanpham()
@@ -383,7 +393,7 @@ namespace WindowsFormsApplication1
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "MAMH";
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
-           
+            gridCTHOADON.BestFitColumns();
         }
         public void loadgridNhacCungCap()
         {
@@ -392,7 +402,7 @@ namespace WindowsFormsApplication1
             cboTenNCC.Properties.DisplayMember = "TENNCC";
             cboTenNCC.Properties.ValueMember = "MANCC";
             cboTenNCC.Properties.View.BestFitColumns();
-            cboTenNCC.Properties.PopupFormWidth = 300;
+           // cboTenNCC.Properties.PopupFormWidth = 300;
             cboTenNCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
             //dtoNCC.TENNCC = gridNCC.GetFocusedRowCellValue("TENNCC").ToString();
  
@@ -1508,6 +1518,8 @@ namespace WindowsFormsApplication1
         public void View_phieunhap(string MAHDN)
         {
             loadgridCTHOADON(MAHDN);
+           
+
             txtMaHD.Text = MAHDN;
             txtlohang.Text =MAHDN;
             string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) as NGAYNHAP ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA,T1.GHICHU ,T1.CKTIEN,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,IDNHAP,TYPEMONEY FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
@@ -1546,6 +1558,7 @@ namespace WindowsFormsApplication1
                 cktien.Value = 0;
             }
                 gettotal();
+            gridCTHOADON.BestFitColumns();
         }
 
         private void btXem_Click(object sender, EventArgs e)
