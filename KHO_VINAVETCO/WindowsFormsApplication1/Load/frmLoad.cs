@@ -27,33 +27,6 @@ namespace WindowsFormsApplication1
 
 
                 this.timer1.Enabled = false;
-
-                RegistryKey rkey = Registry.CurrentUser.OpenSubKey(@"Control Panel\International", true);
-                rkey.SetValue("sCountry", "United States");
-                rkey.SetValue("sShortDate", "dd/MM/yyyy");
-                rkey.SetValue("sLongDate", "dd/MM/yyyy");
-
-                rkey.SetValue("sDecimal", ".");
-                rkey.SetValue("sGrouping", ",");
-                rkey.SetValue("sNativeDigits", "123,456,789");
-                
-                rkey.SetValue("sList", ",");
-                rkey.SetValue("sThousand", ",");
-                rkey.Close();
-
-                Registry.SetValue(@"HKEY_USERS\.Default\Control Panel\International", "sCountry", "United States");
-                Registry.SetValue(@"HKEY_USERS\.Default\Control Panel\International", "sShortDate", "dd/MM/yyyy");
-                Registry.SetValue(@"HKEY_USERS\.Default\Control Panel\International", "sLongDate", "dd/MM/yyyy");
-
-                Registry.SetValue(@"HKEY_USERS\.Default\Control Panel\International", "sDecimal", ".");
-                Registry.SetValue(@"HKEY_USERS\.Default\Control Panel\International", "sGrouping", ",");
-                Registry.SetValue(@"HKEY_USERS\.Default\Control Panel\International", "sNativeDigits", "123,456,789");
-
-                Registry.SetValue(@"HKEY_USERS\.Default\Control Panel\International", "sList", ",");
-                Registry.SetValue(@"HKEY_USERS\.Default\Control Panel\International", "sThousand", ",");
-                
-
-
                 DataTable PhanKho = new DataTable();
                 DataTable PhanQuyen = new DataTable();
                 String SQL = "";

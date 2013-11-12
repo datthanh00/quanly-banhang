@@ -196,13 +196,13 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.Location = new System.Drawing.Point(3, 3);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(1230, 419);
+            this.gridControl1.Size = new System.Drawing.Size(1228, 417);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -210,6 +210,8 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAMH,
             this.colMATH,
@@ -283,30 +285,34 @@
             this.colMADVT.OptionsColumn.AllowEdit = false;
             this.colMADVT.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colMADVT.Visible = true;
-            this.colMADVT.VisibleIndex = 4;
+            this.colMADVT.VisibleIndex = 2;
             this.colMADVT.Width = 166;
             // 
             // colSOLUONGMH
             // 
             this.colSOLUONGMH.Caption = "Số Lượng Mặt Hàng";
+            this.colSOLUONGMH.DisplayFormat.FormatString = "{0:0.##}";
+            this.colSOLUONGMH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSOLUONGMH.FieldName = "SOLUONGMH";
             this.colSOLUONGMH.Name = "colSOLUONGMH";
             this.colSOLUONGMH.OptionsColumn.AllowEdit = false;
             this.colSOLUONGMH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colSOLUONGMH.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.colSOLUONGMH.SummaryItem.DisplayFormat = "{0:0.##}";
             this.colSOLUONGMH.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSOLUONGMH.Visible = true;
-            this.colSOLUONGMH.VisibleIndex = 6;
+            this.colSOLUONGMH.VisibleIndex = 5;
             this.colSOLUONGMH.Width = 177;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Giá Mua";
+            this.gridColumn3.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn3.FieldName = "GIAMUA";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 5;
+            this.gridColumn3.VisibleIndex = 4;
             this.gridColumn3.Width = 139;
             // 
             // colMOTA
@@ -317,7 +323,7 @@
             this.colMOTA.OptionsColumn.AllowEdit = false;
             this.colMOTA.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colMOTA.Visible = true;
-            this.colMOTA.VisibleIndex = 7;
+            this.colMOTA.VisibleIndex = 6;
             this.colMOTA.Width = 205;
             // 
             // colMAKHO
@@ -334,7 +340,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
+            this.gridColumn2.VisibleIndex = 3;
             this.gridColumn2.Width = 138;
             // 
             // gridColumn1
@@ -351,8 +357,6 @@
             this.gridColumn4.FieldName = "KLDVT";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
             this.gridColumn4.Width = 204;
             // 
             // repositoryItemPictureEdit1

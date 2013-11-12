@@ -216,6 +216,8 @@
             // 
             // gridViewKHACHHANG
             // 
+            this.gridViewKHACHHANG.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridViewKHACHHANG.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridViewKHACHHANG.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMAKH,
             this.colTENKH,

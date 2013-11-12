@@ -27,11 +27,18 @@ namespace WindowsFormsApplication1
 {
     public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+
         public frmMain()
         {
             InitializeComponent();
-           
+            CultureInfo culture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            culture.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
+            culture.DateTimeFormat.LongTimePattern = "dd/MM/yyyy hh:mm:ss";
+            culture.NumberFormat.CurrencyDecimalSeparator = ",";
+            culture.NumberFormat.CurrencyGroupSeparator = ".";
+            Thread.CurrentThread.CurrentCulture = culture;
         }
+
         public frmBaoCaoTonKho frmTonKho;
         public Boolean isclose;
         private void btKhachHang_ItemClick(object sender, ItemClickEventArgs e)
@@ -828,7 +835,7 @@ namespace WindowsFormsApplication1
          Loadingggg ld = new Loadingggg();
         private void timer1_Tick(object sender, EventArgs e)
         {
-            barThoiGian.Caption = DateTime.Now.ToString();
+            barThoiGian.Caption = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt");
         }
 
 
@@ -1841,6 +1848,7 @@ namespace WindowsFormsApplication1
             if (isclose == true)
             {
                 notifyIcon1.Dispose();
+               
                 Application.Exit();
             }
         }
