@@ -241,6 +241,12 @@ namespace WindowsFormsApplication1
                         calKLDVT.Focus();
                         return;
                     }
+                    else if (Convert.ToInt64(calKLDVT.Value) > 2000000000)
+                    {
+                        XtraMessageBox.Show("Khối Lượng không thể lớn hơn 2000,000,000 ");
+                        calKLDVT.Focus();
+                        return;
+                    }
 
 
 

@@ -51,10 +51,10 @@
             this.gridBand9 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn30 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn32 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn33 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn38 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn39 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn35 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn33 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand11 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.bandedGridColumn34 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn36 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -349,13 +349,13 @@
             this.gridBand9.Caption = "Thông tin";
             this.gridBand9.Columns.Add(this.bandedGridColumn30);
             this.gridBand9.Columns.Add(this.bandedGridColumn32);
+            this.gridBand9.Columns.Add(this.bandedGridColumn33);
             this.gridBand9.Columns.Add(this.bandedGridColumn38);
             this.gridBand9.Columns.Add(this.bandedGridColumn39);
             this.gridBand9.Columns.Add(this.bandedGridColumn35);
-            this.gridBand9.Columns.Add(this.bandedGridColumn33);
             this.gridBand9.MinWidth = 20;
             this.gridBand9.Name = "gridBand9";
-            this.gridBand9.Width = 670;
+            this.gridBand9.Width = 538;
             // 
             // bandedGridColumn30
             // 
@@ -374,6 +374,15 @@
             this.bandedGridColumn32.OptionsColumn.AllowEdit = false;
             this.bandedGridColumn32.Visible = true;
             this.bandedGridColumn32.Width = 173;
+            // 
+            // bandedGridColumn33
+            // 
+            this.bandedGridColumn33.Caption = "Đơn Vị Tính";
+            this.bandedGridColumn33.FieldName = "DONVITINH";
+            this.bandedGridColumn33.Name = "bandedGridColumn33";
+            this.bandedGridColumn33.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn33.Visible = true;
+            this.bandedGridColumn33.Width = 96;
             // 
             // bandedGridColumn38
             // 
@@ -399,17 +408,7 @@
             this.bandedGridColumn35.FieldName = "KLDVT";
             this.bandedGridColumn35.Name = "bandedGridColumn35";
             this.bandedGridColumn35.OptionsColumn.AllowEdit = false;
-            this.bandedGridColumn35.Visible = true;
             this.bandedGridColumn35.Width = 132;
-            // 
-            // bandedGridColumn33
-            // 
-            this.bandedGridColumn33.Caption = "Đơn Vị";
-            this.bandedGridColumn33.FieldName = "DONVITINH";
-            this.bandedGridColumn33.Name = "bandedGridColumn33";
-            this.bandedGridColumn33.OptionsColumn.AllowEdit = false;
-            this.bandedGridColumn33.Visible = true;
-            this.bandedGridColumn33.Width = 96;
             // 
             // gridBand11
             // 
@@ -426,11 +425,13 @@
             // bandedGridColumn34
             // 
             this.bandedGridColumn34.Caption = "Số Lượng";
-            this.bandedGridColumn34.DisplayFormat.FormatString = "{0:0,0}";
+            this.bandedGridColumn34.DisplayFormat.FormatString = "{0:0.##}";
             this.bandedGridColumn34.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn34.FieldName = "SOLUONGMH";
             this.bandedGridColumn34.Name = "bandedGridColumn34";
             this.bandedGridColumn34.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn34.SummaryItem.DisplayFormat = "{0:0.##}";
+            this.bandedGridColumn34.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn34.Visible = true;
             this.bandedGridColumn34.Width = 139;
             // 
@@ -438,7 +439,7 @@
             // 
             this.bandedGridColumn36.Caption = "Giá Bán";
             this.bandedGridColumn36.ColumnEdit = this.repositoryItemCalcEdit1;
-            this.bandedGridColumn36.DisplayFormat.FormatString = "n0";
+            this.bandedGridColumn36.DisplayFormat.FormatString = "{0:0,0}";
             this.bandedGridColumn36.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn36.FieldName = "GIABAN";
             this.bandedGridColumn36.Name = "bandedGridColumn36";
@@ -463,6 +464,8 @@
             this.bandedGridColumn37.FieldName = "THANHTIEN";
             this.bandedGridColumn37.Name = "bandedGridColumn37";
             this.bandedGridColumn37.OptionsColumn.AllowEdit = false;
+            this.bandedGridColumn37.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.bandedGridColumn37.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn37.Visible = true;
             this.bandedGridColumn37.Width = 141;
             // 

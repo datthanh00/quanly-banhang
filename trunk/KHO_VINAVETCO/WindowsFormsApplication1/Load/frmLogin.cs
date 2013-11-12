@@ -250,27 +250,27 @@ namespace WindowsFormsApplication1
         {
             iNgonNgu = 0;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-             lbTenTaiKhoan.Text = LamVN.USERNAME.ToString();
-            lbMatKhau.Text = LamVN.PASSWORD.ToString();
-            lbDangNhap.Text = resVietNam.DangNhap.ToString();
+            // lbTenTaiKhoan.Text = LamVN.USERNAME.ToString();
+            //lbMatKhau.Text = LamVN.PASSWORD.ToString();
+           // lbDangNhap.Text = resVietNam.DangNhap.ToString();
             btDangNhap.Text = resVietNam.DangNhap.ToString();
             btTuyChon.Text = resVietNam.TuyChon.ToString();
             btKetThuc.Text = LamVN.DONG.ToString();
             checkNho.Text = resVietNam.checkNho.ToString();
-            this.Text = "Đăng nhập tài khoản";
+           // this.Text = "Đăng nhập tài khoản";
         }
         public void loadEN()
         {
             iNgonNgu = 1;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-            lbTenTaiKhoan.Text = LamEL.USERNAME.ToString();
-            lbMatKhau.Text = LamEL.PASSWORD.ToString();
-            lbDangNhap.Text = resEngLand.DangNhap.ToString();
+            //lbTenTaiKhoan.Text = LamEL.USERNAME.ToString();
+            //lbMatKhau.Text = LamEL.PASSWORD.ToString();
+           // lbDangNhap.Text = resEngLand.DangNhap.ToString();
             btDangNhap.Text = resEngLand.DangNhap.ToString();
             btTuyChon.Text = resEngLand.TuyChon.ToString();
             btKetThuc.Text = LamEL.DONG.ToString();
             checkNho.Text = resEngLand.checkNho.ToString();
-            this.Text = "Login account";
+         //   this.Text = "Login account";
           
 
         }

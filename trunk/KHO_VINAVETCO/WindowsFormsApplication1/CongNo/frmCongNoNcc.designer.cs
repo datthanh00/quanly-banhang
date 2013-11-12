@@ -649,7 +649,6 @@
             this.SOTIEN.Name = "SOTIEN";
             this.SOTIEN.OptionsColumn.ReadOnly = true;
             this.SOTIEN.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.SOTIEN.SummaryItem.FieldName = "CONLAI";
             this.SOTIEN.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.SOTIEN.Visible = true;
             this.SOTIEN.VisibleIndex = 1;
@@ -720,14 +719,13 @@
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "Số Tiền";
+            this.gridColumn3.Caption = "Số Tiền Trả NCC";
             this.gridColumn3.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn3.FieldName = "SOTIEN";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.ReadOnly = true;
             this.gridColumn3.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.gridColumn3.SummaryItem.FieldName = "CONLAI";
             this.gridColumn3.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 3;
@@ -815,14 +813,13 @@
             // 
             // gridColumn10
             // 
-            this.gridColumn10.Caption = "Số Tiền";
+            this.gridColumn10.Caption = "Số Tiền Hóa Đơn";
             this.gridColumn10.DisplayFormat.FormatString = "{0:0,0}";
             this.gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn10.FieldName = "SOTIEN";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.ReadOnly = true;
             this.gridColumn10.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.gridColumn10.SummaryItem.FieldName = "CONLAI";
             this.gridColumn10.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 4;

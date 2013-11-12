@@ -71,7 +71,7 @@ namespace WindowsFormsApplication1
             colMATH.Caption = LamVN.MATH.ToString();
             colMANH.Caption = LamVN.MANH.ToString();
             colTENMH.Caption = LamVN.TENMH.ToString();
-            colMADVT.Caption = LamVN.MADVT.ToString();
+           // colMADVT.Caption = LamVN.MADVT.ToString();
             colSOLUONGMH.Caption = LamVN.SOLUONGMH.ToString();
             
             colMAKHO.Caption = LamVN.MAKHO.ToString();
@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
             colMATH.Caption = LamEL.MATH.ToString();
             colMANH.Caption = LamEL.MANH.ToString();
             colTENMH.Caption = LamEL.TENMH.ToString();
-            colMADVT.Caption = LamEL.MADVT.ToString();
+           // colMADVT.Caption = LamEL.MADVT.ToString();
             colSOLUONGMH.Caption = LamEL.SOLUONGMH.ToString();
 
             colMAKHO.Caption = LamEL.MAKHO.ToString();

@@ -44,10 +44,10 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAACTIVE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupCtDetails = new System.Windows.Forms.GroupBox();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -145,6 +145,8 @@
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn2,
             this.gridColumn1,
@@ -195,6 +197,15 @@
             this.colMAACTIVE.VisibleIndex = 2;
             this.colMAACTIVE.Width = 240;
             // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Computer Name";
+            this.gridColumn3.FieldName = "COMPUTERNAME";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.Width = 294;
+            // 
             // groupCtDetails
             // 
             this.groupCtDetails.Controls.Add(this.gridControl1);
@@ -221,15 +232,6 @@
             this.barButtonItem2.Glyph = global::Quanlykho.Properties.Resources.close3;
             this.barButtonItem2.Id = 2;
             this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Computer Name";
-            this.gridColumn3.FieldName = "COMPUTERNAME";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
-            this.gridColumn3.Width = 294;
             // 
             // FrmINITCODEActive
             // 
