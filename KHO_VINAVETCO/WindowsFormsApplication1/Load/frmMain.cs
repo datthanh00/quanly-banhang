@@ -823,8 +823,8 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                PublicVariable.isBANGGIA = false;
-                btnbanggia.Enabled = false;
+                PublicVariable.isBANGGIA = true;
+                btnbanggia.Enabled = true;
             }
         }
         void OnPaintStyleClick(object sender, ItemClickEventArgs e)
@@ -1629,6 +1629,7 @@ namespace WindowsFormsApplication1
                 if (DevComponents.DotNetBar.MessageBoxEx.Show("Bạn có muốn thoát hay không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
                     notifyIcon1.Dispose();
+                    Application.ExitThread();
                     Application.Exit();
                 }
             }
@@ -1637,6 +1638,7 @@ namespace WindowsFormsApplication1
                 if (DevComponents.DotNetBar.MessageBoxEx.Show("Do you want to exit program? ", "Notifications", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
                     notifyIcon1.Dispose();
+                    Application.ExitThread();
                     Application.Exit();
                 }
             }
@@ -1830,6 +1832,7 @@ namespace WindowsFormsApplication1
                 if (XtraMessageBox.Show("Bạn có muốn thoát hay không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
                     notifyIcon1.Dispose();
+                    Application.ExitThread();
                     Application.Exit();
                 }
             }
@@ -1838,6 +1841,7 @@ namespace WindowsFormsApplication1
                 if (XtraMessageBox.Show("Do you want to exit ? ", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
                     notifyIcon1.Dispose();
+                    Application.ExitThread();
                     Application.Exit();
                 }
             }
@@ -1849,6 +1853,8 @@ namespace WindowsFormsApplication1
             {
                 notifyIcon1.Dispose();
                
+               // Application.Exit();
+                Application.ExitThread();
                 Application.Exit();
             }
         }

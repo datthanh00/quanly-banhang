@@ -125,6 +125,7 @@ namespace WindowsFormsApplication1
         private void LOADNHACC()
         {
             gridControl1.DataSource = CTL.GETDANHSACHNCC();
+            gridView1.BestFitColumns();
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

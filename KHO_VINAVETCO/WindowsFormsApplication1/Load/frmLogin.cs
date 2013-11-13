@@ -30,6 +30,7 @@ namespace WindowsFormsApplication1
             {
                 if (XtraMessageBox.Show("Bạn có muốn thoát hay không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
+                    Application.ExitThread();
                     Application.Exit();
                 }
             }
@@ -37,6 +38,7 @@ namespace WindowsFormsApplication1
             {
                 if (XtraMessageBox.Show("Do you want to exit ? ", "Info", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
+                    Application.ExitThread();
                     Application.Exit();
                 }
             }
@@ -73,8 +75,6 @@ namespace WindowsFormsApplication1
         }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-
-     
             if (txtTenTaiKhoan.Text=="")
             {
                

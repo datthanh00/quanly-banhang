@@ -137,7 +137,7 @@
             this.colsoluong.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colsoluong.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colsoluong.Visible = true;
-            this.colsoluong.VisibleIndex = 7;
+            this.colsoluong.VisibleIndex = 5;
             this.colsoluong.Width = 69;
             // 
             // repositoryItemCalcEdit1
@@ -397,8 +397,6 @@
             this.gridColumn7.FieldName = "KLDVT";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
             this.gridColumn7.Width = 64;
             // 
             // coltendonvi
@@ -408,8 +406,6 @@
             this.coltendonvi.Name = "coltendonvi";
             this.coltendonvi.OptionsColumn.AllowEdit = false;
             this.coltendonvi.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.coltendonvi.Visible = true;
-            this.coltendonvi.VisibleIndex = 6;
             this.coltendonvi.Width = 103;
             // 
             // gridColumn11
@@ -423,7 +419,7 @@
             this.gridColumn11.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 8;
+            this.gridColumn11.VisibleIndex = 6;
             this.gridColumn11.Width = 105;
             // 
             // colthanhtiennhap
@@ -438,7 +434,7 @@
             this.colthanhtiennhap.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colthanhtiennhap.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colthanhtiennhap.Visible = true;
-            this.colthanhtiennhap.VisibleIndex = 10;
+            this.colthanhtiennhap.VisibleIndex = 8;
             this.colthanhtiennhap.Width = 148;
             // 
             // colmota
@@ -498,7 +494,7 @@
             this.colgiamua.OptionsColumn.AllowEdit = false;
             this.colgiamua.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colgiamua.Visible = true;
-            this.colgiamua.VisibleIndex = 9;
+            this.colgiamua.VisibleIndex = 7;
             this.colgiamua.Width = 86;
             // 
             // repositoryItemCalcEdit3

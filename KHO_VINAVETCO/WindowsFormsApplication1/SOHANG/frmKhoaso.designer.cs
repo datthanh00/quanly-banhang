@@ -181,7 +181,6 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1263, 527);
             this.groupControl1.TabIndex = 5;
-            this.groupControl1.Text = "Danh Sách Tồn Đầu Kỳ Các Mặt Hàng";
             // 
             // xtraTabControl1
             // 
@@ -200,7 +199,7 @@
             this.xtraTabPage3.Controls.Add(this.panelControl6);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Size = new System.Drawing.Size(1252, 474);
-            this.xtraTabPage3.Text = "Tồn Đầu Kỳ";
+            this.xtraTabPage3.Text = "LỊCH KHÓA SỔ";
             // 
             // panelControl5
             // 
@@ -219,7 +218,6 @@
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(1248, 431);
             this.groupControl2.TabIndex = 2;
-            this.groupControl2.Text = "Chi Tiết Mặt Hàng";
             // 
             // gridControl1
             // 
@@ -272,7 +270,6 @@
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowFooter = true;
-            this.gridView1.PreviewFieldName = "Báo Cáo Doanh Thu";
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
             // 
             // ID

@@ -187,7 +187,7 @@ namespace WindowsFormsApplication1
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT convert(varchar,TRAHOADONNHAP.NGAYNHAP,103)AS NGAYNHAP ,TRAHOADONNHAP.MAHDN ,TENNCC , MATHANG.MAMH ,TENMH+' ' +CONVERT(VARCHAR,KLDVT)+' - '+DONVITINH AS TENMH ,SOLUONGNHAP,KMAI,(SOLUONGNHAP+KMAI)*KLDVT AS KHOILUONG ,GIANHAP, SOLUONGNHAP * GIANHAP AS THANHTIEN,GHICHU,convert(varchar,HSD,103)AS HSD,TIENTRANHAPTT AS TIENTHU,KHOHANG.LOHANG  FROM TRAHOADONNHAP, TRACHITIETHDN, MATHANG, KHOHANG, NHACUNGCAP WHERE [TYPE]=1 AND MATHANG.MAMH=KHOHANG.MAMH AND TRAHOADONNHAP.MAHDN=TRACHITIETHDN.MAHDN AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND KHOHANG.LOHANG=TRACHITIETHDN.LOHANG AND TRAHOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' AND TRAHOADONNHAP.NGAYNHAP BETWEEN  '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "'  ";
+            string SQL = "SELECT convert(varchar,TRAHOADONNHAP.NGAYNHAP,103)AS NGAYNHAP ,TRAHOADONNHAP.MAHDN ,TENNCC , MATHANG.MAMH ,TENMH+' - ' +CONVERT(VARCHAR,KLDVT)+' - '+DONVITINH AS TENMH ,SOLUONGNHAP,KMAI,(SOLUONGNHAP+KMAI)*KLDVT AS KHOILUONG ,GIANHAP, SOLUONGNHAP * GIANHAP AS THANHTIEN,GHICHU,convert(varchar,HSD,103)AS HSD,TIENTRANHAPTT AS TIENTHU,KHOHANG.LOHANG  FROM TRAHOADONNHAP, TRACHITIETHDN, MATHANG, KHOHANG, NHACUNGCAP, DONVITINH WHERE DONVITINH.MADVT=MATHANG.MADVT AND [TYPE]=1 AND MATHANG.MAMH=KHOHANG.MAMH AND TRAHOADONNHAP.MAHDN=TRACHITIETHDN.MAHDN AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND KHOHANG.LOHANG=TRACHITIETHDN.LOHANG AND TRAHOADONNHAP.MAKHO='" + PublicVariable.MAKHO + "' AND TRAHOADONNHAP.NGAYNHAP BETWEEN  '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "'  ";
             
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
@@ -221,7 +221,7 @@ namespace WindowsFormsApplication1
             dtoNCC.NGAYKT = NGAYKT;
 
             Load_panel_filter();
-            string SQL = "SELECT MATHANG.MAMH, TENMH+' ' +CONVERT(VARCHAR,KLDVT)+' - '+DONVITINH AS TENMH, TENNCC,KLDVT, TENKHO, DONVITINH, sum(KMAI) as KMAI, sum((SOLUONGNHAP+KMAI)*KLDVT) as KHOILUONG, sum(SOLUONGNHAP) as SOLUONGNHAP, GIANHAP, SUM(SOLUONGNHAP*GIANHAP) AS TONGTIEN, SUM(TIENTRANHAPTT) AS TIENTHU FROM MATHANG,NHACUNGCAP,KHO,DONVITINH,(select MAMH,SOLUONGNHAP, GIANHAP,KMAI,TIENTRANHAPTT FROM TRACHITIETHDN, TRAHOADONNHAP WHERE TYPE=1 AND TRACHITIETHDN.MAHDN=TRAHOADONNHAP.MAHDN AND NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDN WHERE MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND KHO.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC,KLDVT, TENKHO, DONVITINH,GIANHAP";
+            string SQL = "SELECT MATHANG.MAMH, TENMH+' - ' +CONVERT(VARCHAR,KLDVT)+' - '+DONVITINH AS TENMH, TENNCC,KLDVT, TENKHO, DONVITINH, sum(KMAI) as KMAI, sum((SOLUONGNHAP+KMAI)*KLDVT) as KHOILUONG, sum(SOLUONGNHAP) as SOLUONGNHAP, GIANHAP, SUM(SOLUONGNHAP*GIANHAP) AS TONGTIEN, SUM(TIENTRANHAPTT) AS TIENTHU FROM MATHANG,NHACUNGCAP,KHO,DONVITINH,(select MAMH,SOLUONGNHAP, GIANHAP,KMAI,TIENTRANHAPTT FROM TRACHITIETHDN, TRAHOADONNHAP WHERE TYPE=1 AND TRACHITIETHDN.MAHDN=TRAHOADONNHAP.MAHDN AND NGAYNHAP BETWEEN '" + dtoNCC.NGAYBD + "' AND '" + dtoNCC.NGAYKT + "') as TRACHITIETHDN WHERE MATHANG.MANCC=NHACUNGCAP.MANCC AND MATHANG.MAKHO=KHO.MAKHO AND MATHANG.MADVT = DONVITINH.MADVT AND MATHANG.MAMH=TRACHITIETHDN.MAMH AND KHO.MAKHO='" + PublicVariable.MAKHO + "' group by mathang.MAMH,TENMH, TENNCC,KLDVT, TENKHO, DONVITINH,GIANHAP";
            
 
             DataTable TBS = ctlNCC.GETDATA(SQL);
@@ -236,6 +236,7 @@ namespace WindowsFormsApplication1
             {
                 gridViewTONGSANPHAM.Columns["KHOILUONG"].Visible = false;
             }
+            gridViewTONGSANPHAM.ExpandAllGroups();
         }
         Boolean isloadGrid_sanpham = false;
         public void loadGrid_sanpham(string MAHDN)
@@ -517,20 +518,24 @@ namespace WindowsFormsApplication1
                                 soluongtraNHAP = soluongtraNHAP + Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
                                 String SQL = "Select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["_LOHANG"].ToString() + "'";
                                 DataTable dt = ctlNCC.GETDATA(SQL);
-
+                                string LOHANG1 = "";
+                                if (PublicVariable.isHSD)
+                                {
+                                    LOHANG1 = " với lô hàng " + dtr["_LOHANG"].ToString();
+                                }
                                 if (dt.Rows.Count > 0)
                                 {
                                     soluongTON = Convert.ToDouble(dt.Rows[0][0].ToString());
 
                                     if (soluongtraNHAP > soluongTON)
                                     {
-                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không thể nhiều hơn số lượng tồn");
+                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() +LOHANG1+ " có Số lượng trả không thể nhiều hơn số lượng tồn");
                                         return;
                                     }
 
                                     if (Convert.ToDouble(dtr["SOLUONG"].ToString()) <= 0 && Convert.ToDouble(dtr["KMAI"].ToString()) <= 0)
                                     {
-                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không được <=0");
+                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() +LOHANG1+ " có Số lượng trả không được <=0");
                                         return;
                                     }
                                    
@@ -595,21 +600,34 @@ namespace WindowsFormsApplication1
                                 Double soluongtraNHAP = 0;
                                 Double soluongTONKHO = 0;
                                 soluongtraNHAP = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
-                                string SQL = "select TONKHO+SOLUONGNHAP+KMAI AS TONKHO from KHOHANG,TRACHITIETHDN where KHOHANG.MAMH='" + dtr["MAMH"].ToString() + "' AND KHOHANG.LOHANG='" + dtr["_LOHANG"].ToString() + "' AND KHOHANG.MAMH=TRACHITIETHDN.MAMH AND  TRACHITIETHDN.MAHDN='"+txtMaHD.Text+"'";
+                                string SQL = "";
+                                if (dtr["ID"].ToString() != "")
+                                {
+                                    SQL = "select TONKHO+SOLUONGNHAP+KMAI AS TONKHO from KHOHANG,TRACHITIETHDN where KHOHANG.MAMH='" + dtr["MAMH"].ToString() + "' AND KHOHANG.LOHANG='" + dtr["_LOHANG"].ToString() + "' AND KHOHANG.MAMH=TRACHITIETHDN.MAMH AND  TRACHITIETHDN.MAHDN='" + txtMaHD.Text + "'";
+                                }
+                                else
+                                {
+                                    SQL = "Select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["_LOHANG"].ToString() + "'";
+
+                                }
                                 DataTable dt = ctlNCC.GETDATA(SQL);
                                 if (dt.Rows.Count > 0)
                                 {
                                     soluongTONKHO = Convert.ToDouble(dt.Rows[0][0].ToString());
-
+                                    string LOHANG1 = "";
+                                    if (PublicVariable.isHSD)
+                                    {
+                                        LOHANG1 = " với lô hàng " + dtr["_LOHANG"].ToString();
+                                    }
                                     if (soluongtraNHAP > soluongTONKHO)
                                     {
-                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không thể nhiều hơn số lượng tồn");
+                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() +LOHANG1+ " có Số lượng trả không thể nhiều hơn số lượng tồn");
                                         return;
                                     }
 
                                     if (Convert.ToDouble(dtr["SOLUONG"].ToString()) <= 0 && Convert.ToDouble(dtr["KMAI"].ToString()) <= 0)
                                     {
-                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " có Số lượng trả không được <=0");
+                                        MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() +LOHANG1+ " có Số lượng trả không được <=0");
                                         return;
                                     }
                                 } 
