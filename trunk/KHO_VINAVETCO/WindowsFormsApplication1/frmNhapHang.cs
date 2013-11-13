@@ -15,6 +15,7 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraTreeList.StyleFormatConditions;
 using DevExpress.XtraGrid;
 using DevExpress.XtraPrinting;
+using DevExpress.XtraEditors.Repository;
 
 namespace WindowsFormsApplication1
 {
@@ -386,22 +387,32 @@ namespace WindowsFormsApplication1
          //   gridViewTHEOTONGNHAP.OptionsView.ColumnAutoWidth = false;
             gridViewTHEOTONGNHAP.BestFitColumns();
         }
-        
+        Boolean isloadGrid_sanpham = false;
         public void loadGrid_sanpham()
         {
+
+           // Grid_sanpham.View.OptionsBehavior.AutoPopulateColumns = false;
+            DataTable dt = new DataTable();
+            dt.Columns.Add("mamh");
+            
             Grid_sanpham.DataSource = ctlNCC.GETMMH(txtMANCC.Text);
+            Grid_sanpham.View.RefreshData();
             Grid_sanpham.DisplayMember = "TENMH";
             Grid_sanpham.ValueMember = "MAMH";
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            Grid_sanpham.View.BestFitColumns();
+            isloadGrid_sanpham = true;
             gridCTHOADON.BestFitColumns();
         }
         public void loadgridNhacCungCap()
         {
             
-            cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+           // cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cboTenNCC.Properties.DisplayMember = "TENNCC";
             cboTenNCC.Properties.ValueMember = "MANCC";
+            cboTenNCC.Properties.View.OptionsView.ColumnAutoWidth = false;
             cboTenNCC.Properties.View.BestFitColumns();
+            cboTenNCC.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
            // cboTenNCC.Properties.PopupFormWidth = 300;
             cboTenNCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
             //dtoNCC.TENNCC = gridNCC.GetFocusedRowCellValue("TENNCC").ToString();
@@ -411,11 +422,14 @@ namespace WindowsFormsApplication1
         public void loadgridNhacCungCap(String MANCC)
         {
           
-            cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+           // cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cboTenNCC.Properties.DisplayMember = "TENNCC";
             cboTenNCC.Properties.ValueMember = "MANCC";
             cboTenNCC.Properties.View.BestFitColumns();
-            cboTenNCC.Properties.PopupFormWidth = 300;
+         // cboTenNCC.Properties.PopupFormWidth = 300;
+            //var view = cboTenNCC.GridView;
+          //  cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+
             DataTable dt=ctlNCC.GETDANHSACHNCC(MANCC);
             cboTenNCC.Properties.DataSource = dt;
            // cboTenNCC.SelectedText = dt.Rows[0]["TENNCC"].ToString();
@@ -484,6 +498,7 @@ namespace WindowsFormsApplication1
                 //txtSoDT.Text = gridView3.GetFocusedRowCellValue("SDT").ToString();
                 //txtFax.Text = gridView3.GetFocusedRowCellValue("FAX").ToString();
                 //txtEmail.Text = gridView3.GetFocusedRowCellValue("EMAIL").ToString();
+              
                 dtoNCC.MANCC = txtMANCC.Text;
                 DataTable tblayno = ctlNCC.LAYTIENNO(dtoNCC);
                 if (tblayno.Rows.Count > 0)
@@ -556,6 +571,7 @@ namespace WindowsFormsApplication1
                 CheckCongNo.Checked = true;
                 cbotientra.Properties.ReadOnly = true;
             }
+           
         }
 
         public int kiemtra;
@@ -1105,149 +1121,155 @@ namespace WindowsFormsApplication1
         {          
             DataRow dtr= gridCTHOADON.GetDataRow(gridCTHOADON.FocusedRowHandle);
                 if(dtr!=null)
-                if (dtr["TENMH"].ToString() != "")
-                {
-                    if (e.Column.FieldName.ToString() == "TENMH")
+                    if (dtr["TENMH"].ToString() != "")
                     {
-                        DataTable dtmh = ctlNCC.GETMATHANG_MUA(dtr["TENMH"].ToString());
-                        string mamh = dtmh.Rows[0]["MAMH"].ToString();
-                        if (mamh == "")
+                        if (e.Column.FieldName.ToString() == "TENMH")
                         {
-                            MessageBox.Show("Hãy chọn một mặt hàng");
-                            return;
-                        }
-                        for (int i = 0; i < gridCTHOADON.DataRowCount; i++)
-                        {
-                            DataRow dtr2 = gridCTHOADON.GetDataRow(i);
-                            if (dtr2["MAMH"].ToString() == mamh)
+                            DataTable dtmh = ctlNCC.GETMATHANG_MUA(dtr["TENMH"].ToString());
+                            string mamh = dtmh.Rows[0]["MAMH"].ToString();
+                            if (mamh == "")
                             {
-                                MessageBox.Show("Mặt hàng này đã nhập bên trên rồi");
+                                MessageBox.Show("Hãy chọn một mặt hàng");
                                 return;
                             }
-                        }
-                        dtr["MAMH"] = mamh;
-                       
-                        dtr["SOLUONG"] = "0";
-                        dtr["KMAI"] = "0";
-                        try
-                        {
-                            dtr["_HSD"] = "";
-                        }
-                        catch { }
-                        dtr["_DonGia"] = dtmh.Rows[0]["GIAMUA"];
-                        //dtr["_Thue"] = dtmh.Rows[0]["SOTHUE"];
-                        dtr["_DVT"] = dtmh.Rows[0]["DONVITINH"];
-                        //dtr["TENMH"] = dtmh.Rows[0]["TENMH"];
-                        dtr["_Total"] = "0";
-                        dtr["TIENTRA"] = "0";
-                    }
-                    else if (e.Column.FieldName.ToString() == "KMAI")
-                    {
-                        Double Num;
-                        bool isNum = Double.TryParse(dtr["KMAI"].ToString(), out Num);
-                        
-                        if (isNum)
-                        {
-                            if (Num < 0)
+                            for (int i = 0; i < gridCTHOADON.DataRowCount; i++)
                             {
-                                MessageBox.Show("Khuyến Mãi Phải lớn Hơn hoặc bằng 0");
-                                dtr["KMAI"] = "0";
-                                return;
+                                DataRow dtr2 = gridCTHOADON.GetDataRow(i);
+                                if (dtr2["MAMH"].ToString() == mamh)
+                                {
+                                    MessageBox.Show("Mặt hàng này đã nhập bên trên rồi");
+                                    gridCTHOADON.DeleteSelectedRows();
+                                    return;
+                                }
                             }
-                        }
-                        else
-                        {
+                            dtr["MAMH"] = mamh;
+
+                            dtr["SOLUONG"] = "0";
                             dtr["KMAI"] = "0";
-                        }
-                    }
-                    else if (e.Column.FieldName.ToString() == "SOLUONG")
-                    {
-                        Double Num;
-                        bool isNum = Double.TryParse(dtr["SOLUONG"].ToString(), out Num);
-                        
-                        if (isNum)
-                        {
-                            if (Num < 0)
+                            try
                             {
-                                MessageBox.Show("Số Lượng Phải lớn Hơn hoặc bằng 0");
+                                dtr["_HSD"] = "";
+                            }
+                            catch { }
+                            dtr["_DonGia"] = dtmh.Rows[0]["GIAMUA"];
+                            //dtr["_Thue"] = dtmh.Rows[0]["SOTHUE"];
+                            dtr["_DVT"] = dtmh.Rows[0]["DONVITINH"];
+                            //dtr["TENMH"] = dtmh.Rows[0]["TENMH"];
+                            dtr["_Total"] = "0";
+                            dtr["TIENTRA"] = "0";
+                            gridCTHOADON.BestFitColumns();
+                        }
+                        else if (e.Column.FieldName.ToString() == "KMAI")
+                        {
+                            Double Num;
+                            bool isNum = Double.TryParse(dtr["KMAI"].ToString(), out Num);
+
+                            if (isNum)
+                            {
+                                if (Num < 0)
+                                {
+                                    MessageBox.Show("Khuyến Mãi Phải lớn Hơn hoặc bằng 0");
+                                    dtr["KMAI"] = "0";
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                dtr["KMAI"] = "0";
+                            }
+                        }
+                        else if (e.Column.FieldName.ToString() == "SOLUONG")
+                        {
+                            Double Num;
+                            bool isNum = Double.TryParse(dtr["SOLUONG"].ToString(), out Num);
+
+                            if (isNum)
+                            {
+                                if (Num < 0)
+                                {
+                                    MessageBox.Show("Số Lượng Phải lớn Hơn hoặc bằng 0");
+                                    dtr["SOLUONG"] = "0";
+                                    dtr["_Total"] = "0";
+                                    dtr["TIENTRA"] = "0";
+                                    gettotal();
+                                    return;
+                                }
+
+                                Int64 total = Convert.ToInt64(Convert.ToInt64(dtr["_DonGia"].ToString()) * Num);
+                                dtr["_Total"] = total.ToString();
+                                dtr["TIENTRA"] = total.ToString();
+                                gettotal();
+                            }
+                            else
+                            {
                                 dtr["SOLUONG"] = "0";
                                 dtr["_Total"] = "0";
                                 dtr["TIENTRA"] = "0";
                                 gettotal();
-                                return;
                             }
-
-                            Int64 total = Convert.ToInt64(Convert.ToInt64(dtr["_DonGia"].ToString()) * Num);
-                            dtr["_Total"] = total.ToString();
-                            dtr["TIENTRA"] = total.ToString();
-                            gettotal();
                         }
-                        else
+                        else if (e.Column.FieldName.ToString() == "_DonGia")
                         {
-                            dtr["SOLUONG"] = "0";
-                            dtr["_Total"] = "0";
-                            dtr["TIENTRA"] = "0";
-                            gettotal();
-                        }
-                    }
-                    else if (e.Column.FieldName.ToString() == "_DonGia")
-                    {
-                        Double Num;
-                        bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
-                        if (isNum)
-                        {
-                            if (Num < 0)
+                            Double Num;
+                            bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
+                            if (isNum)
                             {
-                                MessageBox.Show("Đơn giá Phải lớn Hơn hoặc bằng 0");
+                                if (Num < 0)
+                                {
+                                    MessageBox.Show("Đơn giá Phải lớn Hơn hoặc bằng 0");
+                                    dtr["_DonGia"] = "0";
+                                    dtr["_Total"] = "0";
+                                    dtr["TIENTRA"] = "0";
+                                    gettotal();
+                                    return;
+                                }
+                                Int64 total = Convert.ToInt64(Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num);
+                                dtr["_Total"] = total.ToString();
+                                dtr["TIENTRA"] = total.ToString();
+                                gettotal();
+                            }
+                            else
+                            {
                                 dtr["_DonGia"] = "0";
                                 dtr["_Total"] = "0";
                                 dtr["TIENTRA"] = "0";
                                 gettotal();
-                                return;
                             }
-                            Int64 total =Convert.ToInt64(Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num);
-                            dtr["_Total"] = total.ToString();
-                            dtr["TIENTRA"] = total.ToString();
-                            gettotal();
+
                         }
-                        else
+                        else if (e.Column.FieldName.ToString() == "_HSD")
                         {
-                            dtr["_DonGia"] = "0";
-                            dtr["_Total"] = "0";
-                            dtr["TIENTRA"] = "0";
-                            gettotal();
+                            string NGAY = dtr["_HSD"].ToString();
+                            if (NGAY.Length > 10)
+                                dtr["_HSD"] = NGAY.Substring(0, 10);
                         }
-                       
-                    }
-                    else if (e.Column.FieldName.ToString() == "_HSD")
-                    {
-                        string NGAY= dtr["_HSD"].ToString();
-                        if (NGAY.Length > 10)
-                            dtr["_HSD"] = NGAY.Substring(0, 10);
-                    }
-                    else if (e.Column.FieldName.ToString() == "TIENTRA")
-                    {
-                        Int64 Num;
-                        bool isNum = Int64.TryParse(dtr["TIENTRA"].ToString(), out Num);
-                        if (isNum)
+                        else if (e.Column.FieldName.ToString() == "TIENTRA")
                         {
-                            Int64 tientrasl = Convert.ToInt64(dtr["TIENTRA"].ToString());
-                            if (tientrasl < 0)
+                            Int64 Num;
+                            bool isNum = Int64.TryParse(dtr["TIENTRA"].ToString(), out Num);
+                            if (isNum)
                             {
-                                MessageBox.Show("Tiền Trả Phải lớn Hơn hoặc bằng 0");
+                                Int64 tientrasl = Convert.ToInt64(dtr["TIENTRA"].ToString());
+                                if (tientrasl < 0)
+                                {
+                                    MessageBox.Show("Tiền Trả Phải lớn Hơn hoặc bằng 0");
+                                    dtr["TIENTRA"] = "0";
+                                    gettotal();
+                                    return;
+                                }
+                            }
+                            else
+                            {
                                 dtr["TIENTRA"] = "0";
-                                gettotal();
-                                return;
-                            } 
+                            }
+                            gettotal();
                         }
-                        else
-                        {
-                            dtr["TIENTRA"] = "0";
-                        }
-                        gettotal();
+
                     }
-                    
-                }
+                    else
+                    {
+                        gridCTHOADON.DeleteSelectedRows();
+                    }
         }
 
         private void gridCTHOADON_RowcountChanged(object sender, EventArgs e)
@@ -1917,6 +1939,23 @@ namespace WindowsFormsApplication1
         {
             deDongTab();
         }
+
+        private void Grid_sanpham_Popup(object sender, EventArgs e)
+        {
+            ((GridLookUpEdit)sender).Properties.View.BestFitColumns();
+        }
+
+        private void Grid_sanpham_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            if (isloadGrid_sanpham)
+            {
+                GridLookUpEdit editor = (GridLookUpEdit)sender;
+                RepositoryItemGridLookUpEdit properties = editor.Properties;
+                properties.PopupFormSize = new Size(editor.Width - 4, properties.PopupFormSize.Height);
+                isloadGrid_sanpham = false;
+            }
+        }
+
 
         
     }

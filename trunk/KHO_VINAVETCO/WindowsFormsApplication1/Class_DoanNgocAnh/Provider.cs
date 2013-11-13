@@ -93,7 +93,16 @@ namespace WindowsFormsApplication1
         
         public static SqlConnection get_Connect()
         {
-            System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
+
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App");
+            if (!Directory.Exists(filePath))
+            {
+                filePath = AppDomain.CurrentDomain.BaseDirectory;
+            }
+            filePath = Path.Combine(filePath, Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location));
+            System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration(filePath);
+
+         //   System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
                 if (File.Exists("App.config"))
                 {
                   //Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
