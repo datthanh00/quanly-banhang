@@ -893,6 +893,7 @@
             this.cboTenNCC.Size = new System.Drawing.Size(230, 20);
             this.cboTenNCC.TabIndex = 1;
             this.cboTenNCC.Validated += new System.EventHandler(this.cboTenNCC_Validated);
+
             // 
             // gridView3
             // 
@@ -1090,6 +1091,8 @@
             this.Grid_sanpham.Name = "Grid_sanpham";
             this.Grid_sanpham.NullText = "";
             this.Grid_sanpham.View = this.repositoryItemGridLookUpEdit1View;
+            this.Grid_sanpham.Popup += new System.EventHandler(this.Grid_sanpham_Popup);
+            this.Grid_sanpham.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.Grid_sanpham_QueryPopUp);
             // 
             // repositoryItemGridLookUpEdit1View
             // 

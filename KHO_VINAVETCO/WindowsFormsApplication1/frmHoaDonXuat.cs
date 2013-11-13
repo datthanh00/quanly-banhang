@@ -14,6 +14,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraGrid;
 using DevExpress.XtraPrinting;
+using DevExpress.XtraEditors.Repository;
 
 namespace WindowsFormsApplication1.HoaDonXuat
 {
@@ -36,12 +37,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
         double TIENTRATRUOC = 0;
         public void loadgridKhachHang()
         {
-            cboTenKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            //cboTenKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cboTenKH.Properties.DataSource = dtvKH;
             cboTenKH.Properties.DisplayMember = "TENKH";
             cboTenKH.Properties.ValueMember = "MAKH";
             cboTenKH.Properties.View.BestFitColumns();
-            cboTenKH.Properties.PopupFormWidth = 300;
+            cboTenKH.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             DataTable dt = ctlNCC.GETKHACHHANG();
             cboTenKH.Properties.DataSource = dt;
            // dtoNCC.MANCC = gridKH1.GetFocusedRowCellValue("TENKH").ToString();
@@ -49,7 +50,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
         }
         public void loadgridKhachHang(string MAKH)
         {
-            cboTenKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            //cboTenKH.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cboTenKH.Properties.DataSource = dtvKH;
             cboTenKH.Properties.DisplayMember = "TENKH";
             cboTenKH.Properties.ValueMember = "MAKH";
@@ -136,6 +137,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             CountRowTBEdit = dt.Rows.Count;
 
         }
+        Boolean isloadGrid_sanpham = false;
         public void loadGrid_sanpham()
         {
             if (isnhap)
@@ -166,7 +168,9 @@ namespace WindowsFormsApplication1.HoaDonXuat
             Grid_sanpham.ValueMember = "LOHANG";
            
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+
             gridCTHOADON.BestFitColumns();
+            isloadGrid_sanpham = true;
         }
 
         public delegate void _deDongTab();
@@ -950,6 +954,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 {
                                     MessageBox.Show("Mặt hàng này đã xuất bên trên rồi");
                                 }
+                                gridCTHOADON.DeleteSelectedRows();
                                 return;
                             }
                         }
@@ -968,6 +973,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         //dtr["TENMH"] = dtmh.Rows[0]["TENMH"];
                         dtr["_Total"] = "0";
                         dtr["TIENTHU"] = "0";
+                        gridCTHOADON.BestFitColumns();
                     }
                     else if (e.Column.FieldName.ToString() == "_DonGia")
                     {
@@ -1068,6 +1074,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         }
                         gettotal();
                     }
+                }
+                else
+                {
+                    gridCTHOADON.DeleteSelectedRows();
                 }
         }
 
@@ -1930,6 +1940,22 @@ namespace WindowsFormsApplication1.HoaDonXuat
         private void frmHoaDonXuat_FormClosed(object sender, FormClosedEventArgs e)
         {
             deDongTab();
+        }
+
+        private void Grid_sanpham_Popup(object sender, EventArgs e)
+        {
+            ((GridLookUpEdit)sender).Properties.View.BestFitColumns();
+        }
+
+        private void Grid_sanpham_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            if (isloadGrid_sanpham)
+            {
+                GridLookUpEdit editor = (GridLookUpEdit)sender;
+                RepositoryItemGridLookUpEdit properties = editor.Properties;
+                properties.PopupFormSize = new Size(editor.Width - 4, properties.PopupFormSize.Height);
+                isloadGrid_sanpham = false;
+            }
         }
 
     }

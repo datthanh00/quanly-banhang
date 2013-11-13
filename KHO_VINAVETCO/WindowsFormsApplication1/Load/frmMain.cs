@@ -33,7 +33,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             CultureInfo culture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
             culture.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
-            culture.DateTimeFormat.LongTimePattern = "dd/MM/yyyy hh:mm:ss";
+            culture.DateTimeFormat.LongTimePattern = "hh:mm:ss";
             culture.NumberFormat.CurrencyDecimalSeparator = ",";
             culture.NumberFormat.CurrencyGroupSeparator = ".";
             Thread.CurrentThread.CurrentCulture = culture;

@@ -15,6 +15,7 @@ using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraTreeList.StyleFormatConditions;
 using DevExpress.XtraGrid;
 using DevExpress.XtraPrinting;
+using DevExpress.XtraEditors.Repository;
 
 namespace WindowsFormsApplication1
 {
@@ -362,7 +363,7 @@ namespace WindowsFormsApplication1
                 gridViewTONGNHAP.Columns["KHOILUONG"].Visible = false;
             }
         }
-        
+        Boolean isloadGrid_sanpham = false;
         public void loadGrid_sanpham()
         {
             Grid_sanpham.DataSource = ctlNCC.GETMMH_NHAPKHAC();
@@ -370,15 +371,16 @@ namespace WindowsFormsApplication1
             Grid_sanpham.ValueMember = "MAMH";
             Grid_sanpham.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             gridCTHOADON.BestFitColumns();
+            isloadGrid_sanpham = true;
         }
         public void loadgridNhacCungCap()
         {
             
-            cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+           // cboTenNCC.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
             cboTenNCC.Properties.DisplayMember = "TENNCC";
             cboTenNCC.Properties.ValueMember = "MANCC";
             cboTenNCC.Properties.View.BestFitColumns();
-            cboTenNCC.Properties.PopupFormWidth = 300;
+            cboTenNCC.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             cboTenNCC.Properties.DataSource = ctlNCC.GETDANHSACHNCC();
             //dtoNCC.TENNCC = gridNCC.GetFocusedRowCellValue("TENNCC").ToString();
 
@@ -982,6 +984,7 @@ namespace WindowsFormsApplication1
                             if (dtr2["MAMH"].ToString() == mamh)
                             {
                                 MessageBox.Show("Mặt hàng này đã nhập bên trên rồi");
+                                gridCTHOADON.DeleteSelectedRows();
                                 return;
                             }
                         }
@@ -1000,6 +1003,8 @@ namespace WindowsFormsApplication1
                         //dtr["TENMH"] = dtmh.Rows[0]["TENMH"];
                         dtr["_Total"] = "0";
                         dtr["TIENTRA"] = "0";
+                        gridCTHOADON.BestFitColumns();
+                       
                     }
                     else if (e.Column.FieldName.ToString() == "KMAI")
                     {
@@ -1106,7 +1111,11 @@ namespace WindowsFormsApplication1
                         gettotal();
                     }
 
-                    
+
+                }
+                else
+                {
+                    gridCTHOADON.DeleteSelectedRows();
                 }
         }
 
@@ -1723,6 +1732,22 @@ namespace WindowsFormsApplication1
         private void frmnhapkhac_FormClosed(object sender, FormClosedEventArgs e)
         {
             deDongTab();
+        }
+
+        private void Grid_sanpham_Popup(object sender, EventArgs e)
+        {
+            ((GridLookUpEdit)sender).Properties.View.BestFitColumns();
+        }
+
+        private void Grid_sanpham_QueryPopUp(object sender, CancelEventArgs e)
+        {
+            if (isloadGrid_sanpham)
+            {
+                GridLookUpEdit editor = (GridLookUpEdit)sender;
+                RepositoryItemGridLookUpEdit properties = editor.Properties;
+                properties.PopupFormSize = new Size(editor.Width - 4, properties.PopupFormSize.Height);
+                isloadGrid_sanpham = false;
+            }
         }
 
  
