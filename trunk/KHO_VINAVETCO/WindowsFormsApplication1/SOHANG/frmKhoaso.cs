@@ -50,7 +50,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            frm = new frmMain();
+          //  frm = new frmMain();
             load_khoaso();
    
         }

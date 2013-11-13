@@ -211,7 +211,8 @@ namespace WindowsFormsApplication1
         private void LOADDANHSACHKHACHHANG()
         {
             girdcontrol.MainView = gridViewKHACHHANG;
-            girdcontrol.DataSource = ctl.GETDANHSACHKH();   
+            girdcontrol.DataSource = ctl.GETDANHSACHKH();
+            gridViewKHACHHANG.BestFitColumns();
         }
 
         private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

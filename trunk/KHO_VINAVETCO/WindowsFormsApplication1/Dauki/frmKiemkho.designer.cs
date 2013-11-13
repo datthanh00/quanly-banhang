@@ -192,7 +192,6 @@
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(1263, 527);
             this.groupControl1.TabIndex = 5;
-            this.groupControl1.Text = "Danh Sách Tồn Đầu Kỳ Các Mặt Hàng";
             // 
             // xtraTabControl1
             // 
@@ -211,7 +210,7 @@
             this.xtraTabPage3.Controls.Add(this.panelControl6);
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Size = new System.Drawing.Size(1252, 474);
-            this.xtraTabPage3.Text = "Tồn Đầu Kỳ";
+            this.xtraTabPage3.Text = "KIỂM KÊ KHO";
             // 
             // panelControl5
             // 

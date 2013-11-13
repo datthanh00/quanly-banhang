@@ -364,21 +364,33 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                 {
                                     Double slton = Convert.ToDouble(dt.Rows[0]["TONKHO"].ToString());
                                     Double SOLUONG = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
+                                    string LOHANG1 = "";
+                                    if (PublicVariable.isHSD)
+                                    {
+                                        LOHANG1 = " với lô hàng " + dtr["_LOHANG"].ToString();
+                                    }
                                     if (SOLUONG<=0)
                                     {
-                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " KHÔNG THỂ XUẤT <=0");
+                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() +LOHANG1+ " KHÔNG THỂ XUẤT <=0");
                                         return;
                                     }
                                     if (slton <SOLUONG )
                                     {
-                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Không đủ số lượng để xuất");
+                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() +LOHANG1+ " Không đủ số lượng để xuất");
                                         return;
                                     }
                                     
                                 }
                                 else
                                 {
-                                    System.Windows.Forms.MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " trong kho");
+                                    if (PublicVariable.isHSD)
+                                    {
+                                        MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " với lô hàng " + dtr["_LOHANG"].ToString() + " trong kho");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Chưa có mã hàng:" + dtr["MAMH"].ToString() + " trong kho");
+                                    }
                                     return;
                                 }
                             }
@@ -429,21 +441,35 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
-                                string SQL = "select TONKHO+SOLUONGXUAT+KMAI AS TONKHO from KHOHANG,CHITIETHDX where KHOHANG.MAMH='" + dtr["MAMH"].ToString() + "' AND KHOHANG.LOHANG='" + dtr["_LOHANG"].ToString() + "' AND KHOHANG.MAMH=CHITIETHDX.MAMH AND CHITIETHDX.MAHDX='"+txtMaHD.Text+"'";
+                                string SQL = "";
+                                if (dtr["ID"].ToString() != "")
+                                {
+                                    SQL = "select TONKHO+SOLUONGXUAT+KMAI AS TONKHO from KHOHANG,CHITIETHDX where KHOHANG.MAMH='" + dtr["MAMH"].ToString() + "' AND KHOHANG.LOHANG='" + dtr["_LOHANG"].ToString() + "' AND KHOHANG.MAMH=CHITIETHDX.MAMH AND CHITIETHDX.MAHDX='" + txtMaHD.Text + "'";
+                                }
+                                else
+                                {
+                                    SQL = "select TONKHO from KHOHANG where MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["_LOHANG"].ToString() + "'";
+
+                                }
                                 DataTable dt = ctlNCC.GETDATA(SQL);
 
                                 if (dt.Rows.Count > 0)
                                 {
                                     Double slton = Convert.ToDouble(dt.Rows[0]["TONKHO"].ToString());
                                     Double SOLUONG = Convert.ToDouble(dtr["SOLUONG"].ToString()) + Convert.ToDouble(dtr["KMAI"].ToString());
+                                    string LOHANG1 = "";
+                                    if (PublicVariable.isHSD)
+                                    {
+                                        LOHANG1 = " với lô hàng " + dtr["_LOHANG"].ToString();
+                                    }
                                     if (SOLUONG <= 0)
                                     {
-                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " KHÔNG THỂ XUẤT <=0");
+                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString()+LOHANG1 + " KHÔNG THỂ XUẤT <=0");
                                         return;
                                     }
                                     if (slton < SOLUONG)
                                     {
-                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Không đủ số lượng để xuất");
+                                        System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() +LOHANG1+ " Không đủ số lượng để xuất");
                                         return;
                                     }
                                 }
@@ -1590,12 +1616,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 }
             }
 
-            string SQL = "SELECT CHITIETHDX.MAHDX,convert(varchar,HOADONXUAT.NGAYXUAT,103) as NGAYXUAT ,TENKH,TENMH,DONVITINH,SOLUONGXUAT,KMAI,GIABAN AS GIATIEN,GIABAN*SOLUONGXUAT AS THANHTIEN  FROM CHITIETHDX, HOADONXUAT,KHACHHANG, (SELECT MATHANG.MAMH,TENMH, DONVITINH FROM DONVITINH, MATHANG WHERE MATHANG.MADVT=DONVITINH.MADVT) AS DONVITINH WHERE CHITIETHDX.MAHDX=HOADONXUAT.MAHDX AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND CHITIETHDX.MAMH=DONVITINH.MAMH " + SQL1;
-            DataTable dt1 = ctlNCC.GETDATA(SQL);
-            SQL = "SELECT MATHANG.MAMH,convert(varchar,HOADONXUAT.NGAYXUAT,103) as NGAYXUAT, TENMH, SUM(SOLUONGXUAT+KMAI) AS SOLUONGXUAT, GIABAN AS GIATIEN FROM CHITIETHDX, MATHANG, DONVITINH,HOADONXUAT WHERE MATHANG.MADVT=DONVITINH.MADVT AND  HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND MATHANG.MAMH=CHITIETHDX.MAMH " + SQL1 + " GROUP BY MATHANG.MAMH,HOADONXUAT.NGAYXUAT, TENMH,GIABAN";
+          //  string SQL = "SELECT CHITIETHDX.MAHDX,convert(varchar,HOADONXUAT.NGAYXUAT,103) as NGAYXUAT ,TENKH,TENMH,DONVITINH,SOLUONGXUAT,KMAI,GIABAN AS GIATIEN,GIABAN*SOLUONGXUAT AS THANHTIEN  FROM CHITIETHDX, HOADONXUAT,KHACHHANG, (SELECT MATHANG.MAMH,TENMH, DONVITINH FROM DONVITINH, MATHANG WHERE MATHANG.MADVT=DONVITINH.MADVT) AS DONVITINH WHERE CHITIETHDX.MAHDX=HOADONXUAT.MAHDX AND HOADONXUAT.MAKH=KHACHHANG.MAKH AND CHITIETHDX.MAMH=DONVITINH.MAMH " + SQL1;
+           // DataTable dt1 = ctlNCC.GETDATA(SQL);
+            string SQL = "SELECT MATHANG.MAMH,convert(varchar,HOADONXUAT.NGAYXUAT,103) as NGAYXUAT,TENMH+' - ' +CONVERT(VARCHAR,KLDVT)+' - '+DONVITINH AS TENMH, SUM(SOLUONGXUAT+KMAI) AS SOLUONGXUAT, GIABAN AS GIATIEN FROM CHITIETHDX, MATHANG, DONVITINH,HOADONXUAT WHERE MATHANG.MADVT=DONVITINH.MADVT AND  HOADONXUAT.MAHDX=CHITIETHDX.MAHDX AND MATHANG.MAMH=CHITIETHDX.MAMH " + SQL1 + " GROUP BY MATHANG.MAMH,HOADONXUAT.NGAYXUAT, TENMH,GIABAN, DONVITINH,KLDVT";
             DataTable dt2 = ctlNCC.GETDATA(SQL);
-            Inhdnhap rep = new Inhdnhap(dt1);
-            rep.ShowPreviewDialog();
+           // Inhdnhap rep = new Inhdnhap(dt1);
+           // rep.ShowPreviewDialog();
 
             Inhdxuat rep2 = new Inhdxuat(dt2);
             rep2.ShowPreviewDialog();  

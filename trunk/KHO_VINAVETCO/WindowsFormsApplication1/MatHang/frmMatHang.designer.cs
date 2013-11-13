@@ -196,13 +196,13 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(3, 3);
+            this.gridControl1.Location = new System.Drawing.Point(2, 2);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(1228, 417);
+            this.gridControl1.Size = new System.Drawing.Size(1230, 419);
             this.gridControl1.TabIndex = 1;
             this.gridControl1.UseEmbeddedNavigator = true;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -284,8 +284,6 @@
             this.colMADVT.Name = "colMADVT";
             this.colMADVT.OptionsColumn.AllowEdit = false;
             this.colMADVT.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colMADVT.Visible = true;
-            this.colMADVT.VisibleIndex = 2;
             this.colMADVT.Width = 166;
             // 
             // colSOLUONGMH
@@ -300,7 +298,7 @@
             this.colSOLUONGMH.SummaryItem.DisplayFormat = "{0:0.##}";
             this.colSOLUONGMH.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSOLUONGMH.Visible = true;
-            this.colSOLUONGMH.VisibleIndex = 5;
+            this.colSOLUONGMH.VisibleIndex = 4;
             this.colSOLUONGMH.Width = 177;
             // 
             // gridColumn3
@@ -312,7 +310,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 4;
+            this.gridColumn3.VisibleIndex = 3;
             this.gridColumn3.Width = 139;
             // 
             // colMOTA
@@ -323,7 +321,7 @@
             this.colMOTA.OptionsColumn.AllowEdit = false;
             this.colMOTA.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colMOTA.Visible = true;
-            this.colMOTA.VisibleIndex = 6;
+            this.colMOTA.VisibleIndex = 5;
             this.colMOTA.Width = 205;
             // 
             // colMAKHO
@@ -340,7 +338,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 3;
+            this.gridColumn2.VisibleIndex = 2;
             this.gridColumn2.Width = 138;
             // 
             // gridColumn1

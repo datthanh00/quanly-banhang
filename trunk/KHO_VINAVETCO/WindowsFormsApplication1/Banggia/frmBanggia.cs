@@ -48,6 +48,8 @@ namespace WindowsFormsApplication1
             load_cbhanghoa();
             gridControl2.DataSource = CTL.GETBANGGIA(dto.MABG);
             gridView1.ExpandAllGroups();
+            advBandedGridView2.OptionsView.ColumnAutoWidth = true;
+            advBandedGridView2.BestFitColumns();
         }
 
         private void btDong_Click(object sender, EventArgs e)
@@ -110,6 +112,8 @@ namespace WindowsFormsApplication1
                 gridControl2.DataSource = CTL.GETBANGGIA(dto.MABG);
 
                 gridView1.ExpandAllGroups();
+                advBandedGridView2.OptionsView.ColumnAutoWidth = true;
+                advBandedGridView2.BestFitColumns();
             }
             catch
             {

@@ -55,26 +55,10 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-            frm.LoadVI += new frmMain.Translate(loadcbVietNam);
-            ////frm.LoadVI += new frmMain.Translate(loadGird);
-            
-            frm.LoadEN += new frmMain.Translate(loadcbEgLish);
-            //frm.LoadEN += new frmMain.Translate(loadReSEG);
-
-            if (iNgonNgu == 0)
-            {
-                loadReSVN1();
-                loadcbVietNam();
-            }
-            else
-            {
-                loadReSEG1();
-                loadcbEgLish();
-            } 
+ 
             vload();
             load_cbhanghoa();
-            loadngonngu();
-         
+ 
             if (!PublicVariable.isKHOILUONG)
             {
                 gridView1.Columns["KHOILUONG"].Visible = false;
@@ -89,57 +73,9 @@ namespace WindowsFormsApplication1
             Load_mathang();
         }
 
-        private void loadReSVN1()
-        {
-            
-            btin.Text = resVietNam.btIn.ToString();
-            BtXuatdulieu.Text = resVietNam.btXuat.ToString();
-       
-        }
-
-        private void loadReSEG1()
-        {
-            CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-
-       
-           btin.Text = resEngLand.btIn.ToString();
-           BtXuatdulieu.Text = resEngLand.btXuat.ToString();
-
-        }
-     
 
 
-        private void loadngonngu()
-        {
-            if (iNgonNgu == 0)
-            {
-                loadcbVietNam();
 
-            }
-            else
-            {
-                loadcbEgLish();
-                loadgirdenglish();
-
-            }
-        }
-
-        private void loadgirdenglish()
-        {
-
-           
-        }
-
-
-        public void loadcbEgLish()
-        {
-            
-
-        }
-        public void loadcbVietNam()
-        {
-           
-        }
   
         public void load()
         {
@@ -154,14 +90,7 @@ namespace WindowsFormsApplication1
 
         private void vload()
         {
-            if (iNgonNgu == 0)
-            {
-                xtraTabPage3.Text = "Chọn Loại Thống Kê Mặt Hàng";
-            }
-            else
-            {
-                xtraTabPage3.Text = "STATISTICAL ITEMS REPORT";
-            }
+
         }
 
         private void load_cbhanghoa()
@@ -231,6 +160,7 @@ namespace WindowsFormsApplication1
                 NGAYKIEMKHO = cbncc.Text;
             }
             gridControl1.DataSource = ctr.getonkiemkho(NGAYKIEMKHO);
+            gridView1.BestFitColumns();
         }
         
 

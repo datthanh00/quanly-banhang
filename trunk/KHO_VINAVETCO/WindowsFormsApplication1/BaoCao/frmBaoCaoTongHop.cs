@@ -108,6 +108,7 @@ namespace WindowsFormsApplication1
             dto.NGAYKTKHO = NGAYKT;
 
             gridControl1.MainView = grid_hoadontheo_NCC;
+
             if (ISXEMCLICK){
             dt = ctr1.thongkhetheoNCC(dto);
                 gridControl1.DataSource = dt;
@@ -125,6 +126,8 @@ namespace WindowsFormsApplication1
             {
                 grid_hoadontheo_NCC.Columns["HSD"].Visible = false;
             }
+           // grid_hoadontheo_NCC.OptionsView.ColumnAutoWidth = false;
+            grid_hoadontheo_NCC.BestFitColumns();
            
         }
         private void loadGird2()
@@ -167,6 +170,8 @@ namespace WindowsFormsApplication1
             {
                 grid_hoadontheo_KHACHHANG.Columns["HSD"].Visible = false;
             }
+            //grid_hoadontheo_KHACHHANG.OptionsView.ColumnAutoWidth = false;
+            grid_hoadontheo_KHACHHANG.BestFitColumns();
         }
        
         private void loadGird_tonkhotonghop()
@@ -216,6 +221,9 @@ namespace WindowsFormsApplication1
                 grid_tonkho_CUOIKY.Columns["HSD"].Visible = false;
                 grid_tonkho_CUOIKY.Columns["LOHANG"].Visible = false;
             }
+
+           // grid_tonkho_CUOIKY.OptionsView.ColumnAutoWidth = false;
+            grid_tonkho_CUOIKY.BestFitColumns();
         }
         private void loadGird_thekho()
         {
@@ -283,6 +291,9 @@ namespace WindowsFormsApplication1
                 grid_THEKHO.Columns["KLTONCUOI"].Visible = false;
             }
 
+            //grid_THEKHO.OptionsView.ColumnAutoWidth = false;
+            grid_THEKHO.BestFitColumns();
+
         }
         private void loadGird_chitiethanghoa()
         {
@@ -348,6 +359,8 @@ namespace WindowsFormsApplication1
                 gridView9.Columns["KLTRAXUAT"].Visible = false;
                 gridView9.Columns["KLTONCUOI"].Visible = false;
             }
+           // gridView9.OptionsView.ColumnAutoWidth = false;
+            gridView9.BestFitColumns();
         }
        
   
@@ -567,6 +580,7 @@ namespace WindowsFormsApplication1
                   {
 
                       loadGird1();
+                      
                   }
                   if (gridControl1.MainView == grid_hoadontheo_KHACHHANG)
                   {

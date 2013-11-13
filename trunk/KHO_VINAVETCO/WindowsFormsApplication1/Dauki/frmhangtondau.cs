@@ -211,6 +211,7 @@ namespace WindowsFormsApplication1
         {
 
             gridControl1.DataSource = ctr.getondauky_mathang();
+            gridView1.BestFitColumns();
         }
         
 

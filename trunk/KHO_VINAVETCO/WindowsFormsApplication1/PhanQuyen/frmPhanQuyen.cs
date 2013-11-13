@@ -35,9 +35,7 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-            frm = new frmMain();
-            frm.LoadVI += new frmMain.Translate(loadVN);
-            frm.LoadEN += new frmMain.Translate(loadEN);
+            
             if (iNgonNgu == 0)
             {
                 loadVN();
