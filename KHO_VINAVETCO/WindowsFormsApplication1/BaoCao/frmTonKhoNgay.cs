@@ -160,23 +160,21 @@ namespace WindowsFormsApplication1
         }
         clDTO dto = new clDTO();
 
-        private void loadGird()
+        private void loadGird(Boolean ISFILTER)
         {
             string NGAYBD = dateTu.Text;
             dto.NGAYBD = NGAYBD;
 
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
             dto.NGAYBDKHO = NGAYBD;
-
+            dto.ISFILTER = ISFILTER;
             String SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
             CTL ctlNCC = new CTL();
             DataTable   dt=ctlNCC.GETDATA(SQL);
 
             SQL="SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
             DataTable dt2=ctlNCC.GETDATA(SQL);
-            string COUNT = dt.Rows[0][0].ToString();
-            string ss1 = dt2.Rows[0][0].ToString();
-            string sss2 = DateTime.Now.ToString("dd/MM/yyy");
+           
 
             if (dt.Rows[0][0].ToString() != "0" || dt2.Rows[0][0].ToString() == dateTu.Text)
             {
@@ -205,7 +203,7 @@ namespace WindowsFormsApplication1
                 SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' AND TONKHONGAY <> 0 ";
 
                 dt = ctlNCC.GETDATA(SQL);
-                string s123 = dt.Rows[0][0].ToString();
+               
                 if (dt.Rows[0][0].ToString() != "0")
                 {
                     //INSERT CAP NHAT
@@ -265,7 +263,7 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-           loadGird();
+           loadGird(false);
         }
 
         private void btIn_Click(object sender, EventArgs e)
@@ -385,7 +383,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
-                loadGird();
+                loadGird(false);
             }
             catch (Exception)
             {
@@ -519,6 +517,17 @@ namespace WindowsFormsApplication1
             deDongTab();
         }
 
+        private void Btnfilter_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+           loadGird(true);
+        }
+
+  
         
     }
 }
