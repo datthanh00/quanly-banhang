@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1
         private String _LOGO;
         private String _MASOTHUE;
         private String _WEBSITE;
+
       
         public String MACT
         {
@@ -128,6 +129,7 @@ namespace WindowsFormsApplication1
 	private Byte[] _PICTURE;
 	private String _MOTA;
     private bool _TINHTRANG;
+    private bool _ISFILTER;
     public string MAMH
     {
         get { return _MAMH; }
@@ -198,6 +200,12 @@ namespace WindowsFormsApplication1
     {
         get { return _TINHTRANG; }
         set { _TINHTRANG = value; }
+    }
+
+    public bool ISFILTER
+    {
+        get { return _ISFILTER; }
+        set { _ISFILTER = value; }
     }
 
         //---------------------Nhom Hang---------------------------------------------------------

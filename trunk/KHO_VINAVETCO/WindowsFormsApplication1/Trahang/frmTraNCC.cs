@@ -468,20 +468,22 @@ namespace WindowsFormsApplication1
                                 XtraMessageBox.Show("bạn đã chọn thanh toán bằng tiền mặt nên số tiền trả phải lớn hơn 0");
                                 return;
                             }
-                            else if (Convert.ToInt64(txtthanhtien.Value) < Convert.ToInt64(dtoNCC.TIENDATRA))
-                            {
-                                MessageBox.Show("Số tiền trả của bạn không thể lớn hơn số tiền trong hóa đơn");
-                                return;
-                            }
+                            
                         }
-                        
-                        if (txtthanhtien.Value > 100000000000)
+                        if (Convert.ToInt64(txtthanhtien.Value) < Convert.ToInt64(dtoNCC.TIENDATRA))
+                        {
+                            MessageBox.Show("Số tiền trả của bạn không thể lớn hơn số tiền trong hóa đơn");
+                            return;
+                        }
+                        if (txtthanhtien.Value > 50000000000)
                         {
                             XtraMessageBox.Show("Hóa đơn giá trị quá lớn bạn không thể lưu");
                             return;
                         }
-                        
+
                         dtoNCC.NGAYNHAP = "convert(varchar,getDate(),101)";
+
+                        dtoNCC.NGAYXUAT = dtoNCC.NGAYNHAP;
 
                         dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
 
@@ -1771,6 +1773,10 @@ namespace WindowsFormsApplication1
             Int64 _cktien = Convert.ToInt64(thanhtien * _ckphantram / 100);
             thanhtien = thanhtien - _cktien;
             txtthanhtien.Text = thanhtien.ToString();
+            if (CheckGoiDau.Checked == true)
+            {
+                cbotientra.Text = thanhtien.ToString();
+            }
             cktien.Value = _cktien;
             if (cbotientra.Text != "")
             {
@@ -1784,7 +1790,7 @@ namespace WindowsFormsApplication1
         {
             Int64 thanhtien = tienchuack;
             Int64 _cktien = Convert.ToInt64(cktien.Value);
-            if (_cktien > 0 && thanhtien > 0)
+            if (_cktien >= 0 && thanhtien >= 0)
             {
                 ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
             }
@@ -1797,6 +1803,10 @@ namespace WindowsFormsApplication1
             }
             thanhtien = thanhtien - _cktien;
             txtthanhtien.Text = thanhtien.ToString();
+            if (CheckGoiDau.Checked == true)
+            {
+                cbotientra.Text = thanhtien.ToString();
+            }
             if (cbotientra.Text != "")
             {
                 tientra = Convert.ToInt64(cbotientra.Value);
@@ -1809,6 +1819,12 @@ namespace WindowsFormsApplication1
         {
             thanhtien =Convert.ToInt64(txtthanhtien.Value);
             tientra = Convert.ToInt64(cbotientra.Value);
+            if (tientra < 0)
+            {
+                MessageBox.Show("Tiền trả không thể nhỏ hơn 0");
+                tientra = 0;
+                cbotientra.Value = 0;
+            }
             conlai = thanhtien - tientra;
             txtconLai.Text = conlai.ToString();
         }

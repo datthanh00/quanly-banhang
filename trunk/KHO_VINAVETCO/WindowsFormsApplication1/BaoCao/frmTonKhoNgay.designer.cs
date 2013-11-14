@@ -52,6 +52,7 @@
             this.kHOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kHOgetallBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.Btnfilter = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
             this.btXuat = new DevExpress.XtraEditors.SimpleButton();
@@ -307,6 +308,7 @@
             // 
             // panelControl3
             // 
+            this.panelControl3.Controls.Add(this.Btnfilter);
             this.panelControl3.Controls.Add(this.simpleButton1);
             this.panelControl3.Controls.Add(this.btIn);
             this.panelControl3.Controls.Add(this.btXuat);
@@ -316,6 +318,16 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(1286, 38);
             this.panelControl3.TabIndex = 1;
+            // 
+            // Btnfilter
+            // 
+            this.Btnfilter.Image = global::Quanlykho.Properties.Resources.check;
+            this.Btnfilter.Location = new System.Drawing.Point(398, 5);
+            this.Btnfilter.Name = "Btnfilter";
+            this.Btnfilter.Size = new System.Drawing.Size(124, 29);
+            this.Btnfilter.TabIndex = 4;
+            this.Btnfilter.Text = "Lọc MH Hôm nay";
+            this.Btnfilter.Click += new System.EventHandler(this.Btnfilter_Click);
             // 
             // simpleButton1
             // 
@@ -330,7 +342,7 @@
             // btIn
             // 
             this.btIn.Image = ((System.Drawing.Image)(resources.GetObject("btIn.Image")));
-            this.btIn.Location = new System.Drawing.Point(315, 6);
+            this.btIn.Location = new System.Drawing.Point(308, 6);
             this.btIn.Name = "btIn";
             this.btIn.Size = new System.Drawing.Size(75, 29);
             this.btIn.TabIndex = 3;
@@ -439,7 +451,6 @@
             styleFormatCondition2});
             this.advBandedGridView3.GridControl = this.gridControl2;
             this.advBandedGridView3.Name = "advBandedGridView3";
-            this.advBandedGridView3.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseDownFocused;
             this.advBandedGridView3.OptionsSelection.MultiSelect = true;
             this.advBandedGridView3.OptionsView.AllowCellMerge = true;
             this.advBandedGridView3.OptionsView.ColumnAutoWidth = false;
@@ -1007,6 +1018,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridXuatKho;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridCuoiKi;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        public DevExpress.XtraEditors.SimpleButton Btnfilter;
         //private WindowsFormsApplication1.XUAT_NHAPTONDataSet1TableAdapters.KHOTableAdapter kHOTableAdapter;
     }
 }
