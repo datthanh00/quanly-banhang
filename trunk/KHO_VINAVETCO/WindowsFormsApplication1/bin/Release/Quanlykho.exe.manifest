@@ -317,14 +317,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Quanlykho.exe" size="2870784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Quanlykho.exe" size="2871296">
       <assemblyIdentity name="Quanlykho" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>6gnnfLAa2HdumQEDLTXUIPeOvak=</dsig:DigestValue>
+        <dsig:DigestValue>S8cvjXyW2MRKFCgdnzvGLDK2ig8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -336,7 +336,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>DjBKBICn/JMLhHCO+Ty+a/E/dbQ=</dsig:DigestValue>
+        <dsig:DigestValue>ORM00kpNYYCHrj+i/fNstYC18Es=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
