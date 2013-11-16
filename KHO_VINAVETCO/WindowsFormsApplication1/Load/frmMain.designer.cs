@@ -349,18 +349,18 @@
             // 
             // btCongNoNCC
             // 
-            this.btCongNoNCC.Caption = "Nhà Cung Cấp";
+            this.btCongNoNCC.Caption = "Công Nợ Công Ty";
             this.btCongNoNCC.Id = 20;
-            this.btCongNoNCC.LargeGlyph = global::Quanlykho.Properties.Resources.cno;
+            this.btCongNoNCC.LargeGlyph = global::Quanlykho.Properties.Resources.provider;
             this.btCongNoNCC.LargeWidth = 70;
             this.btCongNoNCC.Name = "btCongNoNCC";
             this.btCongNoNCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btCongNoNCC_ItemClick);
             // 
             // btCongNoKH
             // 
-            this.btCongNoKH.Caption = "Khách Hàng";
+            this.btCongNoKH.Caption = "Công Nợ Khách Hàng";
             this.btCongNoKH.Id = 21;
-            this.btCongNoKH.LargeGlyph = global::Quanlykho.Properties.Resources.KIEMKEKHO1;
+            this.btCongNoKH.LargeGlyph = global::Quanlykho.Properties.Resources.customer;
             this.btCongNoKH.LargeWidth = 70;
             this.btCongNoKH.Name = "btCongNoKH";
             this.btCongNoKH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btCongNoKH_ItemClick);
@@ -666,7 +666,7 @@
             // 
             this.BTTraNCC.Caption = "Trả Hàng CTY";
             this.BTTraNCC.Id = 106;
-            this.BTTraNCC.LargeGlyph = global::Quanlykho.Properties.Resources.tonkho;
+            this.BTTraNCC.LargeGlyph = global::Quanlykho.Properties.Resources.store;
             this.BTTraNCC.LargeWidth = 60;
             this.BTTraNCC.Name = "BTTraNCC";
             this.BTTraNCC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTTraNCC_ItemClick);
@@ -675,7 +675,7 @@
             // 
             this.BTKHtra.Caption = "Khách Trả Hàng";
             this.BTKHtra.Id = 107;
-            this.BTKHtra.LargeGlyph = global::Quanlykho.Properties.Resources.Hien;
+            this.BTKHtra.LargeGlyph = global::Quanlykho.Properties.Resources.listvn;
             this.BTKHtra.LargeWidth = 60;
             this.BTKHtra.Name = "BTKHtra";
             this.BTKHtra.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BTKHtra_ItemClick);
@@ -729,7 +729,7 @@
             // 
             this.barButtoncongnodau.Caption = "Công Nợ NCC";
             this.barButtoncongnodau.Id = 114;
-            this.barButtoncongnodau.LargeGlyph = global::Quanlykho.Properties.Resources.NONCCDAUKY1;
+            this.barButtoncongnodau.LargeGlyph = global::Quanlykho.Properties.Resources.provider;
             this.barButtoncongnodau.LargeWidth = 80;
             this.barButtoncongnodau.Name = "barButtoncongnodau";
             this.barButtoncongnodau.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtoncongnodau_ItemClick);
@@ -774,7 +774,7 @@
             // 
             this.barButtonphaithudauky.Caption = "Công Nợ KH";
             this.barButtonphaithudauky.Id = 119;
-            this.barButtonphaithudauky.LargeGlyph = global::Quanlykho.Properties.Resources.doanhthu;
+            this.barButtonphaithudauky.LargeGlyph = global::Quanlykho.Properties.Resources.customer;
             this.barButtonphaithudauky.LargeWidth = 70;
             this.barButtonphaithudauky.Name = "barButtonphaithudauky";
             this.barButtonphaithudauky.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonphaithudauky_ItemClick);
@@ -810,7 +810,7 @@
             // 
             this.buttonNOPTIENTRUOC.Caption = "Nộp Tiền Trước";
             this.buttonNOPTIENTRUOC.Id = 124;
-            this.buttonNOPTIENTRUOC.LargeGlyph = global::Quanlykho.Properties.Resources.tonkho;
+            this.buttonNOPTIENTRUOC.LargeGlyph = global::Quanlykho.Properties.Resources.NONCCDAUKY;
             this.buttonNOPTIENTRUOC.LargeWidth = 70;
             this.buttonNOPTIENTRUOC.Name = "buttonNOPTIENTRUOC";
             this.buttonNOPTIENTRUOC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick_1);
@@ -1193,7 +1193,7 @@
             // 
             // lbkho
             // 
-            this.lbkho.Location = new System.Drawing.Point(841, 96);
+            this.lbkho.Location = new System.Drawing.Point(840, 96);
             this.lbkho.Name = "lbkho";
             this.lbkho.Size = new System.Drawing.Size(46, 13);
             this.lbkho.TabIndex = 27;

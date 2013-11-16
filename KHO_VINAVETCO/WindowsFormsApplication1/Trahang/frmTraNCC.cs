@@ -1419,9 +1419,17 @@ namespace WindowsFormsApplication1
             Int64 _cktien = Convert.ToInt64(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
             Int64 thanhtien = tienchuack;
-            if (_cktien > 0 && thanhtien > 0)
+            if (_cktien >= 0 && thanhtien >= 0)
             {
-                ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                if (thanhtien > 0)
+                {
+                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                }
+                else
+                {
+                    ckphantram.Value = 0;
+                    cktien.Value = 0;
+                }
             }
             else
             {
@@ -1792,7 +1800,15 @@ namespace WindowsFormsApplication1
             Int64 _cktien = Convert.ToInt64(cktien.Value);
             if (_cktien >= 0 && thanhtien >= 0)
             {
-                ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                if (thanhtien > 0)
+                {
+                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                }
+                else
+                {
+                    ckphantram.Value = 0;
+                    cktien.Value = 0;
+                }
             }
             else
             {

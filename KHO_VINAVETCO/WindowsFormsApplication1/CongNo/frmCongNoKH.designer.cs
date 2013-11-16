@@ -160,9 +160,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(138, 465);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(138, 466);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -179,7 +179,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(138, 465);
+            this.navBarControl1.Size = new System.Drawing.Size(138, 466);
             this.navBarControl1.TabIndex = 3;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -336,7 +336,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(144, 10);
+            this.labelControl1.Location = new System.Drawing.Point(145, 11);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(20, 13);
             this.labelControl1.TabIndex = 100;
@@ -344,7 +344,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(8, 10);
+            this.labelControl2.Location = new System.Drawing.Point(9, 11);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(13, 13);
             this.labelControl2.TabIndex = 100;
@@ -468,8 +468,8 @@
             // 
             // 
             this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
-            this.printableComponentLink1.PrintingSystem = this.printingSystem2;
-            this.printableComponentLink1.PrintingSystemBase = this.printingSystem2;
+            this.printableComponentLink1.PrintingSystem = this.printingSystem1;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
@@ -539,7 +539,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(144, 10);
+            this.labelControl3.Location = new System.Drawing.Point(145, 11);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(20, 13);
             this.labelControl3.TabIndex = 11;
@@ -547,7 +547,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(8, 10);
+            this.labelControl4.Location = new System.Drawing.Point(9, 11);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(13, 13);
             this.labelControl4.TabIndex = 11;
