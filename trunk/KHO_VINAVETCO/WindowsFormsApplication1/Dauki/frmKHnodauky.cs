@@ -111,6 +111,7 @@ namespace WindowsFormsApplication1
                        SQL = SQL + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO + " + dtr["TONGTIENTRA"].ToString() + " WHERE MAKH='" + dtr["MAKH"].ToString() + "'";
                        i++;
                    }
+				   i--;
                    ctlNCC.executeNonQuery2(SQL);
                }
                
@@ -132,6 +133,7 @@ namespace WindowsFormsApplication1
                        SQL = SQL + " \r\nGO\r\n UPDATE KHACHHANG SET CONGNO=CONGNO + " + CHENHLECH.ToString() + " WHERE MAKH='" + dtr["MAKH"].ToString() + "'";
                        i++;
                    }
+				   i--;
                    ctlNCC.executeNonQuery2(SQL);
                }
            }

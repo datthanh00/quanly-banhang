@@ -110,6 +110,7 @@ namespace WindowsFormsApplication1
                        SQL = SQL + " \r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO + " + dtr["TONGTIENTRA"].ToString() + " WHERE MANCC='" + dtr["MANCC"].ToString() + "'";
                        i++;
                    }
+				   i--;
                    ctlNCC.executeNonQuery2(SQL);
                }
                
@@ -132,6 +133,7 @@ namespace WindowsFormsApplication1
                        SQL = SQL + " \r\nGO\r\n UPDATE NHACUNGCAP SET CONGNO=CONGNO + " + CHENHLECH.ToString() + " WHERE MANCC='" + dtr["MANCC"].ToString() + "'";
                        i++;
                    }
+				   i--;
                    ctlNCC.executeNonQuery2(SQL);
                }
            }

@@ -230,9 +230,9 @@ namespace WindowsFormsApplication1
 
         private void SetPhanQuyen(string MACN)
         {
-            int tabcount= tabControl12.Tabs.Count;
-            if (tabcount == 0)
-            {
+           // int tabcount= tabControl12.Tabs.Count;
+           // if (tabcount == 0)
+            //{
                 //int phanquyencount = PhanQuyen.Rows.Count;
          
                 int imacn = Convert.ToInt32(MACN);
@@ -242,9 +242,7 @@ namespace WindowsFormsApplication1
                 PublicVariable.XOA = PhanQuyen.Rows[imacn - 1]["XOA"].ToString();
                 PublicVariable.SUA = PhanQuyen.Rows[imacn - 1]["SUA"].ToString();
                 PublicVariable.IN = PhanQuyen.Rows[imacn - 1]["IN"].ToString();
-            }
-
-              
+           // }  
         }
         private void SetPhanQuyen2(string MACN)
         {
@@ -1111,7 +1109,7 @@ namespace WindowsFormsApplication1
                     else
                         item.Text = "Report total";
                 }
-                if (item.Name == "DoanhThu")
+                if (item.Name == "Doanhthu")
                 {
                     if (iNgonNgu == 0)
                         item.Text = "Thống kê doanh thu";
@@ -1378,7 +1376,7 @@ namespace WindowsFormsApplication1
             if (!checkOpenTabs(sTieuDe))
             {
                 TabItem t = tabControl12.CreateTab(sTieuDe);
-                t.Name = "DoanhThu";
+                t.Name = "Doanhthu";
                 frmThongKeDoanhThu dt = new frmThongKeDoanhThu();
                 dt.deDongTab = new frmThongKeDoanhThu._deDongTab(vDOngTab);
                 dt.frm=this;

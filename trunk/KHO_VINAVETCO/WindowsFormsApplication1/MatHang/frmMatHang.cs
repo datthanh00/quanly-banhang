@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1
         {
             InitializeComponent();
         }
-        string sma, sten, smathue, smanhomhang, smadvt, ssoluong, smota, stinhtrang, smakho, SKLDVT, sgiamua;
+        string sma, sten,SQUYCAH, smathue, smanhomhang, smadvt, ssoluong, smota, stinhtrang, smakho, SKLDVT, sgiamua;
         CTL CTL = new CTL();
         DAO DAO = new DAO();
         DTO DTO = new DTO();
@@ -110,7 +110,7 @@ namespace WindowsFormsApplication1
         }
         private void loadmathang()
         {
-            gridControl1.DataSource = CTL.GETMATHANG();
+            gridControl1.DataSource = CTL.GETMATHANGEDIT();
             gridView1.ExpandAllGroups();
             gridView1.BestFitColumns();
         }
@@ -224,23 +224,15 @@ namespace WindowsFormsApplication1
 
             sua.MAMH = sma;
             sua.TENMATHANG = sten;
+            sua.QUYCACH = SQUYCAH;
             sua.MANCC = smanhomhang;
             sua.DVT = smadvt;
             sua.KLDVT = SKLDVT;
-
             sua.MASOTHUE = smathue;
-  
             sua.MOTA = smota;
             sua.SOLUONG = ssoluong;
-
- 
-
             sua.sBoPhan = sMaBP;
-           
-            
-            
             sua.MAKHO = smakho;
-            
             sua.HINHANH = "";
             
             sua.TINHTRANG = stinhtrang;
@@ -345,6 +337,7 @@ namespace WindowsFormsApplication1
                 DataRow dtr = gridView1.GetDataRow(e.RowHandle);
                 sma = dtr["MAMH"].ToString();
                 sten = dtr["TENMH"].ToString();
+                SQUYCAH = dtr["QUYCACH"].ToString();
                 smanhomhang = dtr["MANCC"].ToString();
                 smadvt = dtr["MADVT"].ToString();
                 SKLDVT = dtr["KLDVT"].ToString();
@@ -391,6 +384,7 @@ namespace WindowsFormsApplication1
 
                     sua.MAMH = sma;
                     sua.TENMATHANG = sten;
+                    sua.QUYCACH = SQUYCAH;
                     sua.MANCC = smanhomhang;
                     sua.DVT = smadvt;
                     sua.KLDVT = SKLDVT;

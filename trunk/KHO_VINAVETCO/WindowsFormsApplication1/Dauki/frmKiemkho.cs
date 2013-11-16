@@ -139,6 +139,7 @@ namespace WindowsFormsApplication1
                        SQL = SQL + " \r\nGO\r\n UPDATE TONKIEMKHO SET [TONTT]=" + dtr["TONTT"].ToString() + ",[TONKHO]=" + dtr["TONKHO"].ToString() + " WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "' AND NGAY='" + HSD + "'";
                        i++;
                    }
+				   i--;
                    ctlNCC.executeNonQuery2(SQL);
                }
           

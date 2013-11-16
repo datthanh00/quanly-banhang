@@ -233,6 +233,10 @@ namespace WindowsFormsApplication1
         {
             return DAO.GETMATHANG();
         }
+        public DataTable GETMATHANGEDIT()
+        {
+            return DAO.GETMATHANGEDIT();
+        }
         public DataTable GETBANGGIA(String MABG)
         {
             return DAO.GETBANGGIA(MABG);
