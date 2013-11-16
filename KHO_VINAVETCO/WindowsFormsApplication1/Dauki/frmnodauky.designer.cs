@@ -101,7 +101,6 @@
             this.colsoluong.FieldName = "TONGTIENTRA";
             this.colsoluong.Name = "colsoluong";
             this.colsoluong.SummaryItem.DisplayFormat = "{0:0,0}";
-            this.colsoluong.SummaryItem.FieldName = "SOLUONGMH";
             this.colsoluong.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colsoluong.Visible = true;
             this.colsoluong.VisibleIndex = 3;

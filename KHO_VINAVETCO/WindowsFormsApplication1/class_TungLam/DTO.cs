@@ -43,6 +43,14 @@ namespace WindowsFormsApplication1
             set { _HSD = value; }
         }
 
+        private string _QUYCACH;
+
+        public string QUYCACH
+        {
+            get { return _QUYCACH; }
+            set { _QUYCACH = value; }
+        }
+
         private string _LOHANG;
 
         public string LOHANG

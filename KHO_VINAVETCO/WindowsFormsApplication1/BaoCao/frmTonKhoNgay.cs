@@ -159,11 +159,14 @@ namespace WindowsFormsApplication1
            // colTen.Caption = resEngLand.TenKho.ToString();
         }
         clDTO dto = new clDTO();
-
+        Boolean _isfilter = false;
         private void loadGird(Boolean ISFILTER)
         {
             string NGAYBD = dateTu.Text;
             dto.NGAYBD = NGAYBD;
+            dto.ISFILTER = false;
+
+            
 
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
             dto.NGAYBDKHO = NGAYBD;
@@ -236,6 +239,18 @@ namespace WindowsFormsApplication1
                 {
                     advBandedGridView3.Columns["LOHANG"].Visible = false;
                 }
+
+                if (ISFILTER)
+                {
+                    advBandedGridView3.ActiveFilterEnabled = true;
+                    advBandedGridView3.ActiveFilterString = "NHAP+TRANHAP+XUAT+TRAXUAT>0";
+                    _isfilter = true;
+                }
+                else
+                {
+                    advBandedGridView3.ActiveFilterEnabled = false;
+                    _isfilter = false;
+                }
             }
             else
             {
@@ -264,6 +279,7 @@ namespace WindowsFormsApplication1
                 return;
             }
            loadGird(false);
+
         }
 
         private void btIn_Click(object sender, EventArgs e)
@@ -399,6 +415,8 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
+          
+            
             string NGAYBD = dateTu.Text;
             CTL ctlNCC = new CTL();
             string SQL="";
@@ -411,6 +429,13 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("vui lòng nhấn nút xem trước khi lưu");
                 return;
             }
+
+            if (_isfilter)
+            {
+                loadGird(false);
+            }
+
+
             string s1 = dtr1["NGAY"].ToString();
             string s2 = dt.Rows[0][0].ToString();
             if( dtr1["NGAY"].ToString() == dt.Rows[0][0].ToString()){
@@ -431,6 +456,7 @@ namespace WindowsFormsApplication1
 
                             i++;
                         }
+						i--;
                         ctlNCC.executeNonQuery2(SQL);
                     }
                 }
@@ -446,10 +472,14 @@ namespace WindowsFormsApplication1
 
                             i++;
                         }
+                        i--;
                         ctlNCC.executeNonQuery2(SQL);
                     }
                 }
-                
+                if (_isfilter)
+                {
+                    loadGird(true);
+                }
                 MessageBox.Show("Đã lưu tồn kho thực tế ngày hôm nay");
             }else{
                 MessageBox.Show("Không phải ngày hôm nay nên không thể chỉnh sửa");
@@ -525,6 +555,7 @@ namespace WindowsFormsApplication1
                 return;
             }
            loadGird(true);
+           
         }
 
   

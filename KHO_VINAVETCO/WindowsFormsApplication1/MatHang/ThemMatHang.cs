@@ -81,7 +81,7 @@ namespace WindowsFormsApplication1
            
             this.Text = "Form Insert && Update Products";
         }
-        public string MANHOMHANG, MANCC, TENMATHANG, MAMH, DVT, TINHTRANG, HINHANH, MASOTHUE, SOLUONG, MOTA, MAKHO, MADVT,KLDVT,GIAMUA;
+        public string MANHOMHANG, MANCC, TENMATHANG, MAMH, DVT, TINHTRANG, HINHANH, MASOTHUE, SOLUONG, MOTA, MAKHO, MADVT,KLDVT,GIAMUA,QUYCACH;
   
         public void loadgirdlookupTHUE()
         {
@@ -157,6 +157,7 @@ namespace WindowsFormsApplication1
 
                 txtMaMH.Text = MAMH;
                 txtTenMH.Text = TENMATHANG;
+                txtquycach.Text = QUYCACH;
                 cbNhomHang.Text = MANCC;
                 cbDvt.Text = DVT;
                 calKLDVT.Text = KLDVT;
@@ -202,6 +203,21 @@ namespace WindowsFormsApplication1
                         txtTenMH.Focus();
                         return;
                     }
+                    else if
+                     (txtquycach.Text == "")
+                    {
+                        XtraMessageBox.Show("Vui lòng Nhập Tên QUY CÁCH");
+                        txtquycach.Focus();
+                        return;
+                    }
+                     else if
+                     (txtquycach.Text.Length > 48 || txtquycach.Text.Length <5)
+                    {
+                        XtraMessageBox.Show("Tên QUY CÁCH QUÁ DÀI hoặc quá ngắn");
+                        txtquycach.Focus();
+                        return;
+                    }
+    
     
                     else if (cbDvt.Text == "")
                     {
@@ -271,6 +287,7 @@ namespace WindowsFormsApplication1
                             DTO.MANCC = MANCC;
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
+                            DTO.QUYCACH = txtquycach.Text;
                             DTO.MADVT = DVT;
                             DTO.KLDVT = Convert.ToInt64(calKLDVT.Value).ToString();
                             DTO.SOLUONGMH = "0";
@@ -304,6 +321,7 @@ namespace WindowsFormsApplication1
                             DTO.MADVT = DVT;
                             DTO.KLDVT = Convert.ToInt64(calKLDVT.Value).ToString();
                             DTO.TENMH = txtTenMH.Text;
+                            DTO.QUYCACH = txtquycach.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.LOHANG = "TONDAU";
                             DTO.SOLUONGMH = "0";
@@ -328,8 +346,20 @@ namespace WindowsFormsApplication1
                         txtTenMH.Focus();
                         return;
                     }
-
-  
+                    else if (txtquycach.Text == "")
+                    {
+                        XtraMessageBox.Show("Please Choose The TYPE");
+                        txtquycach.Focus();
+                        return;
+                    }
+                    else if
+                     (txtquycach.Text.Length > 48 || txtquycach.Text.Length <5)
+                    {
+                        XtraMessageBox.Show("Tên QUY CÁCH QUÁ DÀI hoặc quá ngắn");
+                        txtquycach.Focus();
+                        return;
+                    }
+    
                     else if (cbNhomHang.Text == "")
                     {
                         XtraMessageBox.Show("Please Choose The Group Product");
@@ -366,6 +396,7 @@ namespace WindowsFormsApplication1
                             DTO.MADVT = DVT;
                             DTO.KLDVT = Convert.ToInt64(calKLDVT.Value).ToString();
                             DTO.TENMH = txtTenMH.Text;
+                            DTO.QUYCACH=txtquycach.Text;
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
@@ -402,6 +433,7 @@ namespace WindowsFormsApplication1
                             DTO.KLDVT = Convert.ToInt64(calKLDVT.Value).ToString();
                             DTO.MAKHO = PublicVariable.MAKHO;
                             DTO.TENMH = txtTenMH.Text;
+                            DTO.QUYCACH=txtquycach.Text;
                             DTO.LOHANG = "TONDAU";
                             DTO.SOLUONGMH = "0";
                             DTO.HANSUDUNG = "";
