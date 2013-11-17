@@ -777,7 +777,7 @@ namespace WindowsFormsApplication1
             if (chucnang.IndexOf("HSD") >= 0)
             {
                 PublicVariable.isHSD = true;
-                btnphanlo.Enabled = true;
+             //   btnphanlo.Enabled = true;
             }
             else
             {
@@ -797,7 +797,7 @@ namespace WindowsFormsApplication1
             if (chucnang.IndexOf("TONTHUCTE") >= 0)
             {
                 PublicVariable.isTONTHUCTE = true;
-                barButtonItem1.Enabled = true;
+               // barButtonItem1.Enabled = true;
             }
             else
             {
@@ -817,7 +817,7 @@ namespace WindowsFormsApplication1
             if (chucnang.IndexOf("BANGGIA") >= 0)
             {
                 PublicVariable.isBANGGIA = true;
-                btnbanggia.Enabled = true;
+               // btnbanggia.Enabled = true;
             }
             else
             {

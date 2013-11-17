@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QUANLYKHO", "WindowsFormsApplication1\QUANLYKHO.csproj", "{64E9BF30-7C69-4CB1-8F07-16F655B48D79}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QUANLYKHO_DB", "QLKHO\QLKHO.vdproj", "{B66985D2-C3FB-4614-AC8A-3B6A91B0ED70}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QUANLYKHO_VINAVETCO", "QLKHO\QLKHO.vdproj", "{B66985D2-C3FB-4614-AC8A-3B6A91B0ED70}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "KHO_TUANHANH", "KHO_TUANHANH\KHO_TUANHANH.vdproj", "{ED7C6478-5A4D-47BA-B595-53E7D23C37D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,9 @@ Global
 		{B66985D2-C3FB-4614-AC8A-3B6A91B0ED70}.Debug|Any CPU.ActiveCfg = Release
 		{B66985D2-C3FB-4614-AC8A-3B6A91B0ED70}.Release|Any CPU.ActiveCfg = Release
 		{B66985D2-C3FB-4614-AC8A-3B6A91B0ED70}.Release|Any CPU.Build.0 = Release
+		{ED7C6478-5A4D-47BA-B595-53E7D23C37D6}.Debug|Any CPU.ActiveCfg = Debug
+		{ED7C6478-5A4D-47BA-B595-53E7D23C37D6}.Release|Any CPU.ActiveCfg = Release
+		{ED7C6478-5A4D-47BA-B595-53E7D23C37D6}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
