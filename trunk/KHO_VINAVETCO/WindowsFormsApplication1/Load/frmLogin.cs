@@ -157,36 +157,54 @@ namespace WindowsFormsApplication1
         
         private void SaveRegistry()
         {
+            string TENCTY = "";
+            if (PublicVariable.IS_VINAVETCO)
+            {
+                TENCTY = "vnvc";
+            }
+            else
+            {
+                TENCTY = "tuanhanh";
+            }
             if (checkNho.Checked == true)
             {
 
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "Chk", "1");
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ID", txtTenTaiKhoan.Text);
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "PSS", txtMatKhau.Text);
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\"+TENCTY, "Chk", "1");
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "ID", txtTenTaiKhoan.Text);
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "PSS", txtMatKhau.Text);
             }
             else if (checkNho.Checked == false)
             {
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "Chk", "0");
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ID", "");
-                Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "PSS", "");
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "Chk", "0");
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "ID", "");
+                Registry.SetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "PSS", "");
             }
         }
         private void LoadRegistry()
         {
-            txtTenTaiKhoan.Text = (string)(Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ID", null));
-            txtMatKhau.Text = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "PSS", null);
-            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "Chk", null) == "1")
+            string TENCTY = "";
+            if (PublicVariable.IS_VINAVETCO)
+            {
+                TENCTY = "vnvc";
+            }
+            else
+            {
+                TENCTY = "tuanhanh";
+            }
+            txtTenTaiKhoan.Text = (string)(Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "ID", null));
+            txtMatKhau.Text = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "PSS", null);
+            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "Chk", null) == "1")
             {
                 checkNho.Checked = true;
             }
-            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "Chk", null) == "0")
+            if ((string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "Chk", null) == "0")
             {
                 checkNho.Checked = false;
             }
 
-           
-            string ACTIVE=(string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ACTIVE", null);
-            string CODERUN = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\vnvc", "CODERUN", null);
+
+            string ACTIVE = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "ACTIVE", null);
+            string CODERUN = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "CODERUN", null);
             if (ACTIVE != "" && CODERUN != "")
             {
                 CTL ctl = new CTL();

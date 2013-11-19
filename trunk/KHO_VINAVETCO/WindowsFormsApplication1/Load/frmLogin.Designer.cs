@@ -71,6 +71,7 @@
             this.txtTenTaiKhoan.Size = new System.Drawing.Size(158, 20);
             this.txtTenTaiKhoan.TabIndex = 1;
             this.txtTenTaiKhoan.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenTaiKhoan_Validating);
+            this.txtTenTaiKhoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhau_KeyPress);
             // 
             // txtMatKhau
             // 

@@ -341,14 +341,22 @@ namespace WindowsFormsApplication1
 
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
-            DataTable dt = new DataTable();
-            DataRow dtr = gridView1.GetDataRow(e.RowHandle);
-            sma = dtr[0].ToString();
-            //textEdit1.Text = sma;
-            sten = dtr[1].ToString();
-            //textEdit2.Text = sten;
-            sghichu = dtr[2].ToString();
-            stinhtrang = dtr[3].ToString();
+            try
+            {
+                DataTable dt = new DataTable();
+                DataRow dtr = gridView1.GetDataRow(e.RowHandle);
+                sma = dtr[0].ToString();
+                //textEdit1.Text = sma;
+                sten = dtr[1].ToString();
+                //textEdit2.Text = sten;
+                sghichu = dtr[2].ToString();
+                stinhtrang = dtr[3].ToString();
+            }
+            catch (Exception ex)
+            {
+
+                XtraMessageBox.Show(ex.Message);
+            }
         }
 
         private void gridView1_DoubleClick_1(object sender, EventArgs e)
@@ -358,14 +366,22 @@ namespace WindowsFormsApplication1
 
         private void gridView1_RowClick_1(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            DataTable dt = new DataTable();
-            DataRow dtr = gridView1.GetDataRow(e.RowHandle);
-            sma = dtr[0].ToString();
-            //textEdit1.Text = sma;
-            sten = dtr[1].ToString();
-            //textEdit2.Text = sten;
-            sghichu = dtr[2].ToString();
-            stinhtrang = dtr[3].ToString();
+            try
+            {
+                DataTable dt = new DataTable();
+                DataRow dtr = gridView1.GetDataRow(e.RowHandle);
+                sma = dtr[0].ToString();
+                //textEdit1.Text = sma;
+                sten = dtr[1].ToString();
+                //textEdit2.Text = sten;
+                sghichu = dtr[2].ToString();
+                stinhtrang = dtr[3].ToString();
+            }
+            catch (Exception ex)
+            {
+
+                XtraMessageBox.Show(ex.Message);
+            }
         }
 
         private void barNapLai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

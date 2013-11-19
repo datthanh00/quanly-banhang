@@ -6,8 +6,10 @@ using System.Configuration;
 using System.Windows.Forms;
 using System.IO;
 using System.Data;
-using Microsoft.SqlServer.Management.Common;
 using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Management.Common;
+
+using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
@@ -102,7 +104,7 @@ namespace WindowsFormsApplication1
             filePath = Path.Combine(filePath, Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location));
             System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration(filePath);
 
-         //   System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
+         //System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
                 if (File.Exists("App.config"))
                 {
                   //Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
@@ -112,9 +114,15 @@ namespace WindowsFormsApplication1
                     }
                     else
                     {
-                         //strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_qlkho;User ID=nguyendat_thanh;Password=Xziojs1U98;";
-                        //strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_vinavetco;User ID=nguye_vinavet;Password=bli0P4_1;";
-                        strConnect = "server=DATTHANH\\SQLEXPRESS2008;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123";
+                        if (PublicVariable.IS_VINAVETCO)
+                        {
+                            strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_vinavetco;User ID=nguye_vinavet;Password=bli0P4_1;";
+                            //strConnect = "server=DATTHANH\\SQLEXPRESS2008;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123;Integrated Security=True";
+                        }
+                        else
+                        {
+                            strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_qlkho;User ID=nguyendat_thanh;Password=Xziojs1U98;";
+                        }
                     }
                 }
                 SqlConnection cn = new SqlConnection(strConnect);
@@ -169,11 +177,22 @@ namespace WindowsFormsApplication1
         }
          public void executeNonQuery2(string sql)
         {
+            //connect();
+            //ServerConnection svrConnection = new ServerConnection(con);
+            //Server server = new Server(svrConnection);
+            //server.ConnectionContext.ExecuteNonQuery(sql);
+            //disconnect();
+
             connect();
-            ServerConnection svrConnection = new ServerConnection(con);
-            Server server = new Server(svrConnection);
-            server.ConnectionContext.ExecuteNonQuery(sql);
+            using (SqlCommand command = con.CreateCommand())
+            {
+                string script = sql;
+                command.CommandText = script.Replace("GO", "");
+               
+                int affectedRows = command.ExecuteNonQuery();
+            }
             disconnect();
+
         }
 
          
@@ -193,6 +212,7 @@ namespace WindowsFormsApplication1
             }
             DR.Close();
             disconnect();
+           // ExecSql("");
 
         }
 

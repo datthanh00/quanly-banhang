@@ -4,14 +4,14 @@
   <description asmv2:publisher="3/1 đường Bắc Kạn, TP TN" asmv2:product="Quanlykho" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="false" mapFileExtensions="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Quanlykho.exe.manifest" size="22689">
+    <dependentAssembly dependencyType="install" codebase="Quanlykho.exe.manifest" size="28980">
       <assemblyIdentity name="Quanlykho.exe" version="1.0.0.10" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>IHDQcqRVT5c0U/4xpPjMyhg+H/M=</dsig:DigestValue>
+        <dsig:DigestValue>ig6sZOb4BiUTwfNPB2t33VTcAAs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

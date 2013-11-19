@@ -120,12 +120,12 @@ namespace WindowsFormsApplication1
         }
         public void UPDATEQUANLY(DTO dto)
         {
-            string SQL = "update QUANLY set MAQL= '"+dto.MAQL+"',USERNAME= '"+dto.USERNAME+"',PASSWORD= '"+dto.PASSWORD+"',TENQL= '"+dto.TENQL+"',DIACHI= '"+dto.DIACHI+"',NGAYSINH= '"+ dto.NGAYSINH+"',SCMND= '"+dto.SCMND+"',SDT= '"+dto.SDT+"',TINHTRANG= '"+dto.TINHTRANG+"' where MAQL='"+dto.MAQL+"'";
+            string SQL = "update QUANLY set MAQL= '"+dto.MAQL+"',USERNAMES= '"+dto.USERNAME+"',PASSWORD= '"+dto.PASSWORD+"',TENQL= '"+dto.TENQL+"',DIACHI= '"+dto.DIACHI+"',NGAYSINH= '"+ dto.NGAYSINH+"',SCMND= '"+dto.SCMND+"',SDT= '"+dto.SDT+"',TINHTRANG= '"+dto.TINHTRANG+"' where MAQL='"+dto.MAQL+"'";
             executeNonQuery(SQL);
         }
         public void INSERTQUANLY(DTO dto)
         {
-            string SQL = "insert into QUANLY(MAQL,USERNAME,PASSWORD,TENQL,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG)"
+            string SQL = "insert into QUANLY(MAQL,USERNAMES,PASSWORD,TENQL,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG)"
             +" values('"+dto.MAQL+"','"+dto.USERNAME+"','"+dto.PASSWORD+"',N'"+dto.TENQL+"',N'"+dto.DIACHI+"','"+dto.NGAYSINH+"','"+dto.SCMND+"','"+dto.SDT+"','"+dto.TINHTRANG+"')";
             executeNonQuery(SQL);
         }
@@ -526,7 +526,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETQUANLY()
         {
-            string SQL = "select 	MAQL,USERNAME,PASSWORD,TENQL,DIACHI,convert(varchar,NGAYSINH,103),SCMND,SDT,TINHTRANG from  QUANLY";
+            string SQL = "select 	MAQL,USERNAMES AS USERNAME,PASSWORD,TENQL,DIACHI,convert(varchar,NGAYSINH,103),SCMND,SDT,TINHTRANG from  QUANLY";
             return GET_DATA(SQL);
         }
 
