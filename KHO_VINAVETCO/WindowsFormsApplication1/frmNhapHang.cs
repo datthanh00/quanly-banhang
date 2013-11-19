@@ -645,6 +645,11 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("Số tiền trả của bạn không thể lớn hơn số tiền trong hóa đơn");
                             return;
                         }
+                        if (Convert.ToInt64(txtthanhtien.Value) < 0)
+                        {
+                            MessageBox.Show("Giá trị hóa đơn không thể nhỏ hơn 0");
+                            return;
+                        }
 
                         if (txtthanhtien.Value > 50000000000)
                         {

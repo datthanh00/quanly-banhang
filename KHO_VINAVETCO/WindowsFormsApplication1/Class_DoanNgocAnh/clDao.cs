@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
   
         public DataTable kiemtra_user(clDTO dto)
         {
-            String SQL = "select * from NHANVIEN where USERNAME='"+dto.TENDANGNHAP+"'";
+            String SQL = "select * from NHANVIEN where USERNAMES='"+dto.TENDANGNHAP+"'";
             return getdata(SQL);
         }
 
@@ -38,13 +38,13 @@ namespace WindowsFormsApplication1
         }//----------------GET NHAN VIEN
         public DataTable getNhanVien()
         {
-            String SQL = "select MANV,MABP,USERNAME,PASSWORD,CHUCVU,TENNV,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG from  NHANVIEN where TINHTRANG='False'";
+            String SQL = "select MANV,MABP,USERNAMES  AS USERNAME,PASSWORD,CHUCVU,TENNV,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG from  NHANVIEN where TINHTRANG='False'";
             return getdata(SQL);
         }
 
         public DataTable getNhanVienBP(clDTO dto)
         {
-            String SQL = "select MANV,MABP,USERNAME,PASSWORD,CHUCVU,TENNV,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG from NHANVIEN where mabp='"+dto.MABOPHAN+"' and TINHTRANG='True'";
+            String SQL = "select MANV,MABP,USERNAMES  AS USERNAME,PASSWORD,CHUCVU,TENNV,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG from NHANVIEN where mabp='"+dto.MABOPHAN+"' and TINHTRANG='True'";
             return getdata(SQL);
 
         }
@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
 
         public void THEMNGUOIDUNG(clDTO dto)
         {
-            String SQL = "update NHANVIEN set MABP= '" + dto.MABOPHAN + "',USERNAME= '" + dto.TENDANGNHAP + "',PASSWORD= '" + dto.MATKHAU + "',TINHTRANG='" + dto.TINHTRANG + "' where MANV='" + dto.MANV + "'";
+            String SQL = "update NHANVIEN set MABP= '" + dto.MABOPHAN + "',USERNAMES= '" + dto.TENDANGNHAP + "',PASSWORD= '" + dto.MATKHAU + "',TINHTRANG='" + dto.TINHTRANG + "' where MANV='" + dto.MANV + "'";
             executeNonQuery(SQL);
         }
           public void SuaNguoiDung(clDTO dto)
@@ -88,7 +88,7 @@ namespace WindowsFormsApplication1
           }
         public void XoaNguoiDUng(clDTO dto)
         {
-            String SQL = "update NHANVIEN set MABP=null,USERNAME=null,PASSWORD=null,TINHTRANG= 'False' where 	MANV='" + dto.MANV + "'";
+            String SQL = "update NHANVIEN set MABP=null,USERNAMES=null,PASSWORD=null,TINHTRANG= 'False' where 	MANV='" + dto.MANV + "'";
             executeNonQuery(SQL);
         }
         public DataTable getNhomHang()
@@ -374,8 +374,8 @@ namespace WindowsFormsApplication1
         }
         public DataTable testLogin(clDTO dto)
         {
-            string SQL="select 	MANV,MABP,USERNAME,PASSWORD,CHUCVU,TENNV,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG from  NHANVIEN"
-            + " where 	PASSWORD='"+dto.MATKHAU+"' and USERNAME='"+dto.TENDANGNHAP+"'";
+            string SQL="select 	MANV,MABP,USERNAMES,PASSWORD,CHUCVU,TENNV,DIACHI,NGAYSINH,SCMND,SDT,TINHTRANG from  NHANVIEN"
+            + " where 	PASSWORD='"+dto.MATKHAU+"' and USERNAMES='"+dto.TENDANGNHAP+"'";
             return getdata(SQL);
         }
 

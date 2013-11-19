@@ -64,8 +64,18 @@ namespace WindowsFormsApplication1
 
         private void SaveRegistry(String ACTIVE,String CODERUN)
         {
-            Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "ACTIVE", ACTIVE);
-            Registry.SetValue(@"HKEY_CURRENT_USER\Software\vnvc", "CODERUN", CODERUN);
+            string TENCTY = "";
+            if (PublicVariable.IS_VINAVETCO)
+            {
+                TENCTY = "vnvc";
+            }
+            else
+            {
+                TENCTY = "tuanhanh";
+            }
+
+            Registry.SetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "ACTIVE", ACTIVE);
+            Registry.SetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "CODERUN", CODERUN);
         }
      
 
