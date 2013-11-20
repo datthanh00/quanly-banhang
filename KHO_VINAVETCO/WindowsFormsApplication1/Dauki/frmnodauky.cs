@@ -229,7 +229,7 @@ namespace WindowsFormsApplication1
                     {
                         TONGTIENTRA = Convert.ToInt64(dtr["TONGTIENTRA"].ToString());
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         MessageBox.Show("Công nợ phải là số nguyên");
                         dtr["TONGTIENTRA"] = "0";

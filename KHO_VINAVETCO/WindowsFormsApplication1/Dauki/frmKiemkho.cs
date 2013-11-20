@@ -321,7 +321,7 @@ namespace WindowsFormsApplication1
                             dtr["CHENHLECH"] = (Convert.ToDouble(dtr["TONTT"].ToString()) - Convert.ToDouble(dtr["TONKHO"].ToString())).ToString();
                         }
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         MessageBox.Show("Tồn thực tế phải là số");
                         dtr["TONTT"] = "0";

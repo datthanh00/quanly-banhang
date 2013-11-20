@@ -56,10 +56,12 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
             this.simpleSeparator2 = new DevExpress.XtraLayout.SimpleSeparator();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.checkEDITTODAY = new DevExpress.XtraEditors.CheckEdit();
+            this.tbchecksuahoadonngay = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -73,9 +75,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEDITTODAY.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbchecksuahoadonngay)).BeginInit();
             this.SuspendLayout();
             // 
             // dockManager1
@@ -112,9 +116,10 @@
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.btDong);
+            this.layoutControl1.Controls.Add(this.checkEDITTODAY);
             this.layoutControl1.Controls.Add(this.gridControl2);
             this.layoutControl1.Controls.Add(this.btSave);
+            this.layoutControl1.Controls.Add(this.btDong);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
@@ -126,9 +131,9 @@
             // btDong
             // 
             this.btDong.Image = global::Quanlykho.Properties.Resources.close3;
-            this.btDong.Location = new System.Drawing.Point(223, 45);
+            this.btDong.Location = new System.Drawing.Point(355, 46);
             this.btDong.Name = "btDong";
-            this.btDong.Size = new System.Drawing.Size(212, 38);
+            this.btDong.Size = new System.Drawing.Size(120, 38);
             this.btDong.StyleController = this.layoutControl1;
             this.btDong.TabIndex = 2;
             this.btDong.Text = "Đóng";
@@ -136,12 +141,12 @@
             // 
             // gridControl2
             // 
-            this.gridControl2.Location = new System.Drawing.Point(31, 87);
+            this.gridControl2.Location = new System.Drawing.Point(31, 88);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
             this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.ISQLKHO});
-            this.gridControl2.Size = new System.Drawing.Size(1230, 377);
+            this.gridControl2.Size = new System.Drawing.Size(1230, 376);
             this.gridControl2.TabIndex = 5;
             this.gridControl2.UseEmbeddedNavigator = true;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -300,9 +305,9 @@
             // btSave
             // 
             this.btSave.Image = global::Quanlykho.Properties.Resources.save1;
-            this.btSave.Location = new System.Drawing.Point(26, 45);
+            this.btSave.Location = new System.Drawing.Point(241, 46);
             this.btSave.Name = "btSave";
-            this.btSave.Size = new System.Drawing.Size(193, 38);
+            this.btSave.Size = new System.Drawing.Size(110, 38);
             this.btSave.StyleController = this.layoutControl1;
             this.btSave.TabIndex = 1;
             this.btSave.Text = "Lưu";
@@ -331,7 +336,8 @@
             this.simpleSeparator2,
             this.emptySpaceItem1,
             this.layoutControlItem4,
-            this.layoutControlItem1});
+            this.layoutControlItem1,
+            this.tbchecksuahoadonngay});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(1265, 468);
@@ -343,7 +349,7 @@
             this.layoutControlItem2.CustomizationFormText = " ";
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 44);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1241, 381);
+            this.layoutControlItem2.Size = new System.Drawing.Size(1241, 380);
             this.layoutControlItem2.Text = " ";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(3, 13);
             // 
@@ -363,22 +369,13 @@
             this.simpleSeparator2.Size = new System.Drawing.Size(1239, 2);
             this.simpleSeparator2.Text = "simpleSeparator2";
             // 
-            // emptySpaceItem1
-            // 
-            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
-            this.emptySpaceItem1.Location = new System.Drawing.Point(415, 2);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(826, 42);
-            this.emptySpaceItem1.Text = "emptySpaceItem1";
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btSave;
             this.layoutControlItem4.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem4.Location = new System.Drawing.Point(2, 2);
+            this.layoutControlItem4.Location = new System.Drawing.Point(217, 2);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(197, 42);
+            this.layoutControlItem4.Size = new System.Drawing.Size(114, 42);
             this.layoutControlItem4.Text = "layoutControlItem4";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextToControlDistance = 0;
@@ -388,9 +385,9 @@
             // 
             this.layoutControlItem1.Control = this.btDong;
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem1.Location = new System.Drawing.Point(199, 2);
+            this.layoutControlItem1.Location = new System.Drawing.Point(331, 2);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(216, 42);
+            this.layoutControlItem1.Size = new System.Drawing.Size(124, 42);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextToControlDistance = 0;
@@ -404,6 +401,38 @@
             this.simpleButton4.StyleController = this.layoutControl1;
             this.simpleButton4.TabIndex = 10;
             this.simpleButton4.Text = "simpleButton2";
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem1";
+            this.emptySpaceItem1.Location = new System.Drawing.Point(455, 2);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(786, 42);
+            this.emptySpaceItem1.Text = "emptySpaceItem1";
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // checkEDITTODAY
+            // 
+            this.checkEDITTODAY.EditValue = true;
+            this.checkEDITTODAY.Location = new System.Drawing.Point(26, 46);
+            this.checkEDITTODAY.Name = "checkEDITTODAY";
+            this.checkEDITTODAY.Properties.Caption = "Chỉ được phép sửa hóa đơn trong ngày";
+            this.checkEDITTODAY.Size = new System.Drawing.Size(211, 19);
+            this.checkEDITTODAY.StyleController = this.layoutControl1;
+            this.checkEDITTODAY.TabIndex = 9;
+            // 
+            // tbchecksuahoadonngay
+            // 
+            this.tbchecksuahoadonngay.Control = this.checkEDITTODAY;
+            this.tbchecksuahoadonngay.CustomizationFormText = "tbchecksuahoadonngay";
+            this.tbchecksuahoadonngay.FillControlToClientArea = false;
+            this.tbchecksuahoadonngay.Location = new System.Drawing.Point(2, 2);
+            this.tbchecksuahoadonngay.Name = "tbchecksuahoadonngay";
+            this.tbchecksuahoadonngay.Size = new System.Drawing.Size(215, 42);
+            this.tbchecksuahoadonngay.Text = "tbchecksuahoadonngay";
+            this.tbchecksuahoadonngay.TextSize = new System.Drawing.Size(0, 0);
+            this.tbchecksuahoadonngay.TextToControlDistance = 0;
+            this.tbchecksuahoadonngay.TextVisible = false;
             // 
             // frmPhanQuyenbophan
             // 
@@ -428,9 +457,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEDITTODAY.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbchecksuahoadonngay)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,7 +480,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCHUCVU;
         private DevExpress.XtraGrid.Columns.GridColumn colTENNV;
         private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.SimpleSeparator simpleSeparator1;
         private DevExpress.XtraEditors.SimpleButton btSave;
         private DevExpress.XtraLayout.SimpleSeparator simpleSeparator2;
@@ -468,5 +498,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit ISQLKHO;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraEditors.CheckEdit checkEDITTODAY;
+        private DevExpress.XtraLayout.LayoutControlItem tbchecksuahoadonngay;
     }
 }

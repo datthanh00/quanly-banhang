@@ -412,6 +412,7 @@ namespace WindowsFormsApplication1
         {
             return DAO.GET_DATA(SQL);
         }
+
         internal object getDatabase()
         {
             throw new NotImplementedException();

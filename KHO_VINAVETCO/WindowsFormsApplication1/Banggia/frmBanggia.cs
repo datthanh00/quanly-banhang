@@ -142,7 +142,7 @@ namespace WindowsFormsApplication1
                          dtr["GIABAN"] = "0";
                          return;
                      }
-                    }catch(Exception ex)
+                    }catch
                     {
                         MessageBox.Show("Giá bán phải là số nguyên");
                         dtr["GIABAN"] = "0";

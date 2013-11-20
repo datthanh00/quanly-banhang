@@ -54,7 +54,8 @@ namespace WindowsFormsApplication1
             if (gridView1.RowCount > 0)
             {
                 DataRow dtr = gridView1.GetDataRow(0);
-                sMaBP = dtr[0].ToString();
+                sMaBP = dtr["MABP"].ToString();
+                SISEDITTODAY = dtr["ISEDITTODAY"].ToString();
             }
         }
         
@@ -71,6 +72,7 @@ namespace WindowsFormsApplication1
             DataRow dtr = gridView1.GetDataRow(e.RowHandle);
             sMaBP = dtr[0].ToString();
             sTenBP = dtr[1].ToString();
+            SISEDITTODAY = dtr["ISEDITTODAY"].ToString();
             loadNguoiDung();
             }
             catch 
@@ -105,7 +107,7 @@ namespace WindowsFormsApplication1
 
         }
         string sMaNV, sTenDangNhap,sTenNhanVien,sTenBP;
-        string bTinhTrang;
+        string bTinhTrang,SISEDITTODAY;
         private void gridView2_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
    
@@ -408,7 +410,18 @@ namespace WindowsFormsApplication1
             frmPhanQuyenbophan frmbp = new frmPhanQuyenbophan();
             frmbp.sMaBP = sMaBP;
             frmbp.isPhankho = false;
+            if (SISEDITTODAY == "True")
+            {
+                frmbp.ISEDITTODAY = true;
+            }
+            else
+            {
+                frmbp.ISEDITTODAY = false;
+            }
+
+            
             frmbp.ShowDialog();
+            LoadBoPhan();
         }
 
         private void btnphankho_Click(object sender, EventArgs e)

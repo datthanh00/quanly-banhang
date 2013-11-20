@@ -136,7 +136,7 @@ namespace WindowsFormsApplication1
                         }
                         
                     }
-                    catch (Exception ex)
+                    catch
                     {
                         MessageBox.Show("NGÀY LỖI");
                         dtr["NGAY"] = DateTime.Now.ToString("dd/MM/yyyy");

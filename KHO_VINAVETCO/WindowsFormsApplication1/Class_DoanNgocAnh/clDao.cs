@@ -50,7 +50,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable getBoPhan()
         {
-            String SQL = "select MABP,TENBOPHAN,TINHTRANG from  BOPHAN";
+            String SQL = "select MABP,TENBOPHAN,TINHTRANG,ISEDITTODAY from  BOPHAN";
             return getdata(SQL);
         }
         public DataTable getThongTinCT(clDTO dto)
