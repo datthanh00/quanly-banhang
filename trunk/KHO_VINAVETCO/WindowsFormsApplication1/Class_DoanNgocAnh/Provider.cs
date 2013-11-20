@@ -9,7 +9,6 @@ using System.Data;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
 
-using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {

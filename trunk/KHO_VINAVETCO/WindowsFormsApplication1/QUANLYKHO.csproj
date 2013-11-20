@@ -148,16 +148,12 @@
       <HintPath>C:\Program Files\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Management.CollectorEnum.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Management.Utility, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Management.Utility.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Management.UtilityEnum, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Management.UtilityEnum.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.PolicyEnum, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

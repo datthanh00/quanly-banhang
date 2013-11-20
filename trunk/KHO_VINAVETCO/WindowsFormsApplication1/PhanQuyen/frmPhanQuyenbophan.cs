@@ -19,40 +19,38 @@ namespace WindowsFormsApplication1
             InitializeComponent();
         }
         public string sMaBP;
-        public Boolean isPhankho;
+        public Boolean isPhankho, ISEDITTODAY;
         CTL Ctl = new CTL();
 
         private void frmPhanQuyenbophan_Load(object sender, EventArgs e)
         {
             if (isPhankho)
             {
-                /*DataTable dt = new DataTable();
-                dt.Columns.Add(new DataColumn("MAKHO"));
-                dt.Columns.Add(new DataColumn("TENKHO"));
-                dt.Columns.Add(new DataColumn("QUANLY"));
-                dt.Columns.Add(new DataColumn("MABP"));
-                */
-                //gridControl2.DataSource = dt;
-
                 string SQL = "SELECT PHANKHO.*,TENKHO FROM KHO,PHANKHO WHERE KHO.MAKHO=PHANKHO.MAKHO AND MABP='"+sMaBP+"'";
-
                 DataTable TBS = Ctl.GETDATA(SQL);
                 gridControl2.MainView = gridView1;
                 gridControl2.DataSource = TBS;
                 gridView1.RefreshData();
                 gridControl2.RefreshDataSource();
-
-
+                checkEDITTODAY.Enabled = false;
             }
             else
             {
                 string SQL = "SELECT PHANQUYEN.*,CHUCNANG FROM CHUCNANG,PHANQUYEN WHERE CHUCNANG.MACN=PHANQUYEN.MACN AND MABP='" + sMaBP + "'";
-
                 DataTable TBS = Ctl.GETDATA(SQL);
                 gridControl2.MainView = gridView2;
                 gridControl2.DataSource = TBS;
                 gridView2.RefreshData();
                 gridControl2.RefreshDataSource();
+                checkEDITTODAY.Enabled = true;
+                if (ISEDITTODAY)
+                {
+                    checkEDITTODAY.Checked = true;
+                }
+                else
+                {
+                    checkEDITTODAY.Checked = false;
+                }
             }
 
         }
@@ -68,26 +66,29 @@ namespace WindowsFormsApplication1
             {
 
                 int rowcount = gridView1.DataRowCount;
+                string SQL = "";
                 for (int i = 0; i < rowcount; i++)
                 {
                     DataRow dtr = dtr = gridView1.GetDataRow(i);
 
                     String quanly = dtr["QUANLY"].ToString();
-                    string SQL = "";
+                   
                     if (quanly == "False")
                     {
-                        SQL = "update  PHANKHO set quanly=0 where mabp='" + sMaBP + "' and makho='" + dtr["MAKHO"].ToString() + "' ";
+                        SQL = SQL + "\r\nGO\r\n update  PHANKHO set quanly=0 where mabp='" + sMaBP + "' and makho='" + dtr["MAKHO"].ToString() + "' ";
                     }
                     else
                     {
-                        SQL = "update  PHANKHO set quanly=1 where mabp='" + sMaBP + "' and makho='" + dtr["MAKHO"].ToString() + "' ";
+                        SQL = SQL + "\r\nGO\r\n update  PHANKHO set quanly=1 where mabp='" + sMaBP + "' and makho='" + dtr["MAKHO"].ToString() + "' ";
                     }
-                    Ctl.executeNonQuery(SQL);
+                   
                 }
+                Ctl.executeNonQuery2(SQL);
             }
             else
             {
                 int rowcount = gridView2.DataRowCount;
+                string SQL = "";
                 for (int i = 0; i < rowcount; i++)
                 {
                     DataRow dtr = dtr = gridView2.GetDataRow(i);
@@ -150,11 +151,23 @@ namespace WindowsFormsApplication1
                     {
                         IN = "1";
                     }
+                    
 
-                    string SQL = "UPDATE phanquyen SET TATCA=" + TATCA + ",TRUYCAP=" + TRUYCAP + ",THEM=" + THEM + ",XOA=" + XOA + ",SUA=" + SUA + ",[IN]=" + IN + " WHERE  MABP='" + sMaBP + "' and MACN=" + dtr["MACN"].ToString();
-                    Ctl.executeNonQuery(SQL);
+                    SQL = SQL + "\r\nGO\r\n UPDATE phanquyen SET TATCA=" + TATCA + ",TRUYCAP=" + TRUYCAP + ",THEM=" + THEM + ",XOA=" + XOA + ",SUA=" + SUA + ",[IN]=" + IN + " WHERE  MABP='" + sMaBP + "' and MACN=" + dtr["MACN"].ToString();
+                    
+                   
                 }
-
+                String CHECK = checkEDITTODAY.Checked.ToString();
+                if (CHECK == "True")
+                {
+                    CHECK = "1";
+                }
+                else
+                {
+                    CHECK = "0";
+                }
+                SQL = SQL + "\r\nGO\r\n UPDATE BOPHAN SET ISEDITTODAY=" + CHECK + " WHERE MABP='" + sMaBP + "'";
+                Ctl.executeNonQuery2(SQL);
             }
 
             this.Close();
@@ -164,35 +177,29 @@ namespace WindowsFormsApplication1
         {
             DataRow dtr = gridView2.GetDataRow(gridView2.FocusedRowHandle);
 
-                if(dtr!=null)
-                    
-                        if (e.Column.FieldName.ToString() == "TATCA")
-                        {
-                            string SSSS = dtr["TATCA"].ToString();
-                            if (dtr["TATCA"].ToString() != "False")
-                            {
-                                
-                                gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["TRUYCAP"], Convert.ToBoolean(1));
-                                gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["THEM"], Convert.ToBoolean(1));
-                                gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["XOA"], Convert.ToBoolean(1));
-                                gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["SUA"], Convert.ToBoolean(1));
-                                gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["IN"], Convert.ToBoolean(1));
-
-                           
-                            }
-                            else
-                            {
-                               
-                                gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["TRUYCAP"], Convert.ToBoolean(0));
-                                gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["THEM"], Convert.ToBoolean(0));
-                                gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["XOA"], Convert.ToBoolean(0));
-                                gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["SUA"], Convert.ToBoolean(0));
-                                gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["IN"], Convert.ToBoolean(0));
-                            }
-                        }
-                    
-              
+            if (dtr != null)
+            {
+                if (e.Column.FieldName.ToString() == "TATCA")
+                {
+                    string SSSS = dtr["TATCA"].ToString();
+                    if (dtr["TATCA"].ToString() != "False")
+                    {
+                        gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["TRUYCAP"], Convert.ToBoolean(1));
+                        gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["THEM"], Convert.ToBoolean(1));
+                        gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["XOA"], Convert.ToBoolean(1));
+                        gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["SUA"], Convert.ToBoolean(1));
+                        gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["IN"], Convert.ToBoolean(1));
+                    }
+                    else
+                    {
+                        gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["TRUYCAP"], Convert.ToBoolean(0));
+                        gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["THEM"], Convert.ToBoolean(0));
+                        gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["XOA"], Convert.ToBoolean(0));
+                        gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["SUA"], Convert.ToBoolean(0));
+                        gridView2.SetRowCellValue(e.RowHandle, gridView2.Columns["IN"], Convert.ToBoolean(0));
+                    }
+                }
+            }
         }
-
     }
 }

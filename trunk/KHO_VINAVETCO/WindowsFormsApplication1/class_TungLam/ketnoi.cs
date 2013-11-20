@@ -122,24 +122,7 @@ namespace WindowsFormsApplication1
             return SQL;
         }
         //--------------load ma MH----------
-        public string sTuDongDienMaMH(string sMaMH)
-        {
-            string HEAD = "MH", MAHD = "MAMH", TABLE = "MATHANG";
-            int LENHEAD = HEAD.Length + 2;
-            string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='"+PublicVariable.MAKHO+"')+1)  AS T1) AS T2";
-            DataTable DT = getdata(SQL);
-            sMaMH = DT.Rows[0][0].ToString();
-            return sMaMH;
-        }
-        public string sTuDongDienMaMH()
-        {
-            string HEAD = "MH", MAHD = "MAMH", TABLE = "MATHANG";
-            int LENHEAD = HEAD.Length + 2;
-            string SQL = "";
-            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='" + PublicVariable.MAKHO + "')+1)  AS T1) AS T2";
-            return SQL;
-        }
+        
         public string sTuDongDienMaBG(string sMaBG)
         {
             string HEAD = "BG", MAHD = "MABG", TABLE = "BANGGIA";
@@ -285,7 +268,24 @@ namespace WindowsFormsApplication1
             SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='" + PublicVariable.MAKHO + "')+1)  AS T1) AS T2";
             return SQL;
         }
-
+        public string sTuDongDienMaMH(string sMaMH)
+        {
+            string HEAD = "MH", MAHD = "MAMH", TABLE = "MATHANG";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='" + PublicVariable.MAKHO + "')+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMaMH = DT.Rows[0][0].ToString();
+            return sMaMH;
+        }
+        public string sTuDongDienMaMH()
+        {
+            string HEAD = "MH", MAHD = "MAMH", TABLE = "MATHANG";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='" + PublicVariable.MAKHO + "')+1)  AS T1) AS T2";
+            return SQL;
+        }
         public string sTuDongDienMaHoaDonXuat(string sMahdx)
         {
             string HEAD = "HDX", MAHD = "MAHDX", TABLE = "HOADONXUAT";

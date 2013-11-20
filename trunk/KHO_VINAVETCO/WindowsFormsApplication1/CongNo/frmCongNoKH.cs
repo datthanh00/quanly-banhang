@@ -247,13 +247,26 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYCHI FROM PHIEUCHI WHERE MAPC='" + smpt + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6) AS NGAY,(SELECT TINHTRANG  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6) AS TINHTRANG";
+                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYCHI FROM PHIEUCHI WHERE MAPC='" + smpt + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6) AS NGAY,(SELECT TINHTRANG  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6) AS TINHTRANG,(SELECT ISEDITTODAY FROM BOPHAN WHERE MABP=(SELECT MABP FROM NHANVIEN WHERE MANV='" + sMaNV + "')) AS ISEDITTODAY,(SELECT CONVERT(VARCHAR,GETDATE(),103)) AS HOMNAY,(SELECT CONVERT(VARCHAR,NGAYCHI,103) FROM PHIEUCHI WHERE MAPC='" + smpt + "') AS NGAYHD";
                 CTL ctlKHOA = new CTL();
                 DataTable DTKHOA = ctlKHOA.GETDATA(SQLKHOA);
-                if (DTKHOA.Rows[0][0].ToString() == "1"&& DTKHOA.Rows[0]["TINHTRANG"].ToString()=="True")
+                if (DTKHOA.Rows[0]["ISEDITTODAY"].ToString() == "True")
                 {
-                    MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
-                    return;
+                    string TODAY = DateTime.Now.ToString("dd/MM/yyyy");
+                    if (DTKHOA.Rows[0]["NGAYHD"].ToString() != DTKHOA.Rows[0]["HOMNAY"].ToString())
+                    {
+                        MessageBox.Show("KHÔNG PHẢI HÓA ĐƠN HÔM NAY NÊN BẠN KHÔNG THỂ CHỈNH SỬA");
+                        return;
+                    }
+
+                }
+                else
+                {
+                    if (DTKHOA.Rows[0][0].ToString() == "1" && DTKHOA.Rows[0]["TINHTRANG"].ToString() == "True")
+                    {
+                        MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
+                        return;
+                    }
                 }
 
                 frm.Nhan = "Sua";
@@ -298,13 +311,26 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYTHU FROM PHIEUTHU WHERE MAPT='" + smpt + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6) AS NGAY,(SELECT TINHTRANG  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6) AS TINHTRANG";
+                string SQLKHOA = "SELECT CASE WHEN (SELECT NGAYTHU FROM PHIEUTHU WHERE MAPT='" + smpt + "')>(SELECT NGAY FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6)  THEN 0 ELSE 1 END, (SELECT CONVERT(VARCHAR,NGAY,103)  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6) AS NGAY,(SELECT TINHTRANG  FROM KHOASOTHEOKHO WHERE MAKHO='" + PublicVariable.MAKHO + "' AND ID=6) AS TINHTRANG,(SELECT ISEDITTODAY FROM BOPHAN WHERE MABP=(SELECT MABP FROM NHANVIEN WHERE MANV='" + sMaNV + "')) AS ISEDITTODAY,(SELECT CONVERT(VARCHAR,GETDATE(),103)) AS HOMNAY,(SELECT CONVERT(VARCHAR,NGAYTHU,103) FROM PHIEUTHU WHERE MAPT='" + smpt + "') AS NGAYHD";
                 CTL ctlKHOA = new CTL();
                 DataTable DTKHOA = ctlKHOA.GETDATA(SQLKHOA);
-                if (DTKHOA.Rows[0][0].ToString() == "1"&& DTKHOA.Rows[0]["TINHTRANG"].ToString()=="True")
+                if (DTKHOA.Rows[0]["ISEDITTODAY"].ToString() == "True")
                 {
-                    MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
-                    return;
+                    string TODAY = DateTime.Now.ToString("dd/MM/yyyy");
+                    if (DTKHOA.Rows[0]["NGAYHD"].ToString() != DTKHOA.Rows[0]["HOMNAY"].ToString())
+                    {
+                        MessageBox.Show("KHÔNG PHẢI HÓA ĐƠN HÔM NAY NÊN BẠN KHÔNG THỂ CHỈNH SỬA");
+                        return;
+                    }
+
+                }
+                else
+                {
+                    if (DTKHOA.Rows[0][0].ToString() == "1" && DTKHOA.Rows[0]["TINHTRANG"].ToString() == "True")
+                    {
+                        MessageBox.Show("HỆ THỐNG ĐÃ KHÓA SỔ ĐẾN NGÀY: " + DTKHOA.Rows[0]["NGAY"].ToString() + " NÊN BẠN KHÔNG THỂ CHỈNH SỬA ĐƯỢC NỮA");
+                        return;
+                    }
                 }
                 frm.Nhan = "Sua";
                 frm.MaPT = smpt;
