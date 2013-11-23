@@ -104,6 +104,3 @@ e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.appl
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.exe
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.pdb
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.lbinphai.resources
-e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Microsoft.SqlServer.DmfSqlClrWrapper.dll
-e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Microsoft.SqlServer.Management.Utility.dll
-e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Microsoft.SqlServer.Management.UtilityEnum.dll

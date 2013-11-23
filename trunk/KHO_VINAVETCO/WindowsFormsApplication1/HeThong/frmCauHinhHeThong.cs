@@ -7,8 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using Microsoft.Win32;
-using Microsoft.SqlServer.Management.Smo;
-using Microsoft.SqlServer.Management.Common;
+
 using System.Configuration;
 using System.IO;
 
@@ -94,21 +93,11 @@ namespace WindowsFormsApplication1
 
             ld.simpleCloseWait();
         }
-        Server srv;
-        ServerConnection conn;
+     
         private void GetNetworkInstances()
         {
             
-            DataTable dt = SmoApplication.EnumAvailableSqlServers(false);
-
-            if (dt.Rows.Count > 0)
-            {
-                
-                foreach (DataRow dr in dt.Rows)
-                {
-                    AddNetworkInstance(dr["Name"].ToString());
-                }
-            }
+          
         }
         delegate void SetMessageCallback(string text);
         private void AddNetworkInstance(string text)
@@ -171,44 +160,7 @@ namespace WindowsFormsApplication1
 
                 #endregion
 
-                try
-                {
-                    cbDatabase.Properties.Items.Clear();
-                  
-                    string sqlSErverInstance;
-
-                    if (listBoxnetwork.SelectedIndex == 0)
-                    {
-                        sqlSErverInstance = cbTenMayChu.SelectedItem.ToString();
-                    }
-                    else
-                    {
-                        sqlSErverInstance = listBoxnetwork.SelectedItem.ToString();
-                    }
-
-                    if (radioButton1.Checked == true)
-                    {
-                        conn = new ServerConnection();
-                        conn.ServerInstance = sqlSErverInstance;
-                    }
-                    else
-                    {
-                        conn = new ServerConnection(sqlSErverInstance, txtTaiKhoan.Text, this.txtMatKhau.Text);
-                    }
-                    srv = new Server(conn);
-
-                    foreach (Database db in srv.Databases)
-                    {
-                        cbDatabase.Properties.Items.Add(db.Name);
-                        cbDatabase.Text = "XUAT_NHAPTON";
-                    }
-                    
-                }
-                catch (Exception err)
-                {
-                    MessageBox.Show(err.Message);
-                }
-            
+                
             
             ld.simpleCloseWait();
         }
