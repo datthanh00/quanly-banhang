@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1
         {
                 if (XtraMessageBox.Show("Bạn có muốn thoát hay không ? ", "Thông Báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1) == DialogResult.OK)
                 {
+                    Application.ExitThread();
                     Application.Exit();
                 }
             
@@ -30,6 +31,7 @@ namespace WindowsFormsApplication1
             if(INDEX<0)
             {
                 MessageBox.Show("Mã Kích Hoạt Không Đúng");
+                Application.ExitThread();
                 Application.Exit();
                 return;
             }
@@ -58,6 +60,7 @@ namespace WindowsFormsApplication1
             else
             {
                 MessageBox.Show("Mã Kích Hoạt Không Đúng");
+                Application.ExitThread();
                 Application.Exit();
             }
         }

@@ -117,10 +117,9 @@
             this.colsoluong.Name = "colsoluong";
             this.colsoluong.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.colsoluong.SummaryItem.DisplayFormat = "{0:0,0.##}";
-            this.colsoluong.SummaryItem.FieldName = "SOLUONGMH";
             this.colsoluong.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colsoluong.Visible = true;
-            this.colsoluong.VisibleIndex = 7;
+            this.colsoluong.VisibleIndex = 6;
             this.colsoluong.Width = 83;
             // 
             // repositoryItemCalcEdit1
@@ -355,19 +354,17 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
             this.gridColumn7.Width = 101;
             // 
             // coltendonvi
             // 
-            this.coltendonvi.Caption = "Tên Đơn Vị ";
+            this.coltendonvi.Caption = "Đơn Vị Tính";
             this.coltendonvi.FieldName = "DONVITINH";
             this.coltendonvi.Name = "coltendonvi";
             this.coltendonvi.OptionsColumn.AllowEdit = false;
             this.coltendonvi.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.coltendonvi.Visible = true;
-            this.coltendonvi.VisibleIndex = 6;
+            this.coltendonvi.VisibleIndex = 5;
             this.coltendonvi.Width = 87;
             // 
             // gridColumn1
@@ -382,7 +379,7 @@
             this.gridColumn1.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn1.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 8;
+            this.gridColumn1.VisibleIndex = 7;
             this.gridColumn1.Width = 92;
             // 
             // gridColumn3
@@ -397,7 +394,7 @@
             this.gridColumn3.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn3.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 10;
+            this.gridColumn3.VisibleIndex = 9;
             this.gridColumn3.Width = 92;
             // 
             // gridColumn11
@@ -412,7 +409,7 @@
             this.gridColumn11.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 9;
+            this.gridColumn11.VisibleIndex = 8;
             this.gridColumn11.Width = 99;
             // 
             // colhansudung

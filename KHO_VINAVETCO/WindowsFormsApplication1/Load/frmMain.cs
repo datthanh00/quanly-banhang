@@ -1020,7 +1020,6 @@ namespace WindowsFormsApplication1
             btKetThuc.Caption = resVietNam.btKetThuc.ToString();
             btPhanQuyen.Caption = resVietNam.btPhanQuyen.ToString();
             btThongTin.Caption = resVietNam.btThongTin.ToString();
-            this.Text = resVietNam.frmMain.ToString();
             hiệnToolStripMenuItem.Text = "Hiện";
             ẩnToolStripMenuItem.Text ="Ẩn";
             phụcHồiDữLiệuToolStripMenuItem.Text = resVietNam.btPhucHoi.ToString();
@@ -1850,7 +1849,6 @@ namespace WindowsFormsApplication1
             if (isclose == true)
             {
                 notifyIcon1.Dispose();
-               
                // Application.Exit();
                 Application.ExitThread();
                 Application.Exit();

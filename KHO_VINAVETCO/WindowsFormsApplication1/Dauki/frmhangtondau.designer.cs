@@ -111,7 +111,7 @@
             this.colsoluong.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colsoluong.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colsoluong.Visible = true;
-            this.colsoluong.VisibleIndex = 7;
+            this.colsoluong.VisibleIndex = 5;
             this.colsoluong.Width = 44;
             // 
             // repositoryItemCalcEdit1
@@ -188,10 +188,10 @@
             // xtraTabControl1
             // 
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(2, 21);
+            this.xtraTabControl1.Location = new System.Drawing.Point(2, 22);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage3;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 504);
+            this.xtraTabControl1.Size = new System.Drawing.Size(1259, 503);
             this.xtraTabControl1.TabIndex = 5;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage3});
@@ -201,7 +201,7 @@
             this.xtraTabPage3.Controls.Add(this.panelControl5);
             this.xtraTabPage3.Controls.Add(this.panelControl6);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 476);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1252, 474);
             this.xtraTabPage3.Text = "Tồn Đầu Kỳ";
             // 
             // panelControl5
@@ -210,23 +210,23 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(0, 39);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1252, 437);
+            this.panelControl5.Size = new System.Drawing.Size(1252, 435);
             this.panelControl5.TabIndex = 9;
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.gridControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(3, 3);
+            this.groupControl2.Location = new System.Drawing.Point(2, 2);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1246, 431);
+            this.groupControl2.Size = new System.Drawing.Size(1248, 431);
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "Chi Tiết Mặt Hàng";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(2, 21);
+            this.gridControl1.Location = new System.Drawing.Point(2, 22);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
@@ -239,7 +239,7 @@
             this.repositoryItemRichTextEdit1,
             this.repositoryItemDateEdit1});
             this.gridControl1.ShowOnlyPredefinedDetails = true;
-            this.gridControl1.Size = new System.Drawing.Size(1242, 408);
+            this.gridControl1.Size = new System.Drawing.Size(1244, 407);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -333,8 +333,6 @@
             this.gridColumn7.FieldName = "KLDVT";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
             // 
             // coltendonvi
             // 
@@ -342,8 +340,6 @@
             this.coltendonvi.FieldName = "DONVITINH";
             this.coltendonvi.Name = "coltendonvi";
             this.coltendonvi.OptionsColumn.AllowEdit = false;
-            this.coltendonvi.Visible = true;
-            this.coltendonvi.VisibleIndex = 6;
             this.coltendonvi.Width = 65;
             // 
             // gridColumn11
@@ -357,7 +353,7 @@
             this.gridColumn11.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn11.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 8;
+            this.gridColumn11.VisibleIndex = 6;
             // 
             // colgiamua
             // 
@@ -369,7 +365,7 @@
             this.colgiamua.Name = "colgiamua";
             this.colgiamua.OptionsColumn.AllowEdit = false;
             this.colgiamua.Visible = true;
-            this.colgiamua.VisibleIndex = 9;
+            this.colgiamua.VisibleIndex = 7;
             this.colgiamua.Width = 51;
             // 
             // repositoryItemCalcEdit3
@@ -390,7 +386,7 @@
             this.colgiaban.SummaryItem.DisplayFormat = "{0:0,0}";
             this.colgiaban.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colgiaban.Visible = true;
-            this.colgiaban.VisibleIndex = 10;
+            this.colgiaban.VisibleIndex = 8;
             this.colgiaban.Width = 50;
             // 
             // gridColumn1

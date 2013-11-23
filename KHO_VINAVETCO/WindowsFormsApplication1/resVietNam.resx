@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="barChuongTrinh" xml:space="preserve">
-    <value>Chương Trình Quản Lý KHO THUỐC</value>
+    <value>Chương Trình Quản Lý KHO</value>
   </data>
   <data name="btBoPhan" xml:space="preserve">
     <value>Bộ phận</value>
@@ -262,7 +262,7 @@
     <value>Nhóm hàng</value>
   </data>
   <data name="frmMain" xml:space="preserve">
-    <value>Quản Lý Kho VINAVETCO</value>
+    <value>Quản Lý Kho</value>
   </data>
   <data name="btDong" xml:space="preserve">
     <value>Đóng</value>
@@ -403,10 +403,10 @@
     <value>Tuỳ chọn</value>
   </data>
   <data name="barChuongTrinh1" xml:space="preserve">
-    <value>Chương Trình Quản Lý KHO THUỐC</value>
+    <value>Chương Trình Quản Lý KHO</value>
   </data>
   <data name="barChuongTrinh11" xml:space="preserve">
-    <value>Chương Trình Quản Lý KHO THUỐC</value>
+    <value>Chương Trình Quản Lý KHO</value>
   </data>
   <data name="btBoPhan1" xml:space="preserve">
     <value>Bộ phận</value>
@@ -760,10 +760,10 @@
     <value>Tổng doanh thu</value>
   </data>
   <data name="frmMain1" xml:space="preserve">
-    <value>Quản Lý Kho VINAVETCO</value>
+    <value>Quản Lý Kho</value>
   </data>
   <data name="frmMain11" xml:space="preserve">
-    <value>Quản Lý Kho VINAVETCO</value>
+    <value>Quản Lý Kho</value>
   </data>
   <data name="gridCuoiKi1" xml:space="preserve">
     <value>Cuối kì</value>
