@@ -57,8 +57,8 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -291,13 +291,13 @@
             // colSOLUONGMH
             // 
             this.colSOLUONGMH.Caption = "Số Lượng Mặt Hàng";
-            this.colSOLUONGMH.DisplayFormat.FormatString = "{0:0.##}";
+            this.colSOLUONGMH.DisplayFormat.FormatString = "{0:0,0.##}";
             this.colSOLUONGMH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSOLUONGMH.FieldName = "SOLUONGMH";
             this.colSOLUONGMH.Name = "colSOLUONGMH";
             this.colSOLUONGMH.OptionsColumn.AllowEdit = false;
             this.colSOLUONGMH.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.colSOLUONGMH.SummaryItem.DisplayFormat = "{0:0.##}";
+            this.colSOLUONGMH.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.colSOLUONGMH.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.colSOLUONGMH.Visible = true;
             this.colSOLUONGMH.VisibleIndex = 5;
@@ -359,10 +359,6 @@
             this.gridColumn4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn4.Width = 204;
             // 
-            // repositoryItemPictureEdit1
-            // 
-            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
-            // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "Quy Cách";
@@ -371,6 +367,10 @@
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
             this.gridColumn5.Width = 117;
+            // 
+            // repositoryItemPictureEdit1
+            // 
+            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
             // 
             // frmMatHang
             // 

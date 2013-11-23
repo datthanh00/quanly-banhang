@@ -61,7 +61,7 @@ namespace Quanlykho {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chương Trình Quản Lý KHO THUỐC.
+        ///   Looks up a localized string similar to Chương Trình Quản Lý KHO.
         /// </summary>
         internal static string barChuongTrinh {
             get {
@@ -70,7 +70,7 @@ namespace Quanlykho {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chương Trình Quản Lý KHO THUỐC.
+        ///   Looks up a localized string similar to Chương Trình Quản Lý KHO.
         /// </summary>
         internal static string barChuongTrinh1 {
             get {
@@ -79,7 +79,7 @@ namespace Quanlykho {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Chương Trình Quản Lý KHO THUỐC.
+        ///   Looks up a localized string similar to Chương Trình Quản Lý KHO.
         /// </summary>
         internal static string barChuongTrinh11 {
             get {
@@ -1546,7 +1546,7 @@ namespace Quanlykho {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quản Lý Kho VINAVETCO.
+        ///   Looks up a localized string similar to Quản Lý Kho.
         /// </summary>
         internal static string frmMain {
             get {
@@ -1555,7 +1555,7 @@ namespace Quanlykho {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quản Lý Kho VINAVETCO.
+        ///   Looks up a localized string similar to Quản Lý Kho.
         /// </summary>
         internal static string frmMain1 {
             get {
@@ -1564,7 +1564,7 @@ namespace Quanlykho {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Quản Lý Kho VINAVETCO.
+        ///   Looks up a localized string similar to Quản Lý Kho.
         /// </summary>
         internal static string frmMain11 {
             get {

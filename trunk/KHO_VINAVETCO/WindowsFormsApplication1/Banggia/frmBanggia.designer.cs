@@ -424,12 +424,12 @@
             // bandedGridColumn34
             // 
             this.bandedGridColumn34.Caption = "Số Lượng";
-            this.bandedGridColumn34.DisplayFormat.FormatString = "{0:0.##}";
+            this.bandedGridColumn34.DisplayFormat.FormatString = "{0:0,0.##}";
             this.bandedGridColumn34.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.bandedGridColumn34.FieldName = "SOLUONGMH";
             this.bandedGridColumn34.Name = "bandedGridColumn34";
             this.bandedGridColumn34.OptionsColumn.AllowEdit = false;
-            this.bandedGridColumn34.SummaryItem.DisplayFormat = "{0:0.##}";
+            this.bandedGridColumn34.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.bandedGridColumn34.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.bandedGridColumn34.Visible = true;
             this.bandedGridColumn34.Width = 139;

@@ -202,7 +202,6 @@ namespace WindowsFormsApplication1
                 checkNho.Checked = false;
             }
 
-
             string ACTIVE = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "ACTIVE", null);
             string CODERUN = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + TENCTY, "CODERUN", null);
             if (ACTIVE != "" && CODERUN != "")
@@ -226,7 +225,6 @@ namespace WindowsFormsApplication1
             }
             else
             {
-
                 frmActive active = new frmActive();
                 active.ShowDialog();
             }
@@ -242,35 +240,66 @@ namespace WindowsFormsApplication1
             if (procs.Length >= 2)
             {
                 MessageBox.Show("chương trình đang chạy trên máy tính bạn rồi!");
+                Application.ExitThread();
                 Application.Exit();
                 return;
             }
-
+            CHECKVERSION();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SkinName = NgonNguVA.AppSettings.Settings["Skin"].Value;
             iNgonNgu = int.Parse(NgonNguVA.AppSettings.Settings["NgonNgu"].Value);
             if (iNgonNgu == 1)
             {
-               
                 loadEN();
             }
             if (iNgonNgu == 0)
             {
-               
                 loadVN();
             }
-
-            
-
             txtTenTaiKhoan.Focus();
             LoadRegistry();
+        }
+        public void CHECKVERSION()
+        {
+            
+            CTL ctl = new CTL();
+            String SQL = "SELECT VERSION  from THONGTINCT";
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = ctl.GETDATA(SQL);
+            }
+            catch
+            {
+                MessageBox.Show("Kiểm Tra Lại Kết Nối InterNet nếu không được thì gọi cho Thành SĐT:0907093902");
+                Application.ExitThread();
+                Application.Exit();
+                return;
+            }
+            if (dt.Rows.Count <= 0)
+            {
+                MessageBox.Show("Kiểm Tra Lại DATABASE. gọi cho Thành SĐT:0907093902//FRMLOGIN.ROWS 281");
+                Application.ExitThread();
+                Application.Exit();
+                return;
+            }
+            else
+            {
+                int lastversion = Convert.ToInt32(dt.Rows[0][0].ToString());
+                if (PublicVariable.VERSION<lastversion)
+                {
+                    MessageBox.Show("VUI LÒNG CẬP NHẬT PHẦN MỀM MỚI ĐỂ SỦ DỤNG. PHẦN MỀM NÀY ĐÃ ĐƯỢC NÂNG CẤP LÊN PHIÊN BẢN MỚI");
+                    Application.ExitThread();
+                    Application.Exit();
+                }
+            }
         }
         public void loadVN()
         {
             iNgonNgu = 0;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
-            // lbTenTaiKhoan.Text = LamVN.USERNAME.ToString();
+            //lbTenTaiKhoan.Text = LamVN.USERNAME.ToString();
             //lbMatKhau.Text = LamVN.PASSWORD.ToString();
-           // lbDangNhap.Text = resVietNam.DangNhap.ToString();
+            //lbDangNhap.Text = resVietNam.DangNhap.ToString();
             btDangNhap.Text = resVietNam.DangNhap.ToString();
             btTuyChon.Text = resVietNam.TuyChon.ToString();
             btKetThuc.Text = LamVN.DONG.ToString();
