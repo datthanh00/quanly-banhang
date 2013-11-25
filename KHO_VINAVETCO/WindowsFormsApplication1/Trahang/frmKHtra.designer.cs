@@ -161,7 +161,6 @@
             this.gridView6 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gridViewSANPHAM = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -177,6 +176,7 @@
             this.gridColumn35 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn46 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn58 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridViewPHIEUTRA = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -192,6 +192,7 @@
             this.xoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
+            this.gridColumn44 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -1424,7 +1425,8 @@
             this.gridViewTONGSANPHAM.OptionsView.ShowFooter = true;
             this.gridViewTONGSANPHAM.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridViewTONGSANPHAM.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn38, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn38, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn37, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // gridColumn36
             // 
@@ -1447,8 +1449,6 @@
             this.gridColumn38.Caption = "Nhà Cung Cấp";
             this.gridColumn38.FieldName = "TENNCC";
             this.gridColumn38.Name = "gridColumn38";
-            this.gridColumn38.Visible = true;
-            this.gridColumn38.VisibleIndex = 2;
             // 
             // gridColumn2
             // 
@@ -1629,10 +1629,10 @@
             this.gridViewSANPHAM.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridViewSANPHAM.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridViewSANPHAM.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn44,
             this.gridColumn28,
             this.gridColumn29,
             this.gridColumn30,
+            this.gridColumn44,
             this.gridColumn31,
             this.gridColumn32,
             this.gridColumn50,
@@ -1644,7 +1644,8 @@
             this.gridColumn45,
             this.gridColumn35,
             this.gridColumn1,
-            this.gridColumn46});
+            this.gridColumn46,
+            this.gridColumn58});
             this.gridViewSANPHAM.GridControl = this.gridControl3;
             this.gridViewSANPHAM.GroupCount = 2;
             this.gridViewSANPHAM.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -1671,14 +1672,8 @@
             this.gridViewSANPHAM.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn28, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn30, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn44, DevExpress.Data.ColumnSortOrder.Descending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn58, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridViewSANPHAM.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
-            // 
-            // gridColumn44
-            // 
-            this.gridColumn44.Caption = "Mã Hóa Đơn";
-            this.gridColumn44.FieldName = "MAHDX";
-            this.gridColumn44.Name = "gridColumn44";
             // 
             // gridColumn28
             // 
@@ -1691,13 +1686,11 @@
             this.gridColumn29.Caption = "Tên Khách Hàng";
             this.gridColumn29.FieldName = "TENKH";
             this.gridColumn29.Name = "gridColumn29";
-            this.gridColumn29.Visible = true;
-            this.gridColumn29.VisibleIndex = 0;
             // 
             // gridColumn30
             // 
-            this.gridColumn30.Caption = "Mã Hóa Đơn";
-            this.gridColumn30.FieldName = "MAHDX";
+            this.gridColumn30.Caption = "Hóa Đơn";
+            this.gridColumn30.FieldName = "MAHDX1";
             this.gridColumn30.Name = "gridColumn30";
             // 
             // gridColumn31
@@ -1706,7 +1699,7 @@
             this.gridColumn31.FieldName = "MAMH";
             this.gridColumn31.Name = "gridColumn31";
             this.gridColumn31.Visible = true;
-            this.gridColumn31.VisibleIndex = 1;
+            this.gridColumn31.VisibleIndex = 0;
             // 
             // gridColumn32
             // 
@@ -1714,7 +1707,7 @@
             this.gridColumn32.FieldName = "TENMH";
             this.gridColumn32.Name = "gridColumn32";
             this.gridColumn32.Visible = true;
-            this.gridColumn32.VisibleIndex = 2;
+            this.gridColumn32.VisibleIndex = 1;
             // 
             // gridColumn50
             // 
@@ -1722,7 +1715,7 @@
             this.gridColumn50.FieldName = "LOHANG";
             this.gridColumn50.Name = "gridColumn50";
             this.gridColumn50.Visible = true;
-            this.gridColumn50.VisibleIndex = 4;
+            this.gridColumn50.VisibleIndex = 3;
             // 
             // gridColumn56
             // 
@@ -1730,7 +1723,7 @@
             this.gridColumn56.FieldName = "HSD";
             this.gridColumn56.Name = "gridColumn56";
             this.gridColumn56.Visible = true;
-            this.gridColumn56.VisibleIndex = 5;
+            this.gridColumn56.VisibleIndex = 4;
             // 
             // gridColumn33
             // 
@@ -1742,7 +1735,7 @@
             this.gridColumn33.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn33.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn33.Visible = true;
-            this.gridColumn33.VisibleIndex = 6;
+            this.gridColumn33.VisibleIndex = 5;
             // 
             // gridColumn47
             // 
@@ -1754,7 +1747,7 @@
             this.gridColumn47.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn47.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn47.Visible = true;
-            this.gridColumn47.VisibleIndex = 8;
+            this.gridColumn47.VisibleIndex = 7;
             // 
             // gridColumn34
             // 
@@ -1764,7 +1757,7 @@
             this.gridColumn34.FieldName = "GIATIEN";
             this.gridColumn34.Name = "gridColumn34";
             this.gridColumn34.Visible = true;
-            this.gridColumn34.VisibleIndex = 9;
+            this.gridColumn34.VisibleIndex = 8;
             // 
             // gridColumn53
             // 
@@ -1776,7 +1769,7 @@
             this.gridColumn53.SummaryItem.DisplayFormat = "{0:0,0.##}";
             this.gridColumn53.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn53.Visible = true;
-            this.gridColumn53.VisibleIndex = 7;
+            this.gridColumn53.VisibleIndex = 6;
             // 
             // gridColumn45
             // 
@@ -1788,7 +1781,7 @@
             this.gridColumn45.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn45.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn45.Visible = true;
-            this.gridColumn45.VisibleIndex = 10;
+            this.gridColumn45.VisibleIndex = 9;
             // 
             // gridColumn35
             // 
@@ -1802,7 +1795,7 @@
             this.gridColumn1.FieldName = "TENNCC";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 3;
+            this.gridColumn1.VisibleIndex = 2;
             // 
             // gridColumn46
             // 
@@ -1814,7 +1807,13 @@
             this.gridColumn46.SummaryItem.DisplayFormat = "{0:0,0}";
             this.gridColumn46.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn46.Visible = true;
-            this.gridColumn46.VisibleIndex = 11;
+            this.gridColumn46.VisibleIndex = 10;
+            // 
+            // gridColumn58
+            // 
+            this.gridColumn58.Caption = "ID";
+            this.gridColumn58.FieldName = "ID";
+            this.gridColumn58.Name = "gridColumn58";
             // 
             // gridViewPHIEUTRA
             // 
@@ -1981,6 +1980,12 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
+            // 
+            // gridColumn44
+            // 
+            this.gridColumn44.Caption = "MAHDX";
+            this.gridColumn44.FieldName = "MAHDX";
+            this.gridColumn44.Name = "gridColumn44";
             // 
             // frmKHtra
             // 
@@ -2192,7 +2197,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn35;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn42;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn43;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn44;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn45;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -2250,6 +2254,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridKH1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn58;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn44;
     }
     
 }
