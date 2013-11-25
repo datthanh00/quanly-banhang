@@ -1490,6 +1490,7 @@ namespace WindowsFormsApplication1
                 dt.deDongTab = new frmThongTin._deDongTab(vDOngTab);
                 dt.frm = this;
                 dt.iNgonNgu = iNgonNgu;
+                dt.smanv = sManv;
                 dt.TopLevel = false;
                 dt.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(dt);

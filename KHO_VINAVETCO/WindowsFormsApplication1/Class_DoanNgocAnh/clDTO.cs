@@ -17,8 +17,14 @@ namespace WindowsFormsApplication1
         private String _LOGO;
         private String _MASOTHUE;
         private String _WEBSITE;
+        private String _VERSION;
 
-      
+
+        public String VERSION
+        {
+            get { return _VERSION; }
+            set { _VERSION = value; }
+        }
         public String MACT
         {
             get { return _MACT; }

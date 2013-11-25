@@ -6,10 +6,15 @@ namespace WindowsFormsApplication1
 {
 	class PublicVariable
 	{
+        // XAC DINH VERSION CHO  PHAN MÊM DE KHOA NGUOI DUNG SU DUNG VERSION CU
        public static int VERSION = 102;
+      
+       // XAC DINH BUILD DE BUILD LA KHO CONG TY HAY KHO TUAN HANH
+       public static Boolean IS_VINAVETCO = true;
+
        public static string TATCA,XEM,THEM, XOA, SUA, IN, MAKHO,MANV,CODEKHO;
        public static Boolean isHSD, isBARCODE, isTONTHUCTE, isKHOILUONG, isBANGGIA;
-       public static Boolean isUSELAN=false,IS_VINAVETCO=true;
+       public static Boolean isUSELAN=false;
        public static DataTable KhoQL;
        public static String TMPtring, SQL_NHAP, SQL_XUAT, SQL_TRANHAP, SQL_TRAXUAT, TMPlog;
        public static String LOHANG = "TONDAU";
