@@ -32,6 +32,7 @@ namespace WindowsFormsApplication1
         public delegate void _deDongTab();
         public _deDongTab deDongTab;
         Loadingggg ld = new Loadingggg();
+        public string smanv;
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             if (PublicVariable.SUA == "False")
@@ -44,7 +45,11 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-       
+            if (cboversion.Value>10000000)
+            {
+                MessageBox.Show("VERSION KHÔNG ĐƯỢC LỚN HƠN 10,000,000");
+                return;
+            }
 
             try
             {
@@ -60,6 +65,7 @@ namespace WindowsFormsApplication1
                 }*/
                
                 dto.MACT = "1";
+                dto.VERSION = cboversion.Value.ToString();
                 dto.TENCT = txtten.Text;
                 dto.DIACHI = txtDiaChi.Text;
                 dto.SDT = txtDT.Text;
@@ -144,16 +150,22 @@ namespace WindowsFormsApplication1
                 {
                     loadEN();
                 }
-                //if (Convert.ToString(Clipboard.GetText()) != "ok")
-                //{
-                //    Clipboard.SetText(" ");
-
-                //}
+                if (smanv == "NV1")
+                {
+                    lbversion.Visible = true;
+                    cboversion.Visible = true;   
+                }
+                else
+                {
+                    lbversion.Visible = false;
+                    cboversion.Visible = false;
+                }
                 DataTable tb = new DataTable();
                 dto.MACT = "1";
                 tb = ctr.getTTCTy(dto);
                 for (int i = 0; i < tb.Rows.Count; i++)
                 {
+                    cboversion.Text = tb.Rows[i]["VERSION"].ToString();
                     txtten.Text = tb.Rows[i]["TENCT"].ToString();
                     txtDiaChi.Text = tb.Rows[i]["diachi"].ToString();
                     txtFax.Text = tb.Rows[i]["FAX"].ToString();

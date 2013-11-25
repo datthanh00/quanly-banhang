@@ -53,6 +53,8 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtingiua = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.lbversion = new DevExpress.XtraEditors.LabelControl();
+            this.cboversion = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtten.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
@@ -65,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtintrai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtinphai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingiua.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboversion.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTenDonVI
@@ -264,11 +267,36 @@
             this.labelControl3.TabIndex = 15;
             this.labelControl3.Text = "TT in Giữa";
             // 
+            // lbversion
+            // 
+            this.lbversion.Location = new System.Drawing.Point(48, 5);
+            this.lbversion.Name = "lbversion";
+            this.lbversion.Size = new System.Drawing.Size(39, 13);
+            this.lbversion.TabIndex = 16;
+            this.lbversion.Text = "Version:";
+            // 
+            // cboversion
+            // 
+            this.cboversion.Location = new System.Drawing.Point(130, 1);
+            this.cboversion.Name = "cboversion";
+            this.cboversion.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboversion.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.cboversion.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cboversion.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.cboversion.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cboversion.Properties.Mask.EditMask = "n0";
+            this.cboversion.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.cboversion.Size = new System.Drawing.Size(180, 20);
+            this.cboversion.TabIndex = 17;
+            // 
             // frmThongTin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(528, 341);
+            this.Controls.Add(this.cboversion);
+            this.Controls.Add(this.lbversion);
             this.Controls.Add(this.txtingiua);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.txtinphai);
@@ -312,6 +340,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtintrai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtinphai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtingiua.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboversion.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -344,5 +373,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtingiua;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl lbversion;
+        private DevExpress.XtraEditors.CalcEdit cboversion;
     }
 }
