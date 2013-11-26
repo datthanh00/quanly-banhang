@@ -1546,31 +1546,31 @@ namespace WindowsFormsApplication1
 
         private void frmMain_Resize(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Minimized)
-            {
-              
-                if (iNgonNgu ==0)
-                {
-                    notifyIcon1.ShowBalloonTip(1, "Thông báo", "Nhấn chuột phải chọn hiển thị lại để mở lại cửa sổ hoặc double click vào icon chương trình", ToolTipIcon.Info);
-                }
-                else
-                {
-                    notifyIcon1.ShowBalloonTip(1, "Infomation", "Right-click again to select the display window open or double click the program icon", ToolTipIcon.Info);
-                }
-               
-            }
+            //if (this.WindowState == FormWindowState.Minimized)
+            //{
+            //  
+            //    if (iNgonNgu ==0)
+            //    {
+            //        notifyIcon1.ShowBalloonTip(1, "Thông báo", "Nhấn chuột phải chọn hiển thị lại để mở lại cửa sổ hoặc double click vào icon chương trình", ToolTipIcon.Info);
+            //    }
+            //    else
+            //    {
+            //        notifyIcon1.ShowBalloonTip(1, "Infomation", "Right-click again to select the display window open or double click the program icon", ToolTipIcon.Info);
+            //    }
+            //   
+            //}
         }
         private void notifyIcon()
         {
            
-            notifyIcon1.Text = "Quản Lý Kho";
+            //notifyIcon1.Text = "Quản Lý Kho";
 
-            if (iNgonNgu == 0)
-            {
-                notifyIcon1.ShowBalloonTip(1, "Chào mừng", "Chương trình quản lý xuất nhập tồn đang chạy máy tính của bạn", ToolTipIcon.Info);
-            }
-            else
-                notifyIcon1.ShowBalloonTip(1, "Welcome", "Entry management programs exist that are running your computer", ToolTipIcon.Info);
+            //if (iNgonNgu == 0)
+            //{
+            //    notifyIcon1.ShowBalloonTip(1, "Chào mừng", "Chương trình quản lý xuất nhập tồn đang chạy máy tính của bạn", ToolTipIcon.Info);
+            //}
+            //else
+            //    notifyIcon1.ShowBalloonTip(1, "Welcome", "Entry management programs exist that are running your computer", ToolTipIcon.Info);
         }
 
         private void notifyIcon1_MouseDown(object sender, MouseEventArgs e)
@@ -1593,14 +1593,14 @@ namespace WindowsFormsApplication1
         {
           
                 this.Hide();
-                if (iNgonNgu == 0)
-                {
-                    notifyIcon1.ShowBalloonTip(1, "Thông báo", "Nhấn chuột phải chọn hiển thị lại để mở lại cửa sổ hoặc double click vào icon chương trình", ToolTipIcon.Info);
-                }
-                else
-                {
-                    notifyIcon1.ShowBalloonTip(1, "Infomation", "Right-click again to select the display window open or double click the program icon", ToolTipIcon.Info);
-                }
+                //if (iNgonNgu == 0)
+                //{
+                //    notifyIcon1.ShowBalloonTip(1, "Thông báo", "Nhấn chuột phải chọn hiển thị lại để mở lại cửa sổ hoặc double click vào icon chương trình", ToolTipIcon.Info);
+                //}
+                //else
+                //{
+                //    notifyIcon1.ShowBalloonTip(1, "Infomation", "Right-click again to select the display window open or double click the program icon", ToolTipIcon.Info);
+                //}
 
 
         }
