@@ -223,6 +223,7 @@ namespace WindowsFormsApplication1
             if (!PublicVariable.isHSD)
             {
                 BandedGridView3.Columns["LOHANG"].Visible = false;
+                BandedGridView3.Columns["HSD"].Visible = false;
             }
             
         }

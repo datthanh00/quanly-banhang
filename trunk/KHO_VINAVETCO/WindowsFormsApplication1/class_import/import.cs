@@ -28,6 +28,7 @@ namespace WindowsFormsApplication1.class_import
             cbTable.Properties.Items.Add("NHÀ CUNG CẤP");
             cbTable.Properties.Items.Add("KHÁCH HÀNG");
             cbTable.Properties.Items.Add("MẶT HÀNG");
+            cbTable.Properties.Items.Add("QUY CÁCH MẶT HÀNG");
             button2.Enabled = false;
            
         }
@@ -392,7 +393,7 @@ namespace WindowsFormsApplication1.class_import
                 lenh = "";
                 foreach (System.Data.DataRow COT in dulieu.Rows)
                 {
-                    lenh = lenh + " \r\nGO\r\n UPDATE [MATHANG] SET MATH='" + COT["MATH"] + "',MANH='" + COT["MANH"] + "',QUYCACH='" + COT["QUYCACH"] + "',MAKHO='" + COT["MAKHO"] + "',TENMH=N'" + COT["TENMH"] + "',MADVT='" + COT["MADVT"] + "',SOLUONGMH='" + COT["SOLUONGMH"] + "',GIAMUA='" + COT["GIAMUA"] + "',MOTA='" + COT["MOTA"] + "' WHERE MAMH='" + COT["MAMH"] + "'";
+                    lenh = lenh + " \r\nGO\r\n UPDATE [MATHANG] SET MATH='" + COT["MATH"] + "',MANH='" + COT["MANH"] + "',QUYCACH=N'" + COT["QUYCACH"] + "',MAKHO='" + COT["MAKHO"] + "',TENMH=N'" + COT["TENMH"] + "',MADVT='" + COT["MADVT"] + "',SOLUONGMH='" + COT["SOLUONGMH"] + "',GIAMUA='" + COT["GIAMUA"] + "',MOTA='" + COT["MOTA"] + "' WHERE MAMH='" + COT["MAMH"] + "'";
                     lenh = lenh + "\r\nGO\r\n  UPDATE TONDAUMATHANG SET TONDAU='" + COT["SOLUONGMH"] + "' WHERE MAMH='" + COT["MAMH"] + "'";
 
 
@@ -415,7 +416,18 @@ namespace WindowsFormsApplication1.class_import
                         }
                     }
                 }
-              
+
+            }
+                // FREE DOME
+            else if (cbTable.SelectedIndex == 9 && isupdate)
+            {
+                lenh = "";
+                foreach (System.Data.DataRow COT in dulieu.Rows)
+                {
+                    lenh = lenh + " \r\nGO\r\n UPDATE [MATHANG] SET QUYCACH=N'" + COT["QUYCACH"] + "' WHERE MAMH='" + COT["MAMH"] + "'";
+                   
+                }
+
             }
 
             try
