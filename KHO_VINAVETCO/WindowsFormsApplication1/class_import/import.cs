@@ -356,17 +356,20 @@ namespace WindowsFormsApplication1.class_import
                     lenh = lenh + " \r\nGO\r\n INSERT INTO [MATHANG]([MAMH],[MATH],[MANH],[MAKHO],[TENMH],[MADVT],[SOLUONGMH],[GIAMUA],[MOTA],[TINHTRANG],[MANCC],[KLDVT],QUYCACH) VALUES('" + COT["MAMH"] + "','" + COT["MATH"] + "','" + COT["MANH"] + "','" + COT["MAKHO"] + "',N'" + COT["TENMH"] + "','" + COT["MADVT"] + "','" + COT["SOLUONGMH"] + "','" + COT["GIAMUA"] + "','" + COT["MOTA"] + "','" + COT["TINHTRANG"] + "','" + COT["MANCC"] + "','" + COT["KLDVT"] + "',N'" + COT["QUYCACH"] + "')";
                     lenh = lenh + "\r\nGO\r\n  INSERT INTO BANGGIAMATHANG ([MABG],[MAMH],[GIABAN])  SELECT MABG,'" + COT["MAMH"] + "' AS MAMH,0 AS GIABAN FROM BANGGIA WHERE MAKHO='" + COT["MAKHO"] + "'";
                     lenh = lenh + "\r\nGO\r\n  INSERT INTO TONDAUMATHANG([MAMH],[TONDAU]) VALUES ('" + COT["MAMH"] + "','" + COT["SOLUONGMH"] + "')";
-
+            
+                
                     for (int i = 0; i < 10; i++)
                     {
                         if (COT["LO" + i.ToString()] != "" && COT["SLLO" + i.ToString()] != "")
                         {
                             if (COT["SLLO" + i.ToString()].ToString() != null && COT["SLLO" + i.ToString()].ToString() != "")
                             {
-                                int SL = Convert.ToInt32(COT["SLLO" + i.ToString()]);
+                                Double SL = Convert.ToDouble(COT["SLLO" + i.ToString()]);
                                 if (SL >= 0)
                                 {
-                                    lenh = lenh + " \r\nGO\r\n INSERT INTO [KHOHANG] ([MAMH],[LOHANG],[GIAMUA],[TONKHO],[NGAYNHAP],[HSD],[TINHTRANG]) VALUES('" + COT["MAMH"] + "','" + COT["LO" + i.ToString()] + "','" + COT["GIAMUA"] + "','" + COT["SLLO" + i.ToString()] + "',convert(varchar,getDate(),101),'" + COT["HSD" + i.ToString()] + "',1)";
+                                    string HSD = COT["HSD" + i.ToString()].ToString();
+                                    HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
+                                    lenh = lenh + " \r\nGO\r\n INSERT INTO [KHOHANG] ([MAMH],[LOHANG],[GIAMUA],[TONKHO],[NGAYNHAP],[HSD],[TINHTRANG]) VALUES('" + COT["MAMH"] + "','" + COT["LO" + i.ToString()] + "','" + COT["GIAMUA"] + "','" + COT["SLLO" + i.ToString()] + "',convert(varchar,getDate(),101),'" + HSD + "',1)";
                                     lenh = lenh + "\r\nGO\r\n  INSERT INTO [TONDAUKHOHANG] ([MAMH],[LOHANG],[GIAMUA],[TONKHO]) VALUES ('" + COT["MAMH"] + "','" + COT["LO" + i.ToString()] + "'," + COT["GIAMUA"] + "," + COT["SLLO" + i.ToString()] + ")";
 
                                     String SQL3 = "select COUNT(*) from TONKHOTT WHERE NGAY=convert(varchar,GETDATE(),101) AND MAKHO='" + COT["MAKHO"] + "'";
@@ -399,10 +402,12 @@ namespace WindowsFormsApplication1.class_import
                         {
                             if (COT["SLLO" + i.ToString()].ToString() != null && COT["SLLO" + i.ToString()].ToString() != "")
                             {
-                                int SL = Convert.ToInt32(COT["SLLO" + i.ToString()]);
+                                Double SL = Convert.ToDouble(COT["SLLO" + i.ToString()]);
                                 if (SL > 0)
                                 {
-                                    lenh = lenh + " \r\nGO\r\n UPDATE  [KHOHANG] SET  GIAMUA='" + COT["GIAMUA"] + "',TONKHO='" + COT["SLLO" + i.ToString()] + "',HSD='" + COT["HSD" + i.ToString()] + "' WHERE MAMH='" + COT["MAMH"] + "' AND LOHANG='" + COT["LO" + i.ToString()] + "'";
+                                    string HSD = COT["HSD" + i.ToString()].ToString();
+                                    HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
+                                    lenh = lenh + " \r\nGO\r\n UPDATE  [KHOHANG] SET  GIAMUA='" + COT["GIAMUA"] + "',TONKHO='" + COT["SLLO" + i.ToString()] + "',HSD='" + HSD + "' WHERE MAMH='" + COT["MAMH"] + "' AND LOHANG='" + COT["LO" + i.ToString()] + "'";
                                     lenh = lenh + "\r\nGO\r\n  UPDATE  [TONDAUKHOHANG] SET GIAMUA='" + COT["GIAMUA"] + "',TONKHO='" + COT["SLLO" + i.ToString()] + "' WHERE  MAMH='" + COT["MAMH"] + "' AND LOHANG='" + COT["LO" + i.ToString()] + "'";
 
                                 }

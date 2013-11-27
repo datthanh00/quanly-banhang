@@ -495,6 +495,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_644FB713220C6109F28E7C540A158CD6"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_685BC6E169ED80492CF29ABA257ABF00"
         "OwnerKey" = "8:_13A8FF9923DF4A0B84603541881F58CD"
         "MsmSig" = "8:_UNDEFINED"
@@ -856,30 +862,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_890DC9A0E92C414F92F140786378CB2B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A3B42DECB0735B77ADEF2D778FAEFEFD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A3B42DECB0735B77ADEF2D778FAEFEFD"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1F1542533A1202B1EABF2BD5816529C6"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E1FB9CD7C5D148309D6FF69F513C2FC3"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -904,7 +886,37 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_1F1542533A1202B1EABF2BD5816529C6"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_1A648FCDC586432DBECD9AC933FA7C14"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_890DC9A0E92C414F92F140786378CB2B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A3B42DECB0735B77ADEF2D778FAEFEFD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_A3B42DECB0735B77ADEF2D778FAEFEFD"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_644FB713220C6109F28E7C540A158CD6"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1181,7 +1193,7 @@
             "Enabled" = "11:TRUE"
             "PromptEnabled" = "11:TRUE"
             "PrerequisitesLocation" = "2:2"
-            "Url" = "8:C:\\Program Files\\VINAVETCO\\QUANLYKHOKHO_VINAVETCO"
+            "Url" = "8:"
             "ComponentsUrl" = "8:"
                 "Items"
                 {
@@ -1764,6 +1776,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_644FB713220C6109F28E7C540A158CD6"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MySql.Data, Version=1.0.4.20163, Culture=neutral, PublicKeyToken=c5687fc88969c44d"
+                "ScatterAssemblies"
+                {
+                    "_644FB713220C6109F28E7C540A158CD6"
+                    {
+                    "Name" = "8:MySql.Data.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MySql.Data.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_3D833512D94B4DD08488EDCF4ECEF472"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_685BC6E169ED80492CF29ABA257ABF00"
@@ -2645,7 +2688,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MySql.Data, Version=1.0.4.20163, Culture=neutral, PublicKeyToken=c5687fc88969c44d"
+            "AssemblyAsmDisplayName" = "8:MySql.Data, Version=6.2.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d"
                 "ScatterAssemblies"
                 {
                     "_E9E875E74D0C49F99D7B506B987FF912"

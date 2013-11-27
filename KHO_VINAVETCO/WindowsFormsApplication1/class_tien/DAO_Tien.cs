@@ -85,7 +85,7 @@ namespace WindowsFormsApplication1
                 CODERUN = CODERUN+ Convert.ToString(Rd.Next(1, 9));
             }
             Provider pv = new Provider();
-            string SQL = "INSERT INTO  ACTIVE  ([CODE],[CODERUN],COMPUTERNAME)  VALUES ('" + CODE + "','" + CODERUN + "','')";
+            string SQL = "INSERT INTO  ACTIVE  ([ACTIVE],[CODE],[CODERUN],[TYPE],COMPUTERNAME)  SELECT MAX(ACTIVE)+1 AS ACTIVE,'" + CODE + "','" + CODERUN + "',0,'' FROM ACTIVE ";
             pv.executeNonQuery(SQL);
         }
 

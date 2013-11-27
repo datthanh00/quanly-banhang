@@ -177,6 +177,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2A4AC1A94638948166DCC38D4713C3AE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_37598804311AE8C009C89D5C0E225AD7"
         "OwnerKey" = "8:_F00940BD3A0F49B8A2458E9ED1314BE9"
         "MsmSig" = "8:_UNDEFINED"
@@ -850,31 +856,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B7B3FBC9660B4B7F9A124DB55C777B85"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F00940BD3A0F49B8A2458E9ED1314BE9"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_45EF3877277ED52270DAE353BFD8296C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_45EF3877277ED52270DAE353BFD8296C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_D795BA34ADF85632ABDBE52EE58171FA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_B7B3FBC9660B4B7F9A124DB55C777B85"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -911,6 +899,30 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_55EE43DDE4AECB29CC26889B6E550B16"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_F00940BD3A0F49B8A2458E9ED1314BE9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_45EF3877277ED52270DAE353BFD8296C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_45EF3877277ED52270DAE353BFD8296C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_2A4AC1A94638948166DCC38D4713C3AE"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1175,11 +1187,6 @@
                     "Name" = "8:.NET Framework 2.0 (x86)"
                     "ProductCode" = "8:Microsoft.Net.Framework.2.0"
                     }
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Sql.Server.Express.9.2"
-                    {
-                    "Name" = "8:SQL Server 2005 Express Edition SP2 (x86)"
-                    "ProductCode" = "8:Microsoft.Sql.Server.Express.9.2"
-                    }
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
                     {
                     "Name" = "8:Windows Installer 3.1"
@@ -1425,6 +1432,37 @@
                     }
                 }
             "SourcePath" = "8:Interop.Microsoft.Office.Core.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_87FA93942CCE452CAB6FB4F84E3D6CB5"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2A4AC1A94638948166DCC38D4713C3AE"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:MySql.Data, Version=1.0.4.20163, Culture=neutral, PublicKeyToken=c5687fc88969c44d"
+                "ScatterAssemblies"
+                {
+                    "_2A4AC1A94638948166DCC38D4713C3AE"
+                    {
+                    "Name" = "8:MySql.Data.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:MySql.Data.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_87FA93942CCE452CAB6FB4F84E3D6CB5"
@@ -2239,7 +2277,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:MySql.Data, Version=1.0.4.20163, Culture=neutral, PublicKeyToken=c5687fc88969c44d"
+            "AssemblyAsmDisplayName" = "8:MySql.Data, Version=6.2.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d"
                 "ScatterAssemblies"
                 {
                     "_B7B3FBC9660B4B7F9A124DB55C777B85"
@@ -2766,7 +2804,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:KHO_TUANHANH"
         "ProductCode" = "8:{A4C3885E-781E-46B7-9EFC-4E3F93AA92C6}"
-        "PackageCode" = "8:{7F536358-94C9-4E29-B5B9-59BEECC62B4D}"
+        "PackageCode" = "8:{7A963C85-32A2-498A-B345-D560AC5895F8}"
         "UpgradeCode" = "8:{DB40B258-094F-45A7-BE96-BA99716EE2C1}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
@@ -2887,7 +2925,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_6A513FAB99E245A693753E9ED698DD18"
             {
-            "Name" = "8:QUAN LY KHO"
+            "Name" = "8:QUAN LY KHO 2"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -2901,7 +2939,7 @@
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_AD5862FF29AA407198D7929E5C4B5983"
             {
-            "Name" = "8:QUAN LY KHO"
+            "Name" = "8:QUAN LY KHO 2"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
