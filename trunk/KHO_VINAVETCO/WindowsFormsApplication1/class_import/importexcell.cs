@@ -19,7 +19,7 @@ namespace WindowsFormsApplication1.class_import
             sConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;" +
                    "Data Source=" + file_readed + ";" +
                    "Extended Properties=Excel 8.0";
-
+            sConnectionString = String.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties=""Excel 8.0;HDR=YES;IMEX=1;""", file_readed);
                //sConnectionString = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
                 // sConnectionString = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_qlkho;User ID=nguyendat_thanh;Password=Xziojs1U98;";
              
@@ -39,6 +39,8 @@ namespace WindowsFormsApplication1.class_import
                 thich_ung.SelectCommand = lenh;
                 thich_ung.Fill(bang);
                 con.Close();
+
+     
             }
             catch
             {
