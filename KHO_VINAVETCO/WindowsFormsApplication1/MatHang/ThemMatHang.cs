@@ -211,7 +211,7 @@ namespace WindowsFormsApplication1
                         return;
                     }
                      else if
-                     (txtquycach.Text.Length > 48 || txtquycach.Text.Length <5)
+                     (txtquycach.Text.Length > 48 || txtquycach.Text.Length <2)
                     {
                         XtraMessageBox.Show("Tên QUY CÁCH QUÁ DÀI hoặc quá ngắn");
                         txtquycach.Focus();
