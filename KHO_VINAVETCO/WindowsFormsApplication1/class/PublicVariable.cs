@@ -13,7 +13,7 @@ namespace WindowsFormsApplication1
        public static Boolean IS_VINAVETCO = false;
 
        public static string TATCA,XEM,THEM, XOA, SUA, IN, MAKHO,MANV,CODEKHO;
-       public static Boolean isHSD, isBARCODE, isTONTHUCTE, isKHOILUONG, isBANGGIA;
+       public static Boolean isHSD, isBARCODE, isTONNHAPXUATNGAYFULL, isKHOILUONG, isBANGGIA;
        public static Boolean isUSELAN=false;
        public static DataTable KhoQL;
        public static String TMPtring, SQL_NHAP, SQL_XUAT, SQL_TRANHAP, SQL_TRAXUAT, TMPlog;

@@ -12,6 +12,15 @@ namespace WindowsFormsApplication1
             set { _IsUPDATE = value; }
         }
 
+        private string _CODEKHO;
+
+        public string CODEKHO
+        {
+            get { return _CODEKHO; }
+            set { _CODEKHO = value; }
+        }
+
+
         private  int _ID;
 
         public int ID

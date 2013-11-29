@@ -137,10 +137,10 @@ namespace WindowsFormsApplication1.HoaDonXuat
             gridCTHOADON.FormatConditions.Add(condition1);
 
         }
-        public void loadgridCTHOADONTAM(string MHDX)
+        public void loadgridGETHOADONDATXUAT(string MHDX)
         {
             DataTable dt = new DataTable();
-            dt = ctlNCC.GETCTHOADONXUATTAM(MHDX);
+            dt = ctlNCC.GETHOADONDATXUAT(MHDX);
             gridControl1.DataSource = dt;
 
             CountRowTBEdit = dt.Rows.Count;
@@ -274,6 +274,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     if (txtmakh.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng chọn Mã Khách Hàng");
+                        return;
                     }
                     else
                     {
@@ -1573,7 +1574,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             dtr = gridView2.GetDataRow(gridView2.FocusedRowHandle);
 
             mahdtam = dtr["MAHDX"].ToString();
-            loadgridCTHOADONTAM(dtr["MAHDX"].ToString());
+            //loadgridCTHOADONTAM(dtr["MAHDX"].ToString());
             loadGrid_sanpham();
 
         }
@@ -1619,10 +1620,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 thanhtien=txtthanhtien.Text;
             }
             
-            if (mahdtam == "")
-            {
-                mahdtam = connect.sTuDongDienMaHoaDonXuattam(txtMaHD.Text);
-            }
+           
             PublicVariable.SQL_XUAT = PublicVariable.SQL_XUAT + " \r\nGO\r\n DELETE FROM [CHITIETHDXTAM] WHERE MAHDX='" + mahdtam + "'";
             //ctlNCC.executeNonQuery(SQL);
             for (int i = 0; i < gridCTHOADON.DataRowCount; i++)

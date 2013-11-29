@@ -782,7 +782,7 @@ namespace WindowsFormsApplication1
             else
             {
                 PublicVariable.isHSD = false;
-                btnphanlo.Enabled = false;
+               // btnphanlo.Enabled = false;
             }
 
             if (chucnang.IndexOf("BARCODE") >= 0)
@@ -793,16 +793,16 @@ namespace WindowsFormsApplication1
             {
                 PublicVariable.isBARCODE = false;
             }
-            //HSD--BARCODE--TONTHUCTE
-            if (chucnang.IndexOf("TONTHUCTE") >= 0)
+            //HSD--BARCODE--TONNHAPXUATNGAYFULL
+            if (chucnang.IndexOf("TONNHAPXUATNGAYFULL") >= 0)
             {
-                PublicVariable.isTONTHUCTE = true;
+                PublicVariable.isTONNHAPXUATNGAYFULL = true;
                // barButtonItem1.Enabled = true;
             }
             else
             {
-                PublicVariable.isTONTHUCTE = false;
-                barButtonItem1.Enabled = false;
+                PublicVariable.isTONNHAPXUATNGAYFULL = false;
+                //barButtonItem1.Enabled = false;
             }
 
             if (chucnang.IndexOf("KHOILUONG") >= 0)
@@ -822,7 +822,7 @@ namespace WindowsFormsApplication1
             else
             {
                 PublicVariable.isBANGGIA = true;
-                btnbanggia.Enabled = true;
+                //btnbanggia.Enabled = true;
             }
         }
         void OnPaintStyleClick(object sender, ItemClickEventArgs e)

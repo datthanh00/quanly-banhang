@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
         string IDNHAP = "0";
         NhapHangDTO dto = new NhapHangDTO();
         NhapHangDAO mh = new NhapHangDAO();
-        Boolean isdelete = false, isnhap=true;
+        Boolean isdelete = false, isnhap=true,isdathang=false;
         //WindowsFormsApplication1.Class_ManhCuong.Cart.HoaDon hd = new Cart.HoaDon();
         public string STYPEMONEY,MAHDXOA;
         double TIENTRATRUOC = 0;
@@ -521,6 +521,21 @@ namespace WindowsFormsApplication1
                 }
             }
         }
+        public void Load_TTNCC(string MANCC)
+        {
+            txtMANCC.Text = MANCC;
+            dtoNCC.MANCC = txtMANCC.Text;
+            DataTable tblayno = ctlNCC.LAYTIENNO(dtoNCC);
+            if (tblayno.Rows.Count > 0)
+            {
+                txtNo.Text = tblayno.Rows[0]["TIENNO"].ToString();
+                TIENTRATRUOC = Convert.ToInt64(tblayno.Rows[0]["TIENTRATRUOC"].ToString());
+            }
+            else
+            {
+                txtNo.Text = "0";
+            }
+        }
         
 
         public string sTenNV, sMaNV;
@@ -593,6 +608,7 @@ namespace WindowsFormsApplication1
                     if (txtMANCC.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng chọn Nhà Cung Cấp");
+                        return;
                     }
                     else
                     {
@@ -877,14 +893,14 @@ namespace WindowsFormsApplication1
         {
             dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
             dtoNCC.MAKHO = PublicVariable.MAKHO;
-            gridControl2.DataSource = ctlNCC.GETHOADONNHAP(dtoNCC);
+           // gridControl2.DataSource = ctlNCC.GETHOADONNHAP(dtoNCC);
         }
 
         private void loadGiaoDich()
         {
             dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
             dtoNCC.MAKHO = PublicVariable.MAKHO;
-            gridControl2.DataSource = ctlNCC.GETHOADONNHAP(dtoNCC);
+           // gridControl2.DataSource = ctlNCC.GETHOADONNHAP(dtoNCC);
         }
         public void createHoadon()
         {
@@ -1668,7 +1684,12 @@ namespace WindowsFormsApplication1
             {
                 DataTable printtable = (DataTable)gridControl3.DataSource;
                 Inhd rep = new Inhd(printtable, 2);
-               
+                rep.ShowPreviewDialog();
+            }
+            if (gridControl3.MainView == griddathang)
+            {
+                DataTable printtable = (DataTable)gridControl3.DataSource;
+                Inhd rep = new Inhd(printtable, 25);
                 rep.ShowPreviewDialog();
             }
                 
@@ -1725,6 +1746,10 @@ namespace WindowsFormsApplication1
             else if (gridControl3.MainView == gridViewTHEOTONGNHAP)
             {
                 loadgridtongSANPHAM();
+            }
+            else if (gridControl3.MainView == griddathang)
+            {
+                loadgridDATHANG();
             }
         }
 
@@ -2014,6 +2039,141 @@ namespace WindowsFormsApplication1
                 RepositoryItemGridLookUpEdit properties = editor.Properties;
                 properties.PopupFormSize = new Size(editor.Width - 4, properties.PopupFormSize.Height);
                 isloadGrid_sanpham = false;
+            }
+        }
+
+        private void simpleButton5_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.THEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            if (txtMANCC.Text == "")
+            {
+                XtraMessageBox.Show("Vui lòng chọn Nhà Cung Cấp");
+                return;
+            }
+            if (gridCTHOADON.DataRowCount <= 0)
+            {
+                XtraMessageBox.Show("Vui lòng chọn MỘT MẶT HÀNG");
+                return;
+            }
+            PublicVariable.SQL_NHAP = "";
+            string thanhtien = "0";
+            if (txtthanhtien.Text != "")
+            {
+                thanhtien = txtthanhtien.Text;
+            }
+            string mahdtam = connect.sTuDongDienMaHoaDondatnhap(txtMaHD.Text);
+
+            PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n DELETE FROM [HOADONDATNHAP] WHERE MAHDN='" + mahdtam + "'";
+            //ctlNCC.executeNonQuery(SQL);
+            
+            for (int i = 0; i < gridCTHOADON.DataRowCount; i++)
+            {
+                DataRow dtr = dtr = gridCTHOADON.GetDataRow(i);
+                PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n INSERT INTO [HOADONDATNHAP] ([MAHDN],[MAMH],[ID],[SOLUONGNHAP],[KMAI],[GIANHAP],[TIENNHAPTT],[TINHTRANG],[MAKHO],[MANCC])  VALUES ( '" + mahdtam + "','" + dtr["MAMH"].ToString() + "','" + dtr["ID"].ToString() + "'," + dtr["SOLUONG"].ToString() + "," + dtr["KMAI"].ToString() + "," + dtr["_Dongia"].ToString() + "," + dtr["TIENTRA"].ToString() + ",1,'" + PublicVariable.MAKHO + "','"+txtMANCC.Text+"')";
+                // ctlNCC.executeNonQuery(SQL);
+            }
+
+            // mahdtam = "";
+            ctlNCC.EXCUTE_SQL2(PublicVariable.SQL_NHAP);
+            PublicVariable.SQL_NHAP = "";
+            loadGiaoDich();
+
+            Create_new();
+
+            MessageBox.Show("Đã Lưu Hóa Đơn Đặt hàng");
+        }
+
+        public void loadgridDATHANG()
+        {
+            Load_panel_filter();
+            string SQL = "SELECT HOADONDATNHAP.*,HOADONDATNHAP.MAHDN + N' - NHà Cung Cấp: '+ TENNCC AS MAHDN1,(SOLUONGNHAP+KMAI)*KLDVT as KHOILUONG,HOADONDATNHAP.GIANHAP*SOLUONGNHAP AS THANHTIEN,TENMH+' - ' + QUYCACH AS TENMH, TENNCC FROM HOADONDATNHAP,MATHANG,NHACUNGCAP WHERE MATHANG.MAMH=HOADONDATNHAP.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC";
+
+            DataTable TBS = ctlNCC.GETDATA(SQL);
+            gridControl3.MainView = griddathang;
+            gridControl3.DataSource = TBS;
+            griddathang.RefreshData();
+            gridControl3.RefreshDataSource();
+            if (!PublicVariable.isKHOILUONG)
+            {
+                griddathang.Columns["KHOILUONG"].Visible = false;
+            }
+     
+            griddathang.ExpandAllGroups();
+        }
+
+        private void linkdathang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            loadgridDATHANG();
+        }
+
+        private void griddathang_ShowGridMenu(object sender, GridMenuEventArgs e)
+        {
+            GridView view = sender as GridView;
+            GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
+            if (hitInfo.RowHandle >= 0)
+            {
+                view.FocusedRowHandle = hitInfo.RowHandle;
+
+                contextMenuStrip3.Show(view.GridControl, e.Point);
+            }
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (PublicVariable.XEM == "False")
+            {
+                MessageBox.Show("KHÔNG CÓ QUYỀN ");
+                return;
+            }
+            PublicVariable.SQL_XUAT = "";
+            Load_panel_create();
+            Create_new();
+            loadgridCTHOADON();
+            DataRow dtr;
+            if (griddathang.FocusedRowHandle < 0)
+            {
+                return;
+            }
+            isdathang = true;
+            dtr = griddathang.GetDataRow(griddathang.FocusedRowHandle);
+            loadgridGETHOADONDATNHAP(dtr["MAHDN"].ToString());
+            Load_TTNCC(dtr["MANCC"].ToString());
+            cboTenNCC.Text = dtr["MANCC"].ToString();
+           // loadgridCTHOADON();
+            loadGrid_sanpham();
+            
+            isdathang=false;
+        }
+        public void loadgridGETHOADONDATNHAP(string MHDN)
+        {
+            DataTable dt = new DataTable();
+            dt = ctlNCC.GETHOADONDATNHAP(MHDN);
+            gridControl1.DataSource = dt;
+            CountRowTBEdit = dt.Rows.Count;
+
+        }
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            PublicVariable.SQL_XUAT = "";
+            if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (griddathang.FocusedRowHandle < 0)
+                {
+                    return;
+                }
+                int focusrow = griddathang.FocusedRowHandle;
+                DataRow dtr = dtr = griddathang.GetDataRow(focusrow);
+                if (dtr != null)
+                {
+                    ctlNCC.DELETEHOADONDATNHAP(dtr["MAHDN"].ToString());
+                    griddathang.DeleteRow(griddathang.FocusedRowHandle);
+                }
+                loadgridDATHANG();
+                MessageBox.Show("ĐÃ XÓA ĐẶT HÀNG ");
             }
         }
 

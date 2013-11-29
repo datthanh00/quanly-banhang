@@ -126,10 +126,10 @@ namespace WindowsFormsApplication1.KHtra
             gridCTHOADON.FormatConditions.Add(condition1);
 
         }
-        public void loadgridCTHOADONTAM(string MHDX)
+        public void loadgridGETHOADONDATXUAT(string MHDX)
         {
             DataTable dt = new DataTable();
-            dt = ctlNCC.GETCTHOADONXUATTAM(MHDX);
+            dt = ctlNCC.GETHOADONDATXUAT(MHDX);
             gridControl1.DataSource = dt;
 
             CountRowTBEdit = dt.Rows.Count;
@@ -252,6 +252,7 @@ namespace WindowsFormsApplication1.KHtra
                     if (txtmakh.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng chọn Mã Khách Hàng");
+                        return;
                     }
                     else
                     {

@@ -203,22 +203,6 @@ namespace WindowsFormsApplication1
                         txtTenMH.Focus();
                         return;
                     }
-                    else if
-                     (txtquycach.Text == "")
-                    {
-                        XtraMessageBox.Show("Vui lòng Nhập Tên QUY CÁCH");
-                        txtquycach.Focus();
-                        return;
-                    }
-                     else if
-                     (txtquycach.Text.Length > 48 || txtquycach.Text.Length <2)
-                    {
-                        XtraMessageBox.Show("Tên QUY CÁCH QUÁ DÀI hoặc quá ngắn");
-                        txtquycach.Focus();
-                        return;
-                    }
-    
-    
                     else if (cbDvt.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng Chọn Đơn Vị Tính ");
@@ -286,6 +270,7 @@ namespace WindowsFormsApplication1
 
                             DTO.MANCC = MANCC;
                             DTO.MAKHO = PublicVariable.MAKHO;
+                            
                             DTO.TENMH = txtTenMH.Text;
                             DTO.QUYCACH = txtquycach.Text;
                             DTO.MADVT = DVT;
@@ -295,7 +280,14 @@ namespace WindowsFormsApplication1
                             DTO.GIAMUA= Convert.ToInt64(txtgiamua.Value).ToString();
                             DTO.LOHANG = PublicVariable.LOHANG;
                             DTO.MOTA = txtmota.Text;
-                            DTO.TINHTRANG = "True";
+                            if (checkTT.Checked)
+                            {
+                                DTO.TINHTRANG = "True";
+                            }
+                            else
+                            {
+                                DTO.TINHTRANG = "False";
+                            }
 
                             try
                             {
@@ -329,7 +321,14 @@ namespace WindowsFormsApplication1
                             DTO.GIAMUA = Convert.ToInt64(txtgiamua.Value).ToString();
                     
                             DTO.MOTA = txtmota.Text;
-                            DTO.TINHTRANG = "True";
+                            if (checkTT.Checked)
+                            {
+                                DTO.TINHTRANG = "True";
+                            }
+                            else
+                            {
+                                DTO.TINHTRANG = "False";
+                            }
                             CTL.UPDATEMATHANG(DTO);
                             XtraMessageBox.Show("Bạn Đã Sửa Thành Công");
                             this.Close();

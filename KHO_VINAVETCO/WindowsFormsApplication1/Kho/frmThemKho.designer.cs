@@ -138,9 +138,9 @@
             // 
             this.labelControl2.Location = new System.Drawing.Point(87, 230);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(272, 13);
+            this.labelControl2.Size = new System.Drawing.Size(336, 13);
             this.labelControl2.TabIndex = 0;
-            this.labelControl2.Text = "HSD--BARCODE--TONTHUCTE--KHOILUONG--BANGGIA--";
+            this.labelControl2.Text = "HSD--BARCODE--TONNHAPXUATNGAYFULL--KHOILUONG--BANGGIA--";
             // 
             // labelControl1
             // 
