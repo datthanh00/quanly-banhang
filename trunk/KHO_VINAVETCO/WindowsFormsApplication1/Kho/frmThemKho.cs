@@ -79,6 +79,15 @@ namespace WindowsFormsApplication1
                     {
                         loadma();
                         DTO.MAKHO = txtmakho.Text;
+                        
+                        if (DTO.MAKHO.Length == 4)
+                        {
+                            DTO.CODEKHO = "0" + DTO.MAKHO.Substring(3, 1);
+                        }
+                        else
+                        {
+                            DTO.CODEKHO = DTO.MAKHO.Substring(3, 2);
+                        }
                         DTO.TENKHO = txttenkho.Text;
                         DTO.DIACHI = txtdiachi.Text;
                         DTO.SDTB = txtsodtB.Text;

@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmxuatkhac));
             this.panel_tool = new DevExpress.XtraEditors.PanelControl();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.btIn = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
@@ -171,6 +170,7 @@
             this.gridColumn55 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn56 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -193,7 +193,6 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn34 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -273,7 +272,6 @@
             // 
             // panel_tool
             // 
-            this.panel_tool.Controls.Add(this.simpleButton5);
             this.panel_tool.Controls.Add(this.simpleButton4);
             this.panel_tool.Controls.Add(this.btIn);
             this.panel_tool.Controls.Add(this.btLuu);
@@ -283,16 +281,6 @@
             this.panel_tool.Name = "panel_tool";
             this.panel_tool.Size = new System.Drawing.Size(1119, 47);
             this.panel_tool.TabIndex = 0;
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Image = global::Quanlykho.Properties.Resources.save;
-            this.simpleButton5.Location = new System.Drawing.Point(448, 6);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(87, 35);
-            this.simpleButton5.TabIndex = 6;
-            this.simpleButton5.Text = "Lưu Tạm";
-            this.simpleButton5.Click += new System.EventHandler(this.simpleButton5_Click);
             // 
             // simpleButton4
             // 
@@ -1790,6 +1778,12 @@
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             // 
+            // gridColumn34
+            // 
+            this.gridColumn34.Caption = "MAHDX";
+            this.gridColumn34.FieldName = "MAHDX";
+            this.gridColumn34.Name = "gridColumn34";
+            // 
             // gridColumn29
             // 
             this.gridColumn29.Caption = "Hóa Đơn";
@@ -1985,12 +1979,6 @@
             this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
-            // 
-            // gridColumn34
-            // 
-            this.gridColumn34.Caption = "MAHDX";
-            this.gridColumn34.FieldName = "MAHDX";
-            this.gridColumn34.Name = "gridColumn34";
             // 
             // frmxuatkhac
             // 
@@ -2225,7 +2213,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;

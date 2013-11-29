@@ -429,6 +429,7 @@ namespace WindowsFormsApplication1
                     if (txtMANCC.Text == "")
                     {
                         XtraMessageBox.Show("Vui lòng chọn Nhà Cung Cấp");
+                        return;
                     }
                     else
                     {

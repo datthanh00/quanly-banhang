@@ -240,18 +240,30 @@ namespace WindowsFormsApplication1
                     advBandedGridView3.Columns["LOHANG"].Visible = false;
                     advBandedGridView3.Columns["HSD"].Visible = false;
                 }
-
-                if (ISFILTER)
-                {
-                    advBandedGridView3.ActiveFilterEnabled = true;
-                    advBandedGridView3.ActiveFilterString = "NHAP+TRANHAP+XUAT+TRAXUAT>0";
-                    _isfilter = true;
-                }
                 else
                 {
-                    advBandedGridView3.ActiveFilterEnabled = false;
-                    _isfilter = false;
+                    if (ISFILTER)
+                    {
+
+                        //     advBandedGridView3.ActiveFilterEnabled = true;
+                        //     advBandedGridView3.ActiveFilterString = "NHAP+TRANHAP+XUAT+TRAXUAT>0";
+                        //
+                        advBandedGridView3.Columns["LOHANG"].Visible = false;
+                        advBandedGridView3.Columns["HSD"].Visible = false;
+                        _isfilter = true;
+                    }
+                    else
+                    {
+
+                        // advBandedGridView3.ActiveFilterEnabled = false;
+                        advBandedGridView3.Columns["LOHANG"].Visible = true;
+                        advBandedGridView3.Columns["HSD"].Visible = true;
+                        _isfilter = false;
+                    }
+
                 }
+
+                
             }
             else
             {
@@ -305,7 +317,16 @@ namespace WindowsFormsApplication1
 
           
             DataTable printtable = (DataTable)gridControl2.DataSource;
-            Inhd rep = new Inhd(printtable, 17);
+            int sohd = 0;
+            if (_isfilter)
+            {
+                sohd = 24;
+            }
+            else
+            {
+                sohd = 17;
+            }
+            Inhd rep = new Inhd(printtable, sohd);
             rep.ShowPreviewDialog();
         }
 

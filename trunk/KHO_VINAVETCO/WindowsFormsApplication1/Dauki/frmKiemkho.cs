@@ -132,10 +132,7 @@ namespace WindowsFormsApplication1
                    {
                        DataRow dtr = gridView1.GetDataRow(i);
                         HSD=cbncc.Text;
-                       if(PublicVariable.isTONTHUCTE)
-                       {
-                            HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
-                       }
+                       HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
                        SQL = SQL + " \r\nGO\r\n UPDATE TONKIEMKHO SET [TONTT]=" + dtr["TONTT"].ToString() + ",[TONKHO]=" + dtr["TONKHO"].ToString() + " WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "' AND NGAY='" + HSD + "'";
                        i++;
                    }

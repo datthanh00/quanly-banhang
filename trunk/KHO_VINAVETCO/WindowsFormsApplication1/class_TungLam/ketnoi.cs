@@ -324,12 +324,22 @@ namespace WindowsFormsApplication1
             SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='" + PublicVariable.MAKHO + "')+1)  AS T1) AS T2";
             return SQL;
         }
-        public string sTuDongDienMaHoaDonXuattam(string sMahdx)
+        public string sTuDongDienMaHoaDondatxuat(string sMahdx)
         {
-            string HEAD = "HDX", MAHD = "MAHDX", TABLE = "HOADONXUAT";
+            string HEAD = "HDX", MAHD = "MAHDX", TABLE = "HOADONDATXUAT";
             int LENHEAD = HEAD.Length + 2;
             string SQL = "";
             SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='"+PublicVariable.MAKHO+"')+1)  AS T1) AS T2";
+            DataTable DT = getdata(SQL);
+            sMahdx = DT.Rows[0][0].ToString();
+            return sMahdx;
+        }
+        public string sTuDongDienMaHoaDondatnhap(string sMahdx)
+        {
+            string HEAD = "HDN", MAHD = "MAHDN", TABLE = "HOADONDATNHAP";
+            int LENHEAD = HEAD.Length + 2;
+            string SQL = "";
+            SQL = "SELECT CASE WHEN T1 IS NULL THEN '" + HEAD + PublicVariable.CODEKHO + "1' ELSE T1 END FROM (SELECT '" + HEAD + PublicVariable.CODEKHO + "' + convert(VARCHAR,(SELECT MAX(convert(int,SUBSTRING(" + MAHD + "," + (LENHEAD + 1).ToString() + ",len(" + MAHD + ")-" + LENHEAD.ToString() + "))) FROM " + TABLE + " WHERE MAKHO='" + PublicVariable.MAKHO + "')+1)  AS T1) AS T2";
             DataTable DT = getdata(SQL);
             sMahdx = DT.Rows[0][0].ToString();
             return sMahdx;
