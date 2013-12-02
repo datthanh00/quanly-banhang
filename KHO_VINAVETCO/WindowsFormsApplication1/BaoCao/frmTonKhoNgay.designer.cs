@@ -64,8 +64,6 @@
             this.bandedGridColumn12 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colHangHoa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colMa = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn14 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.bandedGridColumn22 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandedGridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colDonViTInh = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -411,8 +409,6 @@
             this.bandedGridColumn12,
             this.colMa,
             this.colHangHoa,
-            this.bandedGridColumn22,
-            this.bandedGridColumn14,
             this.bandedGridColumn3,
             this.bandedGridColumn2,
             this.colDonViTInh,
@@ -471,15 +467,13 @@
             this.gridThongTin.Columns.Add(this.bandedGridColumn12);
             this.gridThongTin.Columns.Add(this.colHangHoa);
             this.gridThongTin.Columns.Add(this.colMa);
-            this.gridThongTin.Columns.Add(this.bandedGridColumn14);
-            this.gridThongTin.Columns.Add(this.bandedGridColumn22);
             this.gridThongTin.Columns.Add(this.bandedGridColumn3);
             this.gridThongTin.Columns.Add(this.bandedGridColumn2);
             this.gridThongTin.Columns.Add(this.colDonViTInh);
             this.gridThongTin.Columns.Add(this.bandedGridColumn8);
             this.gridThongTin.MinWidth = 20;
             this.gridThongTin.Name = "gridThongTin";
-            this.gridThongTin.Width = 567;
+            this.gridThongTin.Width = 417;
             // 
             // bandedGridColumn12
             // 
@@ -507,22 +501,6 @@
             this.colMa.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.colMa.Visible = true;
             this.colMa.Width = 85;
-            // 
-            // bandedGridColumn14
-            // 
-            this.bandedGridColumn14.Caption = "Lô Hàng";
-            this.bandedGridColumn14.FieldName = "LOHANG";
-            this.bandedGridColumn14.Name = "bandedGridColumn14";
-            this.bandedGridColumn14.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.bandedGridColumn14.Visible = true;
-            // 
-            // bandedGridColumn22
-            // 
-            this.bandedGridColumn22.Caption = "Hạn Dùng";
-            this.bandedGridColumn22.FieldName = "HSD";
-            this.bandedGridColumn22.Name = "bandedGridColumn22";
-            this.bandedGridColumn22.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.bandedGridColumn22.Visible = true;
             // 
             // bandedGridColumn3
             // 
@@ -996,7 +974,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn12;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colMa;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHangHoa;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn14;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn3;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn2;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colDonViTInh;
@@ -1025,7 +1002,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         public DevExpress.XtraEditors.SimpleButton Btnfilter;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridThongTin;
-        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn22;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridDauKi;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridNhapKho;
