@@ -209,8 +209,8 @@ namespace WindowsFormsApplication1
                
                 if (dt.Rows[0][0].ToString() != "0")
                 {
-                    //INSERT CAP NHAT
-                    SQL = "INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[LOHANG],[TONKHONGAY],[MAKHO]) SELECT convert(varchar,NGAYNHAP,101) AS NGAY, MAMH,LOHANG,TONKHO,'" + PublicVariable.MAKHO + "' AS MAKHO FROM KHOHANG WHERE NGAYNHAP='" + NGAYBD + "' AND MAMH+LOHANG NOT IN(SELECT MAMH+LOHANG FROM TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "') AND MAMH +LOHANG IN (SELECT MAMH+LOHANG FROM TONKHO WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "') ";
+                    //INSERT CAP NHAT THEM MAT HANG CHUA CO TRONG TON KHO NGAY
+                    SQL = "INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[TONKHONGAY],[MAKHO]) SELECT convert(varchar,GETDATE(),101) AS NGAY, MAMH,SOLUONGMH,'" + PublicVariable.MAKHO + "' AS MAKHO FROM MATHANG  WHERE MAMH NOT IN(SELECT MAMH FROM TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "') AND MAMH  IN (SELECT MAMH FROM TONKHO WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "') ";
 
                     ctlNCC.executeNonQuery(SQL);
 
@@ -235,35 +235,16 @@ namespace WindowsFormsApplication1
                     advBandedGridView3.Columns["KLTRAXUAT"].Visible = false;
                     advBandedGridView3.Columns["KLTONCUOI"].Visible = false;
                 }
-                if (!PublicVariable.isHSD)
+
+                if (ISFILTER)
                 {
-                    advBandedGridView3.Columns["LOHANG"].Visible = false;
-                    advBandedGridView3.Columns["HSD"].Visible = false;
+                    _isfilter = true;
                 }
                 else
                 {
-                    if (ISFILTER)
-                    {
-
-                        //     advBandedGridView3.ActiveFilterEnabled = true;
-                        //     advBandedGridView3.ActiveFilterString = "NHAP+TRANHAP+XUAT+TRAXUAT>0";
-                        //
-                        advBandedGridView3.Columns["LOHANG"].Visible = false;
-                        advBandedGridView3.Columns["HSD"].Visible = false;
-                        _isfilter = true;
-                    }
-                    else
-                    {
-
-                        // advBandedGridView3.ActiveFilterEnabled = false;
-                        advBandedGridView3.Columns["LOHANG"].Visible = true;
-                        advBandedGridView3.Columns["HSD"].Visible = true;
-                        _isfilter = false;
-                    }
-
+                    _isfilter = false;
                 }
-
-                
+   
             }
             else
             {
@@ -438,7 +419,6 @@ namespace WindowsFormsApplication1
                 return;
             }
           
-            
             string NGAYBD = dateTu.Text;
             CTL ctlNCC = new CTL();
             string SQL="";
@@ -451,15 +431,13 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("vui lòng nhấn nút xem trước khi lưu");
                 return;
             }
+            //if (_isfilter)
+            //{
+            //    loadGird(false);
+            //}
 
-            if (_isfilter)
-            {
-                loadGird(false);
-            }
 
-
-            string s1 = dtr1["NGAY"].ToString();
-            string s2 = dt.Rows[0][0].ToString();
+           
             if( dtr1["NGAY"].ToString() == dt.Rows[0][0].ToString()){
                 NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
 
@@ -474,7 +452,7 @@ namespace WindowsFormsApplication1
                         for (int j = 0; j < 20 && i < advBandedGridView3.DataRowCount; j++)
                         {
                             DataRow dtr = advBandedGridView3.GetDataRow(i);
-                            SQL = SQL + " \r\nGO\r\n UPDATE  [TONKHOTT] SET TONKHONGAY=" + dtr["TONTT"].ToString() + " WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "' AND NGAY='" + NGAYBD + "' ";
+                            SQL = SQL + " \r\nGO\r\n UPDATE  [TONKHOTT] SET TONKHONGAY=" + dtr["TONTT"].ToString() + " WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND NGAY='" + NGAYBD + "' ";
 
                             i++;
                         }
@@ -490,7 +468,7 @@ namespace WindowsFormsApplication1
                         for (int j = 0; j < 20 && i < advBandedGridView3.DataRowCount; j++)
                         {
                             DataRow dtr = advBandedGridView3.GetDataRow(i);
-                            SQL = SQL + " \r\nGO\r\n INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[LOHANG],[TONKHONGAY],[MAKHO]) VALUES (convert(varchar,GETDATE(),101),'" + dtr["MAMH"].ToString() + "','" + dtr["LOHANG"].ToString() + "'," + dtr["TONTT"].ToString() + ",'" + PublicVariable.MAKHO+ "')";
+                            SQL = SQL + " \r\nGO\r\n INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[TONKHONGAY],[MAKHO]) VALUES (convert(varchar,GETDATE(),101),'" + dtr["MAMH"].ToString() + "'," + dtr["TONTT"].ToString() + ",'" + PublicVariable.MAKHO+ "')";
 
                             i++;
                         }
