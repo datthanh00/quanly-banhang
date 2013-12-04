@@ -1320,13 +1320,20 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 {
                     cbotientra.Text = "0";
                 }
-                dtoNCC.TYPE = "1";
+               
                 dtoNCC.GHICHU = txtghichu.Text;
                 dtoNCC.CKTIEN = Convert.ToInt64(cktien.Value).ToString();
                 dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                 dtoNCC.MANV = sMaNV;
+                dtoNCC.TYPE = "1";
 
-                if (Convert.ToInt64(cbotientra.Value) > Convert.ToInt64(txtthanhtien.Value) && PublicVariable.ComboTraXuat == 1)
+                if (Convert.ToInt64(txtthanhtien.Value) == 0 && Convert.ToInt64(cbotientra.Value) != 0)
+                {
+                    MessageBox.Show("Bạn Không thể xóa sản phẩm nàyvì đã trả tiền rồi");
+                    View_phieuxuat(MAHDXOA);
+                    return;
+                }
+                if (Convert.ToInt64(cbotientra.Value) > Convert.ToInt64(txtthanhtien.Value) && PublicVariable.ComboXuat == 1)
                 {
                     MessageBox.Show("Bạn Không thể xóa sản phẩm này số tiền đã trả sẽ lớn hơn giá trị hóa đơn còn lại");
                     View_phieuxuat(MAHDXOA);

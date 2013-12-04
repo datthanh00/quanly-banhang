@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
             }
 
             CTL ctl = new CTL();
-            string SQL = "select * from log";
+            string SQL = "SELECT MAHD, LOG,LYDO, NGAY FROM [LOG]";
             DataTable dt= ctl.GETDATA(SQL);
 
             gridControl1.DataSource = dt;

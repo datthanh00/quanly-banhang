@@ -423,8 +423,8 @@ namespace WindowsFormsApplication1
 
         private void linkphieuchi_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
-            int ingaykt = Convert.ToInt32(dateDen1.Text.Substring(6, 4)) + Convert.ToInt32(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen1.Text.Substring(0, 2)) * 365;
+            Int64 ingaybd = Convert.ToInt64(dateTu1.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateTu1.Text.Substring(0, 2));
+            Int64 ingaykt = Convert.ToInt64(dateDen1.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateDen1.Text.Substring(0, 2));
             if (ingaybd > ingaykt)
             {
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
@@ -591,8 +591,8 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
-            int ingaykt = Convert.ToInt32(dateDen1.Text.Substring(6, 4)) + Convert.ToInt32(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen1.Text.Substring(0, 2)) * 365;
+            Int64 ingaybd = Convert.ToInt64(dateTu1.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateTu1.Text.Substring(0, 2));
+            Int64 ingaykt = Convert.ToInt64(dateDen1.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateDen1.Text.Substring(0, 2));
             if (ingaybd > ingaykt)
             {
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
@@ -606,8 +606,8 @@ namespace WindowsFormsApplication1
 
         private void linkhoadon_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
-            int ingaykt = Convert.ToInt32(dateDen1.Text.Substring(6, 4)) + Convert.ToInt32(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen1.Text.Substring(0, 2)) * 365;
+            Int64 ingaybd = Convert.ToInt64(dateTu.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateTu.Text.Substring(0, 2));
+            Int64 ingaykt = Convert.ToInt64(dateDen.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateDen.Text.Substring(0, 2));
             if (ingaybd > ingaykt)
             {
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
@@ -708,8 +708,8 @@ namespace WindowsFormsApplication1
 
         private void simpleButton8_Click_1(object sender, EventArgs e)
         {
-            int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
-            int ingaykt = Convert.ToInt32(dateDen1.Text.Substring(6, 4)) + Convert.ToInt32(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen1.Text.Substring(0, 2)) * 365;
+            Int64 ingaybd = Convert.ToInt64(dateTu1.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateTu1.Text.Substring(0, 2));
+            Int64 ingaykt = Convert.ToInt64(dateDen1.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateDen1.Text.Substring(0, 2));
             if (ingaybd > ingaykt)
             {
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
@@ -727,8 +727,8 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-            int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
-            int ingaykt = Convert.ToInt32(dateDen1.Text.Substring(6, 4)) + Convert.ToInt32(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen1.Text.Substring(0, 2)) * 365;
+            Int64 ingaybd = Convert.ToInt64(dateTu.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateTu.Text.Substring(0, 2));
+            Int64 ingaykt = Convert.ToInt64(dateDen.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateDen.Text.Substring(0, 2));
             if (ingaybd > ingaykt)
             {
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");

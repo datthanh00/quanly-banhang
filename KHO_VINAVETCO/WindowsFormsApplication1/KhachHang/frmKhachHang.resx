@@ -271,7 +271,7 @@
     <value>True</value>
   </data>
   <data name="colMAKV.VisibleIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="_TENNV.Caption" xml:space="preserve">
     <value>Nhân Viên Phụ Trách</value>
@@ -280,7 +280,7 @@
     <value>True</value>
   </data>
   <data name="_TENNV.VisibleIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="colSOTAIKHOAN.Caption" xml:space="preserve">
     <value>Số Tài Khoản</value>
@@ -298,7 +298,7 @@
     <value>True</value>
   </data>
   <data name="colDIACHI.VisibleIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="colSDT.Caption" xml:space="preserve">
     <value>Số Điện Thoại</value>
@@ -307,7 +307,7 @@
     <value>True</value>
   </data>
   <data name="colSDT.VisibleIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="colFAX.Caption" xml:space="preserve">
     <value>Số Fax</value>
@@ -328,7 +328,7 @@
     <value>True</value>
   </data>
   <data name="colTINHTRANG.VisibleIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="gridColumn2.Caption" xml:space="preserve">
     <value>MAKV</value>
@@ -346,16 +346,31 @@
     <value>True</value>
   </data>
   <data name="_TENBG.VisibleIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="gridColumn1.Caption" xml:space="preserve">
     <value>Tiền Trả Trước</value>
+  </data>
+  <data name="gridColumn1.SummaryItem.DisplayFormat" xml:space="preserve">
+    <value>{0:0,0}</value>
   </data>
   <data name="gridColumn1.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="gridColumn1.VisibleIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="gridColumn5.Caption" xml:space="preserve">
+    <value>Công Nợ</value>
+  </data>
+  <data name="gridColumn5.SummaryItem.DisplayFormat" xml:space="preserve">
+    <value>{0:0,0}</value>
+  </data>
+  <data name="gridColumn5.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn5.VisibleIndex" type="System.Int32, mscorlib">
+    <value>3</value>
   </data>
   <data name="girdcontrol.Size" type="System.Drawing.Size, System.Drawing">
     <value>994, 405</value>
@@ -559,6 +574,12 @@
     <value>gridColumn1</value>
   </data>
   <data name="&gt;&gt;gridColumn1.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridColumn5.Name" xml:space="preserve">
+    <value>gridColumn5</value>
+  </data>
+  <data name="&gt;&gt;gridColumn5.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;dxErrorProvider1.Name" xml:space="preserve">

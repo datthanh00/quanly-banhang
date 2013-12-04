@@ -185,7 +185,7 @@ namespace WindowsFormsApplication1.KHtra
             ckphantram.Text = "0";
             txtthanhtien.Text = "0";
             Create_new();
-            gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();
+            //gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();
             if (!PublicVariable.isKHOILUONG)
             {
                 gridViewSANPHAM.Columns["KHOILUONG"].Visible = false;
@@ -1281,6 +1281,12 @@ namespace WindowsFormsApplication1.KHtra
                 if (Convert.ToInt64(cbotientra.Value) > Convert.ToInt64(txtthanhtien.Value) && PublicVariable.ComboTraXuat == 1)
                 {
                     MessageBox.Show("Bạn Không thể xóa sản phẩm này số tiền đã trả sẽ lớn hơn giá trị hóa đơn còn lại");
+                    View_phieuxuat(MAHDXOA);
+                    return;
+                }
+                if (Convert.ToInt64(txtthanhtien.Value) == 0 && Convert.ToInt64(cbotientra.Value) != 0)
+                {
+                    MessageBox.Show("Bạn Không thể xóa sản phẩm nàyvì đã trả tiền rồi");
                     View_phieuxuat(MAHDXOA);
                     return;
                 }
