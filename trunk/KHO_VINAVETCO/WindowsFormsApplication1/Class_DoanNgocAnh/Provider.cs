@@ -18,6 +18,54 @@ namespace WindowsFormsApplication1
         SqlCommand cmd;
         DataSet ds;
 
+        protected static string strConnect;
+
+        public static SqlConnection get_Connect()
+        {
+
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App");
+            if (!Directory.Exists(filePath))
+            {
+                filePath = AppDomain.CurrentDomain.BaseDirectory;
+            }
+            filePath = Path.Combine(filePath, Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location));
+            System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration(filePath);
+
+            //System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
+            if (File.Exists("App.config"))
+            {
+                //Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
+                if (PublicVariable.isUSELAN)
+                {
+                    strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
+                }
+                else
+                {
+                    if (PublicVariable.IS_VINAVETCO)
+                    {
+                        strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_tuanhanh;User ID=nguye_tuanhanh;Password=diQn9#42;";
+                        //   strConnect = "server=DATTHANH;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123;Integrated Security=True";
+                    }
+                    else
+                    {
+                        strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_tuanhanh;User ID=nguye_tuanhanh;Password=diQn9#42;";
+
+                        //strConnect = "server=DATTHANH;database=KHO_TUANHANH5;integrated security = true;uid=sa,pwd=dat123;Integrated Security=True";
+                    }
+                }
+            }
+            SqlConnection cn = new SqlConnection(strConnect);
+            try
+            {
+                cn.Open();
+            }
+            catch
+            {
+                MessageBox.Show("Kiểm Tra Lại Kết Nối InterNet nếu không được thì gọi cho Thành SĐT:0907093902");
+            }
+            return cn;
+        }
+
         public void thu(String sql, List<SqlParameter> sqlParams)
         {
             connect();
@@ -89,54 +137,6 @@ namespace WindowsFormsApplication1
             }
         }
         
-        protected static string strConnect;
-        
-        public static SqlConnection get_Connect()
-        {
-
-            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "App");
-            if (!Directory.Exists(filePath))
-            {
-                filePath = AppDomain.CurrentDomain.BaseDirectory;
-            }
-            filePath = Path.Combine(filePath, Path.GetFileName(System.Reflection.Assembly.GetExecutingAssembly().Location));
-            System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration(filePath);
-
-         //System.Configuration.Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
-                if (File.Exists("App.config"))
-                {
-                  //Configuration AppC = ConfigurationManager.OpenExeConfiguration("App");
-                    if (PublicVariable.isUSELAN)
-                    {
-                        strConnect = "server=" + AppC.AppSettings.Settings["server"].Value.ToString() + ";" + "database=" + AppC.AppSettings.Settings["database"].Value.ToString() + ";" + "integrated security = true;uid=" + AppC.AppSettings.Settings["uid"].Value.ToString() + ",pwd=" + AppC.AppSettings.Settings["pwd"].Value.ToString() + "";
-                    }
-                    else
-                    {
-                        if (PublicVariable.IS_VINAVETCO)
-                        {
-                            strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_tuanhanh;User ID=nguye_tuanhanh;Password=diQn9#42;";
-                         //   strConnect = "server=DATTHANH;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123;Integrated Security=True";
-                        }
-                        else
-                        {
-                            strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_tuanhanh;User ID=nguye_tuanhanh;Password=diQn9#42;";
-
-                            //strConnect = "server=DATTHANH;database=KHO_TUANHANH3;integrated security = true;uid=sa,pwd=dat123;Integrated Security=True";
-                        }
-                    }
-                }
-                SqlConnection cn = new SqlConnection(strConnect);
-           try
-            {
-                cn.Open();
-            }
-            catch
-            {
-                MessageBox.Show("Kiểm Tra Lại Kết Nối InterNet nếu không được thì gọi cho Thành SĐT:0907093902");
-            }
-            return cn;
-        }
-
        
         public void connect()
         {

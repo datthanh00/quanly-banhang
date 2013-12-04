@@ -1502,7 +1502,7 @@ namespace WindowsFormsApplication1
 
                 gettotal();
 
-                dtoNCC.TYPE = "1";
+               
                 dtoNCC.MANCC = txtMANCC.Text;
                 dtoNCC.GHICHU = txtghichu.Text;
                 dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
@@ -1510,10 +1510,16 @@ namespace WindowsFormsApplication1
                 dtoNCC.MAHDN = txtMaHD.Text;
                 dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                 dtoNCC.CKTIEN =Convert.ToInt64(cktien.Value).ToString();
-
+                dtoNCC.TYPE = "1";
                 if (Convert.ToInt64(cbotientra.Value) > Convert.ToInt64(txtthanhtien.Value)&&PublicVariable.ComboNhap==1)
                 {
                     MessageBox.Show("Bạn Không thể xóa sản phẩm này số tiền đã trả sẽ lớn hơn giá trị hóa đơn còn lại");
+                    View_phieunhap(MAHDXOA);
+                    return;
+                }
+                if (Convert.ToInt64(txtthanhtien.Value) == 0 && Convert.ToInt64(cbotientra.Value) != 0)
+                {
+                    MessageBox.Show("Bạn Không thể xóa sản phẩm nàyvì đã trả tiền rồi");
                     View_phieunhap(MAHDXOA);
                     return;
                 }

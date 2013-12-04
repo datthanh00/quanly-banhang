@@ -1339,6 +1339,7 @@ namespace WindowsFormsApplication1
                 dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                 dtoNCC.MAHDN = txtMaHD.Text;
                 dtoNCC.CKTIEN = Convert.ToInt64(cktien.Value).ToString();
+                
                 if (cbotientra.Text == "")
                 {
                     cbotientra.Text = "0";
@@ -1348,6 +1349,12 @@ namespace WindowsFormsApplication1
                 if (Convert.ToInt64(cbotientra.Value) > Convert.ToInt64(txtthanhtien.Value) && PublicVariable.ComboTraNhap == 1)
                 {
                     MessageBox.Show("Bạn Không thể xóa sản phẩm này số tiền đã trả sẽ lớn hơn giá trị hóa đơn còn lại");
+                    View_phieunhap(MAHDXOA);
+                    return;
+                }
+                if (Convert.ToInt64(txtthanhtien.Value) == 0 && Convert.ToInt64(cbotientra.Value) != 0)
+                {
+                    MessageBox.Show("Bạn Không thể xóa sản phẩm nàyvì đã trả tiền rồi");
                     View_phieunhap(MAHDXOA);
                     return;
                 }

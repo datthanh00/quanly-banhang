@@ -44,6 +44,7 @@
             this.barThoat = new DevExpress.XtraBars.BarButtonItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -168,47 +169,57 @@
             this.gridView1.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridView1.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
             this.colGHICHU,
             this.colTINHTRANG,
             this.gridColumn1});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AllowIncrementalSearch = true;
-            this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsCustomization.AllowRowSizing = true;
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn2, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Thời Gian";
+            this.gridColumn2.DisplayFormat.FormatString = "{dd/MM/yyyy hh:mm:ss}";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn2.FieldName = "NGAY";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 134;
             // 
             // colGHICHU
             // 
             this.colGHICHU.Caption = "Hóa Đơn";
             this.colGHICHU.FieldName = "MAHD";
             this.colGHICHU.Name = "colGHICHU";
-            this.colGHICHU.OptionsColumn.AllowEdit = false;
             this.colGHICHU.Visible = true;
             this.colGHICHU.VisibleIndex = 0;
-            this.colGHICHU.Width = 85;
+            this.colGHICHU.Width = 88;
             // 
             // colTINHTRANG
             // 
             this.colTINHTRANG.Caption = "Hoạt Động";
             this.colTINHTRANG.FieldName = "LOG";
             this.colTINHTRANG.Name = "colTINHTRANG";
-            this.colTINHTRANG.OptionsColumn.AllowEdit = false;
             this.colTINHTRANG.Visible = true;
-            this.colTINHTRANG.VisibleIndex = 1;
-            this.colTINHTRANG.Width = 573;
+            this.colTINHTRANG.VisibleIndex = 2;
+            this.colTINHTRANG.Width = 615;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Ghi Chú";
             this.gridColumn1.FieldName = "LYDO";
             this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 2;
-            this.gridColumn1.Width = 284;
+            this.gridColumn1.VisibleIndex = 3;
+            this.gridColumn1.Width = 253;
             // 
             // frmLog
             // 
@@ -252,5 +263,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colGHICHU;
         private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

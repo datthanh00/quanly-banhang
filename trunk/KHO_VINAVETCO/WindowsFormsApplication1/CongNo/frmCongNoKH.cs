@@ -43,9 +43,9 @@ namespace WindowsFormsApplication1
         }
         public void loadGetAllHOADON()
         {
-            string NGAYBD = dateTu1.Text;
+            string NGAYBD = dateTu.Text;
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
-            string NGAYKT = dateDen1.Text;
+            string NGAYKT = dateDen.Text;
             NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
 
             dt = CTR.GETALLHOADON_ctrl(NGAYBD, NGAYKT);
@@ -443,8 +443,9 @@ namespace WindowsFormsApplication1
 
         private void linkphieuthu_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
-            int ingaykt = Convert.ToInt32(dateDen1.Text.Substring(6, 4)) + Convert.ToInt32(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen1.Text.Substring(0, 2)) * 365;
+            Int64 ingaybd = Convert.ToInt64(dateTu1.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateTu1.Text.Substring(0, 2));
+            Int64 ingaykt = Convert.ToInt64(dateDen1.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateDen1.Text.Substring(0, 2));
+           
             if (ingaybd > ingaykt)
             {
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
@@ -606,8 +607,9 @@ namespace WindowsFormsApplication1
 
         private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
-            int ingaykt = Convert.ToInt32(dateDen1.Text.Substring(6, 4)) + Convert.ToInt32(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen1.Text.Substring(0, 2)) * 365;
+            Int64 ingaybd = Convert.ToInt64(dateTu.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateTu.Text.Substring(0, 2));
+            Int64 ingaykt = Convert.ToInt64(dateDen.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateDen.Text.Substring(0, 2));
+           
             if (ingaybd > ingaykt)
             {
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
@@ -626,8 +628,8 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-            int ingaybd = Convert.ToInt32(dateTu1.Text.Substring(6, 4)) + Convert.ToInt32(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu1.Text.Substring(0, 2)) * 365;
-            int ingaykt = Convert.ToInt32(dateDen1.Text.Substring(6, 4)) + Convert.ToInt32(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen1.Text.Substring(0, 2)) * 365;
+            Int64 ingaybd = Convert.ToInt64(dateTu1.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateTu1.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateTu1.Text.Substring(0, 2));
+            Int64 ingaykt = Convert.ToInt64(dateDen1.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateDen1.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateDen1.Text.Substring(0, 2));
             if (ingaybd > ingaykt)
             {
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
@@ -700,8 +702,8 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-            int ingaybd = Convert.ToInt32(dateTu.Text.Substring(6, 4)) + Convert.ToInt32(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu.Text.Substring(0, 2)) * 365;
-            int ingaykt = Convert.ToInt32(dateDen.Text.Substring(6, 4)) + Convert.ToInt32(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen.Text.Substring(0, 2)) * 365;
+            Int64 ingaybd = Convert.ToInt64(dateTu.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateTu.Text.Substring(0, 2));
+            Int64 ingaykt = Convert.ToInt64(dateDen.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateDen.Text.Substring(0, 2));
             if (ingaybd > ingaykt)
             {
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");

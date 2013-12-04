@@ -213,7 +213,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             cktien.Text = "0";
             ckphantram.Text = "0";
             txtthanhtien.Text = "0";
-            gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();
+           // gridControl2.DataSource = ctlNCC.GETCTHOADONXUATTAM();
             Create_new();
         }
 

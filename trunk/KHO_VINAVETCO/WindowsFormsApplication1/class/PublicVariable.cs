@@ -7,7 +7,7 @@ namespace WindowsFormsApplication1
 	class PublicVariable
 	{
         // XAC DINH VERSION CHO  PHAN MÊM DE KHOA NGUOI DUNG SU DUNG VERSION CU
-       public static int VERSION = 106;
+       public static int VERSION = 108;
       
        // XAC DINH BUILD DE BUILD LA KHO CONG TY HAY KHO TUAN HANH
        public static Boolean IS_VINAVETCO = false;

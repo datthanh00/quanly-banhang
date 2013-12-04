@@ -44,6 +44,7 @@
             this.colWEBSITE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
@@ -97,7 +98,8 @@
             this.colFAX,
             this.colWEBSITE,
             this.colTINHTRANG,
-            this.gridColumn1});
+            this.gridColumn1,
+            this.gridColumn2});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
@@ -144,7 +146,7 @@
             this.colDIACHI.Name = "colDIACHI";
             this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.Visible = true;
-            this.colDIACHI.VisibleIndex = 3;
+            this.colDIACHI.VisibleIndex = 4;
             this.colDIACHI.Width = 94;
             // 
             // colMASOTHUE
@@ -162,7 +164,7 @@
             this.colSOTK.Name = "colSOTK";
             this.colSOTK.OptionsColumn.AllowEdit = false;
             this.colSOTK.Visible = true;
-            this.colSOTK.VisibleIndex = 4;
+            this.colSOTK.VisibleIndex = 5;
             this.colSOTK.Width = 73;
             // 
             // colNGANHANG
@@ -172,7 +174,7 @@
             this.colNGANHANG.Name = "colNGANHANG";
             this.colNGANHANG.OptionsColumn.AllowEdit = false;
             this.colNGANHANG.Visible = true;
-            this.colNGANHANG.VisibleIndex = 5;
+            this.colNGANHANG.VisibleIndex = 6;
             this.colNGANHANG.Width = 73;
             // 
             // colSDT
@@ -182,7 +184,7 @@
             this.colSDT.Name = "colSDT";
             this.colSDT.OptionsColumn.AllowEdit = false;
             this.colSDT.Visible = true;
-            this.colSDT.VisibleIndex = 6;
+            this.colSDT.VisibleIndex = 7;
             this.colSDT.Width = 73;
             // 
             // colEMAIL
@@ -192,7 +194,7 @@
             this.colEMAIL.Name = "colEMAIL";
             this.colEMAIL.OptionsColumn.AllowEdit = false;
             this.colEMAIL.Visible = true;
-            this.colEMAIL.VisibleIndex = 7;
+            this.colEMAIL.VisibleIndex = 8;
             this.colEMAIL.Width = 73;
             // 
             // colFAX
@@ -202,7 +204,7 @@
             this.colFAX.Name = "colFAX";
             this.colFAX.OptionsColumn.AllowEdit = false;
             this.colFAX.Visible = true;
-            this.colFAX.VisibleIndex = 8;
+            this.colFAX.VisibleIndex = 9;
             this.colFAX.Width = 60;
             // 
             // colWEBSITE
@@ -212,7 +214,7 @@
             this.colWEBSITE.Name = "colWEBSITE";
             this.colWEBSITE.OptionsColumn.AllowEdit = false;
             this.colWEBSITE.Visible = true;
-            this.colWEBSITE.VisibleIndex = 9;
+            this.colWEBSITE.VisibleIndex = 10;
             this.colWEBSITE.Width = 79;
             // 
             // colTINHTRANG
@@ -222,7 +224,7 @@
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.OptionsColumn.AllowEdit = false;
             this.colTINHTRANG.Visible = true;
-            this.colTINHTRANG.VisibleIndex = 10;
+            this.colTINHTRANG.VisibleIndex = 11;
             this.colTINHTRANG.Width = 100;
             // 
             // gridColumn1
@@ -232,9 +234,23 @@
             this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn1.FieldName = "TIENTRATRUOC";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn1.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 2;
             this.gridColumn1.Width = 99;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Công Nợ";
+            this.gridColumn2.DisplayFormat.FormatString = "{0:0,0}";
+            this.gridColumn2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn2.FieldName = "CONGNO";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.SummaryItem.DisplayFormat = "{0:0,0}";
+            this.gridColumn2.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 3;
             // 
             // repositoryItemGridLookUpEdit1
             // 
@@ -427,5 +443,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colWEBSITE;
         private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }
