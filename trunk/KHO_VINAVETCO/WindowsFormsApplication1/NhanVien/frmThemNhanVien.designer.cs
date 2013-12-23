@@ -46,17 +46,17 @@
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
             this.txtsoCMND = new DevExpress.XtraEditors.CalcEdit();
-            this.txtsdt = new DevExpress.XtraEditors.CalcEdit();
             this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             this.lbtinhtrang = new DevExpress.XtraEditors.LabelControl();
+            this.txtsdt = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmanv.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdiachi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txttennv.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbdate.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbdate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsoCMND.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl19
@@ -243,16 +243,6 @@
             this.txtsoCMND.TabIndex = 5;
             this.txtsoCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsoCMND_KeyPress);
             // 
-            // txtsdt
-            // 
-            this.txtsdt.Location = new System.Drawing.Point(455, 38);
-            this.txtsdt.Name = "txtsdt";
-            this.txtsdt.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtsdt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtsdt.Size = new System.Drawing.Size(228, 20);
-            this.txtsdt.TabIndex = 3;
-            // 
             // checkTT
             // 
             this.checkTT.Location = new System.Drawing.Point(108, 104);
@@ -269,11 +259,19 @@
             this.lbtinhtrang.TabIndex = 141;
             this.lbtinhtrang.Text = "Tình trạng";
             // 
+            // txtsdt
+            // 
+            this.txtsdt.Location = new System.Drawing.Point(455, 42);
+            this.txtsdt.Name = "txtsdt";
+            this.txtsdt.Size = new System.Drawing.Size(228, 20);
+            this.txtsdt.TabIndex = 142;
+            // 
             // frmThemNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 195);
+            this.Controls.Add(this.txtsdt);
             this.Controls.Add(this.checkTT);
             this.Controls.Add(this.lbtinhtrang);
             this.Controls.Add(this.cmbdate);
@@ -294,7 +292,6 @@
             this.Controls.Add(this.lbsocmnd);
             this.Controls.Add(this.lbmanv);
             this.Controls.Add(this.txtsoCMND);
-            this.Controls.Add(this.txtsdt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmThemNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -306,8 +303,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbdate.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbdate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsoCMND.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,8 +337,8 @@
         //private XUAT_NHAPTONDataSet15 xuaT_NHAPTONDataSet151;
         //private XUAT_NHAPTONDataSet16 xuaT_NHAPTONDataSet161;
         private DevExpress.XtraEditors.CalcEdit txtsoCMND;
-        private DevExpress.XtraEditors.CalcEdit txtsdt;
         private DevExpress.XtraEditors.CheckEdit checkTT;
         private DevExpress.XtraEditors.LabelControl lbtinhtrang;
+        private DevExpress.XtraEditors.TextEdit txtsdt;
     }
 }

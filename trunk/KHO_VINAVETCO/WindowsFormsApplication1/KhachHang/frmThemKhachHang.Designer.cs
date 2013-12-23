@@ -61,25 +61,25 @@
             this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             this.cmbtenkhuvuc = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cotMaKV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cotTenKV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtfax = new DevExpress.XtraEditors.CalcEdit();
             this.txtmasothue = new DevExpress.XtraEditors.CalcEdit();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.cmbtennhanvien = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cmbbanggia = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cotMaKV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cotTenKV = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txttenkh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdiachi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnganhang.Properties)).BeginInit();
@@ -351,9 +351,6 @@
             this.txtsdt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtsdt.Size = new System.Drawing.Size(231, 20);
             this.txtsdt.TabIndex = 9;
-            this.txtsdt.Validating += new System.ComponentModel.CancelEventHandler(this.txtsdt_Validating);
-            this.txtsdt.EditValueChanged += new System.EventHandler(this.txtsdt_EditValueChanged);
-            this.txtsdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtsdt_KeyPress);
             // 
             // txtsotaikhan
             // 
@@ -403,22 +400,6 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
-            // 
-            // cotMaKV
-            // 
-            this.cotMaKV.Caption = "Mã Khu Vực";
-            this.cotMaKV.FieldName = "MAKV";
-            this.cotMaKV.Name = "cotMaKV";
-            this.cotMaKV.Visible = true;
-            this.cotMaKV.VisibleIndex = 0;
-            // 
-            // cotTenKV
-            // 
-            this.cotTenKV.Caption = "Tên Khu Vực";
-            this.cotTenKV.FieldName = "TENKV";
-            this.cotTenKV.Name = "cotTenKV";
-            this.cotTenKV.Visible = true;
-            this.cotTenKV.VisibleIndex = 1;
             // 
             // txtfax
             // 
@@ -473,22 +454,6 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Mã Nhân Viên";
-            this.gridColumn1.FieldName = "MANV";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tên Nhân Viên";
-            this.gridColumn2.FieldName = "TENNV";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -535,22 +500,6 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Mã Bảng Giá";
-            this.gridColumn3.FieldName = "MABG";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Tên Bảng Giá";
-            this.gridColumn4.FieldName = "TENBG";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
-            // 
             // labelControl3
             // 
             this.labelControl3.Appearance.BackColor = System.Drawing.Color.Transparent;
@@ -594,6 +543,54 @@
             this.cbotientra.Properties.ReadOnly = true;
             this.cbotientra.Size = new System.Drawing.Size(231, 20);
             this.cbotientra.TabIndex = 7;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Mã Bảng Giá";
+            this.gridColumn3.FieldName = "MABG";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Tên Bảng Giá";
+            this.gridColumn4.FieldName = "TENBG";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã Nhân Viên";
+            this.gridColumn1.FieldName = "MANV";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên Nhân Viên";
+            this.gridColumn2.FieldName = "TENNV";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // cotMaKV
+            // 
+            this.cotMaKV.Caption = "Mã Khu Vực";
+            this.cotMaKV.FieldName = "MAKV";
+            this.cotMaKV.Name = "cotMaKV";
+            this.cotMaKV.Visible = true;
+            this.cotMaKV.VisibleIndex = 0;
+            // 
+            // cotTenKV
+            // 
+            this.cotTenKV.Caption = "Tên Khu Vực";
+            this.cotTenKV.FieldName = "TENKV";
+            this.cotTenKV.Name = "cotTenKV";
+            this.cotTenKV.Visible = true;
+            this.cotTenKV.VisibleIndex = 1;
             // 
             // frmThemKhachHang
             // 

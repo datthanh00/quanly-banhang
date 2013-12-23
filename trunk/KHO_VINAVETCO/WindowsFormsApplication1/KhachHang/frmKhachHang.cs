@@ -425,7 +425,9 @@ namespace WindowsFormsApplication1
 
         private void barNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            DataTable dskh= new DataTable();
+           // Inbbbg inbb = new Inbbbg(dskh);
+           // inbb.ShowPreviewDialog();
         }
 
         private void frmKhachHang_FormClosed(object sender, FormClosedEventArgs e)

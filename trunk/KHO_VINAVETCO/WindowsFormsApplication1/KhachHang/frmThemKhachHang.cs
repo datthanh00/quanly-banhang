@@ -93,6 +93,18 @@ namespace WindowsFormsApplication1
                         cmbtenkhuvuc.Focus();
                         return;
                     }
+                    else if (txtsdt.Text.Length>20)
+                    {
+                        XtraMessageBox.Show("số điện thoại quá dài");
+                        txtsdt.Focus();
+                        return;
+                    }
+                    else if (txtdiachi.Text.Length > 199)
+                    {
+                        XtraMessageBox.Show("địa chỉ quá dài");
+                        txtdiachi.Focus();
+                        return;
+                    }
 
                     if (PublicVariable.isBANGGIA)
                     {
@@ -467,14 +479,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void txtsdt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Keys)e.KeyChar == Keys.Enter)
-            {
-
-                simpleButton1_Click(null, null);
-            }
-        }
+      
 
         private void txtdiachi_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -606,24 +611,14 @@ namespace WindowsFormsApplication1
             //return;
         }
 
-        private void txtsdt_Validating(object sender, CancelEventArgs e)
-        {
-            //Validate_EmptyStringRule(sender as BaseEdit);
-            //Validate_Tu8den11kitu(sender as BaseEdit);
-            //txtsdt.Focus();
-            //return;
-        }
+  
 
         private void cmbtenkhuvuc_EditValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void txtsdt_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
+     
         private void cmbtennhanvien_Validating(object sender, CancelEventArgs e)
         {
             try

@@ -150,7 +150,7 @@ namespace WindowsFormsApplication1
                     else if (cmbdate.Text.Length < 10 )
                     {
                         XtraMessageBox.Show("ngày sinh không đúng phải theo định dạng dd/mm/yyyy");
-                        txtsdt.Focus();
+                        cmbdate.Focus();
                         return;
                     }
 
@@ -342,10 +342,7 @@ namespace WindowsFormsApplication1
 
         }
 
-        private void txtsdt_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
+  
 
         private void lbtinhtrang_Click(object sender, EventArgs e)
         {
@@ -387,15 +384,6 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void txtsdt_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((Keys)e.KeyChar == Keys.Enter)
-            {
-
-                btLuu_Click(null, null);
-
-            }
-        }
 
         private void cmbdate_KeyPress(object sender, KeyPressEventArgs e)
         {
