@@ -932,10 +932,7 @@ namespace WindowsFormsApplication1
             {
                 PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n INSERT INTO PHIEUCHI (MAPC,MANV,NGAYCHI,SOTIEN,MAKHO,MADOITUONG,IDNHAP,TYPEMONEY) VALUES('" + MAPC + "', '" + sMaNV + "',convert(varchar,getDate(),101),0,'" + PublicVariable.MAKHO + "','" + MANCC + "','" + IDNHAP + "',3)";
                 PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + "\r\nGO\r\n UPDATE HOADONNHAP SET MAPC= '" + MAPC + "', TYPEMONEY=3 WHERE MAHDN='" + MAHDN + "' ";
-                
             }
-
-
         }
         public void update_PHIEUTHUCHI(String MANCC, String SOTIEN, String MAHDN)
         {

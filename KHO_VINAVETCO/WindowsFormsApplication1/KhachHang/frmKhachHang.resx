@@ -138,9 +138,6 @@
   <data name="barXuat1.Caption" xml:space="preserve">
     <value>Xuất Dữ Liệu</value>
   </data>
-  <data name="barNhap.Caption" xml:space="preserve">
-    <value>Nhập Dữ Liệu</value>
-  </data>
   <data name="bar2.Text" xml:space="preserve">
     <value>Main menu</value>
   </data>
@@ -271,7 +268,7 @@
     <value>True</value>
   </data>
   <data name="colMAKV.VisibleIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="_TENNV.Caption" xml:space="preserve">
     <value>Nhân Viên Phụ Trách</value>
@@ -294,12 +291,6 @@
   <data name="colDIACHI.Caption" xml:space="preserve">
     <value>Địa Chỉ</value>
   </data>
-  <data name="colDIACHI.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colDIACHI.VisibleIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
   <data name="colSDT.Caption" xml:space="preserve">
     <value>Số Điện Thoại</value>
   </data>
@@ -307,7 +298,7 @@
     <value>True</value>
   </data>
   <data name="colSDT.VisibleIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="colFAX.Caption" xml:space="preserve">
     <value>Số Fax</value>
@@ -322,13 +313,13 @@
     <value>Nick Skype</value>
   </data>
   <data name="colTINHTRANG.Caption" xml:space="preserve">
-    <value>Tình Trạng</value>
+    <value>Số Lượng In</value>
   </data>
   <data name="colTINHTRANG.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="colTINHTRANG.VisibleIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="gridColumn2.Caption" xml:space="preserve">
     <value>MAKV</value>
@@ -358,7 +349,7 @@
     <value>True</value>
   </data>
   <data name="gridColumn1.VisibleIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="gridColumn5.Caption" xml:space="preserve">
     <value>Công Nợ</value>
@@ -370,7 +361,7 @@
     <value>True</value>
   </data>
   <data name="gridColumn5.VisibleIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="girdcontrol.Size" type="System.Drawing.Size, System.Drawing">
     <value>994, 405</value>
@@ -596,6 +587,9 @@
   </data>
   <data name="barStaticItem1.Caption" xml:space="preserve">
     <value>s</value>
+  </data>
+  <data name="barNhap.Caption" xml:space="preserve">
+    <value>In Nhãn Dán</value>
   </data>
   <data name="barThem1.Caption" xml:space="preserve">
     <value>Thêm</value>

@@ -110,8 +110,7 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barSua, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barNapLai, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barIn, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barXuat1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barNhap, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barXuat1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.AllowQuickCustomization = false;
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
@@ -169,7 +168,7 @@
             // barNhap
             // 
             resources.ApplyResources(this.barNhap, "barNhap");
-            this.barNhap.Glyph = global::Quanlykho.Properties.Resources.excel;
+            this.barNhap.Glyph = global::Quanlykho.Properties.Resources.paper;
             this.barNhap.Id = 7;
             this.barNhap.Name = "barNhap";
             this.barNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNhap_ItemClick);
@@ -242,7 +241,6 @@
             this.gridColumn5});
             this.gridViewKHACHHANG.GridControl = this.girdcontrol;
             this.gridViewKHACHHANG.Name = "gridViewKHACHHANG";
-            this.gridViewKHACHHANG.OptionsBehavior.Editable = false;
             this.gridViewKHACHHANG.OptionsPrint.EnableAppearanceEvenRow = true;
             this.gridViewKHACHHANG.OptionsPrint.EnableAppearanceOddRow = true;
             this.gridViewKHACHHANG.OptionsPrint.ExpandAllDetails = true;
@@ -349,9 +347,10 @@
             // colTINHTRANG
             // 
             resources.ApplyResources(this.colTINHTRANG, "colTINHTRANG");
-            this.colTINHTRANG.FieldName = "TINHTRANG";
+            this.colTINHTRANG.DisplayFormat.FormatString = "{0:0,0}";
+            this.colTINHTRANG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colTINHTRANG.FieldName = "SLIN";
             this.colTINHTRANG.Name = "colTINHTRANG";
-            this.colTINHTRANG.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn2
             // 
