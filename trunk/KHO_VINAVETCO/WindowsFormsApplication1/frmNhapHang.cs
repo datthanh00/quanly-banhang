@@ -1529,10 +1529,16 @@ namespace WindowsFormsApplication1
                 }
 
                 gridCTHOADON.DeleteRow(gridCTHOADON.FocusedRowHandle);
-
+                
                 gettotal();
 
-               
+                if (VAT.Text == "")
+                {
+                    VAT.Text = "0";
+                }
+
+                Int32 _vat = Convert.ToInt32(VAT.Value);
+
                 dtoNCC.MANCC = txtMANCC.Text;
                 dtoNCC.GHICHU = txtghichu.Text;
                 dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
@@ -1543,6 +1549,7 @@ namespace WindowsFormsApplication1
                 dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                 dtoNCC.CKTIEN =Convert.ToInt64(cktien.Value).ToString();
                 dtoNCC.TYPE = "1";
+                dtoNCC.VAT = _vat.ToString();
                 if (Convert.ToInt64(cbotientra.Value) > Convert.ToInt64(txtthanhtien.Value)&&PublicVariable.ComboNhap==1)
                 {
                     MessageBox.Show("Bạn Không thể xóa sản phẩm này số tiền đã trả sẽ lớn hơn giá trị hóa đơn còn lại");
@@ -1781,8 +1788,8 @@ namespace WindowsFormsApplication1
         }
         private void loadgrid()
         {
-            int ingaybd = Convert.ToInt32(dateTu.Text.Substring(6, 4)) * 365 + Convert.ToInt32(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateTu.Text.Substring(0, 2));
-            int ingaykt = Convert.ToInt32(dateDen.Text.Substring(6, 4)) * 365 + Convert.ToInt32(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt32(dateDen.Text.Substring(0, 2)); 
+            int ingaybd = Convert.ToInt32(dateTu.Text.Substring(6, 4)) * 365 + Convert.ToInt32(dateTu.Text.Substring(3, 2)) * 30 + Convert.ToInt32(dateTu.Text.Substring(0, 2));
+            int ingaykt = Convert.ToInt32(dateDen.Text.Substring(6, 4)) * 365 + Convert.ToInt32(dateDen.Text.Substring(3, 2)) * 30 + Convert.ToInt32(dateDen.Text.Substring(0, 2)); 
             if (ingaybd > ingaykt)
             {
                 MessageBox.Show("ngày kết thúc phải lớn  hơn ngày bắt đầu");
