@@ -490,6 +490,28 @@ namespace WindowsFormsApplication1
         {
             deDongTab();
         }
+
+        private void btluu_Click(object sender, EventArgs e)
+        {
+            string SQL = "";
+            CTL ctlNCC = new CTL();
+            for (int i = 0; i < gridView1.DataRowCount; i++)
+            {
+                SQL = "";
+                for (int j = 0; j < 20 && i < gridView1.DataRowCount; j++)
+                {
+                    DataRow dtr = gridView1.GetDataRow(i);
+                    string HSD = dtr["HANSUDUNG"].ToString();
+                    HSD = HSD.Substring(6, 4) + "/" + HSD.Substring(3, 2) + "/" + HSD.Substring(0, 2);
+                    SQL = SQL + " \r\nGO\r\n UPDATE  [KHOHANG] SET HSD='" + HSD + "' WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND LOHANG='" + dtr["LOHANG"].ToString() + "' ";
+                    i++;
+                }
+                i--;
+                ctlNCC.executeNonQuery2(SQL);
+            }
+
+            MessageBox.Show("ĐÃ CẬP NHẬT HẠN SỬ DỤNG CHO SẢN PHẨM");
+        }
     }
 }
         

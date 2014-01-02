@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+
 using System.Data;
-using System.Drawing;
-using System.Text;
+
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using Microsoft.Win32;
 
 namespace WindowsFormsApplication1
 {
@@ -15,6 +13,8 @@ namespace WindowsFormsApplication1
         public frmLoad()
         {
             InitializeComponent();
+
+           
         }
         int z;
         public int iNgonNgu;
@@ -57,7 +57,9 @@ namespace WindowsFormsApplication1
             
             this.timer1.Enabled = false;
             this.timer1.Interval = 10;
-            timer1.Start(); 
+            timer1.Start();
+
+
         }
 
     }

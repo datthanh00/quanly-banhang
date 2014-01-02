@@ -68,6 +68,7 @@ namespace WindowsFormsApplication1
                 dateTu.Text = DateTime.Now.ToString("dd/MM/yyy");
                 cktien.Text = "0";
                 ckphantram.Text = "0";
+                VAT.Text = "0";
                 txtthanhtien.Text = "0";
                 Create_new();
             
@@ -131,6 +132,7 @@ namespace WindowsFormsApplication1
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = false;
             ckphantram.Properties.ReadOnly = false;
+            VAT.Properties.ReadOnly = false;
             cktien.Properties.ReadOnly = false;
             txtlohang.ReadOnly = true;
             CheckCongNo.Enabled = true;
@@ -163,6 +165,7 @@ namespace WindowsFormsApplication1
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
             ckphantram.Properties.ReadOnly = true;
+            VAT.Properties.ReadOnly = true;
             cktien.Properties.ReadOnly = true;
             CheckCongNo.Enabled = false;
             CheckGoiDau.Enabled = false;
@@ -566,6 +569,7 @@ namespace WindowsFormsApplication1
             txtthanhtien.Text = "0";
             cbotientra.Text = "0";
             ckphantram.Text = "0";
+            VAT.Text = "0";
             btLuu.Enabled = true;
             cboTenNCC.Enabled = true;
             gridCTHOADON.OptionsBehavior.ReadOnly = false;
@@ -573,6 +577,7 @@ namespace WindowsFormsApplication1
             cbotientra.Properties.ReadOnly = false;
             txtlohang.ReadOnly = true;
             ckphantram.Properties.ReadOnly = false;
+            VAT.Properties.ReadOnly = false;
             cktien.Properties.ReadOnly = false;
             CheckCongNo.Enabled = true;
             CheckGoiDau.Enabled = true;
@@ -615,15 +620,15 @@ namespace WindowsFormsApplication1
                         PublicVariable.SQL_NHAP = "";
                         dtoNCC.MANCC = txtMANCC.Text;
                         dtoNCC.TENNCC = cboTenNCC.Text;
-                        //dtoNCC.SDT = txtSoDT.Text;
-                        //dtoNCC.FAX = txtFax.Text;
-                        //dtoNCC.EMAIL = txtEmail.Text;
                         dtoNCC.GHICHU = txtghichu.Text;
+                        dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                        dtoNCC.GHICHU=dtoNCC.GHICHU.Replace("\"", "");
                         dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                         dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                         dtoNCC.MAHDN = txtMaHD.Text;
                         dtoNCC.CKTIEN =Convert.ToInt64(cktien.Value).ToString();
                         dtoNCC.TYPE = "1";
+                        dtoNCC.VAT = Convert.ToInt32(VAT.Value).ToString();
                      
                         if (cbotientra.Text == "")
                         {
@@ -679,7 +684,7 @@ namespace WindowsFormsApplication1
                             MessageBox.Show("Giá trị hóa đơn không thể nhỏ hơn 0");
                             return;
                         }
-
+                        
                         if (txtthanhtien.Value > 50000000000)
                         {
                             XtraMessageBox.Show("Hóa đơn giá trị quá lớn bạn không thể lưu");
@@ -695,19 +700,19 @@ namespace WindowsFormsApplication1
                             for (int i = 0; i < rowcount; i++)
                             {
                                 DataRow dtr = gridCTHOADON.GetDataRow(i);
-
+                               
                                 //insert_HoadonChitiet(txtMaHD.Text, dtr["MAMH"].ToString(), Double.Parse(dtr["SOLUONG"].ToString()), int.Parse(dtr["_DonGia"].ToString()));
                                 if (dtr["_HSD"].ToString() == "")
                                 {
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Chưa có Hạn Sử Dụng ");
                                     return;
                                 }
-                                else if (DateTime.Parse(timenow) >= DateTime.Parse(dtr["_HSD"].ToString()))
+                                else if (DateTime.Parse(timenow) >= DateTime.Parse(dtr["_HSD"].ToString().Substring(0,10)))
                                 {
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Hạn Sử Dụng Quá Ngắn ");
                                     return;
                                 }
-                                DateTime time = DateTime.Parse(dtr["_HSD"].ToString());
+                                
                             }
                         }
 
@@ -791,7 +796,6 @@ namespace WindowsFormsApplication1
                         }
                         else
                         {
-
                             if (PublicVariable.SUA == "False")
                             {
                                 MessageBox.Show("KHÔNG CÓ QUYỀN SỬA");
@@ -1224,9 +1228,20 @@ namespace WindowsFormsApplication1
                                     gettotal();
                                     return;
                                 }
+                                Int64 DONGIABANG = Convert.ToInt64(dtr["_Dongia"].ToString());
+                                
 
-                                Int64 total = Convert.ToInt64(Convert.ToInt64(dtr["_DonGia"].ToString()) * Num);
+                                Int64 total = Convert.ToInt64(DONGIABANG * Num);
                                 dtr["_Total"] = total.ToString();
+                                if (THUEVAT == 0)
+                                {
+                                    total = total;
+                                }
+                                else
+                                {
+                                    total = (total + (total * THUEVAT / 100));
+                                }
+                               // total = Convert.ToInt64(DONGIABANG * Num);
                                 dtr["TIENTRA"] = total.ToString();
                                 gettotal();
                             }
@@ -1242,6 +1257,8 @@ namespace WindowsFormsApplication1
                         {
                             Double Num;
                             bool isNum = Double.TryParse(dtr["_DonGia"].ToString(), out Num);
+
+                           
                             if (isNum)
                             {
                                 if (Num < 0)
@@ -1253,8 +1270,19 @@ namespace WindowsFormsApplication1
                                     gettotal();
                                     return;
                                 }
+                                
+
                                 Int64 total = Convert.ToInt64(Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num);
                                 dtr["_Total"] = total.ToString();
+                                if (THUEVAT == 0)
+                                {
+                                    total = total;
+                                }
+                                else
+                                {
+                                    total = (total + (total * THUEVAT / 100));
+                                }
+                               // total = Convert.ToInt64(Convert.ToDouble(dtr["SOLUONG"].ToString()) * Num);
                                 dtr["TIENTRA"] = total.ToString();
                                 gettotal();
                             }
@@ -1308,6 +1336,7 @@ namespace WindowsFormsApplication1
          
         }
         private Int64 tienchuack = 0;
+        int THUEVAT = 0;
         public void gettotal()
         {
            
@@ -1331,10 +1360,12 @@ namespace WindowsFormsApplication1
             {
                 cktien.Value = 0;
                 ckphantram.Value = 0;
+                VAT.Value = 0;
             }
             total = total - Convert.ToInt64(cktien.Value);
+           
 
-            txtthanhtien.Text = total.ToString();
+            txtthanhtien.Text = Convert.ToInt64(total).ToString();
             if (PublicVariable.ComboNhap == 2)
             {
                 cbotientra.Value = Convert.ToDecimal(txtthanhtien.Text);
@@ -1488,6 +1519,8 @@ namespace WindowsFormsApplication1
                     gettotal();
                     dtoNCC.MANCC = txtMANCC.Text;
                     dtoNCC.GHICHU = txtghichu.Text;
+                    dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                    dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                     dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                     dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                     dtoNCC.MAHDN = txtMaHD.Text;
@@ -1502,6 +1535,8 @@ namespace WindowsFormsApplication1
                
                 dtoNCC.MANCC = txtMANCC.Text;
                 dtoNCC.GHICHU = txtghichu.Text;
+                dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                 dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                 dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                 dtoNCC.MAHDN = txtMaHD.Text;
@@ -1580,7 +1615,7 @@ namespace WindowsFormsApplication1
 
             txtMaHD.Text = MAHDN;
             txtlohang.Text =MAHDN;
-            string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) as NGAYNHAP ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA,T1.GHICHU ,T1.CKTIEN,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,IDNHAP,TYPEMONEY FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
+            string SQL = String.Format("SELECT convert(varchar,T1.NGAYNHAP,103) as NGAYNHAP ,T1.MAHDN ,T2.MANV,T2.TENNV ,T1.TIENPHAITRA,T1.GHICHU ,T1.CKTIEN,VAT,T1.TIENDATRA ,(T1.TIENPHAITRA - T1.TIENDATRA) TIENNO,IDNHAP,TYPEMONEY FROM (SELECT * FROM HOADONNHAP WHERE MAHDN='{0}' AND MAKHO='{1}' ) AS T1 INNER JOIN NHANVIEN AS T2 ON T1.MANV =T2.MANV", MAHDN, PublicVariable.MAKHO);
             DataTable DT = ctlNCC.GETDATA(SQL);
             txtnhanvienlap.Text = DT.Rows[0]["TENNV"].ToString();
             txtthanhtien.Text = DT.Rows[0]["TIENPHAITRA"].ToString();
@@ -1604,13 +1639,14 @@ namespace WindowsFormsApplication1
                 cbotientra.Properties.ReadOnly = true;
             }
             Int64 _cktien = Convert.ToInt64(DT.Rows[0]["CKTIEN"].ToString());
+            Int64 _vat = Convert.ToInt64(DT.Rows[0]["VAT"].ToString());
             cktien.Value = _cktien;
-            Int64 thanhtien = tienchuack;
+            Double thanhtien = tienchuack;
             if (_cktien >= 0 && thanhtien >= 0)
             {
                 if (thanhtien > 0)
                 {
-                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                    ckphantram.Value = Convert.ToDecimal(_cktien * 100 / thanhtien);
                 }
                 else
                 {
@@ -1623,7 +1659,22 @@ namespace WindowsFormsApplication1
                 ckphantram.Value = 0;
                 cktien.Value = 0;
             }
-                gettotal();
+            if (_vat >= 0 && thanhtien >= 0)
+            {
+                if (thanhtien > 0)
+                {
+                    VAT.Value = _vat;
+                }
+                else
+                {
+                    VAT.Value = 0;
+                }
+            }
+            else
+            {
+                VAT.Value = 0;
+            }
+            gettotal();
             gridCTHOADON.BestFitColumns();
         }
 
@@ -1851,6 +1902,7 @@ namespace WindowsFormsApplication1
         {
             Int64 thanhtien = tienchuack;
             Double _ckphantram = Convert.ToDouble(ckphantram.Value);
+           
             if (_ckphantram < 0)
             {
                 MessageBox.Show("Chiết khấu không thể nhỏ hơn 0");
@@ -1860,7 +1912,8 @@ namespace WindowsFormsApplication1
             Int64 _cktien = Convert.ToInt64(thanhtien * _ckphantram / 100);
             
             thanhtien = thanhtien - _cktien;
-            txtthanhtien.Text = thanhtien.ToString();
+           
+            txtthanhtien.Text = Convert.ToInt64(thanhtien).ToString();
             if (CheckGoiDau.Checked == true)
             {
                 cbotientra.Text = thanhtien.ToString();
@@ -1876,13 +1929,15 @@ namespace WindowsFormsApplication1
 
         private void cktien_Validated(object sender, EventArgs e)
         {
-            Int64 thanhtien = tienchuack;
+            Double thanhtien = tienchuack;
             Int64 _cktien = Convert.ToInt64(cktien.Value);
             if (_cktien >= 0 && thanhtien >= 0)
             {
                 if (thanhtien > 0)
                 {
-                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                    
+                    ckphantram.Value = Convert.ToDecimal(_cktien * 100 / thanhtien);
+                    //ckphantram.Value = ab;
                 }
                 else
                 {
@@ -1898,16 +1953,17 @@ namespace WindowsFormsApplication1
                 cktien.Value = 0;
             }
             thanhtien = thanhtien - _cktien;
-            txtthanhtien.Text = thanhtien.ToString();
+           
+            txtthanhtien.Text = Convert.ToInt64(thanhtien).ToString();
             if (CheckGoiDau.Checked == true)
             {
-                cbotientra.Text = thanhtien.ToString();
+                cbotientra.Text = Convert.ToInt64(thanhtien).ToString();
             }
             if (cbotientra.Text != "")
             {
                 tientra = Convert.ToInt64(cbotientra.Value);
                 conlai = thanhtien - tientra;
-                txtconLai.Text = conlai.ToString();
+                txtconLai.Text = Convert.ToInt64(conlai).ToString();
             }
         }
 
@@ -1968,6 +2024,7 @@ namespace WindowsFormsApplication1
             cboTenNCC.Enabled = false;
             cbotientra.Properties.ReadOnly = true;
             ckphantram.Properties.ReadOnly = true;
+            VAT.Properties.ReadOnly = true;
             cktien.Properties.ReadOnly = true;
             txtlohang.ReadOnly = true;
             CheckCongNo.Enabled = false;
@@ -2178,6 +2235,36 @@ namespace WindowsFormsApplication1
                 loadgridDATHANG();
                 MessageBox.Show("ĐÃ XÓA ĐẶT HÀNG ");
             }
+        }
+
+        private void VAT_Validated(object sender, EventArgs e)
+        {
+            if (VAT.Text == "")
+            {
+                VAT.Text = "0";
+            }
+            
+            Int32 _vat = Convert.ToInt32(VAT.Value);
+            THUEVAT = _vat;
+            for (int i = 0; i < gridCTHOADON.DataRowCount; i++)
+            {
+                DataRow dtr = gridCTHOADON.GetDataRow(i);
+                Int64 TIENPHAITRA = Convert.ToInt64(Convert.ToInt64(dtr["_Dongia"].ToString()) * Convert.ToDouble(dtr["SOLUONG"].ToString()));
+                if (_vat == 0)
+                {
+                    dtr["TIENTRA"] = TIENPHAITRA;
+                }
+                else
+                {
+                    dtr["TIENTRA"] = (TIENPHAITRA + (TIENPHAITRA * _vat / 100));
+                }
+
+
+                // PublicVariable.SQL_NHAP = PublicVariable.SQL_NHAP + " \r\nGO\r\n INSERT INTO [HOADONDATNHAP] ([MAHDN],[MAMH],[ID],[SOLUONGNHAP],[KMAI],[GIANHAP],[TIENNHAPTT],[TINHTRANG],[MAKHO],[MANCC])  VALUES ( '" + mahdtam + "','" + dtr["MAMH"].ToString() + "','" + dtr["ID"].ToString() + "'," + dtr["SOLUONG"].ToString() + "," + dtr["KMAI"].ToString() + "," + dtr["_Dongia"].ToString() + "," + dtr["TIENTRA"].ToString() + ",1,'" + PublicVariable.MAKHO + "','" + txtMANCC.Text + "')";
+                // ctlNCC.executeNonQuery(SQL);
+            }
+
+            gettotal();
         }
 
 

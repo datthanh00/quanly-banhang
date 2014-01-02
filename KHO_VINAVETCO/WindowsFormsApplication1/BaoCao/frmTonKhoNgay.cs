@@ -73,6 +73,14 @@ namespace WindowsFormsApplication1
                 advBandedGridView3.Columns["KLTRAXUAT"].Visible = false;
                 advBandedGridView3.Columns["KLTONCUOI"].Visible = false;
             }
+            //CultureInfo culture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            //CultureInfo ci = new CultureInfo("en-IE");
+            ////Thay đổi vài thuộc tính tùy thích
+            //ci.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
+            //ci.DateTimeFormat.LongTimePattern = "hh:mm:ss";
+            //ci.NumberFormat.CurrencyDecimalSeparator = ",";
+            //ci.NumberFormat.CurrencyGroupSeparator = ".";
+
         }
         private void load_cbhanghoa()
         {

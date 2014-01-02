@@ -20,6 +20,14 @@ namespace WindowsFormsApplication1
             set { _CODEKHO = value; }
         }
 
+        private string _VAT;
+
+        public string VAT
+        {
+            get { return _VAT; }
+            set { _VAT = value; }
+        }
+
 
         private  int _ID;
 

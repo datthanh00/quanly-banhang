@@ -1,25 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
 using DevExpress.XtraBars;
-using DevExpress.XtraTab;
 using DevComponents.DotNetBar;
-using WindowsFormsApplication1.Class_ManhCuong;
-using DevExpress.Skins;
 using System.Configuration;
 using System.IO;
 using System.Globalization;
 using System.Threading;
 using DevExpress.XtraEditors;
 using WindowsFormsApplication1.HoaDonXuat;
-using System.Diagnostics;
 using WindowsFormsApplication1.KHtra;
 using WindowsFormsApplication1.class_import;
 using Quanlykho;
+using System.Windows.Forms;
+using System.Data;
+using System.Diagnostics;
 //using DoanCuoi;
 
 
@@ -31,12 +24,7 @@ namespace WindowsFormsApplication1
         public frmMain()
         {
             InitializeComponent();
-            CultureInfo culture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
-            culture.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
-            culture.DateTimeFormat.LongTimePattern = "hh:mm:ss";
-            culture.NumberFormat.CurrencyDecimalSeparator = ",";
-            culture.NumberFormat.CurrencyGroupSeparator = ".";
-            Thread.CurrentThread.CurrentCulture = culture;
+            
         }
 
         public frmBaoCaoTonKho frmTonKho;
@@ -745,6 +733,23 @@ namespace WindowsFormsApplication1
             timer1.Enabled = true;
             isclose = false;
             notifyIcon();
+
+
+            CultureInfo culture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            culture.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
+            culture.DateTimeFormat.LongTimePattern = "dd/MM/yyyy hh:mm:ss";
+            culture.NumberFormat.CurrencyDecimalSeparator = ",";
+            culture.NumberFormat.CurrencyGroupSeparator = ".";
+            Application.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentCulture = culture;
+            Thread.CurrentThread.CurrentUICulture = culture;
+
+            //CultureInfo ci = new CultureInfo("en-IE");
+            ////Thay đổi vài thuộc tính tùy thích
+            //ci.DateTimeFormat.ShortDatePattern = "dd/MM/yyyy";
+            //ci.DateTimeFormat.LongTimePattern = "hh:mm:ss";
+            //ci.NumberFormat.CurrencyDecimalSeparator = ",";
+            //ci.NumberFormat.CurrencyGroupSeparator = ".";
          
         }
  
@@ -2443,6 +2448,7 @@ namespace WindowsFormsApplication1
                 dt.Dock = DockStyle.Fill;
                 t.AttachedControl.Controls.Add(dt);
                 dt.Show();
+               
                 tabControl12.SelectedTabIndex = tabControl12.Tabs.Count - 1;
             }
             ld.simpleCloseWait();
