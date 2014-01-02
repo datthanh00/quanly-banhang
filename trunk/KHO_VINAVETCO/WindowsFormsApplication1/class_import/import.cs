@@ -377,14 +377,12 @@ namespace WindowsFormsApplication1.class_import
                                     DataTable dt = pv.getdata(SQL3);
                                     if (dt.Rows[0][0].ToString() != "0")
                                     {
-                                        lenh = lenh + "\r\nGO\r\n  INSERT INTO TONKHOTT([NGAY],[MAMH],[LOHANG],[TONKHONGAY],[MAKHO]) VALUES (convert(varchar,GETDATE(),101),'" + COT["MAMH"] + "','" + COT["LO" + i.ToString()] + "',0,'" + COT["MAKHO"] + "')";
+                                        lenh = lenh + "\r\nGO\r\n  INSERT INTO TONKHOTT([NGAY],[MAMH],[TONKHONGAY],[MAKHO]) VALUES (convert(varchar,GETDATE(),101),'" + COT["MAMH"] + "',0,'" + COT["MAKHO"] + "')";
                                     }
-
                                 }
                             }
                         }
                     }
-
                    }
             }
             // UPDATE MẶT HÀNG\

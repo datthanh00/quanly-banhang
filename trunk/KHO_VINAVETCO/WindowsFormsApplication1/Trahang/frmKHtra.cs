@@ -271,8 +271,11 @@ namespace WindowsFormsApplication1.KHtra
                             cbotientra.Text = "0";
                         }
                         dtoNCC.GHICHU = txtghichu.Text;
+                        dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                        dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                         dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                         dtoNCC.TYPE = "1";
+                        dtoNCC.VAT = "0";
                         int rowcount = gridCTHOADON.DataRowCount;
 
                         if (CheckGoiDau.Checked == true)
@@ -327,7 +330,7 @@ namespace WindowsFormsApplication1.KHtra
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Chưa có Hạn Sử Dụng ");
                                     return;
                                 }
-                                else if (DateTime.Parse(timenow) >= DateTime.Parse(dtr["_HSD"].ToString()))
+                                else if (DateTime.Parse(timenow) >= DateTime.Parse(dtr["_HSD"].ToString().Substring(0, 10)))
                                 {
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Hạn Sử Dụng Quá Ngắn ");
                                     return;
@@ -1254,7 +1257,8 @@ namespace WindowsFormsApplication1.KHtra
                         cbotientra.Text = "0";
                     }
                     dtoNCC.GHICHU = txtghichu.Text;
-
+                    dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                    dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                     dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                     return;
                 }
@@ -1275,6 +1279,8 @@ namespace WindowsFormsApplication1.KHtra
                     cbotientra.Text = "0";
                 }
                 dtoNCC.GHICHU = txtghichu.Text;
+                dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                 dtoNCC.TYPE = "1";
                 dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
 
@@ -1335,12 +1341,12 @@ namespace WindowsFormsApplication1.KHtra
             }
             Int64 _cktien = Convert.ToInt64(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
-            Int64 thanhtien = tienchuack;
+            Double thanhtien = tienchuack;
             if (_cktien >= 0 && thanhtien >= 0)
             {
                 if (thanhtien > 0)
                 {
-                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                    ckphantram.Value = Convert.ToDecimal(_cktien * 100 / thanhtien);
                 }
                 else
                 {
@@ -1729,13 +1735,13 @@ namespace WindowsFormsApplication1.KHtra
 
         private void cktien_Validated(object sender, EventArgs e)
         {
-            Int64 thanhtien = tienchuack;
+            Double thanhtien = tienchuack;
             Int64 _cktien = Convert.ToInt64(cktien.Value);
             if (_cktien >= 0 && thanhtien >= 0)
             {
                 if (thanhtien > 0)
                 {
-                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                    ckphantram.Value = Convert.ToDecimal(_cktien * 100 / thanhtien);
                 }
                 else
                 {
@@ -1751,16 +1757,16 @@ namespace WindowsFormsApplication1.KHtra
 
             }
             thanhtien = thanhtien - _cktien;
-            txtthanhtien.Text = thanhtien.ToString();
+            txtthanhtien.Text = Convert.ToInt64(thanhtien).ToString();
             if (CheckGoiDau.Checked == true)
             {
-                cbotientra.Text = thanhtien.ToString();
+                cbotientra.Text = Convert.ToInt64(thanhtien).ToString();
             }
             if (cbotientra.Text != "")
             {
                 tientra = Convert.ToInt64(cbotientra.Value);
                 conlai = thanhtien - tientra;
-                txtconLai.Text = conlai.ToString();
+                txtconLai.Text = Convert.ToInt64(conlai).ToString();
             }
 
         }

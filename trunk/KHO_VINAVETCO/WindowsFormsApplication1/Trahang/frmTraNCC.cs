@@ -441,6 +441,8 @@ namespace WindowsFormsApplication1
                         //dtoNCC.FAX = txtFax.Text;
                         //dtoNCC.EMAIL = txtEmail.Text;
                         dtoNCC.GHICHU = txtghichu.Text;
+                        dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                        dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                         dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                         dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                         dtoNCC.MAHDN = txtMaHD.Text;
@@ -1314,6 +1316,8 @@ namespace WindowsFormsApplication1
                     //dtoNCC.FAX = txtFax.Text;
                     //dtoNCC.EMAIL = txtEmail.Text;
                     dtoNCC.GHICHU = txtghichu.Text;
+                    dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                    dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                     dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                     dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                     dtoNCC.MAHDN = txtMaHD.Text;
@@ -1335,6 +1339,8 @@ namespace WindowsFormsApplication1
                 //dtoNCC.FAX = txtFax.Text;
                 //dtoNCC.EMAIL = txtEmail.Text;
                 dtoNCC.GHICHU = txtghichu.Text;
+                dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                 dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                 dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                 dtoNCC.MAHDN = txtMaHD.Text;
@@ -1430,12 +1436,12 @@ namespace WindowsFormsApplication1
             }
             Int64 _cktien = Convert.ToInt64(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
-            Int64 thanhtien = tienchuack;
+            Double thanhtien = tienchuack;
             if (_cktien >= 0 && thanhtien >= 0)
             {
                 if (thanhtien > 0)
                 {
-                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                    ckphantram.Value = Convert.ToDecimal(_cktien * 100 / thanhtien);
                 }
                 else
                 {
@@ -1821,13 +1827,13 @@ namespace WindowsFormsApplication1
 
         private void cktien_Validated(object sender, EventArgs e)
         {
-            Int64 thanhtien = tienchuack;
+            Double thanhtien = tienchuack;
             Int64 _cktien = Convert.ToInt64(cktien.Value);
             if (_cktien >= 0 && thanhtien >= 0)
             {
                 if (thanhtien > 0)
                 {
-                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                    ckphantram.Value = Convert.ToDecimal(_cktien * 100 / thanhtien);
                 }
                 else
                 {
@@ -1843,16 +1849,16 @@ namespace WindowsFormsApplication1
 
             }
             thanhtien = thanhtien - _cktien;
-            txtthanhtien.Text = thanhtien.ToString();
+            txtthanhtien.Text = Convert.ToInt64(thanhtien).ToString();
             if (CheckGoiDau.Checked == true)
             {
-                cbotientra.Text = thanhtien.ToString();
+                cbotientra.Text = Convert.ToInt64(thanhtien).ToString();
             }
             if (cbotientra.Text != "")
             {
                 tientra = Convert.ToInt64(cbotientra.Value);
                 conlai = thanhtien - tientra;
-                txtconLai.Text = conlai.ToString();
+                txtconLai.Text = Convert.ToInt64(conlai).ToString();
             }
         }
 

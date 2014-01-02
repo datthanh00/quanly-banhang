@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 
-using Excel;
+using Microsoft.Office.Interop.Excel;
 using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1.class_import

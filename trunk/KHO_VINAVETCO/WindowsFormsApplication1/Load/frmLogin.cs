@@ -1,18 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Text;
-using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using Microsoft.Win32;
-using WindowsFormsApplication1.Class_ManhCuong;
 using DevExpress.XtraEditors.DXErrorProvider;
 using System.Globalization;
 using System.Threading;
 using System.Configuration;
 using Quanlykho;
+using System.Data;
+using System.Windows.Forms;
+using System.ComponentModel;
 
 
 namespace WindowsFormsApplication1

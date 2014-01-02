@@ -563,12 +563,14 @@ namespace WindowsFormsApplication1
                         dtoNCC.FAX = Sfax;
                         dtoNCC.EMAIL = Semail;
                         dtoNCC.GHICHU = txtghichu.Text;
+                        dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                        dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                         dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                         dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                         dtoNCC.MAHDN = txtMaHD.Text;
                         dtoNCC.CKTIEN = Convert.ToInt64(cktien.Value).ToString();
                         dtoNCC.TYPE = Stype;
-
+                        dtoNCC.VAT = "0";
                         if (cbotientra.Text == "")
                         {
                             cbotientra.Text = "0";
@@ -613,7 +615,7 @@ namespace WindowsFormsApplication1
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Chưa có Hạn Sử Dụng ");
                                     return;
                                 }
-                                else if (DateTime.Parse(timenow) >= DateTime.Parse(dtr["_HSD"].ToString()))
+                                else if (DateTime.Parse(timenow) >= DateTime.Parse(dtr["_HSD"].ToString().Substring(0, 10)))
                                 {
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Hạn Sử Dụng Quá Ngắn ");
                                     return;
@@ -1334,6 +1336,8 @@ namespace WindowsFormsApplication1
                     gettotal();
                     dtoNCC.MANCC = txtMANCC.Text;
                     dtoNCC.GHICHU = txtghichu.Text;
+                    dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                    dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                     dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                     dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                     dtoNCC.MAHDN = txtMaHD.Text;
@@ -1346,6 +1350,8 @@ namespace WindowsFormsApplication1
                 gettotal();
                 dtoNCC.MANCC = txtMANCC.Text;
                 dtoNCC.GHICHU = txtghichu.Text;
+                dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                 dtoNCC.NGAYNHAP = DateTime.Now.ToString("yyy/MM/dd");
                 dtoNCC.TIENPHAITRA = Convert.ToInt64(txtthanhtien.Value).ToString();
                 dtoNCC.MAHDN = txtMaHD.Text;
@@ -1422,12 +1428,12 @@ namespace WindowsFormsApplication1
             IDNHAP = DT.Rows[0]["IDNHAP"].ToString();
             Int64 _cktien = Convert.ToInt64(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
-            Int64 thanhtien = tienchuack;
+            Double thanhtien = tienchuack;
             if (_cktien >= 0 && thanhtien >= 0)
             {
                 if (thanhtien > 0)
                 {
-                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                    ckphantram.Value = Convert.ToDecimal(_cktien * 100 / thanhtien);
                 }
                 else
                 {
@@ -1684,13 +1690,13 @@ namespace WindowsFormsApplication1
 
         private void cktien_Validated(object sender, EventArgs e)
         {
-            Int64 thanhtien = tienchuack;
+            Double thanhtien = tienchuack;
             Int64 _cktien = Convert.ToInt64(cktien.Value);
             if (_cktien >= 0 && thanhtien >= 0)
             {
                 if (thanhtien > 0)
                 {
-                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                    ckphantram.Value = Convert.ToDecimal(_cktien * 100 / thanhtien);
                 }
                 else
                 {
@@ -1706,13 +1712,13 @@ namespace WindowsFormsApplication1
 
             }
             thanhtien = thanhtien - _cktien;
-            txtthanhtien.Text = thanhtien.ToString();
+            txtthanhtien.Text = Convert.ToInt64(thanhtien).ToString();
        
             if (cbotientra.Text != "")
             {
                 tientra = Convert.ToInt64(cbotientra.Value);
                 conlai = thanhtien - tientra;
-                txtconLai.Text = conlai.ToString();
+                txtconLai.Text = Convert.ToInt64(conlai).ToString();
             }
           
         }

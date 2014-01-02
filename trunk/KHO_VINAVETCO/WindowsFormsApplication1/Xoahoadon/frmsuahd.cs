@@ -29,9 +29,17 @@ namespace WindowsFormsApplication1
         {
             if (txtlydo.Text.Length > 10)
             {
-                
-                PublicVariable.TMPtring = txtlydo.Text;
-                Inhdsua rep = new Inhdsua(MAHD,txtlydo.Text,LISTTRUOC,LISTSAU);
+                string LYDO = txtlydo.Text;
+                LYDO = LYDO.Replace("'", "");
+                LYDO = LYDO.Replace("\"", "");
+                PublicVariable.TMPtring = LYDO;
+                if (LYDO.Length > 190)
+                {
+                    PublicVariable.TMPtring = "";
+                    MessageBox.Show("lý do xóa quá Dài");
+                    return;
+                }
+                Inhdsua rep = new Inhdsua(MAHD,LYDO,LISTTRUOC,LISTSAU);
                 rep.ShowPreviewDialog();
                 this.Close();
             }

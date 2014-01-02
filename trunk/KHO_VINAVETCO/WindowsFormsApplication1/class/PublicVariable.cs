@@ -11,7 +11,6 @@ namespace WindowsFormsApplication1
       
        // XAC DINH BUILD DE BUILD LA KHO CONG TY HAY KHO TUAN HANH
        public static Boolean IS_VINAVETCO = false;
-
        public static string TATCA,XEM,THEM, XOA, SUA, IN, MAKHO,MANV,CODEKHO;
        public static Boolean isHSD, isBARCODE, isTONNHAPXUATNGAYFULL, isKHOILUONG, isBANGGIA;
        public static Boolean isUSELAN=false;

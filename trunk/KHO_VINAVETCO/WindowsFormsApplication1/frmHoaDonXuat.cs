@@ -308,7 +308,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
                             cbotientra.Text = "0";
                         }
                         dtoNCC.GHICHU = txtghichu.Text;
-
+                        dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                        dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                         dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                         dtoNCC.TINHTRANG = "1";
                         dtoNCC.TYPE = "1";
@@ -1305,7 +1306,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
                         cbotientra.Text = "0";
                     }
                     dtoNCC.GHICHU = txtghichu.Text;
-
+                    dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                    dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                     dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                     return;
                 }
@@ -1322,6 +1324,8 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 }
                
                 dtoNCC.GHICHU = txtghichu.Text;
+                dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("'", "");
+                dtoNCC.GHICHU = dtoNCC.GHICHU.Replace("\"", "");
                 dtoNCC.CKTIEN = Convert.ToInt64(cktien.Value).ToString();
                 dtoNCC.TIENDATRA = Convert.ToInt64(cbotientra.Value).ToString();
                 dtoNCC.MANV = sMaNV;
@@ -1382,12 +1386,12 @@ namespace WindowsFormsApplication1.HoaDonXuat
             
             Int64 _cktien = Convert.ToInt64(DT.Rows[0]["CKTIEN"].ToString());
             cktien.Value = _cktien;
-            Int64 thanhtien = tienchuack;
+            Double thanhtien = tienchuack;
             if (_cktien >= 0 && thanhtien >= 0)
             {
                 if (thanhtien > 0)
                 {
-                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                    ckphantram.Value = Convert.ToDecimal(_cktien * 100 / thanhtien);
                 }
                 else
                 {
@@ -1929,13 +1933,13 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
         private void cktien_Validated(object sender, EventArgs e)
         {
-            Int64 thanhtien = tienchuack;
+            Double thanhtien = tienchuack;
             Int64 _cktien = Convert.ToInt64(cktien.Value);
             if (_cktien >= 0 && thanhtien >= 0)
             {
                 if (thanhtien > 0)
                 {
-                    ckphantram.Value = Convert.ToDecimal(_cktien / thanhtien * 100);
+                    ckphantram.Value = Convert.ToDecimal(_cktien * 100 / thanhtien);
                 }
                 else
                 {
@@ -1951,16 +1955,16 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
             }
             thanhtien = thanhtien - _cktien;
-            txtthanhtien.Text = thanhtien.ToString();
+            txtthanhtien.Text = Convert.ToInt64(thanhtien).ToString();
             if (CheckGoiDau.Checked == true)
             {
-                cbotientra.Text = thanhtien.ToString();
+                cbotientra.Text = Convert.ToInt64(thanhtien).ToString();
             }
             if (cbotientra.Text != "")
             {
                 tientra = Convert.ToInt64(cbotientra.Value);
                 conlai = thanhtien - tientra;
-                txtconLai.Text = conlai.ToString();
+                txtconLai.Text = Convert.ToInt64(conlai).ToString();
             }
 
         }
