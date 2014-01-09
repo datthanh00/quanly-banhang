@@ -500,7 +500,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                                         System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString()+LOHANG1 + " KHÔNG THỂ XUẤT <=0");
                                         return;
                                     }
-                                    if (slton < SOLUONG)
+                                    if (slton < SOLUONG && dtr["ID"].ToString() != "")
                                     {
                                         System.Windows.Forms.MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() +LOHANG1+ " Không đủ số lượng để xuất");
                                         return;
@@ -2151,6 +2151,11 @@ namespace WindowsFormsApplication1.HoaDonXuat
 
                 contextMenuStrip3.Show(view.GridControl, e.Point);
             }
+        }
+
+        private void Panel_filter_Click(object sender, EventArgs e)
+        {
+
         }
      
     }

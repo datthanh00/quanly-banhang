@@ -479,6 +479,7 @@
             this.Panel_filter.Name = "Panel_filter";
             this.Panel_filter.OriginalSize = new System.Drawing.Size(200, 69);
             this.Panel_filter.Size = new System.Drawing.Size(1117, 69);
+            this.Panel_filter.Click += new System.EventHandler(this.Panel_filter_Click);
             // 
             // dockPanel2_Container
             // 
@@ -1290,12 +1291,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 26);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.deleteToolStripMenuItem.Text = "Xóa";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
