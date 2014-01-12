@@ -434,6 +434,11 @@ namespace WindowsFormsApplication1
         {
             deDongTab();
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
        
     }
 }
