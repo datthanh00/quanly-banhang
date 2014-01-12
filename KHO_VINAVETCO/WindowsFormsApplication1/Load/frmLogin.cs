@@ -265,8 +265,9 @@ namespace WindowsFormsApplication1
             {
                 dt = ctl.GETDATA(SQL);
             }
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 MessageBox.Show("Kiểm Tra Lại Kết Nối InterNet nếu không được thì gọi cho Thành SĐT:0907093902");
                 Application.ExitThread();
                 Application.Exit();
