@@ -312,13 +312,13 @@
   <data name="colSKYPE.Caption" xml:space="preserve">
     <value>Nick Skype</value>
   </data>
-  <data name="colTINHTRANG.Caption" xml:space="preserve">
+  <data name="colSLIN.Caption" xml:space="preserve">
     <value>Số Lượng In</value>
   </data>
-  <data name="colTINHTRANG.Visible" type="System.Boolean, mscorlib">
+  <data name="colSLIN.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="colTINHTRANG.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="colSLIN.VisibleIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
   <data name="gridColumn2.Caption" xml:space="preserve">
@@ -429,17 +429,17 @@
   <data name="&gt;&gt;barXuat1.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;barNhap.Name" xml:space="preserve">
-    <value>barNhap</value>
-  </data>
-  <data name="&gt;&gt;barNhap.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
   <data name="&gt;&gt;barStaticItem1.Name" xml:space="preserve">
     <value>barStaticItem1</value>
   </data>
   <data name="&gt;&gt;barStaticItem1.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarStaticItem, DevExpress.XtraBars.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barNhap.Name" xml:space="preserve">
+    <value>barNhap</value>
+  </data>
+  <data name="&gt;&gt;barNhap.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;barThem1.Name" xml:space="preserve">
     <value>barThem1</value>
@@ -531,10 +531,10 @@
   <data name="&gt;&gt;colSKYPE.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;colTINHTRANG.Name" xml:space="preserve">
-    <value>colTINHTRANG</value>
+  <data name="&gt;&gt;colSLIN.Name" xml:space="preserve">
+    <value>colSLIN</value>
   </data>
-  <data name="&gt;&gt;colTINHTRANG.Type" xml:space="preserve">
+  <data name="&gt;&gt;colSLIN.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;gridColumn2.Name" xml:space="preserve">

@@ -38,12 +38,12 @@
             this.barNapLai = new DevExpress.XtraBars.BarButtonItem();
             this.barIn = new DevExpress.XtraBars.BarButtonItem();
             this.barXuat1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barNhap = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
+            this.barNhap = new DevExpress.XtraBars.BarButtonItem();
             this.barThem1 = new DevExpress.XtraBars.BarButtonItem();
             this.girdcontrol = new DevExpress.XtraGrid.GridControl();
             this.gridViewKHACHHANG = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -60,7 +60,7 @@
             this.colWEBSITE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colYAHOO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSKYPE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSLIN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -165,14 +165,6 @@
             this.barXuat1.Name = "barXuat1";
             this.barXuat1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
-            // barNhap
-            // 
-            resources.ApplyResources(this.barNhap, "barNhap");
-            this.barNhap.Glyph = global::Quanlykho.Properties.Resources.paper;
-            this.barNhap.Id = 7;
-            this.barNhap.Name = "barNhap";
-            this.barNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNhap_ItemClick);
-            // 
             // barDockControlTop
             // 
             resources.ApplyResources(this.barDockControlTop, "barDockControlTop");
@@ -195,6 +187,14 @@
             this.barStaticItem1.Id = 0;
             this.barStaticItem1.Name = "barStaticItem1";
             this.barStaticItem1.TextAlignment = System.Drawing.StringAlignment.Near;
+            // 
+            // barNhap
+            // 
+            resources.ApplyResources(this.barNhap, "barNhap");
+            this.barNhap.Glyph = global::Quanlykho.Properties.Resources.paper;
+            this.barNhap.Id = 7;
+            this.barNhap.Name = "barNhap";
+            this.barNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barNhap_ItemClick);
             // 
             // barThem1
             // 
@@ -232,7 +232,7 @@
             this.colWEBSITE,
             this.colYAHOO,
             this.colSKYPE,
-            this.colTINHTRANG,
+            this.colSLIN,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
@@ -344,13 +344,13 @@
             this.colSKYPE.Name = "colSKYPE";
             this.colSKYPE.OptionsColumn.AllowEdit = false;
             // 
-            // colTINHTRANG
+            // colSLIN
             // 
-            resources.ApplyResources(this.colTINHTRANG, "colTINHTRANG");
-            this.colTINHTRANG.DisplayFormat.FormatString = "{0:0,0}";
-            this.colTINHTRANG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colTINHTRANG.FieldName = "SLIN";
-            this.colTINHTRANG.Name = "colTINHTRANG";
+            resources.ApplyResources(this.colSLIN, "colSLIN");
+            this.colSLIN.DisplayFormat.FormatString = "{0:0,0}";
+            this.colSLIN.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colSLIN.FieldName = "SLIN";
+            this.colSLIN.Name = "colSLIN";
             // 
             // gridColumn2
             // 
@@ -453,7 +453,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colWEBSITE;
         private DevExpress.XtraGrid.Columns.GridColumn colYAHOO;
         private DevExpress.XtraGrid.Columns.GridColumn colSKYPE;
-        private DevExpress.XtraGrid.Columns.GridColumn colTINHTRANG;
+        private DevExpress.XtraGrid.Columns.GridColumn colSLIN;
         private DevExpress.XtraGrid.Columns.GridColumn _TENNV;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
