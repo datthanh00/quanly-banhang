@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
                         cmbtenkhuvuc.Focus();
                         return;
                     }
-                    else if (txtsdt.Text.Length>20)
+                    else if (txtsdt.Text.Length>99)
                     {
                         XtraMessageBox.Show("số điện thoại quá dài");
                         txtsdt.Focus();
@@ -407,6 +407,7 @@ namespace WindowsFormsApplication1
                 txttenkh.Text = TenKH;
                 cmbtenkhuvuc.Text = sMaKV;
                 cmbtennhanvien.Text = sMaNV;
+               
                 cmbbanggia.Text = sMaBG;
                 txtdiachi.Text = DIACHI;
                 txtmasothue.Text = MASOTHUE;
@@ -425,7 +426,8 @@ namespace WindowsFormsApplication1
                     checkTT.Checked = false;
                 }
                 txtsotaikhan.Text = SOTK;
-                txtnickskype.Text = SKYPE;  
+                txtnickskype.Text = SKYPE;
+                
             }
             else
             {
@@ -590,36 +592,22 @@ namespace WindowsFormsApplication1
             }
            
         }
-        private void cmbtenkhuvuc_Validating(object sender, CancelEventArgs e)
+ 
+
+
+        private void cmbbanggia_Validated(object sender, EventArgs e)
         {
-            //Validate_EmptyStringRule(sender as BaseEdit);
-            //cmbtenkhuvuc.Focus();
-            //return;
             try
             {
-                sMaKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
+                sMaBG = gridView2.GetFocusedRowCellValue("MABG").ToString();
             }
             catch
             {
+
             }
         }
 
-        private void txttenkh_Validating(object sender, CancelEventArgs e)
-        {
-            //Validate_EmptyStringRule(sender as BaseEdit);
-            //txttenkh.Focus();
-            //return;
-        }
-
-  
-
-        private void cmbtenkhuvuc_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-     
-        private void cmbtennhanvien_Validating(object sender, CancelEventArgs e)
+        private void cmbtennhanvien_Validated(object sender, EventArgs e)
         {
             try
             {
@@ -631,17 +619,19 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void cmbbanggia_EditValueChanged(object sender, EventArgs e)
+        private void cmbtenkhuvuc_Validated(object sender, EventArgs e)
         {
             try
             {
-                sMaBG = gridView2.GetFocusedRowCellValue("MABG").ToString();
+                sMaKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
             }
             catch
             {
-
             }
         }
+
+     
+
 
       
 

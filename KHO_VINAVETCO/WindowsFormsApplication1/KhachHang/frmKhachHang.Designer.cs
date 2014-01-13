@@ -38,6 +38,7 @@
             this.barNapLai = new DevExpress.XtraBars.BarButtonItem();
             this.barIn = new DevExpress.XtraBars.BarButtonItem();
             this.barXuat1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -68,7 +69,6 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.girdcontrol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewKHACHHANG)).BeginInit();
@@ -167,6 +167,14 @@
             this.barXuat1.Id = 6;
             this.barXuat1.Name = "barXuat1";
             this.barXuat1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            resources.ApplyResources(this.barButtonItem1, "barButtonItem1");
+            this.barButtonItem1.Glyph = global::Quanlykho.Properties.Resources.paper;
+            this.barButtonItem1.Id = 10;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -283,6 +291,7 @@
             resources.ApplyResources(this._TENNV, "_TENNV");
             this._TENNV.FieldName = "TENNV";
             this._TENNV.Name = "_TENNV";
+            this._TENNV.OptionsColumn.AllowEdit = false;
             // 
             // colSOTAIKHOAN
             // 
@@ -360,24 +369,28 @@
             resources.ApplyResources(this.gridColumn2, "gridColumn2");
             this.gridColumn2.FieldName = "MAKV";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn3
             // 
             resources.ApplyResources(this.gridColumn3, "gridColumn3");
             this.gridColumn3.FieldName = "MANV";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn4
             // 
             resources.ApplyResources(this.gridColumn4, "gridColumn4");
             this.gridColumn4.FieldName = "MABG";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
             // 
             // _TENBG
             // 
             resources.ApplyResources(this._TENBG, "_TENBG");
             this._TENBG.FieldName = "TENBG";
             this._TENBG.Name = "_TENBG";
+            this._TENBG.OptionsColumn.AllowEdit = false;
             // 
             // gridColumn1
             // 
@@ -386,6 +399,7 @@
             this.gridColumn1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn1.FieldName = "TIENTRATRUOC";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.SummaryItem.DisplayFormat = resources.GetString("gridColumn1.SummaryItem.DisplayFormat");
             this.gridColumn1.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             // 
@@ -396,20 +410,13 @@
             this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn5.FieldName = "CONGNO";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.SummaryItem.DisplayFormat = resources.GetString("gridColumn5.SummaryItem.DisplayFormat");
             this.gridColumn5.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             // 
             // dxErrorProvider1
             // 
             this.dxErrorProvider1.ContainerControl = this;
-            // 
-            // barButtonItem1
-            // 
-            resources.ApplyResources(this.barButtonItem1, "barButtonItem1");
-            this.barButtonItem1.Glyph = global::Quanlykho.Properties.Resources.paper;
-            this.barButtonItem1.Id = 10;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // frmKhachHang
             // 

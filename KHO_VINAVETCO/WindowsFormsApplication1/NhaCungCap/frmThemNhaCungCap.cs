@@ -108,6 +108,7 @@ namespace WindowsFormsApplication1
                 loadgirdlookupKV();
                 txtma.Text = MANCC;
                 cmbmaKV.Text = MAKV;
+
                 txtten.Text = TENNCC;
                 txtdiachi.Text = DIACHI;
                 txtmasothue.Text = MASOTHUE;
@@ -493,6 +494,7 @@ namespace WindowsFormsApplication1
         {
             try
             {
+               
                 MAKV = gridLookUpEdit1View.GetFocusedRowCellValue("MAKV").ToString();
             }
             catch
@@ -500,6 +502,7 @@ namespace WindowsFormsApplication1
 
             }
         }
+
 
         
     }

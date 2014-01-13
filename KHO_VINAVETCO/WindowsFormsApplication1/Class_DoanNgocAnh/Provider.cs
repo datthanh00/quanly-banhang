@@ -43,7 +43,7 @@ namespace WindowsFormsApplication1
                 {
                     if (PublicVariable.IS_VINAVETCO)
                     {
-                        strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_tuanhanh;User ID=nguye_tuanhanh;Password=diQn9#42;";
+                        strConnect = " Data Source=103.3.245.243\\sql2008;Network Library=DBMSSOCN;Initial Catalog=nguyendat_vinavetco;User ID=nguye_vinavetco;Password=Urt22!u6;";
                         //   strConnect = "server=DATTHANH;database=KHO_VINAVETCO;integrated security = true;uid=sa,pwd=dat123;Integrated Security=True";
                     }
                     else

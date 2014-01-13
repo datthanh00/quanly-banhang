@@ -332,6 +332,12 @@
     <Compile Include="In.designer.cs">
       <DependentUpon>In.cs</DependentUpon>
     </Compile>
+    <Compile Include="InBBB.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InBBB.designer.cs">
+      <DependentUpon>InBBB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inhd.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -759,6 +765,9 @@
     <EmbeddedResource Include="In.resx">
       <DependentUpon>In.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InBBB.resx">
+      <DependentUpon>InBBB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inhd.resx">
       <DependentUpon>Inhd.cs</DependentUpon>
@@ -1345,7 +1354,6 @@
   <ItemGroup>
     <Folder Include="AddResources\" />
     <Folder Include="NgonNgu\" />
-    <Folder Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

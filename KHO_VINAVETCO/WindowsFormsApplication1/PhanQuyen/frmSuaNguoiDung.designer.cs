@@ -132,6 +132,7 @@
             this.gridLookUpEdit1.Size = new System.Drawing.Size(236, 20);
             this.gridLookUpEdit1.StyleController = this.layoutControl1;
             this.gridLookUpEdit1.TabIndex = 4;
+            this.gridLookUpEdit1.Validated += new System.EventHandler(this.gridLookUpEdit1_Validated);
             // 
             // gBoPhan
             // 
