@@ -239,6 +239,139 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>994, 447</value>
   </data>
+  <data name="girdcontrol.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="girdcontrol.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 42</value>
+  </data>
+  <data name="colMAKH.Caption" xml:space="preserve">
+    <value>Mã Khách Hàng</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="colMAKH.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colMAKH.VisibleIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="colTENKH.Caption" xml:space="preserve">
+    <value>Tên Khách Hàng</value>
+  </data>
+  <data name="colTENKH.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colTENKH.VisibleIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="colMAKV.Caption" xml:space="preserve">
+    <value>Khu Vực</value>
+  </data>
+  <data name="colMAKV.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colMAKV.VisibleIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="_TENNV.Caption" xml:space="preserve">
+    <value>Nhân Viên Phụ Trách</value>
+  </data>
+  <data name="_TENNV.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_TENNV.VisibleIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="colSOTAIKHOAN.Caption" xml:space="preserve">
+    <value>Số Tài Khoản</value>
+  </data>
+  <data name="colNGANHANG.Caption" xml:space="preserve">
+    <value>Ngân Hàng</value>
+  </data>
+  <data name="colMASOTHUE.Caption" xml:space="preserve">
+    <value>Mã Số Thuế</value>
+  </data>
+  <data name="colDIACHI.Caption" xml:space="preserve">
+    <value>Địa Chỉ</value>
+  </data>
+  <data name="colSDT.Caption" xml:space="preserve">
+    <value>Số Điện Thoại</value>
+  </data>
+  <data name="colSDT.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colSDT.VisibleIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="colFAX.Caption" xml:space="preserve">
+    <value>Số Fax</value>
+  </data>
+  <data name="colWEBSITE.Caption" xml:space="preserve">
+    <value>WebSite</value>
+  </data>
+  <data name="colYAHOO.Caption" xml:space="preserve">
+    <value>Yahoo</value>
+  </data>
+  <data name="colSKYPE.Caption" xml:space="preserve">
+    <value>Nick Skype</value>
+  </data>
+  <data name="colSLIN.Caption" xml:space="preserve">
+    <value>Số Lượng In</value>
+  </data>
+  <data name="colSLIN.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colSLIN.VisibleIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="gridColumn2.Caption" xml:space="preserve">
+    <value>MAKV</value>
+  </data>
+  <data name="gridColumn3.Caption" xml:space="preserve">
+    <value>MANV</value>
+  </data>
+  <data name="gridColumn4.Caption" xml:space="preserve">
+    <value>Mã Bảng Gíá</value>
+  </data>
+  <data name="_TENBG.Caption" xml:space="preserve">
+    <value>Bảng Giá</value>
+  </data>
+  <data name="_TENBG.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="_TENBG.VisibleIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="gridColumn1.Caption" xml:space="preserve">
+    <value>Tiền Trả Trước</value>
+  </data>
+  <data name="gridColumn1.SummaryItem.DisplayFormat" xml:space="preserve">
+    <value>{0:0,0}</value>
+  </data>
+  <data name="gridColumn1.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn1.VisibleIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="gridColumn5.Caption" xml:space="preserve">
+    <value>Công Nợ</value>
+  </data>
+  <data name="gridColumn5.SummaryItem.DisplayFormat" xml:space="preserve">
+    <value>{0:0,0}</value>
+  </data>
+  <data name="gridColumn5.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gridColumn5.VisibleIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="girdcontrol.Size" type="System.Drawing.Size, System.Drawing">
+    <value>994, 405</value>
+  </data>
+  <data name="girdcontrol.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;girdcontrol.Name" xml:space="preserve">
     <value>girdcontrol</value>
   </data>
@@ -297,6 +430,12 @@
     <value>barXuat1</value>
   </data>
   <data name="&gt;&gt;barXuat1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem1.Name" xml:space="preserve">
+    <value>barButtonItem1</value>
+  </data>
+  <data name="&gt;&gt;barButtonItem1.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;barStaticItem1.Name" xml:space="preserve">
@@ -449,12 +588,6 @@
   <data name="&gt;&gt;dxErrorProvider1.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider, DevExpress.XtraEditors.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;barButtonItem1.Name" xml:space="preserve">
-    <value>barButtonItem1</value>
-  </data>
-  <data name="&gt;&gt;barButtonItem1.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarButtonItem, DevExpress.XtraBars.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmKhachHang</value>
   </data>
@@ -469,151 +602,6 @@
   </data>
   <data name="barThem1.Caption" xml:space="preserve">
     <value>Thêm</value>
-  </data>
-  <data name="girdcontrol.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="girdcontrol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 42</value>
-  </data>
-  <data name="colMAKH.Caption" xml:space="preserve">
-    <value>Mã Khách Hàng</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="colMAKH.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colMAKH.VisibleIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="colTENKH.Caption" xml:space="preserve">
-    <value>Tên Khách Hàng</value>
-  </data>
-  <data name="colTENKH.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colTENKH.VisibleIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="colMAKV.Caption" xml:space="preserve">
-    <value>Khu Vực</value>
-  </data>
-  <data name="colMAKV.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colMAKV.VisibleIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="_TENNV.Caption" xml:space="preserve">
-    <value>Nhân Viên Phụ Trách</value>
-  </data>
-  <data name="_TENNV.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_TENNV.VisibleIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="colSOTAIKHOAN.Caption" xml:space="preserve">
-    <value>Số Tài Khoản</value>
-  </data>
-  <data name="colNGANHANG.Caption" xml:space="preserve">
-    <value>Ngân Hàng</value>
-  </data>
-  <data name="colMASOTHUE.Caption" xml:space="preserve">
-    <value>Mã Số Thuế</value>
-  </data>
-  <data name="colDIACHI.Caption" xml:space="preserve">
-    <value>Địa Chỉ</value>
-  </data>
-  <data name="colSDT.Caption" xml:space="preserve">
-    <value>Số Điện Thoại</value>
-  </data>
-  <data name="colSDT.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colSDT.VisibleIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="colFAX.Caption" xml:space="preserve">
-    <value>Số Fax</value>
-  </data>
-  <data name="colWEBSITE.Caption" xml:space="preserve">
-    <value>WebSite</value>
-  </data>
-  <data name="colYAHOO.Caption" xml:space="preserve">
-    <value>Yahoo</value>
-  </data>
-  <data name="colSKYPE.Caption" xml:space="preserve">
-    <value>Nick Skype</value>
-  </data>
-  <data name="colSLIN.Caption" xml:space="preserve">
-    <value>Số Lượng In</value>
-  </data>
-  <data name="colSLIN.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colSLIN.VisibleIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="gridColumn2.Caption" xml:space="preserve">
-    <value>MAKV</value>
-  </data>
-  <data name="gridColumn3.Caption" xml:space="preserve">
-    <value>MANV</value>
-  </data>
-  <data name="gridColumn4.Caption" xml:space="preserve">
-    <value>Mã Bảng Gíá</value>
-  </data>
-  <data name="_TENBG.Caption" xml:space="preserve">
-    <value>Bảng Giá</value>
-  </data>
-  <data name="_TENBG.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="_TENBG.VisibleIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="gridColumn1.Caption" xml:space="preserve">
-    <value>Tiền Trả Trước</value>
-  </data>
-  <data name="gridColumn1.SummaryItem.DisplayFormat" xml:space="preserve">
-    <value>{0:0,0}</value>
-  </data>
-  <data name="gridColumn1.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn1.VisibleIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="gridColumn5.Caption" xml:space="preserve">
-    <value>Công Nợ</value>
-  </data>
-  <data name="gridColumn5.SummaryItem.DisplayFormat" xml:space="preserve">
-    <value>{0:0,0}</value>
-  </data>
-  <data name="gridColumn5.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="gridColumn5.VisibleIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="girdcontrol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>994, 405</value>
-  </data>
-  <data name="girdcontrol.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;girdcontrol.Name" xml:space="preserve">
-    <value>girdcontrol</value>
-  </data>
-  <data name="&gt;&gt;girdcontrol.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;girdcontrol.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;girdcontrol.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <metadata name="dxErrorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>309, 17</value>

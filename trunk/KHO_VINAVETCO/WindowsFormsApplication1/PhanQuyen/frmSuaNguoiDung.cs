@@ -83,10 +83,11 @@ namespace WindowsFormsApplication1
         }
 
         public int iNgonNgu;
+    
         private void btLuu_Click(object sender, EventArgs e)
         {
             dto.MANV = txtma.Text;
-            dto.MABOPHAN = gBoPhan.GetFocusedRowCellValue("MABP").ToString();
+            dto.MABOPHAN = mabp;
             ctr.SuaNguoiDung(dto);
             this.Refresh();
             if (iNgonNgu == 1)
@@ -97,11 +98,24 @@ namespace WindowsFormsApplication1
             {
                 MessageBox.Show("Sửa thành công");
             }
+            this.Close();
         }
 
         private void btDong_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void gridLookUpEdit1_Validated(object sender, EventArgs e)
+        {
+            try
+            {
+                mabp = gBoPhan.GetFocusedRowCellValue("MABP").ToString();
+            }
+            catch
+            {
+
+            }
         }
 
     }

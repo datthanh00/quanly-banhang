@@ -63,12 +63,12 @@
             this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             this.cmbmaKV = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
             this.colMAKV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKHUVUC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTINHTRANG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsodt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnganhang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtfax.Properties)).BeginInit();
@@ -147,7 +147,7 @@
             this.txtten.Location = new System.Drawing.Point(110, 34);
             this.txtten.Name = "txtten";
             this.txtten.Size = new System.Drawing.Size(228, 20);
-            this.txtten.TabIndex = 3;
+            this.txtten.TabIndex = 2;
             this.txtten.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtten_KeyPress);
             // 
             // lbsodt
@@ -333,7 +333,7 @@
             this.simpleButton2.Location = new System.Drawing.Point(671, 8);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(26, 19);
-            this.simpleButton2.TabIndex = 2;
+            this.simpleButton2.TabIndex = 20;
             this.simpleButton2.Text = "simpleButton1";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
@@ -363,7 +363,7 @@
             this.checkTT.Location = new System.Drawing.Point(108, 188);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 18);
+            this.checkTT.Size = new System.Drawing.Size(82, 19);
             this.checkTT.TabIndex = 12;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
@@ -376,7 +376,7 @@
             this.cmbmaKV.Properties.NullText = "";
             this.cmbmaKV.Properties.View = this.gridLookUpEdit1View;
             this.cmbmaKV.Size = new System.Drawing.Size(231, 20);
-            this.cmbmaKV.TabIndex = 2;
+            this.cmbmaKV.TabIndex = 3;
             this.cmbmaKV.Validated += new System.EventHandler(this.cmbmaKV_Validated);
             // 
             // gridLookUpEdit1View
@@ -390,6 +390,30 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(354, 42);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(70, 13);
+            this.labelControl1.TabIndex = 124;
+            this.labelControl1.Text = "Tiền Trả Trước";
+            // 
+            // cbotientra
+            // 
+            this.cbotientra.Location = new System.Drawing.Point(441, 37);
+            this.cbotientra.Name = "cbotientra";
+            this.cbotientra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbotientra.Properties.DisplayFormat.FormatString = "{0:0,0}";
+            this.cbotientra.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cbotientra.Properties.EditFormat.FormatString = "{0:0,0}";
+            this.cbotientra.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cbotientra.Properties.Mask.EditMask = "n0";
+            this.cbotientra.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.cbotientra.Properties.ReadOnly = true;
+            this.cbotientra.Size = new System.Drawing.Size(231, 20);
+            this.cbotientra.TabIndex = 125;
             // 
             // colMAKV
             // 
@@ -422,30 +446,6 @@
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.Visible = true;
             this.colTINHTRANG.VisibleIndex = 3;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(354, 42);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(70, 13);
-            this.labelControl1.TabIndex = 124;
-            this.labelControl1.Text = "Tiền Trả Trước";
-            // 
-            // cbotientra
-            // 
-            this.cbotientra.Location = new System.Drawing.Point(441, 37);
-            this.cbotientra.Name = "cbotientra";
-            this.cbotientra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbotientra.Properties.DisplayFormat.FormatString = "{0:0,0}";
-            this.cbotientra.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.cbotientra.Properties.EditFormat.FormatString = "{0:0,0}";
-            this.cbotientra.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.cbotientra.Properties.Mask.EditMask = "n0";
-            this.cbotientra.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.cbotientra.Properties.ReadOnly = true;
-            this.cbotientra.Size = new System.Drawing.Size(231, 20);
-            this.cbotientra.TabIndex = 125;
             // 
             // frmThemNhaCungCap
             // 

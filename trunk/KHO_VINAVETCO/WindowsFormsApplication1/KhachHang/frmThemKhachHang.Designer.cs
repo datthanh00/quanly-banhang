@@ -56,30 +56,30 @@
             this.btThemKhuVuc = new DevExpress.XtraEditors.SimpleButton();
             this.btDong = new DevExpress.XtraEditors.SimpleButton();
             this.btLuu = new DevExpress.XtraEditors.SimpleButton();
-            this.txtsdt = new DevExpress.XtraEditors.CalcEdit();
             this.txtsotaikhan = new DevExpress.XtraEditors.CalcEdit();
             this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             this.cmbtenkhuvuc = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.cotMaKV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cotTenKV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtfax = new DevExpress.XtraEditors.CalcEdit();
             this.txtmasothue = new DevExpress.XtraEditors.CalcEdit();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             this.cmbtennhanvien = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.cmbbanggia = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cotMaKV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.cotTenKV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtsdt = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txttenkh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdiachi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnganhang.Properties)).BeginInit();
@@ -87,7 +87,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtnickskype.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmakh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtyahoo.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsotaikhan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbtenkhuvuc.Properties)).BeginInit();
@@ -100,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbbanggia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // colMAKH
@@ -204,8 +204,7 @@
             this.txttenkh.Location = new System.Drawing.Point(114, 39);
             this.txttenkh.Name = "txttenkh";
             this.txttenkh.Size = new System.Drawing.Size(228, 20);
-            this.txttenkh.TabIndex = 4;
-            this.txttenkh.Validating += new System.ComponentModel.CancelEventHandler(this.txttenkh_Validating);
+            this.txttenkh.TabIndex = 2;
             this.txttenkh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txttenkh_KeyPress);
             // 
             // txtdiachi
@@ -269,6 +268,7 @@
             this.txtmakh.Enabled = false;
             this.txtmakh.Location = new System.Drawing.Point(114, 9);
             this.txtmakh.Name = "txtmakh";
+            this.txtmakh.Properties.ReadOnly = true;
             this.txtmakh.Size = new System.Drawing.Size(228, 20);
             this.txtmakh.TabIndex = 1;
             this.txtmakh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtmakh_KeyPress);
@@ -318,7 +318,7 @@
             this.btThemKhuVuc.Location = new System.Drawing.Point(637, 10);
             this.btThemKhuVuc.Name = "btThemKhuVuc";
             this.btThemKhuVuc.Size = new System.Drawing.Size(26, 19);
-            this.btThemKhuVuc.TabIndex = 3;
+            this.btThemKhuVuc.TabIndex = 30;
             this.btThemKhuVuc.Text = "simpleButton1";
             this.btThemKhuVuc.Click += new System.EventHandler(this.btThemKhuVuc_Click);
             // 
@@ -341,16 +341,6 @@
             this.btLuu.TabIndex = 18;
             this.btLuu.Text = "Lưu";
             this.btLuu.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // txtsdt
-            // 
-            this.txtsdt.Location = new System.Drawing.Point(445, 100);
-            this.txtsdt.Name = "txtsdt";
-            this.txtsdt.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtsdt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.txtsdt.Size = new System.Drawing.Size(231, 20);
-            this.txtsdt.TabIndex = 9;
             // 
             // txtsotaikhan
             // 
@@ -386,9 +376,8 @@
             this.cmbtenkhuvuc.Properties.ValueMember = "TENKV";
             this.cmbtenkhuvuc.Properties.View = this.gridLookUpEdit1View;
             this.cmbtenkhuvuc.Size = new System.Drawing.Size(186, 20);
-            this.cmbtenkhuvuc.TabIndex = 2;
-            this.cmbtenkhuvuc.Validating += new System.ComponentModel.CancelEventHandler(this.cmbtenkhuvuc_Validating);
-            this.cmbtenkhuvuc.EditValueChanged += new System.EventHandler(this.cmbtenkhuvuc_EditValueChanged);
+            this.cmbtenkhuvuc.TabIndex = 3;
+            this.cmbtenkhuvuc.Validated += new System.EventHandler(this.cmbtenkhuvuc_Validated);
             this.cmbtenkhuvuc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbtenkhuvuc_KeyPress);
             // 
             // gridLookUpEdit1View
@@ -400,6 +389,22 @@
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // cotMaKV
+            // 
+            this.cotMaKV.Caption = "Mã Khu Vực";
+            this.cotMaKV.FieldName = "MAKV";
+            this.cotMaKV.Name = "cotMaKV";
+            this.cotMaKV.Visible = true;
+            this.cotMaKV.VisibleIndex = 0;
+            // 
+            // cotTenKV
+            // 
+            this.cotTenKV.Caption = "Tên Khu Vực";
+            this.cotTenKV.FieldName = "TENKV";
+            this.cotTenKV.Name = "cotTenKV";
+            this.cotTenKV.Visible = true;
+            this.cotTenKV.VisibleIndex = 1;
             // 
             // txtfax
             // 
@@ -442,7 +447,7 @@
             this.cmbtennhanvien.Properties.View = this.gridView1;
             this.cmbtennhanvien.Size = new System.Drawing.Size(228, 20);
             this.cmbtennhanvien.TabIndex = 6;
-            this.cmbtennhanvien.Validating += new System.ComponentModel.CancelEventHandler(this.cmbtennhanvien_Validating);
+            this.cmbtennhanvien.Validated += new System.EventHandler(this.cmbtennhanvien_Validated);
             // 
             // gridView1
             // 
@@ -453,6 +458,22 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã Nhân Viên";
+            this.gridColumn1.FieldName = "MANV";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên Nhân Viên";
+            this.gridColumn2.FieldName = "TENNV";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
             // 
             // labelControl1
             // 
@@ -488,7 +509,7 @@
             this.cmbbanggia.Properties.View = this.gridView2;
             this.cmbbanggia.Size = new System.Drawing.Size(231, 20);
             this.cmbbanggia.TabIndex = 5;
-            this.cmbbanggia.EditValueChanged += new System.EventHandler(this.cmbbanggia_EditValueChanged);
+            this.cmbbanggia.Validated += new System.EventHandler(this.cmbbanggia_Validated);
             // 
             // gridView2
             // 
@@ -499,6 +520,22 @@
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Mã Bảng Giá";
+            this.gridColumn3.FieldName = "MABG";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 0;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Tên Bảng Giá";
+            this.gridColumn4.FieldName = "TENBG";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 1;
             // 
             // labelControl3
             // 
@@ -544,53 +581,12 @@
             this.cbotientra.Size = new System.Drawing.Size(231, 20);
             this.cbotientra.TabIndex = 7;
             // 
-            // gridColumn3
+            // txtsdt
             // 
-            this.gridColumn3.Caption = "Mã Bảng Giá";
-            this.gridColumn3.FieldName = "MABG";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Tên Bảng Giá";
-            this.gridColumn4.FieldName = "TENBG";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Mã Nhân Viên";
-            this.gridColumn1.FieldName = "MANV";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tên Nhân Viên";
-            this.gridColumn2.FieldName = "TENNV";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            // 
-            // cotMaKV
-            // 
-            this.cotMaKV.Caption = "Mã Khu Vực";
-            this.cotMaKV.FieldName = "MAKV";
-            this.cotMaKV.Name = "cotMaKV";
-            this.cotMaKV.Visible = true;
-            this.cotMaKV.VisibleIndex = 0;
-            // 
-            // cotTenKV
-            // 
-            this.cotTenKV.Caption = "Tên Khu Vực";
-            this.cotTenKV.FieldName = "TENKV";
-            this.cotTenKV.Name = "cotTenKV";
-            this.cotTenKV.Visible = true;
-            this.cotTenKV.VisibleIndex = 1;
+            this.txtsdt.Location = new System.Drawing.Point(445, 99);
+            this.txtsdt.Name = "txtsdt";
+            this.txtsdt.Size = new System.Drawing.Size(231, 20);
+            this.txtsdt.TabIndex = 29;
             // 
             // frmThemKhachHang
             // 
@@ -598,6 +594,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 330);
             this.ControlBox = false;
+            this.Controls.Add(this.txtsdt);
             this.Controls.Add(this.cbotientra);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.cmbbanggia);
@@ -635,7 +632,6 @@
             this.Controls.Add(this.colMASOTHUE);
             this.Controls.Add(this.colFAX);
             this.Controls.Add(this.colMAKH);
-            this.Controls.Add(this.txtsdt);
             this.Controls.Add(this.txtsotaikhan);
             this.Controls.Add(this.txtfax);
             this.Controls.Add(this.txtmasothue);
@@ -651,7 +647,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtnickskype.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtmakh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtyahoo.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsotaikhan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbtenkhuvuc.Properties)).EndInit();
@@ -664,6 +659,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbbanggia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -699,7 +695,6 @@
         private DevExpress.XtraEditors.TextEdit txtyahoo;
         private DevExpress.XtraEditors.LabelControl lbCHUY;
         private DevExpress.XtraEditors.SimpleButton btThemKhuVuc;
-        private DevExpress.XtraEditors.CalcEdit txtsdt;
         private DevExpress.XtraEditors.CalcEdit txtsotaikhan;
         private DevExpress.XtraEditors.CheckEdit checkTT;
        // private XUAT_NHAPTONDataSet35 xUAT_NHAPTONDataSet35;
@@ -725,5 +720,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.CalcEdit cbotientra;
+        private DevExpress.XtraEditors.TextEdit txtsdt;
     }
 }

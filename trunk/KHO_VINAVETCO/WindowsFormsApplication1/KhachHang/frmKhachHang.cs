@@ -474,7 +474,7 @@ namespace WindowsFormsApplication1
                         DTNCC.Rows.Add(RNGUOIGUI);
 
                         DataRow RNHANVIEN = DTNCC.NewRow();
-                        RNHANVIEN[0] = TENNV + " NHÂN VIÊN " + TENCTY;
+                        RNHANVIEN[0] = TENNV + " nhân viên " + TENCTY;
                         DTNCC.Rows.Add(RNHANVIEN);
 
                         DataRow RSDTNV = DTNCC.NewRow();
@@ -498,7 +498,7 @@ namespace WindowsFormsApplication1
                         DTNCC.Rows.Add(RDTKH);
 
                         DataRow RLUUY = DTNCC.NewRow();
-                        RLUUY[0] = "lƯU Ý: HÀNG DỄ VỠ XIN NHẸ TAY- HÀNG ĐÃ THANH TOÁN TIỀN CƯỚC - GIAO TẬN NƠI";
+                        RLUUY[0] = "lƯU Ý: hàng dễ vỡ xin nhẹ tay - hàng đã thanh toán tiền cước - giao tận nơi";
                         DTNCC.Rows.Add(RLUUY);
 
                         DataRow RBLANK = DTNCC.NewRow();
