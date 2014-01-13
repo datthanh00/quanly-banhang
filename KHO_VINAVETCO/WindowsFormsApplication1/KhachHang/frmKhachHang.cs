@@ -94,7 +94,7 @@ namespace WindowsFormsApplication1
         }
         //private bool thoat = false;
         string sma, sten, smakv, smanv, smabg, sdiachi, ssoTK, snganhang, smasothue, sfax, syahoo, snickskype, stinhtrang,stientratruoc;
-       
+        public string stennhanvien, smanhanvien; 
         DTO DTO = new DTO();
         CTL ctl= new CTL();
         public string fsten;
@@ -437,6 +437,80 @@ namespace WindowsFormsApplication1
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            string SQL = "";
+            CTL ctlNCC = new CTL();
+            string TENCTY, TENNV, SDTNV, TENKH, DTKH, DIACHIKH;
+            
+            
+            SQL = "SELECT TENCT FROM THONGTINCT";
+            DataTable TBGETTT = ctlNCC.GETDATA(SQL);
+            TENCTY = TBGETTT.Rows[0][0].ToString();
+            TENNV = stennhanvien;
+
+            SQL = "SELECT SDT FROM NHANVIEN WHERE MANV='"+smanhanvien+"'";
+            TBGETTT = ctlNCC.GETDATA(SQL);
+            SDTNV = TBGETTT.Rows[0][0].ToString();
+           
+
+
+            DataTable DTNCC= new DataTable("SDKHACHHANG");
+            DTNCC.Columns.Add("NOIDUNG");
+            for (int i = 0; i < gridViewKHACHHANG.DataRowCount; i++)
+            {
+                DataRow dtr = gridViewKHACHHANG.GetDataRow(i);
+                int SLIN = Convert.ToInt32(dtr["SLIN"].ToString());
+                if (SLIN > 0)
+                {
+                    SQL = "SELECT TENKH,DIACHI,SDT FROM KHACHHANG WHERE MAKH='" + dtr["MAKH"].ToString() + "'";
+                    TBGETTT = ctlNCC.GETDATA(SQL);
+                    TENKH = TBGETTT.Rows[0][0].ToString();
+                    DIACHIKH = TBGETTT.Rows[0][1].ToString();
+                    DTKH = TBGETTT.Rows[0][2].ToString();
+
+                    for (int J = 0; J < SLIN; J++)
+                    {
+                        DataRow RNGUOIGUI = DTNCC.NewRow();
+                        RNGUOIGUI[0] = "NGƯỜI GỬI:";
+                        DTNCC.Rows.Add(RNGUOIGUI);
+
+                        DataRow RNHANVIEN = DTNCC.NewRow();
+                        RNHANVIEN[0] = TENNV + " NHÂN VIÊN " + TENCTY;
+                        DTNCC.Rows.Add(RNHANVIEN);
+
+                        DataRow RSDTNV = DTNCC.NewRow();
+                        RSDTNV[0] = "ĐIỆN THOẠI: " + SDTNV;
+                        DTNCC.Rows.Add(RSDTNV);
+
+                        DataRow RNGUOINHAN = DTNCC.NewRow();
+                        RNGUOINHAN[0] = "NGƯỜI NHẬN:";
+                        DTNCC.Rows.Add(RNGUOINHAN);
+
+                        DataRow RKHACHHANG = DTNCC.NewRow();
+                        RKHACHHANG[0] = "CỬA HÀNG THUỐC THÚ Y " +TENKH ;
+                        DTNCC.Rows.Add(RKHACHHANG);
+
+                        DataRow RDCKH = DTNCC.NewRow();
+                        RDCKH[0] = "ĐIẠ CHỈ: " + DIACHIKH;
+                        DTNCC.Rows.Add(RDCKH);
+
+                        DataRow RDTKH = DTNCC.NewRow();
+                        RDTKH[0] = "ĐIỆN THOẠI: " + DTKH;
+                        DTNCC.Rows.Add(RDTKH);
+
+                        DataRow RLUUY = DTNCC.NewRow();
+                        RLUUY[0] = "lƯU Ý: HÀNG DỄ VỠ XIN NHẸ TAY- HÀNG ĐÃ THANH TOÁN TIỀN CƯỚC - GIAO TẬN NƠI";
+                        DTNCC.Rows.Add(RLUUY);
+
+                        DataRow RBLANK = DTNCC.NewRow();
+                        RBLANK[0] = "";
+                        DTNCC.Rows.Add(RBLANK);
+                    }
+                }
+
+            }
+
+            InBBBG rep = new InBBBG(DTNCC);
+            rep.ShowPreviewDialog();
 
         }
        
