@@ -53,6 +53,8 @@ namespace WindowsFormsApplication1
                 t.Name = "KhachHang";
                 frmKhachHang dt = new frmKhachHang();
                 dt.deDongTab = new frmKhachHang._deDongTab(vDOngTab);
+                dt.smanhanvien = sManv;
+                dt.stennhanvien = sTennv;
                 dt.frm = this;
                 dt.iNgonNgu = iNgonNgu;
                 dt.TopLevel = false;
