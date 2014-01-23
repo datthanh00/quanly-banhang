@@ -80,6 +80,8 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.cbotientra = new DevExpress.XtraEditors.CalcEdit();
             this.txtsdt = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.ckphantram = new DevExpress.XtraEditors.CalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txttenkh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtdiachi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtnganhang.Properties)).BeginInit();
@@ -100,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckphantram.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // colMAKH
@@ -168,7 +171,7 @@
             // 
             // colFAX
             // 
-            this.colFAX.Location = new System.Drawing.Point(367, 163);
+            this.colFAX.Location = new System.Drawing.Point(367, 165);
             this.colFAX.Name = "colFAX";
             this.colFAX.Size = new System.Drawing.Size(18, 13);
             this.colFAX.TabIndex = 0;
@@ -184,7 +187,7 @@
             // 
             // colYAHOO
             // 
-            this.colYAHOO.Location = new System.Drawing.Point(12, 193);
+            this.colYAHOO.Location = new System.Drawing.Point(12, 194);
             this.colYAHOO.Name = "colYAHOO";
             this.colYAHOO.Size = new System.Drawing.Size(30, 13);
             this.colYAHOO.TabIndex = 0;
@@ -193,7 +196,7 @@
             // 
             // colWEBSITE
             // 
-            this.colWEBSITE.Location = new System.Drawing.Point(367, 193);
+            this.colWEBSITE.Location = new System.Drawing.Point(367, 196);
             this.colWEBSITE.Name = "colWEBSITE";
             this.colWEBSITE.Size = new System.Drawing.Size(39, 13);
             this.colWEBSITE.TabIndex = 0;
@@ -225,7 +228,7 @@
             // 
             // txtwebsite
             // 
-            this.txtwebsite.Location = new System.Drawing.Point(445, 189);
+            this.txtwebsite.Location = new System.Drawing.Point(445, 193);
             this.txtwebsite.Name = "txtwebsite";
             this.txtwebsite.Size = new System.Drawing.Size(231, 20);
             this.txtwebsite.TabIndex = 15;
@@ -275,7 +278,7 @@
             // 
             // colTINHTRANG
             // 
-            this.colTINHTRANG.Location = new System.Drawing.Point(12, 229);
+            this.colTINHTRANG.Location = new System.Drawing.Point(7, 256);
             this.colTINHTRANG.Name = "colTINHTRANG";
             this.colTINHTRANG.Size = new System.Drawing.Size(51, 13);
             this.colTINHTRANG.TabIndex = 0;
@@ -287,7 +290,7 @@
             this.labelControl19.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl19.Appearance.Options.UseBackColor = true;
             this.labelControl19.Appearance.Options.UseForeColor = true;
-            this.labelControl19.Location = new System.Drawing.Point(9, 259);
+            this.labelControl19.Location = new System.Drawing.Point(12, 343);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(14, 13);
             this.labelControl19.TabIndex = 20;
@@ -295,7 +298,7 @@
             // 
             // txtyahoo
             // 
-            this.txtyahoo.Location = new System.Drawing.Point(114, 189);
+            this.txtyahoo.Location = new System.Drawing.Point(114, 193);
             this.txtyahoo.Name = "txtyahoo";
             this.txtyahoo.Size = new System.Drawing.Size(228, 20);
             this.txtyahoo.TabIndex = 14;
@@ -303,7 +306,7 @@
             // 
             // lbCHUY
             // 
-            this.lbCHUY.Location = new System.Drawing.Point(32, 259);
+            this.lbCHUY.Location = new System.Drawing.Point(32, 343);
             this.lbCHUY.Name = "lbCHUY";
             this.lbCHUY.Size = new System.Drawing.Size(246, 13);
             this.lbCHUY.TabIndex = 21;
@@ -356,7 +359,7 @@
             // checkTT
             // 
             this.checkTT.EditValue = true;
-            this.checkTT.Location = new System.Drawing.Point(117, 226);
+            this.checkTT.Location = new System.Drawing.Point(112, 253);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
             this.checkTT.Size = new System.Drawing.Size(82, 19);
@@ -408,7 +411,7 @@
             // 
             // txtfax
             // 
-            this.txtfax.Location = new System.Drawing.Point(445, 159);
+            this.txtfax.Location = new System.Drawing.Point(445, 163);
             this.txtfax.Name = "txtfax";
             this.txtfax.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -420,7 +423,7 @@
             // 
             // txtmasothue
             // 
-            this.txtmasothue.Location = new System.Drawing.Point(114, 159);
+            this.txtmasothue.Location = new System.Drawing.Point(114, 163);
             this.txtmasothue.Name = "txtmasothue";
             this.txtmasothue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -588,12 +591,32 @@
             this.txtsdt.Size = new System.Drawing.Size(231, 20);
             this.txtsdt.TabIndex = 29;
             // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(12, 229);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(66, 13);
+            this.labelControl6.TabIndex = 31;
+            this.labelControl6.Text = "% Chiết Khấu";
+            // 
+            // ckphantram
+            // 
+            this.ckphantram.Location = new System.Drawing.Point(114, 225);
+            this.ckphantram.Name = "ckphantram";
+            this.ckphantram.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ckphantram.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.ckphantram.Size = new System.Drawing.Size(228, 20);
+            this.ckphantram.TabIndex = 32;
+            // 
             // frmThemKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 330);
+            this.ClientSize = new System.Drawing.Size(693, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.ckphantram);
             this.Controls.Add(this.txtsdt);
             this.Controls.Add(this.cbotientra);
             this.Controls.Add(this.labelControl5);
@@ -660,6 +683,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsdt.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ckphantram.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -721,5 +745,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.CalcEdit cbotientra;
         private DevExpress.XtraEditors.TextEdit txtsdt;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.CalcEdit ckphantram;
     }
 }

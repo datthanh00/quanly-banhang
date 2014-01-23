@@ -221,6 +221,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
             loadgridCTHOADON();
             loadGrid_sanpham();
         }
+        public string SCHIETKHAU;
         public void LOAD_TTKH()
         {
             DataRow rowselect = gridKH1.GetFocusedDataRow();
@@ -235,6 +236,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 if (tblayno.Rows.Count > 0)
                 {
                     txtNo.Text = tblayno.Rows[0]["TIENNO"].ToString();
+                    SCHIETKHAU = tblayno.Rows[0]["CHIETKHAU"].ToString();
                     TIENTRATRUOC = Convert.ToInt64(tblayno.Rows[0]["TIENTRATRUOC"].ToString());
                 }
                 else
@@ -2156,6 +2158,43 @@ namespace WindowsFormsApplication1.HoaDonXuat
         private void Panel_filter_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkTT_Validated(object sender, EventArgs e)
+        {
+            if (checkTT.Checked == true)
+            {
+                ckphantram.Text = SCHIETKHAU;
+                ckphantram.Value = Convert.ToDecimal(SCHIETKHAU);
+            }
+            else
+            {
+                ckphantram.Text = "0";
+                ckphantram.Value = 0;
+            }
+                Int64 thanhtien = tienchuack;
+                Double _ckphantram = Convert.ToDouble(ckphantram.Value);
+                if (_ckphantram < 0)
+                {
+                    MessageBox.Show("Chiết khấu không thể nhỏ hơn 0");
+                    _ckphantram = 0;
+                    ckphantram.Value = 0;
+                }
+                Int64 _cktien = Convert.ToInt64(thanhtien * _ckphantram / 100);
+                thanhtien = thanhtien - _cktien;
+                txtthanhtien.Text = thanhtien.ToString();
+                if (CheckGoiDau.Checked == true)
+                {
+                    cbotientra.Text = thanhtien.ToString();
+                }
+                cktien.Value = _cktien;
+                if (cbotientra.Text != "")
+                {
+                    tientra = Convert.ToInt64(cbotientra.Value);
+                    conlai = thanhtien - tientra;
+                    txtconLai.Text = conlai.ToString();
+                }
+           
         }
      
     }

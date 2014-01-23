@@ -160,9 +160,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(138, 466);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(138, 465);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -179,7 +179,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(138, 466);
+            this.navBarControl1.Size = new System.Drawing.Size(138, 465);
             this.navBarControl1.TabIndex = 3;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -242,13 +242,13 @@
             // 
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1175, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1030, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 493);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1175, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1030, 0);
             // 
             // barDockControlLeft
             // 
@@ -259,7 +259,7 @@
             // barDockControlRight
             // 
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1175, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1030, 0);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 493);
             // 
             // barThuTien
@@ -295,7 +295,7 @@
             this.panel_phieuchi.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_phieuchi.Location = new System.Drawing.Point(144, 43);
             this.panel_phieuchi.Name = "panel_phieuchi";
-            this.panel_phieuchi.Size = new System.Drawing.Size(1031, 45);
+            this.panel_phieuchi.Size = new System.Drawing.Size(886, 45);
             this.panel_phieuchi.TabIndex = 19;
             // 
             // simpleButton1
@@ -414,7 +414,7 @@
             this.panel_congno.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_congno.Location = new System.Drawing.Point(144, 0);
             this.panel_congno.Name = "panel_congno";
-            this.panel_congno.Size = new System.Drawing.Size(1031, 43);
+            this.panel_congno.Size = new System.Drawing.Size(886, 43);
             this.panel_congno.TabIndex = 18;
             // 
             // simpleButton2
@@ -468,8 +468,8 @@
             // 
             // 
             this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
-            this.printableComponentLink1.PrintingSystem = this.printingSystem1;
-            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
+            this.printableComponentLink1.PrintingSystem = this.printingSystem2;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem2;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
@@ -499,7 +499,7 @@
             this.panelhoadon.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelhoadon.Location = new System.Drawing.Point(144, 88);
             this.panelhoadon.Name = "panelhoadon";
-            this.panelhoadon.Size = new System.Drawing.Size(1031, 44);
+            this.panelhoadon.Size = new System.Drawing.Size(886, 44);
             this.panelhoadon.TabIndex = 25;
             // 
             // simpleButton3
@@ -593,7 +593,7 @@
             this.gridControl1.Location = new System.Drawing.Point(144, 132);
             this.gridControl1.MainView = this.gridcongnokh;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1031, 361);
+            this.gridControl1.Size = new System.Drawing.Size(886, 361);
             this.gridControl1.TabIndex = 31;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridcongnokh,
@@ -830,7 +830,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 493);
+            this.ClientSize = new System.Drawing.Size(1030, 493);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelhoadon);
             this.Controls.Add(this.panel_phieuchi);
