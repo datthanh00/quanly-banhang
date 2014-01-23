@@ -68,6 +68,7 @@
             this._TENBG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.girdcontrol)).BeginInit();
@@ -249,7 +250,8 @@
             this.gridColumn4,
             this._TENBG,
             this.gridColumn1,
-            this.gridColumn5});
+            this.gridColumn5,
+            this.gridColumn6});
             this.gridViewKHACHHANG.GridControl = this.girdcontrol;
             this.gridViewKHACHHANG.Name = "gridViewKHACHHANG";
             this.gridViewKHACHHANG.OptionsPrint.EnableAppearanceEvenRow = true;
@@ -414,6 +416,13 @@
             this.gridColumn5.SummaryItem.DisplayFormat = resources.GetString("gridColumn5.SummaryItem.DisplayFormat");
             this.gridColumn5.SummaryItem.SummaryType = DevExpress.Data.SummaryItemType.Sum;
             // 
+            // gridColumn6
+            // 
+            resources.ApplyResources(this.gridColumn6, "gridColumn6");
+            this.gridColumn6.FieldName = "CHIETKHAU";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            // 
             // dxErrorProvider1
             // 
             this.dxErrorProvider1.ContainerControl = this;
@@ -480,5 +489,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }

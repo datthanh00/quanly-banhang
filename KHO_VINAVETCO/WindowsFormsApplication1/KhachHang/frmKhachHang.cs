@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
 
         }
         //private bool thoat = false;
-        string sma, sten, smakv, smanv, smabg, sdiachi, ssoTK, snganhang, smasothue, sfax, syahoo, snickskype, stinhtrang,stientratruoc;
+        string sma, sten, smakv, smanv, smabg, sdiachi, ssoTK, snganhang, smasothue, sfax, syahoo, snickskype, stinhtrang,stientratruoc,schietkhau;
         public string stennhanvien, smanhanvien; 
         DTO DTO = new DTO();
         CTL ctl= new CTL();
@@ -145,7 +145,7 @@ namespace WindowsFormsApplication1
 
                     sten = "";
                     stientratruoc = "";
-
+                    schietkhau = "";
                     smakv = "";
 
                     ssoTK = "";
@@ -201,6 +201,7 @@ namespace WindowsFormsApplication1
                     snickskype = "";
                     stinhtrang = "";
                     stientratruoc = "";
+                    schietkhau = "";
                 }
             }
            
@@ -292,6 +293,7 @@ namespace WindowsFormsApplication1
                 smanv= dtr["MANV"].ToString();
                 smabg = dtr["MABG"].ToString();
                 stientratruoc = dtr["TIENTRATRUOC"].ToString();
+                schietkhau = dtr["CHIETKHAU"].ToString();
             }
             catch (Exception ex)
             {
@@ -328,6 +330,7 @@ namespace WindowsFormsApplication1
             sua.SKYPE = snickskype;
             sua.TINHTRANG = stinhtrang;
             sua.TIENTRATRUOC = stientratruoc;
+            sua.CHIETKHAU = schietkhau;
             if (sma == null||sma =="")
             {
                 if (iNgonNgu == 0)
@@ -410,6 +413,7 @@ namespace WindowsFormsApplication1
                     sua.SKYPE = snickskype;
                     sua.TINHTRANG = stinhtrang;
                     sua.TIENTRATRUOC = stientratruoc;
+                    sua.CHIETKHAU = schietkhau;
                     sua.ShowDialog();
                     
                     LOADDANHSACHKHACHHANG();

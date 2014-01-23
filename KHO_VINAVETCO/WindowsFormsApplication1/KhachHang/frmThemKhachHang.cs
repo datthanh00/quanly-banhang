@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
         public string MACHUYEN;
         DataTable dt = new DataTable();
         public string Nhan;
-        public string TenKH, sMaKV, sMaNV, sMaBG, sTenKV, DIACHI, SDT, SOTK, NGANHANG, MASOTHUE, FAX, YAHOO, WEBSITE, SKYPE, TINHTRANG,TIENTRATRUOC;
+        public string TenKH, sMaKV, sMaNV, sMaBG, sTenKV, DIACHI, SDT, SOTK, NGANHANG, MASOTHUE, FAX, YAHOO, WEBSITE, SKYPE, TINHTRANG,TIENTRATRUOC,CHIETKHAU;
         public int kiemtra;
         public void loadma()
         {
@@ -105,6 +105,12 @@ namespace WindowsFormsApplication1
                         txtdiachi.Focus();
                         return;
                     }
+                    else if (Convert.ToDecimal(ckphantram.Value)<0)
+                    {
+                        XtraMessageBox.Show("Chiết khấu không được nhỏ hơn 0");
+                        ckphantram.Focus();
+                        return;
+                    }
 
                     if (PublicVariable.isBANGGIA)
                     {
@@ -144,7 +150,7 @@ namespace WindowsFormsApplication1
                         DTO.YAHOO = txtyahoo.Text;
                         DTO.SKYPE = txtnickskype.Text;
                         DTO.TINHTRANG = KT;
-
+                        DTO.CKTIEN = ckphantram.Value.ToString();
                         try
                         {
                             CTRL.insertKhachHang(DTO);
@@ -183,6 +189,7 @@ namespace WindowsFormsApplication1
                         DTO.YAHOO = txtyahoo.Text;
                         DTO.SKYPE = txtnickskype.Text;
                         DTO.TINHTRANG = KT;
+                        DTO.CKTIEN = ckphantram.Value.ToString();
                         // CTRL.insertKhachHang(DTO);
                         CTRL.updateKhachHang(DTO);
                         XtraMessageBox.Show("Bạn Đã Sửa Thành Công");
@@ -427,12 +434,15 @@ namespace WindowsFormsApplication1
                 }
                 txtsotaikhan.Text = SOTK;
                 txtnickskype.Text = SKYPE;
+                ckphantram.Value =Convert.ToDecimal(CHIETKHAU);
                 
             }
             else
             {
                 loadma();
                 loadgirdlookupKV();
+                ckphantram.Value = 0;
+                
             }
 
 
