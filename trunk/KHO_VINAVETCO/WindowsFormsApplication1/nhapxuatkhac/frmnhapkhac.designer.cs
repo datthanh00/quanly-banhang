@@ -164,6 +164,7 @@
             this.gridColumn40 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridViewMATHANG = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn51 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -186,7 +187,6 @@
             this.xoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.gridColumn33 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.panelContainer1.SuspendLayout();
             this.dockPanel2.SuspendLayout();
@@ -446,14 +446,14 @@
             this.panel_filter.Location = new System.Drawing.Point(144, 0);
             this.panel_filter.Name = "panel_filter";
             this.panel_filter.OriginalSize = new System.Drawing.Size(200, 77);
-            this.panel_filter.Size = new System.Drawing.Size(1117, 77);
+            this.panel_filter.Size = new System.Drawing.Size(886, 77);
             // 
             // dockPanel3_Container
             // 
             this.dockPanel3_Container.Controls.Add(this.panelControl10);
             this.dockPanel3_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel3_Container.Name = "dockPanel3_Container";
-            this.dockPanel3_Container.Size = new System.Drawing.Size(1111, 49);
+            this.dockPanel3_Container.Size = new System.Drawing.Size(880, 49);
             this.dockPanel3_Container.TabIndex = 0;
             // 
             // panelControl10
@@ -465,7 +465,7 @@
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl10.Location = new System.Drawing.Point(0, 0);
             this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(1111, 39);
+            this.panelControl10.Size = new System.Drawing.Size(880, 39);
             this.panelControl10.TabIndex = 2;
             // 
             // pnThangNam
@@ -565,7 +565,7 @@
             this.panel_info1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_info1.Location = new System.Drawing.Point(144, 126);
             this.panel_info1.Name = "panel_info1";
-            this.panel_info1.Size = new System.Drawing.Size(1117, 163);
+            this.panel_info1.Size = new System.Drawing.Size(886, 163);
             this.panel_info1.TabIndex = 9;
             // 
             // panel_info
@@ -575,7 +575,7 @@
             this.panel_info.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_info.Location = new System.Drawing.Point(2, 2);
             this.panel_info.Name = "panel_info";
-            this.panel_info.Size = new System.Drawing.Size(1113, 159);
+            this.panel_info.Size = new System.Drawing.Size(882, 159);
             this.panel_info.TabIndex = 1;
             this.panel_info.Text = "Thông Tin Nhà Cung Cấp";
             // 
@@ -612,7 +612,7 @@
             this.panelControl5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl5.Location = new System.Drawing.Point(2, 22);
             this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(1099, 135);
+            this.panelControl5.Size = new System.Drawing.Size(868, 135);
             this.panelControl5.TabIndex = 3;
             // 
             // txtconLai
@@ -947,7 +947,7 @@
             // 
             this.panelControl4.Controls.Add(this.splitterControl1);
             this.panelControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelControl4.Location = new System.Drawing.Point(1101, 22);
+            this.panelControl4.Location = new System.Drawing.Point(870, 22);
             this.panelControl4.Name = "panelControl4";
             this.panelControl4.Size = new System.Drawing.Size(10, 135);
             this.panelControl4.TabIndex = 7;
@@ -969,7 +969,7 @@
             this.panel_create.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_create.Location = new System.Drawing.Point(144, 77);
             this.panel_create.Name = "panel_create";
-            this.panel_create.Size = new System.Drawing.Size(1117, 49);
+            this.panel_create.Size = new System.Drawing.Size(886, 49);
             this.panel_create.TabIndex = 2;
             // 
             // btXuatDuLieu
@@ -1607,6 +1607,7 @@
             this.gridViewPHIEUNHAP.OptionsView.ShowFooter = true;
             this.gridViewPHIEUNHAP.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridViewPHIEUNHAP.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn9, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn12, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gridViewPHIEUNHAP.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
             // 
@@ -1731,7 +1732,7 @@
             this.gridViewMATHANG.OptionsView.ShowFooter = true;
             this.gridViewMATHANG.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridViewMATHANG.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn24, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn24, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn26, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn52, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridViewMATHANG.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
@@ -1742,6 +1743,12 @@
             this.gridColumn24.FieldName = "NGAYNHAP";
             this.gridColumn24.Name = "gridColumn24";
             this.gridColumn24.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            // 
+            // gridColumn33
+            // 
+            this.gridColumn33.Caption = "MAHDN";
+            this.gridColumn33.FieldName = "MAHDN";
+            this.gridColumn33.Name = "gridColumn33";
             // 
             // gridColumn26
             // 
@@ -1941,17 +1948,11 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
-            // gridColumn33
-            // 
-            this.gridColumn33.Caption = "MAHDN";
-            this.gridColumn33.FieldName = "MAHDN";
-            this.gridColumn33.Name = "gridColumn33";
-            // 
             // frmnhapkhac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 521);
+            this.ClientSize = new System.Drawing.Size(1030, 521);
             this.Controls.Add(this.panel_grid2);
             this.Controls.Add(this.panel_grid);
             this.Controls.Add(this.panel_info1);

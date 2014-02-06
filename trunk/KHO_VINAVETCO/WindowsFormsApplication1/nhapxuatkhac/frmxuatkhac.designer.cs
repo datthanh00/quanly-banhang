@@ -279,7 +279,7 @@
             this.panel_tool.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_tool.Location = new System.Drawing.Point(143, 69);
             this.panel_tool.Name = "panel_tool";
-            this.panel_tool.Size = new System.Drawing.Size(1119, 47);
+            this.panel_tool.Size = new System.Drawing.Size(887, 47);
             this.panel_tool.TabIndex = 0;
             // 
             // simpleButton4
@@ -507,13 +507,13 @@
             // 
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1262, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1030, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 521);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1262, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1030, 0);
             // 
             // barDockControlLeft
             // 
@@ -524,7 +524,7 @@
             // barDockControlRight
             // 
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1262, 0);
+            this.barDockControlRight.Location = new System.Drawing.Point(1030, 0);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 521);
             // 
             // barButtonItem1
@@ -541,14 +541,14 @@
             this.Panel_filter.Location = new System.Drawing.Point(143, 0);
             this.Panel_filter.Name = "Panel_filter";
             this.Panel_filter.OriginalSize = new System.Drawing.Size(200, 69);
-            this.Panel_filter.Size = new System.Drawing.Size(1119, 69);
+            this.Panel_filter.Size = new System.Drawing.Size(887, 69);
             // 
             // dockPanel2_Container
             // 
             this.dockPanel2_Container.Controls.Add(this.panelControl10);
             this.dockPanel2_Container.Location = new System.Drawing.Point(3, 25);
             this.dockPanel2_Container.Name = "dockPanel2_Container";
-            this.dockPanel2_Container.Size = new System.Drawing.Size(1113, 41);
+            this.dockPanel2_Container.Size = new System.Drawing.Size(881, 41);
             this.dockPanel2_Container.TabIndex = 0;
             // 
             // panelControl10
@@ -560,7 +560,7 @@
             this.panelControl10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl10.Location = new System.Drawing.Point(0, 0);
             this.panelControl10.Name = "panelControl10";
-            this.panelControl10.Size = new System.Drawing.Size(1113, 39);
+            this.panelControl10.Size = new System.Drawing.Size(881, 39);
             this.panelControl10.TabIndex = 8;
             // 
             // pnThangNam
@@ -663,7 +663,7 @@
             this.panel_info.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_info.Location = new System.Drawing.Point(143, 116);
             this.panel_info.Name = "panel_info";
-            this.panel_info.Size = new System.Drawing.Size(1119, 161);
+            this.panel_info.Size = new System.Drawing.Size(887, 161);
             this.panel_info.TabIndex = 5;
             // 
             // groupControl1
@@ -697,7 +697,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(2, 2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1115, 157);
+            this.groupControl1.Size = new System.Drawing.Size(883, 157);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Thông Tin Hóa Đơn";
             // 
@@ -1612,6 +1612,7 @@
             this.gridViewPHIEUXUAT.OptionsView.ShowFooter = true;
             this.gridViewPHIEUXUAT.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridViewPHIEUXUAT.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn9, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn19, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gridViewPHIEUXUAT.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
             // 
@@ -1739,7 +1740,7 @@
             this.gridViewMATHANG.OptionsView.ShowFooter = true;
             this.gridViewMATHANG.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridViewMATHANG.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn27, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn27, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn29, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn57, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridViewMATHANG.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
@@ -1984,7 +1985,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 521);
+            this.ClientSize = new System.Drawing.Size(1030, 521);
             this.Controls.Add(this.panel_Grid);
             this.Controls.Add(this.panel_Create);
             this.Controls.Add(this.panel_info);

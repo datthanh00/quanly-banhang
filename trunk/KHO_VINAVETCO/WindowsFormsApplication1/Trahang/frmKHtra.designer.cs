@@ -73,6 +73,7 @@
             this.panel_info = new DevExpress.XtraEditors.PanelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             this.txtconLai = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.txtthanhtien = new DevExpress.XtraEditors.CalcEdit();
@@ -193,7 +194,6 @@
             this.xoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printingSystem1 = new DevExpress.XtraPrinting.PrintingSystem(this.components);
             this.printableComponentLink1 = new DevExpress.XtraPrinting.PrintableComponentLink(this.components);
-            this.checkTT = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.panel_tool)).BeginInit();
             this.panel_tool.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
@@ -224,6 +224,7 @@
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
             this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).BeginInit();
@@ -273,7 +274,6 @@
             this.contextMenuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_tool
@@ -727,6 +727,15 @@
             this.panelControl5.Name = "panelControl5";
             this.panelControl5.Size = new System.Drawing.Size(879, 139);
             this.panelControl5.TabIndex = 127;
+            // 
+            // checkTT
+            // 
+            this.checkTT.Location = new System.Drawing.Point(264, 115);
+            this.checkTT.Name = "checkTT";
+            this.checkTT.Properties.Caption = "CK";
+            this.checkTT.Size = new System.Drawing.Size(40, 19);
+            this.checkTT.TabIndex = 203;
+            this.checkTT.Validated += new System.EventHandler(this.checkTT_Validated);
             // 
             // txtconLai
             // 
@@ -1673,7 +1682,7 @@
             this.gridViewSANPHAM.OptionsView.ShowFooter = true;
             this.gridViewSANPHAM.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridViewSANPHAM.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn28, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn28, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn30, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn58, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridViewSANPHAM.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
@@ -1855,6 +1864,7 @@
             this.gridViewPHIEUTRA.OptionsView.ShowFooter = true;
             this.gridViewPHIEUTRA.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.gridViewPHIEUTRA.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn9, DevExpress.Data.ColumnSortOrder.Descending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn19, DevExpress.Data.ColumnSortOrder.Descending)});
             this.gridViewPHIEUTRA.ShowGridMenu += new DevExpress.XtraGrid.Views.Grid.GridMenuEventHandler(this.gridView4_ShowGridMenu);
             // 
@@ -1990,15 +2000,6 @@
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
-            // checkTT
-            // 
-            this.checkTT.Location = new System.Drawing.Point(264, 115);
-            this.checkTT.Name = "checkTT";
-            this.checkTT.Properties.Caption = "CK";
-            this.checkTT.Size = new System.Drawing.Size(40, 19);
-            this.checkTT.TabIndex = 203;
-            this.checkTT.Validated += new System.EventHandler(this.checkTT_Validated);
-            // 
             // frmKHtra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2050,6 +2051,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
             this.panelControl5.ResumeLayout(false);
             this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtconLai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtthanhtien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbotientra.Properties)).EndInit();
@@ -2099,7 +2101,6 @@
             this.contextMenuStrip2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkTT.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
