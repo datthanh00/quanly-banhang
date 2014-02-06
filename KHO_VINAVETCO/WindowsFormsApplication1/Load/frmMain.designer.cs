@@ -253,7 +253,7 @@
             this.repositoryItemComboBox3});
             this.ribbon.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ribbon.SelectedPage = this.ribChucNang;
-            this.ribbon.Size = new System.Drawing.Size(1092, 148);
+            this.ribbon.Size = new System.Drawing.Size(1028, 148);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             this.ribbon.Toolbar.ItemLinks.Add(this.barSubItem1);
             // 
@@ -1031,7 +1031,7 @@
             this.ribbonStatusBar.Location = new System.Drawing.Point(0, 452);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1092, 23);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1028, 23);
             // 
             // clientPanel
             // 
@@ -1040,7 +1040,7 @@
             this.clientPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.clientPanel.Location = new System.Drawing.Point(0, 148);
             this.clientPanel.Name = "clientPanel";
-            this.clientPanel.Size = new System.Drawing.Size(1092, 304);
+            this.clientPanel.Size = new System.Drawing.Size(1028, 304);
             this.clientPanel.TabIndex = 2;
             // 
             // tabControl12
@@ -1053,7 +1053,7 @@
             this.tabControl12.Name = "tabControl12";
             this.tabControl12.SelectedTabFont = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.tabControl12.SelectedTabIndex = -1;
-            this.tabControl12.Size = new System.Drawing.Size(1092, 304);
+            this.tabControl12.Size = new System.Drawing.Size(1028, 304);
             this.tabControl12.Style = DevComponents.DotNetBar.eTabStripStyle.Office2007Document;
             this.tabControl12.TabIndex = 5;
             this.tabControl12.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
@@ -1154,7 +1154,7 @@
             // 
             // cbkho
             // 
-            this.cbkho.Location = new System.Drawing.Point(893, 92);
+            this.cbkho.Location = new System.Drawing.Point(840, 107);
             this.cbkho.Name = "cbkho";
             this.cbkho.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -1193,7 +1193,7 @@
             // 
             // lbkho
             // 
-            this.lbkho.Location = new System.Drawing.Point(840, 96);
+            this.lbkho.Location = new System.Drawing.Point(898, 85);
             this.lbkho.Name = "lbkho";
             this.lbkho.Size = new System.Drawing.Size(46, 13);
             this.lbkho.TabIndex = 27;
@@ -1204,7 +1204,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1092, 475);
+            this.ClientSize = new System.Drawing.Size(1028, 475);
             this.Controls.Add(this.clientPanel);
             this.Controls.Add(this.cbkho);
             this.Controls.Add(this.ribbonStatusBar);
