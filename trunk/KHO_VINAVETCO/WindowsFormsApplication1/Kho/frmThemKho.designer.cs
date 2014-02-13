@@ -70,7 +70,7 @@
             // 
             // lbMakho
             // 
-            this.lbMakho.Location = new System.Drawing.Point(8, 57);
+            this.lbMakho.Location = new System.Drawing.Point(8, 56);
             this.lbMakho.Name = "lbMakho";
             this.lbMakho.Size = new System.Drawing.Size(35, 13);
             this.lbMakho.TabIndex = 0;
@@ -78,7 +78,7 @@
             // 
             // lbTenkho
             // 
-            this.lbTenkho.Location = new System.Drawing.Point(8, 26);
+            this.lbTenkho.Location = new System.Drawing.Point(8, 25);
             this.lbTenkho.Name = "lbTenkho";
             this.lbTenkho.Size = new System.Drawing.Size(39, 13);
             this.lbTenkho.TabIndex = 0;
@@ -128,7 +128,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(8, 208);
+            this.labelControl3.Location = new System.Drawing.Point(8, 207);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(53, 13);
             this.labelControl3.TabIndex = 0;
@@ -136,7 +136,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(87, 230);
+            this.labelControl2.Location = new System.Drawing.Point(87, 229);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(336, 13);
             this.labelControl2.TabIndex = 0;
@@ -148,7 +148,7 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl1.Appearance.Options.UseBackColor = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(67, 26);
+            this.labelControl1.Location = new System.Drawing.Point(67, 25);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(14, 13);
             this.labelControl1.TabIndex = 0;
@@ -160,7 +160,7 @@
             this.checkTT.Location = new System.Drawing.Point(85, 259);
             this.checkTT.Name = "checkTT";
             this.checkTT.Properties.Caption = "Kích Hoạt";
-            this.checkTT.Size = new System.Drawing.Size(82, 19);
+            this.checkTT.Size = new System.Drawing.Size(82, 18);
             this.checkTT.TabIndex = 9;
             this.checkTT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.checkTT_KeyPress);
             // 
@@ -170,7 +170,7 @@
             this.labelControl19.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl19.Appearance.Options.UseBackColor = true;
             this.labelControl19.Appearance.Options.UseForeColor = true;
-            this.labelControl19.Location = new System.Drawing.Point(40, 283);
+            this.labelControl19.Location = new System.Drawing.Point(40, 282);
             this.labelControl19.Name = "labelControl19";
             this.labelControl19.Size = new System.Drawing.Size(14, 13);
             this.labelControl19.TabIndex = 0;
@@ -178,7 +178,7 @@
             // 
             // lbchuy
             // 
-            this.lbchuy.Location = new System.Drawing.Point(63, 283);
+            this.lbchuy.Location = new System.Drawing.Point(63, 282);
             this.lbchuy.Name = "lbchuy";
             this.lbchuy.Size = new System.Drawing.Size(246, 13);
             this.lbchuy.TabIndex = 0;
@@ -190,7 +190,7 @@
             this.labelControl13.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl13.Appearance.Options.UseBackColor = true;
             this.labelControl13.Appearance.Options.UseForeColor = true;
-            this.labelControl13.Location = new System.Drawing.Point(65, 258);
+            this.labelControl13.Location = new System.Drawing.Point(65, 257);
             this.labelControl13.Name = "labelControl13";
             this.labelControl13.Size = new System.Drawing.Size(14, 13);
             this.labelControl13.TabIndex = 0;
@@ -202,7 +202,7 @@
             this.labelControl11.Appearance.ForeColor = System.Drawing.Color.Red;
             this.labelControl11.Appearance.Options.UseBackColor = true;
             this.labelControl11.Appearance.Options.UseForeColor = true;
-            this.labelControl11.Location = new System.Drawing.Point(63, 57);
+            this.labelControl11.Location = new System.Drawing.Point(63, 56);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(14, 13);
             this.labelControl11.TabIndex = 0;
@@ -218,7 +218,7 @@
             // 
             // lbnguoilienhe
             // 
-            this.lbnguoilienhe.Location = new System.Drawing.Point(8, 139);
+            this.lbnguoilienhe.Location = new System.Drawing.Point(8, 138);
             this.lbnguoilienhe.Name = "lbnguoilienhe";
             this.lbnguoilienhe.Size = new System.Drawing.Size(66, 13);
             this.lbnguoilienhe.TabIndex = 0;
@@ -234,7 +234,7 @@
             // 
             // lbtinhtrang
             // 
-            this.lbtinhtrang.Location = new System.Drawing.Point(8, 258);
+            this.lbtinhtrang.Location = new System.Drawing.Point(8, 257);
             this.lbtinhtrang.Name = "lbtinhtrang";
             this.lbtinhtrang.Size = new System.Drawing.Size(51, 13);
             this.lbtinhtrang.TabIndex = 0;
@@ -242,7 +242,7 @@
             // 
             // lbfax
             // 
-            this.lbfax.Location = new System.Drawing.Point(8, 169);
+            this.lbfax.Location = new System.Drawing.Point(8, 168);
             this.lbfax.Name = "lbfax";
             this.lbfax.Size = new System.Drawing.Size(18, 13);
             this.lbfax.TabIndex = 0;
@@ -251,7 +251,7 @@
             // 
             // lbsodtdd
             // 
-            this.lbsodtdd.Location = new System.Drawing.Point(8, 111);
+            this.lbsodtdd.Location = new System.Drawing.Point(8, 110);
             this.lbsodtdd.Name = "lbsodtdd";
             this.lbsodtdd.Size = new System.Drawing.Size(44, 13);
             this.lbsodtdd.TabIndex = 0;
@@ -275,7 +275,7 @@
             // 
             // lbdiachi
             // 
-            this.lbdiachi.Location = new System.Drawing.Point(204, 57);
+            this.lbdiachi.Location = new System.Drawing.Point(204, 56);
             this.lbdiachi.Name = "lbdiachi";
             this.lbdiachi.Size = new System.Drawing.Size(34, 13);
             this.lbdiachi.TabIndex = 0;
@@ -291,7 +291,7 @@
             // 
             // lbsosdtban
             // 
-            this.lbsosdtban.Location = new System.Drawing.Point(8, 82);
+            this.lbsosdtban.Location = new System.Drawing.Point(8, 81);
             this.lbsosdtban.Name = "lbsosdtban";
             this.lbsosdtban.Size = new System.Drawing.Size(50, 13);
             this.lbsosdtban.TabIndex = 0;
