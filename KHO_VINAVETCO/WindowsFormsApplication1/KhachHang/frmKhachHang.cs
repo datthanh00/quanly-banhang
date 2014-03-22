@@ -93,7 +93,7 @@ namespace WindowsFormsApplication1
 
         }
         //private bool thoat = false;
-        string sma, sten, smakv, smanv, smabg, sdiachi, ssoTK, snganhang, smasothue, sfax, syahoo, snickskype, stinhtrang,stientratruoc,schietkhau;
+        string sma, sten,sbidanh, smakv, smanv, smabg, sdiachi, ssoTK, snganhang, smasothue, sfax, syahoo, snickskype, stinhtrang,stientratruoc,schietkhau;
         public string stennhanvien, smanhanvien; 
         DTO DTO = new DTO();
         CTL ctl= new CTL();
@@ -144,6 +144,7 @@ namespace WindowsFormsApplication1
                     sma = "";
 
                     sten = "";
+                    sbidanh = "";
                     stientratruoc = "";
                     schietkhau = "";
                     smakv = "";
@@ -187,7 +188,7 @@ namespace WindowsFormsApplication1
                     sma = "";
 
                     sten = "";
-
+                    sbidanh = "";
                     smakv = "";
 
                     ssoTK = "";
@@ -277,7 +278,7 @@ namespace WindowsFormsApplication1
                 sma = dtr["MAKH"].ToString();
                 
                 sten = dtr["TENKH"].ToString();
-                
+                sbidanh = dtr["BIDANH"].ToString();
                 smakv = dtr["MAKV"].ToString();
 
                 ssoTK = dtr["SOTAIKHOAN"].ToString();
@@ -316,6 +317,7 @@ namespace WindowsFormsApplication1
             sua.kiemtra = 0;
             sua.MACHUYEN = sma;
             sua.TenKH = sten;
+            sua.BiDanh = sbidanh;
             sua.sMaKV = smakv;
             sua.sMaNV = smanv;
             sua.sMaBG = smabg;
@@ -399,6 +401,7 @@ namespace WindowsFormsApplication1
                     sua.iNgonNgu = iNgonNgu; sua.kiemtra = 0;
                     sua.MACHUYEN = sma;
                     sua.TenKH = sten;
+                    sua.BiDanh = sbidanh;
                     sua.sMaKV = smakv;
                     sua.sMaNV = smanv;
                     sua.sMaBG = smabg;

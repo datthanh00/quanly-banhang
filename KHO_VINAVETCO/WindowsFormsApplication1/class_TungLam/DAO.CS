@@ -11,8 +11,8 @@ namespace WindowsFormsApplication1
         
         public void insertKhachHang(DTO dto)
         {
-            string SQL = " \r\nGO\r\n insert into KHACHHANG(MAKH,MAKV,MANV,MABG,MAKHO,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG,CONGNO,TIENTRATRUOC,CHIETKHAU)"
-            + " values('" + dto.MAKH + "','" + dto.MAKV + "','" + dto.MANV + "','" + dto.MABG + "','" + PublicVariable.MAKHO + "',N'" + dto.TENKH + "','" + dto.SOTAIKHOAN + "',N'" + dto.NGANHANG + "','" + dto.MASOTHUE + "',N'" + dto.DIACHI + "',N'" + dto.SDT + "','" + dto.FAX + "','" + dto.WEBSITE + "','" + dto.YAHOO + "','" + dto.SKYPE + "','" + dto.TINHTRANG + "',0,0," + dto.CKTIEN + ")";
+            string SQL = " \r\nGO\r\n insert into KHACHHANG(MAKH,MAKV,MANV,MABG,MAKHO,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,DIACHI,SDT,FAX,WEBSITE,YAHOO,SKYPE,TINHTRANG,CONGNO,TIENTRATRUOC,CHIETKHAU,BIDANH)"
+            + " values('" + dto.MAKH + "','" + dto.MAKV + "','" + dto.MANV + "','" + dto.MABG + "','" + PublicVariable.MAKHO + "',N'" + dto.TENKH + "','" + dto.SOTAIKHOAN + "',N'" + dto.NGANHANG + "','" + dto.MASOTHUE + "',N'" + dto.DIACHI + "',N'" + dto.SDT + "','" + dto.FAX + "','" + dto.WEBSITE + "','" + dto.YAHOO + "','" + dto.SKYPE + "','" + dto.TINHTRANG + "',0,0," + dto.CKTIEN + ",'" + dto.BIDANH + "')";
 
             SQL = SQL + "\r\nGO\r\n INSERT INTO TONDAUCONGNOKH([MAKH],[CONGNO])VALUES ('" + dto.MAKH + "',0)";
             executeNonQuery2(SQL);
@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
 
         public void updateKhachHang(DTO dto)
         {
-            string SQL = "update KHACHHANG set MAKH='" + dto.MAKH + "' ,MABG='" + dto.MABG + "',MANV='" + dto.MANV + "',MAKV='" + dto.MAKV + "',TENKH=N'" + dto.TENKH + "',SOTAIKHOAN='" + dto.SOTAIKHOAN + "',NGANHANG=N'" + dto.NGANHANG + "',MASOTHUE='" + dto.MASOTHUE + "',DIACHI=N'" + dto.DIACHI + "',SDT=N'" + dto.SDT + "',FAX='" + dto.FAX + "',WEBSITE='" + dto.WEBSITE + "',YAHOO='" + dto.YAHOO + "',SKYPE='" + dto.SKYPE + "',TINHTRANG='" + dto.TINHTRANG + "',CHIETKHAU=" + dto.CKTIEN + " where 	(MAKH='" + dto.MAKH + "')";
+            string SQL = "update KHACHHANG set MAKH='" + dto.MAKH + "' ,MABG='" + dto.MABG + "',MANV='" + dto.MANV + "',MAKV='" + dto.MAKV + "',TENKH=N'" + dto.TENKH + "',BIDANH=N'" + dto.BIDANH + "',SOTAIKHOAN='" + dto.SOTAIKHOAN + "',NGANHANG=N'" + dto.NGANHANG + "',MASOTHUE='" + dto.MASOTHUE + "',DIACHI=N'" + dto.DIACHI + "',SDT=N'" + dto.SDT + "',FAX='" + dto.FAX + "',WEBSITE='" + dto.WEBSITE + "',YAHOO='" + dto.YAHOO + "',SKYPE='" + dto.SKYPE + "',TINHTRANG='" + dto.TINHTRANG + "',CHIETKHAU=" + dto.CKTIEN + " where 	(MAKH='" + dto.MAKH + "')";
             executeNonQuery(SQL);
         }
         public void INSERTKHUVUC(DTO dto)
@@ -559,7 +559,7 @@ namespace WindowsFormsApplication1
         }
         public DataTable GETDANHSACHKH()
         {
-            string SQL = "select 	MAKH,TENKV,KHACHHANG.MAKV,KHACHHANG.MANV,TENNV,BANGGIA.MABG,TENBG,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,KHACHHANG.DIACHI,KHACHHANG.SDT,KHACHHANG.FAX,KHACHHANG.WEBSITE,KHACHHANG.YAHOO,KHACHHANG.SKYPE,KHACHHANG.TINHTRANG,TIENTRATRUOC,CONGNO,0 AS SLIN, CHIETKHAU from  KHACHHANG,KHUVUC,NHANVIEN,BANGGIA where KHACHHANG.MABG=BANGGIA.MABG AND KHACHHANG.MAKV=KHUVUC.MAKV AND KHACHHANG.MANV=NHANVIEN.MANV AND KHACHHANG.MAKHO='" + PublicVariable.MAKHO + "' order by TENKH ASC";
+            string SQL = "select 	MAKH,TENKV,KHACHHANG.MAKV,BIDANH,KHACHHANG.MANV,TENNV,BANGGIA.MABG,TENBG,TENKH,SOTAIKHOAN,NGANHANG,MASOTHUE,KHACHHANG.DIACHI,KHACHHANG.SDT,KHACHHANG.FAX,KHACHHANG.WEBSITE,KHACHHANG.YAHOO,KHACHHANG.SKYPE,KHACHHANG.TINHTRANG,TIENTRATRUOC,CONGNO,0 AS SLIN, CHIETKHAU from  KHACHHANG,KHUVUC,NHANVIEN,BANGGIA where KHACHHANG.MABG=BANGGIA.MABG AND KHACHHANG.MAKV=KHUVUC.MAKV AND KHACHHANG.MANV=NHANVIEN.MANV AND KHACHHANG.MAKHO='" + PublicVariable.MAKHO + "' order by TENKH ASC";
             return GET_DATA(SQL);
         }
         public DataTable GETDANHSACHKH(string MAKH)

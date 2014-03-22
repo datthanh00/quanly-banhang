@@ -135,6 +135,13 @@ namespace WindowsFormsApplication1
             get { return _TENKH; }
             set { _TENKH = value; }
         }
+        private string _BIDANH;
+
+        public string BIDANH
+        {
+            get { return _BIDANH; }
+            set { _BIDANH = value; }
+        }
         private string _SOTAIKHOAN;
 
         public string SOTAIKHOAN

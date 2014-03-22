@@ -70,6 +70,7 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dxErrorProvider1 = new DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider(this.components);
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.girdcontrol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewKHACHHANG)).BeginInit();
@@ -251,7 +252,8 @@
             this._TENBG,
             this.gridColumn1,
             this.gridColumn5,
-            this.gridColumn6});
+            this.gridColumn6,
+            this.gridColumn7});
             this.gridViewKHACHHANG.GridControl = this.girdcontrol;
             this.gridViewKHACHHANG.Name = "gridViewKHACHHANG";
             this.gridViewKHACHHANG.OptionsPrint.EnableAppearanceEvenRow = true;
@@ -427,6 +429,12 @@
             // 
             this.dxErrorProvider1.ContainerControl = this;
             // 
+            // gridColumn7
+            // 
+            resources.ApplyResources(this.gridColumn7, "gridColumn7");
+            this.gridColumn7.FieldName = "BIDANH";
+            this.gridColumn7.Name = "gridColumn7";
+            // 
             // frmKhachHang
             // 
             resources.ApplyResources(this, "$this");
@@ -490,5 +498,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
     }
 }
