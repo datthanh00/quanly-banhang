@@ -38,7 +38,7 @@ namespace WindowsFormsApplication1
         public string MACHUYEN;
         DataTable dt = new DataTable();
         public string Nhan;
-        public string TenKH, sMaKV, sMaNV, sMaBG, sTenKV, DIACHI, SDT, SOTK, NGANHANG, MASOTHUE, FAX, YAHOO, WEBSITE, SKYPE, TINHTRANG,TIENTRATRUOC,CHIETKHAU;
+        public string TenKH,BiDanh, sMaKV, sMaNV, sMaBG, sTenKV, DIACHI, SDT, SOTK, NGANHANG, MASOTHUE, FAX, YAHOO, WEBSITE, SKYPE, TINHTRANG,TIENTRATRUOC,CHIETKHAU;
         public int kiemtra;
         public void loadma()
         {
@@ -139,6 +139,7 @@ namespace WindowsFormsApplication1
                         DTO.MABG = sMaBG;
                     
                         DTO.TENKH = txttenkh.Text;
+                        DTO.BIDANH = txtbidanh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
                         DTO.MASOTHUE = txtmasothue.Text;
@@ -177,6 +178,7 @@ namespace WindowsFormsApplication1
                         DTO.MABG = sMaBG;
                     
                         DTO.TENKH = txttenkh.Text;
+                        DTO.BIDANH = txtbidanh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
                         DTO.MASOTHUE = txtmasothue.Text;
@@ -251,6 +253,7 @@ namespace WindowsFormsApplication1
                         DTO.MANV = sMaNV;
                         DTO.MABG = sMaBG;
                         DTO.TENKH = txttenkh.Text;
+                        DTO.BIDANH = txtbidanh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
                         DTO.MASOTHUE = txtmasothue.Text;
@@ -284,6 +287,7 @@ namespace WindowsFormsApplication1
                         DTO.MANV = sMaNV;
                         DTO.MABG = sMaBG;
                         DTO.TENKH = txttenkh.Text;
+                        DTO.BIDANH = txtbidanh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
                         DTO.MASOTHUE = txtmasothue.Text;
@@ -412,6 +416,8 @@ namespace WindowsFormsApplication1
                 loadgirdlookupKV();
                 txtmakh.Text = MACHUYEN;
                 txttenkh.Text = TenKH;
+                txtbidanh.Text = BiDanh;
+                DTO.BIDANH = txtbidanh.Text;
                 cmbtenkhuvuc.Text = sMaKV;
                 cmbtennhanvien.Text = sMaNV;
                

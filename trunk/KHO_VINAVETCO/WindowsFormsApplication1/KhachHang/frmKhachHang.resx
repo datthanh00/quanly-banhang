@@ -120,6 +120,27 @@
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="barThem.Caption" xml:space="preserve">
+    <value>&amp;Thêm</value>
+  </data>
+  <data name="barXoa.Caption" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="barSua.Caption" xml:space="preserve">
+    <value>Sửa</value>
+  </data>
+  <data name="barNapLai.Caption" xml:space="preserve">
+    <value>Nạp Lại</value>
+  </data>
+  <data name="barIn.Caption" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="barXuat1.Caption" xml:space="preserve">
+    <value>Xuất</value>
+  </data>
+  <data name="barButtonItem1.Caption" xml:space="preserve">
+    <value>In Biên Bản</value>
+  </data>
   <data name="bar2.Text" xml:space="preserve">
     <value>Main menu</value>
   </data>
@@ -354,6 +375,9 @@
   <data name="gridColumn6.VisibleIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
+  <data name="gridColumn7.Caption" xml:space="preserve">
+    <value>Bí Danh</value>
+  </data>
   <data name="girdcontrol.Size" type="System.Drawing.Size, System.Drawing">
     <value>994, 405</value>
   </data>
@@ -582,6 +606,12 @@
   <data name="&gt;&gt;dxErrorProvider1.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.DXErrorProvider.DXErrorProvider, DevExpress.XtraEditors.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;gridColumn7.Name" xml:space="preserve">
+    <value>gridColumn7</value>
+  </data>
+  <data name="&gt;&gt;gridColumn7.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v10.1, Version=10.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmKhachHang</value>
   </data>
@@ -591,32 +621,11 @@
   <data name="barStaticItem1.Caption" xml:space="preserve">
     <value>s</value>
   </data>
-  <data name="barThem.Caption" xml:space="preserve">
-    <value>&amp;Thêm</value>
-  </data>
-  <data name="barXoa.Caption" xml:space="preserve">
-    <value>Xóa</value>
-  </data>
-  <data name="barSua.Caption" xml:space="preserve">
-    <value>Sửa</value>
-  </data>
-  <data name="barNapLai.Caption" xml:space="preserve">
-    <value>Nạp Lại</value>
-  </data>
-  <data name="barIn.Caption" xml:space="preserve">
-    <value>In</value>
-  </data>
-  <data name="barXuat1.Caption" xml:space="preserve">
-    <value>Xuất</value>
-  </data>
   <data name="barNhap.Caption" xml:space="preserve">
     <value>In Nhãn Dán</value>
   </data>
   <data name="barThem1.Caption" xml:space="preserve">
     <value>Thêm</value>
-  </data>
-  <data name="barButtonItem1.Caption" xml:space="preserve">
-    <value>In Biên Bản</value>
   </data>
   <metadata name="dxErrorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>309, 17</value>

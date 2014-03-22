@@ -1596,7 +1596,7 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 Inhd rep = new Inhd(printtable, 5);
                 rep.ShowPreviewDialog();
             }
-            if (gridControl3.MainView == griddathang)
+            if (gridControl3.MainView == griddathang || gridControl3.MainView == griddathang2)
             {
               
                 Inhd rep = new Inhd(printtable, 26);
@@ -1788,13 +1788,28 @@ namespace WindowsFormsApplication1.HoaDonXuat
             Create_new();
             loadgridCTHOADON();
             DataRow dtr;
-            if (griddathang.FocusedRowHandle < 0)
+            if (gridControl3.MainView == griddathang2)
             {
-                return;
+                if (griddathang2.FocusedRowHandle < 0)
+                {
+                    return;
+                }
+                dtr = griddathang2.GetDataRow(griddathang2.FocusedRowHandle);
             }
-            dtr = griddathang.GetDataRow(griddathang.FocusedRowHandle);
+            else
+            {
+                if (griddathang.FocusedRowHandle < 0)
+                {
+                    return;
+                }
+                dtr = griddathang.GetDataRow(griddathang.FocusedRowHandle);
+            }
+            
+            
             mahdtam = dtr["MAHDX"].ToString();
-            LOAD_TTKH(dtr["MAKH"].ToString());
+            loadgridKhachHang(dtr["MAKH"].ToString());
+            LOAD_TTKH();
+           // LOAD_TTKH(dtr["MAKH"].ToString());
             cboTenKH.Text = dtr["MAKH"].ToString();
             isdathang = true;
             loadGrid_sanpham();
@@ -1810,17 +1825,40 @@ namespace WindowsFormsApplication1.HoaDonXuat
             PublicVariable.SQL_XUAT = "";
             if (XtraMessageBox.Show("Bạn có muốn xóa không?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (griddathang.FocusedRowHandle < 0)
+                
+                DataRow dtr;
+
+                if (gridControl3.MainView == griddathang2)
                 {
-                    return;
+                    if (griddathang2.FocusedRowHandle < 0)
+                    {
+                        return;
+                    }
+
+                    int focusrow = griddathang2.FocusedRowHandle;
+                    dtr = griddathang2.GetDataRow(focusrow);
+                    if (dtr != null)
+                    {
+                        ctlNCC.DELETEHOADONDATXUAT(dtr["MAHDX"].ToString());
+                        griddathang2.DeleteRow(griddathang2.FocusedRowHandle);
+                    }
                 }
-                int focusrow = griddathang.FocusedRowHandle;
-                DataRow dtr = dtr = griddathang.GetDataRow(focusrow);
-                if (dtr != null)
+                else
                 {
-                    ctlNCC.DELETEHOADONDATXUAT(dtr["MAHDX"].ToString());
-                    griddathang.DeleteRow(griddathang.FocusedRowHandle);
+                    if (griddathang.FocusedRowHandle < 0)
+                    {
+                        return;
+                    }
+
+                    int focusrow = griddathang.FocusedRowHandle;
+                    dtr = griddathang.GetDataRow(focusrow);
+                    if (dtr != null)
+                    {
+                        ctlNCC.DELETEHOADONDATXUAT(dtr["MAHDX"].ToString());
+                        griddathang.DeleteRow(griddathang.FocusedRowHandle);
+                    }
                 }
+                
                 loadgridDATHANG();
                 MessageBox.Show("ĐÃ XÓA ĐẶT HÀNG ");
             }
@@ -2120,9 +2158,19 @@ namespace WindowsFormsApplication1.HoaDonXuat
         {
             Load_panel_filter();
             //string SQL = "SELECT HOADONDATXUAT.*,HOADONDATXUAT.GIANHAP*SOLUONGNHAP AS THANHTIEN,TENMH+' - ' + QUYCACH AS TENMH, TENNCC FROM HOADONDATNHAP,MATHANG,NHACUNGCAP WHERE MATHANG.MAMH=HOADONDATNHAP.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC";
+
+
             string SQL = "SELECT convert(varchar,GETDATE(),103) AS NGAYXUAT,TENNCC,HOADONDATXUAT.MAKH,TENKH ,KHOHANG.LOHANG,KMAI,HOADONDATXUAT.MAHDX + N' - Khách Hàng: '+ TENKH AS MAHDX1 , HOADONDATXUAT.MAHDX, MATHANG.MAMH ,TENMH+' - ' + QUYCACH AS TENMH ,SOLUONGXUAT ,(SOLUONGXUAT+KMAI)*KLDVT as KHOILUONG,GIABAN AS GIATIEN,SOLUONGXUAT*GIABAN AS THANHTIEN,TIENTHU,convert(varchar,HSD,103)AS HSD,ID FROM HOADONDATXUAT,MATHANG,KHOHANG,NHACUNGCAP,KHACHHANG WHERE  MATHANG.MAMH=KHOHANG.MAMH AND MATHANG.MAMH=HOADONDATXUAT.MAMH AND MATHANG.MANCC=NHACUNGCAP.MANCC AND KHOHANG.LOHANG=HOADONDATXUAT.LOHANG AND HOADONDATXUAT.MAKHO='" + PublicVariable.MAKHO + "' AND  HOADONDATXUAT.MAKH=KHACHHANG.MAKH   ";
             DataTable TBS = ctlNCC.GETDATA(SQL);
-            gridControl3.MainView = griddathang;
+
+            if (PublicVariable.IS_VINAVETCO)
+            {
+                gridControl3.MainView = griddathang2;
+            }
+            else
+            {
+                gridControl3.MainView = griddathang;
+            }
             gridControl3.DataSource = TBS;
             griddathang.RefreshData();
             gridControl3.RefreshDataSource();
@@ -2135,7 +2183,15 @@ namespace WindowsFormsApplication1.HoaDonXuat
                 griddathang.Columns["LOHANG"].Visible = false;
                 griddathang.Columns["HSD"].Visible = false;
             }
-            griddathang.ExpandAllGroups();
+            
+            if (PublicVariable.IS_VINAVETCO)
+            {
+                griddathang2.ExpandAllGroups();
+            }
+            else
+            {
+                griddathang.ExpandAllGroups();
+            }
         }
 
         private void linkdathang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -2195,6 +2251,18 @@ namespace WindowsFormsApplication1.HoaDonXuat
                     txtconLai.Text = conlai.ToString();
                 }
            
+        }
+
+        private void griddathang2_ShowGridMenu(object sender, GridMenuEventArgs e)
+        {
+            GridView view = sender as GridView;
+            GridHitInfo hitInfo = view.CalcHitInfo(e.Point);
+            if (hitInfo.RowHandle >= 0)
+            {
+                view.FocusedRowHandle = hitInfo.RowHandle;
+
+                contextMenuStrip3.Show(view.GridControl, e.Point);
+            }
         }
      
     }
