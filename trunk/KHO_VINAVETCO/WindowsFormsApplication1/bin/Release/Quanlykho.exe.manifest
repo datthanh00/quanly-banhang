@@ -43,11 +43,6 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="DevComponents.DotNetBar2" version="10.0.0.0" publicKeyToken="C39C3242A43EEE2B" language="neutral" processorArchitecture="msil" />
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="DevExpress.BonusSkins.v10.1" version="10.1.6.0" publicKeyToken="95FC6C5621878F0A" language="neutral" processorArchitecture="msil" />
     </dependentAssembly>
   </dependency>
@@ -173,22 +168,12 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="Microsoft.Office.Interop.Excel" version="12.0.0.0" publicKeyToken="71E9BCE111E9429C" language="neutral" />
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="Microsoft.Vbe.Interop" version="12.0.0.0" publicKeyToken="71E9BCE111E9429C" language="neutral" />
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="Microsoft.VisualBasic.PowerPacks.Vs" version="9.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
-      <assemblyIdentity name="office" version="12.0.0.0" publicKeyToken="71E9BCE111E9429C" language="neutral" />
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -204,6 +189,18 @@
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="WindowsBase" version="3.0.0.0" publicKeyToken="31bf3856ad364e35" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevComponents.DotNetBar2.dll" size="3432960">
+      <assemblyIdentity name="DevComponents.DotNetBar2" version="8.0.0.0" publicKeyToken="5FD520D36328F741" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>qgtC05R7aCZ/+RHP19d0M9R5gP0=</dsig:DigestValue>
+      </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -255,6 +252,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Office.Interop.Excel.dll" size="1276720">
+      <assemblyIdentity name="Microsoft.Office.Interop.Excel" version="12.0.0.0" publicKeyToken="71E9BCE111E9429C" language="neutral" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>NEVCIGHkg/arl6UuCFNlxV9F4W0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.dll" size="139264">
       <assemblyIdentity name="MySql.Data" version="1.0.4.20163" publicKeyToken="C5687FC88969C44D" language="neutral" />
       <hash>
@@ -279,6 +288,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="office.dll" size="416544">
+      <assemblyIdentity name="office" version="12.0.0.0" publicKeyToken="71E9BCE111E9429C" language="neutral" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>T20B2Tc3f9WAJjzj714VHOHjZvE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Quanlykho.exe" size="2928640">
       <assemblyIdentity name="Quanlykho" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -286,7 +307,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>z8gurGcz9Na3Sbn41r7YyP2nOzo=</dsig:DigestValue>
+        <dsig:DigestValue>mYBfMmMMBNH69x/Uxc0Im1bh0W8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -298,7 +319,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>S0KBYExA9b4NMdnqfvz15o/3R0Q=</dsig:DigestValue>
+        <dsig:DigestValue>aOoXuwQqvr+w3/h5wOoLtNa6RnM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -329,15 +350,6 @@
       <dsig:DigestValue>OyrfsDfRk5R4TGcaKavQDtQXCEE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Resources\KHOASO.png" size="4586">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>SsoiCrOpN4Y05aCPKnzIEWzQBGA=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Resources\KIEMKEKHO.png" size="6056">
     <hash>
       <dsig:Transforms>
@@ -345,6 +357,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>6hbVMXb+iX3RSH/ZHZztQbKPvIM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\KHOASO.png" size="4586">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>SsoiCrOpN4Y05aCPKnzIEWzQBGA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\NONCCDAUKY.png" size="5492">
