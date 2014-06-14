@@ -2013,8 +2013,11 @@
             // gridColumn9
             // 
             this.gridColumn9.Caption = "Ngày Xuất";
+            this.gridColumn9.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn9.FieldName = "NGAYXUAT";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 0;
             this.gridColumn9.Width = 136;
@@ -2149,9 +2152,12 @@
             // gridColumn27
             // 
             this.gridColumn27.Caption = "Ngày Xuất";
+            this.gridColumn27.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.gridColumn27.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn27.FieldName = "NGAYXUAT";
             this.gridColumn27.Name = "gridColumn27";
             this.gridColumn27.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumn27.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             this.gridColumn27.Width = 64;
             // 
             // gridColumn28
