@@ -1309,6 +1309,7 @@
     <None Include="Resources\emblem_art2.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\app.manifest" />
     <None Include="Resources\plus.png" />
     <None Include="WindowsFormsApplication1_TemporaryKey.pfx" />
