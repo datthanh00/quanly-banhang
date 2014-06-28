@@ -445,7 +445,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(181, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1105, 35);
+            this.panelControl1.Size = new System.Drawing.Size(849, 35);
             this.panelControl1.TabIndex = 0;
             // 
             // pnkho
@@ -705,7 +705,7 @@
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(181, 35);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(1105, 38);
+            this.panelControl3.Size = new System.Drawing.Size(849, 38);
             this.panelControl3.TabIndex = 3;
             // 
             // btIn
@@ -744,7 +744,7 @@
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(181, 73);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1105, 397);
+            this.panelControl2.Size = new System.Drawing.Size(849, 397);
             this.panelControl2.TabIndex = 0;
             // 
             // gridControl1
@@ -758,7 +758,7 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2,
             this.repositoryItemDateEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(1101, 393);
+            this.gridControl1.Size = new System.Drawing.Size(845, 393);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grid_THEKHO,
@@ -1994,7 +1994,7 @@
             this.coltiendangno,
             this.coltienno,
             this.gridColumn13});
-            this.grid_hoadontheo_KHACHHANG.CustomizationFormBounds = new System.Drawing.Rectangle(1030, 432, 216, 178);
+            this.grid_hoadontheo_KHACHHANG.CustomizationFormBounds = new System.Drawing.Rectangle(808, 432, 216, 178);
             styleFormatCondition6.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             styleFormatCondition6.Appearance.Options.UseBackColor = true;
             styleFormatCondition6.ApplyToRow = true;
@@ -2265,7 +2265,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 470);
+            this.ClientSize = new System.Drawing.Size(1030, 470);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.panelControl1);
