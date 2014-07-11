@@ -43,9 +43,9 @@ namespace WindowsFormsApplication1
                 {
                     if (PublicVariable.IS_VINAVETCO)
                     {
-                        //strConnect = " Data Source=mssql.nguyendatthanh.com;Network Library=DBMSSOCN;Initial Catalog=nguyendat_vinavetco;User ID=nguye_vinavetco;Password=Urt22!u6;";
-                           strConnect = "server=MINHNAM;database=vinatuanhanh;integrated security = true;uid=sa,pwd=dat123;Integrated Security=True";
-			// user:nguye_datthanh    pass:  Minhnam123@
+                        strConnect = " Data Source=mssql.nguyendatthanh.com;Network Library=DBMSSOCN;Initial Catalog=nguyendat_vinavetco;User ID=nguye_vinavetco;Password=Urt22!u6;";
+                         //  strConnect = "server=MINHNAM;database=vinatuanhanh;integrated security = true;uid=sa,pwd=dat123;Integrated Security=True";
+			            // user:nguye_datthanh    pass:  Minhnam123@
 
                     }
                     else

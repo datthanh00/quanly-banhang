@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1
             DevExpress.UserSkins.BonusSkins.Register();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            FormatDate.Main();
             Application.Run(new frmLogin());
         }
     }
