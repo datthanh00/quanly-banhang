@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongKeDoanhThu));
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             this.dockChucNang = new DevExpress.XtraBars.Docking.DockPanel();
@@ -446,9 +446,9 @@
             // gridControl6
             // 
             this.gridControl6.Dock = System.Windows.Forms.DockStyle.Fill;
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode1.RelationName = "Level1";
             this.gridControl6.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode1});
             this.gridControl6.Location = new System.Drawing.Point(2, 2);
             this.gridControl6.MainView = this.grid_MUAHANG_KHACHHANGTRA;
             this.gridControl6.Name = "gridControl6";
@@ -617,7 +617,9 @@
             // 
             this.gridColumn1.Caption = "Ngày Tháng";
             this.gridColumn1.FieldName = "NGAYNHAP";
+            this.gridColumn1.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
@@ -913,7 +915,9 @@
             // 
             this.gridColumn9.Caption = "Ngày Xuất";
             this.gridColumn9.FieldName = "NGAYXUAT";
+            this.gridColumn9.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 0;
             // 

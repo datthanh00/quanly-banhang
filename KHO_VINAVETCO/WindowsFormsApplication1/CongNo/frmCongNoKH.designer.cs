@@ -91,6 +91,7 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridhoadon = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -100,7 +101,6 @@
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.dockPanel1.SuspendLayout();
             this.dockPanel1_Container.SuspendLayout();
@@ -469,8 +469,8 @@
             // 
             // 
             this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
-            this.printableComponentLink1.PrintingSystem = this.printingSystem1;
-            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
+            this.printableComponentLink1.PrintingSystem = this.printingSystem2;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem2;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
@@ -710,7 +710,9 @@
             // 
             this.gridColumn5.Caption = "Ngày";
             this.gridColumn5.FieldName = "NGAY";
+            this.gridColumn5.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
             // 
@@ -738,6 +740,12 @@
             this.gridColumn15.Caption = "IDNHAP";
             this.gridColumn15.FieldName = "IDNHAP";
             this.gridColumn15.Name = "gridColumn15";
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "BÍ DANH";
+            this.gridColumn17.FieldName = "BIDANH";
+            this.gridColumn17.Name = "gridColumn17";
             // 
             // gridhoadon
             // 
@@ -805,7 +813,9 @@
             // 
             this.gridColumn9.Caption = "Ngày";
             this.gridColumn9.FieldName = "NGAY";
+            this.gridColumn9.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 2;
             // 
@@ -827,12 +837,6 @@
             this.gridColumn16.Caption = "IDNHAP";
             this.gridColumn16.FieldName = "IDNHAP";
             this.gridColumn16.Name = "gridColumn16";
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "BÍ DANH";
-            this.gridColumn17.FieldName = "BIDANH";
-            this.gridColumn17.Name = "gridColumn17";
             // 
             // frmCongNoKH
             // 

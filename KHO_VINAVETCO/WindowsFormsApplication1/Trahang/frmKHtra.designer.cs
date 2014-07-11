@@ -935,7 +935,6 @@
             // 
             // 
             this.txtghichu.Border.Class = "TextBoxBorder";
-            this.txtghichu.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtghichu.Location = new System.Drawing.Point(72, 85);
             this.txtghichu.Multiline = true;
             this.txtghichu.Name = "txtghichu";
@@ -1358,12 +1357,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(93, 26);
             // 
             // deleteToolStripMenuItem
             // 
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.deleteToolStripMenuItem.Text = "Xóa";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
@@ -1691,7 +1690,9 @@
             // 
             this.gridColumn28.Caption = "Ngày Trả Hàng";
             this.gridColumn28.FieldName = "NGAYXUAT";
+            this.gridColumn28.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             // 
             // gridColumn29
             // 
@@ -1872,7 +1873,9 @@
             // 
             this.gridColumn9.Caption = "Ngày Trả Hàng";
             this.gridColumn9.FieldName = "NGAYXUAT";
+            this.gridColumn9.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 0;
             this.gridColumn9.Width = 136;
@@ -1959,26 +1962,26 @@
             this.EditToolStripMenuItem,
             this.xoaToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(106, 70);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(95, 70);
             // 
             // ViewToolStripMenuItem
             // 
             this.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem";
-            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.ViewToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.ViewToolStripMenuItem.Text = "Xem";
             this.ViewToolStripMenuItem.Click += new System.EventHandler(this.ViewToolStripMenuItem_Click);
             // 
             // EditToolStripMenuItem
             // 
             this.EditToolStripMenuItem.Name = "EditToolStripMenuItem";
-            this.EditToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.EditToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.EditToolStripMenuItem.Text = "Sửa";
             this.EditToolStripMenuItem.Click += new System.EventHandler(this.EditToolStripMenuItem_Click);
             // 
             // xoaToolStripMenuItem
             // 
             this.xoaToolStripMenuItem.Name = "xoaToolStripMenuItem";
-            this.xoaToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.xoaToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.xoaToolStripMenuItem.Text = "Xóa";
             this.xoaToolStripMenuItem.Click += new System.EventHandler(this.xoaToolStripMenuItem_Click);
             // 

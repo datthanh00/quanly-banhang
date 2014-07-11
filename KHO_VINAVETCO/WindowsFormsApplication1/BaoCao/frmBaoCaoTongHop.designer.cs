@@ -850,7 +850,9 @@
             // 
             this.gridColumn49.Caption = "Ngày Tháng";
             this.gridColumn49.FieldName = "NGAY";
+            this.gridColumn49.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn49.Name = "gridColumn49";
+            this.gridColumn49.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.gridColumn49.Visible = true;
             this.gridColumn49.Width = 106;
             // 
@@ -1383,6 +1385,7 @@
             this.gridColumn84.Name = "gridColumn84";
             this.gridColumn84.OptionsColumn.AllowEdit = false;
             this.gridColumn84.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
+            this.gridColumn84.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.gridColumn84.Visible = true;
             this.gridColumn84.VisibleIndex = 0;
             this.gridColumn84.Width = 97;
@@ -1651,7 +1654,9 @@
             // 
             this.gridColumn56.Caption = "Ngày Tháng";
             this.gridColumn56.FieldName = "NGAY";
+            this.gridColumn56.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn56.Name = "gridColumn56";
+            this.gridColumn56.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.gridColumn56.Visible = true;
             this.gridColumn56.Width = 90;
             // 
@@ -2040,6 +2045,7 @@
             this.colngayxuathoadon.Name = "colngayxuathoadon";
             this.colngayxuathoadon.OptionsColumn.AllowEdit = false;
             this.colngayxuathoadon.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.colngayxuathoadon.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.colngayxuathoadon.Visible = true;
             this.colngayxuathoadon.VisibleIndex = 0;
             this.colngayxuathoadon.Width = 118;

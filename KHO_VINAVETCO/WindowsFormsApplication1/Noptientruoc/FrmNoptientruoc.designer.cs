@@ -207,8 +207,10 @@
             // 
             this.colMAACTIVE.Caption = "Ngày";
             this.colMAACTIVE.FieldName = "NGAY";
+            this.colMAACTIVE.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.colMAACTIVE.Name = "colMAACTIVE";
             this.colMAACTIVE.OptionsColumn.AllowEdit = false;
+            this.colMAACTIVE.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.colMAACTIVE.Visible = true;
             this.colMAACTIVE.VisibleIndex = 2;
             this.colMAACTIVE.Width = 179;

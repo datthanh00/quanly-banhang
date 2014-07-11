@@ -519,12 +519,17 @@
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn2, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Kì Kiểm";
             this.gridColumn2.FieldName = "NGAY";
+            this.gridColumn2.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
+            this.gridColumn2.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
             // 
