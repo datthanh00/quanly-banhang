@@ -214,7 +214,7 @@ namespace WindowsFormsApplication1
                 SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' AND TONKHONGAY <> 0 ";
 
                 dt = ctlNCC.GETDATA(SQL);
-               
+        
                 if (dt.Rows[0][0].ToString() != "0")
                 {
                     //INSERT CAP NHAT THEM MAT HANG CHUA CO TRONG TON KHO NGAY

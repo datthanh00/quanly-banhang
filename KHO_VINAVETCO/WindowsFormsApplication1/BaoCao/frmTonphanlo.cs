@@ -23,6 +23,8 @@ namespace WindowsFormsApplication1
     {
         public frmTonphanlo()
         {
+          
+
             InitializeComponent();
         }
         

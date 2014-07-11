@@ -244,6 +244,7 @@
     <Compile Include="BaoCao\frmBCMatHang.designer.cs">
       <DependentUpon>frmBCMatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="class\FormatDate.cs" />
     <Compile Include="class\PublicVariable.cs" />
     <Compile Include="Class_DoanNgocAnh\Class1.cs" />
     <Compile Include="class_import\export.cs">
