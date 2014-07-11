@@ -713,7 +713,9 @@
             // 
             this.gridColumn4.Caption = "Ngày";
             this.gridColumn4.FieldName = "NGAY";
+            this.gridColumn4.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
             // 
@@ -799,7 +801,9 @@
             // 
             this.gridColumn9.Caption = "Ngày";
             this.gridColumn9.FieldName = "NGAY";
+            this.gridColumn9.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 2;
             // 
