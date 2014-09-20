@@ -270,7 +270,7 @@ namespace WindowsFormsApplication1
 
                             DTO.MANCC = MANCC;
                             DTO.MAKHO = PublicVariable.MAKHO;
-                            
+                            DTO.MATH="TH1";
                             DTO.TENMH = txtTenMH.Text;
                             DTO.QUYCACH = txtquycach.Text;
                             DTO.MADVT = DVT;
@@ -308,7 +308,7 @@ namespace WindowsFormsApplication1
                         {
 
                             DTO.MAMH = txtMaMH.Text;
-                            DTO.MATH = gridView2.GetFocusedRowCellValue("MATH").ToString();
+                            DTO.MATH = "TH1";
                             DTO.MANCC = MANCC;
                             DTO.MADVT = DVT;
                             DTO.KLDVT = Convert.ToInt64(calKLDVT.Value).ToString();
@@ -390,7 +390,7 @@ namespace WindowsFormsApplication1
                             //    DTO.PICTURE = imageData;
                             loadma();
                             DTO.MAMH = txtMaMH.Text;
-                            DTO.MATH = MASOTHUE;
+                            DTO.MATH = "TH1";
                             DTO.MANCC = MANCC;
                             DTO.MADVT = DVT;
                             DTO.KLDVT = Convert.ToInt64(calKLDVT.Value).ToString();
@@ -426,7 +426,7 @@ namespace WindowsFormsApplication1
                             //ms.Close();
                             //DTO.PICTURE = imageData;
                             DTO.MAMH = txtMaMH.Text;
-                            DTO.MATH = MASOTHUE;
+                            DTO.MATH = "TH1";
                             DTO.MANCC = MANCC;
                             DTO.MADVT = DVT;
                             DTO.KLDVT = Convert.ToInt64(calKLDVT.Value).ToString();

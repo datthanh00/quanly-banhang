@@ -1,6 +1,4 @@
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Quanlykho.exe.config
-e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.exe
-e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.pdb
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Quanlykho.exe.manifest
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Quanlykho.application
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Quanlykho.exe
@@ -106,3 +104,5 @@ e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\af-ZA\Quanlykh
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.TrustInfo.xml
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.exe.manifest
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.application
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.exe
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.pdb
