@@ -36,7 +36,7 @@ namespace WindowsFormsApplication1
                 if (LYDO.Length > 190)
                 {
                     PublicVariable.TMPtring = "";
-                    MessageBox.Show("lý do xóa quá Dài");
+                    MessageBox.Show("lý do Sửa quá Dài");
                     return;
                 }
                 Inhdsua rep = new Inhdsua(MAHD,LYDO,LISTTRUOC,LISTSAU);

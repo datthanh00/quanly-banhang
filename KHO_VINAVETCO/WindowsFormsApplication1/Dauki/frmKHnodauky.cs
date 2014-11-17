@@ -53,10 +53,26 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-
+            load_cbkykiem();
             Load_CONGNONKH();
         }
-
+        private void load_cbkykiem()
+        {
+            cbkykiem.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbkykiem.Properties.DisplayMember = "CHOTKHO";
+            cbkykiem.Properties.ValueMember = "CHOTKHO";
+            cbkykiem.Properties.View.BestFitColumns();
+            //cbmathang.Properties.PopupFormWidth = 200;
+            Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
+            DataTable dt = ctr1.dtGetKIKIEM_KHNO();
+            cbkykiem.Properties.DataSource = dt;
+            if (dt.Rows.Count > 0)
+            {
+                cbkykiem.Text = dt.Rows[0][0].ToString();
+            }
+            gridView2.BestFitColumns();
+            //cbmathang.best
+        }
         private void loadReSVN1()
         {
             
@@ -145,7 +161,12 @@ namespace WindowsFormsApplication1
 
         private void Load_CONGNONKH()
         {
-            gridControl1.DataSource = ctr.getCONGNONKH_DAUKY();
+            string NGAYCHOTKHO = "";
+            if (cbkykiem.Text != "")
+            {
+                NGAYCHOTKHO = cbkykiem.Text;
+            }
+            gridControl1.DataSource = ctr.getCONGNONKH_DAUKY(NGAYCHOTKHO);
         }
         
 
@@ -237,6 +258,11 @@ namespace WindowsFormsApplication1
                     }
                 }
             }
+        }
+
+        private void cbkykiem_Validated(object sender, EventArgs e)
+        {
+            Load_CONGNONKH();
         }
 
         

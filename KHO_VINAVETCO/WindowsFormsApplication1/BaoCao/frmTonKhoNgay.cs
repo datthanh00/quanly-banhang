@@ -140,8 +140,7 @@ namespace WindowsFormsApplication1
             iNgonNgu = 1;
             CultureInfo objCultureInfo = Thread.CurrentThread.CurrentCulture;
             btXem.Text = resEngLand.btXem.ToString();
-    
-           // colNgay.Caption = resEngLand.colNgay.ToString();
+            //colNgay.Caption = resEngLand.colNgay.ToString();
             colMa.Caption = resEngLand.colMa.ToString();
             colDonViTInh.Caption = resEngLand.colDonViTInh.ToString();
             colHangHoa.Caption = resEngLand.colHangHoa.ToString();
@@ -158,13 +157,12 @@ namespace WindowsFormsApplication1
             gridCuoiKi.Caption = resEngLand.gridCuoiKi.ToString();
             gridNhapKho.Caption = resEngLand.gridNhapKho.ToString();
             gridXuatKho.Caption = resEngLand.gridXuatKho.ToString();
-    
             btIn.Text = resEngLand.btIn.ToString();
             btXuat.Text = resEngLand.btXuat.ToString();
-           // lbTu.Text = resEngLand.NgayBD.ToString();
-          //  lbDen.Text = resEngLand.NgayKT.ToString();
-           // colMaKho.Caption = resEngLand.MaKho.ToString();
-           // colTen.Caption = resEngLand.TenKho.ToString();
+            //lbTu.Text = resEngLand.NgayBD.ToString();
+            //lbDen.Text = resEngLand.NgayKT.ToString();
+            //colMaKho.Caption = resEngLand.MaKho.ToString();
+            //colTen.Caption = resEngLand.TenKho.ToString();
         }
         clDTO dto = new clDTO();
         Boolean _isfilter = false;
@@ -173,8 +171,6 @@ namespace WindowsFormsApplication1
             string NGAYBD = dateTu.Text;
             dto.NGAYBD = NGAYBD;
             dto.ISFILTER = false;
-
-            
 
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
             dto.NGAYBDKHO = NGAYBD;
@@ -186,7 +182,6 @@ namespace WindowsFormsApplication1
             SQL="SELECT convert(varchar,getDate(),103) AS CurrentDateTime ";
             DataTable dt2=ctlNCC.GETDATA(SQL);
            
-
             if (dt.Rows[0][0].ToString() != "0" || dt2.Rows[0][0].ToString() == dateTu.Text)
             {
                 gridControl2.MainView = advBandedGridView3;
@@ -218,8 +213,8 @@ namespace WindowsFormsApplication1
                 if (dt.Rows[0][0].ToString() != "0")
                 {
                     //INSERT CAP NHAT THEM MAT HANG CHUA CO TRONG TON KHO NGAY
-                    SQL = "INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[TONKHONGAY],[MAKHO]) SELECT convert(varchar,GETDATE(),101) AS NGAY, MAMH,SOLUONGMH,'" + PublicVariable.MAKHO + "' AS MAKHO FROM MATHANG  WHERE MAMH NOT IN(SELECT MAMH FROM TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "') AND MAMH  IN (SELECT MAMH FROM TONKHO WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "') ";
-
+                    //SQL = "INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[TONKHONGAY],[MAKHO]) SELECT convert(varchar,GETDATE(),101) AS NGAY, MAMH,SOLUONGMH,'" + PublicVariable.MAKHO + "' AS MAKHO FROM MATHANG  WHERE MAMH NOT IN(SELECT MAMH FROM TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "') AND MAMH  IN (SELECT MAMH FROM TONKHO WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "') ";
+                    
                     ctlNCC.executeNonQuery(SQL);
 
                     // LAY TON KHO NGAY DA CO TRONG TONKHONGAY
@@ -439,48 +434,40 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("vui lòng nhấn nút xem trước khi lưu");
                 return;
             }
-            //if (_isfilter)
-            //{
-            //    loadGird(false);
-            //}
 
-
-           
-            if( dtr1["NGAY"].ToString() == dt.Rows[0][0].ToString()){
+            if (dtr1["NGAY"].ToString() == dt.Rows[0][0].ToString())
+            {
                 NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+                string CHENHLECH, ISINSERT;
 
-                SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
-                
-                dt=ctlNCC.GETDATA(SQL);
-                if (dt.Rows[0][0].ToString() != "0")
+                for (int i = 0; i < advBandedGridView3.DataRowCount; i++)
                 {
-                    for (int i = 0; i < advBandedGridView3.DataRowCount; i++)
+                    SQL = "";
+                    for (int j = 0; j < 20 && i < advBandedGridView3.DataRowCount; j++)
                     {
-                        SQL = "";
-                        for (int j = 0; j < 20 && i < advBandedGridView3.DataRowCount; j++)
-                        {
-                            DataRow dtr = advBandedGridView3.GetDataRow(i);
-                            SQL = SQL + " \r\nGO\r\n UPDATE  [TONKHOTT] SET TONKHONGAY=" + dtr["TONTT"].ToString() + " WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND NGAY='" + NGAYBD + "' ";
+                        DataRow dtr = advBandedGridView3.GetDataRow(i);
+                        CHENHLECH = dtr["CHENHLECH"].ToString();
+                        ISINSERT = dtr["ISINSERT"].ToString();
 
-                            i++;
+                        if (CHENHLECH != "0.000")
+                        {
+                            if (ISINSERT != "0.000")
+                            {
+                                SQL = SQL + " \r\nGO\r\n UPDATE  [TONKHOTT] SET TONKHONGAY=" + dtr["TONTT"].ToString() + " WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND NGAY='" + NGAYBD + "' ";
+                            }
+                            else
+                            {
+                                SQL = SQL + " \r\nGO\r\n INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[TONKHONGAY],[MAKHO]) VALUES (convert(varchar,GETDATE(),101),'" + dtr["MAMH"].ToString() + "'," + dtr["TONTT"].ToString() + ",'" + PublicVariable.MAKHO + "')";
+                            }
                         }
-						i--;
-                        ctlNCC.executeNonQuery2(SQL);
+
+
+                        i++;
                     }
-                }
-                else
-                {
-                    for (int i = 0; i < advBandedGridView3.DataRowCount; i++)
-                    {
-                        SQL = "";
-                        for (int j = 0; j < 20 && i < advBandedGridView3.DataRowCount; j++)
-                        {
-                            DataRow dtr = advBandedGridView3.GetDataRow(i);
-                            SQL = SQL + " \r\nGO\r\n INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[TONKHONGAY],[MAKHO]) VALUES (convert(varchar,GETDATE(),101),'" + dtr["MAMH"].ToString() + "'," + dtr["TONTT"].ToString() + ",'" + PublicVariable.MAKHO+ "')";
+                    i--;
 
-                            i++;
-                        }
-                        i--;
+                    if (SQL != "")
+                    {
                         ctlNCC.executeNonQuery2(SQL);
                     }
                 }
@@ -489,7 +476,9 @@ namespace WindowsFormsApplication1
                     loadGird(true);
                 }
                 MessageBox.Show("Đã lưu tồn kho thực tế ngày hôm nay");
-            }else{
+            }
+            else
+            {
                 MessageBox.Show("Không phải ngày hôm nay nên không thể chỉnh sửa");
             }
         }

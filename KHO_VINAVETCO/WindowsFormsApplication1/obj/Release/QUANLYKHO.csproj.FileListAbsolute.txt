@@ -4,8 +4,6 @@ e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Quanlykho.appl
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Quanlykho.exe
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Quanlykho.pdb
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\af-ZA\Quanlykho.resources.dll
-e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Microsoft.Office.Interop.Excel.dll
-e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\office.dll
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\ResolveAssemblyReference.cache
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.FrmINITCODEActive.resources
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\WindowsFormsApplication1.frmBanggia.resources

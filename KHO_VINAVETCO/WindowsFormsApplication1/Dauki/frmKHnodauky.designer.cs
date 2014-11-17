@@ -58,6 +58,10 @@
             this.repositoryItemRichTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemRichTextEdit();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.cbkykiem = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lbnhom = new DevExpress.XtraEditors.LabelControl();
             this.BtXuatdulieu = new DevExpress.XtraEditors.SimpleButton();
             this.btin = new DevExpress.XtraEditors.SimpleButton();
             this.btxem = new DevExpress.XtraEditors.SimpleButton();
@@ -87,6 +91,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbkykiem.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mATHANGBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).BeginInit();
@@ -347,6 +353,8 @@
             // 
             // panelControl6
             // 
+            this.panelControl6.Controls.Add(this.cbkykiem);
+            this.panelControl6.Controls.Add(this.lbnhom);
             this.panelControl6.Controls.Add(this.BtXuatdulieu);
             this.panelControl6.Controls.Add(this.btin);
             this.panelControl6.Controls.Add(this.btxem);
@@ -356,10 +364,55 @@
             this.panelControl6.Size = new System.Drawing.Size(1252, 39);
             this.panelControl6.TabIndex = 8;
             // 
+            // cbkykiem
+            // 
+            this.cbkykiem.Location = new System.Drawing.Point(71, 9);
+            this.cbkykiem.Name = "cbkykiem";
+            this.cbkykiem.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbkykiem.Properties.NullText = "";
+            this.cbkykiem.Properties.PopupSizeable = false;
+            this.cbkykiem.Properties.View = this.gridView2;
+            this.cbkykiem.Size = new System.Drawing.Size(147, 20);
+            this.cbkykiem.TabIndex = 6;
+            this.cbkykiem.Validated += new System.EventHandler(this.cbkykiem_Validated);
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn4});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn4, DevExpress.Data.ColumnSortOrder.Descending)});
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Kì Kiểm (NĂM)";
+            this.gridColumn4.DisplayFormat.FormatString = "y";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn4.FieldName = "CHOTKHO";
+            this.gridColumn4.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
+            this.gridColumn4.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 0;
+            // 
+            // lbnhom
+            // 
+            this.lbnhom.Location = new System.Drawing.Point(11, 12);
+            this.lbnhom.Name = "lbnhom";
+            this.lbnhom.Size = new System.Drawing.Size(53, 13);
+            this.lbnhom.TabIndex = 4;
+            this.lbnhom.Text = "Kì Chốt Sổ:";
+            // 
             // BtXuatdulieu
             // 
             this.BtXuatdulieu.Image = ((System.Drawing.Image)(resources.GetObject("BtXuatdulieu.Image")));
-            this.BtXuatdulieu.Location = new System.Drawing.Point(194, 4);
+            this.BtXuatdulieu.Location = new System.Drawing.Point(432, 4);
             this.BtXuatdulieu.Name = "BtXuatdulieu";
             this.BtXuatdulieu.Size = new System.Drawing.Size(103, 31);
             this.BtXuatdulieu.TabIndex = 3;
@@ -369,7 +422,7 @@
             // btin
             // 
             this.btin.Image = ((System.Drawing.Image)(resources.GetObject("btin.Image")));
-            this.btin.Location = new System.Drawing.Point(101, 4);
+            this.btin.Location = new System.Drawing.Point(339, 4);
             this.btin.Name = "btin";
             this.btin.Size = new System.Drawing.Size(70, 31);
             this.btin.TabIndex = 2;
@@ -379,7 +432,7 @@
             // btxem
             // 
             this.btxem.Image = global::Quanlykho.Properties.Resources.save;
-            this.btxem.Location = new System.Drawing.Point(8, 4);
+            this.btxem.Location = new System.Drawing.Point(246, 4);
             this.btxem.Name = "btxem";
             this.btxem.Size = new System.Drawing.Size(70, 31);
             this.btxem.TabIndex = 1;
@@ -441,6 +494,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
+            this.panelControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cbkykiem.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mATHANGBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printingSystem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.printableComponentLink1.ImageCollection)).EndInit();
@@ -484,5 +540,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.LabelControl lbnhom;
+        private DevExpress.XtraEditors.GridLookUpEdit cbkykiem;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }

@@ -426,6 +426,7 @@
             // Linkthekho
             // 
             this.Linkthekho.Caption = "Thẻ Kho";
+            this.Linkthekho.Enabled = false;
             this.Linkthekho.Name = "Linkthekho";
             this.Linkthekho.SmallImage = global::Quanlykho.Properties.Resources.money;
             this.Linkthekho.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.Linkthekho_LinkClicked);

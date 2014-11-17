@@ -620,7 +620,7 @@ namespace WindowsFormsApplication1
                                     MessageBox.Show("Mã Hàng:" + dtr["MAMH"].ToString() + " Hạn Sử Dụng Quá Ngắn ");
                                     return;
                                 }
-                                DateTime time = DateTime.Parse(dtr["_HSD"].ToString());
+                               
                             }
                         }
 
