@@ -92,8 +92,8 @@ namespace WindowsFormsApplication1
                 Validate_EmptyStringRule(txtMatKhau);
                 if (iNgonNgu==0)
                 {
-                     XtraMessageBox.Show("Vui lòng nhập mật khẩu");
-                 return;
+                    XtraMessageBox.Show("Vui lòng nhập mật khẩu");
+                    return;
                 }
                 else 
                 {
@@ -107,7 +107,7 @@ namespace WindowsFormsApplication1
             dto.MATKHAU=txtMatKhau.Text;
             DataTable tb = new DataTable(); 
             tb= ctr.ctrTestLogin(dto);
-           
+            ctr.ctrISnewyear();
             if (tb.Rows.Count > 0)
             {
              

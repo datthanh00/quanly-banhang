@@ -89,10 +89,28 @@ namespace WindowsFormsApplication1
                 gridView1.Columns["NGAYSUDUNG"].Visible = false;
                 gridView1.Columns["HANSUDUNG"].Visible = false;
             }
-
+            load_cbkykiem();
             Load_mathang();
         }
 
+
+        private void load_cbkykiem()
+        {
+            cbkykiem.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+            cbkykiem.Properties.DisplayMember = "CHOTKHO";
+            cbkykiem.Properties.ValueMember = "CHOTKHO";
+            cbkykiem.Properties.View.BestFitColumns();
+            //cbmathang.Properties.PopupFormWidth = 200;
+            Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
+            DataTable dt = ctr1.dtGetKICHOTKHO();
+            cbkykiem.Properties.DataSource = dt;
+            if (dt.Rows.Count > 0)
+            {
+                cbkykiem.Text = dt.Rows[0][0].ToString();
+            }
+            gridView2.BestFitColumns();
+            //cbmathang.best
+        }
         private void loadReSVN1()
         {
             
@@ -209,8 +227,12 @@ namespace WindowsFormsApplication1
         }
         private void Load_mathang()
         {
-
-            gridControl1.DataSource = ctr.getondauky_mathang();
+            string NGAYCHOTKHO = "";
+            if (cbkykiem.Text != "")
+            {
+                NGAYCHOTKHO = cbkykiem.Text;
+            }
+            gridControl1.DataSource = ctr.getondauky_mathang(NGAYCHOTKHO);
             gridView1.BestFitColumns();
         }
         
@@ -341,7 +363,7 @@ namespace WindowsFormsApplication1
 
         private void cbncc_Validated(object sender, EventArgs e)
         {
-            Load_mathang();
+
         }
 
 
@@ -409,6 +431,11 @@ namespace WindowsFormsApplication1
         private void frmhangtondau_FormClosed(object sender, FormClosedEventArgs e)
         {
             deDongTab();
+        }
+
+        private void cbkykiem_Validated(object sender, EventArgs e)
+        {
+            Load_mathang();
         }
 
 

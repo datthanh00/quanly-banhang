@@ -75,6 +75,11 @@ namespace WindowsFormsApplication1
             string SQL = "";
             CTL ctlNCC = new CTL();
 
+            SQL = "select YEAR(GETDATE()) AS NAM ";
+            DataTable DT1 = new DataTable();
+            DT1 =ctlNCC.GETDATA(SQL);
+            string NAMNAY = DT1.Rows[0][0].ToString();
+
             SQL = "";
             if (XtraMessageBox.Show("Bạn có muốn Lưu khóa sổ không ?", "Cảnh báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -86,13 +91,19 @@ namespace WindowsFormsApplication1
                         DataRow dtr = gridView1.GetDataRow(i);
                         string TINHTRANG = "",NGAY="";
                         NGAY = dtr["NGAY"].ToString();
+
+                        if (NAMNAY != NGAY.Substring(6, 4))
+                        {
+                            MessageBox.Show("Lỗi Năm khóa sổ phải là năm nay");
+                            return;
+                        }
                         if (NGAY.Length>6)
                         {
                             NGAY = NGAY.Substring(6, 4) + "/" + NGAY.Substring(3, 2) + "/" + NGAY.Substring(0, 2);
                         }
                         if (dtr["TINHTRANG"].ToString() == "False")
                         {
-                            TINHTRANG = "0";
+                            TINHTRANG = "1";
                         }
                         else
                         {

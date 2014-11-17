@@ -153,6 +153,15 @@ namespace WindowsFormsApplication1
         {
             return dao.testLogin(dto);
         }
+        public void ctrISnewyear()
+        {
+             dao.ctrISnewyear();
+        }
+
+        public void NEW_YEAR()
+        {
+            dao.NEW_YEAR();
+        }
         public DataTable KiemTraPass(clDTO dto)
         {
             return dao.KiemTraMatKhau(dto);
