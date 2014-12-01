@@ -170,11 +170,11 @@ namespace WindowsFormsApplication1
                  " \r\nGO\r\n delete from KHOHANG where 	MAMH='" + MAMH + "' AND LOHANG='" + LOHANG + "'";
             executeNonQuery2(SQL);
         }
-        public DataTable getCONGNOKH_DAUKY(String NGAYCHOTKHO)
+        public DataTable getCONGNOKH_DAUKY()
         {
             string SQL = "";
 
-            SQL = "SELECT TENKH,KHACHHANG.MAKH, DIACHI, SDT,TONDAUCONGNOKH.CONGNO AS TONGTIENTRA FROM TONDAUCONGNOKH, KHACHHANG WHERE KHACHHANG.MAKH=TONDAUCONGNOKH.MAKH AND MAKHO='" + PublicVariable.MAKHO + "' AND TONDAUCONGNOKH.CHOTKHO='"+NGAYCHOTKHO+"' ";
+            SQL = "SELECT TENKH,KHACHHANG.MAKH, DIACHI, SDT,TONDAUCONGNOKH.CONGNO AS TONGTIENTRA FROM TONDAUCONGNOKH, KHACHHANG WHERE KHACHHANG.MAKH=TONDAUCONGNOKH.MAKH AND MAKHO='" + PublicVariable.MAKHO + "' ";
             
             return getdata(SQL);
         }
@@ -186,11 +186,11 @@ namespace WindowsFormsApplication1
             return getdata(SQL);
         }
              
-        public DataTable getCONGNONCC_DAUKY(string CHOTKHO)
+        public DataTable getCONGNONCC_DAUKY()
         {
             string SQL = "";
 
-            SQL = "SELECT TENNCC,NHACUNGCAP.MANCC, DIACHI, SDT,TONDAUCONGNONCC.CONGNO as TONGTIENTRA FROM TONDAUCONGNONCC, NHACUNGCAP WHERE NHACUNGCAP.MANCC=TONDAUCONGNONCC.MANCC AND MAKHO='" + PublicVariable.MAKHO + "' and CHOTKHO='"+CHOTKHO+"' ";
+            SQL = "SELECT TENNCC,NHACUNGCAP.MANCC, DIACHI, SDT,TONDAUCONGNONCC.CONGNO as TONGTIENTRA FROM TONDAUCONGNONCC, NHACUNGCAP WHERE NHACUNGCAP.MANCC=TONDAUCONGNONCC.MANCC AND MAKHO='" + PublicVariable.MAKHO + "' ";
             return getdata(SQL);
         }
         public void updatetonkiemkho()
@@ -275,17 +275,6 @@ namespace WindowsFormsApplication1
         public DataTable dtGetKIKIEM()
         {
             String SQL = "select convert(varchar,NGAY,103)AS NGAY from  TONKIEMKHO WHERE  MAKHO='" + PublicVariable.MAKHO + "' GROUP BY NGAY ORDER BY NGAY DESC";
-            return getdata(SQL);
-        }
-        public DataTable dtGetKIKIEM_NCCNO()
-        {
-            String SQL = "SELECT convert(varchar,CHOTKHO,103)AS CHOTKHO FROM TONDAUCONGNONCC,NHACUNGCAP WHERE NHACUNGCAP.MANCC=TONDAUCONGNONCC.MANCC AND NHACUNGCAP.MAKHO='" + PublicVariable.MAKHO + "' GROUP BY CHOTKHO ORDER BY CHOTKHO DESC";
-            return getdata(SQL);
-        }
-
-        public DataTable dtGetKIKIEM_KHNO()
-        {
-            String SQL = "SELECT convert(varchar,CHOTKHO,103)AS CHOTKHO FROM TONDAUCONGNOKH,KHACHHANG WHERE KHACHHANG.MAKH=TONDAUCONGNOKH.MAKH AND KHACHHANG.MAKHO='" + PublicVariable.MAKHO + "' GROUP BY CHOTKHO ORDER BY CHOTKHO DESC";
             return getdata(SQL);
         }
 

@@ -206,7 +206,11 @@
             // colMAACTIVE
             // 
             this.colMAACTIVE.Caption = "Ngày";
+            this.colMAACTIVE.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colMAACTIVE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colMAACTIVE.FieldName = "NGAY";
+            this.colMAACTIVE.GroupFormat.FormatString = "d";
+            this.colMAACTIVE.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colMAACTIVE.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.colMAACTIVE.Name = "colMAACTIVE";
             this.colMAACTIVE.OptionsColumn.AllowEdit = false;

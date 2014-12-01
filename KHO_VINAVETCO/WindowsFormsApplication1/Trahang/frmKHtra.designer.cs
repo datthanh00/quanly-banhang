@@ -1689,7 +1689,11 @@
             // gridColumn28
             // 
             this.gridColumn28.Caption = "Ngày Trả Hàng";
+            this.gridColumn28.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.gridColumn28.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn28.FieldName = "NGAYXUAT";
+            this.gridColumn28.GroupFormat.FormatString = "d";
+            this.gridColumn28.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn28.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn28.Name = "gridColumn28";
             this.gridColumn28.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
@@ -1872,7 +1876,11 @@
             // gridColumn9
             // 
             this.gridColumn9.Caption = "Ngày Trả Hàng";
+            this.gridColumn9.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn9.FieldName = "NGAYXUAT";
+            this.gridColumn9.GroupFormat.FormatString = "d";
+            this.gridColumn9.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.gridColumn9.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Date;
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;

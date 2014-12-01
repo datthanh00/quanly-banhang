@@ -142,7 +142,7 @@ namespace WindowsFormsApplication1
                         DTO.BIDANH = txtbidanh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
-                        DTO.MASOTHUE = txtmasothue.Text;
+                        DTO.MASOTHUE = "TH1";
                         DTO.DIACHI = txtdiachi.Text;
 
                         DTO.SDT = txtsdt.Text;
@@ -181,7 +181,7 @@ namespace WindowsFormsApplication1
                         DTO.BIDANH = txtbidanh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
-                        DTO.MASOTHUE = txtmasothue.Text;
+                        DTO.MASOTHUE = "TH1";
                         DTO.DIACHI = txtdiachi.Text;
                         // TXTSDT.Focus();
                         //TXTSDT.SelectAll();
@@ -256,7 +256,7 @@ namespace WindowsFormsApplication1
                         DTO.BIDANH = txtbidanh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
-                        DTO.MASOTHUE = txtmasothue.Text;
+                        DTO.MASOTHUE = "TH1";
                         DTO.DIACHI = txtdiachi.Text;
 
                         DTO.SDT = txtsdt.Text;
@@ -290,7 +290,7 @@ namespace WindowsFormsApplication1
                         DTO.BIDANH = txtbidanh.Text;
                         DTO.SOTAIKHOAN = txtsotaikhan.Text;
                         DTO.NGANHANG = txtnganhang.Text;
-                        DTO.MASOTHUE = txtmasothue.Text;
+                        DTO.MASOTHUE = "TH1";
                         DTO.DIACHI = txtdiachi.Text;
                         // TXTSDT.Focus();
                         //TXTSDT.SelectAll();
