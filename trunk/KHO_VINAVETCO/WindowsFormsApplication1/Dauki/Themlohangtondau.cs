@@ -179,8 +179,8 @@ namespace WindowsFormsApplication1
                 }
 
                 dto.CHENHLECH = (SOLUONGMH1 - TONKHO).ToString();
-                ctl.UPDATElohangtondau(dto);
-                XtraMessageBox.Show("Bạn Đã Sửa Thành Công");
+               // ctl.UPDATElohangtondau(dto);
+                XtraMessageBox.Show("KHÔNG CHO UPDATE NỮA");
             }
             this.Close();
         }

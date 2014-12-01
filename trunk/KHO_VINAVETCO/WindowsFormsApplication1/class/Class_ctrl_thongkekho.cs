@@ -75,18 +75,18 @@ namespace WindowsFormsApplication1
         {
             return dao.getondauky_mathang(NGAYCHOTKHO);
         }
-        public DataTable getCONGNONCC_DAUKY(string CHOTKHO)
+        public DataTable getCONGNONCC_DAUKY()
         {
-            return dao.getCONGNONCC_DAUKY(CHOTKHO);
+            return dao.getCONGNONCC_DAUKY();
         }
 
         public DataTable getKHOASO()
         {
             return dao.getKHOASO();
         }
-        public DataTable getCONGNONKH_DAUKY(string NGAYCHOTKHO)
+        public DataTable getCONGNONKH_DAUKY()
         {
-            return dao.getCONGNOKH_DAUKY(NGAYCHOTKHO);
+            return dao.getCONGNOKH_DAUKY();
         }
         public DataTable dtGetNH()
         {
@@ -103,15 +103,6 @@ namespace WindowsFormsApplication1
         public DataTable dtGetKIKIEM()
         {
             return dao.dtGetKIKIEM();
-        }
-
-        public DataTable dtGetKIKIEM_NCCNO()
-        {
-            return dao.dtGetKIKIEM_NCCNO();
-        }
-        public DataTable dtGetKIKIEM_KHNO()
-        {
-            return dao.dtGetKIKIEM_KHNO();
         }
 
         public DataTable dtGetKICHOTKHO()

@@ -115,10 +115,20 @@ namespace WindowsFormsApplication1
             panel_congno.Visible = false;
             panel_phieuchi.Visible = false;
             panelhoadon.Visible = true;
-
             gridhoadon.ExpandAllGroups();
+            if (ISHANGHOA)
+            {
+                Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
+                cbncc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+                cbncc.Properties.DisplayMember = "TENKH";
+                cbncc.Properties.ValueMember = "MAKH";
+                cbncc.Properties.View.BestFitColumns();
+                cbncc.Properties.PopupFormWidth = 300;
+                cbncc.Properties.DataSource = ctr1.dtGetKH();
+            }
 
         }
+        
         private void btThutien_Click(object sender, EventArgs e)
         {
             if (PublicVariable.THEM == "False")
@@ -434,11 +444,13 @@ namespace WindowsFormsApplication1
         {
             deDongTab();
         }
-
+        Boolean ISHANGHOA = false;
         private void linkcongno_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             loadGetAll_CONGNO();
             load_congno();
+            ISHANGHOA = false;
+            CBKH_MAKH = "";
         }
 
         private void linkphieuthu_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -451,7 +463,8 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
                 return;
             }
-
+            ISHANGHOA = false;
+            CBKH_MAKH = "";
             loadGetAllPHIEUTHU();
             load_phieuthu();
         }
@@ -615,7 +628,8 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
                 return;
             }
-
+            ISHANGHOA = false;
+            CBKH_MAKH = "";
             loadGetAllHOADON();
             load_hoadon();
         }
@@ -710,8 +724,16 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-            loadGetAllHOADON();
+            
             load_hoadon();
+            if (ISHANGHOA)
+            {
+                loadGetAllMATHANG();
+            }
+            else
+            {
+                loadGetAllHOADON();
+            }
         }
 
         private void simpleButton8_Click(object sender, EventArgs e)
@@ -753,6 +775,53 @@ namespace WindowsFormsApplication1
             deDongTab();
         }
 
+        private void dateEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void navBarItem2_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Int64 ingaybd = Convert.ToInt64(dateTu.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateTu.Text.Substring(0, 2));
+            Int64 ingaykt = Convert.ToInt64(dateDen.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateDen.Text.Substring(0, 2));
+            if (ingaybd > ingaykt)
+            {
+                MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
+                return;
+            }
+            ISHANGHOA = true;
+            CBKH_MAKH = "";
+            load_hoadon();
+            loadGetAllMATHANG();
+        }
+        public void loadGetAllMATHANG()
+        {
+            string NGAYBD = dateTu.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            string NGAYKT = dateDen.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            dt = null;
+            if (CBKH_MAKH != "")
+            {
+                dt = CTR.GETALL_MATHANGKH(NGAYBD, NGAYKT, CBKH_MAKH);
+            }
+                gridControl1.DataSource = dt;
+            
+
+            gridControl1.MainView = MATHANG;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                MATHANG.Columns["KHOILUONG"].Visible = false;
+            }
+            MATHANG.ExpandAllGroups();
+        }
+        string CBKH_MAKH = "";
+        
+
+        private void cbncc_Validated(object sender, EventArgs e)
+        {
+            CBKH_MAKH = gridncc.GetFocusedRowCellValue("MAKH").ToString();
+        }
   
 
 

@@ -36,13 +36,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.dateTu = new DevExpress.XtraEditors.DateEdit();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -64,7 +62,6 @@
             // 
             // 
             this.txtsql.Border.Class = "TextBoxBorder";
-            this.txtsql.Border.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.txtsql.Location = new System.Drawing.Point(6, 18);
             this.txtsql.Multiline = true;
             this.txtsql.Name = "txtsql";
@@ -128,26 +125,12 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // dateTu
-            // 
-            this.dateTu.EditValue = new System.DateTime(2010, 11, 27, 23, 39, 42, 143);
-            this.dateTu.Location = new System.Drawing.Point(427, 461);
-            this.dateTu.Name = "dateTu";
-            this.dateTu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateTu.Properties.Mask.EditMask = "";
-            this.dateTu.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.dateTu.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.dateTu.Size = new System.Drawing.Size(100, 20);
-            this.dateTu.TabIndex = 6;
-            // 
             // button4
             // 
             this.button4.ForeColor = System.Drawing.Color.DarkBlue;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(562, 457);
+            this.button4.Location = new System.Drawing.Point(383, 456);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(129, 30);
             this.button4.TabIndex = 7;
@@ -156,13 +139,27 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(523, 456);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(140, 30);
+            this.button5.TabIndex = 8;
+            this.button5.Text = " lệch MH-KHOHANG";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // export
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 489);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.dateTu);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.groupBox1);
             this.Name = "export";
@@ -170,8 +167,6 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties.VistaTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTu.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,7 +180,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtsql;
-        private DevExpress.XtraEditors.DateEdit dateTu;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }

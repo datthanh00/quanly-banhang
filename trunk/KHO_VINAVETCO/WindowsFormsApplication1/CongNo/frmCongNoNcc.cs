@@ -74,9 +74,6 @@ namespace WindowsFormsApplication1
       
         private void frmCongNoNcc_Load(object sender, EventArgs e)
         {
-
-
-
             if (PublicVariable.XEM == "False")
             {
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
@@ -104,7 +101,6 @@ namespace WindowsFormsApplication1
             panel_congno.Visible = true;
             panel_phieuchi.Visible = false;
             panelhoadon.Visible = false;
-    
             gridcongno.ExpandAllGroups();
         }
 
@@ -121,8 +117,19 @@ namespace WindowsFormsApplication1
             panel_phieuchi.Visible = false;
             panelhoadon.Visible = true;
             gridhoadon.ExpandAllGroups();
+            if (ISHANGHOA)
+            {
+                Class_ctrl_thongkekho ctr1 = new Class_ctrl_thongkekho();
+                cbncc.Properties.View.OptionsBehavior.AutoPopulateColumns = false;
+                cbncc.Properties.DisplayMember = "TENNCC";
+                cbncc.Properties.ValueMember = "MANCC";
+                cbncc.Properties.View.BestFitColumns();
+                cbncc.Properties.PopupFormWidth = 300;
+                cbncc.Properties.DataSource = ctr1.dtGetNCC();
+            }
         }
-
+       
+        
         private void gridView1_DoubleClick(object sender, EventArgs e)
         {
             GridView view = sender as GridView;
@@ -413,10 +420,11 @@ namespace WindowsFormsApplication1
                 }
             }
         }
-
+        Boolean ISHANGHOA = false;
         private void linkcongno_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-
+            ISHANGHOA = false;
+            CBKH_MANCC = "";
             loadGetAllHDN();
             load_congno();
         }
@@ -430,6 +438,8 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
                 return;
             }
+            ISHANGHOA = false;
+            CBKH_MANCC = "";
             loadGetAllphieuchi();
             load_phieuchi();
         }
@@ -615,7 +625,8 @@ namespace WindowsFormsApplication1
             }
 
             loadGetAllhoadon();
-            
+            ISHANGHOA = false;
+            CBKH_MANCC = "";
             load_hoadon();
         }
 
@@ -735,9 +746,17 @@ namespace WindowsFormsApplication1
                 return;
             }
 
-            loadGetAllhoadon();
+            
 
-            load_phieuchi();
+            load_hoadon();
+            if (ISHANGHOA)
+            {
+                loadGetAllMATHANG();
+            }
+            else
+            {
+                loadGetAllhoadon();
+            }
         }
 
         private void simpleButton9_Click_1(object sender, EventArgs e)
@@ -779,12 +798,60 @@ namespace WindowsFormsApplication1
             deDongTab();
         }
 
+        private void panelhoadon_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
 
+        private void panelControl2_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
 
+        private void navBarItem1_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            Int64 ingaybd = Convert.ToInt64(dateTu.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateTu.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateTu.Text.Substring(0, 2));
+            Int64 ingaykt = Convert.ToInt64(dateDen.Text.Substring(6, 4)) * 365 + Convert.ToInt64(dateDen.Text.Substring(3, 2)) * 31 + Convert.ToInt64(dateDen.Text.Substring(0, 2));
+            if (ingaybd > ingaykt)
+            {
+                MessageBox.Show("ngày kết thúc phải nhỏ hơn ngày bắt đầu");
+                return;
+            }
+            ISHANGHOA = true;
+            CBKH_MANCC = "";
+            load_hoadon();
+            
+            loadGetAllMATHANG();
+        }
 
+        public void loadGetAllMATHANG()
+        {
 
+            string NGAYBD = dateTu1.Text;
+            NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
+            string NGAYKT = dateDen1.Text;
+            NGAYKT = NGAYKT.Substring(6, 4) + "/" + NGAYKT.Substring(3, 2) + "/" + NGAYKT.Substring(0, 2);
+            string MANCC = "";
+            dt = null;
+            //dt = CTR.GETALLHDn_ctrl();
+            if (CBKH_MANCC != "")
+            {
+                dt = CTR.Getall_MATHANGNCC(NGAYBD, NGAYKT, CBKH_MANCC);
+            }
+            gridControl1.DataSource = dt;
+            gridControl1.MainView = MATHANG;
+            if (!PublicVariable.isKHOILUONG)
+            {
+                MATHANG.Columns["KHOILUONG"].Visible = false;
+            }
+            MATHANG.ExpandAllGroups();
+        }
+        string CBKH_MANCC = "";
+        
 
+        private void cbncc_Validated(object sender, EventArgs e)
+        {
+            CBKH_MANCC = gridncc.GetFocusedRowCellValue("MANCC").ToString();
+        }
     }
 }

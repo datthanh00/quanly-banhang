@@ -206,7 +206,7 @@ namespace WindowsFormsApplication1
                     dto.MANCC = "";
                 }
 
-                SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' AND TONKHONGAY <> 0 ";
+                SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "'";
 
                 dt = ctlNCC.GETDATA(SQL);
         
@@ -290,14 +290,14 @@ namespace WindowsFormsApplication1
             CTL ctltk = new CTL();
             string NGAYBD = dateTu.Text;
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
-            string SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' ";
+            //string SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' ";
 
-            DataTable dt = ctltk.GETDATA(SQL);
-            if (dt.Rows[0][0].ToString() == "0")
-            {
-                MessageBox.Show("Bạn phải lưu trước khi in");
-                return;
-            }
+            //DataTable dt = ctltk.GETDATA(SQL);
+            //if (dt.Rows[0][0].ToString() == "0")
+            //{
+                //MessageBox.Show("Bạn phải lưu trước khi in");
+              //  return;
+            //}
 
           
             DataTable printtable = (DataTable)gridControl2.DataSource;
@@ -421,7 +421,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("KHÔNG CÓ QUYỀN ");
                 return;
             }
-          
             string NGAYBD = dateTu.Text;
             CTL ctlNCC = new CTL();
             string SQL="";
@@ -434,7 +433,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("vui lòng nhấn nút xem trước khi lưu");
                 return;
             }
-
             if (dtr1["NGAY"].ToString() == dt.Rows[0][0].ToString())
             {
                 NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
@@ -460,8 +458,6 @@ namespace WindowsFormsApplication1
                                 SQL = SQL + " \r\nGO\r\n INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[TONKHONGAY],[MAKHO]) VALUES (convert(varchar,GETDATE(),101),'" + dtr["MAMH"].ToString() + "'," + dtr["TONTT"].ToString() + ",'" + PublicVariable.MAKHO + "')";
                             }
                         }
-
-
                         i++;
                     }
                     i--;
@@ -471,10 +467,10 @@ namespace WindowsFormsApplication1
                         ctlNCC.executeNonQuery2(SQL);
                     }
                 }
-                if (_isfilter)
-                {
-                    loadGird(true);
-                }
+               // if (_isfilter)
+               // {
+                loadGird(false);
+               // }
                 MessageBox.Show("Đã lưu tồn kho thực tế ngày hôm nay");
             }
             else

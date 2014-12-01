@@ -103,6 +103,15 @@ namespace WindowsFormsApplication1
         {
             return CNNCC.Getall_hoadon_Dao(NGAYBD, NGAYKT);
         }
+        public DataTable Getall_MATHANGNCC(string NGAYBD, string NGAYKT, string CBKH_MANCC)
+        {
+            return CNNCC.Getall_MATHANGNCC(NGAYBD, NGAYKT, CBKH_MANCC);
+        }
+
+        public DataTable GETALL_MATHANGKH(string NGAYBD, string NGAYKT, string CBKH_MAKH)
+        {
+            return CNNCC.GETALL_MATHANGKH(NGAYBD, NGAYKT, CBKH_MAKH);
+        }
         public  DataTable get1pthdn_ctrl(string MaHDn)
         {
             return CNNCC.get1pc_dao(MaHDn);
