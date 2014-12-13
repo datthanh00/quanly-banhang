@@ -290,14 +290,14 @@ namespace WindowsFormsApplication1
             CTL ctltk = new CTL();
             string NGAYBD = dateTu.Text;
             NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
-            //string SQL = "select count(mamh) from TONKHOTT WHERE NGAY='" + NGAYBD + "' AND MAKHO='" + PublicVariable.MAKHO + "' ";
+            string SQL = "select count(mamh) from TONKHOTT WHERE NGAY=convert(varchar,GETDATE(),101) AND MAKHO='" + PublicVariable.MAKHO + "' ";
 
-            //DataTable dt = ctltk.GETDATA(SQL);
-            //if (dt.Rows[0][0].ToString() == "0")
-            //{
-                //MessageBox.Show("Bạn phải lưu trước khi in");
-              //  return;
-            //}
+            DataTable dt = ctltk.GETDATA(SQL);
+            if (dt.Rows[0][0].ToString() == "0")
+            {
+                MessageBox.Show("Bạn phải lưu trước khi in");
+               return;
+            }
 
           
             DataTable printtable = (DataTable)gridControl2.DataSource;
@@ -437,6 +437,7 @@ namespace WindowsFormsApplication1
             {
                 NGAYBD = NGAYBD.Substring(6, 4) + "/" + NGAYBD.Substring(3, 2) + "/" + NGAYBD.Substring(0, 2);
                 string CHENHLECH, ISINSERT;
+                int count = 0;
 
                 for (int i = 0; i < advBandedGridView3.DataRowCount; i++)
                 {
@@ -451,10 +452,12 @@ namespace WindowsFormsApplication1
                         {
                             if (ISINSERT != "0.000")
                             {
+                                count = 1;
                                 SQL = SQL + " \r\nGO\r\n UPDATE  [TONKHOTT] SET TONKHONGAY=" + dtr["TONTT"].ToString() + " WHERE MAMH='" + dtr["MAMH"].ToString() + "' AND NGAY='" + NGAYBD + "' ";
                             }
                             else
                             {
+                                count = 1;
                                 SQL = SQL + " \r\nGO\r\n INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[TONKHONGAY],[MAKHO]) VALUES (convert(varchar,GETDATE(),101),'" + dtr["MAMH"].ToString() + "'," + dtr["TONTT"].ToString() + ",'" + PublicVariable.MAKHO + "')";
                             }
                         }
@@ -465,6 +468,19 @@ namespace WindowsFormsApplication1
                     if (SQL != "")
                     {
                         ctlNCC.executeNonQuery2(SQL);
+                    }
+                }
+                
+               
+                if (count == 0)
+                {
+                    SQL = "SELECT * FROM TONKHOTT WHERE NGAY=convert(varchar,GETDATE(),101) ";
+                    dt = ctlNCC.GETDATA(SQL);
+                    if(dt.Rows.Count==0)
+                    {
+                    DataRow dtr = advBandedGridView3.GetDataRow(0);
+                    SQL = "INSERT INTO  [TONKHOTT] ([NGAY],[MAMH],[TONKHONGAY],[MAKHO]) VALUES (convert(varchar,GETDATE(),101),'" + dtr["MAMH"].ToString() + "'," + dtr["TONTT"].ToString() + ",'" + PublicVariable.MAKHO + "')";
+                    ctlNCC.executeNonQuery2(SQL);
                     }
                 }
                // if (_isfilter)
