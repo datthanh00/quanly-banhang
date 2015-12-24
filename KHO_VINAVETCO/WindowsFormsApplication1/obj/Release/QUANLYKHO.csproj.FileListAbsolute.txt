@@ -104,3 +104,5 @@ e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.exe.
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.application
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.exe
 e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\obj\Release\Quanlykho.pdb
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\Microsoft.Office.Interop.Excel.dll
+e:\visualsudio\KHO_VINAVETCO\WindowsFormsApplication1\bin\Release\office.dll

@@ -86,7 +86,6 @@
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.MATHANG = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -182,9 +181,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(138, 465);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(138, 466);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -202,7 +201,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(138, 465);
+            this.navBarControl1.Size = new System.Drawing.Size(138, 466);
             this.navBarControl1.TabIndex = 3;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -499,8 +498,8 @@
             // 
             // 
             this.printableComponentLink1.ImageCollection.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("printableComponentLink1.ImageCollection.ImageStream")));
-            this.printableComponentLink1.PrintingSystem = this.printingSystem2;
-            this.printableComponentLink1.PrintingSystemBase = this.printingSystem2;
+            this.printableComponentLink1.PrintingSystem = this.printingSystem1;
+            this.printableComponentLink1.PrintingSystemBase = this.printingSystem1;
             this.printableComponentLink1.CreateReportFooterArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportFooterArea);
             this.printableComponentLink1.CreateReportHeaderArea += new DevExpress.XtraPrinting.CreateAreaEventHandler(this.printableComponentLink1_CreateReportHeaderArea);
             // 
@@ -554,7 +553,6 @@
             this.cbncc.Properties.View = this.gridncc;
             this.cbncc.Size = new System.Drawing.Size(202, 20);
             this.cbncc.TabIndex = 14;
-            
             this.cbncc.Validated += new System.EventHandler(this.cbncc_Validated);
             // 
             // gridncc
@@ -695,7 +693,6 @@
             this.MATHANG.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.MATHANG.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MATHANG.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn19,
             this.gridColumn18,
             this.gridColumn20,
             this.gridColumn24,
@@ -704,7 +701,6 @@
             this.gridColumn23,
             this.gridColumn26});
             this.MATHANG.GridControl = this.gridControl1;
-            this.MATHANG.GroupCount = 1;
             this.MATHANG.Name = "MATHANG";
             this.MATHANG.OptionsBehavior.Editable = false;
             this.MATHANG.OptionsBehavior.ReadOnly = true;
@@ -712,14 +708,6 @@
             this.MATHANG.OptionsSelection.MultiSelect = true;
             this.MATHANG.OptionsView.ShowAutoFilterRow = true;
             this.MATHANG.OptionsView.ShowFooter = true;
-            this.MATHANG.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn19, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // gridColumn19
-            // 
-            this.gridColumn19.Caption = "Khách Hàng";
-            this.gridColumn19.FieldName = "TENKH";
-            this.gridColumn19.Name = "gridColumn19";
             // 
             // gridColumn18
             // 
@@ -1170,7 +1158,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraNavBar.NavBarItem navBarItem2;
         private DevExpress.XtraGrid.Views.Grid.GridView MATHANG;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;

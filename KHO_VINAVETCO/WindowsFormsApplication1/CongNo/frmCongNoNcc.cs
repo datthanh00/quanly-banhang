@@ -851,7 +851,11 @@ namespace WindowsFormsApplication1
 
         private void cbncc_Validated(object sender, EventArgs e)
         {
-            CBKH_MANCC = gridncc.GetFocusedRowCellValue("MANCC").ToString();
+            try
+            {
+                CBKH_MANCC = gridncc.GetFocusedRowCellValue("MANCC").ToString();
+            }
+            catch { }
         }
     }
 }

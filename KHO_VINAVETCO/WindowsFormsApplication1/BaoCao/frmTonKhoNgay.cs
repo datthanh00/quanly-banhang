@@ -483,10 +483,7 @@ namespace WindowsFormsApplication1
                     ctlNCC.executeNonQuery2(SQL);
                     }
                 }
-               // if (_isfilter)
-               // {
                 loadGird(false);
-               // }
                 MessageBox.Show("Đã lưu tồn kho thực tế ngày hôm nay");
             }
             else
@@ -494,8 +491,6 @@ namespace WindowsFormsApplication1
                 MessageBox.Show("Không phải ngày hôm nay nên không thể chỉnh sửa");
             }
         }
-
-
 
         private void printableComponentLink1_CreateReportFooterArea(object sender, DevExpress.XtraPrinting.CreateAreaEventArgs e)
         {

@@ -820,7 +820,11 @@ namespace WindowsFormsApplication1
 
         private void cbncc_Validated(object sender, EventArgs e)
         {
-            CBKH_MAKH = gridncc.GetFocusedRowCellValue("MAKH").ToString();
+            try
+            {
+                CBKH_MAKH = gridncc.GetFocusedRowCellValue("MAKH").ToString();
+            }
+            catch { }
         }
   
 

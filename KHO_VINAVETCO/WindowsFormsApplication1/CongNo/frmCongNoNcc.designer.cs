@@ -86,7 +86,6 @@
             this.simpleButton10 = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.MATHANG = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -256,9 +255,9 @@
             // dockPanel1_Container
             // 
             this.dockPanel1_Container.Controls.Add(this.navBarControl1);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 25);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(3, 24);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(143, 483);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(143, 484);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // navBarControl1
@@ -276,7 +275,7 @@
             this.navBarControl1.Location = new System.Drawing.Point(0, 0);
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 191;
-            this.navBarControl1.Size = new System.Drawing.Size(143, 483);
+            this.navBarControl1.Size = new System.Drawing.Size(143, 484);
             this.navBarControl1.TabIndex = 2;
             this.navBarControl1.Text = "navBarControl1";
             // 
@@ -560,7 +559,6 @@
             this.cbncc.Properties.View = this.gridncc;
             this.cbncc.Size = new System.Drawing.Size(202, 20);
             this.cbncc.TabIndex = 14;
-            
             this.cbncc.Validated += new System.EventHandler(this.cbncc_Validated);
             // 
             // gridncc
@@ -701,7 +699,6 @@
             this.MATHANG.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.MATHANG.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.MATHANG.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn18,
             this.gridColumn23,
             this.gridColumn19,
             this.gridColumn17,
@@ -710,7 +707,6 @@
             this.gridColumn22,
             this.gridColumn25});
             this.MATHANG.GridControl = this.gridControl1;
-            this.MATHANG.GroupCount = 1;
             this.MATHANG.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SOLUONG", null, "{0:0,0}")});
             this.MATHANG.Name = "MATHANG";
@@ -719,16 +715,6 @@
             this.MATHANG.OptionsSelection.MultiSelect = true;
             this.MATHANG.OptionsView.ShowAutoFilterRow = true;
             this.MATHANG.OptionsView.ShowFooter = true;
-            this.MATHANG.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn18, DevExpress.Data.ColumnSortOrder.Ascending)});
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "Nhà Cung Cấp";
-            this.gridColumn18.FieldName = "TENNCC";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 0;
             // 
             // gridColumn23
             // 
@@ -1167,7 +1153,6 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton10;
         private DevExpress.XtraNavBar.NavBarItem navBarItem1;
         private DevExpress.XtraGrid.Views.Grid.GridView MATHANG;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
